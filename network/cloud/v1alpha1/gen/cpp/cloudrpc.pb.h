@@ -993,21 +993,21 @@ class DeleteDeviceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -1026,7 +1026,7 @@ class DeleteDeviceRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -1679,20 +1679,20 @@ class GetDeviceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetDeviceRequest)
@@ -1702,7 +1702,7 @@ class GetDeviceRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -2354,20 +2354,20 @@ class GetPortRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetPortRequest)
@@ -2377,7 +2377,7 @@ class GetPortRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -2692,21 +2692,21 @@ class DeleteVnicRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -2725,7 +2725,7 @@ class DeleteVnicRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -3378,20 +3378,20 @@ class GetVnicRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetVnicRequest)
@@ -3401,7 +3401,7 @@ class GetVnicRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -3716,21 +3716,21 @@ class DeleteInterfaceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -3749,7 +3749,7 @@ class DeleteInterfaceRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -4402,20 +4402,20 @@ class GetInterfaceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetInterfaceRequest)
@@ -4425,7 +4425,7 @@ class GetInterfaceRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -4740,21 +4740,21 @@ class DeleteRouteTableRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -4773,7 +4773,7 @@ class DeleteRouteTableRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -5426,20 +5426,20 @@ class GetRouteTableRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetRouteTableRequest)
@@ -5449,7 +5449,7 @@ class GetRouteTableRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -5764,21 +5764,21 @@ class DeleteRouteRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -5797,7 +5797,7 @@ class DeleteRouteRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -6450,20 +6450,20 @@ class GetRouteRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetRouteRequest)
@@ -6473,7 +6473,7 @@ class GetRouteRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -6788,21 +6788,21 @@ class DeleteUnderlayRouteRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -6821,7 +6821,7 @@ class DeleteUnderlayRouteRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -7474,20 +7474,20 @@ class GetUnderlayRouteRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest)
@@ -7497,7 +7497,7 @@ class GetUnderlayRouteRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -7812,21 +7812,21 @@ class DeleteBgpRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -7845,7 +7845,7 @@ class DeleteBgpRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -8498,20 +8498,20 @@ class GetBgpRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetBgpRequest)
@@ -8521,7 +8521,7 @@ class GetBgpRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -8836,21 +8836,21 @@ class DeleteBGPPeerRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -8869,7 +8869,7 @@ class DeleteBGPPeerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -9522,20 +9522,20 @@ class GetBGPPeerRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest)
@@ -9545,7 +9545,7 @@ class GetBGPPeerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -9860,21 +9860,21 @@ class DeleteBGPPeerAfRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -9893,7 +9893,7 @@ class DeleteBGPPeerAfRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -10546,20 +10546,20 @@ class GetBGPPeerAfRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest)
@@ -10569,7 +10569,7 @@ class GetBGPPeerAfRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -10884,21 +10884,21 @@ class DeleteMappingRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -10917,7 +10917,7 @@ class DeleteMappingRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -11570,20 +11570,20 @@ class GetMappingRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetMappingRequest)
@@ -11593,7 +11593,7 @@ class GetMappingRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -11908,21 +11908,21 @@ class DeleteNextHopRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -11941,7 +11941,7 @@ class DeleteNextHopRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -12594,20 +12594,20 @@ class GetNextHopRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetNextHopRequest)
@@ -12617,7 +12617,7 @@ class GetNextHopRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -12932,21 +12932,21 @@ class DeleteNextHopGroupRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -12965,7 +12965,7 @@ class DeleteNextHopGroupRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -13618,20 +13618,20 @@ class GetNextHopGroupRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest)
@@ -13641,7 +13641,7 @@ class GetNextHopGroupRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -13956,21 +13956,21 @@ class DeleteSubnetRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -13989,7 +13989,7 @@ class DeleteSubnetRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -14642,20 +14642,20 @@ class GetSubnetRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetSubnetRequest)
@@ -14665,7 +14665,7 @@ class GetSubnetRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -14980,21 +14980,21 @@ class DeleteTunnelRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -15013,7 +15013,7 @@ class DeleteTunnelRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -15666,20 +15666,20 @@ class GetTunnelRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetTunnelRequest)
@@ -15689,7 +15689,7 @@ class GetTunnelRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -16004,21 +16004,21 @@ class DeleteVpcRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -16037,7 +16037,7 @@ class DeleteVpcRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -16690,20 +16690,20 @@ class GetVpcRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetVpcRequest)
@@ -16713,7 +16713,7 @@ class GetVpcRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -17028,21 +17028,21 @@ class DeleteVPCPeerRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -17061,7 +17061,7 @@ class DeleteVPCPeerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -17714,20 +17714,20 @@ class GetVPCPeerRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest)
@@ -17737,7 +17737,7 @@ class GetVPCPeerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -18052,21 +18052,21 @@ class DeleteSecurityPolicyRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -18085,7 +18085,7 @@ class DeleteSecurityPolicyRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -18738,20 +18738,20 @@ class GetSecurityPolicyRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest)
@@ -18761,7 +18761,7 @@ class GetSecurityPolicyRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -19076,21 +19076,21 @@ class DeleteSecurityRuleRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -19109,7 +19109,7 @@ class DeleteSecurityRuleRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -19762,20 +19762,20 @@ class GetSecurityRuleRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest)
@@ -19785,7 +19785,7 @@ class GetSecurityRuleRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -20100,21 +20100,21 @@ class DeleteSecurityProfileRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kAllowMissingFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // bool allow_missing = 2;
@@ -20133,7 +20133,7 @@ class DeleteSecurityProfileRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
@@ -20786,20 +20786,20 @@ class GetSecurityProfileRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_id();
-  const std::string& id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest)
@@ -20809,7 +20809,7 @@ class GetSecurityProfileRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -21020,55 +21020,55 @@ inline void CreateDeviceRequest::set_allocated_device_id(std::string* device_id)
 
 // DeleteDeviceRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteDeviceRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteDeviceRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteDeviceRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.id)
-  return _internal_id();
+inline const std::string& DeleteDeviceRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteDeviceRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteDeviceRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.name)
 }
-inline std::string* DeleteDeviceRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.id)
+inline std::string* DeleteDeviceRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.name)
   return _s;
 }
-inline const std::string& DeleteDeviceRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteDeviceRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteDeviceRequest::_internal_set_id(const std::string& value) {
+inline void DeleteDeviceRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteDeviceRequest::_internal_mutable_id() {
+inline std::string* DeleteDeviceRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteDeviceRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteDeviceRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteDeviceRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteDeviceRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -21489,55 +21489,55 @@ inline void ListDevicesResponse::set_allocated_next_page_token(std::string* next
 
 // GetDeviceRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetDeviceRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetDeviceRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetDeviceRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetDeviceRequest.id)
-  return _internal_id();
+inline const std::string& GetDeviceRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetDeviceRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetDeviceRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetDeviceRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetDeviceRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetDeviceRequest.name)
 }
-inline std::string* GetDeviceRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetDeviceRequest.id)
+inline std::string* GetDeviceRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetDeviceRequest.name)
   return _s;
 }
-inline const std::string& GetDeviceRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetDeviceRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetDeviceRequest::_internal_set_id(const std::string& value) {
+inline void GetDeviceRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetDeviceRequest::_internal_mutable_id() {
+inline std::string* GetDeviceRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetDeviceRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetDeviceRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetDeviceRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetDeviceRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetDeviceRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetDeviceRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetDeviceRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetDeviceRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -21938,55 +21938,55 @@ inline void ListPortsResponse::set_allocated_next_page_token(std::string* next_p
 
 // GetPortRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetPortRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetPortRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetPortRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetPortRequest.id)
-  return _internal_id();
+inline const std::string& GetPortRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetPortRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetPortRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetPortRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetPortRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetPortRequest.name)
 }
-inline std::string* GetPortRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetPortRequest.id)
+inline std::string* GetPortRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetPortRequest.name)
   return _s;
 }
-inline const std::string& GetPortRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetPortRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetPortRequest::_internal_set_id(const std::string& value) {
+inline void GetPortRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetPortRequest::_internal_mutable_id() {
+inline std::string* GetPortRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetPortRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetPortRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetPortRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetPortRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetPortRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetPortRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetPortRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetPortRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -22185,55 +22185,55 @@ inline void CreateVnicRequest::set_allocated_vnic_id(std::string* vnic_id) {
 
 // DeleteVnicRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteVnicRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteVnicRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteVnicRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.id)
-  return _internal_id();
+inline const std::string& DeleteVnicRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteVnicRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteVnicRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.name)
 }
-inline std::string* DeleteVnicRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.id)
+inline std::string* DeleteVnicRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.name)
   return _s;
 }
-inline const std::string& DeleteVnicRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteVnicRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteVnicRequest::_internal_set_id(const std::string& value) {
+inline void DeleteVnicRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteVnicRequest::_internal_mutable_id() {
+inline std::string* DeleteVnicRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteVnicRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteVnicRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteVnicRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteVnicRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -22654,55 +22654,55 @@ inline void ListVnicsResponse::set_allocated_next_page_token(std::string* next_p
 
 // GetVnicRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetVnicRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetVnicRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetVnicRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetVnicRequest.id)
-  return _internal_id();
+inline const std::string& GetVnicRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetVnicRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetVnicRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetVnicRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetVnicRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetVnicRequest.name)
 }
-inline std::string* GetVnicRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetVnicRequest.id)
+inline std::string* GetVnicRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetVnicRequest.name)
   return _s;
 }
-inline const std::string& GetVnicRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetVnicRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetVnicRequest::_internal_set_id(const std::string& value) {
+inline void GetVnicRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetVnicRequest::_internal_mutable_id() {
+inline std::string* GetVnicRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetVnicRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetVnicRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetVnicRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetVnicRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetVnicRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetVnicRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetVnicRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetVnicRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -22901,55 +22901,55 @@ inline void CreateInterfaceRequest::set_allocated_interface_id(std::string* inte
 
 // DeleteInterfaceRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteInterfaceRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteInterfaceRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteInterfaceRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.id)
-  return _internal_id();
+inline const std::string& DeleteInterfaceRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteInterfaceRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteInterfaceRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.name)
 }
-inline std::string* DeleteInterfaceRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.id)
+inline std::string* DeleteInterfaceRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.name)
   return _s;
 }
-inline const std::string& DeleteInterfaceRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteInterfaceRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteInterfaceRequest::_internal_set_id(const std::string& value) {
+inline void DeleteInterfaceRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteInterfaceRequest::_internal_mutable_id() {
+inline std::string* DeleteInterfaceRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteInterfaceRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteInterfaceRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteInterfaceRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteInterfaceRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -23370,55 +23370,55 @@ inline void ListInterfacesResponse::set_allocated_next_page_token(std::string* n
 
 // GetInterfaceRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetInterfaceRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetInterfaceRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetInterfaceRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.id)
-  return _internal_id();
+inline const std::string& GetInterfaceRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetInterfaceRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetInterfaceRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.name)
 }
-inline std::string* GetInterfaceRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.id)
+inline std::string* GetInterfaceRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.name)
   return _s;
 }
-inline const std::string& GetInterfaceRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetInterfaceRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetInterfaceRequest::_internal_set_id(const std::string& value) {
+inline void GetInterfaceRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetInterfaceRequest::_internal_mutable_id() {
+inline std::string* GetInterfaceRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetInterfaceRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetInterfaceRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetInterfaceRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetInterfaceRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetInterfaceRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -23617,55 +23617,55 @@ inline void CreateRouteTableRequest::set_allocated_routetable_id(std::string* ro
 
 // DeleteRouteTableRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteRouteTableRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteRouteTableRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteRouteTableRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.id)
-  return _internal_id();
+inline const std::string& DeleteRouteTableRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteRouteTableRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteRouteTableRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.name)
 }
-inline std::string* DeleteRouteTableRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.id)
+inline std::string* DeleteRouteTableRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.name)
   return _s;
 }
-inline const std::string& DeleteRouteTableRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteRouteTableRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteRouteTableRequest::_internal_set_id(const std::string& value) {
+inline void DeleteRouteTableRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteRouteTableRequest::_internal_mutable_id() {
+inline std::string* DeleteRouteTableRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteRouteTableRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteRouteTableRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteRouteTableRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteRouteTableRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -24086,55 +24086,55 @@ inline void ListRouteTablesResponse::set_allocated_next_page_token(std::string* 
 
 // GetRouteTableRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetRouteTableRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetRouteTableRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetRouteTableRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.id)
-  return _internal_id();
+inline const std::string& GetRouteTableRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetRouteTableRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetRouteTableRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.name)
 }
-inline std::string* GetRouteTableRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.id)
+inline std::string* GetRouteTableRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.name)
   return _s;
 }
-inline const std::string& GetRouteTableRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetRouteTableRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetRouteTableRequest::_internal_set_id(const std::string& value) {
+inline void GetRouteTableRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetRouteTableRequest::_internal_mutable_id() {
+inline std::string* GetRouteTableRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetRouteTableRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetRouteTableRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetRouteTableRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetRouteTableRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetRouteTableRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -24333,55 +24333,55 @@ inline void CreateRouteRequest::set_allocated_route_id(std::string* route_id) {
 
 // DeleteRouteRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteRouteRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteRouteRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteRouteRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.id)
-  return _internal_id();
+inline const std::string& DeleteRouteRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteRouteRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteRouteRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.name)
 }
-inline std::string* DeleteRouteRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.id)
+inline std::string* DeleteRouteRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.name)
   return _s;
 }
-inline const std::string& DeleteRouteRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteRouteRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteRouteRequest::_internal_set_id(const std::string& value) {
+inline void DeleteRouteRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteRouteRequest::_internal_mutable_id() {
+inline std::string* DeleteRouteRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteRouteRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteRouteRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteRouteRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteRouteRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -24802,55 +24802,55 @@ inline void ListRoutesResponse::set_allocated_next_page_token(std::string* next_
 
 // GetRouteRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetRouteRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetRouteRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetRouteRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetRouteRequest.id)
-  return _internal_id();
+inline const std::string& GetRouteRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetRouteRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetRouteRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetRouteRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetRouteRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetRouteRequest.name)
 }
-inline std::string* GetRouteRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetRouteRequest.id)
+inline std::string* GetRouteRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetRouteRequest.name)
   return _s;
 }
-inline const std::string& GetRouteRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetRouteRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetRouteRequest::_internal_set_id(const std::string& value) {
+inline void GetRouteRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetRouteRequest::_internal_mutable_id() {
+inline std::string* GetRouteRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetRouteRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetRouteRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetRouteRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetRouteRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetRouteRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetRouteRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetRouteRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetRouteRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -25049,55 +25049,55 @@ inline void CreateUnderlayRouteRequest::set_allocated_underlayroute_id(std::stri
 
 // DeleteUnderlayRouteRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteUnderlayRouteRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteUnderlayRouteRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteUnderlayRouteRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.id)
-  return _internal_id();
+inline const std::string& DeleteUnderlayRouteRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteUnderlayRouteRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteUnderlayRouteRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.name)
 }
-inline std::string* DeleteUnderlayRouteRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.id)
+inline std::string* DeleteUnderlayRouteRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.name)
   return _s;
 }
-inline const std::string& DeleteUnderlayRouteRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteUnderlayRouteRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteUnderlayRouteRequest::_internal_set_id(const std::string& value) {
+inline void DeleteUnderlayRouteRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteUnderlayRouteRequest::_internal_mutable_id() {
+inline std::string* DeleteUnderlayRouteRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteUnderlayRouteRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteUnderlayRouteRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteUnderlayRouteRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteUnderlayRouteRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -25518,55 +25518,55 @@ inline void ListUnderlayRoutesResponse::set_allocated_next_page_token(std::strin
 
 // GetUnderlayRouteRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetUnderlayRouteRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetUnderlayRouteRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetUnderlayRouteRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.id)
-  return _internal_id();
+inline const std::string& GetUnderlayRouteRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetUnderlayRouteRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetUnderlayRouteRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.name)
 }
-inline std::string* GetUnderlayRouteRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.id)
+inline std::string* GetUnderlayRouteRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.name)
   return _s;
 }
-inline const std::string& GetUnderlayRouteRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetUnderlayRouteRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetUnderlayRouteRequest::_internal_set_id(const std::string& value) {
+inline void GetUnderlayRouteRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetUnderlayRouteRequest::_internal_mutable_id() {
+inline std::string* GetUnderlayRouteRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetUnderlayRouteRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetUnderlayRouteRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetUnderlayRouteRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetUnderlayRouteRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -25765,55 +25765,55 @@ inline void CreateBgpRequest::set_allocated_bgp_id(std::string* bgp_id) {
 
 // DeleteBgpRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteBgpRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteBgpRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteBgpRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.id)
-  return _internal_id();
+inline const std::string& DeleteBgpRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteBgpRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteBgpRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.name)
 }
-inline std::string* DeleteBgpRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.id)
+inline std::string* DeleteBgpRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.name)
   return _s;
 }
-inline const std::string& DeleteBgpRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteBgpRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteBgpRequest::_internal_set_id(const std::string& value) {
+inline void DeleteBgpRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteBgpRequest::_internal_mutable_id() {
+inline std::string* DeleteBgpRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteBgpRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteBgpRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteBgpRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteBgpRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -26234,55 +26234,55 @@ inline void ListBgpsResponse::set_allocated_next_page_token(std::string* next_pa
 
 // GetBgpRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetBgpRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetBgpRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetBgpRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetBgpRequest.id)
-  return _internal_id();
+inline const std::string& GetBgpRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetBgpRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetBgpRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetBgpRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetBgpRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetBgpRequest.name)
 }
-inline std::string* GetBgpRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetBgpRequest.id)
+inline std::string* GetBgpRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetBgpRequest.name)
   return _s;
 }
-inline const std::string& GetBgpRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetBgpRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetBgpRequest::_internal_set_id(const std::string& value) {
+inline void GetBgpRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetBgpRequest::_internal_mutable_id() {
+inline std::string* GetBgpRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetBgpRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetBgpRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetBgpRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetBgpRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetBgpRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetBgpRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetBgpRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetBgpRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -26481,55 +26481,55 @@ inline void CreateBGPPeerRequest::set_allocated_bgppeer_id(std::string* bgppeer_
 
 // DeleteBGPPeerRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteBGPPeerRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteBGPPeerRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteBGPPeerRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.id)
-  return _internal_id();
+inline const std::string& DeleteBGPPeerRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteBGPPeerRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteBGPPeerRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.name)
 }
-inline std::string* DeleteBGPPeerRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.id)
+inline std::string* DeleteBGPPeerRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.name)
   return _s;
 }
-inline const std::string& DeleteBGPPeerRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteBGPPeerRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteBGPPeerRequest::_internal_set_id(const std::string& value) {
+inline void DeleteBGPPeerRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteBGPPeerRequest::_internal_mutable_id() {
+inline std::string* DeleteBGPPeerRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteBGPPeerRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteBGPPeerRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteBGPPeerRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteBGPPeerRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -26950,55 +26950,55 @@ inline void ListBGPPeersResponse::set_allocated_next_page_token(std::string* nex
 
 // GetBGPPeerRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetBGPPeerRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetBGPPeerRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetBGPPeerRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.id)
-  return _internal_id();
+inline const std::string& GetBGPPeerRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetBGPPeerRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetBGPPeerRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.name)
 }
-inline std::string* GetBGPPeerRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.id)
+inline std::string* GetBGPPeerRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.name)
   return _s;
 }
-inline const std::string& GetBGPPeerRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetBGPPeerRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetBGPPeerRequest::_internal_set_id(const std::string& value) {
+inline void GetBGPPeerRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetBGPPeerRequest::_internal_mutable_id() {
+inline std::string* GetBGPPeerRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetBGPPeerRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetBGPPeerRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetBGPPeerRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetBGPPeerRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -27197,55 +27197,55 @@ inline void CreateBGPPeerAfRequest::set_allocated_bgppeeraf_id(std::string* bgpp
 
 // DeleteBGPPeerAfRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteBGPPeerAfRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteBGPPeerAfRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteBGPPeerAfRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.id)
-  return _internal_id();
+inline const std::string& DeleteBGPPeerAfRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteBGPPeerAfRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteBGPPeerAfRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.name)
 }
-inline std::string* DeleteBGPPeerAfRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.id)
+inline std::string* DeleteBGPPeerAfRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.name)
   return _s;
 }
-inline const std::string& DeleteBGPPeerAfRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteBGPPeerAfRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteBGPPeerAfRequest::_internal_set_id(const std::string& value) {
+inline void DeleteBGPPeerAfRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteBGPPeerAfRequest::_internal_mutable_id() {
+inline std::string* DeleteBGPPeerAfRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteBGPPeerAfRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteBGPPeerAfRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteBGPPeerAfRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteBGPPeerAfRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -27666,55 +27666,55 @@ inline void ListBGPPeerAfsResponse::set_allocated_next_page_token(std::string* n
 
 // GetBGPPeerAfRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetBGPPeerAfRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetBGPPeerAfRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetBGPPeerAfRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.id)
-  return _internal_id();
+inline const std::string& GetBGPPeerAfRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetBGPPeerAfRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetBGPPeerAfRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.name)
 }
-inline std::string* GetBGPPeerAfRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.id)
+inline std::string* GetBGPPeerAfRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.name)
   return _s;
 }
-inline const std::string& GetBGPPeerAfRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetBGPPeerAfRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetBGPPeerAfRequest::_internal_set_id(const std::string& value) {
+inline void GetBGPPeerAfRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetBGPPeerAfRequest::_internal_mutable_id() {
+inline std::string* GetBGPPeerAfRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetBGPPeerAfRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetBGPPeerAfRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetBGPPeerAfRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetBGPPeerAfRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -27913,55 +27913,55 @@ inline void CreateMappingRequest::set_allocated_mapping_id(std::string* mapping_
 
 // DeleteMappingRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteMappingRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteMappingRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteMappingRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.id)
-  return _internal_id();
+inline const std::string& DeleteMappingRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteMappingRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteMappingRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.name)
 }
-inline std::string* DeleteMappingRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.id)
+inline std::string* DeleteMappingRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.name)
   return _s;
 }
-inline const std::string& DeleteMappingRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteMappingRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteMappingRequest::_internal_set_id(const std::string& value) {
+inline void DeleteMappingRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteMappingRequest::_internal_mutable_id() {
+inline std::string* DeleteMappingRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteMappingRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteMappingRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteMappingRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteMappingRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -28382,55 +28382,55 @@ inline void ListMappingsResponse::set_allocated_next_page_token(std::string* nex
 
 // GetMappingRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetMappingRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetMappingRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetMappingRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetMappingRequest.id)
-  return _internal_id();
+inline const std::string& GetMappingRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetMappingRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetMappingRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetMappingRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetMappingRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetMappingRequest.name)
 }
-inline std::string* GetMappingRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetMappingRequest.id)
+inline std::string* GetMappingRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetMappingRequest.name)
   return _s;
 }
-inline const std::string& GetMappingRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetMappingRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetMappingRequest::_internal_set_id(const std::string& value) {
+inline void GetMappingRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetMappingRequest::_internal_mutable_id() {
+inline std::string* GetMappingRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetMappingRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetMappingRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetMappingRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetMappingRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetMappingRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetMappingRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetMappingRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetMappingRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -28629,55 +28629,55 @@ inline void CreateNextHopRequest::set_allocated_nexthop_id(std::string* nexthop_
 
 // DeleteNextHopRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteNextHopRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteNextHopRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteNextHopRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.id)
-  return _internal_id();
+inline const std::string& DeleteNextHopRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteNextHopRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteNextHopRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.name)
 }
-inline std::string* DeleteNextHopRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.id)
+inline std::string* DeleteNextHopRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.name)
   return _s;
 }
-inline const std::string& DeleteNextHopRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteNextHopRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteNextHopRequest::_internal_set_id(const std::string& value) {
+inline void DeleteNextHopRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteNextHopRequest::_internal_mutable_id() {
+inline std::string* DeleteNextHopRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteNextHopRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteNextHopRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteNextHopRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteNextHopRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -29098,55 +29098,55 @@ inline void ListNextHopsResponse::set_allocated_next_page_token(std::string* nex
 
 // GetNextHopRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetNextHopRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetNextHopRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetNextHopRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetNextHopRequest.id)
-  return _internal_id();
+inline const std::string& GetNextHopRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetNextHopRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetNextHopRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetNextHopRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetNextHopRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetNextHopRequest.name)
 }
-inline std::string* GetNextHopRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetNextHopRequest.id)
+inline std::string* GetNextHopRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetNextHopRequest.name)
   return _s;
 }
-inline const std::string& GetNextHopRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetNextHopRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetNextHopRequest::_internal_set_id(const std::string& value) {
+inline void GetNextHopRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetNextHopRequest::_internal_mutable_id() {
+inline std::string* GetNextHopRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetNextHopRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetNextHopRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetNextHopRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetNextHopRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetNextHopRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetNextHopRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetNextHopRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetNextHopRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -29345,55 +29345,55 @@ inline void CreateNextHopGroupRequest::set_allocated_nexthopgroup_id(std::string
 
 // DeleteNextHopGroupRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteNextHopGroupRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteNextHopGroupRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteNextHopGroupRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.id)
-  return _internal_id();
+inline const std::string& DeleteNextHopGroupRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteNextHopGroupRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteNextHopGroupRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.name)
 }
-inline std::string* DeleteNextHopGroupRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.id)
+inline std::string* DeleteNextHopGroupRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.name)
   return _s;
 }
-inline const std::string& DeleteNextHopGroupRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteNextHopGroupRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteNextHopGroupRequest::_internal_set_id(const std::string& value) {
+inline void DeleteNextHopGroupRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteNextHopGroupRequest::_internal_mutable_id() {
+inline std::string* DeleteNextHopGroupRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteNextHopGroupRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteNextHopGroupRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteNextHopGroupRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteNextHopGroupRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -29814,55 +29814,55 @@ inline void ListNextHopGroupsResponse::set_allocated_next_page_token(std::string
 
 // GetNextHopGroupRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetNextHopGroupRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetNextHopGroupRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetNextHopGroupRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.id)
-  return _internal_id();
+inline const std::string& GetNextHopGroupRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetNextHopGroupRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetNextHopGroupRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.name)
 }
-inline std::string* GetNextHopGroupRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.id)
+inline std::string* GetNextHopGroupRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.name)
   return _s;
 }
-inline const std::string& GetNextHopGroupRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetNextHopGroupRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetNextHopGroupRequest::_internal_set_id(const std::string& value) {
+inline void GetNextHopGroupRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetNextHopGroupRequest::_internal_mutable_id() {
+inline std::string* GetNextHopGroupRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetNextHopGroupRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetNextHopGroupRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetNextHopGroupRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetNextHopGroupRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -30061,55 +30061,55 @@ inline void CreateSubnetRequest::set_allocated_subnet_id(std::string* subnet_id)
 
 // DeleteSubnetRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteSubnetRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteSubnetRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteSubnetRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.id)
-  return _internal_id();
+inline const std::string& DeleteSubnetRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteSubnetRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteSubnetRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.name)
 }
-inline std::string* DeleteSubnetRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.id)
+inline std::string* DeleteSubnetRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.name)
   return _s;
 }
-inline const std::string& DeleteSubnetRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteSubnetRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteSubnetRequest::_internal_set_id(const std::string& value) {
+inline void DeleteSubnetRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteSubnetRequest::_internal_mutable_id() {
+inline std::string* DeleteSubnetRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteSubnetRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteSubnetRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteSubnetRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteSubnetRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -30530,55 +30530,55 @@ inline void ListSubnetsResponse::set_allocated_next_page_token(std::string* next
 
 // GetSubnetRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetSubnetRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetSubnetRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetSubnetRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetSubnetRequest.id)
-  return _internal_id();
+inline const std::string& GetSubnetRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetSubnetRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetSubnetRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetSubnetRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetSubnetRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetSubnetRequest.name)
 }
-inline std::string* GetSubnetRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetSubnetRequest.id)
+inline std::string* GetSubnetRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetSubnetRequest.name)
   return _s;
 }
-inline const std::string& GetSubnetRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetSubnetRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetSubnetRequest::_internal_set_id(const std::string& value) {
+inline void GetSubnetRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetSubnetRequest::_internal_mutable_id() {
+inline std::string* GetSubnetRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetSubnetRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetSubnetRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetSubnetRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetSubnetRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetSubnetRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetSubnetRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetSubnetRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetSubnetRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -30777,55 +30777,55 @@ inline void CreateTunnelRequest::set_allocated_tunnel_id(std::string* tunnel_id)
 
 // DeleteTunnelRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteTunnelRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteTunnelRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteTunnelRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.id)
-  return _internal_id();
+inline const std::string& DeleteTunnelRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteTunnelRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteTunnelRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.name)
 }
-inline std::string* DeleteTunnelRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.id)
+inline std::string* DeleteTunnelRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.name)
   return _s;
 }
-inline const std::string& DeleteTunnelRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteTunnelRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteTunnelRequest::_internal_set_id(const std::string& value) {
+inline void DeleteTunnelRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteTunnelRequest::_internal_mutable_id() {
+inline std::string* DeleteTunnelRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteTunnelRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteTunnelRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteTunnelRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteTunnelRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -31246,55 +31246,55 @@ inline void ListTunnelsResponse::set_allocated_next_page_token(std::string* next
 
 // GetTunnelRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetTunnelRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetTunnelRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetTunnelRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetTunnelRequest.id)
-  return _internal_id();
+inline const std::string& GetTunnelRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetTunnelRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetTunnelRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetTunnelRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetTunnelRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetTunnelRequest.name)
 }
-inline std::string* GetTunnelRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetTunnelRequest.id)
+inline std::string* GetTunnelRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetTunnelRequest.name)
   return _s;
 }
-inline const std::string& GetTunnelRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetTunnelRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetTunnelRequest::_internal_set_id(const std::string& value) {
+inline void GetTunnelRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetTunnelRequest::_internal_mutable_id() {
+inline std::string* GetTunnelRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetTunnelRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetTunnelRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetTunnelRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetTunnelRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetTunnelRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetTunnelRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetTunnelRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetTunnelRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -31493,55 +31493,55 @@ inline void CreateVpcRequest::set_allocated_vpc_id(std::string* vpc_id) {
 
 // DeleteVpcRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteVpcRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteVpcRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteVpcRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.id)
-  return _internal_id();
+inline const std::string& DeleteVpcRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteVpcRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteVpcRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.name)
 }
-inline std::string* DeleteVpcRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.id)
+inline std::string* DeleteVpcRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.name)
   return _s;
 }
-inline const std::string& DeleteVpcRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteVpcRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteVpcRequest::_internal_set_id(const std::string& value) {
+inline void DeleteVpcRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteVpcRequest::_internal_mutable_id() {
+inline std::string* DeleteVpcRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteVpcRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteVpcRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteVpcRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteVpcRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -31962,55 +31962,55 @@ inline void ListVpcsResponse::set_allocated_next_page_token(std::string* next_pa
 
 // GetVpcRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetVpcRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetVpcRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetVpcRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetVpcRequest.id)
-  return _internal_id();
+inline const std::string& GetVpcRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetVpcRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetVpcRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetVpcRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetVpcRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetVpcRequest.name)
 }
-inline std::string* GetVpcRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetVpcRequest.id)
+inline std::string* GetVpcRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetVpcRequest.name)
   return _s;
 }
-inline const std::string& GetVpcRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetVpcRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetVpcRequest::_internal_set_id(const std::string& value) {
+inline void GetVpcRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetVpcRequest::_internal_mutable_id() {
+inline std::string* GetVpcRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetVpcRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetVpcRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetVpcRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetVpcRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetVpcRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetVpcRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetVpcRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetVpcRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -32209,55 +32209,55 @@ inline void CreateVPCPeerRequest::set_allocated_vpcpeer_id(std::string* vpcpeer_
 
 // DeleteVPCPeerRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteVPCPeerRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteVPCPeerRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteVPCPeerRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.id)
-  return _internal_id();
+inline const std::string& DeleteVPCPeerRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteVPCPeerRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteVPCPeerRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.name)
 }
-inline std::string* DeleteVPCPeerRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.id)
+inline std::string* DeleteVPCPeerRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.name)
   return _s;
 }
-inline const std::string& DeleteVPCPeerRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteVPCPeerRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteVPCPeerRequest::_internal_set_id(const std::string& value) {
+inline void DeleteVPCPeerRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteVPCPeerRequest::_internal_mutable_id() {
+inline std::string* DeleteVPCPeerRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteVPCPeerRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteVPCPeerRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteVPCPeerRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteVPCPeerRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -32678,55 +32678,55 @@ inline void ListVPCPeersResponse::set_allocated_next_page_token(std::string* nex
 
 // GetVPCPeerRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetVPCPeerRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetVPCPeerRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetVPCPeerRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.id)
-  return _internal_id();
+inline const std::string& GetVPCPeerRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetVPCPeerRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetVPCPeerRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.name)
 }
-inline std::string* GetVPCPeerRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.id)
+inline std::string* GetVPCPeerRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.name)
   return _s;
 }
-inline const std::string& GetVPCPeerRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetVPCPeerRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetVPCPeerRequest::_internal_set_id(const std::string& value) {
+inline void GetVPCPeerRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetVPCPeerRequest::_internal_mutable_id() {
+inline std::string* GetVPCPeerRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetVPCPeerRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetVPCPeerRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetVPCPeerRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetVPCPeerRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -32925,55 +32925,55 @@ inline void CreateSecurityPolicyRequest::set_allocated_securitypolicy_id(std::st
 
 // DeleteSecurityPolicyRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteSecurityPolicyRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteSecurityPolicyRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteSecurityPolicyRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.id)
-  return _internal_id();
+inline const std::string& DeleteSecurityPolicyRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteSecurityPolicyRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteSecurityPolicyRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.name)
 }
-inline std::string* DeleteSecurityPolicyRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.id)
+inline std::string* DeleteSecurityPolicyRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.name)
   return _s;
 }
-inline const std::string& DeleteSecurityPolicyRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteSecurityPolicyRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteSecurityPolicyRequest::_internal_set_id(const std::string& value) {
+inline void DeleteSecurityPolicyRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteSecurityPolicyRequest::_internal_mutable_id() {
+inline std::string* DeleteSecurityPolicyRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteSecurityPolicyRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteSecurityPolicyRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteSecurityPolicyRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteSecurityPolicyRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -33394,55 +33394,55 @@ inline void ListSecurityPolicysResponse::set_allocated_next_page_token(std::stri
 
 // GetSecurityPolicyRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetSecurityPolicyRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetSecurityPolicyRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetSecurityPolicyRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.id)
-  return _internal_id();
+inline const std::string& GetSecurityPolicyRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetSecurityPolicyRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetSecurityPolicyRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.name)
 }
-inline std::string* GetSecurityPolicyRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.id)
+inline std::string* GetSecurityPolicyRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.name)
   return _s;
 }
-inline const std::string& GetSecurityPolicyRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetSecurityPolicyRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetSecurityPolicyRequest::_internal_set_id(const std::string& value) {
+inline void GetSecurityPolicyRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetSecurityPolicyRequest::_internal_mutable_id() {
+inline std::string* GetSecurityPolicyRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetSecurityPolicyRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetSecurityPolicyRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetSecurityPolicyRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetSecurityPolicyRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -33641,55 +33641,55 @@ inline void CreateSecurityRuleRequest::set_allocated_securityrule_id(std::string
 
 // DeleteSecurityRuleRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteSecurityRuleRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteSecurityRuleRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteSecurityRuleRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.id)
-  return _internal_id();
+inline const std::string& DeleteSecurityRuleRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteSecurityRuleRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteSecurityRuleRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.name)
 }
-inline std::string* DeleteSecurityRuleRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.id)
+inline std::string* DeleteSecurityRuleRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.name)
   return _s;
 }
-inline const std::string& DeleteSecurityRuleRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteSecurityRuleRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteSecurityRuleRequest::_internal_set_id(const std::string& value) {
+inline void DeleteSecurityRuleRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteSecurityRuleRequest::_internal_mutable_id() {
+inline std::string* DeleteSecurityRuleRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteSecurityRuleRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteSecurityRuleRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteSecurityRuleRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteSecurityRuleRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -34110,55 +34110,55 @@ inline void ListSecurityRulesResponse::set_allocated_next_page_token(std::string
 
 // GetSecurityRuleRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetSecurityRuleRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetSecurityRuleRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetSecurityRuleRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.id)
-  return _internal_id();
+inline const std::string& GetSecurityRuleRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetSecurityRuleRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetSecurityRuleRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.name)
 }
-inline std::string* GetSecurityRuleRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.id)
+inline std::string* GetSecurityRuleRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.name)
   return _s;
 }
-inline const std::string& GetSecurityRuleRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetSecurityRuleRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetSecurityRuleRequest::_internal_set_id(const std::string& value) {
+inline void GetSecurityRuleRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetSecurityRuleRequest::_internal_mutable_id() {
+inline std::string* GetSecurityRuleRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetSecurityRuleRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetSecurityRuleRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetSecurityRuleRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetSecurityRuleRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -34357,55 +34357,55 @@ inline void CreateSecurityProfileRequest::set_allocated_securityprofile_id(std::
 
 // DeleteSecurityProfileRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void DeleteSecurityProfileRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteSecurityProfileRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteSecurityProfileRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.id)
-  return _internal_id();
+inline const std::string& DeleteSecurityProfileRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteSecurityProfileRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void DeleteSecurityProfileRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.name)
 }
-inline std::string* DeleteSecurityProfileRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.id)
+inline std::string* DeleteSecurityProfileRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.name)
   return _s;
 }
-inline const std::string& DeleteSecurityProfileRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& DeleteSecurityProfileRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteSecurityProfileRequest::_internal_set_id(const std::string& value) {
+inline void DeleteSecurityProfileRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteSecurityProfileRequest::_internal_mutable_id() {
+inline std::string* DeleteSecurityProfileRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteSecurityProfileRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteSecurityProfileRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteSecurityProfileRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void DeleteSecurityProfileRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.name)
 }
 
 // bool allow_missing = 2;
@@ -34826,55 +34826,55 @@ inline void ListSecurityProfilesResponse::set_allocated_next_page_token(std::str
 
 // GetSecurityProfileRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void GetSecurityProfileRequest::clear_id() {
-  id_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetSecurityProfileRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetSecurityProfileRequest::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.id)
-  return _internal_id();
+inline const std::string& GetSecurityProfileRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetSecurityProfileRequest::set_id(ArgT0&& arg0, ArgT... args) {
+void GetSecurityProfileRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.id)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.name)
 }
-inline std::string* GetSecurityProfileRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.id)
+inline std::string* GetSecurityProfileRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.name)
   return _s;
 }
-inline const std::string& GetSecurityProfileRequest::_internal_id() const {
-  return id_.Get();
+inline const std::string& GetSecurityProfileRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void GetSecurityProfileRequest::_internal_set_id(const std::string& value) {
+inline void GetSecurityProfileRequest::_internal_set_name(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetSecurityProfileRequest::_internal_mutable_id() {
+inline std::string* GetSecurityProfileRequest::_internal_mutable_name() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetSecurityProfileRequest::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetSecurityProfileRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetSecurityProfileRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void GetSecurityProfileRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.name)
 }
 
 #ifdef __GNUC__

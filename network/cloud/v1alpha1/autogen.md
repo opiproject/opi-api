@@ -1314,7 +1314,7 @@ Delete bgppeeraf request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | bgppeeraf id |
+| name | [string](#string) |  | bgppeeraf id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1330,7 +1330,7 @@ Delete bgppeer request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | bgppeer id |
+| name | [string](#string) |  | bgppeer id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1346,7 +1346,7 @@ Delete bgp request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | bgp id |
+| name | [string](#string) |  | bgp id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1362,7 +1362,7 @@ Delete device request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | device id |
+| name | [string](#string) |  | device id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1378,7 +1378,7 @@ Delete interface request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | interface id |
+| name | [string](#string) |  | interface id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1394,7 +1394,7 @@ Delete mapping request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | mapping id |
+| name | [string](#string) |  | mapping id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1410,7 +1410,7 @@ Delete nexthopgroup request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | nexthopgroup id |
+| name | [string](#string) |  | nexthopgroup id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1426,7 +1426,7 @@ Delete nexthop request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | nexthop id |
+| name | [string](#string) |  | nexthop id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1442,7 +1442,7 @@ Delete route request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | route id |
+| name | [string](#string) |  | route id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1458,7 +1458,7 @@ Delete routetable request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | routetable id |
+| name | [string](#string) |  | routetable id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1474,7 +1474,7 @@ Delete securitypolicy request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | securitypolicy id |
+| name | [string](#string) |  | securitypolicy id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1490,7 +1490,7 @@ Delete securityprofile request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | securityprofile id |
+| name | [string](#string) |  | securityprofile id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1506,7 +1506,7 @@ Delete securityrule request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | securityrule id |
+| name | [string](#string) |  | securityrule id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1522,7 +1522,7 @@ Delete subnet request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | subnet id |
+| name | [string](#string) |  | subnet id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1538,7 +1538,7 @@ Delete Tunnel request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | tunnel id |
+| name | [string](#string) |  | tunnel id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1554,7 +1554,7 @@ Delete underlayroute request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | underlayroute id |
+| name | [string](#string) |  | underlayroute id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1570,7 +1570,7 @@ Delete vpcpeer request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | vpcpeer id |
+| name | [string](#string) |  | vpcpeer id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1586,7 +1586,7 @@ Delete vnic request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | vnic id |
+| name | [string](#string) |  | vnic id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1602,7 +1602,7 @@ Delete vpc request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | vpc id |
+| name | [string](#string) |  | vpc id |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1618,7 +1618,7 @@ Get bgppeeraf request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1633,7 +1633,7 @@ Get bgppeer request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1648,7 +1648,7 @@ Get bgp request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1673,7 +1673,7 @@ Get device request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1688,7 +1688,7 @@ Get interface request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1703,7 +1703,7 @@ Get mapping request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1718,7 +1718,7 @@ Get nexthopgroup request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1733,7 +1733,7 @@ Get nexthop request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1748,7 +1748,7 @@ Get port request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1763,7 +1763,7 @@ Get route request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1778,7 +1778,7 @@ Get routetable request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1793,7 +1793,7 @@ Get securitypolicy request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1808,7 +1808,7 @@ Get securityprofile request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1823,7 +1823,7 @@ Get securityrule request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1838,7 +1838,7 @@ Get subnet request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1853,7 +1853,7 @@ Get Tunnel request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1868,7 +1868,7 @@ Get underlayroute request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1883,7 +1883,7 @@ Get vpcpeer request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1898,7 +1898,7 @@ Get vnic request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1913,7 +1913,7 @@ Get vpc request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 

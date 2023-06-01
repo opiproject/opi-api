@@ -47,7 +47,7 @@ struct CreateDeviceRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateDeviceRequestDefaultTypeInternal _CreateDeviceRequest_default_instance_;
 constexpr DeleteDeviceRequest::DeleteDeviceRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteDeviceRequestDefaultTypeInternal {
   constexpr DeleteDeviceRequestDefaultTypeInternal()
@@ -100,7 +100,7 @@ struct ListDevicesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListDevicesResponseDefaultTypeInternal _ListDevicesResponse_default_instance_;
 constexpr GetDeviceRequest::GetDeviceRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetDeviceRequestDefaultTypeInternal {
   constexpr GetDeviceRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -152,7 +152,7 @@ struct ListPortsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListPortsResponseDefaultTypeInternal _ListPortsResponse_default_instance_;
 constexpr GetPortRequest::GetPortRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetPortRequestDefaultTypeInternal {
   constexpr GetPortRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -178,7 +178,7 @@ struct CreateVnicRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateVnicRequestDefaultTypeInternal _CreateVnicRequest_default_instance_;
 constexpr DeleteVnicRequest::DeleteVnicRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteVnicRequestDefaultTypeInternal {
   constexpr DeleteVnicRequestDefaultTypeInternal()
@@ -231,7 +231,7 @@ struct ListVnicsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListVnicsResponseDefaultTypeInternal _ListVnicsResponse_default_instance_;
 constexpr GetVnicRequest::GetVnicRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetVnicRequestDefaultTypeInternal {
   constexpr GetVnicRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -257,7 +257,7 @@ struct CreateInterfaceRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateInterfaceRequestDefaultTypeInternal _CreateInterfaceRequest_default_instance_;
 constexpr DeleteInterfaceRequest::DeleteInterfaceRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteInterfaceRequestDefaultTypeInternal {
   constexpr DeleteInterfaceRequestDefaultTypeInternal()
@@ -310,7 +310,7 @@ struct ListInterfacesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListInterfacesResponseDefaultTypeInternal _ListInterfacesResponse_default_instance_;
 constexpr GetInterfaceRequest::GetInterfaceRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetInterfaceRequestDefaultTypeInternal {
   constexpr GetInterfaceRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -336,7 +336,7 @@ struct CreateRouteTableRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateRouteTableRequestDefaultTypeInternal _CreateRouteTableRequest_default_instance_;
 constexpr DeleteRouteTableRequest::DeleteRouteTableRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteRouteTableRequestDefaultTypeInternal {
   constexpr DeleteRouteTableRequestDefaultTypeInternal()
@@ -389,7 +389,7 @@ struct ListRouteTablesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListRouteTablesResponseDefaultTypeInternal _ListRouteTablesResponse_default_instance_;
 constexpr GetRouteTableRequest::GetRouteTableRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetRouteTableRequestDefaultTypeInternal {
   constexpr GetRouteTableRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -415,7 +415,7 @@ struct CreateRouteRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateRouteRequestDefaultTypeInternal _CreateRouteRequest_default_instance_;
 constexpr DeleteRouteRequest::DeleteRouteRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteRouteRequestDefaultTypeInternal {
   constexpr DeleteRouteRequestDefaultTypeInternal()
@@ -468,7 +468,7 @@ struct ListRoutesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListRoutesResponseDefaultTypeInternal _ListRoutesResponse_default_instance_;
 constexpr GetRouteRequest::GetRouteRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetRouteRequestDefaultTypeInternal {
   constexpr GetRouteRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -494,7 +494,7 @@ struct CreateUnderlayRouteRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateUnderlayRouteRequestDefaultTypeInternal _CreateUnderlayRouteRequest_default_instance_;
 constexpr DeleteUnderlayRouteRequest::DeleteUnderlayRouteRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteUnderlayRouteRequestDefaultTypeInternal {
   constexpr DeleteUnderlayRouteRequestDefaultTypeInternal()
@@ -547,7 +547,7 @@ struct ListUnderlayRoutesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListUnderlayRoutesResponseDefaultTypeInternal _ListUnderlayRoutesResponse_default_instance_;
 constexpr GetUnderlayRouteRequest::GetUnderlayRouteRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetUnderlayRouteRequestDefaultTypeInternal {
   constexpr GetUnderlayRouteRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -573,7 +573,7 @@ struct CreateBgpRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateBgpRequestDefaultTypeInternal _CreateBgpRequest_default_instance_;
 constexpr DeleteBgpRequest::DeleteBgpRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteBgpRequestDefaultTypeInternal {
   constexpr DeleteBgpRequestDefaultTypeInternal()
@@ -626,7 +626,7 @@ struct ListBgpsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListBgpsResponseDefaultTypeInternal _ListBgpsResponse_default_instance_;
 constexpr GetBgpRequest::GetBgpRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetBgpRequestDefaultTypeInternal {
   constexpr GetBgpRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -652,7 +652,7 @@ struct CreateBGPPeerRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateBGPPeerRequestDefaultTypeInternal _CreateBGPPeerRequest_default_instance_;
 constexpr DeleteBGPPeerRequest::DeleteBGPPeerRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteBGPPeerRequestDefaultTypeInternal {
   constexpr DeleteBGPPeerRequestDefaultTypeInternal()
@@ -705,7 +705,7 @@ struct ListBGPPeersResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListBGPPeersResponseDefaultTypeInternal _ListBGPPeersResponse_default_instance_;
 constexpr GetBGPPeerRequest::GetBGPPeerRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetBGPPeerRequestDefaultTypeInternal {
   constexpr GetBGPPeerRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -731,7 +731,7 @@ struct CreateBGPPeerAfRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateBGPPeerAfRequestDefaultTypeInternal _CreateBGPPeerAfRequest_default_instance_;
 constexpr DeleteBGPPeerAfRequest::DeleteBGPPeerAfRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteBGPPeerAfRequestDefaultTypeInternal {
   constexpr DeleteBGPPeerAfRequestDefaultTypeInternal()
@@ -784,7 +784,7 @@ struct ListBGPPeerAfsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListBGPPeerAfsResponseDefaultTypeInternal _ListBGPPeerAfsResponse_default_instance_;
 constexpr GetBGPPeerAfRequest::GetBGPPeerAfRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetBGPPeerAfRequestDefaultTypeInternal {
   constexpr GetBGPPeerAfRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -810,7 +810,7 @@ struct CreateMappingRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateMappingRequestDefaultTypeInternal _CreateMappingRequest_default_instance_;
 constexpr DeleteMappingRequest::DeleteMappingRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteMappingRequestDefaultTypeInternal {
   constexpr DeleteMappingRequestDefaultTypeInternal()
@@ -863,7 +863,7 @@ struct ListMappingsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListMappingsResponseDefaultTypeInternal _ListMappingsResponse_default_instance_;
 constexpr GetMappingRequest::GetMappingRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetMappingRequestDefaultTypeInternal {
   constexpr GetMappingRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -889,7 +889,7 @@ struct CreateNextHopRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateNextHopRequestDefaultTypeInternal _CreateNextHopRequest_default_instance_;
 constexpr DeleteNextHopRequest::DeleteNextHopRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteNextHopRequestDefaultTypeInternal {
   constexpr DeleteNextHopRequestDefaultTypeInternal()
@@ -942,7 +942,7 @@ struct ListNextHopsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNextHopsResponseDefaultTypeInternal _ListNextHopsResponse_default_instance_;
 constexpr GetNextHopRequest::GetNextHopRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetNextHopRequestDefaultTypeInternal {
   constexpr GetNextHopRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -968,7 +968,7 @@ struct CreateNextHopGroupRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateNextHopGroupRequestDefaultTypeInternal _CreateNextHopGroupRequest_default_instance_;
 constexpr DeleteNextHopGroupRequest::DeleteNextHopGroupRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteNextHopGroupRequestDefaultTypeInternal {
   constexpr DeleteNextHopGroupRequestDefaultTypeInternal()
@@ -1021,7 +1021,7 @@ struct ListNextHopGroupsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNextHopGroupsResponseDefaultTypeInternal _ListNextHopGroupsResponse_default_instance_;
 constexpr GetNextHopGroupRequest::GetNextHopGroupRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetNextHopGroupRequestDefaultTypeInternal {
   constexpr GetNextHopGroupRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1047,7 +1047,7 @@ struct CreateSubnetRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateSubnetRequestDefaultTypeInternal _CreateSubnetRequest_default_instance_;
 constexpr DeleteSubnetRequest::DeleteSubnetRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteSubnetRequestDefaultTypeInternal {
   constexpr DeleteSubnetRequestDefaultTypeInternal()
@@ -1100,7 +1100,7 @@ struct ListSubnetsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListSubnetsResponseDefaultTypeInternal _ListSubnetsResponse_default_instance_;
 constexpr GetSubnetRequest::GetSubnetRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetSubnetRequestDefaultTypeInternal {
   constexpr GetSubnetRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1126,7 +1126,7 @@ struct CreateTunnelRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateTunnelRequestDefaultTypeInternal _CreateTunnelRequest_default_instance_;
 constexpr DeleteTunnelRequest::DeleteTunnelRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteTunnelRequestDefaultTypeInternal {
   constexpr DeleteTunnelRequestDefaultTypeInternal()
@@ -1179,7 +1179,7 @@ struct ListTunnelsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListTunnelsResponseDefaultTypeInternal _ListTunnelsResponse_default_instance_;
 constexpr GetTunnelRequest::GetTunnelRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetTunnelRequestDefaultTypeInternal {
   constexpr GetTunnelRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1205,7 +1205,7 @@ struct CreateVpcRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateVpcRequestDefaultTypeInternal _CreateVpcRequest_default_instance_;
 constexpr DeleteVpcRequest::DeleteVpcRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteVpcRequestDefaultTypeInternal {
   constexpr DeleteVpcRequestDefaultTypeInternal()
@@ -1258,7 +1258,7 @@ struct ListVpcsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListVpcsResponseDefaultTypeInternal _ListVpcsResponse_default_instance_;
 constexpr GetVpcRequest::GetVpcRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetVpcRequestDefaultTypeInternal {
   constexpr GetVpcRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1284,7 +1284,7 @@ struct CreateVPCPeerRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateVPCPeerRequestDefaultTypeInternal _CreateVPCPeerRequest_default_instance_;
 constexpr DeleteVPCPeerRequest::DeleteVPCPeerRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteVPCPeerRequestDefaultTypeInternal {
   constexpr DeleteVPCPeerRequestDefaultTypeInternal()
@@ -1337,7 +1337,7 @@ struct ListVPCPeersResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListVPCPeersResponseDefaultTypeInternal _ListVPCPeersResponse_default_instance_;
 constexpr GetVPCPeerRequest::GetVPCPeerRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetVPCPeerRequestDefaultTypeInternal {
   constexpr GetVPCPeerRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1363,7 +1363,7 @@ struct CreateSecurityPolicyRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateSecurityPolicyRequestDefaultTypeInternal _CreateSecurityPolicyRequest_default_instance_;
 constexpr DeleteSecurityPolicyRequest::DeleteSecurityPolicyRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteSecurityPolicyRequestDefaultTypeInternal {
   constexpr DeleteSecurityPolicyRequestDefaultTypeInternal()
@@ -1416,7 +1416,7 @@ struct ListSecurityPolicysResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListSecurityPolicysResponseDefaultTypeInternal _ListSecurityPolicysResponse_default_instance_;
 constexpr GetSecurityPolicyRequest::GetSecurityPolicyRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetSecurityPolicyRequestDefaultTypeInternal {
   constexpr GetSecurityPolicyRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1442,7 +1442,7 @@ struct CreateSecurityRuleRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateSecurityRuleRequestDefaultTypeInternal _CreateSecurityRuleRequest_default_instance_;
 constexpr DeleteSecurityRuleRequest::DeleteSecurityRuleRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteSecurityRuleRequestDefaultTypeInternal {
   constexpr DeleteSecurityRuleRequestDefaultTypeInternal()
@@ -1495,7 +1495,7 @@ struct ListSecurityRulesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListSecurityRulesResponseDefaultTypeInternal _ListSecurityRulesResponse_default_instance_;
 constexpr GetSecurityRuleRequest::GetSecurityRuleRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetSecurityRuleRequestDefaultTypeInternal {
   constexpr GetSecurityRuleRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1521,7 +1521,7 @@ struct CreateSecurityProfileRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateSecurityProfileRequestDefaultTypeInternal _CreateSecurityProfileRequest_default_instance_;
 constexpr DeleteSecurityProfileRequest::DeleteSecurityProfileRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
 struct DeleteSecurityProfileRequestDefaultTypeInternal {
   constexpr DeleteSecurityProfileRequestDefaultTypeInternal()
@@ -1574,7 +1574,7 @@ struct ListSecurityProfilesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListSecurityProfilesResponseDefaultTypeInternal _ListSecurityProfilesResponse_default_instance_;
 constexpr GetSecurityProfileRequest::GetSecurityProfileRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetSecurityProfileRequestDefaultTypeInternal {
   constexpr GetSecurityProfileRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1614,7 +1614,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteDeviceRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteDeviceRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteDeviceRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateDeviceRequest, _internal_metadata_),
@@ -1647,7 +1647,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetDeviceRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetDeviceRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdatePortRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1679,7 +1679,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetPortRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetPortRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateVnicRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1695,7 +1695,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVnicRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVnicRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVnicRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateVnicRequest, _internal_metadata_),
@@ -1728,7 +1728,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetVnicRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetVnicRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateInterfaceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1744,7 +1744,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteInterfaceRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteInterfaceRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteInterfaceRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateInterfaceRequest, _internal_metadata_),
@@ -1777,7 +1777,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetInterfaceRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetInterfaceRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateRouteTableRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1793,7 +1793,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteRouteTableRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteRouteTableRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteRouteTableRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateRouteTableRequest, _internal_metadata_),
@@ -1826,7 +1826,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetRouteTableRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetRouteTableRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateRouteRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1842,7 +1842,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteRouteRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteRouteRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteRouteRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateRouteRequest, _internal_metadata_),
@@ -1875,7 +1875,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetRouteRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetRouteRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateUnderlayRouteRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1891,7 +1891,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteUnderlayRouteRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteUnderlayRouteRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteUnderlayRouteRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateUnderlayRouteRequest, _internal_metadata_),
@@ -1924,7 +1924,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetUnderlayRouteRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetUnderlayRouteRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateBgpRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1940,7 +1940,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBgpRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBgpRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBgpRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateBgpRequest, _internal_metadata_),
@@ -1973,7 +1973,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetBgpRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetBgpRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateBGPPeerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1989,7 +1989,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBGPPeerRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBGPPeerRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBGPPeerRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateBGPPeerRequest, _internal_metadata_),
@@ -2022,7 +2022,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetBGPPeerRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetBGPPeerRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateBGPPeerAfRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2038,7 +2038,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBGPPeerAfRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBGPPeerAfRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteBGPPeerAfRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateBGPPeerAfRequest, _internal_metadata_),
@@ -2071,7 +2071,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetBGPPeerAfRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetBGPPeerAfRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateMappingRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2087,7 +2087,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteMappingRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteMappingRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteMappingRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateMappingRequest, _internal_metadata_),
@@ -2120,7 +2120,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetMappingRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetMappingRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateNextHopRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2136,7 +2136,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteNextHopRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteNextHopRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteNextHopRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateNextHopRequest, _internal_metadata_),
@@ -2169,7 +2169,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetNextHopRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetNextHopRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateNextHopGroupRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2185,7 +2185,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteNextHopGroupRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteNextHopGroupRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteNextHopGroupRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateNextHopGroupRequest, _internal_metadata_),
@@ -2218,7 +2218,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetNextHopGroupRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetNextHopGroupRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateSubnetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2234,7 +2234,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSubnetRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSubnetRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSubnetRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateSubnetRequest, _internal_metadata_),
@@ -2267,7 +2267,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetSubnetRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetSubnetRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateTunnelRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2283,7 +2283,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteTunnelRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteTunnelRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteTunnelRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateTunnelRequest, _internal_metadata_),
@@ -2316,7 +2316,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetTunnelRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetTunnelRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateVpcRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2332,7 +2332,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVpcRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVpcRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVpcRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateVpcRequest, _internal_metadata_),
@@ -2365,7 +2365,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetVpcRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetVpcRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateVPCPeerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2381,7 +2381,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVPCPeerRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVPCPeerRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteVPCPeerRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateVPCPeerRequest, _internal_metadata_),
@@ -2414,7 +2414,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetVPCPeerRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetVPCPeerRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateSecurityPolicyRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2430,7 +2430,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityPolicyRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityPolicyRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityPolicyRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateSecurityPolicyRequest, _internal_metadata_),
@@ -2463,7 +2463,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetSecurityPolicyRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetSecurityPolicyRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateSecurityRuleRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2479,7 +2479,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityRuleRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityRuleRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityRuleRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateSecurityRuleRequest, _internal_metadata_),
@@ -2512,7 +2512,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetSecurityRuleRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetSecurityRuleRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateSecurityProfileRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2528,7 +2528,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityProfileRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityProfileRequest, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeleteSecurityProfileRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UpdateSecurityProfileRequest, _internal_metadata_),
@@ -2561,7 +2561,7 @@ const uint32_t TableStruct_cloudrpc_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetSecurityProfileRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::GetSecurityProfileRequest, name_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::GetDeviceCapabilitiesRequest)},
@@ -2823,177 +2823,178 @@ const char descriptor_table_protodef_cloudrpc_2eproto[] PROTOBUF_SECTION_VARIABL
   "nt\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1alph"
   "a1/Device\022;\n\006device\030\002 \001(\0132&.opi_api.netw"
   "ork.cloud.v1alpha1.DeviceB\003\340A\002\022\021\n\tdevice"
-  "_id\030\003 \001(\t\"a\n\023DeleteDeviceRequest\0223\n\002id\030\001"
-  " \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha1/D"
-  "evice\022\025\n\rallow_missing\030\002 \001(\010\"~\n\023UpdateDe"
-  "viceRequest\0226\n\006device\030\001 \001(\0132&.opi_api.ne"
-  "twork.cloud.v1alpha1.Device\022/\n\013update_ma"
-  "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\"t\n\022"
-  "ListDevicesRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372"
-  "A!\n\037opi_api.network.v1alpha1/Device\022\021\n\tp"
-  "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023Li"
-  "stDevicesResponse\0226\n\006device\030\001 \003(\0132&.opi_"
-  "api.network.cloud.v1alpha1.Device\022\027\n\017nex"
-  "t_page_token\030\002 \001(\t\"G\n\020GetDeviceRequest\0223"
-  "\n\002id\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1al"
-  "pha1/Device\"x\n\021UpdatePortRequest\0222\n\004port"
-  "\030\001 \001(\0132$.opi_api.network.cloud.v1alpha1."
-  "Port\022/\n\013update_mask\030\002 \001(\0132\032.google.proto"
-  "buf.FieldMask\"p\n\020ListPortsRequest\0225\n\006par"
-  "ent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1alp"
-  "ha1/Port\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
-  "n\030\003 \001(\t\"`\n\021ListPortsResponse\0222\n\004port\030\001 \003"
-  "(\0132$.opi_api.network.cloud.v1alpha1.Port"
-  "\022\027\n\017next_page_token\030\002 \001(\t\"C\n\016GetPortRequ"
-  "est\0221\n\002id\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network"
-  ".v1alpha1/Port\"\224\001\n\021CreateVnicRequest\0225\n\006"
-  "parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1"
-  "alpha1/Vnic\0227\n\004vnic\030\002 \001(\0132$.opi_api.netw"
-  "ork.cloud.v1alpha1.VnicB\003\340A\002\022\017\n\007vnic_id\030"
-  "\003 \001(\t\"]\n\021DeleteVnicRequest\0221\n\002id\030\001 \001(\tB%"
-  "\340A\002\372A\037\n\035opi_api.network.v1alpha1/Vnic\022\025\n"
-  "\rallow_missing\030\002 \001(\010\"x\n\021UpdateVnicReques"
-  "t\0222\n\004vnic\030\001 \001(\0132$.opi_api.network.cloud."
-  "v1alpha1.Vnic\022/\n\013update_mask\030\002 \001(\0132\032.goo"
-  "gle.protobuf.FieldMask\"p\n\020ListVnicsReque"
+  "_id\030\003 \001(\t\"c\n\023DeleteDeviceRequest\0225\n\004name"
+  "\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha1"
+  "/Device\022\025\n\rallow_missing\030\002 \001(\010\"~\n\023Update"
+  "DeviceRequest\0226\n\006device\030\001 \001(\0132&.opi_api."
+  "network.cloud.v1alpha1.Device\022/\n\013update_"
+  "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"t"
+  "\n\022ListDevicesRequest\0227\n\006parent\030\001 \001(\tB\'\340A"
+  "\002\372A!\n\037opi_api.network.v1alpha1/Device\022\021\n"
+  "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023"
+  "ListDevicesResponse\0226\n\006device\030\001 \003(\0132&.op"
+  "i_api.network.cloud.v1alpha1.Device\022\027\n\017n"
+  "ext_page_token\030\002 \001(\t\"I\n\020GetDeviceRequest"
+  "\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network."
+  "v1alpha1/Device\"x\n\021UpdatePortRequest\0222\n\004"
+  "port\030\001 \001(\0132$.opi_api.network.cloud.v1alp"
+  "ha1.Port\022/\n\013update_mask\030\002 \001(\0132\032.google.p"
+  "rotobuf.FieldMask\"p\n\020ListPortsRequest\0225\n"
+  "\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v"
+  "1alpha1/Port\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
+  "token\030\003 \001(\t\"`\n\021ListPortsResponse\0222\n\004port"
+  "\030\001 \003(\0132$.opi_api.network.cloud.v1alpha1."
+  "Port\022\027\n\017next_page_token\030\002 \001(\t\"E\n\016GetPort"
+  "Request\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.n"
+  "etwork.v1alpha1/Port\"\224\001\n\021CreateVnicReque"
   "st\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.netw"
-  "ork.v1alpha1/Vnic\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
-  "page_token\030\003 \001(\t\"`\n\021ListVnicsResponse\0222\n"
-  "\004vnic\030\001 \003(\0132$.opi_api.network.cloud.v1al"
-  "pha1.Vnic\022\027\n\017next_page_token\030\002 \001(\t\"C\n\016Ge"
-  "tVnicRequest\0221\n\002id\030\001 \001(\tB%\340A\002\372A\037\n\035opi_ap"
-  "i.network.v1alpha1/Vnic\"\255\001\n\026CreateInterf"
-  "aceRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_"
-  "api.network.v1alpha1/Interface\022A\n\tinterf"
-  "ace\030\002 \001(\0132).opi_api.network.cloud.v1alph"
-  "a1.InterfaceB\003\340A\002\022\024\n\014interface_id\030\003 \001(\t\""
-  "g\n\026DeleteInterfaceRequest\0226\n\002id\030\001 \001(\tB*\340"
-  "A\002\372A$\n\"opi_api.network.v1alpha1/Interfac"
-  "e\022\025\n\rallow_missing\030\002 \001(\010\"\207\001\n\026UpdateInter"
-  "faceRequest\022<\n\tinterface\030\001 \001(\0132).opi_api"
-  ".network.cloud.v1alpha1.Interface\022/\n\013upd"
-  "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
-  "sk\"z\n\025ListInterfacesRequest\022:\n\006parent\030\001 "
-  "\001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha1/In"
-  "terface\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
-  "\030\003 \001(\t\"o\n\026ListInterfacesResponse\022<\n\tinte"
-  "rface\030\001 \003(\0132).opi_api.network.cloud.v1al"
-  "pha1.Interface\022\027\n\017next_page_token\030\002 \001(\t\""
-  "M\n\023GetInterfaceRequest\0226\n\002id\030\001 \001(\tB*\340A\002\372"
-  "A$\n\"opi_api.network.v1alpha1/Interface\"\262"
-  "\001\n\027CreateRouteTableRequest\022;\n\006parent\030\001 \001"
-  "(\tB+\340A\002\372A%\n#opi_api.network.v1alpha1/Rou"
-  "teTable\022C\n\nroutetable\030\002 \001(\0132*.opi_api.ne"
-  "twork.cloud.v1alpha1.RouteTableB\003\340A\002\022\025\n\r"
-  "routetable_id\030\003 \001(\t\"i\n\027DeleteRouteTableR"
-  "equest\0227\n\002id\030\001 \001(\tB+\340A\002\372A%\n#opi_api.netw"
-  "ork.v1alpha1/RouteTable\022\025\n\rallow_missing"
-  "\030\002 \001(\010\"\212\001\n\027UpdateRouteTableRequest\022>\n\nro"
-  "utetable\030\001 \001(\0132*.opi_api.network.cloud.v"
-  "1alpha1.RouteTable\022/\n\013update_mask\030\002 \001(\0132"
-  "\032.google.protobuf.FieldMask\"|\n\026ListRoute"
-  "TablesRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#o"
-  "pi_api.network.v1alpha1/RouteTable\022\021\n\tpa"
-  "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"r\n\027Lis"
-  "tRouteTablesResponse\022>\n\nroutetable\030\001 \003(\013"
-  "2*.opi_api.network.cloud.v1alpha1.RouteT"
-  "able\022\027\n\017next_page_token\030\002 \001(\t\"O\n\024GetRout"
-  "eTableRequest\0227\n\002id\030\001 \001(\tB+\340A\002\372A%\n#opi_a"
-  "pi.network.v1alpha1/RouteTable\"\231\001\n\022Creat"
-  "eRouteRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \n\036o"
-  "pi_api.network.v1alpha1/Route\0229\n\005route\030\002"
-  " \001(\0132%.opi_api.network.cloud.v1alpha1.Ro"
-  "uteB\003\340A\002\022\020\n\010route_id\030\003 \001(\t\"_\n\022DeleteRout"
-  "eRequest\0222\n\002id\030\001 \001(\tB&\340A\002\372A \n\036opi_api.ne"
-  "twork.v1alpha1/Route\022\025\n\rallow_missing\030\002 "
-  "\001(\010\"{\n\022UpdateRouteRequest\0224\n\005route\030\001 \001(\013"
-  "2%.opi_api.network.cloud.v1alpha1.Route\022"
+  "ork.v1alpha1/Vnic\0227\n\004vnic\030\002 \001(\0132$.opi_ap"
+  "i.network.cloud.v1alpha1.VnicB\003\340A\002\022\017\n\007vn"
+  "ic_id\030\003 \001(\t\"_\n\021DeleteVnicRequest\0223\n\004name"
+  "\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1alpha1"
+  "/Vnic\022\025\n\rallow_missing\030\002 \001(\010\"x\n\021UpdateVn"
+  "icRequest\0222\n\004vnic\030\001 \001(\0132$.opi_api.networ"
+  "k.cloud.v1alpha1.Vnic\022/\n\013update_mask\030\002 \001"
+  "(\0132\032.google.protobuf.FieldMask\"p\n\020ListVn"
+  "icsRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_"
+  "api.network.v1alpha1/Vnic\022\021\n\tpage_size\030\002"
+  " \001(\005\022\022\n\npage_token\030\003 \001(\t\"`\n\021ListVnicsRes"
+  "ponse\0222\n\004vnic\030\001 \003(\0132$.opi_api.network.cl"
+  "oud.v1alpha1.Vnic\022\027\n\017next_page_token\030\002 \001"
+  "(\t\"E\n\016GetVnicRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372"
+  "A\037\n\035opi_api.network.v1alpha1/Vnic\"\255\001\n\026Cr"
+  "eateInterfaceRequest\022:\n\006parent\030\001 \001(\tB*\340A"
+  "\002\372A$\n\"opi_api.network.v1alpha1/Interface"
+  "\022A\n\tinterface\030\002 \001(\0132).opi_api.network.cl"
+  "oud.v1alpha1.InterfaceB\003\340A\002\022\024\n\014interface"
+  "_id\030\003 \001(\t\"i\n\026DeleteInterfaceRequest\0228\n\004n"
+  "ame\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alp"
+  "ha1/Interface\022\025\n\rallow_missing\030\002 \001(\010\"\207\001\n"
+  "\026UpdateInterfaceRequest\022<\n\tinterface\030\001 \001"
+  "(\0132).opi_api.network.cloud.v1alpha1.Inte"
+  "rface\022/\n\013update_mask\030\002 \001(\0132\032.google.prot"
+  "obuf.FieldMask\"z\n\025ListInterfacesRequest\022"
+  ":\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network"
+  ".v1alpha1/Interface\022\021\n\tpage_size\030\002 \001(\005\022\022"
+  "\n\npage_token\030\003 \001(\t\"o\n\026ListInterfacesResp"
+  "onse\022<\n\tinterface\030\001 \003(\0132).opi_api.networ"
+  "k.cloud.v1alpha1.Interface\022\027\n\017next_page_"
+  "token\030\002 \001(\t\"O\n\023GetInterfaceRequest\0228\n\004na"
+  "me\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alph"
+  "a1/Interface\"\262\001\n\027CreateRouteTableRequest"
+  "\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#opi_api.networ"
+  "k.v1alpha1/RouteTable\022C\n\nroutetable\030\002 \001("
+  "\0132*.opi_api.network.cloud.v1alpha1.Route"
+  "TableB\003\340A\002\022\025\n\rroutetable_id\030\003 \001(\t\"k\n\027Del"
+  "eteRouteTableRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372"
+  "A%\n#opi_api.network.v1alpha1/RouteTable\022"
+  "\025\n\rallow_missing\030\002 \001(\010\"\212\001\n\027UpdateRouteTa"
+  "bleRequest\022>\n\nroutetable\030\001 \001(\0132*.opi_api"
+  ".network.cloud.v1alpha1.RouteTable\022/\n\013up"
+  "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
+  "ask\"|\n\026ListRouteTablesRequest\022;\n\006parent\030"
+  "\001 \001(\tB+\340A\002\372A%\n#opi_api.network.v1alpha1/"
+  "RouteTable\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
+  "ken\030\003 \001(\t\"r\n\027ListRouteTablesResponse\022>\n\n"
+  "routetable\030\001 \003(\0132*.opi_api.network.cloud"
+  ".v1alpha1.RouteTable\022\027\n\017next_page_token\030"
+  "\002 \001(\t\"Q\n\024GetRouteTableRequest\0229\n\004name\030\001 "
+  "\001(\tB+\340A\002\372A%\n#opi_api.network.v1alpha1/Ro"
+  "uteTable\"\231\001\n\022CreateRouteRequest\0226\n\006paren"
+  "t\030\001 \001(\tB&\340A\002\372A \n\036opi_api.network.v1alpha"
+  "1/Route\0229\n\005route\030\002 \001(\0132%.opi_api.network"
+  ".cloud.v1alpha1.RouteB\003\340A\002\022\020\n\010route_id\030\003"
+  " \001(\t\"a\n\022DeleteRouteRequest\0224\n\004name\030\001 \001(\t"
+  "B&\340A\002\372A \n\036opi_api.network.v1alpha1/Route"
+  "\022\025\n\rallow_missing\030\002 \001(\010\"{\n\022UpdateRouteRe"
+  "quest\0224\n\005route\030\001 \001(\0132%.opi_api.network.c"
+  "loud.v1alpha1.Route\022/\n\013update_mask\030\002 \001(\013"
+  "2\032.google.protobuf.FieldMask\"r\n\021ListRout"
+  "esRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \n\036opi_a"
+  "pi.network.v1alpha1/Route\022\021\n\tpage_size\030\002"
+  " \001(\005\022\022\n\npage_token\030\003 \001(\t\"c\n\022ListRoutesRe"
+  "sponse\0224\n\005route\030\001 \003(\0132%.opi_api.network."
+  "cloud.v1alpha1.Route\022\027\n\017next_page_token\030"
+  "\002 \001(\t\"G\n\017GetRouteRequest\0224\n\004name\030\001 \001(\tB&"
+  "\340A\002\372A \n\036opi_api.network.v1alpha1/Route\"\301"
+  "\001\n\032CreateUnderlayRouteRequest\022>\n\006parent\030"
+  "\001 \001(\tB.\340A\002\372A(\n&opi_api.network.v1alpha1/"
+  "UnderlayRoute\022I\n\runderlayroute\030\002 \001(\0132-.o"
+  "pi_api.network.cloud.v1alpha1.UnderlayRo"
+  "uteB\003\340A\002\022\030\n\020underlayroute_id\030\003 \001(\t\"q\n\032De"
+  "leteUnderlayRouteRequest\022<\n\004name\030\001 \001(\tB."
+  "\340A\002\372A(\n&opi_api.network.v1alpha1/Underla"
+  "yRoute\022\025\n\rallow_missing\030\002 \001(\010\"\223\001\n\032Update"
+  "UnderlayRouteRequest\022D\n\runderlayroute\030\001 "
+  "\001(\0132-.opi_api.network.cloud.v1alpha1.Und"
+  "erlayRoute\022/\n\013update_mask\030\002 \001(\0132\032.google"
+  ".protobuf.FieldMask\"\202\001\n\031ListUnderlayRout"
+  "esRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\n&opi_a"
+  "pi.network.v1alpha1/UnderlayRoute\022\021\n\tpag"
+  "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"{\n\032List"
+  "UnderlayRoutesResponse\022D\n\runderlayroute\030"
+  "\001 \003(\0132-.opi_api.network.cloud.v1alpha1.U"
+  "nderlayRoute\022\027\n\017next_page_token\030\002 \001(\t\"W\n"
+  "\027GetUnderlayRouteRequest\022<\n\004name\030\001 \001(\tB."
+  "\340A\002\372A(\n&opi_api.network.v1alpha1/Underla"
+  "yRoute\"\217\001\n\020CreateBgpRequest\0224\n\006parent\030\001 "
+  "\001(\tB$\340A\002\372A\036\n\034opi_api.network.v1alpha1/Bg"
+  "p\0225\n\003bgp\030\002 \001(\0132#.opi_api.network.cloud.v"
+  "1alpha1.BgpB\003\340A\002\022\016\n\006bgp_id\030\003 \001(\t\"]\n\020Dele"
+  "teBgpRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_"
+  "api.network.v1alpha1/Bgp\022\025\n\rallow_missin"
+  "g\030\002 \001(\010\"u\n\020UpdateBgpRequest\0220\n\003bgp\030\001 \001(\013"
+  "2#.opi_api.network.cloud.v1alpha1.Bgp\022/\n"
+  "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie"
+  "ldMask\"n\n\017ListBgpsRequest\0224\n\006parent\030\001 \001("
+  "\tB$\340A\002\372A\036\n\034opi_api.network.v1alpha1/Bgp\022"
+  "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"]"
+  "\n\020ListBgpsResponse\0220\n\003bgp\030\001 \003(\0132#.opi_ap"
+  "i.network.cloud.v1alpha1.Bgp\022\027\n\017next_pag"
+  "e_token\030\002 \001(\t\"C\n\rGetBgpRequest\0222\n\004name\030\001"
+  " \001(\tB$\340A\002\372A\036\n\034opi_api.network.v1alpha1/B"
+  "gp\"\243\001\n\024CreateBGPPeerRequest\0228\n\006parent\030\001 "
+  "\001(\tB(\340A\002\372A\"\n opi_api.network.v1alpha1/BG"
+  "PPeer\022=\n\007bgppeer\030\002 \001(\0132\'.opi_api.network"
+  ".cloud.v1alpha1.BGPPeerB\003\340A\002\022\022\n\nbgppeer_"
+  "id\030\003 \001(\t\"e\n\024DeleteBGPPeerRequest\0226\n\004name"
+  "\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1alpha1"
+  "/BGPPeer\022\025\n\rallow_missing\030\002 \001(\010\"\201\001\n\024Upda"
+  "teBGPPeerRequest\0228\n\007bgppeer\030\001 \001(\0132\'.opi_"
+  "api.network.cloud.v1alpha1.BGPPeer\022/\n\013up"
+  "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
+  "ask\"v\n\023ListBGPPeersRequest\0228\n\006parent\030\001 \001"
+  "(\tB(\340A\002\372A\"\n opi_api.network.v1alpha1/BGP"
+  "Peer\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+  "\001(\t\"i\n\024ListBGPPeersResponse\0228\n\007bgppeer\030\001"
+  " \003(\0132\'.opi_api.network.cloud.v1alpha1.BG"
+  "PPeer\022\027\n\017next_page_token\030\002 \001(\t\"K\n\021GetBGP"
+  "PeerRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_a"
+  "pi.network.v1alpha1/BGPPeer\"\255\001\n\026CreateBG"
+  "PPeerAfRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\""
+  "opi_api.network.v1alpha1/BGPPeerAf\022A\n\tbg"
+  "ppeeraf\030\002 \001(\0132).opi_api.network.cloud.v1"
+  "alpha1.BGPPeerAfB\003\340A\002\022\024\n\014bgppeeraf_id\030\003 "
+  "\001(\t\"i\n\026DeleteBGPPeerAfRequest\0228\n\004name\030\001 "
+  "\001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha1/BG"
+  "PPeerAf\022\025\n\rallow_missing\030\002 \001(\010\"\207\001\n\026Updat"
+  "eBGPPeerAfRequest\022<\n\tbgppeeraf\030\001 \001(\0132).o"
+  "pi_api.network.cloud.v1alpha1.BGPPeerAf\022"
   "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
-  "ieldMask\"r\n\021ListRoutesRequest\0226\n\006parent\030"
-  "\001 \001(\tB&\340A\002\372A \n\036opi_api.network.v1alpha1/"
-  "Route\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003"
-  " \001(\t\"c\n\022ListRoutesResponse\0224\n\005route\030\001 \003("
-  "\0132%.opi_api.network.cloud.v1alpha1.Route"
-  "\022\027\n\017next_page_token\030\002 \001(\t\"E\n\017GetRouteReq"
-  "uest\0222\n\002id\030\001 \001(\tB&\340A\002\372A \n\036opi_api.networ"
-  "k.v1alpha1/Route\"\301\001\n\032CreateUnderlayRoute"
-  "Request\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\n&opi_api"
-  ".network.v1alpha1/UnderlayRoute\022I\n\runder"
-  "layroute\030\002 \001(\0132-.opi_api.network.cloud.v"
-  "1alpha1.UnderlayRouteB\003\340A\002\022\030\n\020underlayro"
-  "ute_id\030\003 \001(\t\"o\n\032DeleteUnderlayRouteReque"
-  "st\022:\n\002id\030\001 \001(\tB.\340A\002\372A(\n&opi_api.network."
-  "v1alpha1/UnderlayRoute\022\025\n\rallow_missing\030"
-  "\002 \001(\010\"\223\001\n\032UpdateUnderlayRouteRequest\022D\n\r"
-  "underlayroute\030\001 \001(\0132-.opi_api.network.cl"
-  "oud.v1alpha1.UnderlayRoute\022/\n\013update_mas"
-  "k\030\002 \001(\0132\032.google.protobuf.FieldMask\"\202\001\n\031"
-  "ListUnderlayRoutesRequest\022>\n\006parent\030\001 \001("
-  "\tB.\340A\002\372A(\n&opi_api.network.v1alpha1/Unde"
-  "rlayRoute\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
-  "en\030\003 \001(\t\"{\n\032ListUnderlayRoutesResponse\022D"
-  "\n\runderlayroute\030\001 \003(\0132-.opi_api.network."
-  "cloud.v1alpha1.UnderlayRoute\022\027\n\017next_pag"
-  "e_token\030\002 \001(\t\"U\n\027GetUnderlayRouteRequest"
-  "\022:\n\002id\030\001 \001(\tB.\340A\002\372A(\n&opi_api.network.v1"
-  "alpha1/UnderlayRoute\"\217\001\n\020CreateBgpReques"
-  "t\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.netwo"
-  "rk.v1alpha1/Bgp\0225\n\003bgp\030\002 \001(\0132#.opi_api.n"
-  "etwork.cloud.v1alpha1.BgpB\003\340A\002\022\016\n\006bgp_id"
-  "\030\003 \001(\t\"[\n\020DeleteBgpRequest\0220\n\002id\030\001 \001(\tB$"
-  "\340A\002\372A\036\n\034opi_api.network.v1alpha1/Bgp\022\025\n\r"
-  "allow_missing\030\002 \001(\010\"u\n\020UpdateBgpRequest\022"
-  "0\n\003bgp\030\001 \001(\0132#.opi_api.network.cloud.v1a"
-  "lpha1.Bgp\022/\n\013update_mask\030\002 \001(\0132\032.google."
-  "protobuf.FieldMask\"n\n\017ListBgpsRequest\0224\n"
-  "\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.network.v"
-  "1alpha1/Bgp\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
-  "oken\030\003 \001(\t\"]\n\020ListBgpsResponse\0220\n\003bgp\030\001 "
-  "\003(\0132#.opi_api.network.cloud.v1alpha1.Bgp"
-  "\022\027\n\017next_page_token\030\002 \001(\t\"A\n\rGetBgpReque"
-  "st\0220\n\002id\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.network."
-  "v1alpha1/Bgp\"\243\001\n\024CreateBGPPeerRequest\0228\n"
-  "\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v"
-  "1alpha1/BGPPeer\022=\n\007bgppeer\030\002 \001(\0132\'.opi_a"
-  "pi.network.cloud.v1alpha1.BGPPeerB\003\340A\002\022\022"
-  "\n\nbgppeer_id\030\003 \001(\t\"c\n\024DeleteBGPPeerReque"
-  "st\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network."
-  "v1alpha1/BGPPeer\022\025\n\rallow_missing\030\002 \001(\010\""
-  "\201\001\n\024UpdateBGPPeerRequest\0228\n\007bgppeer\030\001 \001("
-  "\0132\'.opi_api.network.cloud.v1alpha1.BGPPe"
-  "er\022/\n\013update_mask\030\002 \001(\0132\032.google.protobu"
-  "f.FieldMask\"v\n\023ListBGPPeersRequest\0228\n\006pa"
-  "rent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1al"
-  "pha1/BGPPeer\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
-  "token\030\003 \001(\t\"i\n\024ListBGPPeersResponse\0228\n\007b"
-  "gppeer\030\001 \003(\0132\'.opi_api.network.cloud.v1a"
-  "lpha1.BGPPeer\022\027\n\017next_page_token\030\002 \001(\t\"I"
-  "\n\021GetBGPPeerRequest\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n"
-  " opi_api.network.v1alpha1/BGPPeer\"\255\001\n\026Cr"
-  "eateBGPPeerAfRequest\022:\n\006parent\030\001 \001(\tB*\340A"
-  "\002\372A$\n\"opi_api.network.v1alpha1/BGPPeerAf"
-  "\022A\n\tbgppeeraf\030\002 \001(\0132).opi_api.network.cl"
-  "oud.v1alpha1.BGPPeerAfB\003\340A\002\022\024\n\014bgppeeraf"
-  "_id\030\003 \001(\t\"g\n\026DeleteBGPPeerAfRequest\0226\n\002i"
-  "d\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha"
-  "1/BGPPeerAf\022\025\n\rallow_missing\030\002 \001(\010\"\207\001\n\026U"
-  "pdateBGPPeerAfRequest\022<\n\tbgppeeraf\030\001 \001(\013"
-  "2).opi_api.network.cloud.v1alpha1.BGPPee"
-  "rAf\022/\n\013update_mask\030\002 \001(\0132\032.google.protob"
-  "uf.FieldMask\"z\n\025ListBGPPeerAfsRequest\022:\n"
-  "\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v"
-  "1alpha1/BGPPeerAf\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
-  "page_token\030\003 \001(\t\"o\n\026ListBGPPeerAfsRespon"
-  "se\022<\n\tbgppeeraf\030\001 \003(\0132).opi_api.network."
-  "cloud.v1alpha1.BGPPeerAf\022\027\n\017next_page_to"
-  "ken\030\002 \001(\t\"M\n\023GetBGPPeerAfRequest\0226\n\002id\030\001"
-  " \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha1/B"
-  "GPPeerAf\"\243\001\n\024CreateMappingRequest\0228\n\006par"
-  "ent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1alp"
-  "ha1/Mapping\022=\n\007mapping\030\002 \001(\0132\'.opi_api.n"
-  "etwork.cloud.v1alpha1.MappingB\003\340A\002\022\022\n\nma"
-  "pping_id\030\003 \001(\t\"c\n\024DeleteMappingRequest\0224"
-  "\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1al"
+  "ieldMask\"z\n\025ListBGPPeerAfsRequest\022:\n\006par"
+  "ent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alp"
+  "ha1/BGPPeerAf\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage"
+  "_token\030\003 \001(\t\"o\n\026ListBGPPeerAfsResponse\022<"
+  "\n\tbgppeeraf\030\001 \003(\0132).opi_api.network.clou"
+  "d.v1alpha1.BGPPeerAf\022\027\n\017next_page_token\030"
+  "\002 \001(\t\"O\n\023GetBGPPeerAfRequest\0228\n\004name\030\001 \001"
+  "(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha1/BGP"
+  "PeerAf\"\243\001\n\024CreateMappingRequest\0228\n\006paren"
+  "t\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1alpha"
+  "1/Mapping\022=\n\007mapping\030\002 \001(\0132\'.opi_api.net"
+  "work.cloud.v1alpha1.MappingB\003\340A\002\022\022\n\nmapp"
+  "ing_id\030\003 \001(\t\"e\n\024DeleteMappingRequest\0226\n\004"
+  "name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1al"
   "pha1/Mapping\022\025\n\rallow_missing\030\002 \001(\010\"\201\001\n\024"
   "UpdateMappingRequest\0228\n\007mapping\030\001 \001(\0132\'."
   "opi_api.network.cloud.v1alpha1.Mapping\022/"
@@ -3003,572 +3004,573 @@ const char descriptor_table_protodef_cloudrpc_2eproto[] PROTOBUF_SECTION_VARIABL
   "/Mapping\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
   "n\030\003 \001(\t\"i\n\024ListMappingsResponse\0228\n\007mappi"
   "ng\030\001 \003(\0132\'.opi_api.network.cloud.v1alpha"
-  "1.Mapping\022\027\n\017next_page_token\030\002 \001(\t\"I\n\021Ge"
-  "tMappingRequest\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi"
-  "_api.network.v1alpha1/Mapping\"\243\001\n\024Create"
-  "NextHopRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n "
-  "opi_api.network.v1alpha1/NextHop\022=\n\007next"
-  "hop\030\002 \001(\0132\'.opi_api.network.cloud.v1alph"
-  "a1.NextHopB\003\340A\002\022\022\n\nnexthop_id\030\003 \001(\t\"c\n\024D"
-  "eleteNextHopRequest\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n"
-  " opi_api.network.v1alpha1/NextHop\022\025\n\rall"
-  "ow_missing\030\002 \001(\010\"\201\001\n\024UpdateNextHopReques"
-  "t\0228\n\007nexthop\030\001 \001(\0132\'.opi_api.network.clo"
-  "ud.v1alpha1.NextHop\022/\n\013update_mask\030\002 \001(\013"
-  "2\032.google.protobuf.FieldMask\"v\n\023ListNext"
-  "HopsRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi"
-  "_api.network.v1alpha1/NextHop\022\021\n\tpage_si"
-  "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i\n\024ListNext"
-  "HopsResponse\0228\n\007nexthop\030\001 \003(\0132\'.opi_api."
-  "network.cloud.v1alpha1.NextHop\022\027\n\017next_p"
-  "age_token\030\002 \001(\t\"I\n\021GetNextHopRequest\0224\n\002"
-  "id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1alph"
-  "a1/NextHop\"\274\001\n\031CreateNextHopGroupRequest"
-  "\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.networ"
-  "k.v1alpha1/NextHopGroup\022G\n\014nexthopgroup\030"
-  "\002 \001(\0132,.opi_api.network.cloud.v1alpha1.N"
-  "extHopGroupB\003\340A\002\022\027\n\017nexthopgroup_id\030\003 \001("
-  "\t\"m\n\031DeleteNextHopGroupRequest\0229\n\002id\030\001 \001"
-  "(\tB-\340A\002\372A\'\n%opi_api.network.v1alpha1/Nex"
-  "tHopGroup\022\025\n\rallow_missing\030\002 \001(\010\"\220\001\n\031Upd"
-  "ateNextHopGroupRequest\022B\n\014nexthopgroup\030\001"
-  " \001(\0132,.opi_api.network.cloud.v1alpha1.Ne"
-  "xtHopGroup\022/\n\013update_mask\030\002 \001(\0132\032.google"
-  ".protobuf.FieldMask\"\200\001\n\030ListNextHopGroup"
-  "sRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%opi_ap"
-  "i.network.v1alpha1/NextHopGroup\022\021\n\tpage_"
-  "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"x\n\031ListNe"
-  "xtHopGroupsResponse\022B\n\014nexthopgroup\030\001 \003("
-  "\0132,.opi_api.network.cloud.v1alpha1.NextH"
-  "opGroup\022\027\n\017next_page_token\030\002 \001(\t\"S\n\026GetN"
-  "extHopGroupRequest\0229\n\002id\030\001 \001(\tB-\340A\002\372A\'\n%"
-  "opi_api.network.v1alpha1/NextHopGroup\"\236\001"
-  "\n\023CreateSubnetRequest\0227\n\006parent\030\001 \001(\tB\'\340"
-  "A\002\372A!\n\037opi_api.network.v1alpha1/Subnet\022;"
-  "\n\006subnet\030\002 \001(\0132&.opi_api.network.cloud.v"
-  "1alpha1.SubnetB\003\340A\002\022\021\n\tsubnet_id\030\003 \001(\t\"a"
-  "\n\023DeleteSubnetRequest\0223\n\002id\030\001 \001(\tB\'\340A\002\372A"
-  "!\n\037opi_api.network.v1alpha1/Subnet\022\025\n\ral"
-  "low_missing\030\002 \001(\010\"~\n\023UpdateSubnetRequest"
-  "\0226\n\006subnet\030\001 \001(\0132&.opi_api.network.cloud"
-  ".v1alpha1.Subnet\022/\n\013update_mask\030\002 \001(\0132\032."
-  "google.protobuf.FieldMask\"t\n\022ListSubnets"
-  "Request\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api"
-  ".network.v1alpha1/Subnet\022\021\n\tpage_size\030\002 "
-  "\001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023ListSubnetsRe"
-  "sponse\0226\n\006subnet\030\001 \003(\0132&.opi_api.network"
-  ".cloud.v1alpha1.Subnet\022\027\n\017next_page_toke"
-  "n\030\002 \001(\t\"G\n\020GetSubnetRequest\0223\n\002id\030\001 \001(\tB"
-  "\'\340A\002\372A!\n\037opi_api.network.v1alpha1/Subnet"
-  "\"\236\001\n\023CreateTunnelRequest\0227\n\006parent\030\001 \001(\t"
-  "B\'\340A\002\372A!\n\037opi_api.network.v1alpha1/Tunne"
-  "l\022;\n\006tunnel\030\002 \001(\0132&.opi_api.network.clou"
-  "d.v1alpha1.TunnelB\003\340A\002\022\021\n\ttunnel_id\030\003 \001("
-  "\t\"a\n\023DeleteTunnelRequest\0223\n\002id\030\001 \001(\tB\'\340A"
-  "\002\372A!\n\037opi_api.network.v1alpha1/Tunnel\022\025\n"
-  "\rallow_missing\030\002 \001(\010\"~\n\023UpdateTunnelRequ"
-  "est\0226\n\006tunnel\030\001 \001(\0132&.opi_api.network.cl"
-  "oud.v1alpha1.Tunnel\022/\n\013update_mask\030\002 \001(\013"
-  "2\032.google.protobuf.FieldMask\"t\n\022ListTunn"
-  "elsRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037opi_"
-  "api.network.v1alpha1/Tunnel\022\021\n\tpage_size"
-  "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023ListTunnel"
-  "sResponse\0226\n\006tunnel\030\001 \003(\0132&.opi_api.netw"
-  "ork.cloud.v1alpha1.Tunnel\022\027\n\017next_page_t"
-  "oken\030\002 \001(\t\"G\n\020GetTunnelRequest\0223\n\002id\030\001 \001"
+  "1.Mapping\022\027\n\017next_page_token\030\002 \001(\t\"K\n\021Ge"
+  "tMappingRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n o"
+  "pi_api.network.v1alpha1/Mapping\"\243\001\n\024Crea"
+  "teNextHopRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\""
+  "\n opi_api.network.v1alpha1/NextHop\022=\n\007ne"
+  "xthop\030\002 \001(\0132\'.opi_api.network.cloud.v1al"
+  "pha1.NextHopB\003\340A\002\022\022\n\nnexthop_id\030\003 \001(\t\"e\n"
+  "\024DeleteNextHopRequest\0226\n\004name\030\001 \001(\tB(\340A\002"
+  "\372A\"\n opi_api.network.v1alpha1/NextHop\022\025\n"
+  "\rallow_missing\030\002 \001(\010\"\201\001\n\024UpdateNextHopRe"
+  "quest\0228\n\007nexthop\030\001 \001(\0132\'.opi_api.network"
+  ".cloud.v1alpha1.NextHop\022/\n\013update_mask\030\002"
+  " \001(\0132\032.google.protobuf.FieldMask\"v\n\023List"
+  "NextHopsRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+  " opi_api.network.v1alpha1/NextHop\022\021\n\tpag"
+  "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i\n\024List"
+  "NextHopsResponse\0228\n\007nexthop\030\001 \003(\0132\'.opi_"
+  "api.network.cloud.v1alpha1.NextHop\022\027\n\017ne"
+  "xt_page_token\030\002 \001(\t\"K\n\021GetNextHopRequest"
+  "\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network."
+  "v1alpha1/NextHop\"\274\001\n\031CreateNextHopGroupR"
+  "equest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%opi_api."
+  "network.v1alpha1/NextHopGroup\022G\n\014nexthop"
+  "group\030\002 \001(\0132,.opi_api.network.cloud.v1al"
+  "pha1.NextHopGroupB\003\340A\002\022\027\n\017nexthopgroup_i"
+  "d\030\003 \001(\t\"o\n\031DeleteNextHopGroupRequest\022;\n\004"
+  "name\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.network.v1al"
+  "pha1/NextHopGroup\022\025\n\rallow_missing\030\002 \001(\010"
+  "\"\220\001\n\031UpdateNextHopGroupRequest\022B\n\014nextho"
+  "pgroup\030\001 \001(\0132,.opi_api.network.cloud.v1a"
+  "lpha1.NextHopGroup\022/\n\013update_mask\030\002 \001(\0132"
+  "\032.google.protobuf.FieldMask\"\200\001\n\030ListNext"
+  "HopGroupsRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'"
+  "\n%opi_api.network.v1alpha1/NextHopGroup\022"
+  "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"x"
+  "\n\031ListNextHopGroupsResponse\022B\n\014nexthopgr"
+  "oup\030\001 \003(\0132,.opi_api.network.cloud.v1alph"
+  "a1.NextHopGroup\022\027\n\017next_page_token\030\002 \001(\t"
+  "\"U\n\026GetNextHopGroupRequest\022;\n\004name\030\001 \001(\t"
+  "B-\340A\002\372A\'\n%opi_api.network.v1alpha1/NextH"
+  "opGroup\"\236\001\n\023CreateSubnetRequest\0227\n\006paren"
+  "t\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha"
+  "1/Subnet\022;\n\006subnet\030\002 \001(\0132&.opi_api.netwo"
+  "rk.cloud.v1alpha1.SubnetB\003\340A\002\022\021\n\tsubnet_"
+  "id\030\003 \001(\t\"c\n\023DeleteSubnetRequest\0225\n\004name\030"
+  "\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha1/"
+  "Subnet\022\025\n\rallow_missing\030\002 \001(\010\"~\n\023UpdateS"
+  "ubnetRequest\0226\n\006subnet\030\001 \001(\0132&.opi_api.n"
+  "etwork.cloud.v1alpha1.Subnet\022/\n\013update_m"
+  "ask\030\002 \001(\0132\032.google.protobuf.FieldMask\"t\n"
+  "\022ListSubnetsRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002"
+  "\372A!\n\037opi_api.network.v1alpha1/Subnet\022\021\n\t"
+  "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023L"
+  "istSubnetsResponse\0226\n\006subnet\030\001 \003(\0132&.opi"
+  "_api.network.cloud.v1alpha1.Subnet\022\027\n\017ne"
+  "xt_page_token\030\002 \001(\t\"I\n\020GetSubnetRequest\022"
+  "5\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v"
+  "1alpha1/Subnet\"\236\001\n\023CreateTunnelRequest\0227"
+  "\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network."
+  "v1alpha1/Tunnel\022;\n\006tunnel\030\002 \001(\0132&.opi_ap"
+  "i.network.cloud.v1alpha1.TunnelB\003\340A\002\022\021\n\t"
+  "tunnel_id\030\003 \001(\t\"c\n\023DeleteTunnelRequest\0225"
+  "\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1"
+  "alpha1/Tunnel\022\025\n\rallow_missing\030\002 \001(\010\"~\n\023"
+  "UpdateTunnelRequest\0226\n\006tunnel\030\001 \001(\0132&.op"
+  "i_api.network.cloud.v1alpha1.Tunnel\022/\n\013u"
+  "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
+  "Mask\"t\n\022ListTunnelsRequest\0227\n\006parent\030\001 \001"
   "(\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha1/Tun"
-  "nel\"\217\001\n\020CreateVpcRequest\0224\n\006parent\030\001 \001(\t"
-  "B$\340A\002\372A\036\n\034opi_api.network.v1alpha1/Vpc\0225"
-  "\n\003vpc\030\002 \001(\0132#.opi_api.network.cloud.v1al"
-  "pha1.VpcB\003\340A\002\022\016\n\006vpc_id\030\003 \001(\t\"[\n\020DeleteV"
-  "pcRequest\0220\n\002id\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.n"
-  "etwork.v1alpha1/Vpc\022\025\n\rallow_missing\030\002 \001"
-  "(\010\"u\n\020UpdateVpcRequest\0220\n\003vpc\030\001 \001(\0132#.op"
-  "i_api.network.cloud.v1alpha1.Vpc\022/\n\013upda"
-  "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas"
-  "k\"n\n\017ListVpcsRequest\0224\n\006parent\030\001 \001(\tB$\340A"
-  "\002\372A\036\n\034opi_api.network.v1alpha1/Vpc\022\021\n\tpa"
-  "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"]\n\020Lis"
-  "tVpcsResponse\0220\n\003vpc\030\001 \003(\0132#.opi_api.net"
-  "work.cloud.v1alpha1.Vpc\022\027\n\017next_page_tok"
-  "en\030\002 \001(\t\"A\n\rGetVpcRequest\0220\n\002id\030\001 \001(\tB$\340"
-  "A\002\372A\036\n\034opi_api.network.v1alpha1/Vpc\"\243\001\n\024"
-  "CreateVPCPeerRequest\0228\n\006parent\030\001 \001(\tB(\340A"
-  "\002\372A\"\n opi_api.network.v1alpha1/VPCPeer\022="
-  "\n\007vpcpeer\030\002 \001(\0132\'.opi_api.network.cloud."
-  "v1alpha1.VPCPeerB\003\340A\002\022\022\n\nvpcpeer_id\030\003 \001("
-  "\t\"c\n\024DeleteVPCPeerRequest\0224\n\002id\030\001 \001(\tB(\340"
-  "A\002\372A\"\n opi_api.network.v1alpha1/VPCPeer\022"
-  "\025\n\rallow_missing\030\002 \001(\010\"\201\001\n\024UpdateVPCPeer"
-  "Request\0228\n\007vpcpeer\030\001 \001(\0132\'.opi_api.netwo"
-  "rk.cloud.v1alpha1.VPCPeer\022/\n\013update_mask"
-  "\030\002 \001(\0132\032.google.protobuf.FieldMask\"v\n\023Li"
-  "stVPCPeersRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A"
-  "\"\n opi_api.network.v1alpha1/VPCPeer\022\021\n\tp"
-  "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i\n\024Li"
-  "stVPCPeersResponse\0228\n\007vpcpeer\030\001 \003(\0132\'.op"
-  "i_api.network.cloud.v1alpha1.VPCPeer\022\027\n\017"
-  "next_page_token\030\002 \001(\t\"I\n\021GetVPCPeerReque"
-  "st\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network."
-  "v1alpha1/VPCPeer\"\306\001\n\033CreateSecurityPolic"
-  "yRequest\022\?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_ap"
-  "i.network.v1alpha1/SecurityPolicy\022K\n\016sec"
-  "uritypolicy\030\002 \001(\0132..opi_api.network.clou"
-  "d.v1alpha1.SecurityPolicyB\003\340A\002\022\031\n\021securi"
-  "typolicy_id\030\003 \001(\t\"q\n\033DeleteSecurityPolic"
-  "yRequest\022;\n\002id\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.ne"
-  "twork.v1alpha1/SecurityPolicy\022\025\n\rallow_m"
-  "issing\030\002 \001(\010\"\226\001\n\033UpdateSecurityPolicyReq"
-  "uest\022F\n\016securitypolicy\030\001 \001(\0132..opi_api.n"
-  "etwork.cloud.v1alpha1.SecurityPolicy\022/\n\013"
-  "update_mask\030\002 \001(\0132\032.google.protobuf.Fiel"
-  "dMask\"\204\001\n\032ListSecurityPolicysRequest\022\?\n\006"
-  "parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.network.v1"
-  "alpha1/SecurityPolicy\022\021\n\tpage_size\030\002 \001(\005"
-  "\022\022\n\npage_token\030\003 \001(\t\"~\n\033ListSecurityPoli"
-  "cysResponse\022F\n\016securitypolicy\030\001 \003(\0132..op"
-  "i_api.network.cloud.v1alpha1.SecurityPol"
-  "icy\022\027\n\017next_page_token\030\002 \001(\t\"W\n\030GetSecur"
-  "ityPolicyRequest\022;\n\002id\030\001 \001(\tB/\340A\002\372A)\n\'op"
-  "i_api.network.v1alpha1/SecurityPolicy\"\274\001"
-  "\n\031CreateSecurityRuleRequest\022=\n\006parent\030\001 "
+  "nel\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
+  "(\t\"f\n\023ListTunnelsResponse\0226\n\006tunnel\030\001 \003("
+  "\0132&.opi_api.network.cloud.v1alpha1.Tunne"
+  "l\022\027\n\017next_page_token\030\002 \001(\t\"I\n\020GetTunnelR"
+  "equest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.ne"
+  "twork.v1alpha1/Tunnel\"\217\001\n\020CreateVpcReque"
+  "st\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.netw"
+  "ork.v1alpha1/Vpc\0225\n\003vpc\030\002 \001(\0132#.opi_api."
+  "network.cloud.v1alpha1.VpcB\003\340A\002\022\016\n\006vpc_i"
+  "d\030\003 \001(\t\"]\n\020DeleteVpcRequest\0222\n\004name\030\001 \001("
+  "\tB$\340A\002\372A\036\n\034opi_api.network.v1alpha1/Vpc\022"
+  "\025\n\rallow_missing\030\002 \001(\010\"u\n\020UpdateVpcReque"
+  "st\0220\n\003vpc\030\001 \001(\0132#.opi_api.network.cloud."
+  "v1alpha1.Vpc\022/\n\013update_mask\030\002 \001(\0132\032.goog"
+  "le.protobuf.FieldMask\"n\n\017ListVpcsRequest"
+  "\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.networ"
+  "k.v1alpha1/Vpc\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag"
+  "e_token\030\003 \001(\t\"]\n\020ListVpcsResponse\0220\n\003vpc"
+  "\030\001 \003(\0132#.opi_api.network.cloud.v1alpha1."
+  "Vpc\022\027\n\017next_page_token\030\002 \001(\t\"C\n\rGetVpcRe"
+  "quest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.net"
+  "work.v1alpha1/Vpc\"\243\001\n\024CreateVPCPeerReque"
+  "st\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.netw"
+  "ork.v1alpha1/VPCPeer\022=\n\007vpcpeer\030\002 \001(\0132\'."
+  "opi_api.network.cloud.v1alpha1.VPCPeerB\003"
+  "\340A\002\022\022\n\nvpcpeer_id\030\003 \001(\t\"e\n\024DeleteVPCPeer"
+  "Request\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.n"
+  "etwork.v1alpha1/VPCPeer\022\025\n\rallow_missing"
+  "\030\002 \001(\010\"\201\001\n\024UpdateVPCPeerRequest\0228\n\007vpcpe"
+  "er\030\001 \001(\0132\'.opi_api.network.cloud.v1alpha"
+  "1.VPCPeer\022/\n\013update_mask\030\002 \001(\0132\032.google."
+  "protobuf.FieldMask\"v\n\023ListVPCPeersReques"
+  "t\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.netwo"
+  "rk.v1alpha1/VPCPeer\022\021\n\tpage_size\030\002 \001(\005\022\022"
+  "\n\npage_token\030\003 \001(\t\"i\n\024ListVPCPeersRespon"
+  "se\0228\n\007vpcpeer\030\001 \003(\0132\'.opi_api.network.cl"
+  "oud.v1alpha1.VPCPeer\022\027\n\017next_page_token\030"
+  "\002 \001(\t\"K\n\021GetVPCPeerRequest\0226\n\004name\030\001 \001(\t"
+  "B(\340A\002\372A\"\n opi_api.network.v1alpha1/VPCPe"
+  "er\"\306\001\n\033CreateSecurityPolicyRequest\022\?\n\006pa"
+  "rent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.network.v1al"
+  "pha1/SecurityPolicy\022K\n\016securitypolicy\030\002 "
+  "\001(\0132..opi_api.network.cloud.v1alpha1.Sec"
+  "urityPolicyB\003\340A\002\022\031\n\021securitypolicy_id\030\003 "
+  "\001(\t\"s\n\033DeleteSecurityPolicyRequest\022=\n\004na"
+  "me\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.network.v1alph"
+  "a1/SecurityPolicy\022\025\n\rallow_missing\030\002 \001(\010"
+  "\"\226\001\n\033UpdateSecurityPolicyRequest\022F\n\016secu"
+  "ritypolicy\030\001 \001(\0132..opi_api.network.cloud"
+  ".v1alpha1.SecurityPolicy\022/\n\013update_mask\030"
+  "\002 \001(\0132\032.google.protobuf.FieldMask\"\204\001\n\032Li"
+  "stSecurityPolicysRequest\022\?\n\006parent\030\001 \001(\t"
+  "B/\340A\002\372A)\n\'opi_api.network.v1alpha1/Secur"
+  "ityPolicy\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
+  "en\030\003 \001(\t\"~\n\033ListSecurityPolicysResponse\022"
+  "F\n\016securitypolicy\030\001 \003(\0132..opi_api.networ"
+  "k.cloud.v1alpha1.SecurityPolicy\022\027\n\017next_"
+  "page_token\030\002 \001(\t\"Y\n\030GetSecurityPolicyReq"
+  "uest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.netw"
+  "ork.v1alpha1/SecurityPolicy\"\274\001\n\031CreateSe"
+  "curityRuleRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A"
+  "\'\n%opi_api.network.v1alpha1/SecurityRule"
+  "\022G\n\014securityrule\030\002 \001(\0132,.opi_api.network"
+  ".cloud.v1alpha1.SecurityRuleB\003\340A\002\022\027\n\017sec"
+  "urityrule_id\030\003 \001(\t\"o\n\031DeleteSecurityRule"
+  "Request\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.n"
+  "etwork.v1alpha1/SecurityRule\022\025\n\rallow_mi"
+  "ssing\030\002 \001(\010\"\220\001\n\031UpdateSecurityRuleReques"
+  "t\022B\n\014securityrule\030\001 \001(\0132,.opi_api.networ"
+  "k.cloud.v1alpha1.SecurityRule\022/\n\013update_"
+  "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"\200"
+  "\001\n\030ListSecurityRulesRequest\022=\n\006parent\030\001 "
   "\001(\tB-\340A\002\372A\'\n%opi_api.network.v1alpha1/Se"
-  "curityRule\022G\n\014securityrule\030\002 \001(\0132,.opi_a"
-  "pi.network.cloud.v1alpha1.SecurityRuleB\003"
-  "\340A\002\022\027\n\017securityrule_id\030\003 \001(\t\"m\n\031DeleteSe"
-  "curityRuleRequest\0229\n\002id\030\001 \001(\tB-\340A\002\372A\'\n%o"
-  "pi_api.network.v1alpha1/SecurityRule\022\025\n\r"
-  "allow_missing\030\002 \001(\010\"\220\001\n\031UpdateSecurityRu"
-  "leRequest\022B\n\014securityrule\030\001 \001(\0132,.opi_ap"
-  "i.network.cloud.v1alpha1.SecurityRule\022/\n"
-  "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie"
-  "ldMask\"\200\001\n\030ListSecurityRulesRequest\022=\n\006p"
-  "arent\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.network.v1a"
-  "lpha1/SecurityRule\022\021\n\tpage_size\030\002 \001(\005\022\022\n"
-  "\npage_token\030\003 \001(\t\"x\n\031ListSecurityRulesRe"
-  "sponse\022B\n\014securityrule\030\001 \003(\0132,.opi_api.n"
-  "etwork.cloud.v1alpha1.SecurityRule\022\027\n\017ne"
-  "xt_page_token\030\002 \001(\t\"S\n\026GetSecurityRuleRe"
-  "quest\0229\n\002id\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.netwo"
-  "rk.v1alpha1/SecurityRule\"\313\001\n\034CreateSecur"
-  "ityProfileRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A"
-  "*\n(opi_api.network.v1alpha1/SecurityProf"
-  "ile\022M\n\017securityprofile\030\002 \001(\0132/.opi_api.n"
-  "etwork.cloud.v1alpha1.SecurityProfileB\003\340"
-  "A\002\022\032\n\022securityprofile_id\030\003 \001(\t\"s\n\034Delete"
-  "SecurityProfileRequest\022<\n\002id\030\001 \001(\tB0\340A\002\372"
-  "A*\n(opi_api.network.v1alpha1/SecurityPro"
-  "file\022\025\n\rallow_missing\030\002 \001(\010\"\231\001\n\034UpdateSe"
-  "curityProfileRequest\022H\n\017securityprofile\030"
-  "\001 \001(\0132/.opi_api.network.cloud.v1alpha1.S"
-  "ecurityProfile\022/\n\013update_mask\030\002 \001(\0132\032.go"
-  "ogle.protobuf.FieldMask\"\206\001\n\033ListSecurity"
-  "ProfilesRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n"
-  "(opi_api.network.v1alpha1/SecurityProfil"
-  "e\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
-  "\"\201\001\n\034ListSecurityProfilesResponse\022H\n\017sec"
-  "urityprofile\030\001 \003(\0132/.opi_api.network.clo"
-  "ud.v1alpha1.SecurityProfile\022\027\n\017next_page"
-  "_token\030\002 \001(\t\"Y\n\031GetSecurityProfileReques"
-  "t\022<\n\002id\030\001 \001(\tB0\340A\002\372A*\n(opi_api.network.v"
-  "1alpha1/SecurityProfile2\213{\n\021CloudInfraSe"
-  "rvice\022\255\001\n\025GetDeviceCapabilities\022<.opi_ap"
-  "i.network.cloud.v1alpha1.GetDeviceCapabi"
-  "litiesRequest\0322.opi_api.network.cloud.v1"
-  "alpha1.DeviceCapabilities\"\"\202\323\344\223\002\031\022\027/v1/d"
-  "evicecapabilitiess\332A\000\022\233\001\n\014CreateDevice\0223"
-  ".opi_api.network.cloud.v1alpha1.CreateDe"
-  "viceRequest\032&.opi_api.network.cloud.v1al"
-  "pha1.Device\".\202\323\344\223\002\025\"\013/v1/devices:\006device"
-  "\332A\020device,device_id\022\200\001\n\014DeleteDevice\0223.o"
-  "pi_api.network.cloud.v1alpha1.DeleteDevi"
-  "ceRequest\032\026.google.protobuf.Empty\"#\202\323\344\223\002"
-  "\026*\024/v1/{name=devices}/*\332A\004name\022\247\001\n\014Updat"
-  "eDevice\0223.opi_api.network.cloud.v1alpha1"
-  ".UpdateDeviceRequest\032&.opi_api.network.c"
-  "loud.v1alpha1.Device\":\202\323\344\223\002\0362\024/v1/{name="
-  "devices}/*:\006device\332A\023device, update_mask"
-  "\022\216\001\n\013ListDevices\0222.opi_api.network.cloud"
-  ".v1alpha1.ListDevicesRequest\0323.opi_api.n"
-  "etwork.cloud.v1alpha1.ListDevicesRespons"
-  "e\"\026\202\323\344\223\002\r\022\013/v1/devices\332A\000\022\212\001\n\tGetDevice\022"
-  "0.opi_api.network.cloud.v1alpha1.GetDevi"
+  "curityRule\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
+  "ken\030\003 \001(\t\"x\n\031ListSecurityRulesResponse\022B"
+  "\n\014securityrule\030\001 \003(\0132,.opi_api.network.c"
+  "loud.v1alpha1.SecurityRule\022\027\n\017next_page_"
+  "token\030\002 \001(\t\"U\n\026GetSecurityRuleRequest\022;\n"
+  "\004name\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.network.v1a"
+  "lpha1/SecurityRule\"\313\001\n\034CreateSecurityPro"
+  "fileRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n(opi"
+  "_api.network.v1alpha1/SecurityProfile\022M\n"
+  "\017securityprofile\030\002 \001(\0132/.opi_api.network"
+  ".cloud.v1alpha1.SecurityProfileB\003\340A\002\022\032\n\022"
+  "securityprofile_id\030\003 \001(\t\"u\n\034DeleteSecuri"
+  "tyProfileRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n("
+  "opi_api.network.v1alpha1/SecurityProfile"
+  "\022\025\n\rallow_missing\030\002 \001(\010\"\231\001\n\034UpdateSecuri"
+  "tyProfileRequest\022H\n\017securityprofile\030\001 \001("
+  "\0132/.opi_api.network.cloud.v1alpha1.Secur"
+  "ityProfile\022/\n\013update_mask\030\002 \001(\0132\032.google"
+  ".protobuf.FieldMask\"\206\001\n\033ListSecurityProf"
+  "ilesRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n(opi"
+  "_api.network.v1alpha1/SecurityProfile\022\021\n"
+  "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\201\001\n"
+  "\034ListSecurityProfilesResponse\022H\n\017securit"
+  "yprofile\030\001 \003(\0132/.opi_api.network.cloud.v"
+  "1alpha1.SecurityProfile\022\027\n\017next_page_tok"
+  "en\030\002 \001(\t\"[\n\031GetSecurityProfileRequest\022>\n"
+  "\004name\030\001 \001(\tB0\340A\002\372A*\n(opi_api.network.v1a"
+  "lpha1/SecurityProfile2\213{\n\021CloudInfraServ"
+  "ice\022\255\001\n\025GetDeviceCapabilities\022<.opi_api."
+  "network.cloud.v1alpha1.GetDeviceCapabili"
+  "tiesRequest\0322.opi_api.network.cloud.v1al"
+  "pha1.DeviceCapabilities\"\"\202\323\344\223\002\031\022\027/v1/dev"
+  "icecapabilitiess\332A\000\022\233\001\n\014CreateDevice\0223.o"
+  "pi_api.network.cloud.v1alpha1.CreateDevi"
   "ceRequest\032&.opi_api.network.cloud.v1alph"
-  "a1.Device\"#\202\323\344\223\002\026\022\024/v1/{name=devices}/*\332"
-  "A\004name\022\233\001\n\nUpdatePort\0221.opi_api.network."
-  "cloud.v1alpha1.UpdatePortRequest\032$.opi_a"
-  "pi.network.cloud.v1alpha1.Port\"4\202\323\344\223\002\0322\022"
-  "/v1/{name=ports}/*:\004port\332A\021port, update_"
-  "mask\022\206\001\n\tListPorts\0220.opi_api.network.clo"
-  "ud.v1alpha1.ListPortsRequest\0321.opi_api.n"
-  "etwork.cloud.v1alpha1.ListPortsResponse\""
-  "\024\202\323\344\223\002\013\022\t/v1/ports\332A\000\022\202\001\n\007GetPort\022..opi_"
-  "api.network.cloud.v1alpha1.GetPortReques"
-  "t\032$.opi_api.network.cloud.v1alpha1.Port\""
-  "!\202\323\344\223\002\024\022\022/v1/{name=ports}/*\332A\004name\022\215\001\n\nC"
-  "reateVnic\0221.opi_api.network.cloud.v1alph"
-  "a1.CreateVnicRequest\032$.opi_api.network.c"
-  "loud.v1alpha1.Vnic\"&\202\323\344\223\002\021\"\t/v1/vnics:\004v"
-  "nic\332A\014vnic,vnic_id\022z\n\nDeleteVnic\0221.opi_a"
-  "pi.network.cloud.v1alpha1.DeleteVnicRequ"
-  "est\032\026.google.protobuf.Empty\"!\202\323\344\223\002\024*\022/v1"
-  "/{name=vnics}/*\332A\004name\022\233\001\n\nUpdateVnic\0221."
-  "opi_api.network.cloud.v1alpha1.UpdateVni"
-  "cRequest\032$.opi_api.network.cloud.v1alpha"
-  "1.Vnic\"4\202\323\344\223\002\0322\022/v1/{name=vnics}/*:\004vnic"
-  "\332A\021vnic, update_mask\022\206\001\n\tListVnics\0220.opi"
-  "_api.network.cloud.v1alpha1.ListVnicsReq"
-  "uest\0321.opi_api.network.cloud.v1alpha1.Li"
-  "stVnicsResponse\"\024\202\323\344\223\002\013\022\t/v1/vnics\332A\000\022\202\001"
-  "\n\007GetVnic\022..opi_api.network.cloud.v1alph"
-  "a1.GetVnicRequest\032$.opi_api.network.clou"
-  "d.v1alpha1.Vnic\"!\202\323\344\223\002\024\022\022/v1/{name=vnics"
-  "}/*\332A\004name\022\260\001\n\017CreateInterface\0226.opi_api"
-  ".network.cloud.v1alpha1.CreateInterfaceR"
-  "equest\032).opi_api.network.cloud.v1alpha1."
-  "Interface\":\202\323\344\223\002\033\"\016/v1/interfaces:\tinter"
-  "face\332A\026interface,interface_id\022\211\001\n\017Delete"
-  "Interface\0226.opi_api.network.cloud.v1alph"
-  "a1.DeleteInterfaceRequest\032\026.google.proto"
-  "buf.Empty\"&\202\323\344\223\002\031*\027/v1/{name=interfaces}"
-  "/*\332A\004name\022\271\001\n\017UpdateInterface\0226.opi_api."
-  "network.cloud.v1alpha1.UpdateInterfaceRe"
-  "quest\032).opi_api.network.cloud.v1alpha1.I"
-  "nterface\"C\202\323\344\223\002$2\027/v1/{name=interfaces}/"
-  "*:\tinterface\332A\026interface, update_mask\022\232\001"
-  "\n\016ListInterfaces\0225.opi_api.network.cloud"
-  ".v1alpha1.ListInterfacesRequest\0326.opi_ap"
-  "i.network.cloud.v1alpha1.ListInterfacesR"
-  "esponse\"\031\202\323\344\223\002\020\022\016/v1/interfaces\332A\000\022\226\001\n\014G"
-  "etInterface\0223.opi_api.network.cloud.v1al"
-  "pha1.GetInterfaceRequest\032).opi_api.netwo"
-  "rk.cloud.v1alpha1.Interface\"&\202\323\344\223\002\031\022\027/v1"
-  "/{name=interfaces}/*\332A\004name\022\267\001\n\020CreateRo"
-  "uteTable\0227.opi_api.network.cloud.v1alpha"
-  "1.CreateRouteTableRequest\032*.opi_api.netw"
-  "ork.cloud.v1alpha1.RouteTable\">\202\323\344\223\002\035\"\017/"
-  "v1/routetables:\nroutetable\332A\030routetable,"
-  "routetable_id\022\214\001\n\020DeleteRouteTable\0227.opi"
-  "_api.network.cloud.v1alpha1.DeleteRouteT"
-  "ableRequest\032\026.google.protobuf.Empty\"\'\202\323\344"
-  "\223\002\032*\030/v1/{name=routetables}/*\332A\004name\022\277\001\n"
-  "\020UpdateRouteTable\0227.opi_api.network.clou"
-  "d.v1alpha1.UpdateRouteTableRequest\032*.opi"
-  "_api.network.cloud.v1alpha1.RouteTable\"F"
-  "\202\323\344\223\002&2\030/v1/{name=routetables}/*:\nroutet"
-  "able\332A\027routetable, update_mask\022\236\001\n\017ListR"
-  "outeTables\0226.opi_api.network.cloud.v1alp"
-  "ha1.ListRouteTablesRequest\0327.opi_api.net"
-  "work.cloud.v1alpha1.ListRouteTablesRespo"
-  "nse\"\032\202\323\344\223\002\021\022\017/v1/routetables\332A\000\022\232\001\n\rGetR"
-  "outeTable\0224.opi_api.network.cloud.v1alph"
-  "a1.GetRouteTableRequest\032*.opi_api.networ"
-  "k.cloud.v1alpha1.RouteTable\"\'\202\323\344\223\002\032\022\030/v1"
-  "/{name=routetables}/*\332A\004name\022\224\001\n\013CreateR"
-  "oute\0222.opi_api.network.cloud.v1alpha1.Cr"
-  "eateRouteRequest\032%.opi_api.network.cloud"
-  ".v1alpha1.Route\"*\202\323\344\223\002\023\"\n/v1/routes:\005rou"
-  "te\332A\016route,route_id\022}\n\013DeleteRoute\0222.opi"
-  "_api.network.cloud.v1alpha1.DeleteRouteR"
-  "equest\032\026.google.protobuf.Empty\"\"\202\323\344\223\002\025*\023"
-  "/v1/{name=routes}/*\332A\004name\022\241\001\n\013UpdateRou"
-  "te\0222.opi_api.network.cloud.v1alpha1.Upda"
+  "a1.Device\".\202\323\344\223\002\025\"\013/v1/devices:\006device\332A"
+  "\020device,device_id\022\200\001\n\014DeleteDevice\0223.opi"
+  "_api.network.cloud.v1alpha1.DeleteDevice"
+  "Request\032\026.google.protobuf.Empty\"#\202\323\344\223\002\026*"
+  "\024/v1/{name=devices}/*\332A\004name\022\247\001\n\014UpdateD"
+  "evice\0223.opi_api.network.cloud.v1alpha1.U"
+  "pdateDeviceRequest\032&.opi_api.network.clo"
+  "ud.v1alpha1.Device\":\202\323\344\223\002\0362\024/v1/{name=de"
+  "vices}/*:\006device\332A\023device, update_mask\022\216"
+  "\001\n\013ListDevices\0222.opi_api.network.cloud.v"
+  "1alpha1.ListDevicesRequest\0323.opi_api.net"
+  "work.cloud.v1alpha1.ListDevicesResponse\""
+  "\026\202\323\344\223\002\r\022\013/v1/devices\332A\000\022\212\001\n\tGetDevice\0220."
+  "opi_api.network.cloud.v1alpha1.GetDevice"
+  "Request\032&.opi_api.network.cloud.v1alpha1"
+  ".Device\"#\202\323\344\223\002\026\022\024/v1/{name=devices}/*\332A\004"
+  "name\022\233\001\n\nUpdatePort\0221.opi_api.network.cl"
+  "oud.v1alpha1.UpdatePortRequest\032$.opi_api"
+  ".network.cloud.v1alpha1.Port\"4\202\323\344\223\002\0322\022/v"
+  "1/{name=ports}/*:\004port\332A\021port, update_ma"
+  "sk\022\206\001\n\tListPorts\0220.opi_api.network.cloud"
+  ".v1alpha1.ListPortsRequest\0321.opi_api.net"
+  "work.cloud.v1alpha1.ListPortsResponse\"\024\202"
+  "\323\344\223\002\013\022\t/v1/ports\332A\000\022\202\001\n\007GetPort\022..opi_ap"
+  "i.network.cloud.v1alpha1.GetPortRequest\032"
+  "$.opi_api.network.cloud.v1alpha1.Port\"!\202"
+  "\323\344\223\002\024\022\022/v1/{name=ports}/*\332A\004name\022\215\001\n\nCre"
+  "ateVnic\0221.opi_api.network.cloud.v1alpha1"
+  ".CreateVnicRequest\032$.opi_api.network.clo"
+  "ud.v1alpha1.Vnic\"&\202\323\344\223\002\021\"\t/v1/vnics:\004vni"
+  "c\332A\014vnic,vnic_id\022z\n\nDeleteVnic\0221.opi_api"
+  ".network.cloud.v1alpha1.DeleteVnicReques"
+  "t\032\026.google.protobuf.Empty\"!\202\323\344\223\002\024*\022/v1/{"
+  "name=vnics}/*\332A\004name\022\233\001\n\nUpdateVnic\0221.op"
+  "i_api.network.cloud.v1alpha1.UpdateVnicR"
+  "equest\032$.opi_api.network.cloud.v1alpha1."
+  "Vnic\"4\202\323\344\223\002\0322\022/v1/{name=vnics}/*:\004vnic\332A"
+  "\021vnic, update_mask\022\206\001\n\tListVnics\0220.opi_a"
+  "pi.network.cloud.v1alpha1.ListVnicsReque"
+  "st\0321.opi_api.network.cloud.v1alpha1.List"
+  "VnicsResponse\"\024\202\323\344\223\002\013\022\t/v1/vnics\332A\000\022\202\001\n\007"
+  "GetVnic\022..opi_api.network.cloud.v1alpha1"
+  ".GetVnicRequest\032$.opi_api.network.cloud."
+  "v1alpha1.Vnic\"!\202\323\344\223\002\024\022\022/v1/{name=vnics}/"
+  "*\332A\004name\022\260\001\n\017CreateInterface\0226.opi_api.n"
+  "etwork.cloud.v1alpha1.CreateInterfaceReq"
+  "uest\032).opi_api.network.cloud.v1alpha1.In"
+  "terface\":\202\323\344\223\002\033\"\016/v1/interfaces:\tinterfa"
+  "ce\332A\026interface,interface_id\022\211\001\n\017DeleteIn"
+  "terface\0226.opi_api.network.cloud.v1alpha1"
+  ".DeleteInterfaceRequest\032\026.google.protobu"
+  "f.Empty\"&\202\323\344\223\002\031*\027/v1/{name=interfaces}/*"
+  "\332A\004name\022\271\001\n\017UpdateInterface\0226.opi_api.ne"
+  "twork.cloud.v1alpha1.UpdateInterfaceRequ"
+  "est\032).opi_api.network.cloud.v1alpha1.Int"
+  "erface\"C\202\323\344\223\002$2\027/v1/{name=interfaces}/*:"
+  "\tinterface\332A\026interface, update_mask\022\232\001\n\016"
+  "ListInterfaces\0225.opi_api.network.cloud.v"
+  "1alpha1.ListInterfacesRequest\0326.opi_api."
+  "network.cloud.v1alpha1.ListInterfacesRes"
+  "ponse\"\031\202\323\344\223\002\020\022\016/v1/interfaces\332A\000\022\226\001\n\014Get"
+  "Interface\0223.opi_api.network.cloud.v1alph"
+  "a1.GetInterfaceRequest\032).opi_api.network"
+  ".cloud.v1alpha1.Interface\"&\202\323\344\223\002\031\022\027/v1/{"
+  "name=interfaces}/*\332A\004name\022\267\001\n\020CreateRout"
+  "eTable\0227.opi_api.network.cloud.v1alpha1."
+  "CreateRouteTableRequest\032*.opi_api.networ"
+  "k.cloud.v1alpha1.RouteTable\">\202\323\344\223\002\035\"\017/v1"
+  "/routetables:\nroutetable\332A\030routetable,ro"
+  "utetable_id\022\214\001\n\020DeleteRouteTable\0227.opi_a"
+  "pi.network.cloud.v1alpha1.DeleteRouteTab"
+  "leRequest\032\026.google.protobuf.Empty\"\'\202\323\344\223\002"
+  "\032*\030/v1/{name=routetables}/*\332A\004name\022\277\001\n\020U"
+  "pdateRouteTable\0227.opi_api.network.cloud."
+  "v1alpha1.UpdateRouteTableRequest\032*.opi_a"
+  "pi.network.cloud.v1alpha1.RouteTable\"F\202\323"
+  "\344\223\002&2\030/v1/{name=routetables}/*:\nroutetab"
+  "le\332A\027routetable, update_mask\022\236\001\n\017ListRou"
+  "teTables\0226.opi_api.network.cloud.v1alpha"
+  "1.ListRouteTablesRequest\0327.opi_api.netwo"
+  "rk.cloud.v1alpha1.ListRouteTablesRespons"
+  "e\"\032\202\323\344\223\002\021\022\017/v1/routetables\332A\000\022\232\001\n\rGetRou"
+  "teTable\0224.opi_api.network.cloud.v1alpha1"
+  ".GetRouteTableRequest\032*.opi_api.network."
+  "cloud.v1alpha1.RouteTable\"\'\202\323\344\223\002\032\022\030/v1/{"
+  "name=routetables}/*\332A\004name\022\224\001\n\013CreateRou"
+  "te\0222.opi_api.network.cloud.v1alpha1.Crea"
   "teRouteRequest\032%.opi_api.network.cloud.v"
-  "1alpha1.Route\"7\202\323\344\223\002\0342\023/v1/{name=routes}"
-  "/*:\005route\332A\022route, update_mask\022\212\001\n\nListR"
-  "outes\0221.opi_api.network.cloud.v1alpha1.L"
-  "istRoutesRequest\0322.opi_api.network.cloud"
-  ".v1alpha1.ListRoutesResponse\"\025\202\323\344\223\002\014\022\n/v"
-  "1/routes\332A\000\022\206\001\n\010GetRoute\022/.opi_api.netwo"
-  "rk.cloud.v1alpha1.GetRouteRequest\032%.opi_"
-  "api.network.cloud.v1alpha1.Route\"\"\202\323\344\223\002\025"
-  "\022\023/v1/{name=routes}/*\332A\004name\022\314\001\n\023CreateU"
-  "nderlayRoute\022:.opi_api.network.cloud.v1a"
-  "lpha1.CreateUnderlayRouteRequest\032-.opi_a"
-  "pi.network.cloud.v1alpha1.UnderlayRoute\""
-  "J\202\323\344\223\002#\"\022/v1/underlayroutes:\runderlayrou"
-  "te\332A\036underlayroute,underlayroute_id\022\225\001\n\023"
-  "DeleteUnderlayRoute\022:.opi_api.network.cl"
-  "oud.v1alpha1.DeleteUnderlayRouteRequest\032"
-  "\026.google.protobuf.Empty\"*\202\323\344\223\002\035*\033/v1/{na"
-  "me=underlayroutes}/*\332A\004name\022\321\001\n\023UpdateUn"
-  "derlayRoute\022:.opi_api.network.cloud.v1al"
-  "pha1.UpdateUnderlayRouteRequest\032-.opi_ap"
-  "i.network.cloud.v1alpha1.UnderlayRoute\"O"
-  "\202\323\344\223\002,2\033/v1/{name=underlayroutes}/*:\rund"
-  "erlayroute\332A\032underlayroute, update_mask\022"
-  "\252\001\n\022ListUnderlayRoutes\0229.opi_api.network"
-  ".cloud.v1alpha1.ListUnderlayRoutesReques"
-  "t\032:.opi_api.network.cloud.v1alpha1.ListU"
-  "nderlayRoutesResponse\"\035\202\323\344\223\002\024\022\022/v1/under"
-  "layroutes\332A\000\022\246\001\n\020GetUnderlayRoute\0227.opi_"
-  "api.network.cloud.v1alpha1.GetUnderlayRo"
-  "uteRequest\032-.opi_api.network.cloud.v1alp"
-  "ha1.UnderlayRoute\"*\202\323\344\223\002\035\022\033/v1/{name=und"
-  "erlayroutes}/*\332A\004name\022\206\001\n\tCreateBgp\0220.op"
-  "i_api.network.cloud.v1alpha1.CreateBgpRe"
-  "quest\032#.opi_api.network.cloud.v1alpha1.B"
-  "gp\"\"\202\323\344\223\002\017\"\010/v1/bgps:\003bgp\332A\nbgp,bgp_id\022w"
-  "\n\tDeleteBgp\0220.opi_api.network.cloud.v1al"
-  "pha1.DeleteBgpRequest\032\026.google.protobuf."
-  "Empty\" \202\323\344\223\002\023*\021/v1/{name=bgps}/*\332A\004name\022"
-  "\225\001\n\tUpdateBgp\0220.opi_api.network.cloud.v1"
-  "alpha1.UpdateBgpRequest\032#.opi_api.networ"
-  "k.cloud.v1alpha1.Bgp\"1\202\323\344\223\002\0302\021/v1/{name="
-  "bgps}/*:\003bgp\332A\020bgp, update_mask\022\202\001\n\010List"
-  "Bgps\022/.opi_api.network.cloud.v1alpha1.Li"
-  "stBgpsRequest\0320.opi_api.network.cloud.v1"
-  "alpha1.ListBgpsResponse\"\023\202\323\344\223\002\n\022\010/v1/bgp"
-  "s\332A\000\022~\n\006GetBgp\022-.opi_api.network.cloud.v"
-  "1alpha1.GetBgpRequest\032#.opi_api.network."
-  "cloud.v1alpha1.Bgp\" \202\323\344\223\002\023\022\021/v1/{name=bg"
-  "ps}/*\332A\004name\022\242\001\n\rCreateBGPPeer\0224.opi_api"
-  ".network.cloud.v1alpha1.CreateBGPPeerReq"
-  "uest\032\'.opi_api.network.cloud.v1alpha1.BG"
-  "PPeer\"2\202\323\344\223\002\027\"\014/v1/bgppeers:\007bgppeer\332A\022b"
-  "gppeer,bgppeer_id\022\203\001\n\rDeleteBGPPeer\0224.op"
-  "i_api.network.cloud.v1alpha1.DeleteBGPPe"
-  "erRequest\032\026.google.protobuf.Empty\"$\202\323\344\223\002"
-  "\027*\025/v1/{name=bgppeers}/*\332A\004name\022\255\001\n\rUpda"
-  "teBGPPeer\0224.opi_api.network.cloud.v1alph"
-  "a1.UpdateBGPPeerRequest\032\'.opi_api.networ"
-  "k.cloud.v1alpha1.BGPPeer\"=\202\323\344\223\002 2\025/v1/{n"
-  "ame=bgppeers}/*:\007bgppeer\332A\024bgppeer, upda"
-  "te_mask\022\222\001\n\014ListBGPPeers\0223.opi_api.netwo"
-  "rk.cloud.v1alpha1.ListBGPPeersRequest\0324."
-  "opi_api.network.cloud.v1alpha1.ListBGPPe"
-  "ersResponse\"\027\202\323\344\223\002\016\022\014/v1/bgppeers\332A\000\022\216\001\n"
-  "\nGetBGPPeer\0221.opi_api.network.cloud.v1al"
-  "pha1.GetBGPPeerRequest\032\'.opi_api.network"
-  ".cloud.v1alpha1.BGPPeer\"$\202\323\344\223\002\027\022\025/v1/{na"
-  "me=bgppeers}/*\332A\004name\022\260\001\n\017CreateBGPPeerA"
-  "f\0226.opi_api.network.cloud.v1alpha1.Creat"
-  "eBGPPeerAfRequest\032).opi_api.network.clou"
-  "d.v1alpha1.BGPPeerAf\":\202\323\344\223\002\033\"\016/v1/bgppee"
-  "rafs:\tbgppeeraf\332A\026bgppeeraf,bgppeeraf_id"
-  "\022\211\001\n\017DeleteBGPPeerAf\0226.opi_api.network.c"
-  "loud.v1alpha1.DeleteBGPPeerAfRequest\032\026.g"
-  "oogle.protobuf.Empty\"&\202\323\344\223\002\031*\027/v1/{name="
-  "bgppeerafs}/*\332A\004name\022\271\001\n\017UpdateBGPPeerAf"
-  "\0226.opi_api.network.cloud.v1alpha1.Update"
-  "BGPPeerAfRequest\032).opi_api.network.cloud"
-  ".v1alpha1.BGPPeerAf\"C\202\323\344\223\002$2\027/v1/{name=b"
-  "gppeerafs}/*:\tbgppeeraf\332A\026bgppeeraf, upd"
-  "ate_mask\022\232\001\n\016ListBGPPeerAfs\0225.opi_api.ne"
-  "twork.cloud.v1alpha1.ListBGPPeerAfsReque"
-  "st\0326.opi_api.network.cloud.v1alpha1.List"
-  "BGPPeerAfsResponse\"\031\202\323\344\223\002\020\022\016/v1/bgppeera"
-  "fs\332A\000\022\226\001\n\014GetBGPPeerAf\0223.opi_api.network"
-  ".cloud.v1alpha1.GetBGPPeerAfRequest\032).op"
-  "i_api.network.cloud.v1alpha1.BGPPeerAf\"&"
-  "\202\323\344\223\002\031\022\027/v1/{name=bgppeerafs}/*\332A\004name\022\242"
-  "\001\n\rCreateMapping\0224.opi_api.network.cloud"
-  ".v1alpha1.CreateMappingRequest\032\'.opi_api"
-  ".network.cloud.v1alpha1.Mapping\"2\202\323\344\223\002\027\""
-  "\014/v1/mappings:\007mapping\332A\022mapping,mapping"
-  "_id\022\203\001\n\rDeleteMapping\0224.opi_api.network."
-  "cloud.v1alpha1.DeleteMappingRequest\032\026.go"
-  "ogle.protobuf.Empty\"$\202\323\344\223\002\027*\025/v1/{name=m"
-  "appings}/*\332A\004name\022\255\001\n\rUpdateMapping\0224.op"
-  "i_api.network.cloud.v1alpha1.UpdateMappi"
-  "ngRequest\032\'.opi_api.network.cloud.v1alph"
-  "a1.Mapping\"=\202\323\344\223\002 2\025/v1/{name=mappings}/"
-  "*:\007mapping\332A\024mapping, update_mask\022\222\001\n\014Li"
-  "stMappings\0223.opi_api.network.cloud.v1alp"
-  "ha1.ListMappingsRequest\0324.opi_api.networ"
-  "k.cloud.v1alpha1.ListMappingsResponse\"\027\202"
-  "\323\344\223\002\016\022\014/v1/mappings\332A\000\022\216\001\n\nGetMapping\0221."
-  "opi_api.network.cloud.v1alpha1.GetMappin"
-  "gRequest\032\'.opi_api.network.cloud.v1alpha"
-  "1.Mapping\"$\202\323\344\223\002\027\022\025/v1/{name=mappings}/*"
-  "\332A\004name\022\242\001\n\rCreateNextHop\0224.opi_api.netw"
-  "ork.cloud.v1alpha1.CreateNextHopRequest\032"
-  "\'.opi_api.network.cloud.v1alpha1.NextHop"
-  "\"2\202\323\344\223\002\027\"\014/v1/nexthops:\007nexthop\332A\022nextho"
-  "p,nexthop_id\022\203\001\n\rDeleteNextHop\0224.opi_api"
-  ".network.cloud.v1alpha1.DeleteNextHopReq"
-  "uest\032\026.google.protobuf.Empty\"$\202\323\344\223\002\027*\025/v"
-  "1/{name=nexthops}/*\332A\004name\022\255\001\n\rUpdateNex"
-  "tHop\0224.opi_api.network.cloud.v1alpha1.Up"
-  "dateNextHopRequest\032\'.opi_api.network.clo"
-  "ud.v1alpha1.NextHop\"=\202\323\344\223\002 2\025/v1/{name=n"
-  "exthops}/*:\007nexthop\332A\024nexthop, update_ma"
-  "sk\022\221\001\n\013ListNextHop\0223.opi_api.network.clo"
-  "ud.v1alpha1.ListNextHopsRequest\0324.opi_ap"
-  "i.network.cloud.v1alpha1.ListNextHopsRes"
-  "ponse\"\027\202\323\344\223\002\016\022\014/v1/nexthops\332A\000\022\216\001\n\nGetNe"
-  "xtHop\0221.opi_api.network.cloud.v1alpha1.G"
-  "etNextHopRequest\032\'.opi_api.network.cloud"
-  ".v1alpha1.NextHop\"$\202\323\344\223\002\027\022\025/v1/{name=nex"
-  "thops}/*\332A\004name\022\305\001\n\022CreateNextHopGroup\0229"
-  ".opi_api.network.cloud.v1alpha1.CreateNe"
-  "xtHopGroupRequest\032,.opi_api.network.clou"
-  "d.v1alpha1.NextHopGroup\"F\202\323\344\223\002!\"\021/v1/nex"
-  "thopgroups:\014nexthopgroup\332A\034nexthopgroup,"
-  "nexthopgroup_id\022\222\001\n\022DeleteNextHopGroup\0229"
-  ".opi_api.network.cloud.v1alpha1.DeleteNe"
-  "xtHopGroupRequest\032\026.google.protobuf.Empt"
-  "y\")\202\323\344\223\002\034*\032/v1/{name=nexthopgroups}/*\332A\004"
-  "name\022\313\001\n\022UpdateNextHopGroup\0229.opi_api.ne"
-  "twork.cloud.v1alpha1.UpdateNextHopGroupR"
-  "equest\032,.opi_api.network.cloud.v1alpha1."
-  "NextHopGroup\"L\202\323\344\223\002*2\032/v1/{name=nexthopg"
-  "roups}/*:\014nexthopgroup\332A\031nexthopgroup, u"
-  "pdate_mask\022\246\001\n\021ListNextHopGroups\0228.opi_a"
-  "pi.network.cloud.v1alpha1.ListNextHopGro"
-  "upsRequest\0329.opi_api.network.cloud.v1alp"
-  "ha1.ListNextHopGroupsResponse\"\034\202\323\344\223\002\023\022\021/"
-  "v1/nexthopgroups\332A\000\022\242\001\n\017GetNextHopGroup\022"
-  "6.opi_api.network.cloud.v1alpha1.GetNext"
+  "1alpha1.Route\"*\202\323\344\223\002\023\"\n/v1/routes:\005route"
+  "\332A\016route,route_id\022}\n\013DeleteRoute\0222.opi_a"
+  "pi.network.cloud.v1alpha1.DeleteRouteReq"
+  "uest\032\026.google.protobuf.Empty\"\"\202\323\344\223\002\025*\023/v"
+  "1/{name=routes}/*\332A\004name\022\241\001\n\013UpdateRoute"
+  "\0222.opi_api.network.cloud.v1alpha1.Update"
+  "RouteRequest\032%.opi_api.network.cloud.v1a"
+  "lpha1.Route\"7\202\323\344\223\002\0342\023/v1/{name=routes}/*"
+  ":\005route\332A\022route, update_mask\022\212\001\n\nListRou"
+  "tes\0221.opi_api.network.cloud.v1alpha1.Lis"
+  "tRoutesRequest\0322.opi_api.network.cloud.v"
+  "1alpha1.ListRoutesResponse\"\025\202\323\344\223\002\014\022\n/v1/"
+  "routes\332A\000\022\206\001\n\010GetRoute\022/.opi_api.network"
+  ".cloud.v1alpha1.GetRouteRequest\032%.opi_ap"
+  "i.network.cloud.v1alpha1.Route\"\"\202\323\344\223\002\025\022\023"
+  "/v1/{name=routes}/*\332A\004name\022\314\001\n\023CreateUnd"
+  "erlayRoute\022:.opi_api.network.cloud.v1alp"
+  "ha1.CreateUnderlayRouteRequest\032-.opi_api"
+  ".network.cloud.v1alpha1.UnderlayRoute\"J\202"
+  "\323\344\223\002#\"\022/v1/underlayroutes:\runderlayroute"
+  "\332A\036underlayroute,underlayroute_id\022\225\001\n\023De"
+  "leteUnderlayRoute\022:.opi_api.network.clou"
+  "d.v1alpha1.DeleteUnderlayRouteRequest\032\026."
+  "google.protobuf.Empty\"*\202\323\344\223\002\035*\033/v1/{name"
+  "=underlayroutes}/*\332A\004name\022\321\001\n\023UpdateUnde"
+  "rlayRoute\022:.opi_api.network.cloud.v1alph"
+  "a1.UpdateUnderlayRouteRequest\032-.opi_api."
+  "network.cloud.v1alpha1.UnderlayRoute\"O\202\323"
+  "\344\223\002,2\033/v1/{name=underlayroutes}/*:\runder"
+  "layroute\332A\032underlayroute, update_mask\022\252\001"
+  "\n\022ListUnderlayRoutes\0229.opi_api.network.c"
+  "loud.v1alpha1.ListUnderlayRoutesRequest\032"
+  ":.opi_api.network.cloud.v1alpha1.ListUnd"
+  "erlayRoutesResponse\"\035\202\323\344\223\002\024\022\022/v1/underla"
+  "yroutes\332A\000\022\246\001\n\020GetUnderlayRoute\0227.opi_ap"
+  "i.network.cloud.v1alpha1.GetUnderlayRout"
+  "eRequest\032-.opi_api.network.cloud.v1alpha"
+  "1.UnderlayRoute\"*\202\323\344\223\002\035\022\033/v1/{name=under"
+  "layroutes}/*\332A\004name\022\206\001\n\tCreateBgp\0220.opi_"
+  "api.network.cloud.v1alpha1.CreateBgpRequ"
+  "est\032#.opi_api.network.cloud.v1alpha1.Bgp"
+  "\"\"\202\323\344\223\002\017\"\010/v1/bgps:\003bgp\332A\nbgp,bgp_id\022w\n\t"
+  "DeleteBgp\0220.opi_api.network.cloud.v1alph"
+  "a1.DeleteBgpRequest\032\026.google.protobuf.Em"
+  "pty\" \202\323\344\223\002\023*\021/v1/{name=bgps}/*\332A\004name\022\225\001"
+  "\n\tUpdateBgp\0220.opi_api.network.cloud.v1al"
+  "pha1.UpdateBgpRequest\032#.opi_api.network."
+  "cloud.v1alpha1.Bgp\"1\202\323\344\223\002\0302\021/v1/{name=bg"
+  "ps}/*:\003bgp\332A\020bgp, update_mask\022\202\001\n\010ListBg"
+  "ps\022/.opi_api.network.cloud.v1alpha1.List"
+  "BgpsRequest\0320.opi_api.network.cloud.v1al"
+  "pha1.ListBgpsResponse\"\023\202\323\344\223\002\n\022\010/v1/bgps\332"
+  "A\000\022~\n\006GetBgp\022-.opi_api.network.cloud.v1a"
+  "lpha1.GetBgpRequest\032#.opi_api.network.cl"
+  "oud.v1alpha1.Bgp\" \202\323\344\223\002\023\022\021/v1/{name=bgps"
+  "}/*\332A\004name\022\242\001\n\rCreateBGPPeer\0224.opi_api.n"
+  "etwork.cloud.v1alpha1.CreateBGPPeerReque"
+  "st\032\'.opi_api.network.cloud.v1alpha1.BGPP"
+  "eer\"2\202\323\344\223\002\027\"\014/v1/bgppeers:\007bgppeer\332A\022bgp"
+  "peer,bgppeer_id\022\203\001\n\rDeleteBGPPeer\0224.opi_"
+  "api.network.cloud.v1alpha1.DeleteBGPPeer"
+  "Request\032\026.google.protobuf.Empty\"$\202\323\344\223\002\027*"
+  "\025/v1/{name=bgppeers}/*\332A\004name\022\255\001\n\rUpdate"
+  "BGPPeer\0224.opi_api.network.cloud.v1alpha1"
+  ".UpdateBGPPeerRequest\032\'.opi_api.network."
+  "cloud.v1alpha1.BGPPeer\"=\202\323\344\223\002 2\025/v1/{nam"
+  "e=bgppeers}/*:\007bgppeer\332A\024bgppeer, update"
+  "_mask\022\222\001\n\014ListBGPPeers\0223.opi_api.network"
+  ".cloud.v1alpha1.ListBGPPeersRequest\0324.op"
+  "i_api.network.cloud.v1alpha1.ListBGPPeer"
+  "sResponse\"\027\202\323\344\223\002\016\022\014/v1/bgppeers\332A\000\022\216\001\n\nG"
+  "etBGPPeer\0221.opi_api.network.cloud.v1alph"
+  "a1.GetBGPPeerRequest\032\'.opi_api.network.c"
+  "loud.v1alpha1.BGPPeer\"$\202\323\344\223\002\027\022\025/v1/{name"
+  "=bgppeers}/*\332A\004name\022\260\001\n\017CreateBGPPeerAf\022"
+  "6.opi_api.network.cloud.v1alpha1.CreateB"
+  "GPPeerAfRequest\032).opi_api.network.cloud."
+  "v1alpha1.BGPPeerAf\":\202\323\344\223\002\033\"\016/v1/bgppeera"
+  "fs:\tbgppeeraf\332A\026bgppeeraf,bgppeeraf_id\022\211"
+  "\001\n\017DeleteBGPPeerAf\0226.opi_api.network.clo"
+  "ud.v1alpha1.DeleteBGPPeerAfRequest\032\026.goo"
+  "gle.protobuf.Empty\"&\202\323\344\223\002\031*\027/v1/{name=bg"
+  "ppeerafs}/*\332A\004name\022\271\001\n\017UpdateBGPPeerAf\0226"
+  ".opi_api.network.cloud.v1alpha1.UpdateBG"
+  "PPeerAfRequest\032).opi_api.network.cloud.v"
+  "1alpha1.BGPPeerAf\"C\202\323\344\223\002$2\027/v1/{name=bgp"
+  "peerafs}/*:\tbgppeeraf\332A\026bgppeeraf, updat"
+  "e_mask\022\232\001\n\016ListBGPPeerAfs\0225.opi_api.netw"
+  "ork.cloud.v1alpha1.ListBGPPeerAfsRequest"
+  "\0326.opi_api.network.cloud.v1alpha1.ListBG"
+  "PPeerAfsResponse\"\031\202\323\344\223\002\020\022\016/v1/bgppeerafs"
+  "\332A\000\022\226\001\n\014GetBGPPeerAf\0223.opi_api.network.c"
+  "loud.v1alpha1.GetBGPPeerAfRequest\032).opi_"
+  "api.network.cloud.v1alpha1.BGPPeerAf\"&\202\323"
+  "\344\223\002\031\022\027/v1/{name=bgppeerafs}/*\332A\004name\022\242\001\n"
+  "\rCreateMapping\0224.opi_api.network.cloud.v"
+  "1alpha1.CreateMappingRequest\032\'.opi_api.n"
+  "etwork.cloud.v1alpha1.Mapping\"2\202\323\344\223\002\027\"\014/"
+  "v1/mappings:\007mapping\332A\022mapping,mapping_i"
+  "d\022\203\001\n\rDeleteMapping\0224.opi_api.network.cl"
+  "oud.v1alpha1.DeleteMappingRequest\032\026.goog"
+  "le.protobuf.Empty\"$\202\323\344\223\002\027*\025/v1/{name=map"
+  "pings}/*\332A\004name\022\255\001\n\rUpdateMapping\0224.opi_"
+  "api.network.cloud.v1alpha1.UpdateMapping"
+  "Request\032\'.opi_api.network.cloud.v1alpha1"
+  ".Mapping\"=\202\323\344\223\002 2\025/v1/{name=mappings}/*:"
+  "\007mapping\332A\024mapping, update_mask\022\222\001\n\014List"
+  "Mappings\0223.opi_api.network.cloud.v1alpha"
+  "1.ListMappingsRequest\0324.opi_api.network."
+  "cloud.v1alpha1.ListMappingsResponse\"\027\202\323\344"
+  "\223\002\016\022\014/v1/mappings\332A\000\022\216\001\n\nGetMapping\0221.op"
+  "i_api.network.cloud.v1alpha1.GetMappingR"
+  "equest\032\'.opi_api.network.cloud.v1alpha1."
+  "Mapping\"$\202\323\344\223\002\027\022\025/v1/{name=mappings}/*\332A"
+  "\004name\022\242\001\n\rCreateNextHop\0224.opi_api.networ"
+  "k.cloud.v1alpha1.CreateNextHopRequest\032\'."
+  "opi_api.network.cloud.v1alpha1.NextHop\"2"
+  "\202\323\344\223\002\027\"\014/v1/nexthops:\007nexthop\332A\022nexthop,"
+  "nexthop_id\022\203\001\n\rDeleteNextHop\0224.opi_api.n"
+  "etwork.cloud.v1alpha1.DeleteNextHopReque"
+  "st\032\026.google.protobuf.Empty\"$\202\323\344\223\002\027*\025/v1/"
+  "{name=nexthops}/*\332A\004name\022\255\001\n\rUpdateNextH"
+  "op\0224.opi_api.network.cloud.v1alpha1.Upda"
+  "teNextHopRequest\032\'.opi_api.network.cloud"
+  ".v1alpha1.NextHop\"=\202\323\344\223\002 2\025/v1/{name=nex"
+  "thops}/*:\007nexthop\332A\024nexthop, update_mask"
+  "\022\221\001\n\013ListNextHop\0223.opi_api.network.cloud"
+  ".v1alpha1.ListNextHopsRequest\0324.opi_api."
+  "network.cloud.v1alpha1.ListNextHopsRespo"
+  "nse\"\027\202\323\344\223\002\016\022\014/v1/nexthops\332A\000\022\216\001\n\nGetNext"
+  "Hop\0221.opi_api.network.cloud.v1alpha1.Get"
+  "NextHopRequest\032\'.opi_api.network.cloud.v"
+  "1alpha1.NextHop\"$\202\323\344\223\002\027\022\025/v1/{name=nexth"
+  "ops}/*\332A\004name\022\305\001\n\022CreateNextHopGroup\0229.o"
+  "pi_api.network.cloud.v1alpha1.CreateNext"
   "HopGroupRequest\032,.opi_api.network.cloud."
-  "v1alpha1.NextHopGroup\")\202\323\344\223\002\034\022\032/v1/{name"
-  "=nexthopgroups}/*\332A\004name\022\233\001\n\014CreateSubne"
-  "t\0223.opi_api.network.cloud.v1alpha1.Creat"
-  "eSubnetRequest\032&.opi_api.network.cloud.v"
-  "1alpha1.Subnet\".\202\323\344\223\002\025\"\013/v1/subnets:\006sub"
-  "net\332A\020subnet,subnet_id\022\200\001\n\014DeleteSubnet\022"
-  "3.opi_api.network.cloud.v1alpha1.DeleteS"
-  "ubnetRequest\032\026.google.protobuf.Empty\"#\202\323"
-  "\344\223\002\026*\024/v1/{name=subnets}/*\332A\004name\022\247\001\n\014Up"
-  "dateSubnet\0223.opi_api.network.cloud.v1alp"
-  "ha1.UpdateSubnetRequest\032&.opi_api.networ"
-  "k.cloud.v1alpha1.Subnet\":\202\323\344\223\002\0362\024/v1/{na"
-  "me=subnets}/*:\006subnet\332A\023subnet, update_m"
-  "ask\022\216\001\n\013ListSubnets\0222.opi_api.network.cl"
-  "oud.v1alpha1.ListSubnetsRequest\0323.opi_ap"
-  "i.network.cloud.v1alpha1.ListSubnetsResp"
-  "onse\"\026\202\323\344\223\002\r\022\013/v1/subnets\332A\000\022\212\001\n\tGetSubn"
-  "et\0220.opi_api.network.cloud.v1alpha1.GetS"
+  "v1alpha1.NextHopGroup\"F\202\323\344\223\002!\"\021/v1/nexth"
+  "opgroups:\014nexthopgroup\332A\034nexthopgroup,ne"
+  "xthopgroup_id\022\222\001\n\022DeleteNextHopGroup\0229.o"
+  "pi_api.network.cloud.v1alpha1.DeleteNext"
+  "HopGroupRequest\032\026.google.protobuf.Empty\""
+  ")\202\323\344\223\002\034*\032/v1/{name=nexthopgroups}/*\332A\004na"
+  "me\022\313\001\n\022UpdateNextHopGroup\0229.opi_api.netw"
+  "ork.cloud.v1alpha1.UpdateNextHopGroupReq"
+  "uest\032,.opi_api.network.cloud.v1alpha1.Ne"
+  "xtHopGroup\"L\202\323\344\223\002*2\032/v1/{name=nexthopgro"
+  "ups}/*:\014nexthopgroup\332A\031nexthopgroup, upd"
+  "ate_mask\022\246\001\n\021ListNextHopGroups\0228.opi_api"
+  ".network.cloud.v1alpha1.ListNextHopGroup"
+  "sRequest\0329.opi_api.network.cloud.v1alpha"
+  "1.ListNextHopGroupsResponse\"\034\202\323\344\223\002\023\022\021/v1"
+  "/nexthopgroups\332A\000\022\242\001\n\017GetNextHopGroup\0226."
+  "opi_api.network.cloud.v1alpha1.GetNextHo"
+  "pGroupRequest\032,.opi_api.network.cloud.v1"
+  "alpha1.NextHopGroup\")\202\323\344\223\002\034\022\032/v1/{name=n"
+  "exthopgroups}/*\332A\004name\022\233\001\n\014CreateSubnet\022"
+  "3.opi_api.network.cloud.v1alpha1.CreateS"
   "ubnetRequest\032&.opi_api.network.cloud.v1a"
-  "lpha1.Subnet\"#\202\323\344\223\002\026\022\024/v1/{name=subnets}"
-  "/*\332A\004name\022\233\001\n\014CreateTunnel\0223.opi_api.net"
-  "work.cloud.v1alpha1.CreateTunnelRequest\032"
-  "&.opi_api.network.cloud.v1alpha1.Tunnel\""
-  ".\202\323\344\223\002\025\"\013/v1/tunnels:\006tunnel\332A\020tunnel,tu"
-  "nnel_id\022\200\001\n\014DeleteTunnel\0223.opi_api.netwo"
-  "rk.cloud.v1alpha1.DeleteTunnelRequest\032\026."
-  "google.protobuf.Empty\"#\202\323\344\223\002\026*\024/v1/{name"
-  "=tunnels}/*\332A\004name\022\247\001\n\014UpdateTunnel\0223.op"
-  "i_api.network.cloud.v1alpha1.UpdateTunne"
-  "lRequest\032&.opi_api.network.cloud.v1alpha"
-  "1.Tunnel\":\202\323\344\223\002\0362\024/v1/{name=tunnels}/*:\006"
-  "tunnel\332A\023tunnel, update_mask\022\216\001\n\013ListTun"
-  "nels\0222.opi_api.network.cloud.v1alpha1.Li"
-  "stTunnelsRequest\0323.opi_api.network.cloud"
-  ".v1alpha1.ListTunnelsResponse\"\026\202\323\344\223\002\r\022\013/"
-  "v1/tunnels\332A\000\022\212\001\n\tGetTunnel\0220.opi_api.ne"
-  "twork.cloud.v1alpha1.GetTunnelRequest\032&."
-  "opi_api.network.cloud.v1alpha1.Tunnel\"#\202"
-  "\323\344\223\002\026\022\024/v1/{name=tunnels}/*\332A\004name\022\206\001\n\tC"
-  "reateVpc\0220.opi_api.network.cloud.v1alpha"
-  "1.CreateVpcRequest\032#.opi_api.network.clo"
-  "ud.v1alpha1.Vpc\"\"\202\323\344\223\002\017\"\010/v1/vpcs:\003vpc\332A"
-  "\nvpc,vpc_id\022w\n\tDeleteVpc\0220.opi_api.netwo"
-  "rk.cloud.v1alpha1.DeleteVpcRequest\032\026.goo"
-  "gle.protobuf.Empty\" \202\323\344\223\002\023*\021/v1/{name=vp"
-  "cs}/*\332A\004name\022\225\001\n\tUpdateVpc\0220.opi_api.net"
-  "work.cloud.v1alpha1.UpdateVpcRequest\032#.o"
-  "pi_api.network.cloud.v1alpha1.Vpc\"1\202\323\344\223\002"
-  "\0302\021/v1/{name=vpcs}/*:\003vpc\332A\020vpc, update_"
-  "mask\022\202\001\n\010ListVpcs\022/.opi_api.network.clou"
-  "d.v1alpha1.ListVpcsRequest\0320.opi_api.net"
-  "work.cloud.v1alpha1.ListVpcsResponse\"\023\202\323"
-  "\344\223\002\n\022\010/v1/vpcs\332A\000\022~\n\006GetVpc\022-.opi_api.ne"
-  "twork.cloud.v1alpha1.GetVpcRequest\032#.opi"
-  "_api.network.cloud.v1alpha1.Vpc\" \202\323\344\223\002\023\022"
-  "\021/v1/{name=vpcs}/*\332A\004name\022\242\001\n\rCreateVPCP"
-  "eer\0224.opi_api.network.cloud.v1alpha1.Cre"
-  "ateVPCPeerRequest\032\'.opi_api.network.clou"
-  "d.v1alpha1.VPCPeer\"2\202\323\344\223\002\027\"\014/v1/vpcpeers"
-  ":\007vpcpeer\332A\022vpcpeer,vpcpeer_id\022\203\001\n\rDelet"
-  "eVPCPeer\0224.opi_api.network.cloud.v1alpha"
-  "1.DeleteVPCPeerRequest\032\026.google.protobuf"
-  ".Empty\"$\202\323\344\223\002\027*\025/v1/{name=vpcpeers}/*\332A\004"
-  "name\022\255\001\n\rUpdateVPCPeer\0224.opi_api.network"
-  ".cloud.v1alpha1.UpdateVPCPeerRequest\032\'.o"
-  "pi_api.network.cloud.v1alpha1.VPCPeer\"=\202"
-  "\323\344\223\002 2\025/v1/{name=vpcpeers}/*:\007vpcpeer\332A\024"
-  "vpcpeer, update_mask\022\222\001\n\014ListVPCPeers\0223."
-  "opi_api.network.cloud.v1alpha1.ListVPCPe"
-  "ersRequest\0324.opi_api.network.cloud.v1alp"
-  "ha1.ListVPCPeersResponse\"\027\202\323\344\223\002\016\022\014/v1/vp"
-  "cpeers\332A\000\022\216\001\n\nGetVPCPeer\0221.opi_api.netwo"
-  "rk.cloud.v1alpha1.GetVPCPeerRequest\032\'.op"
-  "i_api.network.cloud.v1alpha1.VPCPeer\"$\202\323"
-  "\344\223\002\027\022\025/v1/{name=vpcpeers}/*\332A\004name\022\323\001\n\024C"
-  "reateSecurityPolicy\022;.opi_api.network.cl"
-  "oud.v1alpha1.CreateSecurityPolicyRequest"
-  "\032..opi_api.network.cloud.v1alpha1.Securi"
-  "tyPolicy\"N\202\323\344\223\002%\"\023/v1/securitypolicys:\016s"
-  "ecuritypolicy\332A securitypolicy,securityp"
-  "olicy_id\022\230\001\n\024DeleteSecurityPolicy\022;.opi_"
-  "api.network.cloud.v1alpha1.DeleteSecurit"
-  "yPolicyRequest\032\026.google.protobuf.Empty\"+"
-  "\202\323\344\223\002\036*\034/v1/{name=securitypolicys}/*\332A\004n"
-  "ame\022\327\001\n\024UpdateSecurityPolicy\022;.opi_api.n"
-  "etwork.cloud.v1alpha1.UpdateSecurityPoli"
-  "cyRequest\032..opi_api.network.cloud.v1alph"
-  "a1.SecurityPolicy\"R\202\323\344\223\002.2\034/v1/{name=sec"
-  "uritypolicys}/*:\016securitypolicy\332A\033securi"
-  "typolicy, update_mask\022\256\001\n\023ListSecurityPo"
-  "licys\022:.opi_api.network.cloud.v1alpha1.L"
-  "istSecurityPolicysRequest\032;.opi_api.netw"
-  "ork.cloud.v1alpha1.ListSecurityPolicysRe"
-  "sponse\"\036\202\323\344\223\002\025\022\023/v1/securitypolicys\332A\000\022\252"
-  "\001\n\021GetSecurityPolicy\0228.opi_api.network.c"
-  "loud.v1alpha1.GetSecurityPolicyRequest\032."
+  "lpha1.Subnet\".\202\323\344\223\002\025\"\013/v1/subnets:\006subne"
+  "t\332A\020subnet,subnet_id\022\200\001\n\014DeleteSubnet\0223."
+  "opi_api.network.cloud.v1alpha1.DeleteSub"
+  "netRequest\032\026.google.protobuf.Empty\"#\202\323\344\223"
+  "\002\026*\024/v1/{name=subnets}/*\332A\004name\022\247\001\n\014Upda"
+  "teSubnet\0223.opi_api.network.cloud.v1alpha"
+  "1.UpdateSubnetRequest\032&.opi_api.network."
+  "cloud.v1alpha1.Subnet\":\202\323\344\223\002\0362\024/v1/{name"
+  "=subnets}/*:\006subnet\332A\023subnet, update_mas"
+  "k\022\216\001\n\013ListSubnets\0222.opi_api.network.clou"
+  "d.v1alpha1.ListSubnetsRequest\0323.opi_api."
+  "network.cloud.v1alpha1.ListSubnetsRespon"
+  "se\"\026\202\323\344\223\002\r\022\013/v1/subnets\332A\000\022\212\001\n\tGetSubnet"
+  "\0220.opi_api.network.cloud.v1alpha1.GetSub"
+  "netRequest\032&.opi_api.network.cloud.v1alp"
+  "ha1.Subnet\"#\202\323\344\223\002\026\022\024/v1/{name=subnets}/*"
+  "\332A\004name\022\233\001\n\014CreateTunnel\0223.opi_api.netwo"
+  "rk.cloud.v1alpha1.CreateTunnelRequest\032&."
+  "opi_api.network.cloud.v1alpha1.Tunnel\".\202"
+  "\323\344\223\002\025\"\013/v1/tunnels:\006tunnel\332A\020tunnel,tunn"
+  "el_id\022\200\001\n\014DeleteTunnel\0223.opi_api.network"
+  ".cloud.v1alpha1.DeleteTunnelRequest\032\026.go"
+  "ogle.protobuf.Empty\"#\202\323\344\223\002\026*\024/v1/{name=t"
+  "unnels}/*\332A\004name\022\247\001\n\014UpdateTunnel\0223.opi_"
+  "api.network.cloud.v1alpha1.UpdateTunnelR"
+  "equest\032&.opi_api.network.cloud.v1alpha1."
+  "Tunnel\":\202\323\344\223\002\0362\024/v1/{name=tunnels}/*:\006tu"
+  "nnel\332A\023tunnel, update_mask\022\216\001\n\013ListTunne"
+  "ls\0222.opi_api.network.cloud.v1alpha1.List"
+  "TunnelsRequest\0323.opi_api.network.cloud.v"
+  "1alpha1.ListTunnelsResponse\"\026\202\323\344\223\002\r\022\013/v1"
+  "/tunnels\332A\000\022\212\001\n\tGetTunnel\0220.opi_api.netw"
+  "ork.cloud.v1alpha1.GetTunnelRequest\032&.op"
+  "i_api.network.cloud.v1alpha1.Tunnel\"#\202\323\344"
+  "\223\002\026\022\024/v1/{name=tunnels}/*\332A\004name\022\206\001\n\tCre"
+  "ateVpc\0220.opi_api.network.cloud.v1alpha1."
+  "CreateVpcRequest\032#.opi_api.network.cloud"
+  ".v1alpha1.Vpc\"\"\202\323\344\223\002\017\"\010/v1/vpcs:\003vpc\332A\nv"
+  "pc,vpc_id\022w\n\tDeleteVpc\0220.opi_api.network"
+  ".cloud.v1alpha1.DeleteVpcRequest\032\026.googl"
+  "e.protobuf.Empty\" \202\323\344\223\002\023*\021/v1/{name=vpcs"
+  "}/*\332A\004name\022\225\001\n\tUpdateVpc\0220.opi_api.netwo"
+  "rk.cloud.v1alpha1.UpdateVpcRequest\032#.opi"
+  "_api.network.cloud.v1alpha1.Vpc\"1\202\323\344\223\002\0302"
+  "\021/v1/{name=vpcs}/*:\003vpc\332A\020vpc, update_ma"
+  "sk\022\202\001\n\010ListVpcs\022/.opi_api.network.cloud."
+  "v1alpha1.ListVpcsRequest\0320.opi_api.netwo"
+  "rk.cloud.v1alpha1.ListVpcsResponse\"\023\202\323\344\223"
+  "\002\n\022\010/v1/vpcs\332A\000\022~\n\006GetVpc\022-.opi_api.netw"
+  "ork.cloud.v1alpha1.GetVpcRequest\032#.opi_a"
+  "pi.network.cloud.v1alpha1.Vpc\" \202\323\344\223\002\023\022\021/"
+  "v1/{name=vpcs}/*\332A\004name\022\242\001\n\rCreateVPCPee"
+  "r\0224.opi_api.network.cloud.v1alpha1.Creat"
+  "eVPCPeerRequest\032\'.opi_api.network.cloud."
+  "v1alpha1.VPCPeer\"2\202\323\344\223\002\027\"\014/v1/vpcpeers:\007"
+  "vpcpeer\332A\022vpcpeer,vpcpeer_id\022\203\001\n\rDeleteV"
+  "PCPeer\0224.opi_api.network.cloud.v1alpha1."
+  "DeleteVPCPeerRequest\032\026.google.protobuf.E"
+  "mpty\"$\202\323\344\223\002\027*\025/v1/{name=vpcpeers}/*\332A\004na"
+  "me\022\255\001\n\rUpdateVPCPeer\0224.opi_api.network.c"
+  "loud.v1alpha1.UpdateVPCPeerRequest\032\'.opi"
+  "_api.network.cloud.v1alpha1.VPCPeer\"=\202\323\344"
+  "\223\002 2\025/v1/{name=vpcpeers}/*:\007vpcpeer\332A\024vp"
+  "cpeer, update_mask\022\222\001\n\014ListVPCPeers\0223.op"
+  "i_api.network.cloud.v1alpha1.ListVPCPeer"
+  "sRequest\0324.opi_api.network.cloud.v1alpha"
+  "1.ListVPCPeersResponse\"\027\202\323\344\223\002\016\022\014/v1/vpcp"
+  "eers\332A\000\022\216\001\n\nGetVPCPeer\0221.opi_api.network"
+  ".cloud.v1alpha1.GetVPCPeerRequest\032\'.opi_"
+  "api.network.cloud.v1alpha1.VPCPeer\"$\202\323\344\223"
+  "\002\027\022\025/v1/{name=vpcpeers}/*\332A\004name\022\323\001\n\024Cre"
+  "ateSecurityPolicy\022;.opi_api.network.clou"
+  "d.v1alpha1.CreateSecurityPolicyRequest\032."
   ".opi_api.network.cloud.v1alpha1.Security"
-  "Policy\"+\202\323\344\223\002\036\022\034/v1/{name=securitypolicy"
-  "s}/*\332A\004name\022\305\001\n\022CreateSecurityRule\0229.opi"
-  "_api.network.cloud.v1alpha1.CreateSecuri"
-  "tyRuleRequest\032,.opi_api.network.cloud.v1"
-  "alpha1.SecurityRule\"F\202\323\344\223\002!\"\021/v1/securit"
-  "yrules:\014securityrule\332A\034securityrule,secu"
-  "rityrule_id\022\222\001\n\022DeleteSecurityRule\0229.opi"
-  "_api.network.cloud.v1alpha1.DeleteSecuri"
-  "tyRuleRequest\032\026.google.protobuf.Empty\")\202"
-  "\323\344\223\002\034*\032/v1/{name=securityrules}/*\332A\004name"
-  "\022\313\001\n\022UpdateSecurityRule\0229.opi_api.networ"
-  "k.cloud.v1alpha1.UpdateSecurityRuleReque"
-  "st\032,.opi_api.network.cloud.v1alpha1.Secu"
-  "rityRule\"L\202\323\344\223\002*2\032/v1/{name=securityrule"
-  "s}/*:\014securityrule\332A\031securityrule, updat"
-  "e_mask\022\246\001\n\021ListSecurityRules\0228.opi_api.n"
-  "etwork.cloud.v1alpha1.ListSecurityRulesR"
-  "equest\0329.opi_api.network.cloud.v1alpha1."
-  "ListSecurityRulesResponse\"\034\202\323\344\223\002\023\022\021/v1/s"
-  "ecurityrules\332A\000\022\242\001\n\017GetSecurityRule\0226.op"
-  "i_api.network.cloud.v1alpha1.GetSecurity"
+  "Policy\"N\202\323\344\223\002%\"\023/v1/securitypolicys:\016sec"
+  "uritypolicy\332A securitypolicy,securitypol"
+  "icy_id\022\230\001\n\024DeleteSecurityPolicy\022;.opi_ap"
+  "i.network.cloud.v1alpha1.DeleteSecurityP"
+  "olicyRequest\032\026.google.protobuf.Empty\"+\202\323"
+  "\344\223\002\036*\034/v1/{name=securitypolicys}/*\332A\004nam"
+  "e\022\327\001\n\024UpdateSecurityPolicy\022;.opi_api.net"
+  "work.cloud.v1alpha1.UpdateSecurityPolicy"
+  "Request\032..opi_api.network.cloud.v1alpha1"
+  ".SecurityPolicy\"R\202\323\344\223\002.2\034/v1/{name=secur"
+  "itypolicys}/*:\016securitypolicy\332A\033security"
+  "policy, update_mask\022\256\001\n\023ListSecurityPoli"
+  "cys\022:.opi_api.network.cloud.v1alpha1.Lis"
+  "tSecurityPolicysRequest\032;.opi_api.networ"
+  "k.cloud.v1alpha1.ListSecurityPolicysResp"
+  "onse\"\036\202\323\344\223\002\025\022\023/v1/securitypolicys\332A\000\022\252\001\n"
+  "\021GetSecurityPolicy\0228.opi_api.network.clo"
+  "ud.v1alpha1.GetSecurityPolicyRequest\032..o"
+  "pi_api.network.cloud.v1alpha1.SecurityPo"
+  "licy\"+\202\323\344\223\002\036\022\034/v1/{name=securitypolicys}"
+  "/*\332A\004name\022\305\001\n\022CreateSecurityRule\0229.opi_a"
+  "pi.network.cloud.v1alpha1.CreateSecurity"
   "RuleRequest\032,.opi_api.network.cloud.v1al"
-  "pha1.SecurityRule\")\202\323\344\223\002\034\022\032/v1/{name=sec"
-  "urityrules}/*\332A\004name\022\332\001\n\025CreateSecurityP"
-  "rofile\022<.opi_api.network.cloud.v1alpha1."
-  "CreateSecurityProfileRequest\032/.opi_api.n"
-  "etwork.cloud.v1alpha1.SecurityProfile\"R\202"
-  "\323\344\223\002\'\"\024/v1/securityprofiles:\017securitypro"
-  "file\332A\"securityprofile,securityprofile_i"
-  "d\022\233\001\n\025DeleteSecurityProfile\022<.opi_api.ne"
-  "twork.cloud.v1alpha1.DeleteSecurityProfi"
-  "leRequest\032\026.google.protobuf.Empty\",\202\323\344\223\002"
-  "\037*\035/v1/{name=securityprofiles}/*\332A\004name\022"
-  "\335\001\n\025UpdateSecurityProfile\022<.opi_api.netw"
-  "ork.cloud.v1alpha1.UpdateSecurityProfile"
-  "Request\032/.opi_api.network.cloud.v1alpha1"
-  ".SecurityProfile\"U\202\323\344\223\00202\035/v1/{name=secu"
-  "rityprofiles}/*:\017securityprofile\332A\034secur"
-  "ityprofile, update_mask\022\262\001\n\024ListSecurity"
-  "Profiles\022;.opi_api.network.cloud.v1alpha"
-  "1.ListSecurityProfilesRequest\032<.opi_api."
-  "network.cloud.v1alpha1.ListSecurityProfi"
-  "lesResponse\"\037\202\323\344\223\002\026\022\024/v1/securityprofile"
-  "s\332A\000\022\256\001\n\022GetSecurityProfile\0229.opi_api.ne"
-  "twork.cloud.v1alpha1.GetSecurityProfileR"
-  "equest\032/.opi_api.network.cloud.v1alpha1."
-  "SecurityProfile\",\202\323\344\223\002\037\022\035/v1/{name=secur"
-  "ityprofiles}/*\332A\004nameBi\n\036opi_api.network"
-  ".cloud.v1alpha1B\010CloudRPCP\001Z;github.com/"
-  "opiproject/opi-api/network/cloud/v1alpha"
-  "1/gen/gob\006proto3"
+  "pha1.SecurityRule\"F\202\323\344\223\002!\"\021/v1/securityr"
+  "ules:\014securityrule\332A\034securityrule,securi"
+  "tyrule_id\022\222\001\n\022DeleteSecurityRule\0229.opi_a"
+  "pi.network.cloud.v1alpha1.DeleteSecurity"
+  "RuleRequest\032\026.google.protobuf.Empty\")\202\323\344"
+  "\223\002\034*\032/v1/{name=securityrules}/*\332A\004name\022\313"
+  "\001\n\022UpdateSecurityRule\0229.opi_api.network."
+  "cloud.v1alpha1.UpdateSecurityRuleRequest"
+  "\032,.opi_api.network.cloud.v1alpha1.Securi"
+  "tyRule\"L\202\323\344\223\002*2\032/v1/{name=securityrules}"
+  "/*:\014securityrule\332A\031securityrule, update_"
+  "mask\022\246\001\n\021ListSecurityRules\0228.opi_api.net"
+  "work.cloud.v1alpha1.ListSecurityRulesReq"
+  "uest\0329.opi_api.network.cloud.v1alpha1.Li"
+  "stSecurityRulesResponse\"\034\202\323\344\223\002\023\022\021/v1/sec"
+  "urityrules\332A\000\022\242\001\n\017GetSecurityRule\0226.opi_"
+  "api.network.cloud.v1alpha1.GetSecurityRu"
+  "leRequest\032,.opi_api.network.cloud.v1alph"
+  "a1.SecurityRule\")\202\323\344\223\002\034\022\032/v1/{name=secur"
+  "ityrules}/*\332A\004name\022\332\001\n\025CreateSecurityPro"
+  "file\022<.opi_api.network.cloud.v1alpha1.Cr"
+  "eateSecurityProfileRequest\032/.opi_api.net"
+  "work.cloud.v1alpha1.SecurityProfile\"R\202\323\344"
+  "\223\002\'\"\024/v1/securityprofiles:\017securityprofi"
+  "le\332A\"securityprofile,securityprofile_id\022"
+  "\233\001\n\025DeleteSecurityProfile\022<.opi_api.netw"
+  "ork.cloud.v1alpha1.DeleteSecurityProfile"
+  "Request\032\026.google.protobuf.Empty\",\202\323\344\223\002\037*"
+  "\035/v1/{name=securityprofiles}/*\332A\004name\022\335\001"
+  "\n\025UpdateSecurityProfile\022<.opi_api.networ"
+  "k.cloud.v1alpha1.UpdateSecurityProfileRe"
+  "quest\032/.opi_api.network.cloud.v1alpha1.S"
+  "ecurityProfile\"U\202\323\344\223\00202\035/v1/{name=securi"
+  "typrofiles}/*:\017securityprofile\332A\034securit"
+  "yprofile, update_mask\022\262\001\n\024ListSecurityPr"
+  "ofiles\022;.opi_api.network.cloud.v1alpha1."
+  "ListSecurityProfilesRequest\032<.opi_api.ne"
+  "twork.cloud.v1alpha1.ListSecurityProfile"
+  "sResponse\"\037\202\323\344\223\002\026\022\024/v1/securityprofiles\332"
+  "A\000\022\256\001\n\022GetSecurityProfile\0229.opi_api.netw"
+  "ork.cloud.v1alpha1.GetSecurityProfileReq"
+  "uest\032/.opi_api.network.cloud.v1alpha1.Se"
+  "curityProfile\",\202\323\344\223\002\037\022\035/v1/{name=securit"
+  "yprofiles}/*\332A\004nameBi\n\036opi_api.network.c"
+  "loud.v1alpha1B\010CloudRPCP\001Z;github.com/op"
+  "iproject/opi-api/network/cloud/v1alpha1/"
+  "gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_cloudrpc_2eproto_deps[19] = {
   &::descriptor_table_bgp_2eproto,
@@ -3593,7 +3595,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_cloudrpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_cloudrpc_2eproto = {
-  false, false, 30416, descriptor_table_protodef_cloudrpc_2eproto, "cloudrpc.proto", 
+  false, false, 30494, descriptor_table_protodef_cloudrpc_2eproto, "cloudrpc.proto", 
   &descriptor_table_cloudrpc_2eproto_once, descriptor_table_cloudrpc_2eproto_deps, 19, 119,
   schemas, file_default_instances, TableStruct_cloudrpc_2eproto::offsets,
   file_level_metadata_cloudrpc_2eproto, file_level_enum_descriptors_cloudrpc_2eproto, file_level_service_descriptors_cloudrpc_2eproto,
@@ -3967,12 +3969,12 @@ DeleteDeviceRequest::DeleteDeviceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteDeviceRequest::DeleteDeviceRequest(const DeleteDeviceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -3980,9 +3982,9 @@ DeleteDeviceRequest::DeleteDeviceRequest(const DeleteDeviceRequest& from)
 }
 
 inline void DeleteDeviceRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -3996,7 +3998,7 @@ DeleteDeviceRequest::~DeleteDeviceRequest() {
 
 inline void DeleteDeviceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteDeviceRequest::ArenaDtor(void* object) {
@@ -4015,7 +4017,7 @@ void DeleteDeviceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4026,12 +4028,12 @@ const char* DeleteDeviceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4073,14 +4075,14 @@ uint8_t* DeleteDeviceRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -4105,11 +4107,11 @@ size_t DeleteDeviceRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -4139,8 +4141,8 @@ void DeleteDeviceRequest::MergeFrom(const DeleteDeviceRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -4166,8 +4168,8 @@ void DeleteDeviceRequest::InternalSwap(DeleteDeviceRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -4969,21 +4971,21 @@ GetDeviceRequest::GetDeviceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetDeviceRequest::GetDeviceRequest(const GetDeviceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetDeviceRequest)
 }
 
 inline void GetDeviceRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -4996,7 +4998,7 @@ GetDeviceRequest::~GetDeviceRequest() {
 
 inline void GetDeviceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetDeviceRequest::ArenaDtor(void* object) {
@@ -5015,7 +5017,7 @@ void GetDeviceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5025,12 +5027,12 @@ const char* GetDeviceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetDeviceRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetDeviceRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5064,14 +5066,14 @@ uint8_t* GetDeviceRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetDeviceRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetDeviceRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5090,11 +5092,11 @@ size_t GetDeviceRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -5119,8 +5121,8 @@ void GetDeviceRequest::MergeFrom(const GetDeviceRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5143,8 +5145,8 @@ void GetDeviceRequest::InternalSwap(GetDeviceRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -5945,21 +5947,21 @@ GetPortRequest::GetPortRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetPortRequest::GetPortRequest(const GetPortRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetPortRequest)
 }
 
 inline void GetPortRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -5972,7 +5974,7 @@ GetPortRequest::~GetPortRequest() {
 
 inline void GetPortRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetPortRequest::ArenaDtor(void* object) {
@@ -5991,7 +5993,7 @@ void GetPortRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6001,12 +6003,12 @@ const char* GetPortRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetPortRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetPortRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6040,14 +6042,14 @@ uint8_t* GetPortRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetPortRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetPortRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6066,11 +6068,11 @@ size_t GetPortRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -6095,8 +6097,8 @@ void GetPortRequest::MergeFrom(const GetPortRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6119,8 +6121,8 @@ void GetPortRequest::InternalSwap(GetPortRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -6449,12 +6451,12 @@ DeleteVnicRequest::DeleteVnicRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteVnicRequest::DeleteVnicRequest(const DeleteVnicRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -6462,9 +6464,9 @@ DeleteVnicRequest::DeleteVnicRequest(const DeleteVnicRequest& from)
 }
 
 inline void DeleteVnicRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -6478,7 +6480,7 @@ DeleteVnicRequest::~DeleteVnicRequest() {
 
 inline void DeleteVnicRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteVnicRequest::ArenaDtor(void* object) {
@@ -6497,7 +6499,7 @@ void DeleteVnicRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -6508,12 +6510,12 @@ const char* DeleteVnicRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteVnicRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteVnicRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6555,14 +6557,14 @@ uint8_t* DeleteVnicRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteVnicRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteVnicRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -6587,11 +6589,11 @@ size_t DeleteVnicRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -6621,8 +6623,8 @@ void DeleteVnicRequest::MergeFrom(const DeleteVnicRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -6648,8 +6650,8 @@ void DeleteVnicRequest::InternalSwap(DeleteVnicRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -7451,21 +7453,21 @@ GetVnicRequest::GetVnicRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetVnicRequest::GetVnicRequest(const GetVnicRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetVnicRequest)
 }
 
 inline void GetVnicRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -7478,7 +7480,7 @@ GetVnicRequest::~GetVnicRequest() {
 
 inline void GetVnicRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetVnicRequest::ArenaDtor(void* object) {
@@ -7497,7 +7499,7 @@ void GetVnicRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7507,12 +7509,12 @@ const char* GetVnicRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetVnicRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetVnicRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7546,14 +7548,14 @@ uint8_t* GetVnicRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetVnicRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetVnicRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7572,11 +7574,11 @@ size_t GetVnicRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -7601,8 +7603,8 @@ void GetVnicRequest::MergeFrom(const GetVnicRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -7625,8 +7627,8 @@ void GetVnicRequest::InternalSwap(GetVnicRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -7955,12 +7957,12 @@ DeleteInterfaceRequest::DeleteInterfaceRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 DeleteInterfaceRequest::DeleteInterfaceRequest(const DeleteInterfaceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -7968,9 +7970,9 @@ DeleteInterfaceRequest::DeleteInterfaceRequest(const DeleteInterfaceRequest& fro
 }
 
 inline void DeleteInterfaceRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -7984,7 +7986,7 @@ DeleteInterfaceRequest::~DeleteInterfaceRequest() {
 
 inline void DeleteInterfaceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteInterfaceRequest::ArenaDtor(void* object) {
@@ -8003,7 +8005,7 @@ void DeleteInterfaceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -8014,12 +8016,12 @@ const char* DeleteInterfaceRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8061,14 +8063,14 @@ uint8_t* DeleteInterfaceRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -8093,11 +8095,11 @@ size_t DeleteInterfaceRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -8127,8 +8129,8 @@ void DeleteInterfaceRequest::MergeFrom(const DeleteInterfaceRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -8154,8 +8156,8 @@ void DeleteInterfaceRequest::InternalSwap(DeleteInterfaceRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -8957,21 +8959,21 @@ GetInterfaceRequest::GetInterfaceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetInterfaceRequest::GetInterfaceRequest(const GetInterfaceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetInterfaceRequest)
 }
 
 inline void GetInterfaceRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -8984,7 +8986,7 @@ GetInterfaceRequest::~GetInterfaceRequest() {
 
 inline void GetInterfaceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetInterfaceRequest::ArenaDtor(void* object) {
@@ -9003,7 +9005,7 @@ void GetInterfaceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -9013,12 +9015,12 @@ const char* GetInterfaceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetInterfaceRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetInterfaceRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -9052,14 +9054,14 @@ uint8_t* GetInterfaceRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetInterfaceRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetInterfaceRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9078,11 +9080,11 @@ size_t GetInterfaceRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -9107,8 +9109,8 @@ void GetInterfaceRequest::MergeFrom(const GetInterfaceRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -9131,8 +9133,8 @@ void GetInterfaceRequest::InternalSwap(GetInterfaceRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -9461,12 +9463,12 @@ DeleteRouteTableRequest::DeleteRouteTableRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 DeleteRouteTableRequest::DeleteRouteTableRequest(const DeleteRouteTableRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -9474,9 +9476,9 @@ DeleteRouteTableRequest::DeleteRouteTableRequest(const DeleteRouteTableRequest& 
 }
 
 inline void DeleteRouteTableRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -9490,7 +9492,7 @@ DeleteRouteTableRequest::~DeleteRouteTableRequest() {
 
 inline void DeleteRouteTableRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteRouteTableRequest::ArenaDtor(void* object) {
@@ -9509,7 +9511,7 @@ void DeleteRouteTableRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -9520,12 +9522,12 @@ const char* DeleteRouteTableRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -9567,14 +9569,14 @@ uint8_t* DeleteRouteTableRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -9599,11 +9601,11 @@ size_t DeleteRouteTableRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -9633,8 +9635,8 @@ void DeleteRouteTableRequest::MergeFrom(const DeleteRouteTableRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -9660,8 +9662,8 @@ void DeleteRouteTableRequest::InternalSwap(DeleteRouteTableRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -10463,21 +10465,21 @@ GetRouteTableRequest::GetRouteTableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 GetRouteTableRequest::GetRouteTableRequest(const GetRouteTableRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetRouteTableRequest)
 }
 
 inline void GetRouteTableRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -10490,7 +10492,7 @@ GetRouteTableRequest::~GetRouteTableRequest() {
 
 inline void GetRouteTableRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetRouteTableRequest::ArenaDtor(void* object) {
@@ -10509,7 +10511,7 @@ void GetRouteTableRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -10519,12 +10521,12 @@ const char* GetRouteTableRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetRouteTableRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetRouteTableRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -10558,14 +10560,14 @@ uint8_t* GetRouteTableRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetRouteTableRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetRouteTableRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -10584,11 +10586,11 @@ size_t GetRouteTableRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -10613,8 +10615,8 @@ void GetRouteTableRequest::MergeFrom(const GetRouteTableRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -10637,8 +10639,8 @@ void GetRouteTableRequest::InternalSwap(GetRouteTableRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -10967,12 +10969,12 @@ DeleteRouteRequest::DeleteRouteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteRouteRequest::DeleteRouteRequest(const DeleteRouteRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -10980,9 +10982,9 @@ DeleteRouteRequest::DeleteRouteRequest(const DeleteRouteRequest& from)
 }
 
 inline void DeleteRouteRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -10996,7 +10998,7 @@ DeleteRouteRequest::~DeleteRouteRequest() {
 
 inline void DeleteRouteRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteRouteRequest::ArenaDtor(void* object) {
@@ -11015,7 +11017,7 @@ void DeleteRouteRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -11026,12 +11028,12 @@ const char* DeleteRouteRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteRouteRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteRouteRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -11073,14 +11075,14 @@ uint8_t* DeleteRouteRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteRouteRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteRouteRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -11105,11 +11107,11 @@ size_t DeleteRouteRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -11139,8 +11141,8 @@ void DeleteRouteRequest::MergeFrom(const DeleteRouteRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -11166,8 +11168,8 @@ void DeleteRouteRequest::InternalSwap(DeleteRouteRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -11969,21 +11971,21 @@ GetRouteRequest::GetRouteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetRouteRequest::GetRouteRequest(const GetRouteRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetRouteRequest)
 }
 
 inline void GetRouteRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -11996,7 +11998,7 @@ GetRouteRequest::~GetRouteRequest() {
 
 inline void GetRouteRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetRouteRequest::ArenaDtor(void* object) {
@@ -12015,7 +12017,7 @@ void GetRouteRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12025,12 +12027,12 @@ const char* GetRouteRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetRouteRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetRouteRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -12064,14 +12066,14 @@ uint8_t* GetRouteRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetRouteRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetRouteRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12090,11 +12092,11 @@ size_t GetRouteRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -12119,8 +12121,8 @@ void GetRouteRequest::MergeFrom(const GetRouteRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -12143,8 +12145,8 @@ void GetRouteRequest::InternalSwap(GetRouteRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -12473,12 +12475,12 @@ DeleteUnderlayRouteRequest::DeleteUnderlayRouteRequest(::PROTOBUF_NAMESPACE_ID::
 DeleteUnderlayRouteRequest::DeleteUnderlayRouteRequest(const DeleteUnderlayRouteRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -12486,9 +12488,9 @@ DeleteUnderlayRouteRequest::DeleteUnderlayRouteRequest(const DeleteUnderlayRoute
 }
 
 inline void DeleteUnderlayRouteRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -12502,7 +12504,7 @@ DeleteUnderlayRouteRequest::~DeleteUnderlayRouteRequest() {
 
 inline void DeleteUnderlayRouteRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteUnderlayRouteRequest::ArenaDtor(void* object) {
@@ -12521,7 +12523,7 @@ void DeleteUnderlayRouteRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -12532,12 +12534,12 @@ const char* DeleteUnderlayRouteRequest::_InternalParse(const char* ptr, ::PROTOB
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -12579,14 +12581,14 @@ uint8_t* DeleteUnderlayRouteRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -12611,11 +12613,11 @@ size_t DeleteUnderlayRouteRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -12645,8 +12647,8 @@ void DeleteUnderlayRouteRequest::MergeFrom(const DeleteUnderlayRouteRequest& fro
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -12672,8 +12674,8 @@ void DeleteUnderlayRouteRequest::InternalSwap(DeleteUnderlayRouteRequest* other)
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -13475,21 +13477,21 @@ GetUnderlayRouteRequest::GetUnderlayRouteRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 GetUnderlayRouteRequest::GetUnderlayRouteRequest(const GetUnderlayRouteRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest)
 }
 
 inline void GetUnderlayRouteRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -13502,7 +13504,7 @@ GetUnderlayRouteRequest::~GetUnderlayRouteRequest() {
 
 inline void GetUnderlayRouteRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetUnderlayRouteRequest::ArenaDtor(void* object) {
@@ -13521,7 +13523,7 @@ void GetUnderlayRouteRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -13531,12 +13533,12 @@ const char* GetUnderlayRouteRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -13570,14 +13572,14 @@ uint8_t* GetUnderlayRouteRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetUnderlayRouteRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -13596,11 +13598,11 @@ size_t GetUnderlayRouteRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -13625,8 +13627,8 @@ void GetUnderlayRouteRequest::MergeFrom(const GetUnderlayRouteRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -13649,8 +13651,8 @@ void GetUnderlayRouteRequest::InternalSwap(GetUnderlayRouteRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -13979,12 +13981,12 @@ DeleteBgpRequest::DeleteBgpRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteBgpRequest::DeleteBgpRequest(const DeleteBgpRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -13992,9 +13994,9 @@ DeleteBgpRequest::DeleteBgpRequest(const DeleteBgpRequest& from)
 }
 
 inline void DeleteBgpRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -14008,7 +14010,7 @@ DeleteBgpRequest::~DeleteBgpRequest() {
 
 inline void DeleteBgpRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteBgpRequest::ArenaDtor(void* object) {
@@ -14027,7 +14029,7 @@ void DeleteBgpRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -14038,12 +14040,12 @@ const char* DeleteBgpRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteBgpRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteBgpRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -14085,14 +14087,14 @@ uint8_t* DeleteBgpRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteBgpRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteBgpRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -14117,11 +14119,11 @@ size_t DeleteBgpRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -14151,8 +14153,8 @@ void DeleteBgpRequest::MergeFrom(const DeleteBgpRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -14178,8 +14180,8 @@ void DeleteBgpRequest::InternalSwap(DeleteBgpRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -14981,21 +14983,21 @@ GetBgpRequest::GetBgpRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetBgpRequest::GetBgpRequest(const GetBgpRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetBgpRequest)
 }
 
 inline void GetBgpRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -15008,7 +15010,7 @@ GetBgpRequest::~GetBgpRequest() {
 
 inline void GetBgpRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetBgpRequest::ArenaDtor(void* object) {
@@ -15027,7 +15029,7 @@ void GetBgpRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -15037,12 +15039,12 @@ const char* GetBgpRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetBgpRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetBgpRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -15076,14 +15078,14 @@ uint8_t* GetBgpRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetBgpRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetBgpRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15102,11 +15104,11 @@ size_t GetBgpRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -15131,8 +15133,8 @@ void GetBgpRequest::MergeFrom(const GetBgpRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -15155,8 +15157,8 @@ void GetBgpRequest::InternalSwap(GetBgpRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -15485,12 +15487,12 @@ DeleteBGPPeerRequest::DeleteBGPPeerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 DeleteBGPPeerRequest::DeleteBGPPeerRequest(const DeleteBGPPeerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -15498,9 +15500,9 @@ DeleteBGPPeerRequest::DeleteBGPPeerRequest(const DeleteBGPPeerRequest& from)
 }
 
 inline void DeleteBGPPeerRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -15514,7 +15516,7 @@ DeleteBGPPeerRequest::~DeleteBGPPeerRequest() {
 
 inline void DeleteBGPPeerRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteBGPPeerRequest::ArenaDtor(void* object) {
@@ -15533,7 +15535,7 @@ void DeleteBGPPeerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -15544,12 +15546,12 @@ const char* DeleteBGPPeerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -15591,14 +15593,14 @@ uint8_t* DeleteBGPPeerRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -15623,11 +15625,11 @@ size_t DeleteBGPPeerRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -15657,8 +15659,8 @@ void DeleteBGPPeerRequest::MergeFrom(const DeleteBGPPeerRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -15684,8 +15686,8 @@ void DeleteBGPPeerRequest::InternalSwap(DeleteBGPPeerRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -16487,21 +16489,21 @@ GetBGPPeerRequest::GetBGPPeerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetBGPPeerRequest::GetBGPPeerRequest(const GetBGPPeerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetBGPPeerRequest)
 }
 
 inline void GetBGPPeerRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -16514,7 +16516,7 @@ GetBGPPeerRequest::~GetBGPPeerRequest() {
 
 inline void GetBGPPeerRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetBGPPeerRequest::ArenaDtor(void* object) {
@@ -16533,7 +16535,7 @@ void GetBGPPeerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -16543,12 +16545,12 @@ const char* GetBGPPeerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -16582,14 +16584,14 @@ uint8_t* GetBGPPeerRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetBGPPeerRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16608,11 +16610,11 @@ size_t GetBGPPeerRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -16637,8 +16639,8 @@ void GetBGPPeerRequest::MergeFrom(const GetBGPPeerRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -16661,8 +16663,8 @@ void GetBGPPeerRequest::InternalSwap(GetBGPPeerRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -16991,12 +16993,12 @@ DeleteBGPPeerAfRequest::DeleteBGPPeerAfRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 DeleteBGPPeerAfRequest::DeleteBGPPeerAfRequest(const DeleteBGPPeerAfRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -17004,9 +17006,9 @@ DeleteBGPPeerAfRequest::DeleteBGPPeerAfRequest(const DeleteBGPPeerAfRequest& fro
 }
 
 inline void DeleteBGPPeerAfRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -17020,7 +17022,7 @@ DeleteBGPPeerAfRequest::~DeleteBGPPeerAfRequest() {
 
 inline void DeleteBGPPeerAfRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteBGPPeerAfRequest::ArenaDtor(void* object) {
@@ -17039,7 +17041,7 @@ void DeleteBGPPeerAfRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -17050,12 +17052,12 @@ const char* DeleteBGPPeerAfRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -17097,14 +17099,14 @@ uint8_t* DeleteBGPPeerAfRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -17129,11 +17131,11 @@ size_t DeleteBGPPeerAfRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -17163,8 +17165,8 @@ void DeleteBGPPeerAfRequest::MergeFrom(const DeleteBGPPeerAfRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -17190,8 +17192,8 @@ void DeleteBGPPeerAfRequest::InternalSwap(DeleteBGPPeerAfRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -17993,21 +17995,21 @@ GetBGPPeerAfRequest::GetBGPPeerAfRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetBGPPeerAfRequest::GetBGPPeerAfRequest(const GetBGPPeerAfRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest)
 }
 
 inline void GetBGPPeerAfRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -18020,7 +18022,7 @@ GetBGPPeerAfRequest::~GetBGPPeerAfRequest() {
 
 inline void GetBGPPeerAfRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetBGPPeerAfRequest::ArenaDtor(void* object) {
@@ -18039,7 +18041,7 @@ void GetBGPPeerAfRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -18049,12 +18051,12 @@ const char* GetBGPPeerAfRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -18088,14 +18090,14 @@ uint8_t* GetBGPPeerAfRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetBGPPeerAfRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -18114,11 +18116,11 @@ size_t GetBGPPeerAfRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -18143,8 +18145,8 @@ void GetBGPPeerAfRequest::MergeFrom(const GetBGPPeerAfRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -18167,8 +18169,8 @@ void GetBGPPeerAfRequest::InternalSwap(GetBGPPeerAfRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -18497,12 +18499,12 @@ DeleteMappingRequest::DeleteMappingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 DeleteMappingRequest::DeleteMappingRequest(const DeleteMappingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -18510,9 +18512,9 @@ DeleteMappingRequest::DeleteMappingRequest(const DeleteMappingRequest& from)
 }
 
 inline void DeleteMappingRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -18526,7 +18528,7 @@ DeleteMappingRequest::~DeleteMappingRequest() {
 
 inline void DeleteMappingRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteMappingRequest::ArenaDtor(void* object) {
@@ -18545,7 +18547,7 @@ void DeleteMappingRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -18556,12 +18558,12 @@ const char* DeleteMappingRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteMappingRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteMappingRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -18603,14 +18605,14 @@ uint8_t* DeleteMappingRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteMappingRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteMappingRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -18635,11 +18637,11 @@ size_t DeleteMappingRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -18669,8 +18671,8 @@ void DeleteMappingRequest::MergeFrom(const DeleteMappingRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -18696,8 +18698,8 @@ void DeleteMappingRequest::InternalSwap(DeleteMappingRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -19499,21 +19501,21 @@ GetMappingRequest::GetMappingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetMappingRequest::GetMappingRequest(const GetMappingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetMappingRequest)
 }
 
 inline void GetMappingRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -19526,7 +19528,7 @@ GetMappingRequest::~GetMappingRequest() {
 
 inline void GetMappingRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetMappingRequest::ArenaDtor(void* object) {
@@ -19545,7 +19547,7 @@ void GetMappingRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -19555,12 +19557,12 @@ const char* GetMappingRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetMappingRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetMappingRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -19594,14 +19596,14 @@ uint8_t* GetMappingRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetMappingRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetMappingRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19620,11 +19622,11 @@ size_t GetMappingRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -19649,8 +19651,8 @@ void GetMappingRequest::MergeFrom(const GetMappingRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -19673,8 +19675,8 @@ void GetMappingRequest::InternalSwap(GetMappingRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -20003,12 +20005,12 @@ DeleteNextHopRequest::DeleteNextHopRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 DeleteNextHopRequest::DeleteNextHopRequest(const DeleteNextHopRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -20016,9 +20018,9 @@ DeleteNextHopRequest::DeleteNextHopRequest(const DeleteNextHopRequest& from)
 }
 
 inline void DeleteNextHopRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -20032,7 +20034,7 @@ DeleteNextHopRequest::~DeleteNextHopRequest() {
 
 inline void DeleteNextHopRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteNextHopRequest::ArenaDtor(void* object) {
@@ -20051,7 +20053,7 @@ void DeleteNextHopRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -20062,12 +20064,12 @@ const char* DeleteNextHopRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -20109,14 +20111,14 @@ uint8_t* DeleteNextHopRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -20141,11 +20143,11 @@ size_t DeleteNextHopRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -20175,8 +20177,8 @@ void DeleteNextHopRequest::MergeFrom(const DeleteNextHopRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -20202,8 +20204,8 @@ void DeleteNextHopRequest::InternalSwap(DeleteNextHopRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -21005,21 +21007,21 @@ GetNextHopRequest::GetNextHopRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetNextHopRequest::GetNextHopRequest(const GetNextHopRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetNextHopRequest)
 }
 
 inline void GetNextHopRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -21032,7 +21034,7 @@ GetNextHopRequest::~GetNextHopRequest() {
 
 inline void GetNextHopRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetNextHopRequest::ArenaDtor(void* object) {
@@ -21051,7 +21053,7 @@ void GetNextHopRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -21061,12 +21063,12 @@ const char* GetNextHopRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetNextHopRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetNextHopRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -21100,14 +21102,14 @@ uint8_t* GetNextHopRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetNextHopRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetNextHopRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -21126,11 +21128,11 @@ size_t GetNextHopRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -21155,8 +21157,8 @@ void GetNextHopRequest::MergeFrom(const GetNextHopRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -21179,8 +21181,8 @@ void GetNextHopRequest::InternalSwap(GetNextHopRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -21509,12 +21511,12 @@ DeleteNextHopGroupRequest::DeleteNextHopGroupRequest(::PROTOBUF_NAMESPACE_ID::Ar
 DeleteNextHopGroupRequest::DeleteNextHopGroupRequest(const DeleteNextHopGroupRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -21522,9 +21524,9 @@ DeleteNextHopGroupRequest::DeleteNextHopGroupRequest(const DeleteNextHopGroupReq
 }
 
 inline void DeleteNextHopGroupRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -21538,7 +21540,7 @@ DeleteNextHopGroupRequest::~DeleteNextHopGroupRequest() {
 
 inline void DeleteNextHopGroupRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteNextHopGroupRequest::ArenaDtor(void* object) {
@@ -21557,7 +21559,7 @@ void DeleteNextHopGroupRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -21568,12 +21570,12 @@ const char* DeleteNextHopGroupRequest::_InternalParse(const char* ptr, ::PROTOBU
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -21615,14 +21617,14 @@ uint8_t* DeleteNextHopGroupRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -21647,11 +21649,11 @@ size_t DeleteNextHopGroupRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -21681,8 +21683,8 @@ void DeleteNextHopGroupRequest::MergeFrom(const DeleteNextHopGroupRequest& from)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -21708,8 +21710,8 @@ void DeleteNextHopGroupRequest::InternalSwap(DeleteNextHopGroupRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -22511,21 +22513,21 @@ GetNextHopGroupRequest::GetNextHopGroupRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 GetNextHopGroupRequest::GetNextHopGroupRequest(const GetNextHopGroupRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest)
 }
 
 inline void GetNextHopGroupRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -22538,7 +22540,7 @@ GetNextHopGroupRequest::~GetNextHopGroupRequest() {
 
 inline void GetNextHopGroupRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetNextHopGroupRequest::ArenaDtor(void* object) {
@@ -22557,7 +22559,7 @@ void GetNextHopGroupRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -22567,12 +22569,12 @@ const char* GetNextHopGroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -22606,14 +22608,14 @@ uint8_t* GetNextHopGroupRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetNextHopGroupRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -22632,11 +22634,11 @@ size_t GetNextHopGroupRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -22661,8 +22663,8 @@ void GetNextHopGroupRequest::MergeFrom(const GetNextHopGroupRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -22685,8 +22687,8 @@ void GetNextHopGroupRequest::InternalSwap(GetNextHopGroupRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -23015,12 +23017,12 @@ DeleteSubnetRequest::DeleteSubnetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteSubnetRequest::DeleteSubnetRequest(const DeleteSubnetRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -23028,9 +23030,9 @@ DeleteSubnetRequest::DeleteSubnetRequest(const DeleteSubnetRequest& from)
 }
 
 inline void DeleteSubnetRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -23044,7 +23046,7 @@ DeleteSubnetRequest::~DeleteSubnetRequest() {
 
 inline void DeleteSubnetRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteSubnetRequest::ArenaDtor(void* object) {
@@ -23063,7 +23065,7 @@ void DeleteSubnetRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -23074,12 +23076,12 @@ const char* DeleteSubnetRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -23121,14 +23123,14 @@ uint8_t* DeleteSubnetRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -23153,11 +23155,11 @@ size_t DeleteSubnetRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -23187,8 +23189,8 @@ void DeleteSubnetRequest::MergeFrom(const DeleteSubnetRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -23214,8 +23216,8 @@ void DeleteSubnetRequest::InternalSwap(DeleteSubnetRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -24017,21 +24019,21 @@ GetSubnetRequest::GetSubnetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetSubnetRequest::GetSubnetRequest(const GetSubnetRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetSubnetRequest)
 }
 
 inline void GetSubnetRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -24044,7 +24046,7 @@ GetSubnetRequest::~GetSubnetRequest() {
 
 inline void GetSubnetRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetSubnetRequest::ArenaDtor(void* object) {
@@ -24063,7 +24065,7 @@ void GetSubnetRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -24073,12 +24075,12 @@ const char* GetSubnetRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetSubnetRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetSubnetRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -24112,14 +24114,14 @@ uint8_t* GetSubnetRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetSubnetRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetSubnetRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -24138,11 +24140,11 @@ size_t GetSubnetRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -24167,8 +24169,8 @@ void GetSubnetRequest::MergeFrom(const GetSubnetRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -24191,8 +24193,8 @@ void GetSubnetRequest::InternalSwap(GetSubnetRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -24521,12 +24523,12 @@ DeleteTunnelRequest::DeleteTunnelRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteTunnelRequest::DeleteTunnelRequest(const DeleteTunnelRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -24534,9 +24536,9 @@ DeleteTunnelRequest::DeleteTunnelRequest(const DeleteTunnelRequest& from)
 }
 
 inline void DeleteTunnelRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -24550,7 +24552,7 @@ DeleteTunnelRequest::~DeleteTunnelRequest() {
 
 inline void DeleteTunnelRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteTunnelRequest::ArenaDtor(void* object) {
@@ -24569,7 +24571,7 @@ void DeleteTunnelRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -24580,12 +24582,12 @@ const char* DeleteTunnelRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -24627,14 +24629,14 @@ uint8_t* DeleteTunnelRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -24659,11 +24661,11 @@ size_t DeleteTunnelRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -24693,8 +24695,8 @@ void DeleteTunnelRequest::MergeFrom(const DeleteTunnelRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -24720,8 +24722,8 @@ void DeleteTunnelRequest::InternalSwap(DeleteTunnelRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -25523,21 +25525,21 @@ GetTunnelRequest::GetTunnelRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetTunnelRequest::GetTunnelRequest(const GetTunnelRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetTunnelRequest)
 }
 
 inline void GetTunnelRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -25550,7 +25552,7 @@ GetTunnelRequest::~GetTunnelRequest() {
 
 inline void GetTunnelRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetTunnelRequest::ArenaDtor(void* object) {
@@ -25569,7 +25571,7 @@ void GetTunnelRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -25579,12 +25581,12 @@ const char* GetTunnelRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetTunnelRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetTunnelRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -25618,14 +25620,14 @@ uint8_t* GetTunnelRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetTunnelRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetTunnelRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -25644,11 +25646,11 @@ size_t GetTunnelRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -25673,8 +25675,8 @@ void GetTunnelRequest::MergeFrom(const GetTunnelRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -25697,8 +25699,8 @@ void GetTunnelRequest::InternalSwap(GetTunnelRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -26027,12 +26029,12 @@ DeleteVpcRequest::DeleteVpcRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteVpcRequest::DeleteVpcRequest(const DeleteVpcRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -26040,9 +26042,9 @@ DeleteVpcRequest::DeleteVpcRequest(const DeleteVpcRequest& from)
 }
 
 inline void DeleteVpcRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -26056,7 +26058,7 @@ DeleteVpcRequest::~DeleteVpcRequest() {
 
 inline void DeleteVpcRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteVpcRequest::ArenaDtor(void* object) {
@@ -26075,7 +26077,7 @@ void DeleteVpcRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -26086,12 +26088,12 @@ const char* DeleteVpcRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteVpcRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteVpcRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -26133,14 +26135,14 @@ uint8_t* DeleteVpcRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteVpcRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteVpcRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -26165,11 +26167,11 @@ size_t DeleteVpcRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -26199,8 +26201,8 @@ void DeleteVpcRequest::MergeFrom(const DeleteVpcRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -26226,8 +26228,8 @@ void DeleteVpcRequest::InternalSwap(DeleteVpcRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -27029,21 +27031,21 @@ GetVpcRequest::GetVpcRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetVpcRequest::GetVpcRequest(const GetVpcRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetVpcRequest)
 }
 
 inline void GetVpcRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -27056,7 +27058,7 @@ GetVpcRequest::~GetVpcRequest() {
 
 inline void GetVpcRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetVpcRequest::ArenaDtor(void* object) {
@@ -27075,7 +27077,7 @@ void GetVpcRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -27085,12 +27087,12 @@ const char* GetVpcRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetVpcRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetVpcRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -27124,14 +27126,14 @@ uint8_t* GetVpcRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetVpcRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetVpcRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -27150,11 +27152,11 @@ size_t GetVpcRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -27179,8 +27181,8 @@ void GetVpcRequest::MergeFrom(const GetVpcRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -27203,8 +27205,8 @@ void GetVpcRequest::InternalSwap(GetVpcRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -27533,12 +27535,12 @@ DeleteVPCPeerRequest::DeleteVPCPeerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 DeleteVPCPeerRequest::DeleteVPCPeerRequest(const DeleteVPCPeerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -27546,9 +27548,9 @@ DeleteVPCPeerRequest::DeleteVPCPeerRequest(const DeleteVPCPeerRequest& from)
 }
 
 inline void DeleteVPCPeerRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -27562,7 +27564,7 @@ DeleteVPCPeerRequest::~DeleteVPCPeerRequest() {
 
 inline void DeleteVPCPeerRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteVPCPeerRequest::ArenaDtor(void* object) {
@@ -27581,7 +27583,7 @@ void DeleteVPCPeerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -27592,12 +27594,12 @@ const char* DeleteVPCPeerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -27639,14 +27641,14 @@ uint8_t* DeleteVPCPeerRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -27671,11 +27673,11 @@ size_t DeleteVPCPeerRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -27705,8 +27707,8 @@ void DeleteVPCPeerRequest::MergeFrom(const DeleteVPCPeerRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -27732,8 +27734,8 @@ void DeleteVPCPeerRequest::InternalSwap(DeleteVPCPeerRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -28535,21 +28537,21 @@ GetVPCPeerRequest::GetVPCPeerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetVPCPeerRequest::GetVPCPeerRequest(const GetVPCPeerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetVPCPeerRequest)
 }
 
 inline void GetVPCPeerRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -28562,7 +28564,7 @@ GetVPCPeerRequest::~GetVPCPeerRequest() {
 
 inline void GetVPCPeerRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetVPCPeerRequest::ArenaDtor(void* object) {
@@ -28581,7 +28583,7 @@ void GetVPCPeerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -28591,12 +28593,12 @@ const char* GetVPCPeerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -28630,14 +28632,14 @@ uint8_t* GetVPCPeerRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetVPCPeerRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -28656,11 +28658,11 @@ size_t GetVPCPeerRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -28685,8 +28687,8 @@ void GetVPCPeerRequest::MergeFrom(const GetVPCPeerRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -28709,8 +28711,8 @@ void GetVPCPeerRequest::InternalSwap(GetVPCPeerRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -29039,12 +29041,12 @@ DeleteSecurityPolicyRequest::DeleteSecurityPolicyRequest(::PROTOBUF_NAMESPACE_ID
 DeleteSecurityPolicyRequest::DeleteSecurityPolicyRequest(const DeleteSecurityPolicyRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -29052,9 +29054,9 @@ DeleteSecurityPolicyRequest::DeleteSecurityPolicyRequest(const DeleteSecurityPol
 }
 
 inline void DeleteSecurityPolicyRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -29068,7 +29070,7 @@ DeleteSecurityPolicyRequest::~DeleteSecurityPolicyRequest() {
 
 inline void DeleteSecurityPolicyRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteSecurityPolicyRequest::ArenaDtor(void* object) {
@@ -29087,7 +29089,7 @@ void DeleteSecurityPolicyRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -29098,12 +29100,12 @@ const char* DeleteSecurityPolicyRequest::_InternalParse(const char* ptr, ::PROTO
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -29145,14 +29147,14 @@ uint8_t* DeleteSecurityPolicyRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -29177,11 +29179,11 @@ size_t DeleteSecurityPolicyRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -29211,8 +29213,8 @@ void DeleteSecurityPolicyRequest::MergeFrom(const DeleteSecurityPolicyRequest& f
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -29238,8 +29240,8 @@ void DeleteSecurityPolicyRequest::InternalSwap(DeleteSecurityPolicyRequest* othe
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -30041,21 +30043,21 @@ GetSecurityPolicyRequest::GetSecurityPolicyRequest(::PROTOBUF_NAMESPACE_ID::Aren
 GetSecurityPolicyRequest::GetSecurityPolicyRequest(const GetSecurityPolicyRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest)
 }
 
 inline void GetSecurityPolicyRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -30068,7 +30070,7 @@ GetSecurityPolicyRequest::~GetSecurityPolicyRequest() {
 
 inline void GetSecurityPolicyRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetSecurityPolicyRequest::ArenaDtor(void* object) {
@@ -30087,7 +30089,7 @@ void GetSecurityPolicyRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -30097,12 +30099,12 @@ const char* GetSecurityPolicyRequest::_InternalParse(const char* ptr, ::PROTOBUF
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -30136,14 +30138,14 @@ uint8_t* GetSecurityPolicyRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetSecurityPolicyRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -30162,11 +30164,11 @@ size_t GetSecurityPolicyRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -30191,8 +30193,8 @@ void GetSecurityPolicyRequest::MergeFrom(const GetSecurityPolicyRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -30215,8 +30217,8 @@ void GetSecurityPolicyRequest::InternalSwap(GetSecurityPolicyRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -30545,12 +30547,12 @@ DeleteSecurityRuleRequest::DeleteSecurityRuleRequest(::PROTOBUF_NAMESPACE_ID::Ar
 DeleteSecurityRuleRequest::DeleteSecurityRuleRequest(const DeleteSecurityRuleRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -30558,9 +30560,9 @@ DeleteSecurityRuleRequest::DeleteSecurityRuleRequest(const DeleteSecurityRuleReq
 }
 
 inline void DeleteSecurityRuleRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -30574,7 +30576,7 @@ DeleteSecurityRuleRequest::~DeleteSecurityRuleRequest() {
 
 inline void DeleteSecurityRuleRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteSecurityRuleRequest::ArenaDtor(void* object) {
@@ -30593,7 +30595,7 @@ void DeleteSecurityRuleRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -30604,12 +30606,12 @@ const char* DeleteSecurityRuleRequest::_InternalParse(const char* ptr, ::PROTOBU
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -30651,14 +30653,14 @@ uint8_t* DeleteSecurityRuleRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -30683,11 +30685,11 @@ size_t DeleteSecurityRuleRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -30717,8 +30719,8 @@ void DeleteSecurityRuleRequest::MergeFrom(const DeleteSecurityRuleRequest& from)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -30744,8 +30746,8 @@ void DeleteSecurityRuleRequest::InternalSwap(DeleteSecurityRuleRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -31547,21 +31549,21 @@ GetSecurityRuleRequest::GetSecurityRuleRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 GetSecurityRuleRequest::GetSecurityRuleRequest(const GetSecurityRuleRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest)
 }
 
 inline void GetSecurityRuleRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -31574,7 +31576,7 @@ GetSecurityRuleRequest::~GetSecurityRuleRequest() {
 
 inline void GetSecurityRuleRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetSecurityRuleRequest::ArenaDtor(void* object) {
@@ -31593,7 +31595,7 @@ void GetSecurityRuleRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -31603,12 +31605,12 @@ const char* GetSecurityRuleRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -31642,14 +31644,14 @@ uint8_t* GetSecurityRuleRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetSecurityRuleRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -31668,11 +31670,11 @@ size_t GetSecurityRuleRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -31697,8 +31699,8 @@ void GetSecurityRuleRequest::MergeFrom(const GetSecurityRuleRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -31721,8 +31723,8 @@ void GetSecurityRuleRequest::InternalSwap(GetSecurityRuleRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
@@ -32051,12 +32053,12 @@ DeleteSecurityProfileRequest::DeleteSecurityProfileRequest(::PROTOBUF_NAMESPACE_
 DeleteSecurityProfileRequest::DeleteSecurityProfileRequest(const DeleteSecurityProfileRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
@@ -32064,9 +32066,9 @@ DeleteSecurityProfileRequest::DeleteSecurityProfileRequest(const DeleteSecurityP
 }
 
 inline void DeleteSecurityProfileRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 allow_missing_ = false;
 }
@@ -32080,7 +32082,7 @@ DeleteSecurityProfileRequest::~DeleteSecurityProfileRequest() {
 
 inline void DeleteSecurityProfileRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteSecurityProfileRequest::ArenaDtor(void* object) {
@@ -32099,7 +32101,7 @@ void DeleteSecurityProfileRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -32110,12 +32112,12 @@ const char* DeleteSecurityProfileRequest::_InternalParse(const char* ptr, ::PROT
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -32157,14 +32159,14 @@ uint8_t* DeleteSecurityProfileRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.id");
+      "opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   // bool allow_missing = 2;
@@ -32189,11 +32191,11 @@ size_t DeleteSecurityProfileRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   // bool allow_missing = 2;
@@ -32223,8 +32225,8 @@ void DeleteSecurityProfileRequest::MergeFrom(const DeleteSecurityProfileRequest&
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
     _internal_set_allow_missing(from._internal_allow_missing());
@@ -32250,8 +32252,8 @@ void DeleteSecurityProfileRequest::InternalSwap(DeleteSecurityProfileRequest* ot
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
   swap(allow_missing_, other->allow_missing_);
 }
@@ -33053,21 +33055,21 @@ GetSecurityProfileRequest::GetSecurityProfileRequest(::PROTOBUF_NAMESPACE_ID::Ar
 GetSecurityProfileRequest::GetSecurityProfileRequest(const GetSecurityProfileRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest)
 }
 
 inline void GetSecurityProfileRequest::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -33080,7 +33082,7 @@ GetSecurityProfileRequest::~GetSecurityProfileRequest() {
 
 inline void GetSecurityProfileRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetSecurityProfileRequest::ArenaDtor(void* object) {
@@ -33099,7 +33101,7 @@ void GetSecurityProfileRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -33109,12 +33111,12 @@ const char* GetSecurityProfileRequest::_InternalParse(const char* ptr, ::PROTOBU
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -33148,14 +33150,14 @@ uint8_t* GetSecurityProfileRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.id");
+      "opi_api.network.cloud.v1alpha1.GetSecurityProfileRequest.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -33174,11 +33176,11 @@ size_t GetSecurityProfileRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_id().empty()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -33203,8 +33205,8 @@ void GetSecurityProfileRequest::MergeFrom(const GetSecurityProfileRequest& from)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -33227,8 +33229,8 @@ void GetSecurityProfileRequest::InternalSwap(GetSecurityProfileRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
   );
 }
 
