@@ -91,9 +91,13 @@ message DeleteAioControllerRequest {
 }
 
 message UpdateAioControllerRequest {
+    // The object's `name` field is used to identify the object to be updated.
     AioController aio_controller = 1;
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 message ListAioControllersRequest {

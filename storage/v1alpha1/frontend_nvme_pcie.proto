@@ -298,9 +298,13 @@ message DeleteNvmeSubsystemRequest {
 }
 
 message UpdateNvmeSubsystemRequest {
+    // The object's `name` field is used to identify the object to be updated.
     NvmeSubsystem nvme_subsystem = 1;
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 message ListNvmeSubsystemsRequest {
@@ -348,9 +352,13 @@ message DeleteNvmeControllerRequest {
 }
 
 message UpdateNvmeControllerRequest {
+    // The object's `name` field is used to identify the object to be updated.
     NvmeController nvme_controller = 1;
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 message ListNvmeControllersRequest {
@@ -399,9 +407,13 @@ message DeleteNvmeNamespaceRequest {
 }
 
 message UpdateNvmeNamespaceRequest {
+    // The object's `name` field is used to identify the object to be updated.
     NvmeNamespace nvme_namespace = 1;
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 message ListNvmeNamespacesRequest {

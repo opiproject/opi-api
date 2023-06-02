@@ -195,9 +195,13 @@ message DeleteVirtioScsiTargetRequest {
 }
 
 message UpdateVirtioScsiTargetRequest {
+    // The object's `name` field is used to identify the object to be updated.
     VirtioScsiTarget virtio_scsi_target = 1;
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 message ListVirtioScsiTargetsRequest {
@@ -246,9 +250,13 @@ message DeleteVirtioScsiControllerRequest {
 }
 
 message UpdateVirtioScsiControllerRequest {
+    // The object's `name` field is used to identify the object to be updated.
     VirtioScsiController virtio_scsi_controller = 1;
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 message ListVirtioScsiControllersRequest {
@@ -297,9 +305,13 @@ message DeleteVirtioScsiLunRequest {
 }
 
 message UpdateVirtioScsiLunRequest {
+    // The object's `name` field is used to identify the object to be updated.
     VirtioScsiLun virtio_scsi_lun = 1;
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 message ListVirtioScsiLunsRequest {
