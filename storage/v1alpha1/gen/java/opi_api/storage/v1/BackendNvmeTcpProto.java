@@ -20,6 +20,16 @@ public final class BackendNvmeTcpProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_NVMfRemoteController_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_NVMfPath_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_NVMfPath_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_NVMfRemoteNamespace_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_NVMfRemoteNamespace_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_storage_v1_CreateNVMfRemoteControllerRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -64,6 +74,26 @@ public final class BackendNvmeTcpProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_NVMfRemoteControllerStatsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_CreateNVMfPathRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_CreateNVMfPathRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_DeleteNVMfPathRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_DeleteNVMfPathRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -79,91 +109,125 @@ public final class BackendNvmeTcpProto {
       "proto\032\034google/api/annotations.proto\032\037goo" +
       "gle/api/field_behavior.proto\032 google/pro" +
       "tobuf/field_mask.proto\032\020object_key.proto" +
-      "\032\017opicommon.proto\"\231\003\n\024NVMfRemoteControll" +
-      "er\022\014\n\004name\030\001 \001(\t\0225\n\006trtype\030\002 \001(\0162%.opi_a" +
-      "pi.storage.v1.NvmeTransportType\0225\n\006adrfa" +
-      "m\030\003 \001(\0162%.opi_api.storage.v1.NvmeAddress" +
-      "Family\022\016\n\006traddr\030\004 \001(\t\022\017\n\007trsvcid\030\005 \001(\003\022" +
-      "\016\n\006subnqn\030\006 \001(\t\022\r\n\005hdgst\030\007 \001(\010\022\r\n\005ddgst\030" +
-      "\010 \001(\010\0224\n\tmultipath\030\t \001(\0162!.opi_api.stora" +
-      "ge.v1.NvmeMultipath\022\027\n\017io_queues_count\030\n" +
-      " \001(\003\022\022\n\nqueue_size\030\013 \001(\003\022\017\n\007hostnqn\030\014 \001(" +
-      "\t:B\352A?\n+storage.opiproject.org/NVMfRemot" +
-      "eController\022\020volumes/{volume}\"\227\001\n!Create" +
-      "NVMfRemoteControllerRequest\022N\n\027nv_mf_rem" +
-      "ote_controller\030\002 \001(\0132(.opi_api.storage.v" +
-      "1.NVMfRemoteControllerB\003\340A\002\022\"\n\032nv_mf_rem" +
-      "ote_controller_id\030\003 \001(\t\"y\n!DeleteNVMfRem" +
-      "oteControllerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372" +
-      "A)\n\'opi_api.storage.v1/NVMfRemoteControl" +
-      "ler\022\025\n\rallow_missing\030\002 \001(\010\"\266\001\n!UpdateNVM" +
-      "fRemoteControllerRequest\022I\n\027nv_mf_remote" +
-      "_controller\030\001 \001(\0132(.opi_api.storage.v1.N" +
-      "VMfRemoteController\022/\n\013update_mask\030\002 \001(\013" +
-      "2\032.google.protobuf.FieldMask\022\025\n\rallow_mi" +
-      "ssing\030\003 \001(\010\"\212\001\n ListNVMfRemoteController" +
-      "sRequest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_ap" +
-      "i.storage.v1/NVMfRemoteController\022\021\n\tpag" +
-      "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\210\001\n!Lis" +
-      "tNVMfRemoteControllersResponse\022J\n\030nv_mf_" +
-      "remote_controllers\030\001 \003(\0132(.opi_api.stora" +
-      "ge.v1.NVMfRemoteController\022\027\n\017next_page_" +
-      "token\030\002 \001(\t\"_\n\036GetNVMfRemoteControllerRe" +
-      "quest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.sto" +
-      "rage.v1/NVMfRemoteController\"L\n NVMfRemo" +
-      "teControllerResetRequest\022(\n\002id\030\001 \001(\0132\034.o" +
-      "pi_api.common.v1.ObjectKey\"L\n NVMfRemote" +
-      "ControllerStatsRequest\022(\n\002id\030\001 \001(\0132\034.opi" +
-      "_api.common.v1.ObjectKey\"S\n!NVMfRemoteCo" +
-      "ntrollerStatsResponse\022.\n\005stats\030\001 \001(\0132\037.o" +
-      "pi_api.storage.v1.VolumeStats*\264\001\n\021NvmeTr" +
-      "ansportType\022#\n\037NVME_TRANSPORT_TYPE_UNSPE" +
-      "CIFIED\020\000\022\025\n\021NVME_TRANSPORT_FC\020\001\022\027\n\023NVME_" +
-      "TRANSPORT_PCIE\020\002\022\027\n\023NVME_TRANSPORT_RDMA\020" +
-      "\003\022\026\n\022NVME_TRANSPORT_TCP\020\004\022\031\n\025NVME_TRANSP" +
-      "ORT_CUSTOM\020\005*\250\001\n\021NvmeAddressFamily\022#\n\037NV" +
-      "ME_ADDRESS_FAMILY_UNSPECIFIED\020\000\022\024\n\020NVMF_" +
-      "ADRFAM_IPV4\020\001\022\024\n\020NVMF_ADRFAM_IPV6\020\002\022\022\n\016N" +
-      "VMF_ADRFAM_IB\020\003\022\022\n\016NVMF_ADRFAM_FC\020\004\022\032\n\026N" +
-      "VMF_ADRFAM_INTRA_HOST\020\005*\206\001\n\rNvmeMultipat" +
-      "h\022\036\n\032NVME_MULTIPATH_UNSPECIFIED\020\000\022\032\n\026NVM" +
-      "E_MULTIPATH_DISABLE\020\001\022\033\n\027NVME_MULTIPATH_" +
-      "FAILOVER\020\002\022\034\n\030NVME_MULTIPATH_MULTIPATH\020\003" +
-      "2\361\t\n\033NVMfRemoteControllerService\022\340\001\n\032Cre" +
-      "ateNVMfRemoteController\0225.opi_api.storag" +
-      "e.v1.CreateNVMfRemoteControllerRequest\032(" +
-      ".opi_api.storage.v1.NVMfRemoteController" +
-      "\"a\202\323\344\223\002&\"\013/v1/volumes:\027nv_mf_remote_cont" +
-      "roller\332A2nv_mf_remote_controller,nv_mf_r" +
-      "emote_controller_id\022\235\001\n\032DeleteNVMfRemote" +
-      "Controller\0225.opi_api.storage.v1.DeleteNV" +
-      "MfRemoteControllerRequest\032\026.google.proto" +
-      "buf.Empty\"0\202\323\344\223\002#*!/v1/{name=subsystems}" +
-      "/{subsystem}\332A\004name\022\363\001\n\032UpdateNVMfRemote" +
-      "Controller\0225.opi_api.storage.v1.UpdateNV" +
-      "MfRemoteControllerRequest\032(.opi_api.stor" +
-      "age.v1.NVMfRemoteController\"t\202\323\344\223\002H2-/v1" +
-      "/{nv_mf_remote_controller.name=subsystem" +
-      "s}:\027nv_mf_remote_controller\332A#nv_mf_remo" +
-      "te_controller,update_mask\022\262\001\n\031ListNVMfRe" +
-      "moteControllers\0224.opi_api.storage.v1.Lis" +
-      "tNVMfRemoteControllersRequest\0325.opi_api." +
-      "storage.v1.ListNVMfRemoteControllersResp" +
-      "onse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006" +
-      "parent\022\251\001\n\027GetNVMfRemoteController\0222.opi" +
-      "_api.storage.v1.GetNVMfRemoteControllerR" +
-      "equest\032(.opi_api.storage.v1.NVMfRemoteCo" +
-      "ntroller\"0\202\323\344\223\002#\022!/v1/{name=subsystems}/" +
-      "{subsystem}\332A\004name\022k\n\031NVMfRemoteControll" +
-      "erReset\0224.opi_api.storage.v1.NVMfRemoteC" +
-      "ontrollerResetRequest\032\026.google.protobuf." +
-      "Empty\"\000\022\212\001\n\031NVMfRemoteControllerStats\0224." +
-      "opi_api.storage.v1.NVMfRemoteControllerS" +
-      "tatsRequest\0325.opi_api.storage.v1.NVMfRem" +
-      "oteControllerStatsResponse\"\000Bb\n\022opi_api." +
-      "storage.v1B\023BackendNvmeTcpProtoP\001Z5githu" +
-      "b.com/opiproject/opi-api/storage/v1alpha" +
-      "1/gen/gob\006proto3"
+      "\032\017opicommon.proto\032\nuuid.proto\"\351\001\n\024NVMfRe" +
+      "moteController\022\014\n\004name\030\001 \001(\t\022\r\n\005hdgst\030\002 " +
+      "\001(\010\022\r\n\005ddgst\030\003 \001(\010\0224\n\tmultipath\030\004 \001(\0162!." +
+      "opi_api.storage.v1.NvmeMultipath\022\027\n\017io_q" +
+      "ueues_count\030\005 \001(\003\022\022\n\nqueue_size\030\006 \001(\003:B\352" +
+      "A?\n+storage.opiproject.org/NVMfRemoteCon" +
+      "troller\022\020volumes/{volume}\"\344\002\n\010NVMfPath\022\014" +
+      "\n\004name\030\001 \001(\t\0223\n\rcontroller_id\030\002 \001(\0132\034.op" +
+      "i_api.common.v1.ObjectKey\0225\n\006trtype\030\003 \001(" +
+      "\0162%.opi_api.storage.v1.NvmeTransportType" +
+      "\0225\n\006adrfam\030\004 \001(\0162%.opi_api.storage.v1.Nv" +
+      "meAddressFamily\022\016\n\006traddr\030\005 \001(\t\022\017\n\007trsvc" +
+      "id\030\006 \001(\003\022\016\n\006subnqn\030\007 \001(\t\022\025\n\rsource_tradd" +
+      "r\030\010 \001(\t\022\026\n\016source_trsvcid\030\t \001(\003\022\017\n\007hostn" +
+      "qn\030\n \001(\t:6\352A3\n\037storage.opiproject.org/NV" +
+      "MfPath\022\020volumes/{volume}\"\356\001\n\023NVMfRemoteN" +
+      "amespace\022\014\n\004name\030\001 \001(\t\0223\n\rcontroller_id\030" +
+      "\002 \001(\0132\034.opi_api.common.v1.ObjectKey\022\014\n\004n" +
+      "sid\030\003 \001(\005\022\r\n\005nguid\030\004 \001(\t\022\r\n\005eui64\030\005 \001(\003\022" +
+      "%\n\004uuid\030\006 \001(\0132\027.opi_api.common.v1.Uuid:A" +
+      "\352A>\n*storage.opiproject.org/NVMfRemoteNa" +
+      "mespace\022\020volumes/{volume}\"\227\001\n!CreateNVMf" +
+      "RemoteControllerRequest\022N\n\027nv_mf_remote_" +
+      "controller\030\002 \001(\0132(.opi_api.storage.v1.NV" +
+      "MfRemoteControllerB\003\340A\002\022\"\n\032nv_mf_remote_" +
+      "controller_id\030\003 \001(\t\"y\n!DeleteNVMfRemoteC" +
+      "ontrollerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'" +
+      "opi_api.storage.v1/NVMfRemoteController\022" +
+      "\025\n\rallow_missing\030\002 \001(\010\"\266\001\n!UpdateNVMfRem" +
+      "oteControllerRequest\022I\n\027nv_mf_remote_con" +
+      "troller\030\001 \001(\0132(.opi_api.storage.v1.NVMfR" +
+      "emoteController\022/\n\013update_mask\030\002 \001(\0132\032.g" +
+      "oogle.protobuf.FieldMask\022\025\n\rallow_missin" +
+      "g\030\003 \001(\010\"\212\001\n ListNVMfRemoteControllersReq" +
+      "uest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.st" +
+      "orage.v1/NVMfRemoteController\022\021\n\tpage_si" +
+      "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\210\001\n!ListNVM" +
+      "fRemoteControllersResponse\022J\n\030nv_mf_remo" +
+      "te_controllers\030\001 \003(\0132(.opi_api.storage.v" +
+      "1.NVMfRemoteController\022\027\n\017next_page_toke" +
+      "n\030\002 \001(\t\"_\n\036GetNVMfRemoteControllerReques" +
+      "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.storage" +
+      ".v1/NVMfRemoteController\"L\n NVMfRemoteCo" +
+      "ntrollerResetRequest\022(\n\002id\030\001 \001(\0132\034.opi_a" +
+      "pi.common.v1.ObjectKey\"L\n NVMfRemoteCont" +
+      "rollerStatsRequest\022(\n\002id\030\001 \001(\0132\034.opi_api" +
+      ".common.v1.ObjectKey\"S\n!NVMfRemoteContro" +
+      "llerStatsResponse\022.\n\005stats\030\001 \001(\0132\037.opi_a" +
+      "pi.storage.v1.VolumeStats\"\210\001\n\037ListNVMfRe" +
+      "moteNamespacesRequest\022>\n\006parent\030\001 \001(\tB.\340" +
+      "A\002\372A(\n&opi_api.storage.v1/NVMfRemoteName" +
+      "space\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003" +
+      " \001(\t\"\205\001\n ListNVMfRemoteNamespacesRespons" +
+      "e\022H\n\027nv_mf_remote_namespaces\030\001 \003(\0132\'.opi" +
+      "_api.storage.v1.NVMfRemoteNamespace\022\027\n\017n" +
+      "ext_page_token\030\002 \001(\t\"e\n\025CreateNVMfPathRe" +
+      "quest\0225\n\nnv_mf_path\030\001 \001(\0132\034.opi_api.stor" +
+      "age.v1.NVMfPathB\003\340A\002\022\025\n\rnv_mf_path_id\030\002 " +
+      "\001(\t\"a\n\025DeleteNVMfPathRequest\0221\n\004name\030\001 \001" +
+      "(\tB#\340A\002\372A\035\n\033opi_api.storage.v1/NVMfPath\022" +
+      "\025\n\rallow_missing\030\002 \001(\010*\264\001\n\021NvmeTransport" +
+      "Type\022#\n\037NVME_TRANSPORT_TYPE_UNSPECIFIED\020" +
+      "\000\022\025\n\021NVME_TRANSPORT_FC\020\001\022\027\n\023NVME_TRANSPO" +
+      "RT_PCIE\020\002\022\027\n\023NVME_TRANSPORT_RDMA\020\003\022\026\n\022NV" +
+      "ME_TRANSPORT_TCP\020\004\022\031\n\025NVME_TRANSPORT_CUS" +
+      "TOM\020\005*\250\001\n\021NvmeAddressFamily\022#\n\037NVME_ADDR" +
+      "ESS_FAMILY_UNSPECIFIED\020\000\022\024\n\020NVMF_ADRFAM_" +
+      "IPV4\020\001\022\024\n\020NVMF_ADRFAM_IPV6\020\002\022\022\n\016NVMF_ADR" +
+      "FAM_IB\020\003\022\022\n\016NVMF_ADRFAM_FC\020\004\022\032\n\026NVMF_ADR" +
+      "FAM_INTRA_HOST\020\005*\206\001\n\rNvmeMultipath\022\036\n\032NV" +
+      "ME_MULTIPATH_UNSPECIFIED\020\000\022\032\n\026NVME_MULTI" +
+      "PATH_DISABLE\020\001\022\033\n\027NVME_MULTIPATH_FAILOVE" +
+      "R\020\002\022\034\n\030NVME_MULTIPATH_MULTIPATH\020\0032\303\r\n\033NV" +
+      "MfRemoteControllerService\022\340\001\n\032CreateNVMf" +
+      "RemoteController\0225.opi_api.storage.v1.Cr" +
+      "eateNVMfRemoteControllerRequest\032(.opi_ap" +
+      "i.storage.v1.NVMfRemoteController\"a\202\323\344\223\002" +
+      "&\"\013/v1/volumes:\027nv_mf_remote_controller\332" +
+      "A2nv_mf_remote_controller,nv_mf_remote_c" +
+      "ontroller_id\022\235\001\n\032DeleteNVMfRemoteControl" +
+      "ler\0225.opi_api.storage.v1.DeleteNVMfRemot" +
+      "eControllerRequest\032\026.google.protobuf.Emp" +
+      "ty\"0\202\323\344\223\002#*!/v1/{name=subsystems}/{subsy" +
+      "stem}\332A\004name\022\363\001\n\032UpdateNVMfRemoteControl" +
+      "ler\0225.opi_api.storage.v1.UpdateNVMfRemot" +
+      "eControllerRequest\032(.opi_api.storage.v1." +
+      "NVMfRemoteController\"t\202\323\344\223\002H2-/v1/{nv_mf" +
+      "_remote_controller.name=subsystems}:\027nv_" +
+      "mf_remote_controller\332A#nv_mf_remote_cont" +
+      "roller,update_mask\022\262\001\n\031ListNVMfRemoteCon" +
+      "trollers\0224.opi_api.storage.v1.ListNVMfRe" +
+      "moteControllersRequest\0325.opi_api.storage" +
+      ".v1.ListNVMfRemoteControllersResponse\"(\202" +
+      "\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent\022" +
+      "\251\001\n\027GetNVMfRemoteController\0222.opi_api.st" +
+      "orage.v1.GetNVMfRemoteControllerRequest\032" +
+      "(.opi_api.storage.v1.NVMfRemoteControlle" +
+      "r\"0\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsys" +
+      "tem}\332A\004name\022k\n\031NVMfRemoteControllerReset" +
+      "\0224.opi_api.storage.v1.NVMfRemoteControll" +
+      "erResetRequest\032\026.google.protobuf.Empty\"\000" +
+      "\022\212\001\n\031NVMfRemoteControllerStats\0224.opi_api" +
+      ".storage.v1.NVMfRemoteControllerStatsReq" +
+      "uest\0325.opi_api.storage.v1.NVMfRemoteCont" +
+      "rollerStatsResponse\"\000\022\257\001\n\030ListNVMfRemote" +
+      "Namespaces\0223.opi_api.storage.v1.ListNVMf" +
+      "RemoteNamespacesRequest\0324.opi_api.storag" +
+      "e.v1.ListNVMfRemoteNamespacesResponse\"(\202" +
+      "\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent\022" +
+      "\225\001\n\016CreateNVMfPath\022).opi_api.storage.v1." +
+      "CreateNVMfPathRequest\032\034.opi_api.storage." +
+      "v1.NVMfPath\":\202\323\344\223\002\031\"\013/v1/volumes:\nnv_mf_" +
+      "path\332A\030nv_mf_path,nv_mf_path_id\022\205\001\n\016Dele" +
+      "teNVMfPath\022).opi_api.storage.v1.DeleteNV" +
+      "MfPathRequest\032\026.google.protobuf.Empty\"0\202" +
+      "\323\344\223\002#*!/v1/{name=subsystems}/{subsystem}" +
+      "\332A\004nameBb\n\022opi_api.storage.v1B\023BackendNv" +
+      "meTcpProtoP\001Z5github.com/opiproject/opi-" +
+      "api/storage/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -176,67 +240,104 @@ public final class BackendNvmeTcpProto {
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.storage.v1.OpiCommonProto.getDescriptor(),
+          opi_api.common.v1.UuidProto.getDescriptor(),
         });
     internal_static_opi_api_storage_v1_NVMfRemoteController_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_opi_api_storage_v1_NVMfRemoteController_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NVMfRemoteController_descriptor,
-        new java.lang.String[] { "Name", "Trtype", "Adrfam", "Traddr", "Trsvcid", "Subnqn", "Hdgst", "Ddgst", "Multipath", "IoQueuesCount", "QueueSize", "Hostnqn", });
-    internal_static_opi_api_storage_v1_CreateNVMfRemoteControllerRequest_descriptor =
+        new java.lang.String[] { "Name", "Hdgst", "Ddgst", "Multipath", "IoQueuesCount", "QueueSize", });
+    internal_static_opi_api_storage_v1_NVMfPath_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_opi_api_storage_v1_NVMfPath_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_NVMfPath_descriptor,
+        new java.lang.String[] { "Name", "ControllerId", "Trtype", "Adrfam", "Traddr", "Trsvcid", "Subnqn", "SourceTraddr", "SourceTrsvcid", "Hostnqn", });
+    internal_static_opi_api_storage_v1_NVMfRemoteNamespace_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_opi_api_storage_v1_NVMfRemoteNamespace_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_NVMfRemoteNamespace_descriptor,
+        new java.lang.String[] { "Name", "ControllerId", "Nsid", "Nguid", "Eui64", "Uuid", });
+    internal_static_opi_api_storage_v1_CreateNVMfRemoteControllerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_storage_v1_CreateNVMfRemoteControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_CreateNVMfRemoteControllerRequest_descriptor,
         new java.lang.String[] { "NvMfRemoteController", "NvMfRemoteControllerId", });
     internal_static_opi_api_storage_v1_DeleteNVMfRemoteControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_opi_api_storage_v1_DeleteNVMfRemoteControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_DeleteNVMfRemoteControllerRequest_descriptor,
         new java.lang.String[] { "Name", "AllowMissing", });
     internal_static_opi_api_storage_v1_UpdateNVMfRemoteControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_opi_api_storage_v1_UpdateNVMfRemoteControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_UpdateNVMfRemoteControllerRequest_descriptor,
         new java.lang.String[] { "NvMfRemoteController", "UpdateMask", "AllowMissing", });
     internal_static_opi_api_storage_v1_ListNVMfRemoteControllersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_opi_api_storage_v1_ListNVMfRemoteControllersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_ListNVMfRemoteControllersRequest_descriptor,
         new java.lang.String[] { "Parent", "PageSize", "PageToken", });
     internal_static_opi_api_storage_v1_ListNVMfRemoteControllersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_opi_api_storage_v1_ListNVMfRemoteControllersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_ListNVMfRemoteControllersResponse_descriptor,
         new java.lang.String[] { "NvMfRemoteControllers", "NextPageToken", });
     internal_static_opi_api_storage_v1_GetNVMfRemoteControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_opi_api_storage_v1_GetNVMfRemoteControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetNVMfRemoteControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_opi_api_storage_v1_NVMfRemoteControllerResetRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_opi_api_storage_v1_NVMfRemoteControllerResetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NVMfRemoteControllerResetRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_opi_api_storage_v1_NVMfRemoteControllerStatsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_opi_api_storage_v1_NVMfRemoteControllerStatsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NVMfRemoteControllerStatsRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_opi_api_storage_v1_NVMfRemoteControllerStatsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_opi_api_storage_v1_NVMfRemoteControllerStatsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NVMfRemoteControllerStatsResponse_descriptor,
         new java.lang.String[] { "Stats", });
+    internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesRequest_descriptor,
+        new java.lang.String[] { "Parent", "PageSize", "PageToken", });
+    internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_ListNVMfRemoteNamespacesResponse_descriptor,
+        new java.lang.String[] { "NvMfRemoteNamespaces", "NextPageToken", });
+    internal_static_opi_api_storage_v1_CreateNVMfPathRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_opi_api_storage_v1_CreateNVMfPathRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_CreateNVMfPathRequest_descriptor,
+        new java.lang.String[] { "NvMfPath", "NvMfPathId", });
+    internal_static_opi_api_storage_v1_DeleteNVMfPathRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_opi_api_storage_v1_DeleteNVMfPathRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_DeleteNVMfPathRequest_descriptor,
+        new java.lang.String[] { "Name", "AllowMissing", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -254,6 +355,7 @@ public final class BackendNvmeTcpProto {
     com.google.protobuf.FieldMaskProto.getDescriptor();
     opi_api.common.v1.ObjectKeyProto.getDescriptor();
     opi_api.storage.v1.OpiCommonProto.getDescriptor();
+    opi_api.common.v1.UuidProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

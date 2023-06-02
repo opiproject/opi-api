@@ -51,6 +51,21 @@ class NVMfRemoteControllerServiceStub(object):
                 request_serializer=backend__nvme__tcp__pb2.NVMfRemoteControllerStatsRequest.SerializeToString,
                 response_deserializer=backend__nvme__tcp__pb2.NVMfRemoteControllerStatsResponse.FromString,
                 )
+        self.ListNVMfRemoteNamespaces = channel.unary_unary(
+                '/opi_api.storage.v1.NVMfRemoteControllerService/ListNVMfRemoteNamespaces',
+                request_serializer=backend__nvme__tcp__pb2.ListNVMfRemoteNamespacesRequest.SerializeToString,
+                response_deserializer=backend__nvme__tcp__pb2.ListNVMfRemoteNamespacesResponse.FromString,
+                )
+        self.CreateNVMfPath = channel.unary_unary(
+                '/opi_api.storage.v1.NVMfRemoteControllerService/CreateNVMfPath',
+                request_serializer=backend__nvme__tcp__pb2.CreateNVMfPathRequest.SerializeToString,
+                response_deserializer=backend__nvme__tcp__pb2.NVMfPath.FromString,
+                )
+        self.DeleteNVMfPath = channel.unary_unary(
+                '/opi_api.storage.v1.NVMfRemoteControllerService/DeleteNVMfPath',
+                request_serializer=backend__nvme__tcp__pb2.DeleteNVMfPathRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
 
 
 class NVMfRemoteControllerServiceServicer(object):
@@ -99,6 +114,24 @@ class NVMfRemoteControllerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListNVMfRemoteNamespaces(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateNVMfPath(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteNVMfPath(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NVMfRemoteControllerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -136,6 +169,21 @@ def add_NVMfRemoteControllerServiceServicer_to_server(servicer, server):
                     servicer.NVMfRemoteControllerStats,
                     request_deserializer=backend__nvme__tcp__pb2.NVMfRemoteControllerStatsRequest.FromString,
                     response_serializer=backend__nvme__tcp__pb2.NVMfRemoteControllerStatsResponse.SerializeToString,
+            ),
+            'ListNVMfRemoteNamespaces': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListNVMfRemoteNamespaces,
+                    request_deserializer=backend__nvme__tcp__pb2.ListNVMfRemoteNamespacesRequest.FromString,
+                    response_serializer=backend__nvme__tcp__pb2.ListNVMfRemoteNamespacesResponse.SerializeToString,
+            ),
+            'CreateNVMfPath': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateNVMfPath,
+                    request_deserializer=backend__nvme__tcp__pb2.CreateNVMfPathRequest.FromString,
+                    response_serializer=backend__nvme__tcp__pb2.NVMfPath.SerializeToString,
+            ),
+            'DeleteNVMfPath': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteNVMfPath,
+                    request_deserializer=backend__nvme__tcp__pb2.DeleteNVMfPathRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -264,5 +312,56 @@ class NVMfRemoteControllerService(object):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerStats',
             backend__nvme__tcp__pb2.NVMfRemoteControllerStatsRequest.SerializeToString,
             backend__nvme__tcp__pb2.NVMfRemoteControllerStatsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListNVMfRemoteNamespaces(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMfRemoteControllerService/ListNVMfRemoteNamespaces',
+            backend__nvme__tcp__pb2.ListNVMfRemoteNamespacesRequest.SerializeToString,
+            backend__nvme__tcp__pb2.ListNVMfRemoteNamespacesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateNVMfPath(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMfRemoteControllerService/CreateNVMfPath',
+            backend__nvme__tcp__pb2.CreateNVMfPathRequest.SerializeToString,
+            backend__nvme__tcp__pb2.NVMfPath.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteNVMfPath(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMfRemoteControllerService/DeleteNVMfPath',
+            backend__nvme__tcp__pb2.DeleteNVMfPathRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

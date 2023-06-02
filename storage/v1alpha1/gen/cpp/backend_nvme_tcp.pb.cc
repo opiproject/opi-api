@@ -22,14 +22,6 @@ namespace v1 {
 constexpr NVMfRemoteController::NVMfRemoteController(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , traddr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , subnqn_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , hostnqn_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , trtype_(0)
-
-  , adrfam_(0)
-
-  , trsvcid_(int64_t{0})
   , hdgst_(false)
   , ddgst_(false)
   , multipath_(0)
@@ -45,6 +37,46 @@ struct NVMfRemoteControllerDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMfRemoteControllerDefaultTypeInternal _NVMfRemoteController_default_instance_;
+constexpr NVMfPath::NVMfPath(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , traddr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , subnqn_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , source_traddr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , hostnqn_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , controller_id_(nullptr)
+  , trtype_(0)
+
+  , adrfam_(0)
+
+  , trsvcid_(int64_t{0})
+  , source_trsvcid_(int64_t{0}){}
+struct NVMfPathDefaultTypeInternal {
+  constexpr NVMfPathDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~NVMfPathDefaultTypeInternal() {}
+  union {
+    NVMfPath _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMfPathDefaultTypeInternal _NVMfPath_default_instance_;
+constexpr NVMfRemoteNamespace::NVMfRemoteNamespace(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , nguid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , controller_id_(nullptr)
+  , uuid_(nullptr)
+  , eui64_(int64_t{0})
+  , nsid_(0){}
+struct NVMfRemoteNamespaceDefaultTypeInternal {
+  constexpr NVMfRemoteNamespaceDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~NVMfRemoteNamespaceDefaultTypeInternal() {}
+  union {
+    NVMfRemoteNamespace _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMfRemoteNamespaceDefaultTypeInternal _NVMfRemoteNamespace_default_instance_;
 constexpr CreateNVMfRemoteControllerRequest::CreateNVMfRemoteControllerRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : nv_mf_remote_controller_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -160,10 +192,63 @@ struct NVMfRemoteControllerStatsResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMfRemoteControllerStatsResponseDefaultTypeInternal _NVMfRemoteControllerStatsResponse_default_instance_;
+constexpr ListNVMfRemoteNamespacesRequest::ListNVMfRemoteNamespacesRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : parent_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , page_size_(0){}
+struct ListNVMfRemoteNamespacesRequestDefaultTypeInternal {
+  constexpr ListNVMfRemoteNamespacesRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ListNVMfRemoteNamespacesRequestDefaultTypeInternal() {}
+  union {
+    ListNVMfRemoteNamespacesRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNVMfRemoteNamespacesRequestDefaultTypeInternal _ListNVMfRemoteNamespacesRequest_default_instance_;
+constexpr ListNVMfRemoteNamespacesResponse::ListNVMfRemoteNamespacesResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : nv_mf_remote_namespaces_()
+  , next_page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ListNVMfRemoteNamespacesResponseDefaultTypeInternal {
+  constexpr ListNVMfRemoteNamespacesResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ListNVMfRemoteNamespacesResponseDefaultTypeInternal() {}
+  union {
+    ListNVMfRemoteNamespacesResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNVMfRemoteNamespacesResponseDefaultTypeInternal _ListNVMfRemoteNamespacesResponse_default_instance_;
+constexpr CreateNVMfPathRequest::CreateNVMfPathRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : nv_mf_path_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , nv_mf_path_(nullptr){}
+struct CreateNVMfPathRequestDefaultTypeInternal {
+  constexpr CreateNVMfPathRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateNVMfPathRequestDefaultTypeInternal() {}
+  union {
+    CreateNVMfPathRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateNVMfPathRequestDefaultTypeInternal _CreateNVMfPathRequest_default_instance_;
+constexpr DeleteNVMfPathRequest::DeleteNVMfPathRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , allow_missing_(false){}
+struct DeleteNVMfPathRequestDefaultTypeInternal {
+  constexpr DeleteNVMfPathRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DeleteNVMfPathRequestDefaultTypeInternal() {}
+  union {
+    DeleteNVMfPathRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteNVMfPathRequestDefaultTypeInternal _DeleteNVMfPathRequest_default_instance_;
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_backend_5fnvme_5ftcp_2eproto[10];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_backend_5fnvme_5ftcp_2eproto[16];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_backend_5fnvme_5ftcp_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_backend_5fnvme_5ftcp_2eproto = nullptr;
 
@@ -175,17 +260,39 @@ const uint32_t TableStruct_backend_5fnvme_5ftcp_2eproto::offsets[] PROTOBUF_SECT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, trtype_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, adrfam_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, traddr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, trsvcid_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, subnqn_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, hdgst_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, ddgst_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, multipath_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, io_queues_count_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, queue_size_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteController, hostnqn_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, controller_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, trtype_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, adrfam_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, traddr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, trsvcid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, subnqn_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, source_traddr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, source_trsvcid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfPath, hostnqn_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteNamespace, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteNamespace, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteNamespace, controller_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteNamespace, nsid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteNamespace, nguid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteNamespace, eui64_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteNamespace, uuid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNVMfRemoteControllerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -256,22 +363,63 @@ const uint32_t TableStruct_backend_5fnvme_5ftcp_2eproto::offsets[] PROTOBUF_SECT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMfRemoteControllerStatsResponse, stats_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest, parent_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest, page_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest, page_token_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse, nv_mf_remote_namespaces_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse, next_page_token_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNVMfPathRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNVMfPathRequest, nv_mf_path_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNVMfPathRequest, nv_mf_path_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNVMfPathRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNVMfPathRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNVMfPathRequest, allow_missing_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::NVMfRemoteController)},
-  { 18, -1, -1, sizeof(::opi_api::storage::v1::CreateNVMfRemoteControllerRequest)},
-  { 26, -1, -1, sizeof(::opi_api::storage::v1::DeleteNVMfRemoteControllerRequest)},
-  { 34, -1, -1, sizeof(::opi_api::storage::v1::UpdateNVMfRemoteControllerRequest)},
-  { 43, -1, -1, sizeof(::opi_api::storage::v1::ListNVMfRemoteControllersRequest)},
-  { 52, -1, -1, sizeof(::opi_api::storage::v1::ListNVMfRemoteControllersResponse)},
-  { 60, -1, -1, sizeof(::opi_api::storage::v1::GetNVMfRemoteControllerRequest)},
-  { 67, -1, -1, sizeof(::opi_api::storage::v1::NVMfRemoteControllerResetRequest)},
-  { 74, -1, -1, sizeof(::opi_api::storage::v1::NVMfRemoteControllerStatsRequest)},
-  { 81, -1, -1, sizeof(::opi_api::storage::v1::NVMfRemoteControllerStatsResponse)},
+  { 12, -1, -1, sizeof(::opi_api::storage::v1::NVMfPath)},
+  { 28, -1, -1, sizeof(::opi_api::storage::v1::NVMfRemoteNamespace)},
+  { 40, -1, -1, sizeof(::opi_api::storage::v1::CreateNVMfRemoteControllerRequest)},
+  { 48, -1, -1, sizeof(::opi_api::storage::v1::DeleteNVMfRemoteControllerRequest)},
+  { 56, -1, -1, sizeof(::opi_api::storage::v1::UpdateNVMfRemoteControllerRequest)},
+  { 65, -1, -1, sizeof(::opi_api::storage::v1::ListNVMfRemoteControllersRequest)},
+  { 74, -1, -1, sizeof(::opi_api::storage::v1::ListNVMfRemoteControllersResponse)},
+  { 82, -1, -1, sizeof(::opi_api::storage::v1::GetNVMfRemoteControllerRequest)},
+  { 89, -1, -1, sizeof(::opi_api::storage::v1::NVMfRemoteControllerResetRequest)},
+  { 96, -1, -1, sizeof(::opi_api::storage::v1::NVMfRemoteControllerStatsRequest)},
+  { 103, -1, -1, sizeof(::opi_api::storage::v1::NVMfRemoteControllerStatsResponse)},
+  { 110, -1, -1, sizeof(::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest)},
+  { 119, -1, -1, sizeof(::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse)},
+  { 127, -1, -1, sizeof(::opi_api::storage::v1::CreateNVMfPathRequest)},
+  { 135, -1, -1, sizeof(::opi_api::storage::v1::DeleteNVMfPathRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMfRemoteController_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMfPath_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMfRemoteNamespace_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_CreateNVMfRemoteControllerRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_DeleteNVMfRemoteControllerRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_UpdateNVMfRemoteControllerRequest_default_instance_),
@@ -281,6 +429,10 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMfRemoteControllerResetRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMfRemoteControllerStatsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMfRemoteControllerStatsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_ListNVMfRemoteNamespacesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_ListNVMfRemoteNamespacesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_CreateNVMfPathRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_DeleteNVMfPathRequest_default_instance_),
 };
 
 const char descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -290,93 +442,127 @@ const char descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto[] PROTOBUF_SEC
   "proto\032\034google/api/annotations.proto\032\037goo"
   "gle/api/field_behavior.proto\032 google/pro"
   "tobuf/field_mask.proto\032\020object_key.proto"
-  "\032\017opicommon.proto\"\231\003\n\024NVMfRemoteControll"
-  "er\022\014\n\004name\030\001 \001(\t\0225\n\006trtype\030\002 \001(\0162%.opi_a"
-  "pi.storage.v1.NvmeTransportType\0225\n\006adrfa"
-  "m\030\003 \001(\0162%.opi_api.storage.v1.NvmeAddress"
-  "Family\022\016\n\006traddr\030\004 \001(\t\022\017\n\007trsvcid\030\005 \001(\003\022"
-  "\016\n\006subnqn\030\006 \001(\t\022\r\n\005hdgst\030\007 \001(\010\022\r\n\005ddgst\030"
-  "\010 \001(\010\0224\n\tmultipath\030\t \001(\0162!.opi_api.stora"
-  "ge.v1.NvmeMultipath\022\027\n\017io_queues_count\030\n"
-  " \001(\003\022\022\n\nqueue_size\030\013 \001(\003\022\017\n\007hostnqn\030\014 \001("
-  "\t:B\352A\?\n+storage.opiproject.org/NVMfRemot"
-  "eController\022\020volumes/{volume}\"\227\001\n!Create"
-  "NVMfRemoteControllerRequest\022N\n\027nv_mf_rem"
-  "ote_controller\030\002 \001(\0132(.opi_api.storage.v"
-  "1.NVMfRemoteControllerB\003\340A\002\022\"\n\032nv_mf_rem"
-  "ote_controller_id\030\003 \001(\t\"y\n!DeleteNVMfRem"
-  "oteControllerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372"
-  "A)\n\'opi_api.storage.v1/NVMfRemoteControl"
-  "ler\022\025\n\rallow_missing\030\002 \001(\010\"\266\001\n!UpdateNVM"
-  "fRemoteControllerRequest\022I\n\027nv_mf_remote"
-  "_controller\030\001 \001(\0132(.opi_api.storage.v1.N"
-  "VMfRemoteController\022/\n\013update_mask\030\002 \001(\013"
-  "2\032.google.protobuf.FieldMask\022\025\n\rallow_mi"
-  "ssing\030\003 \001(\010\"\212\001\n ListNVMfRemoteController"
-  "sRequest\022\?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_ap"
-  "i.storage.v1/NVMfRemoteController\022\021\n\tpag"
-  "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\210\001\n!Lis"
-  "tNVMfRemoteControllersResponse\022J\n\030nv_mf_"
-  "remote_controllers\030\001 \003(\0132(.opi_api.stora"
-  "ge.v1.NVMfRemoteController\022\027\n\017next_page_"
-  "token\030\002 \001(\t\"_\n\036GetNVMfRemoteControllerRe"
-  "quest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.sto"
-  "rage.v1/NVMfRemoteController\"L\n NVMfRemo"
-  "teControllerResetRequest\022(\n\002id\030\001 \001(\0132\034.o"
-  "pi_api.common.v1.ObjectKey\"L\n NVMfRemote"
-  "ControllerStatsRequest\022(\n\002id\030\001 \001(\0132\034.opi"
-  "_api.common.v1.ObjectKey\"S\n!NVMfRemoteCo"
-  "ntrollerStatsResponse\022.\n\005stats\030\001 \001(\0132\037.o"
-  "pi_api.storage.v1.VolumeStats*\264\001\n\021NvmeTr"
-  "ansportType\022#\n\037NVME_TRANSPORT_TYPE_UNSPE"
-  "CIFIED\020\000\022\025\n\021NVME_TRANSPORT_FC\020\001\022\027\n\023NVME_"
-  "TRANSPORT_PCIE\020\002\022\027\n\023NVME_TRANSPORT_RDMA\020"
-  "\003\022\026\n\022NVME_TRANSPORT_TCP\020\004\022\031\n\025NVME_TRANSP"
-  "ORT_CUSTOM\020\005*\250\001\n\021NvmeAddressFamily\022#\n\037NV"
-  "ME_ADDRESS_FAMILY_UNSPECIFIED\020\000\022\024\n\020NVMF_"
-  "ADRFAM_IPV4\020\001\022\024\n\020NVMF_ADRFAM_IPV6\020\002\022\022\n\016N"
-  "VMF_ADRFAM_IB\020\003\022\022\n\016NVMF_ADRFAM_FC\020\004\022\032\n\026N"
-  "VMF_ADRFAM_INTRA_HOST\020\005*\206\001\n\rNvmeMultipat"
-  "h\022\036\n\032NVME_MULTIPATH_UNSPECIFIED\020\000\022\032\n\026NVM"
-  "E_MULTIPATH_DISABLE\020\001\022\033\n\027NVME_MULTIPATH_"
-  "FAILOVER\020\002\022\034\n\030NVME_MULTIPATH_MULTIPATH\020\003"
-  "2\361\t\n\033NVMfRemoteControllerService\022\340\001\n\032Cre"
-  "ateNVMfRemoteController\0225.opi_api.storag"
-  "e.v1.CreateNVMfRemoteControllerRequest\032("
-  ".opi_api.storage.v1.NVMfRemoteController"
-  "\"a\202\323\344\223\002&\"\013/v1/volumes:\027nv_mf_remote_cont"
-  "roller\332A2nv_mf_remote_controller,nv_mf_r"
-  "emote_controller_id\022\235\001\n\032DeleteNVMfRemote"
-  "Controller\0225.opi_api.storage.v1.DeleteNV"
-  "MfRemoteControllerRequest\032\026.google.proto"
-  "buf.Empty\"0\202\323\344\223\002#*!/v1/{name=subsystems}"
-  "/{subsystem}\332A\004name\022\363\001\n\032UpdateNVMfRemote"
-  "Controller\0225.opi_api.storage.v1.UpdateNV"
-  "MfRemoteControllerRequest\032(.opi_api.stor"
-  "age.v1.NVMfRemoteController\"t\202\323\344\223\002H2-/v1"
-  "/{nv_mf_remote_controller.name=subsystem"
-  "s}:\027nv_mf_remote_controller\332A#nv_mf_remo"
-  "te_controller,update_mask\022\262\001\n\031ListNVMfRe"
-  "moteControllers\0224.opi_api.storage.v1.Lis"
-  "tNVMfRemoteControllersRequest\0325.opi_api."
-  "storage.v1.ListNVMfRemoteControllersResp"
-  "onse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006"
-  "parent\022\251\001\n\027GetNVMfRemoteController\0222.opi"
-  "_api.storage.v1.GetNVMfRemoteControllerR"
-  "equest\032(.opi_api.storage.v1.NVMfRemoteCo"
-  "ntroller\"0\202\323\344\223\002#\022!/v1/{name=subsystems}/"
-  "{subsystem}\332A\004name\022k\n\031NVMfRemoteControll"
-  "erReset\0224.opi_api.storage.v1.NVMfRemoteC"
-  "ontrollerResetRequest\032\026.google.protobuf."
-  "Empty\"\000\022\212\001\n\031NVMfRemoteControllerStats\0224."
-  "opi_api.storage.v1.NVMfRemoteControllerS"
-  "tatsRequest\0325.opi_api.storage.v1.NVMfRem"
-  "oteControllerStatsResponse\"\000Bb\n\022opi_api."
-  "storage.v1B\023BackendNvmeTcpProtoP\001Z5githu"
-  "b.com/opiproject/opi-api/storage/v1alpha"
-  "1/gen/gob\006proto3"
+  "\032\017opicommon.proto\032\nuuid.proto\"\351\001\n\024NVMfRe"
+  "moteController\022\014\n\004name\030\001 \001(\t\022\r\n\005hdgst\030\002 "
+  "\001(\010\022\r\n\005ddgst\030\003 \001(\010\0224\n\tmultipath\030\004 \001(\0162!."
+  "opi_api.storage.v1.NvmeMultipath\022\027\n\017io_q"
+  "ueues_count\030\005 \001(\003\022\022\n\nqueue_size\030\006 \001(\003:B\352"
+  "A\?\n+storage.opiproject.org/NVMfRemoteCon"
+  "troller\022\020volumes/{volume}\"\344\002\n\010NVMfPath\022\014"
+  "\n\004name\030\001 \001(\t\0223\n\rcontroller_id\030\002 \001(\0132\034.op"
+  "i_api.common.v1.ObjectKey\0225\n\006trtype\030\003 \001("
+  "\0162%.opi_api.storage.v1.NvmeTransportType"
+  "\0225\n\006adrfam\030\004 \001(\0162%.opi_api.storage.v1.Nv"
+  "meAddressFamily\022\016\n\006traddr\030\005 \001(\t\022\017\n\007trsvc"
+  "id\030\006 \001(\003\022\016\n\006subnqn\030\007 \001(\t\022\025\n\rsource_tradd"
+  "r\030\010 \001(\t\022\026\n\016source_trsvcid\030\t \001(\003\022\017\n\007hostn"
+  "qn\030\n \001(\t:6\352A3\n\037storage.opiproject.org/NV"
+  "MfPath\022\020volumes/{volume}\"\356\001\n\023NVMfRemoteN"
+  "amespace\022\014\n\004name\030\001 \001(\t\0223\n\rcontroller_id\030"
+  "\002 \001(\0132\034.opi_api.common.v1.ObjectKey\022\014\n\004n"
+  "sid\030\003 \001(\005\022\r\n\005nguid\030\004 \001(\t\022\r\n\005eui64\030\005 \001(\003\022"
+  "%\n\004uuid\030\006 \001(\0132\027.opi_api.common.v1.Uuid:A"
+  "\352A>\n*storage.opiproject.org/NVMfRemoteNa"
+  "mespace\022\020volumes/{volume}\"\227\001\n!CreateNVMf"
+  "RemoteControllerRequest\022N\n\027nv_mf_remote_"
+  "controller\030\002 \001(\0132(.opi_api.storage.v1.NV"
+  "MfRemoteControllerB\003\340A\002\022\"\n\032nv_mf_remote_"
+  "controller_id\030\003 \001(\t\"y\n!DeleteNVMfRemoteC"
+  "ontrollerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'"
+  "opi_api.storage.v1/NVMfRemoteController\022"
+  "\025\n\rallow_missing\030\002 \001(\010\"\266\001\n!UpdateNVMfRem"
+  "oteControllerRequest\022I\n\027nv_mf_remote_con"
+  "troller\030\001 \001(\0132(.opi_api.storage.v1.NVMfR"
+  "emoteController\022/\n\013update_mask\030\002 \001(\0132\032.g"
+  "oogle.protobuf.FieldMask\022\025\n\rallow_missin"
+  "g\030\003 \001(\010\"\212\001\n ListNVMfRemoteControllersReq"
+  "uest\022\?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.st"
+  "orage.v1/NVMfRemoteController\022\021\n\tpage_si"
+  "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\210\001\n!ListNVM"
+  "fRemoteControllersResponse\022J\n\030nv_mf_remo"
+  "te_controllers\030\001 \003(\0132(.opi_api.storage.v"
+  "1.NVMfRemoteController\022\027\n\017next_page_toke"
+  "n\030\002 \001(\t\"_\n\036GetNVMfRemoteControllerReques"
+  "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.storage"
+  ".v1/NVMfRemoteController\"L\n NVMfRemoteCo"
+  "ntrollerResetRequest\022(\n\002id\030\001 \001(\0132\034.opi_a"
+  "pi.common.v1.ObjectKey\"L\n NVMfRemoteCont"
+  "rollerStatsRequest\022(\n\002id\030\001 \001(\0132\034.opi_api"
+  ".common.v1.ObjectKey\"S\n!NVMfRemoteContro"
+  "llerStatsResponse\022.\n\005stats\030\001 \001(\0132\037.opi_a"
+  "pi.storage.v1.VolumeStats\"\210\001\n\037ListNVMfRe"
+  "moteNamespacesRequest\022>\n\006parent\030\001 \001(\tB.\340"
+  "A\002\372A(\n&opi_api.storage.v1/NVMfRemoteName"
+  "space\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003"
+  " \001(\t\"\205\001\n ListNVMfRemoteNamespacesRespons"
+  "e\022H\n\027nv_mf_remote_namespaces\030\001 \003(\0132\'.opi"
+  "_api.storage.v1.NVMfRemoteNamespace\022\027\n\017n"
+  "ext_page_token\030\002 \001(\t\"e\n\025CreateNVMfPathRe"
+  "quest\0225\n\nnv_mf_path\030\001 \001(\0132\034.opi_api.stor"
+  "age.v1.NVMfPathB\003\340A\002\022\025\n\rnv_mf_path_id\030\002 "
+  "\001(\t\"a\n\025DeleteNVMfPathRequest\0221\n\004name\030\001 \001"
+  "(\tB#\340A\002\372A\035\n\033opi_api.storage.v1/NVMfPath\022"
+  "\025\n\rallow_missing\030\002 \001(\010*\264\001\n\021NvmeTransport"
+  "Type\022#\n\037NVME_TRANSPORT_TYPE_UNSPECIFIED\020"
+  "\000\022\025\n\021NVME_TRANSPORT_FC\020\001\022\027\n\023NVME_TRANSPO"
+  "RT_PCIE\020\002\022\027\n\023NVME_TRANSPORT_RDMA\020\003\022\026\n\022NV"
+  "ME_TRANSPORT_TCP\020\004\022\031\n\025NVME_TRANSPORT_CUS"
+  "TOM\020\005*\250\001\n\021NvmeAddressFamily\022#\n\037NVME_ADDR"
+  "ESS_FAMILY_UNSPECIFIED\020\000\022\024\n\020NVMF_ADRFAM_"
+  "IPV4\020\001\022\024\n\020NVMF_ADRFAM_IPV6\020\002\022\022\n\016NVMF_ADR"
+  "FAM_IB\020\003\022\022\n\016NVMF_ADRFAM_FC\020\004\022\032\n\026NVMF_ADR"
+  "FAM_INTRA_HOST\020\005*\206\001\n\rNvmeMultipath\022\036\n\032NV"
+  "ME_MULTIPATH_UNSPECIFIED\020\000\022\032\n\026NVME_MULTI"
+  "PATH_DISABLE\020\001\022\033\n\027NVME_MULTIPATH_FAILOVE"
+  "R\020\002\022\034\n\030NVME_MULTIPATH_MULTIPATH\020\0032\303\r\n\033NV"
+  "MfRemoteControllerService\022\340\001\n\032CreateNVMf"
+  "RemoteController\0225.opi_api.storage.v1.Cr"
+  "eateNVMfRemoteControllerRequest\032(.opi_ap"
+  "i.storage.v1.NVMfRemoteController\"a\202\323\344\223\002"
+  "&\"\013/v1/volumes:\027nv_mf_remote_controller\332"
+  "A2nv_mf_remote_controller,nv_mf_remote_c"
+  "ontroller_id\022\235\001\n\032DeleteNVMfRemoteControl"
+  "ler\0225.opi_api.storage.v1.DeleteNVMfRemot"
+  "eControllerRequest\032\026.google.protobuf.Emp"
+  "ty\"0\202\323\344\223\002#*!/v1/{name=subsystems}/{subsy"
+  "stem}\332A\004name\022\363\001\n\032UpdateNVMfRemoteControl"
+  "ler\0225.opi_api.storage.v1.UpdateNVMfRemot"
+  "eControllerRequest\032(.opi_api.storage.v1."
+  "NVMfRemoteController\"t\202\323\344\223\002H2-/v1/{nv_mf"
+  "_remote_controller.name=subsystems}:\027nv_"
+  "mf_remote_controller\332A#nv_mf_remote_cont"
+  "roller,update_mask\022\262\001\n\031ListNVMfRemoteCon"
+  "trollers\0224.opi_api.storage.v1.ListNVMfRe"
+  "moteControllersRequest\0325.opi_api.storage"
+  ".v1.ListNVMfRemoteControllersResponse\"(\202"
+  "\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent\022"
+  "\251\001\n\027GetNVMfRemoteController\0222.opi_api.st"
+  "orage.v1.GetNVMfRemoteControllerRequest\032"
+  "(.opi_api.storage.v1.NVMfRemoteControlle"
+  "r\"0\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsys"
+  "tem}\332A\004name\022k\n\031NVMfRemoteControllerReset"
+  "\0224.opi_api.storage.v1.NVMfRemoteControll"
+  "erResetRequest\032\026.google.protobuf.Empty\"\000"
+  "\022\212\001\n\031NVMfRemoteControllerStats\0224.opi_api"
+  ".storage.v1.NVMfRemoteControllerStatsReq"
+  "uest\0325.opi_api.storage.v1.NVMfRemoteCont"
+  "rollerStatsResponse\"\000\022\257\001\n\030ListNVMfRemote"
+  "Namespaces\0223.opi_api.storage.v1.ListNVMf"
+  "RemoteNamespacesRequest\0324.opi_api.storag"
+  "e.v1.ListNVMfRemoteNamespacesResponse\"(\202"
+  "\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent\022"
+  "\225\001\n\016CreateNVMfPath\022).opi_api.storage.v1."
+  "CreateNVMfPathRequest\032\034.opi_api.storage."
+  "v1.NVMfPath\":\202\323\344\223\002\031\"\013/v1/volumes:\nnv_mf_"
+  "path\332A\030nv_mf_path,nv_mf_path_id\022\205\001\n\016Dele"
+  "teNVMfPath\022).opi_api.storage.v1.DeleteNV"
+  "MfPathRequest\032\026.google.protobuf.Empty\"0\202"
+  "\323\344\223\002#*!/v1/{name=subsystems}/{subsystem}"
+  "\332A\004nameBb\n\022opi_api.storage.v1B\023BackendNv"
+  "meTcpProtoP\001Z5github.com/opiproject/opi-"
+  "api/storage/v1alpha1/gen/gob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnvme_5ftcp_2eproto_deps[8] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnvme_5ftcp_2eproto_deps[9] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
   &::descriptor_table_google_2fapi_2fclient_2eproto,
   &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
@@ -385,11 +571,12 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_google_2fprotobuf_2ffield_5fmask_2eproto,
   &::descriptor_table_object_5fkey_2eproto,
   &::descriptor_table_opicommon_2eproto,
+  &::descriptor_table_uuid_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnvme_5ftcp_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnvme_5ftcp_2eproto = {
-  false, false, 3616, descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto, "backend_nvme_tcp.proto", 
-  &descriptor_table_backend_5fnvme_5ftcp_2eproto_once, descriptor_table_backend_5fnvme_5ftcp_2eproto_deps, 8, 10,
+  false, false, 4995, descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto, "backend_nvme_tcp.proto", 
+  &descriptor_table_backend_5fnvme_5ftcp_2eproto_once, descriptor_table_backend_5fnvme_5ftcp_2eproto_deps, 9, 16,
   schemas, file_default_instances, TableStruct_backend_5fnvme_5ftcp_2eproto::offsets,
   file_level_metadata_backend_5fnvme_5ftcp_2eproto, file_level_enum_descriptors_backend_5fnvme_5ftcp_2eproto, file_level_service_descriptors_backend_5fnvme_5ftcp_2eproto,
 };
@@ -481,33 +668,9 @@ NVMfRemoteController::NVMfRemoteController(const NVMfRemoteController& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
-  traddr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    traddr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_traddr().empty()) {
-    traddr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_traddr(), 
-      GetArenaForAllocation());
-  }
-  subnqn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    subnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_subnqn().empty()) {
-    subnqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subnqn(), 
-      GetArenaForAllocation());
-  }
-  hostnqn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    hostnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_hostnqn().empty()) {
-    hostnqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_hostnqn(), 
-      GetArenaForAllocation());
-  }
-  ::memcpy(&trtype_, &from.trtype_,
+  ::memcpy(&hdgst_, &from.hdgst_,
     static_cast<size_t>(reinterpret_cast<char*>(&queue_size_) -
-    reinterpret_cast<char*>(&trtype_)) + sizeof(queue_size_));
+    reinterpret_cast<char*>(&hdgst_)) + sizeof(queue_size_));
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMfRemoteController)
 }
 
@@ -516,22 +679,10 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-traddr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  traddr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-subnqn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  subnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-hostnqn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  hostnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&trtype_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&hdgst_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&queue_size_) -
-    reinterpret_cast<char*>(&trtype_)) + sizeof(queue_size_));
+    reinterpret_cast<char*>(&hdgst_)) + sizeof(queue_size_));
 }
 
 NVMfRemoteController::~NVMfRemoteController() {
@@ -544,9 +695,6 @@ NVMfRemoteController::~NVMfRemoteController() {
 inline void NVMfRemoteController::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  traddr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  subnqn_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  hostnqn_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void NVMfRemoteController::ArenaDtor(void* object) {
@@ -566,12 +714,9 @@ void NVMfRemoteController::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmpty();
-  traddr_.ClearToEmpty();
-  subnqn_.ClearToEmpty();
-  hostnqn_.ClearToEmpty();
-  ::memset(&trtype_, 0, static_cast<size_t>(
+  ::memset(&hdgst_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&queue_size_) -
-      reinterpret_cast<char*>(&trtype_)) + sizeof(queue_size_));
+      reinterpret_cast<char*>(&hdgst_)) + sizeof(queue_size_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -591,99 +736,43 @@ const char* NVMfRemoteController::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.storage.v1.NvmeTransportType trtype = 2;
+      // bool hdgst = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_trtype(static_cast<::opi_api::storage::v1::NvmeTransportType>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.storage.v1.NvmeAddressFamily adrfam = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_adrfam(static_cast<::opi_api::storage::v1::NvmeAddressFamily>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // string traddr = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_traddr();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfRemoteController.traddr"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int64 trsvcid = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          trsvcid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string subnqn = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          auto str = _internal_mutable_subnqn();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfRemoteController.subnqn"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool hdgst = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           hdgst_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool ddgst = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+      // bool ddgst = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           ddgst_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.storage.v1.NvmeMultipath multipath = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+      // .opi_api.storage.v1.NvmeMultipath multipath = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_multipath(static_cast<::opi_api::storage::v1::NvmeMultipath>(val));
         } else
           goto handle_unusual;
         continue;
-      // int64 io_queues_count = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+      // int64 io_queues_count = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           io_queues_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 queue_size = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+      // int64 queue_size = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           queue_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string hostnqn = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
-          auto str = _internal_mutable_hostnqn();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfRemoteController.hostnqn"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -727,85 +816,35 @@ uint8_t* NVMfRemoteController::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // .opi_api.storage.v1.NvmeTransportType trtype = 2;
-  if (this->_internal_trtype() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_trtype(), target);
-  }
-
-  // .opi_api.storage.v1.NvmeAddressFamily adrfam = 3;
-  if (this->_internal_adrfam() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_adrfam(), target);
-  }
-
-  // string traddr = 4;
-  if (!this->_internal_traddr().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_traddr().data(), static_cast<int>(this->_internal_traddr().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NVMfRemoteController.traddr");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_traddr(), target);
-  }
-
-  // int64 trsvcid = 5;
-  if (this->_internal_trsvcid() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_trsvcid(), target);
-  }
-
-  // string subnqn = 6;
-  if (!this->_internal_subnqn().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_subnqn().data(), static_cast<int>(this->_internal_subnqn().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NVMfRemoteController.subnqn");
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_subnqn(), target);
-  }
-
-  // bool hdgst = 7;
+  // bool hdgst = 2;
   if (this->_internal_hdgst() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_hdgst(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_hdgst(), target);
   }
 
-  // bool ddgst = 8;
+  // bool ddgst = 3;
   if (this->_internal_ddgst() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(8, this->_internal_ddgst(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_ddgst(), target);
   }
 
-  // .opi_api.storage.v1.NvmeMultipath multipath = 9;
+  // .opi_api.storage.v1.NvmeMultipath multipath = 4;
   if (this->_internal_multipath() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      9, this->_internal_multipath(), target);
+      4, this->_internal_multipath(), target);
   }
 
-  // int64 io_queues_count = 10;
+  // int64 io_queues_count = 5;
   if (this->_internal_io_queues_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(10, this->_internal_io_queues_count(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_io_queues_count(), target);
   }
 
-  // int64 queue_size = 11;
+  // int64 queue_size = 6;
   if (this->_internal_queue_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(11, this->_internal_queue_size(), target);
-  }
-
-  // string hostnqn = 12;
-  if (!this->_internal_hostnqn().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_hostnqn().data(), static_cast<int>(this->_internal_hostnqn().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NVMfRemoteController.hostnqn");
-    target = stream->WriteStringMaybeAliased(
-        12, this->_internal_hostnqn(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_queue_size(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -831,66 +870,28 @@ size_t NVMfRemoteController::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // string traddr = 4;
-  if (!this->_internal_traddr().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_traddr());
-  }
-
-  // string subnqn = 6;
-  if (!this->_internal_subnqn().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_subnqn());
-  }
-
-  // string hostnqn = 12;
-  if (!this->_internal_hostnqn().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_hostnqn());
-  }
-
-  // .opi_api.storage.v1.NvmeTransportType trtype = 2;
-  if (this->_internal_trtype() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_trtype());
-  }
-
-  // .opi_api.storage.v1.NvmeAddressFamily adrfam = 3;
-  if (this->_internal_adrfam() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_adrfam());
-  }
-
-  // int64 trsvcid = 5;
-  if (this->_internal_trsvcid() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_trsvcid());
-  }
-
-  // bool hdgst = 7;
+  // bool hdgst = 2;
   if (this->_internal_hdgst() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool ddgst = 8;
+  // bool ddgst = 3;
   if (this->_internal_ddgst() != 0) {
     total_size += 1 + 1;
   }
 
-  // .opi_api.storage.v1.NvmeMultipath multipath = 9;
+  // .opi_api.storage.v1.NvmeMultipath multipath = 4;
   if (this->_internal_multipath() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_multipath());
   }
 
-  // int64 io_queues_count = 10;
+  // int64 io_queues_count = 5;
   if (this->_internal_io_queues_count() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_io_queues_count());
   }
 
-  // int64 queue_size = 11;
+  // int64 queue_size = 6;
   if (this->_internal_queue_size() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_queue_size());
   }
@@ -919,24 +920,6 @@ void NVMfRemoteController::MergeFrom(const NVMfRemoteController& from) {
 
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
-  }
-  if (!from._internal_traddr().empty()) {
-    _internal_set_traddr(from._internal_traddr());
-  }
-  if (!from._internal_subnqn().empty()) {
-    _internal_set_subnqn(from._internal_subnqn());
-  }
-  if (!from._internal_hostnqn().empty()) {
-    _internal_set_hostnqn(from._internal_hostnqn());
-  }
-  if (from._internal_trtype() != 0) {
-    _internal_set_trtype(from._internal_trtype());
-  }
-  if (from._internal_adrfam() != 0) {
-    _internal_set_adrfam(from._internal_adrfam());
-  }
-  if (from._internal_trsvcid() != 0) {
-    _internal_set_trsvcid(from._internal_trsvcid());
   }
   if (from._internal_hdgst() != 0) {
     _internal_set_hdgst(from._internal_hdgst());
@@ -977,6 +960,542 @@ void NVMfRemoteController::InternalSwap(NVMfRemoteController* other) {
       &name_, lhs_arena,
       &other->name_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NVMfRemoteController, queue_size_)
+      + sizeof(NVMfRemoteController::queue_size_)
+      - PROTOBUF_FIELD_OFFSET(NVMfRemoteController, hdgst_)>(
+          reinterpret_cast<char*>(&hdgst_),
+          reinterpret_cast<char*>(&other->hdgst_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata NVMfRemoteController::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[0]);
+}
+
+// ===================================================================
+
+class NVMfPath::_Internal {
+ public:
+  static const ::opi_api::common::v1::ObjectKey& controller_id(const NVMfPath* msg);
+};
+
+const ::opi_api::common::v1::ObjectKey&
+NVMfPath::_Internal::controller_id(const NVMfPath* msg) {
+  return *msg->controller_id_;
+}
+void NVMfPath::clear_controller_id() {
+  if (GetArenaForAllocation() == nullptr && controller_id_ != nullptr) {
+    delete controller_id_;
+  }
+  controller_id_ = nullptr;
+}
+NVMfPath::NVMfPath(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NVMfPath)
+}
+NVMfPath::NVMfPath(const NVMfPath& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  traddr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    traddr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_traddr().empty()) {
+    traddr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_traddr(), 
+      GetArenaForAllocation());
+  }
+  subnqn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    subnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_subnqn().empty()) {
+    subnqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subnqn(), 
+      GetArenaForAllocation());
+  }
+  source_traddr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    source_traddr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_source_traddr().empty()) {
+    source_traddr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_source_traddr(), 
+      GetArenaForAllocation());
+  }
+  hostnqn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    hostnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_hostnqn().empty()) {
+    hostnqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_hostnqn(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_controller_id()) {
+    controller_id_ = new ::opi_api::common::v1::ObjectKey(*from.controller_id_);
+  } else {
+    controller_id_ = nullptr;
+  }
+  ::memcpy(&trtype_, &from.trtype_,
+    static_cast<size_t>(reinterpret_cast<char*>(&source_trsvcid_) -
+    reinterpret_cast<char*>(&trtype_)) + sizeof(source_trsvcid_));
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMfPath)
+}
+
+inline void NVMfPath::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+traddr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  traddr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+subnqn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  subnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+source_traddr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  source_traddr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+hostnqn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  hostnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&controller_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&source_trsvcid_) -
+    reinterpret_cast<char*>(&controller_id_)) + sizeof(source_trsvcid_));
+}
+
+NVMfPath::~NVMfPath() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NVMfPath)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void NVMfPath::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  traddr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  subnqn_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_traddr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  hostnqn_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete controller_id_;
+}
+
+void NVMfPath::ArenaDtor(void* object) {
+  NVMfPath* _this = reinterpret_cast< NVMfPath* >(object);
+  (void)_this;
+}
+void NVMfPath::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void NVMfPath::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void NVMfPath::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NVMfPath)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmpty();
+  traddr_.ClearToEmpty();
+  subnqn_.ClearToEmpty();
+  source_traddr_.ClearToEmpty();
+  hostnqn_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && controller_id_ != nullptr) {
+    delete controller_id_;
+  }
+  controller_id_ = nullptr;
+  ::memset(&trtype_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&source_trsvcid_) -
+      reinterpret_cast<char*>(&trtype_)) + sizeof(source_trsvcid_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* NVMfPath::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfPath.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.common.v1.ObjectKey controller_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_controller_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.storage.v1.NvmeTransportType trtype = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_trtype(static_cast<::opi_api::storage::v1::NvmeTransportType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.storage.v1.NvmeAddressFamily adrfam = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_adrfam(static_cast<::opi_api::storage::v1::NvmeAddressFamily>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // string traddr = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          auto str = _internal_mutable_traddr();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfPath.traddr"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 trsvcid = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          trsvcid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string subnqn = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_subnqn();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfPath.subnqn"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string source_traddr = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          auto str = _internal_mutable_source_traddr();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfPath.source_traddr"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 source_trsvcid = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          source_trsvcid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string hostnqn = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
+          auto str = _internal_mutable_hostnqn();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfPath.hostnqn"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* NVMfPath::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NVMfPath)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMfPath.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.common.v1.ObjectKey controller_id = 2;
+  if (this->_internal_has_controller_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::controller_id(this), target, stream);
+  }
+
+  // .opi_api.storage.v1.NvmeTransportType trtype = 3;
+  if (this->_internal_trtype() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_trtype(), target);
+  }
+
+  // .opi_api.storage.v1.NvmeAddressFamily adrfam = 4;
+  if (this->_internal_adrfam() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      4, this->_internal_adrfam(), target);
+  }
+
+  // string traddr = 5;
+  if (!this->_internal_traddr().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_traddr().data(), static_cast<int>(this->_internal_traddr().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMfPath.traddr");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_traddr(), target);
+  }
+
+  // int64 trsvcid = 6;
+  if (this->_internal_trsvcid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_trsvcid(), target);
+  }
+
+  // string subnqn = 7;
+  if (!this->_internal_subnqn().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_subnqn().data(), static_cast<int>(this->_internal_subnqn().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMfPath.subnqn");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_subnqn(), target);
+  }
+
+  // string source_traddr = 8;
+  if (!this->_internal_source_traddr().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_source_traddr().data(), static_cast<int>(this->_internal_source_traddr().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMfPath.source_traddr");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_source_traddr(), target);
+  }
+
+  // int64 source_trsvcid = 9;
+  if (this->_internal_source_trsvcid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(9, this->_internal_source_trsvcid(), target);
+  }
+
+  // string hostnqn = 10;
+  if (!this->_internal_hostnqn().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_hostnqn().data(), static_cast<int>(this->_internal_hostnqn().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMfPath.hostnqn");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_hostnqn(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NVMfPath)
+  return target;
+}
+
+size_t NVMfPath::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NVMfPath)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string traddr = 5;
+  if (!this->_internal_traddr().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_traddr());
+  }
+
+  // string subnqn = 7;
+  if (!this->_internal_subnqn().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_subnqn());
+  }
+
+  // string source_traddr = 8;
+  if (!this->_internal_source_traddr().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_source_traddr());
+  }
+
+  // string hostnqn = 10;
+  if (!this->_internal_hostnqn().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_hostnqn());
+  }
+
+  // .opi_api.common.v1.ObjectKey controller_id = 2;
+  if (this->_internal_has_controller_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *controller_id_);
+  }
+
+  // .opi_api.storage.v1.NvmeTransportType trtype = 3;
+  if (this->_internal_trtype() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_trtype());
+  }
+
+  // .opi_api.storage.v1.NvmeAddressFamily adrfam = 4;
+  if (this->_internal_adrfam() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_adrfam());
+  }
+
+  // int64 trsvcid = 6;
+  if (this->_internal_trsvcid() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_trsvcid());
+  }
+
+  // int64 source_trsvcid = 9;
+  if (this->_internal_source_trsvcid() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_source_trsvcid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NVMfPath::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    NVMfPath::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMfPath::GetClassData() const { return &_class_data_; }
+
+void NVMfPath::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<NVMfPath *>(to)->MergeFrom(
+      static_cast<const NVMfPath &>(from));
+}
+
+
+void NVMfPath::MergeFrom(const NVMfPath& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NVMfPath)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (!from._internal_traddr().empty()) {
+    _internal_set_traddr(from._internal_traddr());
+  }
+  if (!from._internal_subnqn().empty()) {
+    _internal_set_subnqn(from._internal_subnqn());
+  }
+  if (!from._internal_source_traddr().empty()) {
+    _internal_set_source_traddr(from._internal_source_traddr());
+  }
+  if (!from._internal_hostnqn().empty()) {
+    _internal_set_hostnqn(from._internal_hostnqn());
+  }
+  if (from._internal_has_controller_id()) {
+    _internal_mutable_controller_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_controller_id());
+  }
+  if (from._internal_trtype() != 0) {
+    _internal_set_trtype(from._internal_trtype());
+  }
+  if (from._internal_adrfam() != 0) {
+    _internal_set_adrfam(from._internal_adrfam());
+  }
+  if (from._internal_trsvcid() != 0) {
+    _internal_set_trsvcid(from._internal_trsvcid());
+  }
+  if (from._internal_source_trsvcid() != 0) {
+    _internal_set_source_trsvcid(from._internal_source_trsvcid());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void NVMfPath::CopyFrom(const NVMfPath& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NVMfPath)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool NVMfPath::IsInitialized() const {
+  return true;
+}
+
+void NVMfPath::InternalSwap(NVMfPath* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &traddr_, lhs_arena,
@@ -989,21 +1508,432 @@ void NVMfRemoteController::InternalSwap(NVMfRemoteController* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &source_traddr_, lhs_arena,
+      &other->source_traddr_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &hostnqn_, lhs_arena,
       &other->hostnqn_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NVMfRemoteController, queue_size_)
-      + sizeof(NVMfRemoteController::queue_size_)
-      - PROTOBUF_FIELD_OFFSET(NVMfRemoteController, trtype_)>(
-          reinterpret_cast<char*>(&trtype_),
-          reinterpret_cast<char*>(&other->trtype_));
+      PROTOBUF_FIELD_OFFSET(NVMfPath, source_trsvcid_)
+      + sizeof(NVMfPath::source_trsvcid_)
+      - PROTOBUF_FIELD_OFFSET(NVMfPath, controller_id_)>(
+          reinterpret_cast<char*>(&controller_id_),
+          reinterpret_cast<char*>(&other->controller_id_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata NVMfRemoteController::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata NVMfPath::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[0]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[1]);
+}
+
+// ===================================================================
+
+class NVMfRemoteNamespace::_Internal {
+ public:
+  static const ::opi_api::common::v1::ObjectKey& controller_id(const NVMfRemoteNamespace* msg);
+  static const ::opi_api::common::v1::Uuid& uuid(const NVMfRemoteNamespace* msg);
+};
+
+const ::opi_api::common::v1::ObjectKey&
+NVMfRemoteNamespace::_Internal::controller_id(const NVMfRemoteNamespace* msg) {
+  return *msg->controller_id_;
+}
+const ::opi_api::common::v1::Uuid&
+NVMfRemoteNamespace::_Internal::uuid(const NVMfRemoteNamespace* msg) {
+  return *msg->uuid_;
+}
+void NVMfRemoteNamespace::clear_controller_id() {
+  if (GetArenaForAllocation() == nullptr && controller_id_ != nullptr) {
+    delete controller_id_;
+  }
+  controller_id_ = nullptr;
+}
+void NVMfRemoteNamespace::clear_uuid() {
+  if (GetArenaForAllocation() == nullptr && uuid_ != nullptr) {
+    delete uuid_;
+  }
+  uuid_ = nullptr;
+}
+NVMfRemoteNamespace::NVMfRemoteNamespace(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NVMfRemoteNamespace)
+}
+NVMfRemoteNamespace::NVMfRemoteNamespace(const NVMfRemoteNamespace& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  nguid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    nguid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_nguid().empty()) {
+    nguid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nguid(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_controller_id()) {
+    controller_id_ = new ::opi_api::common::v1::ObjectKey(*from.controller_id_);
+  } else {
+    controller_id_ = nullptr;
+  }
+  if (from._internal_has_uuid()) {
+    uuid_ = new ::opi_api::common::v1::Uuid(*from.uuid_);
+  } else {
+    uuid_ = nullptr;
+  }
+  ::memcpy(&eui64_, &from.eui64_,
+    static_cast<size_t>(reinterpret_cast<char*>(&nsid_) -
+    reinterpret_cast<char*>(&eui64_)) + sizeof(nsid_));
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMfRemoteNamespace)
+}
+
+inline void NVMfRemoteNamespace::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+nguid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  nguid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&controller_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&nsid_) -
+    reinterpret_cast<char*>(&controller_id_)) + sizeof(nsid_));
+}
+
+NVMfRemoteNamespace::~NVMfRemoteNamespace() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NVMfRemoteNamespace)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void NVMfRemoteNamespace::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  nguid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete controller_id_;
+  if (this != internal_default_instance()) delete uuid_;
+}
+
+void NVMfRemoteNamespace::ArenaDtor(void* object) {
+  NVMfRemoteNamespace* _this = reinterpret_cast< NVMfRemoteNamespace* >(object);
+  (void)_this;
+}
+void NVMfRemoteNamespace::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void NVMfRemoteNamespace::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void NVMfRemoteNamespace::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NVMfRemoteNamespace)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmpty();
+  nguid_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && controller_id_ != nullptr) {
+    delete controller_id_;
+  }
+  controller_id_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && uuid_ != nullptr) {
+    delete uuid_;
+  }
+  uuid_ = nullptr;
+  ::memset(&eui64_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&nsid_) -
+      reinterpret_cast<char*>(&eui64_)) + sizeof(nsid_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* NVMfRemoteNamespace::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfRemoteNamespace.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.common.v1.ObjectKey controller_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_controller_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 nsid = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          nsid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string nguid = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_nguid();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMfRemoteNamespace.nguid"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 eui64 = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          eui64_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.common.v1.Uuid uuid = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_uuid(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* NVMfRemoteNamespace::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NVMfRemoteNamespace)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMfRemoteNamespace.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.common.v1.ObjectKey controller_id = 2;
+  if (this->_internal_has_controller_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::controller_id(this), target, stream);
+  }
+
+  // int32 nsid = 3;
+  if (this->_internal_nsid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_nsid(), target);
+  }
+
+  // string nguid = 4;
+  if (!this->_internal_nguid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_nguid().data(), static_cast<int>(this->_internal_nguid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMfRemoteNamespace.nguid");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_nguid(), target);
+  }
+
+  // int64 eui64 = 5;
+  if (this->_internal_eui64() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_eui64(), target);
+  }
+
+  // .opi_api.common.v1.Uuid uuid = 6;
+  if (this->_internal_has_uuid()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::uuid(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NVMfRemoteNamespace)
+  return target;
+}
+
+size_t NVMfRemoteNamespace::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NVMfRemoteNamespace)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string nguid = 4;
+  if (!this->_internal_nguid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_nguid());
+  }
+
+  // .opi_api.common.v1.ObjectKey controller_id = 2;
+  if (this->_internal_has_controller_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *controller_id_);
+  }
+
+  // .opi_api.common.v1.Uuid uuid = 6;
+  if (this->_internal_has_uuid()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *uuid_);
+  }
+
+  // int64 eui64 = 5;
+  if (this->_internal_eui64() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_eui64());
+  }
+
+  // int32 nsid = 3;
+  if (this->_internal_nsid() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_nsid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NVMfRemoteNamespace::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    NVMfRemoteNamespace::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMfRemoteNamespace::GetClassData() const { return &_class_data_; }
+
+void NVMfRemoteNamespace::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<NVMfRemoteNamespace *>(to)->MergeFrom(
+      static_cast<const NVMfRemoteNamespace &>(from));
+}
+
+
+void NVMfRemoteNamespace::MergeFrom(const NVMfRemoteNamespace& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NVMfRemoteNamespace)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (!from._internal_nguid().empty()) {
+    _internal_set_nguid(from._internal_nguid());
+  }
+  if (from._internal_has_controller_id()) {
+    _internal_mutable_controller_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_controller_id());
+  }
+  if (from._internal_has_uuid()) {
+    _internal_mutable_uuid()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_uuid());
+  }
+  if (from._internal_eui64() != 0) {
+    _internal_set_eui64(from._internal_eui64());
+  }
+  if (from._internal_nsid() != 0) {
+    _internal_set_nsid(from._internal_nsid());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void NVMfRemoteNamespace::CopyFrom(const NVMfRemoteNamespace& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NVMfRemoteNamespace)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool NVMfRemoteNamespace::IsInitialized() const {
+  return true;
+}
+
+void NVMfRemoteNamespace::InternalSwap(NVMfRemoteNamespace* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &nguid_, lhs_arena,
+      &other->nguid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NVMfRemoteNamespace, nsid_)
+      + sizeof(NVMfRemoteNamespace::nsid_)
+      - PROTOBUF_FIELD_OFFSET(NVMfRemoteNamespace, controller_id_)>(
+          reinterpret_cast<char*>(&controller_id_),
+          reinterpret_cast<char*>(&other->controller_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata NVMfRemoteNamespace::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[2]);
 }
 
 // ===================================================================
@@ -1249,7 +2179,7 @@ void CreateNVMfRemoteControllerRequest::InternalSwap(CreateNVMfRemoteControllerR
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateNVMfRemoteControllerRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[1]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[3]);
 }
 
 // ===================================================================
@@ -1478,7 +2408,7 @@ void DeleteNVMfRemoteControllerRequest::InternalSwap(DeleteNVMfRemoteControllerR
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteNVMfRemoteControllerRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[2]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[4]);
 }
 
 // ===================================================================
@@ -1752,7 +2682,7 @@ void UpdateNVMfRemoteControllerRequest::InternalSwap(UpdateNVMfRemoteControllerR
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateNVMfRemoteControllerRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[3]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[5]);
 }
 
 // ===================================================================
@@ -2030,7 +2960,7 @@ void ListNVMfRemoteControllersRequest::InternalSwap(ListNVMfRemoteControllersReq
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNVMfRemoteControllersRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[4]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[6]);
 }
 
 // ===================================================================
@@ -2266,7 +3196,7 @@ void ListNVMfRemoteControllersResponse::InternalSwap(ListNVMfRemoteControllersRe
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNVMfRemoteControllersResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[5]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[7]);
 }
 
 // ===================================================================
@@ -2469,7 +3399,7 @@ void GetNVMfRemoteControllerRequest::InternalSwap(GetNVMfRemoteControllerRequest
 ::PROTOBUF_NAMESPACE_ID::Metadata GetNVMfRemoteControllerRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[6]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[8]);
 }
 
 // ===================================================================
@@ -2670,7 +3600,7 @@ void NVMfRemoteControllerResetRequest::InternalSwap(NVMfRemoteControllerResetReq
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMfRemoteControllerResetRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[7]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[9]);
 }
 
 // ===================================================================
@@ -2871,7 +3801,7 @@ void NVMfRemoteControllerStatsRequest::InternalSwap(NVMfRemoteControllerStatsReq
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMfRemoteControllerStatsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[8]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[10]);
 }
 
 // ===================================================================
@@ -3072,7 +4002,996 @@ void NVMfRemoteControllerStatsResponse::InternalSwap(NVMfRemoteControllerStatsRe
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMfRemoteControllerStatsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[9]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[11]);
+}
+
+// ===================================================================
+
+class ListNVMfRemoteNamespacesRequest::_Internal {
+ public:
+};
+
+ListNVMfRemoteNamespacesRequest::ListNVMfRemoteNamespacesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+}
+ListNVMfRemoteNamespacesRequest::ListNVMfRemoteNamespacesRequest(const ListNVMfRemoteNamespacesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_parent().empty()) {
+    parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_parent(), 
+      GetArenaForAllocation());
+  }
+  page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_page_token().empty()) {
+    page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_page_token(), 
+      GetArenaForAllocation());
+  }
+  page_size_ = from.page_size_;
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+}
+
+inline void ListNVMfRemoteNamespacesRequest::SharedCtor() {
+parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+page_size_ = 0;
+}
+
+ListNVMfRemoteNamespacesRequest::~ListNVMfRemoteNamespacesRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ListNVMfRemoteNamespacesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  parent_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ListNVMfRemoteNamespacesRequest::ArenaDtor(void* object) {
+  ListNVMfRemoteNamespacesRequest* _this = reinterpret_cast< ListNVMfRemoteNamespacesRequest* >(object);
+  (void)_this;
+}
+void ListNVMfRemoteNamespacesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListNVMfRemoteNamespacesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ListNVMfRemoteNamespacesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  parent_.ClearToEmpty();
+  page_token_.ClearToEmpty();
+  page_size_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListNVMfRemoteNamespacesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_parent();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMfRemoteNamespacesRequest.parent"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 page_size = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string page_token = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMfRemoteNamespacesRequest.page_token"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ListNVMfRemoteNamespacesRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_parent().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_parent().data(), static_cast<int>(this->_internal_parent().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMfRemoteNamespacesRequest.parent");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_parent(), target);
+  }
+
+  // int32 page_size = 2;
+  if (this->_internal_page_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_page_size(), target);
+  }
+
+  // string page_token = 3;
+  if (!this->_internal_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMfRemoteNamespacesRequest.page_token");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_page_token(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+  return target;
+}
+
+size_t ListNVMfRemoteNamespacesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_parent().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_parent());
+  }
+
+  // string page_token = 3;
+  if (!this->_internal_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_page_token());
+  }
+
+  // int32 page_size = 2;
+  if (this->_internal_page_size() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNVMfRemoteNamespacesRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ListNVMfRemoteNamespacesRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNVMfRemoteNamespacesRequest::GetClassData() const { return &_class_data_; }
+
+void ListNVMfRemoteNamespacesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ListNVMfRemoteNamespacesRequest *>(to)->MergeFrom(
+      static_cast<const ListNVMfRemoteNamespacesRequest &>(from));
+}
+
+
+void ListNVMfRemoteNamespacesRequest::MergeFrom(const ListNVMfRemoteNamespacesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_parent().empty()) {
+    _internal_set_parent(from._internal_parent());
+  }
+  if (!from._internal_page_token().empty()) {
+    _internal_set_page_token(from._internal_page_token());
+  }
+  if (from._internal_page_size() != 0) {
+    _internal_set_page_size(from._internal_page_size());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ListNVMfRemoteNamespacesRequest::CopyFrom(const ListNVMfRemoteNamespacesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListNVMfRemoteNamespacesRequest::IsInitialized() const {
+  return true;
+}
+
+void ListNVMfRemoteNamespacesRequest::InternalSwap(ListNVMfRemoteNamespacesRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &parent_, lhs_arena,
+      &other->parent_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &page_token_, lhs_arena,
+      &other->page_token_, rhs_arena
+  );
+  swap(page_size_, other->page_size_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListNVMfRemoteNamespacesRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[12]);
+}
+
+// ===================================================================
+
+class ListNVMfRemoteNamespacesResponse::_Internal {
+ public:
+};
+
+ListNVMfRemoteNamespacesResponse::ListNVMfRemoteNamespacesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  nv_mf_remote_namespaces_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+}
+ListNVMfRemoteNamespacesResponse::ListNVMfRemoteNamespacesResponse(const ListNVMfRemoteNamespacesResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      nv_mf_remote_namespaces_(from.nv_mf_remote_namespaces_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_next_page_token().empty()) {
+    next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_page_token(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+}
+
+inline void ListNVMfRemoteNamespacesResponse::SharedCtor() {
+next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ListNVMfRemoteNamespacesResponse::~ListNVMfRemoteNamespacesResponse() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ListNVMfRemoteNamespacesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  next_page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ListNVMfRemoteNamespacesResponse::ArenaDtor(void* object) {
+  ListNVMfRemoteNamespacesResponse* _this = reinterpret_cast< ListNVMfRemoteNamespacesResponse* >(object);
+  (void)_this;
+}
+void ListNVMfRemoteNamespacesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListNVMfRemoteNamespacesResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ListNVMfRemoteNamespacesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  nv_mf_remote_namespaces_.Clear();
+  next_page_token_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListNVMfRemoteNamespacesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .opi_api.storage.v1.NVMfRemoteNamespace nv_mf_remote_namespaces = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_nv_mf_remote_namespaces(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // string next_page_token = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_next_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMfRemoteNamespacesResponse.next_page_token"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ListNVMfRemoteNamespacesResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .opi_api.storage.v1.NVMfRemoteNamespace nv_mf_remote_namespaces = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_nv_mf_remote_namespaces_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_nv_mf_remote_namespaces(i), target, stream);
+  }
+
+  // string next_page_token = 2;
+  if (!this->_internal_next_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_next_page_token().data(), static_cast<int>(this->_internal_next_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMfRemoteNamespacesResponse.next_page_token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_next_page_token(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+  return target;
+}
+
+size_t ListNVMfRemoteNamespacesResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .opi_api.storage.v1.NVMfRemoteNamespace nv_mf_remote_namespaces = 1;
+  total_size += 1UL * this->_internal_nv_mf_remote_namespaces_size();
+  for (const auto& msg : this->nv_mf_remote_namespaces_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string next_page_token = 2;
+  if (!this->_internal_next_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_next_page_token());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNVMfRemoteNamespacesResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ListNVMfRemoteNamespacesResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNVMfRemoteNamespacesResponse::GetClassData() const { return &_class_data_; }
+
+void ListNVMfRemoteNamespacesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ListNVMfRemoteNamespacesResponse *>(to)->MergeFrom(
+      static_cast<const ListNVMfRemoteNamespacesResponse &>(from));
+}
+
+
+void ListNVMfRemoteNamespacesResponse::MergeFrom(const ListNVMfRemoteNamespacesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  nv_mf_remote_namespaces_.MergeFrom(from.nv_mf_remote_namespaces_);
+  if (!from._internal_next_page_token().empty()) {
+    _internal_set_next_page_token(from._internal_next_page_token());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ListNVMfRemoteNamespacesResponse::CopyFrom(const ListNVMfRemoteNamespacesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListNVMfRemoteNamespacesResponse::IsInitialized() const {
+  return true;
+}
+
+void ListNVMfRemoteNamespacesResponse::InternalSwap(ListNVMfRemoteNamespacesResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  nv_mf_remote_namespaces_.InternalSwap(&other->nv_mf_remote_namespaces_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &next_page_token_, lhs_arena,
+      &other->next_page_token_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListNVMfRemoteNamespacesResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[13]);
+}
+
+// ===================================================================
+
+class CreateNVMfPathRequest::_Internal {
+ public:
+  static const ::opi_api::storage::v1::NVMfPath& nv_mf_path(const CreateNVMfPathRequest* msg);
+};
+
+const ::opi_api::storage::v1::NVMfPath&
+CreateNVMfPathRequest::_Internal::nv_mf_path(const CreateNVMfPathRequest* msg) {
+  return *msg->nv_mf_path_;
+}
+CreateNVMfPathRequest::CreateNVMfPathRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.CreateNVMfPathRequest)
+}
+CreateNVMfPathRequest::CreateNVMfPathRequest(const CreateNVMfPathRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  nv_mf_path_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    nv_mf_path_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_nv_mf_path_id().empty()) {
+    nv_mf_path_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nv_mf_path_id(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_nv_mf_path()) {
+    nv_mf_path_ = new ::opi_api::storage::v1::NVMfPath(*from.nv_mf_path_);
+  } else {
+    nv_mf_path_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.CreateNVMfPathRequest)
+}
+
+inline void CreateNVMfPathRequest::SharedCtor() {
+nv_mf_path_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  nv_mf_path_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+nv_mf_path_ = nullptr;
+}
+
+CreateNVMfPathRequest::~CreateNVMfPathRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.CreateNVMfPathRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void CreateNVMfPathRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  nv_mf_path_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete nv_mf_path_;
+}
+
+void CreateNVMfPathRequest::ArenaDtor(void* object) {
+  CreateNVMfPathRequest* _this = reinterpret_cast< CreateNVMfPathRequest* >(object);
+  (void)_this;
+}
+void CreateNVMfPathRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void CreateNVMfPathRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void CreateNVMfPathRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.CreateNVMfPathRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  nv_mf_path_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && nv_mf_path_ != nullptr) {
+    delete nv_mf_path_;
+  }
+  nv_mf_path_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CreateNVMfPathRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .opi_api.storage.v1.NVMfPath nv_mf_path = 1 [(.google.api.field_behavior) = REQUIRED];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_nv_mf_path(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string nv_mf_path_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_nv_mf_path_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.CreateNVMfPathRequest.nv_mf_path_id"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CreateNVMfPathRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.CreateNVMfPathRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .opi_api.storage.v1.NVMfPath nv_mf_path = 1 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_nv_mf_path()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::nv_mf_path(this), target, stream);
+  }
+
+  // string nv_mf_path_id = 2;
+  if (!this->_internal_nv_mf_path_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_nv_mf_path_id().data(), static_cast<int>(this->_internal_nv_mf_path_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.CreateNVMfPathRequest.nv_mf_path_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_nv_mf_path_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.CreateNVMfPathRequest)
+  return target;
+}
+
+size_t CreateNVMfPathRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.CreateNVMfPathRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string nv_mf_path_id = 2;
+  if (!this->_internal_nv_mf_path_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_nv_mf_path_id());
+  }
+
+  // .opi_api.storage.v1.NVMfPath nv_mf_path = 1 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_nv_mf_path()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *nv_mf_path_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateNVMfPathRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    CreateNVMfPathRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateNVMfPathRequest::GetClassData() const { return &_class_data_; }
+
+void CreateNVMfPathRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<CreateNVMfPathRequest *>(to)->MergeFrom(
+      static_cast<const CreateNVMfPathRequest &>(from));
+}
+
+
+void CreateNVMfPathRequest::MergeFrom(const CreateNVMfPathRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.CreateNVMfPathRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_nv_mf_path_id().empty()) {
+    _internal_set_nv_mf_path_id(from._internal_nv_mf_path_id());
+  }
+  if (from._internal_has_nv_mf_path()) {
+    _internal_mutable_nv_mf_path()->::opi_api::storage::v1::NVMfPath::MergeFrom(from._internal_nv_mf_path());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CreateNVMfPathRequest::CopyFrom(const CreateNVMfPathRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.CreateNVMfPathRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateNVMfPathRequest::IsInitialized() const {
+  return true;
+}
+
+void CreateNVMfPathRequest::InternalSwap(CreateNVMfPathRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &nv_mf_path_id_, lhs_arena,
+      &other->nv_mf_path_id_, rhs_arena
+  );
+  swap(nv_mf_path_, other->nv_mf_path_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CreateNVMfPathRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[14]);
+}
+
+// ===================================================================
+
+class DeleteNVMfPathRequest::_Internal {
+ public:
+};
+
+DeleteNVMfPathRequest::DeleteNVMfPathRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.DeleteNVMfPathRequest)
+}
+DeleteNVMfPathRequest::DeleteNVMfPathRequest(const DeleteNVMfPathRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  allow_missing_ = from.allow_missing_;
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.DeleteNVMfPathRequest)
+}
+
+inline void DeleteNVMfPathRequest::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+allow_missing_ = false;
+}
+
+DeleteNVMfPathRequest::~DeleteNVMfPathRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.DeleteNVMfPathRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void DeleteNVMfPathRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DeleteNVMfPathRequest::ArenaDtor(void* object) {
+  DeleteNVMfPathRequest* _this = reinterpret_cast< DeleteNVMfPathRequest* >(object);
+  (void)_this;
+}
+void DeleteNVMfPathRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DeleteNVMfPathRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DeleteNVMfPathRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.DeleteNVMfPathRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmpty();
+  allow_missing_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeleteNVMfPathRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.DeleteNVMfPathRequest.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool allow_missing = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DeleteNVMfPathRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.DeleteNVMfPathRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.DeleteNVMfPathRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // bool allow_missing = 2;
+  if (this->_internal_allow_missing() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_allow_missing(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.DeleteNVMfPathRequest)
+  return target;
+}
+
+size_t DeleteNVMfPathRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.DeleteNVMfPathRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // bool allow_missing = 2;
+  if (this->_internal_allow_missing() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteNVMfPathRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    DeleteNVMfPathRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteNVMfPathRequest::GetClassData() const { return &_class_data_; }
+
+void DeleteNVMfPathRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<DeleteNVMfPathRequest *>(to)->MergeFrom(
+      static_cast<const DeleteNVMfPathRequest &>(from));
+}
+
+
+void DeleteNVMfPathRequest::MergeFrom(const DeleteNVMfPathRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.DeleteNVMfPathRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (from._internal_allow_missing() != 0) {
+    _internal_set_allow_missing(from._internal_allow_missing());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeleteNVMfPathRequest::CopyFrom(const DeleteNVMfPathRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.DeleteNVMfPathRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteNVMfPathRequest::IsInitialized() const {
+  return true;
+}
+
+void DeleteNVMfPathRequest::InternalSwap(DeleteNVMfPathRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+  swap(allow_missing_, other->allow_missing_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteNVMfPathRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[15]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -3082,6 +5001,12 @@ void NVMfRemoteControllerStatsResponse::InternalSwap(NVMfRemoteControllerStatsRe
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMfRemoteController* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMfRemoteController >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMfRemoteController >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMfPath* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMfPath >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMfPath >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMfRemoteNamespace* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMfRemoteNamespace >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMfRemoteNamespace >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::CreateNVMfRemoteControllerRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::CreateNVMfRemoteControllerRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::CreateNVMfRemoteControllerRequest >(arena);
@@ -3109,6 +5034,18 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMfRemoteControllerStatsRe
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::CreateNVMfPathRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::CreateNVMfPathRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::CreateNVMfPathRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::DeleteNVMfPathRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::DeleteNVMfPathRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::DeleteNVMfPathRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -31,6 +31,9 @@ static const char* NVMfRemoteControllerService_method_names[] = {
   "/opi_api.storage.v1.NVMfRemoteControllerService/GetNVMfRemoteController",
   "/opi_api.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerReset",
   "/opi_api.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerStats",
+  "/opi_api.storage.v1.NVMfRemoteControllerService/ListNVMfRemoteNamespaces",
+  "/opi_api.storage.v1.NVMfRemoteControllerService/CreateNVMfPath",
+  "/opi_api.storage.v1.NVMfRemoteControllerService/DeleteNVMfPath",
 };
 
 std::unique_ptr< NVMfRemoteControllerService::Stub> NVMfRemoteControllerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -47,6 +50,9 @@ NVMfRemoteControllerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelIn
   , rpcmethod_GetNVMfRemoteController_(NVMfRemoteControllerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_NVMfRemoteControllerReset_(NVMfRemoteControllerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_NVMfRemoteControllerStats_(NVMfRemoteControllerService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListNVMfRemoteNamespaces_(NVMfRemoteControllerService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateNVMfPath_(NVMfRemoteControllerService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteNVMfPath_(NVMfRemoteControllerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status NVMfRemoteControllerService::Stub::CreateNVMfRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNVMfRemoteControllerRequest& request, ::opi_api::storage::v1::NVMfRemoteController* response) {
@@ -210,6 +216,75 @@ void NVMfRemoteControllerService::Stub::async::NVMfRemoteControllerStats(::grpc:
   return result;
 }
 
+::grpc::Status NVMfRemoteControllerService::Stub::ListNVMfRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest& request, ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest, ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListNVMfRemoteNamespaces_, context, request, response);
+}
+
+void NVMfRemoteControllerService::Stub::async::ListNVMfRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest, ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListNVMfRemoteNamespaces_, context, request, response, std::move(f));
+}
+
+void NVMfRemoteControllerService::Stub::async::ListNVMfRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListNVMfRemoteNamespaces_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse>* NVMfRemoteControllerService::Stub::PrepareAsyncListNVMfRemoteNamespacesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse, ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListNVMfRemoteNamespaces_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse>* NVMfRemoteControllerService::Stub::AsyncListNVMfRemoteNamespacesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncListNVMfRemoteNamespacesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status NVMfRemoteControllerService::Stub::CreateNVMfPath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNVMfPathRequest& request, ::opi_api::storage::v1::NVMfPath* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::CreateNVMfPathRequest, ::opi_api::storage::v1::NVMfPath, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateNVMfPath_, context, request, response);
+}
+
+void NVMfRemoteControllerService::Stub::async::CreateNVMfPath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNVMfPathRequest* request, ::opi_api::storage::v1::NVMfPath* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::CreateNVMfPathRequest, ::opi_api::storage::v1::NVMfPath, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateNVMfPath_, context, request, response, std::move(f));
+}
+
+void NVMfRemoteControllerService::Stub::async::CreateNVMfPath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNVMfPathRequest* request, ::opi_api::storage::v1::NVMfPath* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateNVMfPath_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfPath>* NVMfRemoteControllerService::Stub::PrepareAsyncCreateNVMfPathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNVMfPathRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NVMfPath, ::opi_api::storage::v1::CreateNVMfPathRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateNVMfPath_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfPath>* NVMfRemoteControllerService::Stub::AsyncCreateNVMfPathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNVMfPathRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateNVMfPathRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status NVMfRemoteControllerService::Stub::DeleteNVMfPath(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNVMfPathRequest& request, ::google::protobuf::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::DeleteNVMfPathRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DeleteNVMfPath_, context, request, response);
+}
+
+void NVMfRemoteControllerService::Stub::async::DeleteNVMfPath(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNVMfPathRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::DeleteNVMfPathRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteNVMfPath_, context, request, response, std::move(f));
+}
+
+void NVMfRemoteControllerService::Stub::async::DeleteNVMfPath(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNVMfPathRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteNVMfPath_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* NVMfRemoteControllerService::Stub::PrepareAsyncDeleteNVMfPathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNVMfPathRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::opi_api::storage::v1::DeleteNVMfPathRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DeleteNVMfPath_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* NVMfRemoteControllerService::Stub::AsyncDeleteNVMfPathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNVMfPathRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteNVMfPathRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 NVMfRemoteControllerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NVMfRemoteControllerService_method_names[0],
@@ -281,6 +356,36 @@ NVMfRemoteControllerService::Service::Service() {
              ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* resp) {
                return service->NVMfRemoteControllerStats(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NVMfRemoteControllerService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NVMfRemoteControllerService::Service, ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest, ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](NVMfRemoteControllerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest* req,
+             ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse* resp) {
+               return service->ListNVMfRemoteNamespaces(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NVMfRemoteControllerService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NVMfRemoteControllerService::Service, ::opi_api::storage::v1::CreateNVMfPathRequest, ::opi_api::storage::v1::NVMfPath, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](NVMfRemoteControllerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::opi_api::storage::v1::CreateNVMfPathRequest* req,
+             ::opi_api::storage::v1::NVMfPath* resp) {
+               return service->CreateNVMfPath(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NVMfRemoteControllerService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NVMfRemoteControllerService::Service, ::opi_api::storage::v1::DeleteNVMfPathRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](NVMfRemoteControllerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::opi_api::storage::v1::DeleteNVMfPathRequest* req,
+             ::google::protobuf::Empty* resp) {
+               return service->DeleteNVMfPath(ctx, req, resp);
+             }, this)));
 }
 
 NVMfRemoteControllerService::Service::~Service() {
@@ -329,6 +434,27 @@ NVMfRemoteControllerService::Service::~Service() {
 }
 
 ::grpc::Status NVMfRemoteControllerService::Service::NVMfRemoteControllerStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NVMfRemoteControllerService::Service::ListNVMfRemoteNamespaces(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNVMfRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNVMfRemoteNamespacesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NVMfRemoteControllerService::Service::CreateNVMfPath(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNVMfPathRequest* request, ::opi_api::storage::v1::NVMfPath* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NVMfRemoteControllerService::Service::DeleteNVMfPath(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNVMfPathRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -32,101 +32,37 @@ public interface NVMfRemoteControllerOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-   * @return The enum numeric value on the wire for trtype.
-   */
-  int getTrtypeValue();
-  /**
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-   * @return The trtype.
-   */
-  opi_api.storage.v1.NvmeTransportType getTrtype();
-
-  /**
-   * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-   * @return The enum numeric value on the wire for adrfam.
-   */
-  int getAdrfamValue();
-  /**
-   * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-   * @return The adrfam.
-   */
-  opi_api.storage.v1.NvmeAddressFamily getAdrfam();
-
-  /**
-   * <code>string traddr = 4;</code>
-   * @return The traddr.
-   */
-  java.lang.String getTraddr();
-  /**
-   * <code>string traddr = 4;</code>
-   * @return The bytes for traddr.
-   */
-  com.google.protobuf.ByteString
-      getTraddrBytes();
-
-  /**
-   * <code>int64 trsvcid = 5;</code>
-   * @return The trsvcid.
-   */
-  long getTrsvcid();
-
-  /**
-   * <code>string subnqn = 6;</code>
-   * @return The subnqn.
-   */
-  java.lang.String getSubnqn();
-  /**
-   * <code>string subnqn = 6;</code>
-   * @return The bytes for subnqn.
-   */
-  com.google.protobuf.ByteString
-      getSubnqnBytes();
-
-  /**
-   * <code>bool hdgst = 7;</code>
+   * <code>bool hdgst = 2;</code>
    * @return The hdgst.
    */
   boolean getHdgst();
 
   /**
-   * <code>bool ddgst = 8;</code>
+   * <code>bool ddgst = 3;</code>
    * @return The ddgst.
    */
   boolean getDdgst();
 
   /**
-   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
    * @return The enum numeric value on the wire for multipath.
    */
   int getMultipathValue();
   /**
-   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
    * @return The multipath.
    */
   opi_api.storage.v1.NvmeMultipath getMultipath();
 
   /**
-   * <code>int64 io_queues_count = 10;</code>
+   * <code>int64 io_queues_count = 5;</code>
    * @return The ioQueuesCount.
    */
   long getIoQueuesCount();
 
   /**
-   * <code>int64 queue_size = 11;</code>
+   * <code>int64 queue_size = 6;</code>
    * @return The queueSize.
    */
   long getQueueSize();
-
-  /**
-   * <code>string hostnqn = 12;</code>
-   * @return The hostnqn.
-   */
-  java.lang.String getHostnqn();
-  /**
-   * <code>string hostnqn = 12;</code>
-   * @return The bytes for hostnqn.
-   */
-  com.google.protobuf.ByteString
-      getHostnqnBytes();
 }

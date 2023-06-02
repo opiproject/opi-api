@@ -235,6 +235,99 @@ public final class NVMfRemoteControllerServiceGrpc {
     return getNVMfRemoteControllerStatsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMfRemoteNamespacesRequest,
+      opi_api.storage.v1.ListNVMfRemoteNamespacesResponse> getListNVMfRemoteNamespacesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNVMfRemoteNamespaces",
+      requestType = opi_api.storage.v1.ListNVMfRemoteNamespacesRequest.class,
+      responseType = opi_api.storage.v1.ListNVMfRemoteNamespacesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMfRemoteNamespacesRequest,
+      opi_api.storage.v1.ListNVMfRemoteNamespacesResponse> getListNVMfRemoteNamespacesMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMfRemoteNamespacesRequest, opi_api.storage.v1.ListNVMfRemoteNamespacesResponse> getListNVMfRemoteNamespacesMethod;
+    if ((getListNVMfRemoteNamespacesMethod = NVMfRemoteControllerServiceGrpc.getListNVMfRemoteNamespacesMethod) == null) {
+      synchronized (NVMfRemoteControllerServiceGrpc.class) {
+        if ((getListNVMfRemoteNamespacesMethod = NVMfRemoteControllerServiceGrpc.getListNVMfRemoteNamespacesMethod) == null) {
+          NVMfRemoteControllerServiceGrpc.getListNVMfRemoteNamespacesMethod = getListNVMfRemoteNamespacesMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListNVMfRemoteNamespacesRequest, opi_api.storage.v1.ListNVMfRemoteNamespacesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNVMfRemoteNamespaces"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.ListNVMfRemoteNamespacesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.ListNVMfRemoteNamespacesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new NVMfRemoteControllerServiceMethodDescriptorSupplier("ListNVMfRemoteNamespaces"))
+              .build();
+        }
+      }
+    }
+    return getListNVMfRemoteNamespacesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateNVMfPathRequest,
+      opi_api.storage.v1.NVMfPath> getCreateNVMfPathMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateNVMfPath",
+      requestType = opi_api.storage.v1.CreateNVMfPathRequest.class,
+      responseType = opi_api.storage.v1.NVMfPath.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.CreateNVMfPathRequest,
+      opi_api.storage.v1.NVMfPath> getCreateNVMfPathMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.CreateNVMfPathRequest, opi_api.storage.v1.NVMfPath> getCreateNVMfPathMethod;
+    if ((getCreateNVMfPathMethod = NVMfRemoteControllerServiceGrpc.getCreateNVMfPathMethod) == null) {
+      synchronized (NVMfRemoteControllerServiceGrpc.class) {
+        if ((getCreateNVMfPathMethod = NVMfRemoteControllerServiceGrpc.getCreateNVMfPathMethod) == null) {
+          NVMfRemoteControllerServiceGrpc.getCreateNVMfPathMethod = getCreateNVMfPathMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.CreateNVMfPathRequest, opi_api.storage.v1.NVMfPath>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateNVMfPath"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.CreateNVMfPathRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.NVMfPath.getDefaultInstance()))
+              .setSchemaDescriptor(new NVMfRemoteControllerServiceMethodDescriptorSupplier("CreateNVMfPath"))
+              .build();
+        }
+      }
+    }
+    return getCreateNVMfPathMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteNVMfPathRequest,
+      com.google.protobuf.Empty> getDeleteNVMfPathMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNVMfPath",
+      requestType = opi_api.storage.v1.DeleteNVMfPathRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteNVMfPathRequest,
+      com.google.protobuf.Empty> getDeleteNVMfPathMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteNVMfPathRequest, com.google.protobuf.Empty> getDeleteNVMfPathMethod;
+    if ((getDeleteNVMfPathMethod = NVMfRemoteControllerServiceGrpc.getDeleteNVMfPathMethod) == null) {
+      synchronized (NVMfRemoteControllerServiceGrpc.class) {
+        if ((getDeleteNVMfPathMethod = NVMfRemoteControllerServiceGrpc.getDeleteNVMfPathMethod) == null) {
+          NVMfRemoteControllerServiceGrpc.getDeleteNVMfPathMethod = getDeleteNVMfPathMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.DeleteNVMfPathRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteNVMfPath"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.DeleteNVMfPathRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new NVMfRemoteControllerServiceMethodDescriptorSupplier("DeleteNVMfPath"))
+              .build();
+        }
+      }
+    }
+    return getDeleteNVMfPathMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -335,6 +428,27 @@ public final class NVMfRemoteControllerServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNVMfRemoteControllerStatsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void listNVMfRemoteNamespaces(opi_api.storage.v1.ListNVMfRemoteNamespacesRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMfRemoteNamespacesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNVMfRemoteNamespacesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void createNVMfPath(opi_api.storage.v1.CreateNVMfPathRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfPath> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateNVMfPathMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteNVMfPath(opi_api.storage.v1.DeleteNVMfPathRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNVMfPathMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -386,6 +500,27 @@ public final class NVMfRemoteControllerServiceGrpc {
                 opi_api.storage.v1.NVMfRemoteControllerStatsRequest,
                 opi_api.storage.v1.NVMfRemoteControllerStatsResponse>(
                   this, METHODID_NVMF_REMOTE_CONTROLLER_STATS)))
+          .addMethod(
+            getListNVMfRemoteNamespacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.storage.v1.ListNVMfRemoteNamespacesRequest,
+                opi_api.storage.v1.ListNVMfRemoteNamespacesResponse>(
+                  this, METHODID_LIST_NVMF_REMOTE_NAMESPACES)))
+          .addMethod(
+            getCreateNVMfPathMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.storage.v1.CreateNVMfPathRequest,
+                opi_api.storage.v1.NVMfPath>(
+                  this, METHODID_CREATE_NVMF_PATH)))
+          .addMethod(
+            getDeleteNVMfPathMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.storage.v1.DeleteNVMfPathRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_DELETE_NVMF_PATH)))
           .build();
     }
   }
@@ -462,6 +597,30 @@ public final class NVMfRemoteControllerServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerStatsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listNVMfRemoteNamespaces(opi_api.storage.v1.ListNVMfRemoteNamespacesRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMfRemoteNamespacesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNVMfRemoteNamespacesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createNVMfPath(opi_api.storage.v1.CreateNVMfPathRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfPath> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateNVMfPathMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteNVMfPath(opi_api.storage.v1.DeleteNVMfPathRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteNVMfPathMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -528,6 +687,27 @@ public final class NVMfRemoteControllerServiceGrpc {
     public opi_api.storage.v1.NVMfRemoteControllerStatsResponse nVMfRemoteControllerStats(opi_api.storage.v1.NVMfRemoteControllerStatsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNVMfRemoteControllerStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public opi_api.storage.v1.ListNVMfRemoteNamespacesResponse listNVMfRemoteNamespaces(opi_api.storage.v1.ListNVMfRemoteNamespacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNVMfRemoteNamespacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public opi_api.storage.v1.NVMfPath createNVMfPath(opi_api.storage.v1.CreateNVMfPathRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNVMfPathMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty deleteNVMfPath(opi_api.storage.v1.DeleteNVMfPathRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNVMfPathMethod(), getCallOptions(), request);
     }
   }
 
@@ -603,6 +783,30 @@ public final class NVMfRemoteControllerServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerStatsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNVMfRemoteNamespacesResponse> listNVMfRemoteNamespaces(
+        opi_api.storage.v1.ListNVMfRemoteNamespacesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNVMfRemoteNamespacesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NVMfPath> createNVMfPath(
+        opi_api.storage.v1.CreateNVMfPathRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateNVMfPathMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNVMfPath(
+        opi_api.storage.v1.DeleteNVMfPathRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteNVMfPathMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_NVMF_REMOTE_CONTROLLER = 0;
@@ -612,6 +816,9 @@ public final class NVMfRemoteControllerServiceGrpc {
   private static final int METHODID_GET_NVMF_REMOTE_CONTROLLER = 4;
   private static final int METHODID_NVMF_REMOTE_CONTROLLER_RESET = 5;
   private static final int METHODID_NVMF_REMOTE_CONTROLLER_STATS = 6;
+  private static final int METHODID_LIST_NVMF_REMOTE_NAMESPACES = 7;
+  private static final int METHODID_CREATE_NVMF_PATH = 8;
+  private static final int METHODID_DELETE_NVMF_PATH = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -657,6 +864,18 @@ public final class NVMfRemoteControllerServiceGrpc {
         case METHODID_NVMF_REMOTE_CONTROLLER_STATS:
           serviceImpl.nVMfRemoteControllerStats((opi_api.storage.v1.NVMfRemoteControllerStatsRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerStatsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_NVMF_REMOTE_NAMESPACES:
+          serviceImpl.listNVMfRemoteNamespaces((opi_api.storage.v1.ListNVMfRemoteNamespacesRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMfRemoteNamespacesResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_NVMF_PATH:
+          serviceImpl.createNVMfPath((opi_api.storage.v1.CreateNVMfPathRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfPath>) responseObserver);
+          break;
+        case METHODID_DELETE_NVMF_PATH:
+          serviceImpl.deleteNVMfPath((opi_api.storage.v1.DeleteNVMfPathRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -726,6 +945,9 @@ public final class NVMfRemoteControllerServiceGrpc {
               .addMethod(getGetNVMfRemoteControllerMethod())
               .addMethod(getNVMfRemoteControllerResetMethod())
               .addMethod(getNVMfRemoteControllerStatsMethod())
+              .addMethod(getListNVMfRemoteNamespacesMethod())
+              .addMethod(getCreateNVMfPathMethod())
+              .addMethod(getDeleteNVMfPathMethod())
               .build();
         }
       }

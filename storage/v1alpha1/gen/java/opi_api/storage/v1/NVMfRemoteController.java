@@ -17,12 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private NVMfRemoteController() {
     name_ = "";
-    trtype_ = 0;
-    adrfam_ = 0;
-    traddr_ = "";
-    subnqn_ = "";
     multipath_ = 0;
-    hostnqn_ = "";
   }
 
   @java.lang.Override
@@ -62,64 +57,29 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 16: {
-            int rawValue = input.readEnum();
-
-            trtype_ = rawValue;
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            adrfam_ = rawValue;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            traddr_ = s;
-            break;
-          }
-          case 40: {
-
-            trsvcid_ = input.readInt64();
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            subnqn_ = s;
-            break;
-          }
-          case 56: {
 
             hdgst_ = input.readBool();
             break;
           }
-          case 64: {
+          case 24: {
 
             ddgst_ = input.readBool();
             break;
           }
-          case 72: {
+          case 32: {
             int rawValue = input.readEnum();
 
             multipath_ = rawValue;
             break;
           }
-          case 80: {
+          case 40: {
 
             ioQueuesCount_ = input.readInt64();
             break;
           }
-          case 88: {
+          case 48: {
 
             queueSize_ = input.readInt64();
-            break;
-          }
-          case 98: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            hostnqn_ = s;
             break;
           }
           default: {
@@ -204,135 +164,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TRTYPE_FIELD_NUMBER = 2;
-  private int trtype_;
-  /**
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-   * @return The enum numeric value on the wire for trtype.
-   */
-  @java.lang.Override public int getTrtypeValue() {
-    return trtype_;
-  }
-  /**
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-   * @return The trtype.
-   */
-  @java.lang.Override public opi_api.storage.v1.NvmeTransportType getTrtype() {
-    @SuppressWarnings("deprecation")
-    opi_api.storage.v1.NvmeTransportType result = opi_api.storage.v1.NvmeTransportType.valueOf(trtype_);
-    return result == null ? opi_api.storage.v1.NvmeTransportType.UNRECOGNIZED : result;
-  }
-
-  public static final int ADRFAM_FIELD_NUMBER = 3;
-  private int adrfam_;
-  /**
-   * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-   * @return The enum numeric value on the wire for adrfam.
-   */
-  @java.lang.Override public int getAdrfamValue() {
-    return adrfam_;
-  }
-  /**
-   * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-   * @return The adrfam.
-   */
-  @java.lang.Override public opi_api.storage.v1.NvmeAddressFamily getAdrfam() {
-    @SuppressWarnings("deprecation")
-    opi_api.storage.v1.NvmeAddressFamily result = opi_api.storage.v1.NvmeAddressFamily.valueOf(adrfam_);
-    return result == null ? opi_api.storage.v1.NvmeAddressFamily.UNRECOGNIZED : result;
-  }
-
-  public static final int TRADDR_FIELD_NUMBER = 4;
-  private volatile java.lang.Object traddr_;
-  /**
-   * <code>string traddr = 4;</code>
-   * @return The traddr.
-   */
-  @java.lang.Override
-  public java.lang.String getTraddr() {
-    java.lang.Object ref = traddr_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      traddr_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string traddr = 4;</code>
-   * @return The bytes for traddr.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTraddrBytes() {
-    java.lang.Object ref = traddr_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      traddr_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TRSVCID_FIELD_NUMBER = 5;
-  private long trsvcid_;
-  /**
-   * <code>int64 trsvcid = 5;</code>
-   * @return The trsvcid.
-   */
-  @java.lang.Override
-  public long getTrsvcid() {
-    return trsvcid_;
-  }
-
-  public static final int SUBNQN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object subnqn_;
-  /**
-   * <code>string subnqn = 6;</code>
-   * @return The subnqn.
-   */
-  @java.lang.Override
-  public java.lang.String getSubnqn() {
-    java.lang.Object ref = subnqn_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      subnqn_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string subnqn = 6;</code>
-   * @return The bytes for subnqn.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSubnqnBytes() {
-    java.lang.Object ref = subnqn_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      subnqn_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int HDGST_FIELD_NUMBER = 7;
+  public static final int HDGST_FIELD_NUMBER = 2;
   private boolean hdgst_;
   /**
-   * <code>bool hdgst = 7;</code>
+   * <code>bool hdgst = 2;</code>
    * @return The hdgst.
    */
   @java.lang.Override
@@ -340,10 +175,10 @@ private static final long serialVersionUID = 0L;
     return hdgst_;
   }
 
-  public static final int DDGST_FIELD_NUMBER = 8;
+  public static final int DDGST_FIELD_NUMBER = 3;
   private boolean ddgst_;
   /**
-   * <code>bool ddgst = 8;</code>
+   * <code>bool ddgst = 3;</code>
    * @return The ddgst.
    */
   @java.lang.Override
@@ -351,17 +186,17 @@ private static final long serialVersionUID = 0L;
     return ddgst_;
   }
 
-  public static final int MULTIPATH_FIELD_NUMBER = 9;
+  public static final int MULTIPATH_FIELD_NUMBER = 4;
   private int multipath_;
   /**
-   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
    * @return The enum numeric value on the wire for multipath.
    */
   @java.lang.Override public int getMultipathValue() {
     return multipath_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
    * @return The multipath.
    */
   @java.lang.Override public opi_api.storage.v1.NvmeMultipath getMultipath() {
@@ -370,10 +205,10 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.storage.v1.NvmeMultipath.UNRECOGNIZED : result;
   }
 
-  public static final int IO_QUEUES_COUNT_FIELD_NUMBER = 10;
+  public static final int IO_QUEUES_COUNT_FIELD_NUMBER = 5;
   private long ioQueuesCount_;
   /**
-   * <code>int64 io_queues_count = 10;</code>
+   * <code>int64 io_queues_count = 5;</code>
    * @return The ioQueuesCount.
    */
   @java.lang.Override
@@ -381,53 +216,15 @@ private static final long serialVersionUID = 0L;
     return ioQueuesCount_;
   }
 
-  public static final int QUEUE_SIZE_FIELD_NUMBER = 11;
+  public static final int QUEUE_SIZE_FIELD_NUMBER = 6;
   private long queueSize_;
   /**
-   * <code>int64 queue_size = 11;</code>
+   * <code>int64 queue_size = 6;</code>
    * @return The queueSize.
    */
   @java.lang.Override
   public long getQueueSize() {
     return queueSize_;
-  }
-
-  public static final int HOSTNQN_FIELD_NUMBER = 12;
-  private volatile java.lang.Object hostnqn_;
-  /**
-   * <code>string hostnqn = 12;</code>
-   * @return The hostnqn.
-   */
-  @java.lang.Override
-  public java.lang.String getHostnqn() {
-    java.lang.Object ref = hostnqn_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      hostnqn_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string hostnqn = 12;</code>
-   * @return The bytes for hostnqn.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getHostnqnBytes() {
-    java.lang.Object ref = hostnqn_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      hostnqn_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -447,38 +244,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, trtype_);
-    }
-    if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVME_ADDRESS_FAMILY_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, adrfam_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, traddr_);
-    }
-    if (trsvcid_ != 0L) {
-      output.writeInt64(5, trsvcid_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnqn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, subnqn_);
-    }
     if (hdgst_ != false) {
-      output.writeBool(7, hdgst_);
+      output.writeBool(2, hdgst_);
     }
     if (ddgst_ != false) {
-      output.writeBool(8, ddgst_);
+      output.writeBool(3, ddgst_);
     }
     if (multipath_ != opi_api.storage.v1.NvmeMultipath.NVME_MULTIPATH_UNSPECIFIED.getNumber()) {
-      output.writeEnum(9, multipath_);
+      output.writeEnum(4, multipath_);
     }
     if (ioQueuesCount_ != 0L) {
-      output.writeInt64(10, ioQueuesCount_);
+      output.writeInt64(5, ioQueuesCount_);
     }
     if (queueSize_ != 0L) {
-      output.writeInt64(11, queueSize_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostnqn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, hostnqn_);
+      output.writeInt64(6, queueSize_);
     }
     unknownFields.writeTo(output);
   }
@@ -492,46 +271,25 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, trtype_);
-    }
-    if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVME_ADDRESS_FAMILY_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, adrfam_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, traddr_);
-    }
-    if (trsvcid_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, trsvcid_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnqn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, subnqn_);
-    }
     if (hdgst_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, hdgst_);
+        .computeBoolSize(2, hdgst_);
     }
     if (ddgst_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, ddgst_);
+        .computeBoolSize(3, ddgst_);
     }
     if (multipath_ != opi_api.storage.v1.NvmeMultipath.NVME_MULTIPATH_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(9, multipath_);
+        .computeEnumSize(4, multipath_);
     }
     if (ioQueuesCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(10, ioQueuesCount_);
+        .computeInt64Size(5, ioQueuesCount_);
     }
     if (queueSize_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(11, queueSize_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostnqn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, hostnqn_);
+        .computeInt64Size(6, queueSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -550,14 +308,6 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (trtype_ != other.trtype_) return false;
-    if (adrfam_ != other.adrfam_) return false;
-    if (!getTraddr()
-        .equals(other.getTraddr())) return false;
-    if (getTrsvcid()
-        != other.getTrsvcid()) return false;
-    if (!getSubnqn()
-        .equals(other.getSubnqn())) return false;
     if (getHdgst()
         != other.getHdgst()) return false;
     if (getDdgst()
@@ -567,8 +317,6 @@ private static final long serialVersionUID = 0L;
         != other.getIoQueuesCount()) return false;
     if (getQueueSize()
         != other.getQueueSize()) return false;
-    if (!getHostnqn()
-        .equals(other.getHostnqn())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -582,17 +330,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + TRTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + trtype_;
-    hash = (37 * hash) + ADRFAM_FIELD_NUMBER;
-    hash = (53 * hash) + adrfam_;
-    hash = (37 * hash) + TRADDR_FIELD_NUMBER;
-    hash = (53 * hash) + getTraddr().hashCode();
-    hash = (37 * hash) + TRSVCID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTrsvcid());
-    hash = (37 * hash) + SUBNQN_FIELD_NUMBER;
-    hash = (53 * hash) + getSubnqn().hashCode();
     hash = (37 * hash) + HDGST_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getHdgst());
@@ -607,8 +344,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + QUEUE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getQueueSize());
-    hash = (37 * hash) + HOSTNQN_FIELD_NUMBER;
-    hash = (53 * hash) + getHostnqn().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -744,16 +479,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      trtype_ = 0;
-
-      adrfam_ = 0;
-
-      traddr_ = "";
-
-      trsvcid_ = 0L;
-
-      subnqn_ = "";
-
       hdgst_ = false;
 
       ddgst_ = false;
@@ -763,8 +488,6 @@ private static final long serialVersionUID = 0L;
       ioQueuesCount_ = 0L;
 
       queueSize_ = 0L;
-
-      hostnqn_ = "";
 
       return this;
     }
@@ -793,17 +516,11 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.NVMfRemoteController buildPartial() {
       opi_api.storage.v1.NVMfRemoteController result = new opi_api.storage.v1.NVMfRemoteController(this);
       result.name_ = name_;
-      result.trtype_ = trtype_;
-      result.adrfam_ = adrfam_;
-      result.traddr_ = traddr_;
-      result.trsvcid_ = trsvcid_;
-      result.subnqn_ = subnqn_;
       result.hdgst_ = hdgst_;
       result.ddgst_ = ddgst_;
       result.multipath_ = multipath_;
       result.ioQueuesCount_ = ioQueuesCount_;
       result.queueSize_ = queueSize_;
-      result.hostnqn_ = hostnqn_;
       onBuilt();
       return result;
     }
@@ -856,23 +573,6 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.trtype_ != 0) {
-        setTrtypeValue(other.getTrtypeValue());
-      }
-      if (other.adrfam_ != 0) {
-        setAdrfamValue(other.getAdrfamValue());
-      }
-      if (!other.getTraddr().isEmpty()) {
-        traddr_ = other.traddr_;
-        onChanged();
-      }
-      if (other.getTrsvcid() != 0L) {
-        setTrsvcid(other.getTrsvcid());
-      }
-      if (!other.getSubnqn().isEmpty()) {
-        subnqn_ = other.subnqn_;
-        onChanged();
-      }
       if (other.getHdgst() != false) {
         setHdgst(other.getHdgst());
       }
@@ -887,10 +587,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getQueueSize() != 0L) {
         setQueueSize(other.getQueueSize());
-      }
-      if (!other.getHostnqn().isEmpty()) {
-        hostnqn_ = other.hostnqn_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1027,300 +723,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int trtype_ = 0;
-    /**
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-     * @return The enum numeric value on the wire for trtype.
-     */
-    @java.lang.Override public int getTrtypeValue() {
-      return trtype_;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-     * @param value The enum numeric value on the wire for trtype to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTrtypeValue(int value) {
-      
-      trtype_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-     * @return The trtype.
-     */
-    @java.lang.Override
-    public opi_api.storage.v1.NvmeTransportType getTrtype() {
-      @SuppressWarnings("deprecation")
-      opi_api.storage.v1.NvmeTransportType result = opi_api.storage.v1.NvmeTransportType.valueOf(trtype_);
-      return result == null ? opi_api.storage.v1.NvmeTransportType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-     * @param value The trtype to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTrtype(opi_api.storage.v1.NvmeTransportType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      trtype_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTrtype() {
-      
-      trtype_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int adrfam_ = 0;
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-     * @return The enum numeric value on the wire for adrfam.
-     */
-    @java.lang.Override public int getAdrfamValue() {
-      return adrfam_;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-     * @param value The enum numeric value on the wire for adrfam to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdrfamValue(int value) {
-      
-      adrfam_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-     * @return The adrfam.
-     */
-    @java.lang.Override
-    public opi_api.storage.v1.NvmeAddressFamily getAdrfam() {
-      @SuppressWarnings("deprecation")
-      opi_api.storage.v1.NvmeAddressFamily result = opi_api.storage.v1.NvmeAddressFamily.valueOf(adrfam_);
-      return result == null ? opi_api.storage.v1.NvmeAddressFamily.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-     * @param value The adrfam to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdrfam(opi_api.storage.v1.NvmeAddressFamily value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      adrfam_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAdrfam() {
-      
-      adrfam_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object traddr_ = "";
-    /**
-     * <code>string traddr = 4;</code>
-     * @return The traddr.
-     */
-    public java.lang.String getTraddr() {
-      java.lang.Object ref = traddr_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        traddr_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string traddr = 4;</code>
-     * @return The bytes for traddr.
-     */
-    public com.google.protobuf.ByteString
-        getTraddrBytes() {
-      java.lang.Object ref = traddr_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        traddr_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string traddr = 4;</code>
-     * @param value The traddr to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTraddr(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      traddr_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string traddr = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTraddr() {
-      
-      traddr_ = getDefaultInstance().getTraddr();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string traddr = 4;</code>
-     * @param value The bytes for traddr to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTraddrBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      traddr_ = value;
-      onChanged();
-      return this;
-    }
-
-    private long trsvcid_ ;
-    /**
-     * <code>int64 trsvcid = 5;</code>
-     * @return The trsvcid.
-     */
-    @java.lang.Override
-    public long getTrsvcid() {
-      return trsvcid_;
-    }
-    /**
-     * <code>int64 trsvcid = 5;</code>
-     * @param value The trsvcid to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTrsvcid(long value) {
-      
-      trsvcid_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 trsvcid = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTrsvcid() {
-      
-      trsvcid_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object subnqn_ = "";
-    /**
-     * <code>string subnqn = 6;</code>
-     * @return The subnqn.
-     */
-    public java.lang.String getSubnqn() {
-      java.lang.Object ref = subnqn_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        subnqn_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string subnqn = 6;</code>
-     * @return The bytes for subnqn.
-     */
-    public com.google.protobuf.ByteString
-        getSubnqnBytes() {
-      java.lang.Object ref = subnqn_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        subnqn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string subnqn = 6;</code>
-     * @param value The subnqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubnqn(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      subnqn_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string subnqn = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSubnqn() {
-      
-      subnqn_ = getDefaultInstance().getSubnqn();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string subnqn = 6;</code>
-     * @param value The bytes for subnqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubnqnBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      subnqn_ = value;
-      onChanged();
-      return this;
-    }
-
     private boolean hdgst_ ;
     /**
-     * <code>bool hdgst = 7;</code>
+     * <code>bool hdgst = 2;</code>
      * @return The hdgst.
      */
     @java.lang.Override
@@ -1328,7 +733,7 @@ private static final long serialVersionUID = 0L;
       return hdgst_;
     }
     /**
-     * <code>bool hdgst = 7;</code>
+     * <code>bool hdgst = 2;</code>
      * @param value The hdgst to set.
      * @return This builder for chaining.
      */
@@ -1339,7 +744,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool hdgst = 7;</code>
+     * <code>bool hdgst = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearHdgst() {
@@ -1351,7 +756,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean ddgst_ ;
     /**
-     * <code>bool ddgst = 8;</code>
+     * <code>bool ddgst = 3;</code>
      * @return The ddgst.
      */
     @java.lang.Override
@@ -1359,7 +764,7 @@ private static final long serialVersionUID = 0L;
       return ddgst_;
     }
     /**
-     * <code>bool ddgst = 8;</code>
+     * <code>bool ddgst = 3;</code>
      * @param value The ddgst to set.
      * @return This builder for chaining.
      */
@@ -1370,7 +775,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool ddgst = 8;</code>
+     * <code>bool ddgst = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearDdgst() {
@@ -1382,14 +787,14 @@ private static final long serialVersionUID = 0L;
 
     private int multipath_ = 0;
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
      * @return The enum numeric value on the wire for multipath.
      */
     @java.lang.Override public int getMultipathValue() {
       return multipath_;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
      * @param value The enum numeric value on the wire for multipath to set.
      * @return This builder for chaining.
      */
@@ -1400,7 +805,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
      * @return The multipath.
      */
     @java.lang.Override
@@ -1410,7 +815,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? opi_api.storage.v1.NvmeMultipath.UNRECOGNIZED : result;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
      * @param value The multipath to set.
      * @return This builder for chaining.
      */
@@ -1424,7 +829,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 9;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearMultipath() {
@@ -1436,7 +841,7 @@ private static final long serialVersionUID = 0L;
 
     private long ioQueuesCount_ ;
     /**
-     * <code>int64 io_queues_count = 10;</code>
+     * <code>int64 io_queues_count = 5;</code>
      * @return The ioQueuesCount.
      */
     @java.lang.Override
@@ -1444,7 +849,7 @@ private static final long serialVersionUID = 0L;
       return ioQueuesCount_;
     }
     /**
-     * <code>int64 io_queues_count = 10;</code>
+     * <code>int64 io_queues_count = 5;</code>
      * @param value The ioQueuesCount to set.
      * @return This builder for chaining.
      */
@@ -1455,7 +860,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 io_queues_count = 10;</code>
+     * <code>int64 io_queues_count = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearIoQueuesCount() {
@@ -1467,7 +872,7 @@ private static final long serialVersionUID = 0L;
 
     private long queueSize_ ;
     /**
-     * <code>int64 queue_size = 11;</code>
+     * <code>int64 queue_size = 6;</code>
      * @return The queueSize.
      */
     @java.lang.Override
@@ -1475,7 +880,7 @@ private static final long serialVersionUID = 0L;
       return queueSize_;
     }
     /**
-     * <code>int64 queue_size = 11;</code>
+     * <code>int64 queue_size = 6;</code>
      * @param value The queueSize to set.
      * @return This builder for chaining.
      */
@@ -1486,88 +891,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 queue_size = 11;</code>
+     * <code>int64 queue_size = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearQueueSize() {
       
       queueSize_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object hostnqn_ = "";
-    /**
-     * <code>string hostnqn = 12;</code>
-     * @return The hostnqn.
-     */
-    public java.lang.String getHostnqn() {
-      java.lang.Object ref = hostnqn_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        hostnqn_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string hostnqn = 12;</code>
-     * @return The bytes for hostnqn.
-     */
-    public com.google.protobuf.ByteString
-        getHostnqnBytes() {
-      java.lang.Object ref = hostnqn_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        hostnqn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string hostnqn = 12;</code>
-     * @param value The hostnqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHostnqn(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      hostnqn_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string hostnqn = 12;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearHostnqn() {
-      
-      hostnqn_ = getDefaultInstance().getHostnqn();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string hostnqn = 12;</code>
-     * @param value The bytes for hostnqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHostnqnBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      hostnqn_ = value;
       onChanged();
       return this;
     }
