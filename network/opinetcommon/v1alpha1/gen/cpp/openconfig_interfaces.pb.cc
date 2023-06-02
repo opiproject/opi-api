@@ -519,10 +519,10 @@ const char descriptor_table_protodef_openconfig_5finterfaces_2eproto[] PROTOBUF_
   ".v1alpha1.NetInterface\"d\202\323\344\223\002B21/v1/{net"
   "_interface.name=interfaces/*/interface/*"
   "}:\rnet_interface\332A\031net_interface,update_"
-  "maskBn\n\030opi_api.network.v1alpha1B\031Openco"
-  "nfigInterfacesProtoP\001Z5github.com/opipro"
-  "ject/opi-api/network/v1alpha1/gen/gob\006pr"
-  "oto3"
+  "maskB{\n\030opi_api.network.v1alpha1B\031Openco"
+  "nfigInterfacesProtoP\001ZBgithub.com/opipro"
+  "ject/opi-api/network/opinetcommon/v1alph"
+  "a1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_openconfig_5finterfaces_2eproto_deps[6] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -534,7 +534,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_openconfig_5finterfaces_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_openconfig_5finterfaces_2eproto = {
-  false, false, 3564, descriptor_table_protodef_openconfig_5finterfaces_2eproto, "openconfig_interfaces.proto", 
+  false, false, 3577, descriptor_table_protodef_openconfig_5finterfaces_2eproto, "openconfig_interfaces.proto", 
   &descriptor_table_openconfig_5finterfaces_2eproto_once, descriptor_table_openconfig_5finterfaces_2eproto_deps, 6, 14,
   schemas, file_default_instances, TableStruct_openconfig_5finterfaces_2eproto::offsets,
   file_level_metadata_openconfig_5finterfaces_2eproto, file_level_enum_descriptors_openconfig_5finterfaces_2eproto, file_level_service_descriptors_openconfig_5finterfaces_2eproto,

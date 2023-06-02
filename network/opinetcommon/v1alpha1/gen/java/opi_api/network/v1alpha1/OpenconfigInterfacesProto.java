@@ -179,10 +179,10 @@ public final class OpenconfigInterfacesProto {
       ".v1alpha1.NetInterface\"d\202\323\344\223\002B21/v1/{net" +
       "_interface.name=interfaces/*/interface/*" +
       "}:\rnet_interface\332A\031net_interface,update_" +
-      "maskBn\n\030opi_api.network.v1alpha1B\031Openco" +
-      "nfigInterfacesProtoP\001Z5github.com/opipro" +
-      "ject/opi-api/network/v1alpha1/gen/gob\006pr" +
-      "oto3"
+      "maskB{\n\030opi_api.network.v1alpha1B\031Openco" +
+      "nfigInterfacesProtoP\001ZBgithub.com/opipro" +
+      "ject/opi-api/network/opinetcommon/v1alph" +
+      "a1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
