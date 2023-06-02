@@ -64,7 +64,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteEncryptedVolumeRequestDef
 constexpr UpdateEncryptedVolumeRequest::UpdateEncryptedVolumeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : encrypted_volume_(nullptr)
-  , update_mask_(nullptr){}
+  , update_mask_(nullptr)
+  , allow_missing_(false){}
 struct UpdateEncryptedVolumeRequestDefaultTypeInternal {
   constexpr UpdateEncryptedVolumeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -180,6 +181,7 @@ const uint32_t TableStruct_middleend_5fencryption_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, encrypted_volume_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, update_mask_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -225,11 +227,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 10, -1, -1, sizeof(::opi_api::storage::v1::CreateEncryptedVolumeRequest)},
   { 18, -1, -1, sizeof(::opi_api::storage::v1::DeleteEncryptedVolumeRequest)},
   { 26, -1, -1, sizeof(::opi_api::storage::v1::UpdateEncryptedVolumeRequest)},
-  { 34, -1, -1, sizeof(::opi_api::storage::v1::ListEncryptedVolumesRequest)},
-  { 43, -1, -1, sizeof(::opi_api::storage::v1::ListEncryptedVolumesResponse)},
-  { 51, -1, -1, sizeof(::opi_api::storage::v1::GetEncryptedVolumeRequest)},
-  { 58, -1, -1, sizeof(::opi_api::storage::v1::EncryptedVolumeStatsRequest)},
-  { 65, -1, -1, sizeof(::opi_api::storage::v1::EncryptedVolumeStatsResponse)},
+  { 35, -1, -1, sizeof(::opi_api::storage::v1::ListEncryptedVolumesRequest)},
+  { 44, -1, -1, sizeof(::opi_api::storage::v1::ListEncryptedVolumesResponse)},
+  { 52, -1, -1, sizeof(::opi_api::storage::v1::GetEncryptedVolumeRequest)},
+  { 59, -1, -1, sizeof(::opi_api::storage::v1::EncryptedVolumeStatsRequest)},
+  { 66, -1, -1, sizeof(::opi_api::storage::v1::EncryptedVolumeStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -262,53 +264,54 @@ const char descriptor_table_protodef_middleend_5fencryption_2eproto[] PROTOBUF_S
   "dVolumeB\003\340A\002\022\033\n\023encrypted_volume_id\030\003 \001("
   "\t\"o\n\034DeleteEncryptedVolumeRequest\0228\n\004nam"
   "e\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.storage.v1/Encr"
-  "yptedVolume\022\025\n\rallow_missing\030\002 \001(\010\"\216\001\n\034U"
+  "yptedVolume\022\025\n\rallow_missing\030\002 \001(\010\"\245\001\n\034U"
   "pdateEncryptedVolumeRequest\022=\n\020encrypted"
   "_volume\030\001 \001(\0132#.opi_api.storage.v1.Encry"
   "ptedVolume\022/\n\013update_mask\030\002 \001(\0132\032.google"
-  ".protobuf.FieldMask\"\200\001\n\033ListEncryptedVol"
-  "umesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi"
-  "_api.storage.v1/EncryptedVolume\022\021\n\tpage_"
-  "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"w\n\034ListEn"
-  "cryptedVolumesResponse\022>\n\021encrypted_volu"
-  "mes\030\001 \003(\0132#.opi_api.storage.v1.Encrypted"
-  "Volume\022\027\n\017next_page_token\030\002 \001(\t\"U\n\031GetEn"
-  "cryptedVolumeRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372"
-  "A$\n\"opi_api.storage.v1/EncryptedVolume\"X"
-  "\n\033EncryptedVolumeStatsRequest\0229\n\023encrypt"
-  "ed_volume_id\030\001 \001(\0132\034.opi_api.common.v1.O"
-  "bjectKey\"\211\001\n\034EncryptedVolumeStatsRespons"
-  "e\0229\n\023encrypted_volume_id\030\001 \001(\0132\034.opi_api"
-  ".common.v1.ObjectKey\022.\n\005stats\030\002 \001(\0132\037.op"
-  "i_api.storage.v1.VolumeStats2\367\007\n\032Middlee"
-  "ndEncryptionService\022\274\001\n\025CreateEncryptedV"
-  "olume\0220.opi_api.storage.v1.CreateEncrypt"
-  "edVolumeRequest\032#.opi_api.storage.v1.Enc"
-  "ryptedVolume\"L\202\323\344\223\002\037\"\013/v1/volumes:\020encry"
-  "pted_volume\332A$encrypted_volume,encrypted"
-  "_volume_id\022\215\001\n\025DeleteEncryptedVolume\0220.o"
-  "pi_api.storage.v1.DeleteEncryptedVolumeR"
-  "equest\032\026.google.protobuf.Empty\"*\202\323\344\223\002\035*\033"
-  "/v1/{name=volumes}/{volume}\332A\004name\022\317\001\n\025U"
-  "pdateEncryptedVolume\0220.opi_api.storage.v"
-  "1.UpdateEncryptedVolumeRequest\032#.opi_api"
-  ".storage.v1.EncryptedVolume\"_\202\323\344\223\002:2&/v1"
-  "/{encrypted_volume.name=subsystems}:\020enc"
-  "rypted_volume\332A\034encrypted_volume,update_"
-  "mask\022\240\001\n\024ListEncryptedVolumes\022/.opi_api."
-  "storage.v1.ListEncryptedVolumesRequest\0320"
-  ".opi_api.storage.v1.ListEncryptedVolumes"
-  "Response\"%\202\323\344\223\002\026\022\024/v1/{parent=volumes}\332A"
-  "\006parent\022\227\001\n\022GetEncryptedVolume\022-.opi_api"
-  ".storage.v1.GetEncryptedVolumeRequest\032#."
-  "opi_api.storage.v1.EncryptedVolume\"-\202\323\344\223"
-  "\002 \022\036/v1/{name=subsystems}/{volume}\332A\004nam"
-  "e\022{\n\024EncryptedVolumeStats\022/.opi_api.stor"
-  "age.v1.EncryptedVolumeStatsRequest\0320.opi"
-  "_api.storage.v1.EncryptedVolumeStatsResp"
-  "onse\"\000Bg\n\022opi_api.storage.v1B\030MiddleendE"
-  "ncryptionProtoP\001Z5github.com/opiproject/"
-  "opi-api/storage/v1alpha1/gen/gob\006proto3"
+  ".protobuf.FieldMask\022\025\n\rallow_missing\030\003 \001"
+  "(\010\"\200\001\n\033ListEncryptedVolumesRequest\022:\n\006pa"
+  "rent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.storage.v1/E"
+  "ncryptedVolume\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag"
+  "e_token\030\003 \001(\t\"w\n\034ListEncryptedVolumesRes"
+  "ponse\022>\n\021encrypted_volumes\030\001 \003(\0132#.opi_a"
+  "pi.storage.v1.EncryptedVolume\022\027\n\017next_pa"
+  "ge_token\030\002 \001(\t\"U\n\031GetEncryptedVolumeRequ"
+  "est\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.stora"
+  "ge.v1/EncryptedVolume\"X\n\033EncryptedVolume"
+  "StatsRequest\0229\n\023encrypted_volume_id\030\001 \001("
+  "\0132\034.opi_api.common.v1.ObjectKey\"\211\001\n\034Encr"
+  "yptedVolumeStatsResponse\0229\n\023encrypted_vo"
+  "lume_id\030\001 \001(\0132\034.opi_api.common.v1.Object"
+  "Key\022.\n\005stats\030\002 \001(\0132\037.opi_api.storage.v1."
+  "VolumeStats2\367\007\n\032MiddleendEncryptionServi"
+  "ce\022\274\001\n\025CreateEncryptedVolume\0220.opi_api.s"
+  "torage.v1.CreateEncryptedVolumeRequest\032#"
+  ".opi_api.storage.v1.EncryptedVolume\"L\202\323\344"
+  "\223\002\037\"\013/v1/volumes:\020encrypted_volume\332A$enc"
+  "rypted_volume,encrypted_volume_id\022\215\001\n\025De"
+  "leteEncryptedVolume\0220.opi_api.storage.v1"
+  ".DeleteEncryptedVolumeRequest\032\026.google.p"
+  "rotobuf.Empty\"*\202\323\344\223\002\035*\033/v1/{name=volumes"
+  "}/{volume}\332A\004name\022\317\001\n\025UpdateEncryptedVol"
+  "ume\0220.opi_api.storage.v1.UpdateEncrypted"
+  "VolumeRequest\032#.opi_api.storage.v1.Encry"
+  "ptedVolume\"_\202\323\344\223\002:2&/v1/{encrypted_volum"
+  "e.name=subsystems}:\020encrypted_volume\332A\034e"
+  "ncrypted_volume,update_mask\022\240\001\n\024ListEncr"
+  "yptedVolumes\022/.opi_api.storage.v1.ListEn"
+  "cryptedVolumesRequest\0320.opi_api.storage."
+  "v1.ListEncryptedVolumesResponse\"%\202\323\344\223\002\026\022"
+  "\024/v1/{parent=volumes}\332A\006parent\022\227\001\n\022GetEn"
+  "cryptedVolume\022-.opi_api.storage.v1.GetEn"
+  "cryptedVolumeRequest\032#.opi_api.storage.v"
+  "1.EncryptedVolume\"-\202\323\344\223\002 \022\036/v1/{name=sub"
+  "systems}/{volume}\332A\004name\022{\n\024EncryptedVol"
+  "umeStats\022/.opi_api.storage.v1.EncryptedV"
+  "olumeStatsRequest\0320.opi_api.storage.v1.E"
+  "ncryptedVolumeStatsResponse\"\000Bg\n\022opi_api"
+  ".storage.v1B\030MiddleendEncryptionProtoP\001Z"
+  "5github.com/opiproject/opi-api/storage/v"
+  "1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_middleend_5fencryption_2eproto_deps[8] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -322,7 +325,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_middleend_5fencryption_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_middleend_5fencryption_2eproto = {
-  false, false, 2559, descriptor_table_protodef_middleend_5fencryption_2eproto, "middleend_encryption.proto", 
+  false, false, 2582, descriptor_table_protodef_middleend_5fencryption_2eproto, "middleend_encryption.proto", 
   &descriptor_table_middleend_5fencryption_2eproto_once, descriptor_table_middleend_5fencryption_2eproto_deps, 8, 9,
   schemas, file_default_instances, TableStruct_middleend_5fencryption_2eproto::offsets,
   file_level_metadata_middleend_5fencryption_2eproto, file_level_enum_descriptors_middleend_5fencryption_2eproto, file_level_service_descriptors_middleend_5fencryption_2eproto,
@@ -1187,14 +1190,15 @@ UpdateEncryptedVolumeRequest::UpdateEncryptedVolumeRequest(const UpdateEncrypted
   } else {
     update_mask_ = nullptr;
   }
+  allow_missing_ = from.allow_missing_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.UpdateEncryptedVolumeRequest)
 }
 
 inline void UpdateEncryptedVolumeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&encrypted_volume_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&update_mask_) -
-    reinterpret_cast<char*>(&encrypted_volume_)) + sizeof(update_mask_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&allow_missing_) -
+    reinterpret_cast<char*>(&encrypted_volume_)) + sizeof(allow_missing_));
 }
 
 UpdateEncryptedVolumeRequest::~UpdateEncryptedVolumeRequest() {
@@ -1234,6 +1238,7 @@ void UpdateEncryptedVolumeRequest::Clear() {
     delete update_mask_;
   }
   update_mask_ = nullptr;
+  allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1255,6 +1260,14 @@ const char* UpdateEncryptedVolumeRequest::_InternalParse(const char* ptr, ::PROT
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_update_mask(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool allow_missing = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1304,6 +1317,12 @@ uint8_t* UpdateEncryptedVolumeRequest::_InternalSerialize(
         2, _Internal::update_mask(this), target, stream);
   }
 
+  // bool allow_missing = 3;
+  if (this->_internal_allow_missing() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_allow_missing(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1334,6 +1353,11 @@ size_t UpdateEncryptedVolumeRequest::ByteSizeLong() const {
         *update_mask_);
   }
 
+  // bool allow_missing = 3;
+  if (this->_internal_allow_missing() != 0) {
+    total_size += 1 + 1;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -1362,6 +1386,9 @@ void UpdateEncryptedVolumeRequest::MergeFrom(const UpdateEncryptedVolumeRequest&
   if (from._internal_has_update_mask()) {
     _internal_mutable_update_mask()->::PROTOBUF_NAMESPACE_ID::FieldMask::MergeFrom(from._internal_update_mask());
   }
+  if (from._internal_allow_missing() != 0) {
+    _internal_set_allow_missing(from._internal_allow_missing());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1380,8 +1407,8 @@ void UpdateEncryptedVolumeRequest::InternalSwap(UpdateEncryptedVolumeRequest* ot
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(UpdateEncryptedVolumeRequest, update_mask_)
-      + sizeof(UpdateEncryptedVolumeRequest::update_mask_)
+      PROTOBUF_FIELD_OFFSET(UpdateEncryptedVolumeRequest, allow_missing_)
+      + sizeof(UpdateEncryptedVolumeRequest::allow_missing_)
       - PROTOBUF_FIELD_OFFSET(UpdateEncryptedVolumeRequest, encrypted_volume_)>(
           reinterpret_cast<char*>(&encrypted_volume_),
           reinterpret_cast<char*>(&other->encrypted_volume_));

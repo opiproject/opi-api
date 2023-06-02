@@ -8,16 +8,28 @@ public interface UpdateQosVolumeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
    * @return Whether the qosVolume field is set.
    */
   boolean hasQosVolume();
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
    * @return The qosVolume.
    */
   opi_api.storage.v1.QosVolume getQosVolume();
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
    */
   opi_api.storage.v1.QosVolumeOrBuilder getQosVolumeOrBuilder();
@@ -48,4 +60,15 @@ public interface UpdateQosVolumeRequestOrBuilder extends
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   * <pre>
+   * If set to true, and the object is not found, a new object will be created.
+   * In this situation, `update_mask` is ignored.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

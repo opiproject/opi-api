@@ -8,16 +8,28 @@ public interface UpdateVirtioScsiLunRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
    * @return Whether the virtioScsiLun field is set.
    */
   boolean hasVirtioScsiLun();
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
    * @return The virtioScsiLun.
    */
   opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun();
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
    */
   opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder();
@@ -48,4 +60,15 @@ public interface UpdateVirtioScsiLunRequestOrBuilder extends
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   * <pre>
+   * If set to true, and the object is not found, a new object will be created.
+   * In this situation, `update_mask` is ignored.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

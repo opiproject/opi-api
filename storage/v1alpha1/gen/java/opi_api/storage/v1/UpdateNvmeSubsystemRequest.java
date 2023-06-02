@@ -74,6 +74,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+
+            allowMissing_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -109,6 +114,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_SUBSYSTEM_FIELD_NUMBER = 1;
   private opi_api.storage.v1.NvmeSubsystem nvmeSubsystem_;
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
    * @return Whether the nvmeSubsystem field is set.
    */
@@ -117,6 +126,10 @@ private static final long serialVersionUID = 0L;
     return nvmeSubsystem_ != null;
   }
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
    * @return The nvmeSubsystem.
    */
@@ -125,6 +138,10 @@ private static final long serialVersionUID = 0L;
     return nvmeSubsystem_ == null ? opi_api.storage.v1.NvmeSubsystem.getDefaultInstance() : nvmeSubsystem_;
   }
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
    */
   @java.lang.Override
@@ -170,6 +187,22 @@ private static final long serialVersionUID = 0L;
     return getUpdateMask();
   }
 
+  public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
+  private boolean allowMissing_;
+  /**
+   * <pre>
+   * If set to true, and the object is not found, a new object will be created.
+   * In this situation, `update_mask` is ignored.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   * @return The allowMissing.
+   */
+  @java.lang.Override
+  public boolean getAllowMissing() {
+    return allowMissing_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +223,9 @@ private static final long serialVersionUID = 0L;
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
     }
+    if (allowMissing_ != false) {
+      output.writeBool(3, allowMissing_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -206,6 +242,10 @@ private static final long serialVersionUID = 0L;
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUpdateMask());
+    }
+    if (allowMissing_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, allowMissing_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,6 +272,8 @@ private static final long serialVersionUID = 0L;
       if (!getUpdateMask()
           .equals(other.getUpdateMask())) return false;
     }
+    if (getAllowMissing()
+        != other.getAllowMissing()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,6 +293,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
+    hash = (37 * hash) + ALLOW_MISSING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAllowMissing());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -396,6 +441,8 @@ private static final long serialVersionUID = 0L;
         updateMask_ = null;
         updateMaskBuilder_ = null;
       }
+      allowMissing_ = false;
+
       return this;
     }
 
@@ -432,6 +479,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.updateMask_ = updateMaskBuilder_.build();
       }
+      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
     }
@@ -486,6 +534,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
       }
+      if (other.getAllowMissing() != false) {
+        setAllowMissing(other.getAllowMissing());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -519,6 +570,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeSubsystem, opi_api.storage.v1.NvmeSubsystem.Builder, opi_api.storage.v1.NvmeSubsystemOrBuilder> nvmeSubsystemBuilder_;
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      * @return Whether the nvmeSubsystem field is set.
      */
@@ -526,6 +581,10 @@ private static final long serialVersionUID = 0L;
       return nvmeSubsystemBuilder_ != null || nvmeSubsystem_ != null;
     }
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      * @return The nvmeSubsystem.
      */
@@ -537,6 +596,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      */
     public Builder setNvmeSubsystem(opi_api.storage.v1.NvmeSubsystem value) {
@@ -553,6 +616,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      */
     public Builder setNvmeSubsystem(
@@ -567,6 +634,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      */
     public Builder mergeNvmeSubsystem(opi_api.storage.v1.NvmeSubsystem value) {
@@ -585,6 +656,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      */
     public Builder clearNvmeSubsystem() {
@@ -599,6 +674,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      */
     public opi_api.storage.v1.NvmeSubsystem.Builder getNvmeSubsystemBuilder() {
@@ -607,6 +686,10 @@ private static final long serialVersionUID = 0L;
       return getNvmeSubsystemFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      */
     public opi_api.storage.v1.NvmeSubsystemOrBuilder getNvmeSubsystemOrBuilder() {
@@ -618,6 +701,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The object's `name` field is used to identify the object to be updated.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -787,6 +874,52 @@ private static final long serialVersionUID = 0L;
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private boolean allowMissing_ ;
+    /**
+     * <pre>
+     * If set to true, and the object is not found, a new object will be created.
+     * In this situation, `update_mask` is ignored.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @return The allowMissing.
+     */
+    @java.lang.Override
+    public boolean getAllowMissing() {
+      return allowMissing_;
+    }
+    /**
+     * <pre>
+     * If set to true, and the object is not found, a new object will be created.
+     * In this situation, `update_mask` is ignored.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @param value The allowMissing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowMissing(boolean value) {
+      
+      allowMissing_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set to true, and the object is not found, a new object will be created.
+     * In this situation, `update_mask` is ignored.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowMissing() {
+      
+      allowMissing_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -8,16 +8,28 @@ public interface UpdateVirtioScsiControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1;</code>
    * @return Whether the virtioScsiController field is set.
    */
   boolean hasVirtioScsiController();
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1;</code>
    * @return The virtioScsiController.
    */
   opi_api.storage.v1.VirtioScsiController getVirtioScsiController();
   /**
+   * <pre>
+   * The object's `name` field is used to identify the object to be updated.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1;</code>
    */
   opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder();
@@ -48,4 +60,15 @@ public interface UpdateVirtioScsiControllerRequestOrBuilder extends
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   * <pre>
+   * If set to true, and the object is not found, a new object will be created.
+   * In this situation, `update_mask` is ignored.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

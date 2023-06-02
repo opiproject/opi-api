@@ -2470,6 +2470,7 @@ class UpdateNvmeSubsystemRequest final :
   enum : int {
     kNvmeSubsystemFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
   // .opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1;
   bool has_nvme_subsystem() const;
@@ -2507,6 +2508,15 @@ class UpdateNvmeSubsystemRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNvmeSubsystemRequest)
  private:
   class _Internal;
@@ -2516,6 +2526,7 @@ class UpdateNvmeSubsystemRequest final :
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NvmeSubsystem* nvme_subsystem_;
   ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -3788,6 +3799,7 @@ class UpdateNvmeControllerRequest final :
   enum : int {
     kNvmeControllerFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
   // .opi_api.storage.v1.NvmeController nvme_controller = 1;
   bool has_nvme_controller() const;
@@ -3825,6 +3837,15 @@ class UpdateNvmeControllerRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNvmeControllerRequest)
  private:
   class _Internal;
@@ -3834,6 +3855,7 @@ class UpdateNvmeControllerRequest final :
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NvmeController* nvme_controller_;
   ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -5126,6 +5148,7 @@ class UpdateNvmeNamespaceRequest final :
   enum : int {
     kNvmeNamespaceFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
   // .opi_api.storage.v1.NvmeNamespace nvme_namespace = 1;
   bool has_nvme_namespace() const;
@@ -5163,6 +5186,15 @@ class UpdateNvmeNamespaceRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNvmeNamespaceRequest)
  private:
   class _Internal;
@@ -5172,6 +5204,7 @@ class UpdateNvmeNamespaceRequest final :
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NvmeNamespace* nvme_namespace_;
   ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -8289,6 +8322,26 @@ inline void UpdateNvmeSubsystemRequest::set_allocated_update_mask(::PROTOBUF_NAM
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNvmeSubsystemRequest.update_mask)
 }
 
+// bool allow_missing = 3;
+inline void UpdateNvmeSubsystemRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateNvmeSubsystemRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateNvmeSubsystemRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateNvmeSubsystemRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateNvmeSubsystemRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateNvmeSubsystemRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.UpdateNvmeSubsystemRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // ListNvmeSubsystemsRequest
@@ -9143,6 +9196,26 @@ inline void UpdateNvmeControllerRequest::set_allocated_update_mask(::PROTOBUF_NA
   }
   update_mask_ = update_mask;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNvmeControllerRequest.update_mask)
+}
+
+// bool allow_missing = 3;
+inline void UpdateNvmeControllerRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateNvmeControllerRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateNvmeControllerRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateNvmeControllerRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateNvmeControllerRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateNvmeControllerRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.UpdateNvmeControllerRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -10085,6 +10158,26 @@ inline void UpdateNvmeNamespaceRequest::set_allocated_update_mask(::PROTOBUF_NAM
   }
   update_mask_ = update_mask;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNvmeNamespaceRequest.update_mask)
+}
+
+// bool allow_missing = 3;
+inline void UpdateNvmeNamespaceRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateNvmeNamespaceRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateNvmeNamespaceRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateNvmeNamespaceRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateNvmeNamespaceRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateNvmeNamespaceRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.UpdateNvmeNamespaceRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------

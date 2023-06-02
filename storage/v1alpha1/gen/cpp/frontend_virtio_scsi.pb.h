@@ -1204,6 +1204,7 @@ class UpdateVirtioScsiTargetRequest final :
   enum : int {
     kVirtioScsiTargetFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
   // .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;
   bool has_virtio_scsi_target() const;
@@ -1241,6 +1242,15 @@ class UpdateVirtioScsiTargetRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateVirtioScsiTargetRequest)
  private:
   class _Internal;
@@ -1250,6 +1260,7 @@ class UpdateVirtioScsiTargetRequest final :
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::VirtioScsiTarget* virtio_scsi_target_;
   ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -2542,6 +2553,7 @@ class UpdateVirtioScsiControllerRequest final :
   enum : int {
     kVirtioScsiControllerFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
   // .opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1;
   bool has_virtio_scsi_controller() const;
@@ -2579,6 +2591,15 @@ class UpdateVirtioScsiControllerRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateVirtioScsiControllerRequest)
  private:
   class _Internal;
@@ -2588,6 +2609,7 @@ class UpdateVirtioScsiControllerRequest final :
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::VirtioScsiController* virtio_scsi_controller_;
   ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -3880,6 +3902,7 @@ class UpdateVirtioScsiLunRequest final :
   enum : int {
     kVirtioScsiLunFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
   // .opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;
   bool has_virtio_scsi_lun() const;
@@ -3917,6 +3940,15 @@ class UpdateVirtioScsiLunRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateVirtioScsiLunRequest)
  private:
   class _Internal;
@@ -3926,6 +3958,7 @@ class UpdateVirtioScsiLunRequest final :
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::VirtioScsiLun* virtio_scsi_lun_;
   ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -5801,6 +5834,26 @@ inline void UpdateVirtioScsiTargetRequest::set_allocated_update_mask(::PROTOBUF_
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateVirtioScsiTargetRequest.update_mask)
 }
 
+// bool allow_missing = 3;
+inline void UpdateVirtioScsiTargetRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateVirtioScsiTargetRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateVirtioScsiTargetRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateVirtioScsiTargetRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateVirtioScsiTargetRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateVirtioScsiTargetRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.UpdateVirtioScsiTargetRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // ListVirtioScsiTargetsRequest
@@ -6743,6 +6796,26 @@ inline void UpdateVirtioScsiControllerRequest::set_allocated_update_mask(::PROTO
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateVirtioScsiControllerRequest.update_mask)
 }
 
+// bool allow_missing = 3;
+inline void UpdateVirtioScsiControllerRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateVirtioScsiControllerRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateVirtioScsiControllerRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateVirtioScsiControllerRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateVirtioScsiControllerRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateVirtioScsiControllerRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.UpdateVirtioScsiControllerRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // ListVirtioScsiControllersRequest
@@ -7683,6 +7756,26 @@ inline void UpdateVirtioScsiLunRequest::set_allocated_update_mask(::PROTOBUF_NAM
   }
   update_mask_ = update_mask;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateVirtioScsiLunRequest.update_mask)
+}
+
+// bool allow_missing = 3;
+inline void UpdateVirtioScsiLunRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateVirtioScsiLunRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateVirtioScsiLunRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateVirtioScsiLunRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateVirtioScsiLunRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateVirtioScsiLunRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.UpdateVirtioScsiLunRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------

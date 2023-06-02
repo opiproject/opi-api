@@ -762,6 +762,7 @@ class UpdateNullDebugRequest final :
   enum : int {
     kNullDebugFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
   // .opi_api.storage.v1.NullDebug null_debug = 1;
   bool has_null_debug() const;
@@ -799,6 +800,15 @@ class UpdateNullDebugRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNullDebugRequest)
  private:
   class _Internal;
@@ -808,6 +818,7 @@ class UpdateNullDebugRequest final :
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NullDebug* null_debug_;
   ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5fnull_2eproto;
 };
@@ -2227,6 +2238,26 @@ inline void UpdateNullDebugRequest::set_allocated_update_mask(::PROTOBUF_NAMESPA
   }
   update_mask_ = update_mask;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNullDebugRequest.update_mask)
+}
+
+// bool allow_missing = 3;
+inline void UpdateNullDebugRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateNullDebugRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateNullDebugRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateNullDebugRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateNullDebugRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateNullDebugRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.UpdateNullDebugRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------

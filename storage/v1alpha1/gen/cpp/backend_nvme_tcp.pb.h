@@ -945,6 +945,7 @@ class UpdateNVMfRemoteControllerRequest final :
   enum : int {
     kNvMfRemoteControllerFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
   // .opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;
   bool has_nv_mf_remote_controller() const;
@@ -982,6 +983,15 @@ class UpdateNVMfRemoteControllerRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMfRemoteControllerRequest)
  private:
   class _Internal;
@@ -991,6 +1001,7 @@ class UpdateNVMfRemoteControllerRequest final :
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NVMfRemoteController* nv_mf_remote_controller_;
   ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5fnvme_5ftcp_2eproto;
 };
@@ -2732,6 +2743,26 @@ inline void UpdateNVMfRemoteControllerRequest::set_allocated_update_mask(::PROTO
   }
   update_mask_ = update_mask;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNVMfRemoteControllerRequest.update_mask)
+}
+
+// bool allow_missing = 3;
+inline void UpdateNVMfRemoteControllerRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateNVMfRemoteControllerRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateNVMfRemoteControllerRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateNVMfRemoteControllerRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateNVMfRemoteControllerRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateNVMfRemoteControllerRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.UpdateNVMfRemoteControllerRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------

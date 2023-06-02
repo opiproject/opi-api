@@ -335,8 +335,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| aio_controller | [AioController](#opi_api-storage-v1-AioController) |  |  |
+| aio_controller | [AioController](#opi_api-storage-v1-AioController) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -527,8 +528,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| null_debug | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
+| null_debug | [NullDebug](#opi_api-storage-v1-NullDebug) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -741,8 +743,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_mf_remote_controller | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
+| nv_mf_remote_controller | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -1327,8 +1330,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  |  |
+| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -1343,8 +1347,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |  |
+| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -1359,8 +1364,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_subsystem | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |  |
+| nvme_subsystem | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -1525,8 +1531,9 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_blk | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
+| virtio_blk | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -1879,8 +1886,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
+| virtio_scsi_controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -1895,8 +1903,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
+| virtio_scsi_lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -1911,8 +1920,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+| virtio_scsi_target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -2244,8 +2254,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| encrypted_volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
+| encrypted_volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
@@ -2420,8 +2431,9 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| qos_volume | [QosVolume](#opi_api-storage-v1-QosVolume) |  |  |
+| qos_volume | [QosVolume](#opi_api-storage-v1-QosVolume) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
