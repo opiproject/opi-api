@@ -72,13 +72,32 @@ service NVMfRemoteControllerService {
         };
         option (google.api.method_signature) = "nv_mf_path,nv_mf_path_id";
     }
-
     rpc DeleteNVMfPath (DeleteNVMfPathRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=subsystems}/{subsystem}"
         };
         option (google.api.method_signature) = "name";
     }
+    rpc UpdateNVMfPath (UpdateNVMfPathRequest) returns (NVMfPath) {
+        option (google.api.http) = {
+            patch: "/v1/{nv_mf_path.name=subsystems}"
+            body: "nv_mf_path"
+        };
+        option (google.api.method_signature) = "nv_mf_path,update_mask";
+    }
+    rpc ListNVMfPaths   (ListNVMfPathsRequest)   returns (ListNVMfPathsResponse)   {
+        option (google.api.http) = {
+            get: "/v1/{parent=subsystems}"
+        };
+        option (google.api.method_signature) = "parent";
+    }
+    rpc GetNVMfPath    (GetNVMfPathRequest)    returns (NVMfPath)    {
+        option (google.api.http) = {
+            get: "/v1/{name=subsystems}/{subsystem}"
+        };
+        option (google.api.method_signature) = "name";
+    }
+    rpc NVMfPathStats  (NVMfPathStatsRequest)  returns (NVMfPathStatsResponse)  {}
 }
 
 message NVMfRemoteController {
@@ -253,6 +272,47 @@ message DeleteNVMfPathRequest {
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
     bool allow_missing = 2;
+}
+
+message UpdateNVMfPathRequest {
+    // The object's `name` field is used to identify the object to be updated.
+    NVMfPath nv_mf_path = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
+}
+
+message ListNVMfPathsRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfPath"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
+}
+
+message ListNVMfPathsResponse {
+    repeated NVMfPath nv_mf_paths = 1;
+    string next_page_token = 2;
+}
+
+message GetNVMfPathRequest {
+    // object's unique identifier
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfPath"
+    ];
+}
+
+message NVMfPathStatsRequest {
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
+}
+
+message NVMfPathStatsResponse {
+    VolumeStats stats = 1;
 }
 
 enum NvmeTransportType {
