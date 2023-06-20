@@ -2705,7 +2705,7 @@ confusion with storage &#34;devices&#34;.
 | ----- | ---- | ----- | ----------- |
 | port_id | [int32](#int32) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
 | physical_function | [int32](#int32) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
-| virtual_function | [int32](#int32) |  | Virtual function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| virtual_function | [int32](#int32) |  | Virtual function index. 1-based index. The value 0 is reserved to represent the PCI physical &#34;device&#34;. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
 
 
 

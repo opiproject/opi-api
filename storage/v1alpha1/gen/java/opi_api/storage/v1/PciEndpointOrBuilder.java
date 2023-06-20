@@ -34,9 +34,11 @@ public interface PciEndpointOrBuilder extends
 
   /**
    * <pre>
-   * Virtual function index. This may end up matching the host-assigned
-   * "function" value in the bus:device:function identifier, but it does not
-   * strictly have to and that should not be relied upon.
+   * Virtual function index. 1-based index.
+   * The value 0 is reserved to represent the PCI physical "device".
+   * This may end up matching the host-assigned "function" value in the
+   * bus:device:function identifier, but it does not strictly have to and
+   * that should not be relied upon.
    * </pre>
    *
    * <code>int32 virtual_function = 3;</code>

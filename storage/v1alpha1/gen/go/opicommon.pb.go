@@ -109,9 +109,11 @@ type PciEndpoint struct {
 	// "function" value in the bus:device:function identifier, but it does not
 	// strictly have to and that should not be relied upon.
 	PhysicalFunction int32 `protobuf:"varint,2,opt,name=physical_function,json=physicalFunction,proto3" json:"physical_function,omitempty"`
-	// Virtual function index. This may end up matching the host-assigned
-	// "function" value in the bus:device:function identifier, but it does not
-	// strictly have to and that should not be relied upon.
+	// Virtual function index. 1-based index.
+	// The value 0 is reserved to represent the PCI physical "device".
+	// This may end up matching the host-assigned "function" value in the
+	// bus:device:function identifier, but it does not strictly have to and
+	// that should not be relied upon.
 	VirtualFunction int32 `protobuf:"varint,3,opt,name=virtual_function,json=virtualFunction,proto3" json:"virtual_function,omitempty"`
 }
 
