@@ -32,34 +32,34 @@
   
 - [backend_nvme_pcie.proto](#backend_nvme_pcie-proto)
 - [backend_nvme_tcp.proto](#backend_nvme_tcp-proto)
-    - [CreateNVMfPathRequest](#opi_api-storage-v1-CreateNVMfPathRequest)
-    - [CreateNVMfRemoteControllerRequest](#opi_api-storage-v1-CreateNVMfRemoteControllerRequest)
-    - [DeleteNVMfPathRequest](#opi_api-storage-v1-DeleteNVMfPathRequest)
-    - [DeleteNVMfRemoteControllerRequest](#opi_api-storage-v1-DeleteNVMfRemoteControllerRequest)
-    - [GetNVMfPathRequest](#opi_api-storage-v1-GetNVMfPathRequest)
-    - [GetNVMfRemoteControllerRequest](#opi_api-storage-v1-GetNVMfRemoteControllerRequest)
-    - [ListNVMfPathsRequest](#opi_api-storage-v1-ListNVMfPathsRequest)
-    - [ListNVMfPathsResponse](#opi_api-storage-v1-ListNVMfPathsResponse)
-    - [ListNVMfRemoteControllersRequest](#opi_api-storage-v1-ListNVMfRemoteControllersRequest)
-    - [ListNVMfRemoteControllersResponse](#opi_api-storage-v1-ListNVMfRemoteControllersResponse)
-    - [ListNVMfRemoteNamespacesRequest](#opi_api-storage-v1-ListNVMfRemoteNamespacesRequest)
-    - [ListNVMfRemoteNamespacesResponse](#opi_api-storage-v1-ListNVMfRemoteNamespacesResponse)
-    - [NVMfPath](#opi_api-storage-v1-NVMfPath)
-    - [NVMfPathStatsRequest](#opi_api-storage-v1-NVMfPathStatsRequest)
-    - [NVMfPathStatsResponse](#opi_api-storage-v1-NVMfPathStatsResponse)
-    - [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController)
-    - [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest)
-    - [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest)
-    - [NVMfRemoteControllerStatsResponse](#opi_api-storage-v1-NVMfRemoteControllerStatsResponse)
-    - [NVMfRemoteNamespace](#opi_api-storage-v1-NVMfRemoteNamespace)
-    - [UpdateNVMfPathRequest](#opi_api-storage-v1-UpdateNVMfPathRequest)
-    - [UpdateNVMfRemoteControllerRequest](#opi_api-storage-v1-UpdateNVMfRemoteControllerRequest)
+    - [CreateNvmePathRequest](#opi_api-storage-v1-CreateNvmePathRequest)
+    - [CreateNvmeRemoteControllerRequest](#opi_api-storage-v1-CreateNvmeRemoteControllerRequest)
+    - [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest)
+    - [DeleteNvmeRemoteControllerRequest](#opi_api-storage-v1-DeleteNvmeRemoteControllerRequest)
+    - [GetNvmePathRequest](#opi_api-storage-v1-GetNvmePathRequest)
+    - [GetNvmeRemoteControllerRequest](#opi_api-storage-v1-GetNvmeRemoteControllerRequest)
+    - [ListNvmePathsRequest](#opi_api-storage-v1-ListNvmePathsRequest)
+    - [ListNvmePathsResponse](#opi_api-storage-v1-ListNvmePathsResponse)
+    - [ListNvmeRemoteControllersRequest](#opi_api-storage-v1-ListNvmeRemoteControllersRequest)
+    - [ListNvmeRemoteControllersResponse](#opi_api-storage-v1-ListNvmeRemoteControllersResponse)
+    - [ListNvmeRemoteNamespacesRequest](#opi_api-storage-v1-ListNvmeRemoteNamespacesRequest)
+    - [ListNvmeRemoteNamespacesResponse](#opi_api-storage-v1-ListNvmeRemoteNamespacesResponse)
+    - [NvmePath](#opi_api-storage-v1-NvmePath)
+    - [NvmePathStatsRequest](#opi_api-storage-v1-NvmePathStatsRequest)
+    - [NvmePathStatsResponse](#opi_api-storage-v1-NvmePathStatsResponse)
+    - [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController)
+    - [NvmeRemoteControllerResetRequest](#opi_api-storage-v1-NvmeRemoteControllerResetRequest)
+    - [NvmeRemoteControllerStatsRequest](#opi_api-storage-v1-NvmeRemoteControllerStatsRequest)
+    - [NvmeRemoteControllerStatsResponse](#opi_api-storage-v1-NvmeRemoteControllerStatsResponse)
+    - [NvmeRemoteNamespace](#opi_api-storage-v1-NvmeRemoteNamespace)
+    - [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest)
+    - [UpdateNvmeRemoteControllerRequest](#opi_api-storage-v1-UpdateNvmeRemoteControllerRequest)
   
     - [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily)
     - [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath)
     - [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType)
   
-    - [NVMfRemoteControllerService](#opi_api-storage-v1-NVMfRemoteControllerService)
+    - [NvmeRemoteControllerService](#opi_api-storage-v1-NvmeRemoteControllerService)
   
 - [frontend_nvme_pcie.proto](#frontend_nvme_pcie-proto)
     - [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest)
@@ -596,57 +596,41 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-CreateNVMfPathRequest"></a>
+<a name="opi_api-storage-v1-CreateNvmePathRequest"></a>
 
-### CreateNVMfPathRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| nv_mf_path | [NVMfPath](#opi_api-storage-v1-NVMfPath) |  |  |
-| nv_mf_path_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-CreateNVMfRemoteControllerRequest"></a>
-
-### CreateNVMfRemoteControllerRequest
+### CreateNvmePathRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_mf_remote_controller | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
-| nv_mf_remote_controller_id | [string](#string) |  |  |
+| nvme_path | [NvmePath](#opi_api-storage-v1-NvmePath) |  |  |
+| nvme_path_id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-DeleteNVMfPathRequest"></a>
+<a name="opi_api-storage-v1-CreateNvmeRemoteControllerRequest"></a>
 
-### DeleteNVMfPathRequest
+### CreateNvmeRemoteControllerRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | object&#39;s unique identifier |
-| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
+| nvme_remote_controller | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |  |
+| nvme_remote_controller_id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-DeleteNVMfRemoteControllerRequest"></a>
+<a name="opi_api-storage-v1-DeleteNvmePathRequest"></a>
 
-### DeleteNVMfRemoteControllerRequest
+### DeleteNvmePathRequest
 
 
 
@@ -660,9 +644,25 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-GetNVMfPathRequest"></a>
+<a name="opi_api-storage-v1-DeleteNvmeRemoteControllerRequest"></a>
 
-### GetNVMfPathRequest
+### DeleteNvmeRemoteControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | object&#39;s unique identifier |
+| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-GetNvmePathRequest"></a>
+
+### GetNvmePathRequest
 
 
 
@@ -675,9 +675,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-GetNVMfRemoteControllerRequest"></a>
+<a name="opi_api-storage-v1-GetNvmeRemoteControllerRequest"></a>
 
-### GetNVMfRemoteControllerRequest
+### GetNvmeRemoteControllerRequest
 
 
 
@@ -690,9 +690,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-ListNVMfPathsRequest"></a>
+<a name="opi_api-storage-v1-ListNvmePathsRequest"></a>
 
-### ListNVMfPathsRequest
+### ListNvmePathsRequest
 
 
 
@@ -707,15 +707,15 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-ListNVMfPathsResponse"></a>
+<a name="opi_api-storage-v1-ListNvmePathsResponse"></a>
 
-### ListNVMfPathsResponse
+### ListNvmePathsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_mf_paths | [NVMfPath](#opi_api-storage-v1-NVMfPath) | repeated |  |
+| nvme_paths | [NvmePath](#opi_api-storage-v1-NvmePath) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -723,9 +723,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-ListNVMfRemoteControllersRequest"></a>
+<a name="opi_api-storage-v1-ListNvmeRemoteControllersRequest"></a>
 
-### ListNVMfRemoteControllersRequest
+### ListNvmeRemoteControllersRequest
 
 
 
@@ -740,15 +740,15 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-ListNVMfRemoteControllersResponse"></a>
+<a name="opi_api-storage-v1-ListNvmeRemoteControllersResponse"></a>
 
-### ListNVMfRemoteControllersResponse
+### ListNvmeRemoteControllersResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_mf_remote_controllers | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) | repeated |  |
+| nvme_remote_controllers | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -756,9 +756,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-ListNVMfRemoteNamespacesRequest"></a>
+<a name="opi_api-storage-v1-ListNvmeRemoteNamespacesRequest"></a>
 
-### ListNVMfRemoteNamespacesRequest
+### ListNvmeRemoteNamespacesRequest
 
 
 
@@ -773,15 +773,15 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-ListNVMfRemoteNamespacesResponse"></a>
+<a name="opi_api-storage-v1-ListNvmeRemoteNamespacesResponse"></a>
 
-### ListNVMfRemoteNamespacesResponse
+### ListNvmeRemoteNamespacesResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_mf_remote_namespaces | [NVMfRemoteNamespace](#opi_api-storage-v1-NVMfRemoteNamespace) | repeated |  |
+| nvme_remote_namespaces | [NvmeRemoteNamespace](#opi_api-storage-v1-NvmeRemoteNamespace) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -789,9 +789,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NVMfPath"></a>
+<a name="opi_api-storage-v1-NvmePath"></a>
 
-### NVMfPath
+### NvmePath
 
 
 
@@ -813,9 +813,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NVMfPathStatsRequest"></a>
+<a name="opi_api-storage-v1-NvmePathStatsRequest"></a>
 
-### NVMfPathStatsRequest
+### NvmePathStatsRequest
 
 
 
@@ -828,9 +828,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NVMfPathStatsResponse"></a>
+<a name="opi_api-storage-v1-NvmePathStatsResponse"></a>
 
-### NVMfPathStatsResponse
+### NvmePathStatsResponse
 
 
 
@@ -843,9 +843,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NVMfRemoteController"></a>
+<a name="opi_api-storage-v1-NvmeRemoteController"></a>
 
-### NVMfRemoteController
+### NvmeRemoteController
 
 
 
@@ -863,24 +863,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NVMfRemoteControllerResetRequest"></a>
+<a name="opi_api-storage-v1-NvmeRemoteControllerResetRequest"></a>
 
-### NVMfRemoteControllerResetRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerStatsRequest"></a>
-
-### NVMfRemoteControllerStatsRequest
+### NvmeRemoteControllerResetRequest
 
 
 
@@ -893,9 +878,24 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NVMfRemoteControllerStatsResponse"></a>
+<a name="opi_api-storage-v1-NvmeRemoteControllerStatsRequest"></a>
 
-### NVMfRemoteControllerStatsResponse
+### NvmeRemoteControllerStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-NvmeRemoteControllerStatsResponse"></a>
+
+### NvmeRemoteControllerStatsResponse
 
 
 
@@ -908,9 +908,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NVMfRemoteNamespace"></a>
+<a name="opi_api-storage-v1-NvmeRemoteNamespace"></a>
 
-### NVMfRemoteNamespace
+### NvmeRemoteNamespace
 
 
 
@@ -928,15 +928,15 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-UpdateNVMfPathRequest"></a>
+<a name="opi_api-storage-v1-UpdateNvmePathRequest"></a>
 
-### UpdateNVMfPathRequest
+### UpdateNvmePathRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_mf_path | [NVMfPath](#opi_api-storage-v1-NVMfPath) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| nvme_path | [NvmePath](#opi_api-storage-v1-NvmePath) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 | allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
@@ -945,15 +945,15 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-UpdateNVMfRemoteControllerRequest"></a>
+<a name="opi_api-storage-v1-UpdateNvmeRemoteControllerRequest"></a>
 
-### UpdateNVMfRemoteControllerRequest
+### UpdateNvmeRemoteControllerRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_mf_remote_controller | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| nvme_remote_controller | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 | allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
@@ -972,11 +972,11 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | NVME_ADDRESS_FAMILY_UNSPECIFIED | 0 |  |
-| NVMF_ADRFAM_IPV4 | 1 |  |
-| NVMF_ADRFAM_IPV6 | 2 |  |
-| NVMF_ADRFAM_IB | 3 |  |
-| NVMF_ADRFAM_FC | 4 |  |
-| NVMF_ADRFAM_INTRA_HOST | 5 |  |
+| NVME_ADRFAM_IPV4 | 1 |  |
+| NVME_ADRFAM_IPV6 | 2 |  |
+| NVME_ADRFAM_IB | 3 |  |
+| NVME_ADRFAM_FC | 4 |  |
+| NVME_ADRFAM_INTRA_HOST | 5 |  |
 
 
 
@@ -1014,27 +1014,27 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
  
 
 
-<a name="opi_api-storage-v1-NVMfRemoteControllerService"></a>
+<a name="opi_api-storage-v1-NvmeRemoteControllerService"></a>
 
-### NVMfRemoteControllerService
+### NvmeRemoteControllerService
 Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateNVMfRemoteController | [CreateNVMfRemoteControllerRequest](#opi_api-storage-v1-CreateNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
-| DeleteNVMfRemoteController | [DeleteNVMfRemoteControllerRequest](#opi_api-storage-v1-DeleteNVMfRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNVMfRemoteController | [UpdateNVMfRemoteControllerRequest](#opi_api-storage-v1-UpdateNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
-| ListNVMfRemoteControllers | [ListNVMfRemoteControllersRequest](#opi_api-storage-v1-ListNVMfRemoteControllersRequest) | [ListNVMfRemoteControllersResponse](#opi_api-storage-v1-ListNVMfRemoteControllersResponse) |  |
-| GetNVMfRemoteController | [GetNVMfRemoteControllerRequest](#opi_api-storage-v1-GetNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
-| NVMfRemoteControllerReset | [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| NVMfRemoteControllerStats | [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest) | [NVMfRemoteControllerStatsResponse](#opi_api-storage-v1-NVMfRemoteControllerStatsResponse) |  |
-| ListNVMfRemoteNamespaces | [ListNVMfRemoteNamespacesRequest](#opi_api-storage-v1-ListNVMfRemoteNamespacesRequest) | [ListNVMfRemoteNamespacesResponse](#opi_api-storage-v1-ListNVMfRemoteNamespacesResponse) |  |
-| CreateNVMfPath | [CreateNVMfPathRequest](#opi_api-storage-v1-CreateNVMfPathRequest) | [NVMfPath](#opi_api-storage-v1-NVMfPath) |  |
-| DeleteNVMfPath | [DeleteNVMfPathRequest](#opi_api-storage-v1-DeleteNVMfPathRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNVMfPath | [UpdateNVMfPathRequest](#opi_api-storage-v1-UpdateNVMfPathRequest) | [NVMfPath](#opi_api-storage-v1-NVMfPath) |  |
-| ListNVMfPaths | [ListNVMfPathsRequest](#opi_api-storage-v1-ListNVMfPathsRequest) | [ListNVMfPathsResponse](#opi_api-storage-v1-ListNVMfPathsResponse) |  |
-| GetNVMfPath | [GetNVMfPathRequest](#opi_api-storage-v1-GetNVMfPathRequest) | [NVMfPath](#opi_api-storage-v1-NVMfPath) |  |
-| NVMfPathStats | [NVMfPathStatsRequest](#opi_api-storage-v1-NVMfPathStatsRequest) | [NVMfPathStatsResponse](#opi_api-storage-v1-NVMfPathStatsResponse) |  |
+| CreateNvmeRemoteController | [CreateNvmeRemoteControllerRequest](#opi_api-storage-v1-CreateNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |
+| DeleteNvmeRemoteController | [DeleteNvmeRemoteControllerRequest](#opi_api-storage-v1-DeleteNvmeRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNvmeRemoteController | [UpdateNvmeRemoteControllerRequest](#opi_api-storage-v1-UpdateNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |
+| ListNvmeRemoteControllers | [ListNvmeRemoteControllersRequest](#opi_api-storage-v1-ListNvmeRemoteControllersRequest) | [ListNvmeRemoteControllersResponse](#opi_api-storage-v1-ListNvmeRemoteControllersResponse) |  |
+| GetNvmeRemoteController | [GetNvmeRemoteControllerRequest](#opi_api-storage-v1-GetNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |
+| NvmeRemoteControllerReset | [NvmeRemoteControllerResetRequest](#opi_api-storage-v1-NvmeRemoteControllerResetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| NvmeRemoteControllerStats | [NvmeRemoteControllerStatsRequest](#opi_api-storage-v1-NvmeRemoteControllerStatsRequest) | [NvmeRemoteControllerStatsResponse](#opi_api-storage-v1-NvmeRemoteControllerStatsResponse) |  |
+| ListNvmeRemoteNamespaces | [ListNvmeRemoteNamespacesRequest](#opi_api-storage-v1-ListNvmeRemoteNamespacesRequest) | [ListNvmeRemoteNamespacesResponse](#opi_api-storage-v1-ListNvmeRemoteNamespacesResponse) |  |
+| CreateNvmePath | [CreateNvmePathRequest](#opi_api-storage-v1-CreateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
+| DeleteNvmePath | [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNvmePath | [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
+| ListNvmePaths | [ListNvmePathsRequest](#opi_api-storage-v1-ListNvmePathsRequest) | [ListNvmePathsResponse](#opi_api-storage-v1-ListNvmePathsResponse) |  |
+| GetNvmePath | [GetNvmePathRequest](#opi_api-storage-v1-GetNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
+| NvmePathStats | [NvmePathStatsRequest](#opi_api-storage-v1-NvmePathStatsRequest) | [NvmePathStatsResponse](#opi_api-storage-v1-NvmePathStatsResponse) |  |
 
  
 

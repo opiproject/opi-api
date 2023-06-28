@@ -16,7 +16,7 @@ See [CONTRIBUTING](https://github.com/opiproject/opi/blob/main/CONTRIBUTING.md) 
 OPI subgroup dealing with APIs.  The focus of the subgroup is:
 
 - Define the object models for each of the components and services on the platform.
-  - Define the layering of the capabilities that are abstracted
+  - Define the layering of the [Capabilities](CAPABILITIES.md) that are abstracted and the associated APIs
 - Define both host system facing and control/management facing APIs
   - Discovery and Service Advertisement API
   - Capabilities/Capacity Advertisement API
@@ -65,8 +65,8 @@ The OPI API boundary for the consumption interface will provide the exposed VF/P
 - Meeting Time & Date
   - Thursdays 12:00-13:00 ET
 - Slack Channel
-  - [open-api-subgroup](https://opi-project.slack.com/archives/C0344KMEAKB)
+  - [team-api](https://opi-project.slack.com/archives/C0344KMEAKB)
 - Status
   - Active
 - Agenda
-  - [Topics](Agenda.md)
+  - Refer to the [team-api](https://opi-project.slack.com/archives/C0344KMEAKB) slack channel for current agenda topics

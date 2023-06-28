@@ -24,7 +24,7 @@ import opicommon_pb2 as opicommon__pb2
 import uuid_pb2 as uuid__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x62\x61\x63kend_nvme_tcp.proto\x12\x12opi_api.storage.v1\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\x1a\x10object_key.proto\x1a\x0fopicommon.proto\x1a\nuuid.proto\"\xe9\x01\n\x14NVMfRemoteController\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05hdgst\x18\x02 \x01(\x08\x12\r\n\x05\x64\x64gst\x18\x03 \x01(\x08\x12\x34\n\tmultipath\x18\x04 \x01(\x0e\x32!.opi_api.storage.v1.NvmeMultipath\x12\x17\n\x0fio_queues_count\x18\x05 \x01(\x03\x12\x12\n\nqueue_size\x18\x06 \x01(\x03:B\xea\x41?\n+storage.opiproject.org/NVMfRemoteController\x12\x10volumes/{volume}\"\xe4\x02\n\x08NVMfPath\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x33\n\rcontroller_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x35\n\x06trtype\x18\x03 \x01(\x0e\x32%.opi_api.storage.v1.NvmeTransportType\x12\x35\n\x06\x61\x64rfam\x18\x04 \x01(\x0e\x32%.opi_api.storage.v1.NvmeAddressFamily\x12\x0e\n\x06traddr\x18\x05 \x01(\t\x12\x0f\n\x07trsvcid\x18\x06 \x01(\x03\x12\x0e\n\x06subnqn\x18\x07 \x01(\t\x12\x15\n\rsource_traddr\x18\x08 \x01(\t\x12\x16\n\x0esource_trsvcid\x18\t \x01(\x03\x12\x0f\n\x07hostnqn\x18\n \x01(\t:6\xea\x41\x33\n\x1fstorage.opiproject.org/NVMfPath\x12\x10volumes/{volume}\"\xee\x01\n\x13NVMfRemoteNamespace\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x33\n\rcontroller_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x0c\n\x04nsid\x18\x03 \x01(\x05\x12\r\n\x05nguid\x18\x04 \x01(\t\x12\r\n\x05\x65ui64\x18\x05 \x01(\x03\x12%\n\x04uuid\x18\x06 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid:A\xea\x41>\n*storage.opiproject.org/NVMfRemoteNamespace\x12\x10volumes/{volume}\"\x97\x01\n!CreateNVMfRemoteControllerRequest\x12N\n\x17nv_mf_remote_controller\x18\x02 \x01(\x0b\x32(.opi_api.storage.v1.NVMfRemoteControllerB\x03\xe0\x41\x02\x12\"\n\x1anv_mf_remote_controller_id\x18\x03 \x01(\t\"y\n!DeleteNVMfRemoteControllerRequest\x12=\n\x04name\x18\x01 \x01(\tB/\xe0\x41\x02\xfa\x41)\n\'opi_api.storage.v1/NVMfRemoteController\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\xb6\x01\n!UpdateNVMfRemoteControllerRequest\x12I\n\x17nv_mf_remote_controller\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.NVMfRemoteController\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x15\n\rallow_missing\x18\x03 \x01(\x08\"\x8a\x01\n ListNVMfRemoteControllersRequest\x12?\n\x06parent\x18\x01 \x01(\tB/\xe0\x41\x02\xfa\x41)\n\'opi_api.storage.v1/NVMfRemoteController\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x88\x01\n!ListNVMfRemoteControllersResponse\x12J\n\x18nv_mf_remote_controllers\x18\x01 \x03(\x0b\x32(.opi_api.storage.v1.NVMfRemoteController\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"_\n\x1eGetNVMfRemoteControllerRequest\x12=\n\x04name\x18\x01 \x01(\tB/\xe0\x41\x02\xfa\x41)\n\'opi_api.storage.v1/NVMfRemoteController\"L\n NVMfRemoteControllerResetRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n NVMfRemoteControllerStatsRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"S\n!NVMfRemoteControllerStatsResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats\"\x88\x01\n\x1fListNVMfRemoteNamespacesRequest\x12>\n\x06parent\x18\x01 \x01(\tB.\xe0\x41\x02\xfa\x41(\n&opi_api.storage.v1/NVMfRemoteNamespace\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x85\x01\n ListNVMfRemoteNamespacesResponse\x12H\n\x17nv_mf_remote_namespaces\x18\x01 \x03(\x0b\x32\'.opi_api.storage.v1.NVMfRemoteNamespace\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"e\n\x15\x43reateNVMfPathRequest\x12\x35\n\nnv_mf_path\x18\x01 \x01(\x0b\x32\x1c.opi_api.storage.v1.NVMfPathB\x03\xe0\x41\x02\x12\x15\n\rnv_mf_path_id\x18\x02 \x01(\t\"a\n\x15\x44\x65leteNVMfPathRequest\x12\x31\n\x04name\x18\x01 \x01(\tB#\xe0\x41\x02\xfa\x41\x1d\n\x1bopi_api.storage.v1/NVMfPath\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x91\x01\n\x15UpdateNVMfPathRequest\x12\x30\n\nnv_mf_path\x18\x01 \x01(\x0b\x32\x1c.opi_api.storage.v1.NVMfPath\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x15\n\rallow_missing\x18\x03 \x01(\x08\"r\n\x14ListNVMfPathsRequest\x12\x33\n\x06parent\x18\x01 \x01(\tB#\xe0\x41\x02\xfa\x41\x1d\n\x1bopi_api.storage.v1/NVMfPath\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"c\n\x15ListNVMfPathsResponse\x12\x31\n\x0bnv_mf_paths\x18\x01 \x03(\x0b\x32\x1c.opi_api.storage.v1.NVMfPath\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"G\n\x12GetNVMfPathRequest\x12\x31\n\x04name\x18\x01 \x01(\tB#\xe0\x41\x02\xfa\x41\x1d\n\x1bopi_api.storage.v1/NVMfPath\"@\n\x14NVMfPathStatsRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"G\n\x15NVMfPathStatsResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats*\xb4\x01\n\x11NvmeTransportType\x12#\n\x1fNVME_TRANSPORT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11NVME_TRANSPORT_FC\x10\x01\x12\x17\n\x13NVME_TRANSPORT_PCIE\x10\x02\x12\x17\n\x13NVME_TRANSPORT_RDMA\x10\x03\x12\x16\n\x12NVME_TRANSPORT_TCP\x10\x04\x12\x19\n\x15NVME_TRANSPORT_CUSTOM\x10\x05*\xa8\x01\n\x11NvmeAddressFamily\x12#\n\x1fNVME_ADDRESS_FAMILY_UNSPECIFIED\x10\x00\x12\x14\n\x10NVMF_ADRFAM_IPV4\x10\x01\x12\x14\n\x10NVMF_ADRFAM_IPV6\x10\x02\x12\x12\n\x0eNVMF_ADRFAM_IB\x10\x03\x12\x12\n\x0eNVMF_ADRFAM_FC\x10\x04\x12\x1a\n\x16NVMF_ADRFAM_INTRA_HOST\x10\x05*\x86\x01\n\rNvmeMultipath\x12\x1e\n\x1aNVME_MULTIPATH_UNSPECIFIED\x10\x00\x12\x1a\n\x16NVME_MULTIPATH_DISABLE\x10\x01\x12\x1b\n\x17NVME_MULTIPATH_FAILOVER\x10\x02\x12\x1c\n\x18NVME_MULTIPATH_MULTIPATH\x10\x03\x32\xef\x11\n\x1bNVMfRemoteControllerService\x12\xe0\x01\n\x1a\x43reateNVMfRemoteController\x12\x35.opi_api.storage.v1.CreateNVMfRemoteControllerRequest\x1a(.opi_api.storage.v1.NVMfRemoteController\"a\x82\xd3\xe4\x93\x02&\"\x0b/v1/volumes:\x17nv_mf_remote_controller\xda\x41\x32nv_mf_remote_controller,nv_mf_remote_controller_id\x12\x9d\x01\n\x1a\x44\x65leteNVMfRemoteController\x12\x35.opi_api.storage.v1.DeleteNVMfRemoteControllerRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02#*!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12\xf3\x01\n\x1aUpdateNVMfRemoteController\x12\x35.opi_api.storage.v1.UpdateNVMfRemoteControllerRequest\x1a(.opi_api.storage.v1.NVMfRemoteController\"t\x82\xd3\xe4\x93\x02H2-/v1/{nv_mf_remote_controller.name=subsystems}:\x17nv_mf_remote_controller\xda\x41#nv_mf_remote_controller,update_mask\x12\xb2\x01\n\x19ListNVMfRemoteControllers\x12\x34.opi_api.storage.v1.ListNVMfRemoteControllersRequest\x1a\x35.opi_api.storage.v1.ListNVMfRemoteControllersResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\xa9\x01\n\x17GetNVMfRemoteController\x12\x32.opi_api.storage.v1.GetNVMfRemoteControllerRequest\x1a(.opi_api.storage.v1.NVMfRemoteController\"0\x82\xd3\xe4\x93\x02#\x12!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12k\n\x19NVMfRemoteControllerReset\x12\x34.opi_api.storage.v1.NVMfRemoteControllerResetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x8a\x01\n\x19NVMfRemoteControllerStats\x12\x34.opi_api.storage.v1.NVMfRemoteControllerStatsRequest\x1a\x35.opi_api.storage.v1.NVMfRemoteControllerStatsResponse\"\x00\x12\xaf\x01\n\x18ListNVMfRemoteNamespaces\x12\x33.opi_api.storage.v1.ListNVMfRemoteNamespacesRequest\x1a\x34.opi_api.storage.v1.ListNVMfRemoteNamespacesResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x95\x01\n\x0e\x43reateNVMfPath\x12).opi_api.storage.v1.CreateNVMfPathRequest\x1a\x1c.opi_api.storage.v1.NVMfPath\":\x82\xd3\xe4\x93\x02\x19\"\x0b/v1/volumes:\nnv_mf_path\xda\x41\x18nv_mf_path,nv_mf_path_id\x12\x85\x01\n\x0e\x44\x65leteNVMfPath\x12).opi_api.storage.v1.DeleteNVMfPathRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02#*!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12\xa8\x01\n\x0eUpdateNVMfPath\x12).opi_api.storage.v1.UpdateNVMfPathRequest\x1a\x1c.opi_api.storage.v1.NVMfPath\"M\x82\xd3\xe4\x93\x02.2 /v1/{nv_mf_path.name=subsystems}:\nnv_mf_path\xda\x41\x16nv_mf_path,update_mask\x12\x8e\x01\n\rListNVMfPaths\x12(.opi_api.storage.v1.ListNVMfPathsRequest\x1a).opi_api.storage.v1.ListNVMfPathsResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x85\x01\n\x0bGetNVMfPath\x12&.opi_api.storage.v1.GetNVMfPathRequest\x1a\x1c.opi_api.storage.v1.NVMfPath\"0\x82\xd3\xe4\x93\x02#\x12!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12\x66\n\rNVMfPathStats\x12(.opi_api.storage.v1.NVMfPathStatsRequest\x1a).opi_api.storage.v1.NVMfPathStatsResponse\"\x00\x42\x62\n\x12opi_api.storage.v1B\x13\x42\x61\x63kendNvmeTcpProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x62\x61\x63kend_nvme_tcp.proto\x12\x12opi_api.storage.v1\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\x1a\x10object_key.proto\x1a\x0fopicommon.proto\x1a\nuuid.proto\"\xe9\x01\n\x14NvmeRemoteController\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05hdgst\x18\x02 \x01(\x08\x12\r\n\x05\x64\x64gst\x18\x03 \x01(\x08\x12\x34\n\tmultipath\x18\x04 \x01(\x0e\x32!.opi_api.storage.v1.NvmeMultipath\x12\x17\n\x0fio_queues_count\x18\x05 \x01(\x03\x12\x12\n\nqueue_size\x18\x06 \x01(\x03:B\xea\x41?\n+storage.opiproject.org/NvmeRemoteController\x12\x10volumes/{volume}\"\xe4\x02\n\x08NvmePath\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x33\n\rcontroller_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x35\n\x06trtype\x18\x03 \x01(\x0e\x32%.opi_api.storage.v1.NvmeTransportType\x12\x35\n\x06\x61\x64rfam\x18\x04 \x01(\x0e\x32%.opi_api.storage.v1.NvmeAddressFamily\x12\x0e\n\x06traddr\x18\x05 \x01(\t\x12\x0f\n\x07trsvcid\x18\x06 \x01(\x03\x12\x0e\n\x06subnqn\x18\x07 \x01(\t\x12\x15\n\rsource_traddr\x18\x08 \x01(\t\x12\x16\n\x0esource_trsvcid\x18\t \x01(\x03\x12\x0f\n\x07hostnqn\x18\n \x01(\t:6\xea\x41\x33\n\x1fstorage.opiproject.org/NvmePath\x12\x10volumes/{volume}\"\xee\x01\n\x13NvmeRemoteNamespace\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x33\n\rcontroller_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x0c\n\x04nsid\x18\x03 \x01(\x05\x12\r\n\x05nguid\x18\x04 \x01(\t\x12\r\n\x05\x65ui64\x18\x05 \x01(\x03\x12%\n\x04uuid\x18\x06 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid:A\xea\x41>\n*storage.opiproject.org/NvmeRemoteNamespace\x12\x10volumes/{volume}\"\x95\x01\n!CreateNvmeRemoteControllerRequest\x12M\n\x16nvme_remote_controller\x18\x02 \x01(\x0b\x32(.opi_api.storage.v1.NvmeRemoteControllerB\x03\xe0\x41\x02\x12!\n\x19nvme_remote_controller_id\x18\x03 \x01(\t\"y\n!DeleteNvmeRemoteControllerRequest\x12=\n\x04name\x18\x01 \x01(\tB/\xe0\x41\x02\xfa\x41)\n\'opi_api.storage.v1/NvmeRemoteController\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\xb5\x01\n!UpdateNvmeRemoteControllerRequest\x12H\n\x16nvme_remote_controller\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.NvmeRemoteController\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x15\n\rallow_missing\x18\x03 \x01(\x08\"\x8a\x01\n ListNvmeRemoteControllersRequest\x12?\n\x06parent\x18\x01 \x01(\tB/\xe0\x41\x02\xfa\x41)\n\'opi_api.storage.v1/NvmeRemoteController\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x87\x01\n!ListNvmeRemoteControllersResponse\x12I\n\x17nvme_remote_controllers\x18\x01 \x03(\x0b\x32(.opi_api.storage.v1.NvmeRemoteController\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"_\n\x1eGetNvmeRemoteControllerRequest\x12=\n\x04name\x18\x01 \x01(\tB/\xe0\x41\x02\xfa\x41)\n\'opi_api.storage.v1/NvmeRemoteController\"L\n NvmeRemoteControllerResetRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n NvmeRemoteControllerStatsRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"S\n!NvmeRemoteControllerStatsResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats\"\x88\x01\n\x1fListNvmeRemoteNamespacesRequest\x12>\n\x06parent\x18\x01 \x01(\tB.\xe0\x41\x02\xfa\x41(\n&opi_api.storage.v1/NvmeRemoteNamespace\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x84\x01\n ListNvmeRemoteNamespacesResponse\x12G\n\x16nvme_remote_namespaces\x18\x01 \x03(\x0b\x32\'.opi_api.storage.v1.NvmeRemoteNamespace\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x15\x43reateNvmePathRequest\x12\x34\n\tnvme_path\x18\x01 \x01(\x0b\x32\x1c.opi_api.storage.v1.NvmePathB\x03\xe0\x41\x02\x12\x14\n\x0cnvme_path_id\x18\x02 \x01(\t\"a\n\x15\x44\x65leteNvmePathRequest\x12\x31\n\x04name\x18\x01 \x01(\tB#\xe0\x41\x02\xfa\x41\x1d\n\x1bopi_api.storage.v1/NvmePath\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x90\x01\n\x15UpdateNvmePathRequest\x12/\n\tnvme_path\x18\x01 \x01(\x0b\x32\x1c.opi_api.storage.v1.NvmePath\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x15\n\rallow_missing\x18\x03 \x01(\x08\"r\n\x14ListNvmePathsRequest\x12\x33\n\x06parent\x18\x01 \x01(\tB#\xe0\x41\x02\xfa\x41\x1d\n\x1bopi_api.storage.v1/NvmePath\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"b\n\x15ListNvmePathsResponse\x12\x30\n\nnvme_paths\x18\x01 \x03(\x0b\x32\x1c.opi_api.storage.v1.NvmePath\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"G\n\x12GetNvmePathRequest\x12\x31\n\x04name\x18\x01 \x01(\tB#\xe0\x41\x02\xfa\x41\x1d\n\x1bopi_api.storage.v1/NvmePath\"@\n\x14NvmePathStatsRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"G\n\x15NvmePathStatsResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats*\xb4\x01\n\x11NvmeTransportType\x12#\n\x1fNVME_TRANSPORT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11NVME_TRANSPORT_FC\x10\x01\x12\x17\n\x13NVME_TRANSPORT_PCIE\x10\x02\x12\x17\n\x13NVME_TRANSPORT_RDMA\x10\x03\x12\x16\n\x12NVME_TRANSPORT_TCP\x10\x04\x12\x19\n\x15NVME_TRANSPORT_CUSTOM\x10\x05*\xa8\x01\n\x11NvmeAddressFamily\x12#\n\x1fNVME_ADDRESS_FAMILY_UNSPECIFIED\x10\x00\x12\x14\n\x10NVME_ADRFAM_IPV4\x10\x01\x12\x14\n\x10NVME_ADRFAM_IPV6\x10\x02\x12\x12\n\x0eNVME_ADRFAM_IB\x10\x03\x12\x12\n\x0eNVME_ADRFAM_FC\x10\x04\x12\x1a\n\x16NVME_ADRFAM_INTRA_HOST\x10\x05*\x86\x01\n\rNvmeMultipath\x12\x1e\n\x1aNVME_MULTIPATH_UNSPECIFIED\x10\x00\x12\x1a\n\x16NVME_MULTIPATH_DISABLE\x10\x01\x12\x1b\n\x17NVME_MULTIPATH_FAILOVER\x10\x02\x12\x1c\n\x18NVME_MULTIPATH_MULTIPATH\x10\x03\x32\xe3\x11\n\x1bNvmeRemoteControllerService\x12\xdd\x01\n\x1a\x43reateNvmeRemoteController\x12\x35.opi_api.storage.v1.CreateNvmeRemoteControllerRequest\x1a(.opi_api.storage.v1.NvmeRemoteController\"^\x82\xd3\xe4\x93\x02%\"\x0b/v1/volumes:\x16nvme_remote_controller\xda\x41\x30nvme_remote_controller,nvme_remote_controller_id\x12\x9d\x01\n\x1a\x44\x65leteNvmeRemoteController\x12\x35.opi_api.storage.v1.DeleteNvmeRemoteControllerRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02#*!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12\xf0\x01\n\x1aUpdateNvmeRemoteController\x12\x35.opi_api.storage.v1.UpdateNvmeRemoteControllerRequest\x1a(.opi_api.storage.v1.NvmeRemoteController\"q\x82\xd3\xe4\x93\x02\x46\x32,/v1/{nvme_remote_controller.name=subsystems}:\x16nvme_remote_controller\xda\x41\"nvme_remote_controller,update_mask\x12\xb2\x01\n\x19ListNvmeRemoteControllers\x12\x34.opi_api.storage.v1.ListNvmeRemoteControllersRequest\x1a\x35.opi_api.storage.v1.ListNvmeRemoteControllersResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\xa9\x01\n\x17GetNvmeRemoteController\x12\x32.opi_api.storage.v1.GetNvmeRemoteControllerRequest\x1a(.opi_api.storage.v1.NvmeRemoteController\"0\x82\xd3\xe4\x93\x02#\x12!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12k\n\x19NvmeRemoteControllerReset\x12\x34.opi_api.storage.v1.NvmeRemoteControllerResetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x8a\x01\n\x19NvmeRemoteControllerStats\x12\x34.opi_api.storage.v1.NvmeRemoteControllerStatsRequest\x1a\x35.opi_api.storage.v1.NvmeRemoteControllerStatsResponse\"\x00\x12\xaf\x01\n\x18ListNvmeRemoteNamespaces\x12\x33.opi_api.storage.v1.ListNvmeRemoteNamespacesRequest\x1a\x34.opi_api.storage.v1.ListNvmeRemoteNamespacesResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x92\x01\n\x0e\x43reateNvmePath\x12).opi_api.storage.v1.CreateNvmePathRequest\x1a\x1c.opi_api.storage.v1.NvmePath\"7\x82\xd3\xe4\x93\x02\x18\"\x0b/v1/volumes:\tnvme_path\xda\x41\x16nvme_path,nvme_path_id\x12\x85\x01\n\x0e\x44\x65leteNvmePath\x12).opi_api.storage.v1.DeleteNvmePathRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02#*!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12\xa5\x01\n\x0eUpdateNvmePath\x12).opi_api.storage.v1.UpdateNvmePathRequest\x1a\x1c.opi_api.storage.v1.NvmePath\"J\x82\xd3\xe4\x93\x02,2\x1f/v1/{nvme_path.name=subsystems}:\tnvme_path\xda\x41\x15nvme_path,update_mask\x12\x8e\x01\n\rListNvmePaths\x12(.opi_api.storage.v1.ListNvmePathsRequest\x1a).opi_api.storage.v1.ListNvmePathsResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x85\x01\n\x0bGetNvmePath\x12&.opi_api.storage.v1.GetNvmePathRequest\x1a\x1c.opi_api.storage.v1.NvmePath\"0\x82\xd3\xe4\x93\x02#\x12!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12\x66\n\rNvmePathStats\x12(.opi_api.storage.v1.NvmePathStatsRequest\x1a).opi_api.storage.v1.NvmePathStatsResponse\"\x00\x42\x62\n\x12opi_api.storage.v1B\x13\x42\x61\x63kendNvmeTcpProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 _NVMETRANSPORTTYPE = DESCRIPTOR.enum_types_by_name['NvmeTransportType']
 NvmeTransportType = enum_type_wrapper.EnumTypeWrapper(_NVMETRANSPORTTYPE)
@@ -39,294 +39,294 @@ NVME_TRANSPORT_RDMA = 3
 NVME_TRANSPORT_TCP = 4
 NVME_TRANSPORT_CUSTOM = 5
 NVME_ADDRESS_FAMILY_UNSPECIFIED = 0
-NVMF_ADRFAM_IPV4 = 1
-NVMF_ADRFAM_IPV6 = 2
-NVMF_ADRFAM_IB = 3
-NVMF_ADRFAM_FC = 4
-NVMF_ADRFAM_INTRA_HOST = 5
+NVME_ADRFAM_IPV4 = 1
+NVME_ADRFAM_IPV6 = 2
+NVME_ADRFAM_IB = 3
+NVME_ADRFAM_FC = 4
+NVME_ADRFAM_INTRA_HOST = 5
 NVME_MULTIPATH_UNSPECIFIED = 0
 NVME_MULTIPATH_DISABLE = 1
 NVME_MULTIPATH_FAILOVER = 2
 NVME_MULTIPATH_MULTIPATH = 3
 
 
-_NVMFREMOTECONTROLLER = DESCRIPTOR.message_types_by_name['NVMfRemoteController']
-_NVMFPATH = DESCRIPTOR.message_types_by_name['NVMfPath']
-_NVMFREMOTENAMESPACE = DESCRIPTOR.message_types_by_name['NVMfRemoteNamespace']
-_CREATENVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['CreateNVMfRemoteControllerRequest']
-_DELETENVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['DeleteNVMfRemoteControllerRequest']
-_UPDATENVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['UpdateNVMfRemoteControllerRequest']
-_LISTNVMFREMOTECONTROLLERSREQUEST = DESCRIPTOR.message_types_by_name['ListNVMfRemoteControllersRequest']
-_LISTNVMFREMOTECONTROLLERSRESPONSE = DESCRIPTOR.message_types_by_name['ListNVMfRemoteControllersResponse']
-_GETNVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['GetNVMfRemoteControllerRequest']
-_NVMFREMOTECONTROLLERRESETREQUEST = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerResetRequest']
-_NVMFREMOTECONTROLLERSTATSREQUEST = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerStatsRequest']
-_NVMFREMOTECONTROLLERSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerStatsResponse']
-_LISTNVMFREMOTENAMESPACESREQUEST = DESCRIPTOR.message_types_by_name['ListNVMfRemoteNamespacesRequest']
-_LISTNVMFREMOTENAMESPACESRESPONSE = DESCRIPTOR.message_types_by_name['ListNVMfRemoteNamespacesResponse']
-_CREATENVMFPATHREQUEST = DESCRIPTOR.message_types_by_name['CreateNVMfPathRequest']
-_DELETENVMFPATHREQUEST = DESCRIPTOR.message_types_by_name['DeleteNVMfPathRequest']
-_UPDATENVMFPATHREQUEST = DESCRIPTOR.message_types_by_name['UpdateNVMfPathRequest']
-_LISTNVMFPATHSREQUEST = DESCRIPTOR.message_types_by_name['ListNVMfPathsRequest']
-_LISTNVMFPATHSRESPONSE = DESCRIPTOR.message_types_by_name['ListNVMfPathsResponse']
-_GETNVMFPATHREQUEST = DESCRIPTOR.message_types_by_name['GetNVMfPathRequest']
-_NVMFPATHSTATSREQUEST = DESCRIPTOR.message_types_by_name['NVMfPathStatsRequest']
-_NVMFPATHSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NVMfPathStatsResponse']
-NVMfRemoteController = _reflection.GeneratedProtocolMessageType('NVMfRemoteController', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLER,
+_NVMEREMOTECONTROLLER = DESCRIPTOR.message_types_by_name['NvmeRemoteController']
+_NVMEPATH = DESCRIPTOR.message_types_by_name['NvmePath']
+_NVMEREMOTENAMESPACE = DESCRIPTOR.message_types_by_name['NvmeRemoteNamespace']
+_CREATENVMEREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['CreateNvmeRemoteControllerRequest']
+_DELETENVMEREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['DeleteNvmeRemoteControllerRequest']
+_UPDATENVMEREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['UpdateNvmeRemoteControllerRequest']
+_LISTNVMEREMOTECONTROLLERSREQUEST = DESCRIPTOR.message_types_by_name['ListNvmeRemoteControllersRequest']
+_LISTNVMEREMOTECONTROLLERSRESPONSE = DESCRIPTOR.message_types_by_name['ListNvmeRemoteControllersResponse']
+_GETNVMEREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['GetNvmeRemoteControllerRequest']
+_NVMEREMOTECONTROLLERRESETREQUEST = DESCRIPTOR.message_types_by_name['NvmeRemoteControllerResetRequest']
+_NVMEREMOTECONTROLLERSTATSREQUEST = DESCRIPTOR.message_types_by_name['NvmeRemoteControllerStatsRequest']
+_NVMEREMOTECONTROLLERSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NvmeRemoteControllerStatsResponse']
+_LISTNVMEREMOTENAMESPACESREQUEST = DESCRIPTOR.message_types_by_name['ListNvmeRemoteNamespacesRequest']
+_LISTNVMEREMOTENAMESPACESRESPONSE = DESCRIPTOR.message_types_by_name['ListNvmeRemoteNamespacesResponse']
+_CREATENVMEPATHREQUEST = DESCRIPTOR.message_types_by_name['CreateNvmePathRequest']
+_DELETENVMEPATHREQUEST = DESCRIPTOR.message_types_by_name['DeleteNvmePathRequest']
+_UPDATENVMEPATHREQUEST = DESCRIPTOR.message_types_by_name['UpdateNvmePathRequest']
+_LISTNVMEPATHSREQUEST = DESCRIPTOR.message_types_by_name['ListNvmePathsRequest']
+_LISTNVMEPATHSRESPONSE = DESCRIPTOR.message_types_by_name['ListNvmePathsResponse']
+_GETNVMEPATHREQUEST = DESCRIPTOR.message_types_by_name['GetNvmePathRequest']
+_NVMEPATHSTATSREQUEST = DESCRIPTOR.message_types_by_name['NvmePathStatsRequest']
+_NVMEPATHSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NvmePathStatsResponse']
+NvmeRemoteController = _reflection.GeneratedProtocolMessageType('NvmeRemoteController', (_message.Message,), {
+  'DESCRIPTOR' : _NVMEREMOTECONTROLLER,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteController)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeRemoteController)
   })
-_sym_db.RegisterMessage(NVMfRemoteController)
+_sym_db.RegisterMessage(NvmeRemoteController)
 
-NVMfPath = _reflection.GeneratedProtocolMessageType('NVMfPath', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFPATH,
+NvmePath = _reflection.GeneratedProtocolMessageType('NvmePath', (_message.Message,), {
+  'DESCRIPTOR' : _NVMEPATH,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfPath)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmePath)
   })
-_sym_db.RegisterMessage(NVMfPath)
+_sym_db.RegisterMessage(NvmePath)
 
-NVMfRemoteNamespace = _reflection.GeneratedProtocolMessageType('NVMfRemoteNamespace', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTENAMESPACE,
+NvmeRemoteNamespace = _reflection.GeneratedProtocolMessageType('NvmeRemoteNamespace', (_message.Message,), {
+  'DESCRIPTOR' : _NVMEREMOTENAMESPACE,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteNamespace)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeRemoteNamespace)
   })
-_sym_db.RegisterMessage(NVMfRemoteNamespace)
+_sym_db.RegisterMessage(NvmeRemoteNamespace)
 
-CreateNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('CreateNVMfRemoteControllerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATENVMFREMOTECONTROLLERREQUEST,
+CreateNvmeRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('CreateNvmeRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATENVMEREMOTECONTROLLERREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMfRemoteControllerRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNvmeRemoteControllerRequest)
   })
-_sym_db.RegisterMessage(CreateNVMfRemoteControllerRequest)
+_sym_db.RegisterMessage(CreateNvmeRemoteControllerRequest)
 
-DeleteNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('DeleteNVMfRemoteControllerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETENVMFREMOTECONTROLLERREQUEST,
+DeleteNvmeRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('DeleteNvmeRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETENVMEREMOTECONTROLLERREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMfRemoteControllerRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNvmeRemoteControllerRequest)
   })
-_sym_db.RegisterMessage(DeleteNVMfRemoteControllerRequest)
+_sym_db.RegisterMessage(DeleteNvmeRemoteControllerRequest)
 
-UpdateNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('UpdateNVMfRemoteControllerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATENVMFREMOTECONTROLLERREQUEST,
+UpdateNvmeRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('UpdateNvmeRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATENVMEREMOTECONTROLLERREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMfRemoteControllerRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNvmeRemoteControllerRequest)
   })
-_sym_db.RegisterMessage(UpdateNVMfRemoteControllerRequest)
+_sym_db.RegisterMessage(UpdateNvmeRemoteControllerRequest)
 
-ListNVMfRemoteControllersRequest = _reflection.GeneratedProtocolMessageType('ListNVMfRemoteControllersRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTNVMFREMOTECONTROLLERSREQUEST,
+ListNvmeRemoteControllersRequest = _reflection.GeneratedProtocolMessageType('ListNvmeRemoteControllersRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNVMEREMOTECONTROLLERSREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMfRemoteControllersRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeRemoteControllersRequest)
   })
-_sym_db.RegisterMessage(ListNVMfRemoteControllersRequest)
+_sym_db.RegisterMessage(ListNvmeRemoteControllersRequest)
 
-ListNVMfRemoteControllersResponse = _reflection.GeneratedProtocolMessageType('ListNVMfRemoteControllersResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTNVMFREMOTECONTROLLERSRESPONSE,
+ListNvmeRemoteControllersResponse = _reflection.GeneratedProtocolMessageType('ListNvmeRemoteControllersResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNVMEREMOTECONTROLLERSRESPONSE,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMfRemoteControllersResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeRemoteControllersResponse)
   })
-_sym_db.RegisterMessage(ListNVMfRemoteControllersResponse)
+_sym_db.RegisterMessage(ListNvmeRemoteControllersResponse)
 
-GetNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('GetNVMfRemoteControllerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETNVMFREMOTECONTROLLERREQUEST,
+GetNvmeRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('GetNvmeRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETNVMEREMOTECONTROLLERREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNVMfRemoteControllerRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNvmeRemoteControllerRequest)
   })
-_sym_db.RegisterMessage(GetNVMfRemoteControllerRequest)
+_sym_db.RegisterMessage(GetNvmeRemoteControllerRequest)
 
-NVMfRemoteControllerResetRequest = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerResetRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLERRESETREQUEST,
+NvmeRemoteControllerResetRequest = _reflection.GeneratedProtocolMessageType('NvmeRemoteControllerResetRequest', (_message.Message,), {
+  'DESCRIPTOR' : _NVMEREMOTECONTROLLERRESETREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerResetRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeRemoteControllerResetRequest)
   })
-_sym_db.RegisterMessage(NVMfRemoteControllerResetRequest)
+_sym_db.RegisterMessage(NvmeRemoteControllerResetRequest)
 
-NVMfRemoteControllerStatsRequest = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerStatsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLERSTATSREQUEST,
+NvmeRemoteControllerStatsRequest = _reflection.GeneratedProtocolMessageType('NvmeRemoteControllerStatsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _NVMEREMOTECONTROLLERSTATSREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerStatsRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeRemoteControllerStatsRequest)
   })
-_sym_db.RegisterMessage(NVMfRemoteControllerStatsRequest)
+_sym_db.RegisterMessage(NvmeRemoteControllerStatsRequest)
 
-NVMfRemoteControllerStatsResponse = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerStatsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLERSTATSRESPONSE,
+NvmeRemoteControllerStatsResponse = _reflection.GeneratedProtocolMessageType('NvmeRemoteControllerStatsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _NVMEREMOTECONTROLLERSTATSRESPONSE,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerStatsResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeRemoteControllerStatsResponse)
   })
-_sym_db.RegisterMessage(NVMfRemoteControllerStatsResponse)
+_sym_db.RegisterMessage(NvmeRemoteControllerStatsResponse)
 
-ListNVMfRemoteNamespacesRequest = _reflection.GeneratedProtocolMessageType('ListNVMfRemoteNamespacesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTNVMFREMOTENAMESPACESREQUEST,
+ListNvmeRemoteNamespacesRequest = _reflection.GeneratedProtocolMessageType('ListNvmeRemoteNamespacesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNVMEREMOTENAMESPACESREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMfRemoteNamespacesRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeRemoteNamespacesRequest)
   })
-_sym_db.RegisterMessage(ListNVMfRemoteNamespacesRequest)
+_sym_db.RegisterMessage(ListNvmeRemoteNamespacesRequest)
 
-ListNVMfRemoteNamespacesResponse = _reflection.GeneratedProtocolMessageType('ListNVMfRemoteNamespacesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTNVMFREMOTENAMESPACESRESPONSE,
+ListNvmeRemoteNamespacesResponse = _reflection.GeneratedProtocolMessageType('ListNvmeRemoteNamespacesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNVMEREMOTENAMESPACESRESPONSE,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMfRemoteNamespacesResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeRemoteNamespacesResponse)
   })
-_sym_db.RegisterMessage(ListNVMfRemoteNamespacesResponse)
+_sym_db.RegisterMessage(ListNvmeRemoteNamespacesResponse)
 
-CreateNVMfPathRequest = _reflection.GeneratedProtocolMessageType('CreateNVMfPathRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATENVMFPATHREQUEST,
+CreateNvmePathRequest = _reflection.GeneratedProtocolMessageType('CreateNvmePathRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATENVMEPATHREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMfPathRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNvmePathRequest)
   })
-_sym_db.RegisterMessage(CreateNVMfPathRequest)
+_sym_db.RegisterMessage(CreateNvmePathRequest)
 
-DeleteNVMfPathRequest = _reflection.GeneratedProtocolMessageType('DeleteNVMfPathRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETENVMFPATHREQUEST,
+DeleteNvmePathRequest = _reflection.GeneratedProtocolMessageType('DeleteNvmePathRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETENVMEPATHREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMfPathRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNvmePathRequest)
   })
-_sym_db.RegisterMessage(DeleteNVMfPathRequest)
+_sym_db.RegisterMessage(DeleteNvmePathRequest)
 
-UpdateNVMfPathRequest = _reflection.GeneratedProtocolMessageType('UpdateNVMfPathRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATENVMFPATHREQUEST,
+UpdateNvmePathRequest = _reflection.GeneratedProtocolMessageType('UpdateNvmePathRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATENVMEPATHREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMfPathRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNvmePathRequest)
   })
-_sym_db.RegisterMessage(UpdateNVMfPathRequest)
+_sym_db.RegisterMessage(UpdateNvmePathRequest)
 
-ListNVMfPathsRequest = _reflection.GeneratedProtocolMessageType('ListNVMfPathsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTNVMFPATHSREQUEST,
+ListNvmePathsRequest = _reflection.GeneratedProtocolMessageType('ListNvmePathsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNVMEPATHSREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMfPathsRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmePathsRequest)
   })
-_sym_db.RegisterMessage(ListNVMfPathsRequest)
+_sym_db.RegisterMessage(ListNvmePathsRequest)
 
-ListNVMfPathsResponse = _reflection.GeneratedProtocolMessageType('ListNVMfPathsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTNVMFPATHSRESPONSE,
+ListNvmePathsResponse = _reflection.GeneratedProtocolMessageType('ListNvmePathsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNVMEPATHSRESPONSE,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMfPathsResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmePathsResponse)
   })
-_sym_db.RegisterMessage(ListNVMfPathsResponse)
+_sym_db.RegisterMessage(ListNvmePathsResponse)
 
-GetNVMfPathRequest = _reflection.GeneratedProtocolMessageType('GetNVMfPathRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETNVMFPATHREQUEST,
+GetNvmePathRequest = _reflection.GeneratedProtocolMessageType('GetNvmePathRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETNVMEPATHREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNVMfPathRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNvmePathRequest)
   })
-_sym_db.RegisterMessage(GetNVMfPathRequest)
+_sym_db.RegisterMessage(GetNvmePathRequest)
 
-NVMfPathStatsRequest = _reflection.GeneratedProtocolMessageType('NVMfPathStatsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFPATHSTATSREQUEST,
+NvmePathStatsRequest = _reflection.GeneratedProtocolMessageType('NvmePathStatsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _NVMEPATHSTATSREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfPathStatsRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmePathStatsRequest)
   })
-_sym_db.RegisterMessage(NVMfPathStatsRequest)
+_sym_db.RegisterMessage(NvmePathStatsRequest)
 
-NVMfPathStatsResponse = _reflection.GeneratedProtocolMessageType('NVMfPathStatsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFPATHSTATSRESPONSE,
+NvmePathStatsResponse = _reflection.GeneratedProtocolMessageType('NvmePathStatsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _NVMEPATHSTATSRESPONSE,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfPathStatsResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmePathStatsResponse)
   })
-_sym_db.RegisterMessage(NVMfPathStatsResponse)
+_sym_db.RegisterMessage(NvmePathStatsResponse)
 
-_NVMFREMOTECONTROLLERSERVICE = DESCRIPTOR.services_by_name['NVMfRemoteControllerService']
+_NVMEREMOTECONTROLLERSERVICE = DESCRIPTOR.services_by_name['NvmeRemoteControllerService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\023BackendNvmeTcpProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
-  _NVMFREMOTECONTROLLER._options = None
-  _NVMFREMOTECONTROLLER._serialized_options = b'\352A?\n+storage.opiproject.org/NVMfRemoteController\022\020volumes/{volume}'
-  _NVMFPATH._options = None
-  _NVMFPATH._serialized_options = b'\352A3\n\037storage.opiproject.org/NVMfPath\022\020volumes/{volume}'
-  _NVMFREMOTENAMESPACE._options = None
-  _NVMFREMOTENAMESPACE._serialized_options = b'\352A>\n*storage.opiproject.org/NVMfRemoteNamespace\022\020volumes/{volume}'
-  _CREATENVMFREMOTECONTROLLERREQUEST.fields_by_name['nv_mf_remote_controller']._options = None
-  _CREATENVMFREMOTECONTROLLERREQUEST.fields_by_name['nv_mf_remote_controller']._serialized_options = b'\340A\002'
-  _DELETENVMFREMOTECONTROLLERREQUEST.fields_by_name['name']._options = None
-  _DELETENVMFREMOTECONTROLLERREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A)\n\'opi_api.storage.v1/NVMfRemoteController'
-  _LISTNVMFREMOTECONTROLLERSREQUEST.fields_by_name['parent']._options = None
-  _LISTNVMFREMOTECONTROLLERSREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A)\n\'opi_api.storage.v1/NVMfRemoteController'
-  _GETNVMFREMOTECONTROLLERREQUEST.fields_by_name['name']._options = None
-  _GETNVMFREMOTECONTROLLERREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A)\n\'opi_api.storage.v1/NVMfRemoteController'
-  _LISTNVMFREMOTENAMESPACESREQUEST.fields_by_name['parent']._options = None
-  _LISTNVMFREMOTENAMESPACESREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A(\n&opi_api.storage.v1/NVMfRemoteNamespace'
-  _CREATENVMFPATHREQUEST.fields_by_name['nv_mf_path']._options = None
-  _CREATENVMFPATHREQUEST.fields_by_name['nv_mf_path']._serialized_options = b'\340A\002'
-  _DELETENVMFPATHREQUEST.fields_by_name['name']._options = None
-  _DELETENVMFPATHREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\035\n\033opi_api.storage.v1/NVMfPath'
-  _LISTNVMFPATHSREQUEST.fields_by_name['parent']._options = None
-  _LISTNVMFPATHSREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\035\n\033opi_api.storage.v1/NVMfPath'
-  _GETNVMFPATHREQUEST.fields_by_name['name']._options = None
-  _GETNVMFPATHREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\035\n\033opi_api.storage.v1/NVMfPath'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['CreateNVMfRemoteController']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['CreateNVMfRemoteController']._serialized_options = b'\202\323\344\223\002&\"\013/v1/volumes:\027nv_mf_remote_controller\332A2nv_mf_remote_controller,nv_mf_remote_controller_id'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['DeleteNVMfRemoteController']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['DeleteNVMfRemoteController']._serialized_options = b'\202\323\344\223\002#*!/v1/{name=subsystems}/{subsystem}\332A\004name'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['UpdateNVMfRemoteController']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['UpdateNVMfRemoteController']._serialized_options = b'\202\323\344\223\002H2-/v1/{nv_mf_remote_controller.name=subsystems}:\027nv_mf_remote_controller\332A#nv_mf_remote_controller,update_mask'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['ListNVMfRemoteControllers']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['ListNVMfRemoteControllers']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['GetNVMfRemoteController']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['GetNVMfRemoteController']._serialized_options = b'\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsystem}\332A\004name'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['ListNVMfRemoteNamespaces']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['ListNVMfRemoteNamespaces']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['CreateNVMfPath']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['CreateNVMfPath']._serialized_options = b'\202\323\344\223\002\031\"\013/v1/volumes:\nnv_mf_path\332A\030nv_mf_path,nv_mf_path_id'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['DeleteNVMfPath']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['DeleteNVMfPath']._serialized_options = b'\202\323\344\223\002#*!/v1/{name=subsystems}/{subsystem}\332A\004name'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['UpdateNVMfPath']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['UpdateNVMfPath']._serialized_options = b'\202\323\344\223\002.2 /v1/{nv_mf_path.name=subsystems}:\nnv_mf_path\332A\026nv_mf_path,update_mask'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['ListNVMfPaths']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['ListNVMfPaths']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['GetNVMfPath']._options = None
-  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['GetNVMfPath']._serialized_options = b'\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsystem}\332A\004name'
-  _NVMETRANSPORTTYPE._serialized_start=3242
-  _NVMETRANSPORTTYPE._serialized_end=3422
-  _NVMEADDRESSFAMILY._serialized_start=3425
-  _NVMEADDRESSFAMILY._serialized_end=3593
-  _NVMEMULTIPATH._serialized_start=3596
-  _NVMEMULTIPATH._serialized_end=3730
-  _NVMFREMOTECONTROLLER._serialized_start=272
-  _NVMFREMOTECONTROLLER._serialized_end=505
-  _NVMFPATH._serialized_start=508
-  _NVMFPATH._serialized_end=864
-  _NVMFREMOTENAMESPACE._serialized_start=867
-  _NVMFREMOTENAMESPACE._serialized_end=1105
-  _CREATENVMFREMOTECONTROLLERREQUEST._serialized_start=1108
-  _CREATENVMFREMOTECONTROLLERREQUEST._serialized_end=1259
-  _DELETENVMFREMOTECONTROLLERREQUEST._serialized_start=1261
-  _DELETENVMFREMOTECONTROLLERREQUEST._serialized_end=1382
-  _UPDATENVMFREMOTECONTROLLERREQUEST._serialized_start=1385
-  _UPDATENVMFREMOTECONTROLLERREQUEST._serialized_end=1567
-  _LISTNVMFREMOTECONTROLLERSREQUEST._serialized_start=1570
-  _LISTNVMFREMOTECONTROLLERSREQUEST._serialized_end=1708
-  _LISTNVMFREMOTECONTROLLERSRESPONSE._serialized_start=1711
-  _LISTNVMFREMOTECONTROLLERSRESPONSE._serialized_end=1847
-  _GETNVMFREMOTECONTROLLERREQUEST._serialized_start=1849
-  _GETNVMFREMOTECONTROLLERREQUEST._serialized_end=1944
-  _NVMFREMOTECONTROLLERRESETREQUEST._serialized_start=1946
-  _NVMFREMOTECONTROLLERRESETREQUEST._serialized_end=2022
-  _NVMFREMOTECONTROLLERSTATSREQUEST._serialized_start=2024
-  _NVMFREMOTECONTROLLERSTATSREQUEST._serialized_end=2100
-  _NVMFREMOTECONTROLLERSTATSRESPONSE._serialized_start=2102
-  _NVMFREMOTECONTROLLERSTATSRESPONSE._serialized_end=2185
-  _LISTNVMFREMOTENAMESPACESREQUEST._serialized_start=2188
-  _LISTNVMFREMOTENAMESPACESREQUEST._serialized_end=2324
-  _LISTNVMFREMOTENAMESPACESRESPONSE._serialized_start=2327
-  _LISTNVMFREMOTENAMESPACESRESPONSE._serialized_end=2460
-  _CREATENVMFPATHREQUEST._serialized_start=2462
-  _CREATENVMFPATHREQUEST._serialized_end=2563
-  _DELETENVMFPATHREQUEST._serialized_start=2565
-  _DELETENVMFPATHREQUEST._serialized_end=2662
-  _UPDATENVMFPATHREQUEST._serialized_start=2665
-  _UPDATENVMFPATHREQUEST._serialized_end=2810
-  _LISTNVMFPATHSREQUEST._serialized_start=2812
-  _LISTNVMFPATHSREQUEST._serialized_end=2926
-  _LISTNVMFPATHSRESPONSE._serialized_start=2928
-  _LISTNVMFPATHSRESPONSE._serialized_end=3027
-  _GETNVMFPATHREQUEST._serialized_start=3029
-  _GETNVMFPATHREQUEST._serialized_end=3100
-  _NVMFPATHSTATSREQUEST._serialized_start=3102
-  _NVMFPATHSTATSREQUEST._serialized_end=3166
-  _NVMFPATHSTATSRESPONSE._serialized_start=3168
-  _NVMFPATHSTATSRESPONSE._serialized_end=3239
-  _NVMFREMOTECONTROLLERSERVICE._serialized_start=3733
-  _NVMFREMOTECONTROLLERSERVICE._serialized_end=6020
+  _NVMEREMOTECONTROLLER._options = None
+  _NVMEREMOTECONTROLLER._serialized_options = b'\352A?\n+storage.opiproject.org/NvmeRemoteController\022\020volumes/{volume}'
+  _NVMEPATH._options = None
+  _NVMEPATH._serialized_options = b'\352A3\n\037storage.opiproject.org/NvmePath\022\020volumes/{volume}'
+  _NVMEREMOTENAMESPACE._options = None
+  _NVMEREMOTENAMESPACE._serialized_options = b'\352A>\n*storage.opiproject.org/NvmeRemoteNamespace\022\020volumes/{volume}'
+  _CREATENVMEREMOTECONTROLLERREQUEST.fields_by_name['nvme_remote_controller']._options = None
+  _CREATENVMEREMOTECONTROLLERREQUEST.fields_by_name['nvme_remote_controller']._serialized_options = b'\340A\002'
+  _DELETENVMEREMOTECONTROLLERREQUEST.fields_by_name['name']._options = None
+  _DELETENVMEREMOTECONTROLLERREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A)\n\'opi_api.storage.v1/NvmeRemoteController'
+  _LISTNVMEREMOTECONTROLLERSREQUEST.fields_by_name['parent']._options = None
+  _LISTNVMEREMOTECONTROLLERSREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A)\n\'opi_api.storage.v1/NvmeRemoteController'
+  _GETNVMEREMOTECONTROLLERREQUEST.fields_by_name['name']._options = None
+  _GETNVMEREMOTECONTROLLERREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A)\n\'opi_api.storage.v1/NvmeRemoteController'
+  _LISTNVMEREMOTENAMESPACESREQUEST.fields_by_name['parent']._options = None
+  _LISTNVMEREMOTENAMESPACESREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A(\n&opi_api.storage.v1/NvmeRemoteNamespace'
+  _CREATENVMEPATHREQUEST.fields_by_name['nvme_path']._options = None
+  _CREATENVMEPATHREQUEST.fields_by_name['nvme_path']._serialized_options = b'\340A\002'
+  _DELETENVMEPATHREQUEST.fields_by_name['name']._options = None
+  _DELETENVMEPATHREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\035\n\033opi_api.storage.v1/NvmePath'
+  _LISTNVMEPATHSREQUEST.fields_by_name['parent']._options = None
+  _LISTNVMEPATHSREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\035\n\033opi_api.storage.v1/NvmePath'
+  _GETNVMEPATHREQUEST.fields_by_name['name']._options = None
+  _GETNVMEPATHREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\035\n\033opi_api.storage.v1/NvmePath'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['CreateNvmeRemoteController']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['CreateNvmeRemoteController']._serialized_options = b'\202\323\344\223\002%\"\013/v1/volumes:\026nvme_remote_controller\332A0nvme_remote_controller,nvme_remote_controller_id'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['DeleteNvmeRemoteController']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['DeleteNvmeRemoteController']._serialized_options = b'\202\323\344\223\002#*!/v1/{name=subsystems}/{subsystem}\332A\004name'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['UpdateNvmeRemoteController']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['UpdateNvmeRemoteController']._serialized_options = b'\202\323\344\223\002F2,/v1/{nvme_remote_controller.name=subsystems}:\026nvme_remote_controller\332A\"nvme_remote_controller,update_mask'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['ListNvmeRemoteControllers']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['ListNvmeRemoteControllers']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['GetNvmeRemoteController']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['GetNvmeRemoteController']._serialized_options = b'\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsystem}\332A\004name'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['ListNvmeRemoteNamespaces']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['ListNvmeRemoteNamespaces']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['CreateNvmePath']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['CreateNvmePath']._serialized_options = b'\202\323\344\223\002\030\"\013/v1/volumes:\tnvme_path\332A\026nvme_path,nvme_path_id'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['DeleteNvmePath']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['DeleteNvmePath']._serialized_options = b'\202\323\344\223\002#*!/v1/{name=subsystems}/{subsystem}\332A\004name'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['UpdateNvmePath']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['UpdateNvmePath']._serialized_options = b'\202\323\344\223\002,2\037/v1/{nvme_path.name=subsystems}:\tnvme_path\332A\025nvme_path,update_mask'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['ListNvmePaths']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['ListNvmePaths']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['GetNvmePath']._options = None
+  _NVMEREMOTECONTROLLERSERVICE.methods_by_name['GetNvmePath']._serialized_options = b'\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsystem}\332A\004name'
+  _NVMETRANSPORTTYPE._serialized_start=3233
+  _NVMETRANSPORTTYPE._serialized_end=3413
+  _NVMEADDRESSFAMILY._serialized_start=3416
+  _NVMEADDRESSFAMILY._serialized_end=3584
+  _NVMEMULTIPATH._serialized_start=3587
+  _NVMEMULTIPATH._serialized_end=3721
+  _NVMEREMOTECONTROLLER._serialized_start=272
+  _NVMEREMOTECONTROLLER._serialized_end=505
+  _NVMEPATH._serialized_start=508
+  _NVMEPATH._serialized_end=864
+  _NVMEREMOTENAMESPACE._serialized_start=867
+  _NVMEREMOTENAMESPACE._serialized_end=1105
+  _CREATENVMEREMOTECONTROLLERREQUEST._serialized_start=1108
+  _CREATENVMEREMOTECONTROLLERREQUEST._serialized_end=1257
+  _DELETENVMEREMOTECONTROLLERREQUEST._serialized_start=1259
+  _DELETENVMEREMOTECONTROLLERREQUEST._serialized_end=1380
+  _UPDATENVMEREMOTECONTROLLERREQUEST._serialized_start=1383
+  _UPDATENVMEREMOTECONTROLLERREQUEST._serialized_end=1564
+  _LISTNVMEREMOTECONTROLLERSREQUEST._serialized_start=1567
+  _LISTNVMEREMOTECONTROLLERSREQUEST._serialized_end=1705
+  _LISTNVMEREMOTECONTROLLERSRESPONSE._serialized_start=1708
+  _LISTNVMEREMOTECONTROLLERSRESPONSE._serialized_end=1843
+  _GETNVMEREMOTECONTROLLERREQUEST._serialized_start=1845
+  _GETNVMEREMOTECONTROLLERREQUEST._serialized_end=1940
+  _NVMEREMOTECONTROLLERRESETREQUEST._serialized_start=1942
+  _NVMEREMOTECONTROLLERRESETREQUEST._serialized_end=2018
+  _NVMEREMOTECONTROLLERSTATSREQUEST._serialized_start=2020
+  _NVMEREMOTECONTROLLERSTATSREQUEST._serialized_end=2096
+  _NVMEREMOTECONTROLLERSTATSRESPONSE._serialized_start=2098
+  _NVMEREMOTECONTROLLERSTATSRESPONSE._serialized_end=2181
+  _LISTNVMEREMOTENAMESPACESREQUEST._serialized_start=2184
+  _LISTNVMEREMOTENAMESPACESREQUEST._serialized_end=2320
+  _LISTNVMEREMOTENAMESPACESRESPONSE._serialized_start=2323
+  _LISTNVMEREMOTENAMESPACESRESPONSE._serialized_end=2455
+  _CREATENVMEPATHREQUEST._serialized_start=2457
+  _CREATENVMEPATHREQUEST._serialized_end=2556
+  _DELETENVMEPATHREQUEST._serialized_start=2558
+  _DELETENVMEPATHREQUEST._serialized_end=2655
+  _UPDATENVMEPATHREQUEST._serialized_start=2658
+  _UPDATENVMEPATHREQUEST._serialized_end=2802
+  _LISTNVMEPATHSREQUEST._serialized_start=2804
+  _LISTNVMEPATHSREQUEST._serialized_end=2918
+  _LISTNVMEPATHSRESPONSE._serialized_start=2920
+  _LISTNVMEPATHSRESPONSE._serialized_end=3018
+  _GETNVMEPATHREQUEST._serialized_start=3020
+  _GETNVMEPATHREQUEST._serialized_end=3091
+  _NVMEPATHSTATSREQUEST._serialized_start=3093
+  _NVMEPATHSTATSREQUEST._serialized_end=3157
+  _NVMEPATHSTATSRESPONSE._serialized_start=3159
+  _NVMEPATHSTATSRESPONSE._serialized_end=3230
+  _NVMEREMOTECONTROLLERSERVICE._serialized_start=3724
+  _NVMEREMOTECONTROLLERSERVICE._serialized_end=5999
 # @@protoc_insertion_point(module_scope)

@@ -53,15 +53,23 @@ Actions:
 
 ---
 
-Upcoming Topics - Next week:
+## May 25
 
-- Transaction Support PR #212 Update/Status.
+Topics
 
-Future/Continuing Topics:
+- EVPN PR Update
+- Object field naming - "string name" as Opaque Object
+- Queuery on the CNI Update for defining the API in the CNI Aspect
+
+Recording at: <https://zoom.us/rec/share/d0Z1pgR8cPF4Dm3I2AFNpLLY7IYqF85pufitr7oueR1BzzaYoKMRmk24ahrHHNjb.gLBjMKmPXpyiwrLC>
+
+---
+
+Future Topics:
 
 - Layering Approach - Venkat
 - Revisit API Diagrams and Discuss updates
 - Primary and Secondary K8s Networking Offload
   - Deeper level discussion on Primary Offload
   - Deeper level discussion on Secondary capabilities
-  
+- Initial Configuration of the DPU before the operational configurations begin.
