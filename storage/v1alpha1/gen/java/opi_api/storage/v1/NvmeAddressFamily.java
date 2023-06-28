@@ -13,25 +13,25 @@ public enum NvmeAddressFamily
    */
   NVME_ADDRESS_FAMILY_UNSPECIFIED(0),
   /**
-   * <code>NVMF_ADRFAM_IPV4 = 1;</code>
+   * <code>NVME_ADRFAM_IPV4 = 1;</code>
    */
-  NVMF_ADRFAM_IPV4(1),
+  NVME_ADRFAM_IPV4(1),
   /**
-   * <code>NVMF_ADRFAM_IPV6 = 2;</code>
+   * <code>NVME_ADRFAM_IPV6 = 2;</code>
    */
-  NVMF_ADRFAM_IPV6(2),
+  NVME_ADRFAM_IPV6(2),
   /**
-   * <code>NVMF_ADRFAM_IB = 3;</code>
+   * <code>NVME_ADRFAM_IB = 3;</code>
    */
-  NVMF_ADRFAM_IB(3),
+  NVME_ADRFAM_IB(3),
   /**
-   * <code>NVMF_ADRFAM_FC = 4;</code>
+   * <code>NVME_ADRFAM_FC = 4;</code>
    */
-  NVMF_ADRFAM_FC(4),
+  NVME_ADRFAM_FC(4),
   /**
-   * <code>NVMF_ADRFAM_INTRA_HOST = 5;</code>
+   * <code>NVME_ADRFAM_INTRA_HOST = 5;</code>
    */
-  NVMF_ADRFAM_INTRA_HOST(5),
+  NVME_ADRFAM_INTRA_HOST(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -40,25 +40,25 @@ public enum NvmeAddressFamily
    */
   public static final int NVME_ADDRESS_FAMILY_UNSPECIFIED_VALUE = 0;
   /**
-   * <code>NVMF_ADRFAM_IPV4 = 1;</code>
+   * <code>NVME_ADRFAM_IPV4 = 1;</code>
    */
-  public static final int NVMF_ADRFAM_IPV4_VALUE = 1;
+  public static final int NVME_ADRFAM_IPV4_VALUE = 1;
   /**
-   * <code>NVMF_ADRFAM_IPV6 = 2;</code>
+   * <code>NVME_ADRFAM_IPV6 = 2;</code>
    */
-  public static final int NVMF_ADRFAM_IPV6_VALUE = 2;
+  public static final int NVME_ADRFAM_IPV6_VALUE = 2;
   /**
-   * <code>NVMF_ADRFAM_IB = 3;</code>
+   * <code>NVME_ADRFAM_IB = 3;</code>
    */
-  public static final int NVMF_ADRFAM_IB_VALUE = 3;
+  public static final int NVME_ADRFAM_IB_VALUE = 3;
   /**
-   * <code>NVMF_ADRFAM_FC = 4;</code>
+   * <code>NVME_ADRFAM_FC = 4;</code>
    */
-  public static final int NVMF_ADRFAM_FC_VALUE = 4;
+  public static final int NVME_ADRFAM_FC_VALUE = 4;
   /**
-   * <code>NVMF_ADRFAM_INTRA_HOST = 5;</code>
+   * <code>NVME_ADRFAM_INTRA_HOST = 5;</code>
    */
-  public static final int NVMF_ADRFAM_INTRA_HOST_VALUE = 5;
+  public static final int NVME_ADRFAM_INTRA_HOST_VALUE = 5;
 
 
   public final int getNumber() {
@@ -86,11 +86,11 @@ public enum NvmeAddressFamily
   public static NvmeAddressFamily forNumber(int value) {
     switch (value) {
       case 0: return NVME_ADDRESS_FAMILY_UNSPECIFIED;
-      case 1: return NVMF_ADRFAM_IPV4;
-      case 2: return NVMF_ADRFAM_IPV6;
-      case 3: return NVMF_ADRFAM_IB;
-      case 4: return NVMF_ADRFAM_FC;
-      case 5: return NVMF_ADRFAM_INTRA_HOST;
+      case 1: return NVME_ADRFAM_IPV4;
+      case 2: return NVME_ADRFAM_IPV6;
+      case 3: return NVME_ADRFAM_IB;
+      case 4: return NVME_ADRFAM_FC;
+      case 5: return NVME_ADRFAM_INTRA_HOST;
       default: return null;
     }
   }
