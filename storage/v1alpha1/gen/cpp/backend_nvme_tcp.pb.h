@@ -373,6 +373,7 @@ class NvmeRemoteController final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kPskFieldNumber = 7,
     kHdgstFieldNumber = 2,
     kDdgstFieldNumber = 3,
     kMultipathFieldNumber = 4,
@@ -391,6 +392,20 @@ class NvmeRemoteController final :
   const std::string& _internal_name() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
   std::string* _internal_mutable_name();
+  public:
+
+  // bytes psk = 7;
+  void clear_psk();
+  const std::string& psk() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_psk(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_psk();
+  PROTOBUF_NODISCARD std::string* release_psk();
+  void set_allocated_psk(std::string* psk);
+  private:
+  const std::string& _internal_psk() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_psk(const std::string& value);
+  std::string* _internal_mutable_psk();
   public:
 
   // bool hdgst = 2;
@@ -446,6 +461,7 @@ class NvmeRemoteController final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr psk_;
   bool hdgst_;
   bool ddgst_;
   int multipath_;
@@ -4284,6 +4300,57 @@ inline void NvmeRemoteController::_internal_set_queue_size(int64_t value) {
 inline void NvmeRemoteController::set_queue_size(int64_t value) {
   _internal_set_queue_size(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeRemoteController.queue_size)
+}
+
+// bytes psk = 7;
+inline void NvmeRemoteController::clear_psk() {
+  psk_.ClearToEmpty();
+}
+inline const std::string& NvmeRemoteController::psk() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeRemoteController.psk)
+  return _internal_psk();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void NvmeRemoteController::set_psk(ArgT0&& arg0, ArgT... args) {
+ 
+ psk_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeRemoteController.psk)
+}
+inline std::string* NvmeRemoteController::mutable_psk() {
+  std::string* _s = _internal_mutable_psk();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeRemoteController.psk)
+  return _s;
+}
+inline const std::string& NvmeRemoteController::_internal_psk() const {
+  return psk_.Get();
+}
+inline void NvmeRemoteController::_internal_set_psk(const std::string& value) {
+  
+  psk_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* NvmeRemoteController::_internal_mutable_psk() {
+  
+  return psk_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* NvmeRemoteController::release_psk() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeRemoteController.psk)
+  return psk_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void NvmeRemoteController::set_allocated_psk(std::string* psk) {
+  if (psk != nullptr) {
+    
+  } else {
+    
+  }
+  psk_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), psk,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (psk_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    psk_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeRemoteController.psk)
 }
 
 // -------------------------------------------------------------------

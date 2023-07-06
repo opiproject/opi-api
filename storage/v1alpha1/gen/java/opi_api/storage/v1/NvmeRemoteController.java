@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private NvmeRemoteController() {
     name_ = "";
     multipath_ = 0;
+    psk_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -80,6 +81,11 @@ private static final long serialVersionUID = 0L;
           case 48: {
 
             queueSize_ = input.readInt64();
+            break;
+          }
+          case 58: {
+
+            psk_ = input.readBytes();
             break;
           }
           default: {
@@ -227,6 +233,29 @@ private static final long serialVersionUID = 0L;
     return queueSize_;
   }
 
+  public static final int PSK_FIELD_NUMBER = 7;
+  private com.google.protobuf.ByteString psk_;
+  /**
+   * <pre>
+   * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+   * Use PSK interchange format with base64 encoding as input.
+   * Also use information about hash function in interchange
+   * format for retained PSK generation. If no hash is selected,
+   * use configured PSK as retained PSK.
+   * Check the size of interchange PSK to determine cipher suite.
+   * Calculate CRC-32 bytes to ensure validity of PSK.
+   * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+   * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+   * </pre>
+   *
+   * <code>bytes psk = 7;</code>
+   * @return The psk.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPsk() {
+    return psk_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -258,6 +287,9 @@ private static final long serialVersionUID = 0L;
     }
     if (queueSize_ != 0L) {
       output.writeInt64(6, queueSize_);
+    }
+    if (!psk_.isEmpty()) {
+      output.writeBytes(7, psk_);
     }
     unknownFields.writeTo(output);
   }
@@ -291,6 +323,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, queueSize_);
     }
+    if (!psk_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(7, psk_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -317,6 +353,8 @@ private static final long serialVersionUID = 0L;
         != other.getIoQueuesCount()) return false;
     if (getQueueSize()
         != other.getQueueSize()) return false;
+    if (!getPsk()
+        .equals(other.getPsk())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -344,6 +382,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + QUEUE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getQueueSize());
+    hash = (37 * hash) + PSK_FIELD_NUMBER;
+    hash = (53 * hash) + getPsk().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -489,6 +529,8 @@ private static final long serialVersionUID = 0L;
 
       queueSize_ = 0L;
 
+      psk_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -521,6 +563,7 @@ private static final long serialVersionUID = 0L;
       result.multipath_ = multipath_;
       result.ioQueuesCount_ = ioQueuesCount_;
       result.queueSize_ = queueSize_;
+      result.psk_ = psk_;
       onBuilt();
       return result;
     }
@@ -587,6 +630,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getQueueSize() != 0L) {
         setQueueSize(other.getQueueSize());
+      }
+      if (other.getPsk() != com.google.protobuf.ByteString.EMPTY) {
+        setPsk(other.getPsk());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -897,6 +943,76 @@ private static final long serialVersionUID = 0L;
     public Builder clearQueueSize() {
       
       queueSize_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString psk_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+     * Use PSK interchange format with base64 encoding as input.
+     * Also use information about hash function in interchange
+     * format for retained PSK generation. If no hash is selected,
+     * use configured PSK as retained PSK.
+     * Check the size of interchange PSK to determine cipher suite.
+     * Calculate CRC-32 bytes to ensure validity of PSK.
+     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+     * </pre>
+     *
+     * <code>bytes psk = 7;</code>
+     * @return The psk.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPsk() {
+      return psk_;
+    }
+    /**
+     * <pre>
+     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+     * Use PSK interchange format with base64 encoding as input.
+     * Also use information about hash function in interchange
+     * format for retained PSK generation. If no hash is selected,
+     * use configured PSK as retained PSK.
+     * Check the size of interchange PSK to determine cipher suite.
+     * Calculate CRC-32 bytes to ensure validity of PSK.
+     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+     * </pre>
+     *
+     * <code>bytes psk = 7;</code>
+     * @param value The psk to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPsk(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      psk_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+     * Use PSK interchange format with base64 encoding as input.
+     * Also use information about hash function in interchange
+     * format for retained PSK generation. If no hash is selected,
+     * use configured PSK as retained PSK.
+     * Check the size of interchange PSK to determine cipher suite.
+     * Calculate CRC-32 bytes to ensure validity of PSK.
+     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+     * </pre>
+     *
+     * <code>bytes psk = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPsk() {
+      
+      psk_ = getDefaultInstance().getPsk();
       onChanged();
       return this;
     }

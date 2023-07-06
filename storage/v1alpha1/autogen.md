@@ -857,6 +857,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | multipath | [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath) |  |  |
 | io_queues_count | [int64](#int64) |  |  |
 | queue_size | [int64](#int64) |  |  |
+| psk | [bytes](#bytes) |  | Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK. Use PSK interchange format with base64 encoding as input. Also use information about hash function in interchange format for retained PSK generation. If no hash is selected, use configured PSK as retained PSK. Check the size of interchange PSK to determine cipher suite. Calculate CRC-32 bytes to ensure validity of PSK. Example: &#34;NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9&#43;wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:&#34; if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made |
 
 
 

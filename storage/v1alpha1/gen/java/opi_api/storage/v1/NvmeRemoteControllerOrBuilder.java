@@ -65,4 +65,22 @@ public interface NvmeRemoteControllerOrBuilder extends
    * @return The queueSize.
    */
   long getQueueSize();
+
+  /**
+   * <pre>
+   * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+   * Use PSK interchange format with base64 encoding as input.
+   * Also use information about hash function in interchange
+   * format for retained PSK generation. If no hash is selected,
+   * use configured PSK as retained PSK.
+   * Check the size of interchange PSK to determine cipher suite.
+   * Calculate CRC-32 bytes to ensure validity of PSK.
+   * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+   * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+   * </pre>
+   *
+   * <code>bytes psk = 7;</code>
+   * @return The psk.
+   */
+  com.google.protobuf.ByteString getPsk();
 }
