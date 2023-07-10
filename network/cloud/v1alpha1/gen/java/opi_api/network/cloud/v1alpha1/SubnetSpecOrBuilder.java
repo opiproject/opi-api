@@ -563,4 +563,32 @@ public interface SubnetSpecOrBuilder extends
    * @return The remoteSubnet.
    */
   boolean getRemoteSubnet();
+
+  /**
+   * <pre>
+   * Tunnel interface name associated with the subnet
+   * Usually a route/prefix can point to a tunnel as next hope (route.proto)
+   * However to handle the situation where subnet is associated with the tunnel interface
+   * to allow any learned routes within this subnet to be automatically advertised
+   * over to the routing plane (e.g. EVPN) this association needs to be explicit
+   * </pre>
+   *
+   * <code>string attached_tunnel_interface_name_ref = 21;</code>
+   * @return The attachedTunnelInterfaceNameRef.
+   */
+  java.lang.String getAttachedTunnelInterfaceNameRef();
+  /**
+   * <pre>
+   * Tunnel interface name associated with the subnet
+   * Usually a route/prefix can point to a tunnel as next hope (route.proto)
+   * However to handle the situation where subnet is associated with the tunnel interface
+   * to allow any learned routes within this subnet to be automatically advertised
+   * over to the routing plane (e.g. EVPN) this association needs to be explicit
+   * </pre>
+   *
+   * <code>string attached_tunnel_interface_name_ref = 21;</code>
+   * @return The bytes for attachedTunnelInterfaceNameRef.
+   */
+  com.google.protobuf.ByteString
+      getAttachedTunnelInterfaceNameRefBytes();
 }

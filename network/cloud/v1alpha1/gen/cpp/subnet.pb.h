@@ -409,6 +409,7 @@ class SubnetSpec final :
     kV6RouteTableNameRefFieldNumber = 8,
     kIngressDefaultSgPolicyNameRefFieldNumber = 18,
     kEgressDefaultSgPolicyNameRefFieldNumber = 19,
+    kAttachedTunnelInterfaceNameRefFieldNumber = 21,
     kV4PrefixFieldNumber = 2,
     kV6PrefixFieldNumber = 3,
     kAccessEncapFieldNumber = 13,
@@ -636,6 +637,20 @@ class SubnetSpec final :
   std::string* _internal_mutable_egress_default_sg_policy_name_ref();
   public:
 
+  // string attached_tunnel_interface_name_ref = 21;
+  void clear_attached_tunnel_interface_name_ref();
+  const std::string& attached_tunnel_interface_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_attached_tunnel_interface_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_attached_tunnel_interface_name_ref();
+  PROTOBUF_NODISCARD std::string* release_attached_tunnel_interface_name_ref();
+  void set_allocated_attached_tunnel_interface_name_ref(std::string* attached_tunnel_interface_name_ref);
+  private:
+  const std::string& _internal_attached_tunnel_interface_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_attached_tunnel_interface_name_ref(const std::string& value);
+  std::string* _internal_mutable_attached_tunnel_interface_name_ref();
+  public:
+
   // .opi_api.network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 2;
   bool has_v4_prefix() const;
   private:
@@ -763,6 +778,7 @@ class SubnetSpec final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr v6_route_table_name_ref_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ingress_default_sg_policy_name_ref_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr egress_default_sg_policy_name_ref_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr attached_tunnel_interface_name_ref_;
   ::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix* v4_prefix_;
   ::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix* v6_prefix_;
   ::opi_api::network::opinetcommon::v1alpha1::Encap* access_encap_;
@@ -2331,6 +2347,57 @@ inline void SubnetSpec::_internal_set_remote_subnet(bool value) {
 inline void SubnetSpec::set_remote_subnet(bool value) {
   _internal_set_remote_subnet(value);
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SubnetSpec.remote_subnet)
+}
+
+// string attached_tunnel_interface_name_ref = 21;
+inline void SubnetSpec::clear_attached_tunnel_interface_name_ref() {
+  attached_tunnel_interface_name_ref_.ClearToEmpty();
+}
+inline const std::string& SubnetSpec::attached_tunnel_interface_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SubnetSpec.attached_tunnel_interface_name_ref)
+  return _internal_attached_tunnel_interface_name_ref();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SubnetSpec::set_attached_tunnel_interface_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ attached_tunnel_interface_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SubnetSpec.attached_tunnel_interface_name_ref)
+}
+inline std::string* SubnetSpec::mutable_attached_tunnel_interface_name_ref() {
+  std::string* _s = _internal_mutable_attached_tunnel_interface_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SubnetSpec.attached_tunnel_interface_name_ref)
+  return _s;
+}
+inline const std::string& SubnetSpec::_internal_attached_tunnel_interface_name_ref() const {
+  return attached_tunnel_interface_name_ref_.Get();
+}
+inline void SubnetSpec::_internal_set_attached_tunnel_interface_name_ref(const std::string& value) {
+  
+  attached_tunnel_interface_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SubnetSpec::_internal_mutable_attached_tunnel_interface_name_ref() {
+  
+  return attached_tunnel_interface_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SubnetSpec::release_attached_tunnel_interface_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SubnetSpec.attached_tunnel_interface_name_ref)
+  return attached_tunnel_interface_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SubnetSpec::set_allocated_attached_tunnel_interface_name_ref(std::string* attached_tunnel_interface_name_ref) {
+  if (attached_tunnel_interface_name_ref != nullptr) {
+    
+  } else {
+    
+  }
+  attached_tunnel_interface_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), attached_tunnel_interface_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (attached_tunnel_interface_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    attached_tunnel_interface_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SubnetSpec.attached_tunnel_interface_name_ref)
 }
 
 // -------------------------------------------------------------------

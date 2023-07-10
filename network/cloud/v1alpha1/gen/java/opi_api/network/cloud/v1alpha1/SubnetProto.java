@@ -45,7 +45,7 @@ public final class SubnetProto {
       "lpha1.SubnetSpec\022<\n\006status\030\003 \001(\0132,.opi_a" +
       "pi.network.cloud.v1alpha1.SubnetStatus:<" +
       "\352A9\n%opi_api.network.cloud.v1alpha1/subn" +
-      "et\022\020subnets/{subnet}\"\264\006\n\nSubnetSpec\022\024\n\014v" +
+      "et\022\020subnets/{subnet}\"\340\006\n\nSubnetSpec\022\024\n\014v" +
       "pc_name_ref\030\001 \001(\t\022D\n\tv4_prefix\030\002 \001(\01321.o" +
       "pi_api.network.opinetcommon.v1alpha1.IPv" +
       "4Prefix\022D\n\tv6_prefix\030\003 \001(\01321.opi_api.net" +
@@ -66,11 +66,12 @@ public final class SubnetProto {
       "nnected\030\021 \001(\010\022*\n\"ingress_default_sg_poli" +
       "cy_name_ref\030\022 \001(\t\022)\n!egress_default_sg_p" +
       "olicy_name_ref\030\023 \001(\t\022\025\n\rremote_subnet\030\024 " +
-      "\001(\010\"4\n\014SubnetStatus\022\020\n\010hw_index\030\001 \001(\005\022\022\n" +
-      "\nvnic_count\030\002 \001(\005Bl\n\036opi_api.network.clo" +
-      "ud.v1alpha1B\013SubnetProtoP\001Z;github.com/o" +
-      "piproject/opi-api/network/cloud/v1alpha1" +
-      "/gen/gob\006proto3"
+      "\001(\010\022*\n\"attached_tunnel_interface_name_re" +
+      "f\030\025 \001(\t\"4\n\014SubnetStatus\022\020\n\010hw_index\030\001 \001(" +
+      "\005\022\022\n\nvnic_count\030\002 \001(\005Bl\n\036opi_api.network" +
+      ".cloud.v1alpha1B\013SubnetProtoP\001Z;github.c" +
+      "om/opiproject/opi-api/network/cloud/v1al" +
+      "pha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -89,7 +90,7 @@ public final class SubnetProto {
     internal_static_opi_api_network_cloud_v1alpha1_SubnetSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SubnetSpec_descriptor,
-        new java.lang.String[] { "VpcNameRef", "V4Prefix", "V6Prefix", "Ipv4VirtualRouterIp", "Ipv6VirtualRouterIp", "VirtualRouterMac", "V4RouteTableNameRef", "V6RouteTableNameRef", "IngessV4SecurityPolicyNameRef", "IngressV6SecurityPolicyNameRef", "EgressV4SecurityPolicyNameRef", "EgressV6SecurityPolicyNameRef", "AccessEncap", "FabricEncap", "HostInterfaceNameRef", "Tos", "Connected", "IngressDefaultSgPolicyNameRef", "EgressDefaultSgPolicyNameRef", "RemoteSubnet", });
+        new java.lang.String[] { "VpcNameRef", "V4Prefix", "V6Prefix", "Ipv4VirtualRouterIp", "Ipv6VirtualRouterIp", "VirtualRouterMac", "V4RouteTableNameRef", "V6RouteTableNameRef", "IngessV4SecurityPolicyNameRef", "IngressV6SecurityPolicyNameRef", "EgressV4SecurityPolicyNameRef", "EgressV6SecurityPolicyNameRef", "AccessEncap", "FabricEncap", "HostInterfaceNameRef", "Tos", "Connected", "IngressDefaultSgPolicyNameRef", "EgressDefaultSgPolicyNameRef", "RemoteSubnet", "AttachedTunnelInterfaceNameRef", });
     internal_static_opi_api_network_cloud_v1alpha1_SubnetStatus_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_network_cloud_v1alpha1_SubnetStatus_fieldAccessorTable = new
