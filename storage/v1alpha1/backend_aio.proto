@@ -22,45 +22,45 @@ import "opicommon.proto";
 import "uuid.proto";
 
 // Back End (network-facing) APIs. This service is for AIO generic kernel block device.
-service AioControllerService {
-    rpc CreateAioController (CreateAioControllerRequest) returns (AioController) {
+service AioVolumeService {
+    rpc CreateAioVolume (CreateAioVolumeRequest) returns (AioVolume) {
         option (google.api.http) = {
             post: "/v1/volumes"
-            body: "aio_controller"
+            body: "aio_volume"
         };
-        option (google.api.method_signature) = "aio_controller,aio_controller_id";
+        option (google.api.method_signature) = "aio_volume,aio_volume_id";
     }
-    rpc DeleteAioController (DeleteAioControllerRequest) returns (google.protobuf.Empty) {
+    rpc DeleteAioVolume (DeleteAioVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=subsystems}/{subsystem}"
         };
         option (google.api.method_signature) = "name";
     }
-    rpc UpdateAioController (UpdateAioControllerRequest) returns (AioController) {
+    rpc UpdateAioVolume (UpdateAioVolumeRequest) returns (AioVolume) {
         option (google.api.http) = {
-            patch: "/v1/{aio_controller.name=subsystems}"
-            body: "aio_controller"
+            patch: "/v1/{aio_volume.name=subsystems}"
+            body: "aio_volume"
         };
-        option (google.api.method_signature) = "aio_controller,update_mask";
+        option (google.api.method_signature) = "aio_volume,update_mask";
     }
-    rpc ListAioControllers   (ListAioControllersRequest)   returns (ListAioControllersResponse)   {
+    rpc ListAioVolumes   (ListAioVolumesRequest)   returns (ListAioVolumesResponse)   {
         option (google.api.http) = {
             get: "/v1/{parent=subsystems}"
         };
         option (google.api.method_signature) = "parent";
     }
-    rpc GetAioController    (GetAioControllerRequest)    returns (AioController)    {
+    rpc GetAioVolume    (GetAioVolumeRequest)    returns (AioVolume)    {
         option (google.api.http) = {
             get: "/v1/{name=subsystems}/{subsystem}"
         };
         option (google.api.method_signature) = "name";
     }
-    rpc AioControllerStats  (AioControllerStatsRequest)  returns (AioControllerStatsResponse)  {}
+    rpc AioVolumeStats  (AioVolumeStatsRequest)  returns (AioVolumeStatsResponse)  {}
 }
 
-message AioController {
+message AioVolume {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/AioController"
+        type: "storage.opiproject.org/AioVolume"
         pattern: "volumes/{volume}"
     };
 
@@ -75,24 +75,24 @@ message AioController {
     string filename = 5;
 }
 
-message CreateAioControllerRequest {
-    AioController aio_controller = 2 [(google.api.field_behavior) = REQUIRED];
-    string aio_controller_id = 3;
+message CreateAioVolumeRequest {
+    AioVolume aio_volume = 2 [(google.api.field_behavior) = REQUIRED];
+    string aio_volume_id = 3;
 }
 
-message DeleteAioControllerRequest {
+message DeleteAioVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/AioController"
+        (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
     bool allow_missing = 2;
 }
 
-message UpdateAioControllerRequest {
+message UpdateAioVolumeRequest {
     // The object's `name` field is used to identify the object to be updated.
-    AioController aio_controller = 1;
+    AioVolume aio_volume = 1;
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
     // If set to true, and the object is not found, a new object will be created.
@@ -100,32 +100,32 @@ message UpdateAioControllerRequest {
     bool allow_missing = 3;
 }
 
-message ListAioControllersRequest {
+message ListAioVolumesRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/AioController"
+        (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
     ];
     int32 page_size = 2;
     string page_token = 3;
 }
 
-message ListAioControllersResponse{
-    repeated AioController aio_controllers = 1;
+message ListAioVolumesResponse{
+    repeated AioVolume aio_volumes = 1;
     string next_page_token = 2;
 }
 
-message GetAioControllerRequest {
+message GetAioVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/AioController"
+        (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
     ];
 }
 
-message AioControllerStatsRequest {
+message AioVolumeStatsRequest {
     common.v1.ObjectKey handle = 1;
 }
 
-message AioControllerStatsResponse {
+message AioVolumeStatsResponse {
     common.v1.ObjectKey handle = 1;
     VolumeStats stats = 2;
 }
