@@ -23,270 +23,270 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-static const char* AioControllerService_method_names[] = {
-  "/opi_api.storage.v1.AioControllerService/CreateAioController",
-  "/opi_api.storage.v1.AioControllerService/DeleteAioController",
-  "/opi_api.storage.v1.AioControllerService/UpdateAioController",
-  "/opi_api.storage.v1.AioControllerService/ListAioControllers",
-  "/opi_api.storage.v1.AioControllerService/GetAioController",
-  "/opi_api.storage.v1.AioControllerService/AioControllerStats",
+static const char* AioVolumeService_method_names[] = {
+  "/opi_api.storage.v1.AioVolumeService/CreateAioVolume",
+  "/opi_api.storage.v1.AioVolumeService/DeleteAioVolume",
+  "/opi_api.storage.v1.AioVolumeService/UpdateAioVolume",
+  "/opi_api.storage.v1.AioVolumeService/ListAioVolumes",
+  "/opi_api.storage.v1.AioVolumeService/GetAioVolume",
+  "/opi_api.storage.v1.AioVolumeService/AioVolumeStats",
 };
 
-std::unique_ptr< AioControllerService::Stub> AioControllerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< AioVolumeService::Stub> AioVolumeService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< AioControllerService::Stub> stub(new AioControllerService::Stub(channel, options));
+  std::unique_ptr< AioVolumeService::Stub> stub(new AioVolumeService::Stub(channel, options));
   return stub;
 }
 
-AioControllerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_CreateAioController_(AioControllerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteAioController_(AioControllerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateAioController_(AioControllerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListAioControllers_(AioControllerService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAioController_(AioControllerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AioControllerStats_(AioControllerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+AioVolumeService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_CreateAioVolume_(AioVolumeService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteAioVolume_(AioVolumeService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateAioVolume_(AioVolumeService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListAioVolumes_(AioVolumeService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAioVolume_(AioVolumeService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AioVolumeStats_(AioVolumeService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status AioControllerService::Stub::CreateAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioControllerRequest& request, ::opi_api::storage::v1::AioController* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::CreateAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateAioController_, context, request, response);
+::grpc::Status AioVolumeService::Stub::CreateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest& request, ::opi_api::storage::v1::AioVolume* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::CreateAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateAioVolume_, context, request, response);
 }
 
-void AioControllerService::Stub::async::CreateAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioControllerRequest* request, ::opi_api::storage::v1::AioController* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::CreateAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateAioController_, context, request, response, std::move(f));
+void AioVolumeService::Stub::async::CreateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::CreateAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateAioVolume_, context, request, response, std::move(f));
 }
 
-void AioControllerService::Stub::async::CreateAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioControllerRequest* request, ::opi_api::storage::v1::AioController* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateAioController_, context, request, response, reactor);
+void AioVolumeService::Stub::async::CreateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateAioVolume_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioController>* AioControllerService::Stub::PrepareAsyncCreateAioControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioControllerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::AioController, ::opi_api::storage::v1::CreateAioControllerRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateAioController_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>* AioVolumeService::Stub::PrepareAsyncCreateAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::AioVolume, ::opi_api::storage::v1::CreateAioVolumeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateAioVolume_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioController>* AioControllerService::Stub::AsyncCreateAioControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioControllerRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>* AioVolumeService::Stub::AsyncCreateAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncCreateAioControllerRaw(context, request, cq);
+    this->PrepareAsyncCreateAioVolumeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status AioControllerService::Stub::DeleteAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioControllerRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::DeleteAioControllerRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DeleteAioController_, context, request, response);
+::grpc::Status AioVolumeService::Stub::DeleteAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest& request, ::google::protobuf::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::DeleteAioVolumeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DeleteAioVolume_, context, request, response);
 }
 
-void AioControllerService::Stub::async::DeleteAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioControllerRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::DeleteAioControllerRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteAioController_, context, request, response, std::move(f));
+void AioVolumeService::Stub::async::DeleteAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::DeleteAioVolumeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteAioVolume_, context, request, response, std::move(f));
 }
 
-void AioControllerService::Stub::async::DeleteAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioControllerRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteAioController_, context, request, response, reactor);
+void AioVolumeService::Stub::async::DeleteAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteAioVolume_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AioControllerService::Stub::PrepareAsyncDeleteAioControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioControllerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::opi_api::storage::v1::DeleteAioControllerRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DeleteAioController_, context, request);
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AioVolumeService::Stub::PrepareAsyncDeleteAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::opi_api::storage::v1::DeleteAioVolumeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DeleteAioVolume_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AioControllerService::Stub::AsyncDeleteAioControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioControllerRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AioVolumeService::Stub::AsyncDeleteAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncDeleteAioControllerRaw(context, request, cq);
+    this->PrepareAsyncDeleteAioVolumeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status AioControllerService::Stub::UpdateAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioControllerRequest& request, ::opi_api::storage::v1::AioController* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::UpdateAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateAioController_, context, request, response);
+::grpc::Status AioVolumeService::Stub::UpdateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest& request, ::opi_api::storage::v1::AioVolume* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::UpdateAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateAioVolume_, context, request, response);
 }
 
-void AioControllerService::Stub::async::UpdateAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioControllerRequest* request, ::opi_api::storage::v1::AioController* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::UpdateAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateAioController_, context, request, response, std::move(f));
+void AioVolumeService::Stub::async::UpdateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::UpdateAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateAioVolume_, context, request, response, std::move(f));
 }
 
-void AioControllerService::Stub::async::UpdateAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioControllerRequest* request, ::opi_api::storage::v1::AioController* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateAioController_, context, request, response, reactor);
+void AioVolumeService::Stub::async::UpdateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateAioVolume_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioController>* AioControllerService::Stub::PrepareAsyncUpdateAioControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioControllerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::AioController, ::opi_api::storage::v1::UpdateAioControllerRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateAioController_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>* AioVolumeService::Stub::PrepareAsyncUpdateAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::AioVolume, ::opi_api::storage::v1::UpdateAioVolumeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateAioVolume_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioController>* AioControllerService::Stub::AsyncUpdateAioControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioControllerRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>* AioVolumeService::Stub::AsyncUpdateAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncUpdateAioControllerRaw(context, request, cq);
+    this->PrepareAsyncUpdateAioVolumeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status AioControllerService::Stub::ListAioControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioControllersRequest& request, ::opi_api::storage::v1::ListAioControllersResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::ListAioControllersRequest, ::opi_api::storage::v1::ListAioControllersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListAioControllers_, context, request, response);
+::grpc::Status AioVolumeService::Stub::ListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest& request, ::opi_api::storage::v1::ListAioVolumesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::ListAioVolumesRequest, ::opi_api::storage::v1::ListAioVolumesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListAioVolumes_, context, request, response);
 }
 
-void AioControllerService::Stub::async::ListAioControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioControllersRequest* request, ::opi_api::storage::v1::ListAioControllersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::ListAioControllersRequest, ::opi_api::storage::v1::ListAioControllersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListAioControllers_, context, request, response, std::move(f));
+void AioVolumeService::Stub::async::ListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::ListAioVolumesRequest, ::opi_api::storage::v1::ListAioVolumesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListAioVolumes_, context, request, response, std::move(f));
 }
 
-void AioControllerService::Stub::async::ListAioControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioControllersRequest* request, ::opi_api::storage::v1::ListAioControllersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListAioControllers_, context, request, response, reactor);
+void AioVolumeService::Stub::async::ListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListAioVolumes_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListAioControllersResponse>* AioControllerService::Stub::PrepareAsyncListAioControllersRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioControllersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::ListAioControllersResponse, ::opi_api::storage::v1::ListAioControllersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListAioControllers_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListAioVolumesResponse>* AioVolumeService::Stub::PrepareAsyncListAioVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::ListAioVolumesResponse, ::opi_api::storage::v1::ListAioVolumesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListAioVolumes_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListAioControllersResponse>* AioControllerService::Stub::AsyncListAioControllersRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioControllersRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListAioVolumesResponse>* AioVolumeService::Stub::AsyncListAioVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncListAioControllersRaw(context, request, cq);
+    this->PrepareAsyncListAioVolumesRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status AioControllerService::Stub::GetAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioControllerRequest& request, ::opi_api::storage::v1::AioController* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::GetAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAioController_, context, request, response);
+::grpc::Status AioVolumeService::Stub::GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::opi_api::storage::v1::AioVolume* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::GetAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAioVolume_, context, request, response);
 }
 
-void AioControllerService::Stub::async::GetAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioControllerRequest* request, ::opi_api::storage::v1::AioController* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::GetAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAioController_, context, request, response, std::move(f));
+void AioVolumeService::Stub::async::GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::GetAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAioVolume_, context, request, response, std::move(f));
 }
 
-void AioControllerService::Stub::async::GetAioController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioControllerRequest* request, ::opi_api::storage::v1::AioController* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAioController_, context, request, response, reactor);
+void AioVolumeService::Stub::async::GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAioVolume_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioController>* AioControllerService::Stub::PrepareAsyncGetAioControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioControllerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::AioController, ::opi_api::storage::v1::GetAioControllerRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAioController_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>* AioVolumeService::Stub::PrepareAsyncGetAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::AioVolume, ::opi_api::storage::v1::GetAioVolumeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAioVolume_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioController>* AioControllerService::Stub::AsyncGetAioControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioControllerRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>* AioVolumeService::Stub::AsyncGetAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncGetAioControllerRaw(context, request, cq);
+    this->PrepareAsyncGetAioVolumeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status AioControllerService::Stub::AioControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioControllerStatsRequest& request, ::opi_api::storage::v1::AioControllerStatsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::AioControllerStatsRequest, ::opi_api::storage::v1::AioControllerStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AioControllerStats_, context, request, response);
+::grpc::Status AioVolumeService::Stub::AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::opi_api::storage::v1::AioVolumeStatsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::AioVolumeStatsRequest, ::opi_api::storage::v1::AioVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AioVolumeStats_, context, request, response);
 }
 
-void AioControllerService::Stub::async::AioControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioControllerStatsRequest* request, ::opi_api::storage::v1::AioControllerStatsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::AioControllerStatsRequest, ::opi_api::storage::v1::AioControllerStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AioControllerStats_, context, request, response, std::move(f));
+void AioVolumeService::Stub::async::AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::AioVolumeStatsRequest, ::opi_api::storage::v1::AioVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AioVolumeStats_, context, request, response, std::move(f));
 }
 
-void AioControllerService::Stub::async::AioControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioControllerStatsRequest* request, ::opi_api::storage::v1::AioControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AioControllerStats_, context, request, response, reactor);
+void AioVolumeService::Stub::async::AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AioVolumeStats_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioControllerStatsResponse>* AioControllerService::Stub::PrepareAsyncAioControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::AioControllerStatsResponse, ::opi_api::storage::v1::AioControllerStatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AioControllerStats_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolumeStatsResponse>* AioVolumeService::Stub::PrepareAsyncAioVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::AioVolumeStatsResponse, ::opi_api::storage::v1::AioVolumeStatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AioVolumeStats_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioControllerStatsResponse>* AioControllerService::Stub::AsyncAioControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolumeStatsResponse>* AioVolumeService::Stub::AsyncAioVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncAioControllerStatsRaw(context, request, cq);
+    this->PrepareAsyncAioVolumeStatsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-AioControllerService::Service::Service() {
+AioVolumeService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AioControllerService_method_names[0],
+      AioVolumeService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AioControllerService::Service, ::opi_api::storage::v1::CreateAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](AioControllerService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< AioVolumeService::Service, ::opi_api::storage::v1::CreateAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AioVolumeService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::CreateAioControllerRequest* req,
-             ::opi_api::storage::v1::AioController* resp) {
-               return service->CreateAioController(ctx, req, resp);
+             const ::opi_api::storage::v1::CreateAioVolumeRequest* req,
+             ::opi_api::storage::v1::AioVolume* resp) {
+               return service->CreateAioVolume(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AioControllerService_method_names[1],
+      AioVolumeService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AioControllerService::Service, ::opi_api::storage::v1::DeleteAioControllerRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](AioControllerService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< AioVolumeService::Service, ::opi_api::storage::v1::DeleteAioVolumeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AioVolumeService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::DeleteAioControllerRequest* req,
+             const ::opi_api::storage::v1::DeleteAioVolumeRequest* req,
              ::google::protobuf::Empty* resp) {
-               return service->DeleteAioController(ctx, req, resp);
+               return service->DeleteAioVolume(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AioControllerService_method_names[2],
+      AioVolumeService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AioControllerService::Service, ::opi_api::storage::v1::UpdateAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](AioControllerService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< AioVolumeService::Service, ::opi_api::storage::v1::UpdateAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AioVolumeService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::UpdateAioControllerRequest* req,
-             ::opi_api::storage::v1::AioController* resp) {
-               return service->UpdateAioController(ctx, req, resp);
+             const ::opi_api::storage::v1::UpdateAioVolumeRequest* req,
+             ::opi_api::storage::v1::AioVolume* resp) {
+               return service->UpdateAioVolume(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AioControllerService_method_names[3],
+      AioVolumeService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AioControllerService::Service, ::opi_api::storage::v1::ListAioControllersRequest, ::opi_api::storage::v1::ListAioControllersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](AioControllerService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< AioVolumeService::Service, ::opi_api::storage::v1::ListAioVolumesRequest, ::opi_api::storage::v1::ListAioVolumesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AioVolumeService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::ListAioControllersRequest* req,
-             ::opi_api::storage::v1::ListAioControllersResponse* resp) {
-               return service->ListAioControllers(ctx, req, resp);
+             const ::opi_api::storage::v1::ListAioVolumesRequest* req,
+             ::opi_api::storage::v1::ListAioVolumesResponse* resp) {
+               return service->ListAioVolumes(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AioControllerService_method_names[4],
+      AioVolumeService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AioControllerService::Service, ::opi_api::storage::v1::GetAioControllerRequest, ::opi_api::storage::v1::AioController, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](AioControllerService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< AioVolumeService::Service, ::opi_api::storage::v1::GetAioVolumeRequest, ::opi_api::storage::v1::AioVolume, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AioVolumeService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::GetAioControllerRequest* req,
-             ::opi_api::storage::v1::AioController* resp) {
-               return service->GetAioController(ctx, req, resp);
+             const ::opi_api::storage::v1::GetAioVolumeRequest* req,
+             ::opi_api::storage::v1::AioVolume* resp) {
+               return service->GetAioVolume(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AioControllerService_method_names[5],
+      AioVolumeService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AioControllerService::Service, ::opi_api::storage::v1::AioControllerStatsRequest, ::opi_api::storage::v1::AioControllerStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](AioControllerService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< AioVolumeService::Service, ::opi_api::storage::v1::AioVolumeStatsRequest, ::opi_api::storage::v1::AioVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AioVolumeService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::AioControllerStatsRequest* req,
-             ::opi_api::storage::v1::AioControllerStatsResponse* resp) {
-               return service->AioControllerStats(ctx, req, resp);
+             const ::opi_api::storage::v1::AioVolumeStatsRequest* req,
+             ::opi_api::storage::v1::AioVolumeStatsResponse* resp) {
+               return service->AioVolumeStats(ctx, req, resp);
              }, this)));
 }
 
-AioControllerService::Service::~Service() {
+AioVolumeService::Service::~Service() {
 }
 
-::grpc::Status AioControllerService::Service::CreateAioController(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateAioControllerRequest* request, ::opi_api::storage::v1::AioController* response) {
+::grpc::Status AioVolumeService::Service::CreateAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AioControllerService::Service::DeleteAioController(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteAioControllerRequest* request, ::google::protobuf::Empty* response) {
+::grpc::Status AioVolumeService::Service::DeleteAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AioControllerService::Service::UpdateAioController(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateAioControllerRequest* request, ::opi_api::storage::v1::AioController* response) {
+::grpc::Status AioVolumeService::Service::UpdateAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AioControllerService::Service::ListAioControllers(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListAioControllersRequest* request, ::opi_api::storage::v1::ListAioControllersResponse* response) {
+::grpc::Status AioVolumeService::Service::ListAioVolumes(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AioControllerService::Service::GetAioController(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetAioControllerRequest* request, ::opi_api::storage::v1::AioController* response) {
+::grpc::Status AioVolumeService::Service::GetAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AioControllerService::Service::AioControllerStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::AioControllerStatsRequest* request, ::opi_api::storage::v1::AioControllerStatsResponse* response) {
+::grpc::Status AioVolumeService::Service::AioVolumeStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -6,7 +6,7 @@ import backend_null_pb2 as backend__null__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-class NullDebugServiceStub(object):
+class NullVolumeServiceStub(object):
     """Back End (network-facing) APIs. This is debug interface for null block devices.
     """
 
@@ -16,124 +16,124 @@ class NullDebugServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.CreateNullDebug = channel.unary_unary(
-                '/opi_api.storage.v1.NullDebugService/CreateNullDebug',
-                request_serializer=backend__null__pb2.CreateNullDebugRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullDebug.FromString,
+        self.CreateNullVolume = channel.unary_unary(
+                '/opi_api.storage.v1.NullVolumeService/CreateNullVolume',
+                request_serializer=backend__null__pb2.CreateNullVolumeRequest.SerializeToString,
+                response_deserializer=backend__null__pb2.NullVolume.FromString,
                 )
-        self.DeleteNullDebug = channel.unary_unary(
-                '/opi_api.storage.v1.NullDebugService/DeleteNullDebug',
-                request_serializer=backend__null__pb2.DeleteNullDebugRequest.SerializeToString,
+        self.DeleteNullVolume = channel.unary_unary(
+                '/opi_api.storage.v1.NullVolumeService/DeleteNullVolume',
+                request_serializer=backend__null__pb2.DeleteNullVolumeRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.UpdateNullDebug = channel.unary_unary(
-                '/opi_api.storage.v1.NullDebugService/UpdateNullDebug',
-                request_serializer=backend__null__pb2.UpdateNullDebugRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullDebug.FromString,
+        self.UpdateNullVolume = channel.unary_unary(
+                '/opi_api.storage.v1.NullVolumeService/UpdateNullVolume',
+                request_serializer=backend__null__pb2.UpdateNullVolumeRequest.SerializeToString,
+                response_deserializer=backend__null__pb2.NullVolume.FromString,
                 )
-        self.ListNullDebugs = channel.unary_unary(
-                '/opi_api.storage.v1.NullDebugService/ListNullDebugs',
-                request_serializer=backend__null__pb2.ListNullDebugsRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.ListNullDebugsResponse.FromString,
+        self.ListNullVolumes = channel.unary_unary(
+                '/opi_api.storage.v1.NullVolumeService/ListNullVolumes',
+                request_serializer=backend__null__pb2.ListNullVolumesRequest.SerializeToString,
+                response_deserializer=backend__null__pb2.ListNullVolumesResponse.FromString,
                 )
-        self.GetNullDebug = channel.unary_unary(
-                '/opi_api.storage.v1.NullDebugService/GetNullDebug',
-                request_serializer=backend__null__pb2.GetNullDebugRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullDebug.FromString,
+        self.GetNullVolume = channel.unary_unary(
+                '/opi_api.storage.v1.NullVolumeService/GetNullVolume',
+                request_serializer=backend__null__pb2.GetNullVolumeRequest.SerializeToString,
+                response_deserializer=backend__null__pb2.NullVolume.FromString,
                 )
-        self.NullDebugStats = channel.unary_unary(
-                '/opi_api.storage.v1.NullDebugService/NullDebugStats',
-                request_serializer=backend__null__pb2.NullDebugStatsRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullDebugStatsResponse.FromString,
+        self.NullVolumeStats = channel.unary_unary(
+                '/opi_api.storage.v1.NullVolumeService/NullVolumeStats',
+                request_serializer=backend__null__pb2.NullVolumeStatsRequest.SerializeToString,
+                response_deserializer=backend__null__pb2.NullVolumeStatsResponse.FromString,
                 )
 
 
-class NullDebugServiceServicer(object):
+class NullVolumeServiceServicer(object):
     """Back End (network-facing) APIs. This is debug interface for null block devices.
     """
 
-    def CreateNullDebug(self, request, context):
+    def CreateNullVolume(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteNullDebug(self, request, context):
+    def DeleteNullVolume(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateNullDebug(self, request, context):
+    def UpdateNullVolume(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListNullDebugs(self, request, context):
+    def ListNullVolumes(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetNullDebug(self, request, context):
+    def GetNullVolume(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def NullDebugStats(self, request, context):
+    def NullVolumeStats(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_NullDebugServiceServicer_to_server(servicer, server):
+def add_NullVolumeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'CreateNullDebug': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateNullDebug,
-                    request_deserializer=backend__null__pb2.CreateNullDebugRequest.FromString,
-                    response_serializer=backend__null__pb2.NullDebug.SerializeToString,
+            'CreateNullVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateNullVolume,
+                    request_deserializer=backend__null__pb2.CreateNullVolumeRequest.FromString,
+                    response_serializer=backend__null__pb2.NullVolume.SerializeToString,
             ),
-            'DeleteNullDebug': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteNullDebug,
-                    request_deserializer=backend__null__pb2.DeleteNullDebugRequest.FromString,
+            'DeleteNullVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteNullVolume,
+                    request_deserializer=backend__null__pb2.DeleteNullVolumeRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'UpdateNullDebug': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateNullDebug,
-                    request_deserializer=backend__null__pb2.UpdateNullDebugRequest.FromString,
-                    response_serializer=backend__null__pb2.NullDebug.SerializeToString,
+            'UpdateNullVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateNullVolume,
+                    request_deserializer=backend__null__pb2.UpdateNullVolumeRequest.FromString,
+                    response_serializer=backend__null__pb2.NullVolume.SerializeToString,
             ),
-            'ListNullDebugs': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListNullDebugs,
-                    request_deserializer=backend__null__pb2.ListNullDebugsRequest.FromString,
-                    response_serializer=backend__null__pb2.ListNullDebugsResponse.SerializeToString,
+            'ListNullVolumes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListNullVolumes,
+                    request_deserializer=backend__null__pb2.ListNullVolumesRequest.FromString,
+                    response_serializer=backend__null__pb2.ListNullVolumesResponse.SerializeToString,
             ),
-            'GetNullDebug': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetNullDebug,
-                    request_deserializer=backend__null__pb2.GetNullDebugRequest.FromString,
-                    response_serializer=backend__null__pb2.NullDebug.SerializeToString,
+            'GetNullVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNullVolume,
+                    request_deserializer=backend__null__pb2.GetNullVolumeRequest.FromString,
+                    response_serializer=backend__null__pb2.NullVolume.SerializeToString,
             ),
-            'NullDebugStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.NullDebugStats,
-                    request_deserializer=backend__null__pb2.NullDebugStatsRequest.FromString,
-                    response_serializer=backend__null__pb2.NullDebugStatsResponse.SerializeToString,
+            'NullVolumeStats': grpc.unary_unary_rpc_method_handler(
+                    servicer.NullVolumeStats,
+                    request_deserializer=backend__null__pb2.NullVolumeStatsRequest.FromString,
+                    response_serializer=backend__null__pb2.NullVolumeStatsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'opi_api.storage.v1.NullDebugService', rpc_method_handlers)
+            'opi_api.storage.v1.NullVolumeService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class NullDebugService(object):
+class NullVolumeService(object):
     """Back End (network-facing) APIs. This is debug interface for null block devices.
     """
 
     @staticmethod
-    def CreateNullDebug(request,
+    def CreateNullVolume(request,
             target,
             options=(),
             channel_credentials=None,
@@ -143,14 +143,14 @@ class NullDebugService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/CreateNullDebug',
-            backend__null__pb2.CreateNullDebugRequest.SerializeToString,
-            backend__null__pb2.NullDebug.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullVolumeService/CreateNullVolume',
+            backend__null__pb2.CreateNullVolumeRequest.SerializeToString,
+            backend__null__pb2.NullVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteNullDebug(request,
+    def DeleteNullVolume(request,
             target,
             options=(),
             channel_credentials=None,
@@ -160,14 +160,14 @@ class NullDebugService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/DeleteNullDebug',
-            backend__null__pb2.DeleteNullDebugRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullVolumeService/DeleteNullVolume',
+            backend__null__pb2.DeleteNullVolumeRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateNullDebug(request,
+    def UpdateNullVolume(request,
             target,
             options=(),
             channel_credentials=None,
@@ -177,14 +177,14 @@ class NullDebugService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/UpdateNullDebug',
-            backend__null__pb2.UpdateNullDebugRequest.SerializeToString,
-            backend__null__pb2.NullDebug.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullVolumeService/UpdateNullVolume',
+            backend__null__pb2.UpdateNullVolumeRequest.SerializeToString,
+            backend__null__pb2.NullVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListNullDebugs(request,
+    def ListNullVolumes(request,
             target,
             options=(),
             channel_credentials=None,
@@ -194,14 +194,14 @@ class NullDebugService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/ListNullDebugs',
-            backend__null__pb2.ListNullDebugsRequest.SerializeToString,
-            backend__null__pb2.ListNullDebugsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullVolumeService/ListNullVolumes',
+            backend__null__pb2.ListNullVolumesRequest.SerializeToString,
+            backend__null__pb2.ListNullVolumesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetNullDebug(request,
+    def GetNullVolume(request,
             target,
             options=(),
             channel_credentials=None,
@@ -211,14 +211,14 @@ class NullDebugService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/GetNullDebug',
-            backend__null__pb2.GetNullDebugRequest.SerializeToString,
-            backend__null__pb2.NullDebug.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullVolumeService/GetNullVolume',
+            backend__null__pb2.GetNullVolumeRequest.SerializeToString,
+            backend__null__pb2.NullVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def NullDebugStats(request,
+    def NullVolumeStats(request,
             target,
             options=(),
             channel_credentials=None,
@@ -228,8 +228,8 @@ class NullDebugService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/NullDebugStats',
-            backend__null__pb2.NullDebugStatsRequest.SerializeToString,
-            backend__null__pb2.NullDebugStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullVolumeService/NullVolumeStats',
+            backend__null__pb2.NullVolumeStatsRequest.SerializeToString,
+            backend__null__pb2.NullVolumeStatsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -4,31 +4,31 @@
 ## Table of Contents
 
 - [backend_aio.proto](#backend_aio-proto)
-    - [AioController](#opi_api-storage-v1-AioController)
-    - [AioControllerStatsRequest](#opi_api-storage-v1-AioControllerStatsRequest)
-    - [AioControllerStatsResponse](#opi_api-storage-v1-AioControllerStatsResponse)
-    - [CreateAioControllerRequest](#opi_api-storage-v1-CreateAioControllerRequest)
-    - [DeleteAioControllerRequest](#opi_api-storage-v1-DeleteAioControllerRequest)
-    - [GetAioControllerRequest](#opi_api-storage-v1-GetAioControllerRequest)
-    - [ListAioControllersRequest](#opi_api-storage-v1-ListAioControllersRequest)
-    - [ListAioControllersResponse](#opi_api-storage-v1-ListAioControllersResponse)
-    - [UpdateAioControllerRequest](#opi_api-storage-v1-UpdateAioControllerRequest)
+    - [AioVolume](#opi_api-storage-v1-AioVolume)
+    - [AioVolumeStatsRequest](#opi_api-storage-v1-AioVolumeStatsRequest)
+    - [AioVolumeStatsResponse](#opi_api-storage-v1-AioVolumeStatsResponse)
+    - [CreateAioVolumeRequest](#opi_api-storage-v1-CreateAioVolumeRequest)
+    - [DeleteAioVolumeRequest](#opi_api-storage-v1-DeleteAioVolumeRequest)
+    - [GetAioVolumeRequest](#opi_api-storage-v1-GetAioVolumeRequest)
+    - [ListAioVolumesRequest](#opi_api-storage-v1-ListAioVolumesRequest)
+    - [ListAioVolumesResponse](#opi_api-storage-v1-ListAioVolumesResponse)
+    - [UpdateAioVolumeRequest](#opi_api-storage-v1-UpdateAioVolumeRequest)
   
-    - [AioControllerService](#opi_api-storage-v1-AioControllerService)
+    - [AioVolumeService](#opi_api-storage-v1-AioVolumeService)
   
 - [backend_iscsi.proto](#backend_iscsi-proto)
 - [backend_null.proto](#backend_null-proto)
-    - [CreateNullDebugRequest](#opi_api-storage-v1-CreateNullDebugRequest)
-    - [DeleteNullDebugRequest](#opi_api-storage-v1-DeleteNullDebugRequest)
-    - [GetNullDebugRequest](#opi_api-storage-v1-GetNullDebugRequest)
-    - [ListNullDebugsRequest](#opi_api-storage-v1-ListNullDebugsRequest)
-    - [ListNullDebugsResponse](#opi_api-storage-v1-ListNullDebugsResponse)
-    - [NullDebug](#opi_api-storage-v1-NullDebug)
-    - [NullDebugStatsRequest](#opi_api-storage-v1-NullDebugStatsRequest)
-    - [NullDebugStatsResponse](#opi_api-storage-v1-NullDebugStatsResponse)
-    - [UpdateNullDebugRequest](#opi_api-storage-v1-UpdateNullDebugRequest)
+    - [CreateNullVolumeRequest](#opi_api-storage-v1-CreateNullVolumeRequest)
+    - [DeleteNullVolumeRequest](#opi_api-storage-v1-DeleteNullVolumeRequest)
+    - [GetNullVolumeRequest](#opi_api-storage-v1-GetNullVolumeRequest)
+    - [ListNullVolumesRequest](#opi_api-storage-v1-ListNullVolumesRequest)
+    - [ListNullVolumesResponse](#opi_api-storage-v1-ListNullVolumesResponse)
+    - [NullVolume](#opi_api-storage-v1-NullVolume)
+    - [NullVolumeStatsRequest](#opi_api-storage-v1-NullVolumeStatsRequest)
+    - [NullVolumeStatsResponse](#opi_api-storage-v1-NullVolumeStatsResponse)
+    - [UpdateNullVolumeRequest](#opi_api-storage-v1-UpdateNullVolumeRequest)
   
-    - [NullDebugService](#opi_api-storage-v1-NullDebugService)
+    - [NullVolumeService](#opi_api-storage-v1-NullVolumeService)
   
 - [backend_nvme_pcie.proto](#backend_nvme_pcie-proto)
 - [backend_nvme_tcp.proto](#backend_nvme_tcp-proto)
@@ -209,9 +209,9 @@
 
 
 
-<a name="opi_api-storage-v1-AioController"></a>
+<a name="opi_api-storage-v1-AioVolume"></a>
 
-### AioController
+### AioVolume
 
 
 
@@ -228,9 +228,9 @@
 
 
 
-<a name="opi_api-storage-v1-AioControllerStatsRequest"></a>
+<a name="opi_api-storage-v1-AioVolumeStatsRequest"></a>
 
-### AioControllerStatsRequest
+### AioVolumeStatsRequest
 
 
 
@@ -243,9 +243,9 @@
 
 
 
-<a name="opi_api-storage-v1-AioControllerStatsResponse"></a>
+<a name="opi_api-storage-v1-AioVolumeStatsResponse"></a>
 
-### AioControllerStatsResponse
+### AioVolumeStatsResponse
 
 
 
@@ -259,25 +259,25 @@
 
 
 
-<a name="opi_api-storage-v1-CreateAioControllerRequest"></a>
+<a name="opi_api-storage-v1-CreateAioVolumeRequest"></a>
 
-### CreateAioControllerRequest
+### CreateAioVolumeRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| aio_controller | [AioController](#opi_api-storage-v1-AioController) |  |  |
-| aio_controller_id | [string](#string) |  |  |
+| aio_volume | [AioVolume](#opi_api-storage-v1-AioVolume) |  |  |
+| aio_volume_id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-DeleteAioControllerRequest"></a>
+<a name="opi_api-storage-v1-DeleteAioVolumeRequest"></a>
 
-### DeleteAioControllerRequest
+### DeleteAioVolumeRequest
 
 
 
@@ -291,9 +291,9 @@
 
 
 
-<a name="opi_api-storage-v1-GetAioControllerRequest"></a>
+<a name="opi_api-storage-v1-GetAioVolumeRequest"></a>
 
-### GetAioControllerRequest
+### GetAioVolumeRequest
 
 
 
@@ -306,9 +306,9 @@
 
 
 
-<a name="opi_api-storage-v1-ListAioControllersRequest"></a>
+<a name="opi_api-storage-v1-ListAioVolumesRequest"></a>
 
-### ListAioControllersRequest
+### ListAioVolumesRequest
 
 
 
@@ -323,15 +323,15 @@
 
 
 
-<a name="opi_api-storage-v1-ListAioControllersResponse"></a>
+<a name="opi_api-storage-v1-ListAioVolumesResponse"></a>
 
-### ListAioControllersResponse
+### ListAioVolumesResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| aio_controllers | [AioController](#opi_api-storage-v1-AioController) | repeated |  |
+| aio_volumes | [AioVolume](#opi_api-storage-v1-AioVolume) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -339,15 +339,15 @@
 
 
 
-<a name="opi_api-storage-v1-UpdateAioControllerRequest"></a>
+<a name="opi_api-storage-v1-UpdateAioVolumeRequest"></a>
 
-### UpdateAioControllerRequest
+### UpdateAioVolumeRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| aio_controller | [AioController](#opi_api-storage-v1-AioController) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| aio_volume | [AioVolume](#opi_api-storage-v1-AioVolume) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 | allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
@@ -362,19 +362,19 @@
  
 
 
-<a name="opi_api-storage-v1-AioControllerService"></a>
+<a name="opi_api-storage-v1-AioVolumeService"></a>
 
-### AioControllerService
+### AioVolumeService
 Back End (network-facing) APIs. This service is for AIO generic kernel block device.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateAioController | [CreateAioControllerRequest](#opi_api-storage-v1-CreateAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
-| DeleteAioController | [DeleteAioControllerRequest](#opi_api-storage-v1-DeleteAioControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateAioController | [UpdateAioControllerRequest](#opi_api-storage-v1-UpdateAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
-| ListAioControllers | [ListAioControllersRequest](#opi_api-storage-v1-ListAioControllersRequest) | [ListAioControllersResponse](#opi_api-storage-v1-ListAioControllersResponse) |  |
-| GetAioController | [GetAioControllerRequest](#opi_api-storage-v1-GetAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
-| AioControllerStats | [AioControllerStatsRequest](#opi_api-storage-v1-AioControllerStatsRequest) | [AioControllerStatsResponse](#opi_api-storage-v1-AioControllerStatsResponse) |  |
+| CreateAioVolume | [CreateAioVolumeRequest](#opi_api-storage-v1-CreateAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) |  |
+| DeleteAioVolume | [DeleteAioVolumeRequest](#opi_api-storage-v1-DeleteAioVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateAioVolume | [UpdateAioVolumeRequest](#opi_api-storage-v1-UpdateAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) |  |
+| ListAioVolumes | [ListAioVolumesRequest](#opi_api-storage-v1-ListAioVolumesRequest) | [ListAioVolumesResponse](#opi_api-storage-v1-ListAioVolumesResponse) |  |
+| GetAioVolume | [GetAioVolumeRequest](#opi_api-storage-v1-GetAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) |  |
+| AioVolumeStats | [AioVolumeStatsRequest](#opi_api-storage-v1-AioVolumeStatsRequest) | [AioVolumeStatsResponse](#opi_api-storage-v1-AioVolumeStatsResponse) |  |
 
  
 
@@ -403,25 +403,25 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-CreateNullDebugRequest"></a>
+<a name="opi_api-storage-v1-CreateNullVolumeRequest"></a>
 
-### CreateNullDebugRequest
+### CreateNullVolumeRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| null_debug | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
-| null_debug_id | [string](#string) |  |  |
+| null_volume | [NullVolume](#opi_api-storage-v1-NullVolume) |  |  |
+| null_volume_id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-DeleteNullDebugRequest"></a>
+<a name="opi_api-storage-v1-DeleteNullVolumeRequest"></a>
 
-### DeleteNullDebugRequest
+### DeleteNullVolumeRequest
 
 
 
@@ -435,9 +435,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-GetNullDebugRequest"></a>
+<a name="opi_api-storage-v1-GetNullVolumeRequest"></a>
 
-### GetNullDebugRequest
+### GetNullVolumeRequest
 
 
 
@@ -450,9 +450,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-ListNullDebugsRequest"></a>
+<a name="opi_api-storage-v1-ListNullVolumesRequest"></a>
 
-### ListNullDebugsRequest
+### ListNullVolumesRequest
 
 
 
@@ -467,15 +467,15 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-ListNullDebugsResponse"></a>
+<a name="opi_api-storage-v1-ListNullVolumesResponse"></a>
 
-### ListNullDebugsResponse
+### ListNullVolumesResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| null_debugs | [NullDebug](#opi_api-storage-v1-NullDebug) | repeated |  |
+| null_volumes | [NullVolume](#opi_api-storage-v1-NullVolume) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -483,9 +483,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullDebug"></a>
+<a name="opi_api-storage-v1-NullVolume"></a>
 
-### NullDebug
+### NullVolume
 
 
 
@@ -501,9 +501,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullDebugStatsRequest"></a>
+<a name="opi_api-storage-v1-NullVolumeStatsRequest"></a>
 
-### NullDebugStatsRequest
+### NullVolumeStatsRequest
 
 
 
@@ -516,9 +516,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullDebugStatsResponse"></a>
+<a name="opi_api-storage-v1-NullVolumeStatsResponse"></a>
 
-### NullDebugStatsResponse
+### NullVolumeStatsResponse
 
 
 
@@ -532,15 +532,15 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-UpdateNullDebugRequest"></a>
+<a name="opi_api-storage-v1-UpdateNullVolumeRequest"></a>
 
-### UpdateNullDebugRequest
+### UpdateNullVolumeRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| null_debug | [NullDebug](#opi_api-storage-v1-NullDebug) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| null_volume | [NullVolume](#opi_api-storage-v1-NullVolume) |  | The object&#39;s `name` field is used to identify the object to be updated. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 | allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
@@ -555,19 +555,19 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
  
 
 
-<a name="opi_api-storage-v1-NullDebugService"></a>
+<a name="opi_api-storage-v1-NullVolumeService"></a>
 
-### NullDebugService
+### NullVolumeService
 Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateNullDebug | [CreateNullDebugRequest](#opi_api-storage-v1-CreateNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
-| DeleteNullDebug | [DeleteNullDebugRequest](#opi_api-storage-v1-DeleteNullDebugRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNullDebug | [UpdateNullDebugRequest](#opi_api-storage-v1-UpdateNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
-| ListNullDebugs | [ListNullDebugsRequest](#opi_api-storage-v1-ListNullDebugsRequest) | [ListNullDebugsResponse](#opi_api-storage-v1-ListNullDebugsResponse) |  |
-| GetNullDebug | [GetNullDebugRequest](#opi_api-storage-v1-GetNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
-| NullDebugStats | [NullDebugStatsRequest](#opi_api-storage-v1-NullDebugStatsRequest) | [NullDebugStatsResponse](#opi_api-storage-v1-NullDebugStatsResponse) |  |
+| CreateNullVolume | [CreateNullVolumeRequest](#opi_api-storage-v1-CreateNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) |  |
+| DeleteNullVolume | [DeleteNullVolumeRequest](#opi_api-storage-v1-DeleteNullVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNullVolume | [UpdateNullVolumeRequest](#opi_api-storage-v1-UpdateNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) |  |
+| ListNullVolumes | [ListNullVolumesRequest](#opi_api-storage-v1-ListNullVolumesRequest) | [ListNullVolumesResponse](#opi_api-storage-v1-ListNullVolumesResponse) |  |
+| GetNullVolume | [GetNullVolumeRequest](#opi_api-storage-v1-GetNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) |  |
+| NullVolumeStats | [NullVolumeStatsRequest](#opi_api-storage-v1-NullVolumeStatsRequest) | [NullVolumeStatsResponse](#opi_api-storage-v1-NullVolumeStatsResponse) |  |
 
  
 

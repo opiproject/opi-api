@@ -19,125 +19,125 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace opi_api {
 namespace storage {
 namespace v1 {
-constexpr NullDebug::NullDebug(
+constexpr NullVolume::NullVolume(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , uuid_(nullptr)
   , block_size_(int64_t{0})
   , blocks_count_(int64_t{0}){}
-struct NullDebugDefaultTypeInternal {
-  constexpr NullDebugDefaultTypeInternal()
+struct NullVolumeDefaultTypeInternal {
+  constexpr NullVolumeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NullDebugDefaultTypeInternal() {}
+  ~NullVolumeDefaultTypeInternal() {}
   union {
-    NullDebug _instance;
+    NullVolume _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullDebugDefaultTypeInternal _NullDebug_default_instance_;
-constexpr CreateNullDebugRequest::CreateNullDebugRequest(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullVolumeDefaultTypeInternal _NullVolume_default_instance_;
+constexpr CreateNullVolumeRequest::CreateNullVolumeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : null_debug_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , null_debug_(nullptr){}
-struct CreateNullDebugRequestDefaultTypeInternal {
-  constexpr CreateNullDebugRequestDefaultTypeInternal()
+  : null_volume_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , null_volume_(nullptr){}
+struct CreateNullVolumeRequestDefaultTypeInternal {
+  constexpr CreateNullVolumeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~CreateNullDebugRequestDefaultTypeInternal() {}
+  ~CreateNullVolumeRequestDefaultTypeInternal() {}
   union {
-    CreateNullDebugRequest _instance;
+    CreateNullVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateNullDebugRequestDefaultTypeInternal _CreateNullDebugRequest_default_instance_;
-constexpr DeleteNullDebugRequest::DeleteNullDebugRequest(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateNullVolumeRequestDefaultTypeInternal _CreateNullVolumeRequest_default_instance_;
+constexpr DeleteNullVolumeRequest::DeleteNullVolumeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , allow_missing_(false){}
-struct DeleteNullDebugRequestDefaultTypeInternal {
-  constexpr DeleteNullDebugRequestDefaultTypeInternal()
+struct DeleteNullVolumeRequestDefaultTypeInternal {
+  constexpr DeleteNullVolumeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~DeleteNullDebugRequestDefaultTypeInternal() {}
+  ~DeleteNullVolumeRequestDefaultTypeInternal() {}
   union {
-    DeleteNullDebugRequest _instance;
+    DeleteNullVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteNullDebugRequestDefaultTypeInternal _DeleteNullDebugRequest_default_instance_;
-constexpr UpdateNullDebugRequest::UpdateNullDebugRequest(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteNullVolumeRequestDefaultTypeInternal _DeleteNullVolumeRequest_default_instance_;
+constexpr UpdateNullVolumeRequest::UpdateNullVolumeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : null_debug_(nullptr)
+  : null_volume_(nullptr)
   , update_mask_(nullptr)
   , allow_missing_(false){}
-struct UpdateNullDebugRequestDefaultTypeInternal {
-  constexpr UpdateNullDebugRequestDefaultTypeInternal()
+struct UpdateNullVolumeRequestDefaultTypeInternal {
+  constexpr UpdateNullVolumeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~UpdateNullDebugRequestDefaultTypeInternal() {}
+  ~UpdateNullVolumeRequestDefaultTypeInternal() {}
   union {
-    UpdateNullDebugRequest _instance;
+    UpdateNullVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateNullDebugRequestDefaultTypeInternal _UpdateNullDebugRequest_default_instance_;
-constexpr ListNullDebugsRequest::ListNullDebugsRequest(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateNullVolumeRequestDefaultTypeInternal _UpdateNullVolumeRequest_default_instance_;
+constexpr ListNullVolumesRequest::ListNullVolumesRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : parent_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , page_size_(0){}
-struct ListNullDebugsRequestDefaultTypeInternal {
-  constexpr ListNullDebugsRequestDefaultTypeInternal()
+struct ListNullVolumesRequestDefaultTypeInternal {
+  constexpr ListNullVolumesRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~ListNullDebugsRequestDefaultTypeInternal() {}
+  ~ListNullVolumesRequestDefaultTypeInternal() {}
   union {
-    ListNullDebugsRequest _instance;
+    ListNullVolumesRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNullDebugsRequestDefaultTypeInternal _ListNullDebugsRequest_default_instance_;
-constexpr ListNullDebugsResponse::ListNullDebugsResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNullVolumesRequestDefaultTypeInternal _ListNullVolumesRequest_default_instance_;
+constexpr ListNullVolumesResponse::ListNullVolumesResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : null_debugs_()
+  : null_volumes_()
   , next_page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct ListNullDebugsResponseDefaultTypeInternal {
-  constexpr ListNullDebugsResponseDefaultTypeInternal()
+struct ListNullVolumesResponseDefaultTypeInternal {
+  constexpr ListNullVolumesResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~ListNullDebugsResponseDefaultTypeInternal() {}
+  ~ListNullVolumesResponseDefaultTypeInternal() {}
   union {
-    ListNullDebugsResponse _instance;
+    ListNullVolumesResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNullDebugsResponseDefaultTypeInternal _ListNullDebugsResponse_default_instance_;
-constexpr GetNullDebugRequest::GetNullDebugRequest(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNullVolumesResponseDefaultTypeInternal _ListNullVolumesResponse_default_instance_;
+constexpr GetNullVolumeRequest::GetNullVolumeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct GetNullDebugRequestDefaultTypeInternal {
-  constexpr GetNullDebugRequestDefaultTypeInternal()
+struct GetNullVolumeRequestDefaultTypeInternal {
+  constexpr GetNullVolumeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~GetNullDebugRequestDefaultTypeInternal() {}
+  ~GetNullVolumeRequestDefaultTypeInternal() {}
   union {
-    GetNullDebugRequest _instance;
+    GetNullVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetNullDebugRequestDefaultTypeInternal _GetNullDebugRequest_default_instance_;
-constexpr NullDebugStatsRequest::NullDebugStatsRequest(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetNullVolumeRequestDefaultTypeInternal _GetNullVolumeRequest_default_instance_;
+constexpr NullVolumeStatsRequest::NullVolumeStatsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : handle_(nullptr){}
-struct NullDebugStatsRequestDefaultTypeInternal {
-  constexpr NullDebugStatsRequestDefaultTypeInternal()
+struct NullVolumeStatsRequestDefaultTypeInternal {
+  constexpr NullVolumeStatsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NullDebugStatsRequestDefaultTypeInternal() {}
+  ~NullVolumeStatsRequestDefaultTypeInternal() {}
   union {
-    NullDebugStatsRequest _instance;
+    NullVolumeStatsRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullDebugStatsRequestDefaultTypeInternal _NullDebugStatsRequest_default_instance_;
-constexpr NullDebugStatsResponse::NullDebugStatsResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullVolumeStatsRequestDefaultTypeInternal _NullVolumeStatsRequest_default_instance_;
+constexpr NullVolumeStatsResponse::NullVolumeStatsResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : handle_(nullptr)
   , stats_(nullptr){}
-struct NullDebugStatsResponseDefaultTypeInternal {
-  constexpr NullDebugStatsResponseDefaultTypeInternal()
+struct NullVolumeStatsResponseDefaultTypeInternal {
+  constexpr NullVolumeStatsResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NullDebugStatsResponseDefaultTypeInternal() {}
+  ~NullVolumeStatsResponseDefaultTypeInternal() {}
   union {
-    NullDebugStatsResponse _instance;
+    NullVolumeStatsResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullDebugStatsResponseDefaultTypeInternal _NullDebugStatsResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullVolumeStatsResponseDefaultTypeInternal _NullVolumeStatsResponse_default_instance_;
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
@@ -147,102 +147,102 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolume, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, block_size_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, blocks_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, uuid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolume, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolume, block_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolume, blocks_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolume, uuid_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNullDebugRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNullVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNullDebugRequest, null_debug_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNullDebugRequest, null_debug_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNullVolumeRequest, null_volume_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNullVolumeRequest, null_volume_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNullDebugRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNullVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNullDebugRequest, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNullDebugRequest, allow_missing_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNullVolumeRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNullVolumeRequest, allow_missing_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullDebugRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullDebugRequest, null_debug_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullDebugRequest, update_mask_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullDebugRequest, allow_missing_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullVolumeRequest, null_volume_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullVolumeRequest, update_mask_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullVolumeRequest, allow_missing_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullDebugsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullVolumesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullDebugsRequest, parent_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullDebugsRequest, page_size_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullDebugsRequest, page_token_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullVolumesRequest, parent_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullVolumesRequest, page_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullVolumesRequest, page_token_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullDebugsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullVolumesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullDebugsResponse, null_debugs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullDebugsResponse, next_page_token_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullVolumesResponse, null_volumes_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNullVolumesResponse, next_page_token_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNullDebugRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNullVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNullDebugRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNullVolumeRequest, name_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugStatsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugStatsRequest, handle_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsRequest, handle_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugStatsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugStatsResponse, handle_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugStatsResponse, stats_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsResponse, handle_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsResponse, stats_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::opi_api::storage::v1::NullDebug)},
-  { 10, -1, -1, sizeof(::opi_api::storage::v1::CreateNullDebugRequest)},
-  { 18, -1, -1, sizeof(::opi_api::storage::v1::DeleteNullDebugRequest)},
-  { 26, -1, -1, sizeof(::opi_api::storage::v1::UpdateNullDebugRequest)},
-  { 35, -1, -1, sizeof(::opi_api::storage::v1::ListNullDebugsRequest)},
-  { 44, -1, -1, sizeof(::opi_api::storage::v1::ListNullDebugsResponse)},
-  { 52, -1, -1, sizeof(::opi_api::storage::v1::GetNullDebugRequest)},
-  { 59, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsRequest)},
-  { 66, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsResponse)},
+  { 0, -1, -1, sizeof(::opi_api::storage::v1::NullVolume)},
+  { 10, -1, -1, sizeof(::opi_api::storage::v1::CreateNullVolumeRequest)},
+  { 18, -1, -1, sizeof(::opi_api::storage::v1::DeleteNullVolumeRequest)},
+  { 26, -1, -1, sizeof(::opi_api::storage::v1::UpdateNullVolumeRequest)},
+  { 35, -1, -1, sizeof(::opi_api::storage::v1::ListNullVolumesRequest)},
+  { 44, -1, -1, sizeof(::opi_api::storage::v1::ListNullVolumesResponse)},
+  { 52, -1, -1, sizeof(::opi_api::storage::v1::GetNullVolumeRequest)},
+  { 59, -1, -1, sizeof(::opi_api::storage::v1::NullVolumeStatsRequest)},
+  { 66, -1, -1, sizeof(::opi_api::storage::v1::NullVolumeStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NullDebug_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_CreateNullDebugRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_DeleteNullDebugRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_UpdateNullDebugRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_ListNullDebugsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_ListNullDebugsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_GetNullDebugRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NullDebugStatsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NullDebugStatsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NullVolume_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_CreateNullVolumeRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_DeleteNullVolumeRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_UpdateNullVolumeRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_ListNullVolumesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_ListNullVolumesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_GetNullVolumeRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NullVolumeStatsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NullVolumeStatsResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_backend_5fnull_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -252,57 +252,58 @@ const char descriptor_table_protodef_backend_5fnull_2eproto[] PROTOBUF_SECTION_V
   "o\032\034google/api/annotations.proto\032\037google/"
   "api/field_behavior.proto\032 google/protobu"
   "f/field_mask.proto\032\020object_key.proto\032\017op"
-  "icommon.proto\032\nuuid.proto\"\243\001\n\tNullDebug\022"
-  "\014\n\004name\030\001 \001(\t\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014blo"
-  "cks_count\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api."
-  "common.v1.Uuid:7\352A4\n storage.opiproject."
-  "org/NullDebug\022\020volumes/{volume}\"g\n\026Creat"
-  "eNullDebugRequest\0226\n\nnull_debug\030\002 \001(\0132\035."
-  "opi_api.storage.v1.NullDebugB\003\340A\002\022\025\n\rnul"
-  "l_debug_id\030\003 \001(\t\"c\n\026DeleteNullDebugReque"
-  "st\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storag"
-  "e.v1/NullDebug\022\025\n\rallow_missing\030\002 \001(\010\"\223\001"
-  "\n\026UpdateNullDebugRequest\0221\n\nnull_debug\030\001"
-  " \001(\0132\035.opi_api.storage.v1.NullDebug\022/\n\013u"
-  "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
-  "Mask\022\025\n\rallow_missing\030\003 \001(\010\"t\n\025ListNullD"
-  "ebugsRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034op"
-  "i_api.storage.v1/NullDebug\022\021\n\tpage_size\030"
-  "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"e\n\026ListNullDeb"
-  "ugsResponse\0222\n\013null_debugs\030\001 \003(\0132\035.opi_a"
-  "pi.storage.v1.NullDebug\022\027\n\017next_page_tok"
-  "en\030\002 \001(\t\"I\n\023GetNullDebugRequest\0222\n\004name\030"
-  "\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/NullDe"
-  "bug\"E\n\025NullDebugStatsRequest\022,\n\006handle\030\001"
-  " \001(\0132\034.opi_api.common.v1.ObjectKey\"v\n\026Nu"
-  "llDebugStatsResponse\022,\n\006handle\030\001 \001(\0132\034.o"
-  "pi_api.common.v1.ObjectKey\022.\n\005stats\030\002 \001("
-  "\0132\037.opi_api.storage.v1.VolumeStats2\357\006\n\020N"
-  "ullDebugService\022\230\001\n\017CreateNullDebug\022*.op"
-  "i_api.storage.v1.CreateNullDebugRequest\032"
-  "\035.opi_api.storage.v1.NullDebug\":\202\323\344\223\002\031\"\013"
-  "/v1/volumes:\nnull_debug\332A\030null_debug,nul"
-  "l_debug_id\022\207\001\n\017DeleteNullDebug\022*.opi_api"
-  ".storage.v1.DeleteNullDebugRequest\032\026.goo"
-  "gle.protobuf.Empty\"0\202\323\344\223\002#*!/v1/{name=su"
-  "bsystems}/{subsystem}\332A\004name\022\253\001\n\017UpdateN"
-  "ullDebug\022*.opi_api.storage.v1.UpdateNull"
-  "DebugRequest\032\035.opi_api.storage.v1.NullDe"
-  "bug\"M\202\323\344\223\002.2 /v1/{null_debug.name=subsys"
-  "tems}:\nnull_debug\332A\026null_debug,update_ma"
-  "sk\022\221\001\n\016ListNullDebugs\022).opi_api.storage."
-  "v1.ListNullDebugsRequest\032*.opi_api.stora"
-  "ge.v1.ListNullDebugsResponse\"(\202\323\344\223\002\031\022\027/v"
-  "1/{parent=subsystems}\332A\006parent\022\210\001\n\014GetNu"
-  "llDebug\022\'.opi_api.storage.v1.GetNullDebu"
-  "gRequest\032\035.opi_api.storage.v1.NullDebug\""
-  "0\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsyste"
-  "m}\332A\004name\022i\n\016NullDebugStats\022).opi_api.st"
-  "orage.v1.NullDebugStatsRequest\032*.opi_api"
-  ".storage.v1.NullDebugStatsResponse\"\000B_\n\022"
-  "opi_api.storage.v1B\020BackendNullProtoP\001Z5"
-  "github.com/opiproject/opi-api/storage/v1"
-  "alpha1/gen/gob\006proto3"
+  "icommon.proto\032\nuuid.proto\"\245\001\n\nNullVolume"
+  "\022\014\n\004name\030\001 \001(\t\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014bl"
+  "ocks_count\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api"
+  ".common.v1.Uuid:8\352A5\n!storage.opiproject"
+  ".org/NullVolume\022\020volumes/{volume}\"k\n\027Cre"
+  "ateNullVolumeRequest\0228\n\013null_volume\030\002 \001("
+  "\0132\036.opi_api.storage.v1.NullVolumeB\003\340A\002\022\026"
+  "\n\016null_volume_id\030\003 \001(\t\"e\n\027DeleteNullVolu"
+  "meRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api"
+  ".storage.v1/NullVolume\022\025\n\rallow_missing\030"
+  "\002 \001(\010\"\226\001\n\027UpdateNullVolumeRequest\0223\n\013nul"
+  "l_volume\030\001 \001(\0132\036.opi_api.storage.v1.Null"
+  "Volume\022/\n\013update_mask\030\002 \001(\0132\032.google.pro"
+  "tobuf.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\"v"
+  "\n\026ListNullVolumesRequest\0225\n\006parent\030\001 \001(\t"
+  "B%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolume\022"
+  "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"h"
+  "\n\027ListNullVolumesResponse\0224\n\014null_volume"
+  "s\030\001 \003(\0132\036.opi_api.storage.v1.NullVolume\022"
+  "\027\n\017next_page_token\030\002 \001(\t\"K\n\024GetNullVolum"
+  "eRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api."
+  "storage.v1/NullVolume\"F\n\026NullVolumeStats"
+  "Request\022,\n\006handle\030\001 \001(\0132\034.opi_api.common"
+  ".v1.ObjectKey\"w\n\027NullVolumeStatsResponse"
+  "\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Obj"
+  "ectKey\022.\n\005stats\030\002 \001(\0132\037.opi_api.storage."
+  "v1.VolumeStats2\207\007\n\021NullVolumeService\022\236\001\n"
+  "\020CreateNullVolume\022+.opi_api.storage.v1.C"
+  "reateNullVolumeRequest\032\036.opi_api.storage"
+  ".v1.NullVolume\"=\202\323\344\223\002\032\"\013/v1/volumes:\013nul"
+  "l_volume\332A\032null_volume,null_volume_id\022\211\001"
+  "\n\020DeleteNullVolume\022+.opi_api.storage.v1."
+  "DeleteNullVolumeRequest\032\026.google.protobu"
+  "f.Empty\"0\202\323\344\223\002#*!/v1/{name=subsystems}/{"
+  "subsystem}\332A\004name\022\261\001\n\020UpdateNullVolume\022+"
+  ".opi_api.storage.v1.UpdateNullVolumeRequ"
+  "est\032\036.opi_api.storage.v1.NullVolume\"P\202\323\344"
+  "\223\00202!/v1/{null_volume.name=subsystems}:\013"
+  "null_volume\332A\027null_volume,update_mask\022\224\001"
+  "\n\017ListNullVolumes\022*.opi_api.storage.v1.L"
+  "istNullVolumesRequest\032+.opi_api.storage."
+  "v1.ListNullVolumesResponse\"(\202\323\344\223\002\031\022\027/v1/"
+  "{parent=subsystems}\332A\006parent\022\213\001\n\rGetNull"
+  "Volume\022(.opi_api.storage.v1.GetNullVolum"
+  "eRequest\032\036.opi_api.storage.v1.NullVolume"
+  "\"0\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsyst"
+  "em}\332A\004name\022l\n\017NullVolumeStats\022*.opi_api."
+  "storage.v1.NullVolumeStatsRequest\032+.opi_"
+  "api.storage.v1.NullVolumeStatsResponse\"\000"
+  "B_\n\022opi_api.storage.v1B\020BackendNullProto"
+  "P\001Z5github.com/opiproject/opi-api/storag"
+  "e/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnull_2eproto_deps[9] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -317,7 +318,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnull_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnull_2eproto = {
-  false, false, 2261, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
+  false, false, 2305, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
   &descriptor_table_backend_5fnull_2eproto_once, descriptor_table_backend_5fnull_2eproto_deps, 9, 9,
   schemas, file_default_instances, TableStruct_backend_5fnull_2eproto::offsets,
   file_level_metadata_backend_5fnull_2eproto, file_level_enum_descriptors_backend_5fnull_2eproto, file_level_service_descriptors_backend_5fnull_2eproto,
@@ -334,31 +335,31 @@ namespace v1 {
 
 // ===================================================================
 
-class NullDebug::_Internal {
+class NullVolume::_Internal {
  public:
-  static const ::opi_api::common::v1::Uuid& uuid(const NullDebug* msg);
+  static const ::opi_api::common::v1::Uuid& uuid(const NullVolume* msg);
 };
 
 const ::opi_api::common::v1::Uuid&
-NullDebug::_Internal::uuid(const NullDebug* msg) {
+NullVolume::_Internal::uuid(const NullVolume* msg) {
   return *msg->uuid_;
 }
-void NullDebug::clear_uuid() {
+void NullVolume::clear_uuid() {
   if (GetArenaForAllocation() == nullptr && uuid_ != nullptr) {
     delete uuid_;
   }
   uuid_ = nullptr;
 }
-NullDebug::NullDebug(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+NullVolume::NullVolume(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NullDebug)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NullVolume)
 }
-NullDebug::NullDebug(const NullDebug& from)
+NullVolume::NullVolume(const NullVolume& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -377,10 +378,10 @@ NullDebug::NullDebug(const NullDebug& from)
   ::memcpy(&block_size_, &from.block_size_,
     static_cast<size_t>(reinterpret_cast<char*>(&blocks_count_) -
     reinterpret_cast<char*>(&block_size_)) + sizeof(blocks_count_));
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullDebug)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullVolume)
 }
 
-inline void NullDebug::SharedCtor() {
+inline void NullVolume::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -391,31 +392,31 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
     reinterpret_cast<char*>(&uuid_)) + sizeof(blocks_count_));
 }
 
-NullDebug::~NullDebug() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NullDebug)
+NullVolume::~NullVolume() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NullVolume)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void NullDebug::SharedDtor() {
+inline void NullVolume::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete uuid_;
 }
 
-void NullDebug::ArenaDtor(void* object) {
-  NullDebug* _this = reinterpret_cast< NullDebug* >(object);
+void NullVolume::ArenaDtor(void* object) {
+  NullVolume* _this = reinterpret_cast< NullVolume* >(object);
   (void)_this;
 }
-void NullDebug::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void NullVolume::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void NullDebug::SetCachedSize(int size) const {
+void NullVolume::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void NullDebug::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NullDebug)
+void NullVolume::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NullVolume)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -431,7 +432,7 @@ void NullDebug::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NullDebug::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NullVolume::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -442,7 +443,7 @@ const char* NullDebug::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NullDebug.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NullVolume.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -494,9 +495,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* NullDebug::_InternalSerialize(
+uint8_t* NullVolume::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NullDebug)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NullVolume)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -505,7 +506,7 @@ uint8_t* NullDebug::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NullDebug.name");
+      "opi_api.storage.v1.NullVolume.name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
@@ -534,12 +535,12 @@ uint8_t* NullDebug::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NullDebug)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NullVolume)
   return target;
 }
 
-size_t NullDebug::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NullDebug)
+size_t NullVolume::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NullVolume)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -573,21 +574,21 @@ size_t NullDebug::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NullDebug::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NullVolume::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    NullDebug::MergeImpl
+    NullVolume::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NullDebug::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NullVolume::GetClassData() const { return &_class_data_; }
 
-void NullDebug::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void NullVolume::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NullDebug *>(to)->MergeFrom(
-      static_cast<const NullDebug &>(from));
+  static_cast<NullVolume *>(to)->MergeFrom(
+      static_cast<const NullVolume &>(from));
 }
 
 
-void NullDebug::MergeFrom(const NullDebug& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NullDebug)
+void NullVolume::MergeFrom(const NullVolume& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NullVolume)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -607,18 +608,18 @@ void NullDebug::MergeFrom(const NullDebug& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void NullDebug::CopyFrom(const NullDebug& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NullDebug)
+void NullVolume::CopyFrom(const NullVolume& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NullVolume)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool NullDebug::IsInitialized() const {
+bool NullVolume::IsInitialized() const {
   return true;
 }
 
-void NullDebug::InternalSwap(NullDebug* other) {
+void NullVolume::InternalSwap(NullVolume* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -629,14 +630,14 @@ void NullDebug::InternalSwap(NullDebug* other) {
       &other->name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NullDebug, blocks_count_)
-      + sizeof(NullDebug::blocks_count_)
-      - PROTOBUF_FIELD_OFFSET(NullDebug, uuid_)>(
+      PROTOBUF_FIELD_OFFSET(NullVolume, blocks_count_)
+      + sizeof(NullVolume::blocks_count_)
+      - PROTOBUF_FIELD_OFFSET(NullVolume, uuid_)>(
           reinterpret_cast<char*>(&uuid_),
           reinterpret_cast<char*>(&other->uuid_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata NullDebug::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata NullVolume::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[0]);
@@ -644,108 +645,108 @@ void NullDebug::InternalSwap(NullDebug* other) {
 
 // ===================================================================
 
-class CreateNullDebugRequest::_Internal {
+class CreateNullVolumeRequest::_Internal {
  public:
-  static const ::opi_api::storage::v1::NullDebug& null_debug(const CreateNullDebugRequest* msg);
+  static const ::opi_api::storage::v1::NullVolume& null_volume(const CreateNullVolumeRequest* msg);
 };
 
-const ::opi_api::storage::v1::NullDebug&
-CreateNullDebugRequest::_Internal::null_debug(const CreateNullDebugRequest* msg) {
-  return *msg->null_debug_;
+const ::opi_api::storage::v1::NullVolume&
+CreateNullVolumeRequest::_Internal::null_volume(const CreateNullVolumeRequest* msg) {
+  return *msg->null_volume_;
 }
-CreateNullDebugRequest::CreateNullDebugRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+CreateNullVolumeRequest::CreateNullVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.CreateNullDebugRequest)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.CreateNullVolumeRequest)
 }
-CreateNullDebugRequest::CreateNullDebugRequest(const CreateNullDebugRequest& from)
+CreateNullVolumeRequest::CreateNullVolumeRequest(const CreateNullVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  null_debug_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  null_volume_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    null_debug_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    null_volume_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_null_debug_id().empty()) {
-    null_debug_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_null_debug_id(), 
+  if (!from._internal_null_volume_id().empty()) {
+    null_volume_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_null_volume_id(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_null_debug()) {
-    null_debug_ = new ::opi_api::storage::v1::NullDebug(*from.null_debug_);
+  if (from._internal_has_null_volume()) {
+    null_volume_ = new ::opi_api::storage::v1::NullVolume(*from.null_volume_);
   } else {
-    null_debug_ = nullptr;
+    null_volume_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.CreateNullDebugRequest)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.CreateNullVolumeRequest)
 }
 
-inline void CreateNullDebugRequest::SharedCtor() {
-null_debug_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void CreateNullVolumeRequest::SharedCtor() {
+null_volume_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  null_debug_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  null_volume_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-null_debug_ = nullptr;
+null_volume_ = nullptr;
 }
 
-CreateNullDebugRequest::~CreateNullDebugRequest() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.CreateNullDebugRequest)
+CreateNullVolumeRequest::~CreateNullVolumeRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.CreateNullVolumeRequest)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void CreateNullDebugRequest::SharedDtor() {
+inline void CreateNullVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  null_debug_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete null_debug_;
+  null_volume_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete null_volume_;
 }
 
-void CreateNullDebugRequest::ArenaDtor(void* object) {
-  CreateNullDebugRequest* _this = reinterpret_cast< CreateNullDebugRequest* >(object);
+void CreateNullVolumeRequest::ArenaDtor(void* object) {
+  CreateNullVolumeRequest* _this = reinterpret_cast< CreateNullVolumeRequest* >(object);
   (void)_this;
 }
-void CreateNullDebugRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void CreateNullVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void CreateNullDebugRequest::SetCachedSize(int size) const {
+void CreateNullVolumeRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void CreateNullDebugRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.CreateNullDebugRequest)
+void CreateNullVolumeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.CreateNullVolumeRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  null_debug_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && null_debug_ != nullptr) {
-    delete null_debug_;
+  null_volume_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && null_volume_ != nullptr) {
+    delete null_volume_;
   }
-  null_debug_ = nullptr;
+  null_volume_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CreateNullDebugRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* CreateNullVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];
+      // .opi_api.storage.v1.NullVolume null_volume = 2 [(.google.api.field_behavior) = REQUIRED];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_null_debug(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_null_volume(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string null_debug_id = 3;
+      // string null_volume_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_null_debug_id();
+          auto str = _internal_mutable_null_volume_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.CreateNullDebugRequest.null_debug_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.CreateNullVolumeRequest.null_volume_id"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -773,116 +774,116 @@ failure:
 #undef CHK_
 }
 
-uint8_t* CreateNullDebugRequest::_InternalSerialize(
+uint8_t* CreateNullVolumeRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.CreateNullDebugRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.CreateNullVolumeRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_has_null_debug()) {
+  // .opi_api.storage.v1.NullVolume null_volume = 2 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_null_volume()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::null_debug(this), target, stream);
+        2, _Internal::null_volume(this), target, stream);
   }
 
-  // string null_debug_id = 3;
-  if (!this->_internal_null_debug_id().empty()) {
+  // string null_volume_id = 3;
+  if (!this->_internal_null_volume_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_null_debug_id().data(), static_cast<int>(this->_internal_null_debug_id().length()),
+      this->_internal_null_volume_id().data(), static_cast<int>(this->_internal_null_volume_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.CreateNullDebugRequest.null_debug_id");
+      "opi_api.storage.v1.CreateNullVolumeRequest.null_volume_id");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_null_debug_id(), target);
+        3, this->_internal_null_volume_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.CreateNullDebugRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.CreateNullVolumeRequest)
   return target;
 }
 
-size_t CreateNullDebugRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.CreateNullDebugRequest)
+size_t CreateNullVolumeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.CreateNullVolumeRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string null_debug_id = 3;
-  if (!this->_internal_null_debug_id().empty()) {
+  // string null_volume_id = 3;
+  if (!this->_internal_null_volume_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_null_debug_id());
+        this->_internal_null_volume_id());
   }
 
-  // .opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_has_null_debug()) {
+  // .opi_api.storage.v1.NullVolume null_volume = 2 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_null_volume()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *null_debug_);
+        *null_volume_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateNullDebugRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateNullVolumeRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    CreateNullDebugRequest::MergeImpl
+    CreateNullVolumeRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateNullDebugRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateNullVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void CreateNullDebugRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void CreateNullVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<CreateNullDebugRequest *>(to)->MergeFrom(
-      static_cast<const CreateNullDebugRequest &>(from));
+  static_cast<CreateNullVolumeRequest *>(to)->MergeFrom(
+      static_cast<const CreateNullVolumeRequest &>(from));
 }
 
 
-void CreateNullDebugRequest::MergeFrom(const CreateNullDebugRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.CreateNullDebugRequest)
+void CreateNullVolumeRequest::MergeFrom(const CreateNullVolumeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.CreateNullVolumeRequest)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_null_debug_id().empty()) {
-    _internal_set_null_debug_id(from._internal_null_debug_id());
+  if (!from._internal_null_volume_id().empty()) {
+    _internal_set_null_volume_id(from._internal_null_volume_id());
   }
-  if (from._internal_has_null_debug()) {
-    _internal_mutable_null_debug()->::opi_api::storage::v1::NullDebug::MergeFrom(from._internal_null_debug());
+  if (from._internal_has_null_volume()) {
+    _internal_mutable_null_volume()->::opi_api::storage::v1::NullVolume::MergeFrom(from._internal_null_volume());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void CreateNullDebugRequest::CopyFrom(const CreateNullDebugRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.CreateNullDebugRequest)
+void CreateNullVolumeRequest::CopyFrom(const CreateNullVolumeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.CreateNullVolumeRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool CreateNullDebugRequest::IsInitialized() const {
+bool CreateNullVolumeRequest::IsInitialized() const {
   return true;
 }
 
-void CreateNullDebugRequest::InternalSwap(CreateNullDebugRequest* other) {
+void CreateNullVolumeRequest::InternalSwap(CreateNullVolumeRequest* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &null_debug_id_, lhs_arena,
-      &other->null_debug_id_, rhs_arena
+      &null_volume_id_, lhs_arena,
+      &other->null_volume_id_, rhs_arena
   );
-  swap(null_debug_, other->null_debug_);
+  swap(null_volume_, other->null_volume_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata CreateNullDebugRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata CreateNullVolumeRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[1]);
@@ -890,20 +891,20 @@ void CreateNullDebugRequest::InternalSwap(CreateNullDebugRequest* other) {
 
 // ===================================================================
 
-class DeleteNullDebugRequest::_Internal {
+class DeleteNullVolumeRequest::_Internal {
  public:
 };
 
-DeleteNullDebugRequest::DeleteNullDebugRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+DeleteNullVolumeRequest::DeleteNullVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.DeleteNullDebugRequest)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.DeleteNullVolumeRequest)
 }
-DeleteNullDebugRequest::DeleteNullDebugRequest(const DeleteNullDebugRequest& from)
+DeleteNullVolumeRequest::DeleteNullVolumeRequest(const DeleteNullVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -915,10 +916,10 @@ DeleteNullDebugRequest::DeleteNullDebugRequest(const DeleteNullDebugRequest& fro
       GetArenaForAllocation());
   }
   allow_missing_ = from.allow_missing_;
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.DeleteNullDebugRequest)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.DeleteNullVolumeRequest)
 }
 
-inline void DeleteNullDebugRequest::SharedCtor() {
+inline void DeleteNullVolumeRequest::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -926,30 +927,30 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 allow_missing_ = false;
 }
 
-DeleteNullDebugRequest::~DeleteNullDebugRequest() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.DeleteNullDebugRequest)
+DeleteNullVolumeRequest::~DeleteNullVolumeRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.DeleteNullVolumeRequest)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void DeleteNullDebugRequest::SharedDtor() {
+inline void DeleteNullVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void DeleteNullDebugRequest::ArenaDtor(void* object) {
-  DeleteNullDebugRequest* _this = reinterpret_cast< DeleteNullDebugRequest* >(object);
+void DeleteNullVolumeRequest::ArenaDtor(void* object) {
+  DeleteNullVolumeRequest* _this = reinterpret_cast< DeleteNullVolumeRequest* >(object);
   (void)_this;
 }
-void DeleteNullDebugRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void DeleteNullVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void DeleteNullDebugRequest::SetCachedSize(int size) const {
+void DeleteNullVolumeRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void DeleteNullDebugRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.DeleteNullDebugRequest)
+void DeleteNullVolumeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.DeleteNullVolumeRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -959,7 +960,7 @@ void DeleteNullDebugRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeleteNullDebugRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DeleteNullVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -970,7 +971,7 @@ const char* DeleteNullDebugRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.DeleteNullDebugRequest.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.DeleteNullVolumeRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1006,9 +1007,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* DeleteNullDebugRequest::_InternalSerialize(
+uint8_t* DeleteNullVolumeRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.DeleteNullDebugRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.DeleteNullVolumeRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1017,7 +1018,7 @@ uint8_t* DeleteNullDebugRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.DeleteNullDebugRequest.name");
+      "opi_api.storage.v1.DeleteNullVolumeRequest.name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
@@ -1032,12 +1033,12 @@ uint8_t* DeleteNullDebugRequest::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.DeleteNullDebugRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.DeleteNullVolumeRequest)
   return target;
 }
 
-size_t DeleteNullDebugRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.DeleteNullDebugRequest)
+size_t DeleteNullVolumeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.DeleteNullVolumeRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1059,21 +1060,21 @@ size_t DeleteNullDebugRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteNullDebugRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteNullVolumeRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    DeleteNullDebugRequest::MergeImpl
+    DeleteNullVolumeRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteNullDebugRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteNullVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void DeleteNullDebugRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void DeleteNullVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<DeleteNullDebugRequest *>(to)->MergeFrom(
-      static_cast<const DeleteNullDebugRequest &>(from));
+  static_cast<DeleteNullVolumeRequest *>(to)->MergeFrom(
+      static_cast<const DeleteNullVolumeRequest &>(from));
 }
 
 
-void DeleteNullDebugRequest::MergeFrom(const DeleteNullDebugRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.DeleteNullDebugRequest)
+void DeleteNullVolumeRequest::MergeFrom(const DeleteNullVolumeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.DeleteNullVolumeRequest)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1087,18 +1088,18 @@ void DeleteNullDebugRequest::MergeFrom(const DeleteNullDebugRequest& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void DeleteNullDebugRequest::CopyFrom(const DeleteNullDebugRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.DeleteNullDebugRequest)
+void DeleteNullVolumeRequest::CopyFrom(const DeleteNullVolumeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.DeleteNullVolumeRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool DeleteNullDebugRequest::IsInitialized() const {
+bool DeleteNullVolumeRequest::IsInitialized() const {
   return true;
 }
 
-void DeleteNullDebugRequest::InternalSwap(DeleteNullDebugRequest* other) {
+void DeleteNullVolumeRequest::InternalSwap(DeleteNullVolumeRequest* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -1111,7 +1112,7 @@ void DeleteNullDebugRequest::InternalSwap(DeleteNullDebugRequest* other) {
   swap(allow_missing_, other->allow_missing_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata DeleteNullDebugRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteNullVolumeRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[2]);
@@ -1119,42 +1120,42 @@ void DeleteNullDebugRequest::InternalSwap(DeleteNullDebugRequest* other) {
 
 // ===================================================================
 
-class UpdateNullDebugRequest::_Internal {
+class UpdateNullVolumeRequest::_Internal {
  public:
-  static const ::opi_api::storage::v1::NullDebug& null_debug(const UpdateNullDebugRequest* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::FieldMask& update_mask(const UpdateNullDebugRequest* msg);
+  static const ::opi_api::storage::v1::NullVolume& null_volume(const UpdateNullVolumeRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::FieldMask& update_mask(const UpdateNullVolumeRequest* msg);
 };
 
-const ::opi_api::storage::v1::NullDebug&
-UpdateNullDebugRequest::_Internal::null_debug(const UpdateNullDebugRequest* msg) {
-  return *msg->null_debug_;
+const ::opi_api::storage::v1::NullVolume&
+UpdateNullVolumeRequest::_Internal::null_volume(const UpdateNullVolumeRequest* msg) {
+  return *msg->null_volume_;
 }
 const ::PROTOBUF_NAMESPACE_ID::FieldMask&
-UpdateNullDebugRequest::_Internal::update_mask(const UpdateNullDebugRequest* msg) {
+UpdateNullVolumeRequest::_Internal::update_mask(const UpdateNullVolumeRequest* msg) {
   return *msg->update_mask_;
 }
-void UpdateNullDebugRequest::clear_update_mask() {
+void UpdateNullVolumeRequest::clear_update_mask() {
   if (GetArenaForAllocation() == nullptr && update_mask_ != nullptr) {
     delete update_mask_;
   }
   update_mask_ = nullptr;
 }
-UpdateNullDebugRequest::UpdateNullDebugRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+UpdateNullVolumeRequest::UpdateNullVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.UpdateNullDebugRequest)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.UpdateNullVolumeRequest)
 }
-UpdateNullDebugRequest::UpdateNullDebugRequest(const UpdateNullDebugRequest& from)
+UpdateNullVolumeRequest::UpdateNullVolumeRequest(const UpdateNullVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_null_debug()) {
-    null_debug_ = new ::opi_api::storage::v1::NullDebug(*from.null_debug_);
+  if (from._internal_has_null_volume()) {
+    null_volume_ = new ::opi_api::storage::v1::NullVolume(*from.null_volume_);
   } else {
-    null_debug_ = nullptr;
+    null_volume_ = nullptr;
   }
   if (from._internal_has_update_mask()) {
     update_mask_ = new ::PROTOBUF_NAMESPACE_ID::FieldMask(*from.update_mask_);
@@ -1162,49 +1163,49 @@ UpdateNullDebugRequest::UpdateNullDebugRequest(const UpdateNullDebugRequest& fro
     update_mask_ = nullptr;
   }
   allow_missing_ = from.allow_missing_;
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.UpdateNullDebugRequest)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.UpdateNullVolumeRequest)
 }
 
-inline void UpdateNullDebugRequest::SharedCtor() {
+inline void UpdateNullVolumeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&null_debug_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&null_volume_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&allow_missing_) -
-    reinterpret_cast<char*>(&null_debug_)) + sizeof(allow_missing_));
+    reinterpret_cast<char*>(&null_volume_)) + sizeof(allow_missing_));
 }
 
-UpdateNullDebugRequest::~UpdateNullDebugRequest() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.UpdateNullDebugRequest)
+UpdateNullVolumeRequest::~UpdateNullVolumeRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.UpdateNullVolumeRequest)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void UpdateNullDebugRequest::SharedDtor() {
+inline void UpdateNullVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete null_debug_;
+  if (this != internal_default_instance()) delete null_volume_;
   if (this != internal_default_instance()) delete update_mask_;
 }
 
-void UpdateNullDebugRequest::ArenaDtor(void* object) {
-  UpdateNullDebugRequest* _this = reinterpret_cast< UpdateNullDebugRequest* >(object);
+void UpdateNullVolumeRequest::ArenaDtor(void* object) {
+  UpdateNullVolumeRequest* _this = reinterpret_cast< UpdateNullVolumeRequest* >(object);
   (void)_this;
 }
-void UpdateNullDebugRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void UpdateNullVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void UpdateNullDebugRequest::SetCachedSize(int size) const {
+void UpdateNullVolumeRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void UpdateNullDebugRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.UpdateNullDebugRequest)
+void UpdateNullVolumeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.UpdateNullVolumeRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && null_debug_ != nullptr) {
-    delete null_debug_;
+  if (GetArenaForAllocation() == nullptr && null_volume_ != nullptr) {
+    delete null_volume_;
   }
-  null_debug_ = nullptr;
+  null_volume_ = nullptr;
   if (GetArenaForAllocation() == nullptr && update_mask_ != nullptr) {
     delete update_mask_;
   }
@@ -1213,16 +1214,16 @@ void UpdateNullDebugRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* UpdateNullDebugRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* UpdateNullVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.storage.v1.NullDebug null_debug = 1;
+      // .opi_api.storage.v1.NullVolume null_volume = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_null_debug(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_null_volume(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1266,18 +1267,18 @@ failure:
 #undef CHK_
 }
 
-uint8_t* UpdateNullDebugRequest::_InternalSerialize(
+uint8_t* UpdateNullVolumeRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.UpdateNullDebugRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.UpdateNullVolumeRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.storage.v1.NullDebug null_debug = 1;
-  if (this->_internal_has_null_debug()) {
+  // .opi_api.storage.v1.NullVolume null_volume = 1;
+  if (this->_internal_has_null_volume()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::null_debug(this), target, stream);
+        1, _Internal::null_volume(this), target, stream);
   }
 
   // .google.protobuf.FieldMask update_mask = 2;
@@ -1298,23 +1299,23 @@ uint8_t* UpdateNullDebugRequest::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.UpdateNullDebugRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.UpdateNullVolumeRequest)
   return target;
 }
 
-size_t UpdateNullDebugRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.UpdateNullDebugRequest)
+size_t UpdateNullVolumeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.UpdateNullVolumeRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.storage.v1.NullDebug null_debug = 1;
-  if (this->_internal_has_null_debug()) {
+  // .opi_api.storage.v1.NullVolume null_volume = 1;
+  if (this->_internal_has_null_volume()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *null_debug_);
+        *null_volume_);
   }
 
   // .google.protobuf.FieldMask update_mask = 2;
@@ -1332,27 +1333,27 @@ size_t UpdateNullDebugRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateNullDebugRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateNullVolumeRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    UpdateNullDebugRequest::MergeImpl
+    UpdateNullVolumeRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateNullDebugRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateNullVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void UpdateNullDebugRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void UpdateNullVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<UpdateNullDebugRequest *>(to)->MergeFrom(
-      static_cast<const UpdateNullDebugRequest &>(from));
+  static_cast<UpdateNullVolumeRequest *>(to)->MergeFrom(
+      static_cast<const UpdateNullVolumeRequest &>(from));
 }
 
 
-void UpdateNullDebugRequest::MergeFrom(const UpdateNullDebugRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.UpdateNullDebugRequest)
+void UpdateNullVolumeRequest::MergeFrom(const UpdateNullVolumeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.UpdateNullVolumeRequest)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_null_debug()) {
-    _internal_mutable_null_debug()->::opi_api::storage::v1::NullDebug::MergeFrom(from._internal_null_debug());
+  if (from._internal_has_null_volume()) {
+    _internal_mutable_null_volume()->::opi_api::storage::v1::NullVolume::MergeFrom(from._internal_null_volume());
   }
   if (from._internal_has_update_mask()) {
     _internal_mutable_update_mask()->::PROTOBUF_NAMESPACE_ID::FieldMask::MergeFrom(from._internal_update_mask());
@@ -1363,29 +1364,29 @@ void UpdateNullDebugRequest::MergeFrom(const UpdateNullDebugRequest& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void UpdateNullDebugRequest::CopyFrom(const UpdateNullDebugRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.UpdateNullDebugRequest)
+void UpdateNullVolumeRequest::CopyFrom(const UpdateNullVolumeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.UpdateNullVolumeRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool UpdateNullDebugRequest::IsInitialized() const {
+bool UpdateNullVolumeRequest::IsInitialized() const {
   return true;
 }
 
-void UpdateNullDebugRequest::InternalSwap(UpdateNullDebugRequest* other) {
+void UpdateNullVolumeRequest::InternalSwap(UpdateNullVolumeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(UpdateNullDebugRequest, allow_missing_)
-      + sizeof(UpdateNullDebugRequest::allow_missing_)
-      - PROTOBUF_FIELD_OFFSET(UpdateNullDebugRequest, null_debug_)>(
-          reinterpret_cast<char*>(&null_debug_),
-          reinterpret_cast<char*>(&other->null_debug_));
+      PROTOBUF_FIELD_OFFSET(UpdateNullVolumeRequest, allow_missing_)
+      + sizeof(UpdateNullVolumeRequest::allow_missing_)
+      - PROTOBUF_FIELD_OFFSET(UpdateNullVolumeRequest, null_volume_)>(
+          reinterpret_cast<char*>(&null_volume_),
+          reinterpret_cast<char*>(&other->null_volume_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata UpdateNullDebugRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata UpdateNullVolumeRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[3]);
@@ -1393,20 +1394,20 @@ void UpdateNullDebugRequest::InternalSwap(UpdateNullDebugRequest* other) {
 
 // ===================================================================
 
-class ListNullDebugsRequest::_Internal {
+class ListNullVolumesRequest::_Internal {
  public:
 };
 
-ListNullDebugsRequest::ListNullDebugsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+ListNullVolumesRequest::ListNullVolumesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListNullDebugsRequest)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListNullVolumesRequest)
 }
-ListNullDebugsRequest::ListNullDebugsRequest(const ListNullDebugsRequest& from)
+ListNullVolumesRequest::ListNullVolumesRequest(const ListNullVolumesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1426,10 +1427,10 @@ ListNullDebugsRequest::ListNullDebugsRequest(const ListNullDebugsRequest& from)
       GetArenaForAllocation());
   }
   page_size_ = from.page_size_;
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNullDebugsRequest)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNullVolumesRequest)
 }
 
-inline void ListNullDebugsRequest::SharedCtor() {
+inline void ListNullVolumesRequest::SharedCtor() {
 parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -1441,31 +1442,31 @@ page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 page_size_ = 0;
 }
 
-ListNullDebugsRequest::~ListNullDebugsRequest() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListNullDebugsRequest)
+ListNullVolumesRequest::~ListNullVolumesRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListNullVolumesRequest)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ListNullDebugsRequest::SharedDtor() {
+inline void ListNullVolumesRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   parent_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void ListNullDebugsRequest::ArenaDtor(void* object) {
-  ListNullDebugsRequest* _this = reinterpret_cast< ListNullDebugsRequest* >(object);
+void ListNullVolumesRequest::ArenaDtor(void* object) {
+  ListNullVolumesRequest* _this = reinterpret_cast< ListNullVolumesRequest* >(object);
   (void)_this;
 }
-void ListNullDebugsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void ListNullVolumesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void ListNullDebugsRequest::SetCachedSize(int size) const {
+void ListNullVolumesRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void ListNullDebugsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.ListNullDebugsRequest)
+void ListNullVolumesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.ListNullVolumesRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1476,7 +1477,7 @@ void ListNullDebugsRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListNullDebugsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListNullVolumesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -1487,7 +1488,7 @@ const char* ListNullDebugsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_parent();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNullDebugsRequest.parent"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNullVolumesRequest.parent"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1505,7 +1506,7 @@ const char* ListNullDebugsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_page_token();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNullDebugsRequest.page_token"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNullVolumesRequest.page_token"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1533,9 +1534,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* ListNullDebugsRequest::_InternalSerialize(
+uint8_t* ListNullVolumesRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.ListNullDebugsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.ListNullVolumesRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1544,7 +1545,7 @@ uint8_t* ListNullDebugsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_parent().data(), static_cast<int>(this->_internal_parent().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.ListNullDebugsRequest.parent");
+      "opi_api.storage.v1.ListNullVolumesRequest.parent");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_parent(), target);
   }
@@ -1560,7 +1561,7 @@ uint8_t* ListNullDebugsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.ListNullDebugsRequest.page_token");
+      "opi_api.storage.v1.ListNullVolumesRequest.page_token");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_page_token(), target);
   }
@@ -1569,12 +1570,12 @@ uint8_t* ListNullDebugsRequest::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListNullDebugsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListNullVolumesRequest)
   return target;
 }
 
-size_t ListNullDebugsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.ListNullDebugsRequest)
+size_t ListNullVolumesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.ListNullVolumesRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1603,21 +1604,21 @@ size_t ListNullDebugsRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNullDebugsRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNullVolumesRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    ListNullDebugsRequest::MergeImpl
+    ListNullVolumesRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNullDebugsRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNullVolumesRequest::GetClassData() const { return &_class_data_; }
 
-void ListNullDebugsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void ListNullVolumesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListNullDebugsRequest *>(to)->MergeFrom(
-      static_cast<const ListNullDebugsRequest &>(from));
+  static_cast<ListNullVolumesRequest *>(to)->MergeFrom(
+      static_cast<const ListNullVolumesRequest &>(from));
 }
 
 
-void ListNullDebugsRequest::MergeFrom(const ListNullDebugsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListNullDebugsRequest)
+void ListNullVolumesRequest::MergeFrom(const ListNullVolumesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListNullVolumesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1634,18 +1635,18 @@ void ListNullDebugsRequest::MergeFrom(const ListNullDebugsRequest& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void ListNullDebugsRequest::CopyFrom(const ListNullDebugsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.ListNullDebugsRequest)
+void ListNullVolumesRequest::CopyFrom(const ListNullVolumesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.ListNullVolumesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ListNullDebugsRequest::IsInitialized() const {
+bool ListNullVolumesRequest::IsInitialized() const {
   return true;
 }
 
-void ListNullDebugsRequest::InternalSwap(ListNullDebugsRequest* other) {
+void ListNullVolumesRequest::InternalSwap(ListNullVolumesRequest* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -1663,7 +1664,7 @@ void ListNullDebugsRequest::InternalSwap(ListNullDebugsRequest* other) {
   swap(page_size_, other->page_size_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata ListNullDebugsRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ListNullVolumesRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[4]);
@@ -1671,23 +1672,23 @@ void ListNullDebugsRequest::InternalSwap(ListNullDebugsRequest* other) {
 
 // ===================================================================
 
-class ListNullDebugsResponse::_Internal {
+class ListNullVolumesResponse::_Internal {
  public:
 };
 
-ListNullDebugsResponse::ListNullDebugsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+ListNullVolumesResponse::ListNullVolumesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  null_debugs_(arena) {
+  null_volumes_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListNullDebugsResponse)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListNullVolumesResponse)
 }
-ListNullDebugsResponse::ListNullDebugsResponse(const ListNullDebugsResponse& from)
+ListNullVolumesResponse::ListNullVolumesResponse(const ListNullVolumesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      null_debugs_(from.null_debugs_) {
+      null_volumes_(from.null_volumes_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1697,62 +1698,62 @@ ListNullDebugsResponse::ListNullDebugsResponse(const ListNullDebugsResponse& fro
     next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_page_token(), 
       GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNullDebugsResponse)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNullVolumesResponse)
 }
 
-inline void ListNullDebugsResponse::SharedCtor() {
+inline void ListNullVolumesResponse::SharedCtor() {
 next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-ListNullDebugsResponse::~ListNullDebugsResponse() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListNullDebugsResponse)
+ListNullVolumesResponse::~ListNullVolumesResponse() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListNullVolumesResponse)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ListNullDebugsResponse::SharedDtor() {
+inline void ListNullVolumesResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   next_page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void ListNullDebugsResponse::ArenaDtor(void* object) {
-  ListNullDebugsResponse* _this = reinterpret_cast< ListNullDebugsResponse* >(object);
+void ListNullVolumesResponse::ArenaDtor(void* object) {
+  ListNullVolumesResponse* _this = reinterpret_cast< ListNullVolumesResponse* >(object);
   (void)_this;
 }
-void ListNullDebugsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void ListNullVolumesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void ListNullDebugsResponse::SetCachedSize(int size) const {
+void ListNullVolumesResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void ListNullDebugsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.ListNullDebugsResponse)
+void ListNullVolumesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.ListNullVolumesResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  null_debugs_.Clear();
+  null_volumes_.Clear();
   next_page_token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListNullDebugsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListNullVolumesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .opi_api.storage.v1.NullDebug null_debugs = 1;
+      // repeated .opi_api.storage.v1.NullVolume null_volumes = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_null_debugs(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_null_volumes(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
@@ -1764,7 +1765,7 @@ const char* ListNullDebugsResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_next_page_token();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNullDebugsResponse.next_page_token"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNullVolumesResponse.next_page_token"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1792,18 +1793,18 @@ failure:
 #undef CHK_
 }
 
-uint8_t* ListNullDebugsResponse::_InternalSerialize(
+uint8_t* ListNullVolumesResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.ListNullDebugsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.ListNullVolumesResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .opi_api.storage.v1.NullDebug null_debugs = 1;
+  // repeated .opi_api.storage.v1.NullVolume null_volumes = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_null_debugs_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_null_volumes_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_null_debugs(i), target, stream);
+      InternalWriteMessage(1, this->_internal_null_volumes(i), target, stream);
   }
 
   // string next_page_token = 2;
@@ -1811,7 +1812,7 @@ uint8_t* ListNullDebugsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_next_page_token().data(), static_cast<int>(this->_internal_next_page_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.ListNullDebugsResponse.next_page_token");
+      "opi_api.storage.v1.ListNullVolumesResponse.next_page_token");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_next_page_token(), target);
   }
@@ -1820,21 +1821,21 @@ uint8_t* ListNullDebugsResponse::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListNullDebugsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListNullVolumesResponse)
   return target;
 }
 
-size_t ListNullDebugsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.ListNullDebugsResponse)
+size_t ListNullVolumesResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.ListNullVolumesResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .opi_api.storage.v1.NullDebug null_debugs = 1;
-  total_size += 1UL * this->_internal_null_debugs_size();
-  for (const auto& msg : this->null_debugs_) {
+  // repeated .opi_api.storage.v1.NullVolume null_volumes = 1;
+  total_size += 1UL * this->_internal_null_volumes_size();
+  for (const auto& msg : this->null_volumes_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -1849,49 +1850,49 @@ size_t ListNullDebugsResponse::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNullDebugsResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNullVolumesResponse::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    ListNullDebugsResponse::MergeImpl
+    ListNullVolumesResponse::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNullDebugsResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNullVolumesResponse::GetClassData() const { return &_class_data_; }
 
-void ListNullDebugsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void ListNullVolumesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListNullDebugsResponse *>(to)->MergeFrom(
-      static_cast<const ListNullDebugsResponse &>(from));
+  static_cast<ListNullVolumesResponse *>(to)->MergeFrom(
+      static_cast<const ListNullVolumesResponse &>(from));
 }
 
 
-void ListNullDebugsResponse::MergeFrom(const ListNullDebugsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListNullDebugsResponse)
+void ListNullVolumesResponse::MergeFrom(const ListNullVolumesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListNullVolumesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  null_debugs_.MergeFrom(from.null_debugs_);
+  null_volumes_.MergeFrom(from.null_volumes_);
   if (!from._internal_next_page_token().empty()) {
     _internal_set_next_page_token(from._internal_next_page_token());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void ListNullDebugsResponse::CopyFrom(const ListNullDebugsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.ListNullDebugsResponse)
+void ListNullVolumesResponse::CopyFrom(const ListNullVolumesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.ListNullVolumesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ListNullDebugsResponse::IsInitialized() const {
+bool ListNullVolumesResponse::IsInitialized() const {
   return true;
 }
 
-void ListNullDebugsResponse::InternalSwap(ListNullDebugsResponse* other) {
+void ListNullVolumesResponse::InternalSwap(ListNullVolumesResponse* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  null_debugs_.InternalSwap(&other->null_debugs_);
+  null_volumes_.InternalSwap(&other->null_volumes_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &next_page_token_, lhs_arena,
@@ -1899,7 +1900,7 @@ void ListNullDebugsResponse::InternalSwap(ListNullDebugsResponse* other) {
   );
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata ListNullDebugsResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ListNullVolumesResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[5]);
@@ -1907,20 +1908,20 @@ void ListNullDebugsResponse::InternalSwap(ListNullDebugsResponse* other) {
 
 // ===================================================================
 
-class GetNullDebugRequest::_Internal {
+class GetNullVolumeRequest::_Internal {
  public:
 };
 
-GetNullDebugRequest::GetNullDebugRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+GetNullVolumeRequest::GetNullVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.GetNullDebugRequest)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.GetNullVolumeRequest)
 }
-GetNullDebugRequest::GetNullDebugRequest(const GetNullDebugRequest& from)
+GetNullVolumeRequest::GetNullVolumeRequest(const GetNullVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1931,40 +1932,40 @@ GetNullDebugRequest::GetNullDebugRequest(const GetNullDebugRequest& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.GetNullDebugRequest)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.GetNullVolumeRequest)
 }
 
-inline void GetNullDebugRequest::SharedCtor() {
+inline void GetNullVolumeRequest::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-GetNullDebugRequest::~GetNullDebugRequest() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.GetNullDebugRequest)
+GetNullVolumeRequest::~GetNullVolumeRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.GetNullVolumeRequest)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetNullDebugRequest::SharedDtor() {
+inline void GetNullVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void GetNullDebugRequest::ArenaDtor(void* object) {
-  GetNullDebugRequest* _this = reinterpret_cast< GetNullDebugRequest* >(object);
+void GetNullVolumeRequest::ArenaDtor(void* object) {
+  GetNullVolumeRequest* _this = reinterpret_cast< GetNullVolumeRequest* >(object);
   (void)_this;
 }
-void GetNullDebugRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void GetNullVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void GetNullDebugRequest::SetCachedSize(int size) const {
+void GetNullVolumeRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void GetNullDebugRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.GetNullDebugRequest)
+void GetNullVolumeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.GetNullVolumeRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1973,7 +1974,7 @@ void GetNullDebugRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetNullDebugRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetNullVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -1984,7 +1985,7 @@ const char* GetNullDebugRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.GetNullDebugRequest.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.GetNullVolumeRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2012,9 +2013,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* GetNullDebugRequest::_InternalSerialize(
+uint8_t* GetNullVolumeRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.GetNullDebugRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.GetNullVolumeRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2023,7 +2024,7 @@ uint8_t* GetNullDebugRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.GetNullDebugRequest.name");
+      "opi_api.storage.v1.GetNullVolumeRequest.name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
@@ -2032,12 +2033,12 @@ uint8_t* GetNullDebugRequest::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.GetNullDebugRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.GetNullVolumeRequest)
   return target;
 }
 
-size_t GetNullDebugRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.GetNullDebugRequest)
+size_t GetNullVolumeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.GetNullVolumeRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2054,21 +2055,21 @@ size_t GetNullDebugRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNullDebugRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNullVolumeRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    GetNullDebugRequest::MergeImpl
+    GetNullVolumeRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNullDebugRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNullVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void GetNullDebugRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void GetNullVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<GetNullDebugRequest *>(to)->MergeFrom(
-      static_cast<const GetNullDebugRequest &>(from));
+  static_cast<GetNullVolumeRequest *>(to)->MergeFrom(
+      static_cast<const GetNullVolumeRequest &>(from));
 }
 
 
-void GetNullDebugRequest::MergeFrom(const GetNullDebugRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.GetNullDebugRequest)
+void GetNullVolumeRequest::MergeFrom(const GetNullVolumeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.GetNullVolumeRequest)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2079,18 +2080,18 @@ void GetNullDebugRequest::MergeFrom(const GetNullDebugRequest& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void GetNullDebugRequest::CopyFrom(const GetNullDebugRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.GetNullDebugRequest)
+void GetNullVolumeRequest::CopyFrom(const GetNullVolumeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.GetNullVolumeRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetNullDebugRequest::IsInitialized() const {
+bool GetNullVolumeRequest::IsInitialized() const {
   return true;
 }
 
-void GetNullDebugRequest::InternalSwap(GetNullDebugRequest* other) {
+void GetNullVolumeRequest::InternalSwap(GetNullVolumeRequest* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -2102,7 +2103,7 @@ void GetNullDebugRequest::InternalSwap(GetNullDebugRequest* other) {
   );
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetNullDebugRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetNullVolumeRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[6]);
@@ -2110,31 +2111,31 @@ void GetNullDebugRequest::InternalSwap(GetNullDebugRequest* other) {
 
 // ===================================================================
 
-class NullDebugStatsRequest::_Internal {
+class NullVolumeStatsRequest::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& handle(const NullDebugStatsRequest* msg);
+  static const ::opi_api::common::v1::ObjectKey& handle(const NullVolumeStatsRequest* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
-NullDebugStatsRequest::_Internal::handle(const NullDebugStatsRequest* msg) {
+NullVolumeStatsRequest::_Internal::handle(const NullVolumeStatsRequest* msg) {
   return *msg->handle_;
 }
-void NullDebugStatsRequest::clear_handle() {
+void NullVolumeStatsRequest::clear_handle() {
   if (GetArenaForAllocation() == nullptr && handle_ != nullptr) {
     delete handle_;
   }
   handle_ = nullptr;
 }
-NullDebugStatsRequest::NullDebugStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+NullVolumeStatsRequest::NullVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NullDebugStatsRequest)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NullVolumeStatsRequest)
 }
-NullDebugStatsRequest::NullDebugStatsRequest(const NullDebugStatsRequest& from)
+NullVolumeStatsRequest::NullVolumeStatsRequest(const NullVolumeStatsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_handle()) {
@@ -2142,37 +2143,37 @@ NullDebugStatsRequest::NullDebugStatsRequest(const NullDebugStatsRequest& from)
   } else {
     handle_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullDebugStatsRequest)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullVolumeStatsRequest)
 }
 
-inline void NullDebugStatsRequest::SharedCtor() {
+inline void NullVolumeStatsRequest::SharedCtor() {
 handle_ = nullptr;
 }
 
-NullDebugStatsRequest::~NullDebugStatsRequest() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NullDebugStatsRequest)
+NullVolumeStatsRequest::~NullVolumeStatsRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NullVolumeStatsRequest)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void NullDebugStatsRequest::SharedDtor() {
+inline void NullVolumeStatsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete handle_;
 }
 
-void NullDebugStatsRequest::ArenaDtor(void* object) {
-  NullDebugStatsRequest* _this = reinterpret_cast< NullDebugStatsRequest* >(object);
+void NullVolumeStatsRequest::ArenaDtor(void* object) {
+  NullVolumeStatsRequest* _this = reinterpret_cast< NullVolumeStatsRequest* >(object);
   (void)_this;
 }
-void NullDebugStatsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void NullVolumeStatsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void NullDebugStatsRequest::SetCachedSize(int size) const {
+void NullVolumeStatsRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void NullDebugStatsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NullDebugStatsRequest)
+void NullVolumeStatsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NullVolumeStatsRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2184,7 +2185,7 @@ void NullDebugStatsRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NullDebugStatsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NullVolumeStatsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -2221,9 +2222,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* NullDebugStatsRequest::_InternalSerialize(
+uint8_t* NullVolumeStatsRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NullDebugStatsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NullVolumeStatsRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2239,12 +2240,12 @@ uint8_t* NullDebugStatsRequest::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NullDebugStatsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NullVolumeStatsRequest)
   return target;
 }
 
-size_t NullDebugStatsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NullDebugStatsRequest)
+size_t NullVolumeStatsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NullVolumeStatsRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2261,21 +2262,21 @@ size_t NullDebugStatsRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NullDebugStatsRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NullVolumeStatsRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    NullDebugStatsRequest::MergeImpl
+    NullVolumeStatsRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NullDebugStatsRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NullVolumeStatsRequest::GetClassData() const { return &_class_data_; }
 
-void NullDebugStatsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void NullVolumeStatsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NullDebugStatsRequest *>(to)->MergeFrom(
-      static_cast<const NullDebugStatsRequest &>(from));
+  static_cast<NullVolumeStatsRequest *>(to)->MergeFrom(
+      static_cast<const NullVolumeStatsRequest &>(from));
 }
 
 
-void NullDebugStatsRequest::MergeFrom(const NullDebugStatsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NullDebugStatsRequest)
+void NullVolumeStatsRequest::MergeFrom(const NullVolumeStatsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NullVolumeStatsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2286,24 +2287,24 @@ void NullDebugStatsRequest::MergeFrom(const NullDebugStatsRequest& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void NullDebugStatsRequest::CopyFrom(const NullDebugStatsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NullDebugStatsRequest)
+void NullVolumeStatsRequest::CopyFrom(const NullVolumeStatsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NullVolumeStatsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool NullDebugStatsRequest::IsInitialized() const {
+bool NullVolumeStatsRequest::IsInitialized() const {
   return true;
 }
 
-void NullDebugStatsRequest::InternalSwap(NullDebugStatsRequest* other) {
+void NullVolumeStatsRequest::InternalSwap(NullVolumeStatsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(handle_, other->handle_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata NullDebugStatsRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata NullVolumeStatsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[7]);
@@ -2311,42 +2312,42 @@ void NullDebugStatsRequest::InternalSwap(NullDebugStatsRequest* other) {
 
 // ===================================================================
 
-class NullDebugStatsResponse::_Internal {
+class NullVolumeStatsResponse::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& handle(const NullDebugStatsResponse* msg);
-  static const ::opi_api::storage::v1::VolumeStats& stats(const NullDebugStatsResponse* msg);
+  static const ::opi_api::common::v1::ObjectKey& handle(const NullVolumeStatsResponse* msg);
+  static const ::opi_api::storage::v1::VolumeStats& stats(const NullVolumeStatsResponse* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
-NullDebugStatsResponse::_Internal::handle(const NullDebugStatsResponse* msg) {
+NullVolumeStatsResponse::_Internal::handle(const NullVolumeStatsResponse* msg) {
   return *msg->handle_;
 }
 const ::opi_api::storage::v1::VolumeStats&
-NullDebugStatsResponse::_Internal::stats(const NullDebugStatsResponse* msg) {
+NullVolumeStatsResponse::_Internal::stats(const NullVolumeStatsResponse* msg) {
   return *msg->stats_;
 }
-void NullDebugStatsResponse::clear_handle() {
+void NullVolumeStatsResponse::clear_handle() {
   if (GetArenaForAllocation() == nullptr && handle_ != nullptr) {
     delete handle_;
   }
   handle_ = nullptr;
 }
-void NullDebugStatsResponse::clear_stats() {
+void NullVolumeStatsResponse::clear_stats() {
   if (GetArenaForAllocation() == nullptr && stats_ != nullptr) {
     delete stats_;
   }
   stats_ = nullptr;
 }
-NullDebugStatsResponse::NullDebugStatsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+NullVolumeStatsResponse::NullVolumeStatsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NullDebugStatsResponse)
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NullVolumeStatsResponse)
 }
-NullDebugStatsResponse::NullDebugStatsResponse(const NullDebugStatsResponse& from)
+NullVolumeStatsResponse::NullVolumeStatsResponse(const NullVolumeStatsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_handle()) {
@@ -2359,41 +2360,41 @@ NullDebugStatsResponse::NullDebugStatsResponse(const NullDebugStatsResponse& fro
   } else {
     stats_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullDebugStatsResponse)
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullVolumeStatsResponse)
 }
 
-inline void NullDebugStatsResponse::SharedCtor() {
+inline void NullVolumeStatsResponse::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&handle_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&stats_) -
     reinterpret_cast<char*>(&handle_)) + sizeof(stats_));
 }
 
-NullDebugStatsResponse::~NullDebugStatsResponse() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NullDebugStatsResponse)
+NullVolumeStatsResponse::~NullVolumeStatsResponse() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NullVolumeStatsResponse)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void NullDebugStatsResponse::SharedDtor() {
+inline void NullVolumeStatsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete handle_;
   if (this != internal_default_instance()) delete stats_;
 }
 
-void NullDebugStatsResponse::ArenaDtor(void* object) {
-  NullDebugStatsResponse* _this = reinterpret_cast< NullDebugStatsResponse* >(object);
+void NullVolumeStatsResponse::ArenaDtor(void* object) {
+  NullVolumeStatsResponse* _this = reinterpret_cast< NullVolumeStatsResponse* >(object);
   (void)_this;
 }
-void NullDebugStatsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void NullVolumeStatsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void NullDebugStatsResponse::SetCachedSize(int size) const {
+void NullVolumeStatsResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void NullDebugStatsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NullDebugStatsResponse)
+void NullVolumeStatsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NullVolumeStatsResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2409,7 +2410,7 @@ void NullDebugStatsResponse::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NullDebugStatsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NullVolumeStatsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -2454,9 +2455,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* NullDebugStatsResponse::_InternalSerialize(
+uint8_t* NullVolumeStatsResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NullDebugStatsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NullVolumeStatsResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2480,12 +2481,12 @@ uint8_t* NullDebugStatsResponse::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NullDebugStatsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NullVolumeStatsResponse)
   return target;
 }
 
-size_t NullDebugStatsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NullDebugStatsResponse)
+size_t NullVolumeStatsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NullVolumeStatsResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2509,21 +2510,21 @@ size_t NullDebugStatsResponse::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NullDebugStatsResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NullVolumeStatsResponse::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    NullDebugStatsResponse::MergeImpl
+    NullVolumeStatsResponse::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NullDebugStatsResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NullVolumeStatsResponse::GetClassData() const { return &_class_data_; }
 
-void NullDebugStatsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void NullVolumeStatsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NullDebugStatsResponse *>(to)->MergeFrom(
-      static_cast<const NullDebugStatsResponse &>(from));
+  static_cast<NullVolumeStatsResponse *>(to)->MergeFrom(
+      static_cast<const NullVolumeStatsResponse &>(from));
 }
 
 
-void NullDebugStatsResponse::MergeFrom(const NullDebugStatsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NullDebugStatsResponse)
+void NullVolumeStatsResponse::MergeFrom(const NullVolumeStatsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NullVolumeStatsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2537,29 +2538,29 @@ void NullDebugStatsResponse::MergeFrom(const NullDebugStatsResponse& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void NullDebugStatsResponse::CopyFrom(const NullDebugStatsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NullDebugStatsResponse)
+void NullVolumeStatsResponse::CopyFrom(const NullVolumeStatsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NullVolumeStatsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool NullDebugStatsResponse::IsInitialized() const {
+bool NullVolumeStatsResponse::IsInitialized() const {
   return true;
 }
 
-void NullDebugStatsResponse::InternalSwap(NullDebugStatsResponse* other) {
+void NullVolumeStatsResponse::InternalSwap(NullVolumeStatsResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NullDebugStatsResponse, stats_)
-      + sizeof(NullDebugStatsResponse::stats_)
-      - PROTOBUF_FIELD_OFFSET(NullDebugStatsResponse, handle_)>(
+      PROTOBUF_FIELD_OFFSET(NullVolumeStatsResponse, stats_)
+      + sizeof(NullVolumeStatsResponse::stats_)
+      - PROTOBUF_FIELD_OFFSET(NullVolumeStatsResponse, handle_)>(
           reinterpret_cast<char*>(&handle_),
           reinterpret_cast<char*>(&other->handle_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata NullDebugStatsResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata NullVolumeStatsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_backend_5fnull_2eproto_getter, &descriptor_table_backend_5fnull_2eproto_once,
       file_level_metadata_backend_5fnull_2eproto[8]);
@@ -2570,32 +2571,32 @@ void NullDebugStatsResponse::InternalSwap(NullDebugStatsResponse* other) {
 }  // namespace storage
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NullDebug* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NullDebug >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NullDebug >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NullVolume* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NullVolume >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NullVolume >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::CreateNullDebugRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::CreateNullDebugRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::CreateNullDebugRequest >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::CreateNullVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::CreateNullVolumeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::CreateNullVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::DeleteNullDebugRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::DeleteNullDebugRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::DeleteNullDebugRequest >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::DeleteNullVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::DeleteNullVolumeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::DeleteNullVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::UpdateNullDebugRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::UpdateNullDebugRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::UpdateNullDebugRequest >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::UpdateNullVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::UpdateNullVolumeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::UpdateNullVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListNullDebugsRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListNullDebugsRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListNullDebugsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListNullVolumesRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListNullVolumesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListNullVolumesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListNullDebugsResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListNullDebugsResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListNullDebugsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListNullVolumesResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListNullVolumesResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListNullVolumesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::GetNullDebugRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::GetNullDebugRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::GetNullDebugRequest >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::GetNullVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::GetNullVolumeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::GetNullVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NullDebugStatsRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NullDebugStatsRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NullDebugStatsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NullVolumeStatsRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NullVolumeStatsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NullVolumeStatsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NullDebugStatsResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NullDebugStatsResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NullDebugStatsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NullVolumeStatsResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NullVolumeStatsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NullVolumeStatsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
