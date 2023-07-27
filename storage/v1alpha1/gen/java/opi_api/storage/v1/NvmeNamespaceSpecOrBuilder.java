@@ -12,27 +12,20 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   * @return Whether the subsystemId field is set.
+   * <code>string subsystem_name_ref = 1;</code>
+   * @return The subsystemNameRef.
    */
-  boolean hasSubsystemId();
+  java.lang.String getSubsystemNameRef();
   /**
    * <pre>
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   * @return The subsystemId.
+   * <code>string subsystem_name_ref = 1;</code>
+   * @return The bytes for subsystemNameRef.
    */
-  opi_api.common.v1.ObjectKey getSubsystemId();
-  /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder();
+  com.google.protobuf.ByteString
+      getSubsystemNameRefBytes();
 
   /**
    * <pre>
@@ -110,25 +103,18 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-   * @return Whether the volumeId field is set.
+   * <code>string volume_name_ref = 6;</code>
+   * @return The volumeNameRef.
    */
-  boolean hasVolumeId();
+  java.lang.String getVolumeNameRef();
   /**
    * <pre>
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-   * @return The volumeId.
+   * <code>string volume_name_ref = 6;</code>
+   * @return The bytes for volumeNameRef.
    */
-  opi_api.common.v1.ObjectKey getVolumeId();
-  /**
-   * <pre>
-   * The back/middle-end volume to back this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVolumeNameRefBytes();
 }

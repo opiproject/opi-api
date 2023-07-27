@@ -16,7 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeNamespaceSpec() {
+    subsystemNameRef_ = "";
     nguid_ = "";
+    volumeNameRef_ = "";
   }
 
   @java.lang.Override
@@ -50,16 +52,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (subsystemId_ != null) {
-              subBuilder = subsystemId_.toBuilder();
-            }
-            subsystemId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(subsystemId_);
-              subsystemId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            subsystemNameRef_ = s;
             break;
           }
           case 16: {
@@ -92,16 +87,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (volumeId_ != null) {
-              subBuilder = volumeId_.toBuilder();
-            }
-            volumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(volumeId_);
-              volumeId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            volumeNameRef_ = s;
             break;
           }
           default: {
@@ -136,42 +124,50 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NvmeNamespaceSpec.class, opi_api.storage.v1.NvmeNamespaceSpec.Builder.class);
   }
 
-  public static final int SUBSYSTEM_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey subsystemId_;
+  public static final int SUBSYSTEM_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object subsystemNameRef_;
   /**
    * <pre>
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   * @return Whether the subsystemId field is set.
+   * <code>string subsystem_name_ref = 1;</code>
+   * @return The subsystemNameRef.
    */
   @java.lang.Override
-  public boolean hasSubsystemId() {
-    return subsystemId_ != null;
+  public java.lang.String getSubsystemNameRef() {
+    java.lang.Object ref = subsystemNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subsystemNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   * @return The subsystemId.
+   * <code>string subsystem_name_ref = 1;</code>
+   * @return The bytes for subsystemNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getSubsystemId() {
-    return subsystemId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
-  }
-  /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
-    return getSubsystemId();
+  public com.google.protobuf.ByteString
+      getSubsystemNameRefBytes() {
+    java.lang.Object ref = subsystemNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      subsystemNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int HOST_NSID_FIELD_NUMBER = 2;
@@ -292,42 +288,50 @@ private static final long serialVersionUID = 0L;
     return getUuid();
   }
 
-  public static final int VOLUME_ID_FIELD_NUMBER = 6;
-  private opi_api.common.v1.ObjectKey volumeId_;
+  public static final int VOLUME_NAME_REF_FIELD_NUMBER = 6;
+  private volatile java.lang.Object volumeNameRef_;
   /**
    * <pre>
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-   * @return Whether the volumeId field is set.
+   * <code>string volume_name_ref = 6;</code>
+   * @return The volumeNameRef.
    */
   @java.lang.Override
-  public boolean hasVolumeId() {
-    return volumeId_ != null;
+  public java.lang.String getVolumeNameRef() {
+    java.lang.Object ref = volumeNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      volumeNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-   * @return The volumeId.
+   * <code>string volume_name_ref = 6;</code>
+   * @return The bytes for volumeNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVolumeId() {
-    return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-  }
-  /**
-   * <pre>
-   * The back/middle-end volume to back this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
-    return getVolumeId();
+  public com.google.protobuf.ByteString
+      getVolumeNameRefBytes() {
+    java.lang.Object ref = volumeNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      volumeNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -344,8 +348,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (subsystemId_ != null) {
-      output.writeMessage(1, getSubsystemId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subsystemNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subsystemNameRef_);
     }
     if (hostNsid_ != 0) {
       output.writeInt32(2, hostNsid_);
@@ -359,8 +363,8 @@ private static final long serialVersionUID = 0L;
     if (uuid_ != null) {
       output.writeMessage(5, getUuid());
     }
-    if (volumeId_ != null) {
-      output.writeMessage(6, getVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, volumeNameRef_);
     }
     unknownFields.writeTo(output);
   }
@@ -371,9 +375,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (subsystemId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSubsystemId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subsystemNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subsystemNameRef_);
     }
     if (hostNsid_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -390,9 +393,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getUuid());
     }
-    if (volumeId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, volumeNameRef_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -409,11 +411,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NvmeNamespaceSpec other = (opi_api.storage.v1.NvmeNamespaceSpec) obj;
 
-    if (hasSubsystemId() != other.hasSubsystemId()) return false;
-    if (hasSubsystemId()) {
-      if (!getSubsystemId()
-          .equals(other.getSubsystemId())) return false;
-    }
+    if (!getSubsystemNameRef()
+        .equals(other.getSubsystemNameRef())) return false;
     if (getHostNsid()
         != other.getHostNsid()) return false;
     if (!getNguid()
@@ -425,11 +424,8 @@ private static final long serialVersionUID = 0L;
       if (!getUuid()
           .equals(other.getUuid())) return false;
     }
-    if (hasVolumeId() != other.hasVolumeId()) return false;
-    if (hasVolumeId()) {
-      if (!getVolumeId()
-          .equals(other.getVolumeId())) return false;
-    }
+    if (!getVolumeNameRef()
+        .equals(other.getVolumeNameRef())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -441,10 +437,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasSubsystemId()) {
-      hash = (37 * hash) + SUBSYSTEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSubsystemId().hashCode();
-    }
+    hash = (37 * hash) + SUBSYSTEM_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getSubsystemNameRef().hashCode();
     hash = (37 * hash) + HOST_NSID_FIELD_NUMBER;
     hash = (53 * hash) + getHostNsid();
     hash = (37 * hash) + NGUID_FIELD_NUMBER;
@@ -456,10 +450,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + UUID_FIELD_NUMBER;
       hash = (53 * hash) + getUuid().hashCode();
     }
-    if (hasVolumeId()) {
-      hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVolumeId().hashCode();
-    }
+    hash = (37 * hash) + VOLUME_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getVolumeNameRef().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -593,12 +585,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = null;
-      } else {
-        subsystemId_ = null;
-        subsystemIdBuilder_ = null;
-      }
+      subsystemNameRef_ = "";
+
       hostNsid_ = 0;
 
       nguid_ = "";
@@ -611,12 +599,8 @@ private static final long serialVersionUID = 0L;
         uuid_ = null;
         uuidBuilder_ = null;
       }
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = null;
-      } else {
-        volumeId_ = null;
-        volumeIdBuilder_ = null;
-      }
+      volumeNameRef_ = "";
+
       return this;
     }
 
@@ -643,11 +627,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NvmeNamespaceSpec buildPartial() {
       opi_api.storage.v1.NvmeNamespaceSpec result = new opi_api.storage.v1.NvmeNamespaceSpec(this);
-      if (subsystemIdBuilder_ == null) {
-        result.subsystemId_ = subsystemId_;
-      } else {
-        result.subsystemId_ = subsystemIdBuilder_.build();
-      }
+      result.subsystemNameRef_ = subsystemNameRef_;
       result.hostNsid_ = hostNsid_;
       result.nguid_ = nguid_;
       result.eui64_ = eui64_;
@@ -656,11 +636,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.uuid_ = uuidBuilder_.build();
       }
-      if (volumeIdBuilder_ == null) {
-        result.volumeId_ = volumeId_;
-      } else {
-        result.volumeId_ = volumeIdBuilder_.build();
-      }
+      result.volumeNameRef_ = volumeNameRef_;
       onBuilt();
       return result;
     }
@@ -709,8 +685,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NvmeNamespaceSpec other) {
       if (other == opi_api.storage.v1.NvmeNamespaceSpec.getDefaultInstance()) return this;
-      if (other.hasSubsystemId()) {
-        mergeSubsystemId(other.getSubsystemId());
+      if (!other.getSubsystemNameRef().isEmpty()) {
+        subsystemNameRef_ = other.subsystemNameRef_;
+        onChanged();
       }
       if (other.getHostNsid() != 0) {
         setHostNsid(other.getHostNsid());
@@ -725,8 +702,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasUuid()) {
         mergeUuid(other.getUuid());
       }
-      if (other.hasVolumeId()) {
-        mergeVolumeId(other.getVolumeId());
+      if (!other.getVolumeNameRef().isEmpty()) {
+        volumeNameRef_ = other.volumeNameRef_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -757,33 +735,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey subsystemId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> subsystemIdBuilder_;
+    private java.lang.Object subsystemNameRef_ = "";
     /**
      * <pre>
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-     * @return Whether the subsystemId field is set.
+     * <code>string subsystem_name_ref = 1;</code>
+     * @return The subsystemNameRef.
      */
-    public boolean hasSubsystemId() {
-      return subsystemIdBuilder_ != null || subsystemId_ != null;
-    }
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-     * @return The subsystemId.
-     */
-    public opi_api.common.v1.ObjectKey getSubsystemId() {
-      if (subsystemIdBuilder_ == null) {
-        return subsystemId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
+    public java.lang.String getSubsystemNameRef() {
+      java.lang.Object ref = subsystemNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subsystemNameRef_ = s;
+        return s;
       } else {
-        return subsystemIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -791,125 +761,74 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
+     * <code>string subsystem_name_ref = 1;</code>
+     * @return The bytes for subsystemNameRef.
      */
-    public Builder setSubsystemId(opi_api.common.v1.ObjectKey value) {
-      if (subsystemIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        subsystemId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getSubsystemNameRefBytes() {
+      java.lang.Object ref = subsystemNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subsystemNameRef_ = b;
+        return b;
       } else {
-        subsystemIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
+     * <code>string subsystem_name_ref = 1;</code>
+     * @param value The subsystemNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setSubsystemId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = builderForValue.build();
-        onChanged();
-      } else {
-        subsystemIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-     */
-    public Builder mergeSubsystemId(opi_api.common.v1.ObjectKey value) {
-      if (subsystemIdBuilder_ == null) {
-        if (subsystemId_ != null) {
-          subsystemId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(subsystemId_).mergeFrom(value).buildPartial();
-        } else {
-          subsystemId_ = value;
-        }
-        onChanged();
-      } else {
-        subsystemIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-     */
-    public Builder clearSubsystemId() {
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = null;
-        onChanged();
-      } else {
-        subsystemId_ = null;
-        subsystemIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getSubsystemIdBuilder() {
-      
+    public Builder setSubsystemNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      subsystemNameRef_ = value;
       onChanged();
-      return getSubsystemIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
+     * <code>string subsystem_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
-      if (subsystemIdBuilder_ != null) {
-        return subsystemIdBuilder_.getMessageOrBuilder();
-      } else {
-        return subsystemId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
-      }
+    public Builder clearSubsystemNameRef() {
+      
+      subsystemNameRef_ = getDefaultInstance().getSubsystemNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
+     * <code>string subsystem_name_ref = 1;</code>
+     * @param value The bytes for subsystemNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getSubsystemIdFieldBuilder() {
-      if (subsystemIdBuilder_ == null) {
-        subsystemIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getSubsystemId(),
-                getParentForChildren(),
-                isClean());
-        subsystemId_ = null;
-      }
-      return subsystemIdBuilder_;
+    public Builder setSubsystemNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      subsystemNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private int hostNsid_ ;
@@ -1261,33 +1180,25 @@ private static final long serialVersionUID = 0L;
       return uuidBuilder_;
     }
 
-    private opi_api.common.v1.ObjectKey volumeId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> volumeIdBuilder_;
+    private java.lang.Object volumeNameRef_ = "";
     /**
      * <pre>
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-     * @return Whether the volumeId field is set.
+     * <code>string volume_name_ref = 6;</code>
+     * @return The volumeNameRef.
      */
-    public boolean hasVolumeId() {
-      return volumeIdBuilder_ != null || volumeId_ != null;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-     * @return The volumeId.
-     */
-    public opi_api.common.v1.ObjectKey getVolumeId() {
-      if (volumeIdBuilder_ == null) {
-        return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
+    public java.lang.String getVolumeNameRef() {
+      java.lang.Object ref = volumeNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        volumeNameRef_ = s;
+        return s;
       } else {
-        return volumeIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1295,125 +1206,74 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
+     * <code>string volume_name_ref = 6;</code>
+     * @return The bytes for volumeNameRef.
      */
-    public Builder setVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (volumeIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        volumeId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getVolumeNameRefBytes() {
+      java.lang.Object ref = volumeNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        volumeNameRef_ = b;
+        return b;
       } else {
-        volumeIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
+     * <code>string volume_name_ref = 6;</code>
+     * @param value The volumeNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setVolumeId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = builderForValue.build();
-        onChanged();
-      } else {
-        volumeIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-     */
-    public Builder mergeVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (volumeIdBuilder_ == null) {
-        if (volumeId_ != null) {
-          volumeId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(volumeId_).mergeFrom(value).buildPartial();
-        } else {
-          volumeId_ = value;
-        }
-        onChanged();
-      } else {
-        volumeIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-     */
-    public Builder clearVolumeId() {
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = null;
-        onChanged();
-      } else {
-        volumeId_ = null;
-        volumeIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVolumeIdBuilder() {
-      
+    public Builder setVolumeNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      volumeNameRef_ = value;
       onChanged();
-      return getVolumeIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
+     * <code>string volume_name_ref = 6;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
-      if (volumeIdBuilder_ != null) {
-        return volumeIdBuilder_.getMessageOrBuilder();
-      } else {
-        return volumeId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-      }
+    public Builder clearVolumeNameRef() {
+      
+      volumeNameRef_ = getDefaultInstance().getVolumeNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
+     * <code>string volume_name_ref = 6;</code>
+     * @param value The bytes for volumeNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVolumeIdFieldBuilder() {
-      if (volumeIdBuilder_ == null) {
-        volumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVolumeId(),
-                getParentForChildren(),
-                isClean());
-        volumeId_ = null;
-      }
-      return volumeIdBuilder_;
+    public Builder setVolumeNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      volumeNameRef_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

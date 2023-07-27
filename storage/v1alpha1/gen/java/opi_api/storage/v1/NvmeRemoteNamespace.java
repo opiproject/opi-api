@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private NvmeRemoteNamespace() {
     name_ = "";
+    controllerNameRef_ = "";
     nguid_ = "";
   }
 
@@ -57,16 +58,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (controllerId_ != null) {
-              subBuilder = controllerId_.toBuilder();
-            }
-            controllerId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(controllerId_);
-              controllerId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            controllerNameRef_ = s;
             break;
           }
           case 24: {
@@ -176,42 +170,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONTROLLER_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey controllerId_;
+  public static final int CONTROLLER_NAME_REF_FIELD_NUMBER = 2;
+  private volatile java.lang.Object controllerNameRef_;
   /**
    * <pre>
    * controller through which the namespace is visible
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return Whether the controllerId field is set.
+   * <code>string controller_name_ref = 2;</code>
+   * @return The controllerNameRef.
    */
   @java.lang.Override
-  public boolean hasControllerId() {
-    return controllerId_ != null;
+  public java.lang.String getControllerNameRef() {
+    java.lang.Object ref = controllerNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      controllerNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * controller through which the namespace is visible
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return The controllerId.
+   * <code>string controller_name_ref = 2;</code>
+   * @return The bytes for controllerNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getControllerId() {
-    return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-  }
-  /**
-   * <pre>
-   * controller through which the namespace is visible
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-    return getControllerId();
+  public com.google.protobuf.ByteString
+      getControllerNameRefBytes() {
+    java.lang.Object ref = controllerNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      controllerNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NSID_FIELD_NUMBER = 3;
@@ -346,8 +348,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (controllerId_ != null) {
-      output.writeMessage(2, getControllerId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, controllerNameRef_);
     }
     if (nsid_ != 0) {
       output.writeInt32(3, nsid_);
@@ -373,9 +375,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (controllerId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getControllerId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, controllerNameRef_);
     }
     if (nsid_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -409,11 +410,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (hasControllerId() != other.hasControllerId()) return false;
-    if (hasControllerId()) {
-      if (!getControllerId()
-          .equals(other.getControllerId())) return false;
-    }
+    if (!getControllerNameRef()
+        .equals(other.getControllerNameRef())) return false;
     if (getNsid()
         != other.getNsid()) return false;
     if (!getNguid()
@@ -438,10 +436,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    if (hasControllerId()) {
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId().hashCode();
-    }
+    hash = (37 * hash) + CONTROLLER_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getControllerNameRef().hashCode();
     hash = (37 * hash) + NSID_FIELD_NUMBER;
     hash = (53 * hash) + getNsid();
     hash = (37 * hash) + NGUID_FIELD_NUMBER;
@@ -588,12 +584,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
+      controllerNameRef_ = "";
+
       nsid_ = 0;
 
       nguid_ = "";
@@ -633,11 +625,7 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.NvmeRemoteNamespace buildPartial() {
       opi_api.storage.v1.NvmeRemoteNamespace result = new opi_api.storage.v1.NvmeRemoteNamespace(this);
       result.name_ = name_;
-      if (controllerIdBuilder_ == null) {
-        result.controllerId_ = controllerId_;
-      } else {
-        result.controllerId_ = controllerIdBuilder_.build();
-      }
+      result.controllerNameRef_ = controllerNameRef_;
       result.nsid_ = nsid_;
       result.nguid_ = nguid_;
       result.eui64_ = eui64_;
@@ -698,8 +686,9 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.hasControllerId()) {
-        mergeControllerId(other.getControllerId());
+      if (!other.getControllerNameRef().isEmpty()) {
+        controllerNameRef_ = other.controllerNameRef_;
+        onChanged();
       }
       if (other.getNsid() != 0) {
         setNsid(other.getNsid());
@@ -839,33 +828,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey controllerId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
+    private java.lang.Object controllerNameRef_ = "";
     /**
      * <pre>
      * controller through which the namespace is visible
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     * @return Whether the controllerId field is set.
+     * <code>string controller_name_ref = 2;</code>
+     * @return The controllerNameRef.
      */
-    public boolean hasControllerId() {
-      return controllerIdBuilder_ != null || controllerId_ != null;
-    }
-    /**
-     * <pre>
-     * controller through which the namespace is visible
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     * @return The controllerId.
-     */
-    public opi_api.common.v1.ObjectKey getControllerId() {
-      if (controllerIdBuilder_ == null) {
-        return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+    public java.lang.String getControllerNameRef() {
+      java.lang.Object ref = controllerNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        controllerNameRef_ = s;
+        return s;
       } else {
-        return controllerIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -873,125 +854,74 @@ private static final long serialVersionUID = 0L;
      * controller through which the namespace is visible
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>string controller_name_ref = 2;</code>
+     * @return The bytes for controllerNameRef.
      */
-    public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        controllerId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getControllerNameRefBytes() {
+      java.lang.Object ref = controllerNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        controllerNameRef_ = b;
+        return b;
       } else {
-        controllerIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * controller through which the namespace is visible
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>string controller_name_ref = 2;</code>
+     * @param value The controllerNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setControllerId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = builderForValue.build();
-        onChanged();
-      } else {
-        controllerIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * controller through which the namespace is visible
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (controllerId_ != null) {
-          controllerId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(controllerId_).mergeFrom(value).buildPartial();
-        } else {
-          controllerId_ = value;
-        }
-        onChanged();
-      } else {
-        controllerIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * controller through which the namespace is visible
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public Builder clearControllerId() {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-        onChanged();
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * controller through which the namespace is visible
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
-      
+    public Builder setControllerNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      controllerNameRef_ = value;
       onChanged();
-      return getControllerIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * controller through which the namespace is visible
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>string controller_name_ref = 2;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-      if (controllerIdBuilder_ != null) {
-        return controllerIdBuilder_.getMessageOrBuilder();
-      } else {
-        return controllerId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-      }
+    public Builder clearControllerNameRef() {
+      
+      controllerNameRef_ = getDefaultInstance().getControllerNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * controller through which the namespace is visible
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>string controller_name_ref = 2;</code>
+     * @param value The bytes for controllerNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getControllerIdFieldBuilder() {
-      if (controllerIdBuilder_ == null) {
-        controllerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getControllerId(),
-                getParentForChildren(),
-                isClean());
-        controllerId_ = null;
-      }
-      return controllerIdBuilder_;
+    public Builder setControllerNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      controllerNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private int nsid_ ;

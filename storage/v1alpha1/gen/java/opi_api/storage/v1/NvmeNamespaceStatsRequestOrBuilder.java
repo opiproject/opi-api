@@ -8,17 +8,14 @@ public interface NvmeNamespaceStatsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-   * @return Whether the namespaceId field is set.
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  boolean hasNamespaceId();
+  java.lang.String getName();
   /**
-   * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-   * @return The namespaceId.
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getNamespaceId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getNamespaceIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

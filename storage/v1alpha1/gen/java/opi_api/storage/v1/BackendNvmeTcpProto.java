@@ -138,154 +138,151 @@ public final class BackendNvmeTcpProto {
       "i/resource.proto\032\033google/protobuf/empty." +
       "proto\032\034google/api/annotations.proto\032\037goo" +
       "gle/api/field_behavior.proto\032 google/pro" +
-      "tobuf/field_mask.proto\032\020object_key.proto" +
-      "\032\017opicommon.proto\032\nuuid.proto\"\366\001\n\024NvmeRe" +
-      "moteController\022\014\n\004name\030\001 \001(\t\022\r\n\005hdgst\030\002 " +
-      "\001(\010\022\r\n\005ddgst\030\003 \001(\010\0224\n\tmultipath\030\004 \001(\0162!." +
-      "opi_api.storage.v1.NvmeMultipath\022\027\n\017io_q" +
-      "ueues_count\030\005 \001(\003\022\022\n\nqueue_size\030\006 \001(\003\022\013\n" +
-      "\003psk\030\007 \001(\014:B\352A?\n+storage.opiproject.org/" +
-      "NvmeRemoteController\022\020volumes/{volume}\"\344" +
-      "\002\n\010NvmePath\022\014\n\004name\030\001 \001(\t\0223\n\rcontroller_" +
-      "id\030\002 \001(\0132\034.opi_api.common.v1.ObjectKey\0225" +
-      "\n\006trtype\030\003 \001(\0162%.opi_api.storage.v1.Nvme" +
-      "TransportType\0225\n\006adrfam\030\004 \001(\0162%.opi_api." +
-      "storage.v1.NvmeAddressFamily\022\016\n\006traddr\030\005" +
-      " \001(\t\022\017\n\007trsvcid\030\006 \001(\003\022\016\n\006subnqn\030\007 \001(\t\022\025\n" +
-      "\rsource_traddr\030\010 \001(\t\022\026\n\016source_trsvcid\030\t" +
-      " \001(\003\022\017\n\007hostnqn\030\n \001(\t:6\352A3\n\037storage.opip" +
-      "roject.org/NvmePath\022\020volumes/{volume}\"\356\001" +
-      "\n\023NvmeRemoteNamespace\022\014\n\004name\030\001 \001(\t\0223\n\rc" +
-      "ontroller_id\030\002 \001(\0132\034.opi_api.common.v1.O" +
-      "bjectKey\022\014\n\004nsid\030\003 \001(\005\022\r\n\005nguid\030\004 \001(\t\022\r\n" +
-      "\005eui64\030\005 \001(\003\022%\n\004uuid\030\006 \001(\0132\027.opi_api.com" +
-      "mon.v1.Uuid:A\352A>\n*storage.opiproject.org" +
-      "/NvmeRemoteNamespace\022\020volumes/{volume}\"\225" +
-      "\001\n!CreateNvmeRemoteControllerRequest\022M\n\026" +
-      "nvme_remote_controller\030\002 \001(\0132(.opi_api.s" +
-      "torage.v1.NvmeRemoteControllerB\003\340A\002\022!\n\031n" +
-      "vme_remote_controller_id\030\003 \001(\t\"y\n!Delete" +
-      "NvmeRemoteControllerRequest\022=\n\004name\030\001 \001(" +
-      "\tB/\340A\002\372A)\n\'opi_api.storage.v1/NvmeRemote" +
-      "Controller\022\025\n\rallow_missing\030\002 \001(\010\"\265\001\n!Up" +
-      "dateNvmeRemoteControllerRequest\022H\n\026nvme_" +
-      "remote_controller\030\001 \001(\0132(.opi_api.storag" +
-      "e.v1.NvmeRemoteController\022/\n\013update_mask" +
-      "\030\002 \001(\0132\032.google.protobuf.FieldMask\022\025\n\ral" +
-      "low_missing\030\003 \001(\010\"\212\001\n ListNvmeRemoteCont" +
-      "rollersRequest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'" +
-      "opi_api.storage.v1/NvmeRemoteController\022" +
-      "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\207" +
-      "\001\n!ListNvmeRemoteControllersResponse\022I\n\027" +
-      "nvme_remote_controllers\030\001 \003(\0132(.opi_api." +
-      "storage.v1.NvmeRemoteController\022\027\n\017next_" +
-      "page_token\030\002 \001(\t\"_\n\036GetNvmeRemoteControl" +
-      "lerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_ap" +
-      "i.storage.v1/NvmeRemoteController\"L\n Nvm" +
-      "eRemoteControllerResetRequest\022(\n\002id\030\001 \001(" +
-      "\0132\034.opi_api.common.v1.ObjectKey\"L\n NvmeR" +
-      "emoteControllerStatsRequest\022(\n\002id\030\001 \001(\0132" +
-      "\034.opi_api.common.v1.ObjectKey\"S\n!NvmeRem" +
-      "oteControllerStatsResponse\022.\n\005stats\030\001 \001(" +
-      "\0132\037.opi_api.storage.v1.VolumeStats\"\210\001\n\037L" +
-      "istNvmeRemoteNamespacesRequest\022>\n\006parent" +
-      "\030\001 \001(\tB.\340A\002\372A(\n&opi_api.storage.v1/NvmeR" +
-      "emoteNamespace\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag" +
-      "e_token\030\003 \001(\t\"\204\001\n ListNvmeRemoteNamespac" +
-      "esResponse\022G\n\026nvme_remote_namespaces\030\001 \003" +
-      "(\0132\'.opi_api.storage.v1.NvmeRemoteNamesp" +
-      "ace\022\027\n\017next_page_token\030\002 \001(\t\"c\n\025CreateNv" +
-      "mePathRequest\0224\n\tnvme_path\030\001 \001(\0132\034.opi_a" +
-      "pi.storage.v1.NvmePathB\003\340A\002\022\024\n\014nvme_path" +
-      "_id\030\002 \001(\t\"a\n\025DeleteNvmePathRequest\0221\n\004na" +
-      "me\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.storage.v1/Nvm" +
-      "ePath\022\025\n\rallow_missing\030\002 \001(\010\"\220\001\n\025UpdateN" +
-      "vmePathRequest\022/\n\tnvme_path\030\001 \001(\0132\034.opi_" +
-      "api.storage.v1.NvmePath\022/\n\013update_mask\030\002" +
-      " \001(\0132\032.google.protobuf.FieldMask\022\025\n\rallo" +
-      "w_missing\030\003 \001(\010\"r\n\024ListNvmePathsRequest\022" +
-      "3\n\006parent\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.storage" +
-      ".v1/NvmePath\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
-      "token\030\003 \001(\t\"b\n\025ListNvmePathsResponse\0220\n\n" +
-      "nvme_paths\030\001 \003(\0132\034.opi_api.storage.v1.Nv" +
-      "mePath\022\027\n\017next_page_token\030\002 \001(\t\"G\n\022GetNv" +
-      "mePathRequest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033opi" +
-      "_api.storage.v1/NvmePath\"@\n\024NvmePathStat" +
-      "sRequest\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1" +
-      ".ObjectKey\"G\n\025NvmePathStatsResponse\022.\n\005s" +
-      "tats\030\001 \001(\0132\037.opi_api.storage.v1.VolumeSt" +
-      "ats*\264\001\n\021NvmeTransportType\022#\n\037NVME_TRANSP" +
-      "ORT_TYPE_UNSPECIFIED\020\000\022\025\n\021NVME_TRANSPORT" +
-      "_FC\020\001\022\027\n\023NVME_TRANSPORT_PCIE\020\002\022\027\n\023NVME_T" +
-      "RANSPORT_RDMA\020\003\022\026\n\022NVME_TRANSPORT_TCP\020\004\022" +
-      "\031\n\025NVME_TRANSPORT_CUSTOM\020\005*\250\001\n\021NvmeAddre" +
-      "ssFamily\022#\n\037NVME_ADDRESS_FAMILY_UNSPECIF" +
-      "IED\020\000\022\024\n\020NVME_ADRFAM_IPV4\020\001\022\024\n\020NVME_ADRF" +
-      "AM_IPV6\020\002\022\022\n\016NVME_ADRFAM_IB\020\003\022\022\n\016NVME_AD" +
-      "RFAM_FC\020\004\022\032\n\026NVME_ADRFAM_INTRA_HOST\020\005*\206\001" +
-      "\n\rNvmeMultipath\022\036\n\032NVME_MULTIPATH_UNSPEC" +
-      "IFIED\020\000\022\032\n\026NVME_MULTIPATH_DISABLE\020\001\022\033\n\027N" +
-      "VME_MULTIPATH_FAILOVER\020\002\022\034\n\030NVME_MULTIPA" +
-      "TH_MULTIPATH\020\0032\343\021\n\033NvmeRemoteControllerS" +
-      "ervice\022\335\001\n\032CreateNvmeRemoteController\0225." +
-      "opi_api.storage.v1.CreateNvmeRemoteContr" +
-      "ollerRequest\032(.opi_api.storage.v1.NvmeRe" +
-      "moteController\"^\202\323\344\223\002%\"\013/v1/volumes:\026nvm" +
-      "e_remote_controller\332A0nvme_remote_contro" +
-      "ller,nvme_remote_controller_id\022\235\001\n\032Delet" +
-      "eNvmeRemoteController\0225.opi_api.storage." +
-      "v1.DeleteNvmeRemoteControllerRequest\032\026.g" +
-      "oogle.protobuf.Empty\"0\202\323\344\223\002#*!/v1/{name=" +
-      "subsystems}/{subsystem}\332A\004name\022\360\001\n\032Updat" +
-      "eNvmeRemoteController\0225.opi_api.storage." +
-      "v1.UpdateNvmeRemoteControllerRequest\032(.o" +
-      "pi_api.storage.v1.NvmeRemoteController\"q" +
-      "\202\323\344\223\002F2,/v1/{nvme_remote_controller.name" +
-      "=subsystems}:\026nvme_remote_controller\332A\"n" +
-      "vme_remote_controller,update_mask\022\262\001\n\031Li" +
-      "stNvmeRemoteControllers\0224.opi_api.storag" +
-      "e.v1.ListNvmeRemoteControllersRequest\0325." +
-      "opi_api.storage.v1.ListNvmeRemoteControl" +
-      "lersResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsys" +
-      "tems}\332A\006parent\022\251\001\n\027GetNvmeRemoteControll" +
-      "er\0222.opi_api.storage.v1.GetNvmeRemoteCon" +
-      "trollerRequest\032(.opi_api.storage.v1.Nvme" +
-      "RemoteController\"0\202\323\344\223\002#\022!/v1/{name=subs" +
-      "ystems}/{subsystem}\332A\004name\022k\n\031NvmeRemote" +
-      "ControllerReset\0224.opi_api.storage.v1.Nvm" +
-      "eRemoteControllerResetRequest\032\026.google.p" +
-      "rotobuf.Empty\"\000\022\212\001\n\031NvmeRemoteController" +
-      "Stats\0224.opi_api.storage.v1.NvmeRemoteCon" +
-      "trollerStatsRequest\0325.opi_api.storage.v1" +
-      ".NvmeRemoteControllerStatsResponse\"\000\022\257\001\n" +
-      "\030ListNvmeRemoteNamespaces\0223.opi_api.stor" +
-      "age.v1.ListNvmeRemoteNamespacesRequest\0324" +
-      ".opi_api.storage.v1.ListNvmeRemoteNamesp" +
-      "acesResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsys" +
-      "tems}\332A\006parent\022\222\001\n\016CreateNvmePath\022).opi_" +
-      "api.storage.v1.CreateNvmePathRequest\032\034.o" +
-      "pi_api.storage.v1.NvmePath\"7\202\323\344\223\002\030\"\013/v1/" +
-      "volumes:\tnvme_path\332A\026nvme_path,nvme_path" +
-      "_id\022\205\001\n\016DeleteNvmePath\022).opi_api.storage" +
-      ".v1.DeleteNvmePathRequest\032\026.google.proto" +
-      "buf.Empty\"0\202\323\344\223\002#*!/v1/{name=subsystems}" +
-      "/{subsystem}\332A\004name\022\245\001\n\016UpdateNvmePath\022)" +
-      ".opi_api.storage.v1.UpdateNvmePathReques" +
-      "t\032\034.opi_api.storage.v1.NvmePath\"J\202\323\344\223\002,2" +
-      "\037/v1/{nvme_path.name=subsystems}:\tnvme_p" +
-      "ath\332A\025nvme_path,update_mask\022\216\001\n\rListNvme" +
-      "Paths\022(.opi_api.storage.v1.ListNvmePaths" +
-      "Request\032).opi_api.storage.v1.ListNvmePat" +
-      "hsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsyste" +
-      "ms}\332A\006parent\022\205\001\n\013GetNvmePath\022&.opi_api.s" +
-      "torage.v1.GetNvmePathRequest\032\034.opi_api.s" +
-      "torage.v1.NvmePath\"0\202\323\344\223\002#\022!/v1/{name=su" +
-      "bsystems}/{subsystem}\332A\004name\022f\n\rNvmePath" +
-      "Stats\022(.opi_api.storage.v1.NvmePathStats" +
-      "Request\032).opi_api.storage.v1.NvmePathSta" +
-      "tsResponse\"\000Bb\n\022opi_api.storage.v1B\023Back" +
-      "endNvmeTcpProtoP\001Z5github.com/opiproject" +
-      "/opi-api/storage/v1alpha1/gen/gob\006proto3"
+      "tobuf/field_mask.proto\032\017opicommon.proto\032" +
+      "\nuuid.proto\"\366\001\n\024NvmeRemoteController\022\014\n\004" +
+      "name\030\001 \001(\t\022\r\n\005hdgst\030\002 \001(\010\022\r\n\005ddgst\030\003 \001(\010" +
+      "\0224\n\tmultipath\030\004 \001(\0162!.opi_api.storage.v1" +
+      ".NvmeMultipath\022\027\n\017io_queues_count\030\005 \001(\003\022" +
+      "\022\n\nqueue_size\030\006 \001(\003\022\013\n\003psk\030\007 \001(\014:B\352A?\n+s" +
+      "torage.opiproject.org/NvmeRemoteControll" +
+      "er\022\020volumes/{volume}\"\314\002\n\010NvmePath\022\014\n\004nam" +
+      "e\030\001 \001(\t\022\033\n\023controller_name_ref\030\002 \001(\t\0225\n\006" +
+      "trtype\030\003 \001(\0162%.opi_api.storage.v1.NvmeTr" +
+      "ansportType\0225\n\006adrfam\030\004 \001(\0162%.opi_api.st" +
+      "orage.v1.NvmeAddressFamily\022\016\n\006traddr\030\005 \001" +
+      "(\t\022\017\n\007trsvcid\030\006 \001(\003\022\016\n\006subnqn\030\007 \001(\t\022\025\n\rs" +
+      "ource_traddr\030\010 \001(\t\022\026\n\016source_trsvcid\030\t \001" +
+      "(\003\022\017\n\007hostnqn\030\n \001(\t:6\352A3\n\037storage.opipro" +
+      "ject.org/NvmePath\022\020volumes/{volume}\"\326\001\n\023" +
+      "NvmeRemoteNamespace\022\014\n\004name\030\001 \001(\t\022\033\n\023con" +
+      "troller_name_ref\030\002 \001(\t\022\014\n\004nsid\030\003 \001(\005\022\r\n\005" +
+      "nguid\030\004 \001(\t\022\r\n\005eui64\030\005 \001(\003\022%\n\004uuid\030\006 \001(\013" +
+      "2\027.opi_api.common.v1.Uuid:A\352A>\n*storage." +
+      "opiproject.org/NvmeRemoteNamespace\022\020volu" +
+      "mes/{volume}\"\225\001\n!CreateNvmeRemoteControl" +
+      "lerRequest\022M\n\026nvme_remote_controller\030\002 \001" +
+      "(\0132(.opi_api.storage.v1.NvmeRemoteContro" +
+      "llerB\003\340A\002\022!\n\031nvme_remote_controller_id\030\003" +
+      " \001(\t\"y\n!DeleteNvmeRemoteControllerReques" +
+      "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.storage" +
+      ".v1/NvmeRemoteController\022\025\n\rallow_missin" +
+      "g\030\002 \001(\010\"\265\001\n!UpdateNvmeRemoteControllerRe" +
+      "quest\022H\n\026nvme_remote_controller\030\001 \001(\0132(." +
+      "opi_api.storage.v1.NvmeRemoteController\022" +
+      "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F" +
+      "ieldMask\022\025\n\rallow_missing\030\003 \001(\010\"\212\001\n List" +
+      "NvmeRemoteControllersRequest\022?\n\006parent\030\001" +
+      " \001(\tB/\340A\002\372A)\n\'opi_api.storage.v1/NvmeRem" +
+      "oteController\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage" +
+      "_token\030\003 \001(\t\"\207\001\n!ListNvmeRemoteControlle" +
+      "rsResponse\022I\n\027nvme_remote_controllers\030\001 " +
+      "\003(\0132(.opi_api.storage.v1.NvmeRemoteContr" +
+      "oller\022\027\n\017next_page_token\030\002 \001(\t\"_\n\036GetNvm" +
+      "eRemoteControllerRequest\022=\n\004name\030\001 \001(\tB/" +
+      "\340A\002\372A)\n\'opi_api.storage.v1/NvmeRemoteCon" +
+      "troller\"0\n NvmeRemoteControllerResetRequ" +
+      "est\022\014\n\004name\030\001 \001(\t\"0\n NvmeRemoteControlle" +
+      "rStatsRequest\022\014\n\004name\030\001 \001(\t\"S\n!NvmeRemot" +
+      "eControllerStatsResponse\022.\n\005stats\030\001 \001(\0132" +
+      "\037.opi_api.storage.v1.VolumeStats\"\210\001\n\037Lis" +
+      "tNvmeRemoteNamespacesRequest\022>\n\006parent\030\001" +
+      " \001(\tB.\340A\002\372A(\n&opi_api.storage.v1/NvmeRem" +
+      "oteNamespace\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
+      "token\030\003 \001(\t\"\204\001\n ListNvmeRemoteNamespaces" +
+      "Response\022G\n\026nvme_remote_namespaces\030\001 \003(\013" +
+      "2\'.opi_api.storage.v1.NvmeRemoteNamespac" +
+      "e\022\027\n\017next_page_token\030\002 \001(\t\"c\n\025CreateNvme" +
+      "PathRequest\0224\n\tnvme_path\030\001 \001(\0132\034.opi_api" +
+      ".storage.v1.NvmePathB\003\340A\002\022\024\n\014nvme_path_i" +
+      "d\030\002 \001(\t\"a\n\025DeleteNvmePathRequest\0221\n\004name" +
+      "\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.storage.v1/NvmeP" +
+      "ath\022\025\n\rallow_missing\030\002 \001(\010\"\220\001\n\025UpdateNvm" +
+      "ePathRequest\022/\n\tnvme_path\030\001 \001(\0132\034.opi_ap" +
+      "i.storage.v1.NvmePath\022/\n\013update_mask\030\002 \001" +
+      "(\0132\032.google.protobuf.FieldMask\022\025\n\rallow_" +
+      "missing\030\003 \001(\010\"r\n\024ListNvmePathsRequest\0223\n" +
+      "\006parent\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.storage.v" +
+      "1/NvmePath\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to" +
+      "ken\030\003 \001(\t\"b\n\025ListNvmePathsResponse\0220\n\nnv" +
+      "me_paths\030\001 \003(\0132\034.opi_api.storage.v1.Nvme" +
+      "Path\022\027\n\017next_page_token\030\002 \001(\t\"G\n\022GetNvme" +
+      "PathRequest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033opi_a" +
+      "pi.storage.v1/NvmePath\"$\n\024NvmePathStatsR" +
+      "equest\022\014\n\004name\030\001 \001(\t\"G\n\025NvmePathStatsRes" +
+      "ponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.storage.v" +
+      "1.VolumeStats*\264\001\n\021NvmeTransportType\022#\n\037N" +
+      "VME_TRANSPORT_TYPE_UNSPECIFIED\020\000\022\025\n\021NVME" +
+      "_TRANSPORT_FC\020\001\022\027\n\023NVME_TRANSPORT_PCIE\020\002" +
+      "\022\027\n\023NVME_TRANSPORT_RDMA\020\003\022\026\n\022NVME_TRANSP" +
+      "ORT_TCP\020\004\022\031\n\025NVME_TRANSPORT_CUSTOM\020\005*\250\001\n" +
+      "\021NvmeAddressFamily\022#\n\037NVME_ADDRESS_FAMIL" +
+      "Y_UNSPECIFIED\020\000\022\024\n\020NVME_ADRFAM_IPV4\020\001\022\024\n" +
+      "\020NVME_ADRFAM_IPV6\020\002\022\022\n\016NVME_ADRFAM_IB\020\003\022" +
+      "\022\n\016NVME_ADRFAM_FC\020\004\022\032\n\026NVME_ADRFAM_INTRA" +
+      "_HOST\020\005*\206\001\n\rNvmeMultipath\022\036\n\032NVME_MULTIP" +
+      "ATH_UNSPECIFIED\020\000\022\032\n\026NVME_MULTIPATH_DISA" +
+      "BLE\020\001\022\033\n\027NVME_MULTIPATH_FAILOVER\020\002\022\034\n\030NV" +
+      "ME_MULTIPATH_MULTIPATH\020\0032\343\021\n\033NvmeRemoteC" +
+      "ontrollerService\022\335\001\n\032CreateNvmeRemoteCon" +
+      "troller\0225.opi_api.storage.v1.CreateNvmeR" +
+      "emoteControllerRequest\032(.opi_api.storage" +
+      ".v1.NvmeRemoteController\"^\202\323\344\223\002%\"\013/v1/vo" +
+      "lumes:\026nvme_remote_controller\332A0nvme_rem" +
+      "ote_controller,nvme_remote_controller_id" +
+      "\022\235\001\n\032DeleteNvmeRemoteController\0225.opi_ap" +
+      "i.storage.v1.DeleteNvmeRemoteControllerR" +
+      "equest\032\026.google.protobuf.Empty\"0\202\323\344\223\002#*!" +
+      "/v1/{name=subsystems}/{subsystem}\332A\004name" +
+      "\022\360\001\n\032UpdateNvmeRemoteController\0225.opi_ap" +
+      "i.storage.v1.UpdateNvmeRemoteControllerR" +
+      "equest\032(.opi_api.storage.v1.NvmeRemoteCo" +
+      "ntroller\"q\202\323\344\223\002F2,/v1/{nvme_remote_contr" +
+      "oller.name=subsystems}:\026nvme_remote_cont" +
+      "roller\332A\"nvme_remote_controller,update_m" +
+      "ask\022\262\001\n\031ListNvmeRemoteControllers\0224.opi_" +
+      "api.storage.v1.ListNvmeRemoteControllers" +
+      "Request\0325.opi_api.storage.v1.ListNvmeRem" +
+      "oteControllersResponse\"(\202\323\344\223\002\031\022\027/v1/{par" +
+      "ent=subsystems}\332A\006parent\022\251\001\n\027GetNvmeRemo" +
+      "teController\0222.opi_api.storage.v1.GetNvm" +
+      "eRemoteControllerRequest\032(.opi_api.stora" +
+      "ge.v1.NvmeRemoteController\"0\202\323\344\223\002#\022!/v1/" +
+      "{name=subsystems}/{subsystem}\332A\004name\022k\n\031" +
+      "NvmeRemoteControllerReset\0224.opi_api.stor" +
+      "age.v1.NvmeRemoteControllerResetRequest\032" +
+      "\026.google.protobuf.Empty\"\000\022\212\001\n\031NvmeRemote" +
+      "ControllerStats\0224.opi_api.storage.v1.Nvm" +
+      "eRemoteControllerStatsRequest\0325.opi_api." +
+      "storage.v1.NvmeRemoteControllerStatsResp" +
+      "onse\"\000\022\257\001\n\030ListNvmeRemoteNamespaces\0223.op" +
+      "i_api.storage.v1.ListNvmeRemoteNamespace" +
+      "sRequest\0324.opi_api.storage.v1.ListNvmeRe" +
+      "moteNamespacesResponse\"(\202\323\344\223\002\031\022\027/v1/{par" +
+      "ent=subsystems}\332A\006parent\022\222\001\n\016CreateNvmeP" +
+      "ath\022).opi_api.storage.v1.CreateNvmePathR" +
+      "equest\032\034.opi_api.storage.v1.NvmePath\"7\202\323" +
+      "\344\223\002\030\"\013/v1/volumes:\tnvme_path\332A\026nvme_path" +
+      ",nvme_path_id\022\205\001\n\016DeleteNvmePath\022).opi_a" +
+      "pi.storage.v1.DeleteNvmePathRequest\032\026.go" +
+      "ogle.protobuf.Empty\"0\202\323\344\223\002#*!/v1/{name=s" +
+      "ubsystems}/{subsystem}\332A\004name\022\245\001\n\016Update" +
+      "NvmePath\022).opi_api.storage.v1.UpdateNvme" +
+      "PathRequest\032\034.opi_api.storage.v1.NvmePat" +
+      "h\"J\202\323\344\223\002,2\037/v1/{nvme_path.name=subsystem" +
+      "s}:\tnvme_path\332A\025nvme_path,update_mask\022\216\001" +
+      "\n\rListNvmePaths\022(.opi_api.storage.v1.Lis" +
+      "tNvmePathsRequest\032).opi_api.storage.v1.L" +
+      "istNvmePathsResponse\"(\202\323\344\223\002\031\022\027/v1/{paren" +
+      "t=subsystems}\332A\006parent\022\205\001\n\013GetNvmePath\022&" +
+      ".opi_api.storage.v1.GetNvmePathRequest\032\034" +
+      ".opi_api.storage.v1.NvmePath\"0\202\323\344\223\002#\022!/v" +
+      "1/{name=subsystems}/{subsystem}\332A\004name\022f" +
+      "\n\rNvmePathStats\022(.opi_api.storage.v1.Nvm" +
+      "ePathStatsRequest\032).opi_api.storage.v1.N" +
+      "vmePathStatsResponse\"\000Bb\n\022opi_api.storag" +
+      "e.v1B\023BackendNvmeTcpProtoP\001Z5github.com/" +
+      "opiproject/opi-api/storage/v1alpha1/gen/" +
+      "gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -296,7 +293,6 @@ public final class BackendNvmeTcpProto {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
-          opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.storage.v1.OpiCommonProto.getDescriptor(),
           opi_api.common.v1.UuidProto.getDescriptor(),
         });
@@ -311,13 +307,13 @@ public final class BackendNvmeTcpProto {
     internal_static_opi_api_storage_v1_NvmePath_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NvmePath_descriptor,
-        new java.lang.String[] { "Name", "ControllerId", "Trtype", "Adrfam", "Traddr", "Trsvcid", "Subnqn", "SourceTraddr", "SourceTrsvcid", "Hostnqn", });
+        new java.lang.String[] { "Name", "ControllerNameRef", "Trtype", "Adrfam", "Traddr", "Trsvcid", "Subnqn", "SourceTraddr", "SourceTrsvcid", "Hostnqn", });
     internal_static_opi_api_storage_v1_NvmeRemoteNamespace_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_storage_v1_NvmeRemoteNamespace_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NvmeRemoteNamespace_descriptor,
-        new java.lang.String[] { "Name", "ControllerId", "Nsid", "Nguid", "Eui64", "Uuid", });
+        new java.lang.String[] { "Name", "ControllerNameRef", "Nsid", "Nguid", "Eui64", "Uuid", });
     internal_static_opi_api_storage_v1_CreateNvmeRemoteControllerRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_storage_v1_CreateNvmeRemoteControllerRequest_fieldAccessorTable = new
@@ -359,13 +355,13 @@ public final class BackendNvmeTcpProto {
     internal_static_opi_api_storage_v1_NvmeRemoteControllerResetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NvmeRemoteControllerResetRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsResponse_fieldAccessorTable = new
@@ -425,7 +421,7 @@ public final class BackendNvmeTcpProto {
     internal_static_opi_api_storage_v1_NvmePathStatsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NvmePathStatsRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_storage_v1_NvmePathStatsResponse_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_opi_api_storage_v1_NvmePathStatsResponse_fieldAccessorTable = new
@@ -447,7 +443,6 @@ public final class BackendNvmeTcpProto {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
-    opi_api.common.v1.ObjectKeyProto.getDescriptor();
     opi_api.storage.v1.OpiCommonProto.getDescriptor();
     opi_api.common.v1.UuidProto.getDescriptor();
   }

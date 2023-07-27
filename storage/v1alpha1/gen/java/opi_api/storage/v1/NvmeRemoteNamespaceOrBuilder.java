@@ -32,27 +32,20 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * controller through which the namespace is visible
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return Whether the controllerId field is set.
+   * <code>string controller_name_ref = 2;</code>
+   * @return The controllerNameRef.
    */
-  boolean hasControllerId();
+  java.lang.String getControllerNameRef();
   /**
    * <pre>
    * controller through which the namespace is visible
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return The controllerId.
+   * <code>string controller_name_ref = 2;</code>
+   * @return The bytes for controllerNameRef.
    */
-  opi_api.common.v1.ObjectKey getControllerId();
-  /**
-   * <pre>
-   * controller through which the namespace is visible
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
+  com.google.protobuf.ByteString
+      getControllerNameRefBytes();
 
   /**
    * <pre>

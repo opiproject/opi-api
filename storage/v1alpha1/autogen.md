@@ -798,7 +798,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | user can only set {resource}_id on the Create request object |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| controller_name_ref | [string](#string) |  |  |
 | trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  |  |
 | adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  |  |
 | traddr | [string](#string) |  | Destination address (e.g. IP address) |
@@ -821,7 +821,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+| name | [string](#string) |  | object&#39;s unique identifier |
 
 
 
@@ -872,7 +872,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+| name | [string](#string) |  | object&#39;s unique identifier |
 
 
 
@@ -887,7 +887,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+| name | [string](#string) |  | object&#39;s unique identifier |
 
 
 
@@ -918,7 +918,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | user can only set {resource}_id on the Create request object |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | controller through which the namespace is visible |
+| controller_name_ref | [string](#string) |  | controller through which the namespace is visible |
 | nsid | [int32](#int32) |  | NSID |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
@@ -1314,7 +1314,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_controller_id | [int32](#int32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
-| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem information |
+| subsystem_name_ref | [string](#string) |  | subsystem information |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
 | max_nsq | [int32](#int32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
 | max_ncq | [int32](#int32) |  | maximum number of host completion queues allowed. If not set, the xPU will provide a default. |
@@ -1337,7 +1337,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1352,7 +1352,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -1400,12 +1400,12 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem for this namespace |
+| subsystem_name_ref | [string](#string) |  | subsystem for this namespace |
 | host_nsid | [int32](#int32) |  | NSID present to the host by the Nvme PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this namespace. |
+| volume_name_ref | [string](#string) |  | The back/middle-end volume to back this namespace. |
 
 
 
@@ -1420,7 +1420,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1435,7 +1435,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -1502,7 +1502,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| subsystem_name_ref | [string](#string) |  |  |
 
 
 

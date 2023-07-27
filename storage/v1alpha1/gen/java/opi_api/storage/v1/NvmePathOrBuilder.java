@@ -28,19 +28,16 @@ public interface NvmePathOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return Whether the controllerId field is set.
+   * <code>string controller_name_ref = 2;</code>
+   * @return The controllerNameRef.
    */
-  boolean hasControllerId();
+  java.lang.String getControllerNameRef();
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return The controllerId.
+   * <code>string controller_name_ref = 2;</code>
+   * @return The bytes for controllerNameRef.
    */
-  opi_api.common.v1.ObjectKey getControllerId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
+  com.google.protobuf.ByteString
+      getControllerNameRefBytes();
 
   /**
    * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3;</code>

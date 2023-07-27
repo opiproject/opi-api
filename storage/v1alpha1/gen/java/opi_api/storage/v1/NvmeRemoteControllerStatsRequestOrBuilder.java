@@ -12,25 +12,18 @@ public interface NvmeRemoteControllerStatsRequestOrBuilder extends
    * object's unique identifier
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  boolean hasId();
+  java.lang.String getName();
   /**
    * <pre>
    * object's unique identifier
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

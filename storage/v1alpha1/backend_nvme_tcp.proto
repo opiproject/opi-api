@@ -17,7 +17,6 @@ import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
-import "object_key.proto";
 import "opicommon.proto";
 import "uuid.proto";
 
@@ -138,7 +137,7 @@ message NvmePath {
     // user can only set {resource}_id on the Create request object
     string name = 1;
 
-    common.v1.ObjectKey controller_id = 2;
+    string controller_name_ref = 2;
 
     NvmeTransportType trtype = 3;
     NvmeAddressFamily adrfam = 4;
@@ -173,7 +172,7 @@ message NvmeRemoteNamespace {
     string name = 1;
 
     // controller through which the namespace is visible
-    common.v1.ObjectKey controller_id = 2;
+    string controller_name_ref = 2;
 
     // NSID
     int32 nsid = 3;
@@ -241,12 +240,12 @@ message GetNvmeRemoteControllerRequest {
 
 message NvmeRemoteControllerResetRequest {
     // object's unique identifier
-    common.v1.ObjectKey id = 1;
+    string name = 1;
 }
 
 message NvmeRemoteControllerStatsRequest {
     // object's unique identifier
-    common.v1.ObjectKey id = 1;
+    string name = 1;
 }
 
 message NvmeRemoteControllerStatsResponse {
@@ -319,7 +318,7 @@ message GetNvmePathRequest {
 
 message NvmePathStatsRequest {
     // object's unique identifier
-    common.v1.ObjectKey id = 1;
+    string name = 1;
 }
 
 message NvmePathStatsResponse {

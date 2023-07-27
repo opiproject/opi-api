@@ -12,7 +12,6 @@ option java_outer_classname = "FrontendNvmePcieProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "opicommon.proto";
-import "object_key.proto";
 import "uuid.proto";
 
 import "google/api/client.proto";
@@ -195,7 +194,7 @@ message NvmeControllerSpec {
     int32 nvme_controller_id  = 1;
 
     // subsystem information
-    common.v1.ObjectKey subsystem_id = 2;
+    string subsystem_name_ref = 2;
 
     // xPU's PCI ID for the controller
     PciEndpoint pcie_id = 3;
@@ -252,7 +251,7 @@ message NvmeNamespace {
 
 message NvmeNamespaceSpec {
     // subsystem for this namespace
-    common.v1.ObjectKey subsystem_id = 1;
+    string subsystem_name_ref = 1;
 
     // NSID present to the host by the Nvme PCIe controller.
     // If not provided, then the controller will assign an unused NSID
@@ -271,7 +270,7 @@ message NvmeNamespaceSpec {
     common.v1.Uuid uuid = 5;
 
     // The back/middle-end volume to back this namespace.
-    common.v1.ObjectKey volume_id = 6;
+    string volume_name_ref = 6;
 }
 
 message NvmeNamespaceStatus {
@@ -329,7 +328,7 @@ message GetNvmeSubsystemRequest {
 }
 
 message NvmeSubsystemStatsRequest {
-    common.v1.ObjectKey subsystem_id = 1;
+    string subsystem_name_ref = 1;
 }
 
 message NvmeSubsystemStatsResponse {
@@ -383,11 +382,11 @@ message GetNvmeControllerRequest {
 }
 
 message NvmeControllerStatsRequest {
-    common.v1.ObjectKey id = 1;
+    string name = 1;
 }
 
 message NvmeControllerStatsResponse {
-    common.v1.ObjectKey id = 1;
+    string name = 1;
     VolumeStats stats = 2;
 }
 
@@ -438,11 +437,11 @@ message GetNvmeNamespaceRequest {
 }
 
 message NvmeNamespaceStatsRequest {
-    common.v1.ObjectKey namespace_id = 1;
+    string name = 1;
 }
 
 message NvmeNamespaceStatsResponse {
-    common.v1.ObjectKey id = 1;
+    string name = 1;
     VolumeStats stats = 2;
 }
 

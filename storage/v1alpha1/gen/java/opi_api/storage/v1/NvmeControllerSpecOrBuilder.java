@@ -23,27 +23,20 @@ public interface NvmeControllerSpecOrBuilder extends
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   * @return Whether the subsystemId field is set.
+   * <code>string subsystem_name_ref = 2;</code>
+   * @return The subsystemNameRef.
    */
-  boolean hasSubsystemId();
+  java.lang.String getSubsystemNameRef();
   /**
    * <pre>
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   * @return The subsystemId.
+   * <code>string subsystem_name_ref = 2;</code>
+   * @return The bytes for subsystemNameRef.
    */
-  opi_api.common.v1.ObjectKey getSubsystemId();
-  /**
-   * <pre>
-   * subsystem information
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder();
+  com.google.protobuf.ByteString
+      getSubsystemNameRefBytes();
 
   /**
    * <pre>

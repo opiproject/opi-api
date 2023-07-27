@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeControllerSpec() {
+    subsystemNameRef_ = "";
   }
 
   @java.lang.Override
@@ -54,16 +55,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (subsystemId_ != null) {
-              subBuilder = subsystemId_.toBuilder();
-            }
-            subsystemId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(subsystemId_);
-              subsystemId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            subsystemNameRef_ = s;
             break;
           }
           case 26: {
@@ -178,42 +172,50 @@ private static final long serialVersionUID = 0L;
     return nvmeControllerId_;
   }
 
-  public static final int SUBSYSTEM_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey subsystemId_;
+  public static final int SUBSYSTEM_NAME_REF_FIELD_NUMBER = 2;
+  private volatile java.lang.Object subsystemNameRef_;
   /**
    * <pre>
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   * @return Whether the subsystemId field is set.
+   * <code>string subsystem_name_ref = 2;</code>
+   * @return The subsystemNameRef.
    */
   @java.lang.Override
-  public boolean hasSubsystemId() {
-    return subsystemId_ != null;
+  public java.lang.String getSubsystemNameRef() {
+    java.lang.Object ref = subsystemNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subsystemNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   * @return The subsystemId.
+   * <code>string subsystem_name_ref = 2;</code>
+   * @return The bytes for subsystemNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getSubsystemId() {
-    return subsystemId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
-  }
-  /**
-   * <pre>
-   * subsystem information
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
-    return getSubsystemId();
+  public com.google.protobuf.ByteString
+      getSubsystemNameRefBytes() {
+    java.lang.Object ref = subsystemNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      subsystemNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PCIE_ID_FIELD_NUMBER = 3;
@@ -427,8 +429,8 @@ private static final long serialVersionUID = 0L;
     if (nvmeControllerId_ != 0) {
       output.writeInt32(1, nvmeControllerId_);
     }
-    if (subsystemId_ != null) {
-      output.writeMessage(2, getSubsystemId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subsystemNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subsystemNameRef_);
     }
     if (pcieId_ != null) {
       output.writeMessage(3, getPcieId());
@@ -467,9 +469,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, nvmeControllerId_);
     }
-    if (subsystemId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSubsystemId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subsystemNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subsystemNameRef_);
     }
     if (pcieId_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -520,11 +521,8 @@ private static final long serialVersionUID = 0L;
 
     if (getNvmeControllerId()
         != other.getNvmeControllerId()) return false;
-    if (hasSubsystemId() != other.hasSubsystemId()) return false;
-    if (hasSubsystemId()) {
-      if (!getSubsystemId()
-          .equals(other.getSubsystemId())) return false;
-    }
+    if (!getSubsystemNameRef()
+        .equals(other.getSubsystemNameRef())) return false;
     if (hasPcieId() != other.hasPcieId()) return false;
     if (hasPcieId()) {
       if (!getPcieId()
@@ -563,10 +561,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NVME_CONTROLLER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getNvmeControllerId();
-    if (hasSubsystemId()) {
-      hash = (37 * hash) + SUBSYSTEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSubsystemId().hashCode();
-    }
+    hash = (37 * hash) + SUBSYSTEM_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getSubsystemNameRef().hashCode();
     if (hasPcieId()) {
       hash = (37 * hash) + PCIE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPcieId().hashCode();
@@ -724,12 +720,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       nvmeControllerId_ = 0;
 
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = null;
-      } else {
-        subsystemId_ = null;
-        subsystemIdBuilder_ = null;
-      }
+      subsystemNameRef_ = "";
+
       if (pcieIdBuilder_ == null) {
         pcieId_ = null;
       } else {
@@ -785,11 +777,7 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.NvmeControllerSpec buildPartial() {
       opi_api.storage.v1.NvmeControllerSpec result = new opi_api.storage.v1.NvmeControllerSpec(this);
       result.nvmeControllerId_ = nvmeControllerId_;
-      if (subsystemIdBuilder_ == null) {
-        result.subsystemId_ = subsystemId_;
-      } else {
-        result.subsystemId_ = subsystemIdBuilder_.build();
-      }
+      result.subsystemNameRef_ = subsystemNameRef_;
       if (pcieIdBuilder_ == null) {
         result.pcieId_ = pcieId_;
       } else {
@@ -861,8 +849,9 @@ private static final long serialVersionUID = 0L;
       if (other.getNvmeControllerId() != 0) {
         setNvmeControllerId(other.getNvmeControllerId());
       }
-      if (other.hasSubsystemId()) {
-        mergeSubsystemId(other.getSubsystemId());
+      if (!other.getSubsystemNameRef().isEmpty()) {
+        subsystemNameRef_ = other.subsystemNameRef_;
+        onChanged();
       }
       if (other.hasPcieId()) {
         mergePcieId(other.getPcieId());
@@ -963,33 +952,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey subsystemId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> subsystemIdBuilder_;
+    private java.lang.Object subsystemNameRef_ = "";
     /**
      * <pre>
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-     * @return Whether the subsystemId field is set.
+     * <code>string subsystem_name_ref = 2;</code>
+     * @return The subsystemNameRef.
      */
-    public boolean hasSubsystemId() {
-      return subsystemIdBuilder_ != null || subsystemId_ != null;
-    }
-    /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-     * @return The subsystemId.
-     */
-    public opi_api.common.v1.ObjectKey getSubsystemId() {
-      if (subsystemIdBuilder_ == null) {
-        return subsystemId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
+    public java.lang.String getSubsystemNameRef() {
+      java.lang.Object ref = subsystemNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subsystemNameRef_ = s;
+        return s;
       } else {
-        return subsystemIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -997,125 +978,74 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>string subsystem_name_ref = 2;</code>
+     * @return The bytes for subsystemNameRef.
      */
-    public Builder setSubsystemId(opi_api.common.v1.ObjectKey value) {
-      if (subsystemIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        subsystemId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getSubsystemNameRefBytes() {
+      java.lang.Object ref = subsystemNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subsystemNameRef_ = b;
+        return b;
       } else {
-        subsystemIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>string subsystem_name_ref = 2;</code>
+     * @param value The subsystemNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setSubsystemId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = builderForValue.build();
-        onChanged();
-      } else {
-        subsystemIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-     */
-    public Builder mergeSubsystemId(opi_api.common.v1.ObjectKey value) {
-      if (subsystemIdBuilder_ == null) {
-        if (subsystemId_ != null) {
-          subsystemId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(subsystemId_).mergeFrom(value).buildPartial();
-        } else {
-          subsystemId_ = value;
-        }
-        onChanged();
-      } else {
-        subsystemIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-     */
-    public Builder clearSubsystemId() {
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = null;
-        onChanged();
-      } else {
-        subsystemId_ = null;
-        subsystemIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getSubsystemIdBuilder() {
-      
+    public Builder setSubsystemNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      subsystemNameRef_ = value;
       onChanged();
-      return getSubsystemIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>string subsystem_name_ref = 2;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
-      if (subsystemIdBuilder_ != null) {
-        return subsystemIdBuilder_.getMessageOrBuilder();
-      } else {
-        return subsystemId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
-      }
+    public Builder clearSubsystemNameRef() {
+      
+      subsystemNameRef_ = getDefaultInstance().getSubsystemNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>string subsystem_name_ref = 2;</code>
+     * @param value The bytes for subsystemNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getSubsystemIdFieldBuilder() {
-      if (subsystemIdBuilder_ == null) {
-        subsystemIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getSubsystemId(),
-                getParentForChildren(),
-                isClean());
-        subsystemId_ = null;
-      }
-      return subsystemIdBuilder_;
+    public Builder setSubsystemNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      subsystemNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.storage.v1.PciEndpoint pcieId_;
