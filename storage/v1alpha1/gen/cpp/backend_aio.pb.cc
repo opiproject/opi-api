@@ -277,32 +277,31 @@ const char descriptor_table_protodef_backend_5faio_2eproto[] PROTOBUF_SECTION_VA
   "\"K\n\025AioVolumeStatsRequest\0222\n\004name\030\001 \001(\tB"
   "$\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume\"H\n"
   "\026AioVolumeStatsResponse\022.\n\005stats\030\001 \001(\0132\037"
-  ".opi_api.storage.v1.VolumeStats2\357\006\n\020AioV"
+  ".opi_api.storage.v1.VolumeStats2\331\006\n\020AioV"
   "olumeService\022\230\001\n\017CreateAioVolume\022*.opi_a"
   "pi.storage.v1.CreateAioVolumeRequest\032\035.o"
   "pi_api.storage.v1.AioVolume\":\202\323\344\223\002\031\"\013/v1"
   "/volumes:\naio_volume\332A\030aio_volume,aio_vo"
-  "lume_id\022\207\001\n\017DeleteAioVolume\022*.opi_api.st"
-  "orage.v1.DeleteAioVolumeRequest\032\026.google"
-  ".protobuf.Empty\"0\202\323\344\223\002#*!/v1/{name=subsy"
-  "stems}/{subsystem}\332A\004name\022\253\001\n\017UpdateAioV"
-  "olume\022*.opi_api.storage.v1.UpdateAioVolu"
-  "meRequest\032\035.opi_api.storage.v1.AioVolume"
-  "\"M\202\323\344\223\002.2 /v1/{aio_volume.name=subsystem"
-  "s}:\naio_volume\332A\026aio_volume,update_mask\022"
-  "\221\001\n\016ListAioVolumes\022).opi_api.storage.v1."
-  "ListAioVolumesRequest\032*.opi_api.storage."
-  "v1.ListAioVolumesResponse\"(\202\323\344\223\002\031\022\027/v1/{"
-  "parent=subsystems}\332A\006parent\022\210\001\n\014GetAioVo"
-  "lume\022\'.opi_api.storage.v1.GetAioVolumeRe"
-  "quest\032\035.opi_api.storage.v1.AioVolume\"0\202\323"
-  "\344\223\002#\022!/v1/{name=subsystems}/{subsystem}\332"
-  "A\004name\022i\n\016AioVolumeStats\022).opi_api.stora"
-  "ge.v1.AioVolumeStatsRequest\032*.opi_api.st"
-  "orage.v1.AioVolumeStatsResponse\"\000B^\n\022opi"
-  "_api.storage.v1B\017BackendAioProtoP\001Z5gith"
-  "ub.com/opiproject/opi-api/storage/v1alph"
-  "a1/gen/gob\006proto3"
+  "lume_id\022}\n\017DeleteAioVolume\022*.opi_api.sto"
+  "rage.v1.DeleteAioVolumeRequest\032\026.google."
+  "protobuf.Empty\"&\202\323\344\223\002\031*\027/v1/{name=AioVol"
+  "umes/*}\332A\004name\022\253\001\n\017UpdateAioVolume\022*.opi"
+  "_api.storage.v1.UpdateAioVolumeRequest\032\035"
+  ".opi_api.storage.v1.AioVolume\"M\202\323\344\223\002.2 /"
+  "v1/{aio_volume.name=subsystems}:\naio_vol"
+  "ume\332A\026aio_volume,update_mask\022\221\001\n\016ListAio"
+  "Volumes\022).opi_api.storage.v1.ListAioVolu"
+  "mesRequest\032*.opi_api.storage.v1.ListAioV"
+  "olumesResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subs"
+  "ystems}\332A\006parent\022~\n\014GetAioVolume\022\'.opi_a"
+  "pi.storage.v1.GetAioVolumeRequest\032\035.opi_"
+  "api.storage.v1.AioVolume\"&\202\323\344\223\002\031\022\027/v1/{n"
+  "ame=AioVolumes/*}\332A\004name\022i\n\016AioVolumeSta"
+  "ts\022).opi_api.storage.v1.AioVolumeStatsRe"
+  "quest\032*.opi_api.storage.v1.AioVolumeStat"
+  "sResponse\"\000B^\n\022opi_api.storage.v1B\017Backe"
+  "ndAioProtoP\001Z5github.com/opiproject/opi-"
+  "api/storage/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5faio_2eproto_deps[8] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -316,7 +315,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5faio_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5faio_2eproto = {
-  false, false, 2257, descriptor_table_protodef_backend_5faio_2eproto, "backend_aio.proto", 
+  false, false, 2235, descriptor_table_protodef_backend_5faio_2eproto, "backend_aio.proto", 
   &descriptor_table_backend_5faio_2eproto_once, descriptor_table_backend_5faio_2eproto_deps, 8, 9,
   schemas, file_default_instances, TableStruct_backend_5faio_2eproto::offsets,
   file_level_metadata_backend_5faio_2eproto, file_level_enum_descriptors_backend_5faio_2eproto, file_level_service_descriptors_backend_5faio_2eproto,
