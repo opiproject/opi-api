@@ -337,7 +337,10 @@ message GetNvmeSubsystemRequest {
 }
 
 message NvmeSubsystemStatsRequest {
-    string subsystem_name_ref = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
+    ];
 }
 
 message NvmeSubsystemStatsResponse {
@@ -391,17 +394,19 @@ message GetNvmeControllerRequest {
 }
 
 message NvmeControllerStatsRequest {
-    string name = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
+    ];
 }
 
 message NvmeControllerStatsResponse {
-    string name = 1;
-    VolumeStats stats = 2;
+    VolumeStats stats = 1;
 }
 
 message CreateNvmeNamespaceRequest {
-    NvmeNamespace nvme_namespace = 2 [(google.api.field_behavior) = REQUIRED];
-    string nvme_namespace_id = 3;
+    NvmeNamespace nvme_namespace = 1 [(google.api.field_behavior) = REQUIRED];
+    string nvme_namespace_id = 2;
 }
 
 message DeleteNvmeNamespaceRequest {
@@ -446,12 +451,14 @@ message GetNvmeNamespaceRequest {
 }
 
 message NvmeNamespaceStatsRequest {
-    string name = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
+    ];
 }
 
 message NvmeNamespaceStatsResponse {
-    string name = 1;
-    VolumeStats stats = 2;
+    VolumeStats stats = 1;
 }
 
 // Namespace  Administrative States

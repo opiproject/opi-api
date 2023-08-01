@@ -235,17 +235,19 @@ message GetVirtioScsiTargetRequest {
 }
 
 message VirtioScsiTargetStatsRequest {
-    common.v1.ObjectKey target_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
+    ];
 }
 
 message VirtioScsiTargetStatsResponse {
-    common.v1.ObjectKey id = 1;
-    VolumeStats stats = 2;
+    VolumeStats stats = 1;
 }
 
 message CreateVirtioScsiControllerRequest {
-    VirtioScsiController virtio_scsi_controller = 2 [(google.api.field_behavior) = REQUIRED];
-    string virtio_scsi_controller_id = 3;
+    VirtioScsiController virtio_scsi_controller = 1 [(google.api.field_behavior) = REQUIRED];
+    string virtio_scsi_controller_id = 2;
 }
 
 message DeleteVirtioScsiControllerRequest {
@@ -290,17 +292,19 @@ message GetVirtioScsiControllerRequest {
 }
 
 message VirtioScsiControllerStatsRequest {
-    common.v1.ObjectKey controller_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
+    ];
 }
 
 message VirtioScsiControllerStatsResponse {
-    common.v1.ObjectKey id = 1;
-    VolumeStats stats = 2;
+    VolumeStats stats = 1;
 }
 
 message CreateVirtioScsiLunRequest {
-    VirtioScsiLun virtio_scsi_lun = 2 [(google.api.field_behavior) = REQUIRED];
-    string virtio_scsi_lun_id = 3;
+    VirtioScsiLun virtio_scsi_lun = 1 [(google.api.field_behavior) = REQUIRED];
+    string virtio_scsi_lun_id = 2;
 }
 
 message DeleteVirtioScsiLunRequest {
@@ -345,11 +349,13 @@ message GetVirtioScsiLunRequest {
 }
 
 message VirtioScsiLunStatsRequest {
-    common.v1.ObjectKey controller_id = 1;
-    common.v1.ObjectKey lun_id = 2;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
+    ];
+    common.v1.ObjectKey controller_id = 2;
 }
 
 message VirtioScsiLunStatsResponse {
-    common.v1.ObjectKey id = 1;
-    VolumeStats stats = 2;
+    VolumeStats stats = 1;
 }

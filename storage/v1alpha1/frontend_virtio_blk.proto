@@ -133,10 +133,12 @@ message GetVirtioBlkRequest {
 }
 
 message VirtioBlkStatsRequest {
-    common.v1.ObjectKey controller_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
+    ];
 }
 
 message VirtioBlkStatsResponse {
-    common.v1.ObjectKey id = 1;
-    VolumeStats stats = 2;
+    VolumeStats stats = 1;
 }

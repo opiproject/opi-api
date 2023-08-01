@@ -257,13 +257,17 @@ message GetNvmeRemoteControllerRequest {
 }
 
 message NvmeRemoteControllerResetRequest {
-    // object's unique identifier
-    string name = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
+    ];
 }
 
 message NvmeRemoteControllerStatsRequest {
-    // object's unique identifier
-    string name = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
+    ];
 }
 
 message NvmeRemoteControllerStatsResponse {
@@ -327,7 +331,6 @@ message ListNvmePathsResponse {
 }
 
 message GetNvmePathRequest {
-    // object's unique identifier
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
@@ -335,8 +338,10 @@ message GetNvmePathRequest {
 }
 
 message NvmePathStatsRequest {
-    // object's unique identifier
-    string name = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
+    ];
 }
 
 message NvmePathStatsResponse {
