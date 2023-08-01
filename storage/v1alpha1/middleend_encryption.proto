@@ -31,7 +31,7 @@ service MiddleendEncryptionService {
     }
     rpc DeleteEncryptedVolume (DeleteEncryptedVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=volumes}/{volume}"
+            delete: "/v1/{name=EncryptedVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -50,7 +50,7 @@ service MiddleendEncryptionService {
     }
     rpc GetEncryptedVolume    (GetEncryptedVolumeRequest)    returns (EncryptedVolume)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{volume}"
+            get: "/v1/{name=EncryptedVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }

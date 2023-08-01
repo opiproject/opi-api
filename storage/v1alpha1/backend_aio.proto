@@ -31,7 +31,7 @@ service AioVolumeService {
     }
     rpc DeleteAioVolume (DeleteAioVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=subsystems}/{subsystem}"
+            delete: "/v1/{name=AioVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -50,7 +50,7 @@ service AioVolumeService {
     }
     rpc GetAioVolume    (GetAioVolumeRequest)    returns (AioVolume)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{subsystem}"
+            get: "/v1/{name=AioVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }

@@ -31,7 +31,7 @@ service NvmeRemoteControllerService {
     }
     rpc DeleteNvmeRemoteController (DeleteNvmeRemoteControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=subsystems}/{subsystem}"
+            delete: "/v1/{name=NvmeRemoteControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -50,7 +50,7 @@ service NvmeRemoteControllerService {
     }
     rpc GetNvmeRemoteController    (GetNvmeRemoteControllerRequest)    returns (NvmeRemoteController)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{subsystem}"
+            get: "/v1/{name=NvmeRemoteControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -73,7 +73,7 @@ service NvmeRemoteControllerService {
     }
     rpc DeleteNvmePath (DeleteNvmePathRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=subsystems}/{subsystem}"
+            delete: "/v1/{name=NvmePaths/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -92,7 +92,7 @@ service NvmeRemoteControllerService {
     }
     rpc GetNvmePath    (GetNvmePathRequest)    returns (NvmePath)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{subsystem}"
+            get: "/v1/{name=NvmePaths/*}"
         };
         option (google.api.method_signature) = "name";
     }

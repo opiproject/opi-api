@@ -31,7 +31,7 @@ service FrontendVirtioScsiService {
     }
     rpc DeleteVirtioScsiTarget (DeleteVirtioScsiTargetRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=subsystems}/{virtioscsitarget}"
+            delete: "/v1/{name=VirtioScsiTargets/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -50,7 +50,7 @@ service FrontendVirtioScsiService {
     }
     rpc GetVirtioScsiTarget    (GetVirtioScsiTargetRequest)    returns (VirtioScsiTarget)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{virtioscsitarget}"
+            get: "/v1/{name=VirtioScsiTargets/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -65,7 +65,7 @@ service FrontendVirtioScsiService {
     }
     rpc DeleteVirtioScsiController (DeleteVirtioScsiControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=virtioscsictrls}/{virtioscsictrl}"
+            delete: "/v1/{name=VirtioScsiControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -84,7 +84,7 @@ service FrontendVirtioScsiService {
     }
     rpc GetVirtioScsiController    (GetVirtioScsiControllerRequest)    returns (VirtioScsiController)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{virtioscsictrl}"
+            get: "/v1/{name=VirtioScsiControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -99,7 +99,7 @@ service FrontendVirtioScsiService {
     }
     rpc DeleteVirtioScsiLun (DeleteVirtioScsiLunRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=virtioscsiluns}/{virtioscsilun}"
+            delete: "/v1/{name=VirtioScsiLuns/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -118,7 +118,7 @@ service FrontendVirtioScsiService {
     }
     rpc GetVirtioScsiLun    (GetVirtioScsiLunRequest)    returns (VirtioScsiLun)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{virtioscsilun}"
+            get: "/v1/{name=VirtioScsiLuns/*}"
         };
         option (google.api.method_signature) = "name";
     }

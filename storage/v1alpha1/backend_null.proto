@@ -31,7 +31,7 @@ service NullVolumeService {
     }
     rpc DeleteNullVolume (DeleteNullVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=subsystems}/{subsystem}"
+            delete: "/v1/{name=NullVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -50,7 +50,7 @@ service NullVolumeService {
     }
     rpc GetNullVolume    (GetNullVolumeRequest)    returns (NullVolume)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{subsystem}"
+            get: "/v1/{name=NullVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }

@@ -29,7 +29,7 @@ service MiddleendQosVolumeService {
     }
     rpc DeleteQosVolume(DeleteQosVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete : "/v1/{name=qosvolumes}/{qosvolume}"
+            delete: "/v1/{name=QosVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -48,7 +48,7 @@ service MiddleendQosVolumeService {
     }
     rpc GetQosVolume(GetQosVolumeRequest) returns (QosVolume) {
         option (google.api.http) = {
-            get : "/v1/{name=subsystems}/{qos_volume}"
+            get: "/v1/{name=QosVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }

@@ -33,7 +33,7 @@ service FrontendNvmeService {
     // Fails if there are any associated objects
     rpc DeleteNvmeSubsystem (DeleteNvmeSubsystemRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=subsystems}/{subsystem}"
+            delete: "/v1/{name=NvmeSubsystems/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -52,7 +52,7 @@ service FrontendNvmeService {
     }
     rpc GetNvmeSubsystem    (GetNvmeSubsystemRequest)    returns (NvmeSubsystem)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{subsystem}"
+            get: "/v1/{name=NvmeSubsystems/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -68,7 +68,7 @@ service FrontendNvmeService {
     // Fails if there are any associated objects
     rpc DeleteNvmeController (DeleteNvmeControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=controllers}/{controller}"
+            delete: "/v1/{name=NvmeControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -87,7 +87,7 @@ service FrontendNvmeService {
     }
     rpc GetNvmeController    (GetNvmeControllerRequest)    returns (NvmeController)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{controller}"
+            get: "/v1/{name=NvmeControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -102,7 +102,7 @@ service FrontendNvmeService {
     }
     rpc DeleteNvmeNamespace (DeleteNvmeNamespaceRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=namespaces}/{namespace}"
+            delete: "/v1/{name=NvmeNamespaces/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -121,7 +121,7 @@ service FrontendNvmeService {
     }
     rpc GetNvmeNamespace    (GetNvmeNamespaceRequest)    returns (NvmeNamespace)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{namespace}"
+            get: "/v1/{name=NvmeNamespaces/*}"
         };
         option (google.api.method_signature) = "name";
     }

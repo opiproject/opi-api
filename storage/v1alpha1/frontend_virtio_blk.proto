@@ -30,7 +30,7 @@ service FrontendVirtioBlkService {
     }
     rpc DeleteVirtioBlk (DeleteVirtioBlkRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=virtioblks}/{virtioblk}"
+            delete: "/v1/{name=VirtioBlks/*}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -49,7 +49,7 @@ service FrontendVirtioBlkService {
     }
     rpc GetVirtioBlk    (GetVirtioBlkRequest)    returns (VirtioBlk)    {
         option (google.api.http) = {
-            get: "/v1/{name=subsystems}/{virtioblk}"
+            get: "/v1/{name=VirtioBlks/*}"
         };
         option (google.api.method_signature) = "name";
     }
