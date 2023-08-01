@@ -291,8 +291,8 @@ message NvmeNamespaceStatus {
 }
 
 message CreateNvmeSubsystemRequest {
-    NvmeSubsystem nvme_subsystem = 2 [(google.api.field_behavior) = REQUIRED];
-    string nvme_subsystem_id = 3;
+    NvmeSubsystem nvme_subsystem = 1 [(google.api.field_behavior) = REQUIRED];
+    string nvme_subsystem_id = 2;
 }
 
 message DeleteNvmeSubsystemRequest {
@@ -345,8 +345,8 @@ message NvmeSubsystemStatsResponse {
 }
 
 message CreateNvmeControllerRequest {
-    NvmeController nvme_controller = 2 [(google.api.field_behavior) = REQUIRED];
-    string nvme_controller_id = 3;
+    NvmeController nvme_controller = 1 [(google.api.field_behavior) = REQUIRED];
+    string nvme_controller_id = 2;
 }
 
 message DeleteNvmeControllerRequest {

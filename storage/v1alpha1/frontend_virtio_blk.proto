@@ -87,8 +87,8 @@ message VirtioBlk {
 }
 
 message CreateVirtioBlkRequest {
-    VirtioBlk virtio_blk = 2 [(google.api.field_behavior) = REQUIRED];
-    string virtio_blk_id = 3;
+    VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
+    string virtio_blk_id = 2;
 }
 
 message DeleteVirtioBlkRequest {

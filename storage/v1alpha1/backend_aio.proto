@@ -79,8 +79,8 @@ message AioVolume {
 }
 
 message CreateAioVolumeRequest {
-    AioVolume aio_volume = 2 [(google.api.field_behavior) = REQUIRED];
-    string aio_volume_id = 3;
+    AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
+    string aio_volume_id = 2;
 }
 
 message DeleteAioVolumeRequest {

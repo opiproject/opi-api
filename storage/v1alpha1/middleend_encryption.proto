@@ -81,8 +81,8 @@ message EncryptedVolume {
 }
 
 message CreateEncryptedVolumeRequest {
-    EncryptedVolume encrypted_volume = 2 [(google.api.field_behavior) = REQUIRED];
-    string encrypted_volume_id = 3;
+    EncryptedVolume encrypted_volume = 1 [(google.api.field_behavior) = REQUIRED];
+    string encrypted_volume_id = 2;
 }
 
 message DeleteEncryptedVolumeRequest {

@@ -210,12 +210,11 @@ message NvmeRemoteNamespace {
 }
 
 message CreateNvmeRemoteControllerRequest {
-    NvmeRemoteController nvme_remote_controller = 2 [(google.api.field_behavior) = REQUIRED];
-    string nvme_remote_controller_id = 3;
+    NvmeRemoteController nvme_remote_controller = 1 [(google.api.field_behavior) = REQUIRED];
+    string nvme_remote_controller_id = 2;
 }
 
 message DeleteNvmeRemoteControllerRequest {
-    // object's unique identifier
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"

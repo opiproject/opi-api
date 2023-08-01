@@ -77,8 +77,8 @@ message QosVolume {
 }
 
 message CreateQosVolumeRequest {
-    QosVolume qos_volume = 2 [ (google.api.field_behavior) = REQUIRED ];
-    string qos_volume_id = 3;
+    QosVolume qos_volume = 1 [ (google.api.field_behavior) = REQUIRED ];
+    string qos_volume_id = 2;
 }
 
 message DeleteQosVolumeRequest {

@@ -77,8 +77,8 @@ message NullVolume {
 }
 
 message CreateNullVolumeRequest {
-    NullVolume null_volume = 2 [(google.api.field_behavior) = REQUIRED];
-    string null_volume_id = 3;
+    NullVolume null_volume = 1 [(google.api.field_behavior) = REQUIRED];
+    string null_volume_id = 2;
 }
 
 message DeleteNullVolumeRequest {
