@@ -137,7 +137,10 @@ message NvmeSubsystem {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    string name = 1;
+    string name = 1 [
+        (google.api.field_behavior) = OPTIONAL,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
+    ];
 
     // spec holds configurable values
     NvmeSubsystemSpec   spec   = 2;
@@ -179,7 +182,10 @@ message NvmeController {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    string name = 1;
+    string name = 1 [
+        (google.api.field_behavior) = OPTIONAL,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
+    ];
 
     // spec holds configurable values
     NvmeControllerSpec   spec   = 2;
@@ -240,7 +246,10 @@ message NvmeNamespace {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    string name = 1;
+    string name = 1 [
+        (google.api.field_behavior) = OPTIONAL,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
+    ];
 
     // spec holds configurable values
     NvmeNamespaceSpec   spec   = 2;
