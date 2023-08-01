@@ -75,7 +75,7 @@ message VirtioBlk {
     PciEndpoint pcie_id = 2;
 
     // The back/middle-end volume to back this controller
-    common.v1.ObjectKey volume_id = 3;
+    string volume_name_ref = 3 [ (google.api.field_behavior) = REQUIRED ];
 
     int64 max_io_qps = 4;
 

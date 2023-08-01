@@ -249,7 +249,6 @@ message ListNvmeRemoteControllersResponse {
 }
 
 message GetNvmeRemoteControllerRequest {
-    // object's unique identifier
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"

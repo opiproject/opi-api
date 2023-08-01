@@ -200,7 +200,10 @@ message NvmeControllerSpec {
     int32 nvme_controller_id  = 1;
 
     // subsystem information
-    string subsystem_name_ref = 2;
+    string subsystem_name_ref = 2 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
+    ];
 
     // xPU's PCI ID for the controller
     PciEndpoint pcie_id = 3;
@@ -260,7 +263,10 @@ message NvmeNamespace {
 
 message NvmeNamespaceSpec {
     // subsystem for this namespace
-    string subsystem_name_ref = 1;
+    string subsystem_name_ref = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
+    ];
 
     // NSID present to the host by the Nvme PCIe controller.
     // If not provided, then the controller will assign an unused NSID
@@ -279,7 +285,7 @@ message NvmeNamespaceSpec {
     common.v1.Uuid uuid = 5;
 
     // The back/middle-end volume to back this namespace.
-    string volume_name_ref = 6;
+    string volume_name_ref = 6 [ (google.api.field_behavior) = REQUIRED ];
 }
 
 message NvmeNamespaceStatus {
