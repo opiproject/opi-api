@@ -11,7 +11,6 @@ option java_outer_classname = "FrontendVirtioBlkProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "opicommon.proto";
-import "object_key.proto";
 
 import "google/api/client.proto";
 import "google/api/resource.proto";

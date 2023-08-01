@@ -37,7 +37,6 @@
 #include "google/api/annotations.pb.h"
 #include "google/api/field_behavior.pb.h"
 #include <google/protobuf/field_mask.pb.h>
-#include "object_key.pb.h"
 #include "opicommon.pb.h"
 #include "uuid.pb.h"
 // @@protoc_insertion_point(includes)

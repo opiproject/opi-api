@@ -17,7 +17,6 @@ import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
-import "object_key.proto";
 import "opicommon.proto";
 import "uuid.proto";
 

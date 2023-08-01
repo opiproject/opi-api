@@ -32,7 +32,6 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "opicommon.pb.h"
-#include "object_key.pb.h"
 #include "google/api/client.pb.h"
 #include "google/api/resource.pb.h"
 #include <google/protobuf/empty.pb.h>
