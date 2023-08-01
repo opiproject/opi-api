@@ -23,7 +23,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * subsystem information
    * </pre>
    *
-   * <code>string subsystem_name_ref = 2;</code>
+   * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subsystemNameRef.
    */
   java.lang.String getSubsystemNameRef();
@@ -32,7 +32,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * subsystem information
    * </pre>
    *
-   * <code>string subsystem_name_ref = 2;</code>
+   * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subsystemNameRef.
    */
   com.google.protobuf.ByteString

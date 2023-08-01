@@ -379,7 +379,7 @@ class NvmeRemoteController final :
     kIoQueuesCountFieldNumber = 5,
     kQueueSizeFieldNumber = 6,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -604,7 +604,7 @@ class NvmePath final :
     kTrsvcidFieldNumber = 6,
     kSourceTrsvcidFieldNumber = 9,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -618,7 +618,7 @@ class NvmePath final :
   std::string* _internal_mutable_name();
   public:
 
-  // string controller_name_ref = 2;
+  // string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_controller_name_ref();
   const std::string& controller_name_ref() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -875,7 +875,7 @@ class NvmeRemoteNamespace final :
     kEui64FieldNumber = 5,
     kNsidFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -889,7 +889,7 @@ class NvmeRemoteNamespace final :
   std::string* _internal_mutable_name();
   public:
 
-  // string controller_name_ref = 2;
+  // string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_controller_name_ref();
   const std::string& controller_name_ref() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1093,10 +1093,10 @@ class CreateNvmeRemoteControllerRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNvmeRemoteControllerIdFieldNumber = 3,
-    kNvmeRemoteControllerFieldNumber = 2,
+    kNvmeRemoteControllerIdFieldNumber = 2,
+    kNvmeRemoteControllerFieldNumber = 1,
   };
-  // string nvme_remote_controller_id = 3;
+  // string nvme_remote_controller_id = 2;
   void clear_nvme_remote_controller_id();
   const std::string& nvme_remote_controller_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1110,7 +1110,7 @@ class CreateNvmeRemoteControllerRequest final :
   std::string* _internal_mutable_nvme_remote_controller_id();
   public:
 
-  // .opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_nvme_remote_controller() const;
   private:
   bool _internal_has_nvme_remote_controller() const;
@@ -2114,7 +2114,7 @@ class NvmeRemoteControllerResetRequest final :
   enum : int {
     kNameFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2265,7 +2265,7 @@ class NvmeRemoteControllerStatsRequest final :
   enum : int {
     kNameFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3939,7 +3939,7 @@ class NvmePathStatsRequest final :
   enum : int {
     kNameFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4130,7 +4130,7 @@ class NvmePathStatsResponse final :
 #endif  // __GNUC__
 // NvmeRemoteController
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
 inline void NvmeRemoteController::clear_name() {
   name_.ClearToEmpty();
 }
@@ -4336,7 +4336,7 @@ inline void NvmeRemoteController::set_allocated_psk(std::string* psk) {
 
 // NvmePath
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
 inline void NvmePath::clear_name() {
   name_.ClearToEmpty();
 }
@@ -4387,7 +4387,7 @@ inline void NvmePath::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmePath.name)
 }
 
-// string controller_name_ref = 2;
+// string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmePath::clear_controller_name_ref() {
   controller_name_ref_.ClearToEmpty();
 }
@@ -4726,7 +4726,7 @@ inline void NvmePath::set_allocated_hostnqn(std::string* hostnqn) {
 
 // NvmeRemoteNamespace
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
 inline void NvmeRemoteNamespace::clear_name() {
   name_.ClearToEmpty();
 }
@@ -4777,7 +4777,7 @@ inline void NvmeRemoteNamespace::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeRemoteNamespace.name)
 }
 
-// string controller_name_ref = 2;
+// string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmeRemoteNamespace::clear_controller_name_ref() {
   controller_name_ref_.ClearToEmpty();
 }
@@ -5009,7 +5009,7 @@ inline void NvmeRemoteNamespace::set_allocated_uuid(::opi_api::common::v1::Uuid*
 
 // CreateNvmeRemoteControllerRequest
 
-// .opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];
+// .opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateNvmeRemoteControllerRequest::_internal_has_nvme_remote_controller() const {
   return this != internal_default_instance() && nvme_remote_controller_ != nullptr;
 }
@@ -5099,7 +5099,7 @@ inline void CreateNvmeRemoteControllerRequest::set_allocated_nvme_remote_control
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNvmeRemoteControllerRequest.nvme_remote_controller)
 }
 
-// string nvme_remote_controller_id = 3;
+// string nvme_remote_controller_id = 2;
 inline void CreateNvmeRemoteControllerRequest::clear_nvme_remote_controller_id() {
   nvme_remote_controller_id_.ClearToEmpty();
 }
@@ -5705,7 +5705,7 @@ inline void GetNvmeRemoteControllerRequest::set_allocated_name(std::string* name
 
 // NvmeRemoteControllerResetRequest
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmeRemoteControllerResetRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -5760,7 +5760,7 @@ inline void NvmeRemoteControllerResetRequest::set_allocated_name(std::string* na
 
 // NvmeRemoteControllerStatsRequest
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmeRemoteControllerStatsRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -6822,7 +6822,7 @@ inline void GetNvmePathRequest::set_allocated_name(std::string* name) {
 
 // NvmePathStatsRequest
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmePathStatsRequest::clear_name() {
   name_.ClearToEmpty();
 }

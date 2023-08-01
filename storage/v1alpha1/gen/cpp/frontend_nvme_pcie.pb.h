@@ -387,7 +387,7 @@ class NvmeSubsystem final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -939,7 +939,7 @@ class NvmeController final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1137,7 +1137,7 @@ class NvmeControllerSpec final :
     kCqesFieldNumber = 7,
     kMaxNamespacesFieldNumber = 8,
   };
-  // string subsystem_name_ref = 2;
+  // string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_subsystem_name_ref();
   const std::string& subsystem_name_ref() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1553,7 +1553,7 @@ class NvmeNamespace final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1747,7 +1747,7 @@ class NvmeNamespaceSpec final :
     kEui64FieldNumber = 4,
     kHostNsidFieldNumber = 2,
   };
-  // string subsystem_name_ref = 1;
+  // string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_subsystem_name_ref();
   const std::string& subsystem_name_ref() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1775,7 +1775,7 @@ class NvmeNamespaceSpec final :
   std::string* _internal_mutable_nguid();
   public:
 
-  // string volume_name_ref = 6;
+  // string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];
   void clear_volume_name_ref();
   const std::string& volume_name_ref() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2122,10 +2122,10 @@ class CreateNvmeSubsystemRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNvmeSubsystemIdFieldNumber = 3,
-    kNvmeSubsystemFieldNumber = 2,
+    kNvmeSubsystemIdFieldNumber = 2,
+    kNvmeSubsystemFieldNumber = 1,
   };
-  // string nvme_subsystem_id = 3;
+  // string nvme_subsystem_id = 2;
   void clear_nvme_subsystem_id();
   const std::string& nvme_subsystem_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2139,7 +2139,7 @@ class CreateNvmeSubsystemRequest final :
   std::string* _internal_mutable_nvme_subsystem_id();
   public:
 
-  // .opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_nvme_subsystem() const;
   private:
   bool _internal_has_nvme_subsystem() const;
@@ -3141,20 +3141,20 @@ class NvmeSubsystemStatsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemNameRefFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // string subsystem_name_ref = 1;
-  void clear_subsystem_name_ref();
-  const std::string& subsystem_name_ref() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_subsystem_name_ref(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_subsystem_name_ref();
-  PROTOBUF_NODISCARD std::string* release_subsystem_name_ref();
-  void set_allocated_subsystem_name_ref(std::string* subsystem_name_ref);
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_subsystem_name_ref() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_subsystem_name_ref(const std::string& value);
-  std::string* _internal_mutable_subsystem_name_ref();
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeSubsystemStatsRequest)
@@ -3164,7 +3164,7 @@ class NvmeSubsystemStatsRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subsystem_name_ref_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -3447,10 +3447,10 @@ class CreateNvmeControllerRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNvmeControllerIdFieldNumber = 3,
-    kNvmeControllerFieldNumber = 2,
+    kNvmeControllerIdFieldNumber = 2,
+    kNvmeControllerFieldNumber = 1,
   };
-  // string nvme_controller_id = 3;
+  // string nvme_controller_id = 2;
   void clear_nvme_controller_id();
   const std::string& nvme_controller_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3464,7 +3464,7 @@ class CreateNvmeControllerRequest final :
   std::string* _internal_mutable_nvme_controller_id();
   public:
 
-  // .opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_nvme_controller() const;
   private:
   bool _internal_has_nvme_controller() const;
@@ -4468,7 +4468,7 @@ class NvmeControllerStatsRequest final :
   enum : int {
     kNameFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4617,24 +4617,9 @@ class NvmeControllerStatsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kStatsFieldNumber = 2,
+    kStatsFieldNumber = 1,
   };
-  // string name = 1;
-  void clear_name();
-  const std::string& name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name();
-  PROTOBUF_NODISCARD std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
-  // .opi_api.storage.v1.VolumeStats stats = 2;
+  // .opi_api.storage.v1.VolumeStats stats = 1;
   bool has_stats() const;
   private:
   bool _internal_has_stats() const;
@@ -4659,7 +4644,6 @@ class NvmeControllerStatsResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::storage::v1::VolumeStats* stats_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -4788,10 +4772,10 @@ class CreateNvmeNamespaceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNvmeNamespaceIdFieldNumber = 3,
-    kNvmeNamespaceFieldNumber = 2,
+    kNvmeNamespaceIdFieldNumber = 2,
+    kNvmeNamespaceFieldNumber = 1,
   };
-  // string nvme_namespace_id = 3;
+  // string nvme_namespace_id = 2;
   void clear_nvme_namespace_id();
   const std::string& nvme_namespace_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4805,7 +4789,7 @@ class CreateNvmeNamespaceRequest final :
   std::string* _internal_mutable_nvme_namespace_id();
   public:
 
-  // .opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_nvme_namespace() const;
   private:
   bool _internal_has_nvme_namespace() const;
@@ -5809,7 +5793,7 @@ class NvmeNamespaceStatsRequest final :
   enum : int {
     kNameFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -5958,24 +5942,9 @@ class NvmeNamespaceStatsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kStatsFieldNumber = 2,
+    kStatsFieldNumber = 1,
   };
-  // string name = 1;
-  void clear_name();
-  const std::string& name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name();
-  PROTOBUF_NODISCARD std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
-  // .opi_api.storage.v1.VolumeStats stats = 2;
+  // .opi_api.storage.v1.VolumeStats stats = 1;
   bool has_stats() const;
   private:
   bool _internal_has_stats() const;
@@ -6000,7 +5969,6 @@ class NvmeNamespaceStatsResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::storage::v1::VolumeStats* stats_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -6016,7 +5984,7 @@ class NvmeNamespaceStatsResponse final :
 #endif  // __GNUC__
 // NvmeSubsystem
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
 inline void NvmeSubsystem::clear_name() {
   name_.ClearToEmpty();
 }
@@ -6534,7 +6502,7 @@ inline void NvmeSubsystemStatus::set_allocated_fru_guid(std::string* fru_guid) {
 
 // NvmeController
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
 inline void NvmeController::clear_name() {
   name_.ClearToEmpty();
 }
@@ -6789,7 +6757,7 @@ inline void NvmeControllerSpec::set_nvme_controller_id(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerSpec.nvme_controller_id)
 }
 
-// string subsystem_name_ref = 2;
+// string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmeControllerSpec::clear_subsystem_name_ref() {
   subsystem_name_ref_.ClearToEmpty();
 }
@@ -7226,7 +7194,7 @@ inline void NvmeControllerStatus::set_active(bool value) {
 
 // NvmeNamespace
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
 inline void NvmeNamespace::clear_name() {
   name_.ClearToEmpty();
 }
@@ -7461,7 +7429,7 @@ inline void NvmeNamespace::set_allocated_status(::opi_api::storage::v1::NvmeName
 
 // NvmeNamespaceSpec
 
-// string subsystem_name_ref = 1;
+// string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmeNamespaceSpec::clear_subsystem_name_ref() {
   subsystem_name_ref_.ClearToEmpty();
 }
@@ -7689,7 +7657,7 @@ inline void NvmeNamespaceSpec::set_allocated_uuid(::opi_api::common::v1::Uuid* u
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeNamespaceSpec.uuid)
 }
 
-// string volume_name_ref = 6;
+// string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];
 inline void NvmeNamespaceSpec::clear_volume_name_ref() {
   volume_name_ref_.ClearToEmpty();
 }
@@ -7788,7 +7756,7 @@ inline void NvmeNamespaceStatus::set_pci_oper_state(::opi_api::storage::v1::Nvme
 
 // CreateNvmeSubsystemRequest
 
-// .opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];
+// .opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateNvmeSubsystemRequest::_internal_has_nvme_subsystem() const {
   return this != internal_default_instance() && nvme_subsystem_ != nullptr;
 }
@@ -7878,7 +7846,7 @@ inline void CreateNvmeSubsystemRequest::set_allocated_nvme_subsystem(::opi_api::
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNvmeSubsystemRequest.nvme_subsystem)
 }
 
-// string nvme_subsystem_id = 3;
+// string nvme_subsystem_id = 2;
 inline void CreateNvmeSubsystemRequest::clear_nvme_subsystem_id() {
   nvme_subsystem_id_.ClearToEmpty();
 }
@@ -8484,55 +8452,55 @@ inline void GetNvmeSubsystemRequest::set_allocated_name(std::string* name) {
 
 // NvmeSubsystemStatsRequest
 
-// string subsystem_name_ref = 1;
-inline void NvmeSubsystemStatsRequest::clear_subsystem_name_ref() {
-  subsystem_name_ref_.ClearToEmpty();
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void NvmeSubsystemStatsRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& NvmeSubsystemStatsRequest::subsystem_name_ref() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeSubsystemStatsRequest.subsystem_name_ref)
-  return _internal_subsystem_name_ref();
+inline const std::string& NvmeSubsystemStatsRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeSubsystemStatsRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void NvmeSubsystemStatsRequest::set_subsystem_name_ref(ArgT0&& arg0, ArgT... args) {
+void NvmeSubsystemStatsRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- subsystem_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeSubsystemStatsRequest.subsystem_name_ref)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeSubsystemStatsRequest.name)
 }
-inline std::string* NvmeSubsystemStatsRequest::mutable_subsystem_name_ref() {
-  std::string* _s = _internal_mutable_subsystem_name_ref();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeSubsystemStatsRequest.subsystem_name_ref)
+inline std::string* NvmeSubsystemStatsRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeSubsystemStatsRequest.name)
   return _s;
 }
-inline const std::string& NvmeSubsystemStatsRequest::_internal_subsystem_name_ref() const {
-  return subsystem_name_ref_.Get();
+inline const std::string& NvmeSubsystemStatsRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void NvmeSubsystemStatsRequest::_internal_set_subsystem_name_ref(const std::string& value) {
+inline void NvmeSubsystemStatsRequest::_internal_set_name(const std::string& value) {
   
-  subsystem_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* NvmeSubsystemStatsRequest::_internal_mutable_subsystem_name_ref() {
+inline std::string* NvmeSubsystemStatsRequest::_internal_mutable_name() {
   
-  return subsystem_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* NvmeSubsystemStatsRequest::release_subsystem_name_ref() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeSubsystemStatsRequest.subsystem_name_ref)
-  return subsystem_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* NvmeSubsystemStatsRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeSubsystemStatsRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void NvmeSubsystemStatsRequest::set_allocated_subsystem_name_ref(std::string* subsystem_name_ref) {
-  if (subsystem_name_ref != nullptr) {
+inline void NvmeSubsystemStatsRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  subsystem_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subsystem_name_ref,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (subsystem_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    subsystem_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeSubsystemStatsRequest.subsystem_name_ref)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeSubsystemStatsRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -8629,7 +8597,7 @@ inline void NvmeSubsystemStatsResponse::set_allocated_stats(::opi_api::storage::
 
 // CreateNvmeControllerRequest
 
-// .opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];
+// .opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateNvmeControllerRequest::_internal_has_nvme_controller() const {
   return this != internal_default_instance() && nvme_controller_ != nullptr;
 }
@@ -8719,7 +8687,7 @@ inline void CreateNvmeControllerRequest::set_allocated_nvme_controller(::opi_api
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNvmeControllerRequest.nvme_controller)
 }
 
-// string nvme_controller_id = 3;
+// string nvme_controller_id = 2;
 inline void CreateNvmeControllerRequest::clear_nvme_controller_id() {
   nvme_controller_id_.ClearToEmpty();
 }
@@ -9325,7 +9293,7 @@ inline void GetNvmeControllerRequest::set_allocated_name(std::string* name) {
 
 // NvmeControllerStatsRequest
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmeControllerStatsRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -9380,58 +9348,7 @@ inline void NvmeControllerStatsRequest::set_allocated_name(std::string* name) {
 
 // NvmeControllerStatsResponse
 
-// string name = 1;
-inline void NvmeControllerStatsResponse::clear_name() {
-  name_.ClearToEmpty();
-}
-inline const std::string& NvmeControllerStatsResponse::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerStatsResponse.name)
-  return _internal_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NvmeControllerStatsResponse::set_name(ArgT0&& arg0, ArgT... args) {
- 
- name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerStatsResponse.name)
-}
-inline std::string* NvmeControllerStatsResponse::mutable_name() {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeControllerStatsResponse.name)
-  return _s;
-}
-inline const std::string& NvmeControllerStatsResponse::_internal_name() const {
-  return name_.Get();
-}
-inline void NvmeControllerStatsResponse::_internal_set_name(const std::string& value) {
-  
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NvmeControllerStatsResponse::_internal_mutable_name() {
-  
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NvmeControllerStatsResponse::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeControllerStatsResponse.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NvmeControllerStatsResponse::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeControllerStatsResponse.name)
-}
-
-// .opi_api.storage.v1.VolumeStats stats = 2;
+// .opi_api.storage.v1.VolumeStats stats = 1;
 inline bool NvmeControllerStatsResponse::_internal_has_stats() const {
   return this != internal_default_instance() && stats_ != nullptr;
 }
@@ -9521,7 +9438,7 @@ inline void NvmeControllerStatsResponse::set_allocated_stats(::opi_api::storage:
 
 // CreateNvmeNamespaceRequest
 
-// .opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];
+// .opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateNvmeNamespaceRequest::_internal_has_nvme_namespace() const {
   return this != internal_default_instance() && nvme_namespace_ != nullptr;
 }
@@ -9611,7 +9528,7 @@ inline void CreateNvmeNamespaceRequest::set_allocated_nvme_namespace(::opi_api::
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNvmeNamespaceRequest.nvme_namespace)
 }
 
-// string nvme_namespace_id = 3;
+// string nvme_namespace_id = 2;
 inline void CreateNvmeNamespaceRequest::clear_nvme_namespace_id() {
   nvme_namespace_id_.ClearToEmpty();
 }
@@ -10217,7 +10134,7 @@ inline void GetNvmeNamespaceRequest::set_allocated_name(std::string* name) {
 
 // NvmeNamespaceStatsRequest
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
 inline void NvmeNamespaceStatsRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -10272,58 +10189,7 @@ inline void NvmeNamespaceStatsRequest::set_allocated_name(std::string* name) {
 
 // NvmeNamespaceStatsResponse
 
-// string name = 1;
-inline void NvmeNamespaceStatsResponse::clear_name() {
-  name_.ClearToEmpty();
-}
-inline const std::string& NvmeNamespaceStatsResponse::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeNamespaceStatsResponse.name)
-  return _internal_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NvmeNamespaceStatsResponse::set_name(ArgT0&& arg0, ArgT... args) {
- 
- name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeNamespaceStatsResponse.name)
-}
-inline std::string* NvmeNamespaceStatsResponse::mutable_name() {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeNamespaceStatsResponse.name)
-  return _s;
-}
-inline const std::string& NvmeNamespaceStatsResponse::_internal_name() const {
-  return name_.Get();
-}
-inline void NvmeNamespaceStatsResponse::_internal_set_name(const std::string& value) {
-  
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NvmeNamespaceStatsResponse::_internal_mutable_name() {
-  
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NvmeNamespaceStatsResponse::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeNamespaceStatsResponse.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NvmeNamespaceStatsResponse::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeNamespaceStatsResponse.name)
-}
-
-// .opi_api.storage.v1.VolumeStats stats = 2;
+// .opi_api.storage.v1.VolumeStats stats = 1;
 inline bool NvmeNamespaceStatsResponse::_internal_has_stats() const {
   return this != internal_default_instance() && stats_ != nullptr;
 }

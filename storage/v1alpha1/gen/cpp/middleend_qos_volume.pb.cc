@@ -115,7 +115,7 @@ struct GetQosVolumeRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetQosVolumeRequestDefaultTypeInternal _GetQosVolumeRequest_default_instance_;
 constexpr QosVolumeStatsRequest::QosVolumeStatsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : volume_id_(nullptr){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct QosVolumeStatsRequestDefaultTypeInternal {
   constexpr QosVolumeStatsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -127,8 +127,7 @@ struct QosVolumeStatsRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT QosVolumeStatsRequestDefaultTypeInternal _QosVolumeStatsRequest_default_instance_;
 constexpr QosVolumeStatsResponse::QosVolumeStatsResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , stats_(nullptr){}
+  : stats_(nullptr){}
 struct QosVolumeStatsResponseDefaultTypeInternal {
   constexpr QosVolumeStatsResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -211,14 +210,13 @@ const uint32_t TableStruct_middleend_5fqos_5fvolume_2eproto::offsets[] PROTOBUF_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolumeStatsRequest, volume_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolumeStatsRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolumeStatsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolumeStatsResponse, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolumeStatsResponse, stats_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -252,59 +250,59 @@ const char descriptor_table_protodef_middleend_5fqos_5fvolume_2eproto[] PROTOBUF
   "/resource.proto\032\033google/protobuf/empty.p"
   "roto\032\034google/api/annotations.proto\032\037goog"
   "le/api/field_behavior.proto\032 google/prot"
-  "obuf/field_mask.proto\"\345\001\n\tQosVolume\022\014\n\004n"
-  "ame\030\001 \001(\t\022/\n\tvolume_id\030\002 \001(\0132\034.opi_api.c"
-  "ommon.v1.ObjectKey\022/\n\tmin_limit\030\003 \001(\0132\034."
-  "opi_api.storage.v1.QosLimit\022/\n\tmax_limit"
-  "\030\004 \001(\0132\034.opi_api.storage.v1.QosLimit:7\352A"
-  "4\n storage.opiproject.org/QosVolume\022\020vol"
-  "umes/{volume}\"g\n\026CreateQosVolumeRequest\022"
-  "6\n\nqos_volume\030\002 \001(\0132\035.opi_api.storage.v1"
-  ".QosVolumeB\003\340A\002\022\025\n\rqos_volume_id\030\003 \001(\t\"c"
-  "\n\026DeleteQosVolumeRequest\0222\n\004name\030\001 \001(\tB$"
-  "\340A\002\372A\036\n\034opi_api.storage.v1/QosVolume\022\025\n\r"
-  "allow_missing\030\002 \001(\010\"\223\001\n\026UpdateQosVolumeR"
-  "equest\0221\n\nqos_volume\030\001 \001(\0132\035.opi_api.sto"
-  "rage.v1.QosVolume\022/\n\013update_mask\030\002 \001(\0132\032"
-  ".google.protobuf.FieldMask\022\025\n\rallow_miss"
-  "ing\030\003 \001(\010\"t\n\025ListQosVolumesRequest\0224\n\006pa"
-  "rent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/Q"
-  "osVolume\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
-  "n\030\003 \001(\t\"e\n\026ListQosVolumesResponse\0222\n\013qos"
-  "_volumes\030\001 \003(\0132\035.opi_api.storage.v1.QosV"
-  "olume\022\027\n\017next_page_token\030\002 \001(\t\"I\n\023GetQos"
-  "VolumeRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi"
-  "_api.storage.v1/QosVolume\"H\n\025QosVolumeSt"
-  "atsRequest\022/\n\tvolume_id\030\001 \001(\0132\034.opi_api."
-  "common.v1.ObjectKey\"r\n\026QosVolumeStatsRes"
-  "ponse\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Ob"
-  "jectKey\022.\n\005stats\030\002 \001(\0132\037.opi_api.storage"
-  ".v1.VolumeStats2\366\006\n\031MiddleendQosVolumeSe"
-  "rvice\022\230\001\n\017CreateQosVolume\022*.opi_api.stor"
-  "age.v1.CreateQosVolumeRequest\032\035.opi_api."
-  "storage.v1.QosVolume\":\202\323\344\223\002\031\"\013/v1/volume"
-  "s:\nqos_volume\332A\030qos_volume,qos_volume_id"
-  "\022\207\001\n\017DeleteQosVolume\022*.opi_api.storage.v"
-  "1.DeleteQosVolumeRequest\032\026.google.protob"
-  "uf.Empty\"0\202\323\344\223\002#*!/v1/{name=qosvolumes}/"
-  "{qosvolume}\332A\004name\022\253\001\n\017UpdateQosVolume\022*"
-  ".opi_api.storage.v1.UpdateQosVolumeReque"
-  "st\032\035.opi_api.storage.v1.QosVolume\"M\202\323\344\223\002"
-  ".2 /v1/{qos_volume.name=subsystems}:\nqos"
-  "_volume\332A\026qos_volume,update_mask\022\216\001\n\016Lis"
-  "tQosVolumes\022).opi_api.storage.v1.ListQos"
-  "VolumesRequest\032*.opi_api.storage.v1.List"
-  "QosVolumesResponse\"%\202\323\344\223\002\026\022\024/v1/{parent="
-  "volumes}\332A\006parent\022\211\001\n\014GetQosVolume\022\'.opi"
-  "_api.storage.v1.GetQosVolumeRequest\032\035.op"
-  "i_api.storage.v1.QosVolume\"1\202\323\344\223\002$\022\"/v1/"
-  "{name=subsystems}/{qos_volume}\332A\004name\022i\n"
-  "\016QosVolumeStats\022).opi_api.storage.v1.Qos"
-  "VolumeStatsRequest\032*.opi_api.storage.v1."
-  "QosVolumeStatsResponse\"\000Bf\n\022opi_api.stor"
-  "age.v1B\027MiddleendQosVolumeProtoP\001Z5githu"
-  "b.com/opiproject/opi-api/storage/v1alpha"
-  "1/gen/gob\006proto3"
+  "obuf/field_mask.proto\"\213\002\n\tQosVolume\0222\n\004n"
+  "ame\030\001 \001(\tB$\340A\003\372A\036\n\034opi_api.storage.v1/Qo"
+  "sVolume\022/\n\tvolume_id\030\002 \001(\0132\034.opi_api.com"
+  "mon.v1.ObjectKey\022/\n\tmin_limit\030\003 \001(\0132\034.op"
+  "i_api.storage.v1.QosLimit\022/\n\tmax_limit\030\004"
+  " \001(\0132\034.opi_api.storage.v1.QosLimit:7\352A4\n"
+  " storage.opiproject.org/QosVolume\022\020volum"
+  "es/{volume}\"g\n\026CreateQosVolumeRequest\0226\n"
+  "\nqos_volume\030\001 \001(\0132\035.opi_api.storage.v1.Q"
+  "osVolumeB\003\340A\002\022\025\n\rqos_volume_id\030\002 \001(\t\"c\n\026"
+  "DeleteQosVolumeRequest\0222\n\004name\030\001 \001(\tB$\340A"
+  "\002\372A\036\n\034opi_api.storage.v1/QosVolume\022\025\n\ral"
+  "low_missing\030\002 \001(\010\"\223\001\n\026UpdateQosVolumeReq"
+  "uest\0221\n\nqos_volume\030\001 \001(\0132\035.opi_api.stora"
+  "ge.v1.QosVolume\022/\n\013update_mask\030\002 \001(\0132\032.g"
+  "oogle.protobuf.FieldMask\022\025\n\rallow_missin"
+  "g\030\003 \001(\010\"t\n\025ListQosVolumesRequest\0224\n\006pare"
+  "nt\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/Qos"
+  "Volume\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
+  "\003 \001(\t\"e\n\026ListQosVolumesResponse\0222\n\013qos_v"
+  "olumes\030\001 \003(\0132\035.opi_api.storage.v1.QosVol"
+  "ume\022\027\n\017next_page_token\030\002 \001(\t\"I\n\023GetQosVo"
+  "lumeRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_a"
+  "pi.storage.v1/QosVolume\"K\n\025QosVolumeStat"
+  "sRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api."
+  "storage.v1/QosVolume\"H\n\026QosVolumeStatsRe"
+  "sponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.storage."
+  "v1.VolumeStats2\366\006\n\031MiddleendQosVolumeSer"
+  "vice\022\230\001\n\017CreateQosVolume\022*.opi_api.stora"
+  "ge.v1.CreateQosVolumeRequest\032\035.opi_api.s"
+  "torage.v1.QosVolume\":\202\323\344\223\002\031\"\013/v1/volumes"
+  ":\nqos_volume\332A\030qos_volume,qos_volume_id\022"
+  "\207\001\n\017DeleteQosVolume\022*.opi_api.storage.v1"
+  ".DeleteQosVolumeRequest\032\026.google.protobu"
+  "f.Empty\"0\202\323\344\223\002#*!/v1/{name=qosvolumes}/{"
+  "qosvolume}\332A\004name\022\253\001\n\017UpdateQosVolume\022*."
+  "opi_api.storage.v1.UpdateQosVolumeReques"
+  "t\032\035.opi_api.storage.v1.QosVolume\"M\202\323\344\223\002."
+  "2 /v1/{qos_volume.name=subsystems}:\nqos_"
+  "volume\332A\026qos_volume,update_mask\022\216\001\n\016List"
+  "QosVolumes\022).opi_api.storage.v1.ListQosV"
+  "olumesRequest\032*.opi_api.storage.v1.ListQ"
+  "osVolumesResponse\"%\202\323\344\223\002\026\022\024/v1/{parent=v"
+  "olumes}\332A\006parent\022\211\001\n\014GetQosVolume\022\'.opi_"
+  "api.storage.v1.GetQosVolumeRequest\032\035.opi"
+  "_api.storage.v1.QosVolume\"1\202\323\344\223\002$\022\"/v1/{"
+  "name=subsystems}/{qos_volume}\332A\004name\022i\n\016"
+  "QosVolumeStats\022).opi_api.storage.v1.QosV"
+  "olumeStatsRequest\032*.opi_api.storage.v1.Q"
+  "osVolumeStatsResponse\"\000Bf\n\022opi_api.stora"
+  "ge.v1B\027MiddleendQosVolumeProtoP\001Z5github"
+  ".com/opiproject/opi-api/storage/v1alpha1"
+  "/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_middleend_5fqos_5fvolume_2eproto_deps[8] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -318,7 +316,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_middleend_5fqos_5fvolume_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_middleend_5fqos_5fvolume_2eproto = {
-  false, false, 2336, descriptor_table_protodef_middleend_5fqos_5fvolume_2eproto, "middleend_qos_volume.proto", 
+  false, false, 2335, descriptor_table_protodef_middleend_5fqos_5fvolume_2eproto, "middleend_qos_volume.proto", 
   &descriptor_table_middleend_5fqos_5fvolume_2eproto_once, descriptor_table_middleend_5fqos_5fvolume_2eproto_deps, 8, 9,
   schemas, file_default_instances, TableStruct_middleend_5fqos_5fvolume_2eproto::offsets,
   file_level_metadata_middleend_5fqos_5fvolume_2eproto, file_level_enum_descriptors_middleend_5fqos_5fvolume_2eproto, file_level_service_descriptors_middleend_5fqos_5fvolume_2eproto,
@@ -474,7 +472,7 @@ const char* QosVolume::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1;
+      // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
@@ -537,7 +535,7 @@ uint8_t* QosVolume::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
@@ -587,7 +585,7 @@ size_t QosVolume::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -777,17 +775,17 @@ const char* CreateQosVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.storage.v1.QosVolume qos_volume = 2 [(.google.api.field_behavior) = REQUIRED];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_qos_volume(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string qos_volume_id = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // string qos_volume_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_qos_volume_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.CreateQosVolumeRequest.qos_volume_id"));
@@ -824,22 +822,22 @@ uint8_t* CreateQosVolumeRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.storage.v1.QosVolume qos_volume = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_qos_volume()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::qos_volume(this), target, stream);
+        1, _Internal::qos_volume(this), target, stream);
   }
 
-  // string qos_volume_id = 3;
+  // string qos_volume_id = 2;
   if (!this->_internal_qos_volume_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_qos_volume_id().data(), static_cast<int>(this->_internal_qos_volume_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "opi_api.storage.v1.CreateQosVolumeRequest.qos_volume_id");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_qos_volume_id(), target);
+        2, this->_internal_qos_volume_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -858,14 +856,14 @@ size_t CreateQosVolumeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string qos_volume_id = 3;
+  // string qos_volume_id = 2;
   if (!this->_internal_qos_volume_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_qos_volume_id());
   }
 
-  // .opi_api.storage.v1.QosVolume qos_volume = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_qos_volume()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2157,19 +2155,8 @@ void GetQosVolumeRequest::InternalSwap(GetQosVolumeRequest* other) {
 
 class QosVolumeStatsRequest::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& volume_id(const QosVolumeStatsRequest* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-QosVolumeStatsRequest::_Internal::volume_id(const QosVolumeStatsRequest* msg) {
-  return *msg->volume_id_;
-}
-void QosVolumeStatsRequest::clear_volume_id() {
-  if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
-    delete volume_id_;
-  }
-  volume_id_ = nullptr;
-}
 QosVolumeStatsRequest::QosVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2182,16 +2169,22 @@ QosVolumeStatsRequest::QosVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 QosVolumeStatsRequest::QosVolumeStatsRequest(const QosVolumeStatsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_volume_id()) {
-    volume_id_ = new ::opi_api::common::v1::ObjectKey(*from.volume_id_);
-  } else {
-    volume_id_ = nullptr;
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.QosVolumeStatsRequest)
 }
 
 inline void QosVolumeStatsRequest::SharedCtor() {
-volume_id_ = nullptr;
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 QosVolumeStatsRequest::~QosVolumeStatsRequest() {
@@ -2203,7 +2196,7 @@ QosVolumeStatsRequest::~QosVolumeStatsRequest() {
 
 inline void QosVolumeStatsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete volume_id_;
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void QosVolumeStatsRequest::ArenaDtor(void* object) {
@@ -2222,10 +2215,7 @@ void QosVolumeStatsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
-    delete volume_id_;
-  }
-  volume_id_ = nullptr;
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2235,10 +2225,12 @@ const char* QosVolumeStatsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey volume_id = 1;
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_volume_id(), ptr);
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.QosVolumeStatsRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2272,12 +2264,14 @@ uint8_t* QosVolumeStatsRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  if (this->_internal_has_volume_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::volume_id(this), target, stream);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.QosVolumeStatsRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2296,11 +2290,11 @@ size_t QosVolumeStatsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  if (this->_internal_has_volume_id()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *volume_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2325,8 +2319,8 @@ void QosVolumeStatsRequest::MergeFrom(const QosVolumeStatsRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_volume_id()) {
-    _internal_mutable_volume_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_volume_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2344,8 +2338,14 @@ bool QosVolumeStatsRequest::IsInitialized() const {
 
 void QosVolumeStatsRequest::InternalSwap(QosVolumeStatsRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(volume_id_, other->volume_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata QosVolumeStatsRequest::GetMetadata() const {
@@ -2358,23 +2358,12 @@ void QosVolumeStatsRequest::InternalSwap(QosVolumeStatsRequest* other) {
 
 class QosVolumeStatsResponse::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const QosVolumeStatsResponse* msg);
   static const ::opi_api::storage::v1::VolumeStats& stats(const QosVolumeStatsResponse* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-QosVolumeStatsResponse::_Internal::id(const QosVolumeStatsResponse* msg) {
-  return *msg->id_;
-}
 const ::opi_api::storage::v1::VolumeStats&
 QosVolumeStatsResponse::_Internal::stats(const QosVolumeStatsResponse* msg) {
   return *msg->stats_;
-}
-void QosVolumeStatsResponse::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
 }
 void QosVolumeStatsResponse::clear_stats() {
   if (GetArenaForAllocation() == nullptr && stats_ != nullptr) {
@@ -2394,11 +2383,6 @@ QosVolumeStatsResponse::QosVolumeStatsResponse(::PROTOBUF_NAMESPACE_ID::Arena* a
 QosVolumeStatsResponse::QosVolumeStatsResponse(const QosVolumeStatsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   if (from._internal_has_stats()) {
     stats_ = new ::opi_api::storage::v1::VolumeStats(*from.stats_);
   } else {
@@ -2408,10 +2392,7 @@ QosVolumeStatsResponse::QosVolumeStatsResponse(const QosVolumeStatsResponse& fro
 }
 
 inline void QosVolumeStatsResponse::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&stats_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(stats_));
+stats_ = nullptr;
 }
 
 QosVolumeStatsResponse::~QosVolumeStatsResponse() {
@@ -2423,7 +2404,6 @@ QosVolumeStatsResponse::~QosVolumeStatsResponse() {
 
 inline void QosVolumeStatsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete stats_;
 }
 
@@ -2443,10 +2423,6 @@ void QosVolumeStatsResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   if (GetArenaForAllocation() == nullptr && stats_ != nullptr) {
     delete stats_;
   }
@@ -2460,17 +2436,9 @@ const char* QosVolumeStatsResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.storage.v1.VolumeStats stats = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.storage.v1.VolumeStats stats = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_stats(), ptr);
           CHK_(ptr);
         } else
@@ -2505,20 +2473,12 @@ uint8_t* QosVolumeStatsResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // .opi_api.storage.v1.VolumeStats stats = 2;
+  // .opi_api.storage.v1.VolumeStats stats = 1;
   if (this->_internal_has_stats()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::stats(this), target, stream);
+        1, _Internal::stats(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2537,14 +2497,7 @@ size_t QosVolumeStatsResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // .opi_api.storage.v1.VolumeStats stats = 2;
+  // .opi_api.storage.v1.VolumeStats stats = 1;
   if (this->_internal_has_stats()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2573,9 +2526,6 @@ void QosVolumeStatsResponse::MergeFrom(const QosVolumeStatsResponse& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
   if (from._internal_has_stats()) {
     _internal_mutable_stats()->::opi_api::storage::v1::VolumeStats::MergeFrom(from._internal_stats());
   }
@@ -2596,12 +2546,7 @@ bool QosVolumeStatsResponse::IsInitialized() const {
 void QosVolumeStatsResponse::InternalSwap(QosVolumeStatsResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(QosVolumeStatsResponse, stats_)
-      + sizeof(QosVolumeStatsResponse::stats_)
-      - PROTOBUF_FIELD_OFFSET(QosVolumeStatsResponse, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+  swap(stats_, other->stats_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata QosVolumeStatsResponse::GetMetadata() const {

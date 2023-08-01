@@ -74,61 +74,60 @@ public final class FrontendVirtioBlkProto {
       "resource.proto\032\033google/protobuf/empty.pr" +
       "oto\032\034google/api/annotations.proto\032\037googl" +
       "e/api/field_behavior.proto\032 google/proto" +
-      "buf/field_mask.proto\"\253\002\n\tVirtioBlk\022\014\n\004na" +
-      "me\030\001 \001(\t\0220\n\007pcie_id\030\002 \001(\0132\037.opi_api.stor" +
-      "age.v1.PciEndpoint\022/\n\tvolume_id\030\003 \001(\0132\034." +
-      "opi_api.common.v1.ObjectKey\022\022\n\nmax_io_qp" +
-      "s\030\004 \001(\003\022/\n\tmin_limit\030\005 \001(\0132\034.opi_api.sto" +
-      "rage.v1.QosLimit\022/\n\tmax_limit\030\006 \001(\0132\034.op" +
-      "i_api.storage.v1.QosLimit:7\352A4\n storage." +
-      "opiproject.org/VirtioBlk\022\020volumes/{volum" +
-      "e}\"g\n\026CreateVirtioBlkRequest\0226\n\nvirtio_b" +
-      "lk\030\002 \001(\0132\035.opi_api.storage.v1.VirtioBlkB" +
-      "\003\340A\002\022\025\n\rvirtio_blk_id\030\003 \001(\t\"c\n\026DeleteVir" +
-      "tioBlkRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi" +
-      "_api.storage.v1/VirtioBlk\022\025\n\rallow_missi" +
-      "ng\030\002 \001(\010\"\223\001\n\026UpdateVirtioBlkRequest\0221\n\nv" +
-      "irtio_blk\030\001 \001(\0132\035.opi_api.storage.v1.Vir" +
-      "tioBlk\022/\n\013update_mask\030\002 \001(\0132\032.google.pro" +
-      "tobuf.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\"t" +
-      "\n\025ListVirtioBlksRequest\0224\n\006parent\030\001 \001(\tB" +
-      "$\340A\002\372A\036\n\034opi_api.storage.v1/VirtioBlk\022\021\n" +
-      "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"e\n\026" +
-      "ListVirtioBlksResponse\0222\n\013virtio_blks\030\001 " +
-      "\003(\0132\035.opi_api.storage.v1.VirtioBlk\022\027\n\017ne" +
-      "xt_page_token\030\002 \001(\t\"I\n\023GetVirtioBlkReque" +
-      "st\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storag" +
-      "e.v1/VirtioBlk\"L\n\025VirtioBlkStatsRequest\022" +
-      "3\n\rcontroller_id\030\001 \001(\0132\034.opi_api.common." +
-      "v1.ObjectKey\"r\n\026VirtioBlkStatsResponse\022(" +
-      "\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey" +
-      "\022.\n\005stats\030\002 \001(\0132\037.opi_api.storage.v1.Vol" +
-      "umeStats2\367\006\n\030FrontendVirtioBlkService\022\230\001" +
-      "\n\017CreateVirtioBlk\022*.opi_api.storage.v1.C" +
-      "reateVirtioBlkRequest\032\035.opi_api.storage." +
-      "v1.VirtioBlk\":\202\323\344\223\002\031\"\013/v1/volumes:\nvirti" +
-      "o_blk\332A\030virtio_blk,virtio_blk_id\022\207\001\n\017Del" +
-      "eteVirtioBlk\022*.opi_api.storage.v1.Delete" +
-      "VirtioBlkRequest\032\026.google.protobuf.Empty" +
-      "\"0\202\323\344\223\002#*!/v1/{name=virtioblks}/{virtiob" +
-      "lk}\332A\004name\022\253\001\n\017UpdateVirtioBlk\022*.opi_api" +
-      ".storage.v1.UpdateVirtioBlkRequest\032\035.opi" +
-      "_api.storage.v1.VirtioBlk\"M\202\323\344\223\002.2 /v1/{" +
-      "virtio_blk.name=subsystems}:\nvirtio_blk\332" +
-      "A\026virtio_blk,update_mask\022\221\001\n\016ListVirtioB" +
-      "lks\022).opi_api.storage.v1.ListVirtioBlksR" +
-      "equest\032*.opi_api.storage.v1.ListVirtioBl" +
-      "ksResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsyste" +
-      "ms}\332A\006parent\022\210\001\n\014GetVirtioBlk\022\'.opi_api." +
-      "storage.v1.GetVirtioBlkRequest\032\035.opi_api" +
-      ".storage.v1.VirtioBlk\"0\202\323\344\223\002#\022!/v1/{name" +
-      "=subsystems}/{virtioblk}\332A\004name\022i\n\016Virti" +
-      "oBlkStats\022).opi_api.storage.v1.VirtioBlk" +
-      "StatsRequest\032*.opi_api.storage.v1.Virtio" +
-      "BlkStatsResponse\"\000Be\n\022opi_api.storage.v1" +
-      "B\026FrontendVirtioBlkProtoP\001Z5github.com/o" +
-      "piproject/opi-api/storage/v1alpha1/gen/g" +
-      "ob\006proto3"
+      "buf/field_mask.proto\"\276\002\n\tVirtioBlk\0222\n\004na" +
+      "me\030\001 \001(\tB$\340A\003\372A\036\n\034opi_api.storage.v1/Vir" +
+      "tioBlk\0220\n\007pcie_id\030\002 \001(\0132\037.opi_api.storag" +
+      "e.v1.PciEndpoint\022\034\n\017volume_name_ref\030\003 \001(" +
+      "\tB\003\340A\002\022\022\n\nmax_io_qps\030\004 \001(\003\022/\n\tmin_limit\030" +
+      "\005 \001(\0132\034.opi_api.storage.v1.QosLimit\022/\n\tm" +
+      "ax_limit\030\006 \001(\0132\034.opi_api.storage.v1.QosL" +
+      "imit:7\352A4\n storage.opiproject.org/Virtio" +
+      "Blk\022\020volumes/{volume}\"g\n\026CreateVirtioBlk" +
+      "Request\0226\n\nvirtio_blk\030\001 \001(\0132\035.opi_api.st" +
+      "orage.v1.VirtioBlkB\003\340A\002\022\025\n\rvirtio_blk_id" +
+      "\030\002 \001(\t\"c\n\026DeleteVirtioBlkRequest\0222\n\004name" +
+      "\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/Virti" +
+      "oBlk\022\025\n\rallow_missing\030\002 \001(\010\"\223\001\n\026UpdateVi" +
+      "rtioBlkRequest\0221\n\nvirtio_blk\030\001 \001(\0132\035.opi" +
+      "_api.storage.v1.VirtioBlk\022/\n\013update_mask" +
+      "\030\002 \001(\0132\032.google.protobuf.FieldMask\022\025\n\ral" +
+      "low_missing\030\003 \001(\010\"t\n\025ListVirtioBlksReque" +
+      "st\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.stor" +
+      "age.v1/VirtioBlk\022\021\n\tpage_size\030\002 \001(\005\022\022\n\np" +
+      "age_token\030\003 \001(\t\"e\n\026ListVirtioBlksRespons" +
+      "e\0222\n\013virtio_blks\030\001 \003(\0132\035.opi_api.storage" +
+      ".v1.VirtioBlk\022\027\n\017next_page_token\030\002 \001(\t\"I" +
+      "\n\023GetVirtioBlkRequest\0222\n\004name\030\001 \001(\tB$\340A\002" +
+      "\372A\036\n\034opi_api.storage.v1/VirtioBlk\"K\n\025Vir" +
+      "tioBlkStatsRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036" +
+      "\n\034opi_api.storage.v1/VirtioBlk\"H\n\026Virtio" +
+      "BlkStatsResponse\022.\n\005stats\030\001 \001(\0132\037.opi_ap" +
+      "i.storage.v1.VolumeStats2\367\006\n\030FrontendVir" +
+      "tioBlkService\022\230\001\n\017CreateVirtioBlk\022*.opi_" +
+      "api.storage.v1.CreateVirtioBlkRequest\032\035." +
+      "opi_api.storage.v1.VirtioBlk\":\202\323\344\223\002\031\"\013/v" +
+      "1/volumes:\nvirtio_blk\332A\030virtio_blk,virti" +
+      "o_blk_id\022\207\001\n\017DeleteVirtioBlk\022*.opi_api.s" +
+      "torage.v1.DeleteVirtioBlkRequest\032\026.googl" +
+      "e.protobuf.Empty\"0\202\323\344\223\002#*!/v1/{name=virt" +
+      "ioblks}/{virtioblk}\332A\004name\022\253\001\n\017UpdateVir" +
+      "tioBlk\022*.opi_api.storage.v1.UpdateVirtio" +
+      "BlkRequest\032\035.opi_api.storage.v1.VirtioBl" +
+      "k\"M\202\323\344\223\002.2 /v1/{virtio_blk.name=subsyste" +
+      "ms}:\nvirtio_blk\332A\026virtio_blk,update_mask" +
+      "\022\221\001\n\016ListVirtioBlks\022).opi_api.storage.v1" +
+      ".ListVirtioBlksRequest\032*.opi_api.storage" +
+      ".v1.ListVirtioBlksResponse\"(\202\323\344\223\002\031\022\027/v1/" +
+      "{parent=subsystems}\332A\006parent\022\210\001\n\014GetVirt" +
+      "ioBlk\022\'.opi_api.storage.v1.GetVirtioBlkR" +
+      "equest\032\035.opi_api.storage.v1.VirtioBlk\"0\202" +
+      "\323\344\223\002#\022!/v1/{name=subsystems}/{virtioblk}" +
+      "\332A\004name\022i\n\016VirtioBlkStats\022).opi_api.stor" +
+      "age.v1.VirtioBlkStatsRequest\032*.opi_api.s" +
+      "torage.v1.VirtioBlkStatsResponse\"\000Be\n\022op" +
+      "i_api.storage.v1B\026FrontendVirtioBlkProto" +
+      "P\001Z5github.com/opiproject/opi-api/storag" +
+      "e/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -147,7 +146,7 @@ public final class FrontendVirtioBlkProto {
     internal_static_opi_api_storage_v1_VirtioBlk_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_VirtioBlk_descriptor,
-        new java.lang.String[] { "Name", "PcieId", "VolumeId", "MaxIoQps", "MinLimit", "MaxLimit", });
+        new java.lang.String[] { "Name", "PcieId", "VolumeNameRef", "MaxIoQps", "MinLimit", "MaxLimit", });
     internal_static_opi_api_storage_v1_CreateVirtioBlkRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_storage_v1_CreateVirtioBlkRequest_fieldAccessorTable = new
@@ -189,13 +188,13 @@ public final class FrontendVirtioBlkProto {
     internal_static_opi_api_storage_v1_VirtioBlkStatsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_VirtioBlkStatsRequest_descriptor,
-        new java.lang.String[] { "ControllerId", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_storage_v1_VirtioBlkStatsResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_opi_api_storage_v1_VirtioBlkStatsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_VirtioBlkStatsResponse_descriptor,
-        new java.lang.String[] { "Id", "Stats", });
+        new java.lang.String[] { "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

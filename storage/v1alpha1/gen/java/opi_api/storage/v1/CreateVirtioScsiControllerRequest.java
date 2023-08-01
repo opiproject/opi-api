@@ -49,7 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 10: {
             opi_api.storage.v1.VirtioScsiController.Builder subBuilder = null;
             if (virtioScsiController_ != null) {
               subBuilder = virtioScsiController_.toBuilder();
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             virtioScsiControllerId_ = s;
@@ -100,10 +100,10 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateVirtioScsiControllerRequest.class, opi_api.storage.v1.CreateVirtioScsiControllerRequest.Builder.class);
   }
 
-  public static final int VIRTIO_SCSI_CONTROLLER_FIELD_NUMBER = 2;
+  public static final int VIRTIO_SCSI_CONTROLLER_FIELD_NUMBER = 1;
   private opi_api.storage.v1.VirtioScsiController virtioScsiController_;
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioScsiController field is set.
    */
   @java.lang.Override
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
     return virtioScsiController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioScsiController.
    */
   @java.lang.Override
@@ -119,17 +119,17 @@ private static final long serialVersionUID = 0L;
     return virtioScsiController_ == null ? opi_api.storage.v1.VirtioScsiController.getDefaultInstance() : virtioScsiController_;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder() {
     return getVirtioScsiController();
   }
 
-  public static final int VIRTIO_SCSI_CONTROLLER_ID_FIELD_NUMBER = 3;
+  public static final int VIRTIO_SCSI_CONTROLLER_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object virtioScsiControllerId_;
   /**
-   * <code>string virtio_scsi_controller_id = 3;</code>
+   * <code>string virtio_scsi_controller_id = 2;</code>
    * @return The virtioScsiControllerId.
    */
   @java.lang.Override
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string virtio_scsi_controller_id = 3;</code>
+   * <code>string virtio_scsi_controller_id = 2;</code>
    * @return The bytes for virtioScsiControllerId.
    */
   @java.lang.Override
@@ -179,10 +179,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (virtioScsiController_ != null) {
-      output.writeMessage(2, getVirtioScsiController());
+      output.writeMessage(1, getVirtioScsiController());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtioScsiControllerId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, virtioScsiControllerId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, virtioScsiControllerId_);
     }
     unknownFields.writeTo(output);
   }
@@ -195,10 +195,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (virtioScsiController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getVirtioScsiController());
+        .computeMessageSize(1, getVirtioScsiController());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtioScsiControllerId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, virtioScsiControllerId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, virtioScsiControllerId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -500,14 +500,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioScsiController, opi_api.storage.v1.VirtioScsiController.Builder, opi_api.storage.v1.VirtioScsiControllerOrBuilder> virtioScsiControllerBuilder_;
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the virtioScsiController field is set.
      */
     public boolean hasVirtioScsiController() {
       return virtioScsiControllerBuilder_ != null || virtioScsiController_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The virtioScsiController.
      */
     public opi_api.storage.v1.VirtioScsiController getVirtioScsiController() {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVirtioScsiController(opi_api.storage.v1.VirtioScsiController value) {
       if (virtioScsiControllerBuilder_ == null) {
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVirtioScsiController(
         opi_api.storage.v1.VirtioScsiController.Builder builderForValue) {
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeVirtioScsiController(opi_api.storage.v1.VirtioScsiController value) {
       if (virtioScsiControllerBuilder_ == null) {
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearVirtioScsiController() {
       if (virtioScsiControllerBuilder_ == null) {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.VirtioScsiController.Builder getVirtioScsiControllerBuilder() {
       
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
       return getVirtioScsiControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder() {
       if (virtioScsiControllerBuilder_ != null) {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioScsiController, opi_api.storage.v1.VirtioScsiController.Builder, opi_api.storage.v1.VirtioScsiControllerOrBuilder> 
@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object virtioScsiControllerId_ = "";
     /**
-     * <code>string virtio_scsi_controller_id = 3;</code>
+     * <code>string virtio_scsi_controller_id = 2;</code>
      * @return The virtioScsiControllerId.
      */
     public java.lang.String getVirtioScsiControllerId() {
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string virtio_scsi_controller_id = 3;</code>
+     * <code>string virtio_scsi_controller_id = 2;</code>
      * @return The bytes for virtioScsiControllerId.
      */
     public com.google.protobuf.ByteString
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string virtio_scsi_controller_id = 3;</code>
+     * <code>string virtio_scsi_controller_id = 2;</code>
      * @param value The virtioScsiControllerId to set.
      * @return This builder for chaining.
      */
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string virtio_scsi_controller_id = 3;</code>
+     * <code>string virtio_scsi_controller_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearVirtioScsiControllerId() {
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string virtio_scsi_controller_id = 3;</code>
+     * <code>string virtio_scsi_controller_id = 2;</code>
      * @param value The bytes for virtioScsiControllerId to set.
      * @return This builder for chaining.
      */

@@ -150,10 +150,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
    * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -171,10 +173,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
    * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -195,7 +199,7 @@ private static final long serialVersionUID = 0L;
   public static final int CONTROLLER_NAME_REF_FIELD_NUMBER = 2;
   private volatile java.lang.Object controllerNameRef_;
   /**
-   * <code>string controller_name_ref = 2;</code>
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The controllerNameRef.
    */
   @java.lang.Override
@@ -212,7 +216,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string controller_name_ref = 2;</code>
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for controllerNameRef.
    */
   @java.lang.Override
@@ -940,10 +944,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
      * user can only set {resource}_id on the Create request object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -960,10 +966,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
      * user can only set {resource}_id on the Create request object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -981,10 +989,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
      * user can only set {resource}_id on the Create request object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1000,10 +1010,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
      * user can only set {resource}_id on the Create request object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1014,10 +1026,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
      * user can only set {resource}_id on the Create request object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1035,7 +1049,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object controllerNameRef_ = "";
     /**
-     * <code>string controller_name_ref = 2;</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The controllerNameRef.
      */
     public java.lang.String getControllerNameRef() {
@@ -1051,7 +1065,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string controller_name_ref = 2;</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for controllerNameRef.
      */
     public com.google.protobuf.ByteString
@@ -1068,7 +1082,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string controller_name_ref = 2;</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The controllerNameRef to set.
      * @return This builder for chaining.
      */
@@ -1083,7 +1097,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string controller_name_ref = 2;</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearControllerNameRef() {
@@ -1093,7 +1107,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string controller_name_ref = 2;</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for controllerNameRef to set.
      * @return This builder for chaining.
      */

@@ -8,27 +8,27 @@ public interface CreateNvmeRemoteControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeRemoteController field is set.
    */
   boolean hasNvmeRemoteController();
   /**
-   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeRemoteController.
    */
   opi_api.storage.v1.NvmeRemoteController getNvmeRemoteController();
   /**
-   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeRemoteControllerOrBuilder getNvmeRemoteControllerOrBuilder();
 
   /**
-   * <code>string nvme_remote_controller_id = 3;</code>
+   * <code>string nvme_remote_controller_id = 2;</code>
    * @return The nvmeRemoteControllerId.
    */
   java.lang.String getNvmeRemoteControllerId();
   /**
-   * <code>string nvme_remote_controller_id = 3;</code>
+   * <code>string nvme_remote_controller_id = 2;</code>
    * @return The bytes for nvmeRemoteControllerId.
    */
   com.google.protobuf.ByteString

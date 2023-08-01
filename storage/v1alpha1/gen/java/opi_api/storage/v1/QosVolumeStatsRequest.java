@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private QosVolumeStatsRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +50,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (volumeId_ != null) {
-              subBuilder = volumeId_.toBuilder();
-            }
-            volumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(volumeId_);
-              volumeId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            name_ = s;
             break;
           }
           default: {
@@ -93,30 +87,42 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.QosVolumeStatsRequest.class, opi_api.storage.v1.QosVolumeStatsRequest.Builder.class);
   }
 
-  public static final int VOLUME_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey volumeId_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-   * @return Whether the volumeId field is set.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   @java.lang.Override
-  public boolean hasVolumeId() {
-    return volumeId_ != null;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-   * @return The volumeId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVolumeId() {
-    return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
-    return getVolumeId();
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (volumeId_ != null) {
-      output.writeMessage(1, getVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (volumeId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +169,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.QosVolumeStatsRequest other = (opi_api.storage.v1.QosVolumeStatsRequest) obj;
 
-    if (hasVolumeId() != other.hasVolumeId()) return false;
-    if (hasVolumeId()) {
-      if (!getVolumeId()
-          .equals(other.getVolumeId())) return false;
-    }
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasVolumeId()) {
-      hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVolumeId().hashCode();
-    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +317,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = null;
-      } else {
-        volumeId_ = null;
-        volumeIdBuilder_ = null;
-      }
+      name_ = "";
+
       return this;
     }
 
@@ -349,11 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.QosVolumeStatsRequest buildPartial() {
       opi_api.storage.v1.QosVolumeStatsRequest result = new opi_api.storage.v1.QosVolumeStatsRequest(this);
-      if (volumeIdBuilder_ == null) {
-        result.volumeId_ = volumeId_;
-      } else {
-        result.volumeId_ = volumeIdBuilder_.build();
-      }
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -402,8 +394,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.QosVolumeStatsRequest other) {
       if (other == opi_api.storage.v1.QosVolumeStatsRequest.getDefaultInstance()) return this;
-      if (other.hasVolumeId()) {
-        mergeVolumeId(other.getVolumeId());
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +427,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey volumeId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> volumeIdBuilder_;
+    private java.lang.Object name_ = "";
     /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-     * @return Whether the volumeId field is set.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
-    public boolean hasVolumeId() {
-      return volumeIdBuilder_ != null || volumeId_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-     * @return The volumeId.
-     */
-    public opi_api.common.v1.ObjectKey getVolumeId() {
-      if (volumeIdBuilder_ == null) {
-        return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
       } else {
-        return volumeIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
-    public Builder setVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (volumeIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        volumeId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
       } else {
-        volumeIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
-    public Builder setVolumeId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = builderForValue.build();
-        onChanged();
-      } else {
-        volumeIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-     */
-    public Builder mergeVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (volumeIdBuilder_ == null) {
-        if (volumeId_ != null) {
-          volumeId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(volumeId_).mergeFrom(value).buildPartial();
-        } else {
-          volumeId_ = value;
-        }
-        onChanged();
-      } else {
-        volumeIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-     */
-    public Builder clearVolumeId() {
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = null;
-        onChanged();
-      } else {
-        volumeId_ = null;
-        volumeIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVolumeIdBuilder() {
-      
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
       onChanged();
-      return getVolumeIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
-      if (volumeIdBuilder_ != null) {
-        return volumeIdBuilder_.getMessageOrBuilder();
-      } else {
-        return volumeId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-      }
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVolumeIdFieldBuilder() {
-      if (volumeIdBuilder_ == null) {
-        volumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVolumeId(),
-                getParentForChildren(),
-                isClean());
-        volumeId_ = null;
-      }
-      return volumeIdBuilder_;
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -236,7 +236,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -251,7 +251,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -509,7 +508,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -524,7 +523,6 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -652,7 +650,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | object&#39;s unique identifier |
+| name | [string](#string) |  |  |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -668,7 +666,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | object&#39;s unique identifier |
+| name | [string](#string) |  |  |
 
 
 
@@ -683,7 +681,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | object&#39;s unique identifier |
+| name | [string](#string) |  |  |
 
 
 
@@ -797,7 +795,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | user can only set {resource}_id on the Create request object |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | controller_name_ref | [string](#string) |  |  |
 | trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  |  |
 | adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  |  |
@@ -821,7 +819,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | object&#39;s unique identifier |
+| name | [string](#string) |  |  |
 
 
 
@@ -872,7 +870,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | object&#39;s unique identifier |
+| name | [string](#string) |  |  |
 
 
 
@@ -887,7 +885,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | object&#39;s unique identifier |
+| name | [string](#string) |  |  |
 
 
 
@@ -917,7 +915,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | user can only set {resource}_id on the Create request object |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | controller_name_ref | [string](#string) |  | controller through which the namespace is visible |
 | nsid | [int32](#int32) |  | NSID |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
@@ -1352,7 +1350,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -1435,7 +1432,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -1502,7 +1498,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_name_ref | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1768,7 +1764,7 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | The PCI endpoint where this device should appear |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this controller |
+| volume_name_ref | [string](#string) |  | The back/middle-end volume to back this controller |
 | max_io_qps | [int64](#int64) |  |  |
 | min_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | min QoS limits for the virtio-blk device |
 | max_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | max QoS limits for the virtio-blk device |
@@ -1786,7 +1782,7 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1801,7 +1797,6 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -2173,7 +2168,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -2188,7 +2183,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -2221,8 +2215,8 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -2237,7 +2231,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -2269,7 +2262,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -2284,7 +2277,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -2376,7 +2368,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this volume |
+| volume_name_ref | [string](#string) |  | The back/middle-end volume to back this volume |
 | key | [bytes](#bytes) |  | Key to be used for encryption |
 | cipher | [EncryptionType](#opi_api-storage-v1-EncryptionType) |  | Cipher to use |
 
@@ -2393,7 +2385,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -2408,7 +2400,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
@@ -2618,7 +2609,7 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -2633,7 +2624,6 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 

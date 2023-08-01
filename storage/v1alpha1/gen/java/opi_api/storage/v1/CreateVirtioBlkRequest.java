@@ -49,7 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 10: {
             opi_api.storage.v1.VirtioBlk.Builder subBuilder = null;
             if (virtioBlk_ != null) {
               subBuilder = virtioBlk_.toBuilder();
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             virtioBlkId_ = s;
@@ -100,10 +100,10 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateVirtioBlkRequest.class, opi_api.storage.v1.CreateVirtioBlkRequest.Builder.class);
   }
 
-  public static final int VIRTIO_BLK_FIELD_NUMBER = 2;
+  public static final int VIRTIO_BLK_FIELD_NUMBER = 1;
   private opi_api.storage.v1.VirtioBlk virtioBlk_;
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioBlk field is set.
    */
   @java.lang.Override
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
     return virtioBlk_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioBlk.
    */
   @java.lang.Override
@@ -119,17 +119,17 @@ private static final long serialVersionUID = 0L;
     return virtioBlk_ == null ? opi_api.storage.v1.VirtioBlk.getDefaultInstance() : virtioBlk_;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlkOrBuilder() {
     return getVirtioBlk();
   }
 
-  public static final int VIRTIO_BLK_ID_FIELD_NUMBER = 3;
+  public static final int VIRTIO_BLK_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object virtioBlkId_;
   /**
-   * <code>string virtio_blk_id = 3;</code>
+   * <code>string virtio_blk_id = 2;</code>
    * @return The virtioBlkId.
    */
   @java.lang.Override
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string virtio_blk_id = 3;</code>
+   * <code>string virtio_blk_id = 2;</code>
    * @return The bytes for virtioBlkId.
    */
   @java.lang.Override
@@ -179,10 +179,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (virtioBlk_ != null) {
-      output.writeMessage(2, getVirtioBlk());
+      output.writeMessage(1, getVirtioBlk());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtioBlkId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, virtioBlkId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, virtioBlkId_);
     }
     unknownFields.writeTo(output);
   }
@@ -195,10 +195,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (virtioBlk_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getVirtioBlk());
+        .computeMessageSize(1, getVirtioBlk());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtioBlkId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, virtioBlkId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, virtioBlkId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -500,14 +500,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioBlk, opi_api.storage.v1.VirtioBlk.Builder, opi_api.storage.v1.VirtioBlkOrBuilder> virtioBlkBuilder_;
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the virtioBlk field is set.
      */
     public boolean hasVirtioBlk() {
       return virtioBlkBuilder_ != null || virtioBlk_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The virtioBlk.
      */
     public opi_api.storage.v1.VirtioBlk getVirtioBlk() {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVirtioBlk(opi_api.storage.v1.VirtioBlk value) {
       if (virtioBlkBuilder_ == null) {
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVirtioBlk(
         opi_api.storage.v1.VirtioBlk.Builder builderForValue) {
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeVirtioBlk(opi_api.storage.v1.VirtioBlk value) {
       if (virtioBlkBuilder_ == null) {
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearVirtioBlk() {
       if (virtioBlkBuilder_ == null) {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.VirtioBlk.Builder getVirtioBlkBuilder() {
       
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
       return getVirtioBlkFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlkOrBuilder() {
       if (virtioBlkBuilder_ != null) {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioBlk, opi_api.storage.v1.VirtioBlk.Builder, opi_api.storage.v1.VirtioBlkOrBuilder> 
@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object virtioBlkId_ = "";
     /**
-     * <code>string virtio_blk_id = 3;</code>
+     * <code>string virtio_blk_id = 2;</code>
      * @return The virtioBlkId.
      */
     public java.lang.String getVirtioBlkId() {
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string virtio_blk_id = 3;</code>
+     * <code>string virtio_blk_id = 2;</code>
      * @return The bytes for virtioBlkId.
      */
     public com.google.protobuf.ByteString
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string virtio_blk_id = 3;</code>
+     * <code>string virtio_blk_id = 2;</code>
      * @param value The virtioBlkId to set.
      * @return This builder for chaining.
      */
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string virtio_blk_id = 3;</code>
+     * <code>string virtio_blk_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearVirtioBlkId() {
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string virtio_blk_id = 3;</code>
+     * <code>string virtio_blk_id = 2;</code>
      * @param value The bytes for virtioBlkId to set.
      * @return This builder for chaining.
      */

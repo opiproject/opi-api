@@ -115,7 +115,7 @@ struct GetNullVolumeRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetNullVolumeRequestDefaultTypeInternal _GetNullVolumeRequest_default_instance_;
 constexpr NullVolumeStatsRequest::NullVolumeStatsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : handle_(nullptr){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct NullVolumeStatsRequestDefaultTypeInternal {
   constexpr NullVolumeStatsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -127,8 +127,7 @@ struct NullVolumeStatsRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullVolumeStatsRequestDefaultTypeInternal _NullVolumeStatsRequest_default_instance_;
 constexpr NullVolumeStatsResponse::NullVolumeStatsResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : handle_(nullptr)
-  , stats_(nullptr){}
+  : stats_(nullptr){}
 struct NullVolumeStatsResponseDefaultTypeInternal {
   constexpr NullVolumeStatsResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -211,14 +210,13 @@ const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VA
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsRequest, handle_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsResponse, handle_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullVolumeStatsResponse, stats_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -252,32 +250,32 @@ const char descriptor_table_protodef_backend_5fnull_2eproto[] PROTOBUF_SECTION_V
   "o\032\034google/api/annotations.proto\032\037google/"
   "api/field_behavior.proto\032 google/protobu"
   "f/field_mask.proto\032\020object_key.proto\032\017op"
-  "icommon.proto\032\nuuid.proto\"\245\001\n\nNullVolume"
-  "\022\014\n\004name\030\001 \001(\t\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014bl"
-  "ocks_count\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api"
-  ".common.v1.Uuid:8\352A5\n!storage.opiproject"
-  ".org/NullVolume\022\020volumes/{volume}\"k\n\027Cre"
-  "ateNullVolumeRequest\0228\n\013null_volume\030\002 \001("
-  "\0132\036.opi_api.storage.v1.NullVolumeB\003\340A\002\022\026"
-  "\n\016null_volume_id\030\003 \001(\t\"e\n\027DeleteNullVolu"
-  "meRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api"
-  ".storage.v1/NullVolume\022\025\n\rallow_missing\030"
-  "\002 \001(\010\"\226\001\n\027UpdateNullVolumeRequest\0223\n\013nul"
-  "l_volume\030\001 \001(\0132\036.opi_api.storage.v1.Null"
-  "Volume\022/\n\013update_mask\030\002 \001(\0132\032.google.pro"
-  "tobuf.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\"v"
-  "\n\026ListNullVolumesRequest\0225\n\006parent\030\001 \001(\t"
-  "B%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolume\022"
-  "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"h"
-  "\n\027ListNullVolumesResponse\0224\n\014null_volume"
-  "s\030\001 \003(\0132\036.opi_api.storage.v1.NullVolume\022"
-  "\027\n\017next_page_token\030\002 \001(\t\"K\n\024GetNullVolum"
+  "icommon.proto\032\nuuid.proto\"\314\001\n\nNullVolume"
+  "\0223\n\004name\030\001 \001(\tB%\340A\003\372A\037\n\035opi_api.storage."
+  "v1/NullVolume\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014blo"
+  "cks_count\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api."
+  "common.v1.Uuid:8\352A5\n!storage.opiproject."
+  "org/NullVolume\022\020volumes/{volume}\"k\n\027Crea"
+  "teNullVolumeRequest\0228\n\013null_volume\030\001 \001(\013"
+  "2\036.opi_api.storage.v1.NullVolumeB\003\340A\002\022\026\n"
+  "\016null_volume_id\030\002 \001(\t\"e\n\027DeleteNullVolum"
   "eRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api."
-  "storage.v1/NullVolume\"F\n\026NullVolumeStats"
-  "Request\022,\n\006handle\030\001 \001(\0132\034.opi_api.common"
-  ".v1.ObjectKey\"w\n\027NullVolumeStatsResponse"
-  "\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Obj"
-  "ectKey\022.\n\005stats\030\002 \001(\0132\037.opi_api.storage."
+  "storage.v1/NullVolume\022\025\n\rallow_missing\030\002"
+  " \001(\010\"\226\001\n\027UpdateNullVolumeRequest\0223\n\013null"
+  "_volume\030\001 \001(\0132\036.opi_api.storage.v1.NullV"
+  "olume\022/\n\013update_mask\030\002 \001(\0132\032.google.prot"
+  "obuf.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\"v\n"
+  "\026ListNullVolumesRequest\0225\n\006parent\030\001 \001(\tB"
+  "%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolume\022\021"
+  "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"h\n"
+  "\027ListNullVolumesResponse\0224\n\014null_volumes"
+  "\030\001 \003(\0132\036.opi_api.storage.v1.NullVolume\022\027"
+  "\n\017next_page_token\030\002 \001(\t\"K\n\024GetNullVolume"
+  "Request\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.s"
+  "torage.v1/NullVolume\"M\n\026NullVolumeStatsR"
+  "equest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.st"
+  "orage.v1/NullVolume\"I\n\027NullVolumeStatsRe"
+  "sponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.storage."
   "v1.VolumeStats2\207\007\n\021NullVolumeService\022\236\001\n"
   "\020CreateNullVolume\022+.opi_api.storage.v1.C"
   "reateNullVolumeRequest\032\036.opi_api.storage"
@@ -438,7 +436,7 @@ const char* NullVolume::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1;
+      // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
@@ -501,7 +499,7 @@ uint8_t* NullVolume::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
@@ -547,7 +545,7 @@ size_t NullVolume::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -733,17 +731,17 @@ const char* CreateNullVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.storage.v1.NullVolume null_volume = 2 [(.google.api.field_behavior) = REQUIRED];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_null_volume(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string null_volume_id = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // string null_volume_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_null_volume_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.CreateNullVolumeRequest.null_volume_id"));
@@ -780,22 +778,22 @@ uint8_t* CreateNullVolumeRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.storage.v1.NullVolume null_volume = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_null_volume()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::null_volume(this), target, stream);
+        1, _Internal::null_volume(this), target, stream);
   }
 
-  // string null_volume_id = 3;
+  // string null_volume_id = 2;
   if (!this->_internal_null_volume_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_null_volume_id().data(), static_cast<int>(this->_internal_null_volume_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "opi_api.storage.v1.CreateNullVolumeRequest.null_volume_id");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_null_volume_id(), target);
+        2, this->_internal_null_volume_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -814,14 +812,14 @@ size_t CreateNullVolumeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string null_volume_id = 3;
+  // string null_volume_id = 2;
   if (!this->_internal_null_volume_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_null_volume_id());
   }
 
-  // .opi_api.storage.v1.NullVolume null_volume = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_null_volume()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2113,19 +2111,8 @@ void GetNullVolumeRequest::InternalSwap(GetNullVolumeRequest* other) {
 
 class NullVolumeStatsRequest::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& handle(const NullVolumeStatsRequest* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-NullVolumeStatsRequest::_Internal::handle(const NullVolumeStatsRequest* msg) {
-  return *msg->handle_;
-}
-void NullVolumeStatsRequest::clear_handle() {
-  if (GetArenaForAllocation() == nullptr && handle_ != nullptr) {
-    delete handle_;
-  }
-  handle_ = nullptr;
-}
 NullVolumeStatsRequest::NullVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2138,16 +2125,22 @@ NullVolumeStatsRequest::NullVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 NullVolumeStatsRequest::NullVolumeStatsRequest(const NullVolumeStatsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_handle()) {
-    handle_ = new ::opi_api::common::v1::ObjectKey(*from.handle_);
-  } else {
-    handle_ = nullptr;
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullVolumeStatsRequest)
 }
 
 inline void NullVolumeStatsRequest::SharedCtor() {
-handle_ = nullptr;
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 NullVolumeStatsRequest::~NullVolumeStatsRequest() {
@@ -2159,7 +2152,7 @@ NullVolumeStatsRequest::~NullVolumeStatsRequest() {
 
 inline void NullVolumeStatsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete handle_;
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void NullVolumeStatsRequest::ArenaDtor(void* object) {
@@ -2178,10 +2171,7 @@ void NullVolumeStatsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && handle_ != nullptr) {
-    delete handle_;
-  }
-  handle_ = nullptr;
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2191,10 +2181,12 @@ const char* NullVolumeStatsRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey handle = 1;
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_handle(), ptr);
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NullVolumeStatsRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2228,12 +2220,14 @@ uint8_t* NullVolumeStatsRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey handle = 1;
-  if (this->_internal_has_handle()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::handle(this), target, stream);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NullVolumeStatsRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2252,11 +2246,11 @@ size_t NullVolumeStatsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey handle = 1;
-  if (this->_internal_has_handle()) {
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *handle_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2281,8 +2275,8 @@ void NullVolumeStatsRequest::MergeFrom(const NullVolumeStatsRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_handle()) {
-    _internal_mutable_handle()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_handle());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2300,8 +2294,14 @@ bool NullVolumeStatsRequest::IsInitialized() const {
 
 void NullVolumeStatsRequest::InternalSwap(NullVolumeStatsRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(handle_, other->handle_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NullVolumeStatsRequest::GetMetadata() const {
@@ -2314,23 +2314,12 @@ void NullVolumeStatsRequest::InternalSwap(NullVolumeStatsRequest* other) {
 
 class NullVolumeStatsResponse::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& handle(const NullVolumeStatsResponse* msg);
   static const ::opi_api::storage::v1::VolumeStats& stats(const NullVolumeStatsResponse* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-NullVolumeStatsResponse::_Internal::handle(const NullVolumeStatsResponse* msg) {
-  return *msg->handle_;
-}
 const ::opi_api::storage::v1::VolumeStats&
 NullVolumeStatsResponse::_Internal::stats(const NullVolumeStatsResponse* msg) {
   return *msg->stats_;
-}
-void NullVolumeStatsResponse::clear_handle() {
-  if (GetArenaForAllocation() == nullptr && handle_ != nullptr) {
-    delete handle_;
-  }
-  handle_ = nullptr;
 }
 void NullVolumeStatsResponse::clear_stats() {
   if (GetArenaForAllocation() == nullptr && stats_ != nullptr) {
@@ -2350,11 +2339,6 @@ NullVolumeStatsResponse::NullVolumeStatsResponse(::PROTOBUF_NAMESPACE_ID::Arena*
 NullVolumeStatsResponse::NullVolumeStatsResponse(const NullVolumeStatsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_handle()) {
-    handle_ = new ::opi_api::common::v1::ObjectKey(*from.handle_);
-  } else {
-    handle_ = nullptr;
-  }
   if (from._internal_has_stats()) {
     stats_ = new ::opi_api::storage::v1::VolumeStats(*from.stats_);
   } else {
@@ -2364,10 +2348,7 @@ NullVolumeStatsResponse::NullVolumeStatsResponse(const NullVolumeStatsResponse& 
 }
 
 inline void NullVolumeStatsResponse::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&handle_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&stats_) -
-    reinterpret_cast<char*>(&handle_)) + sizeof(stats_));
+stats_ = nullptr;
 }
 
 NullVolumeStatsResponse::~NullVolumeStatsResponse() {
@@ -2379,7 +2360,6 @@ NullVolumeStatsResponse::~NullVolumeStatsResponse() {
 
 inline void NullVolumeStatsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete handle_;
   if (this != internal_default_instance()) delete stats_;
 }
 
@@ -2399,10 +2379,6 @@ void NullVolumeStatsResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && handle_ != nullptr) {
-    delete handle_;
-  }
-  handle_ = nullptr;
   if (GetArenaForAllocation() == nullptr && stats_ != nullptr) {
     delete stats_;
   }
@@ -2416,17 +2392,9 @@ const char* NullVolumeStatsResponse::_InternalParse(const char* ptr, ::PROTOBUF_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey handle = 1;
+      // .opi_api.storage.v1.VolumeStats stats = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_handle(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.storage.v1.VolumeStats stats = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_stats(), ptr);
           CHK_(ptr);
         } else
@@ -2461,20 +2429,12 @@ uint8_t* NullVolumeStatsResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey handle = 1;
-  if (this->_internal_has_handle()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::handle(this), target, stream);
-  }
-
-  // .opi_api.storage.v1.VolumeStats stats = 2;
+  // .opi_api.storage.v1.VolumeStats stats = 1;
   if (this->_internal_has_stats()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::stats(this), target, stream);
+        1, _Internal::stats(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2493,14 +2453,7 @@ size_t NullVolumeStatsResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey handle = 1;
-  if (this->_internal_has_handle()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *handle_);
-  }
-
-  // .opi_api.storage.v1.VolumeStats stats = 2;
+  // .opi_api.storage.v1.VolumeStats stats = 1;
   if (this->_internal_has_stats()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2529,9 +2482,6 @@ void NullVolumeStatsResponse::MergeFrom(const NullVolumeStatsResponse& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_handle()) {
-    _internal_mutable_handle()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_handle());
-  }
   if (from._internal_has_stats()) {
     _internal_mutable_stats()->::opi_api::storage::v1::VolumeStats::MergeFrom(from._internal_stats());
   }
@@ -2552,12 +2502,7 @@ bool NullVolumeStatsResponse::IsInitialized() const {
 void NullVolumeStatsResponse::InternalSwap(NullVolumeStatsResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NullVolumeStatsResponse, stats_)
-      + sizeof(NullVolumeStatsResponse::stats_)
-      - PROTOBUF_FIELD_OFFSET(NullVolumeStatsResponse, handle_)>(
-          reinterpret_cast<char*>(&handle_),
-          reinterpret_cast<char*>(&other->handle_));
+  swap(stats_, other->stats_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NullVolumeStatsResponse::GetMetadata() const {

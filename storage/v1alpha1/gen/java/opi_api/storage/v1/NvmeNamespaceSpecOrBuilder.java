@@ -12,7 +12,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * subsystem for this namespace
    * </pre>
    *
-   * <code>string subsystem_name_ref = 1;</code>
+   * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subsystemNameRef.
    */
   java.lang.String getSubsystemNameRef();
@@ -21,7 +21,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * subsystem for this namespace
    * </pre>
    *
-   * <code>string subsystem_name_ref = 1;</code>
+   * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subsystemNameRef.
    */
   com.google.protobuf.ByteString
@@ -103,7 +103,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>string volume_name_ref = 6;</code>
+   * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The volumeNameRef.
    */
   java.lang.String getVolumeNameRef();
@@ -112,7 +112,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>string volume_name_ref = 6;</code>
+   * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for volumeNameRef.
    */
   com.google.protobuf.ByteString

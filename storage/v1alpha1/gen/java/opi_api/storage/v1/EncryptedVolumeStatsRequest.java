@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EncryptedVolumeStatsRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +50,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (encryptedVolumeId_ != null) {
-              subBuilder = encryptedVolumeId_.toBuilder();
-            }
-            encryptedVolumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(encryptedVolumeId_);
-              encryptedVolumeId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            name_ = s;
             break;
           }
           default: {
@@ -93,30 +87,42 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.EncryptedVolumeStatsRequest.class, opi_api.storage.v1.EncryptedVolumeStatsRequest.Builder.class);
   }
 
-  public static final int ENCRYPTED_VOLUME_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey encryptedVolumeId_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   * @return Whether the encryptedVolumeId field is set.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   @java.lang.Override
-  public boolean hasEncryptedVolumeId() {
-    return encryptedVolumeId_ != null;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   * @return The encryptedVolumeId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getEncryptedVolumeId() {
-    return encryptedVolumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : encryptedVolumeId_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getEncryptedVolumeIdOrBuilder() {
-    return getEncryptedVolumeId();
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (encryptedVolumeId_ != null) {
-      output.writeMessage(1, getEncryptedVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (encryptedVolumeId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getEncryptedVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +169,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.EncryptedVolumeStatsRequest other = (opi_api.storage.v1.EncryptedVolumeStatsRequest) obj;
 
-    if (hasEncryptedVolumeId() != other.hasEncryptedVolumeId()) return false;
-    if (hasEncryptedVolumeId()) {
-      if (!getEncryptedVolumeId()
-          .equals(other.getEncryptedVolumeId())) return false;
-    }
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasEncryptedVolumeId()) {
-      hash = (37 * hash) + ENCRYPTED_VOLUME_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEncryptedVolumeId().hashCode();
-    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +317,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (encryptedVolumeIdBuilder_ == null) {
-        encryptedVolumeId_ = null;
-      } else {
-        encryptedVolumeId_ = null;
-        encryptedVolumeIdBuilder_ = null;
-      }
+      name_ = "";
+
       return this;
     }
 
@@ -349,11 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.EncryptedVolumeStatsRequest buildPartial() {
       opi_api.storage.v1.EncryptedVolumeStatsRequest result = new opi_api.storage.v1.EncryptedVolumeStatsRequest(this);
-      if (encryptedVolumeIdBuilder_ == null) {
-        result.encryptedVolumeId_ = encryptedVolumeId_;
-      } else {
-        result.encryptedVolumeId_ = encryptedVolumeIdBuilder_.build();
-      }
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -402,8 +394,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.EncryptedVolumeStatsRequest other) {
       if (other == opi_api.storage.v1.EncryptedVolumeStatsRequest.getDefaultInstance()) return this;
-      if (other.hasEncryptedVolumeId()) {
-        mergeEncryptedVolumeId(other.getEncryptedVolumeId());
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +427,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey encryptedVolumeId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> encryptedVolumeIdBuilder_;
+    private java.lang.Object name_ = "";
     /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-     * @return Whether the encryptedVolumeId field is set.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
-    public boolean hasEncryptedVolumeId() {
-      return encryptedVolumeIdBuilder_ != null || encryptedVolumeId_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-     * @return The encryptedVolumeId.
-     */
-    public opi_api.common.v1.ObjectKey getEncryptedVolumeId() {
-      if (encryptedVolumeIdBuilder_ == null) {
-        return encryptedVolumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : encryptedVolumeId_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
       } else {
-        return encryptedVolumeIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
-    public Builder setEncryptedVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (encryptedVolumeIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        encryptedVolumeId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
       } else {
-        encryptedVolumeIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
-    public Builder setEncryptedVolumeId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (encryptedVolumeIdBuilder_ == null) {
-        encryptedVolumeId_ = builderForValue.build();
-        onChanged();
-      } else {
-        encryptedVolumeIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-     */
-    public Builder mergeEncryptedVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (encryptedVolumeIdBuilder_ == null) {
-        if (encryptedVolumeId_ != null) {
-          encryptedVolumeId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(encryptedVolumeId_).mergeFrom(value).buildPartial();
-        } else {
-          encryptedVolumeId_ = value;
-        }
-        onChanged();
-      } else {
-        encryptedVolumeIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-     */
-    public Builder clearEncryptedVolumeId() {
-      if (encryptedVolumeIdBuilder_ == null) {
-        encryptedVolumeId_ = null;
-        onChanged();
-      } else {
-        encryptedVolumeId_ = null;
-        encryptedVolumeIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getEncryptedVolumeIdBuilder() {
-      
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
       onChanged();
-      return getEncryptedVolumeIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getEncryptedVolumeIdOrBuilder() {
-      if (encryptedVolumeIdBuilder_ != null) {
-        return encryptedVolumeIdBuilder_.getMessageOrBuilder();
-      } else {
-        return encryptedVolumeId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : encryptedVolumeId_;
-      }
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getEncryptedVolumeIdFieldBuilder() {
-      if (encryptedVolumeIdBuilder_ == null) {
-        encryptedVolumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getEncryptedVolumeId(),
-                getParentForChildren(),
-                isClean());
-        encryptedVolumeId_ = null;
-      }
-      return encryptedVolumeIdBuilder_;
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

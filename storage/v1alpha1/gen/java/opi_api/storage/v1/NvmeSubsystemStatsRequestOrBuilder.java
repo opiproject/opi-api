@@ -8,14 +8,14 @@ public interface NvmeSubsystemStatsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string subsystem_name_ref = 1;</code>
-   * @return The subsystemNameRef.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  java.lang.String getSubsystemNameRef();
+  java.lang.String getName();
   /**
-   * <code>string subsystem_name_ref = 1;</code>
-   * @return The bytes for subsystemNameRef.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
-      getSubsystemNameRefBytes();
+      getNameBytes();
 }

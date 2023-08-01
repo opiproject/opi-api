@@ -49,7 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 10: {
             opi_api.storage.v1.NvmeRemoteController.Builder subBuilder = null;
             if (nvmeRemoteController_ != null) {
               subBuilder = nvmeRemoteController_.toBuilder();
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             nvmeRemoteControllerId_ = s;
@@ -100,10 +100,10 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateNvmeRemoteControllerRequest.class, opi_api.storage.v1.CreateNvmeRemoteControllerRequest.Builder.class);
   }
 
-  public static final int NVME_REMOTE_CONTROLLER_FIELD_NUMBER = 2;
+  public static final int NVME_REMOTE_CONTROLLER_FIELD_NUMBER = 1;
   private opi_api.storage.v1.NvmeRemoteController nvmeRemoteController_;
   /**
-   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeRemoteController field is set.
    */
   @java.lang.Override
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeRemoteController.
    */
   @java.lang.Override
@@ -119,17 +119,17 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteController_ == null ? opi_api.storage.v1.NvmeRemoteController.getDefaultInstance() : nvmeRemoteController_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmeRemoteControllerOrBuilder getNvmeRemoteControllerOrBuilder() {
     return getNvmeRemoteController();
   }
 
-  public static final int NVME_REMOTE_CONTROLLER_ID_FIELD_NUMBER = 3;
+  public static final int NVME_REMOTE_CONTROLLER_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nvmeRemoteControllerId_;
   /**
-   * <code>string nvme_remote_controller_id = 3;</code>
+   * <code>string nvme_remote_controller_id = 2;</code>
    * @return The nvmeRemoteControllerId.
    */
   @java.lang.Override
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string nvme_remote_controller_id = 3;</code>
+   * <code>string nvme_remote_controller_id = 2;</code>
    * @return The bytes for nvmeRemoteControllerId.
    */
   @java.lang.Override
@@ -179,10 +179,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (nvmeRemoteController_ != null) {
-      output.writeMessage(2, getNvmeRemoteController());
+      output.writeMessage(1, getNvmeRemoteController());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvmeRemoteControllerId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nvmeRemoteControllerId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nvmeRemoteControllerId_);
     }
     unknownFields.writeTo(output);
   }
@@ -195,10 +195,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (nvmeRemoteController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getNvmeRemoteController());
+        .computeMessageSize(1, getNvmeRemoteController());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvmeRemoteControllerId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nvmeRemoteControllerId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nvmeRemoteControllerId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -500,14 +500,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeRemoteController, opi_api.storage.v1.NvmeRemoteController.Builder, opi_api.storage.v1.NvmeRemoteControllerOrBuilder> nvmeRemoteControllerBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nvmeRemoteController field is set.
      */
     public boolean hasNvmeRemoteController() {
       return nvmeRemoteControllerBuilder_ != null || nvmeRemoteController_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nvmeRemoteController.
      */
     public opi_api.storage.v1.NvmeRemoteController getNvmeRemoteController() {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeRemoteController(opi_api.storage.v1.NvmeRemoteController value) {
       if (nvmeRemoteControllerBuilder_ == null) {
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeRemoteController(
         opi_api.storage.v1.NvmeRemoteController.Builder builderForValue) {
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNvmeRemoteController(opi_api.storage.v1.NvmeRemoteController value) {
       if (nvmeRemoteControllerBuilder_ == null) {
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNvmeRemoteController() {
       if (nvmeRemoteControllerBuilder_ == null) {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeRemoteController.Builder getNvmeRemoteControllerBuilder() {
       
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
       return getNvmeRemoteControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeRemoteControllerOrBuilder getNvmeRemoteControllerOrBuilder() {
       if (nvmeRemoteControllerBuilder_ != null) {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeRemoteController, opi_api.storage.v1.NvmeRemoteController.Builder, opi_api.storage.v1.NvmeRemoteControllerOrBuilder> 
@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmeRemoteControllerId_ = "";
     /**
-     * <code>string nvme_remote_controller_id = 3;</code>
+     * <code>string nvme_remote_controller_id = 2;</code>
      * @return The nvmeRemoteControllerId.
      */
     public java.lang.String getNvmeRemoteControllerId() {
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_remote_controller_id = 3;</code>
+     * <code>string nvme_remote_controller_id = 2;</code>
      * @return The bytes for nvmeRemoteControllerId.
      */
     public com.google.protobuf.ByteString
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_remote_controller_id = 3;</code>
+     * <code>string nvme_remote_controller_id = 2;</code>
      * @param value The nvmeRemoteControllerId to set.
      * @return This builder for chaining.
      */
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_remote_controller_id = 3;</code>
+     * <code>string nvme_remote_controller_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearNvmeRemoteControllerId() {
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_remote_controller_id = 3;</code>
+     * <code>string nvme_remote_controller_id = 2;</code>
      * @param value The bytes for nvmeRemoteControllerId to set.
      * @return This builder for chaining.
      */

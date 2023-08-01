@@ -74,32 +74,32 @@ public final class BackendNullProto {
       "o\032\034google/api/annotations.proto\032\037google/" +
       "api/field_behavior.proto\032 google/protobu" +
       "f/field_mask.proto\032\020object_key.proto\032\017op" +
-      "icommon.proto\032\nuuid.proto\"\245\001\n\nNullVolume" +
-      "\022\014\n\004name\030\001 \001(\t\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014bl" +
-      "ocks_count\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api" +
-      ".common.v1.Uuid:8\352A5\n!storage.opiproject" +
-      ".org/NullVolume\022\020volumes/{volume}\"k\n\027Cre" +
-      "ateNullVolumeRequest\0228\n\013null_volume\030\002 \001(" +
-      "\0132\036.opi_api.storage.v1.NullVolumeB\003\340A\002\022\026" +
-      "\n\016null_volume_id\030\003 \001(\t\"e\n\027DeleteNullVolu" +
-      "meRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api" +
-      ".storage.v1/NullVolume\022\025\n\rallow_missing\030" +
-      "\002 \001(\010\"\226\001\n\027UpdateNullVolumeRequest\0223\n\013nul" +
-      "l_volume\030\001 \001(\0132\036.opi_api.storage.v1.Null" +
-      "Volume\022/\n\013update_mask\030\002 \001(\0132\032.google.pro" +
-      "tobuf.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\"v" +
-      "\n\026ListNullVolumesRequest\0225\n\006parent\030\001 \001(\t" +
-      "B%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolume\022" +
-      "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"h" +
-      "\n\027ListNullVolumesResponse\0224\n\014null_volume" +
-      "s\030\001 \003(\0132\036.opi_api.storage.v1.NullVolume\022" +
-      "\027\n\017next_page_token\030\002 \001(\t\"K\n\024GetNullVolum" +
+      "icommon.proto\032\nuuid.proto\"\314\001\n\nNullVolume" +
+      "\0223\n\004name\030\001 \001(\tB%\340A\003\372A\037\n\035opi_api.storage." +
+      "v1/NullVolume\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014blo" +
+      "cks_count\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api." +
+      "common.v1.Uuid:8\352A5\n!storage.opiproject." +
+      "org/NullVolume\022\020volumes/{volume}\"k\n\027Crea" +
+      "teNullVolumeRequest\0228\n\013null_volume\030\001 \001(\013" +
+      "2\036.opi_api.storage.v1.NullVolumeB\003\340A\002\022\026\n" +
+      "\016null_volume_id\030\002 \001(\t\"e\n\027DeleteNullVolum" +
       "eRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api." +
-      "storage.v1/NullVolume\"F\n\026NullVolumeStats" +
-      "Request\022,\n\006handle\030\001 \001(\0132\034.opi_api.common" +
-      ".v1.ObjectKey\"w\n\027NullVolumeStatsResponse" +
-      "\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Obj" +
-      "ectKey\022.\n\005stats\030\002 \001(\0132\037.opi_api.storage." +
+      "storage.v1/NullVolume\022\025\n\rallow_missing\030\002" +
+      " \001(\010\"\226\001\n\027UpdateNullVolumeRequest\0223\n\013null" +
+      "_volume\030\001 \001(\0132\036.opi_api.storage.v1.NullV" +
+      "olume\022/\n\013update_mask\030\002 \001(\0132\032.google.prot" +
+      "obuf.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\"v\n" +
+      "\026ListNullVolumesRequest\0225\n\006parent\030\001 \001(\tB" +
+      "%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolume\022\021" +
+      "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"h\n" +
+      "\027ListNullVolumesResponse\0224\n\014null_volumes" +
+      "\030\001 \003(\0132\036.opi_api.storage.v1.NullVolume\022\027" +
+      "\n\017next_page_token\030\002 \001(\t\"K\n\024GetNullVolume" +
+      "Request\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.s" +
+      "torage.v1/NullVolume\"M\n\026NullVolumeStatsR" +
+      "equest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.st" +
+      "orage.v1/NullVolume\"I\n\027NullVolumeStatsRe" +
+      "sponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.storage." +
       "v1.VolumeStats2\207\007\n\021NullVolumeService\022\236\001\n" +
       "\020CreateNullVolume\022+.opi_api.storage.v1.C" +
       "reateNullVolumeRequest\032\036.opi_api.storage" +
@@ -187,13 +187,13 @@ public final class BackendNullProto {
     internal_static_opi_api_storage_v1_NullVolumeStatsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NullVolumeStatsRequest_descriptor,
-        new java.lang.String[] { "Handle", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_storage_v1_NullVolumeStatsResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_opi_api_storage_v1_NullVolumeStatsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NullVolumeStatsResponse_descriptor,
-        new java.lang.String[] { "Handle", "Stats", });
+        new java.lang.String[] { "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

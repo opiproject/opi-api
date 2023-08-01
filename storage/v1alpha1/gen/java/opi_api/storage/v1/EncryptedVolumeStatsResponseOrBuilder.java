@@ -8,32 +8,17 @@ public interface EncryptedVolumeStatsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   * @return Whether the encryptedVolumeId field is set.
-   */
-  boolean hasEncryptedVolumeId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   * @return The encryptedVolumeId.
-   */
-  opi_api.common.v1.ObjectKey getEncryptedVolumeId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getEncryptedVolumeIdOrBuilder();
-
-  /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return Whether the stats field is set.
    */
   boolean hasStats();
   /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return The stats.
    */
   opi_api.storage.v1.VolumeStats getStats();
   /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    */
   opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder();
 }

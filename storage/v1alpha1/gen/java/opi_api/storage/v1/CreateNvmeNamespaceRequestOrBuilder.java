@@ -8,27 +8,27 @@ public interface CreateNvmeNamespaceRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeNamespace field is set.
    */
   boolean hasNvmeNamespace();
   /**
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeNamespace.
    */
   opi_api.storage.v1.NvmeNamespace getNvmeNamespace();
   /**
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeNamespaceOrBuilder getNvmeNamespaceOrBuilder();
 
   /**
-   * <code>string nvme_namespace_id = 3;</code>
+   * <code>string nvme_namespace_id = 2;</code>
    * @return The nvmeNamespaceId.
    */
   java.lang.String getNvmeNamespaceId();
   /**
-   * <code>string nvme_namespace_id = 3;</code>
+   * <code>string nvme_namespace_id = 2;</code>
    * @return The bytes for nvmeNamespaceId.
    */
   com.google.protobuf.ByteString

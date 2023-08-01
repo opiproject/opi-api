@@ -49,7 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 10: {
             opi_api.storage.v1.EncryptedVolume.Builder subBuilder = null;
             if (encryptedVolume_ != null) {
               subBuilder = encryptedVolume_.toBuilder();
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             encryptedVolumeId_ = s;
@@ -100,10 +100,10 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateEncryptedVolumeRequest.class, opi_api.storage.v1.CreateEncryptedVolumeRequest.Builder.class);
   }
 
-  public static final int ENCRYPTED_VOLUME_FIELD_NUMBER = 2;
+  public static final int ENCRYPTED_VOLUME_FIELD_NUMBER = 1;
   private opi_api.storage.v1.EncryptedVolume encryptedVolume_;
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the encryptedVolume field is set.
    */
   @java.lang.Override
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
     return encryptedVolume_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The encryptedVolume.
    */
   @java.lang.Override
@@ -119,17 +119,17 @@ private static final long serialVersionUID = 0L;
     return encryptedVolume_ == null ? opi_api.storage.v1.EncryptedVolume.getDefaultInstance() : encryptedVolume_;
   }
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.EncryptedVolumeOrBuilder getEncryptedVolumeOrBuilder() {
     return getEncryptedVolume();
   }
 
-  public static final int ENCRYPTED_VOLUME_ID_FIELD_NUMBER = 3;
+  public static final int ENCRYPTED_VOLUME_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object encryptedVolumeId_;
   /**
-   * <code>string encrypted_volume_id = 3;</code>
+   * <code>string encrypted_volume_id = 2;</code>
    * @return The encryptedVolumeId.
    */
   @java.lang.Override
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string encrypted_volume_id = 3;</code>
+   * <code>string encrypted_volume_id = 2;</code>
    * @return The bytes for encryptedVolumeId.
    */
   @java.lang.Override
@@ -179,10 +179,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (encryptedVolume_ != null) {
-      output.writeMessage(2, getEncryptedVolume());
+      output.writeMessage(1, getEncryptedVolume());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptedVolumeId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, encryptedVolumeId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, encryptedVolumeId_);
     }
     unknownFields.writeTo(output);
   }
@@ -195,10 +195,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (encryptedVolume_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getEncryptedVolume());
+        .computeMessageSize(1, getEncryptedVolume());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptedVolumeId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, encryptedVolumeId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, encryptedVolumeId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -500,14 +500,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.EncryptedVolume, opi_api.storage.v1.EncryptedVolume.Builder, opi_api.storage.v1.EncryptedVolumeOrBuilder> encryptedVolumeBuilder_;
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the encryptedVolume field is set.
      */
     public boolean hasEncryptedVolume() {
       return encryptedVolumeBuilder_ != null || encryptedVolume_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The encryptedVolume.
      */
     public opi_api.storage.v1.EncryptedVolume getEncryptedVolume() {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setEncryptedVolume(opi_api.storage.v1.EncryptedVolume value) {
       if (encryptedVolumeBuilder_ == null) {
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setEncryptedVolume(
         opi_api.storage.v1.EncryptedVolume.Builder builderForValue) {
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeEncryptedVolume(opi_api.storage.v1.EncryptedVolume value) {
       if (encryptedVolumeBuilder_ == null) {
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearEncryptedVolume() {
       if (encryptedVolumeBuilder_ == null) {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.EncryptedVolume.Builder getEncryptedVolumeBuilder() {
       
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
       return getEncryptedVolumeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.EncryptedVolumeOrBuilder getEncryptedVolumeOrBuilder() {
       if (encryptedVolumeBuilder_ != null) {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.EncryptedVolume, opi_api.storage.v1.EncryptedVolume.Builder, opi_api.storage.v1.EncryptedVolumeOrBuilder> 
@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object encryptedVolumeId_ = "";
     /**
-     * <code>string encrypted_volume_id = 3;</code>
+     * <code>string encrypted_volume_id = 2;</code>
      * @return The encryptedVolumeId.
      */
     public java.lang.String getEncryptedVolumeId() {
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string encrypted_volume_id = 3;</code>
+     * <code>string encrypted_volume_id = 2;</code>
      * @return The bytes for encryptedVolumeId.
      */
     public com.google.protobuf.ByteString
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string encrypted_volume_id = 3;</code>
+     * <code>string encrypted_volume_id = 2;</code>
      * @param value The encryptedVolumeId to set.
      * @return This builder for chaining.
      */
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string encrypted_volume_id = 3;</code>
+     * <code>string encrypted_volume_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearEncryptedVolumeId() {
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string encrypted_volume_id = 3;</code>
+     * <code>string encrypted_volume_id = 2;</code>
      * @param value The bytes for encryptedVolumeId to set.
      * @return This builder for chaining.
      */

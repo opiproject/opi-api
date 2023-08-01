@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeSubsystemStatsRequest() {
-    subsystemNameRef_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            subsystemNameRef_ = s;
+            name_ = s;
             break;
           }
           default: {
@@ -87,38 +87,38 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NvmeSubsystemStatsRequest.class, opi_api.storage.v1.NvmeSubsystemStatsRequest.Builder.class);
   }
 
-  public static final int SUBSYSTEM_NAME_REF_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subsystemNameRef_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>string subsystem_name_ref = 1;</code>
-   * @return The subsystemNameRef.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getSubsystemNameRef() {
-    java.lang.Object ref = subsystemNameRef_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      subsystemNameRef_ = s;
+      name_ = s;
       return s;
     }
   }
   /**
-   * <code>string subsystem_name_ref = 1;</code>
-   * @return The bytes for subsystemNameRef.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getSubsystemNameRefBytes() {
-    java.lang.Object ref = subsystemNameRef_;
+      getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      subsystemNameRef_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -139,8 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subsystemNameRef_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subsystemNameRef_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subsystemNameRef_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subsystemNameRef_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,8 +169,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NvmeSubsystemStatsRequest other = (opi_api.storage.v1.NvmeSubsystemStatsRequest) obj;
 
-    if (!getSubsystemNameRef()
-        .equals(other.getSubsystemNameRef())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUBSYSTEM_NAME_REF_FIELD_NUMBER;
-    hash = (53 * hash) + getSubsystemNameRef().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      subsystemNameRef_ = "";
+      name_ = "";
 
       return this;
     }
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NvmeSubsystemStatsRequest buildPartial() {
       opi_api.storage.v1.NvmeSubsystemStatsRequest result = new opi_api.storage.v1.NvmeSubsystemStatsRequest(this);
-      result.subsystemNameRef_ = subsystemNameRef_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -394,8 +394,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NvmeSubsystemStatsRequest other) {
       if (other == opi_api.storage.v1.NvmeSubsystemStatsRequest.getDefaultInstance()) return this;
-      if (!other.getSubsystemNameRef().isEmpty()) {
-        subsystemNameRef_ = other.subsystemNameRef_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -427,78 +427,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object subsystemNameRef_ = "";
+    private java.lang.Object name_ = "";
     /**
-     * <code>string subsystem_name_ref = 1;</code>
-     * @return The subsystemNameRef.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
-    public java.lang.String getSubsystemNameRef() {
-      java.lang.Object ref = subsystemNameRef_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        subsystemNameRef_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string subsystem_name_ref = 1;</code>
-     * @return The bytes for subsystemNameRef.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
-        getSubsystemNameRefBytes() {
-      java.lang.Object ref = subsystemNameRef_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        subsystemNameRef_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string subsystem_name_ref = 1;</code>
-     * @param value The subsystemNameRef to set.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setSubsystemNameRef(
+    public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      subsystemNameRef_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string subsystem_name_ref = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearSubsystemNameRef() {
+    public Builder clearName() {
       
-      subsystemNameRef_ = getDefaultInstance().getSubsystemNameRef();
+      name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
-     * <code>string subsystem_name_ref = 1;</code>
-     * @param value The bytes for subsystemNameRef to set.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setSubsystemNameRefBytes(
+    public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      subsystemNameRef_ = value;
+      name_ = value;
       onChanged();
       return this;
     }

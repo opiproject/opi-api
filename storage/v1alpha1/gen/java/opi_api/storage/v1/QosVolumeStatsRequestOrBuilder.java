@@ -8,17 +8,14 @@ public interface QosVolumeStatsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-   * @return Whether the volumeId field is set.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  boolean hasVolumeId();
+  java.lang.String getName();
   /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-   * @return The volumeId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getVolumeId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

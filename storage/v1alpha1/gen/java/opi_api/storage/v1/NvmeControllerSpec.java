@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
    * subsystem information
    * </pre>
    *
-   * <code>string subsystem_name_ref = 2;</code>
+   * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subsystemNameRef.
    */
   @java.lang.Override
@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
    * subsystem information
    * </pre>
    *
-   * <code>string subsystem_name_ref = 2;</code>
+   * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subsystemNameRef.
    */
   @java.lang.Override
@@ -958,7 +958,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>string subsystem_name_ref = 2;</code>
+     * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The subsystemNameRef.
      */
     public java.lang.String getSubsystemNameRef() {
@@ -978,7 +978,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>string subsystem_name_ref = 2;</code>
+     * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for subsystemNameRef.
      */
     public com.google.protobuf.ByteString
@@ -999,7 +999,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>string subsystem_name_ref = 2;</code>
+     * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The subsystemNameRef to set.
      * @return This builder for chaining.
      */
@@ -1018,7 +1018,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>string subsystem_name_ref = 2;</code>
+     * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSubsystemNameRef() {
@@ -1032,7 +1032,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>string subsystem_name_ref = 2;</code>
+     * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for subsystemNameRef to set.
      * @return This builder for chaining.
      */

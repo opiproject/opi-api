@@ -9,19 +9,23 @@ public interface NvmeRemoteNamespaceOrBuilder extends
 
   /**
    * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
    * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
    * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -32,7 +36,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * controller through which the namespace is visible
    * </pre>
    *
-   * <code>string controller_name_ref = 2;</code>
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The controllerNameRef.
    */
   java.lang.String getControllerNameRef();
@@ -41,7 +45,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * controller through which the namespace is visible
    * </pre>
    *
-   * <code>string controller_name_ref = 2;</code>
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for controllerNameRef.
    */
   com.google.protobuf.ByteString

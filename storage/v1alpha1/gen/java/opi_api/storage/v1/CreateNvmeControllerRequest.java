@@ -49,7 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 10: {
             opi_api.storage.v1.NvmeController.Builder subBuilder = null;
             if (nvmeController_ != null) {
               subBuilder = nvmeController_.toBuilder();
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             nvmeControllerId_ = s;
@@ -100,10 +100,10 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateNvmeControllerRequest.class, opi_api.storage.v1.CreateNvmeControllerRequest.Builder.class);
   }
 
-  public static final int NVME_CONTROLLER_FIELD_NUMBER = 2;
+  public static final int NVME_CONTROLLER_FIELD_NUMBER = 1;
   private opi_api.storage.v1.NvmeController nvmeController_;
   /**
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeController field is set.
    */
   @java.lang.Override
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
     return nvmeController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeController.
    */
   @java.lang.Override
@@ -119,17 +119,17 @@ private static final long serialVersionUID = 0L;
     return nvmeController_ == null ? opi_api.storage.v1.NvmeController.getDefaultInstance() : nvmeController_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmeControllerOrBuilder getNvmeControllerOrBuilder() {
     return getNvmeController();
   }
 
-  public static final int NVME_CONTROLLER_ID_FIELD_NUMBER = 3;
+  public static final int NVME_CONTROLLER_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nvmeControllerId_;
   /**
-   * <code>string nvme_controller_id = 3;</code>
+   * <code>string nvme_controller_id = 2;</code>
    * @return The nvmeControllerId.
    */
   @java.lang.Override
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string nvme_controller_id = 3;</code>
+   * <code>string nvme_controller_id = 2;</code>
    * @return The bytes for nvmeControllerId.
    */
   @java.lang.Override
@@ -179,10 +179,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (nvmeController_ != null) {
-      output.writeMessage(2, getNvmeController());
+      output.writeMessage(1, getNvmeController());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvmeControllerId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nvmeControllerId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nvmeControllerId_);
     }
     unknownFields.writeTo(output);
   }
@@ -195,10 +195,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (nvmeController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getNvmeController());
+        .computeMessageSize(1, getNvmeController());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvmeControllerId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nvmeControllerId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nvmeControllerId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -500,14 +500,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeController, opi_api.storage.v1.NvmeController.Builder, opi_api.storage.v1.NvmeControllerOrBuilder> nvmeControllerBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nvmeController field is set.
      */
     public boolean hasNvmeController() {
       return nvmeControllerBuilder_ != null || nvmeController_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nvmeController.
      */
     public opi_api.storage.v1.NvmeController getNvmeController() {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeController(opi_api.storage.v1.NvmeController value) {
       if (nvmeControllerBuilder_ == null) {
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeController(
         opi_api.storage.v1.NvmeController.Builder builderForValue) {
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNvmeController(opi_api.storage.v1.NvmeController value) {
       if (nvmeControllerBuilder_ == null) {
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNvmeController() {
       if (nvmeControllerBuilder_ == null) {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeController.Builder getNvmeControllerBuilder() {
       
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
       return getNvmeControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeControllerOrBuilder getNvmeControllerOrBuilder() {
       if (nvmeControllerBuilder_ != null) {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeController, opi_api.storage.v1.NvmeController.Builder, opi_api.storage.v1.NvmeControllerOrBuilder> 
@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmeControllerId_ = "";
     /**
-     * <code>string nvme_controller_id = 3;</code>
+     * <code>string nvme_controller_id = 2;</code>
      * @return The nvmeControllerId.
      */
     public java.lang.String getNvmeControllerId() {
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_controller_id = 3;</code>
+     * <code>string nvme_controller_id = 2;</code>
      * @return The bytes for nvmeControllerId.
      */
     public com.google.protobuf.ByteString
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_controller_id = 3;</code>
+     * <code>string nvme_controller_id = 2;</code>
      * @param value The nvmeControllerId to set.
      * @return This builder for chaining.
      */
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_controller_id = 3;</code>
+     * <code>string nvme_controller_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearNvmeControllerId() {
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_controller_id = 3;</code>
+     * <code>string nvme_controller_id = 2;</code>
      * @param value The bytes for nvmeControllerId to set.
      * @return This builder for chaining.
      */

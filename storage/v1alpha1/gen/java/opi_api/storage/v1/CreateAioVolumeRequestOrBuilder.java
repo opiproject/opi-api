@@ -8,27 +8,27 @@ public interface CreateAioVolumeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.AioVolume aio_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the aioVolume field is set.
    */
   boolean hasAioVolume();
   /**
-   * <code>.opi_api.storage.v1.AioVolume aio_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The aioVolume.
    */
   opi_api.storage.v1.AioVolume getAioVolume();
   /**
-   * <code>.opi_api.storage.v1.AioVolume aio_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.AioVolumeOrBuilder getAioVolumeOrBuilder();
 
   /**
-   * <code>string aio_volume_id = 3;</code>
+   * <code>string aio_volume_id = 2;</code>
    * @return The aioVolumeId.
    */
   java.lang.String getAioVolumeId();
   /**
-   * <code>string aio_volume_id = 3;</code>
+   * <code>string aio_volume_id = 2;</code>
    * @return The bytes for aioVolumeId.
    */
   com.google.protobuf.ByteString

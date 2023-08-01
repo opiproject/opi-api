@@ -49,7 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 10: {
             opi_api.storage.v1.NvmeNamespace.Builder subBuilder = null;
             if (nvmeNamespace_ != null) {
               subBuilder = nvmeNamespace_.toBuilder();
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             nvmeNamespaceId_ = s;
@@ -100,10 +100,10 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateNvmeNamespaceRequest.class, opi_api.storage.v1.CreateNvmeNamespaceRequest.Builder.class);
   }
 
-  public static final int NVME_NAMESPACE_FIELD_NUMBER = 2;
+  public static final int NVME_NAMESPACE_FIELD_NUMBER = 1;
   private opi_api.storage.v1.NvmeNamespace nvmeNamespace_;
   /**
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeNamespace field is set.
    */
   @java.lang.Override
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
     return nvmeNamespace_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeNamespace.
    */
   @java.lang.Override
@@ -119,17 +119,17 @@ private static final long serialVersionUID = 0L;
     return nvmeNamespace_ == null ? opi_api.storage.v1.NvmeNamespace.getDefaultInstance() : nvmeNamespace_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmeNamespaceOrBuilder getNvmeNamespaceOrBuilder() {
     return getNvmeNamespace();
   }
 
-  public static final int NVME_NAMESPACE_ID_FIELD_NUMBER = 3;
+  public static final int NVME_NAMESPACE_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nvmeNamespaceId_;
   /**
-   * <code>string nvme_namespace_id = 3;</code>
+   * <code>string nvme_namespace_id = 2;</code>
    * @return The nvmeNamespaceId.
    */
   @java.lang.Override
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string nvme_namespace_id = 3;</code>
+   * <code>string nvme_namespace_id = 2;</code>
    * @return The bytes for nvmeNamespaceId.
    */
   @java.lang.Override
@@ -179,10 +179,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (nvmeNamespace_ != null) {
-      output.writeMessage(2, getNvmeNamespace());
+      output.writeMessage(1, getNvmeNamespace());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvmeNamespaceId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nvmeNamespaceId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nvmeNamespaceId_);
     }
     unknownFields.writeTo(output);
   }
@@ -195,10 +195,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (nvmeNamespace_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getNvmeNamespace());
+        .computeMessageSize(1, getNvmeNamespace());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvmeNamespaceId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nvmeNamespaceId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nvmeNamespaceId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -500,14 +500,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeNamespace, opi_api.storage.v1.NvmeNamespace.Builder, opi_api.storage.v1.NvmeNamespaceOrBuilder> nvmeNamespaceBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nvmeNamespace field is set.
      */
     public boolean hasNvmeNamespace() {
       return nvmeNamespaceBuilder_ != null || nvmeNamespace_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nvmeNamespace.
      */
     public opi_api.storage.v1.NvmeNamespace getNvmeNamespace() {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeNamespace(opi_api.storage.v1.NvmeNamespace value) {
       if (nvmeNamespaceBuilder_ == null) {
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeNamespace(
         opi_api.storage.v1.NvmeNamespace.Builder builderForValue) {
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNvmeNamespace(opi_api.storage.v1.NvmeNamespace value) {
       if (nvmeNamespaceBuilder_ == null) {
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNvmeNamespace() {
       if (nvmeNamespaceBuilder_ == null) {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeNamespace.Builder getNvmeNamespaceBuilder() {
       
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
       return getNvmeNamespaceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeNamespaceOrBuilder getNvmeNamespaceOrBuilder() {
       if (nvmeNamespaceBuilder_ != null) {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeNamespace, opi_api.storage.v1.NvmeNamespace.Builder, opi_api.storage.v1.NvmeNamespaceOrBuilder> 
@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmeNamespaceId_ = "";
     /**
-     * <code>string nvme_namespace_id = 3;</code>
+     * <code>string nvme_namespace_id = 2;</code>
      * @return The nvmeNamespaceId.
      */
     public java.lang.String getNvmeNamespaceId() {
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_namespace_id = 3;</code>
+     * <code>string nvme_namespace_id = 2;</code>
      * @return The bytes for nvmeNamespaceId.
      */
     public com.google.protobuf.ByteString
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_namespace_id = 3;</code>
+     * <code>string nvme_namespace_id = 2;</code>
      * @param value The nvmeNamespaceId to set.
      * @return This builder for chaining.
      */
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_namespace_id = 3;</code>
+     * <code>string nvme_namespace_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearNvmeNamespaceId() {
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_namespace_id = 3;</code>
+     * <code>string nvme_namespace_id = 2;</code>
      * @param value The bytes for nvmeNamespaceId to set.
      * @return This builder for chaining.
      */

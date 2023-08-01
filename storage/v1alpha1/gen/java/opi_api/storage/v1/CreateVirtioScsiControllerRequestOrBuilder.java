@@ -8,27 +8,27 @@ public interface CreateVirtioScsiControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioScsiController field is set.
    */
   boolean hasVirtioScsiController();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioScsiController.
    */
   opi_api.storage.v1.VirtioScsiController getVirtioScsiController();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder();
 
   /**
-   * <code>string virtio_scsi_controller_id = 3;</code>
+   * <code>string virtio_scsi_controller_id = 2;</code>
    * @return The virtioScsiControllerId.
    */
   java.lang.String getVirtioScsiControllerId();
   /**
-   * <code>string virtio_scsi_controller_id = 3;</code>
+   * <code>string virtio_scsi_controller_id = 2;</code>
    * @return The bytes for virtioScsiControllerId.
    */
   com.google.protobuf.ByteString

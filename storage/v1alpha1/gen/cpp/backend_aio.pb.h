@@ -240,7 +240,7 @@ class AioVolume final :
     kBlockSizeFieldNumber = 2,
     kBlocksCountFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -443,10 +443,10 @@ class CreateAioVolumeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAioVolumeIdFieldNumber = 3,
-    kAioVolumeFieldNumber = 2,
+    kAioVolumeIdFieldNumber = 2,
+    kAioVolumeFieldNumber = 1,
   };
-  // string aio_volume_id = 3;
+  // string aio_volume_id = 2;
   void clear_aio_volume_id();
   const std::string& aio_volume_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -460,7 +460,7 @@ class CreateAioVolumeRequest final :
   std::string* _internal_mutable_aio_volume_id();
   public:
 
-  // .opi_api.storage.v1.AioVolume aio_volume = 2 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_aio_volume() const;
   private:
   bool _internal_has_aio_volume() const;
@@ -1462,25 +1462,21 @@ class AioVolumeStatsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kHandleFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // .opi_api.common.v1.ObjectKey handle = 1;
-  bool has_handle() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  bool _internal_has_handle() const;
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
-  void clear_handle();
-  const ::opi_api::common::v1::ObjectKey& handle() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_handle();
-  ::opi_api::common::v1::ObjectKey* mutable_handle();
-  void set_allocated_handle(::opi_api::common::v1::ObjectKey* handle);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_handle() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_handle();
-  public:
-  void unsafe_arena_set_allocated_handle(
-      ::opi_api::common::v1::ObjectKey* handle);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioVolumeStatsRequest)
  private:
@@ -1489,7 +1485,7 @@ class AioVolumeStatsRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* handle_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5faio_2eproto;
 };
@@ -1617,28 +1613,9 @@ class AioVolumeStatsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kHandleFieldNumber = 1,
-    kStatsFieldNumber = 2,
+    kStatsFieldNumber = 1,
   };
-  // .opi_api.common.v1.ObjectKey handle = 1;
-  bool has_handle() const;
-  private:
-  bool _internal_has_handle() const;
-  public:
-  void clear_handle();
-  const ::opi_api::common::v1::ObjectKey& handle() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_handle();
-  ::opi_api::common::v1::ObjectKey* mutable_handle();
-  void set_allocated_handle(::opi_api::common::v1::ObjectKey* handle);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_handle() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_handle();
-  public:
-  void unsafe_arena_set_allocated_handle(
-      ::opi_api::common::v1::ObjectKey* handle);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
-
-  // .opi_api.storage.v1.VolumeStats stats = 2;
+  // .opi_api.storage.v1.VolumeStats stats = 1;
   bool has_stats() const;
   private:
   bool _internal_has_stats() const;
@@ -1663,7 +1640,6 @@ class AioVolumeStatsResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* handle_;
   ::opi_api::storage::v1::VolumeStats* stats_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5faio_2eproto;
@@ -1679,7 +1655,7 @@ class AioVolumeStatsResponse final :
 #endif  // __GNUC__
 // AioVolume
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
 inline void AioVolume::clear_name() {
   name_.ClearToEmpty();
 }
@@ -1911,7 +1887,7 @@ inline void AioVolume::set_allocated_filename(std::string* filename) {
 
 // CreateAioVolumeRequest
 
-// .opi_api.storage.v1.AioVolume aio_volume = 2 [(.google.api.field_behavior) = REQUIRED];
+// .opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateAioVolumeRequest::_internal_has_aio_volume() const {
   return this != internal_default_instance() && aio_volume_ != nullptr;
 }
@@ -2001,7 +1977,7 @@ inline void CreateAioVolumeRequest::set_allocated_aio_volume(::opi_api::storage:
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateAioVolumeRequest.aio_volume)
 }
 
-// string aio_volume_id = 3;
+// string aio_volume_id = 2;
 inline void CreateAioVolumeRequest::clear_aio_volume_id() {
   aio_volume_id_.ClearToEmpty();
 }
@@ -2607,183 +2583,62 @@ inline void GetAioVolumeRequest::set_allocated_name(std::string* name) {
 
 // AioVolumeStatsRequest
 
-// .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioVolumeStatsRequest::_internal_has_handle() const {
-  return this != internal_default_instance() && handle_ != nullptr;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void AioVolumeStatsRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline bool AioVolumeStatsRequest::has_handle() const {
-  return _internal_has_handle();
+inline const std::string& AioVolumeStatsRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioVolumeStatsRequest.name)
+  return _internal_name();
 }
-inline const ::opi_api::common::v1::ObjectKey& AioVolumeStatsRequest::_internal_handle() const {
-  const ::opi_api::common::v1::ObjectKey* p = handle_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AioVolumeStatsRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioVolumeStatsRequest.name)
 }
-inline const ::opi_api::common::v1::ObjectKey& AioVolumeStatsRequest::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioVolumeStatsRequest.handle)
-  return _internal_handle();
+inline std::string* AioVolumeStatsRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioVolumeStatsRequest.name)
+  return _s;
 }
-inline void AioVolumeStatsRequest::unsafe_arena_set_allocated_handle(
-    ::opi_api::common::v1::ObjectKey* handle) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
-  }
-  handle_ = handle;
-  if (handle) {
+inline const std::string& AioVolumeStatsRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void AioVolumeStatsRequest::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AioVolumeStatsRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AioVolumeStatsRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioVolumeStatsRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AioVolumeStatsRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioVolumeStatsRequest.handle)
-}
-inline ::opi_api::common::v1::ObjectKey* AioVolumeStatsRequest::release_handle() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = handle_;
-  handle_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* AioVolumeStatsRequest::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioVolumeStatsRequest.handle)
-  
-  ::opi_api::common::v1::ObjectKey* temp = handle_;
-  handle_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* AioVolumeStatsRequest::_internal_mutable_handle() {
-  
-  if (handle_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    handle_ = p;
-  }
-  return handle_;
-}
-inline ::opi_api::common::v1::ObjectKey* AioVolumeStatsRequest::mutable_handle() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioVolumeStatsRequest.handle)
-  return _msg;
-}
-inline void AioVolumeStatsRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
-  }
-  if (handle) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle));
-    if (message_arena != submessage_arena) {
-      handle = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, handle, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioVolumeStatsRequest.handle)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioVolumeStatsRequest.name)
 }
 
 // -------------------------------------------------------------------
 
 // AioVolumeStatsResponse
 
-// .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioVolumeStatsResponse::_internal_has_handle() const {
-  return this != internal_default_instance() && handle_ != nullptr;
-}
-inline bool AioVolumeStatsResponse::has_handle() const {
-  return _internal_has_handle();
-}
-inline const ::opi_api::common::v1::ObjectKey& AioVolumeStatsResponse::_internal_handle() const {
-  const ::opi_api::common::v1::ObjectKey* p = handle_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& AioVolumeStatsResponse::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioVolumeStatsResponse.handle)
-  return _internal_handle();
-}
-inline void AioVolumeStatsResponse::unsafe_arena_set_allocated_handle(
-    ::opi_api::common::v1::ObjectKey* handle) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
-  }
-  handle_ = handle;
-  if (handle) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioVolumeStatsResponse.handle)
-}
-inline ::opi_api::common::v1::ObjectKey* AioVolumeStatsResponse::release_handle() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = handle_;
-  handle_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* AioVolumeStatsResponse::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioVolumeStatsResponse.handle)
-  
-  ::opi_api::common::v1::ObjectKey* temp = handle_;
-  handle_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* AioVolumeStatsResponse::_internal_mutable_handle() {
-  
-  if (handle_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    handle_ = p;
-  }
-  return handle_;
-}
-inline ::opi_api::common::v1::ObjectKey* AioVolumeStatsResponse::mutable_handle() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioVolumeStatsResponse.handle)
-  return _msg;
-}
-inline void AioVolumeStatsResponse::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
-  }
-  if (handle) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle));
-    if (message_arena != submessage_arena) {
-      handle = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, handle, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioVolumeStatsResponse.handle)
-}
-
-// .opi_api.storage.v1.VolumeStats stats = 2;
+// .opi_api.storage.v1.VolumeStats stats = 1;
 inline bool AioVolumeStatsResponse::_internal_has_stats() const {
   return this != internal_default_instance() && stats_ != nullptr;
 }

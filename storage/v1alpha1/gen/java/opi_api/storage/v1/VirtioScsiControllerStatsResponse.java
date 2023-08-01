@@ -49,19 +49,6 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
             opi_api.storage.v1.VolumeStats.Builder subBuilder = null;
             if (stats_ != null) {
               subBuilder = stats_.toBuilder();
@@ -106,36 +93,10 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.VirtioScsiControllerStatsResponse.class, opi_api.storage.v1.VirtioScsiControllerStatsResponse.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int STATS_FIELD_NUMBER = 2;
+  public static final int STATS_FIELD_NUMBER = 1;
   private opi_api.storage.v1.VolumeStats stats_;
   /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return Whether the stats field is set.
    */
   @java.lang.Override
@@ -143,7 +104,7 @@ private static final long serialVersionUID = 0L;
     return stats_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return The stats.
    */
   @java.lang.Override
@@ -151,7 +112,7 @@ private static final long serialVersionUID = 0L;
     return stats_ == null ? opi_api.storage.v1.VolumeStats.getDefaultInstance() : stats_;
   }
   /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder() {
@@ -172,11 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (stats_ != null) {
-      output.writeMessage(2, getStats());
+      output.writeMessage(1, getStats());
     }
     unknownFields.writeTo(output);
   }
@@ -187,13 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (stats_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getStats());
+        .computeMessageSize(1, getStats());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -210,11 +164,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.VirtioScsiControllerStatsResponse other = (opi_api.storage.v1.VirtioScsiControllerStatsResponse) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (hasStats() != other.hasStats()) return false;
     if (hasStats()) {
       if (!getStats()
@@ -231,10 +180,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     if (hasStats()) {
       hash = (37 * hash) + STATS_FIELD_NUMBER;
       hash = (53 * hash) + getStats().hashCode();
@@ -372,12 +317,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       if (statsBuilder_ == null) {
         stats_ = null;
       } else {
@@ -410,11 +349,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.VirtioScsiControllerStatsResponse buildPartial() {
       opi_api.storage.v1.VirtioScsiControllerStatsResponse result = new opi_api.storage.v1.VirtioScsiControllerStatsResponse(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       if (statsBuilder_ == null) {
         result.stats_ = stats_;
       } else {
@@ -468,9 +402,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.VirtioScsiControllerStatsResponse other) {
       if (other == opi_api.storage.v1.VirtioScsiControllerStatsResponse.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.hasStats()) {
         mergeStats(other.getStats());
       }
@@ -503,137 +434,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private opi_api.storage.v1.VolumeStats stats_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VolumeStats, opi_api.storage.v1.VolumeStats.Builder, opi_api.storage.v1.VolumeStatsOrBuilder> statsBuilder_;
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      * @return Whether the stats field is set.
      */
     public boolean hasStats() {
       return statsBuilder_ != null || stats_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      * @return The stats.
      */
     public opi_api.storage.v1.VolumeStats getStats() {
@@ -644,7 +456,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder setStats(opi_api.storage.v1.VolumeStats value) {
       if (statsBuilder_ == null) {
@@ -660,7 +472,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder setStats(
         opi_api.storage.v1.VolumeStats.Builder builderForValue) {
@@ -674,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder mergeStats(opi_api.storage.v1.VolumeStats value) {
       if (statsBuilder_ == null) {
@@ -692,7 +504,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder clearStats() {
       if (statsBuilder_ == null) {
@@ -706,7 +518,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public opi_api.storage.v1.VolumeStats.Builder getStatsBuilder() {
       
@@ -714,7 +526,7 @@ private static final long serialVersionUID = 0L;
       return getStatsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder() {
       if (statsBuilder_ != null) {
@@ -725,7 +537,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VolumeStats, opi_api.storage.v1.VolumeStats.Builder, opi_api.storage.v1.VolumeStatsOrBuilder> 

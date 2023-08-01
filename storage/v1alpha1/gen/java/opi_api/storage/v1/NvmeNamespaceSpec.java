@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
    * subsystem for this namespace
    * </pre>
    *
-   * <code>string subsystem_name_ref = 1;</code>
+   * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subsystemNameRef.
    */
   @java.lang.Override
@@ -152,7 +152,7 @@ private static final long serialVersionUID = 0L;
    * subsystem for this namespace
    * </pre>
    *
-   * <code>string subsystem_name_ref = 1;</code>
+   * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subsystemNameRef.
    */
   @java.lang.Override
@@ -295,7 +295,7 @@ private static final long serialVersionUID = 0L;
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>string volume_name_ref = 6;</code>
+   * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The volumeNameRef.
    */
   @java.lang.Override
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>string volume_name_ref = 6;</code>
+   * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for volumeNameRef.
    */
   @java.lang.Override
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>string subsystem_name_ref = 1;</code>
+     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The subsystemNameRef.
      */
     public java.lang.String getSubsystemNameRef() {
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>string subsystem_name_ref = 1;</code>
+     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for subsystemNameRef.
      */
     public com.google.protobuf.ByteString
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>string subsystem_name_ref = 1;</code>
+     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The subsystemNameRef to set.
      * @return This builder for chaining.
      */
@@ -801,7 +801,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>string subsystem_name_ref = 1;</code>
+     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSubsystemNameRef() {
@@ -815,7 +815,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>string subsystem_name_ref = 1;</code>
+     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for subsystemNameRef to set.
      * @return This builder for chaining.
      */
@@ -1186,7 +1186,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6;</code>
+     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The volumeNameRef.
      */
     public java.lang.String getVolumeNameRef() {
@@ -1206,7 +1206,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6;</code>
+     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for volumeNameRef.
      */
     public com.google.protobuf.ByteString
@@ -1227,7 +1227,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6;</code>
+     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The volumeNameRef to set.
      * @return This builder for chaining.
      */
@@ -1246,7 +1246,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6;</code>
+     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearVolumeNameRef() {
@@ -1260,7 +1260,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6;</code>
+     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for volumeNameRef to set.
      * @return This builder for chaining.
      */

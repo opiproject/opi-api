@@ -14,7 +14,7 @@ public interface VirtioBlkOrBuilder extends
    * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -25,7 +25,7 @@ public interface VirtioBlkOrBuilder extends
    * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -63,27 +63,20 @@ public interface VirtioBlkOrBuilder extends
    * The back/middle-end volume to back this controller
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
-   * @return Whether the volumeId field is set.
+   * <code>string volume_name_ref = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The volumeNameRef.
    */
-  boolean hasVolumeId();
+  java.lang.String getVolumeNameRef();
   /**
    * <pre>
    * The back/middle-end volume to back this controller
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
-   * @return The volumeId.
+   * <code>string volume_name_ref = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for volumeNameRef.
    */
-  opi_api.common.v1.ObjectKey getVolumeId();
-  /**
-   * <pre>
-   * The back/middle-end volume to back this controller
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVolumeNameRefBytes();
 
   /**
    * <code>int64 max_io_qps = 4;</code>

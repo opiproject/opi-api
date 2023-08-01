@@ -8,27 +8,27 @@ public interface CreateVirtioScsiTargetRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioScsiTarget field is set.
    */
   boolean hasVirtioScsiTarget();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioScsiTarget.
    */
   opi_api.storage.v1.VirtioScsiTarget getVirtioScsiTarget();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.VirtioScsiTargetOrBuilder getVirtioScsiTargetOrBuilder();
 
   /**
-   * <code>string virtio_scsi_target_id = 3;</code>
+   * <code>string virtio_scsi_target_id = 2;</code>
    * @return The virtioScsiTargetId.
    */
   java.lang.String getVirtioScsiTargetId();
   /**
-   * <code>string virtio_scsi_target_id = 3;</code>
+   * <code>string virtio_scsi_target_id = 2;</code>
    * @return The bytes for virtioScsiTargetId.
    */
   com.google.protobuf.ByteString

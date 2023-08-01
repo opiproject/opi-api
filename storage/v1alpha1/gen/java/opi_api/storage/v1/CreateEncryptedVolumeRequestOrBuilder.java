@@ -8,27 +8,27 @@ public interface CreateEncryptedVolumeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the encryptedVolume field is set.
    */
   boolean hasEncryptedVolume();
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The encryptedVolume.
    */
   opi_api.storage.v1.EncryptedVolume getEncryptedVolume();
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.EncryptedVolumeOrBuilder getEncryptedVolumeOrBuilder();
 
   /**
-   * <code>string encrypted_volume_id = 3;</code>
+   * <code>string encrypted_volume_id = 2;</code>
    * @return The encryptedVolumeId.
    */
   java.lang.String getEncryptedVolumeId();
   /**
-   * <code>string encrypted_volume_id = 3;</code>
+   * <code>string encrypted_volume_id = 2;</code>
    * @return The bytes for encryptedVolumeId.
    */
   com.google.protobuf.ByteString

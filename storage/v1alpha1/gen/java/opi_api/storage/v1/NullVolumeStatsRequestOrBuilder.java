@@ -8,17 +8,14 @@ public interface NullVolumeStatsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return Whether the handle field is set.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  boolean hasHandle();
+  java.lang.String getName();
   /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return The handle.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getHandle();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

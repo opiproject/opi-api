@@ -8,32 +8,17 @@ public interface NullVolumeStatsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return Whether the handle field is set.
-   */
-  boolean hasHandle();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return The handle.
-   */
-  opi_api.common.v1.ObjectKey getHandle();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder();
-
-  /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return Whether the stats field is set.
    */
   boolean hasStats();
   /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return The stats.
    */
   opi_api.storage.v1.VolumeStats getStats();
   /**
-   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    */
   opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder();
 }

@@ -8,27 +8,27 @@ public interface CreateNvmeControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeController field is set.
    */
   boolean hasNvmeController();
   /**
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeController.
    */
   opi_api.storage.v1.NvmeController getNvmeController();
   /**
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeControllerOrBuilder getNvmeControllerOrBuilder();
 
   /**
-   * <code>string nvme_controller_id = 3;</code>
+   * <code>string nvme_controller_id = 2;</code>
    * @return The nvmeControllerId.
    */
   java.lang.String getNvmeControllerId();
   /**
-   * <code>string nvme_controller_id = 3;</code>
+   * <code>string nvme_controller_id = 2;</code>
    * @return The bytes for nvmeControllerId.
    */
   com.google.protobuf.ByteString
