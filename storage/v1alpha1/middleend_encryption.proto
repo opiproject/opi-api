@@ -54,7 +54,12 @@ service MiddleendEncryptionService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc EncryptedVolumeStats  (EncryptedVolumeStatsRequest)  returns (EncryptedVolumeStatsResponse)  {}
+    rpc StatsEncryptedVolume  (StatsEncryptedVolumeRequest)  returns (StatsEncryptedVolumeResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=EncryptedVolumes/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message EncryptedVolume {
@@ -128,13 +133,13 @@ message GetEncryptedVolumeRequest {
     ];
 }
 
-message EncryptedVolumeStatsRequest {
+message StatsEncryptedVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
     ];
 }
 
-message EncryptedVolumeStatsResponse {
+message StatsEncryptedVolumeResponse {
     VolumeStats stats = 1;
 }

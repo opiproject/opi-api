@@ -54,7 +54,12 @@ service AioVolumeService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc AioVolumeStats  (AioVolumeStatsRequest)  returns (AioVolumeStatsResponse)  {}
+    rpc StatsAioVolume  (StatsAioVolumeRequest)  returns (StatsAioVolumeResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=AioVolumes/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message AioVolume {
@@ -123,14 +128,14 @@ message GetAioVolumeRequest {
     ];
 }
 
-message AioVolumeStatsRequest {
+message StatsAioVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
     ];
 }
 
-message AioVolumeStatsResponse {
+message StatsAioVolumeResponse {
     VolumeStats stats = 1;
 }
 

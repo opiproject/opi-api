@@ -54,7 +54,12 @@ service NullVolumeService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc NullVolumeStats  (NullVolumeStatsRequest)  returns (NullVolumeStatsResponse)  {}
+    rpc StatsNullVolume  (StatsNullVolumeRequest)  returns (StatsNullVolumeResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=NullVolumes/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message NullVolume {
@@ -121,14 +126,14 @@ message GetNullVolumeRequest {
     ];
 }
 
-message NullVolumeStatsRequest {
+message StatsNullVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NullVolume"
     ];
 }
 
-message NullVolumeStatsResponse {
+message StatsNullVolumeResponse {
     VolumeStats stats = 1;
 }
 

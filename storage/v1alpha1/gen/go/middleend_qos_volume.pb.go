@@ -450,7 +450,7 @@ func (x *GetQosVolumeRequest) GetName() string {
 	return ""
 }
 
-type QosVolumeStatsRequest struct {
+type StatsQosVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -458,8 +458,8 @@ type QosVolumeStatsRequest struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *QosVolumeStatsRequest) Reset() {
-	*x = QosVolumeStatsRequest{}
+func (x *StatsQosVolumeRequest) Reset() {
+	*x = StatsQosVolumeRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_middleend_qos_volume_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -467,13 +467,13 @@ func (x *QosVolumeStatsRequest) Reset() {
 	}
 }
 
-func (x *QosVolumeStatsRequest) String() string {
+func (x *StatsQosVolumeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QosVolumeStatsRequest) ProtoMessage() {}
+func (*StatsQosVolumeRequest) ProtoMessage() {}
 
-func (x *QosVolumeStatsRequest) ProtoReflect() protoreflect.Message {
+func (x *StatsQosVolumeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_middleend_qos_volume_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -485,19 +485,19 @@ func (x *QosVolumeStatsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QosVolumeStatsRequest.ProtoReflect.Descriptor instead.
-func (*QosVolumeStatsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use StatsQosVolumeRequest.ProtoReflect.Descriptor instead.
+func (*StatsQosVolumeRequest) Descriptor() ([]byte, []int) {
 	return file_middleend_qos_volume_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *QosVolumeStatsRequest) GetName() string {
+func (x *StatsQosVolumeRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type QosVolumeStatsResponse struct {
+type StatsQosVolumeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -505,8 +505,8 @@ type QosVolumeStatsResponse struct {
 	Stats *VolumeStats `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
 }
 
-func (x *QosVolumeStatsResponse) Reset() {
-	*x = QosVolumeStatsResponse{}
+func (x *StatsQosVolumeResponse) Reset() {
+	*x = StatsQosVolumeResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_middleend_qos_volume_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -514,13 +514,13 @@ func (x *QosVolumeStatsResponse) Reset() {
 	}
 }
 
-func (x *QosVolumeStatsResponse) String() string {
+func (x *StatsQosVolumeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QosVolumeStatsResponse) ProtoMessage() {}
+func (*StatsQosVolumeResponse) ProtoMessage() {}
 
-func (x *QosVolumeStatsResponse) ProtoReflect() protoreflect.Message {
+func (x *StatsQosVolumeResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_middleend_qos_volume_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -532,12 +532,12 @@ func (x *QosVolumeStatsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QosVolumeStatsResponse.ProtoReflect.Descriptor instead.
-func (*QosVolumeStatsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use StatsQosVolumeResponse.ProtoReflect.Descriptor instead.
+func (*StatsQosVolumeResponse) Descriptor() ([]byte, []int) {
 	return file_middleend_qos_volume_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *QosVolumeStatsResponse) GetStats() *VolumeStats {
+func (x *StatsQosVolumeResponse) GetStats() *VolumeStats {
 	if x != nil {
 		return x.Stats
 	}
@@ -632,17 +632,17 @@ var file_middleend_qos_volume_proto_rawDesc = []byte{
 	0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x24, 0xe0, 0x41, 0x02, 0xfa, 0x41, 0x1e,
 	0x0a, 0x1c, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
 	0x65, 0x2e, 0x76, 0x31, 0x2f, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x22, 0x51, 0x0a, 0x15, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
-	0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a,
+	0x6e, 0x61, 0x6d, 0x65, 0x22, 0x51, 0x0a, 0x15, 0x53, 0x74, 0x61, 0x74, 0x73, 0x51, 0x6f, 0x73,
+	0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a,
 	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x24, 0xe0, 0x41, 0x02,
 	0xfa, 0x41, 0x1e, 0x0a, 0x1c, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
 	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2f, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
-	0x65, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x4f, 0x0a, 0x16, 0x51, 0x6f, 0x73, 0x56, 0x6f,
-	0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x4f, 0x0a, 0x16, 0x53, 0x74, 0x61, 0x74, 0x73,
+	0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x35, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x1f, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
 	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74,
-	0x73, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0xdf, 0x06, 0x0a, 0x19, 0x4d, 0x69, 0x64,
+	0x73, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0x8c, 0x07, 0x0a, 0x19, 0x4d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x65, 0x6e, 0x64, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x98, 0x01, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61, 0x74,
 	0x65, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69,
@@ -690,20 +690,23 @@ var file_middleend_qos_volume_proto_rawDesc = []byte{
 	0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x12,
 	0x17, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x51, 0x6f, 0x73, 0x56, 0x6f,
 	0x6c, 0x75, 0x6d, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x69, 0x0a, 0x0e, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74,
-	0x73, 0x12, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
-	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65,
-	0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x6f,
-	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x66, 0x0a, 0x12, 0x6f, 0x70,
-	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
-	0x42, 0x17, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x65, 0x6e, 0x64, 0x51, 0x6f, 0x73, 0x56, 0x6f,
-	0x6c, 0x75, 0x6d, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65,
-	0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f,
-	0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x95, 0x01, 0x0a, 0x0e, 0x53, 0x74, 0x61, 0x74, 0x73, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75,
+	0x6d, 0x65, 0x12, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x73, 0x51, 0x6f, 0x73,
+	0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e,
+	0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x73, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
+	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x1f, 0x12, 0x1d, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x51, 0x6f, 0x73,
+	0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0x3a, 0x73, 0x74, 0x61, 0x74, 0x73,
+	0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x42, 0x66, 0x0a, 0x12, 0x6f, 0x70, 0x69, 0x5f, 0x61,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x42, 0x17, 0x4d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x65, 0x6e, 0x64, 0x51, 0x6f, 0x73, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
+	0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f,
+	0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f,
+	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -727,8 +730,8 @@ var file_middleend_qos_volume_proto_goTypes = []interface{}{
 	(*ListQosVolumesRequest)(nil),  // 4: opi_api.storage.v1.ListQosVolumesRequest
 	(*ListQosVolumesResponse)(nil), // 5: opi_api.storage.v1.ListQosVolumesResponse
 	(*GetQosVolumeRequest)(nil),    // 6: opi_api.storage.v1.GetQosVolumeRequest
-	(*QosVolumeStatsRequest)(nil),  // 7: opi_api.storage.v1.QosVolumeStatsRequest
-	(*QosVolumeStatsResponse)(nil), // 8: opi_api.storage.v1.QosVolumeStatsResponse
+	(*StatsQosVolumeRequest)(nil),  // 7: opi_api.storage.v1.StatsQosVolumeRequest
+	(*StatsQosVolumeResponse)(nil), // 8: opi_api.storage.v1.StatsQosVolumeResponse
 	(*_go.ObjectKey)(nil),          // 9: opi_api.common.v1.ObjectKey
 	(*QosLimit)(nil),               // 10: opi_api.storage.v1.QosLimit
 	(*fieldmaskpb.FieldMask)(nil),  // 11: google.protobuf.FieldMask
@@ -743,19 +746,19 @@ var file_middleend_qos_volume_proto_depIdxs = []int32{
 	0,  // 4: opi_api.storage.v1.UpdateQosVolumeRequest.qos_volume:type_name -> opi_api.storage.v1.QosVolume
 	11, // 5: opi_api.storage.v1.UpdateQosVolumeRequest.update_mask:type_name -> google.protobuf.FieldMask
 	0,  // 6: opi_api.storage.v1.ListQosVolumesResponse.qos_volumes:type_name -> opi_api.storage.v1.QosVolume
-	12, // 7: opi_api.storage.v1.QosVolumeStatsResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
+	12, // 7: opi_api.storage.v1.StatsQosVolumeResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
 	1,  // 8: opi_api.storage.v1.MiddleendQosVolumeService.CreateQosVolume:input_type -> opi_api.storage.v1.CreateQosVolumeRequest
 	2,  // 9: opi_api.storage.v1.MiddleendQosVolumeService.DeleteQosVolume:input_type -> opi_api.storage.v1.DeleteQosVolumeRequest
 	3,  // 10: opi_api.storage.v1.MiddleendQosVolumeService.UpdateQosVolume:input_type -> opi_api.storage.v1.UpdateQosVolumeRequest
 	4,  // 11: opi_api.storage.v1.MiddleendQosVolumeService.ListQosVolumes:input_type -> opi_api.storage.v1.ListQosVolumesRequest
 	6,  // 12: opi_api.storage.v1.MiddleendQosVolumeService.GetQosVolume:input_type -> opi_api.storage.v1.GetQosVolumeRequest
-	7,  // 13: opi_api.storage.v1.MiddleendQosVolumeService.QosVolumeStats:input_type -> opi_api.storage.v1.QosVolumeStatsRequest
+	7,  // 13: opi_api.storage.v1.MiddleendQosVolumeService.StatsQosVolume:input_type -> opi_api.storage.v1.StatsQosVolumeRequest
 	0,  // 14: opi_api.storage.v1.MiddleendQosVolumeService.CreateQosVolume:output_type -> opi_api.storage.v1.QosVolume
 	13, // 15: opi_api.storage.v1.MiddleendQosVolumeService.DeleteQosVolume:output_type -> google.protobuf.Empty
 	0,  // 16: opi_api.storage.v1.MiddleendQosVolumeService.UpdateQosVolume:output_type -> opi_api.storage.v1.QosVolume
 	5,  // 17: opi_api.storage.v1.MiddleendQosVolumeService.ListQosVolumes:output_type -> opi_api.storage.v1.ListQosVolumesResponse
 	0,  // 18: opi_api.storage.v1.MiddleendQosVolumeService.GetQosVolume:output_type -> opi_api.storage.v1.QosVolume
-	8,  // 19: opi_api.storage.v1.MiddleendQosVolumeService.QosVolumeStats:output_type -> opi_api.storage.v1.QosVolumeStatsResponse
+	8,  // 19: opi_api.storage.v1.MiddleendQosVolumeService.StatsQosVolume:output_type -> opi_api.storage.v1.StatsQosVolumeResponse
 	14, // [14:20] is the sub-list for method output_type
 	8,  // [8:14] is the sub-list for method input_type
 	8,  // [8:8] is the sub-list for extension type_name
@@ -855,7 +858,7 @@ func file_middleend_qos_volume_proto_init() {
 			}
 		}
 		file_middleend_qos_volume_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QosVolumeStatsRequest); i {
+			switch v := v.(*StatsQosVolumeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -867,7 +870,7 @@ func file_middleend_qos_volume_proto_init() {
 			}
 		}
 		file_middleend_qos_volume_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QosVolumeStatsResponse); i {
+			switch v := v.(*StatsQosVolumeResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -916,7 +919,7 @@ type MiddleendQosVolumeServiceClient interface {
 	UpdateQosVolume(ctx context.Context, in *UpdateQosVolumeRequest, opts ...grpc.CallOption) (*QosVolume, error)
 	ListQosVolumes(ctx context.Context, in *ListQosVolumesRequest, opts ...grpc.CallOption) (*ListQosVolumesResponse, error)
 	GetQosVolume(ctx context.Context, in *GetQosVolumeRequest, opts ...grpc.CallOption) (*QosVolume, error)
-	QosVolumeStats(ctx context.Context, in *QosVolumeStatsRequest, opts ...grpc.CallOption) (*QosVolumeStatsResponse, error)
+	StatsQosVolume(ctx context.Context, in *StatsQosVolumeRequest, opts ...grpc.CallOption) (*StatsQosVolumeResponse, error)
 }
 
 type middleendQosVolumeServiceClient struct {
@@ -972,9 +975,9 @@ func (c *middleendQosVolumeServiceClient) GetQosVolume(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *middleendQosVolumeServiceClient) QosVolumeStats(ctx context.Context, in *QosVolumeStatsRequest, opts ...grpc.CallOption) (*QosVolumeStatsResponse, error) {
-	out := new(QosVolumeStatsResponse)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.MiddleendQosVolumeService/QosVolumeStats", in, out, opts...)
+func (c *middleendQosVolumeServiceClient) StatsQosVolume(ctx context.Context, in *StatsQosVolumeRequest, opts ...grpc.CallOption) (*StatsQosVolumeResponse, error) {
+	out := new(StatsQosVolumeResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.MiddleendQosVolumeService/StatsQosVolume", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -988,7 +991,7 @@ type MiddleendQosVolumeServiceServer interface {
 	UpdateQosVolume(context.Context, *UpdateQosVolumeRequest) (*QosVolume, error)
 	ListQosVolumes(context.Context, *ListQosVolumesRequest) (*ListQosVolumesResponse, error)
 	GetQosVolume(context.Context, *GetQosVolumeRequest) (*QosVolume, error)
-	QosVolumeStats(context.Context, *QosVolumeStatsRequest) (*QosVolumeStatsResponse, error)
+	StatsQosVolume(context.Context, *StatsQosVolumeRequest) (*StatsQosVolumeResponse, error)
 }
 
 // UnimplementedMiddleendQosVolumeServiceServer can be embedded to have forward compatible implementations.
@@ -1010,8 +1013,8 @@ func (*UnimplementedMiddleendQosVolumeServiceServer) ListQosVolumes(context.Cont
 func (*UnimplementedMiddleendQosVolumeServiceServer) GetQosVolume(context.Context, *GetQosVolumeRequest) (*QosVolume, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetQosVolume not implemented")
 }
-func (*UnimplementedMiddleendQosVolumeServiceServer) QosVolumeStats(context.Context, *QosVolumeStatsRequest) (*QosVolumeStatsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method QosVolumeStats not implemented")
+func (*UnimplementedMiddleendQosVolumeServiceServer) StatsQosVolume(context.Context, *StatsQosVolumeRequest) (*StatsQosVolumeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StatsQosVolume not implemented")
 }
 
 func RegisterMiddleendQosVolumeServiceServer(s *grpc.Server, srv MiddleendQosVolumeServiceServer) {
@@ -1108,20 +1111,20 @@ func _MiddleendQosVolumeService_GetQosVolume_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MiddleendQosVolumeService_QosVolumeStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(QosVolumeStatsRequest)
+func _MiddleendQosVolumeService_StatsQosVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatsQosVolumeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddleendQosVolumeServiceServer).QosVolumeStats(ctx, in)
+		return srv.(MiddleendQosVolumeServiceServer).StatsQosVolume(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.MiddleendQosVolumeService/QosVolumeStats",
+		FullMethod: "/opi_api.storage.v1.MiddleendQosVolumeService/StatsQosVolume",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddleendQosVolumeServiceServer).QosVolumeStats(ctx, req.(*QosVolumeStatsRequest))
+		return srv.(MiddleendQosVolumeServiceServer).StatsQosVolume(ctx, req.(*StatsQosVolumeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1151,8 +1154,8 @@ var _MiddleendQosVolumeService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _MiddleendQosVolumeService_GetQosVolume_Handler,
 		},
 		{
-			MethodName: "QosVolumeStats",
-			Handler:    _MiddleendQosVolumeService_QosVolumeStats_Handler,
+			MethodName: "StatsQosVolume",
+			Handler:    _MiddleendQosVolumeService_StatsQosVolume_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -50,15 +50,15 @@ public final class BackendNullProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetNullVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NullVolumeStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsNullVolumeRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NullVolumeStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsNullVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NullVolumeStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsNullVolumeResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NullVolumeStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsNullVolumeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -96,10 +96,10 @@ public final class BackendNullProto {
       "torage.v1.NullVolume\022\027\n\017next_page_token\030" +
       "\002 \001(\t\"K\n\024GetNullVolumeRequest\0223\n\004name\030\001 " +
       "\001(\tB%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolu" +
-      "me\"M\n\026NullVolumeStatsRequest\0223\n\004name\030\001 \001" +
+      "me\"M\n\026StatsNullVolumeRequest\0223\n\004name\030\001 \001" +
       "(\tB%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolum" +
-      "e\"I\n\027NullVolumeStatsResponse\022.\n\005stats\030\001 " +
-      "\001(\0132\037.opi_api.storage.v1.VolumeStats2\365\006\n" +
+      "e\"I\n\027StatsNullVolumeResponse\022.\n\005stats\030\001 " +
+      "\001(\0132\037.opi_api.storage.v1.VolumeStats2\243\007\n" +
       "\021NullVolumeService\022\236\001\n\020CreateNullVolume\022" +
       "+.opi_api.storage.v1.CreateNullVolumeReq" +
       "uest\032\036.opi_api.storage.v1.NullVolume\"=\202\323" +
@@ -119,12 +119,13 @@ public final class BackendNullProto {
       "t\022\202\001\n\rGetNullVolume\022(.opi_api.storage.v1" +
       ".GetNullVolumeRequest\032\036.opi_api.storage." +
       "v1.NullVolume\"\'\202\323\344\223\002\032\022\030/v1/{name=NullVol" +
-      "umes/*}\332A\004name\022l\n\017NullVolumeStats\022*.opi_" +
-      "api.storage.v1.NullVolumeStatsRequest\032+." +
-      "opi_api.storage.v1.NullVolumeStatsRespon" +
-      "se\"\000B_\n\022opi_api.storage.v1B\020BackendNullP" +
-      "rotoP\001Z5github.com/opiproject/opi-api/st" +
-      "orage/v1alpha1/gen/gob\006proto3"
+      "umes/*}\332A\004name\022\231\001\n\017StatsNullVolume\022*.opi" +
+      "_api.storage.v1.StatsNullVolumeRequest\032+" +
+      ".opi_api.storage.v1.StatsNullVolumeRespo" +
+      "nse\"-\202\323\344\223\002 \022\036/v1/{name=NullVolumes/*}:st" +
+      "ats\332A\004nameB_\n\022opi_api.storage.v1B\020Backen" +
+      "dNullProtoP\001Z5github.com/opiproject/opi-" +
+      "api/storage/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -180,17 +181,17 @@ public final class BackendNullProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetNullVolumeRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_NullVolumeStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsNullVolumeRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_opi_api_storage_v1_NullVolumeStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsNullVolumeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NullVolumeStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsNullVolumeRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_NullVolumeStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsNullVolumeResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_opi_api_storage_v1_NullVolumeStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsNullVolumeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NullVolumeStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsNullVolumeResponse_descriptor,
         new java.lang.String[] { "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

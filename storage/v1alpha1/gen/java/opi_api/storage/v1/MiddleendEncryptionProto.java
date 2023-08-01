@@ -50,15 +50,15 @@ public final class MiddleendEncryptionProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetEncryptedVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_EncryptedVolumeStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsEncryptedVolumeRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_EncryptedVolumeStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsEncryptedVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_EncryptedVolumeStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsEncryptedVolumeResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_EncryptedVolumeStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsEncryptedVolumeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -98,11 +98,11 @@ public final class MiddleendEncryptionProto {
       "#.opi_api.storage.v1.EncryptedVolume\022\027\n\017" +
       "next_page_token\030\002 \001(\t\"U\n\031GetEncryptedVol" +
       "umeRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"opi_ap" +
-      "i.storage.v1/EncryptedVolume\"W\n\033Encrypte" +
-      "dVolumeStatsRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A" +
+      "i.storage.v1/EncryptedVolume\"W\n\033StatsEnc" +
+      "ryptedVolumeRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A" +
       "$\n\"opi_api.storage.v1/EncryptedVolume\"N\n" +
-      "\034EncryptedVolumeStatsResponse\022.\n\005stats\030\001" +
-      " \001(\0132\037.opi_api.storage.v1.VolumeStats2\370\007" +
+      "\034StatsEncryptedVolumeResponse\022.\n\005stats\030\001" +
+      " \001(\0132\037.opi_api.storage.v1.VolumeStats2\253\010" +
       "\n\032MiddleendEncryptionService\022\274\001\n\025CreateE" +
       "ncryptedVolume\0220.opi_api.storage.v1.Crea" +
       "teEncryptedVolumeRequest\032#.opi_api.stora" +
@@ -125,13 +125,14 @@ public final class MiddleendEncryptionProto {
       "e\022-.opi_api.storage.v1.GetEncryptedVolum" +
       "eRequest\032#.opi_api.storage.v1.EncryptedV" +
       "olume\",\202\323\344\223\002\037\022\035/v1/{name=EncryptedVolume" +
-      "s/*}\332A\004name\022{\n\024EncryptedVolumeStats\022/.op" +
-      "i_api.storage.v1.EncryptedVolumeStatsReq" +
-      "uest\0320.opi_api.storage.v1.EncryptedVolum" +
-      "eStatsResponse\"\000Bg\n\022opi_api.storage.v1B\030" +
-      "MiddleendEncryptionProtoP\001Z5github.com/o" +
-      "piproject/opi-api/storage/v1alpha1/gen/g" +
-      "ob\006proto3"
+      "s/*}\332A\004name\022\255\001\n\024StatsEncryptedVolume\022/.o" +
+      "pi_api.storage.v1.StatsEncryptedVolumeRe" +
+      "quest\0320.opi_api.storage.v1.StatsEncrypte" +
+      "dVolumeResponse\"2\202\323\344\223\002%\022#/v1/{name=Encry" +
+      "ptedVolumes/*}:stats\332A\004nameBg\n\022opi_api.s" +
+      "torage.v1B\030MiddleendEncryptionProtoP\001Z5g" +
+      "ithub.com/opiproject/opi-api/storage/v1a" +
+      "lpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -186,17 +187,17 @@ public final class MiddleendEncryptionProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetEncryptedVolumeRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_EncryptedVolumeStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsEncryptedVolumeRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_opi_api_storage_v1_EncryptedVolumeStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsEncryptedVolumeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_EncryptedVolumeStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsEncryptedVolumeRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_EncryptedVolumeStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsEncryptedVolumeResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_opi_api_storage_v1_EncryptedVolumeStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsEncryptedVolumeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_EncryptedVolumeStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsEncryptedVolumeResponse_descriptor,
         new java.lang.String[] { "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

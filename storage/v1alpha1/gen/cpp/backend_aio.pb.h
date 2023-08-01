@@ -67,12 +67,6 @@ namespace v1 {
 class AioVolume;
 struct AioVolumeDefaultTypeInternal;
 extern AioVolumeDefaultTypeInternal _AioVolume_default_instance_;
-class AioVolumeStatsRequest;
-struct AioVolumeStatsRequestDefaultTypeInternal;
-extern AioVolumeStatsRequestDefaultTypeInternal _AioVolumeStatsRequest_default_instance_;
-class AioVolumeStatsResponse;
-struct AioVolumeStatsResponseDefaultTypeInternal;
-extern AioVolumeStatsResponseDefaultTypeInternal _AioVolumeStatsResponse_default_instance_;
 class CreateAioVolumeRequest;
 struct CreateAioVolumeRequestDefaultTypeInternal;
 extern CreateAioVolumeRequestDefaultTypeInternal _CreateAioVolumeRequest_default_instance_;
@@ -88,6 +82,12 @@ extern ListAioVolumesRequestDefaultTypeInternal _ListAioVolumesRequest_default_i
 class ListAioVolumesResponse;
 struct ListAioVolumesResponseDefaultTypeInternal;
 extern ListAioVolumesResponseDefaultTypeInternal _ListAioVolumesResponse_default_instance_;
+class StatsAioVolumeRequest;
+struct StatsAioVolumeRequestDefaultTypeInternal;
+extern StatsAioVolumeRequestDefaultTypeInternal _StatsAioVolumeRequest_default_instance_;
+class StatsAioVolumeResponse;
+struct StatsAioVolumeResponseDefaultTypeInternal;
+extern StatsAioVolumeResponseDefaultTypeInternal _StatsAioVolumeResponse_default_instance_;
 class UpdateAioVolumeRequest;
 struct UpdateAioVolumeRequestDefaultTypeInternal;
 extern UpdateAioVolumeRequestDefaultTypeInternal _UpdateAioVolumeRequest_default_instance_;
@@ -96,13 +96,13 @@ extern UpdateAioVolumeRequestDefaultTypeInternal _UpdateAioVolumeRequest_default
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
 template<> ::opi_api::storage::v1::AioVolume* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioVolume>(Arena*);
-template<> ::opi_api::storage::v1::AioVolumeStatsRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioVolumeStatsRequest>(Arena*);
-template<> ::opi_api::storage::v1::AioVolumeStatsResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioVolumeStatsResponse>(Arena*);
 template<> ::opi_api::storage::v1::CreateAioVolumeRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::CreateAioVolumeRequest>(Arena*);
 template<> ::opi_api::storage::v1::DeleteAioVolumeRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::DeleteAioVolumeRequest>(Arena*);
 template<> ::opi_api::storage::v1::GetAioVolumeRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::GetAioVolumeRequest>(Arena*);
 template<> ::opi_api::storage::v1::ListAioVolumesRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListAioVolumesRequest>(Arena*);
 template<> ::opi_api::storage::v1::ListAioVolumesResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListAioVolumesResponse>(Arena*);
+template<> ::opi_api::storage::v1::StatsAioVolumeRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::StatsAioVolumeRequest>(Arena*);
+template<> ::opi_api::storage::v1::StatsAioVolumeResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::StatsAioVolumeResponse>(Arena*);
 template<> ::opi_api::storage::v1::UpdateAioVolumeRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::UpdateAioVolumeRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
@@ -1339,24 +1339,24 @@ class GetAioVolumeRequest final :
 };
 // -------------------------------------------------------------------
 
-class AioVolumeStatsRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioVolumeStatsRequest) */ {
+class StatsAioVolumeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.StatsAioVolumeRequest) */ {
  public:
-  inline AioVolumeStatsRequest() : AioVolumeStatsRequest(nullptr) {}
-  ~AioVolumeStatsRequest() override;
-  explicit constexpr AioVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline StatsAioVolumeRequest() : StatsAioVolumeRequest(nullptr) {}
+  ~StatsAioVolumeRequest() override;
+  explicit constexpr StatsAioVolumeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioVolumeStatsRequest(const AioVolumeStatsRequest& from);
-  AioVolumeStatsRequest(AioVolumeStatsRequest&& from) noexcept
-    : AioVolumeStatsRequest() {
+  StatsAioVolumeRequest(const StatsAioVolumeRequest& from);
+  StatsAioVolumeRequest(StatsAioVolumeRequest&& from) noexcept
+    : StatsAioVolumeRequest() {
     *this = ::std::move(from);
   }
 
-  inline AioVolumeStatsRequest& operator=(const AioVolumeStatsRequest& from) {
+  inline StatsAioVolumeRequest& operator=(const StatsAioVolumeRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioVolumeStatsRequest& operator=(AioVolumeStatsRequest&& from) noexcept {
+  inline StatsAioVolumeRequest& operator=(StatsAioVolumeRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1379,20 +1379,20 @@ class AioVolumeStatsRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioVolumeStatsRequest& default_instance() {
+  static const StatsAioVolumeRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioVolumeStatsRequest* internal_default_instance() {
-    return reinterpret_cast<const AioVolumeStatsRequest*>(
-               &_AioVolumeStatsRequest_default_instance_);
+  static inline const StatsAioVolumeRequest* internal_default_instance() {
+    return reinterpret_cast<const StatsAioVolumeRequest*>(
+               &_StatsAioVolumeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  friend void swap(AioVolumeStatsRequest& a, AioVolumeStatsRequest& b) {
+  friend void swap(StatsAioVolumeRequest& a, StatsAioVolumeRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioVolumeStatsRequest* other) {
+  inline void Swap(StatsAioVolumeRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1405,7 +1405,7 @@ class AioVolumeStatsRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioVolumeStatsRequest* other) {
+  void UnsafeArenaSwap(StatsAioVolumeRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1413,13 +1413,13 @@ class AioVolumeStatsRequest final :
 
   // implements Message ----------------------------------------------
 
-  AioVolumeStatsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioVolumeStatsRequest>(arena);
+  StatsAioVolumeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StatsAioVolumeRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioVolumeStatsRequest& from);
+  void CopyFrom(const StatsAioVolumeRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioVolumeStatsRequest& from);
+  void MergeFrom(const StatsAioVolumeRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1436,15 +1436,15 @@ class AioVolumeStatsRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioVolumeStatsRequest* other);
+  void InternalSwap(StatsAioVolumeRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioVolumeStatsRequest";
+    return "opi_api.storage.v1.StatsAioVolumeRequest";
   }
   protected:
-  explicit AioVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit StatsAioVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1477,7 +1477,7 @@ class AioVolumeStatsRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioVolumeStatsRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.StatsAioVolumeRequest)
  private:
   class _Internal;
 
@@ -1490,24 +1490,24 @@ class AioVolumeStatsRequest final :
 };
 // -------------------------------------------------------------------
 
-class AioVolumeStatsResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioVolumeStatsResponse) */ {
+class StatsAioVolumeResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.StatsAioVolumeResponse) */ {
  public:
-  inline AioVolumeStatsResponse() : AioVolumeStatsResponse(nullptr) {}
-  ~AioVolumeStatsResponse() override;
-  explicit constexpr AioVolumeStatsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline StatsAioVolumeResponse() : StatsAioVolumeResponse(nullptr) {}
+  ~StatsAioVolumeResponse() override;
+  explicit constexpr StatsAioVolumeResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioVolumeStatsResponse(const AioVolumeStatsResponse& from);
-  AioVolumeStatsResponse(AioVolumeStatsResponse&& from) noexcept
-    : AioVolumeStatsResponse() {
+  StatsAioVolumeResponse(const StatsAioVolumeResponse& from);
+  StatsAioVolumeResponse(StatsAioVolumeResponse&& from) noexcept
+    : StatsAioVolumeResponse() {
     *this = ::std::move(from);
   }
 
-  inline AioVolumeStatsResponse& operator=(const AioVolumeStatsResponse& from) {
+  inline StatsAioVolumeResponse& operator=(const StatsAioVolumeResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioVolumeStatsResponse& operator=(AioVolumeStatsResponse&& from) noexcept {
+  inline StatsAioVolumeResponse& operator=(StatsAioVolumeResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1530,20 +1530,20 @@ class AioVolumeStatsResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioVolumeStatsResponse& default_instance() {
+  static const StatsAioVolumeResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioVolumeStatsResponse* internal_default_instance() {
-    return reinterpret_cast<const AioVolumeStatsResponse*>(
-               &_AioVolumeStatsResponse_default_instance_);
+  static inline const StatsAioVolumeResponse* internal_default_instance() {
+    return reinterpret_cast<const StatsAioVolumeResponse*>(
+               &_StatsAioVolumeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     8;
 
-  friend void swap(AioVolumeStatsResponse& a, AioVolumeStatsResponse& b) {
+  friend void swap(StatsAioVolumeResponse& a, StatsAioVolumeResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioVolumeStatsResponse* other) {
+  inline void Swap(StatsAioVolumeResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1556,7 +1556,7 @@ class AioVolumeStatsResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioVolumeStatsResponse* other) {
+  void UnsafeArenaSwap(StatsAioVolumeResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1564,13 +1564,13 @@ class AioVolumeStatsResponse final :
 
   // implements Message ----------------------------------------------
 
-  AioVolumeStatsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioVolumeStatsResponse>(arena);
+  StatsAioVolumeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StatsAioVolumeResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioVolumeStatsResponse& from);
+  void CopyFrom(const StatsAioVolumeResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioVolumeStatsResponse& from);
+  void MergeFrom(const StatsAioVolumeResponse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1587,15 +1587,15 @@ class AioVolumeStatsResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioVolumeStatsResponse* other);
+  void InternalSwap(StatsAioVolumeResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioVolumeStatsResponse";
+    return "opi_api.storage.v1.StatsAioVolumeResponse";
   }
   protected:
-  explicit AioVolumeStatsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit StatsAioVolumeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1632,7 +1632,7 @@ class AioVolumeStatsResponse final :
       ::opi_api::storage::v1::VolumeStats* stats);
   ::opi_api::storage::v1::VolumeStats* unsafe_arena_release_stats();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioVolumeStatsResponse)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.StatsAioVolumeResponse)
  private:
   class _Internal;
 
@@ -2580,44 +2580,44 @@ inline void GetAioVolumeRequest::set_allocated_name(std::string* name) {
 
 // -------------------------------------------------------------------
 
-// AioVolumeStatsRequest
+// StatsAioVolumeRequest
 
 // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void AioVolumeStatsRequest::clear_name() {
+inline void StatsAioVolumeRequest::clear_name() {
   name_.ClearToEmpty();
 }
-inline const std::string& AioVolumeStatsRequest::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioVolumeStatsRequest.name)
+inline const std::string& StatsAioVolumeRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.StatsAioVolumeRequest.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void AioVolumeStatsRequest::set_name(ArgT0&& arg0, ArgT... args) {
+void StatsAioVolumeRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioVolumeStatsRequest.name)
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.StatsAioVolumeRequest.name)
 }
-inline std::string* AioVolumeStatsRequest::mutable_name() {
+inline std::string* StatsAioVolumeRequest::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioVolumeStatsRequest.name)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.StatsAioVolumeRequest.name)
   return _s;
 }
-inline const std::string& AioVolumeStatsRequest::_internal_name() const {
+inline const std::string& StatsAioVolumeRequest::_internal_name() const {
   return name_.Get();
 }
-inline void AioVolumeStatsRequest::_internal_set_name(const std::string& value) {
+inline void StatsAioVolumeRequest::_internal_set_name(const std::string& value) {
   
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* AioVolumeStatsRequest::_internal_mutable_name() {
+inline std::string* StatsAioVolumeRequest::_internal_mutable_name() {
   
   return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* AioVolumeStatsRequest::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioVolumeStatsRequest.name)
+inline std::string* StatsAioVolumeRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.StatsAioVolumeRequest.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void AioVolumeStatsRequest::set_allocated_name(std::string* name) {
+inline void StatsAioVolumeRequest::set_allocated_name(std::string* name) {
   if (name != nullptr) {
     
   } else {
@@ -2630,30 +2630,30 @@ inline void AioVolumeStatsRequest::set_allocated_name(std::string* name) {
     name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioVolumeStatsRequest.name)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.StatsAioVolumeRequest.name)
 }
 
 // -------------------------------------------------------------------
 
-// AioVolumeStatsResponse
+// StatsAioVolumeResponse
 
 // .opi_api.storage.v1.VolumeStats stats = 1;
-inline bool AioVolumeStatsResponse::_internal_has_stats() const {
+inline bool StatsAioVolumeResponse::_internal_has_stats() const {
   return this != internal_default_instance() && stats_ != nullptr;
 }
-inline bool AioVolumeStatsResponse::has_stats() const {
+inline bool StatsAioVolumeResponse::has_stats() const {
   return _internal_has_stats();
 }
-inline const ::opi_api::storage::v1::VolumeStats& AioVolumeStatsResponse::_internal_stats() const {
+inline const ::opi_api::storage::v1::VolumeStats& StatsAioVolumeResponse::_internal_stats() const {
   const ::opi_api::storage::v1::VolumeStats* p = stats_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::VolumeStats&>(
       ::opi_api::storage::v1::_VolumeStats_default_instance_);
 }
-inline const ::opi_api::storage::v1::VolumeStats& AioVolumeStatsResponse::stats() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioVolumeStatsResponse.stats)
+inline const ::opi_api::storage::v1::VolumeStats& StatsAioVolumeResponse::stats() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.StatsAioVolumeResponse.stats)
   return _internal_stats();
 }
-inline void AioVolumeStatsResponse::unsafe_arena_set_allocated_stats(
+inline void StatsAioVolumeResponse::unsafe_arena_set_allocated_stats(
     ::opi_api::storage::v1::VolumeStats* stats) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
@@ -2664,9 +2664,9 @@ inline void AioVolumeStatsResponse::unsafe_arena_set_allocated_stats(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioVolumeStatsResponse.stats)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.StatsAioVolumeResponse.stats)
 }
-inline ::opi_api::storage::v1::VolumeStats* AioVolumeStatsResponse::release_stats() {
+inline ::opi_api::storage::v1::VolumeStats* StatsAioVolumeResponse::release_stats() {
   
   ::opi_api::storage::v1::VolumeStats* temp = stats_;
   stats_ = nullptr;
@@ -2681,14 +2681,14 @@ inline ::opi_api::storage::v1::VolumeStats* AioVolumeStatsResponse::release_stat
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::VolumeStats* AioVolumeStatsResponse::unsafe_arena_release_stats() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioVolumeStatsResponse.stats)
+inline ::opi_api::storage::v1::VolumeStats* StatsAioVolumeResponse::unsafe_arena_release_stats() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.StatsAioVolumeResponse.stats)
   
   ::opi_api::storage::v1::VolumeStats* temp = stats_;
   stats_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::VolumeStats* AioVolumeStatsResponse::_internal_mutable_stats() {
+inline ::opi_api::storage::v1::VolumeStats* StatsAioVolumeResponse::_internal_mutable_stats() {
   
   if (stats_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(GetArenaForAllocation());
@@ -2696,12 +2696,12 @@ inline ::opi_api::storage::v1::VolumeStats* AioVolumeStatsResponse::_internal_mu
   }
   return stats_;
 }
-inline ::opi_api::storage::v1::VolumeStats* AioVolumeStatsResponse::mutable_stats() {
+inline ::opi_api::storage::v1::VolumeStats* StatsAioVolumeResponse::mutable_stats() {
   ::opi_api::storage::v1::VolumeStats* _msg = _internal_mutable_stats();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioVolumeStatsResponse.stats)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.StatsAioVolumeResponse.stats)
   return _msg;
 }
-inline void AioVolumeStatsResponse::set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats) {
+inline void StatsAioVolumeResponse::set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
@@ -2720,7 +2720,7 @@ inline void AioVolumeStatsResponse::set_allocated_stats(::opi_api::storage::v1::
     
   }
   stats_ = stats;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioVolumeStatsResponse.stats)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.StatsAioVolumeResponse.stats)
 }
 
 #ifdef __GNUC__

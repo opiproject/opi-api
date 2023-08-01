@@ -173,66 +173,66 @@ public final class NvmeRemoteControllerServiceGrpc {
     return getGetNvmeRemoteControllerMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NvmeRemoteControllerResetRequest,
-      com.google.protobuf.Empty> getNvmeRemoteControllerResetMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ResetNvmeRemoteControllerRequest,
+      com.google.protobuf.Empty> getResetNvmeRemoteControllerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NvmeRemoteControllerReset",
-      requestType = opi_api.storage.v1.NvmeRemoteControllerResetRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "ResetNvmeRemoteController",
+      requestType = opi_api.storage.v1.ResetNvmeRemoteControllerRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NvmeRemoteControllerResetRequest,
-      com.google.protobuf.Empty> getNvmeRemoteControllerResetMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NvmeRemoteControllerResetRequest, com.google.protobuf.Empty> getNvmeRemoteControllerResetMethod;
-    if ((getNvmeRemoteControllerResetMethod = NvmeRemoteControllerServiceGrpc.getNvmeRemoteControllerResetMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ResetNvmeRemoteControllerRequest,
+      com.google.protobuf.Empty> getResetNvmeRemoteControllerMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ResetNvmeRemoteControllerRequest, com.google.protobuf.Empty> getResetNvmeRemoteControllerMethod;
+    if ((getResetNvmeRemoteControllerMethod = NvmeRemoteControllerServiceGrpc.getResetNvmeRemoteControllerMethod) == null) {
       synchronized (NvmeRemoteControllerServiceGrpc.class) {
-        if ((getNvmeRemoteControllerResetMethod = NvmeRemoteControllerServiceGrpc.getNvmeRemoteControllerResetMethod) == null) {
-          NvmeRemoteControllerServiceGrpc.getNvmeRemoteControllerResetMethod = getNvmeRemoteControllerResetMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NvmeRemoteControllerResetRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getResetNvmeRemoteControllerMethod = NvmeRemoteControllerServiceGrpc.getResetNvmeRemoteControllerMethod) == null) {
+          NvmeRemoteControllerServiceGrpc.getResetNvmeRemoteControllerMethod = getResetNvmeRemoteControllerMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ResetNvmeRemoteControllerRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NvmeRemoteControllerReset"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResetNvmeRemoteController"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NvmeRemoteControllerResetRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ResetNvmeRemoteControllerRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new NvmeRemoteControllerServiceMethodDescriptorSupplier("NvmeRemoteControllerReset"))
+              .setSchemaDescriptor(new NvmeRemoteControllerServiceMethodDescriptorSupplier("ResetNvmeRemoteController"))
               .build();
         }
       }
     }
-    return getNvmeRemoteControllerResetMethod;
+    return getResetNvmeRemoteControllerMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NvmeRemoteControllerStatsRequest,
-      opi_api.storage.v1.NvmeRemoteControllerStatsResponse> getNvmeRemoteControllerStatsMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNvmeRemoteControllerRequest,
+      opi_api.storage.v1.StatsNvmeRemoteControllerResponse> getStatsNvmeRemoteControllerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NvmeRemoteControllerStats",
-      requestType = opi_api.storage.v1.NvmeRemoteControllerStatsRequest.class,
-      responseType = opi_api.storage.v1.NvmeRemoteControllerStatsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "StatsNvmeRemoteController",
+      requestType = opi_api.storage.v1.StatsNvmeRemoteControllerRequest.class,
+      responseType = opi_api.storage.v1.StatsNvmeRemoteControllerResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NvmeRemoteControllerStatsRequest,
-      opi_api.storage.v1.NvmeRemoteControllerStatsResponse> getNvmeRemoteControllerStatsMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NvmeRemoteControllerStatsRequest, opi_api.storage.v1.NvmeRemoteControllerStatsResponse> getNvmeRemoteControllerStatsMethod;
-    if ((getNvmeRemoteControllerStatsMethod = NvmeRemoteControllerServiceGrpc.getNvmeRemoteControllerStatsMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNvmeRemoteControllerRequest,
+      opi_api.storage.v1.StatsNvmeRemoteControllerResponse> getStatsNvmeRemoteControllerMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNvmeRemoteControllerRequest, opi_api.storage.v1.StatsNvmeRemoteControllerResponse> getStatsNvmeRemoteControllerMethod;
+    if ((getStatsNvmeRemoteControllerMethod = NvmeRemoteControllerServiceGrpc.getStatsNvmeRemoteControllerMethod) == null) {
       synchronized (NvmeRemoteControllerServiceGrpc.class) {
-        if ((getNvmeRemoteControllerStatsMethod = NvmeRemoteControllerServiceGrpc.getNvmeRemoteControllerStatsMethod) == null) {
-          NvmeRemoteControllerServiceGrpc.getNvmeRemoteControllerStatsMethod = getNvmeRemoteControllerStatsMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NvmeRemoteControllerStatsRequest, opi_api.storage.v1.NvmeRemoteControllerStatsResponse>newBuilder()
+        if ((getStatsNvmeRemoteControllerMethod = NvmeRemoteControllerServiceGrpc.getStatsNvmeRemoteControllerMethod) == null) {
+          NvmeRemoteControllerServiceGrpc.getStatsNvmeRemoteControllerMethod = getStatsNvmeRemoteControllerMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.StatsNvmeRemoteControllerRequest, opi_api.storage.v1.StatsNvmeRemoteControllerResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NvmeRemoteControllerStats"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StatsNvmeRemoteController"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NvmeRemoteControllerStatsRequest.getDefaultInstance()))
+                  opi_api.storage.v1.StatsNvmeRemoteControllerRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NvmeRemoteControllerStatsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new NvmeRemoteControllerServiceMethodDescriptorSupplier("NvmeRemoteControllerStats"))
+                  opi_api.storage.v1.StatsNvmeRemoteControllerResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new NvmeRemoteControllerServiceMethodDescriptorSupplier("StatsNvmeRemoteController"))
               .build();
         }
       }
     }
-    return getNvmeRemoteControllerStatsMethod;
+    return getStatsNvmeRemoteControllerMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNvmeRemoteNamespacesRequest,
@@ -421,35 +421,35 @@ public final class NvmeRemoteControllerServiceGrpc {
     return getGetNvmePathMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NvmePathStatsRequest,
-      opi_api.storage.v1.NvmePathStatsResponse> getNvmePathStatsMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNvmePathRequest,
+      opi_api.storage.v1.StatsNvmePathResponse> getStatsNvmePathMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NvmePathStats",
-      requestType = opi_api.storage.v1.NvmePathStatsRequest.class,
-      responseType = opi_api.storage.v1.NvmePathStatsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "StatsNvmePath",
+      requestType = opi_api.storage.v1.StatsNvmePathRequest.class,
+      responseType = opi_api.storage.v1.StatsNvmePathResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NvmePathStatsRequest,
-      opi_api.storage.v1.NvmePathStatsResponse> getNvmePathStatsMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NvmePathStatsRequest, opi_api.storage.v1.NvmePathStatsResponse> getNvmePathStatsMethod;
-    if ((getNvmePathStatsMethod = NvmeRemoteControllerServiceGrpc.getNvmePathStatsMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNvmePathRequest,
+      opi_api.storage.v1.StatsNvmePathResponse> getStatsNvmePathMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNvmePathRequest, opi_api.storage.v1.StatsNvmePathResponse> getStatsNvmePathMethod;
+    if ((getStatsNvmePathMethod = NvmeRemoteControllerServiceGrpc.getStatsNvmePathMethod) == null) {
       synchronized (NvmeRemoteControllerServiceGrpc.class) {
-        if ((getNvmePathStatsMethod = NvmeRemoteControllerServiceGrpc.getNvmePathStatsMethod) == null) {
-          NvmeRemoteControllerServiceGrpc.getNvmePathStatsMethod = getNvmePathStatsMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NvmePathStatsRequest, opi_api.storage.v1.NvmePathStatsResponse>newBuilder()
+        if ((getStatsNvmePathMethod = NvmeRemoteControllerServiceGrpc.getStatsNvmePathMethod) == null) {
+          NvmeRemoteControllerServiceGrpc.getStatsNvmePathMethod = getStatsNvmePathMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.StatsNvmePathRequest, opi_api.storage.v1.StatsNvmePathResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NvmePathStats"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StatsNvmePath"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NvmePathStatsRequest.getDefaultInstance()))
+                  opi_api.storage.v1.StatsNvmePathRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NvmePathStatsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new NvmeRemoteControllerServiceMethodDescriptorSupplier("NvmePathStats"))
+                  opi_api.storage.v1.StatsNvmePathResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new NvmeRemoteControllerServiceMethodDescriptorSupplier("StatsNvmePath"))
               .build();
         }
       }
     }
-    return getNvmePathStatsMethod;
+    return getStatsNvmePathMethod;
   }
 
   /**
@@ -540,16 +540,16 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      */
-    public void nvmeRemoteControllerReset(opi_api.storage.v1.NvmeRemoteControllerResetRequest request,
+    public void resetNvmeRemoteController(opi_api.storage.v1.ResetNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNvmeRemoteControllerResetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResetNvmeRemoteControllerMethod(), responseObserver);
     }
 
     /**
      */
-    public void nvmeRemoteControllerStats(opi_api.storage.v1.NvmeRemoteControllerStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteControllerStatsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNvmeRemoteControllerStatsMethod(), responseObserver);
+    public void statsNvmeRemoteController(opi_api.storage.v1.StatsNvmeRemoteControllerRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeRemoteControllerResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStatsNvmeRemoteControllerMethod(), responseObserver);
     }
 
     /**
@@ -596,9 +596,9 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      */
-    public void nvmePathStats(opi_api.storage.v1.NvmePathStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePathStatsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNvmePathStatsMethod(), responseObserver);
+    public void statsNvmePath(opi_api.storage.v1.StatsNvmePathRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmePathResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStatsNvmePathMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -639,19 +639,19 @@ public final class NvmeRemoteControllerServiceGrpc {
                 opi_api.storage.v1.NvmeRemoteController>(
                   this, METHODID_GET_NVME_REMOTE_CONTROLLER)))
           .addMethod(
-            getNvmeRemoteControllerResetMethod(),
+            getResetNvmeRemoteControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NvmeRemoteControllerResetRequest,
+                opi_api.storage.v1.ResetNvmeRemoteControllerRequest,
                 com.google.protobuf.Empty>(
-                  this, METHODID_NVME_REMOTE_CONTROLLER_RESET)))
+                  this, METHODID_RESET_NVME_REMOTE_CONTROLLER)))
           .addMethod(
-            getNvmeRemoteControllerStatsMethod(),
+            getStatsNvmeRemoteControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NvmeRemoteControllerStatsRequest,
-                opi_api.storage.v1.NvmeRemoteControllerStatsResponse>(
-                  this, METHODID_NVME_REMOTE_CONTROLLER_STATS)))
+                opi_api.storage.v1.StatsNvmeRemoteControllerRequest,
+                opi_api.storage.v1.StatsNvmeRemoteControllerResponse>(
+                  this, METHODID_STATS_NVME_REMOTE_CONTROLLER)))
           .addMethod(
             getListNvmeRemoteNamespacesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -695,12 +695,12 @@ public final class NvmeRemoteControllerServiceGrpc {
                 opi_api.storage.v1.NvmePath>(
                   this, METHODID_GET_NVME_PATH)))
           .addMethod(
-            getNvmePathStatsMethod(),
+            getStatsNvmePathMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NvmePathStatsRequest,
-                opi_api.storage.v1.NvmePathStatsResponse>(
-                  this, METHODID_NVME_PATH_STATS)))
+                opi_api.storage.v1.StatsNvmePathRequest,
+                opi_api.storage.v1.StatsNvmePathResponse>(
+                  this, METHODID_STATS_NVME_PATH)))
           .build();
     }
   }
@@ -764,18 +764,18 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      */
-    public void nvmeRemoteControllerReset(opi_api.storage.v1.NvmeRemoteControllerResetRequest request,
+    public void resetNvmeRemoteController(opi_api.storage.v1.ResetNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNvmeRemoteControllerResetMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getResetNvmeRemoteControllerMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void nvmeRemoteControllerStats(opi_api.storage.v1.NvmeRemoteControllerStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteControllerStatsResponse> responseObserver) {
+    public void statsNvmeRemoteController(opi_api.storage.v1.StatsNvmeRemoteControllerRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeRemoteControllerResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNvmeRemoteControllerStatsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getStatsNvmeRemoteControllerMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -828,10 +828,10 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      */
-    public void nvmePathStats(opi_api.storage.v1.NvmePathStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePathStatsResponse> responseObserver) {
+    public void statsNvmePath(opi_api.storage.v1.StatsNvmePathRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmePathResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNvmePathStatsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getStatsNvmePathMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -889,16 +889,16 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      */
-    public com.google.protobuf.Empty nvmeRemoteControllerReset(opi_api.storage.v1.NvmeRemoteControllerResetRequest request) {
+    public com.google.protobuf.Empty resetNvmeRemoteController(opi_api.storage.v1.ResetNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNvmeRemoteControllerResetMethod(), getCallOptions(), request);
+          getChannel(), getResetNvmeRemoteControllerMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.NvmeRemoteControllerStatsResponse nvmeRemoteControllerStats(opi_api.storage.v1.NvmeRemoteControllerStatsRequest request) {
+    public opi_api.storage.v1.StatsNvmeRemoteControllerResponse statsNvmeRemoteController(opi_api.storage.v1.StatsNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNvmeRemoteControllerStatsMethod(), getCallOptions(), request);
+          getChannel(), getStatsNvmeRemoteControllerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -945,9 +945,9 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.NvmePathStatsResponse nvmePathStats(opi_api.storage.v1.NvmePathStatsRequest request) {
+    public opi_api.storage.v1.StatsNvmePathResponse statsNvmePath(opi_api.storage.v1.StatsNvmePathRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNvmePathStatsMethod(), getCallOptions(), request);
+          getChannel(), getStatsNvmePathMethod(), getCallOptions(), request);
     }
   }
 
@@ -1010,18 +1010,18 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> nvmeRemoteControllerReset(
-        opi_api.storage.v1.NvmeRemoteControllerResetRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> resetNvmeRemoteController(
+        opi_api.storage.v1.ResetNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNvmeRemoteControllerResetMethod(), getCallOptions()), request);
+          getChannel().newCall(getResetNvmeRemoteControllerMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmeRemoteControllerStatsResponse> nvmeRemoteControllerStats(
-        opi_api.storage.v1.NvmeRemoteControllerStatsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNvmeRemoteControllerResponse> statsNvmeRemoteController(
+        opi_api.storage.v1.StatsNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNvmeRemoteControllerStatsMethod(), getCallOptions()), request);
+          getChannel().newCall(getStatsNvmeRemoteControllerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1074,10 +1074,10 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmePathStatsResponse> nvmePathStats(
-        opi_api.storage.v1.NvmePathStatsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNvmePathResponse> statsNvmePath(
+        opi_api.storage.v1.StatsNvmePathRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNvmePathStatsMethod(), getCallOptions()), request);
+          getChannel().newCall(getStatsNvmePathMethod(), getCallOptions()), request);
     }
   }
 
@@ -1086,15 +1086,15 @@ public final class NvmeRemoteControllerServiceGrpc {
   private static final int METHODID_UPDATE_NVME_REMOTE_CONTROLLER = 2;
   private static final int METHODID_LIST_NVME_REMOTE_CONTROLLERS = 3;
   private static final int METHODID_GET_NVME_REMOTE_CONTROLLER = 4;
-  private static final int METHODID_NVME_REMOTE_CONTROLLER_RESET = 5;
-  private static final int METHODID_NVME_REMOTE_CONTROLLER_STATS = 6;
+  private static final int METHODID_RESET_NVME_REMOTE_CONTROLLER = 5;
+  private static final int METHODID_STATS_NVME_REMOTE_CONTROLLER = 6;
   private static final int METHODID_LIST_NVME_REMOTE_NAMESPACES = 7;
   private static final int METHODID_CREATE_NVME_PATH = 8;
   private static final int METHODID_DELETE_NVME_PATH = 9;
   private static final int METHODID_UPDATE_NVME_PATH = 10;
   private static final int METHODID_LIST_NVME_PATHS = 11;
   private static final int METHODID_GET_NVME_PATH = 12;
-  private static final int METHODID_NVME_PATH_STATS = 13;
+  private static final int METHODID_STATS_NVME_PATH = 13;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1133,13 +1133,13 @@ public final class NvmeRemoteControllerServiceGrpc {
           serviceImpl.getNvmeRemoteController((opi_api.storage.v1.GetNvmeRemoteControllerRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteController>) responseObserver);
           break;
-        case METHODID_NVME_REMOTE_CONTROLLER_RESET:
-          serviceImpl.nvmeRemoteControllerReset((opi_api.storage.v1.NvmeRemoteControllerResetRequest) request,
+        case METHODID_RESET_NVME_REMOTE_CONTROLLER:
+          serviceImpl.resetNvmeRemoteController((opi_api.storage.v1.ResetNvmeRemoteControllerRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_NVME_REMOTE_CONTROLLER_STATS:
-          serviceImpl.nvmeRemoteControllerStats((opi_api.storage.v1.NvmeRemoteControllerStatsRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteControllerStatsResponse>) responseObserver);
+        case METHODID_STATS_NVME_REMOTE_CONTROLLER:
+          serviceImpl.statsNvmeRemoteController((opi_api.storage.v1.StatsNvmeRemoteControllerRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeRemoteControllerResponse>) responseObserver);
           break;
         case METHODID_LIST_NVME_REMOTE_NAMESPACES:
           serviceImpl.listNvmeRemoteNamespaces((opi_api.storage.v1.ListNvmeRemoteNamespacesRequest) request,
@@ -1165,9 +1165,9 @@ public final class NvmeRemoteControllerServiceGrpc {
           serviceImpl.getNvmePath((opi_api.storage.v1.GetNvmePathRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePath>) responseObserver);
           break;
-        case METHODID_NVME_PATH_STATS:
-          serviceImpl.nvmePathStats((opi_api.storage.v1.NvmePathStatsRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePathStatsResponse>) responseObserver);
+        case METHODID_STATS_NVME_PATH:
+          serviceImpl.statsNvmePath((opi_api.storage.v1.StatsNvmePathRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmePathResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1235,15 +1235,15 @@ public final class NvmeRemoteControllerServiceGrpc {
               .addMethod(getUpdateNvmeRemoteControllerMethod())
               .addMethod(getListNvmeRemoteControllersMethod())
               .addMethod(getGetNvmeRemoteControllerMethod())
-              .addMethod(getNvmeRemoteControllerResetMethod())
-              .addMethod(getNvmeRemoteControllerStatsMethod())
+              .addMethod(getResetNvmeRemoteControllerMethod())
+              .addMethod(getStatsNvmeRemoteControllerMethod())
               .addMethod(getListNvmeRemoteNamespacesMethod())
               .addMethod(getCreateNvmePathMethod())
               .addMethod(getDeleteNvmePathMethod())
               .addMethod(getUpdateNvmePathMethod())
               .addMethod(getListNvmePathsMethod())
               .addMethod(getGetNvmePathMethod())
-              .addMethod(getNvmePathStatsMethod())
+              .addMethod(getStatsNvmePathMethod())
               .build();
         }
       }

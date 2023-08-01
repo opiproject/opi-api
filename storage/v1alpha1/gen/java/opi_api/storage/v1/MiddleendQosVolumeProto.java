@@ -50,15 +50,15 @@ public final class MiddleendQosVolumeProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetQosVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_QosVolumeStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsQosVolumeRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_QosVolumeStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsQosVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_QosVolumeStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsQosVolumeResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_QosVolumeStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsQosVolumeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -97,11 +97,11 @@ public final class MiddleendQosVolumeProto {
       "olumes\030\001 \003(\0132\035.opi_api.storage.v1.QosVol" +
       "ume\022\027\n\017next_page_token\030\002 \001(\t\"I\n\023GetQosVo" +
       "lumeRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_a" +
-      "pi.storage.v1/QosVolume\"K\n\025QosVolumeStat" +
-      "sRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api." +
-      "storage.v1/QosVolume\"H\n\026QosVolumeStatsRe" +
+      "pi.storage.v1/QosVolume\"K\n\025StatsQosVolum" +
+      "eRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api." +
+      "storage.v1/QosVolume\"H\n\026StatsQosVolumeRe" +
       "sponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.storage." +
-      "v1.VolumeStats2\337\006\n\031MiddleendQosVolumeSer" +
+      "v1.VolumeStats2\214\007\n\031MiddleendQosVolumeSer" +
       "vice\022\230\001\n\017CreateQosVolume\022*.opi_api.stora" +
       "ge.v1.CreateQosVolumeRequest\032\035.opi_api.s" +
       "torage.v1.QosVolume\":\202\323\344\223\002\031\"\013/v1/volumes" +
@@ -120,12 +120,13 @@ public final class MiddleendQosVolumeProto {
       "arent\022~\n\014GetQosVolume\022\'.opi_api.storage." +
       "v1.GetQosVolumeRequest\032\035.opi_api.storage" +
       ".v1.QosVolume\"&\202\323\344\223\002\031\022\027/v1/{name=QosVolu" +
-      "mes/*}\332A\004name\022i\n\016QosVolumeStats\022).opi_ap" +
-      "i.storage.v1.QosVolumeStatsRequest\032*.opi" +
-      "_api.storage.v1.QosVolumeStatsResponse\"\000" +
-      "Bf\n\022opi_api.storage.v1B\027MiddleendQosVolu" +
-      "meProtoP\001Z5github.com/opiproject/opi-api" +
-      "/storage/v1alpha1/gen/gob\006proto3"
+      "mes/*}\332A\004name\022\225\001\n\016StatsQosVolume\022).opi_a" +
+      "pi.storage.v1.StatsQosVolumeRequest\032*.op" +
+      "i_api.storage.v1.StatsQosVolumeResponse\"" +
+      ",\202\323\344\223\002\037\022\035/v1/{name=QosVolumes/*}:stats\332A" +
+      "\004nameBf\n\022opi_api.storage.v1B\027MiddleendQo" +
+      "sVolumeProtoP\001Z5github.com/opiproject/op" +
+      "i-api/storage/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -181,17 +182,17 @@ public final class MiddleendQosVolumeProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetQosVolumeRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_QosVolumeStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsQosVolumeRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_opi_api_storage_v1_QosVolumeStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsQosVolumeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_QosVolumeStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsQosVolumeRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_QosVolumeStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsQosVolumeResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_opi_api_storage_v1_QosVolumeStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsQosVolumeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_QosVolumeStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsQosVolumeResponse_descriptor,
         new java.lang.String[] { "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

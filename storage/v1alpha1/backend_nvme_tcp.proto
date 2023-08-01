@@ -54,8 +54,19 @@ service NvmeRemoteControllerService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc NvmeRemoteControllerReset (NvmeRemoteControllerResetRequest) returns (google.protobuf.Empty) {}
-    rpc NvmeRemoteControllerStats  (NvmeRemoteControllerStatsRequest)  returns (NvmeRemoteControllerStatsResponse)  {}
+    rpc ResetNvmeRemoteController (ResetNvmeRemoteControllerRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            post: "/v1/{name=NvmeRemoteControllers/*}:reset"
+            body: "*"
+        };
+        option (google.api.method_signature) = "name";
+    }
+    rpc StatsNvmeRemoteController  (StatsNvmeRemoteControllerRequest)  returns (StatsNvmeRemoteControllerResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=NvmeRemoteControllers/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 
     rpc ListNvmeRemoteNamespaces   (ListNvmeRemoteNamespacesRequest)   returns (ListNvmeRemoteNamespacesResponse)   {
         option (google.api.http) = {
@@ -96,7 +107,12 @@ service NvmeRemoteControllerService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc NvmePathStats  (NvmePathStatsRequest)  returns (NvmePathStatsResponse)  {}
+    rpc StatsNvmePath  (StatsNvmePathRequest)  returns (StatsNvmePathResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=NvmePaths/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message NvmeRemoteController {
@@ -255,21 +271,21 @@ message GetNvmeRemoteControllerRequest {
     ];
 }
 
-message NvmeRemoteControllerResetRequest {
+message ResetNvmeRemoteControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
 }
 
-message NvmeRemoteControllerStatsRequest {
+message StatsNvmeRemoteControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
 }
 
-message NvmeRemoteControllerStatsResponse {
+message StatsNvmeRemoteControllerResponse {
     VolumeStats stats = 1;
 }
 
@@ -336,14 +352,14 @@ message GetNvmePathRequest {
     ];
 }
 
-message NvmePathStatsRequest {
+message StatsNvmePathRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
     ];
 }
 
-message NvmePathStatsResponse {
+message StatsNvmePathResponse {
     VolumeStats stats = 1;
 }
 

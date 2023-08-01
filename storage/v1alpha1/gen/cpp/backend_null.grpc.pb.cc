@@ -29,7 +29,7 @@ static const char* NullVolumeService_method_names[] = {
   "/opi_api.storage.v1.NullVolumeService/UpdateNullVolume",
   "/opi_api.storage.v1.NullVolumeService/ListNullVolumes",
   "/opi_api.storage.v1.NullVolumeService/GetNullVolume",
-  "/opi_api.storage.v1.NullVolumeService/NullVolumeStats",
+  "/opi_api.storage.v1.NullVolumeService/StatsNullVolume",
 };
 
 std::unique_ptr< NullVolumeService::Stub> NullVolumeService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -44,7 +44,7 @@ NullVolumeService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_UpdateNullVolume_(NullVolumeService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListNullVolumes_(NullVolumeService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetNullVolume_(NullVolumeService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_NullVolumeStats_(NullVolumeService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StatsNullVolume_(NullVolumeService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status NullVolumeService::Stub::CreateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNullVolumeRequest& request, ::opi_api::storage::v1::NullVolume* response) {
@@ -162,25 +162,25 @@ void NullVolumeService::Stub::async::GetNullVolume(::grpc::ClientContext* contex
   return result;
 }
 
-::grpc::Status NullVolumeService::Stub::NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::opi_api::storage::v1::NullVolumeStatsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullVolumeStatsRequest, ::opi_api::storage::v1::NullVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullVolumeStats_, context, request, response);
+::grpc::Status NullVolumeService::Stub::StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::opi_api::storage::v1::StatsNullVolumeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::StatsNullVolumeRequest, ::opi_api::storage::v1::StatsNullVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_StatsNullVolume_, context, request, response);
 }
 
-void NullVolumeService::Stub::async::NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullVolumeStatsRequest, ::opi_api::storage::v1::NullVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullVolumeStats_, context, request, response, std::move(f));
+void NullVolumeService::Stub::async::StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::StatsNullVolumeRequest, ::opi_api::storage::v1::StatsNullVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsNullVolume_, context, request, response, std::move(f));
 }
 
-void NullVolumeService::Stub::async::NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullVolumeStats_, context, request, response, reactor);
+void NullVolumeService::Stub::async::StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsNullVolume_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolumeStatsResponse>* NullVolumeService::Stub::PrepareAsyncNullVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NullVolumeStatsResponse, ::opi_api::storage::v1::NullVolumeStatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullVolumeStats_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNullVolumeResponse>* NullVolumeService::Stub::PrepareAsyncStatsNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::StatsNullVolumeResponse, ::opi_api::storage::v1::StatsNullVolumeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_StatsNullVolume_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolumeStatsResponse>* NullVolumeService::Stub::AsyncNullVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNullVolumeResponse>* NullVolumeService::Stub::AsyncStatsNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncNullVolumeStatsRaw(context, request, cq);
+    this->PrepareAsyncStatsNullVolumeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -239,12 +239,12 @@ NullVolumeService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NullVolumeService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NullVolumeService::Service, ::opi_api::storage::v1::NullVolumeStatsRequest, ::opi_api::storage::v1::NullVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< NullVolumeService::Service, ::opi_api::storage::v1::StatsNullVolumeRequest, ::opi_api::storage::v1::StatsNullVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NullVolumeService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::NullVolumeStatsRequest* req,
-             ::opi_api::storage::v1::NullVolumeStatsResponse* resp) {
-               return service->NullVolumeStats(ctx, req, resp);
+             const ::opi_api::storage::v1::StatsNullVolumeRequest* req,
+             ::opi_api::storage::v1::StatsNullVolumeResponse* resp) {
+               return service->StatsNullVolume(ctx, req, resp);
              }, this)));
 }
 
@@ -286,7 +286,7 @@ NullVolumeService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status NullVolumeService::Service::NullVolumeStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response) {
+::grpc::Status NullVolumeService::Service::StatsNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -170,35 +170,35 @@ public final class MiddleendQosVolumeServiceGrpc {
     return getGetQosVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.QosVolumeStatsRequest,
-      opi_api.storage.v1.QosVolumeStatsResponse> getQosVolumeStatsMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.StatsQosVolumeRequest,
+      opi_api.storage.v1.StatsQosVolumeResponse> getStatsQosVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "QosVolumeStats",
-      requestType = opi_api.storage.v1.QosVolumeStatsRequest.class,
-      responseType = opi_api.storage.v1.QosVolumeStatsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "StatsQosVolume",
+      requestType = opi_api.storage.v1.StatsQosVolumeRequest.class,
+      responseType = opi_api.storage.v1.StatsQosVolumeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.QosVolumeStatsRequest,
-      opi_api.storage.v1.QosVolumeStatsResponse> getQosVolumeStatsMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.QosVolumeStatsRequest, opi_api.storage.v1.QosVolumeStatsResponse> getQosVolumeStatsMethod;
-    if ((getQosVolumeStatsMethod = MiddleendQosVolumeServiceGrpc.getQosVolumeStatsMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.StatsQosVolumeRequest,
+      opi_api.storage.v1.StatsQosVolumeResponse> getStatsQosVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.StatsQosVolumeRequest, opi_api.storage.v1.StatsQosVolumeResponse> getStatsQosVolumeMethod;
+    if ((getStatsQosVolumeMethod = MiddleendQosVolumeServiceGrpc.getStatsQosVolumeMethod) == null) {
       synchronized (MiddleendQosVolumeServiceGrpc.class) {
-        if ((getQosVolumeStatsMethod = MiddleendQosVolumeServiceGrpc.getQosVolumeStatsMethod) == null) {
-          MiddleendQosVolumeServiceGrpc.getQosVolumeStatsMethod = getQosVolumeStatsMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.QosVolumeStatsRequest, opi_api.storage.v1.QosVolumeStatsResponse>newBuilder()
+        if ((getStatsQosVolumeMethod = MiddleendQosVolumeServiceGrpc.getStatsQosVolumeMethod) == null) {
+          MiddleendQosVolumeServiceGrpc.getStatsQosVolumeMethod = getStatsQosVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.StatsQosVolumeRequest, opi_api.storage.v1.StatsQosVolumeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QosVolumeStats"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StatsQosVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.QosVolumeStatsRequest.getDefaultInstance()))
+                  opi_api.storage.v1.StatsQosVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.QosVolumeStatsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendQosVolumeServiceMethodDescriptorSupplier("QosVolumeStats"))
+                  opi_api.storage.v1.StatsQosVolumeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MiddleendQosVolumeServiceMethodDescriptorSupplier("StatsQosVolume"))
               .build();
         }
       }
     }
-    return getQosVolumeStatsMethod;
+    return getStatsQosVolumeMethod;
   }
 
   /**
@@ -286,9 +286,9 @@ public final class MiddleendQosVolumeServiceGrpc {
 
     /**
      */
-    public void qosVolumeStats(opi_api.storage.v1.QosVolumeStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolumeStatsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQosVolumeStatsMethod(), responseObserver);
+    public void statsQosVolume(opi_api.storage.v1.StatsQosVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsQosVolumeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStatsQosVolumeMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -329,12 +329,12 @@ public final class MiddleendQosVolumeServiceGrpc {
                 opi_api.storage.v1.QosVolume>(
                   this, METHODID_GET_QOS_VOLUME)))
           .addMethod(
-            getQosVolumeStatsMethod(),
+            getStatsQosVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.QosVolumeStatsRequest,
-                opi_api.storage.v1.QosVolumeStatsResponse>(
-                  this, METHODID_QOS_VOLUME_STATS)))
+                opi_api.storage.v1.StatsQosVolumeRequest,
+                opi_api.storage.v1.StatsQosVolumeResponse>(
+                  this, METHODID_STATS_QOS_VOLUME)))
           .build();
     }
   }
@@ -395,10 +395,10 @@ public final class MiddleendQosVolumeServiceGrpc {
 
     /**
      */
-    public void qosVolumeStats(opi_api.storage.v1.QosVolumeStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolumeStatsResponse> responseObserver) {
+    public void statsQosVolume(opi_api.storage.v1.StatsQosVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsQosVolumeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getQosVolumeStatsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getStatsQosVolumeMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -453,9 +453,9 @@ public final class MiddleendQosVolumeServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.QosVolumeStatsResponse qosVolumeStats(opi_api.storage.v1.QosVolumeStatsRequest request) {
+    public opi_api.storage.v1.StatsQosVolumeResponse statsQosVolume(opi_api.storage.v1.StatsQosVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getQosVolumeStatsMethod(), getCallOptions(), request);
+          getChannel(), getStatsQosVolumeMethod(), getCallOptions(), request);
     }
   }
 
@@ -515,10 +515,10 @@ public final class MiddleendQosVolumeServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.QosVolumeStatsResponse> qosVolumeStats(
-        opi_api.storage.v1.QosVolumeStatsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsQosVolumeResponse> statsQosVolume(
+        opi_api.storage.v1.StatsQosVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getQosVolumeStatsMethod(), getCallOptions()), request);
+          getChannel().newCall(getStatsQosVolumeMethod(), getCallOptions()), request);
     }
   }
 
@@ -527,7 +527,7 @@ public final class MiddleendQosVolumeServiceGrpc {
   private static final int METHODID_UPDATE_QOS_VOLUME = 2;
   private static final int METHODID_LIST_QOS_VOLUMES = 3;
   private static final int METHODID_GET_QOS_VOLUME = 4;
-  private static final int METHODID_QOS_VOLUME_STATS = 5;
+  private static final int METHODID_STATS_QOS_VOLUME = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -566,9 +566,9 @@ public final class MiddleendQosVolumeServiceGrpc {
           serviceImpl.getQosVolume((opi_api.storage.v1.GetQosVolumeRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolume>) responseObserver);
           break;
-        case METHODID_QOS_VOLUME_STATS:
-          serviceImpl.qosVolumeStats((opi_api.storage.v1.QosVolumeStatsRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolumeStatsResponse>) responseObserver);
+        case METHODID_STATS_QOS_VOLUME:
+          serviceImpl.statsQosVolume((opi_api.storage.v1.StatsQosVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsQosVolumeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -636,7 +636,7 @@ public final class MiddleendQosVolumeServiceGrpc {
               .addMethod(getUpdateQosVolumeMethod())
               .addMethod(getListQosVolumesMethod())
               .addMethod(getGetQosVolumeMethod())
-              .addMethod(getQosVolumeStatsMethod())
+              .addMethod(getStatsQosVolumeMethod())
               .build();
         }
       }

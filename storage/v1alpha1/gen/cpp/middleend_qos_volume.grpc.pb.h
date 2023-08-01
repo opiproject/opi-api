@@ -76,12 +76,12 @@ class MiddleendQosVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>> PrepareAsyncGetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>>(PrepareAsyncGetQosVolumeRaw(context, request, cq));
     }
-    virtual ::grpc::Status QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::opi_api::storage::v1::QosVolumeStatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolumeStatsResponse>> AsyncQosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolumeStatsResponse>>(AsyncQosVolumeStatsRaw(context, request, cq));
+    virtual ::grpc::Status StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::opi_api::storage::v1::StatsQosVolumeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsQosVolumeResponse>> AsyncStatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsQosVolumeResponse>>(AsyncStatsQosVolumeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolumeStatsResponse>> PrepareAsyncQosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolumeStatsResponse>>(PrepareAsyncQosVolumeStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsQosVolumeResponse>> PrepareAsyncStatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsQosVolumeResponse>>(PrepareAsyncStatsQosVolumeRaw(context, request, cq));
     }
     class async_interface {
      public:
@@ -96,8 +96,8 @@ class MiddleendQosVolumeService final {
       virtual void ListQosVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest* request, ::opi_api::storage::v1::ListQosVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -113,8 +113,8 @@ class MiddleendQosVolumeService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListQosVolumesResponse>* PrepareAsyncListQosVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>* AsyncGetQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>* PrepareAsyncGetQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolumeStatsResponse>* AsyncQosVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolumeStatsResponse>* PrepareAsyncQosVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsQosVolumeResponse>* AsyncStatsQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsQosVolumeResponse>* PrepareAsyncStatsQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -154,12 +154,12 @@ class MiddleendQosVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolume>> PrepareAsyncGetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolume>>(PrepareAsyncGetQosVolumeRaw(context, request, cq));
     }
-    ::grpc::Status QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::opi_api::storage::v1::QosVolumeStatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolumeStatsResponse>> AsyncQosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolumeStatsResponse>>(AsyncQosVolumeStatsRaw(context, request, cq));
+    ::grpc::Status StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::opi_api::storage::v1::StatsQosVolumeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsQosVolumeResponse>> AsyncStatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsQosVolumeResponse>>(AsyncStatsQosVolumeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolumeStatsResponse>> PrepareAsyncQosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolumeStatsResponse>>(PrepareAsyncQosVolumeStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsQosVolumeResponse>> PrepareAsyncStatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsQosVolumeResponse>>(PrepareAsyncStatsQosVolumeRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
@@ -174,8 +174,8 @@ class MiddleendQosVolumeService final {
       void ListQosVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest* request, ::opi_api::storage::v1::ListQosVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, std::function<void(::grpc::Status)>) override;
       void GetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response, std::function<void(::grpc::Status)>) override;
+      void StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -197,14 +197,14 @@ class MiddleendQosVolumeService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListQosVolumesResponse>* PrepareAsyncListQosVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolume>* AsyncGetQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolume>* PrepareAsyncGetQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolumeStatsResponse>* AsyncQosVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolumeStatsResponse>* PrepareAsyncQosVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsQosVolumeResponse>* AsyncStatsQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsQosVolumeResponse>* PrepareAsyncStatsQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateQosVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteQosVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateQosVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_ListQosVolumes_;
     const ::grpc::internal::RpcMethod rpcmethod_GetQosVolume_;
-    const ::grpc::internal::RpcMethod rpcmethod_QosVolumeStats_;
+    const ::grpc::internal::RpcMethod rpcmethod_StatsQosVolume_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -217,7 +217,7 @@ class MiddleendQosVolumeService final {
     virtual ::grpc::Status UpdateQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response);
     virtual ::grpc::Status ListQosVolumes(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest* request, ::opi_api::storage::v1::ListQosVolumesResponse* response);
     virtual ::grpc::Status GetQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response);
-    virtual ::grpc::Status QosVolumeStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response);
+    virtual ::grpc::Status StatsQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateQosVolume : public BaseClass {
@@ -320,26 +320,26 @@ class MiddleendQosVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_QosVolumeStats : public BaseClass {
+  class WithAsyncMethod_StatsQosVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_QosVolumeStats() {
+    WithAsyncMethod_StatsQosVolume() {
       ::grpc::Service::MarkMethodAsync(5);
     }
-    ~WithAsyncMethod_QosVolumeStats() override {
+    ~WithAsyncMethod_StatsQosVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status QosVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::QosVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::QosVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsQosVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsQosVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsQosVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestQosVolumeStats(::grpc::ServerContext* context, ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::QosVolumeStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsQosVolume(::grpc::ServerContext* context, ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::StatsQosVolumeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateQosVolume<WithAsyncMethod_DeleteQosVolume<WithAsyncMethod_UpdateQosVolume<WithAsyncMethod_ListQosVolumes<WithAsyncMethod_GetQosVolume<WithAsyncMethod_QosVolumeStats<Service > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateQosVolume<WithAsyncMethod_DeleteQosVolume<WithAsyncMethod_UpdateQosVolume<WithAsyncMethod_ListQosVolumes<WithAsyncMethod_GetQosVolume<WithAsyncMethod_StatsQosVolume<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateQosVolume : public BaseClass {
    private:
@@ -476,33 +476,33 @@ class MiddleendQosVolumeService final {
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::GetQosVolumeRequest* /*request*/, ::opi_api::storage::v1::QosVolume* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_QosVolumeStats : public BaseClass {
+  class WithCallbackMethod_StatsQosVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_QosVolumeStats() {
+    WithCallbackMethod_StatsQosVolume() {
       ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::QosVolumeStatsRequest, ::opi_api::storage::v1::QosVolumeStatsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsQosVolumeRequest, ::opi_api::storage::v1::StatsQosVolumeResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response) { return this->QosVolumeStats(context, request, response); }));}
-    void SetMessageAllocatorFor_QosVolumeStats(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::QosVolumeStatsRequest, ::opi_api::storage::v1::QosVolumeStatsResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response) { return this->StatsQosVolume(context, request, response); }));}
+    void SetMessageAllocatorFor_StatsQosVolume(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::StatsQosVolumeRequest, ::opi_api::storage::v1::StatsQosVolumeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::QosVolumeStatsRequest, ::opi_api::storage::v1::QosVolumeStatsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsQosVolumeRequest, ::opi_api::storage::v1::StatsQosVolumeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_QosVolumeStats() override {
+    ~WithCallbackMethod_StatsQosVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status QosVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::QosVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::QosVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsQosVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsQosVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsQosVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* QosVolumeStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::QosVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::QosVolumeStatsResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* StatsQosVolume(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::StatsQosVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsQosVolumeResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateQosVolume<WithCallbackMethod_DeleteQosVolume<WithCallbackMethod_UpdateQosVolume<WithCallbackMethod_ListQosVolumes<WithCallbackMethod_GetQosVolume<WithCallbackMethod_QosVolumeStats<Service > > > > > > CallbackService;
+  typedef WithCallbackMethod_CreateQosVolume<WithCallbackMethod_DeleteQosVolume<WithCallbackMethod_UpdateQosVolume<WithCallbackMethod_ListQosVolumes<WithCallbackMethod_GetQosVolume<WithCallbackMethod_StatsQosVolume<Service > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateQosVolume : public BaseClass {
@@ -590,18 +590,18 @@ class MiddleendQosVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_QosVolumeStats : public BaseClass {
+  class WithGenericMethod_StatsQosVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_QosVolumeStats() {
+    WithGenericMethod_StatsQosVolume() {
       ::grpc::Service::MarkMethodGeneric(5);
     }
-    ~WithGenericMethod_QosVolumeStats() override {
+    ~WithGenericMethod_StatsQosVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status QosVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::QosVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::QosVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsQosVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsQosVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsQosVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -707,22 +707,22 @@ class MiddleendQosVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_QosVolumeStats : public BaseClass {
+  class WithRawMethod_StatsQosVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_QosVolumeStats() {
+    WithRawMethod_StatsQosVolume() {
       ::grpc::Service::MarkMethodRaw(5);
     }
-    ~WithRawMethod_QosVolumeStats() override {
+    ~WithRawMethod_StatsQosVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status QosVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::QosVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::QosVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsQosVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsQosVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsQosVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestQosVolumeStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsQosVolume(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -837,25 +837,25 @@ class MiddleendQosVolumeService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_QosVolumeStats : public BaseClass {
+  class WithRawCallbackMethod_StatsQosVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_QosVolumeStats() {
+    WithRawCallbackMethod_StatsQosVolume() {
       ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->QosVolumeStats(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->StatsQosVolume(context, request, response); }));
     }
-    ~WithRawCallbackMethod_QosVolumeStats() override {
+    ~WithRawCallbackMethod_StatsQosVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status QosVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::QosVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::QosVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsQosVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsQosVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsQosVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* QosVolumeStats(
+    virtual ::grpc::ServerUnaryReactor* StatsQosVolume(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -994,35 +994,35 @@ class MiddleendQosVolumeService final {
     virtual ::grpc::Status StreamedGetQosVolume(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::GetQosVolumeRequest,::opi_api::storage::v1::QosVolume>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_QosVolumeStats : public BaseClass {
+  class WithStreamedUnaryMethod_StatsQosVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_QosVolumeStats() {
+    WithStreamedUnaryMethod_StatsQosVolume() {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::QosVolumeStatsRequest, ::opi_api::storage::v1::QosVolumeStatsResponse>(
+          ::opi_api::storage::v1::StatsQosVolumeRequest, ::opi_api::storage::v1::StatsQosVolumeResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::QosVolumeStatsRequest, ::opi_api::storage::v1::QosVolumeStatsResponse>* streamer) {
-                       return this->StreamedQosVolumeStats(context,
+                     ::opi_api::storage::v1::StatsQosVolumeRequest, ::opi_api::storage::v1::StatsQosVolumeResponse>* streamer) {
+                       return this->StreamedStatsQosVolume(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_QosVolumeStats() override {
+    ~WithStreamedUnaryMethod_StatsQosVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status QosVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::QosVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::QosVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsQosVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsQosVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsQosVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedQosVolumeStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::QosVolumeStatsRequest,::opi_api::storage::v1::QosVolumeStatsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedStatsQosVolume(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::StatsQosVolumeRequest,::opi_api::storage::v1::StatsQosVolumeResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateQosVolume<WithStreamedUnaryMethod_DeleteQosVolume<WithStreamedUnaryMethod_UpdateQosVolume<WithStreamedUnaryMethod_ListQosVolumes<WithStreamedUnaryMethod_GetQosVolume<WithStreamedUnaryMethod_QosVolumeStats<Service > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateQosVolume<WithStreamedUnaryMethod_DeleteQosVolume<WithStreamedUnaryMethod_UpdateQosVolume<WithStreamedUnaryMethod_ListQosVolumes<WithStreamedUnaryMethod_GetQosVolume<WithStreamedUnaryMethod_StatsQosVolume<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateQosVolume<WithStreamedUnaryMethod_DeleteQosVolume<WithStreamedUnaryMethod_UpdateQosVolume<WithStreamedUnaryMethod_ListQosVolumes<WithStreamedUnaryMethod_GetQosVolume<WithStreamedUnaryMethod_QosVolumeStats<Service > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateQosVolume<WithStreamedUnaryMethod_DeleteQosVolume<WithStreamedUnaryMethod_UpdateQosVolume<WithStreamedUnaryMethod_ListQosVolumes<WithStreamedUnaryMethod_GetQosVolume<WithStreamedUnaryMethod_StatsQosVolume<Service > > > > > > StreamedService;
 };
 
 }  // namespace v1

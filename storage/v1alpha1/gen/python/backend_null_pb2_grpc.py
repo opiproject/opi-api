@@ -41,10 +41,10 @@ class NullVolumeServiceStub(object):
                 request_serializer=backend__null__pb2.GetNullVolumeRequest.SerializeToString,
                 response_deserializer=backend__null__pb2.NullVolume.FromString,
                 )
-        self.NullVolumeStats = channel.unary_unary(
-                '/opi_api.storage.v1.NullVolumeService/NullVolumeStats',
-                request_serializer=backend__null__pb2.NullVolumeStatsRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullVolumeStatsResponse.FromString,
+        self.StatsNullVolume = channel.unary_unary(
+                '/opi_api.storage.v1.NullVolumeService/StatsNullVolume',
+                request_serializer=backend__null__pb2.StatsNullVolumeRequest.SerializeToString,
+                response_deserializer=backend__null__pb2.StatsNullVolumeResponse.FromString,
                 )
 
 
@@ -82,7 +82,7 @@ class NullVolumeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def NullVolumeStats(self, request, context):
+    def StatsNullVolume(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -116,10 +116,10 @@ def add_NullVolumeServiceServicer_to_server(servicer, server):
                     request_deserializer=backend__null__pb2.GetNullVolumeRequest.FromString,
                     response_serializer=backend__null__pb2.NullVolume.SerializeToString,
             ),
-            'NullVolumeStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.NullVolumeStats,
-                    request_deserializer=backend__null__pb2.NullVolumeStatsRequest.FromString,
-                    response_serializer=backend__null__pb2.NullVolumeStatsResponse.SerializeToString,
+            'StatsNullVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsNullVolume,
+                    request_deserializer=backend__null__pb2.StatsNullVolumeRequest.FromString,
+                    response_serializer=backend__null__pb2.StatsNullVolumeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -218,7 +218,7 @@ class NullVolumeService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def NullVolumeStats(request,
+    def StatsNullVolume(request,
             target,
             options=(),
             channel_credentials=None,
@@ -228,8 +228,8 @@ class NullVolumeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullVolumeService/NullVolumeStats',
-            backend__null__pb2.NullVolumeStatsRequest.SerializeToString,
-            backend__null__pb2.NullVolumeStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullVolumeService/StatsNullVolume',
+            backend__null__pb2.StatsNullVolumeRequest.SerializeToString,
+            backend__null__pb2.StatsNullVolumeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

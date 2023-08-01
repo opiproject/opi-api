@@ -173,35 +173,35 @@ public final class AioVolumeServiceGrpc {
     return getGetAioVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.AioVolumeStatsRequest,
-      opi_api.storage.v1.AioVolumeStatsResponse> getAioVolumeStatsMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.StatsAioVolumeRequest,
+      opi_api.storage.v1.StatsAioVolumeResponse> getStatsAioVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AioVolumeStats",
-      requestType = opi_api.storage.v1.AioVolumeStatsRequest.class,
-      responseType = opi_api.storage.v1.AioVolumeStatsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "StatsAioVolume",
+      requestType = opi_api.storage.v1.StatsAioVolumeRequest.class,
+      responseType = opi_api.storage.v1.StatsAioVolumeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.AioVolumeStatsRequest,
-      opi_api.storage.v1.AioVolumeStatsResponse> getAioVolumeStatsMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.AioVolumeStatsRequest, opi_api.storage.v1.AioVolumeStatsResponse> getAioVolumeStatsMethod;
-    if ((getAioVolumeStatsMethod = AioVolumeServiceGrpc.getAioVolumeStatsMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.StatsAioVolumeRequest,
+      opi_api.storage.v1.StatsAioVolumeResponse> getStatsAioVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.StatsAioVolumeRequest, opi_api.storage.v1.StatsAioVolumeResponse> getStatsAioVolumeMethod;
+    if ((getStatsAioVolumeMethod = AioVolumeServiceGrpc.getStatsAioVolumeMethod) == null) {
       synchronized (AioVolumeServiceGrpc.class) {
-        if ((getAioVolumeStatsMethod = AioVolumeServiceGrpc.getAioVolumeStatsMethod) == null) {
-          AioVolumeServiceGrpc.getAioVolumeStatsMethod = getAioVolumeStatsMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.AioVolumeStatsRequest, opi_api.storage.v1.AioVolumeStatsResponse>newBuilder()
+        if ((getStatsAioVolumeMethod = AioVolumeServiceGrpc.getStatsAioVolumeMethod) == null) {
+          AioVolumeServiceGrpc.getStatsAioVolumeMethod = getStatsAioVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.StatsAioVolumeRequest, opi_api.storage.v1.StatsAioVolumeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AioVolumeStats"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StatsAioVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.AioVolumeStatsRequest.getDefaultInstance()))
+                  opi_api.storage.v1.StatsAioVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.AioVolumeStatsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AioVolumeServiceMethodDescriptorSupplier("AioVolumeStats"))
+                  opi_api.storage.v1.StatsAioVolumeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AioVolumeServiceMethodDescriptorSupplier("StatsAioVolume"))
               .build();
         }
       }
     }
-    return getAioVolumeStatsMethod;
+    return getStatsAioVolumeMethod;
   }
 
   /**
@@ -292,9 +292,9 @@ public final class AioVolumeServiceGrpc {
 
     /**
      */
-    public void aioVolumeStats(opi_api.storage.v1.AioVolumeStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolumeStatsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAioVolumeStatsMethod(), responseObserver);
+    public void statsAioVolume(opi_api.storage.v1.StatsAioVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsAioVolumeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStatsAioVolumeMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -335,12 +335,12 @@ public final class AioVolumeServiceGrpc {
                 opi_api.storage.v1.AioVolume>(
                   this, METHODID_GET_AIO_VOLUME)))
           .addMethod(
-            getAioVolumeStatsMethod(),
+            getStatsAioVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.AioVolumeStatsRequest,
-                opi_api.storage.v1.AioVolumeStatsResponse>(
-                  this, METHODID_AIO_VOLUME_STATS)))
+                opi_api.storage.v1.StatsAioVolumeRequest,
+                opi_api.storage.v1.StatsAioVolumeResponse>(
+                  this, METHODID_STATS_AIO_VOLUME)))
           .build();
     }
   }
@@ -404,10 +404,10 @@ public final class AioVolumeServiceGrpc {
 
     /**
      */
-    public void aioVolumeStats(opi_api.storage.v1.AioVolumeStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolumeStatsResponse> responseObserver) {
+    public void statsAioVolume(opi_api.storage.v1.StatsAioVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsAioVolumeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAioVolumeStatsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getStatsAioVolumeMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -465,9 +465,9 @@ public final class AioVolumeServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.AioVolumeStatsResponse aioVolumeStats(opi_api.storage.v1.AioVolumeStatsRequest request) {
+    public opi_api.storage.v1.StatsAioVolumeResponse statsAioVolume(opi_api.storage.v1.StatsAioVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAioVolumeStatsMethod(), getCallOptions(), request);
+          getChannel(), getStatsAioVolumeMethod(), getCallOptions(), request);
     }
   }
 
@@ -530,10 +530,10 @@ public final class AioVolumeServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.AioVolumeStatsResponse> aioVolumeStats(
-        opi_api.storage.v1.AioVolumeStatsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsAioVolumeResponse> statsAioVolume(
+        opi_api.storage.v1.StatsAioVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAioVolumeStatsMethod(), getCallOptions()), request);
+          getChannel().newCall(getStatsAioVolumeMethod(), getCallOptions()), request);
     }
   }
 
@@ -542,7 +542,7 @@ public final class AioVolumeServiceGrpc {
   private static final int METHODID_UPDATE_AIO_VOLUME = 2;
   private static final int METHODID_LIST_AIO_VOLUMES = 3;
   private static final int METHODID_GET_AIO_VOLUME = 4;
-  private static final int METHODID_AIO_VOLUME_STATS = 5;
+  private static final int METHODID_STATS_AIO_VOLUME = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -581,9 +581,9 @@ public final class AioVolumeServiceGrpc {
           serviceImpl.getAioVolume((opi_api.storage.v1.GetAioVolumeRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolume>) responseObserver);
           break;
-        case METHODID_AIO_VOLUME_STATS:
-          serviceImpl.aioVolumeStats((opi_api.storage.v1.AioVolumeStatsRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolumeStatsResponse>) responseObserver);
+        case METHODID_STATS_AIO_VOLUME:
+          serviceImpl.statsAioVolume((opi_api.storage.v1.StatsAioVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsAioVolumeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -651,7 +651,7 @@ public final class AioVolumeServiceGrpc {
               .addMethod(getUpdateAioVolumeMethod())
               .addMethod(getListAioVolumesMethod())
               .addMethod(getGetAioVolumeMethod())
-              .addMethod(getAioVolumeStatsMethod())
+              .addMethod(getStatsAioVolumeMethod())
               .build();
         }
       }

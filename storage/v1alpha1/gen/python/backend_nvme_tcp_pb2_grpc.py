@@ -41,15 +41,15 @@ class NvmeRemoteControllerServiceStub(object):
                 request_serializer=backend__nvme__tcp__pb2.GetNvmeRemoteControllerRequest.SerializeToString,
                 response_deserializer=backend__nvme__tcp__pb2.NvmeRemoteController.FromString,
                 )
-        self.NvmeRemoteControllerReset = channel.unary_unary(
-                '/opi_api.storage.v1.NvmeRemoteControllerService/NvmeRemoteControllerReset',
-                request_serializer=backend__nvme__tcp__pb2.NvmeRemoteControllerResetRequest.SerializeToString,
+        self.ResetNvmeRemoteController = channel.unary_unary(
+                '/opi_api.storage.v1.NvmeRemoteControllerService/ResetNvmeRemoteController',
+                request_serializer=backend__nvme__tcp__pb2.ResetNvmeRemoteControllerRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.NvmeRemoteControllerStats = channel.unary_unary(
-                '/opi_api.storage.v1.NvmeRemoteControllerService/NvmeRemoteControllerStats',
-                request_serializer=backend__nvme__tcp__pb2.NvmeRemoteControllerStatsRequest.SerializeToString,
-                response_deserializer=backend__nvme__tcp__pb2.NvmeRemoteControllerStatsResponse.FromString,
+        self.StatsNvmeRemoteController = channel.unary_unary(
+                '/opi_api.storage.v1.NvmeRemoteControllerService/StatsNvmeRemoteController',
+                request_serializer=backend__nvme__tcp__pb2.StatsNvmeRemoteControllerRequest.SerializeToString,
+                response_deserializer=backend__nvme__tcp__pb2.StatsNvmeRemoteControllerResponse.FromString,
                 )
         self.ListNvmeRemoteNamespaces = channel.unary_unary(
                 '/opi_api.storage.v1.NvmeRemoteControllerService/ListNvmeRemoteNamespaces',
@@ -81,10 +81,10 @@ class NvmeRemoteControllerServiceStub(object):
                 request_serializer=backend__nvme__tcp__pb2.GetNvmePathRequest.SerializeToString,
                 response_deserializer=backend__nvme__tcp__pb2.NvmePath.FromString,
                 )
-        self.NvmePathStats = channel.unary_unary(
-                '/opi_api.storage.v1.NvmeRemoteControllerService/NvmePathStats',
-                request_serializer=backend__nvme__tcp__pb2.NvmePathStatsRequest.SerializeToString,
-                response_deserializer=backend__nvme__tcp__pb2.NvmePathStatsResponse.FromString,
+        self.StatsNvmePath = channel.unary_unary(
+                '/opi_api.storage.v1.NvmeRemoteControllerService/StatsNvmePath',
+                request_serializer=backend__nvme__tcp__pb2.StatsNvmePathRequest.SerializeToString,
+                response_deserializer=backend__nvme__tcp__pb2.StatsNvmePathResponse.FromString,
                 )
 
 
@@ -122,13 +122,13 @@ class NvmeRemoteControllerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def NvmeRemoteControllerReset(self, request, context):
+    def ResetNvmeRemoteController(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def NvmeRemoteControllerStats(self, request, context):
+    def StatsNvmeRemoteController(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -170,7 +170,7 @@ class NvmeRemoteControllerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def NvmePathStats(self, request, context):
+    def StatsNvmePath(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -204,15 +204,15 @@ def add_NvmeRemoteControllerServiceServicer_to_server(servicer, server):
                     request_deserializer=backend__nvme__tcp__pb2.GetNvmeRemoteControllerRequest.FromString,
                     response_serializer=backend__nvme__tcp__pb2.NvmeRemoteController.SerializeToString,
             ),
-            'NvmeRemoteControllerReset': grpc.unary_unary_rpc_method_handler(
-                    servicer.NvmeRemoteControllerReset,
-                    request_deserializer=backend__nvme__tcp__pb2.NvmeRemoteControllerResetRequest.FromString,
+            'ResetNvmeRemoteController': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResetNvmeRemoteController,
+                    request_deserializer=backend__nvme__tcp__pb2.ResetNvmeRemoteControllerRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'NvmeRemoteControllerStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.NvmeRemoteControllerStats,
-                    request_deserializer=backend__nvme__tcp__pb2.NvmeRemoteControllerStatsRequest.FromString,
-                    response_serializer=backend__nvme__tcp__pb2.NvmeRemoteControllerStatsResponse.SerializeToString,
+            'StatsNvmeRemoteController': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsNvmeRemoteController,
+                    request_deserializer=backend__nvme__tcp__pb2.StatsNvmeRemoteControllerRequest.FromString,
+                    response_serializer=backend__nvme__tcp__pb2.StatsNvmeRemoteControllerResponse.SerializeToString,
             ),
             'ListNvmeRemoteNamespaces': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNvmeRemoteNamespaces,
@@ -244,10 +244,10 @@ def add_NvmeRemoteControllerServiceServicer_to_server(servicer, server):
                     request_deserializer=backend__nvme__tcp__pb2.GetNvmePathRequest.FromString,
                     response_serializer=backend__nvme__tcp__pb2.NvmePath.SerializeToString,
             ),
-            'NvmePathStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.NvmePathStats,
-                    request_deserializer=backend__nvme__tcp__pb2.NvmePathStatsRequest.FromString,
-                    response_serializer=backend__nvme__tcp__pb2.NvmePathStatsResponse.SerializeToString,
+            'StatsNvmePath': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsNvmePath,
+                    request_deserializer=backend__nvme__tcp__pb2.StatsNvmePathRequest.FromString,
+                    response_serializer=backend__nvme__tcp__pb2.StatsNvmePathResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -346,7 +346,7 @@ class NvmeRemoteControllerService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def NvmeRemoteControllerReset(request,
+    def ResetNvmeRemoteController(request,
             target,
             options=(),
             channel_credentials=None,
@@ -356,14 +356,14 @@ class NvmeRemoteControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NvmeRemoteControllerService/NvmeRemoteControllerReset',
-            backend__nvme__tcp__pb2.NvmeRemoteControllerResetRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NvmeRemoteControllerService/ResetNvmeRemoteController',
+            backend__nvme__tcp__pb2.ResetNvmeRemoteControllerRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def NvmeRemoteControllerStats(request,
+    def StatsNvmeRemoteController(request,
             target,
             options=(),
             channel_credentials=None,
@@ -373,9 +373,9 @@ class NvmeRemoteControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NvmeRemoteControllerService/NvmeRemoteControllerStats',
-            backend__nvme__tcp__pb2.NvmeRemoteControllerStatsRequest.SerializeToString,
-            backend__nvme__tcp__pb2.NvmeRemoteControllerStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NvmeRemoteControllerService/StatsNvmeRemoteController',
+            backend__nvme__tcp__pb2.StatsNvmeRemoteControllerRequest.SerializeToString,
+            backend__nvme__tcp__pb2.StatsNvmeRemoteControllerResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -482,7 +482,7 @@ class NvmeRemoteControllerService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def NvmePathStats(request,
+    def StatsNvmePath(request,
             target,
             options=(),
             channel_credentials=None,
@@ -492,8 +492,8 @@ class NvmeRemoteControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NvmeRemoteControllerService/NvmePathStats',
-            backend__nvme__tcp__pb2.NvmePathStatsRequest.SerializeToString,
-            backend__nvme__tcp__pb2.NvmePathStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NvmeRemoteControllerService/StatsNvmePath',
+            backend__nvme__tcp__pb2.StatsNvmePathRequest.SerializeToString,
+            backend__nvme__tcp__pb2.StatsNvmePathResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

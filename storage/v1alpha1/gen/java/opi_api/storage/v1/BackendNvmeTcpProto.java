@@ -60,20 +60,20 @@ public final class BackendNvmeTcpProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetNvmeRemoteControllerRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerResetRequest_descriptor;
+    internal_static_opi_api_storage_v1_ResetNvmeRemoteControllerRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NvmeRemoteControllerResetRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_ResetNvmeRemoteControllerRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_storage_v1_ListNvmeRemoteNamespacesRequest_descriptor;
   static final 
@@ -115,15 +115,15 @@ public final class BackendNvmeTcpProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetNvmePathRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NvmePathStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsNvmePathRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NvmePathStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsNvmePathRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NvmePathStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsNvmePathResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NvmePathStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsNvmePathResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -186,12 +186,12 @@ public final class BackendNvmeTcpProto {
       "\017next_page_token\030\002 \001(\t\"_\n\036GetNvmeRemoteC" +
       "ontrollerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'" +
       "opi_api.storage.v1/NvmeRemoteController\"" +
-      "a\n NvmeRemoteControllerResetRequest\022=\n\004n" +
+      "a\n ResetNvmeRemoteControllerRequest\022=\n\004n" +
       "ame\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.storage.v1/Nv" +
-      "meRemoteController\"a\n NvmeRemoteControll" +
-      "erStatsRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'op" +
+      "meRemoteController\"a\n StatsNvmeRemoteCon" +
+      "trollerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'op" +
       "i_api.storage.v1/NvmeRemoteController\"S\n" +
-      "!NvmeRemoteControllerStatsResponse\022.\n\005st" +
+      "!StatsNvmeRemoteControllerResponse\022.\n\005st" +
       "ats\030\001 \001(\0132\037.opi_api.storage.v1.VolumeSta" +
       "ts\"\210\001\n\037ListNvmeRemoteNamespacesRequest\022>" +
       "\n\006parent\030\001 \001(\tB.\340A\002\372A(\n&opi_api.storage." +
@@ -215,10 +215,10 @@ public final class BackendNvmeTcpProto {
       "onse\0220\n\nnvme_paths\030\001 \003(\0132\034.opi_api.stora" +
       "ge.v1.NvmePath\022\027\n\017next_page_token\030\002 \001(\t\"" +
       "G\n\022GetNvmePathRequest\0221\n\004name\030\001 \001(\tB#\340A\002" +
-      "\372A\035\n\033opi_api.storage.v1/NvmePath\"I\n\024Nvme" +
-      "PathStatsRequest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033" +
-      "opi_api.storage.v1/NvmePath\"G\n\025NvmePathS" +
-      "tatsResponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.st" +
+      "\372A\035\n\033opi_api.storage.v1/NvmePath\"I\n\024Stat" +
+      "sNvmePathRequest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033" +
+      "opi_api.storage.v1/NvmePath\"G\n\025StatsNvme" +
+      "PathResponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.st" +
       "orage.v1.VolumeStats*\264\001\n\021NvmeTransportTy" +
       "pe\022#\n\037NVME_TRANSPORT_TYPE_UNSPECIFIED\020\000\022" +
       "\025\n\021NVME_TRANSPORT_FC\020\001\022\027\n\023NVME_TRANSPORT" +
@@ -231,7 +231,7 @@ public final class BackendNvmeTcpProto {
       "M_INTRA_HOST\020\005*\206\001\n\rNvmeMultipath\022\036\n\032NVME" +
       "_MULTIPATH_UNSPECIFIED\020\000\022\032\n\026NVME_MULTIPA" +
       "TH_DISABLE\020\001\022\033\n\027NVME_MULTIPATH_FAILOVER\020" +
-      "\002\022\034\n\030NVME_MULTIPATH_MULTIPATH\020\0032\315\021\n\033Nvme" +
+      "\002\022\034\n\030NVME_MULTIPATH_MULTIPATH\020\0032\353\022\n\033Nvme" +
       "RemoteControllerService\022\335\001\n\032CreateNvmeRe" +
       "moteController\0225.opi_api.storage.v1.Crea" +
       "teNvmeRemoteControllerRequest\032(.opi_api." +
@@ -257,40 +257,44 @@ public final class BackendNvmeTcpProto {
       "1.GetNvmeRemoteControllerRequest\032(.opi_a" +
       "pi.storage.v1.NvmeRemoteController\"1\202\323\344\223" +
       "\002$\022\"/v1/{name=NvmeRemoteControllers/*}\332A" +
-      "\004name\022k\n\031NvmeRemoteControllerReset\0224.opi" +
-      "_api.storage.v1.NvmeRemoteControllerRese" +
-      "tRequest\032\026.google.protobuf.Empty\"\000\022\212\001\n\031N" +
-      "vmeRemoteControllerStats\0224.opi_api.stora" +
-      "ge.v1.NvmeRemoteControllerStatsRequest\0325" +
-      ".opi_api.storage.v1.NvmeRemoteController" +
-      "StatsResponse\"\000\022\257\001\n\030ListNvmeRemoteNamesp" +
-      "aces\0223.opi_api.storage.v1.ListNvmeRemote" +
-      "NamespacesRequest\0324.opi_api.storage.v1.L" +
-      "istNvmeRemoteNamespacesResponse\"(\202\323\344\223\002\031\022" +
-      "\027/v1/{parent=subsystems}\332A\006parent\022\222\001\n\016Cr" +
-      "eateNvmePath\022).opi_api.storage.v1.Create" +
-      "NvmePathRequest\032\034.opi_api.storage.v1.Nvm" +
-      "ePath\"7\202\323\344\223\002\030\"\013/v1/volumes:\tnvme_path\332A\026" +
-      "nvme_path,nvme_path_id\022z\n\016DeleteNvmePath" +
-      "\022).opi_api.storage.v1.DeleteNvmePathRequ" +
-      "est\032\026.google.protobuf.Empty\"%\202\323\344\223\002\030*\026/v1" +
-      "/{name=NvmePaths/*}\332A\004name\022\245\001\n\016UpdateNvm" +
-      "ePath\022).opi_api.storage.v1.UpdateNvmePat" +
-      "hRequest\032\034.opi_api.storage.v1.NvmePath\"J" +
-      "\202\323\344\223\002,2\037/v1/{nvme_path.name=subsystems}:" +
-      "\tnvme_path\332A\025nvme_path,update_mask\022\216\001\n\rL" +
-      "istNvmePaths\022(.opi_api.storage.v1.ListNv" +
-      "mePathsRequest\032).opi_api.storage.v1.List" +
-      "NvmePathsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=s" +
-      "ubsystems}\332A\006parent\022z\n\013GetNvmePath\022&.opi" +
-      "_api.storage.v1.GetNvmePathRequest\032\034.opi" +
-      "_api.storage.v1.NvmePath\"%\202\323\344\223\002\030\022\026/v1/{n" +
-      "ame=NvmePaths/*}\332A\004name\022f\n\rNvmePathStats" +
-      "\022(.opi_api.storage.v1.NvmePathStatsReque" +
-      "st\032).opi_api.storage.v1.NvmePathStatsRes" +
-      "ponse\"\000Bb\n\022opi_api.storage.v1B\023BackendNv" +
-      "meTcpProtoP\001Z5github.com/opiproject/opi-" +
-      "api/storage/v1alpha1/gen/gob\006proto3"
+      "\004name\022\245\001\n\031ResetNvmeRemoteController\0224.op" +
+      "i_api.storage.v1.ResetNvmeRemoteControll" +
+      "erRequest\032\026.google.protobuf.Empty\":\202\323\344\223\002" +
+      "-\"(/v1/{name=NvmeRemoteControllers/*}:re" +
+      "set:\001*\332A\004name\022\301\001\n\031StatsNvmeRemoteControl" +
+      "ler\0224.opi_api.storage.v1.StatsNvmeRemote" +
+      "ControllerRequest\0325.opi_api.storage.v1.S" +
+      "tatsNvmeRemoteControllerResponse\"7\202\323\344\223\002*" +
+      "\022(/v1/{name=NvmeRemoteControllers/*}:sta" +
+      "ts\332A\004name\022\257\001\n\030ListNvmeRemoteNamespaces\0223" +
+      ".opi_api.storage.v1.ListNvmeRemoteNamesp" +
+      "acesRequest\0324.opi_api.storage.v1.ListNvm" +
+      "eRemoteNamespacesResponse\"(\202\323\344\223\002\031\022\027/v1/{" +
+      "parent=subsystems}\332A\006parent\022\222\001\n\016CreateNv" +
+      "mePath\022).opi_api.storage.v1.CreateNvmePa" +
+      "thRequest\032\034.opi_api.storage.v1.NvmePath\"" +
+      "7\202\323\344\223\002\030\"\013/v1/volumes:\tnvme_path\332A\026nvme_p" +
+      "ath,nvme_path_id\022z\n\016DeleteNvmePath\022).opi" +
+      "_api.storage.v1.DeleteNvmePathRequest\032\026." +
+      "google.protobuf.Empty\"%\202\323\344\223\002\030*\026/v1/{name" +
+      "=NvmePaths/*}\332A\004name\022\245\001\n\016UpdateNvmePath\022" +
+      ").opi_api.storage.v1.UpdateNvmePathReque" +
+      "st\032\034.opi_api.storage.v1.NvmePath\"J\202\323\344\223\002," +
+      "2\037/v1/{nvme_path.name=subsystems}:\tnvme_" +
+      "path\332A\025nvme_path,update_mask\022\216\001\n\rListNvm" +
+      "ePaths\022(.opi_api.storage.v1.ListNvmePath" +
+      "sRequest\032).opi_api.storage.v1.ListNvmePa" +
+      "thsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsyst" +
+      "ems}\332A\006parent\022z\n\013GetNvmePath\022&.opi_api.s" +
+      "torage.v1.GetNvmePathRequest\032\034.opi_api.s" +
+      "torage.v1.NvmePath\"%\202\323\344\223\002\030\022\026/v1/{name=Nv" +
+      "mePaths/*}\332A\004name\022\221\001\n\rStatsNvmePath\022(.op" +
+      "i_api.storage.v1.StatsNvmePathRequest\032)." +
+      "opi_api.storage.v1.StatsNvmePathResponse" +
+      "\"+\202\323\344\223\002\036\022\034/v1/{name=NvmePaths/*}:stats\332A" +
+      "\004nameBb\n\022opi_api.storage.v1B\023BackendNvme" +
+      "TcpProtoP\001Z5github.com/opiproject/opi-ap" +
+      "i/storage/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -358,23 +362,23 @@ public final class BackendNvmeTcpProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetNvmeRemoteControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerResetRequest_descriptor =
+    internal_static_opi_api_storage_v1_ResetNvmeRemoteControllerRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerResetRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_ResetNvmeRemoteControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NvmeRemoteControllerResetRequest_descriptor,
+        internal_static_opi_api_storage_v1_ResetNvmeRemoteControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NvmeRemoteControllerStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsNvmeRemoteControllerResponse_descriptor,
         new java.lang.String[] { "Stats", });
     internal_static_opi_api_storage_v1_ListNvmeRemoteNamespacesRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
@@ -424,17 +428,17 @@ public final class BackendNvmeTcpProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetNvmePathRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_NvmePathStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsNvmePathRequest_descriptor =
       getDescriptor().getMessageTypes().get(20);
-    internal_static_opi_api_storage_v1_NvmePathStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsNvmePathRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NvmePathStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsNvmePathRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_NvmePathStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsNvmePathResponse_descriptor =
       getDescriptor().getMessageTypes().get(21);
-    internal_static_opi_api_storage_v1_NvmePathStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsNvmePathResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NvmePathStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsNvmePathResponse_descriptor,
         new java.lang.String[] { "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

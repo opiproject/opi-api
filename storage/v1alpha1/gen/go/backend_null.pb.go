@@ -449,7 +449,7 @@ func (x *GetNullVolumeRequest) GetName() string {
 	return ""
 }
 
-type NullVolumeStatsRequest struct {
+type StatsNullVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -457,8 +457,8 @@ type NullVolumeStatsRequest struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *NullVolumeStatsRequest) Reset() {
-	*x = NullVolumeStatsRequest{}
+func (x *StatsNullVolumeRequest) Reset() {
+	*x = StatsNullVolumeRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_null_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -466,13 +466,13 @@ func (x *NullVolumeStatsRequest) Reset() {
 	}
 }
 
-func (x *NullVolumeStatsRequest) String() string {
+func (x *StatsNullVolumeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NullVolumeStatsRequest) ProtoMessage() {}
+func (*StatsNullVolumeRequest) ProtoMessage() {}
 
-func (x *NullVolumeStatsRequest) ProtoReflect() protoreflect.Message {
+func (x *StatsNullVolumeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_null_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -484,19 +484,19 @@ func (x *NullVolumeStatsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NullVolumeStatsRequest.ProtoReflect.Descriptor instead.
-func (*NullVolumeStatsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use StatsNullVolumeRequest.ProtoReflect.Descriptor instead.
+func (*StatsNullVolumeRequest) Descriptor() ([]byte, []int) {
 	return file_backend_null_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *NullVolumeStatsRequest) GetName() string {
+func (x *StatsNullVolumeRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type NullVolumeStatsResponse struct {
+type StatsNullVolumeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -504,8 +504,8 @@ type NullVolumeStatsResponse struct {
 	Stats *VolumeStats `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
 }
 
-func (x *NullVolumeStatsResponse) Reset() {
-	*x = NullVolumeStatsResponse{}
+func (x *StatsNullVolumeResponse) Reset() {
+	*x = StatsNullVolumeResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_null_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -513,13 +513,13 @@ func (x *NullVolumeStatsResponse) Reset() {
 	}
 }
 
-func (x *NullVolumeStatsResponse) String() string {
+func (x *StatsNullVolumeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NullVolumeStatsResponse) ProtoMessage() {}
+func (*StatsNullVolumeResponse) ProtoMessage() {}
 
-func (x *NullVolumeStatsResponse) ProtoReflect() protoreflect.Message {
+func (x *StatsNullVolumeResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_null_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -531,12 +531,12 @@ func (x *NullVolumeStatsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NullVolumeStatsResponse.ProtoReflect.Descriptor instead.
-func (*NullVolumeStatsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use StatsNullVolumeResponse.ProtoReflect.Descriptor instead.
+func (*StatsNullVolumeResponse) Descriptor() ([]byte, []int) {
 	return file_backend_null_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *NullVolumeStatsResponse) GetStats() *VolumeStats {
+func (x *StatsNullVolumeResponse) GetStats() *VolumeStats {
 	if x != nil {
 		return x.Stats
 	}
@@ -628,17 +628,17 @@ var file_backend_null_proto_rawDesc = []byte{
 	0x25, 0xe0, 0x41, 0x02, 0xfa, 0x41, 0x1f, 0x0a, 0x1d, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
 	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2f, 0x4e, 0x75, 0x6c, 0x6c,
 	0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x53, 0x0a, 0x16,
-	0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52,
+	0x53, 0x74, 0x61, 0x74, 0x73, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x42, 0x25, 0xe0, 0x41, 0x02, 0xfa, 0x41, 0x1f, 0x0a, 0x1d, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
 	0x2f, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x04, 0x6e, 0x61, 0x6d,
-	0x65, 0x22, 0x50, 0x0a, 0x17, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53,
-	0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05,
+	0x65, 0x22, 0x50, 0x0a, 0x17, 0x53, 0x74, 0x61, 0x74, 0x73, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f,
+	0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05,
 	0x73, 0x74, 0x61, 0x74, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
 	0x2e, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x05, 0x73, 0x74,
-	0x61, 0x74, 0x73, 0x32, 0xf5, 0x06, 0x0a, 0x11, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75,
+	0x61, 0x74, 0x73, 0x32, 0xa3, 0x07, 0x0a, 0x11, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75,
 	0x6d, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x9e, 0x01, 0x0a, 0x10, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x12, 0x2b,
 	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
@@ -686,21 +686,24 @@ var file_backend_null_proto_rawDesc = []byte{
 	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f,
 	0x6c, 0x75, 0x6d, 0x65, 0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x12, 0x18, 0x2f, 0x76,
 	0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75,
-	0x6d, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x6c, 0x0a,
-	0x0f, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73,
-	0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65,
-	0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f,
-	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x5f, 0x0a, 0x12, 0x6f,
-	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x42, 0x10, 0x42, 0x61, 0x63, 0x6b, 0x65, 0x6e, 0x64, 0x4e, 0x75, 0x6c, 0x6c, 0x50, 0x72,
-	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69,
-	0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x61,
-	0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x6d, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x99, 0x01,
+	0x0a, 0x0f, 0x53, 0x74, 0x61, 0x74, 0x73, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
+	0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
+	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x73, 0x4e, 0x75, 0x6c, 0x6c,
+	0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e,
+	0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x73, 0x4e, 0x75, 0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75,
+	0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x20, 0x12, 0x1e, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x4e, 0x75,
+	0x6c, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0x3a, 0x73, 0x74, 0x61,
+	0x74, 0x73, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x42, 0x5f, 0x0a, 0x12, 0x6f, 0x70, 0x69,
+	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x42,
+	0x10, 0x42, 0x61, 0x63, 0x6b, 0x65, 0x6e, 0x64, 0x4e, 0x75, 0x6c, 0x6c, 0x50, 0x72, 0x6f, 0x74,
+	0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61,
+	0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70,
+	0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -724,8 +727,8 @@ var file_backend_null_proto_goTypes = []interface{}{
 	(*ListNullVolumesRequest)(nil),  // 4: opi_api.storage.v1.ListNullVolumesRequest
 	(*ListNullVolumesResponse)(nil), // 5: opi_api.storage.v1.ListNullVolumesResponse
 	(*GetNullVolumeRequest)(nil),    // 6: opi_api.storage.v1.GetNullVolumeRequest
-	(*NullVolumeStatsRequest)(nil),  // 7: opi_api.storage.v1.NullVolumeStatsRequest
-	(*NullVolumeStatsResponse)(nil), // 8: opi_api.storage.v1.NullVolumeStatsResponse
+	(*StatsNullVolumeRequest)(nil),  // 7: opi_api.storage.v1.StatsNullVolumeRequest
+	(*StatsNullVolumeResponse)(nil), // 8: opi_api.storage.v1.StatsNullVolumeResponse
 	(*_go.Uuid)(nil),                // 9: opi_api.common.v1.Uuid
 	(*fieldmaskpb.FieldMask)(nil),   // 10: google.protobuf.FieldMask
 	(*VolumeStats)(nil),             // 11: opi_api.storage.v1.VolumeStats
@@ -737,19 +740,19 @@ var file_backend_null_proto_depIdxs = []int32{
 	0,  // 2: opi_api.storage.v1.UpdateNullVolumeRequest.null_volume:type_name -> opi_api.storage.v1.NullVolume
 	10, // 3: opi_api.storage.v1.UpdateNullVolumeRequest.update_mask:type_name -> google.protobuf.FieldMask
 	0,  // 4: opi_api.storage.v1.ListNullVolumesResponse.null_volumes:type_name -> opi_api.storage.v1.NullVolume
-	11, // 5: opi_api.storage.v1.NullVolumeStatsResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
+	11, // 5: opi_api.storage.v1.StatsNullVolumeResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
 	1,  // 6: opi_api.storage.v1.NullVolumeService.CreateNullVolume:input_type -> opi_api.storage.v1.CreateNullVolumeRequest
 	2,  // 7: opi_api.storage.v1.NullVolumeService.DeleteNullVolume:input_type -> opi_api.storage.v1.DeleteNullVolumeRequest
 	3,  // 8: opi_api.storage.v1.NullVolumeService.UpdateNullVolume:input_type -> opi_api.storage.v1.UpdateNullVolumeRequest
 	4,  // 9: opi_api.storage.v1.NullVolumeService.ListNullVolumes:input_type -> opi_api.storage.v1.ListNullVolumesRequest
 	6,  // 10: opi_api.storage.v1.NullVolumeService.GetNullVolume:input_type -> opi_api.storage.v1.GetNullVolumeRequest
-	7,  // 11: opi_api.storage.v1.NullVolumeService.NullVolumeStats:input_type -> opi_api.storage.v1.NullVolumeStatsRequest
+	7,  // 11: opi_api.storage.v1.NullVolumeService.StatsNullVolume:input_type -> opi_api.storage.v1.StatsNullVolumeRequest
 	0,  // 12: opi_api.storage.v1.NullVolumeService.CreateNullVolume:output_type -> opi_api.storage.v1.NullVolume
 	12, // 13: opi_api.storage.v1.NullVolumeService.DeleteNullVolume:output_type -> google.protobuf.Empty
 	0,  // 14: opi_api.storage.v1.NullVolumeService.UpdateNullVolume:output_type -> opi_api.storage.v1.NullVolume
 	5,  // 15: opi_api.storage.v1.NullVolumeService.ListNullVolumes:output_type -> opi_api.storage.v1.ListNullVolumesResponse
 	0,  // 16: opi_api.storage.v1.NullVolumeService.GetNullVolume:output_type -> opi_api.storage.v1.NullVolume
-	8,  // 17: opi_api.storage.v1.NullVolumeService.NullVolumeStats:output_type -> opi_api.storage.v1.NullVolumeStatsResponse
+	8,  // 17: opi_api.storage.v1.NullVolumeService.StatsNullVolume:output_type -> opi_api.storage.v1.StatsNullVolumeResponse
 	12, // [12:18] is the sub-list for method output_type
 	6,  // [6:12] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -849,7 +852,7 @@ func file_backend_null_proto_init() {
 			}
 		}
 		file_backend_null_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NullVolumeStatsRequest); i {
+			switch v := v.(*StatsNullVolumeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -861,7 +864,7 @@ func file_backend_null_proto_init() {
 			}
 		}
 		file_backend_null_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NullVolumeStatsResponse); i {
+			switch v := v.(*StatsNullVolumeResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -910,7 +913,7 @@ type NullVolumeServiceClient interface {
 	UpdateNullVolume(ctx context.Context, in *UpdateNullVolumeRequest, opts ...grpc.CallOption) (*NullVolume, error)
 	ListNullVolumes(ctx context.Context, in *ListNullVolumesRequest, opts ...grpc.CallOption) (*ListNullVolumesResponse, error)
 	GetNullVolume(ctx context.Context, in *GetNullVolumeRequest, opts ...grpc.CallOption) (*NullVolume, error)
-	NullVolumeStats(ctx context.Context, in *NullVolumeStatsRequest, opts ...grpc.CallOption) (*NullVolumeStatsResponse, error)
+	StatsNullVolume(ctx context.Context, in *StatsNullVolumeRequest, opts ...grpc.CallOption) (*StatsNullVolumeResponse, error)
 }
 
 type nullVolumeServiceClient struct {
@@ -966,9 +969,9 @@ func (c *nullVolumeServiceClient) GetNullVolume(ctx context.Context, in *GetNull
 	return out, nil
 }
 
-func (c *nullVolumeServiceClient) NullVolumeStats(ctx context.Context, in *NullVolumeStatsRequest, opts ...grpc.CallOption) (*NullVolumeStatsResponse, error) {
-	out := new(NullVolumeStatsResponse)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.NullVolumeService/NullVolumeStats", in, out, opts...)
+func (c *nullVolumeServiceClient) StatsNullVolume(ctx context.Context, in *StatsNullVolumeRequest, opts ...grpc.CallOption) (*StatsNullVolumeResponse, error) {
+	out := new(StatsNullVolumeResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.NullVolumeService/StatsNullVolume", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -982,7 +985,7 @@ type NullVolumeServiceServer interface {
 	UpdateNullVolume(context.Context, *UpdateNullVolumeRequest) (*NullVolume, error)
 	ListNullVolumes(context.Context, *ListNullVolumesRequest) (*ListNullVolumesResponse, error)
 	GetNullVolume(context.Context, *GetNullVolumeRequest) (*NullVolume, error)
-	NullVolumeStats(context.Context, *NullVolumeStatsRequest) (*NullVolumeStatsResponse, error)
+	StatsNullVolume(context.Context, *StatsNullVolumeRequest) (*StatsNullVolumeResponse, error)
 }
 
 // UnimplementedNullVolumeServiceServer can be embedded to have forward compatible implementations.
@@ -1004,8 +1007,8 @@ func (*UnimplementedNullVolumeServiceServer) ListNullVolumes(context.Context, *L
 func (*UnimplementedNullVolumeServiceServer) GetNullVolume(context.Context, *GetNullVolumeRequest) (*NullVolume, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNullVolume not implemented")
 }
-func (*UnimplementedNullVolumeServiceServer) NullVolumeStats(context.Context, *NullVolumeStatsRequest) (*NullVolumeStatsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method NullVolumeStats not implemented")
+func (*UnimplementedNullVolumeServiceServer) StatsNullVolume(context.Context, *StatsNullVolumeRequest) (*StatsNullVolumeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StatsNullVolume not implemented")
 }
 
 func RegisterNullVolumeServiceServer(s *grpc.Server, srv NullVolumeServiceServer) {
@@ -1102,20 +1105,20 @@ func _NullVolumeService_GetNullVolume_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NullVolumeService_NullVolumeStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(NullVolumeStatsRequest)
+func _NullVolumeService_StatsNullVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatsNullVolumeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NullVolumeServiceServer).NullVolumeStats(ctx, in)
+		return srv.(NullVolumeServiceServer).StatsNullVolume(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.NullVolumeService/NullVolumeStats",
+		FullMethod: "/opi_api.storage.v1.NullVolumeService/StatsNullVolume",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NullVolumeServiceServer).NullVolumeStats(ctx, req.(*NullVolumeStatsRequest))
+		return srv.(NullVolumeServiceServer).StatsNullVolume(ctx, req.(*StatsNullVolumeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1145,8 +1148,8 @@ var _NullVolumeService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _NullVolumeService_GetNullVolume_Handler,
 		},
 		{
-			MethodName: "NullVolumeStats",
-			Handler:    _NullVolumeService_NullVolumeStats_Handler,
+			MethodName: "StatsNullVolume",
+			Handler:    _NullVolumeService_StatsNullVolume_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

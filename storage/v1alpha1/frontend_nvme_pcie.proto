@@ -56,7 +56,12 @@ service FrontendNvmeService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc NvmeSubsystemStats  (NvmeSubsystemStatsRequest)  returns (NvmeSubsystemStatsResponse)  {}
+    rpc StatsNvmeSubsystem  (StatsNvmeSubsystemRequest)  returns (StatsNvmeSubsystemResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=NvmeSubsystems/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 
     rpc CreateNvmeController (CreateNvmeControllerRequest) returns (NvmeController) {
         option (google.api.http) = {
@@ -91,7 +96,12 @@ service FrontendNvmeService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc NvmeControllerStats  (NvmeControllerStatsRequest)  returns (NvmeControllerStatsResponse)  {}
+    rpc StatsNvmeController  (StatsNvmeControllerRequest)  returns (StatsNvmeControllerResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=NvmeControllers/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 
     rpc CreateNvmeNamespace (CreateNvmeNamespaceRequest) returns (NvmeNamespace) {
         option (google.api.http) = {
@@ -125,7 +135,12 @@ service FrontendNvmeService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc NvmeNamespaceStats  (NvmeNamespaceStatsRequest)  returns (NvmeNamespaceStatsResponse)  {}
+    rpc StatsNvmeNamespace  (StatsNvmeNamespaceRequest)  returns (StatsNvmeNamespaceResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=NvmeNamespaces/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message NvmeSubsystem {
@@ -342,14 +357,14 @@ message GetNvmeSubsystemRequest {
     ];
 }
 
-message NvmeSubsystemStatsRequest {
+message StatsNvmeSubsystemRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
     ];
 }
 
-message NvmeSubsystemStatsResponse {
+message StatsNvmeSubsystemResponse {
     VolumeStats stats = 1;
 }
 
@@ -399,14 +414,14 @@ message GetNvmeControllerRequest {
     ];
 }
 
-message NvmeControllerStatsRequest {
+message StatsNvmeControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
     ];
 }
 
-message NvmeControllerStatsResponse {
+message StatsNvmeControllerResponse {
     VolumeStats stats = 1;
 }
 
@@ -456,14 +471,14 @@ message GetNvmeNamespaceRequest {
     ];
 }
 
-message NvmeNamespaceStatsRequest {
+message StatsNvmeNamespaceRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
     ];
 }
 
-message NvmeNamespaceStatsResponse {
+message StatsNvmeNamespaceResponse {
     VolumeStats stats = 1;
 }
 

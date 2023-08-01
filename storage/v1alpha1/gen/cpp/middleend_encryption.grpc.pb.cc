@@ -29,7 +29,7 @@ static const char* MiddleendEncryptionService_method_names[] = {
   "/opi_api.storage.v1.MiddleendEncryptionService/UpdateEncryptedVolume",
   "/opi_api.storage.v1.MiddleendEncryptionService/ListEncryptedVolumes",
   "/opi_api.storage.v1.MiddleendEncryptionService/GetEncryptedVolume",
-  "/opi_api.storage.v1.MiddleendEncryptionService/EncryptedVolumeStats",
+  "/opi_api.storage.v1.MiddleendEncryptionService/StatsEncryptedVolume",
 };
 
 std::unique_ptr< MiddleendEncryptionService::Stub> MiddleendEncryptionService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -44,7 +44,7 @@ MiddleendEncryptionService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInt
   , rpcmethod_UpdateEncryptedVolume_(MiddleendEncryptionService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListEncryptedVolumes_(MiddleendEncryptionService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetEncryptedVolume_(MiddleendEncryptionService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_EncryptedVolumeStats_(MiddleendEncryptionService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StatsEncryptedVolume_(MiddleendEncryptionService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MiddleendEncryptionService::Stub::CreateEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateEncryptedVolumeRequest& request, ::opi_api::storage::v1::EncryptedVolume* response) {
@@ -162,25 +162,25 @@ void MiddleendEncryptionService::Stub::async::GetEncryptedVolume(::grpc::ClientC
   return result;
 }
 
-::grpc::Status MiddleendEncryptionService::Stub::EncryptedVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest& request, ::opi_api::storage::v1::EncryptedVolumeStatsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::EncryptedVolumeStatsRequest, ::opi_api::storage::v1::EncryptedVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_EncryptedVolumeStats_, context, request, response);
+::grpc::Status MiddleendEncryptionService::Stub::StatsEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsEncryptedVolumeRequest& request, ::opi_api::storage::v1::StatsEncryptedVolumeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::StatsEncryptedVolumeRequest, ::opi_api::storage::v1::StatsEncryptedVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_StatsEncryptedVolume_, context, request, response);
 }
 
-void MiddleendEncryptionService::Stub::async::EncryptedVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest* request, ::opi_api::storage::v1::EncryptedVolumeStatsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::EncryptedVolumeStatsRequest, ::opi_api::storage::v1::EncryptedVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EncryptedVolumeStats_, context, request, response, std::move(f));
+void MiddleendEncryptionService::Stub::async::StatsEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsEncryptedVolumeRequest* request, ::opi_api::storage::v1::StatsEncryptedVolumeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::StatsEncryptedVolumeRequest, ::opi_api::storage::v1::StatsEncryptedVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsEncryptedVolume_, context, request, response, std::move(f));
 }
 
-void MiddleendEncryptionService::Stub::async::EncryptedVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest* request, ::opi_api::storage::v1::EncryptedVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EncryptedVolumeStats_, context, request, response, reactor);
+void MiddleendEncryptionService::Stub::async::StatsEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsEncryptedVolumeRequest* request, ::opi_api::storage::v1::StatsEncryptedVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsEncryptedVolume_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolumeStatsResponse>* MiddleendEncryptionService::Stub::PrepareAsyncEncryptedVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::EncryptedVolumeStatsResponse, ::opi_api::storage::v1::EncryptedVolumeStatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_EncryptedVolumeStats_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsEncryptedVolumeResponse>* MiddleendEncryptionService::Stub::PrepareAsyncStatsEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::StatsEncryptedVolumeResponse, ::opi_api::storage::v1::StatsEncryptedVolumeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_StatsEncryptedVolume_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolumeStatsResponse>* MiddleendEncryptionService::Stub::AsyncEncryptedVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsEncryptedVolumeResponse>* MiddleendEncryptionService::Stub::AsyncStatsEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncEncryptedVolumeStatsRaw(context, request, cq);
+    this->PrepareAsyncStatsEncryptedVolumeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -239,12 +239,12 @@ MiddleendEncryptionService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MiddleendEncryptionService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MiddleendEncryptionService::Service, ::opi_api::storage::v1::EncryptedVolumeStatsRequest, ::opi_api::storage::v1::EncryptedVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< MiddleendEncryptionService::Service, ::opi_api::storage::v1::StatsEncryptedVolumeRequest, ::opi_api::storage::v1::StatsEncryptedVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MiddleendEncryptionService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::EncryptedVolumeStatsRequest* req,
-             ::opi_api::storage::v1::EncryptedVolumeStatsResponse* resp) {
-               return service->EncryptedVolumeStats(ctx, req, resp);
+             const ::opi_api::storage::v1::StatsEncryptedVolumeRequest* req,
+             ::opi_api::storage::v1::StatsEncryptedVolumeResponse* resp) {
+               return service->StatsEncryptedVolume(ctx, req, resp);
              }, this)));
 }
 
@@ -286,7 +286,7 @@ MiddleendEncryptionService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MiddleendEncryptionService::Service::EncryptedVolumeStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest* request, ::opi_api::storage::v1::EncryptedVolumeStatsResponse* response) {
+::grpc::Status MiddleendEncryptionService::Service::StatsEncryptedVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsEncryptedVolumeRequest* request, ::opi_api::storage::v1::StatsEncryptedVolumeResponse* response) {
   (void) context;
   (void) request;
   (void) response;

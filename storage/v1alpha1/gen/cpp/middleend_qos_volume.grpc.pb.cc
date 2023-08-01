@@ -29,7 +29,7 @@ static const char* MiddleendQosVolumeService_method_names[] = {
   "/opi_api.storage.v1.MiddleendQosVolumeService/UpdateQosVolume",
   "/opi_api.storage.v1.MiddleendQosVolumeService/ListQosVolumes",
   "/opi_api.storage.v1.MiddleendQosVolumeService/GetQosVolume",
-  "/opi_api.storage.v1.MiddleendQosVolumeService/QosVolumeStats",
+  "/opi_api.storage.v1.MiddleendQosVolumeService/StatsQosVolume",
 };
 
 std::unique_ptr< MiddleendQosVolumeService::Stub> MiddleendQosVolumeService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -44,7 +44,7 @@ MiddleendQosVolumeService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInte
   , rpcmethod_UpdateQosVolume_(MiddleendQosVolumeService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListQosVolumes_(MiddleendQosVolumeService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetQosVolume_(MiddleendQosVolumeService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_QosVolumeStats_(MiddleendQosVolumeService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StatsQosVolume_(MiddleendQosVolumeService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MiddleendQosVolumeService::Stub::CreateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateQosVolumeRequest& request, ::opi_api::storage::v1::QosVolume* response) {
@@ -162,25 +162,25 @@ void MiddleendQosVolumeService::Stub::async::GetQosVolume(::grpc::ClientContext*
   return result;
 }
 
-::grpc::Status MiddleendQosVolumeService::Stub::QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::opi_api::storage::v1::QosVolumeStatsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::QosVolumeStatsRequest, ::opi_api::storage::v1::QosVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_QosVolumeStats_, context, request, response);
+::grpc::Status MiddleendQosVolumeService::Stub::StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::opi_api::storage::v1::StatsQosVolumeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::StatsQosVolumeRequest, ::opi_api::storage::v1::StatsQosVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_StatsQosVolume_, context, request, response);
 }
 
-void MiddleendQosVolumeService::Stub::async::QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::QosVolumeStatsRequest, ::opi_api::storage::v1::QosVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_QosVolumeStats_, context, request, response, std::move(f));
+void MiddleendQosVolumeService::Stub::async::StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::StatsQosVolumeRequest, ::opi_api::storage::v1::StatsQosVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsQosVolume_, context, request, response, std::move(f));
 }
 
-void MiddleendQosVolumeService::Stub::async::QosVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_QosVolumeStats_, context, request, response, reactor);
+void MiddleendQosVolumeService::Stub::async::StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsQosVolume_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolumeStatsResponse>* MiddleendQosVolumeService::Stub::PrepareAsyncQosVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::QosVolumeStatsResponse, ::opi_api::storage::v1::QosVolumeStatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_QosVolumeStats_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsQosVolumeResponse>* MiddleendQosVolumeService::Stub::PrepareAsyncStatsQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::StatsQosVolumeResponse, ::opi_api::storage::v1::StatsQosVolumeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_StatsQosVolume_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::QosVolumeStatsResponse>* MiddleendQosVolumeService::Stub::AsyncQosVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsQosVolumeResponse>* MiddleendQosVolumeService::Stub::AsyncStatsQosVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncQosVolumeStatsRaw(context, request, cq);
+    this->PrepareAsyncStatsQosVolumeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -239,12 +239,12 @@ MiddleendQosVolumeService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MiddleendQosVolumeService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MiddleendQosVolumeService::Service, ::opi_api::storage::v1::QosVolumeStatsRequest, ::opi_api::storage::v1::QosVolumeStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< MiddleendQosVolumeService::Service, ::opi_api::storage::v1::StatsQosVolumeRequest, ::opi_api::storage::v1::StatsQosVolumeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MiddleendQosVolumeService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::QosVolumeStatsRequest* req,
-             ::opi_api::storage::v1::QosVolumeStatsResponse* resp) {
-               return service->QosVolumeStats(ctx, req, resp);
+             const ::opi_api::storage::v1::StatsQosVolumeRequest* req,
+             ::opi_api::storage::v1::StatsQosVolumeResponse* resp) {
+               return service->StatsQosVolume(ctx, req, resp);
              }, this)));
 }
 
@@ -286,7 +286,7 @@ MiddleendQosVolumeService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MiddleendQosVolumeService::Service::QosVolumeStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::QosVolumeStatsRequest* request, ::opi_api::storage::v1::QosVolumeStatsResponse* response) {
+::grpc::Status MiddleendQosVolumeService::Service::StatsQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response) {
   (void) context;
   (void) request;
   (void) response;

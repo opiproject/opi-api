@@ -457,7 +457,7 @@ func (x *GetAioVolumeRequest) GetName() string {
 	return ""
 }
 
-type AioVolumeStatsRequest struct {
+type StatsAioVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -465,8 +465,8 @@ type AioVolumeStatsRequest struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *AioVolumeStatsRequest) Reset() {
-	*x = AioVolumeStatsRequest{}
+func (x *StatsAioVolumeRequest) Reset() {
+	*x = StatsAioVolumeRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -474,13 +474,13 @@ func (x *AioVolumeStatsRequest) Reset() {
 	}
 }
 
-func (x *AioVolumeStatsRequest) String() string {
+func (x *StatsAioVolumeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioVolumeStatsRequest) ProtoMessage() {}
+func (*StatsAioVolumeRequest) ProtoMessage() {}
 
-func (x *AioVolumeStatsRequest) ProtoReflect() protoreflect.Message {
+func (x *StatsAioVolumeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -492,19 +492,19 @@ func (x *AioVolumeStatsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioVolumeStatsRequest.ProtoReflect.Descriptor instead.
-func (*AioVolumeStatsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use StatsAioVolumeRequest.ProtoReflect.Descriptor instead.
+func (*StatsAioVolumeRequest) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *AioVolumeStatsRequest) GetName() string {
+func (x *StatsAioVolumeRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type AioVolumeStatsResponse struct {
+type StatsAioVolumeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -512,8 +512,8 @@ type AioVolumeStatsResponse struct {
 	Stats *VolumeStats `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
 }
 
-func (x *AioVolumeStatsResponse) Reset() {
-	*x = AioVolumeStatsResponse{}
+func (x *StatsAioVolumeResponse) Reset() {
+	*x = StatsAioVolumeResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -521,13 +521,13 @@ func (x *AioVolumeStatsResponse) Reset() {
 	}
 }
 
-func (x *AioVolumeStatsResponse) String() string {
+func (x *StatsAioVolumeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioVolumeStatsResponse) ProtoMessage() {}
+func (*StatsAioVolumeResponse) ProtoMessage() {}
 
-func (x *AioVolumeStatsResponse) ProtoReflect() protoreflect.Message {
+func (x *StatsAioVolumeResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -539,12 +539,12 @@ func (x *AioVolumeStatsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioVolumeStatsResponse.ProtoReflect.Descriptor instead.
-func (*AioVolumeStatsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use StatsAioVolumeResponse.ProtoReflect.Descriptor instead.
+func (*StatsAioVolumeResponse) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *AioVolumeStatsResponse) GetStats() *VolumeStats {
+func (x *StatsAioVolumeResponse) GetStats() *VolumeStats {
 	if x != nil {
 		return x.Stats
 	}
@@ -636,17 +636,17 @@ var file_backend_aio_proto_rawDesc = []byte{
 	0x01, 0x28, 0x09, 0x42, 0x24, 0xe0, 0x41, 0x02, 0xfa, 0x41, 0x1e, 0x0a, 0x1c, 0x6f, 0x70, 0x69,
 	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2f,
 	0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22,
-	0x51, 0x0a, 0x15, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74,
-	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
+	0x51, 0x0a, 0x15, 0x53, 0x74, 0x61, 0x74, 0x73, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
+	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x24, 0xe0, 0x41, 0x02, 0xfa, 0x41, 0x1e, 0x0a, 0x1c,
 	0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
 	0x76, 0x31, 0x2f, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x04, 0x6e, 0x61,
-	0x6d, 0x65, 0x22, 0x4f, 0x0a, 0x16, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53,
-	0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05,
+	0x6d, 0x65, 0x22, 0x4f, 0x0a, 0x16, 0x53, 0x74, 0x61, 0x74, 0x73, 0x41, 0x69, 0x6f, 0x56, 0x6f,
+	0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05,
 	0x73, 0x74, 0x61, 0x74, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
 	0x2e, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x05, 0x73, 0x74,
-	0x61, 0x74, 0x73, 0x32, 0xd9, 0x06, 0x0a, 0x10, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
+	0x61, 0x74, 0x73, 0x32, 0x86, 0x07, 0x0a, 0x10, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
 	0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x98, 0x01, 0x0a, 0x0f, 0x43, 0x72, 0x65,
 	0x61, 0x74, 0x65, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x12, 0x2a, 0x2e, 0x6f,
 	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
@@ -693,20 +693,23 @@ var file_backend_aio_proto_rawDesc = []byte{
 	0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x22, 0x26, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x19, 0x12, 0x17, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d,
 	0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0xda, 0x41, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x69, 0x0a, 0x0e, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
-	0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
-	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x56,
-	0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
-	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65,
-	0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42,
-	0x5e, 0x0a, 0x12, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x42, 0x0f, 0x42, 0x61, 0x63, 0x6b, 0x65, 0x6e, 0x64, 0x41, 0x69,
-	0x6f, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f,
-	0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f,
-	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x95, 0x01, 0x0a, 0x0e, 0x53, 0x74, 0x61, 0x74, 0x73, 0x41, 0x69,
+	0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x12, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61,
+	0x74, 0x73, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x73, 0x41, 0x69, 0x6f,
+	0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1f, 0x12, 0x1d, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d,
+	0x65, 0x3d, 0x41, 0x69, 0x6f, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0x3a,
+	0x73, 0x74, 0x61, 0x74, 0x73, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x42, 0x5e, 0x0a, 0x12,
+	0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
+	0x76, 0x31, 0x42, 0x0f, 0x42, 0x61, 0x63, 0x6b, 0x65, 0x6e, 0x64, 0x41, 0x69, 0x6f, 0x50, 0x72,
+	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69,
+	0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x61,
+	0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -730,8 +733,8 @@ var file_backend_aio_proto_goTypes = []interface{}{
 	(*ListAioVolumesRequest)(nil),  // 4: opi_api.storage.v1.ListAioVolumesRequest
 	(*ListAioVolumesResponse)(nil), // 5: opi_api.storage.v1.ListAioVolumesResponse
 	(*GetAioVolumeRequest)(nil),    // 6: opi_api.storage.v1.GetAioVolumeRequest
-	(*AioVolumeStatsRequest)(nil),  // 7: opi_api.storage.v1.AioVolumeStatsRequest
-	(*AioVolumeStatsResponse)(nil), // 8: opi_api.storage.v1.AioVolumeStatsResponse
+	(*StatsAioVolumeRequest)(nil),  // 7: opi_api.storage.v1.StatsAioVolumeRequest
+	(*StatsAioVolumeResponse)(nil), // 8: opi_api.storage.v1.StatsAioVolumeResponse
 	(*_go.Uuid)(nil),               // 9: opi_api.common.v1.Uuid
 	(*fieldmaskpb.FieldMask)(nil),  // 10: google.protobuf.FieldMask
 	(*VolumeStats)(nil),            // 11: opi_api.storage.v1.VolumeStats
@@ -743,19 +746,19 @@ var file_backend_aio_proto_depIdxs = []int32{
 	0,  // 2: opi_api.storage.v1.UpdateAioVolumeRequest.aio_volume:type_name -> opi_api.storage.v1.AioVolume
 	10, // 3: opi_api.storage.v1.UpdateAioVolumeRequest.update_mask:type_name -> google.protobuf.FieldMask
 	0,  // 4: opi_api.storage.v1.ListAioVolumesResponse.aio_volumes:type_name -> opi_api.storage.v1.AioVolume
-	11, // 5: opi_api.storage.v1.AioVolumeStatsResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
+	11, // 5: opi_api.storage.v1.StatsAioVolumeResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
 	1,  // 6: opi_api.storage.v1.AioVolumeService.CreateAioVolume:input_type -> opi_api.storage.v1.CreateAioVolumeRequest
 	2,  // 7: opi_api.storage.v1.AioVolumeService.DeleteAioVolume:input_type -> opi_api.storage.v1.DeleteAioVolumeRequest
 	3,  // 8: opi_api.storage.v1.AioVolumeService.UpdateAioVolume:input_type -> opi_api.storage.v1.UpdateAioVolumeRequest
 	4,  // 9: opi_api.storage.v1.AioVolumeService.ListAioVolumes:input_type -> opi_api.storage.v1.ListAioVolumesRequest
 	6,  // 10: opi_api.storage.v1.AioVolumeService.GetAioVolume:input_type -> opi_api.storage.v1.GetAioVolumeRequest
-	7,  // 11: opi_api.storage.v1.AioVolumeService.AioVolumeStats:input_type -> opi_api.storage.v1.AioVolumeStatsRequest
+	7,  // 11: opi_api.storage.v1.AioVolumeService.StatsAioVolume:input_type -> opi_api.storage.v1.StatsAioVolumeRequest
 	0,  // 12: opi_api.storage.v1.AioVolumeService.CreateAioVolume:output_type -> opi_api.storage.v1.AioVolume
 	12, // 13: opi_api.storage.v1.AioVolumeService.DeleteAioVolume:output_type -> google.protobuf.Empty
 	0,  // 14: opi_api.storage.v1.AioVolumeService.UpdateAioVolume:output_type -> opi_api.storage.v1.AioVolume
 	5,  // 15: opi_api.storage.v1.AioVolumeService.ListAioVolumes:output_type -> opi_api.storage.v1.ListAioVolumesResponse
 	0,  // 16: opi_api.storage.v1.AioVolumeService.GetAioVolume:output_type -> opi_api.storage.v1.AioVolume
-	8,  // 17: opi_api.storage.v1.AioVolumeService.AioVolumeStats:output_type -> opi_api.storage.v1.AioVolumeStatsResponse
+	8,  // 17: opi_api.storage.v1.AioVolumeService.StatsAioVolume:output_type -> opi_api.storage.v1.StatsAioVolumeResponse
 	12, // [12:18] is the sub-list for method output_type
 	6,  // [6:12] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -855,7 +858,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioVolumeStatsRequest); i {
+			switch v := v.(*StatsAioVolumeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -867,7 +870,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioVolumeStatsResponse); i {
+			switch v := v.(*StatsAioVolumeResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -916,7 +919,7 @@ type AioVolumeServiceClient interface {
 	UpdateAioVolume(ctx context.Context, in *UpdateAioVolumeRequest, opts ...grpc.CallOption) (*AioVolume, error)
 	ListAioVolumes(ctx context.Context, in *ListAioVolumesRequest, opts ...grpc.CallOption) (*ListAioVolumesResponse, error)
 	GetAioVolume(ctx context.Context, in *GetAioVolumeRequest, opts ...grpc.CallOption) (*AioVolume, error)
-	AioVolumeStats(ctx context.Context, in *AioVolumeStatsRequest, opts ...grpc.CallOption) (*AioVolumeStatsResponse, error)
+	StatsAioVolume(ctx context.Context, in *StatsAioVolumeRequest, opts ...grpc.CallOption) (*StatsAioVolumeResponse, error)
 }
 
 type aioVolumeServiceClient struct {
@@ -972,9 +975,9 @@ func (c *aioVolumeServiceClient) GetAioVolume(ctx context.Context, in *GetAioVol
 	return out, nil
 }
 
-func (c *aioVolumeServiceClient) AioVolumeStats(ctx context.Context, in *AioVolumeStatsRequest, opts ...grpc.CallOption) (*AioVolumeStatsResponse, error) {
-	out := new(AioVolumeStatsResponse)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioVolumeService/AioVolumeStats", in, out, opts...)
+func (c *aioVolumeServiceClient) StatsAioVolume(ctx context.Context, in *StatsAioVolumeRequest, opts ...grpc.CallOption) (*StatsAioVolumeResponse, error) {
+	out := new(StatsAioVolumeResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioVolumeService/StatsAioVolume", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -988,7 +991,7 @@ type AioVolumeServiceServer interface {
 	UpdateAioVolume(context.Context, *UpdateAioVolumeRequest) (*AioVolume, error)
 	ListAioVolumes(context.Context, *ListAioVolumesRequest) (*ListAioVolumesResponse, error)
 	GetAioVolume(context.Context, *GetAioVolumeRequest) (*AioVolume, error)
-	AioVolumeStats(context.Context, *AioVolumeStatsRequest) (*AioVolumeStatsResponse, error)
+	StatsAioVolume(context.Context, *StatsAioVolumeRequest) (*StatsAioVolumeResponse, error)
 }
 
 // UnimplementedAioVolumeServiceServer can be embedded to have forward compatible implementations.
@@ -1010,8 +1013,8 @@ func (*UnimplementedAioVolumeServiceServer) ListAioVolumes(context.Context, *Lis
 func (*UnimplementedAioVolumeServiceServer) GetAioVolume(context.Context, *GetAioVolumeRequest) (*AioVolume, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAioVolume not implemented")
 }
-func (*UnimplementedAioVolumeServiceServer) AioVolumeStats(context.Context, *AioVolumeStatsRequest) (*AioVolumeStatsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AioVolumeStats not implemented")
+func (*UnimplementedAioVolumeServiceServer) StatsAioVolume(context.Context, *StatsAioVolumeRequest) (*StatsAioVolumeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StatsAioVolume not implemented")
 }
 
 func RegisterAioVolumeServiceServer(s *grpc.Server, srv AioVolumeServiceServer) {
@@ -1108,20 +1111,20 @@ func _AioVolumeService_GetAioVolume_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AioVolumeService_AioVolumeStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AioVolumeStatsRequest)
+func _AioVolumeService_StatsAioVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatsAioVolumeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AioVolumeServiceServer).AioVolumeStats(ctx, in)
+		return srv.(AioVolumeServiceServer).StatsAioVolume(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.AioVolumeService/AioVolumeStats",
+		FullMethod: "/opi_api.storage.v1.AioVolumeService/StatsAioVolume",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AioVolumeServiceServer).AioVolumeStats(ctx, req.(*AioVolumeStatsRequest))
+		return srv.(AioVolumeServiceServer).StatsAioVolume(ctx, req.(*StatsAioVolumeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1151,8 +1154,8 @@ var _AioVolumeService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _AioVolumeService_GetAioVolume_Handler,
 		},
 		{
-			MethodName: "AioVolumeStats",
-			Handler:    _AioVolumeService_AioVolumeStats_Handler,
+			MethodName: "StatsAioVolume",
+			Handler:    _AioVolumeService_StatsAioVolume_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

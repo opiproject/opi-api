@@ -82,12 +82,12 @@ extern ListNullVolumesResponseDefaultTypeInternal _ListNullVolumesResponse_defau
 class NullVolume;
 struct NullVolumeDefaultTypeInternal;
 extern NullVolumeDefaultTypeInternal _NullVolume_default_instance_;
-class NullVolumeStatsRequest;
-struct NullVolumeStatsRequestDefaultTypeInternal;
-extern NullVolumeStatsRequestDefaultTypeInternal _NullVolumeStatsRequest_default_instance_;
-class NullVolumeStatsResponse;
-struct NullVolumeStatsResponseDefaultTypeInternal;
-extern NullVolumeStatsResponseDefaultTypeInternal _NullVolumeStatsResponse_default_instance_;
+class StatsNullVolumeRequest;
+struct StatsNullVolumeRequestDefaultTypeInternal;
+extern StatsNullVolumeRequestDefaultTypeInternal _StatsNullVolumeRequest_default_instance_;
+class StatsNullVolumeResponse;
+struct StatsNullVolumeResponseDefaultTypeInternal;
+extern StatsNullVolumeResponseDefaultTypeInternal _StatsNullVolumeResponse_default_instance_;
 class UpdateNullVolumeRequest;
 struct UpdateNullVolumeRequestDefaultTypeInternal;
 extern UpdateNullVolumeRequestDefaultTypeInternal _UpdateNullVolumeRequest_default_instance_;
@@ -101,8 +101,8 @@ template<> ::opi_api::storage::v1::GetNullVolumeRequest* Arena::CreateMaybeMessa
 template<> ::opi_api::storage::v1::ListNullVolumesRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListNullVolumesRequest>(Arena*);
 template<> ::opi_api::storage::v1::ListNullVolumesResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListNullVolumesResponse>(Arena*);
 template<> ::opi_api::storage::v1::NullVolume* Arena::CreateMaybeMessage<::opi_api::storage::v1::NullVolume>(Arena*);
-template<> ::opi_api::storage::v1::NullVolumeStatsRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::NullVolumeStatsRequest>(Arena*);
-template<> ::opi_api::storage::v1::NullVolumeStatsResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::NullVolumeStatsResponse>(Arena*);
+template<> ::opi_api::storage::v1::StatsNullVolumeRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::StatsNullVolumeRequest>(Arena*);
+template<> ::opi_api::storage::v1::StatsNullVolumeResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::StatsNullVolumeResponse>(Arena*);
 template<> ::opi_api::storage::v1::UpdateNullVolumeRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::UpdateNullVolumeRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
@@ -1323,24 +1323,24 @@ class GetNullVolumeRequest final :
 };
 // -------------------------------------------------------------------
 
-class NullVolumeStatsRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.NullVolumeStatsRequest) */ {
+class StatsNullVolumeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.StatsNullVolumeRequest) */ {
  public:
-  inline NullVolumeStatsRequest() : NullVolumeStatsRequest(nullptr) {}
-  ~NullVolumeStatsRequest() override;
-  explicit constexpr NullVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline StatsNullVolumeRequest() : StatsNullVolumeRequest(nullptr) {}
+  ~StatsNullVolumeRequest() override;
+  explicit constexpr StatsNullVolumeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  NullVolumeStatsRequest(const NullVolumeStatsRequest& from);
-  NullVolumeStatsRequest(NullVolumeStatsRequest&& from) noexcept
-    : NullVolumeStatsRequest() {
+  StatsNullVolumeRequest(const StatsNullVolumeRequest& from);
+  StatsNullVolumeRequest(StatsNullVolumeRequest&& from) noexcept
+    : StatsNullVolumeRequest() {
     *this = ::std::move(from);
   }
 
-  inline NullVolumeStatsRequest& operator=(const NullVolumeStatsRequest& from) {
+  inline StatsNullVolumeRequest& operator=(const StatsNullVolumeRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline NullVolumeStatsRequest& operator=(NullVolumeStatsRequest&& from) noexcept {
+  inline StatsNullVolumeRequest& operator=(StatsNullVolumeRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1363,20 +1363,20 @@ class NullVolumeStatsRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const NullVolumeStatsRequest& default_instance() {
+  static const StatsNullVolumeRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const NullVolumeStatsRequest* internal_default_instance() {
-    return reinterpret_cast<const NullVolumeStatsRequest*>(
-               &_NullVolumeStatsRequest_default_instance_);
+  static inline const StatsNullVolumeRequest* internal_default_instance() {
+    return reinterpret_cast<const StatsNullVolumeRequest*>(
+               &_StatsNullVolumeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  friend void swap(NullVolumeStatsRequest& a, NullVolumeStatsRequest& b) {
+  friend void swap(StatsNullVolumeRequest& a, StatsNullVolumeRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(NullVolumeStatsRequest* other) {
+  inline void Swap(StatsNullVolumeRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1389,7 +1389,7 @@ class NullVolumeStatsRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(NullVolumeStatsRequest* other) {
+  void UnsafeArenaSwap(StatsNullVolumeRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1397,13 +1397,13 @@ class NullVolumeStatsRequest final :
 
   // implements Message ----------------------------------------------
 
-  NullVolumeStatsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<NullVolumeStatsRequest>(arena);
+  StatsNullVolumeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StatsNullVolumeRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const NullVolumeStatsRequest& from);
+  void CopyFrom(const StatsNullVolumeRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const NullVolumeStatsRequest& from);
+  void MergeFrom(const StatsNullVolumeRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1420,15 +1420,15 @@ class NullVolumeStatsRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(NullVolumeStatsRequest* other);
+  void InternalSwap(StatsNullVolumeRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.NullVolumeStatsRequest";
+    return "opi_api.storage.v1.StatsNullVolumeRequest";
   }
   protected:
-  explicit NullVolumeStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit StatsNullVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1461,7 +1461,7 @@ class NullVolumeStatsRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullVolumeStatsRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.StatsNullVolumeRequest)
  private:
   class _Internal;
 
@@ -1474,24 +1474,24 @@ class NullVolumeStatsRequest final :
 };
 // -------------------------------------------------------------------
 
-class NullVolumeStatsResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.NullVolumeStatsResponse) */ {
+class StatsNullVolumeResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.StatsNullVolumeResponse) */ {
  public:
-  inline NullVolumeStatsResponse() : NullVolumeStatsResponse(nullptr) {}
-  ~NullVolumeStatsResponse() override;
-  explicit constexpr NullVolumeStatsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline StatsNullVolumeResponse() : StatsNullVolumeResponse(nullptr) {}
+  ~StatsNullVolumeResponse() override;
+  explicit constexpr StatsNullVolumeResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  NullVolumeStatsResponse(const NullVolumeStatsResponse& from);
-  NullVolumeStatsResponse(NullVolumeStatsResponse&& from) noexcept
-    : NullVolumeStatsResponse() {
+  StatsNullVolumeResponse(const StatsNullVolumeResponse& from);
+  StatsNullVolumeResponse(StatsNullVolumeResponse&& from) noexcept
+    : StatsNullVolumeResponse() {
     *this = ::std::move(from);
   }
 
-  inline NullVolumeStatsResponse& operator=(const NullVolumeStatsResponse& from) {
+  inline StatsNullVolumeResponse& operator=(const StatsNullVolumeResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline NullVolumeStatsResponse& operator=(NullVolumeStatsResponse&& from) noexcept {
+  inline StatsNullVolumeResponse& operator=(StatsNullVolumeResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1514,20 +1514,20 @@ class NullVolumeStatsResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const NullVolumeStatsResponse& default_instance() {
+  static const StatsNullVolumeResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const NullVolumeStatsResponse* internal_default_instance() {
-    return reinterpret_cast<const NullVolumeStatsResponse*>(
-               &_NullVolumeStatsResponse_default_instance_);
+  static inline const StatsNullVolumeResponse* internal_default_instance() {
+    return reinterpret_cast<const StatsNullVolumeResponse*>(
+               &_StatsNullVolumeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     8;
 
-  friend void swap(NullVolumeStatsResponse& a, NullVolumeStatsResponse& b) {
+  friend void swap(StatsNullVolumeResponse& a, StatsNullVolumeResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(NullVolumeStatsResponse* other) {
+  inline void Swap(StatsNullVolumeResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1540,7 +1540,7 @@ class NullVolumeStatsResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(NullVolumeStatsResponse* other) {
+  void UnsafeArenaSwap(StatsNullVolumeResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1548,13 +1548,13 @@ class NullVolumeStatsResponse final :
 
   // implements Message ----------------------------------------------
 
-  NullVolumeStatsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<NullVolumeStatsResponse>(arena);
+  StatsNullVolumeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StatsNullVolumeResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const NullVolumeStatsResponse& from);
+  void CopyFrom(const StatsNullVolumeResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const NullVolumeStatsResponse& from);
+  void MergeFrom(const StatsNullVolumeResponse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1571,15 +1571,15 @@ class NullVolumeStatsResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(NullVolumeStatsResponse* other);
+  void InternalSwap(StatsNullVolumeResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.NullVolumeStatsResponse";
+    return "opi_api.storage.v1.StatsNullVolumeResponse";
   }
   protected:
-  explicit NullVolumeStatsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit StatsNullVolumeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1616,7 +1616,7 @@ class NullVolumeStatsResponse final :
       ::opi_api::storage::v1::VolumeStats* stats);
   ::opi_api::storage::v1::VolumeStats* unsafe_arena_release_stats();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullVolumeStatsResponse)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.StatsNullVolumeResponse)
  private:
   class _Internal;
 
@@ -2513,44 +2513,44 @@ inline void GetNullVolumeRequest::set_allocated_name(std::string* name) {
 
 // -------------------------------------------------------------------
 
-// NullVolumeStatsRequest
+// StatsNullVolumeRequest
 
 // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void NullVolumeStatsRequest::clear_name() {
+inline void StatsNullVolumeRequest::clear_name() {
   name_.ClearToEmpty();
 }
-inline const std::string& NullVolumeStatsRequest::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NullVolumeStatsRequest.name)
+inline const std::string& StatsNullVolumeRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.StatsNullVolumeRequest.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void NullVolumeStatsRequest::set_name(ArgT0&& arg0, ArgT... args) {
+void StatsNullVolumeRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NullVolumeStatsRequest.name)
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.StatsNullVolumeRequest.name)
 }
-inline std::string* NullVolumeStatsRequest::mutable_name() {
+inline std::string* StatsNullVolumeRequest::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullVolumeStatsRequest.name)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.StatsNullVolumeRequest.name)
   return _s;
 }
-inline const std::string& NullVolumeStatsRequest::_internal_name() const {
+inline const std::string& StatsNullVolumeRequest::_internal_name() const {
   return name_.Get();
 }
-inline void NullVolumeStatsRequest::_internal_set_name(const std::string& value) {
+inline void StatsNullVolumeRequest::_internal_set_name(const std::string& value) {
   
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* NullVolumeStatsRequest::_internal_mutable_name() {
+inline std::string* StatsNullVolumeRequest::_internal_mutable_name() {
   
   return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* NullVolumeStatsRequest::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullVolumeStatsRequest.name)
+inline std::string* StatsNullVolumeRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.StatsNullVolumeRequest.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void NullVolumeStatsRequest::set_allocated_name(std::string* name) {
+inline void StatsNullVolumeRequest::set_allocated_name(std::string* name) {
   if (name != nullptr) {
     
   } else {
@@ -2563,30 +2563,30 @@ inline void NullVolumeStatsRequest::set_allocated_name(std::string* name) {
     name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullVolumeStatsRequest.name)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.StatsNullVolumeRequest.name)
 }
 
 // -------------------------------------------------------------------
 
-// NullVolumeStatsResponse
+// StatsNullVolumeResponse
 
 // .opi_api.storage.v1.VolumeStats stats = 1;
-inline bool NullVolumeStatsResponse::_internal_has_stats() const {
+inline bool StatsNullVolumeResponse::_internal_has_stats() const {
   return this != internal_default_instance() && stats_ != nullptr;
 }
-inline bool NullVolumeStatsResponse::has_stats() const {
+inline bool StatsNullVolumeResponse::has_stats() const {
   return _internal_has_stats();
 }
-inline const ::opi_api::storage::v1::VolumeStats& NullVolumeStatsResponse::_internal_stats() const {
+inline const ::opi_api::storage::v1::VolumeStats& StatsNullVolumeResponse::_internal_stats() const {
   const ::opi_api::storage::v1::VolumeStats* p = stats_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::VolumeStats&>(
       ::opi_api::storage::v1::_VolumeStats_default_instance_);
 }
-inline const ::opi_api::storage::v1::VolumeStats& NullVolumeStatsResponse::stats() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NullVolumeStatsResponse.stats)
+inline const ::opi_api::storage::v1::VolumeStats& StatsNullVolumeResponse::stats() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.StatsNullVolumeResponse.stats)
   return _internal_stats();
 }
-inline void NullVolumeStatsResponse::unsafe_arena_set_allocated_stats(
+inline void StatsNullVolumeResponse::unsafe_arena_set_allocated_stats(
     ::opi_api::storage::v1::VolumeStats* stats) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
@@ -2597,9 +2597,9 @@ inline void NullVolumeStatsResponse::unsafe_arena_set_allocated_stats(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NullVolumeStatsResponse.stats)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.StatsNullVolumeResponse.stats)
 }
-inline ::opi_api::storage::v1::VolumeStats* NullVolumeStatsResponse::release_stats() {
+inline ::opi_api::storage::v1::VolumeStats* StatsNullVolumeResponse::release_stats() {
   
   ::opi_api::storage::v1::VolumeStats* temp = stats_;
   stats_ = nullptr;
@@ -2614,14 +2614,14 @@ inline ::opi_api::storage::v1::VolumeStats* NullVolumeStatsResponse::release_sta
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::VolumeStats* NullVolumeStatsResponse::unsafe_arena_release_stats() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullVolumeStatsResponse.stats)
+inline ::opi_api::storage::v1::VolumeStats* StatsNullVolumeResponse::unsafe_arena_release_stats() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.StatsNullVolumeResponse.stats)
   
   ::opi_api::storage::v1::VolumeStats* temp = stats_;
   stats_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::VolumeStats* NullVolumeStatsResponse::_internal_mutable_stats() {
+inline ::opi_api::storage::v1::VolumeStats* StatsNullVolumeResponse::_internal_mutable_stats() {
   
   if (stats_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(GetArenaForAllocation());
@@ -2629,12 +2629,12 @@ inline ::opi_api::storage::v1::VolumeStats* NullVolumeStatsResponse::_internal_m
   }
   return stats_;
 }
-inline ::opi_api::storage::v1::VolumeStats* NullVolumeStatsResponse::mutable_stats() {
+inline ::opi_api::storage::v1::VolumeStats* StatsNullVolumeResponse::mutable_stats() {
   ::opi_api::storage::v1::VolumeStats* _msg = _internal_mutable_stats();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullVolumeStatsResponse.stats)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.StatsNullVolumeResponse.stats)
   return _msg;
 }
-inline void NullVolumeStatsResponse::set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats) {
+inline void StatsNullVolumeResponse::set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
@@ -2653,7 +2653,7 @@ inline void NullVolumeStatsResponse::set_allocated_stats(::opi_api::storage::v1:
     
   }
   stats_ = stats;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullVolumeStatsResponse.stats)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.StatsNullVolumeResponse.stats)
 }
 
 #ifdef __GNUC__

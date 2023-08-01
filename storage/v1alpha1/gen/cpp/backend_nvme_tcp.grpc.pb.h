@@ -77,19 +77,19 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>> PrepareAsyncGetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>>(PrepareAsyncGetNvmeRemoteControllerRaw(context, request, cq));
     }
-    virtual ::grpc::Status NvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::google::protobuf::Empty* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncNvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncNvmeRemoteControllerResetRaw(context, request, cq));
+    virtual ::grpc::Status ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncResetNvmeRemoteControllerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncNvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncNvmeRemoteControllerResetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncResetNvmeRemoteControllerRaw(context, request, cq));
     }
-    virtual ::grpc::Status NvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>> AsyncNvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>>(AsyncNvmeRemoteControllerStatsRaw(context, request, cq));
+    virtual ::grpc::Status StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>> AsyncStatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>>(AsyncStatsNvmeRemoteControllerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>> PrepareAsyncNvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>>(PrepareAsyncNvmeRemoteControllerStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>> PrepareAsyncStatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>>(PrepareAsyncStatsNvmeRemoteControllerRaw(context, request, cq));
     }
     virtual ::grpc::Status ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>> AsyncListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
@@ -133,12 +133,12 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>> PrepareAsyncGetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>>(PrepareAsyncGetNvmePathRaw(context, request, cq));
     }
-    virtual ::grpc::Status NvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::opi_api::storage::v1::NvmePathStatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePathStatsResponse>> AsyncNvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePathStatsResponse>>(AsyncNvmePathStatsRaw(context, request, cq));
+    virtual ::grpc::Status StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::opi_api::storage::v1::StatsNvmePathResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmePathResponse>> AsyncStatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmePathResponse>>(AsyncStatsNvmePathRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePathStatsResponse>> PrepareAsyncNvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePathStatsResponse>>(PrepareAsyncNvmePathStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmePathResponse>> PrepareAsyncStatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmePathResponse>>(PrepareAsyncStatsNvmePathRaw(context, request, cq));
     }
     class async_interface {
      public:
@@ -153,10 +153,10 @@ class NvmeRemoteControllerService final {
       virtual void ListNvmeRemoteControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest* request, ::opi_api::storage::v1::ListNvmeRemoteControllersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void CreateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, std::function<void(::grpc::Status)>) = 0;
@@ -169,8 +169,8 @@ class NvmeRemoteControllerService final {
       virtual void ListNvmePaths(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest* request, ::opi_api::storage::v1::ListNvmePathsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest* request, ::opi_api::storage::v1::NvmePathStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest* request, ::opi_api::storage::v1::NvmePathStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -186,10 +186,10 @@ class NvmeRemoteControllerService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteControllersResponse>* PrepareAsyncListNvmeRemoteControllersRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>* AsyncGetNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>* PrepareAsyncGetNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncNvmeRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncNvmeRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>* AsyncNvmeRemoteControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>* PrepareAsyncNvmeRemoteControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncResetNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncResetNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>* AsyncStatsNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>* PrepareAsyncStatsNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>* AsyncListNvmeRemoteNamespacesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>* PrepareAsyncListNvmeRemoteNamespacesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>* AsyncCreateNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -202,8 +202,8 @@ class NvmeRemoteControllerService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmePathsResponse>* PrepareAsyncListNvmePathsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>* AsyncGetNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>* PrepareAsyncGetNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePathStatsResponse>* AsyncNvmePathStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePathStatsResponse>* PrepareAsyncNvmePathStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmePathResponse>* AsyncStatsNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmePathResponse>* PrepareAsyncStatsNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -243,19 +243,19 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteController>> PrepareAsyncGetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteController>>(PrepareAsyncGetNvmeRemoteControllerRaw(context, request, cq));
     }
-    ::grpc::Status NvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::google::protobuf::Empty* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncNvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncNvmeRemoteControllerResetRaw(context, request, cq));
+    ::grpc::Status ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncResetNvmeRemoteControllerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncNvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncNvmeRemoteControllerResetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncResetNvmeRemoteControllerRaw(context, request, cq));
     }
-    ::grpc::Status NvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>> AsyncNvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>>(AsyncNvmeRemoteControllerStatsRaw(context, request, cq));
+    ::grpc::Status StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>> AsyncStatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>>(AsyncStatsNvmeRemoteControllerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>> PrepareAsyncNvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>>(PrepareAsyncNvmeRemoteControllerStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>> PrepareAsyncStatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>>(PrepareAsyncStatsNvmeRemoteControllerRaw(context, request, cq));
     }
     ::grpc::Status ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>> AsyncListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
@@ -299,12 +299,12 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePath>> PrepareAsyncGetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePath>>(PrepareAsyncGetNvmePathRaw(context, request, cq));
     }
-    ::grpc::Status NvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::opi_api::storage::v1::NvmePathStatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePathStatsResponse>> AsyncNvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePathStatsResponse>>(AsyncNvmePathStatsRaw(context, request, cq));
+    ::grpc::Status StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::opi_api::storage::v1::StatsNvmePathResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmePathResponse>> AsyncStatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmePathResponse>>(AsyncStatsNvmePathRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePathStatsResponse>> PrepareAsyncNvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePathStatsResponse>>(PrepareAsyncNvmePathStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmePathResponse>> PrepareAsyncStatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmePathResponse>>(PrepareAsyncStatsNvmePathRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
@@ -319,10 +319,10 @@ class NvmeRemoteControllerService final {
       void ListNvmeRemoteControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest* request, ::opi_api::storage::v1::ListNvmeRemoteControllersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, std::function<void(::grpc::Status)>) override;
       void GetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      void NvmeRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void NvmeRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response, std::function<void(::grpc::Status)>) override;
+      void StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response, std::function<void(::grpc::Status)>) override;
       void ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void CreateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, std::function<void(::grpc::Status)>) override;
@@ -335,8 +335,8 @@ class NvmeRemoteControllerService final {
       void ListNvmePaths(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest* request, ::opi_api::storage::v1::ListNvmePathsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, std::function<void(::grpc::Status)>) override;
       void GetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest* request, ::opi_api::storage::v1::NvmePathStatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void NvmePathStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest* request, ::opi_api::storage::v1::NvmePathStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response, std::function<void(::grpc::Status)>) override;
+      void StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -358,10 +358,10 @@ class NvmeRemoteControllerService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNvmeRemoteControllersResponse>* PrepareAsyncListNvmeRemoteControllersRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteController>* AsyncGetNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteController>* PrepareAsyncGetNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncNvmeRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncNvmeRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>* AsyncNvmeRemoteControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>* PrepareAsyncNvmeRemoteControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncResetNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncResetNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>* AsyncStatsNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>* PrepareAsyncStatsNvmeRemoteControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>* AsyncListNvmeRemoteNamespacesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>* PrepareAsyncListNvmeRemoteNamespacesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePath>* AsyncCreateNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -374,22 +374,22 @@ class NvmeRemoteControllerService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNvmePathsResponse>* PrepareAsyncListNvmePathsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePath>* AsyncGetNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePath>* PrepareAsyncGetNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePathStatsResponse>* AsyncNvmePathStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmePathStatsResponse>* PrepareAsyncNvmePathStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmePathResponse>* AsyncStatsNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNvmePathResponse>* PrepareAsyncStatsNvmePathRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateNvmeRemoteController_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteNvmeRemoteController_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateNvmeRemoteController_;
     const ::grpc::internal::RpcMethod rpcmethod_ListNvmeRemoteControllers_;
     const ::grpc::internal::RpcMethod rpcmethod_GetNvmeRemoteController_;
-    const ::grpc::internal::RpcMethod rpcmethod_NvmeRemoteControllerReset_;
-    const ::grpc::internal::RpcMethod rpcmethod_NvmeRemoteControllerStats_;
+    const ::grpc::internal::RpcMethod rpcmethod_ResetNvmeRemoteController_;
+    const ::grpc::internal::RpcMethod rpcmethod_StatsNvmeRemoteController_;
     const ::grpc::internal::RpcMethod rpcmethod_ListNvmeRemoteNamespaces_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateNvmePath_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteNvmePath_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateNvmePath_;
     const ::grpc::internal::RpcMethod rpcmethod_ListNvmePaths_;
     const ::grpc::internal::RpcMethod rpcmethod_GetNvmePath_;
-    const ::grpc::internal::RpcMethod rpcmethod_NvmePathStats_;
+    const ::grpc::internal::RpcMethod rpcmethod_StatsNvmePath_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -402,15 +402,15 @@ class NvmeRemoteControllerService final {
     virtual ::grpc::Status UpdateNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response);
     virtual ::grpc::Status ListNvmeRemoteControllers(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest* request, ::opi_api::storage::v1::ListNvmeRemoteControllersResponse* response);
     virtual ::grpc::Status GetNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response);
-    virtual ::grpc::Status NvmeRemoteControllerReset(::grpc::ServerContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* request, ::google::protobuf::Empty* response);
-    virtual ::grpc::Status NvmeRemoteControllerStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* response);
+    virtual ::grpc::Status ResetNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status StatsNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response);
     virtual ::grpc::Status ListNvmeRemoteNamespaces(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response);
     virtual ::grpc::Status CreateNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response);
     virtual ::grpc::Status DeleteNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNvmePathRequest* request, ::google::protobuf::Empty* response);
     virtual ::grpc::Status UpdateNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response);
     virtual ::grpc::Status ListNvmePaths(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest* request, ::opi_api::storage::v1::ListNvmePathsResponse* response);
     virtual ::grpc::Status GetNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response);
-    virtual ::grpc::Status NvmePathStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest* request, ::opi_api::storage::v1::NvmePathStatsResponse* response);
+    virtual ::grpc::Status StatsNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateNvmeRemoteController : public BaseClass {
@@ -513,42 +513,42 @@ class NvmeRemoteControllerService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_NvmeRemoteControllerReset : public BaseClass {
+  class WithAsyncMethod_ResetNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_NvmeRemoteControllerReset() {
+    WithAsyncMethod_ResetNvmeRemoteController() {
       ::grpc::Service::MarkMethodAsync(5);
     }
-    ~WithAsyncMethod_NvmeRemoteControllerReset() override {
+    ~WithAsyncMethod_ResetNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+    ::grpc::Status ResetNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNvmeRemoteControllerReset(::grpc::ServerContext* context, ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestResetNvmeRemoteController(::grpc::ServerContext* context, ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_NvmeRemoteControllerStats : public BaseClass {
+  class WithAsyncMethod_StatsNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_NvmeRemoteControllerStats() {
+    WithAsyncMethod_StatsNvmeRemoteController() {
       ::grpc::Service::MarkMethodAsync(6);
     }
-    ~WithAsyncMethod_NvmeRemoteControllerStats() override {
+    ~WithAsyncMethod_StatsNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* /*request*/, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNvmeRemoteControllerStats(::grpc::ServerContext* context, ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsNvmeRemoteController(::grpc::ServerContext* context, ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -673,26 +673,26 @@ class NvmeRemoteControllerService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_NvmePathStats : public BaseClass {
+  class WithAsyncMethod_StatsNvmePath : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_NvmePathStats() {
+    WithAsyncMethod_StatsNvmePath() {
       ::grpc::Service::MarkMethodAsync(13);
     }
-    ~WithAsyncMethod_NvmePathStats() override {
+    ~WithAsyncMethod_StatsNvmePath() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmePathStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmePathStatsRequest* /*request*/, ::opi_api::storage::v1::NvmePathStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmePath(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmePathRequest* /*request*/, ::opi_api::storage::v1::StatsNvmePathResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNvmePathStats(::grpc::ServerContext* context, ::opi_api::storage::v1::NvmePathStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NvmePathStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsNvmePath(::grpc::ServerContext* context, ::opi_api::storage::v1::StatsNvmePathRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::StatsNvmePathResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateNvmeRemoteController<WithAsyncMethod_DeleteNvmeRemoteController<WithAsyncMethod_UpdateNvmeRemoteController<WithAsyncMethod_ListNvmeRemoteControllers<WithAsyncMethod_GetNvmeRemoteController<WithAsyncMethod_NvmeRemoteControllerReset<WithAsyncMethod_NvmeRemoteControllerStats<WithAsyncMethod_ListNvmeRemoteNamespaces<WithAsyncMethod_CreateNvmePath<WithAsyncMethod_DeleteNvmePath<WithAsyncMethod_UpdateNvmePath<WithAsyncMethod_ListNvmePaths<WithAsyncMethod_GetNvmePath<WithAsyncMethod_NvmePathStats<Service > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateNvmeRemoteController<WithAsyncMethod_DeleteNvmeRemoteController<WithAsyncMethod_UpdateNvmeRemoteController<WithAsyncMethod_ListNvmeRemoteControllers<WithAsyncMethod_GetNvmeRemoteController<WithAsyncMethod_ResetNvmeRemoteController<WithAsyncMethod_StatsNvmeRemoteController<WithAsyncMethod_ListNvmeRemoteNamespaces<WithAsyncMethod_CreateNvmePath<WithAsyncMethod_DeleteNvmePath<WithAsyncMethod_UpdateNvmePath<WithAsyncMethod_ListNvmePaths<WithAsyncMethod_GetNvmePath<WithAsyncMethod_StatsNvmePath<Service > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateNvmeRemoteController : public BaseClass {
    private:
@@ -829,58 +829,58 @@ class NvmeRemoteControllerService final {
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* /*request*/, ::opi_api::storage::v1::NvmeRemoteController* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_NvmeRemoteControllerReset : public BaseClass {
+  class WithCallbackMethod_ResetNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_NvmeRemoteControllerReset() {
+    WithCallbackMethod_ResetNvmeRemoteController() {
       ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NvmeRemoteControllerResetRequest, ::google::protobuf::Empty>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* request, ::google::protobuf::Empty* response) { return this->NvmeRemoteControllerReset(context, request, response); }));}
-    void SetMessageAllocatorFor_NvmeRemoteControllerReset(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NvmeRemoteControllerResetRequest, ::google::protobuf::Empty>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response) { return this->ResetNvmeRemoteController(context, request, response); }));}
+    void SetMessageAllocatorFor_ResetNvmeRemoteController(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NvmeRemoteControllerResetRequest, ::google::protobuf::Empty>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_NvmeRemoteControllerReset() override {
+    ~WithCallbackMethod_ResetNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+    ::grpc::Status ResetNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* NvmeRemoteControllerReset(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* ResetNvmeRemoteController(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_NvmeRemoteControllerStats : public BaseClass {
+  class WithCallbackMethod_StatsNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_NvmeRemoteControllerStats() {
+    WithCallbackMethod_StatsNvmeRemoteController() {
       ::grpc::Service::MarkMethodCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* response) { return this->NvmeRemoteControllerStats(context, request, response); }));}
-    void SetMessageAllocatorFor_NvmeRemoteControllerStats(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response) { return this->StatsNvmeRemoteController(context, request, response); }));}
+    void SetMessageAllocatorFor_StatsNvmeRemoteController(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_NvmeRemoteControllerStats() override {
+    ~WithCallbackMethod_StatsNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* /*request*/, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* NvmeRemoteControllerStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* StatsNvmeRemoteController(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* /*request*/, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_ListNvmeRemoteNamespaces : public BaseClass {
@@ -1045,33 +1045,33 @@ class NvmeRemoteControllerService final {
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::GetNvmePathRequest* /*request*/, ::opi_api::storage::v1::NvmePath* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_NvmePathStats : public BaseClass {
+  class WithCallbackMethod_StatsNvmePath : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_NvmePathStats() {
+    WithCallbackMethod_StatsNvmePath() {
       ::grpc::Service::MarkMethodCallback(13,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NvmePathStatsRequest, ::opi_api::storage::v1::NvmePathStatsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsNvmePathRequest, ::opi_api::storage::v1::StatsNvmePathResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NvmePathStatsRequest* request, ::opi_api::storage::v1::NvmePathStatsResponse* response) { return this->NvmePathStats(context, request, response); }));}
-    void SetMessageAllocatorFor_NvmePathStats(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NvmePathStatsRequest, ::opi_api::storage::v1::NvmePathStatsResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response) { return this->StatsNvmePath(context, request, response); }));}
+    void SetMessageAllocatorFor_StatsNvmePath(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::StatsNvmePathRequest, ::opi_api::storage::v1::StatsNvmePathResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NvmePathStatsRequest, ::opi_api::storage::v1::NvmePathStatsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsNvmePathRequest, ::opi_api::storage::v1::StatsNvmePathResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_NvmePathStats() override {
+    ~WithCallbackMethod_StatsNvmePath() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmePathStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmePathStatsRequest* /*request*/, ::opi_api::storage::v1::NvmePathStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmePath(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmePathRequest* /*request*/, ::opi_api::storage::v1::StatsNvmePathResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* NvmePathStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NvmePathStatsRequest* /*request*/, ::opi_api::storage::v1::NvmePathStatsResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* StatsNvmePath(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmePathRequest* /*request*/, ::opi_api::storage::v1::StatsNvmePathResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateNvmeRemoteController<WithCallbackMethod_DeleteNvmeRemoteController<WithCallbackMethod_UpdateNvmeRemoteController<WithCallbackMethod_ListNvmeRemoteControllers<WithCallbackMethod_GetNvmeRemoteController<WithCallbackMethod_NvmeRemoteControllerReset<WithCallbackMethod_NvmeRemoteControllerStats<WithCallbackMethod_ListNvmeRemoteNamespaces<WithCallbackMethod_CreateNvmePath<WithCallbackMethod_DeleteNvmePath<WithCallbackMethod_UpdateNvmePath<WithCallbackMethod_ListNvmePaths<WithCallbackMethod_GetNvmePath<WithCallbackMethod_NvmePathStats<Service > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_CreateNvmeRemoteController<WithCallbackMethod_DeleteNvmeRemoteController<WithCallbackMethod_UpdateNvmeRemoteController<WithCallbackMethod_ListNvmeRemoteControllers<WithCallbackMethod_GetNvmeRemoteController<WithCallbackMethod_ResetNvmeRemoteController<WithCallbackMethod_StatsNvmeRemoteController<WithCallbackMethod_ListNvmeRemoteNamespaces<WithCallbackMethod_CreateNvmePath<WithCallbackMethod_DeleteNvmePath<WithCallbackMethod_UpdateNvmePath<WithCallbackMethod_ListNvmePaths<WithCallbackMethod_GetNvmePath<WithCallbackMethod_StatsNvmePath<Service > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateNvmeRemoteController : public BaseClass {
@@ -1159,35 +1159,35 @@ class NvmeRemoteControllerService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_NvmeRemoteControllerReset : public BaseClass {
+  class WithGenericMethod_ResetNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_NvmeRemoteControllerReset() {
+    WithGenericMethod_ResetNvmeRemoteController() {
       ::grpc::Service::MarkMethodGeneric(5);
     }
-    ~WithGenericMethod_NvmeRemoteControllerReset() override {
+    ~WithGenericMethod_ResetNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+    ::grpc::Status ResetNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_NvmeRemoteControllerStats : public BaseClass {
+  class WithGenericMethod_StatsNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_NvmeRemoteControllerStats() {
+    WithGenericMethod_StatsNvmeRemoteController() {
       ::grpc::Service::MarkMethodGeneric(6);
     }
-    ~WithGenericMethod_NvmeRemoteControllerStats() override {
+    ~WithGenericMethod_StatsNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* /*request*/, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1295,18 +1295,18 @@ class NvmeRemoteControllerService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_NvmePathStats : public BaseClass {
+  class WithGenericMethod_StatsNvmePath : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_NvmePathStats() {
+    WithGenericMethod_StatsNvmePath() {
       ::grpc::Service::MarkMethodGeneric(13);
     }
-    ~WithGenericMethod_NvmePathStats() override {
+    ~WithGenericMethod_StatsNvmePath() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmePathStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmePathStatsRequest* /*request*/, ::opi_api::storage::v1::NvmePathStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmePath(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmePathRequest* /*request*/, ::opi_api::storage::v1::StatsNvmePathResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1412,42 +1412,42 @@ class NvmeRemoteControllerService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_NvmeRemoteControllerReset : public BaseClass {
+  class WithRawMethod_ResetNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_NvmeRemoteControllerReset() {
+    WithRawMethod_ResetNvmeRemoteController() {
       ::grpc::Service::MarkMethodRaw(5);
     }
-    ~WithRawMethod_NvmeRemoteControllerReset() override {
+    ~WithRawMethod_ResetNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+    ::grpc::Status ResetNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNvmeRemoteControllerReset(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestResetNvmeRemoteController(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithRawMethod_NvmeRemoteControllerStats : public BaseClass {
+  class WithRawMethod_StatsNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_NvmeRemoteControllerStats() {
+    WithRawMethod_StatsNvmeRemoteController() {
       ::grpc::Service::MarkMethodRaw(6);
     }
-    ~WithRawMethod_NvmeRemoteControllerStats() override {
+    ~WithRawMethod_StatsNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* /*request*/, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNvmeRemoteControllerStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsNvmeRemoteController(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1572,22 +1572,22 @@ class NvmeRemoteControllerService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_NvmePathStats : public BaseClass {
+  class WithRawMethod_StatsNvmePath : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_NvmePathStats() {
+    WithRawMethod_StatsNvmePath() {
       ::grpc::Service::MarkMethodRaw(13);
     }
-    ~WithRawMethod_NvmePathStats() override {
+    ~WithRawMethod_StatsNvmePath() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmePathStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmePathStatsRequest* /*request*/, ::opi_api::storage::v1::NvmePathStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmePath(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmePathRequest* /*request*/, ::opi_api::storage::v1::StatsNvmePathResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNvmePathStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsNvmePath(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1702,47 +1702,47 @@ class NvmeRemoteControllerService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_NvmeRemoteControllerReset : public BaseClass {
+  class WithRawCallbackMethod_ResetNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_NvmeRemoteControllerReset() {
+    WithRawCallbackMethod_ResetNvmeRemoteController() {
       ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NvmeRemoteControllerReset(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ResetNvmeRemoteController(context, request, response); }));
     }
-    ~WithRawCallbackMethod_NvmeRemoteControllerReset() override {
+    ~WithRawCallbackMethod_ResetNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+    ::grpc::Status ResetNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* NvmeRemoteControllerReset(
+    virtual ::grpc::ServerUnaryReactor* ResetNvmeRemoteController(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_NvmeRemoteControllerStats : public BaseClass {
+  class WithRawCallbackMethod_StatsNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_NvmeRemoteControllerStats() {
+    WithRawCallbackMethod_StatsNvmeRemoteController() {
       ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NvmeRemoteControllerStats(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->StatsNvmeRemoteController(context, request, response); }));
     }
-    ~WithRawCallbackMethod_NvmeRemoteControllerStats() override {
+    ~WithRawCallbackMethod_StatsNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmeRemoteControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* /*request*/, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* NvmeRemoteControllerStats(
+    virtual ::grpc::ServerUnaryReactor* StatsNvmeRemoteController(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -1878,25 +1878,25 @@ class NvmeRemoteControllerService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_NvmePathStats : public BaseClass {
+  class WithRawCallbackMethod_StatsNvmePath : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_NvmePathStats() {
+    WithRawCallbackMethod_StatsNvmePath() {
       ::grpc::Service::MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NvmePathStats(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->StatsNvmePath(context, request, response); }));
     }
-    ~WithRawCallbackMethod_NvmePathStats() override {
+    ~WithRawCallbackMethod_StatsNvmePath() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NvmePathStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmePathStatsRequest* /*request*/, ::opi_api::storage::v1::NvmePathStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmePath(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmePathRequest* /*request*/, ::opi_api::storage::v1::StatsNvmePathResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* NvmePathStats(
+    virtual ::grpc::ServerUnaryReactor* StatsNvmePath(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -2035,58 +2035,58 @@ class NvmeRemoteControllerService final {
     virtual ::grpc::Status StreamedGetNvmeRemoteController(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::GetNvmeRemoteControllerRequest,::opi_api::storage::v1::NvmeRemoteController>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_NvmeRemoteControllerReset : public BaseClass {
+  class WithStreamedUnaryMethod_ResetNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_NvmeRemoteControllerReset() {
+    WithStreamedUnaryMethod_ResetNvmeRemoteController() {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NvmeRemoteControllerResetRequest, ::google::protobuf::Empty>(
+          ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest, ::google::protobuf::Empty>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NvmeRemoteControllerResetRequest, ::google::protobuf::Empty>* streamer) {
-                       return this->StreamedNvmeRemoteControllerReset(context,
+                     ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest, ::google::protobuf::Empty>* streamer) {
+                       return this->StreamedResetNvmeRemoteController(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_NvmeRemoteControllerReset() override {
+    ~WithStreamedUnaryMethod_ResetNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NvmeRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+    ::grpc::Status ResetNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNvmeRemoteControllerReset(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NvmeRemoteControllerResetRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedResetNvmeRemoteController(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_NvmeRemoteControllerStats : public BaseClass {
+  class WithStreamedUnaryMethod_StatsNvmeRemoteController : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_NvmeRemoteControllerStats() {
+    WithStreamedUnaryMethod_StatsNvmeRemoteController() {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>(
+          ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>* streamer) {
-                       return this->StreamedNvmeRemoteControllerStats(context,
+                     ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>* streamer) {
+                       return this->StreamedStatsNvmeRemoteController(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_NvmeRemoteControllerStats() override {
+    ~WithStreamedUnaryMethod_StatsNvmeRemoteController() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NvmeRemoteControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NvmeRemoteControllerStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmeRemoteController(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* /*request*/, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNvmeRemoteControllerStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NvmeRemoteControllerStatsRequest,::opi_api::storage::v1::NvmeRemoteControllerStatsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedStatsNvmeRemoteController(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest,::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_ListNvmeRemoteNamespaces : public BaseClass {
@@ -2251,35 +2251,35 @@ class NvmeRemoteControllerService final {
     virtual ::grpc::Status StreamedGetNvmePath(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::GetNvmePathRequest,::opi_api::storage::v1::NvmePath>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_NvmePathStats : public BaseClass {
+  class WithStreamedUnaryMethod_StatsNvmePath : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_NvmePathStats() {
+    WithStreamedUnaryMethod_StatsNvmePath() {
       ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NvmePathStatsRequest, ::opi_api::storage::v1::NvmePathStatsResponse>(
+          ::opi_api::storage::v1::StatsNvmePathRequest, ::opi_api::storage::v1::StatsNvmePathResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NvmePathStatsRequest, ::opi_api::storage::v1::NvmePathStatsResponse>* streamer) {
-                       return this->StreamedNvmePathStats(context,
+                     ::opi_api::storage::v1::StatsNvmePathRequest, ::opi_api::storage::v1::StatsNvmePathResponse>* streamer) {
+                       return this->StreamedStatsNvmePath(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_NvmePathStats() override {
+    ~WithStreamedUnaryMethod_StatsNvmePath() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NvmePathStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NvmePathStatsRequest* /*request*/, ::opi_api::storage::v1::NvmePathStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNvmePath(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNvmePathRequest* /*request*/, ::opi_api::storage::v1::StatsNvmePathResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNvmePathStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NvmePathStatsRequest,::opi_api::storage::v1::NvmePathStatsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedStatsNvmePath(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::StatsNvmePathRequest,::opi_api::storage::v1::StatsNvmePathResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateNvmeRemoteController<WithStreamedUnaryMethod_DeleteNvmeRemoteController<WithStreamedUnaryMethod_UpdateNvmeRemoteController<WithStreamedUnaryMethod_ListNvmeRemoteControllers<WithStreamedUnaryMethod_GetNvmeRemoteController<WithStreamedUnaryMethod_NvmeRemoteControllerReset<WithStreamedUnaryMethod_NvmeRemoteControllerStats<WithStreamedUnaryMethod_ListNvmeRemoteNamespaces<WithStreamedUnaryMethod_CreateNvmePath<WithStreamedUnaryMethod_DeleteNvmePath<WithStreamedUnaryMethod_UpdateNvmePath<WithStreamedUnaryMethod_ListNvmePaths<WithStreamedUnaryMethod_GetNvmePath<WithStreamedUnaryMethod_NvmePathStats<Service > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateNvmeRemoteController<WithStreamedUnaryMethod_DeleteNvmeRemoteController<WithStreamedUnaryMethod_UpdateNvmeRemoteController<WithStreamedUnaryMethod_ListNvmeRemoteControllers<WithStreamedUnaryMethod_GetNvmeRemoteController<WithStreamedUnaryMethod_ResetNvmeRemoteController<WithStreamedUnaryMethod_StatsNvmeRemoteController<WithStreamedUnaryMethod_ListNvmeRemoteNamespaces<WithStreamedUnaryMethod_CreateNvmePath<WithStreamedUnaryMethod_DeleteNvmePath<WithStreamedUnaryMethod_UpdateNvmePath<WithStreamedUnaryMethod_ListNvmePaths<WithStreamedUnaryMethod_GetNvmePath<WithStreamedUnaryMethod_StatsNvmePath<Service > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateNvmeRemoteController<WithStreamedUnaryMethod_DeleteNvmeRemoteController<WithStreamedUnaryMethod_UpdateNvmeRemoteController<WithStreamedUnaryMethod_ListNvmeRemoteControllers<WithStreamedUnaryMethod_GetNvmeRemoteController<WithStreamedUnaryMethod_NvmeRemoteControllerReset<WithStreamedUnaryMethod_NvmeRemoteControllerStats<WithStreamedUnaryMethod_ListNvmeRemoteNamespaces<WithStreamedUnaryMethod_CreateNvmePath<WithStreamedUnaryMethod_DeleteNvmePath<WithStreamedUnaryMethod_UpdateNvmePath<WithStreamedUnaryMethod_ListNvmePaths<WithStreamedUnaryMethod_GetNvmePath<WithStreamedUnaryMethod_NvmePathStats<Service > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateNvmeRemoteController<WithStreamedUnaryMethod_DeleteNvmeRemoteController<WithStreamedUnaryMethod_UpdateNvmeRemoteController<WithStreamedUnaryMethod_ListNvmeRemoteControllers<WithStreamedUnaryMethod_GetNvmeRemoteController<WithStreamedUnaryMethod_ResetNvmeRemoteController<WithStreamedUnaryMethod_StatsNvmeRemoteController<WithStreamedUnaryMethod_ListNvmeRemoteNamespaces<WithStreamedUnaryMethod_CreateNvmePath<WithStreamedUnaryMethod_DeleteNvmePath<WithStreamedUnaryMethod_UpdateNvmePath<WithStreamedUnaryMethod_ListNvmePaths<WithStreamedUnaryMethod_GetNvmePath<WithStreamedUnaryMethod_StatsNvmePath<Service > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1

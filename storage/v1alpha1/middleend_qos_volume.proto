@@ -52,7 +52,12 @@ service MiddleendQosVolumeService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc QosVolumeStats(QosVolumeStatsRequest) returns (QosVolumeStatsResponse) {}
+    rpc StatsQosVolume(StatsQosVolumeRequest) returns (StatsQosVolumeResponse) {
+        option (google.api.http) = {
+            get: "/v1/{name=QosVolumes/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message QosVolume {
@@ -123,13 +128,13 @@ message GetQosVolumeRequest {
     ];
 }
 
-message QosVolumeStatsRequest {
+message StatsQosVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
     ];
 }
 
-message QosVolumeStatsResponse {
+message StatsQosVolumeResponse {
     VolumeStats stats = 1;
 }

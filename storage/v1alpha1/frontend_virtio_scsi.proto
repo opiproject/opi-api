@@ -54,7 +54,12 @@ service FrontendVirtioScsiService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc VirtioScsiTargetStats  (VirtioScsiTargetStatsRequest)  returns (VirtioScsiTargetStatsResponse)  {}
+    rpc StatsVirtioScsiTarget  (StatsVirtioScsiTargetRequest)  returns (StatsVirtioScsiTargetResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=VirtioScsiTargets/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 
     rpc CreateVirtioScsiController (CreateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
@@ -88,7 +93,12 @@ service FrontendVirtioScsiService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
+    rpc StatsVirtioScsiController  (StatsVirtioScsiControllerRequest)  returns (StatsVirtioScsiControllerResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=VirtioScsiControllers/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 
     rpc CreateVirtioScsiLun (CreateVirtioScsiLunRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
@@ -122,7 +132,12 @@ service FrontendVirtioScsiService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
+    rpc StatsVirtioScsiLun  (StatsVirtioScsiLunRequest)  returns (StatsVirtioScsiLunResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=VirtioScsiLuns/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message VirtioScsiTarget {
@@ -234,14 +249,14 @@ message GetVirtioScsiTargetRequest {
     ];
 }
 
-message VirtioScsiTargetStatsRequest {
+message StatsVirtioScsiTargetRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
 }
 
-message VirtioScsiTargetStatsResponse {
+message StatsVirtioScsiTargetResponse {
     VolumeStats stats = 1;
 }
 
@@ -291,14 +306,14 @@ message GetVirtioScsiControllerRequest {
     ];
 }
 
-message VirtioScsiControllerStatsRequest {
+message StatsVirtioScsiControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
 }
 
-message VirtioScsiControllerStatsResponse {
+message StatsVirtioScsiControllerResponse {
     VolumeStats stats = 1;
 }
 
@@ -348,7 +363,7 @@ message GetVirtioScsiLunRequest {
     ];
 }
 
-message VirtioScsiLunStatsRequest {
+message StatsVirtioScsiLunRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
@@ -356,6 +371,6 @@ message VirtioScsiLunStatsRequest {
     common.v1.ObjectKey controller_id = 2;
 }
 
-message VirtioScsiLunStatsResponse {
+message StatsVirtioScsiLunResponse {
     VolumeStats stats = 1;
 }

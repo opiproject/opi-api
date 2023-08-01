@@ -41,10 +41,10 @@ class AioVolumeServiceStub(object):
                 request_serializer=backend__aio__pb2.GetAioVolumeRequest.SerializeToString,
                 response_deserializer=backend__aio__pb2.AioVolume.FromString,
                 )
-        self.AioVolumeStats = channel.unary_unary(
-                '/opi_api.storage.v1.AioVolumeService/AioVolumeStats',
-                request_serializer=backend__aio__pb2.AioVolumeStatsRequest.SerializeToString,
-                response_deserializer=backend__aio__pb2.AioVolumeStatsResponse.FromString,
+        self.StatsAioVolume = channel.unary_unary(
+                '/opi_api.storage.v1.AioVolumeService/StatsAioVolume',
+                request_serializer=backend__aio__pb2.StatsAioVolumeRequest.SerializeToString,
+                response_deserializer=backend__aio__pb2.StatsAioVolumeResponse.FromString,
                 )
 
 
@@ -82,7 +82,7 @@ class AioVolumeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AioVolumeStats(self, request, context):
+    def StatsAioVolume(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -116,10 +116,10 @@ def add_AioVolumeServiceServicer_to_server(servicer, server):
                     request_deserializer=backend__aio__pb2.GetAioVolumeRequest.FromString,
                     response_serializer=backend__aio__pb2.AioVolume.SerializeToString,
             ),
-            'AioVolumeStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.AioVolumeStats,
-                    request_deserializer=backend__aio__pb2.AioVolumeStatsRequest.FromString,
-                    response_serializer=backend__aio__pb2.AioVolumeStatsResponse.SerializeToString,
+            'StatsAioVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsAioVolume,
+                    request_deserializer=backend__aio__pb2.StatsAioVolumeRequest.FromString,
+                    response_serializer=backend__aio__pb2.StatsAioVolumeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -218,7 +218,7 @@ class AioVolumeService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AioVolumeStats(request,
+    def StatsAioVolume(request,
             target,
             options=(),
             channel_credentials=None,
@@ -228,8 +228,8 @@ class AioVolumeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioVolumeService/AioVolumeStats',
-            backend__aio__pb2.AioVolumeStatsRequest.SerializeToString,
-            backend__aio__pb2.AioVolumeStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioVolumeService/StatsAioVolume',
+            backend__aio__pb2.StatsAioVolumeRequest.SerializeToString,
+            backend__aio__pb2.StatsAioVolumeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

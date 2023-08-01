@@ -41,10 +41,10 @@ class FrontendVirtioBlkServiceStub(object):
                 request_serializer=frontend__virtio__blk__pb2.GetVirtioBlkRequest.SerializeToString,
                 response_deserializer=frontend__virtio__blk__pb2.VirtioBlk.FromString,
                 )
-        self.VirtioBlkStats = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkStats',
-                request_serializer=frontend__virtio__blk__pb2.VirtioBlkStatsRequest.SerializeToString,
-                response_deserializer=frontend__virtio__blk__pb2.VirtioBlkStatsResponse.FromString,
+        self.StatsVirtioBlk = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioBlkService/StatsVirtioBlk',
+                request_serializer=frontend__virtio__blk__pb2.StatsVirtioBlkRequest.SerializeToString,
+                response_deserializer=frontend__virtio__blk__pb2.StatsVirtioBlkResponse.FromString,
                 )
 
 
@@ -82,7 +82,7 @@ class FrontendVirtioBlkServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtioBlkStats(self, request, context):
+    def StatsVirtioBlk(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -116,10 +116,10 @@ def add_FrontendVirtioBlkServiceServicer_to_server(servicer, server):
                     request_deserializer=frontend__virtio__blk__pb2.GetVirtioBlkRequest.FromString,
                     response_serializer=frontend__virtio__blk__pb2.VirtioBlk.SerializeToString,
             ),
-            'VirtioBlkStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioBlkStats,
-                    request_deserializer=frontend__virtio__blk__pb2.VirtioBlkStatsRequest.FromString,
-                    response_serializer=frontend__virtio__blk__pb2.VirtioBlkStatsResponse.SerializeToString,
+            'StatsVirtioBlk': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsVirtioBlk,
+                    request_deserializer=frontend__virtio__blk__pb2.StatsVirtioBlkRequest.FromString,
+                    response_serializer=frontend__virtio__blk__pb2.StatsVirtioBlkResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -218,7 +218,7 @@ class FrontendVirtioBlkService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtioBlkStats(request,
+    def StatsVirtioBlk(request,
             target,
             options=(),
             channel_credentials=None,
@@ -228,8 +228,8 @@ class FrontendVirtioBlkService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkStats',
-            frontend__virtio__blk__pb2.VirtioBlkStatsRequest.SerializeToString,
-            frontend__virtio__blk__pb2.VirtioBlkStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/StatsVirtioBlk',
+            frontend__virtio__blk__pb2.StatsVirtioBlkRequest.SerializeToString,
+            frontend__virtio__blk__pb2.StatsVirtioBlkResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

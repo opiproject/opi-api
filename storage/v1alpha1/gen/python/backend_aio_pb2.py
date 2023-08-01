@@ -22,7 +22,7 @@ import opicommon_pb2 as opicommon__pb2
 import uuid_pb2 as uuid__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x62\x61\x63kend_aio.proto\x12\x12opi_api.storage.v1\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\x1a\x0fopicommon.proto\x1a\nuuid.proto\"\xdb\x01\n\tAioVolume\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x03\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\x12\x12\n\nblock_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x62locks_count\x18\x03 \x01(\x03\x12%\n\x04uuid\x18\x04 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12\x10\n\x08\x66ilename\x18\x05 \x01(\t:7\xea\x41\x34\n storage.opiproject.org/AioVolume\x12\x10volumes/{volume}\"g\n\x16\x43reateAioVolumeRequest\x12\x36\n\naio_volume\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.AioVolumeB\x03\xe0\x41\x02\x12\x15\n\raio_volume_id\x18\x02 \x01(\t\"c\n\x16\x44\x65leteAioVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x93\x01\n\x16UpdateAioVolumeRequest\x12\x31\n\naio_volume\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.AioVolume\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x15\n\rallow_missing\x18\x03 \x01(\x08\"t\n\x15ListAioVolumesRequest\x12\x34\n\x06parent\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"e\n\x16ListAioVolumesResponse\x12\x32\n\x0b\x61io_volumes\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.AioVolume\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"I\n\x13GetAioVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\"K\n\x15\x41ioVolumeStatsRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\"H\n\x16\x41ioVolumeStatsResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats2\xd9\x06\n\x10\x41ioVolumeService\x12\x98\x01\n\x0f\x43reateAioVolume\x12*.opi_api.storage.v1.CreateAioVolumeRequest\x1a\x1d.opi_api.storage.v1.AioVolume\":\x82\xd3\xe4\x93\x02\x19\"\x0b/v1/volumes:\naio_volume\xda\x41\x18\x61io_volume,aio_volume_id\x12}\n\x0f\x44\x65leteAioVolume\x12*.opi_api.storage.v1.DeleteAioVolumeRequest\x1a\x16.google.protobuf.Empty\"&\x82\xd3\xe4\x93\x02\x19*\x17/v1/{name=AioVolumes/*}\xda\x41\x04name\x12\xab\x01\n\x0fUpdateAioVolume\x12*.opi_api.storage.v1.UpdateAioVolumeRequest\x1a\x1d.opi_api.storage.v1.AioVolume\"M\x82\xd3\xe4\x93\x02.2 /v1/{aio_volume.name=subsystems}:\naio_volume\xda\x41\x16\x61io_volume,update_mask\x12\x91\x01\n\x0eListAioVolumes\x12).opi_api.storage.v1.ListAioVolumesRequest\x1a*.opi_api.storage.v1.ListAioVolumesResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12~\n\x0cGetAioVolume\x12\'.opi_api.storage.v1.GetAioVolumeRequest\x1a\x1d.opi_api.storage.v1.AioVolume\"&\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{name=AioVolumes/*}\xda\x41\x04name\x12i\n\x0e\x41ioVolumeStats\x12).opi_api.storage.v1.AioVolumeStatsRequest\x1a*.opi_api.storage.v1.AioVolumeStatsResponse\"\x00\x42^\n\x12opi_api.storage.v1B\x0f\x42\x61\x63kendAioProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x62\x61\x63kend_aio.proto\x12\x12opi_api.storage.v1\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\x1a\x0fopicommon.proto\x1a\nuuid.proto\"\xdb\x01\n\tAioVolume\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x03\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\x12\x12\n\nblock_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x62locks_count\x18\x03 \x01(\x03\x12%\n\x04uuid\x18\x04 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12\x10\n\x08\x66ilename\x18\x05 \x01(\t:7\xea\x41\x34\n storage.opiproject.org/AioVolume\x12\x10volumes/{volume}\"g\n\x16\x43reateAioVolumeRequest\x12\x36\n\naio_volume\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.AioVolumeB\x03\xe0\x41\x02\x12\x15\n\raio_volume_id\x18\x02 \x01(\t\"c\n\x16\x44\x65leteAioVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x93\x01\n\x16UpdateAioVolumeRequest\x12\x31\n\naio_volume\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.AioVolume\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x15\n\rallow_missing\x18\x03 \x01(\x08\"t\n\x15ListAioVolumesRequest\x12\x34\n\x06parent\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"e\n\x16ListAioVolumesResponse\x12\x32\n\x0b\x61io_volumes\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.AioVolume\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"I\n\x13GetAioVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\"K\n\x15StatsAioVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/AioVolume\"H\n\x16StatsAioVolumeResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats2\x86\x07\n\x10\x41ioVolumeService\x12\x98\x01\n\x0f\x43reateAioVolume\x12*.opi_api.storage.v1.CreateAioVolumeRequest\x1a\x1d.opi_api.storage.v1.AioVolume\":\x82\xd3\xe4\x93\x02\x19\"\x0b/v1/volumes:\naio_volume\xda\x41\x18\x61io_volume,aio_volume_id\x12}\n\x0f\x44\x65leteAioVolume\x12*.opi_api.storage.v1.DeleteAioVolumeRequest\x1a\x16.google.protobuf.Empty\"&\x82\xd3\xe4\x93\x02\x19*\x17/v1/{name=AioVolumes/*}\xda\x41\x04name\x12\xab\x01\n\x0fUpdateAioVolume\x12*.opi_api.storage.v1.UpdateAioVolumeRequest\x1a\x1d.opi_api.storage.v1.AioVolume\"M\x82\xd3\xe4\x93\x02.2 /v1/{aio_volume.name=subsystems}:\naio_volume\xda\x41\x16\x61io_volume,update_mask\x12\x91\x01\n\x0eListAioVolumes\x12).opi_api.storage.v1.ListAioVolumesRequest\x1a*.opi_api.storage.v1.ListAioVolumesResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12~\n\x0cGetAioVolume\x12\'.opi_api.storage.v1.GetAioVolumeRequest\x1a\x1d.opi_api.storage.v1.AioVolume\"&\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{name=AioVolumes/*}\xda\x41\x04name\x12\x95\x01\n\x0eStatsAioVolume\x12).opi_api.storage.v1.StatsAioVolumeRequest\x1a*.opi_api.storage.v1.StatsAioVolumeResponse\",\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/{name=AioVolumes/*}:stats\xda\x41\x04nameB^\n\x12opi_api.storage.v1B\x0f\x42\x61\x63kendAioProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
@@ -33,8 +33,8 @@ _UPDATEAIOVOLUMEREQUEST = DESCRIPTOR.message_types_by_name['UpdateAioVolumeReque
 _LISTAIOVOLUMESREQUEST = DESCRIPTOR.message_types_by_name['ListAioVolumesRequest']
 _LISTAIOVOLUMESRESPONSE = DESCRIPTOR.message_types_by_name['ListAioVolumesResponse']
 _GETAIOVOLUMEREQUEST = DESCRIPTOR.message_types_by_name['GetAioVolumeRequest']
-_AIOVOLUMESTATSREQUEST = DESCRIPTOR.message_types_by_name['AioVolumeStatsRequest']
-_AIOVOLUMESTATSRESPONSE = DESCRIPTOR.message_types_by_name['AioVolumeStatsResponse']
+_STATSAIOVOLUMEREQUEST = DESCRIPTOR.message_types_by_name['StatsAioVolumeRequest']
+_STATSAIOVOLUMERESPONSE = DESCRIPTOR.message_types_by_name['StatsAioVolumeResponse']
 AioVolume = _reflection.GeneratedProtocolMessageType('AioVolume', (_message.Message,), {
   'DESCRIPTOR' : _AIOVOLUME,
   '__module__' : 'backend_aio_pb2'
@@ -84,19 +84,19 @@ GetAioVolumeRequest = _reflection.GeneratedProtocolMessageType('GetAioVolumeRequ
   })
 _sym_db.RegisterMessage(GetAioVolumeRequest)
 
-AioVolumeStatsRequest = _reflection.GeneratedProtocolMessageType('AioVolumeStatsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _AIOVOLUMESTATSREQUEST,
+StatsAioVolumeRequest = _reflection.GeneratedProtocolMessageType('StatsAioVolumeRequest', (_message.Message,), {
+  'DESCRIPTOR' : _STATSAIOVOLUMEREQUEST,
   '__module__' : 'backend_aio_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioVolumeStatsRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.StatsAioVolumeRequest)
   })
-_sym_db.RegisterMessage(AioVolumeStatsRequest)
+_sym_db.RegisterMessage(StatsAioVolumeRequest)
 
-AioVolumeStatsResponse = _reflection.GeneratedProtocolMessageType('AioVolumeStatsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _AIOVOLUMESTATSRESPONSE,
+StatsAioVolumeResponse = _reflection.GeneratedProtocolMessageType('StatsAioVolumeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _STATSAIOVOLUMERESPONSE,
   '__module__' : 'backend_aio_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioVolumeStatsResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.StatsAioVolumeResponse)
   })
-_sym_db.RegisterMessage(AioVolumeStatsResponse)
+_sym_db.RegisterMessage(StatsAioVolumeResponse)
 
 _AIOVOLUMESERVICE = DESCRIPTOR.services_by_name['AioVolumeService']
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -115,8 +115,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _LISTAIOVOLUMESREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume'
   _GETAIOVOLUMEREQUEST.fields_by_name['name']._options = None
   _GETAIOVOLUMEREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume'
-  _AIOVOLUMESTATSREQUEST.fields_by_name['name']._options = None
-  _AIOVOLUMESTATSREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume'
+  _STATSAIOVOLUMEREQUEST.fields_by_name['name']._options = None
+  _STATSAIOVOLUMEREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume'
   _AIOVOLUMESERVICE.methods_by_name['CreateAioVolume']._options = None
   _AIOVOLUMESERVICE.methods_by_name['CreateAioVolume']._serialized_options = b'\202\323\344\223\002\031\"\013/v1/volumes:\naio_volume\332A\030aio_volume,aio_volume_id'
   _AIOVOLUMESERVICE.methods_by_name['DeleteAioVolume']._options = None
@@ -127,6 +127,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AIOVOLUMESERVICE.methods_by_name['ListAioVolumes']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
   _AIOVOLUMESERVICE.methods_by_name['GetAioVolume']._options = None
   _AIOVOLUMESERVICE.methods_by_name['GetAioVolume']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{name=AioVolumes/*}\332A\004name'
+  _AIOVOLUMESERVICE.methods_by_name['StatsAioVolume']._options = None
+  _AIOVOLUMESERVICE.methods_by_name['StatsAioVolume']._serialized_options = b'\202\323\344\223\002\037\022\035/v1/{name=AioVolumes/*}:stats\332A\004name'
   _AIOVOLUME._serialized_start=249
   _AIOVOLUME._serialized_end=468
   _CREATEAIOVOLUMEREQUEST._serialized_start=470
@@ -141,10 +143,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _LISTAIOVOLUMESRESPONSE._serialized_end=1045
   _GETAIOVOLUMEREQUEST._serialized_start=1047
   _GETAIOVOLUMEREQUEST._serialized_end=1120
-  _AIOVOLUMESTATSREQUEST._serialized_start=1122
-  _AIOVOLUMESTATSREQUEST._serialized_end=1197
-  _AIOVOLUMESTATSRESPONSE._serialized_start=1199
-  _AIOVOLUMESTATSRESPONSE._serialized_end=1271
+  _STATSAIOVOLUMEREQUEST._serialized_start=1122
+  _STATSAIOVOLUMEREQUEST._serialized_end=1197
+  _STATSAIOVOLUMERESPONSE._serialized_start=1199
+  _STATSAIOVOLUMERESPONSE._serialized_end=1271
   _AIOVOLUMESERVICE._serialized_start=1274
-  _AIOVOLUMESERVICE._serialized_end=2131
+  _AIOVOLUMESERVICE._serialized_end=2176
 # @@protoc_insertion_point(module_scope)

@@ -41,10 +41,10 @@ class FrontendVirtioScsiServiceStub(object):
                 request_serializer=frontend__virtio__scsi__pb2.GetVirtioScsiTargetRequest.SerializeToString,
                 response_deserializer=frontend__virtio__scsi__pb2.VirtioScsiTarget.FromString,
                 )
-        self.VirtioScsiTargetStats = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiTargetStats',
-                request_serializer=frontend__virtio__scsi__pb2.VirtioScsiTargetStatsRequest.SerializeToString,
-                response_deserializer=frontend__virtio__scsi__pb2.VirtioScsiTargetStatsResponse.FromString,
+        self.StatsVirtioScsiTarget = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiTarget',
+                request_serializer=frontend__virtio__scsi__pb2.StatsVirtioScsiTargetRequest.SerializeToString,
+                response_deserializer=frontend__virtio__scsi__pb2.StatsVirtioScsiTargetResponse.FromString,
                 )
         self.CreateVirtioScsiController = channel.unary_unary(
                 '/opi_api.storage.v1.FrontendVirtioScsiService/CreateVirtioScsiController',
@@ -71,10 +71,10 @@ class FrontendVirtioScsiServiceStub(object):
                 request_serializer=frontend__virtio__scsi__pb2.GetVirtioScsiControllerRequest.SerializeToString,
                 response_deserializer=frontend__virtio__scsi__pb2.VirtioScsiController.FromString,
                 )
-        self.VirtioScsiControllerStats = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerStats',
-                request_serializer=frontend__virtio__scsi__pb2.VirtioScsiControllerStatsRequest.SerializeToString,
-                response_deserializer=frontend__virtio__scsi__pb2.VirtioScsiControllerStatsResponse.FromString,
+        self.StatsVirtioScsiController = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiController',
+                request_serializer=frontend__virtio__scsi__pb2.StatsVirtioScsiControllerRequest.SerializeToString,
+                response_deserializer=frontend__virtio__scsi__pb2.StatsVirtioScsiControllerResponse.FromString,
                 )
         self.CreateVirtioScsiLun = channel.unary_unary(
                 '/opi_api.storage.v1.FrontendVirtioScsiService/CreateVirtioScsiLun',
@@ -101,10 +101,10 @@ class FrontendVirtioScsiServiceStub(object):
                 request_serializer=frontend__virtio__scsi__pb2.GetVirtioScsiLunRequest.SerializeToString,
                 response_deserializer=frontend__virtio__scsi__pb2.VirtioScsiLun.FromString,
                 )
-        self.VirtioScsiLunStats = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunStats',
-                request_serializer=frontend__virtio__scsi__pb2.VirtioScsiLunStatsRequest.SerializeToString,
-                response_deserializer=frontend__virtio__scsi__pb2.VirtioScsiLunStatsResponse.FromString,
+        self.StatsVirtioScsiLun = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiLun',
+                request_serializer=frontend__virtio__scsi__pb2.StatsVirtioScsiLunRequest.SerializeToString,
+                response_deserializer=frontend__virtio__scsi__pb2.StatsVirtioScsiLunResponse.FromString,
                 )
 
 
@@ -142,7 +142,7 @@ class FrontendVirtioScsiServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtioScsiTargetStats(self, request, context):
+    def StatsVirtioScsiTarget(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -178,7 +178,7 @@ class FrontendVirtioScsiServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtioScsiControllerStats(self, request, context):
+    def StatsVirtioScsiController(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -214,7 +214,7 @@ class FrontendVirtioScsiServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtioScsiLunStats(self, request, context):
+    def StatsVirtioScsiLun(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -248,10 +248,10 @@ def add_FrontendVirtioScsiServiceServicer_to_server(servicer, server):
                     request_deserializer=frontend__virtio__scsi__pb2.GetVirtioScsiTargetRequest.FromString,
                     response_serializer=frontend__virtio__scsi__pb2.VirtioScsiTarget.SerializeToString,
             ),
-            'VirtioScsiTargetStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioScsiTargetStats,
-                    request_deserializer=frontend__virtio__scsi__pb2.VirtioScsiTargetStatsRequest.FromString,
-                    response_serializer=frontend__virtio__scsi__pb2.VirtioScsiTargetStatsResponse.SerializeToString,
+            'StatsVirtioScsiTarget': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsVirtioScsiTarget,
+                    request_deserializer=frontend__virtio__scsi__pb2.StatsVirtioScsiTargetRequest.FromString,
+                    response_serializer=frontend__virtio__scsi__pb2.StatsVirtioScsiTargetResponse.SerializeToString,
             ),
             'CreateVirtioScsiController': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateVirtioScsiController,
@@ -278,10 +278,10 @@ def add_FrontendVirtioScsiServiceServicer_to_server(servicer, server):
                     request_deserializer=frontend__virtio__scsi__pb2.GetVirtioScsiControllerRequest.FromString,
                     response_serializer=frontend__virtio__scsi__pb2.VirtioScsiController.SerializeToString,
             ),
-            'VirtioScsiControllerStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioScsiControllerStats,
-                    request_deserializer=frontend__virtio__scsi__pb2.VirtioScsiControllerStatsRequest.FromString,
-                    response_serializer=frontend__virtio__scsi__pb2.VirtioScsiControllerStatsResponse.SerializeToString,
+            'StatsVirtioScsiController': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsVirtioScsiController,
+                    request_deserializer=frontend__virtio__scsi__pb2.StatsVirtioScsiControllerRequest.FromString,
+                    response_serializer=frontend__virtio__scsi__pb2.StatsVirtioScsiControllerResponse.SerializeToString,
             ),
             'CreateVirtioScsiLun': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateVirtioScsiLun,
@@ -308,10 +308,10 @@ def add_FrontendVirtioScsiServiceServicer_to_server(servicer, server):
                     request_deserializer=frontend__virtio__scsi__pb2.GetVirtioScsiLunRequest.FromString,
                     response_serializer=frontend__virtio__scsi__pb2.VirtioScsiLun.SerializeToString,
             ),
-            'VirtioScsiLunStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioScsiLunStats,
-                    request_deserializer=frontend__virtio__scsi__pb2.VirtioScsiLunStatsRequest.FromString,
-                    response_serializer=frontend__virtio__scsi__pb2.VirtioScsiLunStatsResponse.SerializeToString,
+            'StatsVirtioScsiLun': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsVirtioScsiLun,
+                    request_deserializer=frontend__virtio__scsi__pb2.StatsVirtioScsiLunRequest.FromString,
+                    response_serializer=frontend__virtio__scsi__pb2.StatsVirtioScsiLunResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -410,7 +410,7 @@ class FrontendVirtioScsiService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtioScsiTargetStats(request,
+    def StatsVirtioScsiTarget(request,
             target,
             options=(),
             channel_credentials=None,
@@ -420,9 +420,9 @@ class FrontendVirtioScsiService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiTargetStats',
-            frontend__virtio__scsi__pb2.VirtioScsiTargetStatsRequest.SerializeToString,
-            frontend__virtio__scsi__pb2.VirtioScsiTargetStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiTarget',
+            frontend__virtio__scsi__pb2.StatsVirtioScsiTargetRequest.SerializeToString,
+            frontend__virtio__scsi__pb2.StatsVirtioScsiTargetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -512,7 +512,7 @@ class FrontendVirtioScsiService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtioScsiControllerStats(request,
+    def StatsVirtioScsiController(request,
             target,
             options=(),
             channel_credentials=None,
@@ -522,9 +522,9 @@ class FrontendVirtioScsiService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerStats',
-            frontend__virtio__scsi__pb2.VirtioScsiControllerStatsRequest.SerializeToString,
-            frontend__virtio__scsi__pb2.VirtioScsiControllerStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiController',
+            frontend__virtio__scsi__pb2.StatsVirtioScsiControllerRequest.SerializeToString,
+            frontend__virtio__scsi__pb2.StatsVirtioScsiControllerResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -614,7 +614,7 @@ class FrontendVirtioScsiService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtioScsiLunStats(request,
+    def StatsVirtioScsiLun(request,
             target,
             options=(),
             channel_credentials=None,
@@ -624,8 +624,8 @@ class FrontendVirtioScsiService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunStats',
-            frontend__virtio__scsi__pb2.VirtioScsiLunStatsRequest.SerializeToString,
-            frontend__virtio__scsi__pb2.VirtioScsiLunStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiLun',
+            frontend__virtio__scsi__pb2.StatsVirtioScsiLunRequest.SerializeToString,
+            frontend__virtio__scsi__pb2.StatsVirtioScsiLunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

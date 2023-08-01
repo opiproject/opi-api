@@ -5,13 +5,13 @@
 
 - [backend_aio.proto](#backend_aio-proto)
     - [AioVolume](#opi_api-storage-v1-AioVolume)
-    - [AioVolumeStatsRequest](#opi_api-storage-v1-AioVolumeStatsRequest)
-    - [AioVolumeStatsResponse](#opi_api-storage-v1-AioVolumeStatsResponse)
     - [CreateAioVolumeRequest](#opi_api-storage-v1-CreateAioVolumeRequest)
     - [DeleteAioVolumeRequest](#opi_api-storage-v1-DeleteAioVolumeRequest)
     - [GetAioVolumeRequest](#opi_api-storage-v1-GetAioVolumeRequest)
     - [ListAioVolumesRequest](#opi_api-storage-v1-ListAioVolumesRequest)
     - [ListAioVolumesResponse](#opi_api-storage-v1-ListAioVolumesResponse)
+    - [StatsAioVolumeRequest](#opi_api-storage-v1-StatsAioVolumeRequest)
+    - [StatsAioVolumeResponse](#opi_api-storage-v1-StatsAioVolumeResponse)
     - [UpdateAioVolumeRequest](#opi_api-storage-v1-UpdateAioVolumeRequest)
   
     - [AioVolumeService](#opi_api-storage-v1-AioVolumeService)
@@ -24,8 +24,8 @@
     - [ListNullVolumesRequest](#opi_api-storage-v1-ListNullVolumesRequest)
     - [ListNullVolumesResponse](#opi_api-storage-v1-ListNullVolumesResponse)
     - [NullVolume](#opi_api-storage-v1-NullVolume)
-    - [NullVolumeStatsRequest](#opi_api-storage-v1-NullVolumeStatsRequest)
-    - [NullVolumeStatsResponse](#opi_api-storage-v1-NullVolumeStatsResponse)
+    - [StatsNullVolumeRequest](#opi_api-storage-v1-StatsNullVolumeRequest)
+    - [StatsNullVolumeResponse](#opi_api-storage-v1-StatsNullVolumeResponse)
     - [UpdateNullVolumeRequest](#opi_api-storage-v1-UpdateNullVolumeRequest)
   
     - [NullVolumeService](#opi_api-storage-v1-NullVolumeService)
@@ -45,13 +45,13 @@
     - [ListNvmeRemoteNamespacesRequest](#opi_api-storage-v1-ListNvmeRemoteNamespacesRequest)
     - [ListNvmeRemoteNamespacesResponse](#opi_api-storage-v1-ListNvmeRemoteNamespacesResponse)
     - [NvmePath](#opi_api-storage-v1-NvmePath)
-    - [NvmePathStatsRequest](#opi_api-storage-v1-NvmePathStatsRequest)
-    - [NvmePathStatsResponse](#opi_api-storage-v1-NvmePathStatsResponse)
     - [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController)
-    - [NvmeRemoteControllerResetRequest](#opi_api-storage-v1-NvmeRemoteControllerResetRequest)
-    - [NvmeRemoteControllerStatsRequest](#opi_api-storage-v1-NvmeRemoteControllerStatsRequest)
-    - [NvmeRemoteControllerStatsResponse](#opi_api-storage-v1-NvmeRemoteControllerStatsResponse)
     - [NvmeRemoteNamespace](#opi_api-storage-v1-NvmeRemoteNamespace)
+    - [ResetNvmeRemoteControllerRequest](#opi_api-storage-v1-ResetNvmeRemoteControllerRequest)
+    - [StatsNvmePathRequest](#opi_api-storage-v1-StatsNvmePathRequest)
+    - [StatsNvmePathResponse](#opi_api-storage-v1-StatsNvmePathResponse)
+    - [StatsNvmeRemoteControllerRequest](#opi_api-storage-v1-StatsNvmeRemoteControllerRequest)
+    - [StatsNvmeRemoteControllerResponse](#opi_api-storage-v1-StatsNvmeRemoteControllerResponse)
     - [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest)
     - [UpdateNvmeRemoteControllerRequest](#opi_api-storage-v1-UpdateNvmeRemoteControllerRequest)
   
@@ -79,19 +79,19 @@
     - [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse)
     - [NvmeController](#opi_api-storage-v1-NvmeController)
     - [NvmeControllerSpec](#opi_api-storage-v1-NvmeControllerSpec)
-    - [NvmeControllerStatsRequest](#opi_api-storage-v1-NvmeControllerStatsRequest)
-    - [NvmeControllerStatsResponse](#opi_api-storage-v1-NvmeControllerStatsResponse)
     - [NvmeControllerStatus](#opi_api-storage-v1-NvmeControllerStatus)
     - [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace)
     - [NvmeNamespaceSpec](#opi_api-storage-v1-NvmeNamespaceSpec)
-    - [NvmeNamespaceStatsRequest](#opi_api-storage-v1-NvmeNamespaceStatsRequest)
-    - [NvmeNamespaceStatsResponse](#opi_api-storage-v1-NvmeNamespaceStatsResponse)
     - [NvmeNamespaceStatus](#opi_api-storage-v1-NvmeNamespaceStatus)
     - [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem)
     - [NvmeSubsystemSpec](#opi_api-storage-v1-NvmeSubsystemSpec)
-    - [NvmeSubsystemStatsRequest](#opi_api-storage-v1-NvmeSubsystemStatsRequest)
-    - [NvmeSubsystemStatsResponse](#opi_api-storage-v1-NvmeSubsystemStatsResponse)
     - [NvmeSubsystemStatus](#opi_api-storage-v1-NvmeSubsystemStatus)
+    - [StatsNvmeControllerRequest](#opi_api-storage-v1-StatsNvmeControllerRequest)
+    - [StatsNvmeControllerResponse](#opi_api-storage-v1-StatsNvmeControllerResponse)
+    - [StatsNvmeNamespaceRequest](#opi_api-storage-v1-StatsNvmeNamespaceRequest)
+    - [StatsNvmeNamespaceResponse](#opi_api-storage-v1-StatsNvmeNamespaceResponse)
+    - [StatsNvmeSubsystemRequest](#opi_api-storage-v1-StatsNvmeSubsystemRequest)
+    - [StatsNvmeSubsystemResponse](#opi_api-storage-v1-StatsNvmeSubsystemResponse)
     - [UpdateNvmeControllerRequest](#opi_api-storage-v1-UpdateNvmeControllerRequest)
     - [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest)
     - [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest)
@@ -107,10 +107,10 @@
     - [GetVirtioBlkRequest](#opi_api-storage-v1-GetVirtioBlkRequest)
     - [ListVirtioBlksRequest](#opi_api-storage-v1-ListVirtioBlksRequest)
     - [ListVirtioBlksResponse](#opi_api-storage-v1-ListVirtioBlksResponse)
+    - [StatsVirtioBlkRequest](#opi_api-storage-v1-StatsVirtioBlkRequest)
+    - [StatsVirtioBlkResponse](#opi_api-storage-v1-StatsVirtioBlkResponse)
     - [UpdateVirtioBlkRequest](#opi_api-storage-v1-UpdateVirtioBlkRequest)
     - [VirtioBlk](#opi_api-storage-v1-VirtioBlk)
-    - [VirtioBlkStatsRequest](#opi_api-storage-v1-VirtioBlkStatsRequest)
-    - [VirtioBlkStatsResponse](#opi_api-storage-v1-VirtioBlkStatsResponse)
   
     - [FrontendVirtioBlkService](#opi_api-storage-v1-FrontendVirtioBlkService)
   
@@ -131,18 +131,18 @@
     - [ListVirtioScsiLunsResponse](#opi_api-storage-v1-ListVirtioScsiLunsResponse)
     - [ListVirtioScsiTargetsRequest](#opi_api-storage-v1-ListVirtioScsiTargetsRequest)
     - [ListVirtioScsiTargetsResponse](#opi_api-storage-v1-ListVirtioScsiTargetsResponse)
+    - [StatsVirtioScsiControllerRequest](#opi_api-storage-v1-StatsVirtioScsiControllerRequest)
+    - [StatsVirtioScsiControllerResponse](#opi_api-storage-v1-StatsVirtioScsiControllerResponse)
+    - [StatsVirtioScsiLunRequest](#opi_api-storage-v1-StatsVirtioScsiLunRequest)
+    - [StatsVirtioScsiLunResponse](#opi_api-storage-v1-StatsVirtioScsiLunResponse)
+    - [StatsVirtioScsiTargetRequest](#opi_api-storage-v1-StatsVirtioScsiTargetRequest)
+    - [StatsVirtioScsiTargetResponse](#opi_api-storage-v1-StatsVirtioScsiTargetResponse)
     - [UpdateVirtioScsiControllerRequest](#opi_api-storage-v1-UpdateVirtioScsiControllerRequest)
     - [UpdateVirtioScsiLunRequest](#opi_api-storage-v1-UpdateVirtioScsiLunRequest)
     - [UpdateVirtioScsiTargetRequest](#opi_api-storage-v1-UpdateVirtioScsiTargetRequest)
     - [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController)
-    - [VirtioScsiControllerStatsRequest](#opi_api-storage-v1-VirtioScsiControllerStatsRequest)
-    - [VirtioScsiControllerStatsResponse](#opi_api-storage-v1-VirtioScsiControllerStatsResponse)
     - [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun)
-    - [VirtioScsiLunStatsRequest](#opi_api-storage-v1-VirtioScsiLunStatsRequest)
-    - [VirtioScsiLunStatsResponse](#opi_api-storage-v1-VirtioScsiLunStatsResponse)
     - [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget)
-    - [VirtioScsiTargetStatsRequest](#opi_api-storage-v1-VirtioScsiTargetStatsRequest)
-    - [VirtioScsiTargetStatsResponse](#opi_api-storage-v1-VirtioScsiTargetStatsResponse)
   
     - [FrontendVirtioScsiService](#opi_api-storage-v1-FrontendVirtioScsiService)
   
@@ -150,11 +150,11 @@
     - [CreateEncryptedVolumeRequest](#opi_api-storage-v1-CreateEncryptedVolumeRequest)
     - [DeleteEncryptedVolumeRequest](#opi_api-storage-v1-DeleteEncryptedVolumeRequest)
     - [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume)
-    - [EncryptedVolumeStatsRequest](#opi_api-storage-v1-EncryptedVolumeStatsRequest)
-    - [EncryptedVolumeStatsResponse](#opi_api-storage-v1-EncryptedVolumeStatsResponse)
     - [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest)
     - [ListEncryptedVolumesRequest](#opi_api-storage-v1-ListEncryptedVolumesRequest)
     - [ListEncryptedVolumesResponse](#opi_api-storage-v1-ListEncryptedVolumesResponse)
+    - [StatsEncryptedVolumeRequest](#opi_api-storage-v1-StatsEncryptedVolumeRequest)
+    - [StatsEncryptedVolumeResponse](#opi_api-storage-v1-StatsEncryptedVolumeResponse)
     - [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest)
   
     - [MiddleendEncryptionService](#opi_api-storage-v1-MiddleendEncryptionService)
@@ -166,8 +166,8 @@
     - [ListQosVolumesRequest](#opi_api-storage-v1-ListQosVolumesRequest)
     - [ListQosVolumesResponse](#opi_api-storage-v1-ListQosVolumesResponse)
     - [QosVolume](#opi_api-storage-v1-QosVolume)
-    - [QosVolumeStatsRequest](#opi_api-storage-v1-QosVolumeStatsRequest)
-    - [QosVolumeStatsResponse](#opi_api-storage-v1-QosVolumeStatsResponse)
+    - [StatsQosVolumeRequest](#opi_api-storage-v1-StatsQosVolumeRequest)
+    - [StatsQosVolumeResponse](#opi_api-storage-v1-StatsQosVolumeResponse)
     - [UpdateQosVolumeRequest](#opi_api-storage-v1-UpdateQosVolumeRequest)
   
     - [MiddleendQosVolumeService](#opi_api-storage-v1-MiddleendQosVolumeService)
@@ -222,36 +222,6 @@
 | blocks_count | [int64](#int64) |  |  |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 | filename | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioVolumeStatsRequest"></a>
-
-### AioVolumeStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioVolumeStatsResponse"></a>
-
-### AioVolumeStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -338,6 +308,36 @@
 
 
 
+<a name="opi_api-storage-v1-StatsAioVolumeRequest"></a>
+
+### StatsAioVolumeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsAioVolumeResponse"></a>
+
+### StatsAioVolumeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-UpdateAioVolumeRequest"></a>
 
 ### UpdateAioVolumeRequest
@@ -373,7 +373,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 | UpdateAioVolume | [UpdateAioVolumeRequest](#opi_api-storage-v1-UpdateAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) |  |
 | ListAioVolumes | [ListAioVolumesRequest](#opi_api-storage-v1-ListAioVolumesRequest) | [ListAioVolumesResponse](#opi_api-storage-v1-ListAioVolumesResponse) |  |
 | GetAioVolume | [GetAioVolumeRequest](#opi_api-storage-v1-GetAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) |  |
-| AioVolumeStats | [AioVolumeStatsRequest](#opi_api-storage-v1-AioVolumeStatsRequest) | [AioVolumeStatsResponse](#opi_api-storage-v1-AioVolumeStatsResponse) |  |
+| StatsAioVolume | [StatsAioVolumeRequest](#opi_api-storage-v1-StatsAioVolumeRequest) | [StatsAioVolumeResponse](#opi_api-storage-v1-StatsAioVolumeResponse) |  |
 
  
 
@@ -500,9 +500,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullVolumeStatsRequest"></a>
+<a name="opi_api-storage-v1-StatsNullVolumeRequest"></a>
 
-### NullVolumeStatsRequest
+### StatsNullVolumeRequest
 
 
 
@@ -515,9 +515,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullVolumeStatsResponse"></a>
+<a name="opi_api-storage-v1-StatsNullVolumeResponse"></a>
 
-### NullVolumeStatsResponse
+### StatsNullVolumeResponse
 
 
 
@@ -565,7 +565,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | UpdateNullVolume | [UpdateNullVolumeRequest](#opi_api-storage-v1-UpdateNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) |  |
 | ListNullVolumes | [ListNullVolumesRequest](#opi_api-storage-v1-ListNullVolumesRequest) | [ListNullVolumesResponse](#opi_api-storage-v1-ListNullVolumesResponse) |  |
 | GetNullVolume | [GetNullVolumeRequest](#opi_api-storage-v1-GetNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) |  |
-| NullVolumeStats | [NullVolumeStatsRequest](#opi_api-storage-v1-NullVolumeStatsRequest) | [NullVolumeStatsResponse](#opi_api-storage-v1-NullVolumeStatsResponse) |  |
+| StatsNullVolume | [StatsNullVolumeRequest](#opi_api-storage-v1-StatsNullVolumeRequest) | [StatsNullVolumeResponse](#opi_api-storage-v1-StatsNullVolumeResponse) |  |
 
  
 
@@ -811,36 +811,6 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NvmePathStatsRequest"></a>
-
-### NvmePathStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NvmePathStatsResponse"></a>
-
-### NvmePathStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-NvmeRemoteController"></a>
 
 ### NvmeRemoteController
@@ -862,51 +832,6 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NvmeRemoteControllerResetRequest"></a>
-
-### NvmeRemoteControllerResetRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NvmeRemoteControllerStatsRequest"></a>
-
-### NvmeRemoteControllerStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NvmeRemoteControllerStatsResponse"></a>
-
-### NvmeRemoteControllerStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-NvmeRemoteNamespace"></a>
 
 ### NvmeRemoteNamespace
@@ -921,6 +846,81 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ResetNvmeRemoteControllerRequest"></a>
+
+### ResetNvmeRemoteControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsNvmePathRequest"></a>
+
+### StatsNvmePathRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsNvmePathResponse"></a>
+
+### StatsNvmePathResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsNvmeRemoteControllerRequest"></a>
+
+### StatsNvmeRemoteControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsNvmeRemoteControllerResponse"></a>
+
+### StatsNvmeRemoteControllerResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1025,15 +1025,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | UpdateNvmeRemoteController | [UpdateNvmeRemoteControllerRequest](#opi_api-storage-v1-UpdateNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |
 | ListNvmeRemoteControllers | [ListNvmeRemoteControllersRequest](#opi_api-storage-v1-ListNvmeRemoteControllersRequest) | [ListNvmeRemoteControllersResponse](#opi_api-storage-v1-ListNvmeRemoteControllersResponse) |  |
 | GetNvmeRemoteController | [GetNvmeRemoteControllerRequest](#opi_api-storage-v1-GetNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |
-| NvmeRemoteControllerReset | [NvmeRemoteControllerResetRequest](#opi_api-storage-v1-NvmeRemoteControllerResetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| NvmeRemoteControllerStats | [NvmeRemoteControllerStatsRequest](#opi_api-storage-v1-NvmeRemoteControllerStatsRequest) | [NvmeRemoteControllerStatsResponse](#opi_api-storage-v1-NvmeRemoteControllerStatsResponse) |  |
+| ResetNvmeRemoteController | [ResetNvmeRemoteControllerRequest](#opi_api-storage-v1-ResetNvmeRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| StatsNvmeRemoteController | [StatsNvmeRemoteControllerRequest](#opi_api-storage-v1-StatsNvmeRemoteControllerRequest) | [StatsNvmeRemoteControllerResponse](#opi_api-storage-v1-StatsNvmeRemoteControllerResponse) |  |
 | ListNvmeRemoteNamespaces | [ListNvmeRemoteNamespacesRequest](#opi_api-storage-v1-ListNvmeRemoteNamespacesRequest) | [ListNvmeRemoteNamespacesResponse](#opi_api-storage-v1-ListNvmeRemoteNamespacesResponse) |  |
 | CreateNvmePath | [CreateNvmePathRequest](#opi_api-storage-v1-CreateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
 | DeleteNvmePath | [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateNvmePath | [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
 | ListNvmePaths | [ListNvmePathsRequest](#opi_api-storage-v1-ListNvmePathsRequest) | [ListNvmePathsResponse](#opi_api-storage-v1-ListNvmePathsResponse) |  |
 | GetNvmePath | [GetNvmePathRequest](#opi_api-storage-v1-GetNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
-| NvmePathStats | [NvmePathStatsRequest](#opi_api-storage-v1-NvmePathStatsRequest) | [NvmePathStatsResponse](#opi_api-storage-v1-NvmePathStatsResponse) |  |
+| StatsNvmePath | [StatsNvmePathRequest](#opi_api-storage-v1-StatsNvmePathRequest) | [StatsNvmePathResponse](#opi_api-storage-v1-StatsNvmePathResponse) |  |
 
  
 
@@ -1327,36 +1327,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NvmeControllerStatsRequest"></a>
-
-### NvmeControllerStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NvmeControllerStatsResponse"></a>
-
-### NvmeControllerStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-NvmeControllerStatus"></a>
 
 ### NvmeControllerStatus
@@ -1403,36 +1373,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
 | volume_name_ref | [string](#string) |  | The back/middle-end volume to back this namespace. |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NvmeNamespaceStatsRequest"></a>
-
-### NvmeNamespaceStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NvmeNamespaceStatsResponse"></a>
-
-### NvmeNamespaceStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1490,9 +1430,25 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NvmeSubsystemStatsRequest"></a>
+<a name="opi_api-storage-v1-NvmeSubsystemStatus"></a>
 
-### NvmeSubsystemStatsRequest
+### NvmeSubsystemStatus
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| firmware_revision | [string](#string) |  | firmware revision, must not exceed &#39;NSV_CTRLR_FW_REV_LEN&#39; |
+| fru_guid | [bytes](#bytes) |  | FRU identfier, 16bytes opaque identity for the type of unit |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsNvmeControllerRequest"></a>
+
+### StatsNvmeControllerRequest
 
 
 
@@ -1505,9 +1461,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NvmeSubsystemStatsResponse"></a>
+<a name="opi_api-storage-v1-StatsNvmeControllerResponse"></a>
 
-### NvmeSubsystemStatsResponse
+### StatsNvmeControllerResponse
 
 
 
@@ -1520,16 +1476,60 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NvmeSubsystemStatus"></a>
+<a name="opi_api-storage-v1-StatsNvmeNamespaceRequest"></a>
 
-### NvmeSubsystemStatus
+### StatsNvmeNamespaceRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firmware_revision | [string](#string) |  | firmware revision, must not exceed &#39;NSV_CTRLR_FW_REV_LEN&#39; |
-| fru_guid | [bytes](#bytes) |  | FRU identfier, 16bytes opaque identity for the type of unit |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsNvmeNamespaceResponse"></a>
+
+### StatsNvmeNamespaceResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsNvmeSubsystemRequest"></a>
+
+### StatsNvmeSubsystemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsNvmeSubsystemResponse"></a>
+
+### StatsNvmeSubsystemResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1632,19 +1632,19 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 | UpdateNvmeSubsystem | [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
 | ListNvmeSubsystems | [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest) | [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse) |  |
 | GetNvmeSubsystem | [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
-| NvmeSubsystemStats | [NvmeSubsystemStatsRequest](#opi_api-storage-v1-NvmeSubsystemStatsRequest) | [NvmeSubsystemStatsResponse](#opi_api-storage-v1-NvmeSubsystemStatsResponse) |  |
+| StatsNvmeSubsystem | [StatsNvmeSubsystemRequest](#opi_api-storage-v1-StatsNvmeSubsystemRequest) | [StatsNvmeSubsystemResponse](#opi_api-storage-v1-StatsNvmeSubsystemResponse) |  |
 | CreateNvmeController | [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
 | DeleteNvmeController | [DeleteNvmeControllerRequest](#opi_api-storage-v1-DeleteNvmeControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Fails if there are any associated objects |
 | UpdateNvmeController | [UpdateNvmeControllerRequest](#opi_api-storage-v1-UpdateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
 | ListNvmeControllers | [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest) | [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse) |  |
 | GetNvmeController | [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
-| NvmeControllerStats | [NvmeControllerStatsRequest](#opi_api-storage-v1-NvmeControllerStatsRequest) | [NvmeControllerStatsResponse](#opi_api-storage-v1-NvmeControllerStatsResponse) |  |
+| StatsNvmeController | [StatsNvmeControllerRequest](#opi_api-storage-v1-StatsNvmeControllerRequest) | [StatsNvmeControllerResponse](#opi_api-storage-v1-StatsNvmeControllerResponse) |  |
 | CreateNvmeNamespace | [CreateNvmeNamespaceRequest](#opi_api-storage-v1-CreateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
 | DeleteNvmeNamespace | [DeleteNvmeNamespaceRequest](#opi_api-storage-v1-DeleteNvmeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateNvmeNamespace | [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
 | ListNvmeNamespaces | [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest) | [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse) |  |
 | GetNvmeNamespace | [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
-| NvmeNamespaceStats | [NvmeNamespaceStatsRequest](#opi_api-storage-v1-NvmeNamespaceStatsRequest) | [NvmeNamespaceStatsResponse](#opi_api-storage-v1-NvmeNamespaceStatsResponse) |  |
+| StatsNvmeNamespace | [StatsNvmeNamespaceRequest](#opi_api-storage-v1-StatsNvmeNamespaceRequest) | [StatsNvmeNamespaceResponse](#opi_api-storage-v1-StatsNvmeNamespaceResponse) |  |
 
  
 
@@ -1737,6 +1737,36 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 
 
 
+<a name="opi_api-storage-v1-StatsVirtioBlkRequest"></a>
+
+### StatsVirtioBlkRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsVirtioBlkResponse"></a>
+
+### StatsVirtioBlkResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-UpdateVirtioBlkRequest"></a>
 
 ### UpdateVirtioBlkRequest
@@ -1773,36 +1803,6 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 
 
 
-
-<a name="opi_api-storage-v1-VirtioBlkStatsRequest"></a>
-
-### VirtioBlkStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-VirtioBlkStatsResponse"></a>
-
-### VirtioBlkStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
-
-
-
-
-
  
 
  
@@ -1822,7 +1822,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | UpdateVirtioBlk | [UpdateVirtioBlkRequest](#opi_api-storage-v1-UpdateVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
 | ListVirtioBlks | [ListVirtioBlksRequest](#opi_api-storage-v1-ListVirtioBlksRequest) | [ListVirtioBlksResponse](#opi_api-storage-v1-ListVirtioBlksResponse) |  |
 | GetVirtioBlk | [GetVirtioBlkRequest](#opi_api-storage-v1-GetVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
-| VirtioBlkStats | [VirtioBlkStatsRequest](#opi_api-storage-v1-VirtioBlkStatsRequest) | [VirtioBlkStatsResponse](#opi_api-storage-v1-VirtioBlkStatsResponse) |  |
+| StatsVirtioBlk | [StatsVirtioBlkRequest](#opi_api-storage-v1-StatsVirtioBlkRequest) | [StatsVirtioBlkResponse](#opi_api-storage-v1-StatsVirtioBlkResponse) |  |
 
  
 
@@ -2091,6 +2091,97 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
+<a name="opi_api-storage-v1-StatsVirtioScsiControllerRequest"></a>
+
+### StatsVirtioScsiControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsVirtioScsiControllerResponse"></a>
+
+### StatsVirtioScsiControllerResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsVirtioScsiLunRequest"></a>
+
+### StatsVirtioScsiLunRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsVirtioScsiLunResponse"></a>
+
+### StatsVirtioScsiLunResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsVirtioScsiTargetRequest"></a>
+
+### StatsVirtioScsiTargetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsVirtioScsiTargetResponse"></a>
+
+### StatsVirtioScsiTargetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-UpdateVirtioScsiControllerRequest"></a>
 
 ### UpdateVirtioScsiControllerRequest
@@ -2160,36 +2251,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
-<a name="opi_api-storage-v1-VirtioScsiControllerStatsRequest"></a>
-
-### VirtioScsiControllerStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-VirtioScsiControllerStatsResponse"></a>
-
-### VirtioScsiControllerStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-VirtioScsiLun"></a>
 
 ### VirtioScsiLun
@@ -2207,37 +2268,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
-<a name="opi_api-storage-v1-VirtioScsiLunStatsRequest"></a>
-
-### VirtioScsiLunStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-VirtioScsiLunStatsResponse"></a>
-
-### VirtioScsiLunStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-VirtioScsiTarget"></a>
 
 ### VirtioScsiTarget
@@ -2248,36 +2278,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | max_luns | [int32](#int32) |  | maximum LUNs within a target |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-VirtioScsiTargetStatsRequest"></a>
-
-### VirtioScsiTargetStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-VirtioScsiTargetStatsResponse"></a>
-
-### VirtioScsiTargetStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -2302,19 +2302,19 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 | UpdateVirtioScsiTarget | [UpdateVirtioScsiTargetRequest](#opi_api-storage-v1-UpdateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
 | ListVirtioScsiTargets | [ListVirtioScsiTargetsRequest](#opi_api-storage-v1-ListVirtioScsiTargetsRequest) | [ListVirtioScsiTargetsResponse](#opi_api-storage-v1-ListVirtioScsiTargetsResponse) |  |
 | GetVirtioScsiTarget | [GetVirtioScsiTargetRequest](#opi_api-storage-v1-GetVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
-| VirtioScsiTargetStats | [VirtioScsiTargetStatsRequest](#opi_api-storage-v1-VirtioScsiTargetStatsRequest) | [VirtioScsiTargetStatsResponse](#opi_api-storage-v1-VirtioScsiTargetStatsResponse) |  |
+| StatsVirtioScsiTarget | [StatsVirtioScsiTargetRequest](#opi_api-storage-v1-StatsVirtioScsiTargetRequest) | [StatsVirtioScsiTargetResponse](#opi_api-storage-v1-StatsVirtioScsiTargetResponse) |  |
 | CreateVirtioScsiController | [CreateVirtioScsiControllerRequest](#opi_api-storage-v1-CreateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
 | DeleteVirtioScsiController | [DeleteVirtioScsiControllerRequest](#opi_api-storage-v1-DeleteVirtioScsiControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateVirtioScsiController | [UpdateVirtioScsiControllerRequest](#opi_api-storage-v1-UpdateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
 | ListVirtioScsiControllers | [ListVirtioScsiControllersRequest](#opi_api-storage-v1-ListVirtioScsiControllersRequest) | [ListVirtioScsiControllersResponse](#opi_api-storage-v1-ListVirtioScsiControllersResponse) |  |
 | GetVirtioScsiController | [GetVirtioScsiControllerRequest](#opi_api-storage-v1-GetVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
-| VirtioScsiControllerStats | [VirtioScsiControllerStatsRequest](#opi_api-storage-v1-VirtioScsiControllerStatsRequest) | [VirtioScsiControllerStatsResponse](#opi_api-storage-v1-VirtioScsiControllerStatsResponse) |  |
+| StatsVirtioScsiController | [StatsVirtioScsiControllerRequest](#opi_api-storage-v1-StatsVirtioScsiControllerRequest) | [StatsVirtioScsiControllerResponse](#opi_api-storage-v1-StatsVirtioScsiControllerResponse) |  |
 | CreateVirtioScsiLun | [CreateVirtioScsiLunRequest](#opi_api-storage-v1-CreateVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
 | DeleteVirtioScsiLun | [DeleteVirtioScsiLunRequest](#opi_api-storage-v1-DeleteVirtioScsiLunRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateVirtioScsiLun | [UpdateVirtioScsiLunRequest](#opi_api-storage-v1-UpdateVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
 | ListVirtioScsiLuns | [ListVirtioScsiLunsRequest](#opi_api-storage-v1-ListVirtioScsiLunsRequest) | [ListVirtioScsiLunsResponse](#opi_api-storage-v1-ListVirtioScsiLunsResponse) |  |
 | GetVirtioScsiLun | [GetVirtioScsiLunRequest](#opi_api-storage-v1-GetVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
-| VirtioScsiLunStats | [VirtioScsiLunStatsRequest](#opi_api-storage-v1-VirtioScsiLunStatsRequest) | [VirtioScsiLunStatsResponse](#opi_api-storage-v1-VirtioScsiLunStatsResponse) |  |
+| StatsVirtioScsiLun | [StatsVirtioScsiLunRequest](#opi_api-storage-v1-StatsVirtioScsiLunRequest) | [StatsVirtioScsiLunResponse](#opi_api-storage-v1-StatsVirtioScsiLunResponse) |  |
 
  
 
@@ -2377,36 +2377,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 
 
-<a name="opi_api-storage-v1-EncryptedVolumeStatsRequest"></a>
-
-### EncryptedVolumeStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-EncryptedVolumeStatsResponse"></a>
-
-### EncryptedVolumeStatsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-GetEncryptedVolumeRequest"></a>
 
 ### GetEncryptedVolumeRequest
@@ -2455,6 +2425,36 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 
 
+<a name="opi_api-storage-v1-StatsEncryptedVolumeRequest"></a>
+
+### StatsEncryptedVolumeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsEncryptedVolumeResponse"></a>
+
+### StatsEncryptedVolumeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-UpdateEncryptedVolumeRequest"></a>
 
 ### UpdateEncryptedVolumeRequest
@@ -2490,7 +2490,7 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 | UpdateEncryptedVolume | [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
 | ListEncryptedVolumes | [ListEncryptedVolumesRequest](#opi_api-storage-v1-ListEncryptedVolumesRequest) | [ListEncryptedVolumesResponse](#opi_api-storage-v1-ListEncryptedVolumesResponse) |  |
 | GetEncryptedVolume | [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
-| EncryptedVolumeStats | [EncryptedVolumeStatsRequest](#opi_api-storage-v1-EncryptedVolumeStatsRequest) | [EncryptedVolumeStatsResponse](#opi_api-storage-v1-EncryptedVolumeStatsResponse) |  |
+| StatsEncryptedVolume | [StatsEncryptedVolumeRequest](#opi_api-storage-v1-StatsEncryptedVolumeRequest) | [StatsEncryptedVolumeResponse](#opi_api-storage-v1-StatsEncryptedVolumeResponse) |  |
 
  
 
@@ -2601,9 +2601,9 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 
 
-<a name="opi_api-storage-v1-QosVolumeStatsRequest"></a>
+<a name="opi_api-storage-v1-StatsQosVolumeRequest"></a>
 
-### QosVolumeStatsRequest
+### StatsQosVolumeRequest
 
 
 
@@ -2616,9 +2616,9 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 
 
-<a name="opi_api-storage-v1-QosVolumeStatsResponse"></a>
+<a name="opi_api-storage-v1-StatsQosVolumeResponse"></a>
 
-### QosVolumeStatsResponse
+### StatsQosVolumeResponse
 
 
 
@@ -2666,7 +2666,7 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 | UpdateQosVolume | [UpdateQosVolumeRequest](#opi_api-storage-v1-UpdateQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) |  |
 | ListQosVolumes | [ListQosVolumesRequest](#opi_api-storage-v1-ListQosVolumesRequest) | [ListQosVolumesResponse](#opi_api-storage-v1-ListQosVolumesResponse) |  |
 | GetQosVolume | [GetQosVolumeRequest](#opi_api-storage-v1-GetQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) |  |
-| QosVolumeStats | [QosVolumeStatsRequest](#opi_api-storage-v1-QosVolumeStatsRequest) | [QosVolumeStatsResponse](#opi_api-storage-v1-QosVolumeStatsResponse) |  |
+| StatsQosVolume | [StatsQosVolumeRequest](#opi_api-storage-v1-StatsQosVolumeRequest) | [StatsQosVolumeResponse](#opi_api-storage-v1-StatsQosVolumeResponse) |  |
 
  
 

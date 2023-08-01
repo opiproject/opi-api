@@ -40,10 +40,10 @@ class MiddleendQosVolumeServiceStub(object):
                 request_serializer=middleend__qos__volume__pb2.GetQosVolumeRequest.SerializeToString,
                 response_deserializer=middleend__qos__volume__pb2.QosVolume.FromString,
                 )
-        self.QosVolumeStats = channel.unary_unary(
-                '/opi_api.storage.v1.MiddleendQosVolumeService/QosVolumeStats',
-                request_serializer=middleend__qos__volume__pb2.QosVolumeStatsRequest.SerializeToString,
-                response_deserializer=middleend__qos__volume__pb2.QosVolumeStatsResponse.FromString,
+        self.StatsQosVolume = channel.unary_unary(
+                '/opi_api.storage.v1.MiddleendQosVolumeService/StatsQosVolume',
+                request_serializer=middleend__qos__volume__pb2.StatsQosVolumeRequest.SerializeToString,
+                response_deserializer=middleend__qos__volume__pb2.StatsQosVolumeResponse.FromString,
                 )
 
 
@@ -80,7 +80,7 @@ class MiddleendQosVolumeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def QosVolumeStats(self, request, context):
+    def StatsQosVolume(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -114,10 +114,10 @@ def add_MiddleendQosVolumeServiceServicer_to_server(servicer, server):
                     request_deserializer=middleend__qos__volume__pb2.GetQosVolumeRequest.FromString,
                     response_serializer=middleend__qos__volume__pb2.QosVolume.SerializeToString,
             ),
-            'QosVolumeStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.QosVolumeStats,
-                    request_deserializer=middleend__qos__volume__pb2.QosVolumeStatsRequest.FromString,
-                    response_serializer=middleend__qos__volume__pb2.QosVolumeStatsResponse.SerializeToString,
+            'StatsQosVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsQosVolume,
+                    request_deserializer=middleend__qos__volume__pb2.StatsQosVolumeRequest.FromString,
+                    response_serializer=middleend__qos__volume__pb2.StatsQosVolumeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -215,7 +215,7 @@ class MiddleendQosVolumeService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def QosVolumeStats(request,
+    def StatsQosVolume(request,
             target,
             options=(),
             channel_credentials=None,
@@ -225,8 +225,8 @@ class MiddleendQosVolumeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendQosVolumeService/QosVolumeStats',
-            middleend__qos__volume__pb2.QosVolumeStatsRequest.SerializeToString,
-            middleend__qos__volume__pb2.QosVolumeStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendQosVolumeService/StatsQosVolume',
+            middleend__qos__volume__pb2.StatsQosVolumeRequest.SerializeToString,
+            middleend__qos__volume__pb2.StatsQosVolumeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

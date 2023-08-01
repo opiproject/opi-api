@@ -77,12 +77,12 @@ class NullVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>> PrepareAsyncGetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>>(PrepareAsyncGetNullVolumeRaw(context, request, cq));
     }
-    virtual ::grpc::Status NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::opi_api::storage::v1::NullVolumeStatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolumeStatsResponse>> AsyncNullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolumeStatsResponse>>(AsyncNullVolumeStatsRaw(context, request, cq));
+    virtual ::grpc::Status StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::opi_api::storage::v1::StatsNullVolumeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNullVolumeResponse>> AsyncStatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNullVolumeResponse>>(AsyncStatsNullVolumeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolumeStatsResponse>> PrepareAsyncNullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolumeStatsResponse>>(PrepareAsyncNullVolumeStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNullVolumeResponse>> PrepareAsyncStatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNullVolumeResponse>>(PrepareAsyncStatsNullVolumeRaw(context, request, cq));
     }
     class async_interface {
      public:
@@ -97,8 +97,8 @@ class NullVolumeService final {
       virtual void ListNullVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest* request, ::opi_api::storage::v1::ListNullVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -114,8 +114,8 @@ class NullVolumeService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNullVolumesResponse>* PrepareAsyncListNullVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>* AsyncGetNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>* PrepareAsyncGetNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolumeStatsResponse>* AsyncNullVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolumeStatsResponse>* PrepareAsyncNullVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNullVolumeResponse>* AsyncStatsNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNullVolumeResponse>* PrepareAsyncStatsNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -155,12 +155,12 @@ class NullVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolume>> PrepareAsyncGetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolume>>(PrepareAsyncGetNullVolumeRaw(context, request, cq));
     }
-    ::grpc::Status NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::opi_api::storage::v1::NullVolumeStatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolumeStatsResponse>> AsyncNullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolumeStatsResponse>>(AsyncNullVolumeStatsRaw(context, request, cq));
+    ::grpc::Status StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::opi_api::storage::v1::StatsNullVolumeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNullVolumeResponse>> AsyncStatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNullVolumeResponse>>(AsyncStatsNullVolumeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolumeStatsResponse>> PrepareAsyncNullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolumeStatsResponse>>(PrepareAsyncNullVolumeStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNullVolumeResponse>> PrepareAsyncStatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNullVolumeResponse>>(PrepareAsyncStatsNullVolumeRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
@@ -175,8 +175,8 @@ class NullVolumeService final {
       void ListNullVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest* request, ::opi_api::storage::v1::ListNullVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, std::function<void(::grpc::Status)>) override;
       void GetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void NullVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response, std::function<void(::grpc::Status)>) override;
+      void StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -198,14 +198,14 @@ class NullVolumeService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNullVolumesResponse>* PrepareAsyncListNullVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolume>* AsyncGetNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolume>* PrepareAsyncGetNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolumeStatsResponse>* AsyncNullVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullVolumeStatsResponse>* PrepareAsyncNullVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNullVolumeResponse>* AsyncStatsNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsNullVolumeResponse>* PrepareAsyncStatsNullVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateNullVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteNullVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateNullVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_ListNullVolumes_;
     const ::grpc::internal::RpcMethod rpcmethod_GetNullVolume_;
-    const ::grpc::internal::RpcMethod rpcmethod_NullVolumeStats_;
+    const ::grpc::internal::RpcMethod rpcmethod_StatsNullVolume_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -218,7 +218,7 @@ class NullVolumeService final {
     virtual ::grpc::Status UpdateNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response);
     virtual ::grpc::Status ListNullVolumes(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest* request, ::opi_api::storage::v1::ListNullVolumesResponse* response);
     virtual ::grpc::Status GetNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response);
-    virtual ::grpc::Status NullVolumeStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response);
+    virtual ::grpc::Status StatsNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateNullVolume : public BaseClass {
@@ -321,26 +321,26 @@ class NullVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_NullVolumeStats : public BaseClass {
+  class WithAsyncMethod_StatsNullVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_NullVolumeStats() {
+    WithAsyncMethod_StatsNullVolume() {
       ::grpc::Service::MarkMethodAsync(5);
     }
-    ~WithAsyncMethod_NullVolumeStats() override {
+    ~WithAsyncMethod_StatsNullVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::NullVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNullVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNullVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsNullVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNullVolumeStats(::grpc::ServerContext* context, ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NullVolumeStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsNullVolume(::grpc::ServerContext* context, ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::StatsNullVolumeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateNullVolume<WithAsyncMethod_DeleteNullVolume<WithAsyncMethod_UpdateNullVolume<WithAsyncMethod_ListNullVolumes<WithAsyncMethod_GetNullVolume<WithAsyncMethod_NullVolumeStats<Service > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateNullVolume<WithAsyncMethod_DeleteNullVolume<WithAsyncMethod_UpdateNullVolume<WithAsyncMethod_ListNullVolumes<WithAsyncMethod_GetNullVolume<WithAsyncMethod_StatsNullVolume<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateNullVolume : public BaseClass {
    private:
@@ -477,33 +477,33 @@ class NullVolumeService final {
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::GetNullVolumeRequest* /*request*/, ::opi_api::storage::v1::NullVolume* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_NullVolumeStats : public BaseClass {
+  class WithCallbackMethod_StatsNullVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_NullVolumeStats() {
+    WithCallbackMethod_StatsNullVolume() {
       ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullVolumeStatsRequest, ::opi_api::storage::v1::NullVolumeStatsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsNullVolumeRequest, ::opi_api::storage::v1::StatsNullVolumeResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullVolumeStatsRequest* request, ::opi_api::storage::v1::NullVolumeStatsResponse* response) { return this->NullVolumeStats(context, request, response); }));}
-    void SetMessageAllocatorFor_NullVolumeStats(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullVolumeStatsRequest, ::opi_api::storage::v1::NullVolumeStatsResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response) { return this->StatsNullVolume(context, request, response); }));}
+    void SetMessageAllocatorFor_StatsNullVolume(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::StatsNullVolumeRequest, ::opi_api::storage::v1::StatsNullVolumeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullVolumeStatsRequest, ::opi_api::storage::v1::NullVolumeStatsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsNullVolumeRequest, ::opi_api::storage::v1::StatsNullVolumeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_NullVolumeStats() override {
+    ~WithCallbackMethod_StatsNullVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::NullVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNullVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNullVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsNullVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* NullVolumeStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::NullVolumeStatsResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* StatsNullVolume(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::StatsNullVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsNullVolumeResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateNullVolume<WithCallbackMethod_DeleteNullVolume<WithCallbackMethod_UpdateNullVolume<WithCallbackMethod_ListNullVolumes<WithCallbackMethod_GetNullVolume<WithCallbackMethod_NullVolumeStats<Service > > > > > > CallbackService;
+  typedef WithCallbackMethod_CreateNullVolume<WithCallbackMethod_DeleteNullVolume<WithCallbackMethod_UpdateNullVolume<WithCallbackMethod_ListNullVolumes<WithCallbackMethod_GetNullVolume<WithCallbackMethod_StatsNullVolume<Service > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateNullVolume : public BaseClass {
@@ -591,18 +591,18 @@ class NullVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_NullVolumeStats : public BaseClass {
+  class WithGenericMethod_StatsNullVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_NullVolumeStats() {
+    WithGenericMethod_StatsNullVolume() {
       ::grpc::Service::MarkMethodGeneric(5);
     }
-    ~WithGenericMethod_NullVolumeStats() override {
+    ~WithGenericMethod_StatsNullVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::NullVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNullVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNullVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsNullVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -708,22 +708,22 @@ class NullVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_NullVolumeStats : public BaseClass {
+  class WithRawMethod_StatsNullVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_NullVolumeStats() {
+    WithRawMethod_StatsNullVolume() {
       ::grpc::Service::MarkMethodRaw(5);
     }
-    ~WithRawMethod_NullVolumeStats() override {
+    ~WithRawMethod_StatsNullVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::NullVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNullVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNullVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsNullVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNullVolumeStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsNullVolume(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -838,25 +838,25 @@ class NullVolumeService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_NullVolumeStats : public BaseClass {
+  class WithRawCallbackMethod_StatsNullVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_NullVolumeStats() {
+    WithRawCallbackMethod_StatsNullVolume() {
       ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NullVolumeStats(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->StatsNullVolume(context, request, response); }));
     }
-    ~WithRawCallbackMethod_NullVolumeStats() override {
+    ~WithRawCallbackMethod_StatsNullVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::NullVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNullVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNullVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsNullVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* NullVolumeStats(
+    virtual ::grpc::ServerUnaryReactor* StatsNullVolume(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -995,35 +995,35 @@ class NullVolumeService final {
     virtual ::grpc::Status StreamedGetNullVolume(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::GetNullVolumeRequest,::opi_api::storage::v1::NullVolume>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_NullVolumeStats : public BaseClass {
+  class WithStreamedUnaryMethod_StatsNullVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_NullVolumeStats() {
+    WithStreamedUnaryMethod_StatsNullVolume() {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NullVolumeStatsRequest, ::opi_api::storage::v1::NullVolumeStatsResponse>(
+          ::opi_api::storage::v1::StatsNullVolumeRequest, ::opi_api::storage::v1::StatsNullVolumeResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NullVolumeStatsRequest, ::opi_api::storage::v1::NullVolumeStatsResponse>* streamer) {
-                       return this->StreamedNullVolumeStats(context,
+                     ::opi_api::storage::v1::StatsNullVolumeRequest, ::opi_api::storage::v1::StatsNullVolumeResponse>* streamer) {
+                       return this->StreamedStatsNullVolume(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_NullVolumeStats() override {
+    ~WithStreamedUnaryMethod_StatsNullVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NullVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::NullVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsNullVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsNullVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsNullVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNullVolumeStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullVolumeStatsRequest,::opi_api::storage::v1::NullVolumeStatsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedStatsNullVolume(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::StatsNullVolumeRequest,::opi_api::storage::v1::StatsNullVolumeResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateNullVolume<WithStreamedUnaryMethod_DeleteNullVolume<WithStreamedUnaryMethod_UpdateNullVolume<WithStreamedUnaryMethod_ListNullVolumes<WithStreamedUnaryMethod_GetNullVolume<WithStreamedUnaryMethod_NullVolumeStats<Service > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateNullVolume<WithStreamedUnaryMethod_DeleteNullVolume<WithStreamedUnaryMethod_UpdateNullVolume<WithStreamedUnaryMethod_ListNullVolumes<WithStreamedUnaryMethod_GetNullVolume<WithStreamedUnaryMethod_StatsNullVolume<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateNullVolume<WithStreamedUnaryMethod_DeleteNullVolume<WithStreamedUnaryMethod_UpdateNullVolume<WithStreamedUnaryMethod_ListNullVolumes<WithStreamedUnaryMethod_GetNullVolume<WithStreamedUnaryMethod_NullVolumeStats<Service > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateNullVolume<WithStreamedUnaryMethod_DeleteNullVolume<WithStreamedUnaryMethod_UpdateNullVolume<WithStreamedUnaryMethod_ListNullVolumes<WithStreamedUnaryMethod_GetNullVolume<WithStreamedUnaryMethod_StatsNullVolume<Service > > > > > > StreamedService;
 };
 
 }  // namespace v1

@@ -60,15 +60,15 @@ public final class FrontendVirtioScsiProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetVirtioScsiTargetRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioScsiTargetStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsVirtioScsiTargetRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioScsiTargetStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsVirtioScsiTargetRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioScsiTargetStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsVirtioScsiTargetResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioScsiTargetStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsVirtioScsiTargetResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_storage_v1_CreateVirtioScsiControllerRequest_descriptor;
   static final 
@@ -100,15 +100,15 @@ public final class FrontendVirtioScsiProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetVirtioScsiControllerRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioScsiControllerStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsVirtioScsiControllerRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioScsiControllerStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsVirtioScsiControllerRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioScsiControllerStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsVirtioScsiControllerResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioScsiControllerStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsVirtioScsiControllerResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_storage_v1_CreateVirtioScsiLunRequest_descriptor;
   static final 
@@ -140,15 +140,15 @@ public final class FrontendVirtioScsiProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetVirtioScsiLunRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioScsiLunStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsVirtioScsiLunRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioScsiLunStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsVirtioScsiLunRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioScsiLunStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsVirtioScsiLunResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioScsiLunStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsVirtioScsiLunResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -201,10 +201,10 @@ public final class FrontendVirtioScsiProto {
       "VirtioScsiTarget\022\027\n\017next_page_token\030\002 \001(" +
       "\t\"W\n\032GetVirtioScsiTargetRequest\0229\n\004name\030" +
       "\001 \001(\tB+\340A\002\372A%\n#opi_api.storage.v1/Virtio" +
-      "ScsiTarget\"Y\n\034VirtioScsiTargetStatsReque" +
+      "ScsiTarget\"Y\n\034StatsVirtioScsiTargetReque" +
       "st\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#opi_api.storag" +
-      "e.v1/VirtioScsiTarget\"O\n\035VirtioScsiTarge" +
-      "tStatsResponse\022.\n\005stats\030\001 \001(\0132\037.opi_api." +
+      "e.v1/VirtioScsiTarget\"O\n\035StatsVirtioScsi" +
+      "TargetResponse\022.\n\005stats\030\001 \001(\0132\037.opi_api." +
       "storage.v1.VolumeStats\"\225\001\n!CreateVirtioS" +
       "csiControllerRequest\022M\n\026virtio_scsi_cont" +
       "roller\030\001 \001(\0132(.opi_api.storage.v1.Virtio" +
@@ -226,10 +226,10 @@ public final class FrontendVirtioScsiProto {
       "oScsiController\022\027\n\017next_page_token\030\002 \001(\t" +
       "\"_\n\036GetVirtioScsiControllerRequest\022=\n\004na" +
       "me\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.storage.v1/Vir" +
-      "tioScsiController\"a\n VirtioScsiControlle" +
-      "rStatsRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi" +
+      "tioScsiController\"a\n StatsVirtioScsiCont" +
+      "rollerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi" +
       "_api.storage.v1/VirtioScsiController\"S\n!" +
-      "VirtioScsiControllerStatsResponse\022.\n\005sta" +
+      "StatsVirtioScsiControllerResponse\022.\n\005sta" +
       "ts\030\001 \001(\0132\037.opi_api.storage.v1.VolumeStat" +
       "s\"y\n\032CreateVirtioScsiLunRequest\022?\n\017virti" +
       "o_scsi_lun\030\001 \001(\0132!.opi_api.storage.v1.Vi" +
@@ -249,12 +249,12 @@ public final class FrontendVirtioScsiProto {
       "VirtioScsiLun\022\027\n\017next_page_token\030\002 \001(\t\"Q" +
       "\n\027GetVirtioScsiLunRequest\0226\n\004name\030\001 \001(\tB" +
       "(\340A\002\372A\"\n opi_api.storage.v1/VirtioScsiLu" +
-      "n\"\210\001\n\031VirtioScsiLunStatsRequest\0226\n\004name\030" +
+      "n\"\210\001\n\031StatsVirtioScsiLunRequest\0226\n\004name\030" +
       "\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v1/Virtio" +
       "ScsiLun\0223\n\rcontroller_id\030\002 \001(\0132\034.opi_api" +
-      ".common.v1.ObjectKey\"L\n\032VirtioScsiLunSta" +
-      "tsResponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.stor" +
-      "age.v1.VolumeStats2\257\030\n\031FrontendVirtioScs" +
+      ".common.v1.ObjectKey\"L\n\032StatsVirtioScsiL" +
+      "unResponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.stor" +
+      "age.v1.VolumeStats2\313\031\n\031FrontendVirtioScs" +
       "iService\022\305\001\n\026CreateVirtioScsiTarget\0221.op" +
       "i_api.storage.v1.CreateVirtioScsiTargetR" +
       "equest\032$.opi_api.storage.v1.VirtioScsiTa" +
@@ -277,65 +277,69 @@ public final class FrontendVirtioScsiProto {
       "csiTarget\022..opi_api.storage.v1.GetVirtio" +
       "ScsiTargetRequest\032$.opi_api.storage.v1.V" +
       "irtioScsiTarget\"-\202\323\344\223\002 \022\036/v1/{name=Virti" +
-      "oScsiTargets/*}\332A\004name\022~\n\025VirtioScsiTarg" +
-      "etStats\0220.opi_api.storage.v1.VirtioScsiT" +
-      "argetStatsRequest\0321.opi_api.storage.v1.V" +
-      "irtioScsiTargetStatsResponse\"\000\022\335\001\n\032Creat" +
-      "eVirtioScsiController\0225.opi_api.storage." +
-      "v1.CreateVirtioScsiControllerRequest\032(.o" +
-      "pi_api.storage.v1.VirtioScsiController\"^" +
-      "\202\323\344\223\002%\"\013/v1/volumes:\026virtio_scsi_control" +
-      "ler\332A0virtio_scsi_controller,virtio_scsi" +
-      "_controller_id\022\236\001\n\032DeleteVirtioScsiContr" +
-      "oller\0225.opi_api.storage.v1.DeleteVirtioS" +
-      "csiControllerRequest\032\026.google.protobuf.E" +
-      "mpty\"1\202\323\344\223\002$*\"/v1/{name=VirtioScsiContro" +
-      "llers/*}\332A\004name\022\360\001\n\032UpdateVirtioScsiCont" +
-      "roller\0225.opi_api.storage.v1.UpdateVirtio" +
-      "ScsiControllerRequest\032(.opi_api.storage." +
-      "v1.VirtioScsiController\"q\202\323\344\223\002F2,/v1/{vi" +
-      "rtio_scsi_controller.name=subsystems}:\026v" +
-      "irtio_scsi_controller\332A\"virtio_scsi_cont" +
-      "roller,update_mask\022\262\001\n\031ListVirtioScsiCon" +
-      "trollers\0224.opi_api.storage.v1.ListVirtio" +
-      "ScsiControllersRequest\0325.opi_api.storage" +
-      ".v1.ListVirtioScsiControllersResponse\"(\202" +
-      "\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent\022" +
-      "\252\001\n\027GetVirtioScsiController\0222.opi_api.st" +
-      "orage.v1.GetVirtioScsiControllerRequest\032" +
-      "(.opi_api.storage.v1.VirtioScsiControlle" +
-      "r\"1\202\323\344\223\002$\022\"/v1/{name=VirtioScsiControlle" +
-      "rs/*}\332A\004name\022\212\001\n\031VirtioScsiControllerSta" +
-      "ts\0224.opi_api.storage.v1.VirtioScsiContro" +
-      "llerStatsRequest\0325.opi_api.storage.v1.Vi" +
-      "rtioScsiControllerStatsResponse\"\000\022\263\001\n\023Cr" +
-      "eateVirtioScsiLun\022..opi_api.storage.v1.C" +
-      "reateVirtioScsiLunRequest\032!.opi_api.stor" +
-      "age.v1.VirtioScsiLun\"I\202\323\344\223\002\036\"\013/v1/volume" +
-      "s:\017virtio_scsi_lun\332A\"virtio_scsi_lun,vir" +
-      "tio_scsi_lun_id\022\211\001\n\023DeleteVirtioScsiLun\022" +
-      "..opi_api.storage.v1.DeleteVirtioScsiLun" +
-      "Request\032\026.google.protobuf.Empty\"*\202\323\344\223\002\035*" +
-      "\033/v1/{name=VirtioScsiLuns/*}\332A\004name\022\306\001\n\023" +
-      "UpdateVirtioScsiLun\022..opi_api.storage.v1" +
-      ".UpdateVirtioScsiLunRequest\032!.opi_api.st" +
-      "orage.v1.VirtioScsiLun\"\\\202\323\344\223\00282%/v1/{vir" +
-      "tio_scsi_lun.name=subsystems}:\017virtio_sc" +
-      "si_lun\332A\033virtio_scsi_lun,update_mask\022\235\001\n" +
-      "\022ListVirtioScsiLuns\022-.opi_api.storage.v1" +
-      ".ListVirtioScsiLunsRequest\032..opi_api.sto" +
-      "rage.v1.ListVirtioScsiLunsResponse\"(\202\323\344\223" +
-      "\002\031\022\027/v1/{parent=subsystems}\332A\006parent\022\216\001\n" +
-      "\020GetVirtioScsiLun\022+.opi_api.storage.v1.G" +
-      "etVirtioScsiLunRequest\032!.opi_api.storage" +
-      ".v1.VirtioScsiLun\"*\202\323\344\223\002\035\022\033/v1/{name=Vir" +
-      "tioScsiLuns/*}\332A\004name\022u\n\022VirtioScsiLunSt" +
-      "ats\022-.opi_api.storage.v1.VirtioScsiLunSt" +
-      "atsRequest\032..opi_api.storage.v1.VirtioSc" +
-      "siLunStatsResponse\"\000Bf\n\022opi_api.storage." +
-      "v1B\027FrontendVirtioScsiProtoP\001Z5github.co" +
-      "m/opiproject/opi-api/storage/v1alpha1/ge" +
-      "n/gob\006proto3"
+      "oScsiTargets/*}\332A\004name\022\261\001\n\025StatsVirtioSc" +
+      "siTarget\0220.opi_api.storage.v1.StatsVirti" +
+      "oScsiTargetRequest\0321.opi_api.storage.v1." +
+      "StatsVirtioScsiTargetResponse\"3\202\323\344\223\002&\022$/" +
+      "v1/{name=VirtioScsiTargets/*}:stats\332A\004na" +
+      "me\022\335\001\n\032CreateVirtioScsiController\0225.opi_" +
+      "api.storage.v1.CreateVirtioScsiControlle" +
+      "rRequest\032(.opi_api.storage.v1.VirtioScsi" +
+      "Controller\"^\202\323\344\223\002%\"\013/v1/volumes:\026virtio_" +
+      "scsi_controller\332A0virtio_scsi_controller" +
+      ",virtio_scsi_controller_id\022\236\001\n\032DeleteVir" +
+      "tioScsiController\0225.opi_api.storage.v1.D" +
+      "eleteVirtioScsiControllerRequest\032\026.googl" +
+      "e.protobuf.Empty\"1\202\323\344\223\002$*\"/v1/{name=Virt" +
+      "ioScsiControllers/*}\332A\004name\022\360\001\n\032UpdateVi" +
+      "rtioScsiController\0225.opi_api.storage.v1." +
+      "UpdateVirtioScsiControllerRequest\032(.opi_" +
+      "api.storage.v1.VirtioScsiController\"q\202\323\344" +
+      "\223\002F2,/v1/{virtio_scsi_controller.name=su" +
+      "bsystems}:\026virtio_scsi_controller\332A\"virt" +
+      "io_scsi_controller,update_mask\022\262\001\n\031ListV" +
+      "irtioScsiControllers\0224.opi_api.storage.v" +
+      "1.ListVirtioScsiControllersRequest\0325.opi" +
+      "_api.storage.v1.ListVirtioScsiController" +
+      "sResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystem" +
+      "s}\332A\006parent\022\252\001\n\027GetVirtioScsiController\022" +
+      "2.opi_api.storage.v1.GetVirtioScsiContro" +
+      "llerRequest\032(.opi_api.storage.v1.VirtioS" +
+      "csiController\"1\202\323\344\223\002$\022\"/v1/{name=VirtioS" +
+      "csiControllers/*}\332A\004name\022\301\001\n\031StatsVirtio" +
+      "ScsiController\0224.opi_api.storage.v1.Stat" +
+      "sVirtioScsiControllerRequest\0325.opi_api.s" +
+      "torage.v1.StatsVirtioScsiControllerRespo" +
+      "nse\"7\202\323\344\223\002*\022(/v1/{name=VirtioScsiControl" +
+      "lers/*}:stats\332A\004name\022\263\001\n\023CreateVirtioScs" +
+      "iLun\022..opi_api.storage.v1.CreateVirtioSc" +
+      "siLunRequest\032!.opi_api.storage.v1.Virtio" +
+      "ScsiLun\"I\202\323\344\223\002\036\"\013/v1/volumes:\017virtio_scs" +
+      "i_lun\332A\"virtio_scsi_lun,virtio_scsi_lun_" +
+      "id\022\211\001\n\023DeleteVirtioScsiLun\022..opi_api.sto" +
+      "rage.v1.DeleteVirtioScsiLunRequest\032\026.goo" +
+      "gle.protobuf.Empty\"*\202\323\344\223\002\035*\033/v1/{name=Vi" +
+      "rtioScsiLuns/*}\332A\004name\022\306\001\n\023UpdateVirtioS" +
+      "csiLun\022..opi_api.storage.v1.UpdateVirtio" +
+      "ScsiLunRequest\032!.opi_api.storage.v1.Virt" +
+      "ioScsiLun\"\\\202\323\344\223\00282%/v1/{virtio_scsi_lun." +
+      "name=subsystems}:\017virtio_scsi_lun\332A\033virt" +
+      "io_scsi_lun,update_mask\022\235\001\n\022ListVirtioSc" +
+      "siLuns\022-.opi_api.storage.v1.ListVirtioSc" +
+      "siLunsRequest\032..opi_api.storage.v1.ListV" +
+      "irtioScsiLunsResponse\"(\202\323\344\223\002\031\022\027/v1/{pare" +
+      "nt=subsystems}\332A\006parent\022\216\001\n\020GetVirtioScs" +
+      "iLun\022+.opi_api.storage.v1.GetVirtioScsiL" +
+      "unRequest\032!.opi_api.storage.v1.VirtioScs" +
+      "iLun\"*\202\323\344\223\002\035\022\033/v1/{name=VirtioScsiLuns/*" +
+      "}\332A\004name\022\245\001\n\022StatsVirtioScsiLun\022-.opi_ap" +
+      "i.storage.v1.StatsVirtioScsiLunRequest\032." +
+      ".opi_api.storage.v1.StatsVirtioScsiLunRe" +
+      "sponse\"0\202\323\344\223\002#\022!/v1/{name=VirtioScsiLuns" +
+      "/*}:stats\332A\004nameBf\n\022opi_api.storage.v1B\027" +
+      "FrontendVirtioScsiProtoP\001Z5github.com/op" +
+      "iproject/opi-api/storage/v1alpha1/gen/go" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -403,17 +407,17 @@ public final class FrontendVirtioScsiProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetVirtioScsiTargetRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_VirtioScsiTargetStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsVirtioScsiTargetRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_opi_api_storage_v1_VirtioScsiTargetStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsVirtioScsiTargetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioScsiTargetStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsVirtioScsiTargetRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_VirtioScsiTargetStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsVirtioScsiTargetResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_opi_api_storage_v1_VirtioScsiTargetStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsVirtioScsiTargetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioScsiTargetStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsVirtioScsiTargetResponse_descriptor,
         new java.lang.String[] { "Stats", });
     internal_static_opi_api_storage_v1_CreateVirtioScsiControllerRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
@@ -451,17 +455,17 @@ public final class FrontendVirtioScsiProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetVirtioScsiControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_VirtioScsiControllerStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsVirtioScsiControllerRequest_descriptor =
       getDescriptor().getMessageTypes().get(17);
-    internal_static_opi_api_storage_v1_VirtioScsiControllerStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsVirtioScsiControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioScsiControllerStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsVirtioScsiControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_VirtioScsiControllerStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsVirtioScsiControllerResponse_descriptor =
       getDescriptor().getMessageTypes().get(18);
-    internal_static_opi_api_storage_v1_VirtioScsiControllerStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsVirtioScsiControllerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioScsiControllerStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsVirtioScsiControllerResponse_descriptor,
         new java.lang.String[] { "Stats", });
     internal_static_opi_api_storage_v1_CreateVirtioScsiLunRequest_descriptor =
       getDescriptor().getMessageTypes().get(19);
@@ -499,17 +503,17 @@ public final class FrontendVirtioScsiProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetVirtioScsiLunRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_VirtioScsiLunStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsVirtioScsiLunRequest_descriptor =
       getDescriptor().getMessageTypes().get(25);
-    internal_static_opi_api_storage_v1_VirtioScsiLunStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsVirtioScsiLunRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioScsiLunStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsVirtioScsiLunRequest_descriptor,
         new java.lang.String[] { "Name", "ControllerId", });
-    internal_static_opi_api_storage_v1_VirtioScsiLunStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsVirtioScsiLunResponse_descriptor =
       getDescriptor().getMessageTypes().get(26);
-    internal_static_opi_api_storage_v1_VirtioScsiLunStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsVirtioScsiLunResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioScsiLunStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsVirtioScsiLunResponse_descriptor,
         new java.lang.String[] { "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

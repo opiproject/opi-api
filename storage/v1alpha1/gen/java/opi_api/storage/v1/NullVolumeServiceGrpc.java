@@ -173,35 +173,35 @@ public final class NullVolumeServiceGrpc {
     return getGetNullVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NullVolumeStatsRequest,
-      opi_api.storage.v1.NullVolumeStatsResponse> getNullVolumeStatsMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNullVolumeRequest,
+      opi_api.storage.v1.StatsNullVolumeResponse> getStatsNullVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NullVolumeStats",
-      requestType = opi_api.storage.v1.NullVolumeStatsRequest.class,
-      responseType = opi_api.storage.v1.NullVolumeStatsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "StatsNullVolume",
+      requestType = opi_api.storage.v1.StatsNullVolumeRequest.class,
+      responseType = opi_api.storage.v1.StatsNullVolumeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NullVolumeStatsRequest,
-      opi_api.storage.v1.NullVolumeStatsResponse> getNullVolumeStatsMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NullVolumeStatsRequest, opi_api.storage.v1.NullVolumeStatsResponse> getNullVolumeStatsMethod;
-    if ((getNullVolumeStatsMethod = NullVolumeServiceGrpc.getNullVolumeStatsMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNullVolumeRequest,
+      opi_api.storage.v1.StatsNullVolumeResponse> getStatsNullVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.StatsNullVolumeRequest, opi_api.storage.v1.StatsNullVolumeResponse> getStatsNullVolumeMethod;
+    if ((getStatsNullVolumeMethod = NullVolumeServiceGrpc.getStatsNullVolumeMethod) == null) {
       synchronized (NullVolumeServiceGrpc.class) {
-        if ((getNullVolumeStatsMethod = NullVolumeServiceGrpc.getNullVolumeStatsMethod) == null) {
-          NullVolumeServiceGrpc.getNullVolumeStatsMethod = getNullVolumeStatsMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NullVolumeStatsRequest, opi_api.storage.v1.NullVolumeStatsResponse>newBuilder()
+        if ((getStatsNullVolumeMethod = NullVolumeServiceGrpc.getStatsNullVolumeMethod) == null) {
+          NullVolumeServiceGrpc.getStatsNullVolumeMethod = getStatsNullVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.StatsNullVolumeRequest, opi_api.storage.v1.StatsNullVolumeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NullVolumeStats"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StatsNullVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NullVolumeStatsRequest.getDefaultInstance()))
+                  opi_api.storage.v1.StatsNullVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NullVolumeStatsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new NullVolumeServiceMethodDescriptorSupplier("NullVolumeStats"))
+                  opi_api.storage.v1.StatsNullVolumeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new NullVolumeServiceMethodDescriptorSupplier("StatsNullVolume"))
               .build();
         }
       }
     }
-    return getNullVolumeStatsMethod;
+    return getStatsNullVolumeMethod;
   }
 
   /**
@@ -292,9 +292,9 @@ public final class NullVolumeServiceGrpc {
 
     /**
      */
-    public void nullVolumeStats(opi_api.storage.v1.NullVolumeStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolumeStatsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNullVolumeStatsMethod(), responseObserver);
+    public void statsNullVolume(opi_api.storage.v1.StatsNullVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNullVolumeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStatsNullVolumeMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -335,12 +335,12 @@ public final class NullVolumeServiceGrpc {
                 opi_api.storage.v1.NullVolume>(
                   this, METHODID_GET_NULL_VOLUME)))
           .addMethod(
-            getNullVolumeStatsMethod(),
+            getStatsNullVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NullVolumeStatsRequest,
-                opi_api.storage.v1.NullVolumeStatsResponse>(
-                  this, METHODID_NULL_VOLUME_STATS)))
+                opi_api.storage.v1.StatsNullVolumeRequest,
+                opi_api.storage.v1.StatsNullVolumeResponse>(
+                  this, METHODID_STATS_NULL_VOLUME)))
           .build();
     }
   }
@@ -404,10 +404,10 @@ public final class NullVolumeServiceGrpc {
 
     /**
      */
-    public void nullVolumeStats(opi_api.storage.v1.NullVolumeStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolumeStatsResponse> responseObserver) {
+    public void statsNullVolume(opi_api.storage.v1.StatsNullVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNullVolumeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNullVolumeStatsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getStatsNullVolumeMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -465,9 +465,9 @@ public final class NullVolumeServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.NullVolumeStatsResponse nullVolumeStats(opi_api.storage.v1.NullVolumeStatsRequest request) {
+    public opi_api.storage.v1.StatsNullVolumeResponse statsNullVolume(opi_api.storage.v1.StatsNullVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNullVolumeStatsMethod(), getCallOptions(), request);
+          getChannel(), getStatsNullVolumeMethod(), getCallOptions(), request);
     }
   }
 
@@ -530,10 +530,10 @@ public final class NullVolumeServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullVolumeStatsResponse> nullVolumeStats(
-        opi_api.storage.v1.NullVolumeStatsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNullVolumeResponse> statsNullVolume(
+        opi_api.storage.v1.StatsNullVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNullVolumeStatsMethod(), getCallOptions()), request);
+          getChannel().newCall(getStatsNullVolumeMethod(), getCallOptions()), request);
     }
   }
 
@@ -542,7 +542,7 @@ public final class NullVolumeServiceGrpc {
   private static final int METHODID_UPDATE_NULL_VOLUME = 2;
   private static final int METHODID_LIST_NULL_VOLUMES = 3;
   private static final int METHODID_GET_NULL_VOLUME = 4;
-  private static final int METHODID_NULL_VOLUME_STATS = 5;
+  private static final int METHODID_STATS_NULL_VOLUME = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -581,9 +581,9 @@ public final class NullVolumeServiceGrpc {
           serviceImpl.getNullVolume((opi_api.storage.v1.GetNullVolumeRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolume>) responseObserver);
           break;
-        case METHODID_NULL_VOLUME_STATS:
-          serviceImpl.nullVolumeStats((opi_api.storage.v1.NullVolumeStatsRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolumeStatsResponse>) responseObserver);
+        case METHODID_STATS_NULL_VOLUME:
+          serviceImpl.statsNullVolume((opi_api.storage.v1.StatsNullVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNullVolumeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -651,7 +651,7 @@ public final class NullVolumeServiceGrpc {
               .addMethod(getUpdateNullVolumeMethod())
               .addMethod(getListNullVolumesMethod())
               .addMethod(getGetNullVolumeMethod())
-              .addMethod(getNullVolumeStatsMethod())
+              .addMethod(getStatsNullVolumeMethod())
               .build();
         }
       }

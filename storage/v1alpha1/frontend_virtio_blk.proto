@@ -53,7 +53,12 @@ service FrontendVirtioBlkService {
         };
         option (google.api.method_signature) = "name";
     }
-    rpc VirtioBlkStats  (VirtioBlkStatsRequest)  returns (VirtioBlkStatsResponse)  {}
+    rpc StatsVirtioBlk  (StatsVirtioBlkRequest)  returns (StatsVirtioBlkResponse)  {
+        option (google.api.http) = {
+            get: "/v1/{name=VirtioBlks/*}:stats"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message VirtioBlk {
@@ -131,13 +136,13 @@ message GetVirtioBlkRequest {
     ];
 }
 
-message VirtioBlkStatsRequest {
+message StatsVirtioBlkRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
     ];
 }
 
-message VirtioBlkStatsResponse {
+message StatsVirtioBlkResponse {
     VolumeStats stats = 1;
 }

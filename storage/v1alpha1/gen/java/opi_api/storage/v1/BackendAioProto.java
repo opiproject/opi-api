@@ -50,15 +50,15 @@ public final class BackendAioProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_GetAioVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_AioVolumeStatsRequest_descriptor;
+    internal_static_opi_api_storage_v1_StatsAioVolumeRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_AioVolumeStatsRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsAioVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_AioVolumeStatsResponse_descriptor;
+    internal_static_opi_api_storage_v1_StatsAioVolumeResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_AioVolumeStatsResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_StatsAioVolumeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -96,10 +96,10 @@ public final class BackendAioProto {
       "storage.v1.AioVolume\022\027\n\017next_page_token\030" +
       "\002 \001(\t\"I\n\023GetAioVolumeRequest\0222\n\004name\030\001 \001" +
       "(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume" +
-      "\"K\n\025AioVolumeStatsRequest\0222\n\004name\030\001 \001(\tB" +
+      "\"K\n\025StatsAioVolumeRequest\0222\n\004name\030\001 \001(\tB" +
       "$\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume\"H\n" +
-      "\026AioVolumeStatsResponse\022.\n\005stats\030\001 \001(\0132\037" +
-      ".opi_api.storage.v1.VolumeStats2\331\006\n\020AioV" +
+      "\026StatsAioVolumeResponse\022.\n\005stats\030\001 \001(\0132\037" +
+      ".opi_api.storage.v1.VolumeStats2\206\007\n\020AioV" +
       "olumeService\022\230\001\n\017CreateAioVolume\022*.opi_a" +
       "pi.storage.v1.CreateAioVolumeRequest\032\035.o" +
       "pi_api.storage.v1.AioVolume\":\202\323\344\223\002\031\"\013/v1" +
@@ -118,12 +118,13 @@ public final class BackendAioProto {
       "ystems}\332A\006parent\022~\n\014GetAioVolume\022\'.opi_a" +
       "pi.storage.v1.GetAioVolumeRequest\032\035.opi_" +
       "api.storage.v1.AioVolume\"&\202\323\344\223\002\031\022\027/v1/{n" +
-      "ame=AioVolumes/*}\332A\004name\022i\n\016AioVolumeSta" +
-      "ts\022).opi_api.storage.v1.AioVolumeStatsRe" +
-      "quest\032*.opi_api.storage.v1.AioVolumeStat" +
-      "sResponse\"\000B^\n\022opi_api.storage.v1B\017Backe" +
-      "ndAioProtoP\001Z5github.com/opiproject/opi-" +
-      "api/storage/v1alpha1/gen/gob\006proto3"
+      "ame=AioVolumes/*}\332A\004name\022\225\001\n\016StatsAioVol" +
+      "ume\022).opi_api.storage.v1.StatsAioVolumeR" +
+      "equest\032*.opi_api.storage.v1.StatsAioVolu" +
+      "meResponse\",\202\323\344\223\002\037\022\035/v1/{name=AioVolumes" +
+      "/*}:stats\332A\004nameB^\n\022opi_api.storage.v1B\017" +
+      "BackendAioProtoP\001Z5github.com/opiproject" +
+      "/opi-api/storage/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -179,17 +180,17 @@ public final class BackendAioProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetAioVolumeRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_AioVolumeStatsRequest_descriptor =
+    internal_static_opi_api_storage_v1_StatsAioVolumeRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_opi_api_storage_v1_AioVolumeStatsRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsAioVolumeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_AioVolumeStatsRequest_descriptor,
+        internal_static_opi_api_storage_v1_StatsAioVolumeRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_opi_api_storage_v1_AioVolumeStatsResponse_descriptor =
+    internal_static_opi_api_storage_v1_StatsAioVolumeResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_opi_api_storage_v1_AioVolumeStatsResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_StatsAioVolumeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_AioVolumeStatsResponse_descriptor,
+        internal_static_opi_api_storage_v1_StatsAioVolumeResponse_descriptor,
         new java.lang.String[] { "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

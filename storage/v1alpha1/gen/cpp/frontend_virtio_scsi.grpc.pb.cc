@@ -29,19 +29,19 @@ static const char* FrontendVirtioScsiService_method_names[] = {
   "/opi_api.storage.v1.FrontendVirtioScsiService/UpdateVirtioScsiTarget",
   "/opi_api.storage.v1.FrontendVirtioScsiService/ListVirtioScsiTargets",
   "/opi_api.storage.v1.FrontendVirtioScsiService/GetVirtioScsiTarget",
-  "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiTargetStats",
+  "/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiTarget",
   "/opi_api.storage.v1.FrontendVirtioScsiService/CreateVirtioScsiController",
   "/opi_api.storage.v1.FrontendVirtioScsiService/DeleteVirtioScsiController",
   "/opi_api.storage.v1.FrontendVirtioScsiService/UpdateVirtioScsiController",
   "/opi_api.storage.v1.FrontendVirtioScsiService/ListVirtioScsiControllers",
   "/opi_api.storage.v1.FrontendVirtioScsiService/GetVirtioScsiController",
-  "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerStats",
+  "/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiController",
   "/opi_api.storage.v1.FrontendVirtioScsiService/CreateVirtioScsiLun",
   "/opi_api.storage.v1.FrontendVirtioScsiService/DeleteVirtioScsiLun",
   "/opi_api.storage.v1.FrontendVirtioScsiService/UpdateVirtioScsiLun",
   "/opi_api.storage.v1.FrontendVirtioScsiService/ListVirtioScsiLuns",
   "/opi_api.storage.v1.FrontendVirtioScsiService/GetVirtioScsiLun",
-  "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunStats",
+  "/opi_api.storage.v1.FrontendVirtioScsiService/StatsVirtioScsiLun",
 };
 
 std::unique_ptr< FrontendVirtioScsiService::Stub> FrontendVirtioScsiService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -56,19 +56,19 @@ FrontendVirtioScsiService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInte
   , rpcmethod_UpdateVirtioScsiTarget_(FrontendVirtioScsiService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListVirtioScsiTargets_(FrontendVirtioScsiService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetVirtioScsiTarget_(FrontendVirtioScsiService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_VirtioScsiTargetStats_(FrontendVirtioScsiService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StatsVirtioScsiTarget_(FrontendVirtioScsiService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreateVirtioScsiController_(FrontendVirtioScsiService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteVirtioScsiController_(FrontendVirtioScsiService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateVirtioScsiController_(FrontendVirtioScsiService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListVirtioScsiControllers_(FrontendVirtioScsiService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetVirtioScsiController_(FrontendVirtioScsiService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_VirtioScsiControllerStats_(FrontendVirtioScsiService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StatsVirtioScsiController_(FrontendVirtioScsiService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreateVirtioScsiLun_(FrontendVirtioScsiService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteVirtioScsiLun_(FrontendVirtioScsiService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateVirtioScsiLun_(FrontendVirtioScsiService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListVirtioScsiLuns_(FrontendVirtioScsiService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetVirtioScsiLun_(FrontendVirtioScsiService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_VirtioScsiLunStats_(FrontendVirtioScsiService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StatsVirtioScsiLun_(FrontendVirtioScsiService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status FrontendVirtioScsiService::Stub::CreateVirtioScsiTarget(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateVirtioScsiTargetRequest& request, ::opi_api::storage::v1::VirtioScsiTarget* response) {
@@ -186,25 +186,25 @@ void FrontendVirtioScsiService::Stub::async::GetVirtioScsiTarget(::grpc::ClientC
   return result;
 }
 
-::grpc::Status FrontendVirtioScsiService::Stub::VirtioScsiTargetStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiTargetStatsRequest& request, ::opi_api::storage::v1::VirtioScsiTargetStatsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioScsiTargetStatsRequest, ::opi_api::storage::v1::VirtioScsiTargetStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioScsiTargetStats_, context, request, response);
+::grpc::Status FrontendVirtioScsiService::Stub::StatsVirtioScsiTarget(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiTargetRequest& request, ::opi_api::storage::v1::StatsVirtioScsiTargetResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::StatsVirtioScsiTargetRequest, ::opi_api::storage::v1::StatsVirtioScsiTargetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_StatsVirtioScsiTarget_, context, request, response);
 }
 
-void FrontendVirtioScsiService::Stub::async::VirtioScsiTargetStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiTargetStatsRequest* request, ::opi_api::storage::v1::VirtioScsiTargetStatsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioScsiTargetStatsRequest, ::opi_api::storage::v1::VirtioScsiTargetStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiTargetStats_, context, request, response, std::move(f));
+void FrontendVirtioScsiService::Stub::async::StatsVirtioScsiTarget(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiTargetRequest* request, ::opi_api::storage::v1::StatsVirtioScsiTargetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::StatsVirtioScsiTargetRequest, ::opi_api::storage::v1::StatsVirtioScsiTargetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsVirtioScsiTarget_, context, request, response, std::move(f));
 }
 
-void FrontendVirtioScsiService::Stub::async::VirtioScsiTargetStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiTargetStatsRequest* request, ::opi_api::storage::v1::VirtioScsiTargetStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiTargetStats_, context, request, response, reactor);
+void FrontendVirtioScsiService::Stub::async::StatsVirtioScsiTarget(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiTargetRequest* request, ::opi_api::storage::v1::StatsVirtioScsiTargetResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsVirtioScsiTarget_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiTargetStatsResponse>* FrontendVirtioScsiService::Stub::PrepareAsyncVirtioScsiTargetStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiTargetStatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioScsiTargetStatsResponse, ::opi_api::storage::v1::VirtioScsiTargetStatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioScsiTargetStats_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsVirtioScsiTargetResponse>* FrontendVirtioScsiService::Stub::PrepareAsyncStatsVirtioScsiTargetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiTargetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::StatsVirtioScsiTargetResponse, ::opi_api::storage::v1::StatsVirtioScsiTargetRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_StatsVirtioScsiTarget_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiTargetStatsResponse>* FrontendVirtioScsiService::Stub::AsyncVirtioScsiTargetStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiTargetStatsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsVirtioScsiTargetResponse>* FrontendVirtioScsiService::Stub::AsyncStatsVirtioScsiTargetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiTargetRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncVirtioScsiTargetStatsRaw(context, request, cq);
+    this->PrepareAsyncStatsVirtioScsiTargetRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -324,25 +324,25 @@ void FrontendVirtioScsiService::Stub::async::GetVirtioScsiController(::grpc::Cli
   return result;
 }
 
-::grpc::Status FrontendVirtioScsiService::Stub::VirtioScsiControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerStatsRequest& request, ::opi_api::storage::v1::VirtioScsiControllerStatsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioScsiControllerStatsRequest, ::opi_api::storage::v1::VirtioScsiControllerStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioScsiControllerStats_, context, request, response);
+::grpc::Status FrontendVirtioScsiService::Stub::StatsVirtioScsiController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiControllerRequest& request, ::opi_api::storage::v1::StatsVirtioScsiControllerResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::StatsVirtioScsiControllerRequest, ::opi_api::storage::v1::StatsVirtioScsiControllerResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_StatsVirtioScsiController_, context, request, response);
 }
 
-void FrontendVirtioScsiService::Stub::async::VirtioScsiControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerStatsRequest* request, ::opi_api::storage::v1::VirtioScsiControllerStatsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioScsiControllerStatsRequest, ::opi_api::storage::v1::VirtioScsiControllerStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiControllerStats_, context, request, response, std::move(f));
+void FrontendVirtioScsiService::Stub::async::StatsVirtioScsiController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiControllerRequest* request, ::opi_api::storage::v1::StatsVirtioScsiControllerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::StatsVirtioScsiControllerRequest, ::opi_api::storage::v1::StatsVirtioScsiControllerResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsVirtioScsiController_, context, request, response, std::move(f));
 }
 
-void FrontendVirtioScsiService::Stub::async::VirtioScsiControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerStatsRequest* request, ::opi_api::storage::v1::VirtioScsiControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiControllerStats_, context, request, response, reactor);
+void FrontendVirtioScsiService::Stub::async::StatsVirtioScsiController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiControllerRequest* request, ::opi_api::storage::v1::StatsVirtioScsiControllerResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsVirtioScsiController_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiControllerStatsResponse>* FrontendVirtioScsiService::Stub::PrepareAsyncVirtioScsiControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioScsiControllerStatsResponse, ::opi_api::storage::v1::VirtioScsiControllerStatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioScsiControllerStats_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsVirtioScsiControllerResponse>* FrontendVirtioScsiService::Stub::PrepareAsyncStatsVirtioScsiControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiControllerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::StatsVirtioScsiControllerResponse, ::opi_api::storage::v1::StatsVirtioScsiControllerRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_StatsVirtioScsiController_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiControllerStatsResponse>* FrontendVirtioScsiService::Stub::AsyncVirtioScsiControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsVirtioScsiControllerResponse>* FrontendVirtioScsiService::Stub::AsyncStatsVirtioScsiControllerRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiControllerRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncVirtioScsiControllerStatsRaw(context, request, cq);
+    this->PrepareAsyncStatsVirtioScsiControllerRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -462,25 +462,25 @@ void FrontendVirtioScsiService::Stub::async::GetVirtioScsiLun(::grpc::ClientCont
   return result;
 }
 
-::grpc::Status FrontendVirtioScsiService::Stub::VirtioScsiLunStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunStatsRequest& request, ::opi_api::storage::v1::VirtioScsiLunStatsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioScsiLunStatsRequest, ::opi_api::storage::v1::VirtioScsiLunStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioScsiLunStats_, context, request, response);
+::grpc::Status FrontendVirtioScsiService::Stub::StatsVirtioScsiLun(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiLunRequest& request, ::opi_api::storage::v1::StatsVirtioScsiLunResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::StatsVirtioScsiLunRequest, ::opi_api::storage::v1::StatsVirtioScsiLunResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_StatsVirtioScsiLun_, context, request, response);
 }
 
-void FrontendVirtioScsiService::Stub::async::VirtioScsiLunStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunStatsRequest* request, ::opi_api::storage::v1::VirtioScsiLunStatsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioScsiLunStatsRequest, ::opi_api::storage::v1::VirtioScsiLunStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiLunStats_, context, request, response, std::move(f));
+void FrontendVirtioScsiService::Stub::async::StatsVirtioScsiLun(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiLunRequest* request, ::opi_api::storage::v1::StatsVirtioScsiLunResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::StatsVirtioScsiLunRequest, ::opi_api::storage::v1::StatsVirtioScsiLunResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsVirtioScsiLun_, context, request, response, std::move(f));
 }
 
-void FrontendVirtioScsiService::Stub::async::VirtioScsiLunStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunStatsRequest* request, ::opi_api::storage::v1::VirtioScsiLunStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiLunStats_, context, request, response, reactor);
+void FrontendVirtioScsiService::Stub::async::StatsVirtioScsiLun(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiLunRequest* request, ::opi_api::storage::v1::StatsVirtioScsiLunResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StatsVirtioScsiLun_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiLunStatsResponse>* FrontendVirtioScsiService::Stub::PrepareAsyncVirtioScsiLunStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunStatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioScsiLunStatsResponse, ::opi_api::storage::v1::VirtioScsiLunStatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioScsiLunStats_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsVirtioScsiLunResponse>* FrontendVirtioScsiService::Stub::PrepareAsyncStatsVirtioScsiLunRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiLunRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::StatsVirtioScsiLunResponse, ::opi_api::storage::v1::StatsVirtioScsiLunRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_StatsVirtioScsiLun_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiLunStatsResponse>* FrontendVirtioScsiService::Stub::AsyncVirtioScsiLunStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunStatsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsVirtioScsiLunResponse>* FrontendVirtioScsiService::Stub::AsyncStatsVirtioScsiLunRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsVirtioScsiLunRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncVirtioScsiLunStatsRaw(context, request, cq);
+    this->PrepareAsyncStatsVirtioScsiLunRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -539,12 +539,12 @@ FrontendVirtioScsiService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       FrontendVirtioScsiService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< FrontendVirtioScsiService::Service, ::opi_api::storage::v1::VirtioScsiTargetStatsRequest, ::opi_api::storage::v1::VirtioScsiTargetStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< FrontendVirtioScsiService::Service, ::opi_api::storage::v1::StatsVirtioScsiTargetRequest, ::opi_api::storage::v1::StatsVirtioScsiTargetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](FrontendVirtioScsiService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::VirtioScsiTargetStatsRequest* req,
-             ::opi_api::storage::v1::VirtioScsiTargetStatsResponse* resp) {
-               return service->VirtioScsiTargetStats(ctx, req, resp);
+             const ::opi_api::storage::v1::StatsVirtioScsiTargetRequest* req,
+             ::opi_api::storage::v1::StatsVirtioScsiTargetResponse* resp) {
+               return service->StatsVirtioScsiTarget(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       FrontendVirtioScsiService_method_names[6],
@@ -599,12 +599,12 @@ FrontendVirtioScsiService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       FrontendVirtioScsiService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< FrontendVirtioScsiService::Service, ::opi_api::storage::v1::VirtioScsiControllerStatsRequest, ::opi_api::storage::v1::VirtioScsiControllerStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< FrontendVirtioScsiService::Service, ::opi_api::storage::v1::StatsVirtioScsiControllerRequest, ::opi_api::storage::v1::StatsVirtioScsiControllerResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](FrontendVirtioScsiService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::VirtioScsiControllerStatsRequest* req,
-             ::opi_api::storage::v1::VirtioScsiControllerStatsResponse* resp) {
-               return service->VirtioScsiControllerStats(ctx, req, resp);
+             const ::opi_api::storage::v1::StatsVirtioScsiControllerRequest* req,
+             ::opi_api::storage::v1::StatsVirtioScsiControllerResponse* resp) {
+               return service->StatsVirtioScsiController(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       FrontendVirtioScsiService_method_names[12],
@@ -659,12 +659,12 @@ FrontendVirtioScsiService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       FrontendVirtioScsiService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< FrontendVirtioScsiService::Service, ::opi_api::storage::v1::VirtioScsiLunStatsRequest, ::opi_api::storage::v1::VirtioScsiLunStatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< FrontendVirtioScsiService::Service, ::opi_api::storage::v1::StatsVirtioScsiLunRequest, ::opi_api::storage::v1::StatsVirtioScsiLunResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](FrontendVirtioScsiService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::VirtioScsiLunStatsRequest* req,
-             ::opi_api::storage::v1::VirtioScsiLunStatsResponse* resp) {
-               return service->VirtioScsiLunStats(ctx, req, resp);
+             const ::opi_api::storage::v1::StatsVirtioScsiLunRequest* req,
+             ::opi_api::storage::v1::StatsVirtioScsiLunResponse* resp) {
+               return service->StatsVirtioScsiLun(ctx, req, resp);
              }, this)));
 }
 
@@ -706,7 +706,7 @@ FrontendVirtioScsiService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status FrontendVirtioScsiService::Service::VirtioScsiTargetStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioScsiTargetStatsRequest* request, ::opi_api::storage::v1::VirtioScsiTargetStatsResponse* response) {
+::grpc::Status FrontendVirtioScsiService::Service::StatsVirtioScsiTarget(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsVirtioScsiTargetRequest* request, ::opi_api::storage::v1::StatsVirtioScsiTargetResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -748,7 +748,7 @@ FrontendVirtioScsiService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status FrontendVirtioScsiService::Service::VirtioScsiControllerStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioScsiControllerStatsRequest* request, ::opi_api::storage::v1::VirtioScsiControllerStatsResponse* response) {
+::grpc::Status FrontendVirtioScsiService::Service::StatsVirtioScsiController(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsVirtioScsiControllerRequest* request, ::opi_api::storage::v1::StatsVirtioScsiControllerResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -790,7 +790,7 @@ FrontendVirtioScsiService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status FrontendVirtioScsiService::Service::VirtioScsiLunStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioScsiLunStatsRequest* request, ::opi_api::storage::v1::VirtioScsiLunStatsResponse* response) {
+::grpc::Status FrontendVirtioScsiService::Service::StatsVirtioScsiLun(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsVirtioScsiLunRequest* request, ::opi_api::storage::v1::StatsVirtioScsiLunResponse* response) {
   (void) context;
   (void) request;
   (void) response;

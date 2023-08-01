@@ -77,12 +77,12 @@ class AioVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>> PrepareAsyncGetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>>(PrepareAsyncGetAioVolumeRaw(context, request, cq));
     }
-    virtual ::grpc::Status AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::opi_api::storage::v1::AioVolumeStatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolumeStatsResponse>> AsyncAioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolumeStatsResponse>>(AsyncAioVolumeStatsRaw(context, request, cq));
+    virtual ::grpc::Status StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::opi_api::storage::v1::StatsAioVolumeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsAioVolumeResponse>> AsyncStatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsAioVolumeResponse>>(AsyncStatsAioVolumeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolumeStatsResponse>> PrepareAsyncAioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolumeStatsResponse>>(PrepareAsyncAioVolumeStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsAioVolumeResponse>> PrepareAsyncStatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsAioVolumeResponse>>(PrepareAsyncStatsAioVolumeRaw(context, request, cq));
     }
     class async_interface {
      public:
@@ -97,8 +97,8 @@ class AioVolumeService final {
       virtual void ListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -114,8 +114,8 @@ class AioVolumeService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListAioVolumesResponse>* PrepareAsyncListAioVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>* AsyncGetAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>* PrepareAsyncGetAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolumeStatsResponse>* AsyncAioVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolumeStatsResponse>* PrepareAsyncAioVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsAioVolumeResponse>* AsyncStatsAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsAioVolumeResponse>* PrepareAsyncStatsAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -155,12 +155,12 @@ class AioVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>> PrepareAsyncGetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>>(PrepareAsyncGetAioVolumeRaw(context, request, cq));
     }
-    ::grpc::Status AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::opi_api::storage::v1::AioVolumeStatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolumeStatsResponse>> AsyncAioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolumeStatsResponse>>(AsyncAioVolumeStatsRaw(context, request, cq));
+    ::grpc::Status StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::opi_api::storage::v1::StatsAioVolumeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsAioVolumeResponse>> AsyncStatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsAioVolumeResponse>>(AsyncStatsAioVolumeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolumeStatsResponse>> PrepareAsyncAioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolumeStatsResponse>>(PrepareAsyncAioVolumeStatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsAioVolumeResponse>> PrepareAsyncStatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsAioVolumeResponse>>(PrepareAsyncStatsAioVolumeRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
@@ -175,8 +175,8 @@ class AioVolumeService final {
       void ListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, std::function<void(::grpc::Status)>) override;
       void GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void AioVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response, std::function<void(::grpc::Status)>) override;
+      void StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -198,14 +198,14 @@ class AioVolumeService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListAioVolumesResponse>* PrepareAsyncListAioVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>* AsyncGetAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolume>* PrepareAsyncGetAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolumeStatsResponse>* AsyncAioVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::AioVolumeStatsResponse>* PrepareAsyncAioVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsAioVolumeResponse>* AsyncStatsAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::StatsAioVolumeResponse>* PrepareAsyncStatsAioVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateAioVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteAioVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateAioVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_ListAioVolumes_;
     const ::grpc::internal::RpcMethod rpcmethod_GetAioVolume_;
-    const ::grpc::internal::RpcMethod rpcmethod_AioVolumeStats_;
+    const ::grpc::internal::RpcMethod rpcmethod_StatsAioVolume_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -218,7 +218,7 @@ class AioVolumeService final {
     virtual ::grpc::Status UpdateAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response);
     virtual ::grpc::Status ListAioVolumes(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response);
     virtual ::grpc::Status GetAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response);
-    virtual ::grpc::Status AioVolumeStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response);
+    virtual ::grpc::Status StatsAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateAioVolume : public BaseClass {
@@ -321,26 +321,26 @@ class AioVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_AioVolumeStats : public BaseClass {
+  class WithAsyncMethod_StatsAioVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_AioVolumeStats() {
+    WithAsyncMethod_StatsAioVolume() {
       ::grpc::Service::MarkMethodAsync(5);
     }
-    ~WithAsyncMethod_AioVolumeStats() override {
+    ~WithAsyncMethod_StatsAioVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AioVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::AioVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::AioVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsAioVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsAioVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsAioVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAioVolumeStats(::grpc::ServerContext* context, ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::AioVolumeStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsAioVolume(::grpc::ServerContext* context, ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::StatsAioVolumeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateAioVolume<WithAsyncMethod_DeleteAioVolume<WithAsyncMethod_UpdateAioVolume<WithAsyncMethod_ListAioVolumes<WithAsyncMethod_GetAioVolume<WithAsyncMethod_AioVolumeStats<Service > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateAioVolume<WithAsyncMethod_DeleteAioVolume<WithAsyncMethod_UpdateAioVolume<WithAsyncMethod_ListAioVolumes<WithAsyncMethod_GetAioVolume<WithAsyncMethod_StatsAioVolume<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateAioVolume : public BaseClass {
    private:
@@ -477,33 +477,33 @@ class AioVolumeService final {
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::GetAioVolumeRequest* /*request*/, ::opi_api::storage::v1::AioVolume* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_AioVolumeStats : public BaseClass {
+  class WithCallbackMethod_StatsAioVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_AioVolumeStats() {
+    WithCallbackMethod_StatsAioVolume() {
       ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::AioVolumeStatsRequest, ::opi_api::storage::v1::AioVolumeStatsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsAioVolumeRequest, ::opi_api::storage::v1::StatsAioVolumeResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::AioVolumeStatsRequest* request, ::opi_api::storage::v1::AioVolumeStatsResponse* response) { return this->AioVolumeStats(context, request, response); }));}
-    void SetMessageAllocatorFor_AioVolumeStats(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::AioVolumeStatsRequest, ::opi_api::storage::v1::AioVolumeStatsResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response) { return this->StatsAioVolume(context, request, response); }));}
+    void SetMessageAllocatorFor_StatsAioVolume(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::StatsAioVolumeRequest, ::opi_api::storage::v1::StatsAioVolumeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::AioVolumeStatsRequest, ::opi_api::storage::v1::AioVolumeStatsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::StatsAioVolumeRequest, ::opi_api::storage::v1::StatsAioVolumeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_AioVolumeStats() override {
+    ~WithCallbackMethod_StatsAioVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AioVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::AioVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::AioVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsAioVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsAioVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsAioVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* AioVolumeStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::AioVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::AioVolumeStatsResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* StatsAioVolume(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::StatsAioVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsAioVolumeResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateAioVolume<WithCallbackMethod_DeleteAioVolume<WithCallbackMethod_UpdateAioVolume<WithCallbackMethod_ListAioVolumes<WithCallbackMethod_GetAioVolume<WithCallbackMethod_AioVolumeStats<Service > > > > > > CallbackService;
+  typedef WithCallbackMethod_CreateAioVolume<WithCallbackMethod_DeleteAioVolume<WithCallbackMethod_UpdateAioVolume<WithCallbackMethod_ListAioVolumes<WithCallbackMethod_GetAioVolume<WithCallbackMethod_StatsAioVolume<Service > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateAioVolume : public BaseClass {
@@ -591,18 +591,18 @@ class AioVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_AioVolumeStats : public BaseClass {
+  class WithGenericMethod_StatsAioVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_AioVolumeStats() {
+    WithGenericMethod_StatsAioVolume() {
       ::grpc::Service::MarkMethodGeneric(5);
     }
-    ~WithGenericMethod_AioVolumeStats() override {
+    ~WithGenericMethod_StatsAioVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AioVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::AioVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::AioVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsAioVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsAioVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsAioVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -708,22 +708,22 @@ class AioVolumeService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_AioVolumeStats : public BaseClass {
+  class WithRawMethod_StatsAioVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_AioVolumeStats() {
+    WithRawMethod_StatsAioVolume() {
       ::grpc::Service::MarkMethodRaw(5);
     }
-    ~WithRawMethod_AioVolumeStats() override {
+    ~WithRawMethod_StatsAioVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AioVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::AioVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::AioVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsAioVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsAioVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsAioVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAioVolumeStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStatsAioVolume(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -838,25 +838,25 @@ class AioVolumeService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_AioVolumeStats : public BaseClass {
+  class WithRawCallbackMethod_StatsAioVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_AioVolumeStats() {
+    WithRawCallbackMethod_StatsAioVolume() {
       ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AioVolumeStats(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->StatsAioVolume(context, request, response); }));
     }
-    ~WithRawCallbackMethod_AioVolumeStats() override {
+    ~WithRawCallbackMethod_StatsAioVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AioVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::AioVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::AioVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsAioVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsAioVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsAioVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* AioVolumeStats(
+    virtual ::grpc::ServerUnaryReactor* StatsAioVolume(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -995,35 +995,35 @@ class AioVolumeService final {
     virtual ::grpc::Status StreamedGetAioVolume(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::GetAioVolumeRequest,::opi_api::storage::v1::AioVolume>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_AioVolumeStats : public BaseClass {
+  class WithStreamedUnaryMethod_StatsAioVolume : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_AioVolumeStats() {
+    WithStreamedUnaryMethod_StatsAioVolume() {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::AioVolumeStatsRequest, ::opi_api::storage::v1::AioVolumeStatsResponse>(
+          ::opi_api::storage::v1::StatsAioVolumeRequest, ::opi_api::storage::v1::StatsAioVolumeResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::AioVolumeStatsRequest, ::opi_api::storage::v1::AioVolumeStatsResponse>* streamer) {
-                       return this->StreamedAioVolumeStats(context,
+                     ::opi_api::storage::v1::StatsAioVolumeRequest, ::opi_api::storage::v1::StatsAioVolumeResponse>* streamer) {
+                       return this->StreamedStatsAioVolume(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_AioVolumeStats() override {
+    ~WithStreamedUnaryMethod_StatsAioVolume() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status AioVolumeStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::AioVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::AioVolumeStatsResponse* /*response*/) override {
+    ::grpc::Status StatsAioVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::StatsAioVolumeRequest* /*request*/, ::opi_api::storage::v1::StatsAioVolumeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedAioVolumeStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::AioVolumeStatsRequest,::opi_api::storage::v1::AioVolumeStatsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedStatsAioVolume(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::StatsAioVolumeRequest,::opi_api::storage::v1::StatsAioVolumeResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateAioVolume<WithStreamedUnaryMethod_DeleteAioVolume<WithStreamedUnaryMethod_UpdateAioVolume<WithStreamedUnaryMethod_ListAioVolumes<WithStreamedUnaryMethod_GetAioVolume<WithStreamedUnaryMethod_AioVolumeStats<Service > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateAioVolume<WithStreamedUnaryMethod_DeleteAioVolume<WithStreamedUnaryMethod_UpdateAioVolume<WithStreamedUnaryMethod_ListAioVolumes<WithStreamedUnaryMethod_GetAioVolume<WithStreamedUnaryMethod_StatsAioVolume<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateAioVolume<WithStreamedUnaryMethod_DeleteAioVolume<WithStreamedUnaryMethod_UpdateAioVolume<WithStreamedUnaryMethod_ListAioVolumes<WithStreamedUnaryMethod_GetAioVolume<WithStreamedUnaryMethod_AioVolumeStats<Service > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateAioVolume<WithStreamedUnaryMethod_DeleteAioVolume<WithStreamedUnaryMethod_UpdateAioVolume<WithStreamedUnaryMethod_ListAioVolumes<WithStreamedUnaryMethod_GetAioVolume<WithStreamedUnaryMethod_StatsAioVolume<Service > > > > > > StreamedService;
 };
 
 }  // namespace v1

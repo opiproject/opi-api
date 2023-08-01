@@ -173,35 +173,35 @@ public final class MiddleendEncryptionServiceGrpc {
     return getGetEncryptedVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.EncryptedVolumeStatsRequest,
-      opi_api.storage.v1.EncryptedVolumeStatsResponse> getEncryptedVolumeStatsMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.StatsEncryptedVolumeRequest,
+      opi_api.storage.v1.StatsEncryptedVolumeResponse> getStatsEncryptedVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "EncryptedVolumeStats",
-      requestType = opi_api.storage.v1.EncryptedVolumeStatsRequest.class,
-      responseType = opi_api.storage.v1.EncryptedVolumeStatsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "StatsEncryptedVolume",
+      requestType = opi_api.storage.v1.StatsEncryptedVolumeRequest.class,
+      responseType = opi_api.storage.v1.StatsEncryptedVolumeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.EncryptedVolumeStatsRequest,
-      opi_api.storage.v1.EncryptedVolumeStatsResponse> getEncryptedVolumeStatsMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.EncryptedVolumeStatsRequest, opi_api.storage.v1.EncryptedVolumeStatsResponse> getEncryptedVolumeStatsMethod;
-    if ((getEncryptedVolumeStatsMethod = MiddleendEncryptionServiceGrpc.getEncryptedVolumeStatsMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.StatsEncryptedVolumeRequest,
+      opi_api.storage.v1.StatsEncryptedVolumeResponse> getStatsEncryptedVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.StatsEncryptedVolumeRequest, opi_api.storage.v1.StatsEncryptedVolumeResponse> getStatsEncryptedVolumeMethod;
+    if ((getStatsEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getStatsEncryptedVolumeMethod) == null) {
       synchronized (MiddleendEncryptionServiceGrpc.class) {
-        if ((getEncryptedVolumeStatsMethod = MiddleendEncryptionServiceGrpc.getEncryptedVolumeStatsMethod) == null) {
-          MiddleendEncryptionServiceGrpc.getEncryptedVolumeStatsMethod = getEncryptedVolumeStatsMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.EncryptedVolumeStatsRequest, opi_api.storage.v1.EncryptedVolumeStatsResponse>newBuilder()
+        if ((getStatsEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getStatsEncryptedVolumeMethod) == null) {
+          MiddleendEncryptionServiceGrpc.getStatsEncryptedVolumeMethod = getStatsEncryptedVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.StatsEncryptedVolumeRequest, opi_api.storage.v1.StatsEncryptedVolumeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EncryptedVolumeStats"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StatsEncryptedVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.EncryptedVolumeStatsRequest.getDefaultInstance()))
+                  opi_api.storage.v1.StatsEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.EncryptedVolumeStatsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendEncryptionServiceMethodDescriptorSupplier("EncryptedVolumeStats"))
+                  opi_api.storage.v1.StatsEncryptedVolumeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MiddleendEncryptionServiceMethodDescriptorSupplier("StatsEncryptedVolume"))
               .build();
         }
       }
     }
-    return getEncryptedVolumeStatsMethod;
+    return getStatsEncryptedVolumeMethod;
   }
 
   /**
@@ -292,9 +292,9 @@ public final class MiddleendEncryptionServiceGrpc {
 
     /**
      */
-    public void encryptedVolumeStats(opi_api.storage.v1.EncryptedVolumeStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolumeStatsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEncryptedVolumeStatsMethod(), responseObserver);
+    public void statsEncryptedVolume(opi_api.storage.v1.StatsEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsEncryptedVolumeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStatsEncryptedVolumeMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -335,12 +335,12 @@ public final class MiddleendEncryptionServiceGrpc {
                 opi_api.storage.v1.EncryptedVolume>(
                   this, METHODID_GET_ENCRYPTED_VOLUME)))
           .addMethod(
-            getEncryptedVolumeStatsMethod(),
+            getStatsEncryptedVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.EncryptedVolumeStatsRequest,
-                opi_api.storage.v1.EncryptedVolumeStatsResponse>(
-                  this, METHODID_ENCRYPTED_VOLUME_STATS)))
+                opi_api.storage.v1.StatsEncryptedVolumeRequest,
+                opi_api.storage.v1.StatsEncryptedVolumeResponse>(
+                  this, METHODID_STATS_ENCRYPTED_VOLUME)))
           .build();
     }
   }
@@ -404,10 +404,10 @@ public final class MiddleendEncryptionServiceGrpc {
 
     /**
      */
-    public void encryptedVolumeStats(opi_api.storage.v1.EncryptedVolumeStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolumeStatsResponse> responseObserver) {
+    public void statsEncryptedVolume(opi_api.storage.v1.StatsEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsEncryptedVolumeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getEncryptedVolumeStatsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getStatsEncryptedVolumeMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -465,9 +465,9 @@ public final class MiddleendEncryptionServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.EncryptedVolumeStatsResponse encryptedVolumeStats(opi_api.storage.v1.EncryptedVolumeStatsRequest request) {
+    public opi_api.storage.v1.StatsEncryptedVolumeResponse statsEncryptedVolume(opi_api.storage.v1.StatsEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getEncryptedVolumeStatsMethod(), getCallOptions(), request);
+          getChannel(), getStatsEncryptedVolumeMethod(), getCallOptions(), request);
     }
   }
 
@@ -530,10 +530,10 @@ public final class MiddleendEncryptionServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.EncryptedVolumeStatsResponse> encryptedVolumeStats(
-        opi_api.storage.v1.EncryptedVolumeStatsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsEncryptedVolumeResponse> statsEncryptedVolume(
+        opi_api.storage.v1.StatsEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getEncryptedVolumeStatsMethod(), getCallOptions()), request);
+          getChannel().newCall(getStatsEncryptedVolumeMethod(), getCallOptions()), request);
     }
   }
 
@@ -542,7 +542,7 @@ public final class MiddleendEncryptionServiceGrpc {
   private static final int METHODID_UPDATE_ENCRYPTED_VOLUME = 2;
   private static final int METHODID_LIST_ENCRYPTED_VOLUMES = 3;
   private static final int METHODID_GET_ENCRYPTED_VOLUME = 4;
-  private static final int METHODID_ENCRYPTED_VOLUME_STATS = 5;
+  private static final int METHODID_STATS_ENCRYPTED_VOLUME = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -581,9 +581,9 @@ public final class MiddleendEncryptionServiceGrpc {
           serviceImpl.getEncryptedVolume((opi_api.storage.v1.GetEncryptedVolumeRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume>) responseObserver);
           break;
-        case METHODID_ENCRYPTED_VOLUME_STATS:
-          serviceImpl.encryptedVolumeStats((opi_api.storage.v1.EncryptedVolumeStatsRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolumeStatsResponse>) responseObserver);
+        case METHODID_STATS_ENCRYPTED_VOLUME:
+          serviceImpl.statsEncryptedVolume((opi_api.storage.v1.StatsEncryptedVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsEncryptedVolumeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -651,7 +651,7 @@ public final class MiddleendEncryptionServiceGrpc {
               .addMethod(getUpdateEncryptedVolumeMethod())
               .addMethod(getListEncryptedVolumesMethod())
               .addMethod(getGetEncryptedVolumeMethod())
-              .addMethod(getEncryptedVolumeStatsMethod())
+              .addMethod(getStatsEncryptedVolumeMethod())
               .build();
         }
       }
