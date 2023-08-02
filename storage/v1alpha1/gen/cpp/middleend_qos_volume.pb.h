@@ -238,7 +238,7 @@ class QosVolume final :
     kMinLimitFieldNumber = 3,
     kMaxLimitFieldNumber = 4,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1656,7 +1656,7 @@ class StatsQosVolumeResponse final :
 #endif  // __GNUC__
 // QosVolume
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
 inline void QosVolume::clear_name() {
   name_.ClearToEmpty();
 }

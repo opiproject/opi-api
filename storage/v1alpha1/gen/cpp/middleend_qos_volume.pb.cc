@@ -250,59 +250,59 @@ const char descriptor_table_protodef_middleend_5fqos_5fvolume_2eproto[] PROTOBUF
   "/resource.proto\032\033google/protobuf/empty.p"
   "roto\032\034google/api/annotations.proto\032\037goog"
   "le/api/field_behavior.proto\032 google/prot"
-  "obuf/field_mask.proto\"\213\002\n\tQosVolume\0222\n\004n"
-  "ame\030\001 \001(\tB$\340A\003\372A\036\n\034opi_api.storage.v1/Qo"
-  "sVolume\022/\n\tvolume_id\030\002 \001(\0132\034.opi_api.com"
-  "mon.v1.ObjectKey\022/\n\tmin_limit\030\003 \001(\0132\034.op"
-  "i_api.storage.v1.QosLimit\022/\n\tmax_limit\030\004"
-  " \001(\0132\034.opi_api.storage.v1.QosLimit:7\352A4\n"
-  " storage.opiproject.org/QosVolume\022\020volum"
-  "es/{volume}\"g\n\026CreateQosVolumeRequest\0226\n"
-  "\nqos_volume\030\001 \001(\0132\035.opi_api.storage.v1.Q"
-  "osVolumeB\003\340A\002\022\025\n\rqos_volume_id\030\002 \001(\t\"c\n\026"
-  "DeleteQosVolumeRequest\0222\n\004name\030\001 \001(\tB$\340A"
-  "\002\372A\036\n\034opi_api.storage.v1/QosVolume\022\025\n\ral"
-  "low_missing\030\002 \001(\010\"\223\001\n\026UpdateQosVolumeReq"
-  "uest\0221\n\nqos_volume\030\001 \001(\0132\035.opi_api.stora"
-  "ge.v1.QosVolume\022/\n\013update_mask\030\002 \001(\0132\032.g"
-  "oogle.protobuf.FieldMask\022\025\n\rallow_missin"
-  "g\030\003 \001(\010\"t\n\025ListQosVolumesRequest\0224\n\006pare"
-  "nt\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/Qos"
-  "Volume\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
-  "\003 \001(\t\"e\n\026ListQosVolumesResponse\0222\n\013qos_v"
-  "olumes\030\001 \003(\0132\035.opi_api.storage.v1.QosVol"
-  "ume\022\027\n\017next_page_token\030\002 \001(\t\"I\n\023GetQosVo"
+  "obuf/field_mask.proto\"\216\002\n\tQosVolume\0225\n\004n"
+  "ame\030\001 \001(\tB\'\340A\003\340A\005\372A\036\n\034opi_api.storage.v1"
+  "/QosVolume\022/\n\tvolume_id\030\002 \001(\0132\034.opi_api."
+  "common.v1.ObjectKey\022/\n\tmin_limit\030\003 \001(\0132\034"
+  ".opi_api.storage.v1.QosLimit\022/\n\tmax_limi"
+  "t\030\004 \001(\0132\034.opi_api.storage.v1.QosLimit:7\352"
+  "A4\n storage.opiproject.org/QosVolume\022\020vo"
+  "lumes/{volume}\"g\n\026CreateQosVolumeRequest"
+  "\0226\n\nqos_volume\030\001 \001(\0132\035.opi_api.storage.v"
+  "1.QosVolumeB\003\340A\002\022\025\n\rqos_volume_id\030\002 \001(\t\""
+  "c\n\026DeleteQosVolumeRequest\0222\n\004name\030\001 \001(\tB"
+  "$\340A\002\372A\036\n\034opi_api.storage.v1/QosVolume\022\025\n"
+  "\rallow_missing\030\002 \001(\010\"\223\001\n\026UpdateQosVolume"
+  "Request\0221\n\nqos_volume\030\001 \001(\0132\035.opi_api.st"
+  "orage.v1.QosVolume\022/\n\013update_mask\030\002 \001(\0132"
+  "\032.google.protobuf.FieldMask\022\025\n\rallow_mis"
+  "sing\030\003 \001(\010\"t\n\025ListQosVolumesRequest\0224\n\006p"
+  "arent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/"
+  "QosVolume\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
+  "en\030\003 \001(\t\"e\n\026ListQosVolumesResponse\0222\n\013qo"
+  "s_volumes\030\001 \003(\0132\035.opi_api.storage.v1.Qos"
+  "Volume\022\027\n\017next_page_token\030\002 \001(\t\"I\n\023GetQo"
+  "sVolumeRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034op"
+  "i_api.storage.v1/QosVolume\"K\n\025StatsQosVo"
   "lumeRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_a"
-  "pi.storage.v1/QosVolume\"K\n\025StatsQosVolum"
-  "eRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api."
-  "storage.v1/QosVolume\"H\n\026StatsQosVolumeRe"
-  "sponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.storage."
-  "v1.VolumeStats2\214\007\n\031MiddleendQosVolumeSer"
-  "vice\022\230\001\n\017CreateQosVolume\022*.opi_api.stora"
-  "ge.v1.CreateQosVolumeRequest\032\035.opi_api.s"
-  "torage.v1.QosVolume\":\202\323\344\223\002\031\"\013/v1/volumes"
-  ":\nqos_volume\332A\030qos_volume,qos_volume_id\022"
-  "}\n\017DeleteQosVolume\022*.opi_api.storage.v1."
-  "DeleteQosVolumeRequest\032\026.google.protobuf"
-  ".Empty\"&\202\323\344\223\002\031*\027/v1/{name=QosVolumes/*}\332"
-  "A\004name\022\253\001\n\017UpdateQosVolume\022*.opi_api.sto"
-  "rage.v1.UpdateQosVolumeRequest\032\035.opi_api"
-  ".storage.v1.QosVolume\"M\202\323\344\223\002.2 /v1/{qos_"
-  "volume.name=subsystems}:\nqos_volume\332A\026qo"
-  "s_volume,update_mask\022\216\001\n\016ListQosVolumes\022"
-  ").opi_api.storage.v1.ListQosVolumesReque"
-  "st\032*.opi_api.storage.v1.ListQosVolumesRe"
-  "sponse\"%\202\323\344\223\002\026\022\024/v1/{parent=volumes}\332A\006p"
-  "arent\022~\n\014GetQosVolume\022\'.opi_api.storage."
-  "v1.GetQosVolumeRequest\032\035.opi_api.storage"
-  ".v1.QosVolume\"&\202\323\344\223\002\031\022\027/v1/{name=QosVolu"
-  "mes/*}\332A\004name\022\225\001\n\016StatsQosVolume\022).opi_a"
-  "pi.storage.v1.StatsQosVolumeRequest\032*.op"
-  "i_api.storage.v1.StatsQosVolumeResponse\""
-  ",\202\323\344\223\002\037\022\035/v1/{name=QosVolumes/*}:stats\332A"
-  "\004nameBf\n\022opi_api.storage.v1B\027MiddleendQo"
-  "sVolumeProtoP\001Z5github.com/opiproject/op"
-  "i-api/storage/v1alpha1/gen/gob\006proto3"
+  "pi.storage.v1/QosVolume\"H\n\026StatsQosVolum"
+  "eResponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.stora"
+  "ge.v1.VolumeStats2\214\007\n\031MiddleendQosVolume"
+  "Service\022\230\001\n\017CreateQosVolume\022*.opi_api.st"
+  "orage.v1.CreateQosVolumeRequest\032\035.opi_ap"
+  "i.storage.v1.QosVolume\":\202\323\344\223\002\031\"\013/v1/volu"
+  "mes:\nqos_volume\332A\030qos_volume,qos_volume_"
+  "id\022}\n\017DeleteQosVolume\022*.opi_api.storage."
+  "v1.DeleteQosVolumeRequest\032\026.google.proto"
+  "buf.Empty\"&\202\323\344\223\002\031*\027/v1/{name=QosVolumes/"
+  "*}\332A\004name\022\253\001\n\017UpdateQosVolume\022*.opi_api."
+  "storage.v1.UpdateQosVolumeRequest\032\035.opi_"
+  "api.storage.v1.QosVolume\"M\202\323\344\223\002.2 /v1/{q"
+  "os_volume.name=subsystems}:\nqos_volume\332A"
+  "\026qos_volume,update_mask\022\216\001\n\016ListQosVolum"
+  "es\022).opi_api.storage.v1.ListQosVolumesRe"
+  "quest\032*.opi_api.storage.v1.ListQosVolume"
+  "sResponse\"%\202\323\344\223\002\026\022\024/v1/{parent=volumes}\332"
+  "A\006parent\022~\n\014GetQosVolume\022\'.opi_api.stora"
+  "ge.v1.GetQosVolumeRequest\032\035.opi_api.stor"
+  "age.v1.QosVolume\"&\202\323\344\223\002\031\022\027/v1/{name=QosV"
+  "olumes/*}\332A\004name\022\225\001\n\016StatsQosVolume\022).op"
+  "i_api.storage.v1.StatsQosVolumeRequest\032*"
+  ".opi_api.storage.v1.StatsQosVolumeRespon"
+  "se\",\202\323\344\223\002\037\022\035/v1/{name=QosVolumes/*}:stat"
+  "s\332A\004nameBf\n\022opi_api.storage.v1B\027Middleen"
+  "dQosVolumeProtoP\001Z5github.com/opiproject"
+  "/opi-api/storage/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_middleend_5fqos_5fvolume_2eproto_deps[8] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -316,7 +316,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_middleend_5fqos_5fvolume_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_middleend_5fqos_5fvolume_2eproto = {
-  false, false, 2357, descriptor_table_protodef_middleend_5fqos_5fvolume_2eproto, "middleend_qos_volume.proto", 
+  false, false, 2360, descriptor_table_protodef_middleend_5fqos_5fvolume_2eproto, "middleend_qos_volume.proto", 
   &descriptor_table_middleend_5fqos_5fvolume_2eproto_once, descriptor_table_middleend_5fqos_5fvolume_2eproto_deps, 8, 9,
   schemas, file_default_instances, TableStruct_middleend_5fqos_5fvolume_2eproto::offsets,
   file_level_metadata_middleend_5fqos_5fvolume_2eproto, file_level_enum_descriptors_middleend_5fqos_5fvolume_2eproto, file_level_service_descriptors_middleend_5fqos_5fvolume_2eproto,
@@ -472,7 +472,7 @@ const char* QosVolume::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
@@ -535,7 +535,7 @@ uint8_t* QosVolume::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
@@ -585,7 +585,7 @@ size_t QosVolume::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(

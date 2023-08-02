@@ -237,7 +237,7 @@ class EncryptedVolume final :
     kKeyFieldNumber = 3,
     kCipherFieldNumber = 4,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1638,7 +1638,7 @@ class StatsEncryptedVolumeResponse final :
 #endif  // __GNUC__
 // EncryptedVolume
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
 inline void EncryptedVolume::clear_name() {
   name_.ClearToEmpty();
 }

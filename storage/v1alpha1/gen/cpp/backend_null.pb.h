@@ -238,7 +238,7 @@ class NullVolume final :
     kBlockSizeFieldNumber = 2,
     kBlocksCountFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1638,7 +1638,7 @@ class StatsNullVolumeResponse final :
 #endif  // __GNUC__
 // NullVolume
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
 inline void NullVolume::clear_name() {
   name_.ClearToEmpty();
 }
