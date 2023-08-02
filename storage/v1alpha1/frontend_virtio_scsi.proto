@@ -151,6 +151,7 @@ message VirtioScsiTarget {
     // user can only set {resource}_id on the Create request object
     string name = 1 [
         (google.api.field_behavior) = OUTPUT_ONLY,
+        (google.api.field_behavior) = IMMUTABLE,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
 
@@ -169,6 +170,7 @@ message VirtioScsiController {
     // user can only set {resource}_id on the Create request object
     string name = 1 [
         (google.api.field_behavior) = OUTPUT_ONLY,
+        (google.api.field_behavior) = IMMUTABLE,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
 
@@ -193,6 +195,7 @@ message VirtioScsiLun {
     // user can only set {resource}_id on the Create request object
     string name = 1 [
         (google.api.field_behavior) = OUTPUT_ONLY,
+        (google.api.field_behavior) = IMMUTABLE,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
 
