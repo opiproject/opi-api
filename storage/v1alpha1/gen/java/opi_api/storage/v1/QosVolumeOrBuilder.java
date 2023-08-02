@@ -36,27 +36,20 @@ public interface QosVolumeOrBuilder extends
    * Middleend/backend volume to apply QoS on
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-   * @return Whether the volumeId field is set.
+   * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The volumeNameRef.
    */
-  boolean hasVolumeId();
+  java.lang.String getVolumeNameRef();
   /**
    * <pre>
    * Middleend/backend volume to apply QoS on
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-   * @return The volumeId.
+   * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for volumeNameRef.
    */
-  opi_api.common.v1.ObjectKey getVolumeId();
-  /**
-   * <pre>
-   * Middleend/backend volume to apply QoS on
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVolumeNameRefBytes();
 
   /**
    * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>

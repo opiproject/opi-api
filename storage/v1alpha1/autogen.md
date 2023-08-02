@@ -2592,7 +2592,7 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | Middleend/backend volume to apply QoS on |
+| volume_name_ref | [string](#string) |  | Middleend/backend volume to apply QoS on |
 | min_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
 | max_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
 

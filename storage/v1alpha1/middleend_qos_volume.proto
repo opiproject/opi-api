@@ -10,7 +10,6 @@ option java_outer_classname = "MiddleendQosVolumeProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "opicommon.proto";
-import "object_key.proto";
 
 import "google/api/client.proto";
 import "google/api/resource.proto";
@@ -76,7 +75,7 @@ message QosVolume {
     ];
 
     // Middleend/backend volume to apply QoS on
-    common.v1.ObjectKey volume_id = 2;
+    string volume_name_ref = 2 [ (google.api.field_behavior) = REQUIRED ];
 
     QosLimit min_limit = 3;
     QosLimit max_limit = 4;

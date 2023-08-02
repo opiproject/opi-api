@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private QosVolume() {
     name_ = "";
+    volumeNameRef_ = "";
   }
 
   @java.lang.Override
@@ -56,16 +57,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (volumeId_ != null) {
-              subBuilder = volumeId_.toBuilder();
-            }
-            volumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(volumeId_);
-              volumeId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            volumeNameRef_ = s;
             break;
           }
           case 26: {
@@ -176,42 +170,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VOLUME_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey volumeId_;
+  public static final int VOLUME_NAME_REF_FIELD_NUMBER = 2;
+  private volatile java.lang.Object volumeNameRef_;
   /**
    * <pre>
    * Middleend/backend volume to apply QoS on
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-   * @return Whether the volumeId field is set.
+   * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The volumeNameRef.
    */
   @java.lang.Override
-  public boolean hasVolumeId() {
-    return volumeId_ != null;
+  public java.lang.String getVolumeNameRef() {
+    java.lang.Object ref = volumeNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      volumeNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Middleend/backend volume to apply QoS on
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-   * @return The volumeId.
+   * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for volumeNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVolumeId() {
-    return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-  }
-  /**
-   * <pre>
-   * Middleend/backend volume to apply QoS on
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
-    return getVolumeId();
+  public com.google.protobuf.ByteString
+      getVolumeNameRefBytes() {
+    java.lang.Object ref = volumeNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      volumeNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MIN_LIMIT_FIELD_NUMBER = 3;
@@ -283,8 +285,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (volumeId_ != null) {
-      output.writeMessage(2, getVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, volumeNameRef_);
     }
     if (minLimit_ != null) {
       output.writeMessage(3, getMinLimit());
@@ -304,9 +306,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (volumeId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, volumeNameRef_);
     }
     if (minLimit_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -333,11 +334,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (hasVolumeId() != other.hasVolumeId()) return false;
-    if (hasVolumeId()) {
-      if (!getVolumeId()
-          .equals(other.getVolumeId())) return false;
-    }
+    if (!getVolumeNameRef()
+        .equals(other.getVolumeNameRef())) return false;
     if (hasMinLimit() != other.hasMinLimit()) return false;
     if (hasMinLimit()) {
       if (!getMinLimit()
@@ -361,10 +359,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    if (hasVolumeId()) {
-      hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVolumeId().hashCode();
-    }
+    hash = (37 * hash) + VOLUME_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getVolumeNameRef().hashCode();
     if (hasMinLimit()) {
       hash = (37 * hash) + MIN_LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getMinLimit().hashCode();
@@ -508,12 +504,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = null;
-      } else {
-        volumeId_ = null;
-        volumeIdBuilder_ = null;
-      }
+      volumeNameRef_ = "";
+
       if (minLimitBuilder_ == null) {
         minLimit_ = null;
       } else {
@@ -553,11 +545,7 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.QosVolume buildPartial() {
       opi_api.storage.v1.QosVolume result = new opi_api.storage.v1.QosVolume(this);
       result.name_ = name_;
-      if (volumeIdBuilder_ == null) {
-        result.volumeId_ = volumeId_;
-      } else {
-        result.volumeId_ = volumeIdBuilder_.build();
-      }
+      result.volumeNameRef_ = volumeNameRef_;
       if (minLimitBuilder_ == null) {
         result.minLimit_ = minLimit_;
       } else {
@@ -620,8 +608,9 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.hasVolumeId()) {
-        mergeVolumeId(other.getVolumeId());
+      if (!other.getVolumeNameRef().isEmpty()) {
+        volumeNameRef_ = other.volumeNameRef_;
+        onChanged();
       }
       if (other.hasMinLimit()) {
         mergeMinLimit(other.getMinLimit());
@@ -764,33 +753,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey volumeId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> volumeIdBuilder_;
+    private java.lang.Object volumeNameRef_ = "";
     /**
      * <pre>
      * Middleend/backend volume to apply QoS on
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-     * @return Whether the volumeId field is set.
+     * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The volumeNameRef.
      */
-    public boolean hasVolumeId() {
-      return volumeIdBuilder_ != null || volumeId_ != null;
-    }
-    /**
-     * <pre>
-     * Middleend/backend volume to apply QoS on
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-     * @return The volumeId.
-     */
-    public opi_api.common.v1.ObjectKey getVolumeId() {
-      if (volumeIdBuilder_ == null) {
-        return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
+    public java.lang.String getVolumeNameRef() {
+      java.lang.Object ref = volumeNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        volumeNameRef_ = s;
+        return s;
       } else {
-        return volumeIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -798,125 +779,74 @@ private static final long serialVersionUID = 0L;
      * Middleend/backend volume to apply QoS on
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
+     * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for volumeNameRef.
      */
-    public Builder setVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (volumeIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        volumeId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getVolumeNameRefBytes() {
+      java.lang.Object ref = volumeNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        volumeNameRef_ = b;
+        return b;
       } else {
-        volumeIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * Middleend/backend volume to apply QoS on
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
+     * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The volumeNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setVolumeId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = builderForValue.build();
-        onChanged();
-      } else {
-        volumeIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Middleend/backend volume to apply QoS on
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-     */
-    public Builder mergeVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (volumeIdBuilder_ == null) {
-        if (volumeId_ != null) {
-          volumeId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(volumeId_).mergeFrom(value).buildPartial();
-        } else {
-          volumeId_ = value;
-        }
-        onChanged();
-      } else {
-        volumeIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Middleend/backend volume to apply QoS on
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-     */
-    public Builder clearVolumeId() {
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = null;
-        onChanged();
-      } else {
-        volumeId_ = null;
-        volumeIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Middleend/backend volume to apply QoS on
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVolumeIdBuilder() {
-      
+    public Builder setVolumeNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      volumeNameRef_ = value;
       onChanged();
-      return getVolumeIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * Middleend/backend volume to apply QoS on
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
+     * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
-      if (volumeIdBuilder_ != null) {
-        return volumeIdBuilder_.getMessageOrBuilder();
-      } else {
-        return volumeId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-      }
+    public Builder clearVolumeNameRef() {
+      
+      volumeNameRef_ = getDefaultInstance().getVolumeNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * Middleend/backend volume to apply QoS on
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 2;</code>
+     * <code>string volume_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for volumeNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVolumeIdFieldBuilder() {
-      if (volumeIdBuilder_ == null) {
-        volumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVolumeId(),
-                getParentForChildren(),
-                isClean());
-        volumeId_ = null;
-      }
-      return volumeIdBuilder_;
+    public Builder setVolumeNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      volumeNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.storage.v1.QosLimit minLimit_;
