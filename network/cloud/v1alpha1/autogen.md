@@ -4963,6 +4963,7 @@ SubnetSpec captures subnet specific configuration
 | ingress_default_sg_policy_name_ref | [string](#string) |  | default ingress stateful security policy for this subnet if configured, is the 1st policy evaluated before other security policies on a given vnic |
 | egress_default_sg_policy_name_ref | [string](#string) |  | default egress stateful security policy for this subnet if configured, is the 1st policy evaluated before other security polices on a given vnic |
 | remote_subnet | [bool](#bool) |  | remote_subnet, if set, indicates that the subnet does not have any IP mappings in local pod and such subnets are used to program all remote pod IP mappings behind it |
+| attached_tunnel_interface_name_ref | [string](#string) |  | Tunnel interface name associated with the subnet Usually a route/prefix can point to a tunnel as next hope (route.proto) However to handle the situation where subnet is associated with the tunnel interface to allow any learned routes within this subnet to be automatically advertised over to the routing plane (e.g. EVPN) this association needs to be explicit |
 
 
 

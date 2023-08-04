@@ -103,6 +103,12 @@ message SubnetSpec {
   // mappings in local pod and such subnets are used to program all remote
   // pod IP mappings behind it
   bool remote_subnet = 20;
+  // Tunnel interface name associated with the subnet
+  // Usually a route/prefix can point to a tunnel as next hope (route.proto)
+  // However to handle the situation where subnet is associated with the tunnel interface
+  // to allow any learned routes within this subnet to be automatically advertised
+  // over to the routing plane (e.g. EVPN) this association needs to be explicit
+  string attached_tunnel_interface_name_ref = 21;
 }
 
 // operational status of the subnet, if any

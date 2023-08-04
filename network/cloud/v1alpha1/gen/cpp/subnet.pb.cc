@@ -48,6 +48,7 @@ constexpr SubnetSpec::SubnetSpec(
   , v6_route_table_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ingress_default_sg_policy_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , egress_default_sg_policy_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , attached_tunnel_interface_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , v4_prefix_(nullptr)
   , v6_prefix_(nullptr)
   , access_encap_(nullptr)
@@ -122,6 +123,7 @@ const uint32_t TableStruct_subnet_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SubnetSpec, ingress_default_sg_policy_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SubnetSpec, egress_default_sg_policy_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SubnetSpec, remote_subnet_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SubnetSpec, attached_tunnel_interface_name_ref_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SubnetStatus, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -134,7 +136,7 @@ const uint32_t TableStruct_subnet_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Subnet)},
   { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SubnetSpec)},
-  { 35, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SubnetStatus)},
+  { 36, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SubnetStatus)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -151,7 +153,7 @@ const char descriptor_table_protodef_subnet_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "lpha1.SubnetSpec\022<\n\006status\030\003 \001(\0132,.opi_a"
   "pi.network.cloud.v1alpha1.SubnetStatus:<"
   "\352A9\n%opi_api.network.cloud.v1alpha1/subn"
-  "et\022\020subnets/{subnet}\"\264\006\n\nSubnetSpec\022\024\n\014v"
+  "et\022\020subnets/{subnet}\"\340\006\n\nSubnetSpec\022\024\n\014v"
   "pc_name_ref\030\001 \001(\t\022D\n\tv4_prefix\030\002 \001(\01321.o"
   "pi_api.network.opinetcommon.v1alpha1.IPv"
   "4Prefix\022D\n\tv6_prefix\030\003 \001(\01321.opi_api.net"
@@ -172,11 +174,12 @@ const char descriptor_table_protodef_subnet_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "nnected\030\021 \001(\010\022*\n\"ingress_default_sg_poli"
   "cy_name_ref\030\022 \001(\t\022)\n!egress_default_sg_p"
   "olicy_name_ref\030\023 \001(\t\022\025\n\rremote_subnet\030\024 "
-  "\001(\010\"4\n\014SubnetStatus\022\020\n\010hw_index\030\001 \001(\005\022\022\n"
-  "\nvnic_count\030\002 \001(\005Bl\n\036opi_api.network.clo"
-  "ud.v1alpha1B\013SubnetProtoP\001Z;github.com/o"
-  "piproject/opi-api/network/cloud/v1alpha1"
-  "/gen/gob\006proto3"
+  "\001(\010\022*\n\"attached_tunnel_interface_name_re"
+  "f\030\025 \001(\t\"4\n\014SubnetStatus\022\020\n\010hw_index\030\001 \001("
+  "\005\022\022\n\nvnic_count\030\002 \001(\005Bl\n\036opi_api.network"
+  ".cloud.v1alpha1B\013SubnetProtoP\001Z;github.c"
+  "om/opiproject/opi-api/network/cloud/v1al"
+  "pha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_subnet_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fresource_2eproto,
@@ -184,7 +187,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_subnet_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_subnet_2eproto = {
-  false, false, 1295, descriptor_table_protodef_subnet_2eproto, "subnet.proto", 
+  false, false, 1339, descriptor_table_protodef_subnet_2eproto, "subnet.proto", 
   &descriptor_table_subnet_2eproto_once, descriptor_table_subnet_2eproto_deps, 2, 3,
   schemas, file_default_instances, TableStruct_subnet_2eproto::offsets,
   file_level_metadata_subnet_2eproto, file_level_enum_descriptors_subnet_2eproto, file_level_service_descriptors_subnet_2eproto,
@@ -623,6 +626,14 @@ SubnetSpec::SubnetSpec(const SubnetSpec& from)
     egress_default_sg_policy_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_egress_default_sg_policy_name_ref(), 
       GetArenaForAllocation());
   }
+  attached_tunnel_interface_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    attached_tunnel_interface_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_attached_tunnel_interface_name_ref().empty()) {
+    attached_tunnel_interface_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_attached_tunnel_interface_name_ref(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_v4_prefix()) {
     v4_prefix_ = new ::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix(*from.v4_prefix_);
   } else {
@@ -678,6 +689,10 @@ egress_default_sg_policy_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::in
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   egress_default_sg_policy_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+attached_tunnel_interface_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  attached_tunnel_interface_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&v4_prefix_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&remote_subnet_) -
@@ -700,6 +715,7 @@ inline void SubnetSpec::SharedDtor() {
   v6_route_table_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ingress_default_sg_policy_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   egress_default_sg_policy_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  attached_tunnel_interface_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete v4_prefix_;
   if (this != internal_default_instance()) delete v6_prefix_;
   if (this != internal_default_instance()) delete access_encap_;
@@ -734,6 +750,7 @@ void SubnetSpec::Clear() {
   v6_route_table_name_ref_.ClearToEmpty();
   ingress_default_sg_policy_name_ref_.ClearToEmpty();
   egress_default_sg_policy_name_ref_.ClearToEmpty();
+  attached_tunnel_interface_name_ref_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && v4_prefix_ != nullptr) {
     delete v4_prefix_;
   }
@@ -969,6 +986,16 @@ const char* SubnetSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         } else
           goto handle_unusual;
         continue;
+      // string attached_tunnel_interface_name_ref = 21;
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
+          auto str = _internal_mutable_attached_tunnel_interface_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.SubnetSpec.attached_tunnel_interface_name_ref"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -1166,6 +1193,16 @@ uint8_t* SubnetSpec::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(20, this->_internal_remote_subnet(), target);
   }
 
+  // string attached_tunnel_interface_name_ref = 21;
+  if (!this->_internal_attached_tunnel_interface_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_attached_tunnel_interface_name_ref().data(), static_cast<int>(this->_internal_attached_tunnel_interface_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.SubnetSpec.attached_tunnel_interface_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        21, this->_internal_attached_tunnel_interface_name_ref(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1271,6 +1308,13 @@ size_t SubnetSpec::ByteSizeLong() const {
         this->_internal_egress_default_sg_policy_name_ref());
   }
 
+  // string attached_tunnel_interface_name_ref = 21;
+  if (!this->_internal_attached_tunnel_interface_name_ref().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_attached_tunnel_interface_name_ref());
+  }
+
   // .opi_api.network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 2;
   if (this->_internal_has_v4_prefix()) {
     total_size += 1 +
@@ -1369,6 +1413,9 @@ void SubnetSpec::MergeFrom(const SubnetSpec& from) {
   if (!from._internal_egress_default_sg_policy_name_ref().empty()) {
     _internal_set_egress_default_sg_policy_name_ref(from._internal_egress_default_sg_policy_name_ref());
   }
+  if (!from._internal_attached_tunnel_interface_name_ref().empty()) {
+    _internal_set_attached_tunnel_interface_name_ref(from._internal_attached_tunnel_interface_name_ref());
+  }
   if (from._internal_has_v4_prefix()) {
     _internal_mutable_v4_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix::MergeFrom(from._internal_v4_prefix());
   }
@@ -1451,6 +1498,11 @@ void SubnetSpec::InternalSwap(SubnetSpec* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &egress_default_sg_policy_name_ref_, lhs_arena,
       &other->egress_default_sg_policy_name_ref_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &attached_tunnel_interface_name_ref_, lhs_arena,
+      &other->attached_tunnel_interface_name_ref_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SubnetSpec, remote_subnet_)
