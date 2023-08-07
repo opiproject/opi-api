@@ -156,7 +156,7 @@ message VirtioScsiTarget {
     ];
 
     // maximum LUNs within a target
-    int32 max_luns = 2;
+    int32 max_luns = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message VirtioScsiController {
@@ -175,13 +175,13 @@ message VirtioScsiController {
     ];
 
     // xPU's PCI ID for the controller
-    PciEndpoint pcie_id = 2;
+    PciEndpoint pcie_id = 2 [(google.api.field_behavior) = REQUIRED];
 
     // min QoS limits for the controller
-    QosLimit min_limit = 3;
+    QosLimit min_limit = 3 [(google.api.field_behavior) = OPTIONAL];
 
     // max QoS limits for the controller
-    QosLimit max_limit = 4;
+    QosLimit max_limit = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message VirtioScsiLun {
@@ -200,10 +200,10 @@ message VirtioScsiLun {
     ];
 
     // The target that this LUN is in
-    common.v1.ObjectKey target_id = 2;
+    common.v1.ObjectKey target_id = 2 [(google.api.field_behavior) = REQUIRED];
 
     // The middle/back-end volume for this LLUN
-    common.v1.ObjectKey volume_id = 3;
+    common.v1.ObjectKey volume_id = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 message CreateVirtioScsiTargetRequest {
@@ -218,17 +218,17 @@ message DeleteVirtioScsiTargetRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateVirtioScsiTargetRequest {
     // The object's `name` field is used to identify the object to be updated.
-    VirtioScsiTarget virtio_scsi_target = 1;
+    VirtioScsiTarget virtio_scsi_target = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListVirtioScsiTargetsRequest {
@@ -236,8 +236,8 @@ message ListVirtioScsiTargetsRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListVirtioScsiTargetsResponse {
@@ -265,7 +265,7 @@ message StatsVirtioScsiTargetResponse {
 
 message CreateVirtioScsiControllerRequest {
     VirtioScsiController virtio_scsi_controller = 1 [(google.api.field_behavior) = REQUIRED];
-    string virtio_scsi_controller_id = 2;
+    string virtio_scsi_controller_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteVirtioScsiControllerRequest {
@@ -275,17 +275,17 @@ message DeleteVirtioScsiControllerRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateVirtioScsiControllerRequest {
     // The object's `name` field is used to identify the object to be updated.
-    VirtioScsiController virtio_scsi_controller = 1;
+    VirtioScsiController virtio_scsi_controller = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListVirtioScsiControllersRequest {
@@ -293,8 +293,8 @@ message ListVirtioScsiControllersRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListVirtioScsiControllersResponse {
@@ -322,7 +322,7 @@ message StatsVirtioScsiControllerResponse {
 
 message CreateVirtioScsiLunRequest {
     VirtioScsiLun virtio_scsi_lun = 1 [(google.api.field_behavior) = REQUIRED];
-    string virtio_scsi_lun_id = 2;
+    string virtio_scsi_lun_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteVirtioScsiLunRequest {
@@ -332,17 +332,17 @@ message DeleteVirtioScsiLunRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateVirtioScsiLunRequest {
     // The object's `name` field is used to identify the object to be updated.
-    VirtioScsiLun virtio_scsi_lun = 1;
+    VirtioScsiLun virtio_scsi_lun = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListVirtioScsiLunsRequest {
@@ -350,8 +350,8 @@ message ListVirtioScsiLunsRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListVirtioScsiLunsResponse {
@@ -371,7 +371,7 @@ message StatsVirtioScsiLunRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
-    common.v1.ObjectKey controller_id = 2;
+    common.v1.ObjectKey controller_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message StatsVirtioScsiLunResponse {
