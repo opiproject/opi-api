@@ -77,23 +77,23 @@ message VirtioBlk {
     ];
 
     // The PCI endpoint where this device should appear
-    PciEndpoint pcie_id = 2;
+    PciEndpoint pcie_id = 2 [(google.api.field_behavior) = REQUIRED];
 
     // The back/middle-end volume to back this controller
-    string volume_name_ref = 3 [ (google.api.field_behavior) = REQUIRED ];
+    string volume_name_ref = 3 [(google.api.field_behavior) = REQUIRED];
 
-    int64 max_io_qps = 4;
+    int64 max_io_qps = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // min QoS limits for the virtio-blk device
-    QosLimit min_limit = 5;
+    QosLimit min_limit = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // max QoS limits for the virtio-blk device
-    QosLimit max_limit = 6;
+    QosLimit max_limit = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message CreateVirtioBlkRequest {
     VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
-    string virtio_blk_id = 2;
+    string virtio_blk_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteVirtioBlkRequest {
@@ -103,17 +103,17 @@ message DeleteVirtioBlkRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateVirtioBlkRequest {
     // The object's `name` field is used to identify the object to be updated.
-    VirtioBlk virtio_blk = 1;
+    VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListVirtioBlksRequest {
@@ -121,8 +121,8 @@ message ListVirtioBlksRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListVirtioBlksResponse {
