@@ -159,34 +159,34 @@ message NvmeSubsystem {
     ];
 
     // spec holds configurable values
-    NvmeSubsystemSpec   spec   = 2;
+    NvmeSubsystemSpec   spec   = 2 [(google.api.field_behavior) = REQUIRED];
 
     // status holds server generated values
-    NvmeSubsystemStatus status = 3;
+    NvmeSubsystemStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message NvmeSubsystemSpec {
     // Nvme subsystem NQN to which the controller belongs
     // Refer to the NQN format in the Nvme base specifications, must not
     // exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-    string nqn = 1;
+    string nqn = 1 [(google.api.field_behavior) = REQUIRED];
 
     // serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-    string serial_number = 2;
+    string serial_number = 2 [(google.api.field_behavior) = OPTIONAL];
 
     // model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-    string model_number = 3;
+    string model_number = 3 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum namespaces within a subsystem
-    int64 max_namespaces = 4;
+    int64 max_namespaces = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message NvmeSubsystemStatus {
     // firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-    string firmware_revision  = 1;
+    string firmware_revision  = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // FRU identfier, 16bytes opaque identity for the type of unit
-    bytes fru_guid = 2;
+    bytes fru_guid = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message NvmeController {
@@ -205,16 +205,16 @@ message NvmeController {
     ];
 
     // spec holds configurable values
-    NvmeControllerSpec   spec   = 2;
+    NvmeControllerSpec   spec   = 2 [(google.api.field_behavior) = REQUIRED];
 
     // status holds server generated values
-    NvmeControllerStatus status = 3;
+    NvmeControllerStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message NvmeControllerSpec {
     // subsystem controller id range: 0 to 65535.
     // must not be reused under the same subsystem
-    int32 nvme_controller_id  = 1;
+    optional int32 nvme_controller_id  = 1 [(google.api.field_behavior) = OPTIONAL];
 
     // subsystem information
     string subsystem_name_ref = 2 [
@@ -223,38 +223,38 @@ message NvmeControllerSpec {
     ];
 
     // xPU's PCI ID for the controller
-    PciEndpoint pcie_id = 3;
+    PciEndpoint pcie_id = 3 [(google.api.field_behavior) = REQUIRED];
 
     // maximum number of host submission queues allowed.
     // If not set, the xPU will provide a default.
-    int32 max_nsq = 4;
+    int32 max_nsq = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum number of host completion queues allowed.
     // If not set, the xPU will provide a default.
-    int32 max_ncq = 5;
+    int32 max_ncq = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum number of submission queue entries per submission queue, as a power of 2.
     // default value as per spec is 6
-    int32 sqes = 6;
+    int32 sqes = 6 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum number of completion queue entries per completion queue, as a power of 2.
     // default value as per spec is 4
-    int32 cqes = 7;
+    int32 cqes = 7 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum Number of namespaces that will be provisioned under
     // the controller.
-    int32 max_namespaces = 8;
+    int32 max_namespaces = 8 [(google.api.field_behavior) = OPTIONAL];
 
     // min QoS limits for the controller
-    QosLimit min_limit = 9;
+    QosLimit min_limit = 9 [(google.api.field_behavior) = OPTIONAL];
 
     // max QoS limits for the controller
-    QosLimit max_limit = 10;
+    QosLimit max_limit = 10 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message NvmeControllerStatus {
     // Device is in use by host nvme driver
-    bool   active = 1;
+    bool   active = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message NvmeNamespace {
@@ -273,10 +273,10 @@ message NvmeNamespace {
     ];
 
     // spec holds configurable values
-    NvmeNamespaceSpec   spec   = 2;
+    NvmeNamespaceSpec   spec   = 2 [(google.api.field_behavior) = REQUIRED];
 
     // status holds server generated values
-    NvmeNamespaceStatus status = 3;
+    NvmeNamespaceStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message NvmeNamespaceSpec {
@@ -290,33 +290,33 @@ message NvmeNamespaceSpec {
     // If not provided, then the controller will assign an unused NSID
     // within the max namespace range - auto assigned nsid may not work
     // for live migration
-    int32 host_nsid = 2;
+    int32 host_nsid = 2 [(google.api.field_behavior) = OPTIONAL];
 
     // Globally unique identifier for the namespace
-    string nguid = 3;
+    string nguid = 3 [(google.api.field_behavior) = OPTIONAL];
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified
-    int64 eui64 = 4;
+    int64 eui64 = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 5;
+    common.v1.Uuid uuid = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // The back/middle-end volume to back this namespace.
-    string volume_name_ref = 6 [ (google.api.field_behavior) = REQUIRED ];
+    string volume_name_ref = 6 [(google.api.field_behavior) = REQUIRED];
 }
 
 message NvmeNamespaceStatus {
     // config state of the namespace object, (enabled, disable, deleting)
-    NvmeNamespacePciState      pci_state       = 1;
+    NvmeNamespacePciState      pci_state       = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Operational state of the namespace object, (connected, disconnected)
-    NvmeNamespacePciOperState  pci_oper_state   = 2;
+    NvmeNamespacePciOperState  pci_oper_state   = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message CreateNvmeSubsystemRequest {
     NvmeSubsystem nvme_subsystem = 1 [(google.api.field_behavior) = REQUIRED];
-    string nvme_subsystem_id = 2;
+    string nvme_subsystem_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteNvmeSubsystemRequest {
@@ -326,17 +326,17 @@ message DeleteNvmeSubsystemRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateNvmeSubsystemRequest {
     // The object's `name` field is used to identify the object to be updated.
-    NvmeSubsystem nvme_subsystem = 1;
+    NvmeSubsystem nvme_subsystem = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeSubsystemsRequest {
@@ -344,8 +344,8 @@ message ListNvmeSubsystemsRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeSubsystemsResponse {
@@ -373,7 +373,7 @@ message StatsNvmeSubsystemResponse {
 
 message CreateNvmeControllerRequest {
     NvmeController nvme_controller = 1 [(google.api.field_behavior) = REQUIRED];
-    string nvme_controller_id = 2;
+    string nvme_controller_id = 2 [ (google.api.field_behavior) = OPTIONAL ];
 }
 
 message DeleteNvmeControllerRequest {
@@ -383,17 +383,17 @@ message DeleteNvmeControllerRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateNvmeControllerRequest {
     // The object's `name` field is used to identify the object to be updated.
-    NvmeController nvme_controller = 1;
+    NvmeController nvme_controller = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeControllersRequest {
@@ -401,8 +401,8 @@ message ListNvmeControllersRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeControllersResponse {
@@ -430,7 +430,7 @@ message StatsNvmeControllerResponse {
 
 message CreateNvmeNamespaceRequest {
     NvmeNamespace nvme_namespace = 1 [(google.api.field_behavior) = REQUIRED];
-    string nvme_namespace_id = 2;
+    string nvme_namespace_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteNvmeNamespaceRequest {
@@ -440,17 +440,17 @@ message DeleteNvmeNamespaceRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateNvmeNamespaceRequest {
     // The object's `name` field is used to identify the object to be updated.
-    NvmeNamespace nvme_namespace = 1;
+    NvmeNamespace nvme_namespace = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeNamespacesRequest {
@@ -458,8 +458,8 @@ message ListNvmeNamespacesRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeNamespacesResponse {
