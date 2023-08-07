@@ -12,6 +12,9 @@ option java_outer_classname = "OpiCommonProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
+import "google/api/field_behavior.proto";
+import "google/protobuf/wrappers.proto";
+
 // Many front-ends expose PCI devices to the host. This represents that endpoint.
 // This device will ultimately be surfaced by the operating system at some
 // Bus:Device:Function, but note that the values set here are not necessarily
@@ -25,48 +28,48 @@ message PciEndpoint {
     // plugged into a particular host. This number may end up matching
     // the host-assigned "device" value in the bus:device:function identifier,
     // but it does not strictly have to and that should not be relied upon.
-    int32 port_id = 1;
+    google.protobuf.Int32Value port_id = 1 [(google.api.field_behavior) = REQUIRED];
 
     // Physical function index. This may end up matching the host-assigned
     // "function" value in the bus:device:function identifier, but it does not
     // strictly have to and that should not be relied upon.
-    int32 physical_function = 2;
+    google.protobuf.Int32Value  physical_function = 2 [(google.api.field_behavior) = REQUIRED];
 
     // Virtual function index. 1-based index.
     // The value 0 is reserved to represent the PCI physical "device".
     // This may end up matching the host-assigned "function" value in the
     // bus:device:function identifier, but it does not strictly have to and
     // that should not be relied upon.
-    int32 virtual_function = 3;
+    google.protobuf.Int32Value  virtual_function = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 message VolumeStats {
-    int32    read_bytes_count       = 1;
-    int32    read_ops_count         = 2;
-    int32    write_bytes_count      = 3;
-    int32    write_ops_count        = 4;
-    int32    unmap_bytes_count      = 5;
-    int32    unmap_ops_count        = 6;
-    int32    read_latency_ticks     = 7;
-    int32    write_latency_ticks    = 8;
-    int32    unmap_latency_ticks    = 9;
+    int32    read_bytes_count       = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32    read_ops_count         = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32    write_bytes_count      = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32    write_ops_count        = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32    unmap_bytes_count      = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32    unmap_ops_count        = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32    read_latency_ticks     = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32    write_latency_ticks    = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32    unmap_latency_ticks    = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // QoS limits applied to volumes/devices
 message QosLimit {
     // Read kIOPS
-    int64 rd_iops_kiops = 1;
+    int64 rd_iops_kiops = 1 [(google.api.field_behavior) = OPTIONAL];
     // Write kIOPS
-    int64 wr_iops_kiops = 2;
+    int64 wr_iops_kiops = 2 [(google.api.field_behavior) = OPTIONAL];
     // Read/write kIOPS
-    int64 rw_iops_kiops = 3;
+    int64 rw_iops_kiops = 3 [(google.api.field_behavior) = OPTIONAL];
 
     // Read bandwidth (MB/s)
-    int64 rd_bandwidth_mbs = 4;
+    int64 rd_bandwidth_mbs = 4 [(google.api.field_behavior) = OPTIONAL];
     // Write bandwidth (MB/s)
-    int64 wr_bandwidth_mbs = 5;
+    int64 wr_bandwidth_mbs = 5 [(google.api.field_behavior) = OPTIONAL];
     // Read/write bandwidth (MB/s)
-    int64 rw_bandwidth_mbs = 6;
+    int64 rw_bandwidth_mbs = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // AES encryption types
