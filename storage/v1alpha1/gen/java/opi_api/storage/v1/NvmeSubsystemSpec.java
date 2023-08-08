@@ -85,6 +85,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -115,7 +117,7 @@ private static final long serialVersionUID = 0L;
    * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
    * </pre>
    *
-   * <code>string nqn = 1;</code>
+   * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nqn.
    */
   @java.lang.Override
@@ -138,7 +140,7 @@ private static final long serialVersionUID = 0L;
    * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
    * </pre>
    *
-   * <code>string nqn = 1;</code>
+   * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for nqn.
    */
   @java.lang.Override
@@ -163,7 +165,7 @@ private static final long serialVersionUID = 0L;
    * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string serial_number = 2;</code>
+   * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The serialNumber.
    */
   @java.lang.Override
@@ -184,7 +186,7 @@ private static final long serialVersionUID = 0L;
    * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string serial_number = 2;</code>
+   * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for serialNumber.
    */
   @java.lang.Override
@@ -209,7 +211,7 @@ private static final long serialVersionUID = 0L;
    * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string model_number = 3;</code>
+   * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The modelNumber.
    */
   @java.lang.Override
@@ -230,7 +232,7 @@ private static final long serialVersionUID = 0L;
    * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string model_number = 3;</code>
+   * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for modelNumber.
    */
   @java.lang.Override
@@ -255,7 +257,7 @@ private static final long serialVersionUID = 0L;
    * maximum namespaces within a subsystem
    * </pre>
    *
-   * <code>int64 max_namespaces = 4;</code>
+   * <code>int64 max_namespaces = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxNamespaces.
    */
   @java.lang.Override
@@ -625,7 +627,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 1;</code>
+     * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nqn.
      */
     public java.lang.String getNqn() {
@@ -647,7 +649,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 1;</code>
+     * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for nqn.
      */
     public com.google.protobuf.ByteString
@@ -670,7 +672,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 1;</code>
+     * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The nqn to set.
      * @return This builder for chaining.
      */
@@ -691,7 +693,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 1;</code>
+     * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearNqn() {
@@ -707,7 +709,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 1;</code>
+     * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for nqn to set.
      * @return This builder for chaining.
      */
@@ -729,7 +731,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 2;</code>
+     * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The serialNumber.
      */
     public java.lang.String getSerialNumber() {
@@ -749,7 +751,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 2;</code>
+     * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for serialNumber.
      */
     public com.google.protobuf.ByteString
@@ -770,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 2;</code>
+     * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The serialNumber to set.
      * @return This builder for chaining.
      */
@@ -789,7 +791,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 2;</code>
+     * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearSerialNumber() {
@@ -803,7 +805,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 2;</code>
+     * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for serialNumber to set.
      * @return This builder for chaining.
      */
@@ -825,7 +827,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 3;</code>
+     * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The modelNumber.
      */
     public java.lang.String getModelNumber() {
@@ -845,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 3;</code>
+     * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for modelNumber.
      */
     public com.google.protobuf.ByteString
@@ -866,7 +868,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 3;</code>
+     * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The modelNumber to set.
      * @return This builder for chaining.
      */
@@ -885,7 +887,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 3;</code>
+     * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearModelNumber() {
@@ -899,7 +901,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 3;</code>
+     * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for modelNumber to set.
      * @return This builder for chaining.
      */
@@ -921,7 +923,7 @@ private static final long serialVersionUID = 0L;
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_namespaces = 4;</code>
+     * <code>int64 max_namespaces = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxNamespaces.
      */
     @java.lang.Override
@@ -933,7 +935,7 @@ private static final long serialVersionUID = 0L;
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_namespaces = 4;</code>
+     * <code>int64 max_namespaces = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The maxNamespaces to set.
      * @return This builder for chaining.
      */
@@ -948,7 +950,7 @@ private static final long serialVersionUID = 0L;
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_namespaces = 4;</code>
+     * <code>int64 max_namespaces = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNamespaces() {

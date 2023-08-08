@@ -104,6 +104,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -128,7 +130,7 @@ private static final long serialVersionUID = 0L;
   public static final int READ_BYTES_COUNT_FIELD_NUMBER = 1;
   private int readBytesCount_;
   /**
-   * <code>int32 read_bytes_count = 1;</code>
+   * <code>int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The readBytesCount.
    */
   @java.lang.Override
@@ -139,7 +141,7 @@ private static final long serialVersionUID = 0L;
   public static final int READ_OPS_COUNT_FIELD_NUMBER = 2;
   private int readOpsCount_;
   /**
-   * <code>int32 read_ops_count = 2;</code>
+   * <code>int32 read_ops_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The readOpsCount.
    */
   @java.lang.Override
@@ -150,7 +152,7 @@ private static final long serialVersionUID = 0L;
   public static final int WRITE_BYTES_COUNT_FIELD_NUMBER = 3;
   private int writeBytesCount_;
   /**
-   * <code>int32 write_bytes_count = 3;</code>
+   * <code>int32 write_bytes_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The writeBytesCount.
    */
   @java.lang.Override
@@ -161,7 +163,7 @@ private static final long serialVersionUID = 0L;
   public static final int WRITE_OPS_COUNT_FIELD_NUMBER = 4;
   private int writeOpsCount_;
   /**
-   * <code>int32 write_ops_count = 4;</code>
+   * <code>int32 write_ops_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The writeOpsCount.
    */
   @java.lang.Override
@@ -172,7 +174,7 @@ private static final long serialVersionUID = 0L;
   public static final int UNMAP_BYTES_COUNT_FIELD_NUMBER = 5;
   private int unmapBytesCount_;
   /**
-   * <code>int32 unmap_bytes_count = 5;</code>
+   * <code>int32 unmap_bytes_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The unmapBytesCount.
    */
   @java.lang.Override
@@ -183,7 +185,7 @@ private static final long serialVersionUID = 0L;
   public static final int UNMAP_OPS_COUNT_FIELD_NUMBER = 6;
   private int unmapOpsCount_;
   /**
-   * <code>int32 unmap_ops_count = 6;</code>
+   * <code>int32 unmap_ops_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The unmapOpsCount.
    */
   @java.lang.Override
@@ -194,7 +196,7 @@ private static final long serialVersionUID = 0L;
   public static final int READ_LATENCY_TICKS_FIELD_NUMBER = 7;
   private int readLatencyTicks_;
   /**
-   * <code>int32 read_latency_ticks = 7;</code>
+   * <code>int32 read_latency_ticks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The readLatencyTicks.
    */
   @java.lang.Override
@@ -205,7 +207,7 @@ private static final long serialVersionUID = 0L;
   public static final int WRITE_LATENCY_TICKS_FIELD_NUMBER = 8;
   private int writeLatencyTicks_;
   /**
-   * <code>int32 write_latency_ticks = 8;</code>
+   * <code>int32 write_latency_ticks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The writeLatencyTicks.
    */
   @java.lang.Override
@@ -216,7 +218,7 @@ private static final long serialVersionUID = 0L;
   public static final int UNMAP_LATENCY_TICKS_FIELD_NUMBER = 9;
   private int unmapLatencyTicks_;
   /**
-   * <code>int32 unmap_latency_ticks = 9;</code>
+   * <code>int32 unmap_latency_ticks = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The unmapLatencyTicks.
    */
   @java.lang.Override
@@ -664,7 +666,7 @@ private static final long serialVersionUID = 0L;
 
     private int readBytesCount_ ;
     /**
-     * <code>int32 read_bytes_count = 1;</code>
+     * <code>int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The readBytesCount.
      */
     @java.lang.Override
@@ -672,7 +674,7 @@ private static final long serialVersionUID = 0L;
       return readBytesCount_;
     }
     /**
-     * <code>int32 read_bytes_count = 1;</code>
+     * <code>int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The readBytesCount to set.
      * @return This builder for chaining.
      */
@@ -683,7 +685,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 read_bytes_count = 1;</code>
+     * <code>int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearReadBytesCount() {
@@ -695,7 +697,7 @@ private static final long serialVersionUID = 0L;
 
     private int readOpsCount_ ;
     /**
-     * <code>int32 read_ops_count = 2;</code>
+     * <code>int32 read_ops_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The readOpsCount.
      */
     @java.lang.Override
@@ -703,7 +705,7 @@ private static final long serialVersionUID = 0L;
       return readOpsCount_;
     }
     /**
-     * <code>int32 read_ops_count = 2;</code>
+     * <code>int32 read_ops_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The readOpsCount to set.
      * @return This builder for chaining.
      */
@@ -714,7 +716,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 read_ops_count = 2;</code>
+     * <code>int32 read_ops_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearReadOpsCount() {
@@ -726,7 +728,7 @@ private static final long serialVersionUID = 0L;
 
     private int writeBytesCount_ ;
     /**
-     * <code>int32 write_bytes_count = 3;</code>
+     * <code>int32 write_bytes_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The writeBytesCount.
      */
     @java.lang.Override
@@ -734,7 +736,7 @@ private static final long serialVersionUID = 0L;
       return writeBytesCount_;
     }
     /**
-     * <code>int32 write_bytes_count = 3;</code>
+     * <code>int32 write_bytes_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The writeBytesCount to set.
      * @return This builder for chaining.
      */
@@ -745,7 +747,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 write_bytes_count = 3;</code>
+     * <code>int32 write_bytes_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearWriteBytesCount() {
@@ -757,7 +759,7 @@ private static final long serialVersionUID = 0L;
 
     private int writeOpsCount_ ;
     /**
-     * <code>int32 write_ops_count = 4;</code>
+     * <code>int32 write_ops_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The writeOpsCount.
      */
     @java.lang.Override
@@ -765,7 +767,7 @@ private static final long serialVersionUID = 0L;
       return writeOpsCount_;
     }
     /**
-     * <code>int32 write_ops_count = 4;</code>
+     * <code>int32 write_ops_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The writeOpsCount to set.
      * @return This builder for chaining.
      */
@@ -776,7 +778,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 write_ops_count = 4;</code>
+     * <code>int32 write_ops_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearWriteOpsCount() {
@@ -788,7 +790,7 @@ private static final long serialVersionUID = 0L;
 
     private int unmapBytesCount_ ;
     /**
-     * <code>int32 unmap_bytes_count = 5;</code>
+     * <code>int32 unmap_bytes_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The unmapBytesCount.
      */
     @java.lang.Override
@@ -796,7 +798,7 @@ private static final long serialVersionUID = 0L;
       return unmapBytesCount_;
     }
     /**
-     * <code>int32 unmap_bytes_count = 5;</code>
+     * <code>int32 unmap_bytes_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The unmapBytesCount to set.
      * @return This builder for chaining.
      */
@@ -807,7 +809,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 unmap_bytes_count = 5;</code>
+     * <code>int32 unmap_bytes_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearUnmapBytesCount() {
@@ -819,7 +821,7 @@ private static final long serialVersionUID = 0L;
 
     private int unmapOpsCount_ ;
     /**
-     * <code>int32 unmap_ops_count = 6;</code>
+     * <code>int32 unmap_ops_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The unmapOpsCount.
      */
     @java.lang.Override
@@ -827,7 +829,7 @@ private static final long serialVersionUID = 0L;
       return unmapOpsCount_;
     }
     /**
-     * <code>int32 unmap_ops_count = 6;</code>
+     * <code>int32 unmap_ops_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The unmapOpsCount to set.
      * @return This builder for chaining.
      */
@@ -838,7 +840,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 unmap_ops_count = 6;</code>
+     * <code>int32 unmap_ops_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearUnmapOpsCount() {
@@ -850,7 +852,7 @@ private static final long serialVersionUID = 0L;
 
     private int readLatencyTicks_ ;
     /**
-     * <code>int32 read_latency_ticks = 7;</code>
+     * <code>int32 read_latency_ticks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The readLatencyTicks.
      */
     @java.lang.Override
@@ -858,7 +860,7 @@ private static final long serialVersionUID = 0L;
       return readLatencyTicks_;
     }
     /**
-     * <code>int32 read_latency_ticks = 7;</code>
+     * <code>int32 read_latency_ticks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The readLatencyTicks to set.
      * @return This builder for chaining.
      */
@@ -869,7 +871,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 read_latency_ticks = 7;</code>
+     * <code>int32 read_latency_ticks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearReadLatencyTicks() {
@@ -881,7 +883,7 @@ private static final long serialVersionUID = 0L;
 
     private int writeLatencyTicks_ ;
     /**
-     * <code>int32 write_latency_ticks = 8;</code>
+     * <code>int32 write_latency_ticks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The writeLatencyTicks.
      */
     @java.lang.Override
@@ -889,7 +891,7 @@ private static final long serialVersionUID = 0L;
       return writeLatencyTicks_;
     }
     /**
-     * <code>int32 write_latency_ticks = 8;</code>
+     * <code>int32 write_latency_ticks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The writeLatencyTicks to set.
      * @return This builder for chaining.
      */
@@ -900,7 +902,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 write_latency_ticks = 8;</code>
+     * <code>int32 write_latency_ticks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearWriteLatencyTicks() {
@@ -912,7 +914,7 @@ private static final long serialVersionUID = 0L;
 
     private int unmapLatencyTicks_ ;
     /**
-     * <code>int32 unmap_latency_ticks = 9;</code>
+     * <code>int32 unmap_latency_ticks = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The unmapLatencyTicks.
      */
     @java.lang.Override
@@ -920,7 +922,7 @@ private static final long serialVersionUID = 0L;
       return unmapLatencyTicks_;
     }
     /**
-     * <code>int32 unmap_latency_ticks = 9;</code>
+     * <code>int32 unmap_latency_ticks = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The unmapLatencyTicks to set.
      * @return This builder for chaining.
      */
@@ -931,7 +933,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 unmap_latency_ticks = 9;</code>
+     * <code>int32 unmap_latency_ticks = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearUnmapLatencyTicks() {

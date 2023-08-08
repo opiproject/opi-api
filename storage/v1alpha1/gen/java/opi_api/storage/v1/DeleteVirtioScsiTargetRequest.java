@@ -71,6 +71,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -138,7 +140,7 @@ private static final long serialVersionUID = 0L;
    * but no action will be taken on the server
    * </pre>
    *
-   * <code>bool allow_missing = 2;</code>
+   * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The allowMissing.
    */
   @java.lang.Override
@@ -549,7 +551,7 @@ private static final long serialVersionUID = 0L;
      * but no action will be taken on the server
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The allowMissing.
      */
     @java.lang.Override
@@ -562,7 +564,7 @@ private static final long serialVersionUID = 0L;
      * but no action will be taken on the server
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The allowMissing to set.
      * @return This builder for chaining.
      */
@@ -578,7 +580,7 @@ private static final long serialVersionUID = 0L;
      * but no action will be taken on the server
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {

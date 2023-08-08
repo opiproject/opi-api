@@ -36,7 +36,7 @@ public interface VirtioBlkOrBuilder extends
    * The PCI endpoint where this device should appear
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
@@ -45,7 +45,7 @@ public interface VirtioBlkOrBuilder extends
    * The PCI endpoint where this device should appear
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The pcieId.
    */
   opi_api.storage.v1.PciEndpoint getPcieId();
@@ -54,7 +54,7 @@ public interface VirtioBlkOrBuilder extends
    * The PCI endpoint where this device should appear
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder();
 
@@ -79,7 +79,7 @@ public interface VirtioBlkOrBuilder extends
       getVolumeNameRefBytes();
 
   /**
-   * <code>int64 max_io_qps = 4;</code>
+   * <code>int64 max_io_qps = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxIoQps.
    */
   long getMaxIoQps();
@@ -89,7 +89,7 @@ public interface VirtioBlkOrBuilder extends
    * min QoS limits for the virtio-blk device
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 5;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the minLimit field is set.
    */
   boolean hasMinLimit();
@@ -98,7 +98,7 @@ public interface VirtioBlkOrBuilder extends
    * min QoS limits for the virtio-blk device
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 5;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The minLimit.
    */
   opi_api.storage.v1.QosLimit getMinLimit();
@@ -107,7 +107,7 @@ public interface VirtioBlkOrBuilder extends
    * min QoS limits for the virtio-blk device
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 5;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder();
 
@@ -116,7 +116,7 @@ public interface VirtioBlkOrBuilder extends
    * max QoS limits for the virtio-blk device
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 6;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the maxLimit field is set.
    */
   boolean hasMaxLimit();
@@ -125,7 +125,7 @@ public interface VirtioBlkOrBuilder extends
    * max QoS limits for the virtio-blk device
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 6;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxLimit.
    */
   opi_api.storage.v1.QosLimit getMaxLimit();
@@ -134,7 +134,7 @@ public interface VirtioBlkOrBuilder extends
    * max QoS limits for the virtio-blk device
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 6;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder();
 }

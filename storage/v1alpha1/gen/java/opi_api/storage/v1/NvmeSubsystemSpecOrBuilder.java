@@ -14,7 +14,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
    * </pre>
    *
-   * <code>string nqn = 1;</code>
+   * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nqn.
    */
   java.lang.String getNqn();
@@ -25,7 +25,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
    * </pre>
    *
-   * <code>string nqn = 1;</code>
+   * <code>string nqn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for nqn.
    */
   com.google.protobuf.ByteString
@@ -36,7 +36,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string serial_number = 2;</code>
+   * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The serialNumber.
    */
   java.lang.String getSerialNumber();
@@ -45,7 +45,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string serial_number = 2;</code>
+   * <code>string serial_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for serialNumber.
    */
   com.google.protobuf.ByteString
@@ -56,7 +56,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string model_number = 3;</code>
+   * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The modelNumber.
    */
   java.lang.String getModelNumber();
@@ -65,7 +65,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string model_number = 3;</code>
+   * <code>string model_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for modelNumber.
    */
   com.google.protobuf.ByteString
@@ -76,7 +76,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * maximum namespaces within a subsystem
    * </pre>
    *
-   * <code>int64 max_namespaces = 4;</code>
+   * <code>int64 max_namespaces = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxNamespaces.
    */
   long getMaxNamespaces();

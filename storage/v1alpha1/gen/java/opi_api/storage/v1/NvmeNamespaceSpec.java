@@ -103,6 +103,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -180,7 +182,7 @@ private static final long serialVersionUID = 0L;
    * for live migration
    * </pre>
    *
-   * <code>int32 host_nsid = 2;</code>
+   * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The hostNsid.
    */
   @java.lang.Override
@@ -195,7 +197,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 3;</code>
+   * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nguid.
    */
   @java.lang.Override
@@ -216,7 +218,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 3;</code>
+   * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nguid.
    */
   @java.lang.Override
@@ -242,7 +244,7 @@ private static final long serialVersionUID = 0L;
    * mandatory if guid is not specified
    * </pre>
    *
-   * <code>int64 eui64 = 4;</code>
+   * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The eui64.
    */
   @java.lang.Override
@@ -257,7 +259,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the uuid field is set.
    */
   @java.lang.Override
@@ -269,7 +271,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uuid.
    */
   @java.lang.Override
@@ -281,7 +283,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
@@ -840,7 +842,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 2;</code>
+     * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The hostNsid.
      */
     @java.lang.Override
@@ -855,7 +857,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 2;</code>
+     * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The hostNsid to set.
      * @return This builder for chaining.
      */
@@ -873,7 +875,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 2;</code>
+     * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearHostNsid() {
@@ -889,7 +891,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3;</code>
+     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nguid.
      */
     public java.lang.String getNguid() {
@@ -909,7 +911,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3;</code>
+     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nguid.
      */
     public com.google.protobuf.ByteString
@@ -930,7 +932,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3;</code>
+     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nguid to set.
      * @return This builder for chaining.
      */
@@ -949,7 +951,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3;</code>
+     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearNguid() {
@@ -963,7 +965,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3;</code>
+     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nguid to set.
      * @return This builder for chaining.
      */
@@ -986,7 +988,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 4;</code>
+     * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The eui64.
      */
     @java.lang.Override
@@ -999,7 +1001,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 4;</code>
+     * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The eui64 to set.
      * @return This builder for chaining.
      */
@@ -1015,7 +1017,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 4;</code>
+     * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearEui64() {
@@ -1033,7 +1035,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the uuid field is set.
      */
     public boolean hasUuid() {
@@ -1044,7 +1046,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The uuid.
      */
     public opi_api.common.v1.Uuid getUuid() {
@@ -1059,7 +1061,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -1079,7 +1081,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUuid(
         opi_api.common.v1.Uuid.Builder builderForValue) {
@@ -1097,7 +1099,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -1119,7 +1121,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUuid() {
       if (uuidBuilder_ == null) {
@@ -1137,7 +1139,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.Uuid.Builder getUuidBuilder() {
       
@@ -1149,7 +1151,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
       if (uuidBuilder_ != null) {
@@ -1164,7 +1166,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> 

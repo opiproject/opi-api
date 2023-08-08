@@ -38,33 +38,41 @@ public final class OpiCommonProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017opicommon.proto\022\022opi_api.storage.v1\"S\n" +
-      "\013PciEndpoint\022\017\n\007port_id\030\001 \001(\005\022\031\n\021physica" +
-      "l_function\030\002 \001(\005\022\030\n\020virtual_function\030\003 \001" +
-      "(\005\"\375\001\n\013VolumeStats\022\030\n\020read_bytes_count\030\001" +
-      " \001(\005\022\026\n\016read_ops_count\030\002 \001(\005\022\031\n\021write_by" +
-      "tes_count\030\003 \001(\005\022\027\n\017write_ops_count\030\004 \001(\005" +
-      "\022\031\n\021unmap_bytes_count\030\005 \001(\005\022\027\n\017unmap_ops" +
-      "_count\030\006 \001(\005\022\032\n\022read_latency_ticks\030\007 \001(\005" +
-      "\022\033\n\023write_latency_ticks\030\010 \001(\005\022\033\n\023unmap_l" +
-      "atency_ticks\030\t \001(\005\"\235\001\n\010QosLimit\022\025\n\rrd_io" +
-      "ps_kiops\030\001 \001(\003\022\025\n\rwr_iops_kiops\030\002 \001(\003\022\025\n" +
-      "\rrw_iops_kiops\030\003 \001(\003\022\030\n\020rd_bandwidth_mbs" +
-      "\030\004 \001(\003\022\030\n\020wr_bandwidth_mbs\030\005 \001(\003\022\030\n\020rw_b" +
-      "andwidth_mbs\030\006 \001(\003*\367\001\n\016EncryptionType\022\037\n" +
-      "\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033ENCRYP" +
-      "TION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTION_TY" +
-      "PE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE_AES_" +
-      "CBC_256\020\003\022\037\n\033ENCRYPTION_TYPE_AES_XTS_128" +
-      "\020\004\022\037\n\033ENCRYPTION_TYPE_AES_XTS_192\020\005\022\037\n\033E" +
-      "NCRYPTION_TYPE_AES_XTS_256\020\006B]\n\022opi_api." +
-      "storage.v1B\016OpiCommonProtoP\001Z5github.com" +
-      "/opiproject/opi-api/storage/v1alpha1/gen" +
-      "/gob\006proto3"
+      "\n\017opicommon.proto\022\022opi_api.storage.v1\032\037g" +
+      "oogle/api/field_behavior.proto\032\036google/p" +
+      "rotobuf/wrappers.proto\"\271\001\n\013PciEndpoint\0221" +
+      "\n\007port_id\030\001 \001(\0132\033.google.protobuf.Int32V" +
+      "alueB\003\340A\002\022;\n\021physical_function\030\002 \001(\0132\033.g" +
+      "oogle.protobuf.Int32ValueB\003\340A\002\022:\n\020virtua" +
+      "l_function\030\003 \001(\0132\033.google.protobuf.Int32" +
+      "ValueB\003\340A\002\"\252\002\n\013VolumeStats\022\035\n\020read_bytes" +
+      "_count\030\001 \001(\005B\003\340A\003\022\033\n\016read_ops_count\030\002 \001(" +
+      "\005B\003\340A\003\022\036\n\021write_bytes_count\030\003 \001(\005B\003\340A\003\022\034" +
+      "\n\017write_ops_count\030\004 \001(\005B\003\340A\003\022\036\n\021unmap_by" +
+      "tes_count\030\005 \001(\005B\003\340A\003\022\034\n\017unmap_ops_count\030" +
+      "\006 \001(\005B\003\340A\003\022\037\n\022read_latency_ticks\030\007 \001(\005B\003" +
+      "\340A\003\022 \n\023write_latency_ticks\030\010 \001(\005B\003\340A\003\022 \n" +
+      "\023unmap_latency_ticks\030\t \001(\005B\003\340A\003\"\273\001\n\010QosL" +
+      "imit\022\032\n\rrd_iops_kiops\030\001 \001(\003B\003\340A\001\022\032\n\rwr_i" +
+      "ops_kiops\030\002 \001(\003B\003\340A\001\022\032\n\rrw_iops_kiops\030\003 " +
+      "\001(\003B\003\340A\001\022\035\n\020rd_bandwidth_mbs\030\004 \001(\003B\003\340A\001\022" +
+      "\035\n\020wr_bandwidth_mbs\030\005 \001(\003B\003\340A\001\022\035\n\020rw_ban" +
+      "dwidth_mbs\030\006 \001(\003B\003\340A\001*\367\001\n\016EncryptionType" +
+      "\022\037\n\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033ENC" +
+      "RYPTION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTION" +
+      "_TYPE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE_A" +
+      "ES_CBC_256\020\003\022\037\n\033ENCRYPTION_TYPE_AES_XTS_" +
+      "128\020\004\022\037\n\033ENCRYPTION_TYPE_AES_XTS_192\020\005\022\037" +
+      "\n\033ENCRYPTION_TYPE_AES_XTS_256\020\006B]\n\022opi_a" +
+      "pi.storage.v1B\016OpiCommonProtoP\001Z5github." +
+      "com/opiproject/opi-api/storage/v1alpha1/" +
+      "gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.protobuf.WrappersProto.getDescriptor(),
         });
     internal_static_opi_api_storage_v1_PciEndpoint_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -84,6 +92,13 @@ public final class OpiCommonProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_QosLimit_descriptor,
         new java.lang.String[] { "RdIopsKiops", "WrIopsKiops", "RwIopsKiops", "RdBandwidthMbs", "WrBandwidthMbs", "RwBandwidthMbs", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

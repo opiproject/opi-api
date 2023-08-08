@@ -16,134 +16,146 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace opi_api {
 namespace storage {
 namespace v1 {
-constexpr EncryptedVolume::EncryptedVolume(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , volume_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , cipher_(0)
-{}
+PROTOBUF_CONSTEXPR EncryptedVolume::EncryptedVolume(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.volume_name_ref_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.cipher_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct EncryptedVolumeDefaultTypeInternal {
-  constexpr EncryptedVolumeDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR EncryptedVolumeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~EncryptedVolumeDefaultTypeInternal() {}
   union {
     EncryptedVolume _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EncryptedVolumeDefaultTypeInternal _EncryptedVolume_default_instance_;
-constexpr CreateEncryptedVolumeRequest::CreateEncryptedVolumeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : encrypted_volume_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , encrypted_volume_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EncryptedVolumeDefaultTypeInternal _EncryptedVolume_default_instance_;
+PROTOBUF_CONSTEXPR CreateEncryptedVolumeRequest::CreateEncryptedVolumeRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.encrypted_volume_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.encrypted_volume_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CreateEncryptedVolumeRequestDefaultTypeInternal {
-  constexpr CreateEncryptedVolumeRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CreateEncryptedVolumeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~CreateEncryptedVolumeRequestDefaultTypeInternal() {}
   union {
     CreateEncryptedVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateEncryptedVolumeRequestDefaultTypeInternal _CreateEncryptedVolumeRequest_default_instance_;
-constexpr DeleteEncryptedVolumeRequest::DeleteEncryptedVolumeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , allow_missing_(false){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateEncryptedVolumeRequestDefaultTypeInternal _CreateEncryptedVolumeRequest_default_instance_;
+PROTOBUF_CONSTEXPR DeleteEncryptedVolumeRequest::DeleteEncryptedVolumeRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.allow_missing_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DeleteEncryptedVolumeRequestDefaultTypeInternal {
-  constexpr DeleteEncryptedVolumeRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR DeleteEncryptedVolumeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~DeleteEncryptedVolumeRequestDefaultTypeInternal() {}
   union {
     DeleteEncryptedVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteEncryptedVolumeRequestDefaultTypeInternal _DeleteEncryptedVolumeRequest_default_instance_;
-constexpr UpdateEncryptedVolumeRequest::UpdateEncryptedVolumeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : encrypted_volume_(nullptr)
-  , update_mask_(nullptr)
-  , allow_missing_(false){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeleteEncryptedVolumeRequestDefaultTypeInternal _DeleteEncryptedVolumeRequest_default_instance_;
+PROTOBUF_CONSTEXPR UpdateEncryptedVolumeRequest::UpdateEncryptedVolumeRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.encrypted_volume_)*/nullptr
+  , /*decltype(_impl_.update_mask_)*/nullptr
+  , /*decltype(_impl_.allow_missing_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct UpdateEncryptedVolumeRequestDefaultTypeInternal {
-  constexpr UpdateEncryptedVolumeRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR UpdateEncryptedVolumeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~UpdateEncryptedVolumeRequestDefaultTypeInternal() {}
   union {
     UpdateEncryptedVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateEncryptedVolumeRequestDefaultTypeInternal _UpdateEncryptedVolumeRequest_default_instance_;
-constexpr ListEncryptedVolumesRequest::ListEncryptedVolumesRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : parent_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , page_size_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateEncryptedVolumeRequestDefaultTypeInternal _UpdateEncryptedVolumeRequest_default_instance_;
+PROTOBUF_CONSTEXPR ListEncryptedVolumesRequest::ListEncryptedVolumesRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.parent_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.page_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.page_size_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListEncryptedVolumesRequestDefaultTypeInternal {
-  constexpr ListEncryptedVolumesRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListEncryptedVolumesRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListEncryptedVolumesRequestDefaultTypeInternal() {}
   union {
     ListEncryptedVolumesRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListEncryptedVolumesRequestDefaultTypeInternal _ListEncryptedVolumesRequest_default_instance_;
-constexpr ListEncryptedVolumesResponse::ListEncryptedVolumesResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : encrypted_volumes_()
-  , next_page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListEncryptedVolumesRequestDefaultTypeInternal _ListEncryptedVolumesRequest_default_instance_;
+PROTOBUF_CONSTEXPR ListEncryptedVolumesResponse::ListEncryptedVolumesResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.encrypted_volumes_)*/{}
+  , /*decltype(_impl_.next_page_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListEncryptedVolumesResponseDefaultTypeInternal {
-  constexpr ListEncryptedVolumesResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListEncryptedVolumesResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListEncryptedVolumesResponseDefaultTypeInternal() {}
   union {
     ListEncryptedVolumesResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListEncryptedVolumesResponseDefaultTypeInternal _ListEncryptedVolumesResponse_default_instance_;
-constexpr GetEncryptedVolumeRequest::GetEncryptedVolumeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListEncryptedVolumesResponseDefaultTypeInternal _ListEncryptedVolumesResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetEncryptedVolumeRequest::GetEncryptedVolumeRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetEncryptedVolumeRequestDefaultTypeInternal {
-  constexpr GetEncryptedVolumeRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetEncryptedVolumeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetEncryptedVolumeRequestDefaultTypeInternal() {}
   union {
     GetEncryptedVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetEncryptedVolumeRequestDefaultTypeInternal _GetEncryptedVolumeRequest_default_instance_;
-constexpr StatsEncryptedVolumeRequest::StatsEncryptedVolumeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEncryptedVolumeRequestDefaultTypeInternal _GetEncryptedVolumeRequest_default_instance_;
+PROTOBUF_CONSTEXPR StatsEncryptedVolumeRequest::StatsEncryptedVolumeRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StatsEncryptedVolumeRequestDefaultTypeInternal {
-  constexpr StatsEncryptedVolumeRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StatsEncryptedVolumeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StatsEncryptedVolumeRequestDefaultTypeInternal() {}
   union {
     StatsEncryptedVolumeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StatsEncryptedVolumeRequestDefaultTypeInternal _StatsEncryptedVolumeRequest_default_instance_;
-constexpr StatsEncryptedVolumeResponse::StatsEncryptedVolumeResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : stats_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatsEncryptedVolumeRequestDefaultTypeInternal _StatsEncryptedVolumeRequest_default_instance_;
+PROTOBUF_CONSTEXPR StatsEncryptedVolumeResponse::StatsEncryptedVolumeResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.stats_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StatsEncryptedVolumeResponseDefaultTypeInternal {
-  constexpr StatsEncryptedVolumeResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StatsEncryptedVolumeResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StatsEncryptedVolumeResponseDefaultTypeInternal() {}
   union {
     StatsEncryptedVolumeResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StatsEncryptedVolumeResponseDefaultTypeInternal _StatsEncryptedVolumeResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatsEncryptedVolumeResponseDefaultTypeInternal _StatsEncryptedVolumeResponse_default_instance_;
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_middleend_5fencryption_2eproto[9];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_middleend_5fencryption_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_middleend_5fencryption_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_middleend_5fencryption_2eproto[9];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_middleend_5fencryption_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_middleend_5fencryption_2eproto = nullptr;
 
 const uint32_t TableStruct_middleend_5fencryption_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -152,75 +164,75 @@ const uint32_t TableStruct_middleend_5fencryption_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::EncryptedVolume, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::EncryptedVolume, volume_name_ref_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::EncryptedVolume, key_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::EncryptedVolume, cipher_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::EncryptedVolume, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::EncryptedVolume, _impl_.volume_name_ref_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::EncryptedVolume, _impl_.key_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::EncryptedVolume, _impl_.cipher_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateEncryptedVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateEncryptedVolumeRequest, encrypted_volume_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateEncryptedVolumeRequest, encrypted_volume_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateEncryptedVolumeRequest, _impl_.encrypted_volume_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateEncryptedVolumeRequest, _impl_.encrypted_volume_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteEncryptedVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteEncryptedVolumeRequest, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteEncryptedVolumeRequest, allow_missing_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteEncryptedVolumeRequest, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteEncryptedVolumeRequest, _impl_.allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, encrypted_volume_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, update_mask_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, allow_missing_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, _impl_.encrypted_volume_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, _impl_.update_mask_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateEncryptedVolumeRequest, _impl_.allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesRequest, parent_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesRequest, page_size_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesRequest, page_token_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesRequest, _impl_.parent_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesRequest, _impl_.page_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesRequest, _impl_.page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesResponse, encrypted_volumes_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesResponse, next_page_token_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesResponse, _impl_.encrypted_volumes_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListEncryptedVolumesResponse, _impl_.next_page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetEncryptedVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetEncryptedVolumeRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetEncryptedVolumeRequest, _impl_.name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::StatsEncryptedVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::StatsEncryptedVolumeRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::StatsEncryptedVolumeRequest, _impl_.name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::StatsEncryptedVolumeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::StatsEncryptedVolumeResponse, stats_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::StatsEncryptedVolumeResponse, _impl_.stats_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::EncryptedVolume)},
   { 10, -1, -1, sizeof(::opi_api::storage::v1::CreateEncryptedVolumeRequest)},
   { 18, -1, -1, sizeof(::opi_api::storage::v1::DeleteEncryptedVolumeRequest)},
@@ -232,16 +244,16 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 66, -1, -1, sizeof(::opi_api::storage::v1::StatsEncryptedVolumeResponse)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_EncryptedVolume_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_CreateEncryptedVolumeRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_DeleteEncryptedVolumeRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_UpdateEncryptedVolumeRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_ListEncryptedVolumesRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_ListEncryptedVolumesResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_GetEncryptedVolumeRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_StatsEncryptedVolumeRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_StatsEncryptedVolumeResponse_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::opi_api::storage::v1::_EncryptedVolume_default_instance_._instance,
+  &::opi_api::storage::v1::_CreateEncryptedVolumeRequest_default_instance_._instance,
+  &::opi_api::storage::v1::_DeleteEncryptedVolumeRequest_default_instance_._instance,
+  &::opi_api::storage::v1::_UpdateEncryptedVolumeRequest_default_instance_._instance,
+  &::opi_api::storage::v1::_ListEncryptedVolumesRequest_default_instance_._instance,
+  &::opi_api::storage::v1::_ListEncryptedVolumesResponse_default_instance_._instance,
+  &::opi_api::storage::v1::_GetEncryptedVolumeRequest_default_instance_._instance,
+  &::opi_api::storage::v1::_StatsEncryptedVolumeRequest_default_instance_._instance,
+  &::opi_api::storage::v1::_StatsEncryptedVolumeResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_middleend_5fencryption_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -311,7 +323,7 @@ const char descriptor_table_protodef_middleend_5fencryption_2eproto[] PROTOBUF_S
   "Z5github.com/opiproject/opi-api/storage/"
   "v1alpha1/gen/gob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_middleend_5fencryption_2eproto_deps[7] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_middleend_5fencryption_2eproto_deps[7] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
   &::descriptor_table_google_2fapi_2fclient_2eproto,
   &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
@@ -320,19 +332,21 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_google_2fprotobuf_2ffield_5fmask_2eproto,
   &::descriptor_table_opicommon_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_middleend_5fencryption_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_middleend_5fencryption_2eproto = {
-  false, false, 2583, descriptor_table_protodef_middleend_5fencryption_2eproto, "middleend_encryption.proto", 
-  &descriptor_table_middleend_5fencryption_2eproto_once, descriptor_table_middleend_5fencryption_2eproto_deps, 7, 9,
-  schemas, file_default_instances, TableStruct_middleend_5fencryption_2eproto::offsets,
-  file_level_metadata_middleend_5fencryption_2eproto, file_level_enum_descriptors_middleend_5fencryption_2eproto, file_level_service_descriptors_middleend_5fencryption_2eproto,
+static ::_pbi::once_flag descriptor_table_middleend_5fencryption_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_middleend_5fencryption_2eproto = {
+    false, false, 2583, descriptor_table_protodef_middleend_5fencryption_2eproto,
+    "middleend_encryption.proto",
+    &descriptor_table_middleend_5fencryption_2eproto_once, descriptor_table_middleend_5fencryption_2eproto_deps, 7, 9,
+    schemas, file_default_instances, TableStruct_middleend_5fencryption_2eproto::offsets,
+    file_level_metadata_middleend_5fencryption_2eproto, file_level_enum_descriptors_middleend_5fencryption_2eproto,
+    file_level_service_descriptors_middleend_5fencryption_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_middleend_5fencryption_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_middleend_5fencryption_2eproto_getter() {
   return &descriptor_table_middleend_5fencryption_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_middleend_5fencryption_2eproto(&descriptor_table_middleend_5fencryption_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_middleend_5fencryption_2eproto(&descriptor_table_middleend_5fencryption_2eproto);
 namespace opi_api {
 namespace storage {
 namespace v1 {
@@ -346,81 +360,91 @@ class EncryptedVolume::_Internal {
 EncryptedVolume::EncryptedVolume(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.EncryptedVolume)
 }
 EncryptedVolume::EncryptedVolume(const EncryptedVolume& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  EncryptedVolume* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.volume_name_ref_){}
+    , decltype(_impl_.key_){}
+    , decltype(_impl_.cipher_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  volume_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.volume_name_ref_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    volume_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.volume_name_ref_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_volume_name_ref().empty()) {
-    volume_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_volume_name_ref(), 
-      GetArenaForAllocation());
+    _this->_impl_.volume_name_ref_.Set(from._internal_volume_name_ref(), 
+      _this->GetArenaForAllocation());
   }
-  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.key_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.key_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_key().empty()) {
-    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
-      GetArenaForAllocation());
+    _this->_impl_.key_.Set(from._internal_key(), 
+      _this->GetArenaForAllocation());
   }
-  cipher_ = from.cipher_;
+  _this->_impl_.cipher_ = from._impl_.cipher_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.EncryptedVolume)
 }
 
-inline void EncryptedVolume::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-volume_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  volume_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-cipher_ = 0;
+inline void EncryptedVolume::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.volume_name_ref_){}
+    , decltype(_impl_.key_){}
+    , decltype(_impl_.cipher_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.volume_name_ref_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.volume_name_ref_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.key_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.key_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 EncryptedVolume::~EncryptedVolume() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.EncryptedVolume)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void EncryptedVolume::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  volume_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.Destroy();
+  _impl_.volume_name_ref_.Destroy();
+  _impl_.key_.Destroy();
 }
 
-void EncryptedVolume::ArenaDtor(void* object) {
-  EncryptedVolume* _this = reinterpret_cast< EncryptedVolume* >(object);
-  (void)_this;
-}
-void EncryptedVolume::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void EncryptedVolume::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void EncryptedVolume::Clear() {
@@ -429,26 +453,26 @@ void EncryptedVolume::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  volume_name_ref_.ClearToEmpty();
-  key_.ClearToEmpty();
-  cipher_ = 0;
+  _impl_.name_.ClearToEmpty();
+  _impl_.volume_name_ref_.ClearToEmpty();
+  _impl_.key_.ClearToEmpty();
+  _impl_.cipher_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* EncryptedVolume::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* EncryptedVolume::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.EncryptedVolume.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.EncryptedVolume.name"));
         } else
           goto handle_unusual;
         continue;
@@ -456,9 +480,9 @@ const char* EncryptedVolume::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_volume_name_ref();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.EncryptedVolume.volume_name_ref"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.EncryptedVolume.volume_name_ref"));
         } else
           goto handle_unusual;
         continue;
@@ -466,7 +490,7 @@ const char* EncryptedVolume::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_key();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -538,12 +562,12 @@ uint8_t* EncryptedVolume::_InternalSerialize(
   // .opi_api.storage.v1.EncryptionType cipher = 4;
   if (this->_internal_cipher() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_cipher(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.EncryptedVolume)
@@ -582,44 +606,40 @@ size_t EncryptedVolume::ByteSizeLong() const {
   // .opi_api.storage.v1.EncryptionType cipher = 4;
   if (this->_internal_cipher() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_cipher());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_cipher());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData EncryptedVolume::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     EncryptedVolume::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*EncryptedVolume::GetClassData() const { return &_class_data_; }
 
-void EncryptedVolume::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<EncryptedVolume *>(to)->MergeFrom(
-      static_cast<const EncryptedVolume &>(from));
-}
 
-
-void EncryptedVolume::MergeFrom(const EncryptedVolume& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.EncryptedVolume)
-  GOOGLE_DCHECK_NE(&from, this);
+void EncryptedVolume::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<EncryptedVolume*>(&to_msg);
+  auto& from = static_cast<const EncryptedVolume&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.EncryptedVolume)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_volume_name_ref().empty()) {
-    _internal_set_volume_name_ref(from._internal_volume_name_ref());
+    _this->_internal_set_volume_name_ref(from._internal_volume_name_ref());
   }
   if (!from._internal_key().empty()) {
-    _internal_set_key(from._internal_key());
+    _this->_internal_set_key(from._internal_key());
   }
   if (from._internal_cipher() != 0) {
-    _internal_set_cipher(from._internal_cipher());
+    _this->_internal_set_cipher(from._internal_cipher());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void EncryptedVolume::CopyFrom(const EncryptedVolume& from) {
@@ -639,25 +659,22 @@ void EncryptedVolume::InternalSwap(EncryptedVolume* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &volume_name_ref_, lhs_arena,
-      &other->volume_name_ref_, rhs_arena
+      &_impl_.volume_name_ref_, lhs_arena,
+      &other->_impl_.volume_name_ref_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &key_, lhs_arena,
-      &other->key_, rhs_arena
+      &_impl_.key_, lhs_arena,
+      &other->_impl_.key_, rhs_arena
   );
-  swap(cipher_, other->cipher_);
+  swap(_impl_.cipher_, other->_impl_.cipher_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata EncryptedVolume::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[0]);
 }
@@ -671,65 +688,69 @@ class CreateEncryptedVolumeRequest::_Internal {
 
 const ::opi_api::storage::v1::EncryptedVolume&
 CreateEncryptedVolumeRequest::_Internal::encrypted_volume(const CreateEncryptedVolumeRequest* msg) {
-  return *msg->encrypted_volume_;
+  return *msg->_impl_.encrypted_volume_;
 }
 CreateEncryptedVolumeRequest::CreateEncryptedVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.CreateEncryptedVolumeRequest)
 }
 CreateEncryptedVolumeRequest::CreateEncryptedVolumeRequest(const CreateEncryptedVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CreateEncryptedVolumeRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.encrypted_volume_id_){}
+    , decltype(_impl_.encrypted_volume_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  encrypted_volume_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.encrypted_volume_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    encrypted_volume_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.encrypted_volume_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_encrypted_volume_id().empty()) {
-    encrypted_volume_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_encrypted_volume_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.encrypted_volume_id_.Set(from._internal_encrypted_volume_id(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_encrypted_volume()) {
-    encrypted_volume_ = new ::opi_api::storage::v1::EncryptedVolume(*from.encrypted_volume_);
-  } else {
-    encrypted_volume_ = nullptr;
+    _this->_impl_.encrypted_volume_ = new ::opi_api::storage::v1::EncryptedVolume(*from._impl_.encrypted_volume_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.CreateEncryptedVolumeRequest)
 }
 
-inline void CreateEncryptedVolumeRequest::SharedCtor() {
-encrypted_volume_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  encrypted_volume_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-encrypted_volume_ = nullptr;
+inline void CreateEncryptedVolumeRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.encrypted_volume_id_){}
+    , decltype(_impl_.encrypted_volume_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.encrypted_volume_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.encrypted_volume_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 CreateEncryptedVolumeRequest::~CreateEncryptedVolumeRequest() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.CreateEncryptedVolumeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void CreateEncryptedVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  encrypted_volume_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete encrypted_volume_;
+  _impl_.encrypted_volume_id_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.encrypted_volume_;
 }
 
-void CreateEncryptedVolumeRequest::ArenaDtor(void* object) {
-  CreateEncryptedVolumeRequest* _this = reinterpret_cast< CreateEncryptedVolumeRequest* >(object);
-  (void)_this;
-}
-void CreateEncryptedVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void CreateEncryptedVolumeRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void CreateEncryptedVolumeRequest::Clear() {
@@ -738,19 +759,19 @@ void CreateEncryptedVolumeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  encrypted_volume_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && encrypted_volume_ != nullptr) {
-    delete encrypted_volume_;
+  _impl_.encrypted_volume_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.encrypted_volume_ != nullptr) {
+    delete _impl_.encrypted_volume_;
   }
-  encrypted_volume_ = nullptr;
+  _impl_.encrypted_volume_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CreateEncryptedVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* CreateEncryptedVolumeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];
       case 1:
@@ -764,9 +785,9 @@ const char* CreateEncryptedVolumeRequest::_InternalParse(const char* ptr, ::PROT
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_encrypted_volume_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.CreateEncryptedVolumeRequest.encrypted_volume_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.CreateEncryptedVolumeRequest.encrypted_volume_id"));
         } else
           goto handle_unusual;
         continue;
@@ -801,10 +822,9 @@ uint8_t* CreateEncryptedVolumeRequest::_InternalSerialize(
 
   // .opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_encrypted_volume()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::encrypted_volume(this), target, stream);
+      InternalWriteMessage(1, _Internal::encrypted_volume(this),
+        _Internal::encrypted_volume(this).GetCachedSize(), target, stream);
   }
 
   // string encrypted_volume_id = 2;
@@ -818,7 +838,7 @@ uint8_t* CreateEncryptedVolumeRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.CreateEncryptedVolumeRequest)
@@ -844,38 +864,35 @@ size_t CreateEncryptedVolumeRequest::ByteSizeLong() const {
   if (this->_internal_has_encrypted_volume()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *encrypted_volume_);
+        *_impl_.encrypted_volume_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateEncryptedVolumeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     CreateEncryptedVolumeRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateEncryptedVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void CreateEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<CreateEncryptedVolumeRequest *>(to)->MergeFrom(
-      static_cast<const CreateEncryptedVolumeRequest &>(from));
-}
 
-
-void CreateEncryptedVolumeRequest::MergeFrom(const CreateEncryptedVolumeRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.CreateEncryptedVolumeRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void CreateEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CreateEncryptedVolumeRequest*>(&to_msg);
+  auto& from = static_cast<const CreateEncryptedVolumeRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.CreateEncryptedVolumeRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_encrypted_volume_id().empty()) {
-    _internal_set_encrypted_volume_id(from._internal_encrypted_volume_id());
+    _this->_internal_set_encrypted_volume_id(from._internal_encrypted_volume_id());
   }
   if (from._internal_has_encrypted_volume()) {
-    _internal_mutable_encrypted_volume()->::opi_api::storage::v1::EncryptedVolume::MergeFrom(from._internal_encrypted_volume());
+    _this->_internal_mutable_encrypted_volume()->::opi_api::storage::v1::EncryptedVolume::MergeFrom(
+        from._internal_encrypted_volume());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CreateEncryptedVolumeRequest::CopyFrom(const CreateEncryptedVolumeRequest& from) {
@@ -895,15 +912,14 @@ void CreateEncryptedVolumeRequest::InternalSwap(CreateEncryptedVolumeRequest* ot
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &encrypted_volume_id_, lhs_arena,
-      &other->encrypted_volume_id_, rhs_arena
+      &_impl_.encrypted_volume_id_, lhs_arena,
+      &other->_impl_.encrypted_volume_id_, rhs_arena
   );
-  swap(encrypted_volume_, other->encrypted_volume_);
+  swap(_impl_.encrypted_volume_, other->_impl_.encrypted_volume_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateEncryptedVolumeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[1]);
 }
@@ -917,55 +933,61 @@ class DeleteEncryptedVolumeRequest::_Internal {
 DeleteEncryptedVolumeRequest::DeleteEncryptedVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
 }
 DeleteEncryptedVolumeRequest::DeleteEncryptedVolumeRequest(const DeleteEncryptedVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeleteEncryptedVolumeRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.allow_missing_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  allow_missing_ = from.allow_missing_;
+  _this->_impl_.allow_missing_ = from._impl_.allow_missing_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
 }
 
-inline void DeleteEncryptedVolumeRequest::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-allow_missing_ = false;
+inline void DeleteEncryptedVolumeRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.allow_missing_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 DeleteEncryptedVolumeRequest::~DeleteEncryptedVolumeRequest() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void DeleteEncryptedVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.Destroy();
 }
 
-void DeleteEncryptedVolumeRequest::ArenaDtor(void* object) {
-  DeleteEncryptedVolumeRequest* _this = reinterpret_cast< DeleteEncryptedVolumeRequest* >(object);
-  (void)_this;
-}
-void DeleteEncryptedVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DeleteEncryptedVolumeRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void DeleteEncryptedVolumeRequest::Clear() {
@@ -974,31 +996,31 @@ void DeleteEncryptedVolumeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  allow_missing_ = false;
+  _impl_.name_.ClearToEmpty();
+  _impl_.allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeleteEncryptedVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DeleteEncryptedVolumeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.DeleteEncryptedVolumeRequest.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.DeleteEncryptedVolumeRequest.name"));
         } else
           goto handle_unusual;
         continue;
       // bool allow_missing = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1045,11 +1067,11 @@ uint8_t* DeleteEncryptedVolumeRequest::_InternalSerialize(
   // bool allow_missing = 2;
   if (this->_internal_allow_missing() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_allow_missing(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_allow_missing(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
@@ -1076,35 +1098,31 @@ size_t DeleteEncryptedVolumeRequest::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteEncryptedVolumeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     DeleteEncryptedVolumeRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteEncryptedVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void DeleteEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<DeleteEncryptedVolumeRequest *>(to)->MergeFrom(
-      static_cast<const DeleteEncryptedVolumeRequest &>(from));
-}
 
-
-void DeleteEncryptedVolumeRequest::MergeFrom(const DeleteEncryptedVolumeRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void DeleteEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeleteEncryptedVolumeRequest*>(&to_msg);
+  auto& from = static_cast<const DeleteEncryptedVolumeRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (from._internal_allow_missing() != 0) {
-    _internal_set_allow_missing(from._internal_allow_missing());
+    _this->_internal_set_allow_missing(from._internal_allow_missing());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void DeleteEncryptedVolumeRequest::CopyFrom(const DeleteEncryptedVolumeRequest& from) {
@@ -1124,15 +1142,14 @@ void DeleteEncryptedVolumeRequest::InternalSwap(DeleteEncryptedVolumeRequest* ot
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
-  swap(allow_missing_, other->allow_missing_);
+  swap(_impl_.allow_missing_, other->_impl_.allow_missing_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteEncryptedVolumeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[2]);
 }
@@ -1147,72 +1164,73 @@ class UpdateEncryptedVolumeRequest::_Internal {
 
 const ::opi_api::storage::v1::EncryptedVolume&
 UpdateEncryptedVolumeRequest::_Internal::encrypted_volume(const UpdateEncryptedVolumeRequest* msg) {
-  return *msg->encrypted_volume_;
+  return *msg->_impl_.encrypted_volume_;
 }
 const ::PROTOBUF_NAMESPACE_ID::FieldMask&
 UpdateEncryptedVolumeRequest::_Internal::update_mask(const UpdateEncryptedVolumeRequest* msg) {
-  return *msg->update_mask_;
+  return *msg->_impl_.update_mask_;
 }
 void UpdateEncryptedVolumeRequest::clear_update_mask() {
-  if (GetArenaForAllocation() == nullptr && update_mask_ != nullptr) {
-    delete update_mask_;
+  if (GetArenaForAllocation() == nullptr && _impl_.update_mask_ != nullptr) {
+    delete _impl_.update_mask_;
   }
-  update_mask_ = nullptr;
+  _impl_.update_mask_ = nullptr;
 }
 UpdateEncryptedVolumeRequest::UpdateEncryptedVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.UpdateEncryptedVolumeRequest)
 }
 UpdateEncryptedVolumeRequest::UpdateEncryptedVolumeRequest(const UpdateEncryptedVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  UpdateEncryptedVolumeRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.encrypted_volume_){nullptr}
+    , decltype(_impl_.update_mask_){nullptr}
+    , decltype(_impl_.allow_missing_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_encrypted_volume()) {
-    encrypted_volume_ = new ::opi_api::storage::v1::EncryptedVolume(*from.encrypted_volume_);
-  } else {
-    encrypted_volume_ = nullptr;
+    _this->_impl_.encrypted_volume_ = new ::opi_api::storage::v1::EncryptedVolume(*from._impl_.encrypted_volume_);
   }
   if (from._internal_has_update_mask()) {
-    update_mask_ = new ::PROTOBUF_NAMESPACE_ID::FieldMask(*from.update_mask_);
-  } else {
-    update_mask_ = nullptr;
+    _this->_impl_.update_mask_ = new ::PROTOBUF_NAMESPACE_ID::FieldMask(*from._impl_.update_mask_);
   }
-  allow_missing_ = from.allow_missing_;
+  _this->_impl_.allow_missing_ = from._impl_.allow_missing_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.UpdateEncryptedVolumeRequest)
 }
 
-inline void UpdateEncryptedVolumeRequest::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&encrypted_volume_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&allow_missing_) -
-    reinterpret_cast<char*>(&encrypted_volume_)) + sizeof(allow_missing_));
+inline void UpdateEncryptedVolumeRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.encrypted_volume_){nullptr}
+    , decltype(_impl_.update_mask_){nullptr}
+    , decltype(_impl_.allow_missing_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 UpdateEncryptedVolumeRequest::~UpdateEncryptedVolumeRequest() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.UpdateEncryptedVolumeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void UpdateEncryptedVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete encrypted_volume_;
-  if (this != internal_default_instance()) delete update_mask_;
+  if (this != internal_default_instance()) delete _impl_.encrypted_volume_;
+  if (this != internal_default_instance()) delete _impl_.update_mask_;
 }
 
-void UpdateEncryptedVolumeRequest::ArenaDtor(void* object) {
-  UpdateEncryptedVolumeRequest* _this = reinterpret_cast< UpdateEncryptedVolumeRequest* >(object);
-  (void)_this;
-}
-void UpdateEncryptedVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void UpdateEncryptedVolumeRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void UpdateEncryptedVolumeRequest::Clear() {
@@ -1221,23 +1239,23 @@ void UpdateEncryptedVolumeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && encrypted_volume_ != nullptr) {
-    delete encrypted_volume_;
+  if (GetArenaForAllocation() == nullptr && _impl_.encrypted_volume_ != nullptr) {
+    delete _impl_.encrypted_volume_;
   }
-  encrypted_volume_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && update_mask_ != nullptr) {
-    delete update_mask_;
+  _impl_.encrypted_volume_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.update_mask_ != nullptr) {
+    delete _impl_.update_mask_;
   }
-  update_mask_ = nullptr;
-  allow_missing_ = false;
+  _impl_.update_mask_ = nullptr;
+  _impl_.allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* UpdateEncryptedVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* UpdateEncryptedVolumeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;
       case 1:
@@ -1258,7 +1276,7 @@ const char* UpdateEncryptedVolumeRequest::_InternalParse(const char* ptr, ::PROT
       // bool allow_missing = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1294,28 +1312,26 @@ uint8_t* UpdateEncryptedVolumeRequest::_InternalSerialize(
 
   // .opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;
   if (this->_internal_has_encrypted_volume()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::encrypted_volume(this), target, stream);
+      InternalWriteMessage(1, _Internal::encrypted_volume(this),
+        _Internal::encrypted_volume(this).GetCachedSize(), target, stream);
   }
 
   // .google.protobuf.FieldMask update_mask = 2;
   if (this->_internal_has_update_mask()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::update_mask(this), target, stream);
+      InternalWriteMessage(2, _Internal::update_mask(this),
+        _Internal::update_mask(this).GetCachedSize(), target, stream);
   }
 
   // bool allow_missing = 3;
   if (this->_internal_allow_missing() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_allow_missing(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_allow_missing(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.UpdateEncryptedVolumeRequest)
@@ -1334,14 +1350,14 @@ size_t UpdateEncryptedVolumeRequest::ByteSizeLong() const {
   if (this->_internal_has_encrypted_volume()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *encrypted_volume_);
+        *_impl_.encrypted_volume_);
   }
 
   // .google.protobuf.FieldMask update_mask = 2;
   if (this->_internal_has_update_mask()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *update_mask_);
+        *_impl_.update_mask_);
   }
 
   // bool allow_missing = 3;
@@ -1349,38 +1365,36 @@ size_t UpdateEncryptedVolumeRequest::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateEncryptedVolumeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     UpdateEncryptedVolumeRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateEncryptedVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void UpdateEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<UpdateEncryptedVolumeRequest *>(to)->MergeFrom(
-      static_cast<const UpdateEncryptedVolumeRequest &>(from));
-}
 
-
-void UpdateEncryptedVolumeRequest::MergeFrom(const UpdateEncryptedVolumeRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.UpdateEncryptedVolumeRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void UpdateEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<UpdateEncryptedVolumeRequest*>(&to_msg);
+  auto& from = static_cast<const UpdateEncryptedVolumeRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.UpdateEncryptedVolumeRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_encrypted_volume()) {
-    _internal_mutable_encrypted_volume()->::opi_api::storage::v1::EncryptedVolume::MergeFrom(from._internal_encrypted_volume());
+    _this->_internal_mutable_encrypted_volume()->::opi_api::storage::v1::EncryptedVolume::MergeFrom(
+        from._internal_encrypted_volume());
   }
   if (from._internal_has_update_mask()) {
-    _internal_mutable_update_mask()->::PROTOBUF_NAMESPACE_ID::FieldMask::MergeFrom(from._internal_update_mask());
+    _this->_internal_mutable_update_mask()->::PROTOBUF_NAMESPACE_ID::FieldMask::MergeFrom(
+        from._internal_update_mask());
   }
   if (from._internal_allow_missing() != 0) {
-    _internal_set_allow_missing(from._internal_allow_missing());
+    _this->_internal_set_allow_missing(from._internal_allow_missing());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void UpdateEncryptedVolumeRequest::CopyFrom(const UpdateEncryptedVolumeRequest& from) {
@@ -1398,15 +1412,15 @@ void UpdateEncryptedVolumeRequest::InternalSwap(UpdateEncryptedVolumeRequest* ot
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(UpdateEncryptedVolumeRequest, allow_missing_)
-      + sizeof(UpdateEncryptedVolumeRequest::allow_missing_)
-      - PROTOBUF_FIELD_OFFSET(UpdateEncryptedVolumeRequest, encrypted_volume_)>(
-          reinterpret_cast<char*>(&encrypted_volume_),
-          reinterpret_cast<char*>(&other->encrypted_volume_));
+      PROTOBUF_FIELD_OFFSET(UpdateEncryptedVolumeRequest, _impl_.allow_missing_)
+      + sizeof(UpdateEncryptedVolumeRequest::_impl_.allow_missing_)
+      - PROTOBUF_FIELD_OFFSET(UpdateEncryptedVolumeRequest, _impl_.encrypted_volume_)>(
+          reinterpret_cast<char*>(&_impl_.encrypted_volume_),
+          reinterpret_cast<char*>(&other->_impl_.encrypted_volume_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateEncryptedVolumeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[3]);
 }
@@ -1420,68 +1434,76 @@ class ListEncryptedVolumesRequest::_Internal {
 ListEncryptedVolumesRequest::ListEncryptedVolumesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListEncryptedVolumesRequest)
 }
 ListEncryptedVolumesRequest::ListEncryptedVolumesRequest(const ListEncryptedVolumesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListEncryptedVolumesRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.parent_){}
+    , decltype(_impl_.page_token_){}
+    , decltype(_impl_.page_size_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.parent_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.parent_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_parent().empty()) {
-    parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_parent(), 
-      GetArenaForAllocation());
+    _this->_impl_.parent_.Set(from._internal_parent(), 
+      _this->GetArenaForAllocation());
   }
-  page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.page_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.page_token_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_page_token().empty()) {
-    page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_page_token(), 
-      GetArenaForAllocation());
+    _this->_impl_.page_token_.Set(from._internal_page_token(), 
+      _this->GetArenaForAllocation());
   }
-  page_size_ = from.page_size_;
+  _this->_impl_.page_size_ = from._impl_.page_size_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListEncryptedVolumesRequest)
 }
 
-inline void ListEncryptedVolumesRequest::SharedCtor() {
-parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-page_size_ = 0;
+inline void ListEncryptedVolumesRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.parent_){}
+    , decltype(_impl_.page_token_){}
+    , decltype(_impl_.page_size_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.parent_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.parent_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.page_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.page_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListEncryptedVolumesRequest::~ListEncryptedVolumesRequest() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListEncryptedVolumesRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListEncryptedVolumesRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  parent_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.parent_.Destroy();
+  _impl_.page_token_.Destroy();
 }
 
-void ListEncryptedVolumesRequest::ArenaDtor(void* object) {
-  ListEncryptedVolumesRequest* _this = reinterpret_cast< ListEncryptedVolumesRequest* >(object);
-  (void)_this;
-}
-void ListEncryptedVolumesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListEncryptedVolumesRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListEncryptedVolumesRequest::Clear() {
@@ -1490,32 +1512,32 @@ void ListEncryptedVolumesRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  parent_.ClearToEmpty();
-  page_token_.ClearToEmpty();
-  page_size_ = 0;
+  _impl_.parent_.ClearToEmpty();
+  _impl_.page_token_.ClearToEmpty();
+  _impl_.page_size_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListEncryptedVolumesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListEncryptedVolumesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_parent();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListEncryptedVolumesRequest.parent"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.ListEncryptedVolumesRequest.parent"));
         } else
           goto handle_unusual;
         continue;
       // int32 page_size = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1524,9 +1546,9 @@ const char* ListEncryptedVolumesRequest::_InternalParse(const char* ptr, ::PROTO
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_page_token();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListEncryptedVolumesRequest.page_token"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.ListEncryptedVolumesRequest.page_token"));
         } else
           goto handle_unusual;
         continue;
@@ -1572,7 +1594,7 @@ uint8_t* ListEncryptedVolumesRequest::_InternalSerialize(
   // int32 page_size = 2;
   if (this->_internal_page_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_page_size(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_page_size(), target);
   }
 
   // string page_token = 3;
@@ -1586,7 +1608,7 @@ uint8_t* ListEncryptedVolumesRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListEncryptedVolumesRequest)
@@ -1617,41 +1639,37 @@ size_t ListEncryptedVolumesRequest::ByteSizeLong() const {
 
   // int32 page_size = 2;
   if (this->_internal_page_size() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListEncryptedVolumesRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListEncryptedVolumesRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListEncryptedVolumesRequest::GetClassData() const { return &_class_data_; }
 
-void ListEncryptedVolumesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListEncryptedVolumesRequest *>(to)->MergeFrom(
-      static_cast<const ListEncryptedVolumesRequest &>(from));
-}
 
-
-void ListEncryptedVolumesRequest::MergeFrom(const ListEncryptedVolumesRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListEncryptedVolumesRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListEncryptedVolumesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListEncryptedVolumesRequest*>(&to_msg);
+  auto& from = static_cast<const ListEncryptedVolumesRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListEncryptedVolumesRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_parent().empty()) {
-    _internal_set_parent(from._internal_parent());
+    _this->_internal_set_parent(from._internal_parent());
   }
   if (!from._internal_page_token().empty()) {
-    _internal_set_page_token(from._internal_page_token());
+    _this->_internal_set_page_token(from._internal_page_token());
   }
   if (from._internal_page_size() != 0) {
-    _internal_set_page_size(from._internal_page_size());
+    _this->_internal_set_page_size(from._internal_page_size());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListEncryptedVolumesRequest::CopyFrom(const ListEncryptedVolumesRequest& from) {
@@ -1671,20 +1689,18 @@ void ListEncryptedVolumesRequest::InternalSwap(ListEncryptedVolumesRequest* othe
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &parent_, lhs_arena,
-      &other->parent_, rhs_arena
+      &_impl_.parent_, lhs_arena,
+      &other->_impl_.parent_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &page_token_, lhs_arena,
-      &other->page_token_, rhs_arena
+      &_impl_.page_token_, lhs_arena,
+      &other->_impl_.page_token_, rhs_arena
   );
-  swap(page_size_, other->page_size_);
+  swap(_impl_.page_size_, other->_impl_.page_size_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListEncryptedVolumesRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[4]);
 }
@@ -1697,56 +1713,62 @@ class ListEncryptedVolumesResponse::_Internal {
 
 ListEncryptedVolumesResponse::ListEncryptedVolumesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  encrypted_volumes_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListEncryptedVolumesResponse)
 }
 ListEncryptedVolumesResponse::ListEncryptedVolumesResponse(const ListEncryptedVolumesResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      encrypted_volumes_(from.encrypted_volumes_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListEncryptedVolumesResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.encrypted_volumes_){from._impl_.encrypted_volumes_}
+    , decltype(_impl_.next_page_token_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.next_page_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.next_page_token_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_next_page_token().empty()) {
-    next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_page_token(), 
-      GetArenaForAllocation());
+    _this->_impl_.next_page_token_.Set(from._internal_next_page_token(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListEncryptedVolumesResponse)
 }
 
-inline void ListEncryptedVolumesResponse::SharedCtor() {
-next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void ListEncryptedVolumesResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.encrypted_volumes_){arena}
+    , decltype(_impl_.next_page_token_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.next_page_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.next_page_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListEncryptedVolumesResponse::~ListEncryptedVolumesResponse() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListEncryptedVolumesResponse)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListEncryptedVolumesResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  next_page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.encrypted_volumes_.~RepeatedPtrField();
+  _impl_.next_page_token_.Destroy();
 }
 
-void ListEncryptedVolumesResponse::ArenaDtor(void* object) {
-  ListEncryptedVolumesResponse* _this = reinterpret_cast< ListEncryptedVolumesResponse* >(object);
-  (void)_this;
-}
-void ListEncryptedVolumesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListEncryptedVolumesResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListEncryptedVolumesResponse::Clear() {
@@ -1755,16 +1777,16 @@ void ListEncryptedVolumesResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  encrypted_volumes_.Clear();
-  next_page_token_.ClearToEmpty();
+  _impl_.encrypted_volumes_.Clear();
+  _impl_.next_page_token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListEncryptedVolumesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListEncryptedVolumesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.storage.v1.EncryptedVolume encrypted_volumes = 1;
       case 1:
@@ -1783,9 +1805,9 @@ const char* ListEncryptedVolumesResponse::_InternalParse(const char* ptr, ::PROT
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_next_page_token();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListEncryptedVolumesResponse.next_page_token"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.ListEncryptedVolumesResponse.next_page_token"));
         } else
           goto handle_unusual;
         continue;
@@ -1819,11 +1841,11 @@ uint8_t* ListEncryptedVolumesResponse::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.storage.v1.EncryptedVolume encrypted_volumes = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_encrypted_volumes_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_encrypted_volumes_size()); i < n; i++) {
+    const auto& repfield = this->_internal_encrypted_volumes(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_encrypted_volumes(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // string next_page_token = 2;
@@ -1837,7 +1859,7 @@ uint8_t* ListEncryptedVolumesResponse::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListEncryptedVolumesResponse)
@@ -1854,7 +1876,7 @@ size_t ListEncryptedVolumesResponse::ByteSizeLong() const {
 
   // repeated .opi_api.storage.v1.EncryptedVolume encrypted_volumes = 1;
   total_size += 1UL * this->_internal_encrypted_volumes_size();
-  for (const auto& msg : this->encrypted_volumes_) {
+  for (const auto& msg : this->_impl_.encrypted_volumes_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -1866,33 +1888,29 @@ size_t ListEncryptedVolumesResponse::ByteSizeLong() const {
         this->_internal_next_page_token());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListEncryptedVolumesResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListEncryptedVolumesResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListEncryptedVolumesResponse::GetClassData() const { return &_class_data_; }
 
-void ListEncryptedVolumesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListEncryptedVolumesResponse *>(to)->MergeFrom(
-      static_cast<const ListEncryptedVolumesResponse &>(from));
-}
 
-
-void ListEncryptedVolumesResponse::MergeFrom(const ListEncryptedVolumesResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListEncryptedVolumesResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListEncryptedVolumesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListEncryptedVolumesResponse*>(&to_msg);
+  auto& from = static_cast<const ListEncryptedVolumesResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListEncryptedVolumesResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  encrypted_volumes_.MergeFrom(from.encrypted_volumes_);
+  _this->_impl_.encrypted_volumes_.MergeFrom(from._impl_.encrypted_volumes_);
   if (!from._internal_next_page_token().empty()) {
-    _internal_set_next_page_token(from._internal_next_page_token());
+    _this->_internal_set_next_page_token(from._internal_next_page_token());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListEncryptedVolumesResponse::CopyFrom(const ListEncryptedVolumesResponse& from) {
@@ -1911,16 +1929,15 @@ void ListEncryptedVolumesResponse::InternalSwap(ListEncryptedVolumesResponse* ot
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  encrypted_volumes_.InternalSwap(&other->encrypted_volumes_);
+  _impl_.encrypted_volumes_.InternalSwap(&other->_impl_.encrypted_volumes_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &next_page_token_, lhs_arena,
-      &other->next_page_token_, rhs_arena
+      &_impl_.next_page_token_, lhs_arena,
+      &other->_impl_.next_page_token_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListEncryptedVolumesResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[5]);
 }
@@ -1934,53 +1951,58 @@ class GetEncryptedVolumeRequest::_Internal {
 GetEncryptedVolumeRequest::GetEncryptedVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.GetEncryptedVolumeRequest)
 }
 GetEncryptedVolumeRequest::GetEncryptedVolumeRequest(const GetEncryptedVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetEncryptedVolumeRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.GetEncryptedVolumeRequest)
 }
 
-inline void GetEncryptedVolumeRequest::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void GetEncryptedVolumeRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GetEncryptedVolumeRequest::~GetEncryptedVolumeRequest() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.GetEncryptedVolumeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void GetEncryptedVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.Destroy();
 }
 
-void GetEncryptedVolumeRequest::ArenaDtor(void* object) {
-  GetEncryptedVolumeRequest* _this = reinterpret_cast< GetEncryptedVolumeRequest* >(object);
-  (void)_this;
-}
-void GetEncryptedVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void GetEncryptedVolumeRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void GetEncryptedVolumeRequest::Clear() {
@@ -1989,23 +2011,23 @@ void GetEncryptedVolumeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
+  _impl_.name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetEncryptedVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetEncryptedVolumeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.GetEncryptedVolumeRequest.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.GetEncryptedVolumeRequest.name"));
         } else
           goto handle_unusual;
         continue;
@@ -2049,7 +2071,7 @@ uint8_t* GetEncryptedVolumeRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.GetEncryptedVolumeRequest)
@@ -2071,32 +2093,28 @@ size_t GetEncryptedVolumeRequest::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetEncryptedVolumeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetEncryptedVolumeRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEncryptedVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void GetEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<GetEncryptedVolumeRequest *>(to)->MergeFrom(
-      static_cast<const GetEncryptedVolumeRequest &>(from));
-}
 
-
-void GetEncryptedVolumeRequest::MergeFrom(const GetEncryptedVolumeRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.GetEncryptedVolumeRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void GetEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetEncryptedVolumeRequest*>(&to_msg);
+  auto& from = static_cast<const GetEncryptedVolumeRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.GetEncryptedVolumeRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetEncryptedVolumeRequest::CopyFrom(const GetEncryptedVolumeRequest& from) {
@@ -2116,14 +2134,13 @@ void GetEncryptedVolumeRequest::InternalSwap(GetEncryptedVolumeRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEncryptedVolumeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[6]);
 }
@@ -2137,53 +2154,58 @@ class StatsEncryptedVolumeRequest::_Internal {
 StatsEncryptedVolumeRequest::StatsEncryptedVolumeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.StatsEncryptedVolumeRequest)
 }
 StatsEncryptedVolumeRequest::StatsEncryptedVolumeRequest(const StatsEncryptedVolumeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StatsEncryptedVolumeRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.StatsEncryptedVolumeRequest)
 }
 
-inline void StatsEncryptedVolumeRequest::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void StatsEncryptedVolumeRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 StatsEncryptedVolumeRequest::~StatsEncryptedVolumeRequest() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.StatsEncryptedVolumeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void StatsEncryptedVolumeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.Destroy();
 }
 
-void StatsEncryptedVolumeRequest::ArenaDtor(void* object) {
-  StatsEncryptedVolumeRequest* _this = reinterpret_cast< StatsEncryptedVolumeRequest* >(object);
-  (void)_this;
-}
-void StatsEncryptedVolumeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void StatsEncryptedVolumeRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void StatsEncryptedVolumeRequest::Clear() {
@@ -2192,23 +2214,23 @@ void StatsEncryptedVolumeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
+  _impl_.name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* StatsEncryptedVolumeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* StatsEncryptedVolumeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.StatsEncryptedVolumeRequest.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.StatsEncryptedVolumeRequest.name"));
         } else
           goto handle_unusual;
         continue;
@@ -2252,7 +2274,7 @@ uint8_t* StatsEncryptedVolumeRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.StatsEncryptedVolumeRequest)
@@ -2274,32 +2296,28 @@ size_t StatsEncryptedVolumeRequest::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StatsEncryptedVolumeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     StatsEncryptedVolumeRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StatsEncryptedVolumeRequest::GetClassData() const { return &_class_data_; }
 
-void StatsEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<StatsEncryptedVolumeRequest *>(to)->MergeFrom(
-      static_cast<const StatsEncryptedVolumeRequest &>(from));
-}
 
-
-void StatsEncryptedVolumeRequest::MergeFrom(const StatsEncryptedVolumeRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.StatsEncryptedVolumeRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void StatsEncryptedVolumeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StatsEncryptedVolumeRequest*>(&to_msg);
+  auto& from = static_cast<const StatsEncryptedVolumeRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.StatsEncryptedVolumeRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StatsEncryptedVolumeRequest::CopyFrom(const StatsEncryptedVolumeRequest& from) {
@@ -2319,14 +2337,13 @@ void StatsEncryptedVolumeRequest::InternalSwap(StatsEncryptedVolumeRequest* othe
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StatsEncryptedVolumeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[7]);
 }
@@ -2340,58 +2357,60 @@ class StatsEncryptedVolumeResponse::_Internal {
 
 const ::opi_api::storage::v1::VolumeStats&
 StatsEncryptedVolumeResponse::_Internal::stats(const StatsEncryptedVolumeResponse* msg) {
-  return *msg->stats_;
+  return *msg->_impl_.stats_;
 }
 void StatsEncryptedVolumeResponse::clear_stats() {
-  if (GetArenaForAllocation() == nullptr && stats_ != nullptr) {
-    delete stats_;
+  if (GetArenaForAllocation() == nullptr && _impl_.stats_ != nullptr) {
+    delete _impl_.stats_;
   }
-  stats_ = nullptr;
+  _impl_.stats_ = nullptr;
 }
 StatsEncryptedVolumeResponse::StatsEncryptedVolumeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.StatsEncryptedVolumeResponse)
 }
 StatsEncryptedVolumeResponse::StatsEncryptedVolumeResponse(const StatsEncryptedVolumeResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StatsEncryptedVolumeResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.stats_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_stats()) {
-    stats_ = new ::opi_api::storage::v1::VolumeStats(*from.stats_);
-  } else {
-    stats_ = nullptr;
+    _this->_impl_.stats_ = new ::opi_api::storage::v1::VolumeStats(*from._impl_.stats_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.StatsEncryptedVolumeResponse)
 }
 
-inline void StatsEncryptedVolumeResponse::SharedCtor() {
-stats_ = nullptr;
+inline void StatsEncryptedVolumeResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.stats_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 StatsEncryptedVolumeResponse::~StatsEncryptedVolumeResponse() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.StatsEncryptedVolumeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void StatsEncryptedVolumeResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete stats_;
+  if (this != internal_default_instance()) delete _impl_.stats_;
 }
 
-void StatsEncryptedVolumeResponse::ArenaDtor(void* object) {
-  StatsEncryptedVolumeResponse* _this = reinterpret_cast< StatsEncryptedVolumeResponse* >(object);
-  (void)_this;
-}
-void StatsEncryptedVolumeResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void StatsEncryptedVolumeResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void StatsEncryptedVolumeResponse::Clear() {
@@ -2400,18 +2419,18 @@ void StatsEncryptedVolumeResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && stats_ != nullptr) {
-    delete stats_;
+  if (GetArenaForAllocation() == nullptr && _impl_.stats_ != nullptr) {
+    delete _impl_.stats_;
   }
-  stats_ = nullptr;
+  _impl_.stats_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* StatsEncryptedVolumeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* StatsEncryptedVolumeResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.storage.v1.VolumeStats stats = 1;
       case 1:
@@ -2452,14 +2471,13 @@ uint8_t* StatsEncryptedVolumeResponse::_InternalSerialize(
 
   // .opi_api.storage.v1.VolumeStats stats = 1;
   if (this->_internal_has_stats()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::stats(this), target, stream);
+      InternalWriteMessage(1, _Internal::stats(this),
+        _Internal::stats(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.StatsEncryptedVolumeResponse)
@@ -2478,35 +2496,32 @@ size_t StatsEncryptedVolumeResponse::ByteSizeLong() const {
   if (this->_internal_has_stats()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *stats_);
+        *_impl_.stats_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StatsEncryptedVolumeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     StatsEncryptedVolumeResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StatsEncryptedVolumeResponse::GetClassData() const { return &_class_data_; }
 
-void StatsEncryptedVolumeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<StatsEncryptedVolumeResponse *>(to)->MergeFrom(
-      static_cast<const StatsEncryptedVolumeResponse &>(from));
-}
 
-
-void StatsEncryptedVolumeResponse::MergeFrom(const StatsEncryptedVolumeResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.StatsEncryptedVolumeResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void StatsEncryptedVolumeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StatsEncryptedVolumeResponse*>(&to_msg);
+  auto& from = static_cast<const StatsEncryptedVolumeResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.StatsEncryptedVolumeResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_stats()) {
-    _internal_mutable_stats()->::opi_api::storage::v1::VolumeStats::MergeFrom(from._internal_stats());
+    _this->_internal_mutable_stats()->::opi_api::storage::v1::VolumeStats::MergeFrom(
+        from._internal_stats());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StatsEncryptedVolumeResponse::CopyFrom(const StatsEncryptedVolumeResponse& from) {
@@ -2523,11 +2538,11 @@ bool StatsEncryptedVolumeResponse::IsInitialized() const {
 void StatsEncryptedVolumeResponse::InternalSwap(StatsEncryptedVolumeResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(stats_, other->stats_);
+  swap(_impl_.stats_, other->_impl_.stats_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StatsEncryptedVolumeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_middleend_5fencryption_2eproto_getter, &descriptor_table_middleend_5fencryption_2eproto_once,
       file_level_metadata_middleend_5fencryption_2eproto[8]);
 }
@@ -2537,31 +2552,40 @@ void StatsEncryptedVolumeResponse::InternalSwap(StatsEncryptedVolumeResponse* ot
 }  // namespace storage
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::EncryptedVolume* Arena::CreateMaybeMessage< ::opi_api::storage::v1::EncryptedVolume >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::EncryptedVolume*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::EncryptedVolume >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::EncryptedVolume >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::CreateEncryptedVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::CreateEncryptedVolumeRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::CreateEncryptedVolumeRequest*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::CreateEncryptedVolumeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::CreateEncryptedVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::DeleteEncryptedVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::DeleteEncryptedVolumeRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::DeleteEncryptedVolumeRequest*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::DeleteEncryptedVolumeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::DeleteEncryptedVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::UpdateEncryptedVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::UpdateEncryptedVolumeRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::UpdateEncryptedVolumeRequest*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::UpdateEncryptedVolumeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::UpdateEncryptedVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListEncryptedVolumesRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListEncryptedVolumesRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListEncryptedVolumesRequest*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListEncryptedVolumesRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListEncryptedVolumesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListEncryptedVolumesResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListEncryptedVolumesResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListEncryptedVolumesResponse*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListEncryptedVolumesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListEncryptedVolumesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::GetEncryptedVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::GetEncryptedVolumeRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::GetEncryptedVolumeRequest*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::GetEncryptedVolumeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::GetEncryptedVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::StatsEncryptedVolumeRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::StatsEncryptedVolumeRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::StatsEncryptedVolumeRequest*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::StatsEncryptedVolumeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::StatsEncryptedVolumeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::StatsEncryptedVolumeResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::StatsEncryptedVolumeResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::StatsEncryptedVolumeResponse*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::StatsEncryptedVolumeResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::StatsEncryptedVolumeResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

@@ -8,55 +8,55 @@ public interface VolumeStatsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 read_bytes_count = 1;</code>
+   * <code>int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The readBytesCount.
    */
   int getReadBytesCount();
 
   /**
-   * <code>int32 read_ops_count = 2;</code>
+   * <code>int32 read_ops_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The readOpsCount.
    */
   int getReadOpsCount();
 
   /**
-   * <code>int32 write_bytes_count = 3;</code>
+   * <code>int32 write_bytes_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The writeBytesCount.
    */
   int getWriteBytesCount();
 
   /**
-   * <code>int32 write_ops_count = 4;</code>
+   * <code>int32 write_ops_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The writeOpsCount.
    */
   int getWriteOpsCount();
 
   /**
-   * <code>int32 unmap_bytes_count = 5;</code>
+   * <code>int32 unmap_bytes_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The unmapBytesCount.
    */
   int getUnmapBytesCount();
 
   /**
-   * <code>int32 unmap_ops_count = 6;</code>
+   * <code>int32 unmap_ops_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The unmapOpsCount.
    */
   int getUnmapOpsCount();
 
   /**
-   * <code>int32 read_latency_ticks = 7;</code>
+   * <code>int32 read_latency_ticks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The readLatencyTicks.
    */
   int getReadLatencyTicks();
 
   /**
-   * <code>int32 write_latency_ticks = 8;</code>
+   * <code>int32 write_latency_ticks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The writeLatencyTicks.
    */
   int getWriteLatencyTicks();
 
   /**
-   * <code>int32 unmap_latency_ticks = 9;</code>
+   * <code>int32 unmap_latency_ticks = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The unmapLatencyTicks.
    */
   int getUnmapLatencyTicks();

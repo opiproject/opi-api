@@ -36,7 +36,7 @@ public interface VirtioScsiLunOrBuilder extends
    * The target that this LUN is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the targetId field is set.
    */
   boolean hasTargetId();
@@ -45,7 +45,7 @@ public interface VirtioScsiLunOrBuilder extends
    * The target that this LUN is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The targetId.
    */
   opi_api.common.v1.ObjectKey getTargetId();
@@ -54,7 +54,7 @@ public interface VirtioScsiLunOrBuilder extends
    * The target that this LUN is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder();
 
@@ -63,7 +63,7 @@ public interface VirtioScsiLunOrBuilder extends
    * The middle/back-end volume for this LLUN
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the volumeId field is set.
    */
   boolean hasVolumeId();
@@ -72,7 +72,7 @@ public interface VirtioScsiLunOrBuilder extends
    * The middle/back-end volume for this LLUN
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The volumeId.
    */
   opi_api.common.v1.ObjectKey getVolumeId();
@@ -81,7 +81,7 @@ public interface VirtioScsiLunOrBuilder extends
    * The middle/back-end volume for this LLUN
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
 }

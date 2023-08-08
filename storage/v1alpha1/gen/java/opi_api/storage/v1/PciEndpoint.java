@@ -59,19 +59,43 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            com.google.protobuf.Int32Value.Builder subBuilder = null;
+            if (portId_ != null) {
+              subBuilder = portId_.toBuilder();
+            }
+            portId_ = input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(portId_);
+              portId_ = subBuilder.buildPartial();
+            }
 
-            portId_ = input.readInt32();
             break;
           }
-          case 16: {
+          case 18: {
+            com.google.protobuf.Int32Value.Builder subBuilder = null;
+            if (physicalFunction_ != null) {
+              subBuilder = physicalFunction_.toBuilder();
+            }
+            physicalFunction_ = input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(physicalFunction_);
+              physicalFunction_ = subBuilder.buildPartial();
+            }
 
-            physicalFunction_ = input.readInt32();
             break;
           }
-          case 24: {
+          case 26: {
+            com.google.protobuf.Int32Value.Builder subBuilder = null;
+            if (virtualFunction_ != null) {
+              subBuilder = virtualFunction_.toBuilder();
+            }
+            virtualFunction_ = input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(virtualFunction_);
+              virtualFunction_ = subBuilder.buildPartial();
+            }
 
-            virtualFunction_ = input.readInt32();
             break;
           }
           default: {
@@ -85,6 +109,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -107,7 +133,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PORT_ID_FIELD_NUMBER = 1;
-  private int portId_;
+  private com.google.protobuf.Int32Value portId_;
   /**
    * <pre>
    * The "port" or "device". In other words, the connector/cable that's
@@ -116,16 +142,45 @@ private static final long serialVersionUID = 0L;
    * but it does not strictly have to and that should not be relied upon.
    * </pre>
    *
-   * <code>int32 port_id = 1;</code>
+   * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the portId field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortId() {
+    return portId_ != null;
+  }
+  /**
+   * <pre>
+   * The "port" or "device". In other words, the connector/cable that's
+   * plugged into a particular host. This number may end up matching
+   * the host-assigned "device" value in the bus:device:function identifier,
+   * but it does not strictly have to and that should not be relied upon.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The portId.
    */
   @java.lang.Override
-  public int getPortId() {
-    return portId_;
+  public com.google.protobuf.Int32Value getPortId() {
+    return portId_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : portId_;
+  }
+  /**
+   * <pre>
+   * The "port" or "device". In other words, the connector/cable that's
+   * plugged into a particular host. This number may end up matching
+   * the host-assigned "device" value in the bus:device:function identifier,
+   * but it does not strictly have to and that should not be relied upon.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int32ValueOrBuilder getPortIdOrBuilder() {
+    return getPortId();
   }
 
   public static final int PHYSICAL_FUNCTION_FIELD_NUMBER = 2;
-  private int physicalFunction_;
+  private com.google.protobuf.Int32Value physicalFunction_;
   /**
    * <pre>
    * Physical function index. This may end up matching the host-assigned
@@ -133,16 +188,43 @@ private static final long serialVersionUID = 0L;
    * strictly have to and that should not be relied upon.
    * </pre>
    *
-   * <code>int32 physical_function = 2;</code>
+   * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the physicalFunction field is set.
+   */
+  @java.lang.Override
+  public boolean hasPhysicalFunction() {
+    return physicalFunction_ != null;
+  }
+  /**
+   * <pre>
+   * Physical function index. This may end up matching the host-assigned
+   * "function" value in the bus:device:function identifier, but it does not
+   * strictly have to and that should not be relied upon.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The physicalFunction.
    */
   @java.lang.Override
-  public int getPhysicalFunction() {
-    return physicalFunction_;
+  public com.google.protobuf.Int32Value getPhysicalFunction() {
+    return physicalFunction_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : physicalFunction_;
+  }
+  /**
+   * <pre>
+   * Physical function index. This may end up matching the host-assigned
+   * "function" value in the bus:device:function identifier, but it does not
+   * strictly have to and that should not be relied upon.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int32ValueOrBuilder getPhysicalFunctionOrBuilder() {
+    return getPhysicalFunction();
   }
 
   public static final int VIRTUAL_FUNCTION_FIELD_NUMBER = 3;
-  private int virtualFunction_;
+  private com.google.protobuf.Int32Value virtualFunction_;
   /**
    * <pre>
    * Virtual function index. 1-based index.
@@ -152,12 +234,43 @@ private static final long serialVersionUID = 0L;
    * that should not be relied upon.
    * </pre>
    *
-   * <code>int32 virtual_function = 3;</code>
+   * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the virtualFunction field is set.
+   */
+  @java.lang.Override
+  public boolean hasVirtualFunction() {
+    return virtualFunction_ != null;
+  }
+  /**
+   * <pre>
+   * Virtual function index. 1-based index.
+   * The value 0 is reserved to represent the PCI physical "device".
+   * This may end up matching the host-assigned "function" value in the
+   * bus:device:function identifier, but it does not strictly have to and
+   * that should not be relied upon.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtualFunction.
    */
   @java.lang.Override
-  public int getVirtualFunction() {
-    return virtualFunction_;
+  public com.google.protobuf.Int32Value getVirtualFunction() {
+    return virtualFunction_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : virtualFunction_;
+  }
+  /**
+   * <pre>
+   * Virtual function index. 1-based index.
+   * The value 0 is reserved to represent the PCI physical "device".
+   * This may end up matching the host-assigned "function" value in the
+   * bus:device:function identifier, but it does not strictly have to and
+   * that should not be relied upon.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int32ValueOrBuilder getVirtualFunctionOrBuilder() {
+    return getVirtualFunction();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -174,14 +287,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (portId_ != 0) {
-      output.writeInt32(1, portId_);
+    if (portId_ != null) {
+      output.writeMessage(1, getPortId());
     }
-    if (physicalFunction_ != 0) {
-      output.writeInt32(2, physicalFunction_);
+    if (physicalFunction_ != null) {
+      output.writeMessage(2, getPhysicalFunction());
     }
-    if (virtualFunction_ != 0) {
-      output.writeInt32(3, virtualFunction_);
+    if (virtualFunction_ != null) {
+      output.writeMessage(3, getVirtualFunction());
     }
     unknownFields.writeTo(output);
   }
@@ -192,17 +305,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (portId_ != 0) {
+    if (portId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, portId_);
+        .computeMessageSize(1, getPortId());
     }
-    if (physicalFunction_ != 0) {
+    if (physicalFunction_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, physicalFunction_);
+        .computeMessageSize(2, getPhysicalFunction());
     }
-    if (virtualFunction_ != 0) {
+    if (virtualFunction_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, virtualFunction_);
+        .computeMessageSize(3, getVirtualFunction());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,12 +332,21 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.PciEndpoint other = (opi_api.storage.v1.PciEndpoint) obj;
 
-    if (getPortId()
-        != other.getPortId()) return false;
-    if (getPhysicalFunction()
-        != other.getPhysicalFunction()) return false;
-    if (getVirtualFunction()
-        != other.getVirtualFunction()) return false;
+    if (hasPortId() != other.hasPortId()) return false;
+    if (hasPortId()) {
+      if (!getPortId()
+          .equals(other.getPortId())) return false;
+    }
+    if (hasPhysicalFunction() != other.hasPhysicalFunction()) return false;
+    if (hasPhysicalFunction()) {
+      if (!getPhysicalFunction()
+          .equals(other.getPhysicalFunction())) return false;
+    }
+    if (hasVirtualFunction() != other.hasVirtualFunction()) return false;
+    if (hasVirtualFunction()) {
+      if (!getVirtualFunction()
+          .equals(other.getVirtualFunction())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -236,12 +358,18 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PORT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getPortId();
-    hash = (37 * hash) + PHYSICAL_FUNCTION_FIELD_NUMBER;
-    hash = (53 * hash) + getPhysicalFunction();
-    hash = (37 * hash) + VIRTUAL_FUNCTION_FIELD_NUMBER;
-    hash = (53 * hash) + getVirtualFunction();
+    if (hasPortId()) {
+      hash = (37 * hash) + PORT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPortId().hashCode();
+    }
+    if (hasPhysicalFunction()) {
+      hash = (37 * hash) + PHYSICAL_FUNCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getPhysicalFunction().hashCode();
+    }
+    if (hasVirtualFunction()) {
+      hash = (37 * hash) + VIRTUAL_FUNCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getVirtualFunction().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -386,12 +514,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      portId_ = 0;
-
-      physicalFunction_ = 0;
-
-      virtualFunction_ = 0;
-
+      if (portIdBuilder_ == null) {
+        portId_ = null;
+      } else {
+        portId_ = null;
+        portIdBuilder_ = null;
+      }
+      if (physicalFunctionBuilder_ == null) {
+        physicalFunction_ = null;
+      } else {
+        physicalFunction_ = null;
+        physicalFunctionBuilder_ = null;
+      }
+      if (virtualFunctionBuilder_ == null) {
+        virtualFunction_ = null;
+      } else {
+        virtualFunction_ = null;
+        virtualFunctionBuilder_ = null;
+      }
       return this;
     }
 
@@ -418,9 +558,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.PciEndpoint buildPartial() {
       opi_api.storage.v1.PciEndpoint result = new opi_api.storage.v1.PciEndpoint(this);
-      result.portId_ = portId_;
-      result.physicalFunction_ = physicalFunction_;
-      result.virtualFunction_ = virtualFunction_;
+      if (portIdBuilder_ == null) {
+        result.portId_ = portId_;
+      } else {
+        result.portId_ = portIdBuilder_.build();
+      }
+      if (physicalFunctionBuilder_ == null) {
+        result.physicalFunction_ = physicalFunction_;
+      } else {
+        result.physicalFunction_ = physicalFunctionBuilder_.build();
+      }
+      if (virtualFunctionBuilder_ == null) {
+        result.virtualFunction_ = virtualFunction_;
+      } else {
+        result.virtualFunction_ = virtualFunctionBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -469,14 +621,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.PciEndpoint other) {
       if (other == opi_api.storage.v1.PciEndpoint.getDefaultInstance()) return this;
-      if (other.getPortId() != 0) {
-        setPortId(other.getPortId());
+      if (other.hasPortId()) {
+        mergePortId(other.getPortId());
       }
-      if (other.getPhysicalFunction() != 0) {
-        setPhysicalFunction(other.getPhysicalFunction());
+      if (other.hasPhysicalFunction()) {
+        mergePhysicalFunction(other.getPhysicalFunction());
       }
-      if (other.getVirtualFunction() != 0) {
-        setVirtualFunction(other.getVirtualFunction());
+      if (other.hasVirtualFunction()) {
+        mergeVirtualFunction(other.getVirtualFunction());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -507,7 +659,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int portId_ ;
+    private com.google.protobuf.Int32Value portId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> portIdBuilder_;
     /**
      * <pre>
      * The "port" or "device". In other words, the connector/cable that's
@@ -516,12 +670,29 @@ private static final long serialVersionUID = 0L;
      * but it does not strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 port_id = 1;</code>
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the portId field is set.
+     */
+    public boolean hasPortId() {
+      return portIdBuilder_ != null || portId_ != null;
+    }
+    /**
+     * <pre>
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The portId.
      */
-    @java.lang.Override
-    public int getPortId() {
-      return portId_;
+    public com.google.protobuf.Int32Value getPortId() {
+      if (portIdBuilder_ == null) {
+        return portId_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : portId_;
+      } else {
+        return portIdBuilder_.getMessage();
+      }
     }
     /**
      * <pre>
@@ -531,14 +702,19 @@ private static final long serialVersionUID = 0L;
      * but it does not strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 port_id = 1;</code>
-     * @param value The portId to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setPortId(int value) {
-      
-      portId_ = value;
-      onChanged();
+    public Builder setPortId(com.google.protobuf.Int32Value value) {
+      if (portIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        portId_ = value;
+        onChanged();
+      } else {
+        portIdBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
@@ -549,17 +725,125 @@ private static final long serialVersionUID = 0L;
      * but it does not strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 port_id = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setPortId(
+        com.google.protobuf.Int32Value.Builder builderForValue) {
+      if (portIdBuilder_ == null) {
+        portId_ = builderForValue.build();
+        onChanged();
+      } else {
+        portIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder mergePortId(com.google.protobuf.Int32Value value) {
+      if (portIdBuilder_ == null) {
+        if (portId_ != null) {
+          portId_ =
+            com.google.protobuf.Int32Value.newBuilder(portId_).mergeFrom(value).buildPartial();
+        } else {
+          portId_ = value;
+        }
+        onChanged();
+      } else {
+        portIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearPortId() {
-      
-      portId_ = 0;
-      onChanged();
+      if (portIdBuilder_ == null) {
+        portId_ = null;
+        onChanged();
+      } else {
+        portId_ = null;
+        portIdBuilder_ = null;
+      }
+
       return this;
     }
+    /**
+     * <pre>
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.protobuf.Int32Value.Builder getPortIdBuilder() {
+      
+      onChanged();
+      return getPortIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.protobuf.Int32ValueOrBuilder getPortIdOrBuilder() {
+      if (portIdBuilder_ != null) {
+        return portIdBuilder_.getMessageOrBuilder();
+      } else {
+        return portId_ == null ?
+            com.google.protobuf.Int32Value.getDefaultInstance() : portId_;
+      }
+    }
+    /**
+     * <pre>
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+        getPortIdFieldBuilder() {
+      if (portIdBuilder_ == null) {
+        portIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
+                getPortId(),
+                getParentForChildren(),
+                isClean());
+        portId_ = null;
+      }
+      return portIdBuilder_;
+    }
 
-    private int physicalFunction_ ;
+    private com.google.protobuf.Int32Value physicalFunction_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> physicalFunctionBuilder_;
     /**
      * <pre>
      * Physical function index. This may end up matching the host-assigned
@@ -567,12 +851,28 @@ private static final long serialVersionUID = 0L;
      * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 physical_function = 2;</code>
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the physicalFunction field is set.
+     */
+    public boolean hasPhysicalFunction() {
+      return physicalFunctionBuilder_ != null || physicalFunction_ != null;
+    }
+    /**
+     * <pre>
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The physicalFunction.
      */
-    @java.lang.Override
-    public int getPhysicalFunction() {
-      return physicalFunction_;
+    public com.google.protobuf.Int32Value getPhysicalFunction() {
+      if (physicalFunctionBuilder_ == null) {
+        return physicalFunction_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : physicalFunction_;
+      } else {
+        return physicalFunctionBuilder_.getMessage();
+      }
     }
     /**
      * <pre>
@@ -581,14 +881,19 @@ private static final long serialVersionUID = 0L;
      * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 physical_function = 2;</code>
-     * @param value The physicalFunction to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setPhysicalFunction(int value) {
-      
-      physicalFunction_ = value;
-      onChanged();
+    public Builder setPhysicalFunction(com.google.protobuf.Int32Value value) {
+      if (physicalFunctionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        physicalFunction_ = value;
+        onChanged();
+      } else {
+        physicalFunctionBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
@@ -598,17 +903,120 @@ private static final long serialVersionUID = 0L;
      * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 physical_function = 2;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setPhysicalFunction(
+        com.google.protobuf.Int32Value.Builder builderForValue) {
+      if (physicalFunctionBuilder_ == null) {
+        physicalFunction_ = builderForValue.build();
+        onChanged();
+      } else {
+        physicalFunctionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder mergePhysicalFunction(com.google.protobuf.Int32Value value) {
+      if (physicalFunctionBuilder_ == null) {
+        if (physicalFunction_ != null) {
+          physicalFunction_ =
+            com.google.protobuf.Int32Value.newBuilder(physicalFunction_).mergeFrom(value).buildPartial();
+        } else {
+          physicalFunction_ = value;
+        }
+        onChanged();
+      } else {
+        physicalFunctionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearPhysicalFunction() {
-      
-      physicalFunction_ = 0;
-      onChanged();
+      if (physicalFunctionBuilder_ == null) {
+        physicalFunction_ = null;
+        onChanged();
+      } else {
+        physicalFunction_ = null;
+        physicalFunctionBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.protobuf.Int32Value.Builder getPhysicalFunctionBuilder() {
+      
+      onChanged();
+      return getPhysicalFunctionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.protobuf.Int32ValueOrBuilder getPhysicalFunctionOrBuilder() {
+      if (physicalFunctionBuilder_ != null) {
+        return physicalFunctionBuilder_.getMessageOrBuilder();
+      } else {
+        return physicalFunction_ == null ?
+            com.google.protobuf.Int32Value.getDefaultInstance() : physicalFunction_;
+      }
+    }
+    /**
+     * <pre>
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+        getPhysicalFunctionFieldBuilder() {
+      if (physicalFunctionBuilder_ == null) {
+        physicalFunctionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
+                getPhysicalFunction(),
+                getParentForChildren(),
+                isClean());
+        physicalFunction_ = null;
+      }
+      return physicalFunctionBuilder_;
     }
 
-    private int virtualFunction_ ;
+    private com.google.protobuf.Int32Value virtualFunction_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> virtualFunctionBuilder_;
     /**
      * <pre>
      * Virtual function index. 1-based index.
@@ -618,12 +1026,30 @@ private static final long serialVersionUID = 0L;
      * that should not be relied upon.
      * </pre>
      *
-     * <code>int32 virtual_function = 3;</code>
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the virtualFunction field is set.
+     */
+    public boolean hasVirtualFunction() {
+      return virtualFunctionBuilder_ != null || virtualFunction_ != null;
+    }
+    /**
+     * <pre>
+     * Virtual function index. 1-based index.
+     * The value 0 is reserved to represent the PCI physical "device".
+     * This may end up matching the host-assigned "function" value in the
+     * bus:device:function identifier, but it does not strictly have to and
+     * that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The virtualFunction.
      */
-    @java.lang.Override
-    public int getVirtualFunction() {
-      return virtualFunction_;
+    public com.google.protobuf.Int32Value getVirtualFunction() {
+      if (virtualFunctionBuilder_ == null) {
+        return virtualFunction_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : virtualFunction_;
+      } else {
+        return virtualFunctionBuilder_.getMessage();
+      }
     }
     /**
      * <pre>
@@ -634,14 +1060,19 @@ private static final long serialVersionUID = 0L;
      * that should not be relied upon.
      * </pre>
      *
-     * <code>int32 virtual_function = 3;</code>
-     * @param value The virtualFunction to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setVirtualFunction(int value) {
-      
-      virtualFunction_ = value;
-      onChanged();
+    public Builder setVirtualFunction(com.google.protobuf.Int32Value value) {
+      if (virtualFunctionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        virtualFunction_ = value;
+        onChanged();
+      } else {
+        virtualFunctionBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
@@ -653,14 +1084,125 @@ private static final long serialVersionUID = 0L;
      * that should not be relied upon.
      * </pre>
      *
-     * <code>int32 virtual_function = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setVirtualFunction(
+        com.google.protobuf.Int32Value.Builder builderForValue) {
+      if (virtualFunctionBuilder_ == null) {
+        virtualFunction_ = builderForValue.build();
+        onChanged();
+      } else {
+        virtualFunctionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Virtual function index. 1-based index.
+     * The value 0 is reserved to represent the PCI physical "device".
+     * This may end up matching the host-assigned "function" value in the
+     * bus:device:function identifier, but it does not strictly have to and
+     * that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder mergeVirtualFunction(com.google.protobuf.Int32Value value) {
+      if (virtualFunctionBuilder_ == null) {
+        if (virtualFunction_ != null) {
+          virtualFunction_ =
+            com.google.protobuf.Int32Value.newBuilder(virtualFunction_).mergeFrom(value).buildPartial();
+        } else {
+          virtualFunction_ = value;
+        }
+        onChanged();
+      } else {
+        virtualFunctionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Virtual function index. 1-based index.
+     * The value 0 is reserved to represent the PCI physical "device".
+     * This may end up matching the host-assigned "function" value in the
+     * bus:device:function identifier, but it does not strictly have to and
+     * that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearVirtualFunction() {
-      
-      virtualFunction_ = 0;
-      onChanged();
+      if (virtualFunctionBuilder_ == null) {
+        virtualFunction_ = null;
+        onChanged();
+      } else {
+        virtualFunction_ = null;
+        virtualFunctionBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Virtual function index. 1-based index.
+     * The value 0 is reserved to represent the PCI physical "device".
+     * This may end up matching the host-assigned "function" value in the
+     * bus:device:function identifier, but it does not strictly have to and
+     * that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.protobuf.Int32Value.Builder getVirtualFunctionBuilder() {
+      
+      onChanged();
+      return getVirtualFunctionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Virtual function index. 1-based index.
+     * The value 0 is reserved to represent the PCI physical "device".
+     * This may end up matching the host-assigned "function" value in the
+     * bus:device:function identifier, but it does not strictly have to and
+     * that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.protobuf.Int32ValueOrBuilder getVirtualFunctionOrBuilder() {
+      if (virtualFunctionBuilder_ != null) {
+        return virtualFunctionBuilder_.getMessageOrBuilder();
+      } else {
+        return virtualFunction_ == null ?
+            com.google.protobuf.Int32Value.getDefaultInstance() : virtualFunction_;
+      }
+    }
+    /**
+     * <pre>
+     * Virtual function index. 1-based index.
+     * The value 0 is reserved to represent the PCI physical "device".
+     * This may end up matching the host-assigned "function" value in the
+     * bus:device:function identifier, but it does not strictly have to and
+     * that should not be relied upon.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+        getVirtualFunctionFieldBuilder() {
+      if (virtualFunctionBuilder_ == null) {
+        virtualFunctionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
+                getVirtualFunction(),
+                getParentForChildren(),
+                isClean());
+        virtualFunction_ = null;
+      }
+      return virtualFunctionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

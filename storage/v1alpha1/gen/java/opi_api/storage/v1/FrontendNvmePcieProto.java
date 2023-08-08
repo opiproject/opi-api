@@ -194,202 +194,209 @@ public final class FrontendNvmePcieProto {
       "e.proto\032\033google/protobuf/empty.proto\032\034go" +
       "ogle/api/annotations.proto\032\037google/api/f" +
       "ield_behavior.proto\032 google/protobuf/fie" +
-      "ld_mask.proto\"\365\001\n\rNvmeSubsystem\0229\n\004name\030" +
+      "ld_mask.proto\"\377\001\n\rNvmeSubsystem\0229\n\004name\030" +
       "\001 \001(\tB+\340A\003\340A\005\372A\"\n opi_api.storage.v1/Nvm" +
-      "eSubsystem\0223\n\004spec\030\002 \001(\0132%.opi_api.stora" +
-      "ge.v1.NvmeSubsystemSpec\0227\n\006status\030\003 \001(\0132" +
-      "\'.opi_api.storage.v1.NvmeSubsystemStatus" +
-      ":;\352A8\n$storage.opiproject.org/NvmeSubsys" +
-      "tem\022\020volumes/{volume}\"e\n\021NvmeSubsystemSp" +
-      "ec\022\013\n\003nqn\030\001 \001(\t\022\025\n\rserial_number\030\002 \001(\t\022\024" +
-      "\n\014model_number\030\003 \001(\t\022\026\n\016max_namespaces\030\004" +
-      " \001(\003\"B\n\023NvmeSubsystemStatus\022\031\n\021firmware_" +
-      "revision\030\001 \001(\t\022\020\n\010fru_guid\030\002 \001(\014\"\372\001\n\016Nvm" +
+      "eSubsystem\0228\n\004spec\030\002 \001(\0132%.opi_api.stora" +
+      "ge.v1.NvmeSubsystemSpecB\003\340A\002\022<\n\006status\030\003" +
+      " \001(\0132\'.opi_api.storage.v1.NvmeSubsystemS" +
+      "tatusB\003\340A\003:;\352A8\n$storage.opiproject.org/" +
+      "NvmeSubsystem\022\020volumes/{volume}\"y\n\021NvmeS" +
+      "ubsystemSpec\022\020\n\003nqn\030\001 \001(\tB\003\340A\002\022\032\n\rserial" +
+      "_number\030\002 \001(\tB\003\340A\001\022\031\n\014model_number\030\003 \001(\t" +
+      "B\003\340A\001\022\033\n\016max_namespaces\030\004 \001(\003B\003\340A\001\"L\n\023Nv" +
+      "meSubsystemStatus\022\036\n\021firmware_revision\030\001" +
+      " \001(\tB\003\340A\003\022\025\n\010fru_guid\030\002 \001(\014B\003\340A\003\"\204\002\n\016Nvm" +
       "eController\022:\n\004name\030\001 \001(\tB,\340A\003\340A\005\372A#\n!op" +
-      "i_api.storage.v1/NvmeController\0224\n\004spec\030" +
+      "i_api.storage.v1/NvmeController\0229\n\004spec\030" +
       "\002 \001(\0132&.opi_api.storage.v1.NvmeControlle" +
-      "rSpec\0228\n\006status\030\003 \001(\0132(.opi_api.storage." +
-      "v1.NvmeControllerStatus:<\352A9\n%storage.op" +
-      "iproject.org/NvmeController\022\020volumes/{vo" +
-      "lume}\"\340\002\n\022NvmeControllerSpec\022\032\n\022nvme_con" +
-      "troller_id\030\001 \001(\005\022D\n\022subsystem_name_ref\030\002" +
-      " \001(\tB(\340A\002\372A\"\n opi_api.storage.v1/NvmeSub" +
-      "system\0220\n\007pcie_id\030\003 \001(\0132\037.opi_api.storag" +
-      "e.v1.PciEndpoint\022\017\n\007max_nsq\030\004 \001(\005\022\017\n\007max" +
-      "_ncq\030\005 \001(\005\022\014\n\004sqes\030\006 \001(\005\022\014\n\004cqes\030\007 \001(\005\022\026" +
-      "\n\016max_namespaces\030\010 \001(\005\022/\n\tmin_limit\030\t \001(" +
-      "\0132\034.opi_api.storage.v1.QosLimit\022/\n\tmax_l" +
-      "imit\030\n \001(\0132\034.opi_api.storage.v1.QosLimit" +
-      "\"&\n\024NvmeControllerStatus\022\016\n\006active\030\001 \001(\010" +
-      "\"\365\001\n\rNvmeNamespace\0229\n\004name\030\001 \001(\tB+\340A\003\340A\005" +
-      "\372A\"\n opi_api.storage.v1/NvmeNamespace\0223\n" +
-      "\004spec\030\002 \001(\0132%.opi_api.storage.v1.NvmeNam" +
-      "espaceSpec\0227\n\006status\030\003 \001(\0132\'.opi_api.sto" +
-      "rage.v1.NvmeNamespaceStatus:;\352A8\n$storag" +
-      "e.opiproject.org/NvmeNamespace\022\020volumes/" +
-      "{volume}\"\317\001\n\021NvmeNamespaceSpec\022D\n\022subsys" +
-      "tem_name_ref\030\001 \001(\tB(\340A\002\372A\"\n opi_api.stor" +
-      "age.v1/NvmeSubsystem\022\021\n\thost_nsid\030\002 \001(\005\022" +
-      "\r\n\005nguid\030\003 \001(\t\022\r\n\005eui64\030\004 \001(\003\022%\n\004uuid\030\005 " +
-      "\001(\0132\027.opi_api.common.v1.Uuid\022\034\n\017volume_n" +
-      "ame_ref\030\006 \001(\tB\003\340A\002\"\232\001\n\023NvmeNamespaceStat" +
-      "us\022<\n\tpci_state\030\001 \001(\0162).opi_api.storage." +
-      "v1.NvmeNamespacePciState\022E\n\016pci_oper_sta" +
-      "te\030\002 \001(\0162-.opi_api.storage.v1.NvmeNamesp" +
-      "acePciOperState\"w\n\032CreateNvmeSubsystemRe" +
-      "quest\022>\n\016nvme_subsystem\030\001 \001(\0132!.opi_api." +
-      "storage.v1.NvmeSubsystemB\003\340A\002\022\031\n\021nvme_su" +
-      "bsystem_id\030\002 \001(\t\"k\n\032DeleteNvmeSubsystemR" +
-      "equest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.st" +
-      "orage.v1/NvmeSubsystem\022\025\n\rallow_missing\030" +
-      "\002 \001(\010\"\237\001\n\032UpdateNvmeSubsystemRequest\0229\n\016" +
-      "nvme_subsystem\030\001 \001(\0132!.opi_api.storage.v" +
-      "1.NvmeSubsystem\022/\n\013update_mask\030\002 \001(\0132\032.g" +
-      "oogle.protobuf.FieldMask\022\025\n\rallow_missin" +
-      "g\030\003 \001(\010\"|\n\031ListNvmeSubsystemsRequest\0228\n\006" +
-      "parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v1" +
-      "/NvmeSubsystem\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag" +
-      "e_token\030\003 \001(\t\"q\n\032ListNvmeSubsystemsRespo" +
-      "nse\022:\n\017nvme_subsystems\030\001 \003(\0132!.opi_api.s" +
-      "torage.v1.NvmeSubsystem\022\027\n\017next_page_tok" +
-      "en\030\002 \001(\t\"Q\n\027GetNvmeSubsystemRequest\0226\n\004n" +
-      "ame\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v1/Nv" +
-      "meSubsystem\"S\n\031StatsNvmeSubsystemRequest" +
-      "\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage." +
-      "v1/NvmeSubsystem\"L\n\032StatsNvmeSubsystemRe" +
-      "sponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.storage." +
-      "v1.VolumeStats\"{\n\033CreateNvmeControllerRe" +
-      "quest\022@\n\017nvme_controller\030\001 \001(\0132\".opi_api" +
-      ".storage.v1.NvmeControllerB\003\340A\002\022\032\n\022nvme_" +
-      "controller_id\030\002 \001(\t\"m\n\033DeleteNvmeControl" +
+      "rSpecB\003\340A\002\022=\n\006status\030\003 \001(\0132(.opi_api.sto" +
+      "rage.v1.NvmeControllerStatusB\003\340A\003:<\352A9\n%" +
+      "storage.opiproject.org/NvmeController\022\020v" +
+      "olumes/{volume}\"\251\003\n\022NvmeControllerSpec\022$" +
+      "\n\022nvme_controller_id\030\001 \001(\005B\003\340A\001H\000\210\001\001\022D\n\022" +
+      "subsystem_name_ref\030\002 \001(\tB(\340A\002\372A\"\n opi_ap" +
+      "i.storage.v1/NvmeSubsystem\0225\n\007pcie_id\030\003 " +
+      "\001(\0132\037.opi_api.storage.v1.PciEndpointB\003\340A" +
+      "\002\022\024\n\007max_nsq\030\004 \001(\005B\003\340A\001\022\024\n\007max_ncq\030\005 \001(\005" +
+      "B\003\340A\001\022\021\n\004sqes\030\006 \001(\005B\003\340A\001\022\021\n\004cqes\030\007 \001(\005B\003" +
+      "\340A\001\022\033\n\016max_namespaces\030\010 \001(\005B\003\340A\001\0224\n\tmin_" +
+      "limit\030\t \001(\0132\034.opi_api.storage.v1.QosLimi" +
+      "tB\003\340A\001\0224\n\tmax_limit\030\n \001(\0132\034.opi_api.stor" +
+      "age.v1.QosLimitB\003\340A\001B\025\n\023_nvme_controller" +
+      "_id\"+\n\024NvmeControllerStatus\022\023\n\006active\030\001 " +
+      "\001(\010B\003\340A\003\"\377\001\n\rNvmeNamespace\0229\n\004name\030\001 \001(\t" +
+      "B+\340A\003\340A\005\372A\"\n opi_api.storage.v1/NvmeName" +
+      "space\0228\n\004spec\030\002 \001(\0132%.opi_api.storage.v1" +
+      ".NvmeNamespaceSpecB\003\340A\002\022<\n\006status\030\003 \001(\0132" +
+      "\'.opi_api.storage.v1.NvmeNamespaceStatus" +
+      "B\003\340A\003:;\352A8\n$storage.opiproject.org/NvmeN" +
+      "amespace\022\020volumes/{volume}\"\343\001\n\021NvmeNames" +
+      "paceSpec\022D\n\022subsystem_name_ref\030\001 \001(\tB(\340A" +
+      "\002\372A\"\n opi_api.storage.v1/NvmeSubsystem\022\026" +
+      "\n\thost_nsid\030\002 \001(\005B\003\340A\001\022\022\n\005nguid\030\003 \001(\tB\003\340" +
+      "A\001\022\022\n\005eui64\030\004 \001(\003B\003\340A\001\022*\n\004uuid\030\005 \001(\0132\027.o" +
+      "pi_api.common.v1.UuidB\003\340A\001\022\034\n\017volume_nam" +
+      "e_ref\030\006 \001(\tB\003\340A\002\"\244\001\n\023NvmeNamespaceStatus" +
+      "\022A\n\tpci_state\030\001 \001(\0162).opi_api.storage.v1" +
+      ".NvmeNamespacePciStateB\003\340A\003\022J\n\016pci_oper_" +
+      "state\030\002 \001(\0162-.opi_api.storage.v1.NvmeNam" +
+      "espacePciOperStateB\003\340A\003\"|\n\032CreateNvmeSub" +
+      "systemRequest\022>\n\016nvme_subsystem\030\001 \001(\0132!." +
+      "opi_api.storage.v1.NvmeSubsystemB\003\340A\002\022\036\n" +
+      "\021nvme_subsystem_id\030\002 \001(\tB\003\340A\001\"p\n\032DeleteN" +
+      "vmeSubsystemRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A" +
+      "\"\n opi_api.storage.v1/NvmeSubsystem\022\032\n\ra" +
+      "llow_missing\030\002 \001(\010B\003\340A\001\"\256\001\n\032UpdateNvmeSu" +
+      "bsystemRequest\022>\n\016nvme_subsystem\030\001 \001(\0132!" +
+      ".opi_api.storage.v1.NvmeSubsystemB\003\340A\002\0224" +
+      "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi" +
+      "eldMaskB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001" +
+      "\"\206\001\n\031ListNvmeSubsystemsRequest\0228\n\006parent" +
+      "\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v1/NvmeS" +
+      "ubsystem\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage" +
+      "_token\030\003 \001(\tB\003\340A\001\"q\n\032ListNvmeSubsystemsR" +
+      "esponse\022:\n\017nvme_subsystems\030\001 \003(\0132!.opi_a" +
+      "pi.storage.v1.NvmeSubsystem\022\027\n\017next_page" +
+      "_token\030\002 \001(\t\"Q\n\027GetNvmeSubsystemRequest\022" +
+      "6\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v" +
+      "1/NvmeSubsystem\"S\n\031StatsNvmeSubsystemReq" +
+      "uest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.stor" +
+      "age.v1/NvmeSubsystem\"L\n\032StatsNvmeSubsyst" +
+      "emResponse\022.\n\005stats\030\001 \001(\0132\037.opi_api.stor" +
+      "age.v1.VolumeStats\"\200\001\n\033CreateNvmeControl" +
+      "lerRequest\022@\n\017nvme_controller\030\001 \001(\0132\".op" +
+      "i_api.storage.v1.NvmeControllerB\003\340A\002\022\037\n\022" +
+      "nvme_controller_id\030\002 \001(\tB\003\340A\001\"r\n\033DeleteN" +
+      "vmeControllerRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372" +
+      "A#\n!opi_api.storage.v1/NvmeController\022\032\n" +
+      "\rallow_missing\030\002 \001(\010B\003\340A\001\"\261\001\n\033UpdateNvme" +
+      "ControllerRequest\022@\n\017nvme_controller\030\001 \001" +
+      "(\0132\".opi_api.storage.v1.NvmeControllerB\003" +
+      "\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.protob" +
+      "uf.FieldMaskB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010" +
+      "B\003\340A\001\"\210\001\n\032ListNvmeControllersRequest\0229\n\006" +
+      "parent\030\001 \001(\tB)\340A\002\372A#\n!opi_api.storage.v1" +
+      "/NvmeController\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022" +
+      "\027\n\npage_token\030\003 \001(\tB\003\340A\001\"t\n\033ListNvmeCont" +
+      "rollersResponse\022<\n\020nvme_controllers\030\001 \003(" +
+      "\0132\".opi_api.storage.v1.NvmeController\022\027\n" +
+      "\017next_page_token\030\002 \001(\t\"S\n\030GetNvmeControl" +
       "lerRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!opi_ap" +
-      "i.storage.v1/NvmeController\022\025\n\rallow_mis" +
-      "sing\030\002 \001(\010\"\242\001\n\033UpdateNvmeControllerReque" +
-      "st\022;\n\017nvme_controller\030\001 \001(\0132\".opi_api.st" +
-      "orage.v1.NvmeController\022/\n\013update_mask\030\002" +
-      " \001(\0132\032.google.protobuf.FieldMask\022\025\n\rallo" +
-      "w_missing\030\003 \001(\010\"~\n\032ListNvmeControllersRe" +
-      "quest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!opi_api.s" +
-      "torage.v1/NvmeController\022\021\n\tpage_size\030\002 " +
-      "\001(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\033ListNvmeContr" +
-      "ollersResponse\022<\n\020nvme_controllers\030\001 \003(\013" +
-      "2\".opi_api.storage.v1.NvmeController\022\027\n\017" +
-      "next_page_token\030\002 \001(\t\"S\n\030GetNvmeControll" +
-      "erRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!opi_api" +
-      ".storage.v1/NvmeController\"U\n\032StatsNvmeC" +
-      "ontrollerRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!" +
-      "opi_api.storage.v1/NvmeController\"M\n\033Sta" +
-      "tsNvmeControllerResponse\022.\n\005stats\030\001 \001(\0132" +
-      "\037.opi_api.storage.v1.VolumeStats\"w\n\032Crea" +
-      "teNvmeNamespaceRequest\022>\n\016nvme_namespace" +
-      "\030\001 \001(\0132!.opi_api.storage.v1.NvmeNamespac" +
-      "eB\003\340A\002\022\031\n\021nvme_namespace_id\030\002 \001(\t\"k\n\032Del" +
-      "eteNvmeNamespaceRequest\0226\n\004name\030\001 \001(\tB(\340" +
-      "A\002\372A\"\n opi_api.storage.v1/NvmeNamespace\022" +
-      "\025\n\rallow_missing\030\002 \001(\010\"\237\001\n\032UpdateNvmeNam" +
-      "espaceRequest\0229\n\016nvme_namespace\030\001 \001(\0132!." +
-      "opi_api.storage.v1.NvmeNamespace\022/\n\013upda" +
-      "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas" +
-      "k\022\025\n\rallow_missing\030\003 \001(\010\"|\n\031ListNvmeName" +
-      "spacesRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n o" +
-      "pi_api.storage.v1/NvmeNamespace\022\021\n\tpage_" +
-      "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"q\n\032ListNv" +
-      "meNamespacesResponse\022:\n\017nvme_namespaces\030" +
-      "\001 \003(\0132!.opi_api.storage.v1.NvmeNamespace" +
-      "\022\027\n\017next_page_token\030\002 \001(\t\"Q\n\027GetNvmeName" +
-      "spaceRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_" +
-      "api.storage.v1/NvmeNamespace\"S\n\031StatsNvm" +
-      "eNamespaceRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n" +
-      " opi_api.storage.v1/NvmeNamespace\"L\n\032Sta" +
-      "tsNvmeNamespaceResponse\022.\n\005stats\030\001 \001(\0132\037" +
-      ".opi_api.storage.v1.VolumeStats*\265\001\n\025Nvme" +
-      "NamespacePciState\022(\n$NVME_NAMESPACE_PCI_" +
-      "STATE_UNSPECIFIED\020\000\022%\n!NVME_NAMESPACE_PC" +
-      "I_STATE_DISABLED\020\001\022$\n NVME_NAMESPACE_PCI" +
-      "_STATE_ENABLED\020\002\022%\n!NVME_NAMESPACE_PCI_S" +
-      "TATE_DELETING\020\003*\237\001\n\031NvmeNamespacePciOper" +
-      "State\022-\n)NVME_NAMESPACE_PCI_OPER_STATE_U" +
-      "NSPECIFIED\020\000\022(\n$NVME_NAMESPACE_PCI_OPER_" +
-      "STATE_ONLINE\020\001\022)\n%NVME_NAMESPACE_PCI_OPE" +
-      "R_STATE_OFFLINE\020\0022\311\027\n\023FrontendNvmeServic" +
-      "e\022\260\001\n\023CreateNvmeSubsystem\022..opi_api.stor" +
-      "age.v1.CreateNvmeSubsystemRequest\032!.opi_" +
-      "api.storage.v1.NvmeSubsystem\"F\202\323\344\223\002\035\"\013/v" +
-      "1/volumes:\016nvme_subsystem\332A nvme_subsyst" +
-      "em,nvme_subsystem_id\022\211\001\n\023DeleteNvmeSubsy" +
-      "stem\022..opi_api.storage.v1.DeleteNvmeSubs" +
-      "ystemRequest\032\026.google.protobuf.Empty\"*\202\323" +
-      "\344\223\002\035*\033/v1/{name=NvmeSubsystems/*}\332A\004name" +
-      "\022\303\001\n\023UpdateNvmeSubsystem\022..opi_api.stora" +
-      "ge.v1.UpdateNvmeSubsystemRequest\032!.opi_a" +
-      "pi.storage.v1.NvmeSubsystem\"Y\202\323\344\223\00262$/v1" +
-      "/{nvme_subsystem.name=subsystems}:\016nvme_" +
-      "subsystem\332A\032nvme_subsystem,update_mask\022\235" +
-      "\001\n\022ListNvmeSubsystems\022-.opi_api.storage." +
-      "v1.ListNvmeSubsystemsRequest\032..opi_api.s" +
-      "torage.v1.ListNvmeSubsystemsResponse\"(\202\323" +
-      "\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent\022\216" +
-      "\001\n\020GetNvmeSubsystem\022+.opi_api.storage.v1" +
-      ".GetNvmeSubsystemRequest\032!.opi_api.stora" +
-      "ge.v1.NvmeSubsystem\"*\202\323\344\223\002\035\022\033/v1/{name=N" +
-      "vmeSubsystems/*}\332A\004name\022\245\001\n\022StatsNvmeSub" +
-      "system\022-.opi_api.storage.v1.StatsNvmeSub" +
-      "systemRequest\032..opi_api.storage.v1.Stats" +
-      "NvmeSubsystemResponse\"0\202\323\344\223\002#\022!/v1/{name" +
-      "=NvmeSubsystems/*}:stats\332A\004name\022\266\001\n\024Crea" +
-      "teNvmeController\022/.opi_api.storage.v1.Cr" +
-      "eateNvmeControllerRequest\032\".opi_api.stor" +
-      "age.v1.NvmeController\"I\202\323\344\223\002\036\"\013/v1/volum" +
-      "es:\017nvme_controller\332A\"nvme_controller,nv" +
-      "me_controller_id\022\214\001\n\024DeleteNvmeControlle" +
-      "r\022/.opi_api.storage.v1.DeleteNvmeControl" +
-      "lerRequest\032\026.google.protobuf.Empty\"+\202\323\344\223" +
-      "\002\036*\034/v1/{name=NvmeControllers/*}\332A\004name\022" +
-      "\311\001\n\024UpdateNvmeController\022/.opi_api.stora" +
-      "ge.v1.UpdateNvmeControllerRequest\032\".opi_" +
-      "api.storage.v1.NvmeController\"\\\202\323\344\223\00282%/" +
-      "v1/{nvme_controller.name=subsystems}:\017nv" +
-      "me_controller\332A\033nvme_controller,update_m" +
-      "ask\022\240\001\n\023ListNvmeControllers\022..opi_api.st" +
-      "orage.v1.ListNvmeControllersRequest\032/.op" +
-      "i_api.storage.v1.ListNvmeControllersResp" +
-      "onse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006" +
-      "parent\022\222\001\n\021GetNvmeController\022,.opi_api.s" +
-      "torage.v1.GetNvmeControllerRequest\032\".opi" +
-      "_api.storage.v1.NvmeController\"+\202\323\344\223\002\036\022\034" +
-      "/v1/{name=NvmeControllers/*}\332A\004name\022\251\001\n\023" +
-      "StatsNvmeController\022..opi_api.storage.v1" +
-      ".StatsNvmeControllerRequest\032/.opi_api.st" +
-      "orage.v1.StatsNvmeControllerResponse\"1\202\323" +
-      "\344\223\002$\022\"/v1/{name=NvmeControllers/*}:stats" +
-      "\332A\004name\022\260\001\n\023CreateNvmeNamespace\022..opi_ap" +
-      "i.storage.v1.CreateNvmeNamespaceRequest\032" +
-      "!.opi_api.storage.v1.NvmeNamespace\"F\202\323\344\223" +
-      "\002\035\"\013/v1/volumes:\016nvme_namespace\332A nvme_n" +
-      "amespace,nvme_namespace_id\022\211\001\n\023DeleteNvm" +
-      "eNamespace\022..opi_api.storage.v1.DeleteNv" +
-      "meNamespaceRequest\032\026.google.protobuf.Emp" +
-      "ty\"*\202\323\344\223\002\035*\033/v1/{name=NvmeNamespaces/*}\332" +
-      "A\004name\022\303\001\n\023UpdateNvmeNamespace\022..opi_api" +
-      ".storage.v1.UpdateNvmeNamespaceRequest\032!" +
-      ".opi_api.storage.v1.NvmeNamespace\"Y\202\323\344\223\002" +
-      "62$/v1/{nvme_namespace.name=subsystems}:" +
-      "\016nvme_namespace\332A\032nvme_namespace,update_" +
-      "mask\022\235\001\n\022ListNvmeNamespaces\022-.opi_api.st" +
-      "orage.v1.ListNvmeNamespacesRequest\032..opi" +
-      "_api.storage.v1.ListNvmeNamespacesRespon" +
-      "se\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006pa" +
-      "rent\022\216\001\n\020GetNvmeNamespace\022+.opi_api.stor" +
-      "age.v1.GetNvmeNamespaceRequest\032!.opi_api" +
-      ".storage.v1.NvmeNamespace\"*\202\323\344\223\002\035\022\033/v1/{" +
-      "name=NvmeNamespaces/*}\332A\004name\022\245\001\n\022StatsN" +
-      "vmeNamespace\022-.opi_api.storage.v1.StatsN" +
-      "vmeNamespaceRequest\032..opi_api.storage.v1" +
-      ".StatsNvmeNamespaceResponse\"0\202\323\344\223\002#\022!/v1" +
-      "/{name=NvmeNamespaces/*}:stats\332A\004nameBd\n" +
-      "\022opi_api.storage.v1B\025FrontendNvmePciePro" +
-      "toP\001Z5github.com/opiproject/opi-api/stor" +
-      "age/v1alpha1/gen/gob\006proto3"
+      "i.storage.v1/NvmeController\"U\n\032StatsNvme" +
+      "ControllerRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n" +
+      "!opi_api.storage.v1/NvmeController\"M\n\033St" +
+      "atsNvmeControllerResponse\022.\n\005stats\030\001 \001(\013" +
+      "2\037.opi_api.storage.v1.VolumeStats\"|\n\032Cre" +
+      "ateNvmeNamespaceRequest\022>\n\016nvme_namespac" +
+      "e\030\001 \001(\0132!.opi_api.storage.v1.NvmeNamespa" +
+      "ceB\003\340A\002\022\036\n\021nvme_namespace_id\030\002 \001(\tB\003\340A\001\"" +
+      "p\n\032DeleteNvmeNamespaceRequest\0226\n\004name\030\001 " +
+      "\001(\tB(\340A\002\372A\"\n opi_api.storage.v1/NvmeName" +
+      "space\022\032\n\rallow_missing\030\002 \001(\010B\003\340A\001\"\256\001\n\032Up" +
+      "dateNvmeNamespaceRequest\022>\n\016nvme_namespa" +
+      "ce\030\001 \001(\0132!.opi_api.storage.v1.NvmeNamesp" +
+      "aceB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.p" +
+      "rotobuf.FieldMaskB\003\340A\001\022\032\n\rallow_missing\030" +
+      "\003 \001(\010B\003\340A\001\"\206\001\n\031ListNvmeNamespacesRequest" +
+      "\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storag" +
+      "e.v1/NvmeNamespace\022\026\n\tpage_size\030\002 \001(\005B\003\340" +
+      "A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"q\n\032ListNvmeN" +
+      "amespacesResponse\022:\n\017nvme_namespaces\030\001 \003" +
+      "(\0132!.opi_api.storage.v1.NvmeNamespace\022\027\n" +
+      "\017next_page_token\030\002 \001(\t\"Q\n\027GetNvmeNamespa" +
+      "ceRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api" +
+      ".storage.v1/NvmeNamespace\"S\n\031StatsNvmeNa" +
+      "mespaceRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n op" +
+      "i_api.storage.v1/NvmeNamespace\"L\n\032StatsN" +
+      "vmeNamespaceResponse\022.\n\005stats\030\001 \001(\0132\037.op" +
+      "i_api.storage.v1.VolumeStats*\265\001\n\025NvmeNam" +
+      "espacePciState\022(\n$NVME_NAMESPACE_PCI_STA" +
+      "TE_UNSPECIFIED\020\000\022%\n!NVME_NAMESPACE_PCI_S" +
+      "TATE_DISABLED\020\001\022$\n NVME_NAMESPACE_PCI_ST" +
+      "ATE_ENABLED\020\002\022%\n!NVME_NAMESPACE_PCI_STAT" +
+      "E_DELETING\020\003*\237\001\n\031NvmeNamespacePciOperSta" +
+      "te\022-\n)NVME_NAMESPACE_PCI_OPER_STATE_UNSP" +
+      "ECIFIED\020\000\022(\n$NVME_NAMESPACE_PCI_OPER_STA" +
+      "TE_ONLINE\020\001\022)\n%NVME_NAMESPACE_PCI_OPER_S" +
+      "TATE_OFFLINE\020\0022\311\027\n\023FrontendNvmeService\022\260" +
+      "\001\n\023CreateNvmeSubsystem\022..opi_api.storage" +
+      ".v1.CreateNvmeSubsystemRequest\032!.opi_api" +
+      ".storage.v1.NvmeSubsystem\"F\202\323\344\223\002\035\"\013/v1/v" +
+      "olumes:\016nvme_subsystem\332A nvme_subsystem," +
+      "nvme_subsystem_id\022\211\001\n\023DeleteNvmeSubsyste" +
+      "m\022..opi_api.storage.v1.DeleteNvmeSubsyst" +
+      "emRequest\032\026.google.protobuf.Empty\"*\202\323\344\223\002" +
+      "\035*\033/v1/{name=NvmeSubsystems/*}\332A\004name\022\303\001" +
+      "\n\023UpdateNvmeSubsystem\022..opi_api.storage." +
+      "v1.UpdateNvmeSubsystemRequest\032!.opi_api." +
+      "storage.v1.NvmeSubsystem\"Y\202\323\344\223\00262$/v1/{n" +
+      "vme_subsystem.name=subsystems}:\016nvme_sub" +
+      "system\332A\032nvme_subsystem,update_mask\022\235\001\n\022" +
+      "ListNvmeSubsystems\022-.opi_api.storage.v1." +
+      "ListNvmeSubsystemsRequest\032..opi_api.stor" +
+      "age.v1.ListNvmeSubsystemsResponse\"(\202\323\344\223\002" +
+      "\031\022\027/v1/{parent=subsystems}\332A\006parent\022\216\001\n\020" +
+      "GetNvmeSubsystem\022+.opi_api.storage.v1.Ge" +
+      "tNvmeSubsystemRequest\032!.opi_api.storage." +
+      "v1.NvmeSubsystem\"*\202\323\344\223\002\035\022\033/v1/{name=Nvme" +
+      "Subsystems/*}\332A\004name\022\245\001\n\022StatsNvmeSubsys" +
+      "tem\022-.opi_api.storage.v1.StatsNvmeSubsys" +
+      "temRequest\032..opi_api.storage.v1.StatsNvm" +
+      "eSubsystemResponse\"0\202\323\344\223\002#\022!/v1/{name=Nv" +
+      "meSubsystems/*}:stats\332A\004name\022\266\001\n\024CreateN" +
+      "vmeController\022/.opi_api.storage.v1.Creat" +
+      "eNvmeControllerRequest\032\".opi_api.storage" +
+      ".v1.NvmeController\"I\202\323\344\223\002\036\"\013/v1/volumes:" +
+      "\017nvme_controller\332A\"nvme_controller,nvme_" +
+      "controller_id\022\214\001\n\024DeleteNvmeController\022/" +
+      ".opi_api.storage.v1.DeleteNvmeController" +
+      "Request\032\026.google.protobuf.Empty\"+\202\323\344\223\002\036*" +
+      "\034/v1/{name=NvmeControllers/*}\332A\004name\022\311\001\n" +
+      "\024UpdateNvmeController\022/.opi_api.storage." +
+      "v1.UpdateNvmeControllerRequest\032\".opi_api" +
+      ".storage.v1.NvmeController\"\\\202\323\344\223\00282%/v1/" +
+      "{nvme_controller.name=subsystems}:\017nvme_" +
+      "controller\332A\033nvme_controller,update_mask" +
+      "\022\240\001\n\023ListNvmeControllers\022..opi_api.stora" +
+      "ge.v1.ListNvmeControllersRequest\032/.opi_a" +
+      "pi.storage.v1.ListNvmeControllersRespons" +
+      "e\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006par" +
+      "ent\022\222\001\n\021GetNvmeController\022,.opi_api.stor" +
+      "age.v1.GetNvmeControllerRequest\032\".opi_ap" +
+      "i.storage.v1.NvmeController\"+\202\323\344\223\002\036\022\034/v1" +
+      "/{name=NvmeControllers/*}\332A\004name\022\251\001\n\023Sta" +
+      "tsNvmeController\022..opi_api.storage.v1.St" +
+      "atsNvmeControllerRequest\032/.opi_api.stora" +
+      "ge.v1.StatsNvmeControllerResponse\"1\202\323\344\223\002" +
+      "$\022\"/v1/{name=NvmeControllers/*}:stats\332A\004" +
+      "name\022\260\001\n\023CreateNvmeNamespace\022..opi_api.s" +
+      "torage.v1.CreateNvmeNamespaceRequest\032!.o" +
+      "pi_api.storage.v1.NvmeNamespace\"F\202\323\344\223\002\035\"" +
+      "\013/v1/volumes:\016nvme_namespace\332A nvme_name" +
+      "space,nvme_namespace_id\022\211\001\n\023DeleteNvmeNa" +
+      "mespace\022..opi_api.storage.v1.DeleteNvmeN" +
+      "amespaceRequest\032\026.google.protobuf.Empty\"" +
+      "*\202\323\344\223\002\035*\033/v1/{name=NvmeNamespaces/*}\332A\004n" +
+      "ame\022\303\001\n\023UpdateNvmeNamespace\022..opi_api.st" +
+      "orage.v1.UpdateNvmeNamespaceRequest\032!.op" +
+      "i_api.storage.v1.NvmeNamespace\"Y\202\323\344\223\00262$" +
+      "/v1/{nvme_namespace.name=subsystems}:\016nv" +
+      "me_namespace\332A\032nvme_namespace,update_mas" +
+      "k\022\235\001\n\022ListNvmeNamespaces\022-.opi_api.stora" +
+      "ge.v1.ListNvmeNamespacesRequest\032..opi_ap" +
+      "i.storage.v1.ListNvmeNamespacesResponse\"" +
+      "(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006paren" +
+      "t\022\216\001\n\020GetNvmeNamespace\022+.opi_api.storage" +
+      ".v1.GetNvmeNamespaceRequest\032!.opi_api.st" +
+      "orage.v1.NvmeNamespace\"*\202\323\344\223\002\035\022\033/v1/{nam" +
+      "e=NvmeNamespaces/*}\332A\004name\022\245\001\n\022StatsNvme" +
+      "Namespace\022-.opi_api.storage.v1.StatsNvme" +
+      "NamespaceRequest\032..opi_api.storage.v1.St" +
+      "atsNvmeNamespaceResponse\"0\202\323\344\223\002#\022!/v1/{n" +
+      "ame=NvmeNamespaces/*}:stats\332A\004nameBd\n\022op" +
+      "i_api.storage.v1B\025FrontendNvmePcieProtoP" +
+      "\001Z5github.com/opiproject/opi-api/storage" +
+      "/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -432,7 +439,7 @@ public final class FrontendNvmePcieProto {
     internal_static_opi_api_storage_v1_NvmeControllerSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NvmeControllerSpec_descriptor,
-        new java.lang.String[] { "NvmeControllerId", "SubsystemNameRef", "PcieId", "MaxNsq", "MaxNcq", "Sqes", "Cqes", "MaxNamespaces", "MinLimit", "MaxLimit", });
+        new java.lang.String[] { "NvmeControllerId", "SubsystemNameRef", "PcieId", "MaxNsq", "MaxNcq", "Sqes", "Cqes", "MaxNamespaces", "MinLimit", "MaxLimit", "NvmeControllerId", });
     internal_static_opi_api_storage_v1_NvmeControllerStatus_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_opi_api_storage_v1_NvmeControllerStatus_fieldAccessorTable = new

@@ -23,12 +23,12 @@ public interface CreateVirtioScsiControllerRequestOrBuilder extends
   opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder();
 
   /**
-   * <code>string virtio_scsi_controller_id = 2;</code>
+   * <code>string virtio_scsi_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioScsiControllerId.
    */
   java.lang.String getVirtioScsiControllerId();
   /**
-   * <code>string virtio_scsi_controller_id = 2;</code>
+   * <code>string virtio_scsi_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioScsiControllerId.
    */
   com.google.protobuf.ByteString

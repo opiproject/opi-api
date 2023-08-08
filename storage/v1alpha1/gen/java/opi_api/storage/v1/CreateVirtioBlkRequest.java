@@ -79,6 +79,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -129,7 +131,7 @@ private static final long serialVersionUID = 0L;
   public static final int VIRTIO_BLK_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object virtioBlkId_;
   /**
-   * <code>string virtio_blk_id = 2;</code>
+   * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioBlkId.
    */
   @java.lang.Override
@@ -146,7 +148,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string virtio_blk_id = 2;</code>
+   * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioBlkId.
    */
   @java.lang.Override
@@ -617,7 +619,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object virtioBlkId_ = "";
     /**
-     * <code>string virtio_blk_id = 2;</code>
+     * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The virtioBlkId.
      */
     public java.lang.String getVirtioBlkId() {
@@ -633,7 +635,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string virtio_blk_id = 2;</code>
+     * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for virtioBlkId.
      */
     public com.google.protobuf.ByteString
@@ -650,7 +652,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string virtio_blk_id = 2;</code>
+     * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The virtioBlkId to set.
      * @return This builder for chaining.
      */
@@ -665,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string virtio_blk_id = 2;</code>
+     * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearVirtioBlkId() {
@@ -675,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string virtio_blk_id = 2;</code>
+     * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for virtioBlkId to set.
      * @return This builder for chaining.
      */

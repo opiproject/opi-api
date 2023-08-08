@@ -73,6 +73,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -101,7 +103,7 @@ private static final long serialVersionUID = 0L;
    * config state of the namespace object, (enabled, disable, deleting)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for pciState.
    */
   @java.lang.Override public int getPciStateValue() {
@@ -112,7 +114,7 @@ private static final long serialVersionUID = 0L;
    * config state of the namespace object, (enabled, disable, deleting)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The pciState.
    */
   @java.lang.Override public opi_api.storage.v1.NvmeNamespacePciState getPciState() {
@@ -128,7 +130,7 @@ private static final long serialVersionUID = 0L;
    * Operational state of the namespace object, (connected, disconnected)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for pciOperState.
    */
   @java.lang.Override public int getPciOperStateValue() {
@@ -139,7 +141,7 @@ private static final long serialVersionUID = 0L;
    * Operational state of the namespace object, (connected, disconnected)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The pciOperState.
    */
   @java.lang.Override public opi_api.storage.v1.NvmeNamespacePciOperState getPciOperState() {
@@ -471,7 +473,7 @@ private static final long serialVersionUID = 0L;
      * config state of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for pciState.
      */
     @java.lang.Override public int getPciStateValue() {
@@ -482,7 +484,7 @@ private static final long serialVersionUID = 0L;
      * config state of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for pciState to set.
      * @return This builder for chaining.
      */
@@ -497,7 +499,7 @@ private static final long serialVersionUID = 0L;
      * config state of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The pciState.
      */
     @java.lang.Override
@@ -511,7 +513,7 @@ private static final long serialVersionUID = 0L;
      * config state of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The pciState to set.
      * @return This builder for chaining.
      */
@@ -529,7 +531,7 @@ private static final long serialVersionUID = 0L;
      * config state of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearPciState() {
@@ -545,7 +547,7 @@ private static final long serialVersionUID = 0L;
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for pciOperState.
      */
     @java.lang.Override public int getPciOperStateValue() {
@@ -556,7 +558,7 @@ private static final long serialVersionUID = 0L;
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for pciOperState to set.
      * @return This builder for chaining.
      */
@@ -571,7 +573,7 @@ private static final long serialVersionUID = 0L;
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The pciOperState.
      */
     @java.lang.Override
@@ -585,7 +587,7 @@ private static final long serialVersionUID = 0L;
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The pciOperState to set.
      * @return This builder for chaining.
      */
@@ -603,7 +605,7 @@ private static final long serialVersionUID = 0L;
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearPciOperState() {

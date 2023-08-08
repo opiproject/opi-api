@@ -23,12 +23,12 @@ public interface CreateNvmeNamespaceRequestOrBuilder extends
   opi_api.storage.v1.NvmeNamespaceOrBuilder getNvmeNamespaceOrBuilder();
 
   /**
-   * <code>string nvme_namespace_id = 2;</code>
+   * <code>string nvme_namespace_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeNamespaceId.
    */
   java.lang.String getNvmeNamespaceId();
   /**
-   * <code>string nvme_namespace_id = 2;</code>
+   * <code>string nvme_namespace_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeNamespaceId.
    */
   com.google.protobuf.ByteString

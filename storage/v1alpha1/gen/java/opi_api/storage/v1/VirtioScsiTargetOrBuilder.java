@@ -36,7 +36,7 @@ public interface VirtioScsiTargetOrBuilder extends
    * maximum LUNs within a target
    * </pre>
    *
-   * <code>int32 max_luns = 2;</code>
+   * <code>int32 max_luns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxLuns.
    */
   int getMaxLuns();

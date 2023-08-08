@@ -36,7 +36,7 @@ public interface NvmeNamespaceOrBuilder extends
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -45,7 +45,7 @@ public interface NvmeNamespaceOrBuilder extends
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The spec.
    */
   opi_api.storage.v1.NvmeNamespaceSpec getSpec();
@@ -54,7 +54,7 @@ public interface NvmeNamespaceOrBuilder extends
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeNamespaceSpecOrBuilder getSpecOrBuilder();
 
@@ -63,7 +63,7 @@ public interface NvmeNamespaceOrBuilder extends
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -72,7 +72,7 @@ public interface NvmeNamespaceOrBuilder extends
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The status.
    */
   opi_api.storage.v1.NvmeNamespaceStatus getStatus();
@@ -81,7 +81,7 @@ public interface NvmeNamespaceOrBuilder extends
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   opi_api.storage.v1.NvmeNamespaceStatusOrBuilder getStatusOrBuilder();
 }

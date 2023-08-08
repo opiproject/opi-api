@@ -64,6 +64,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -92,7 +94,7 @@ private static final long serialVersionUID = 0L;
    * Device is in use by host nvme driver
    * </pre>
    *
-   * <code>bool active = 1;</code>
+   * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The active.
    */
   @java.lang.Override
@@ -409,7 +411,7 @@ private static final long serialVersionUID = 0L;
      * Device is in use by host nvme driver
      * </pre>
      *
-     * <code>bool active = 1;</code>
+     * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The active.
      */
     @java.lang.Override
@@ -421,7 +423,7 @@ private static final long serialVersionUID = 0L;
      * Device is in use by host nvme driver
      * </pre>
      *
-     * <code>bool active = 1;</code>
+     * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The active to set.
      * @return This builder for chaining.
      */
@@ -436,7 +438,7 @@ private static final long serialVersionUID = 0L;
      * Device is in use by host nvme driver
      * </pre>
      *
-     * <code>bool active = 1;</code>
+     * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearActive() {

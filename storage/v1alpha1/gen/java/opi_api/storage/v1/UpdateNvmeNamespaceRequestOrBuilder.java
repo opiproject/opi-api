@@ -12,7 +12,7 @@ public interface UpdateNvmeNamespaceRequestOrBuilder extends
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeNamespace field is set.
    */
   boolean hasNvmeNamespace();
@@ -21,7 +21,7 @@ public interface UpdateNvmeNamespaceRequestOrBuilder extends
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeNamespace.
    */
   opi_api.storage.v1.NvmeNamespace getNvmeNamespace();
@@ -30,7 +30,7 @@ public interface UpdateNvmeNamespaceRequestOrBuilder extends
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeNamespaceOrBuilder getNvmeNamespaceOrBuilder();
 
@@ -39,7 +39,7 @@ public interface UpdateNvmeNamespaceRequestOrBuilder extends
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
@@ -48,7 +48,7 @@ public interface UpdateNvmeNamespaceRequestOrBuilder extends
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
@@ -57,7 +57,7 @@ public interface UpdateNvmeNamespaceRequestOrBuilder extends
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -67,7 +67,7 @@ public interface UpdateNvmeNamespaceRequestOrBuilder extends
    * In this situation, `update_mask` is ignored.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The allowMissing.
    */
   boolean getAllowMissing();

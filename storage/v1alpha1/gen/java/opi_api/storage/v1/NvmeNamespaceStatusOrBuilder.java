@@ -12,7 +12,7 @@ public interface NvmeNamespaceStatusOrBuilder extends
    * config state of the namespace object, (enabled, disable, deleting)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for pciState.
    */
   int getPciStateValue();
@@ -21,7 +21,7 @@ public interface NvmeNamespaceStatusOrBuilder extends
    * config state of the namespace object, (enabled, disable, deleting)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The pciState.
    */
   opi_api.storage.v1.NvmeNamespacePciState getPciState();
@@ -31,7 +31,7 @@ public interface NvmeNamespaceStatusOrBuilder extends
    * Operational state of the namespace object, (connected, disconnected)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for pciOperState.
    */
   int getPciOperStateValue();
@@ -40,7 +40,7 @@ public interface NvmeNamespaceStatusOrBuilder extends
    * Operational state of the namespace object, (connected, disconnected)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The pciOperState.
    */
   opi_api.storage.v1.NvmeNamespacePciOperState getPciOperState();

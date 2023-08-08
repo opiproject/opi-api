@@ -12,7 +12,7 @@ public interface QosLimitOrBuilder extends
    * Read kIOPS
    * </pre>
    *
-   * <code>int64 rd_iops_kiops = 1;</code>
+   * <code>int64 rd_iops_kiops = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rdIopsKiops.
    */
   long getRdIopsKiops();
@@ -22,7 +22,7 @@ public interface QosLimitOrBuilder extends
    * Write kIOPS
    * </pre>
    *
-   * <code>int64 wr_iops_kiops = 2;</code>
+   * <code>int64 wr_iops_kiops = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The wrIopsKiops.
    */
   long getWrIopsKiops();
@@ -32,7 +32,7 @@ public interface QosLimitOrBuilder extends
    * Read/write kIOPS
    * </pre>
    *
-   * <code>int64 rw_iops_kiops = 3;</code>
+   * <code>int64 rw_iops_kiops = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rwIopsKiops.
    */
   long getRwIopsKiops();
@@ -42,7 +42,7 @@ public interface QosLimitOrBuilder extends
    * Read bandwidth (MB/s)
    * </pre>
    *
-   * <code>int64 rd_bandwidth_mbs = 4;</code>
+   * <code>int64 rd_bandwidth_mbs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rdBandwidthMbs.
    */
   long getRdBandwidthMbs();
@@ -52,7 +52,7 @@ public interface QosLimitOrBuilder extends
    * Write bandwidth (MB/s)
    * </pre>
    *
-   * <code>int64 wr_bandwidth_mbs = 5;</code>
+   * <code>int64 wr_bandwidth_mbs = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The wrBandwidthMbs.
    */
   long getWrBandwidthMbs();
@@ -62,7 +62,7 @@ public interface QosLimitOrBuilder extends
    * Read/write bandwidth (MB/s)
    * </pre>
    *
-   * <code>int64 rw_bandwidth_mbs = 6;</code>
+   * <code>int64 rw_bandwidth_mbs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rwBandwidthMbs.
    */
   long getRwBandwidthMbs();

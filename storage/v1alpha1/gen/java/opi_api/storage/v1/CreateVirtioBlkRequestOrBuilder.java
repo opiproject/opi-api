@@ -23,12 +23,12 @@ public interface CreateVirtioBlkRequestOrBuilder extends
   opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlkOrBuilder();
 
   /**
-   * <code>string virtio_blk_id = 2;</code>
+   * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioBlkId.
    */
   java.lang.String getVirtioBlkId();
   /**
-   * <code>string virtio_blk_id = 2;</code>
+   * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioBlkId.
    */
   com.google.protobuf.ByteString

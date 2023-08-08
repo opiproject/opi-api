@@ -23,12 +23,12 @@ public interface CreateNvmeSubsystemRequestOrBuilder extends
   opi_api.storage.v1.NvmeSubsystemOrBuilder getNvmeSubsystemOrBuilder();
 
   /**
-   * <code>string nvme_subsystem_id = 2;</code>
+   * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeSubsystemId.
    */
   java.lang.String getNvmeSubsystemId();
   /**
-   * <code>string nvme_subsystem_id = 2;</code>
+   * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeSubsystemId.
    */
   com.google.protobuf.ByteString

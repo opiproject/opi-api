@@ -92,6 +92,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -170,7 +172,7 @@ private static final long serialVersionUID = 0L;
    * The target that this LUN is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the targetId field is set.
    */
   @java.lang.Override
@@ -182,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * The target that this LUN is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The targetId.
    */
   @java.lang.Override
@@ -194,7 +196,7 @@ private static final long serialVersionUID = 0L;
    * The target that this LUN is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder() {
@@ -208,7 +210,7 @@ private static final long serialVersionUID = 0L;
    * The middle/back-end volume for this LLUN
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the volumeId field is set.
    */
   @java.lang.Override
@@ -220,7 +222,7 @@ private static final long serialVersionUID = 0L;
    * The middle/back-end volume for this LLUN
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The volumeId.
    */
   @java.lang.Override
@@ -232,7 +234,7 @@ private static final long serialVersionUID = 0L;
    * The middle/back-end volume for this LLUN
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
@@ -715,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the targetId field is set.
      */
     public boolean hasTargetId() {
@@ -726,7 +728,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The targetId.
      */
     public opi_api.common.v1.ObjectKey getTargetId() {
@@ -741,7 +743,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTargetId(opi_api.common.v1.ObjectKey value) {
       if (targetIdBuilder_ == null) {
@@ -761,7 +763,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTargetId(
         opi_api.common.v1.ObjectKey.Builder builderForValue) {
@@ -779,7 +781,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeTargetId(opi_api.common.v1.ObjectKey value) {
       if (targetIdBuilder_ == null) {
@@ -801,7 +803,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTargetId() {
       if (targetIdBuilder_ == null) {
@@ -819,7 +821,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.common.v1.ObjectKey.Builder getTargetIdBuilder() {
       
@@ -831,7 +833,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder() {
       if (targetIdBuilder_ != null) {
@@ -846,7 +848,7 @@ private static final long serialVersionUID = 0L;
      * The target that this LUN is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
@@ -870,7 +872,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the volumeId field is set.
      */
     public boolean hasVolumeId() {
@@ -881,7 +883,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The volumeId.
      */
     public opi_api.common.v1.ObjectKey getVolumeId() {
@@ -896,7 +898,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVolumeId(opi_api.common.v1.ObjectKey value) {
       if (volumeIdBuilder_ == null) {
@@ -916,7 +918,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVolumeId(
         opi_api.common.v1.ObjectKey.Builder builderForValue) {
@@ -934,7 +936,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeVolumeId(opi_api.common.v1.ObjectKey value) {
       if (volumeIdBuilder_ == null) {
@@ -956,7 +958,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearVolumeId() {
       if (volumeIdBuilder_ == null) {
@@ -974,7 +976,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.common.v1.ObjectKey.Builder getVolumeIdBuilder() {
       
@@ -986,7 +988,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
       if (volumeIdBuilder_ != null) {
@@ -1001,7 +1003,7 @@ private static final long serialVersionUID = 0L;
      * The middle/back-end volume for this LLUN
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 

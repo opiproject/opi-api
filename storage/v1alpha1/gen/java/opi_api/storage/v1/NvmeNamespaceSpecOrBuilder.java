@@ -35,7 +35,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * for live migration
    * </pre>
    *
-   * <code>int32 host_nsid = 2;</code>
+   * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The hostNsid.
    */
   int getHostNsid();
@@ -45,7 +45,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 3;</code>
+   * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nguid.
    */
   java.lang.String getNguid();
@@ -54,7 +54,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 3;</code>
+   * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nguid.
    */
   com.google.protobuf.ByteString
@@ -66,7 +66,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * mandatory if guid is not specified
    * </pre>
    *
-   * <code>int64 eui64 = 4;</code>
+   * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The eui64.
    */
   long getEui64();
@@ -76,7 +76,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the uuid field is set.
    */
   boolean hasUuid();
@@ -85,7 +85,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uuid.
    */
   opi_api.common.v1.Uuid getUuid();
@@ -94,7 +94,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.common.v1.UuidOrBuilder getUuidOrBuilder();
 

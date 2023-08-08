@@ -105,6 +105,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -183,7 +185,7 @@ private static final long serialVersionUID = 0L;
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the pcieId field is set.
    */
   @java.lang.Override
@@ -195,7 +197,7 @@ private static final long serialVersionUID = 0L;
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The pcieId.
    */
   @java.lang.Override
@@ -207,7 +209,7 @@ private static final long serialVersionUID = 0L;
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
@@ -221,7 +223,7 @@ private static final long serialVersionUID = 0L;
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the minLimit field is set.
    */
   @java.lang.Override
@@ -233,7 +235,7 @@ private static final long serialVersionUID = 0L;
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The minLimit.
    */
   @java.lang.Override
@@ -245,7 +247,7 @@ private static final long serialVersionUID = 0L;
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
@@ -259,7 +261,7 @@ private static final long serialVersionUID = 0L;
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the maxLimit field is set.
    */
   @java.lang.Override
@@ -271,7 +273,7 @@ private static final long serialVersionUID = 0L;
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxLimit.
    */
   @java.lang.Override
@@ -283,7 +285,7 @@ private static final long serialVersionUID = 0L;
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
@@ -796,7 +798,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the pcieId field is set.
      */
     public boolean hasPcieId() {
@@ -807,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The pcieId.
      */
     public opi_api.storage.v1.PciEndpoint getPcieId() {
@@ -822,7 +824,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setPcieId(opi_api.storage.v1.PciEndpoint value) {
       if (pcieIdBuilder_ == null) {
@@ -842,7 +844,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setPcieId(
         opi_api.storage.v1.PciEndpoint.Builder builderForValue) {
@@ -860,7 +862,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergePcieId(opi_api.storage.v1.PciEndpoint value) {
       if (pcieIdBuilder_ == null) {
@@ -882,7 +884,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearPcieId() {
       if (pcieIdBuilder_ == null) {
@@ -900,7 +902,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.PciEndpoint.Builder getPcieIdBuilder() {
       
@@ -912,7 +914,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
       if (pcieIdBuilder_ != null) {
@@ -927,7 +929,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> 
@@ -951,7 +953,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the minLimit field is set.
      */
     public boolean hasMinLimit() {
@@ -962,7 +964,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The minLimit.
      */
     public opi_api.storage.v1.QosLimit getMinLimit() {
@@ -977,7 +979,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMinLimit(opi_api.storage.v1.QosLimit value) {
       if (minLimitBuilder_ == null) {
@@ -997,7 +999,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMinLimit(
         opi_api.storage.v1.QosLimit.Builder builderForValue) {
@@ -1015,7 +1017,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMinLimit(opi_api.storage.v1.QosLimit value) {
       if (minLimitBuilder_ == null) {
@@ -1037,7 +1039,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMinLimit() {
       if (minLimitBuilder_ == null) {
@@ -1055,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimit.Builder getMinLimitBuilder() {
       
@@ -1067,7 +1069,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
       if (minLimitBuilder_ != null) {
@@ -1082,7 +1084,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 
@@ -1106,7 +1108,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the maxLimit field is set.
      */
     public boolean hasMaxLimit() {
@@ -1117,7 +1119,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxLimit.
      */
     public opi_api.storage.v1.QosLimit getMaxLimit() {
@@ -1132,7 +1134,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxLimit(opi_api.storage.v1.QosLimit value) {
       if (maxLimitBuilder_ == null) {
@@ -1152,7 +1154,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxLimit(
         opi_api.storage.v1.QosLimit.Builder builderForValue) {
@@ -1170,7 +1172,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMaxLimit(opi_api.storage.v1.QosLimit value) {
       if (maxLimitBuilder_ == null) {
@@ -1192,7 +1194,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMaxLimit() {
       if (maxLimitBuilder_ == null) {
@@ -1210,7 +1212,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimit.Builder getMaxLimitBuilder() {
       
@@ -1222,7 +1224,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
       if (maxLimitBuilder_ != null) {
@@ -1237,7 +1239,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 

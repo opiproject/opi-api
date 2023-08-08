@@ -20,17 +20,17 @@ public interface StatsVirtioScsiLunRequestOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the controllerId field is set.
    */
   boolean hasControllerId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The controllerId.
    */
   opi_api.common.v1.ObjectKey getControllerId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
 }

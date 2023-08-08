@@ -12,7 +12,7 @@ public interface NvmeSubsystemStatusOrBuilder extends
    * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
    * </pre>
    *
-   * <code>string firmware_revision = 1;</code>
+   * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The firmwareRevision.
    */
   java.lang.String getFirmwareRevision();
@@ -21,7 +21,7 @@ public interface NvmeSubsystemStatusOrBuilder extends
    * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
    * </pre>
    *
-   * <code>string firmware_revision = 1;</code>
+   * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for firmwareRevision.
    */
   com.google.protobuf.ByteString
@@ -32,7 +32,7 @@ public interface NvmeSubsystemStatusOrBuilder extends
    * FRU identfier, 16bytes opaque identity for the type of unit
    * </pre>
    *
-   * <code>bytes fru_guid = 2;</code>
+   * <code>bytes fru_guid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The fruGuid.
    */
   com.google.protobuf.ByteString getFruGuid();

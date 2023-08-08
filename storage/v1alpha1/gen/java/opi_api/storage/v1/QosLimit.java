@@ -93,6 +93,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -121,7 +123,7 @@ private static final long serialVersionUID = 0L;
    * Read kIOPS
    * </pre>
    *
-   * <code>int64 rd_iops_kiops = 1;</code>
+   * <code>int64 rd_iops_kiops = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rdIopsKiops.
    */
   @java.lang.Override
@@ -136,7 +138,7 @@ private static final long serialVersionUID = 0L;
    * Write kIOPS
    * </pre>
    *
-   * <code>int64 wr_iops_kiops = 2;</code>
+   * <code>int64 wr_iops_kiops = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The wrIopsKiops.
    */
   @java.lang.Override
@@ -151,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * Read/write kIOPS
    * </pre>
    *
-   * <code>int64 rw_iops_kiops = 3;</code>
+   * <code>int64 rw_iops_kiops = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rwIopsKiops.
    */
   @java.lang.Override
@@ -166,7 +168,7 @@ private static final long serialVersionUID = 0L;
    * Read bandwidth (MB/s)
    * </pre>
    *
-   * <code>int64 rd_bandwidth_mbs = 4;</code>
+   * <code>int64 rd_bandwidth_mbs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rdBandwidthMbs.
    */
   @java.lang.Override
@@ -181,7 +183,7 @@ private static final long serialVersionUID = 0L;
    * Write bandwidth (MB/s)
    * </pre>
    *
-   * <code>int64 wr_bandwidth_mbs = 5;</code>
+   * <code>int64 wr_bandwidth_mbs = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The wrBandwidthMbs.
    */
   @java.lang.Override
@@ -196,7 +198,7 @@ private static final long serialVersionUID = 0L;
    * Read/write bandwidth (MB/s)
    * </pre>
    *
-   * <code>int64 rw_bandwidth_mbs = 6;</code>
+   * <code>int64 rw_bandwidth_mbs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The rwBandwidthMbs.
    */
   @java.lang.Override
@@ -607,7 +609,7 @@ private static final long serialVersionUID = 0L;
      * Read kIOPS
      * </pre>
      *
-     * <code>int64 rd_iops_kiops = 1;</code>
+     * <code>int64 rd_iops_kiops = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The rdIopsKiops.
      */
     @java.lang.Override
@@ -619,7 +621,7 @@ private static final long serialVersionUID = 0L;
      * Read kIOPS
      * </pre>
      *
-     * <code>int64 rd_iops_kiops = 1;</code>
+     * <code>int64 rd_iops_kiops = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The rdIopsKiops to set.
      * @return This builder for chaining.
      */
@@ -634,7 +636,7 @@ private static final long serialVersionUID = 0L;
      * Read kIOPS
      * </pre>
      *
-     * <code>int64 rd_iops_kiops = 1;</code>
+     * <code>int64 rd_iops_kiops = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearRdIopsKiops() {
@@ -650,7 +652,7 @@ private static final long serialVersionUID = 0L;
      * Write kIOPS
      * </pre>
      *
-     * <code>int64 wr_iops_kiops = 2;</code>
+     * <code>int64 wr_iops_kiops = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The wrIopsKiops.
      */
     @java.lang.Override
@@ -662,7 +664,7 @@ private static final long serialVersionUID = 0L;
      * Write kIOPS
      * </pre>
      *
-     * <code>int64 wr_iops_kiops = 2;</code>
+     * <code>int64 wr_iops_kiops = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The wrIopsKiops to set.
      * @return This builder for chaining.
      */
@@ -677,7 +679,7 @@ private static final long serialVersionUID = 0L;
      * Write kIOPS
      * </pre>
      *
-     * <code>int64 wr_iops_kiops = 2;</code>
+     * <code>int64 wr_iops_kiops = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearWrIopsKiops() {
@@ -693,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * Read/write kIOPS
      * </pre>
      *
-     * <code>int64 rw_iops_kiops = 3;</code>
+     * <code>int64 rw_iops_kiops = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The rwIopsKiops.
      */
     @java.lang.Override
@@ -705,7 +707,7 @@ private static final long serialVersionUID = 0L;
      * Read/write kIOPS
      * </pre>
      *
-     * <code>int64 rw_iops_kiops = 3;</code>
+     * <code>int64 rw_iops_kiops = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The rwIopsKiops to set.
      * @return This builder for chaining.
      */
@@ -720,7 +722,7 @@ private static final long serialVersionUID = 0L;
      * Read/write kIOPS
      * </pre>
      *
-     * <code>int64 rw_iops_kiops = 3;</code>
+     * <code>int64 rw_iops_kiops = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearRwIopsKiops() {
@@ -736,7 +738,7 @@ private static final long serialVersionUID = 0L;
      * Read bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 rd_bandwidth_mbs = 4;</code>
+     * <code>int64 rd_bandwidth_mbs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The rdBandwidthMbs.
      */
     @java.lang.Override
@@ -748,7 +750,7 @@ private static final long serialVersionUID = 0L;
      * Read bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 rd_bandwidth_mbs = 4;</code>
+     * <code>int64 rd_bandwidth_mbs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The rdBandwidthMbs to set.
      * @return This builder for chaining.
      */
@@ -763,7 +765,7 @@ private static final long serialVersionUID = 0L;
      * Read bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 rd_bandwidth_mbs = 4;</code>
+     * <code>int64 rd_bandwidth_mbs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearRdBandwidthMbs() {
@@ -779,7 +781,7 @@ private static final long serialVersionUID = 0L;
      * Write bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 wr_bandwidth_mbs = 5;</code>
+     * <code>int64 wr_bandwidth_mbs = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The wrBandwidthMbs.
      */
     @java.lang.Override
@@ -791,7 +793,7 @@ private static final long serialVersionUID = 0L;
      * Write bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 wr_bandwidth_mbs = 5;</code>
+     * <code>int64 wr_bandwidth_mbs = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The wrBandwidthMbs to set.
      * @return This builder for chaining.
      */
@@ -806,7 +808,7 @@ private static final long serialVersionUID = 0L;
      * Write bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 wr_bandwidth_mbs = 5;</code>
+     * <code>int64 wr_bandwidth_mbs = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearWrBandwidthMbs() {
@@ -822,7 +824,7 @@ private static final long serialVersionUID = 0L;
      * Read/write bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 rw_bandwidth_mbs = 6;</code>
+     * <code>int64 rw_bandwidth_mbs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The rwBandwidthMbs.
      */
     @java.lang.Override
@@ -834,7 +836,7 @@ private static final long serialVersionUID = 0L;
      * Read/write bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 rw_bandwidth_mbs = 6;</code>
+     * <code>int64 rw_bandwidth_mbs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The rwBandwidthMbs to set.
      * @return This builder for chaining.
      */
@@ -849,7 +851,7 @@ private static final long serialVersionUID = 0L;
      * Read/write bandwidth (MB/s)
      * </pre>
      *
-     * <code>int64 rw_bandwidth_mbs = 6;</code>
+     * <code>int64 rw_bandwidth_mbs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearRwBandwidthMbs() {

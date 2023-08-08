@@ -16,66 +16,73 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace opi_api {
 namespace storage {
 namespace v1 {
-constexpr PciEndpoint::PciEndpoint(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : port_id_(0)
-  , physical_function_(0)
-  , virtual_function_(0){}
+PROTOBUF_CONSTEXPR PciEndpoint::PciEndpoint(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.port_id_)*/nullptr
+  , /*decltype(_impl_.physical_function_)*/nullptr
+  , /*decltype(_impl_.virtual_function_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PciEndpointDefaultTypeInternal {
-  constexpr PciEndpointDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PciEndpointDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PciEndpointDefaultTypeInternal() {}
   union {
     PciEndpoint _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PciEndpointDefaultTypeInternal _PciEndpoint_default_instance_;
-constexpr VolumeStats::VolumeStats(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : read_bytes_count_(0)
-  , read_ops_count_(0)
-  , write_bytes_count_(0)
-  , write_ops_count_(0)
-  , unmap_bytes_count_(0)
-  , unmap_ops_count_(0)
-  , read_latency_ticks_(0)
-  , write_latency_ticks_(0)
-  , unmap_latency_ticks_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PciEndpointDefaultTypeInternal _PciEndpoint_default_instance_;
+PROTOBUF_CONSTEXPR VolumeStats::VolumeStats(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.read_bytes_count_)*/0
+  , /*decltype(_impl_.read_ops_count_)*/0
+  , /*decltype(_impl_.write_bytes_count_)*/0
+  , /*decltype(_impl_.write_ops_count_)*/0
+  , /*decltype(_impl_.unmap_bytes_count_)*/0
+  , /*decltype(_impl_.unmap_ops_count_)*/0
+  , /*decltype(_impl_.read_latency_ticks_)*/0
+  , /*decltype(_impl_.write_latency_ticks_)*/0
+  , /*decltype(_impl_.unmap_latency_ticks_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct VolumeStatsDefaultTypeInternal {
-  constexpr VolumeStatsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR VolumeStatsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~VolumeStatsDefaultTypeInternal() {}
   union {
     VolumeStats _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VolumeStatsDefaultTypeInternal _VolumeStats_default_instance_;
-constexpr QosLimit::QosLimit(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rd_iops_kiops_(int64_t{0})
-  , wr_iops_kiops_(int64_t{0})
-  , rw_iops_kiops_(int64_t{0})
-  , rd_bandwidth_mbs_(int64_t{0})
-  , wr_bandwidth_mbs_(int64_t{0})
-  , rw_bandwidth_mbs_(int64_t{0}){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VolumeStatsDefaultTypeInternal _VolumeStats_default_instance_;
+PROTOBUF_CONSTEXPR QosLimit::QosLimit(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.rd_iops_kiops_)*/int64_t{0}
+  , /*decltype(_impl_.wr_iops_kiops_)*/int64_t{0}
+  , /*decltype(_impl_.rw_iops_kiops_)*/int64_t{0}
+  , /*decltype(_impl_.rd_bandwidth_mbs_)*/int64_t{0}
+  , /*decltype(_impl_.wr_bandwidth_mbs_)*/int64_t{0}
+  , /*decltype(_impl_.rw_bandwidth_mbs_)*/int64_t{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct QosLimitDefaultTypeInternal {
-  constexpr QosLimitDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR QosLimitDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~QosLimitDefaultTypeInternal() {}
   union {
     QosLimit _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT QosLimitDefaultTypeInternal _QosLimit_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 QosLimitDefaultTypeInternal _QosLimit_default_instance_;
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_opicommon_2eproto[3];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_opicommon_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_opicommon_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_opicommon_2eproto[3];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_opicommon_2eproto[1];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_opicommon_2eproto = nullptr;
 
 const uint32_t TableStruct_opicommon_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -84,87 +91,99 @@ const uint32_t TableStruct_opicommon_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, port_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, physical_function_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, virtual_function_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, _impl_.port_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, _impl_.physical_function_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, _impl_.virtual_function_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, read_bytes_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, read_ops_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, write_bytes_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, write_ops_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, unmap_bytes_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, unmap_ops_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, read_latency_ticks_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, write_latency_ticks_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, unmap_latency_ticks_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.read_bytes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.read_ops_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.write_bytes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.write_ops_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.unmap_bytes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.unmap_ops_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.read_latency_ticks_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.write_latency_ticks_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _impl_.unmap_latency_ticks_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, rd_iops_kiops_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, wr_iops_kiops_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, rw_iops_kiops_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, rd_bandwidth_mbs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, wr_bandwidth_mbs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, rw_bandwidth_mbs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, _impl_.rd_iops_kiops_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, _impl_.wr_iops_kiops_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, _impl_.rw_iops_kiops_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, _impl_.rd_bandwidth_mbs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, _impl_.wr_bandwidth_mbs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosLimit, _impl_.rw_bandwidth_mbs_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::PciEndpoint)},
   { 9, -1, -1, sizeof(::opi_api::storage::v1::VolumeStats)},
   { 24, -1, -1, sizeof(::opi_api::storage::v1::QosLimit)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_PciEndpoint_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VolumeStats_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_QosLimit_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::opi_api::storage::v1::_PciEndpoint_default_instance_._instance,
+  &::opi_api::storage::v1::_VolumeStats_default_instance_._instance,
+  &::opi_api::storage::v1::_QosLimit_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_opicommon_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017opicommon.proto\022\022opi_api.storage.v1\"S\n"
-  "\013PciEndpoint\022\017\n\007port_id\030\001 \001(\005\022\031\n\021physica"
-  "l_function\030\002 \001(\005\022\030\n\020virtual_function\030\003 \001"
-  "(\005\"\375\001\n\013VolumeStats\022\030\n\020read_bytes_count\030\001"
-  " \001(\005\022\026\n\016read_ops_count\030\002 \001(\005\022\031\n\021write_by"
-  "tes_count\030\003 \001(\005\022\027\n\017write_ops_count\030\004 \001(\005"
-  "\022\031\n\021unmap_bytes_count\030\005 \001(\005\022\027\n\017unmap_ops"
-  "_count\030\006 \001(\005\022\032\n\022read_latency_ticks\030\007 \001(\005"
-  "\022\033\n\023write_latency_ticks\030\010 \001(\005\022\033\n\023unmap_l"
-  "atency_ticks\030\t \001(\005\"\235\001\n\010QosLimit\022\025\n\rrd_io"
-  "ps_kiops\030\001 \001(\003\022\025\n\rwr_iops_kiops\030\002 \001(\003\022\025\n"
-  "\rrw_iops_kiops\030\003 \001(\003\022\030\n\020rd_bandwidth_mbs"
-  "\030\004 \001(\003\022\030\n\020wr_bandwidth_mbs\030\005 \001(\003\022\030\n\020rw_b"
-  "andwidth_mbs\030\006 \001(\003*\367\001\n\016EncryptionType\022\037\n"
-  "\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033ENCRYP"
-  "TION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTION_TY"
-  "PE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE_AES_"
-  "CBC_256\020\003\022\037\n\033ENCRYPTION_TYPE_AES_XTS_128"
-  "\020\004\022\037\n\033ENCRYPTION_TYPE_AES_XTS_192\020\005\022\037\n\033E"
-  "NCRYPTION_TYPE_AES_XTS_256\020\006B]\n\022opi_api."
-  "storage.v1B\016OpiCommonProtoP\001Z5github.com"
-  "/opiproject/opi-api/storage/v1alpha1/gen"
-  "/gob\006proto3"
+  "\n\017opicommon.proto\022\022opi_api.storage.v1\032\037g"
+  "oogle/api/field_behavior.proto\032\036google/p"
+  "rotobuf/wrappers.proto\"\271\001\n\013PciEndpoint\0221"
+  "\n\007port_id\030\001 \001(\0132\033.google.protobuf.Int32V"
+  "alueB\003\340A\002\022;\n\021physical_function\030\002 \001(\0132\033.g"
+  "oogle.protobuf.Int32ValueB\003\340A\002\022:\n\020virtua"
+  "l_function\030\003 \001(\0132\033.google.protobuf.Int32"
+  "ValueB\003\340A\002\"\252\002\n\013VolumeStats\022\035\n\020read_bytes"
+  "_count\030\001 \001(\005B\003\340A\003\022\033\n\016read_ops_count\030\002 \001("
+  "\005B\003\340A\003\022\036\n\021write_bytes_count\030\003 \001(\005B\003\340A\003\022\034"
+  "\n\017write_ops_count\030\004 \001(\005B\003\340A\003\022\036\n\021unmap_by"
+  "tes_count\030\005 \001(\005B\003\340A\003\022\034\n\017unmap_ops_count\030"
+  "\006 \001(\005B\003\340A\003\022\037\n\022read_latency_ticks\030\007 \001(\005B\003"
+  "\340A\003\022 \n\023write_latency_ticks\030\010 \001(\005B\003\340A\003\022 \n"
+  "\023unmap_latency_ticks\030\t \001(\005B\003\340A\003\"\273\001\n\010QosL"
+  "imit\022\032\n\rrd_iops_kiops\030\001 \001(\003B\003\340A\001\022\032\n\rwr_i"
+  "ops_kiops\030\002 \001(\003B\003\340A\001\022\032\n\rrw_iops_kiops\030\003 "
+  "\001(\003B\003\340A\001\022\035\n\020rd_bandwidth_mbs\030\004 \001(\003B\003\340A\001\022"
+  "\035\n\020wr_bandwidth_mbs\030\005 \001(\003B\003\340A\001\022\035\n\020rw_ban"
+  "dwidth_mbs\030\006 \001(\003B\003\340A\001*\367\001\n\016EncryptionType"
+  "\022\037\n\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033ENC"
+  "RYPTION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTION"
+  "_TYPE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE_A"
+  "ES_CBC_256\020\003\022\037\n\033ENCRYPTION_TYPE_AES_XTS_"
+  "128\020\004\022\037\n\033ENCRYPTION_TYPE_AES_XTS_192\020\005\022\037"
+  "\n\033ENCRYPTION_TYPE_AES_XTS_256\020\006B]\n\022opi_a"
+  "pi.storage.v1B\016OpiCommonProtoP\001Z5github."
+  "com/opiproject/opi-api/storage/v1alpha1/"
+  "gen/gob\006proto3"
   ;
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_opicommon_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_opicommon_2eproto = {
-  false, false, 891, descriptor_table_protodef_opicommon_2eproto, "opicommon.proto", 
-  &descriptor_table_opicommon_2eproto_once, nullptr, 0, 3,
-  schemas, file_default_instances, TableStruct_opicommon_2eproto::offsets,
-  file_level_metadata_opicommon_2eproto, file_level_enum_descriptors_opicommon_2eproto, file_level_service_descriptors_opicommon_2eproto,
+static const ::_pbi::DescriptorTable* const descriptor_table_opicommon_2eproto_deps[2] = {
+  &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
+  &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_opicommon_2eproto_getter() {
+static ::_pbi::once_flag descriptor_table_opicommon_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_opicommon_2eproto = {
+    false, false, 1134, descriptor_table_protodef_opicommon_2eproto,
+    "opicommon.proto",
+    &descriptor_table_opicommon_2eproto_once, descriptor_table_opicommon_2eproto_deps, 2, 3,
+    schemas, file_default_instances, TableStruct_opicommon_2eproto::offsets,
+    file_level_metadata_opicommon_2eproto, file_level_enum_descriptors_opicommon_2eproto,
+    file_level_service_descriptors_opicommon_2eproto,
+};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_opicommon_2eproto_getter() {
   return &descriptor_table_opicommon_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_opicommon_2eproto(&descriptor_table_opicommon_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_opicommon_2eproto(&descriptor_table_opicommon_2eproto);
 namespace opi_api {
 namespace storage {
 namespace v1 {
@@ -192,52 +211,99 @@ bool EncryptionType_IsValid(int value) {
 
 class PciEndpoint::_Internal {
  public:
+  static const ::PROTOBUF_NAMESPACE_ID::Int32Value& port_id(const PciEndpoint* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Int32Value& physical_function(const PciEndpoint* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Int32Value& virtual_function(const PciEndpoint* msg);
 };
 
+const ::PROTOBUF_NAMESPACE_ID::Int32Value&
+PciEndpoint::_Internal::port_id(const PciEndpoint* msg) {
+  return *msg->_impl_.port_id_;
+}
+const ::PROTOBUF_NAMESPACE_ID::Int32Value&
+PciEndpoint::_Internal::physical_function(const PciEndpoint* msg) {
+  return *msg->_impl_.physical_function_;
+}
+const ::PROTOBUF_NAMESPACE_ID::Int32Value&
+PciEndpoint::_Internal::virtual_function(const PciEndpoint* msg) {
+  return *msg->_impl_.virtual_function_;
+}
+void PciEndpoint::clear_port_id() {
+  if (GetArenaForAllocation() == nullptr && _impl_.port_id_ != nullptr) {
+    delete _impl_.port_id_;
+  }
+  _impl_.port_id_ = nullptr;
+}
+void PciEndpoint::clear_physical_function() {
+  if (GetArenaForAllocation() == nullptr && _impl_.physical_function_ != nullptr) {
+    delete _impl_.physical_function_;
+  }
+  _impl_.physical_function_ = nullptr;
+}
+void PciEndpoint::clear_virtual_function() {
+  if (GetArenaForAllocation() == nullptr && _impl_.virtual_function_ != nullptr) {
+    delete _impl_.virtual_function_;
+  }
+  _impl_.virtual_function_ = nullptr;
+}
 PciEndpoint::PciEndpoint(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.PciEndpoint)
 }
 PciEndpoint::PciEndpoint(const PciEndpoint& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PciEndpoint* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.port_id_){nullptr}
+    , decltype(_impl_.physical_function_){nullptr}
+    , decltype(_impl_.virtual_function_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&port_id_, &from.port_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&virtual_function_) -
-    reinterpret_cast<char*>(&port_id_)) + sizeof(virtual_function_));
+  if (from._internal_has_port_id()) {
+    _this->_impl_.port_id_ = new ::PROTOBUF_NAMESPACE_ID::Int32Value(*from._impl_.port_id_);
+  }
+  if (from._internal_has_physical_function()) {
+    _this->_impl_.physical_function_ = new ::PROTOBUF_NAMESPACE_ID::Int32Value(*from._impl_.physical_function_);
+  }
+  if (from._internal_has_virtual_function()) {
+    _this->_impl_.virtual_function_ = new ::PROTOBUF_NAMESPACE_ID::Int32Value(*from._impl_.virtual_function_);
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.PciEndpoint)
 }
 
-inline void PciEndpoint::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&port_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&virtual_function_) -
-    reinterpret_cast<char*>(&port_id_)) + sizeof(virtual_function_));
+inline void PciEndpoint::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.port_id_){nullptr}
+    , decltype(_impl_.physical_function_){nullptr}
+    , decltype(_impl_.virtual_function_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 PciEndpoint::~PciEndpoint() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.PciEndpoint)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PciEndpoint::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.port_id_;
+  if (this != internal_default_instance()) delete _impl_.physical_function_;
+  if (this != internal_default_instance()) delete _impl_.virtual_function_;
 }
 
-void PciEndpoint::ArenaDtor(void* object) {
-  PciEndpoint* _this = reinterpret_cast< PciEndpoint* >(object);
-  (void)_this;
-}
-void PciEndpoint::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PciEndpoint::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PciEndpoint::Clear() {
@@ -246,38 +312,47 @@ void PciEndpoint::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&port_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&virtual_function_) -
-      reinterpret_cast<char*>(&port_id_)) + sizeof(virtual_function_));
+  if (GetArenaForAllocation() == nullptr && _impl_.port_id_ != nullptr) {
+    delete _impl_.port_id_;
+  }
+  _impl_.port_id_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.physical_function_ != nullptr) {
+    delete _impl_.physical_function_;
+  }
+  _impl_.physical_function_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.virtual_function_ != nullptr) {
+    delete _impl_.virtual_function_;
+  }
+  _impl_.virtual_function_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PciEndpoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PciEndpoint::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 port_id = 1;
+      // .google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          port_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_port_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 physical_function = 2;
+      // .google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          physical_function_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_physical_function(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 virtual_function = 3;
+      // .google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          virtual_function_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_virtual_function(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -311,26 +386,29 @@ uint8_t* PciEndpoint::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 port_id = 1;
-  if (this->_internal_port_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_port_id(), target);
+  // .google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_port_id()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::port_id(this),
+        _Internal::port_id(this).GetCachedSize(), target, stream);
   }
 
-  // int32 physical_function = 2;
-  if (this->_internal_physical_function() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_physical_function(), target);
+  // .google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_physical_function()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::physical_function(this),
+        _Internal::physical_function(this).GetCachedSize(), target, stream);
   }
 
-  // int32 virtual_function = 3;
-  if (this->_internal_virtual_function() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_virtual_function(), target);
+  // .google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_virtual_function()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::virtual_function(this),
+        _Internal::virtual_function(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.PciEndpoint)
@@ -345,53 +423,58 @@ size_t PciEndpoint::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 port_id = 1;
-  if (this->_internal_port_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_port_id());
+  // .google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_port_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.port_id_);
   }
 
-  // int32 physical_function = 2;
-  if (this->_internal_physical_function() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_physical_function());
+  // .google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_physical_function()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.physical_function_);
   }
 
-  // int32 virtual_function = 3;
-  if (this->_internal_virtual_function() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_virtual_function());
+  // .google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_virtual_function()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.virtual_function_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PciEndpoint::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PciEndpoint::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PciEndpoint::GetClassData() const { return &_class_data_; }
 
-void PciEndpoint::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PciEndpoint *>(to)->MergeFrom(
-      static_cast<const PciEndpoint &>(from));
-}
 
-
-void PciEndpoint::MergeFrom(const PciEndpoint& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.PciEndpoint)
-  GOOGLE_DCHECK_NE(&from, this);
+void PciEndpoint::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PciEndpoint*>(&to_msg);
+  auto& from = static_cast<const PciEndpoint&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.PciEndpoint)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_port_id() != 0) {
-    _internal_set_port_id(from._internal_port_id());
+  if (from._internal_has_port_id()) {
+    _this->_internal_mutable_port_id()->::PROTOBUF_NAMESPACE_ID::Int32Value::MergeFrom(
+        from._internal_port_id());
   }
-  if (from._internal_physical_function() != 0) {
-    _internal_set_physical_function(from._internal_physical_function());
+  if (from._internal_has_physical_function()) {
+    _this->_internal_mutable_physical_function()->::PROTOBUF_NAMESPACE_ID::Int32Value::MergeFrom(
+        from._internal_physical_function());
   }
-  if (from._internal_virtual_function() != 0) {
-    _internal_set_virtual_function(from._internal_virtual_function());
+  if (from._internal_has_virtual_function()) {
+    _this->_internal_mutable_virtual_function()->::PROTOBUF_NAMESPACE_ID::Int32Value::MergeFrom(
+        from._internal_virtual_function());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PciEndpoint::CopyFrom(const PciEndpoint& from) {
@@ -409,15 +492,15 @@ void PciEndpoint::InternalSwap(PciEndpoint* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PciEndpoint, virtual_function_)
-      + sizeof(PciEndpoint::virtual_function_)
-      - PROTOBUF_FIELD_OFFSET(PciEndpoint, port_id_)>(
-          reinterpret_cast<char*>(&port_id_),
-          reinterpret_cast<char*>(&other->port_id_));
+      PROTOBUF_FIELD_OFFSET(PciEndpoint, _impl_.virtual_function_)
+      + sizeof(PciEndpoint::_impl_.virtual_function_)
+      - PROTOBUF_FIELD_OFFSET(PciEndpoint, _impl_.port_id_)>(
+          reinterpret_cast<char*>(&_impl_.port_id_),
+          reinterpret_cast<char*>(&other->_impl_.port_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PciEndpoint::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_opicommon_2eproto_getter, &descriptor_table_opicommon_2eproto_once,
       file_level_metadata_opicommon_2eproto[0]);
 }
@@ -431,47 +514,64 @@ class VolumeStats::_Internal {
 VolumeStats::VolumeStats(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.VolumeStats)
 }
 VolumeStats::VolumeStats(const VolumeStats& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  VolumeStats* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.read_bytes_count_){}
+    , decltype(_impl_.read_ops_count_){}
+    , decltype(_impl_.write_bytes_count_){}
+    , decltype(_impl_.write_ops_count_){}
+    , decltype(_impl_.unmap_bytes_count_){}
+    , decltype(_impl_.unmap_ops_count_){}
+    , decltype(_impl_.read_latency_ticks_){}
+    , decltype(_impl_.write_latency_ticks_){}
+    , decltype(_impl_.unmap_latency_ticks_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&read_bytes_count_, &from.read_bytes_count_,
-    static_cast<size_t>(reinterpret_cast<char*>(&unmap_latency_ticks_) -
-    reinterpret_cast<char*>(&read_bytes_count_)) + sizeof(unmap_latency_ticks_));
+  ::memcpy(&_impl_.read_bytes_count_, &from._impl_.read_bytes_count_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.unmap_latency_ticks_) -
+    reinterpret_cast<char*>(&_impl_.read_bytes_count_)) + sizeof(_impl_.unmap_latency_ticks_));
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.VolumeStats)
 }
 
-inline void VolumeStats::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&read_bytes_count_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&unmap_latency_ticks_) -
-    reinterpret_cast<char*>(&read_bytes_count_)) + sizeof(unmap_latency_ticks_));
+inline void VolumeStats::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.read_bytes_count_){0}
+    , decltype(_impl_.read_ops_count_){0}
+    , decltype(_impl_.write_bytes_count_){0}
+    , decltype(_impl_.write_ops_count_){0}
+    , decltype(_impl_.unmap_bytes_count_){0}
+    , decltype(_impl_.unmap_ops_count_){0}
+    , decltype(_impl_.read_latency_ticks_){0}
+    , decltype(_impl_.write_latency_ticks_){0}
+    , decltype(_impl_.unmap_latency_ticks_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 VolumeStats::~VolumeStats() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.VolumeStats)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void VolumeStats::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void VolumeStats::ArenaDtor(void* object) {
-  VolumeStats* _this = reinterpret_cast< VolumeStats* >(object);
-  (void)_this;
-}
-void VolumeStats::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void VolumeStats::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void VolumeStats::Clear() {
@@ -480,86 +580,86 @@ void VolumeStats::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&read_bytes_count_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&unmap_latency_ticks_) -
-      reinterpret_cast<char*>(&read_bytes_count_)) + sizeof(unmap_latency_ticks_));
+  ::memset(&_impl_.read_bytes_count_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.unmap_latency_ticks_) -
+      reinterpret_cast<char*>(&_impl_.read_bytes_count_)) + sizeof(_impl_.unmap_latency_ticks_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* VolumeStats::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* VolumeStats::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 read_bytes_count = 1;
+      // int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          read_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.read_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 read_ops_count = 2;
+      // int32 read_ops_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          read_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.read_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 write_bytes_count = 3;
+      // int32 write_bytes_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          write_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.write_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 write_ops_count = 4;
+      // int32 write_ops_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          write_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.write_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 unmap_bytes_count = 5;
+      // int32 unmap_bytes_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          unmap_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.unmap_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 unmap_ops_count = 6;
+      // int32 unmap_ops_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          unmap_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.unmap_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 read_latency_ticks = 7;
+      // int32 read_latency_ticks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          read_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.read_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 write_latency_ticks = 8;
+      // int32 write_latency_ticks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          write_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.write_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 unmap_latency_ticks = 9;
+      // int32 unmap_latency_ticks = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          unmap_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.unmap_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -593,62 +693,62 @@ uint8_t* VolumeStats::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 read_bytes_count = 1;
+  // int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_read_bytes_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_read_bytes_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_read_bytes_count(), target);
   }
 
-  // int32 read_ops_count = 2;
+  // int32 read_ops_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_read_ops_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_read_ops_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_read_ops_count(), target);
   }
 
-  // int32 write_bytes_count = 3;
+  // int32 write_bytes_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_write_bytes_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_write_bytes_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_write_bytes_count(), target);
   }
 
-  // int32 write_ops_count = 4;
+  // int32 write_ops_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_write_ops_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_write_ops_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_write_ops_count(), target);
   }
 
-  // int32 unmap_bytes_count = 5;
+  // int32 unmap_bytes_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_unmap_bytes_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_unmap_bytes_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_unmap_bytes_count(), target);
   }
 
-  // int32 unmap_ops_count = 6;
+  // int32 unmap_ops_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_unmap_ops_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_unmap_ops_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_unmap_ops_count(), target);
   }
 
-  // int32 read_latency_ticks = 7;
+  // int32 read_latency_ticks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_read_latency_ticks() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_read_latency_ticks(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_read_latency_ticks(), target);
   }
 
-  // int32 write_latency_ticks = 8;
+  // int32 write_latency_ticks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_write_latency_ticks() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_write_latency_ticks(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_write_latency_ticks(), target);
   }
 
-  // int32 unmap_latency_ticks = 9;
+  // int32 unmap_latency_ticks = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_unmap_latency_ticks() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_unmap_latency_ticks(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_unmap_latency_ticks(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.VolumeStats)
@@ -663,101 +763,97 @@ size_t VolumeStats::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 read_bytes_count = 1;
+  // int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_read_bytes_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_read_bytes_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_read_bytes_count());
   }
 
-  // int32 read_ops_count = 2;
+  // int32 read_ops_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_read_ops_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_read_ops_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_read_ops_count());
   }
 
-  // int32 write_bytes_count = 3;
+  // int32 write_bytes_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_write_bytes_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_write_bytes_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_write_bytes_count());
   }
 
-  // int32 write_ops_count = 4;
+  // int32 write_ops_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_write_ops_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_write_ops_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_write_ops_count());
   }
 
-  // int32 unmap_bytes_count = 5;
+  // int32 unmap_bytes_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_unmap_bytes_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_bytes_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_bytes_count());
   }
 
-  // int32 unmap_ops_count = 6;
+  // int32 unmap_ops_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_unmap_ops_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_ops_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_ops_count());
   }
 
-  // int32 read_latency_ticks = 7;
+  // int32 read_latency_ticks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_read_latency_ticks() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_read_latency_ticks());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_read_latency_ticks());
   }
 
-  // int32 write_latency_ticks = 8;
+  // int32 write_latency_ticks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_write_latency_ticks() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_write_latency_ticks());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_write_latency_ticks());
   }
 
-  // int32 unmap_latency_ticks = 9;
+  // int32 unmap_latency_ticks = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_unmap_latency_ticks() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_latency_ticks());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_latency_ticks());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VolumeStats::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     VolumeStats::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VolumeStats::GetClassData() const { return &_class_data_; }
 
-void VolumeStats::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<VolumeStats *>(to)->MergeFrom(
-      static_cast<const VolumeStats &>(from));
-}
 
-
-void VolumeStats::MergeFrom(const VolumeStats& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.VolumeStats)
-  GOOGLE_DCHECK_NE(&from, this);
+void VolumeStats::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<VolumeStats*>(&to_msg);
+  auto& from = static_cast<const VolumeStats&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.VolumeStats)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_read_bytes_count() != 0) {
-    _internal_set_read_bytes_count(from._internal_read_bytes_count());
+    _this->_internal_set_read_bytes_count(from._internal_read_bytes_count());
   }
   if (from._internal_read_ops_count() != 0) {
-    _internal_set_read_ops_count(from._internal_read_ops_count());
+    _this->_internal_set_read_ops_count(from._internal_read_ops_count());
   }
   if (from._internal_write_bytes_count() != 0) {
-    _internal_set_write_bytes_count(from._internal_write_bytes_count());
+    _this->_internal_set_write_bytes_count(from._internal_write_bytes_count());
   }
   if (from._internal_write_ops_count() != 0) {
-    _internal_set_write_ops_count(from._internal_write_ops_count());
+    _this->_internal_set_write_ops_count(from._internal_write_ops_count());
   }
   if (from._internal_unmap_bytes_count() != 0) {
-    _internal_set_unmap_bytes_count(from._internal_unmap_bytes_count());
+    _this->_internal_set_unmap_bytes_count(from._internal_unmap_bytes_count());
   }
   if (from._internal_unmap_ops_count() != 0) {
-    _internal_set_unmap_ops_count(from._internal_unmap_ops_count());
+    _this->_internal_set_unmap_ops_count(from._internal_unmap_ops_count());
   }
   if (from._internal_read_latency_ticks() != 0) {
-    _internal_set_read_latency_ticks(from._internal_read_latency_ticks());
+    _this->_internal_set_read_latency_ticks(from._internal_read_latency_ticks());
   }
   if (from._internal_write_latency_ticks() != 0) {
-    _internal_set_write_latency_ticks(from._internal_write_latency_ticks());
+    _this->_internal_set_write_latency_ticks(from._internal_write_latency_ticks());
   }
   if (from._internal_unmap_latency_ticks() != 0) {
-    _internal_set_unmap_latency_ticks(from._internal_unmap_latency_ticks());
+    _this->_internal_set_unmap_latency_ticks(from._internal_unmap_latency_ticks());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void VolumeStats::CopyFrom(const VolumeStats& from) {
@@ -775,15 +871,15 @@ void VolumeStats::InternalSwap(VolumeStats* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VolumeStats, unmap_latency_ticks_)
-      + sizeof(VolumeStats::unmap_latency_ticks_)
-      - PROTOBUF_FIELD_OFFSET(VolumeStats, read_bytes_count_)>(
-          reinterpret_cast<char*>(&read_bytes_count_),
-          reinterpret_cast<char*>(&other->read_bytes_count_));
+      PROTOBUF_FIELD_OFFSET(VolumeStats, _impl_.unmap_latency_ticks_)
+      + sizeof(VolumeStats::_impl_.unmap_latency_ticks_)
+      - PROTOBUF_FIELD_OFFSET(VolumeStats, _impl_.read_bytes_count_)>(
+          reinterpret_cast<char*>(&_impl_.read_bytes_count_),
+          reinterpret_cast<char*>(&other->_impl_.read_bytes_count_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VolumeStats::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_opicommon_2eproto_getter, &descriptor_table_opicommon_2eproto_once,
       file_level_metadata_opicommon_2eproto[1]);
 }
@@ -797,47 +893,58 @@ class QosLimit::_Internal {
 QosLimit::QosLimit(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.QosLimit)
 }
 QosLimit::QosLimit(const QosLimit& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  QosLimit* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.rd_iops_kiops_){}
+    , decltype(_impl_.wr_iops_kiops_){}
+    , decltype(_impl_.rw_iops_kiops_){}
+    , decltype(_impl_.rd_bandwidth_mbs_){}
+    , decltype(_impl_.wr_bandwidth_mbs_){}
+    , decltype(_impl_.rw_bandwidth_mbs_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&rd_iops_kiops_, &from.rd_iops_kiops_,
-    static_cast<size_t>(reinterpret_cast<char*>(&rw_bandwidth_mbs_) -
-    reinterpret_cast<char*>(&rd_iops_kiops_)) + sizeof(rw_bandwidth_mbs_));
+  ::memcpy(&_impl_.rd_iops_kiops_, &from._impl_.rd_iops_kiops_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.rw_bandwidth_mbs_) -
+    reinterpret_cast<char*>(&_impl_.rd_iops_kiops_)) + sizeof(_impl_.rw_bandwidth_mbs_));
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.QosLimit)
 }
 
-inline void QosLimit::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&rd_iops_kiops_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&rw_bandwidth_mbs_) -
-    reinterpret_cast<char*>(&rd_iops_kiops_)) + sizeof(rw_bandwidth_mbs_));
+inline void QosLimit::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.rd_iops_kiops_){int64_t{0}}
+    , decltype(_impl_.wr_iops_kiops_){int64_t{0}}
+    , decltype(_impl_.rw_iops_kiops_){int64_t{0}}
+    , decltype(_impl_.rd_bandwidth_mbs_){int64_t{0}}
+    , decltype(_impl_.wr_bandwidth_mbs_){int64_t{0}}
+    , decltype(_impl_.rw_bandwidth_mbs_){int64_t{0}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 QosLimit::~QosLimit() {
   // @@protoc_insertion_point(destructor:opi_api.storage.v1.QosLimit)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void QosLimit::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void QosLimit::ArenaDtor(void* object) {
-  QosLimit* _this = reinterpret_cast< QosLimit* >(object);
-  (void)_this;
-}
-void QosLimit::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void QosLimit::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void QosLimit::Clear() {
@@ -846,62 +953,62 @@ void QosLimit::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&rd_iops_kiops_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rw_bandwidth_mbs_) -
-      reinterpret_cast<char*>(&rd_iops_kiops_)) + sizeof(rw_bandwidth_mbs_));
+  ::memset(&_impl_.rd_iops_kiops_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.rw_bandwidth_mbs_) -
+      reinterpret_cast<char*>(&_impl_.rd_iops_kiops_)) + sizeof(_impl_.rw_bandwidth_mbs_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* QosLimit::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* QosLimit::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int64 rd_iops_kiops = 1;
+      // int64 rd_iops_kiops = 1 [(.google.api.field_behavior) = OPTIONAL];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          rd_iops_kiops_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rd_iops_kiops_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 wr_iops_kiops = 2;
+      // int64 wr_iops_kiops = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          wr_iops_kiops_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.wr_iops_kiops_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 rw_iops_kiops = 3;
+      // int64 rw_iops_kiops = 3 [(.google.api.field_behavior) = OPTIONAL];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          rw_iops_kiops_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rw_iops_kiops_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 rd_bandwidth_mbs = 4;
+      // int64 rd_bandwidth_mbs = 4 [(.google.api.field_behavior) = OPTIONAL];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          rd_bandwidth_mbs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rd_bandwidth_mbs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 wr_bandwidth_mbs = 5;
+      // int64 wr_bandwidth_mbs = 5 [(.google.api.field_behavior) = OPTIONAL];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          wr_bandwidth_mbs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.wr_bandwidth_mbs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 rw_bandwidth_mbs = 6;
+      // int64 rw_bandwidth_mbs = 6 [(.google.api.field_behavior) = OPTIONAL];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          rw_bandwidth_mbs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rw_bandwidth_mbs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -935,44 +1042,44 @@ uint8_t* QosLimit::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 rd_iops_kiops = 1;
+  // int64 rd_iops_kiops = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_rd_iops_kiops() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_rd_iops_kiops(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(1, this->_internal_rd_iops_kiops(), target);
   }
 
-  // int64 wr_iops_kiops = 2;
+  // int64 wr_iops_kiops = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_wr_iops_kiops() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_wr_iops_kiops(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_wr_iops_kiops(), target);
   }
 
-  // int64 rw_iops_kiops = 3;
+  // int64 rw_iops_kiops = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_rw_iops_kiops() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_rw_iops_kiops(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(3, this->_internal_rw_iops_kiops(), target);
   }
 
-  // int64 rd_bandwidth_mbs = 4;
+  // int64 rd_bandwidth_mbs = 4 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_rd_bandwidth_mbs() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_rd_bandwidth_mbs(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(4, this->_internal_rd_bandwidth_mbs(), target);
   }
 
-  // int64 wr_bandwidth_mbs = 5;
+  // int64 wr_bandwidth_mbs = 5 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_wr_bandwidth_mbs() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_wr_bandwidth_mbs(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(5, this->_internal_wr_bandwidth_mbs(), target);
   }
 
-  // int64 rw_bandwidth_mbs = 6;
+  // int64 rw_bandwidth_mbs = 6 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_rw_bandwidth_mbs() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_rw_bandwidth_mbs(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(6, this->_internal_rw_bandwidth_mbs(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.QosLimit)
@@ -987,77 +1094,73 @@ size_t QosLimit::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int64 rd_iops_kiops = 1;
+  // int64 rd_iops_kiops = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_rd_iops_kiops() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_rd_iops_kiops());
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_rd_iops_kiops());
   }
 
-  // int64 wr_iops_kiops = 2;
+  // int64 wr_iops_kiops = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_wr_iops_kiops() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_wr_iops_kiops());
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_wr_iops_kiops());
   }
 
-  // int64 rw_iops_kiops = 3;
+  // int64 rw_iops_kiops = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_rw_iops_kiops() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_rw_iops_kiops());
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_rw_iops_kiops());
   }
 
-  // int64 rd_bandwidth_mbs = 4;
+  // int64 rd_bandwidth_mbs = 4 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_rd_bandwidth_mbs() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_rd_bandwidth_mbs());
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_rd_bandwidth_mbs());
   }
 
-  // int64 wr_bandwidth_mbs = 5;
+  // int64 wr_bandwidth_mbs = 5 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_wr_bandwidth_mbs() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_wr_bandwidth_mbs());
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_wr_bandwidth_mbs());
   }
 
-  // int64 rw_bandwidth_mbs = 6;
+  // int64 rw_bandwidth_mbs = 6 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_rw_bandwidth_mbs() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_rw_bandwidth_mbs());
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_rw_bandwidth_mbs());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData QosLimit::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     QosLimit::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*QosLimit::GetClassData() const { return &_class_data_; }
 
-void QosLimit::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<QosLimit *>(to)->MergeFrom(
-      static_cast<const QosLimit &>(from));
-}
 
-
-void QosLimit::MergeFrom(const QosLimit& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.QosLimit)
-  GOOGLE_DCHECK_NE(&from, this);
+void QosLimit::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<QosLimit*>(&to_msg);
+  auto& from = static_cast<const QosLimit&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.QosLimit)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_rd_iops_kiops() != 0) {
-    _internal_set_rd_iops_kiops(from._internal_rd_iops_kiops());
+    _this->_internal_set_rd_iops_kiops(from._internal_rd_iops_kiops());
   }
   if (from._internal_wr_iops_kiops() != 0) {
-    _internal_set_wr_iops_kiops(from._internal_wr_iops_kiops());
+    _this->_internal_set_wr_iops_kiops(from._internal_wr_iops_kiops());
   }
   if (from._internal_rw_iops_kiops() != 0) {
-    _internal_set_rw_iops_kiops(from._internal_rw_iops_kiops());
+    _this->_internal_set_rw_iops_kiops(from._internal_rw_iops_kiops());
   }
   if (from._internal_rd_bandwidth_mbs() != 0) {
-    _internal_set_rd_bandwidth_mbs(from._internal_rd_bandwidth_mbs());
+    _this->_internal_set_rd_bandwidth_mbs(from._internal_rd_bandwidth_mbs());
   }
   if (from._internal_wr_bandwidth_mbs() != 0) {
-    _internal_set_wr_bandwidth_mbs(from._internal_wr_bandwidth_mbs());
+    _this->_internal_set_wr_bandwidth_mbs(from._internal_wr_bandwidth_mbs());
   }
   if (from._internal_rw_bandwidth_mbs() != 0) {
-    _internal_set_rw_bandwidth_mbs(from._internal_rw_bandwidth_mbs());
+    _this->_internal_set_rw_bandwidth_mbs(from._internal_rw_bandwidth_mbs());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void QosLimit::CopyFrom(const QosLimit& from) {
@@ -1075,15 +1178,15 @@ void QosLimit::InternalSwap(QosLimit* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(QosLimit, rw_bandwidth_mbs_)
-      + sizeof(QosLimit::rw_bandwidth_mbs_)
-      - PROTOBUF_FIELD_OFFSET(QosLimit, rd_iops_kiops_)>(
-          reinterpret_cast<char*>(&rd_iops_kiops_),
-          reinterpret_cast<char*>(&other->rd_iops_kiops_));
+      PROTOBUF_FIELD_OFFSET(QosLimit, _impl_.rw_bandwidth_mbs_)
+      + sizeof(QosLimit::_impl_.rw_bandwidth_mbs_)
+      - PROTOBUF_FIELD_OFFSET(QosLimit, _impl_.rd_iops_kiops_)>(
+          reinterpret_cast<char*>(&_impl_.rd_iops_kiops_),
+          reinterpret_cast<char*>(&other->_impl_.rd_iops_kiops_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata QosLimit::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_opicommon_2eproto_getter, &descriptor_table_opicommon_2eproto_once,
       file_level_metadata_opicommon_2eproto[2]);
 }
@@ -1093,13 +1196,16 @@ void QosLimit::InternalSwap(QosLimit* other) {
 }  // namespace storage
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::PciEndpoint* Arena::CreateMaybeMessage< ::opi_api::storage::v1::PciEndpoint >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::PciEndpoint*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::PciEndpoint >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::PciEndpoint >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VolumeStats* Arena::CreateMaybeMessage< ::opi_api::storage::v1::VolumeStats >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VolumeStats*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::VolumeStats >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::VolumeStats >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::QosLimit* Arena::CreateMaybeMessage< ::opi_api::storage::v1::QosLimit >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::QosLimit*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::QosLimit >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::QosLimit >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

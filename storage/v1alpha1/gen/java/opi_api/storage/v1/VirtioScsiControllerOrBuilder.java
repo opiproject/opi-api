@@ -36,7 +36,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
@@ -45,7 +45,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The pcieId.
    */
   opi_api.storage.v1.PciEndpoint getPcieId();
@@ -54,7 +54,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder();
 
@@ -63,7 +63,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the minLimit field is set.
    */
   boolean hasMinLimit();
@@ -72,7 +72,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The minLimit.
    */
   opi_api.storage.v1.QosLimit getMinLimit();
@@ -81,7 +81,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder();
 
@@ -90,7 +90,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the maxLimit field is set.
    */
   boolean hasMaxLimit();
@@ -99,7 +99,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxLimit.
    */
   opi_api.storage.v1.QosLimit getMaxLimit();
@@ -108,7 +108,7 @@ public interface VirtioScsiControllerOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder();
 }

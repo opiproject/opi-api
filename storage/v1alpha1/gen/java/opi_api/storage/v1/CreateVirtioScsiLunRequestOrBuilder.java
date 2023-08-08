@@ -23,12 +23,12 @@ public interface CreateVirtioScsiLunRequestOrBuilder extends
   opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder();
 
   /**
-   * <code>string virtio_scsi_lun_id = 2;</code>
+   * <code>string virtio_scsi_lun_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioScsiLunId.
    */
   java.lang.String getVirtioScsiLunId();
   /**
-   * <code>string virtio_scsi_lun_id = 2;</code>
+   * <code>string virtio_scsi_lun_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioScsiLunId.
    */
   com.google.protobuf.ByteString

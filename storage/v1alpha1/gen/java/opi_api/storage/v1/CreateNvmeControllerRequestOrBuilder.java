@@ -23,12 +23,12 @@ public interface CreateNvmeControllerRequestOrBuilder extends
   opi_api.storage.v1.NvmeControllerOrBuilder getNvmeControllerOrBuilder();
 
   /**
-   * <code>string nvme_controller_id = 2;</code>
+   * <code>string nvme_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeControllerId.
    */
   java.lang.String getNvmeControllerId();
   /**
-   * <code>string nvme_controller_id = 2;</code>
+   * <code>string nvme_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeControllerId.
    */
   com.google.protobuf.ByteString

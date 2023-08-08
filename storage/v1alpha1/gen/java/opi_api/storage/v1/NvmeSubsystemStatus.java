@@ -72,6 +72,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -100,7 +102,7 @@ private static final long serialVersionUID = 0L;
    * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
    * </pre>
    *
-   * <code>string firmware_revision = 1;</code>
+   * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The firmwareRevision.
    */
   @java.lang.Override
@@ -121,7 +123,7 @@ private static final long serialVersionUID = 0L;
    * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
    * </pre>
    *
-   * <code>string firmware_revision = 1;</code>
+   * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for firmwareRevision.
    */
   @java.lang.Override
@@ -146,7 +148,7 @@ private static final long serialVersionUID = 0L;
    * FRU identfier, 16bytes opaque identity for the type of unit
    * </pre>
    *
-   * <code>bytes fru_guid = 2;</code>
+   * <code>bytes fru_guid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The fruGuid.
    */
   @java.lang.Override
@@ -479,7 +481,7 @@ private static final long serialVersionUID = 0L;
      * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
      * </pre>
      *
-     * <code>string firmware_revision = 1;</code>
+     * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The firmwareRevision.
      */
     public java.lang.String getFirmwareRevision() {
@@ -499,7 +501,7 @@ private static final long serialVersionUID = 0L;
      * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
      * </pre>
      *
-     * <code>string firmware_revision = 1;</code>
+     * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for firmwareRevision.
      */
     public com.google.protobuf.ByteString
@@ -520,7 +522,7 @@ private static final long serialVersionUID = 0L;
      * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
      * </pre>
      *
-     * <code>string firmware_revision = 1;</code>
+     * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The firmwareRevision to set.
      * @return This builder for chaining.
      */
@@ -539,7 +541,7 @@ private static final long serialVersionUID = 0L;
      * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
      * </pre>
      *
-     * <code>string firmware_revision = 1;</code>
+     * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearFirmwareRevision() {
@@ -553,7 +555,7 @@ private static final long serialVersionUID = 0L;
      * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
      * </pre>
      *
-     * <code>string firmware_revision = 1;</code>
+     * <code>string firmware_revision = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for firmwareRevision to set.
      * @return This builder for chaining.
      */
@@ -575,7 +577,7 @@ private static final long serialVersionUID = 0L;
      * FRU identfier, 16bytes opaque identity for the type of unit
      * </pre>
      *
-     * <code>bytes fru_guid = 2;</code>
+     * <code>bytes fru_guid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The fruGuid.
      */
     @java.lang.Override
@@ -587,7 +589,7 @@ private static final long serialVersionUID = 0L;
      * FRU identfier, 16bytes opaque identity for the type of unit
      * </pre>
      *
-     * <code>bytes fru_guid = 2;</code>
+     * <code>bytes fru_guid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The fruGuid to set.
      * @return This builder for chaining.
      */
@@ -605,7 +607,7 @@ private static final long serialVersionUID = 0L;
      * FRU identfier, 16bytes opaque identity for the type of unit
      * </pre>
      *
-     * <code>bytes fru_guid = 2;</code>
+     * <code>bytes fru_guid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearFruGuid() {

@@ -12,7 +12,7 @@ public interface NvmeControllerStatusOrBuilder extends
    * Device is in use by host nvme driver
    * </pre>
    *
-   * <code>bool active = 1;</code>
+   * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The active.
    */
   boolean getActive();

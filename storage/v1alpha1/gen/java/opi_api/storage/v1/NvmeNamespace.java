@@ -92,6 +92,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -170,7 +172,7 @@ private static final long serialVersionUID = 0L;
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the spec field is set.
    */
   @java.lang.Override
@@ -182,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The spec.
    */
   @java.lang.Override
@@ -194,7 +196,7 @@ private static final long serialVersionUID = 0L;
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmeNamespaceSpecOrBuilder getSpecOrBuilder() {
@@ -208,7 +210,7 @@ private static final long serialVersionUID = 0L;
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -220,7 +222,7 @@ private static final long serialVersionUID = 0L;
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The status.
    */
   @java.lang.Override
@@ -232,7 +234,7 @@ private static final long serialVersionUID = 0L;
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmeNamespaceStatusOrBuilder getStatusOrBuilder() {
@@ -715,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the spec field is set.
      */
     public boolean hasSpec() {
@@ -726,7 +728,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The spec.
      */
     public opi_api.storage.v1.NvmeNamespaceSpec getSpec() {
@@ -741,7 +743,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSpec(opi_api.storage.v1.NvmeNamespaceSpec value) {
       if (specBuilder_ == null) {
@@ -761,7 +763,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSpec(
         opi_api.storage.v1.NvmeNamespaceSpec.Builder builderForValue) {
@@ -779,7 +781,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeSpec(opi_api.storage.v1.NvmeNamespaceSpec value) {
       if (specBuilder_ == null) {
@@ -801,7 +803,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSpec() {
       if (specBuilder_ == null) {
@@ -819,7 +821,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeNamespaceSpec.Builder getSpecBuilder() {
       
@@ -831,7 +833,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeNamespaceSpecOrBuilder getSpecOrBuilder() {
       if (specBuilder_ != null) {
@@ -846,7 +848,7 @@ private static final long serialVersionUID = 0L;
      * spec holds configurable values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeNamespaceSpec, opi_api.storage.v1.NvmeNamespaceSpec.Builder, opi_api.storage.v1.NvmeNamespaceSpecOrBuilder> 
@@ -870,7 +872,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
@@ -881,7 +883,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The status.
      */
     public opi_api.storage.v1.NvmeNamespaceStatus getStatus() {
@@ -896,7 +898,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setStatus(opi_api.storage.v1.NvmeNamespaceStatus value) {
       if (statusBuilder_ == null) {
@@ -916,7 +918,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setStatus(
         opi_api.storage.v1.NvmeNamespaceStatus.Builder builderForValue) {
@@ -934,7 +936,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeStatus(opi_api.storage.v1.NvmeNamespaceStatus value) {
       if (statusBuilder_ == null) {
@@ -956,7 +958,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -974,7 +976,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.storage.v1.NvmeNamespaceStatus.Builder getStatusBuilder() {
       
@@ -986,7 +988,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.storage.v1.NvmeNamespaceStatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -1001,7 +1003,7 @@ private static final long serialVersionUID = 0L;
      * status holds server generated values
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeNamespaceStatus, opi_api.storage.v1.NvmeNamespaceStatus.Builder, opi_api.storage.v1.NvmeNamespaceStatusOrBuilder> 

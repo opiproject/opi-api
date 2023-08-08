@@ -1311,7 +1311,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_controller_id | [int32](#int32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
+| nvme_controller_id | [int32](#int32) | optional | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
 | subsystem_name_ref | [string](#string) |  | subsystem information |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
 | max_nsq | [int32](#int32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
@@ -2694,9 +2694,9 @@ confusion with storage &#34;devices&#34;.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| port_id | [int32](#int32) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
-| physical_function | [int32](#int32) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
-| virtual_function | [int32](#int32) |  | Virtual function index. 1-based index. The value 0 is reserved to represent the PCI physical &#34;device&#34;. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| port_id | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| physical_function | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| virtual_function | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | Virtual function index. 1-based index. The value 0 is reserved to represent the PCI physical &#34;device&#34;. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
 
 
 

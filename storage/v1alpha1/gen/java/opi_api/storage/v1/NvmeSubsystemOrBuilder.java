@@ -36,7 +36,7 @@ public interface NvmeSubsystemOrBuilder extends
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -45,7 +45,7 @@ public interface NvmeSubsystemOrBuilder extends
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The spec.
    */
   opi_api.storage.v1.NvmeSubsystemSpec getSpec();
@@ -54,7 +54,7 @@ public interface NvmeSubsystemOrBuilder extends
    * spec holds configurable values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
+   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeSubsystemSpecOrBuilder getSpecOrBuilder();
 
@@ -63,7 +63,7 @@ public interface NvmeSubsystemOrBuilder extends
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -72,7 +72,7 @@ public interface NvmeSubsystemOrBuilder extends
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The status.
    */
   opi_api.storage.v1.NvmeSubsystemStatus getStatus();
@@ -81,7 +81,7 @@ public interface NvmeSubsystemOrBuilder extends
    * status holds server generated values
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   opi_api.storage.v1.NvmeSubsystemStatusOrBuilder getStatusOrBuilder();
 }

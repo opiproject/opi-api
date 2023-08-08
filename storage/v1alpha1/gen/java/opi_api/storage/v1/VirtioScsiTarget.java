@@ -71,6 +71,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -149,7 +151,7 @@ private static final long serialVersionUID = 0L;
    * maximum LUNs within a target
    * </pre>
    *
-   * <code>int32 max_luns = 2;</code>
+   * <code>int32 max_luns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxLuns.
    */
   @java.lang.Override
@@ -588,7 +590,7 @@ private static final long serialVersionUID = 0L;
      * maximum LUNs within a target
      * </pre>
      *
-     * <code>int32 max_luns = 2;</code>
+     * <code>int32 max_luns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxLuns.
      */
     @java.lang.Override
@@ -600,7 +602,7 @@ private static final long serialVersionUID = 0L;
      * maximum LUNs within a target
      * </pre>
      *
-     * <code>int32 max_luns = 2;</code>
+     * <code>int32 max_luns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The maxLuns to set.
      * @return This builder for chaining.
      */
@@ -615,7 +617,7 @@ private static final long serialVersionUID = 0L;
      * maximum LUNs within a target
      * </pre>
      *
-     * <code>int32 max_luns = 2;</code>
+     * <code>int32 max_luns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxLuns() {

@@ -79,6 +79,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -141,7 +143,7 @@ private static final long serialVersionUID = 0L;
   public static final int CONTROLLER_ID_FIELD_NUMBER = 2;
   private opi_api.common.v1.ObjectKey controllerId_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the controllerId field is set.
    */
   @java.lang.Override
@@ -149,7 +151,7 @@ private static final long serialVersionUID = 0L;
     return controllerId_ != null;
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The controllerId.
    */
   @java.lang.Override
@@ -157,7 +159,7 @@ private static final long serialVersionUID = 0L;
     return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
@@ -576,14 +578,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the controllerId field is set.
      */
     public boolean hasControllerId() {
       return controllerIdBuilder_ != null || controllerId_ != null;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The controllerId.
      */
     public opi_api.common.v1.ObjectKey getControllerId() {
@@ -594,7 +596,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
       if (controllerIdBuilder_ == null) {
@@ -610,7 +612,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setControllerId(
         opi_api.common.v1.ObjectKey.Builder builderForValue) {
@@ -624,7 +626,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
       if (controllerIdBuilder_ == null) {
@@ -642,7 +644,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearControllerId() {
       if (controllerIdBuilder_ == null) {
@@ -656,7 +658,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
       
@@ -664,7 +666,7 @@ private static final long serialVersionUID = 0L;
       return getControllerIdFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
       if (controllerIdBuilder_ != null) {
@@ -675,7 +677,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 

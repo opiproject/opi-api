@@ -90,6 +90,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -118,7 +120,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioBlk field is set.
    */
   @java.lang.Override
@@ -130,7 +132,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioBlk.
    */
   @java.lang.Override
@@ -142,7 +144,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlkOrBuilder() {
@@ -156,7 +158,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   @java.lang.Override
@@ -168,7 +170,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   @java.lang.Override
@@ -180,7 +182,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -195,7 +197,7 @@ private static final long serialVersionUID = 0L;
    * In this situation, `update_mask` is ignored.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The allowMissing.
    */
   @java.lang.Override
@@ -574,7 +576,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the virtioBlk field is set.
      */
     public boolean hasVirtioBlk() {
@@ -585,7 +587,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The virtioBlk.
      */
     public opi_api.storage.v1.VirtioBlk getVirtioBlk() {
@@ -600,7 +602,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVirtioBlk(opi_api.storage.v1.VirtioBlk value) {
       if (virtioBlkBuilder_ == null) {
@@ -620,7 +622,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVirtioBlk(
         opi_api.storage.v1.VirtioBlk.Builder builderForValue) {
@@ -638,7 +640,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeVirtioBlk(opi_api.storage.v1.VirtioBlk value) {
       if (virtioBlkBuilder_ == null) {
@@ -660,7 +662,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearVirtioBlk() {
       if (virtioBlkBuilder_ == null) {
@@ -678,7 +680,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.VirtioBlk.Builder getVirtioBlkBuilder() {
       
@@ -690,7 +692,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlkOrBuilder() {
       if (virtioBlkBuilder_ != null) {
@@ -705,7 +707,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioBlk, opi_api.storage.v1.VirtioBlk.Builder, opi_api.storage.v1.VirtioBlkOrBuilder> 
@@ -729,7 +731,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
@@ -740,7 +742,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
@@ -755,7 +757,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -775,7 +777,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -793,7 +795,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -815,7 +817,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -833,7 +835,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -845,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -860,7 +862,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
@@ -883,7 +885,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The allowMissing.
      */
     @java.lang.Override
@@ -896,7 +898,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The allowMissing to set.
      * @return This builder for chaining.
      */
@@ -912,7 +914,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
