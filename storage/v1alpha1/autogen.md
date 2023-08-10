@@ -192,9 +192,6 @@
   
     - [InventorySvc](#opi_api-inventory-v1-InventorySvc)
   
-- [object_key.proto](#object_key-proto)
-    - [ObjectKey](#opi_api-common-v1-ObjectKey)
-  
 - [uuid.proto](#uuid-proto)
     - [Uuid](#opi_api-common-v1-Uuid)
   
@@ -2130,7 +2127,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| controller_name_ref | [string](#string) |  |  |
 
 
 
@@ -2260,8 +2257,8 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The target that this LUN is in |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The middle/back-end volume for this LLUN |
+| target_name_ref | [string](#string) |  | The target that this LUN is in |
+| volume_name_ref | [string](#string) |  | The middle/back-end volume for this LLUN |
 
 
 
@@ -2979,40 +2976,6 @@ Service functions for the device inventory data
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | GetInventory | [GetInventoryRequest](#opi_api-inventory-v1-GetInventoryRequest) | [Inventory](#opi_api-inventory-v1-Inventory) | retrieves the inventory data for the device |
-
- 
-
-
-
-<a name="object_key-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## object_key.proto
-
-
-
-<a name="opi_api-common-v1-ObjectKey"></a>
-
-### ObjectKey
-Object Keys are opaque values. The object key uniquely
-identifies a given configuration object. The key used must be unique within
-the agent&#39;s context for the give object type and must be non-zero. No other
-restrictions apply on the usage of the key.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  | The value of the ObjectKey |
-
-
-
-
-
- 
-
- 
-
- 
 
  
 

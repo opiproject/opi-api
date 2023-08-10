@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private StatsVirtioScsiLunRequest() {
     name_ = "";
+    controllerNameRef_ = "";
   }
 
   @java.lang.Override
@@ -56,16 +57,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (controllerId_ != null) {
-              subBuilder = controllerId_.toBuilder();
-            }
-            controllerId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(controllerId_);
-              controllerId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            controllerNameRef_ = s;
             break;
           }
           default: {
@@ -140,30 +134,42 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONTROLLER_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey controllerId_;
+  public static final int CONTROLLER_NAME_REF_FIELD_NUMBER = 2;
+  private volatile java.lang.Object controllerNameRef_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return Whether the controllerId field is set.
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The controllerNameRef.
    */
   @java.lang.Override
-  public boolean hasControllerId() {
-    return controllerId_ != null;
+  public java.lang.String getControllerNameRef() {
+    java.lang.Object ref = controllerNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      controllerNameRef_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The controllerId.
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for controllerNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getControllerId() {
-    return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-    return getControllerId();
+  public com.google.protobuf.ByteString
+      getControllerNameRefBytes() {
+    java.lang.Object ref = controllerNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      controllerNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -183,8 +189,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (controllerId_ != null) {
-      output.writeMessage(2, getControllerId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, controllerNameRef_);
     }
     unknownFields.writeTo(output);
   }
@@ -198,9 +204,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (controllerId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getControllerId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, controllerNameRef_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,11 +224,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (hasControllerId() != other.hasControllerId()) return false;
-    if (hasControllerId()) {
-      if (!getControllerId()
-          .equals(other.getControllerId())) return false;
-    }
+    if (!getControllerNameRef()
+        .equals(other.getControllerNameRef())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -237,10 +239,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    if (hasControllerId()) {
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId().hashCode();
-    }
+    hash = (37 * hash) + CONTROLLER_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getControllerNameRef().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -376,12 +376,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
+      controllerNameRef_ = "";
+
       return this;
     }
 
@@ -409,11 +405,7 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.StatsVirtioScsiLunRequest buildPartial() {
       opi_api.storage.v1.StatsVirtioScsiLunRequest result = new opi_api.storage.v1.StatsVirtioScsiLunRequest(this);
       result.name_ = name_;
-      if (controllerIdBuilder_ == null) {
-        result.controllerId_ = controllerId_;
-      } else {
-        result.controllerId_ = controllerIdBuilder_.build();
-      }
+      result.controllerNameRef_ = controllerNameRef_;
       onBuilt();
       return result;
     }
@@ -466,8 +458,9 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.hasControllerId()) {
-        mergeControllerId(other.getControllerId());
+      if (!other.getControllerNameRef().isEmpty()) {
+        controllerNameRef_ = other.controllerNameRef_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -574,123 +567,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey controllerId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
+    private java.lang.Object controllerNameRef_ = "";
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return Whether the controllerId field is set.
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The controllerNameRef.
      */
-    public boolean hasControllerId() {
-      return controllerIdBuilder_ != null || controllerId_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The controllerId.
-     */
-    public opi_api.common.v1.ObjectKey getControllerId() {
-      if (controllerIdBuilder_ == null) {
-        return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+    public java.lang.String getControllerNameRef() {
+      java.lang.Object ref = controllerNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        controllerNameRef_ = s;
+        return s;
       } else {
-        return controllerIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for controllerNameRef.
      */
-    public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        controllerId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getControllerNameRefBytes() {
+      java.lang.Object ref = controllerNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        controllerNameRef_ = b;
+        return b;
       } else {
-        controllerIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The controllerNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setControllerId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = builderForValue.build();
-        onChanged();
-      } else {
-        controllerIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (controllerId_ != null) {
-          controllerId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(controllerId_).mergeFrom(value).buildPartial();
-        } else {
-          controllerId_ = value;
-        }
-        onChanged();
-      } else {
-        controllerIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder clearControllerId() {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-        onChanged();
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
-      
+    public Builder setControllerNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      controllerNameRef_ = value;
       onChanged();
-      return getControllerIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-      if (controllerIdBuilder_ != null) {
-        return controllerIdBuilder_.getMessageOrBuilder();
-      } else {
-        return controllerId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-      }
+    public Builder clearControllerNameRef() {
+      
+      controllerNameRef_ = getDefaultInstance().getControllerNameRef();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for controllerNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getControllerIdFieldBuilder() {
-      if (controllerIdBuilder_ == null) {
-        controllerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getControllerId(),
-                getParentForChildren(),
-                isClean());
-        controllerId_ = null;
-      }
-      return controllerIdBuilder_;
+    public Builder setControllerNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      controllerNameRef_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

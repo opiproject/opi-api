@@ -36,52 +36,38 @@ public interface VirtioScsiLunOrBuilder extends
    * The target that this LUN is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return Whether the targetId field is set.
+   * <code>string target_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The targetNameRef.
    */
-  boolean hasTargetId();
+  java.lang.String getTargetNameRef();
   /**
    * <pre>
    * The target that this LUN is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The targetId.
+   * <code>string target_name_ref = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for targetNameRef.
    */
-  opi_api.common.v1.ObjectKey getTargetId();
-  /**
-   * <pre>
-   * The target that this LUN is in
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey target_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder();
+  com.google.protobuf.ByteString
+      getTargetNameRefBytes();
 
   /**
    * <pre>
    * The middle/back-end volume for this LLUN
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return Whether the volumeId field is set.
+   * <code>string volume_name_ref = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The volumeNameRef.
    */
-  boolean hasVolumeId();
+  java.lang.String getVolumeNameRef();
   /**
    * <pre>
    * The middle/back-end volume for this LLUN
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The volumeId.
+   * <code>string volume_name_ref = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for volumeNameRef.
    */
-  opi_api.common.v1.ObjectKey getVolumeId();
-  /**
-   * <pre>
-   * The middle/back-end volume for this LLUN
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVolumeNameRefBytes();
 }

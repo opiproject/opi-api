@@ -20,17 +20,14 @@ public interface StatsVirtioScsiLunRequestOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return Whether the controllerId field is set.
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The controllerNameRef.
    */
-  boolean hasControllerId();
+  java.lang.String getControllerNameRef();
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The controllerId.
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for controllerNameRef.
    */
-  opi_api.common.v1.ObjectKey getControllerId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
+  com.google.protobuf.ByteString
+      getControllerNameRefBytes();
 }

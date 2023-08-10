@@ -67,9 +67,6 @@
   
     - [InventorySvc](#opi_api-inventory-v1-InventorySvc)
   
-- [object_key.proto](#object_key-proto)
-    - [ObjectKey](#opi_api-common-v1-ObjectKey)
-  
 - [uuid.proto](#uuid-proto)
     - [Uuid](#opi_api-common-v1-Uuid)
   
@@ -1057,40 +1054,6 @@ Service functions for the device inventory data
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | GetInventory | [GetInventoryRequest](#opi_api-inventory-v1-GetInventoryRequest) | [Inventory](#opi_api-inventory-v1-Inventory) | retrieves the inventory data for the device |
-
- 
-
-
-
-<a name="object_key-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## object_key.proto
-
-
-
-<a name="opi_api-common-v1-ObjectKey"></a>
-
-### ObjectKey
-Object Keys are opaque values. The object key uniquely
-identifies a given configuration object. The key used must be unique within
-the agent&#39;s context for the give object type and must be non-zero. No other
-restrictions apply on the usage of the key.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  | The value of the ObjectKey |
-
-
-
-
-
- 
-
- 
-
- 
 
  
 
