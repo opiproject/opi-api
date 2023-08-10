@@ -117,12 +117,16 @@ message LogicalBridge {
     // "name" will be returned with created object
     // user can only set {resource}_id on the Create request object
     // Format: logicalBridges/{logical_bridge}
-    string name                = 1;
+    string name                = 1 [
+        (google.api.field_behavior) = OUTPUT_ONLY,
+        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
+    ];
 
     // Logical Bridge network configuration
     LogicalBridgeSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
     // Logical Bridge network status
-    LogicalBridgeStatus status = 3;
+    LogicalBridgeStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Logical Bridge network configuration
@@ -134,13 +138,13 @@ message LogicalBridgeSpec {
     //VXLAN VNI for the L2 EVPN. Also used as EVPN route target
     // (-- api-linter: core::0141::forbidden-types=disabled
     //     aip.dev/not-precedent: vni cannot be negative number. --)
-    uint32 vni             = 2;
+    uint32 vni             = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Logical Bridge
 message LogicalBridgeStatus {
     // operational state of a Logical Bridge
-    LBOperStatus oper_status = 1;
+    LBOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateLogicalBridgeRequest structure
@@ -210,7 +214,7 @@ message UpdateLogicalBridgeRequest {
 // Bridge Port network configuration and status
 message BridgePort {
     option (google.api.resource) = {
-      type: "opi_api.network.evpn_gw.v1alpha1/bridgePort"
+      type: "opi_api.network.evpn_gw.v1alpha1/BridgePort"
       pattern: "bridgePorts/{bridge_port}"
     };
     // The resource name of the Bridge Port.
@@ -218,12 +222,16 @@ message BridgePort {
     // "name" will be returned with created object
     // user can only set {resource}_id on the Create request object
     // Format: bridge_ports/{bridge_port}
-    string name             = 1;
+    string name             = 1 [
+        (google.api.field_behavior) = OUTPUT_ONLY,
+        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/BridgePort"
+    ];
 
     // Bridge Port network configuration
-    BridgePortSpec spec     = 2;
+    BridgePortSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
     // Bridge Port network status
-    BridgePortStatus status = 3;
+    BridgePortStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Bridge Port network configuration
@@ -234,13 +242,13 @@ message BridgePortSpec {
     BridgePortType ptype            = 2 [(google.api.field_behavior) = REQUIRED];
     // List of Logical Bridges this Bridge Port will attach.
     // This will define the VLANs that will be enabled in this Bridge Port
-    repeated string logical_bridges = 3;
+    repeated string logical_bridges = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Bridge Port
 message BridgePortStatus {
     // operational status of a Bridge Port
-    BPOperStatus oper_status = 1;
+    BPOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateBridgePortRequest structure

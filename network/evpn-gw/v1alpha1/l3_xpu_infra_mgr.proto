@@ -120,12 +120,16 @@ message Vrf {
     // "name" will be returned with created object
     // user can only set {resource}_id on the Create request object
     // Format: vrfs/{vrf}
-    string name      = 1;
+    string name      = 1 [
+        (google.api.field_behavior) = OUTPUT_ONLY,
+        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
+    ];
 
     // Vrf's network configuration
     VrfSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
     // Vrf's network status
-    VrfStatus status = 3;
+    VrfStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Vrf network configuration
@@ -133,11 +137,11 @@ message VrfSpec {
     // VXLAN VNI for L3 EVPN. Also used as EVPN route target
     // (-- api-linter: core::0141::forbidden-types=disabled
     //     aip.dev/not-precedent: vni cannot be negative number. --)
-    uint32 vni                                                    = 1;
+    uint32 vni                                                    = 1 [(google.api.field_behavior) = OPTIONAL];
     // IPv4 or IPv6 loopback address prefix. Also serves as basis for RD in FRR
     network.opinetcommon.v1alpha1.IPPrefix loopback_ip_prefix     = 2 [(google.api.field_behavior) = REQUIRED];
     // IPv4 or IPv6 IP address prefix for the VXLAN TEP
-    network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix         = 3;
+    network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix         = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Vrf
@@ -240,12 +244,16 @@ message Svi {
     // "name" will be returned with created object
     // user can only set {resource}_id on the Create request object
     // Format: svis/{svi}
-    string name      = 1;
+    string name      = 1 [
+        (google.api.field_behavior) = OUTPUT_ONLY,
+        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
+    ];
 
     // Svi's network configuration
     SviSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
     // Svi's network status
-    SviStatus status = 3;
+    SviStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Svi's network configuration
@@ -277,7 +285,7 @@ message SviSpec {
 // operational status of a Svi
 message SviStatus {
     // operational status of a Svi
-    SVIOperStatus oper_status  = 1;
+    SVIOperStatus oper_status  = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateSviRequest structure
