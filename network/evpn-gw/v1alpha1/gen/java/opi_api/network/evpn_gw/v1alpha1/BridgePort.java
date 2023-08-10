@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    * Format: bridge_ports/{bridge_port}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * Format: bridge_ports/{bridge_port}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
    * Bridge Port network configuration
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the spec field is set.
    */
   @java.lang.Override
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
    * Bridge Port network configuration
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The spec.
    */
   @java.lang.Override
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
    * Bridge Port network configuration
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder getSpecOrBuilder() {
@@ -216,7 +216,7 @@ private static final long serialVersionUID = 0L;
    * Bridge Port network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
    * Bridge Port network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The status.
    */
   @java.lang.Override
@@ -240,7 +240,7 @@ private static final long serialVersionUID = 0L;
    * Bridge Port network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder getStatusOrBuilder() {
@@ -623,7 +623,7 @@ private static final long serialVersionUID = 0L;
      * Format: bridge_ports/{bridge_port}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
      * Format: bridge_ports/{bridge_port}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -672,7 +672,7 @@ private static final long serialVersionUID = 0L;
      * Format: bridge_ports/{bridge_port}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * Format: bridge_ports/{bridge_port}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -713,7 +713,7 @@ private static final long serialVersionUID = 0L;
      * Format: bridge_ports/{bridge_port}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the spec field is set.
      */
     public boolean hasSpec() {
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The spec.
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePortSpec getSpec() {
@@ -763,7 +763,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSpec(opi_api.network.evpn_gw.v1alpha1.BridgePortSpec value) {
       if (specBuilder_ == null) {
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSpec(
         opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder builderForValue) {
@@ -801,7 +801,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeSpec(opi_api.network.evpn_gw.v1alpha1.BridgePortSpec value) {
       if (specBuilder_ == null) {
@@ -823,7 +823,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSpec() {
       if (specBuilder_ == null) {
@@ -841,7 +841,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder getSpecBuilder() {
       
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder getSpecOrBuilder() {
       if (specBuilder_ != null) {
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network configuration
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.BridgePortSpec, opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder> 
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
@@ -903,7 +903,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The status.
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePortStatus getStatus() {
@@ -918,7 +918,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setStatus(opi_api.network.evpn_gw.v1alpha1.BridgePortStatus value) {
       if (statusBuilder_ == null) {
@@ -938,7 +938,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setStatus(
         opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder builderForValue) {
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeStatus(opi_api.network.evpn_gw.v1alpha1.BridgePortStatus value) {
       if (statusBuilder_ == null) {
@@ -978,7 +978,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -996,7 +996,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder getStatusBuilder() {
       
@@ -1008,7 +1008,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -1023,7 +1023,7 @@ private static final long serialVersionUID = 0L;
      * Bridge Port network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.BridgePortStatus, opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder> 

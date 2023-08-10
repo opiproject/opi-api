@@ -353,7 +353,7 @@ class LogicalBridge final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -385,7 +385,7 @@ class LogicalBridge final :
       ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* spec);
   ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -552,7 +552,7 @@ class LogicalBridgeSpec final :
   void _internal_set_vlan_id(uint32_t value);
   public:
 
-  // uint32 vni = 2;
+  // uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_vni();
   uint32_t vni() const;
   void set_vni(uint32_t value);
@@ -699,7 +699,7 @@ class LogicalBridgeStatus final :
   enum : int {
     kOperStatusFieldNumber = 1,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;
+  // .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_oper_status();
   ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus oper_status() const;
   void set_oper_status(::opi_api::network::evpn_gw::v1alpha1::LBOperStatus value);
@@ -1850,7 +1850,7 @@ class BridgePort final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1864,7 +1864,7 @@ class BridgePort final :
   std::string* _internal_mutable_name();
   public:
 
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -1882,7 +1882,7 @@ class BridgePort final :
       ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* spec);
   ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -2041,7 +2041,7 @@ class BridgePortSpec final :
     kMacAddressFieldNumber = 1,
     kPtypeFieldNumber = 2,
   };
-  // repeated string logical_bridges = 3;
+  // repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];
   int logical_bridges_size() const;
   private:
   int _internal_logical_bridges_size() const;
@@ -2227,7 +2227,7 @@ class BridgePortStatus final :
   enum : int {
     kOperStatusFieldNumber = 1,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1;
+  // .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_oper_status();
   ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus oper_status() const;
   void set_oper_status(::opi_api::network::evpn_gw::v1alpha1::BPOperStatus value);
@@ -3261,7 +3261,7 @@ class UpdateBridgePortRequest final :
 #endif  // __GNUC__
 // LogicalBridge
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
 inline void LogicalBridge::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3402,7 +3402,7 @@ inline void LogicalBridge::set_allocated_spec(::opi_api::network::evpn_gw::v1alp
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.spec)
 }
 
-// .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;
+// .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool LogicalBridge::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -3516,7 +3516,7 @@ inline void LogicalBridgeSpec::set_vlan_id(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vlan_id)
 }
 
-// uint32 vni = 2;
+// uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void LogicalBridgeSpec::clear_vni() {
   vni_ = 0u;
 }
@@ -3540,7 +3540,7 @@ inline void LogicalBridgeSpec::set_vni(uint32_t value) {
 
 // LogicalBridgeStatus
 
-// .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;
+// .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void LogicalBridgeStatus::clear_oper_status() {
   oper_status_ = 0;
 }
@@ -4209,7 +4209,7 @@ inline void UpdateLogicalBridgeRequest::set_allow_missing(bool value) {
 
 // BridgePort
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
 inline void BridgePort::clear_name() {
   name_.ClearToEmpty();
 }
@@ -4260,7 +4260,7 @@ inline void BridgePort::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePort.name)
 }
 
-// .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;
+// .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool BridgePort::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -4350,7 +4350,7 @@ inline void BridgePort::set_allocated_spec(::opi_api::network::evpn_gw::v1alpha1
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePort.spec)
 }
 
-// .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;
+// .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool BridgePort::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -4515,7 +4515,7 @@ inline void BridgePortSpec::set_ptype(::opi_api::network::evpn_gw::v1alpha1::Bri
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.ptype)
 }
 
-// repeated string logical_bridges = 3;
+// repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline int BridgePortSpec::_internal_logical_bridges_size() const {
   return logical_bridges_.size();
 }
@@ -4594,7 +4594,7 @@ BridgePortSpec::mutable_logical_bridges() {
 
 // BridgePortStatus
 
-// .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1;
+// .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void BridgePortStatus::clear_oper_status() {
   oper_status_ = 0;
 }

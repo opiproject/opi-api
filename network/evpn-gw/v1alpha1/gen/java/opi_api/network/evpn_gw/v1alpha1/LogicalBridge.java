@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    * Format: logicalBridges/{logical_bridge}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * Format: logicalBridges/{logical_bridge}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -216,7 +216,7 @@ private static final long serialVersionUID = 0L;
    * Logical Bridge network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
    * Logical Bridge network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The status.
    */
   @java.lang.Override
@@ -240,7 +240,7 @@ private static final long serialVersionUID = 0L;
    * Logical Bridge network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder getStatusOrBuilder() {
@@ -623,7 +623,7 @@ private static final long serialVersionUID = 0L;
      * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
      * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -672,7 +672,7 @@ private static final long serialVersionUID = 0L;
      * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -713,7 +713,7 @@ private static final long serialVersionUID = 0L;
      * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
@@ -903,7 +903,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The status.
      */
     public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus getStatus() {
@@ -918,7 +918,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setStatus(opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus value) {
       if (statusBuilder_ == null) {
@@ -938,7 +938,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setStatus(
         opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder builderForValue) {
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeStatus(opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus value) {
       if (statusBuilder_ == null) {
@@ -978,7 +978,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -996,7 +996,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder getStatusBuilder() {
       
@@ -1008,7 +1008,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -1023,7 +1023,7 @@ private static final long serialVersionUID = 0L;
      * Logical Bridge network status
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder> 

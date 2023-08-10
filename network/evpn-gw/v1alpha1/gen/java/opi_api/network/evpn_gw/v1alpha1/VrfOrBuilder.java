@@ -16,7 +16,7 @@ public interface VrfOrBuilder extends
    * Format: vrfs/{vrf}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -29,7 +29,7 @@ public interface VrfOrBuilder extends
    * Format: vrfs/{vrf}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -67,7 +67,7 @@ public interface VrfOrBuilder extends
    * Vrf's network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -76,7 +76,7 @@ public interface VrfOrBuilder extends
    * Vrf's network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The status.
    */
   opi_api.network.evpn_gw.v1alpha1.VrfStatus getStatus();
@@ -85,7 +85,7 @@ public interface VrfOrBuilder extends
    * Vrf's network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   opi_api.network.evpn_gw.v1alpha1.VrfStatusOrBuilder getStatusOrBuilder();
 }

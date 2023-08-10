@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: vni cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 vni = 1;</code>
+   * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vni.
    */
   @java.lang.Override
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * IPv4 or IPv6 IP address prefix for the VXLAN TEP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the vtepIpPrefix field is set.
    */
   @java.lang.Override
@@ -189,7 +189,7 @@ private static final long serialVersionUID = 0L;
    * IPv4 or IPv6 IP address prefix for the VXLAN TEP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vtepIpPrefix.
    */
   @java.lang.Override
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
    * IPv4 or IPv6 IP address prefix for the VXLAN TEP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getVtepIpPrefixOrBuilder() {
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 1;</code>
+     * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The vni.
      */
     @java.lang.Override
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 1;</code>
+     * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The vni to set.
      * @return This builder for chaining.
      */
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 1;</code>
+     * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearVni() {
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the vtepIpPrefix field is set.
      */
     public boolean hasVtepIpPrefix() {
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The vtepIpPrefix.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPPrefix getVtepIpPrefix() {
@@ -812,7 +812,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setVtepIpPrefix(opi_api.network.opinetcommon.v1alpha1.IPPrefix value) {
       if (vtepIpPrefixBuilder_ == null) {
@@ -832,7 +832,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setVtepIpPrefix(
         opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder builderForValue) {
@@ -850,7 +850,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeVtepIpPrefix(opi_api.network.opinetcommon.v1alpha1.IPPrefix value) {
       if (vtepIpPrefixBuilder_ == null) {
@@ -872,7 +872,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearVtepIpPrefix() {
       if (vtepIpPrefixBuilder_ == null) {
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder getVtepIpPrefixBuilder() {
       
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getVtepIpPrefixOrBuilder() {
       if (vtepIpPrefixBuilder_ != null) {
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 IP address prefix for the VXLAN TEP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPPrefix, opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder, opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder> 

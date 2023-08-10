@@ -12,7 +12,7 @@ public interface LogicalBridgeStatusOrBuilder extends
    * operational state of a Logical Bridge
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for operStatus.
    */
   int getOperStatusValue();
@@ -21,7 +21,7 @@ public interface LogicalBridgeStatusOrBuilder extends
    * operational state of a Logical Bridge
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The operStatus.
    */
   opi_api.network.evpn_gw.v1alpha1.LBOperStatus getOperStatus();

@@ -26,7 +26,7 @@ public interface LogicalBridgeSpecOrBuilder extends
    *     aip.dev/not-precedent: vni cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 vni = 2;</code>
+   * <code>uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vni.
    */
   int getVni();

@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
    * This will define the VLANs that will be enabled in this Bridge Port
    * </pre>
    *
-   * <code>repeated string logical_bridges = 3;</code>
+   * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the logicalBridges.
    */
   public com.google.protobuf.ProtocolStringList
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
    * This will define the VLANs that will be enabled in this Bridge Port
    * </pre>
    *
-   * <code>repeated string logical_bridges = 3;</code>
+   * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of logicalBridges.
    */
   public int getLogicalBridgesCount() {
@@ -186,7 +186,7 @@ private static final long serialVersionUID = 0L;
    * This will define the VLANs that will be enabled in this Bridge Port
    * </pre>
    *
-   * <code>repeated string logical_bridges = 3;</code>
+   * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The logicalBridges at the given index.
    */
@@ -199,7 +199,7 @@ private static final long serialVersionUID = 0L;
    * This will define the VLANs that will be enabled in this Bridge Port
    * </pre>
    *
-   * <code>repeated string logical_bridges = 3;</code>
+   * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the logicalBridges at the given index.
    */
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return A list containing the logicalBridges.
      */
     public com.google.protobuf.ProtocolStringList
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The count of logicalBridges.
      */
     public int getLogicalBridgesCount() {
@@ -724,7 +724,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the element to return.
      * @return The logicalBridges at the given index.
      */
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the value to return.
      * @return The bytes of the logicalBridges at the given index.
      */
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index to set the value at.
      * @param value The logicalBridges to set.
      * @return This builder for chaining.
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The logicalBridges to add.
      * @return This builder for chaining.
      */
@@ -792,7 +792,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param values The logicalBridges to add.
      * @return This builder for chaining.
      */
@@ -810,7 +810,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearLogicalBridges() {
@@ -825,7 +825,7 @@ private static final long serialVersionUID = 0L;
      * This will define the VLANs that will be enabled in this Bridge Port
      * </pre>
      *
-     * <code>repeated string logical_bridges = 3;</code>
+     * <code>repeated string logical_bridges = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes of the logicalBridges to add.
      * @return This builder for chaining.
      */

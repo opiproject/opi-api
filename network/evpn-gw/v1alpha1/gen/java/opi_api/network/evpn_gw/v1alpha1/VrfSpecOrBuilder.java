@@ -14,7 +14,7 @@ public interface VrfSpecOrBuilder extends
    *     aip.dev/not-precedent: vni cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 vni = 1;</code>
+   * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vni.
    */
   int getVni();
@@ -51,7 +51,7 @@ public interface VrfSpecOrBuilder extends
    * IPv4 or IPv6 IP address prefix for the VXLAN TEP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the vtepIpPrefix field is set.
    */
   boolean hasVtepIpPrefix();
@@ -60,7 +60,7 @@ public interface VrfSpecOrBuilder extends
    * IPv4 or IPv6 IP address prefix for the VXLAN TEP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vtepIpPrefix.
    */
   opi_api.network.opinetcommon.v1alpha1.IPPrefix getVtepIpPrefix();
@@ -69,7 +69,7 @@ public interface VrfSpecOrBuilder extends
    * IPv4 or IPv6 IP address prefix for the VXLAN TEP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getVtepIpPrefixOrBuilder();
 }

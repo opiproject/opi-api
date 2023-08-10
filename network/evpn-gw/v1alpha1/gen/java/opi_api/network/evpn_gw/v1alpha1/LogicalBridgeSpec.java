@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: vni cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 vni = 2;</code>
+   * <code>uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vni.
    */
   @java.lang.Override
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 2;</code>
+     * <code>uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The vni.
      */
     @java.lang.Override
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 2;</code>
+     * <code>uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The vni to set.
      * @return This builder for chaining.
      */
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 2;</code>
+     * <code>uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearVni() {

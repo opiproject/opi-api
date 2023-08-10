@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
    * operational status of a Svi
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for operStatus.
    */
   @java.lang.Override public int getOperStatusValue() {
@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
    * operational status of a Svi
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The operStatus.
    */
   @java.lang.Override public opi_api.network.evpn_gw.v1alpha1.SVIOperStatus getOperStatus() {
@@ -429,7 +429,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Svi
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for operStatus.
      */
     @java.lang.Override public int getOperStatusValue() {
@@ -440,7 +440,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Svi
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for operStatus to set.
      * @return This builder for chaining.
      */
@@ -455,7 +455,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Svi
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The operStatus.
      */
     @java.lang.Override
@@ -469,7 +469,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Svi
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The operStatus to set.
      * @return This builder for chaining.
      */
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Svi
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOperStatus() {

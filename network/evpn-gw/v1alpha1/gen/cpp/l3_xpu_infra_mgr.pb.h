@@ -328,7 +328,7 @@ class Vrf final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -360,7 +360,7 @@ class Vrf final :
       ::opi_api::network::evpn_gw::v1alpha1::VrfSpec* spec);
   ::opi_api::network::evpn_gw::v1alpha1::VrfSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;
+  // .opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -537,7 +537,7 @@ class VrfSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* loopback_ip_prefix);
   ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* unsafe_arena_release_loopback_ip_prefix();
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];
   bool has_vtep_ip_prefix() const;
   private:
   bool _internal_has_vtep_ip_prefix() const;
@@ -555,7 +555,7 @@ class VrfSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* vtep_ip_prefix);
   ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* unsafe_arena_release_vtep_ip_prefix();
 
-  // uint32 vni = 1;
+  // uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_vni();
   uint32_t vni() const;
   void set_vni(uint32_t value);
@@ -1986,7 +1986,7 @@ class Svi final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2018,7 +2018,7 @@ class Svi final :
       ::opi_api::network::evpn_gw::v1alpha1::SviSpec* spec);
   ::opi_api::network::evpn_gw::v1alpha1::SviSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;
+  // .opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -2400,7 +2400,7 @@ class SviStatus final :
   enum : int {
     kOperStatusFieldNumber = 1,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;
+  // .opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_oper_status();
   ::opi_api::network::evpn_gw::v1alpha1::SVIOperStatus oper_status() const;
   void set_oper_status(::opi_api::network::evpn_gw::v1alpha1::SVIOperStatus value);
@@ -3434,7 +3434,7 @@ class UpdateSviRequest final :
 #endif  // __GNUC__
 // Vrf
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
 inline void Vrf::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3575,7 +3575,7 @@ inline void Vrf::set_allocated_spec(::opi_api::network::evpn_gw::v1alpha1::VrfSp
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.Vrf.spec)
 }
 
-// .opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;
+// .opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool Vrf::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -3669,7 +3669,7 @@ inline void Vrf::set_allocated_status(::opi_api::network::evpn_gw::v1alpha1::Vrf
 
 // VrfSpec
 
-// uint32 vni = 1;
+// uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void VrfSpec::clear_vni() {
   vni_ = 0u;
 }
@@ -3775,7 +3775,7 @@ inline void VrfSpec::set_allocated_loopback_ip_prefix(::opi_api::network::opinet
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.VrfSpec.loopback_ip_prefix)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3;
+// .opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline bool VrfSpec::_internal_has_vtep_ip_prefix() const {
   return this != internal_default_instance() && vtep_ip_prefix_ != nullptr;
 }
@@ -4901,7 +4901,7 @@ inline void UpdateVrfRequest::set_allow_missing(bool value) {
 
 // Svi
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
 inline void Svi::clear_name() {
   name_.ClearToEmpty();
 }
@@ -5042,7 +5042,7 @@ inline void Svi::set_allocated_spec(::opi_api::network::evpn_gw::v1alpha1::SviSp
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.Svi.spec)
 }
 
-// .opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;
+// .opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool Svi::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -5370,7 +5370,7 @@ inline void SviSpec::set_remote_as(uint32_t value) {
 
 // SviStatus
 
-// .opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;
+// .opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void SviStatus::clear_oper_status() {
   oper_status_ = 0;
 }
