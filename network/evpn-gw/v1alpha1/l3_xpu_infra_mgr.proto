@@ -137,7 +137,7 @@ message VrfSpec {
     // VXLAN VNI for L3 EVPN. Also used as EVPN route target
     // (-- api-linter: core::0141::forbidden-types=disabled
     //     aip.dev/not-precedent: vni cannot be negative number. --)
-    uint32 vni                                                    = 1 [(google.api.field_behavior) = OPTIONAL];
+    optional uint32 vni                                           = 1 [(google.api.field_behavior) = OPTIONAL];
     // IPv4 or IPv6 loopback address prefix. Also serves as basis for RD in FRR
     network.opinetcommon.v1alpha1.IPPrefix loopback_ip_prefix     = 2 [(google.api.field_behavior) = REQUIRED];
     // IPv4 or IPv6 IP address prefix for the VXLAN TEP
