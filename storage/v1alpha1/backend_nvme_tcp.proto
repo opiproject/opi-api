@@ -130,11 +130,17 @@ message NvmeRemoteController {
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
 
-    bool hdgst = 2;
-    bool ddgst = 3;
-    NvmeMultipath multipath = 4;
-    int64 io_queues_count = 5;
-    int64 queue_size = 6;
+    NvmeMultipath multipath = 2 [(google.api.field_behavior) = REQUIRED];
+    int64 io_queues_count = 3 [(google.api.field_behavior) = OPTIONAL];
+    int64 queue_size = 4 [(google.api.field_behavior) = OPTIONAL];
+
+    // Nvme over TCP specific fields
+    TcpController tcp = 5 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message TcpController {
+    bool hdgst = 1 [(google.api.field_behavior) = OPTIONAL];
+    bool ddgst = 2 [(google.api.field_behavior) = OPTIONAL];
 
     // Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
     // Use PSK interchange format with base64 encoding as input.
@@ -145,7 +151,7 @@ message NvmeRemoteController {
     // Calculate CRC-32 bytes to ensure validity of PSK.
     // Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
     // if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
-    bytes psk = 7;
+    bytes psk = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message NvmePath {
@@ -168,26 +174,32 @@ message NvmePath {
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
 
-    NvmeTransportType trtype = 3;
-    NvmeAddressFamily adrfam = 4;
+    NvmeTransportType trtype = 3 [(google.api.field_behavior) = REQUIRED];
 
-    // Destination address (e.g. IP address)
-    string traddr = 5;
+    // Destination address (e.g. IP address, BDF for local PCIe)
+    string traddr = 4 [(google.api.field_behavior) = REQUIRED];
 
+    // Not applicable for local PCIe. Required for Nvme over fabrics transport types
+    FabricsPath fabrics = 6 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message FabricsPath {
     // Destination service id (e.g. Port)
-    int64 trsvcid = 6;
+    int64 trsvcid = 1 [(google.api.field_behavior) = REQUIRED];
 
     // Subsystem NQN
-    string subnqn = 7;
+    string subnqn = 2 [(google.api.field_behavior) = REQUIRED];
+
+    NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
 
     // Source address (e.g. IP of local NIC)
-    string source_traddr = 8;
+    string source_traddr = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // Source port (e.g. Port of local NIC)
-    int64 source_trsvcid = 9;
+    int64 source_trsvcid = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // Host NQN
-    string hostnqn = 10;
+    string hostnqn = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message NvmeRemoteNamespace {
@@ -208,29 +220,29 @@ message NvmeRemoteNamespace {
 
     // controller through which the namespace is visible
     string controller_name_ref = 2 [
-        (google.api.field_behavior) = REQUIRED,
+        (google.api.field_behavior) = OUTPUT_ONLY,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
 
     // NSID
-    int32 nsid = 3;
+    int32 nsid = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Globally unique identifier for the namespace
-    string nguid = 4;
+    string nguid = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified
-    int64 eui64 = 5;
+    int64 eui64 = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 6;
+    common.v1.Uuid uuid = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // ANA state and such?
 }
 
 message CreateNvmeRemoteControllerRequest {
     NvmeRemoteController nvme_remote_controller = 1 [(google.api.field_behavior) = REQUIRED];
-    string nvme_remote_controller_id = 2;
+    string nvme_remote_controller_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteNvmeRemoteControllerRequest {
@@ -240,17 +252,17 @@ message DeleteNvmeRemoteControllerRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateNvmeRemoteControllerRequest {
     // The object's `name` field is used to identify the object to be updated.
-    NvmeRemoteController nvme_remote_controller = 1;
+    NvmeRemoteController nvme_remote_controller = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeRemoteControllersRequest {
@@ -258,8 +270,8 @@ message ListNvmeRemoteControllersRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeRemoteControllersResponse {
@@ -299,8 +311,8 @@ message ListNvmeRemoteNamespacesRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteNamespace"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmeRemoteNamespacesResponse {
@@ -310,7 +322,7 @@ message ListNvmeRemoteNamespacesResponse {
 
 message CreateNvmePathRequest {
     NvmePath nvme_path = 1 [(google.api.field_behavior) = REQUIRED];
-    string nvme_path_id = 2;
+    string nvme_path_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteNvmePathRequest {
@@ -321,17 +333,17 @@ message DeleteNvmePathRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateNvmePathRequest {
     // The object's `name` field is used to identify the object to be updated.
-    NvmePath nvme_path = 1;
+    NvmePath nvme_path = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmePathsRequest {
@@ -339,8 +351,8 @@ message ListNvmePathsRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListNvmePathsResponse {

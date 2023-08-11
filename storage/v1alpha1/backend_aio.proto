@@ -77,15 +77,15 @@ message AioVolume {
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
     ];
 
-    int64 block_size = 2;
-    int64 blocks_count = 3;
-    common.v1.Uuid uuid = 4;
-    string filename = 5;
+    int64 block_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    int64 blocks_count = 3 [(google.api.field_behavior) = OPTIONAL];
+    common.v1.Uuid uuid = 4 [(google.api.field_behavior) = OPTIONAL];
+    string filename = 5 [(google.api.field_behavior) = REQUIRED];
 }
 
 message CreateAioVolumeRequest {
     AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
-    string aio_volume_id = 2;
+    string aio_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteAioVolumeRequest {
@@ -95,17 +95,17 @@ message DeleteAioVolumeRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateAioVolumeRequest {
     // The object's `name` field is used to identify the object to be updated.
-    AioVolume aio_volume = 1;
+    AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListAioVolumesRequest {
@@ -113,8 +113,8 @@ message ListAioVolumesRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListAioVolumesResponse{
