@@ -26,7 +26,18 @@ public interface LogicalBridgeSpecOrBuilder extends
    *     aip.dev/not-precedent: vni cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the vni field is set.
+   */
+  boolean hasVni();
+  /**
+   * <pre>
+   *VXLAN VNI for the L2 EVPN. Also used as EVPN route target
+   * (-- api-linter: core::0141::forbidden-types=disabled
+   *     aip.dev/not-precedent: vni cannot be negative number. --)
+   * </pre>
+   *
+   * <code>optional uint32 vni = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vni.
    */
   int getVni();

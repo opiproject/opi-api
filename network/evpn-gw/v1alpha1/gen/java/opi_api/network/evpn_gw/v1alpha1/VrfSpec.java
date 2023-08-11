@@ -42,6 +42,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -53,7 +54,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-
+            bitField0_ |= 0x00000001;
             vni_ = input.readUInt32();
             break;
           }
@@ -94,6 +95,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -115,6 +118,7 @@ private static final long serialVersionUID = 0L;
             opi_api.network.evpn_gw.v1alpha1.VrfSpec.class, opi_api.network.evpn_gw.v1alpha1.VrfSpec.Builder.class);
   }
 
+  private int bitField0_;
   public static final int VNI_FIELD_NUMBER = 1;
   private int vni_;
   /**
@@ -124,7 +128,21 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: vni cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the vni field is set.
+   */
+  @java.lang.Override
+  public boolean hasVni() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * VXLAN VNI for L3 EVPN. Also used as EVPN route target
+   * (-- api-linter: core::0141::forbidden-types=disabled
+   *     aip.dev/not-precedent: vni cannot be negative number. --)
+   * </pre>
+   *
+   * <code>optional uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vni.
    */
   @java.lang.Override
@@ -222,7 +240,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (vni_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt32(1, vni_);
     }
     if (loopbackIpPrefix_ != null) {
@@ -240,7 +258,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (vni_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(1, vni_);
     }
@@ -267,8 +285,11 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.evpn_gw.v1alpha1.VrfSpec other = (opi_api.network.evpn_gw.v1alpha1.VrfSpec) obj;
 
-    if (getVni()
-        != other.getVni()) return false;
+    if (hasVni() != other.hasVni()) return false;
+    if (hasVni()) {
+      if (getVni()
+          != other.getVni()) return false;
+    }
     if (hasLoopbackIpPrefix() != other.hasLoopbackIpPrefix()) return false;
     if (hasLoopbackIpPrefix()) {
       if (!getLoopbackIpPrefix()
@@ -290,8 +311,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + VNI_FIELD_NUMBER;
-    hash = (53 * hash) + getVni();
+    if (hasVni()) {
+      hash = (37 * hash) + VNI_FIELD_NUMBER;
+      hash = (53 * hash) + getVni();
+    }
     if (hasLoopbackIpPrefix()) {
       hash = (37 * hash) + LOOPBACK_IP_PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getLoopbackIpPrefix().hashCode();
@@ -438,7 +461,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       vni_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (loopbackIpPrefixBuilder_ == null) {
         loopbackIpPrefix_ = null;
       } else {
@@ -477,7 +500,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.evpn_gw.v1alpha1.VrfSpec buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.VrfSpec result = new opi_api.network.evpn_gw.v1alpha1.VrfSpec(this);
-      result.vni_ = vni_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.vni_ = vni_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (loopbackIpPrefixBuilder_ == null) {
         result.loopbackIpPrefix_ = loopbackIpPrefix_;
       } else {
@@ -488,6 +516,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.vtepIpPrefix_ = vtepIpPrefixBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -536,7 +565,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.evpn_gw.v1alpha1.VrfSpec other) {
       if (other == opi_api.network.evpn_gw.v1alpha1.VrfSpec.getDefaultInstance()) return this;
-      if (other.getVni() != 0) {
+      if (other.hasVni()) {
         setVni(other.getVni());
       }
       if (other.hasLoopbackIpPrefix()) {
@@ -573,6 +602,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int vni_ ;
     /**
@@ -582,7 +612,21 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the vni field is set.
+     */
+    @java.lang.Override
+    public boolean hasVni() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * VXLAN VNI for L3 EVPN. Also used as EVPN route target
+     * (-- api-linter: core::0141::forbidden-types=disabled
+     *     aip.dev/not-precedent: vni cannot be negative number. --)
+     * </pre>
+     *
+     * <code>optional uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The vni.
      */
     @java.lang.Override
@@ -596,12 +640,12 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The vni to set.
      * @return This builder for chaining.
      */
     public Builder setVni(int value) {
-      
+      bitField0_ |= 0x00000001;
       vni_ = value;
       onChanged();
       return this;
@@ -613,11 +657,11 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: vni cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional uint32 vni = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearVni() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       vni_ = 0;
       onChanged();
       return this;
