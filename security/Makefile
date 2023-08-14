@@ -8,9 +8,9 @@ all:
 	rm -rf ./v1/{autogen.md,gen}
 	mkdir -p  ./v1/gen/{go,cpp,python}
 
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l go -o ./v1/gen/go/ --go-source-relative
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l cpp -o ./v1/gen/cpp/ --go-source-relative
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l python -o ./v1/gen/python/  --go-source-relative
+	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs namely/protoc-all:1.51_2 --lint -d v1 -l go -o ./v1/gen/go/ --go-source-relative
+	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs namely/protoc-all:1.51_2 --lint -d v1 -l cpp -o ./v1/gen/cpp/ --go-source-relative
+	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs namely/protoc-all:1.51_2 --lint -d v1 -l python -o ./v1/gen/python/  --go-source-relative
 	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -v "${PWD}"/v1:/protos pseudomuto/protoc-gen-doc --doc_opt=markdown,autogen.md
 
 	# Run linters
