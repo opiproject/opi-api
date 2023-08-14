@@ -16,237 +16,251 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace opi_api {
 namespace network {
 namespace v1alpha1 {
-constexpr Config::Config(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , type_(0)
-
-  , mtu_(0u)
-  , loopback_mode_(false)
-  , enabled_(false){}
+PROTOBUF_CONSTEXPR Config::Config(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.description_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_.mtu_)*/0u
+  , /*decltype(_impl_.loopback_mode_)*/false
+  , /*decltype(_impl_.enabled_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ConfigDefaultTypeInternal {
-  constexpr ConfigDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ConfigDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ConfigDefaultTypeInternal() {}
   union {
     Config _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigDefaultTypeInternal _Config_default_instance_;
-constexpr Counters::Counters(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rx_octets_(uint64_t{0u})
-  , rx_packets_(uint64_t{0u})
-  , rx_unicast_pkts_(uint64_t{0u})
-  , rx_broadcast_pkts_(uint64_t{0u})
-  , rx_multicast_pkts_(uint64_t{0u})
-  , rx_discards_(uint64_t{0u})
-  , rx_errors_(uint64_t{0u})
-  , rx_unknown_protos_(uint64_t{0u})
-  , rx_fcs_errors_(uint64_t{0u})
-  , out_octets_(uint64_t{0u})
-  , out_packets_(uint64_t{0u})
-  , out_unicast_pkts_(uint64_t{0u})
-  , out_broadcast_pkts_(uint64_t{0u})
-  , out_multicast_pkts_(uint64_t{0u})
-  , out_discards_(uint64_t{0u})
-  , out_errors_(uint64_t{0u})
-  , carrier_transitions_(uint64_t{0u})
-  , last_clear_(uint64_t{0u}){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConfigDefaultTypeInternal _Config_default_instance_;
+PROTOBUF_CONSTEXPR Counters::Counters(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.rx_octets_)*/uint64_t{0u}
+  , /*decltype(_impl_.rx_packets_)*/uint64_t{0u}
+  , /*decltype(_impl_.rx_unicast_pkts_)*/uint64_t{0u}
+  , /*decltype(_impl_.rx_broadcast_pkts_)*/uint64_t{0u}
+  , /*decltype(_impl_.rx_multicast_pkts_)*/uint64_t{0u}
+  , /*decltype(_impl_.rx_discards_)*/uint64_t{0u}
+  , /*decltype(_impl_.rx_errors_)*/uint64_t{0u}
+  , /*decltype(_impl_.rx_unknown_protos_)*/uint64_t{0u}
+  , /*decltype(_impl_.rx_fcs_errors_)*/uint64_t{0u}
+  , /*decltype(_impl_.out_octets_)*/uint64_t{0u}
+  , /*decltype(_impl_.out_packets_)*/uint64_t{0u}
+  , /*decltype(_impl_.out_unicast_pkts_)*/uint64_t{0u}
+  , /*decltype(_impl_.out_broadcast_pkts_)*/uint64_t{0u}
+  , /*decltype(_impl_.out_multicast_pkts_)*/uint64_t{0u}
+  , /*decltype(_impl_.out_discards_)*/uint64_t{0u}
+  , /*decltype(_impl_.out_errors_)*/uint64_t{0u}
+  , /*decltype(_impl_.carrier_transitions_)*/uint64_t{0u}
+  , /*decltype(_impl_.last_clear_)*/uint64_t{0u}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CountersDefaultTypeInternal {
-  constexpr CountersDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CountersDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~CountersDefaultTypeInternal() {}
   union {
     Counters _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CountersDefaultTypeInternal _Counters_default_instance_;
-constexpr State::State(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , counters_(nullptr)
-  , type_(0)
-
-  , mtu_(0u)
-  , ifindex_(0u)
-  , admin_state_(0)
-
-  , loopback_mode_(false)
-  , enabled_(false)
-  , logical_(false)
-  , management_(false)
-  , oper_state_(0)
-
-  , last_change_(uint64_t{0u})
-  , cpu_(false){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CountersDefaultTypeInternal _Counters_default_instance_;
+PROTOBUF_CONSTEXPR State::State(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.description_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.counters_)*/nullptr
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_.mtu_)*/0u
+  , /*decltype(_impl_.ifindex_)*/0u
+  , /*decltype(_impl_.admin_state_)*/0
+  , /*decltype(_impl_.loopback_mode_)*/false
+  , /*decltype(_impl_.enabled_)*/false
+  , /*decltype(_impl_.logical_)*/false
+  , /*decltype(_impl_.management_)*/false
+  , /*decltype(_impl_.oper_state_)*/0
+  , /*decltype(_impl_.last_change_)*/uint64_t{0u}
+  , /*decltype(_impl_.cpu_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StateDefaultTypeInternal {
-  constexpr StateDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StateDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StateDefaultTypeInternal() {}
   union {
     State _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StateDefaultTypeInternal _State_default_instance_;
-constexpr NetInterface_HoldTime_HoldConfig::NetInterface_HoldTime_HoldConfig(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : up_(0u)
-  , down_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StateDefaultTypeInternal _State_default_instance_;
+PROTOBUF_CONSTEXPR NetInterface_HoldTime_HoldConfig::NetInterface_HoldTime_HoldConfig(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.up_)*/0u
+  , /*decltype(_impl_.down_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct NetInterface_HoldTime_HoldConfigDefaultTypeInternal {
-  constexpr NetInterface_HoldTime_HoldConfigDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NetInterface_HoldTime_HoldConfigDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NetInterface_HoldTime_HoldConfigDefaultTypeInternal() {}
   union {
     NetInterface_HoldTime_HoldConfig _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NetInterface_HoldTime_HoldConfigDefaultTypeInternal _NetInterface_HoldTime_HoldConfig_default_instance_;
-constexpr NetInterface_HoldTime_HoldState::NetInterface_HoldTime_HoldState(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : up_(0u)
-  , down_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NetInterface_HoldTime_HoldConfigDefaultTypeInternal _NetInterface_HoldTime_HoldConfig_default_instance_;
+PROTOBUF_CONSTEXPR NetInterface_HoldTime_HoldState::NetInterface_HoldTime_HoldState(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.up_)*/0u
+  , /*decltype(_impl_.down_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct NetInterface_HoldTime_HoldStateDefaultTypeInternal {
-  constexpr NetInterface_HoldTime_HoldStateDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NetInterface_HoldTime_HoldStateDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NetInterface_HoldTime_HoldStateDefaultTypeInternal() {}
   union {
     NetInterface_HoldTime_HoldState _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NetInterface_HoldTime_HoldStateDefaultTypeInternal _NetInterface_HoldTime_HoldState_default_instance_;
-constexpr NetInterface_HoldTime::NetInterface_HoldTime(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : hold_config_(nullptr)
-  , hold_state_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NetInterface_HoldTime_HoldStateDefaultTypeInternal _NetInterface_HoldTime_HoldState_default_instance_;
+PROTOBUF_CONSTEXPR NetInterface_HoldTime::NetInterface_HoldTime(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.hold_config_)*/nullptr
+  , /*decltype(_impl_.hold_state_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct NetInterface_HoldTimeDefaultTypeInternal {
-  constexpr NetInterface_HoldTimeDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NetInterface_HoldTimeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NetInterface_HoldTimeDefaultTypeInternal() {}
   union {
     NetInterface_HoldTime _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NetInterface_HoldTimeDefaultTypeInternal _NetInterface_HoldTime_default_instance_;
-constexpr NetInterface_Subinterfaces_Subinterface_SubifConfig::NetInterface_Subinterfaces_Subinterface_SubifConfig(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , index_(uint64_t{0u})
-  , enabled_(false){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NetInterface_HoldTimeDefaultTypeInternal _NetInterface_HoldTime_default_instance_;
+PROTOBUF_CONSTEXPR NetInterface_Subinterfaces_Subinterface_SubifConfig::NetInterface_Subinterfaces_Subinterface_SubifConfig(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.description_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.index_)*/uint64_t{0u}
+  , /*decltype(_impl_.enabled_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct NetInterface_Subinterfaces_Subinterface_SubifConfigDefaultTypeInternal {
-  constexpr NetInterface_Subinterfaces_Subinterface_SubifConfigDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NetInterface_Subinterfaces_Subinterface_SubifConfigDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NetInterface_Subinterfaces_Subinterface_SubifConfigDefaultTypeInternal() {}
   union {
     NetInterface_Subinterfaces_Subinterface_SubifConfig _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NetInterface_Subinterfaces_Subinterface_SubifConfigDefaultTypeInternal _NetInterface_Subinterfaces_Subinterface_SubifConfig_default_instance_;
-constexpr NetInterface_Subinterfaces_Subinterface::NetInterface_Subinterfaces_Subinterface(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : subif_config_(nullptr)
-  , state_(nullptr)
-  , index_(int64_t{0}){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NetInterface_Subinterfaces_Subinterface_SubifConfigDefaultTypeInternal _NetInterface_Subinterfaces_Subinterface_SubifConfig_default_instance_;
+PROTOBUF_CONSTEXPR NetInterface_Subinterfaces_Subinterface::NetInterface_Subinterfaces_Subinterface(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.subif_config_)*/nullptr
+  , /*decltype(_impl_.state_)*/nullptr
+  , /*decltype(_impl_.index_)*/int64_t{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct NetInterface_Subinterfaces_SubinterfaceDefaultTypeInternal {
-  constexpr NetInterface_Subinterfaces_SubinterfaceDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NetInterface_Subinterfaces_SubinterfaceDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NetInterface_Subinterfaces_SubinterfaceDefaultTypeInternal() {}
   union {
     NetInterface_Subinterfaces_Subinterface _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NetInterface_Subinterfaces_SubinterfaceDefaultTypeInternal _NetInterface_Subinterfaces_Subinterface_default_instance_;
-constexpr NetInterface_Subinterfaces::NetInterface_Subinterfaces(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : subinterface_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NetInterface_Subinterfaces_SubinterfaceDefaultTypeInternal _NetInterface_Subinterfaces_Subinterface_default_instance_;
+PROTOBUF_CONSTEXPR NetInterface_Subinterfaces::NetInterface_Subinterfaces(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.subinterface_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct NetInterface_SubinterfacesDefaultTypeInternal {
-  constexpr NetInterface_SubinterfacesDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NetInterface_SubinterfacesDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NetInterface_SubinterfacesDefaultTypeInternal() {}
   union {
     NetInterface_Subinterfaces _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NetInterface_SubinterfacesDefaultTypeInternal _NetInterface_Subinterfaces_default_instance_;
-constexpr NetInterface::NetInterface(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , config_(nullptr)
-  , state_(nullptr)
-  , holdtime_(nullptr)
-  , subinterfaces_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NetInterface_SubinterfacesDefaultTypeInternal _NetInterface_Subinterfaces_default_instance_;
+PROTOBUF_CONSTEXPR NetInterface::NetInterface(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.config_)*/nullptr
+  , /*decltype(_impl_.state_)*/nullptr
+  , /*decltype(_impl_.holdtime_)*/nullptr
+  , /*decltype(_impl_.subinterfaces_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct NetInterfaceDefaultTypeInternal {
-  constexpr NetInterfaceDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NetInterfaceDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NetInterfaceDefaultTypeInternal() {}
   union {
     NetInterface _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NetInterfaceDefaultTypeInternal _NetInterface_default_instance_;
-constexpr GetNetInterfaceRequest::GetNetInterfaceRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NetInterfaceDefaultTypeInternal _NetInterface_default_instance_;
+PROTOBUF_CONSTEXPR GetNetInterfaceRequest::GetNetInterfaceRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetNetInterfaceRequestDefaultTypeInternal {
-  constexpr GetNetInterfaceRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetNetInterfaceRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetNetInterfaceRequestDefaultTypeInternal() {}
   union {
     GetNetInterfaceRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetNetInterfaceRequestDefaultTypeInternal _GetNetInterfaceRequest_default_instance_;
-constexpr ListNetInterfacesRequest::ListNetInterfacesRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : parent_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , page_size_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNetInterfaceRequestDefaultTypeInternal _GetNetInterfaceRequest_default_instance_;
+PROTOBUF_CONSTEXPR ListNetInterfacesRequest::ListNetInterfacesRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.parent_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.page_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.page_size_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListNetInterfacesRequestDefaultTypeInternal {
-  constexpr ListNetInterfacesRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListNetInterfacesRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListNetInterfacesRequestDefaultTypeInternal() {}
   union {
     ListNetInterfacesRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNetInterfacesRequestDefaultTypeInternal _ListNetInterfacesRequest_default_instance_;
-constexpr ListNetInterfacesResponse::ListNetInterfacesResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : net_interfaces_()
-  , next_page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListNetInterfacesRequestDefaultTypeInternal _ListNetInterfacesRequest_default_instance_;
+PROTOBUF_CONSTEXPR ListNetInterfacesResponse::ListNetInterfacesResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.net_interfaces_)*/{}
+  , /*decltype(_impl_.next_page_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListNetInterfacesResponseDefaultTypeInternal {
-  constexpr ListNetInterfacesResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListNetInterfacesResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListNetInterfacesResponseDefaultTypeInternal() {}
   union {
     ListNetInterfacesResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNetInterfacesResponseDefaultTypeInternal _ListNetInterfacesResponse_default_instance_;
-constexpr UpdateNetInterfaceRequest::UpdateNetInterfaceRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : net_interface_(nullptr)
-  , update_mask_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListNetInterfacesResponseDefaultTypeInternal _ListNetInterfacesResponse_default_instance_;
+PROTOBUF_CONSTEXPR UpdateNetInterfaceRequest::UpdateNetInterfaceRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.net_interface_)*/nullptr
+  , /*decltype(_impl_.update_mask_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct UpdateNetInterfaceRequestDefaultTypeInternal {
-  constexpr UpdateNetInterfaceRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR UpdateNetInterfaceRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~UpdateNetInterfaceRequestDefaultTypeInternal() {}
   union {
     UpdateNetInterfaceRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateNetInterfaceRequestDefaultTypeInternal _UpdateNetInterfaceRequest_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateNetInterfaceRequestDefaultTypeInternal _UpdateNetInterfaceRequest_default_instance_;
 }  // namespace v1alpha1
 }  // namespace network
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_openconfig_5finterfaces_2eproto[14];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_openconfig_5finterfaces_2eproto[2];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_openconfig_5finterfaces_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_openconfig_5finterfaces_2eproto[14];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_openconfig_5finterfaces_2eproto[2];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_openconfig_5finterfaces_2eproto = nullptr;
 
 const uint32_t TableStruct_openconfig_5finterfaces_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -255,150 +269,150 @@ const uint32_t TableStruct_openconfig_5finterfaces_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, mtu_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, loopback_mode_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, description_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, enabled_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, _impl_.mtu_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, _impl_.loopback_mode_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, _impl_.description_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Config, _impl_.enabled_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_octets_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_packets_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_unicast_pkts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_broadcast_pkts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_multicast_pkts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_discards_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_errors_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_unknown_protos_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, rx_fcs_errors_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, out_octets_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, out_packets_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, out_unicast_pkts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, out_broadcast_pkts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, out_multicast_pkts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, out_discards_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, out_errors_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, carrier_transitions_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, last_clear_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_octets_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_packets_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_unicast_pkts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_broadcast_pkts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_multicast_pkts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_discards_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_errors_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_unknown_protos_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.rx_fcs_errors_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.out_octets_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.out_packets_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.out_unicast_pkts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.out_broadcast_pkts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.out_multicast_pkts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.out_discards_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.out_errors_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.carrier_transitions_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::Counters, _impl_.last_clear_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, mtu_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, loopback_mode_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, description_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, enabled_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, ifindex_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, admin_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, oper_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, last_change_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, logical_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, management_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, cpu_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, counters_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.mtu_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.loopback_mode_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.description_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.enabled_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.ifindex_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.admin_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.oper_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.last_change_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.logical_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.management_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.cpu_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::State, _impl_.counters_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig, up_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig, down_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig, _impl_.up_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig, _impl_.down_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState, up_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState, down_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState, _impl_.up_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState, _impl_.down_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime, hold_config_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime, hold_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime, _impl_.hold_config_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_HoldTime, _impl_.hold_state_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig, index_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig, description_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig, enabled_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig, _impl_.index_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig, _impl_.description_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig, _impl_.enabled_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface, index_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface, subif_config_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface, state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface, _impl_.index_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface, _impl_.subif_config_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface, _impl_.state_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces, subinterface_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface_Subinterfaces, _impl_.subinterface_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, config_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, holdtime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, subinterfaces_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, _impl_.config_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, _impl_.state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, _impl_.holdtime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::NetInterface, _impl_.subinterfaces_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::GetNetInterfaceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::GetNetInterfaceRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::GetNetInterfaceRequest, _impl_.name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesRequest, parent_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesRequest, page_size_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesRequest, page_token_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesRequest, _impl_.parent_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesRequest, _impl_.page_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesRequest, _impl_.page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesResponse, net_interfaces_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesResponse, next_page_token_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesResponse, _impl_.net_interfaces_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::ListNetInterfacesResponse, _impl_.next_page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest, net_interface_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest, update_mask_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest, _impl_.net_interface_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest, _impl_.update_mask_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::v1alpha1::Config)},
   { 12, -1, -1, sizeof(::opi_api::network::v1alpha1::Counters)},
   { 36, -1, -1, sizeof(::opi_api::network::v1alpha1::State)},
@@ -415,21 +429,21 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 140, -1, -1, sizeof(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_Config_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_Counters_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_State_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_NetInterface_HoldTime_HoldConfig_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_NetInterface_HoldTime_HoldState_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_NetInterface_HoldTime_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_NetInterface_Subinterfaces_Subinterface_SubifConfig_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_NetInterface_Subinterfaces_Subinterface_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_NetInterface_Subinterfaces_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_NetInterface_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_GetNetInterfaceRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_ListNetInterfacesRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_ListNetInterfacesResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::v1alpha1::_UpdateNetInterfaceRequest_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::opi_api::network::v1alpha1::_Config_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_Counters_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_State_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_NetInterface_HoldTime_HoldConfig_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_NetInterface_HoldTime_HoldState_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_NetInterface_HoldTime_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_NetInterface_Subinterfaces_Subinterface_SubifConfig_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_NetInterface_Subinterfaces_Subinterface_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_NetInterface_Subinterfaces_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_NetInterface_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_GetNetInterfaceRequest_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_ListNetInterfacesRequest_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_ListNetInterfacesResponse_default_instance_._instance,
+  &::opi_api::network::v1alpha1::_UpdateNetInterfaceRequest_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_openconfig_5finterfaces_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -524,7 +538,7 @@ const char descriptor_table_protodef_openconfig_5finterfaces_2eproto[] PROTOBUF_
   "ject/opi-api/network/opinetcommon/v1alph"
   "a1/gen/gob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_openconfig_5finterfaces_2eproto_deps[6] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_openconfig_5finterfaces_2eproto_deps[6] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
   &::descriptor_table_google_2fapi_2fclient_2eproto,
   &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
@@ -532,19 +546,21 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_google_2fprotobuf_2ffield_5fmask_2eproto,
   &::descriptor_table_networktypes_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_openconfig_5finterfaces_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_openconfig_5finterfaces_2eproto = {
-  false, false, 3577, descriptor_table_protodef_openconfig_5finterfaces_2eproto, "openconfig_interfaces.proto", 
-  &descriptor_table_openconfig_5finterfaces_2eproto_once, descriptor_table_openconfig_5finterfaces_2eproto_deps, 6, 14,
-  schemas, file_default_instances, TableStruct_openconfig_5finterfaces_2eproto::offsets,
-  file_level_metadata_openconfig_5finterfaces_2eproto, file_level_enum_descriptors_openconfig_5finterfaces_2eproto, file_level_service_descriptors_openconfig_5finterfaces_2eproto,
+static ::_pbi::once_flag descriptor_table_openconfig_5finterfaces_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_openconfig_5finterfaces_2eproto = {
+    false, false, 3577, descriptor_table_protodef_openconfig_5finterfaces_2eproto,
+    "openconfig_interfaces.proto",
+    &descriptor_table_openconfig_5finterfaces_2eproto_once, descriptor_table_openconfig_5finterfaces_2eproto_deps, 6, 14,
+    schemas, file_default_instances, TableStruct_openconfig_5finterfaces_2eproto::offsets,
+    file_level_metadata_openconfig_5finterfaces_2eproto, file_level_enum_descriptors_openconfig_5finterfaces_2eproto,
+    file_level_service_descriptors_openconfig_5finterfaces_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_openconfig_5finterfaces_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_openconfig_5finterfaces_2eproto_getter() {
   return &descriptor_table_openconfig_5finterfaces_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_openconfig_5finterfaces_2eproto(&descriptor_table_openconfig_5finterfaces_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_openconfig_5finterfaces_2eproto(&descriptor_table_openconfig_5finterfaces_2eproto);
 namespace opi_api {
 namespace network {
 namespace v1alpha1 {
@@ -593,73 +609,84 @@ class Config::_Internal {
 Config::Config(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.Config)
 }
 Config::Config(const Config& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Config* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.description_){}
+    , decltype(_impl_.type_){}
+    , decltype(_impl_.mtu_){}
+    , decltype(_impl_.loopback_mode_){}
+    , decltype(_impl_.enabled_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.description_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_description().empty()) {
-    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
-      GetArenaForAllocation());
+    _this->_impl_.description_.Set(from._internal_description(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&type_, &from.type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&enabled_) -
-    reinterpret_cast<char*>(&type_)) + sizeof(enabled_));
+  ::memcpy(&_impl_.type_, &from._impl_.type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.enabled_) -
+    reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.enabled_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.Config)
 }
 
-inline void Config::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&type_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&enabled_) -
-    reinterpret_cast<char*>(&type_)) + sizeof(enabled_));
+inline void Config::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.description_){}
+    , decltype(_impl_.type_){0}
+    , decltype(_impl_.mtu_){0u}
+    , decltype(_impl_.loopback_mode_){false}
+    , decltype(_impl_.enabled_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.description_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.description_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Config::~Config() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.Config)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Config::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.Destroy();
+  _impl_.description_.Destroy();
 }
 
-void Config::ArenaDtor(void* object) {
-  Config* _this = reinterpret_cast< Config* >(object);
-  (void)_this;
-}
-void Config::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Config::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Config::Clear() {
@@ -668,27 +695,27 @@ void Config::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  description_.ClearToEmpty();
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&enabled_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(enabled_));
+  _impl_.name_.ClearToEmpty();
+  _impl_.description_.ClearToEmpty();
+  ::memset(&_impl_.type_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.enabled_) -
+      reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.enabled_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Config::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Config::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.Config.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.Config.name"));
         } else
           goto handle_unusual;
         continue;
@@ -704,7 +731,7 @@ const char* Config::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       // uint32 mtu = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -712,7 +739,7 @@ const char* Config::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       // bool loopback_mode = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          loopback_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.loopback_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -721,16 +748,16 @@ const char* Config::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_description();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.Config.description"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.Config.description"));
         } else
           goto handle_unusual;
         continue;
       // bool enabled = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -777,20 +804,20 @@ uint8_t* Config::_InternalSerialize(
   // .opi_api.network.v1alpha1.InterfaceType type = 2;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_type(), target);
   }
 
   // uint32 mtu = 3;
   if (this->_internal_mtu() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_mtu(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_mtu(), target);
   }
 
   // bool loopback_mode = 4;
   if (this->_internal_loopback_mode() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_loopback_mode(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_loopback_mode(), target);
   }
 
   // string description = 5;
@@ -806,11 +833,11 @@ uint8_t* Config::_InternalSerialize(
   // bool enabled = 6;
   if (this->_internal_enabled() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_enabled(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_enabled(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.Config)
@@ -842,12 +869,12 @@ size_t Config::ByteSizeLong() const {
   // .opi_api.network.v1alpha1.InterfaceType type = 2;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // uint32 mtu = 3;
   if (this->_internal_mtu() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_mtu());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mtu());
   }
 
   // bool loopback_mode = 4;
@@ -860,47 +887,43 @@ size_t Config::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Config::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Config::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Config::GetClassData() const { return &_class_data_; }
 
-void Config::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Config *>(to)->MergeFrom(
-      static_cast<const Config &>(from));
-}
 
-
-void Config::MergeFrom(const Config& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.Config)
-  GOOGLE_DCHECK_NE(&from, this);
+void Config::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Config*>(&to_msg);
+  auto& from = static_cast<const Config&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.Config)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_description().empty()) {
-    _internal_set_description(from._internal_description());
+    _this->_internal_set_description(from._internal_description());
   }
   if (from._internal_type() != 0) {
-    _internal_set_type(from._internal_type());
+    _this->_internal_set_type(from._internal_type());
   }
   if (from._internal_mtu() != 0) {
-    _internal_set_mtu(from._internal_mtu());
+    _this->_internal_set_mtu(from._internal_mtu());
   }
   if (from._internal_loopback_mode() != 0) {
-    _internal_set_loopback_mode(from._internal_loopback_mode());
+    _this->_internal_set_loopback_mode(from._internal_loopback_mode());
   }
   if (from._internal_enabled() != 0) {
-    _internal_set_enabled(from._internal_enabled());
+    _this->_internal_set_enabled(from._internal_enabled());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Config::CopyFrom(const Config& from) {
@@ -920,25 +943,23 @@ void Config::InternalSwap(Config* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &description_, lhs_arena,
-      &other->description_, rhs_arena
+      &_impl_.description_, lhs_arena,
+      &other->_impl_.description_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Config, enabled_)
-      + sizeof(Config::enabled_)
-      - PROTOBUF_FIELD_OFFSET(Config, type_)>(
-          reinterpret_cast<char*>(&type_),
-          reinterpret_cast<char*>(&other->type_));
+      PROTOBUF_FIELD_OFFSET(Config, _impl_.enabled_)
+      + sizeof(Config::_impl_.enabled_)
+      - PROTOBUF_FIELD_OFFSET(Config, _impl_.type_)>(
+          reinterpret_cast<char*>(&_impl_.type_),
+          reinterpret_cast<char*>(&other->_impl_.type_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Config::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[0]);
 }
@@ -952,47 +973,82 @@ class Counters::_Internal {
 Counters::Counters(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.Counters)
 }
 Counters::Counters(const Counters& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Counters* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.rx_octets_){}
+    , decltype(_impl_.rx_packets_){}
+    , decltype(_impl_.rx_unicast_pkts_){}
+    , decltype(_impl_.rx_broadcast_pkts_){}
+    , decltype(_impl_.rx_multicast_pkts_){}
+    , decltype(_impl_.rx_discards_){}
+    , decltype(_impl_.rx_errors_){}
+    , decltype(_impl_.rx_unknown_protos_){}
+    , decltype(_impl_.rx_fcs_errors_){}
+    , decltype(_impl_.out_octets_){}
+    , decltype(_impl_.out_packets_){}
+    , decltype(_impl_.out_unicast_pkts_){}
+    , decltype(_impl_.out_broadcast_pkts_){}
+    , decltype(_impl_.out_multicast_pkts_){}
+    , decltype(_impl_.out_discards_){}
+    , decltype(_impl_.out_errors_){}
+    , decltype(_impl_.carrier_transitions_){}
+    , decltype(_impl_.last_clear_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&rx_octets_, &from.rx_octets_,
-    static_cast<size_t>(reinterpret_cast<char*>(&last_clear_) -
-    reinterpret_cast<char*>(&rx_octets_)) + sizeof(last_clear_));
+  ::memcpy(&_impl_.rx_octets_, &from._impl_.rx_octets_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.last_clear_) -
+    reinterpret_cast<char*>(&_impl_.rx_octets_)) + sizeof(_impl_.last_clear_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.Counters)
 }
 
-inline void Counters::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&rx_octets_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&last_clear_) -
-    reinterpret_cast<char*>(&rx_octets_)) + sizeof(last_clear_));
+inline void Counters::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.rx_octets_){uint64_t{0u}}
+    , decltype(_impl_.rx_packets_){uint64_t{0u}}
+    , decltype(_impl_.rx_unicast_pkts_){uint64_t{0u}}
+    , decltype(_impl_.rx_broadcast_pkts_){uint64_t{0u}}
+    , decltype(_impl_.rx_multicast_pkts_){uint64_t{0u}}
+    , decltype(_impl_.rx_discards_){uint64_t{0u}}
+    , decltype(_impl_.rx_errors_){uint64_t{0u}}
+    , decltype(_impl_.rx_unknown_protos_){uint64_t{0u}}
+    , decltype(_impl_.rx_fcs_errors_){uint64_t{0u}}
+    , decltype(_impl_.out_octets_){uint64_t{0u}}
+    , decltype(_impl_.out_packets_){uint64_t{0u}}
+    , decltype(_impl_.out_unicast_pkts_){uint64_t{0u}}
+    , decltype(_impl_.out_broadcast_pkts_){uint64_t{0u}}
+    , decltype(_impl_.out_multicast_pkts_){uint64_t{0u}}
+    , decltype(_impl_.out_discards_){uint64_t{0u}}
+    , decltype(_impl_.out_errors_){uint64_t{0u}}
+    , decltype(_impl_.carrier_transitions_){uint64_t{0u}}
+    , decltype(_impl_.last_clear_){uint64_t{0u}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Counters::~Counters() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.Counters)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Counters::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void Counters::ArenaDtor(void* object) {
-  Counters* _this = reinterpret_cast< Counters* >(object);
-  (void)_this;
-}
-void Counters::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Counters::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Counters::Clear() {
@@ -1001,22 +1057,22 @@ void Counters::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&rx_octets_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&last_clear_) -
-      reinterpret_cast<char*>(&rx_octets_)) + sizeof(last_clear_));
+  ::memset(&_impl_.rx_octets_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.last_clear_) -
+      reinterpret_cast<char*>(&_impl_.rx_octets_)) + sizeof(_impl_.last_clear_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint64 rx_octets = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          rx_octets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_octets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1024,7 +1080,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 rx_packets = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          rx_packets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_packets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1032,7 +1088,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 rx_unicast_pkts = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          rx_unicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_unicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1040,7 +1096,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 rx_broadcast_pkts = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          rx_broadcast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_broadcast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1048,7 +1104,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 rx_multicast_pkts = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          rx_multicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_multicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1056,7 +1112,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 rx_discards = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          rx_discards_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_discards_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1064,7 +1120,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 rx_errors = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          rx_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1072,7 +1128,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 rx_unknown_protos = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          rx_unknown_protos_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_unknown_protos_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1080,7 +1136,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 rx_fcs_errors = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          rx_fcs_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_fcs_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1088,7 +1144,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 out_octets = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          out_octets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.out_octets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1096,7 +1152,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 out_packets = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          out_packets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.out_packets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1104,7 +1160,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 out_unicast_pkts = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          out_unicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.out_unicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1112,7 +1168,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 out_broadcast_pkts = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          out_broadcast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.out_broadcast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1120,7 +1176,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 out_multicast_pkts = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          out_multicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.out_multicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1128,7 +1184,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 out_discards = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
-          out_discards_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.out_discards_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1136,7 +1192,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 out_errors = 16;
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          out_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.out_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1144,7 +1200,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 carrier_transitions = 17;
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
-          carrier_transitions_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.carrier_transitions_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1152,7 +1208,7 @@ const char* Counters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint64 last_clear = 18;
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
-          last_clear_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.last_clear_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1189,113 +1245,113 @@ uint8_t* Counters::_InternalSerialize(
   // uint64 rx_octets = 1;
   if (this->_internal_rx_octets() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_rx_octets(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_rx_octets(), target);
   }
 
   // uint64 rx_packets = 2;
   if (this->_internal_rx_packets() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_rx_packets(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_rx_packets(), target);
   }
 
   // uint64 rx_unicast_pkts = 3;
   if (this->_internal_rx_unicast_pkts() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_rx_unicast_pkts(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_rx_unicast_pkts(), target);
   }
 
   // uint64 rx_broadcast_pkts = 4;
   if (this->_internal_rx_broadcast_pkts() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_rx_broadcast_pkts(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal_rx_broadcast_pkts(), target);
   }
 
   // uint64 rx_multicast_pkts = 5;
   if (this->_internal_rx_multicast_pkts() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_rx_multicast_pkts(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal_rx_multicast_pkts(), target);
   }
 
   // uint64 rx_discards = 6;
   if (this->_internal_rx_discards() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_rx_discards(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(6, this->_internal_rx_discards(), target);
   }
 
   // uint64 rx_errors = 7;
   if (this->_internal_rx_errors() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_rx_errors(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(7, this->_internal_rx_errors(), target);
   }
 
   // uint64 rx_unknown_protos = 8;
   if (this->_internal_rx_unknown_protos() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal_rx_unknown_protos(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(8, this->_internal_rx_unknown_protos(), target);
   }
 
   // uint64 rx_fcs_errors = 9;
   if (this->_internal_rx_fcs_errors() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_rx_fcs_errors(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(9, this->_internal_rx_fcs_errors(), target);
   }
 
   // uint64 out_octets = 10;
   if (this->_internal_out_octets() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(10, this->_internal_out_octets(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(10, this->_internal_out_octets(), target);
   }
 
   // uint64 out_packets = 11;
   if (this->_internal_out_packets() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(11, this->_internal_out_packets(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(11, this->_internal_out_packets(), target);
   }
 
   // uint64 out_unicast_pkts = 12;
   if (this->_internal_out_unicast_pkts() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(12, this->_internal_out_unicast_pkts(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(12, this->_internal_out_unicast_pkts(), target);
   }
 
   // uint64 out_broadcast_pkts = 13;
   if (this->_internal_out_broadcast_pkts() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(13, this->_internal_out_broadcast_pkts(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(13, this->_internal_out_broadcast_pkts(), target);
   }
 
   // uint64 out_multicast_pkts = 14;
   if (this->_internal_out_multicast_pkts() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(14, this->_internal_out_multicast_pkts(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(14, this->_internal_out_multicast_pkts(), target);
   }
 
   // uint64 out_discards = 15;
   if (this->_internal_out_discards() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(15, this->_internal_out_discards(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(15, this->_internal_out_discards(), target);
   }
 
   // uint64 out_errors = 16;
   if (this->_internal_out_errors() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(16, this->_internal_out_errors(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(16, this->_internal_out_errors(), target);
   }
 
   // uint64 carrier_transitions = 17;
   if (this->_internal_carrier_transitions() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(17, this->_internal_carrier_transitions(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(17, this->_internal_carrier_transitions(), target);
   }
 
   // uint64 last_clear = 18;
   if (this->_internal_last_clear() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(18, this->_internal_last_clear(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(18, this->_internal_last_clear(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.Counters)
@@ -1312,177 +1368,173 @@ size_t Counters::ByteSizeLong() const {
 
   // uint64 rx_octets = 1;
   if (this->_internal_rx_octets() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_octets());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_octets());
   }
 
   // uint64 rx_packets = 2;
   if (this->_internal_rx_packets() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_packets());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_packets());
   }
 
   // uint64 rx_unicast_pkts = 3;
   if (this->_internal_rx_unicast_pkts() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_unicast_pkts());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_unicast_pkts());
   }
 
   // uint64 rx_broadcast_pkts = 4;
   if (this->_internal_rx_broadcast_pkts() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_broadcast_pkts());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_broadcast_pkts());
   }
 
   // uint64 rx_multicast_pkts = 5;
   if (this->_internal_rx_multicast_pkts() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_multicast_pkts());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_multicast_pkts());
   }
 
   // uint64 rx_discards = 6;
   if (this->_internal_rx_discards() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_discards());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_discards());
   }
 
   // uint64 rx_errors = 7;
   if (this->_internal_rx_errors() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_errors());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_errors());
   }
 
   // uint64 rx_unknown_protos = 8;
   if (this->_internal_rx_unknown_protos() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_unknown_protos());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_unknown_protos());
   }
 
   // uint64 rx_fcs_errors = 9;
   if (this->_internal_rx_fcs_errors() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_fcs_errors());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_fcs_errors());
   }
 
   // uint64 out_octets = 10;
   if (this->_internal_out_octets() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_out_octets());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_octets());
   }
 
   // uint64 out_packets = 11;
   if (this->_internal_out_packets() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_out_packets());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_packets());
   }
 
   // uint64 out_unicast_pkts = 12;
   if (this->_internal_out_unicast_pkts() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_out_unicast_pkts());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_unicast_pkts());
   }
 
   // uint64 out_broadcast_pkts = 13;
   if (this->_internal_out_broadcast_pkts() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_out_broadcast_pkts());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_broadcast_pkts());
   }
 
   // uint64 out_multicast_pkts = 14;
   if (this->_internal_out_multicast_pkts() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_out_multicast_pkts());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_multicast_pkts());
   }
 
   // uint64 out_discards = 15;
   if (this->_internal_out_discards() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_out_discards());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_discards());
   }
 
   // uint64 out_errors = 16;
   if (this->_internal_out_errors() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+      ::_pbi::WireFormatLite::UInt64Size(
         this->_internal_out_errors());
   }
 
   // uint64 carrier_transitions = 17;
   if (this->_internal_carrier_transitions() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+      ::_pbi::WireFormatLite::UInt64Size(
         this->_internal_carrier_transitions());
   }
 
   // uint64 last_clear = 18;
   if (this->_internal_last_clear() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+      ::_pbi::WireFormatLite::UInt64Size(
         this->_internal_last_clear());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Counters::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Counters::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Counters::GetClassData() const { return &_class_data_; }
 
-void Counters::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Counters *>(to)->MergeFrom(
-      static_cast<const Counters &>(from));
-}
 
-
-void Counters::MergeFrom(const Counters& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.Counters)
-  GOOGLE_DCHECK_NE(&from, this);
+void Counters::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Counters*>(&to_msg);
+  auto& from = static_cast<const Counters&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.Counters)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_rx_octets() != 0) {
-    _internal_set_rx_octets(from._internal_rx_octets());
+    _this->_internal_set_rx_octets(from._internal_rx_octets());
   }
   if (from._internal_rx_packets() != 0) {
-    _internal_set_rx_packets(from._internal_rx_packets());
+    _this->_internal_set_rx_packets(from._internal_rx_packets());
   }
   if (from._internal_rx_unicast_pkts() != 0) {
-    _internal_set_rx_unicast_pkts(from._internal_rx_unicast_pkts());
+    _this->_internal_set_rx_unicast_pkts(from._internal_rx_unicast_pkts());
   }
   if (from._internal_rx_broadcast_pkts() != 0) {
-    _internal_set_rx_broadcast_pkts(from._internal_rx_broadcast_pkts());
+    _this->_internal_set_rx_broadcast_pkts(from._internal_rx_broadcast_pkts());
   }
   if (from._internal_rx_multicast_pkts() != 0) {
-    _internal_set_rx_multicast_pkts(from._internal_rx_multicast_pkts());
+    _this->_internal_set_rx_multicast_pkts(from._internal_rx_multicast_pkts());
   }
   if (from._internal_rx_discards() != 0) {
-    _internal_set_rx_discards(from._internal_rx_discards());
+    _this->_internal_set_rx_discards(from._internal_rx_discards());
   }
   if (from._internal_rx_errors() != 0) {
-    _internal_set_rx_errors(from._internal_rx_errors());
+    _this->_internal_set_rx_errors(from._internal_rx_errors());
   }
   if (from._internal_rx_unknown_protos() != 0) {
-    _internal_set_rx_unknown_protos(from._internal_rx_unknown_protos());
+    _this->_internal_set_rx_unknown_protos(from._internal_rx_unknown_protos());
   }
   if (from._internal_rx_fcs_errors() != 0) {
-    _internal_set_rx_fcs_errors(from._internal_rx_fcs_errors());
+    _this->_internal_set_rx_fcs_errors(from._internal_rx_fcs_errors());
   }
   if (from._internal_out_octets() != 0) {
-    _internal_set_out_octets(from._internal_out_octets());
+    _this->_internal_set_out_octets(from._internal_out_octets());
   }
   if (from._internal_out_packets() != 0) {
-    _internal_set_out_packets(from._internal_out_packets());
+    _this->_internal_set_out_packets(from._internal_out_packets());
   }
   if (from._internal_out_unicast_pkts() != 0) {
-    _internal_set_out_unicast_pkts(from._internal_out_unicast_pkts());
+    _this->_internal_set_out_unicast_pkts(from._internal_out_unicast_pkts());
   }
   if (from._internal_out_broadcast_pkts() != 0) {
-    _internal_set_out_broadcast_pkts(from._internal_out_broadcast_pkts());
+    _this->_internal_set_out_broadcast_pkts(from._internal_out_broadcast_pkts());
   }
   if (from._internal_out_multicast_pkts() != 0) {
-    _internal_set_out_multicast_pkts(from._internal_out_multicast_pkts());
+    _this->_internal_set_out_multicast_pkts(from._internal_out_multicast_pkts());
   }
   if (from._internal_out_discards() != 0) {
-    _internal_set_out_discards(from._internal_out_discards());
+    _this->_internal_set_out_discards(from._internal_out_discards());
   }
   if (from._internal_out_errors() != 0) {
-    _internal_set_out_errors(from._internal_out_errors());
+    _this->_internal_set_out_errors(from._internal_out_errors());
   }
   if (from._internal_carrier_transitions() != 0) {
-    _internal_set_carrier_transitions(from._internal_carrier_transitions());
+    _this->_internal_set_carrier_transitions(from._internal_carrier_transitions());
   }
   if (from._internal_last_clear() != 0) {
-    _internal_set_last_clear(from._internal_last_clear());
+    _this->_internal_set_last_clear(from._internal_last_clear());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Counters::CopyFrom(const Counters& from) {
@@ -1500,15 +1552,15 @@ void Counters::InternalSwap(Counters* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Counters, last_clear_)
-      + sizeof(Counters::last_clear_)
-      - PROTOBUF_FIELD_OFFSET(Counters, rx_octets_)>(
-          reinterpret_cast<char*>(&rx_octets_),
-          reinterpret_cast<char*>(&other->rx_octets_));
+      PROTOBUF_FIELD_OFFSET(Counters, _impl_.last_clear_)
+      + sizeof(Counters::_impl_.last_clear_)
+      - PROTOBUF_FIELD_OFFSET(Counters, _impl_.rx_octets_)>(
+          reinterpret_cast<char*>(&_impl_.rx_octets_),
+          reinterpret_cast<char*>(&other->_impl_.rx_octets_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Counters::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[1]);
 }
@@ -1522,84 +1574,109 @@ class State::_Internal {
 
 const ::opi_api::network::v1alpha1::Counters&
 State::_Internal::counters(const State* msg) {
-  return *msg->counters_;
+  return *msg->_impl_.counters_;
 }
 State::State(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.State)
 }
 State::State(const State& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  State* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.description_){}
+    , decltype(_impl_.counters_){nullptr}
+    , decltype(_impl_.type_){}
+    , decltype(_impl_.mtu_){}
+    , decltype(_impl_.ifindex_){}
+    , decltype(_impl_.admin_state_){}
+    , decltype(_impl_.loopback_mode_){}
+    , decltype(_impl_.enabled_){}
+    , decltype(_impl_.logical_){}
+    , decltype(_impl_.management_){}
+    , decltype(_impl_.oper_state_){}
+    , decltype(_impl_.last_change_){}
+    , decltype(_impl_.cpu_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.description_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_description().empty()) {
-    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
-      GetArenaForAllocation());
+    _this->_impl_.description_.Set(from._internal_description(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_counters()) {
-    counters_ = new ::opi_api::network::v1alpha1::Counters(*from.counters_);
-  } else {
-    counters_ = nullptr;
+    _this->_impl_.counters_ = new ::opi_api::network::v1alpha1::Counters(*from._impl_.counters_);
   }
-  ::memcpy(&type_, &from.type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&cpu_) -
-    reinterpret_cast<char*>(&type_)) + sizeof(cpu_));
+  ::memcpy(&_impl_.type_, &from._impl_.type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.cpu_) -
+    reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.cpu_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.State)
 }
 
-inline void State::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&counters_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&cpu_) -
-    reinterpret_cast<char*>(&counters_)) + sizeof(cpu_));
+inline void State::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.description_){}
+    , decltype(_impl_.counters_){nullptr}
+    , decltype(_impl_.type_){0}
+    , decltype(_impl_.mtu_){0u}
+    , decltype(_impl_.ifindex_){0u}
+    , decltype(_impl_.admin_state_){0}
+    , decltype(_impl_.loopback_mode_){false}
+    , decltype(_impl_.enabled_){false}
+    , decltype(_impl_.logical_){false}
+    , decltype(_impl_.management_){false}
+    , decltype(_impl_.oper_state_){0}
+    , decltype(_impl_.last_change_){uint64_t{0u}}
+    , decltype(_impl_.cpu_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.description_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.description_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 State::~State() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.State)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void State::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete counters_;
+  _impl_.name_.Destroy();
+  _impl_.description_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.counters_;
 }
 
-void State::ArenaDtor(void* object) {
-  State* _this = reinterpret_cast< State* >(object);
-  (void)_this;
-}
-void State::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void State::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void State::Clear() {
@@ -1608,31 +1685,31 @@ void State::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  description_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && counters_ != nullptr) {
-    delete counters_;
+  _impl_.name_.ClearToEmpty();
+  _impl_.description_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.counters_ != nullptr) {
+    delete _impl_.counters_;
   }
-  counters_ = nullptr;
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cpu_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(cpu_));
+  _impl_.counters_ = nullptr;
+  ::memset(&_impl_.type_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.cpu_) -
+      reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.cpu_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.State.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.State.name"));
         } else
           goto handle_unusual;
         continue;
@@ -1648,7 +1725,7 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint32 mtu = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1656,7 +1733,7 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // bool loopback_mode = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          loopback_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.loopback_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1665,16 +1742,16 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_description();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.State.description"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.State.description"));
         } else
           goto handle_unusual;
         continue;
       // bool enabled = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1682,7 +1759,7 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint32 ifindex = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          ifindex_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.ifindex_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1708,7 +1785,7 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint64 last_change = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          last_change_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.last_change_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1716,7 +1793,7 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // bool logical = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          logical_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.logical_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1724,7 +1801,7 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // bool management = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          management_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.management_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1732,7 +1809,7 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // bool cpu = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          cpu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.cpu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1787,20 +1864,20 @@ uint8_t* State::_InternalSerialize(
   // .opi_api.network.v1alpha1.InterfaceType type = 2;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_type(), target);
   }
 
   // uint32 mtu = 3;
   if (this->_internal_mtu() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_mtu(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_mtu(), target);
   }
 
   // bool loopback_mode = 4;
   if (this->_internal_loopback_mode() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_loopback_mode(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_loopback_mode(), target);
   }
 
   // string description = 5;
@@ -1816,63 +1893,62 @@ uint8_t* State::_InternalSerialize(
   // bool enabled = 6;
   if (this->_internal_enabled() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_enabled(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_enabled(), target);
   }
 
   // uint32 ifindex = 7;
   if (this->_internal_ifindex() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_ifindex(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(7, this->_internal_ifindex(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
   if (this->_internal_admin_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       8, this->_internal_admin_state(), target);
   }
 
   // .opi_api.network.v1alpha1.OperState oper_state = 9;
   if (this->_internal_oper_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       9, this->_internal_oper_state(), target);
   }
 
   // uint64 last_change = 10;
   if (this->_internal_last_change() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(10, this->_internal_last_change(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(10, this->_internal_last_change(), target);
   }
 
   // bool logical = 11;
   if (this->_internal_logical() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_logical(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(11, this->_internal_logical(), target);
   }
 
   // bool management = 12;
   if (this->_internal_management() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(12, this->_internal_management(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(12, this->_internal_management(), target);
   }
 
   // bool cpu = 13;
   if (this->_internal_cpu() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(13, this->_internal_cpu(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(13, this->_internal_cpu(), target);
   }
 
   // .opi_api.network.v1alpha1.Counters counters = 14;
   if (this->_internal_has_counters()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        14, _Internal::counters(this), target, stream);
+      InternalWriteMessage(14, _Internal::counters(this),
+        _Internal::counters(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.State)
@@ -1905,29 +1981,29 @@ size_t State::ByteSizeLong() const {
   if (this->_internal_has_counters()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *counters_);
+        *_impl_.counters_);
   }
 
   // .opi_api.network.v1alpha1.InterfaceType type = 2;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // uint32 mtu = 3;
   if (this->_internal_mtu() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_mtu());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mtu());
   }
 
   // uint32 ifindex = 7;
   if (this->_internal_ifindex() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_ifindex());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_ifindex());
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
   if (this->_internal_admin_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_admin_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_admin_state());
   }
 
   // bool loopback_mode = 4;
@@ -1953,12 +2029,12 @@ size_t State::ByteSizeLong() const {
   // .opi_api.network.v1alpha1.OperState oper_state = 9;
   if (this->_internal_oper_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_oper_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_oper_state());
   }
 
   // uint64 last_change = 10;
   if (this->_internal_last_change() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_last_change());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_last_change());
   }
 
   // bool cpu = 13;
@@ -1966,71 +2042,68 @@ size_t State::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData State::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     State::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*State::GetClassData() const { return &_class_data_; }
 
-void State::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<State *>(to)->MergeFrom(
-      static_cast<const State &>(from));
-}
 
-
-void State::MergeFrom(const State& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.State)
-  GOOGLE_DCHECK_NE(&from, this);
+void State::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<State*>(&to_msg);
+  auto& from = static_cast<const State&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.State)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_description().empty()) {
-    _internal_set_description(from._internal_description());
+    _this->_internal_set_description(from._internal_description());
   }
   if (from._internal_has_counters()) {
-    _internal_mutable_counters()->::opi_api::network::v1alpha1::Counters::MergeFrom(from._internal_counters());
+    _this->_internal_mutable_counters()->::opi_api::network::v1alpha1::Counters::MergeFrom(
+        from._internal_counters());
   }
   if (from._internal_type() != 0) {
-    _internal_set_type(from._internal_type());
+    _this->_internal_set_type(from._internal_type());
   }
   if (from._internal_mtu() != 0) {
-    _internal_set_mtu(from._internal_mtu());
+    _this->_internal_set_mtu(from._internal_mtu());
   }
   if (from._internal_ifindex() != 0) {
-    _internal_set_ifindex(from._internal_ifindex());
+    _this->_internal_set_ifindex(from._internal_ifindex());
   }
   if (from._internal_admin_state() != 0) {
-    _internal_set_admin_state(from._internal_admin_state());
+    _this->_internal_set_admin_state(from._internal_admin_state());
   }
   if (from._internal_loopback_mode() != 0) {
-    _internal_set_loopback_mode(from._internal_loopback_mode());
+    _this->_internal_set_loopback_mode(from._internal_loopback_mode());
   }
   if (from._internal_enabled() != 0) {
-    _internal_set_enabled(from._internal_enabled());
+    _this->_internal_set_enabled(from._internal_enabled());
   }
   if (from._internal_logical() != 0) {
-    _internal_set_logical(from._internal_logical());
+    _this->_internal_set_logical(from._internal_logical());
   }
   if (from._internal_management() != 0) {
-    _internal_set_management(from._internal_management());
+    _this->_internal_set_management(from._internal_management());
   }
   if (from._internal_oper_state() != 0) {
-    _internal_set_oper_state(from._internal_oper_state());
+    _this->_internal_set_oper_state(from._internal_oper_state());
   }
   if (from._internal_last_change() != 0) {
-    _internal_set_last_change(from._internal_last_change());
+    _this->_internal_set_last_change(from._internal_last_change());
   }
   if (from._internal_cpu() != 0) {
-    _internal_set_cpu(from._internal_cpu());
+    _this->_internal_set_cpu(from._internal_cpu());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void State::CopyFrom(const State& from) {
@@ -2050,25 +2123,23 @@ void State::InternalSwap(State* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &description_, lhs_arena,
-      &other->description_, rhs_arena
+      &_impl_.description_, lhs_arena,
+      &other->_impl_.description_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(State, cpu_)
-      + sizeof(State::cpu_)
-      - PROTOBUF_FIELD_OFFSET(State, counters_)>(
-          reinterpret_cast<char*>(&counters_),
-          reinterpret_cast<char*>(&other->counters_));
+      PROTOBUF_FIELD_OFFSET(State, _impl_.cpu_)
+      + sizeof(State::_impl_.cpu_)
+      - PROTOBUF_FIELD_OFFSET(State, _impl_.counters_)>(
+          reinterpret_cast<char*>(&_impl_.counters_),
+          reinterpret_cast<char*>(&other->_impl_.counters_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata State::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[2]);
 }
@@ -2082,47 +2153,50 @@ class NetInterface_HoldTime_HoldConfig::_Internal {
 NetInterface_HoldTime_HoldConfig::NetInterface_HoldTime_HoldConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig)
 }
 NetInterface_HoldTime_HoldConfig::NetInterface_HoldTime_HoldConfig(const NetInterface_HoldTime_HoldConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NetInterface_HoldTime_HoldConfig* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.up_){}
+    , decltype(_impl_.down_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&up_, &from.up_,
-    static_cast<size_t>(reinterpret_cast<char*>(&down_) -
-    reinterpret_cast<char*>(&up_)) + sizeof(down_));
+  ::memcpy(&_impl_.up_, &from._impl_.up_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.down_) -
+    reinterpret_cast<char*>(&_impl_.up_)) + sizeof(_impl_.down_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig)
 }
 
-inline void NetInterface_HoldTime_HoldConfig::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&up_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&down_) -
-    reinterpret_cast<char*>(&up_)) + sizeof(down_));
+inline void NetInterface_HoldTime_HoldConfig::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.up_){0u}
+    , decltype(_impl_.down_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 NetInterface_HoldTime_HoldConfig::~NetInterface_HoldTime_HoldConfig() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void NetInterface_HoldTime_HoldConfig::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void NetInterface_HoldTime_HoldConfig::ArenaDtor(void* object) {
-  NetInterface_HoldTime_HoldConfig* _this = reinterpret_cast< NetInterface_HoldTime_HoldConfig* >(object);
-  (void)_this;
-}
-void NetInterface_HoldTime_HoldConfig::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void NetInterface_HoldTime_HoldConfig::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void NetInterface_HoldTime_HoldConfig::Clear() {
@@ -2131,22 +2205,22 @@ void NetInterface_HoldTime_HoldConfig::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&up_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&down_) -
-      reinterpret_cast<char*>(&up_)) + sizeof(down_));
+  ::memset(&_impl_.up_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.down_) -
+      reinterpret_cast<char*>(&_impl_.up_)) + sizeof(_impl_.down_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NetInterface_HoldTime_HoldConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NetInterface_HoldTime_HoldConfig::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint32 up = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          up_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.up_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2154,7 +2228,7 @@ const char* NetInterface_HoldTime_HoldConfig::_InternalParse(const char* ptr, ::
       // uint32 down = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          down_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.down_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2191,17 +2265,17 @@ uint8_t* NetInterface_HoldTime_HoldConfig::_InternalSerialize(
   // uint32 up = 1;
   if (this->_internal_up() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_up(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_up(), target);
   }
 
   // uint32 down = 2;
   if (this->_internal_down() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_down(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_down(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig)
@@ -2218,43 +2292,39 @@ size_t NetInterface_HoldTime_HoldConfig::ByteSizeLong() const {
 
   // uint32 up = 1;
   if (this->_internal_up() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_up());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_up());
   }
 
   // uint32 down = 2;
   if (this->_internal_down() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_down());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_down());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NetInterface_HoldTime_HoldConfig::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     NetInterface_HoldTime_HoldConfig::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NetInterface_HoldTime_HoldConfig::GetClassData() const { return &_class_data_; }
 
-void NetInterface_HoldTime_HoldConfig::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NetInterface_HoldTime_HoldConfig *>(to)->MergeFrom(
-      static_cast<const NetInterface_HoldTime_HoldConfig &>(from));
-}
 
-
-void NetInterface_HoldTime_HoldConfig::MergeFrom(const NetInterface_HoldTime_HoldConfig& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig)
-  GOOGLE_DCHECK_NE(&from, this);
+void NetInterface_HoldTime_HoldConfig::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<NetInterface_HoldTime_HoldConfig*>(&to_msg);
+  auto& from = static_cast<const NetInterface_HoldTime_HoldConfig&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_up() != 0) {
-    _internal_set_up(from._internal_up());
+    _this->_internal_set_up(from._internal_up());
   }
   if (from._internal_down() != 0) {
-    _internal_set_down(from._internal_down());
+    _this->_internal_set_down(from._internal_down());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void NetInterface_HoldTime_HoldConfig::CopyFrom(const NetInterface_HoldTime_HoldConfig& from) {
@@ -2272,15 +2342,15 @@ void NetInterface_HoldTime_HoldConfig::InternalSwap(NetInterface_HoldTime_HoldCo
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime_HoldConfig, down_)
-      + sizeof(NetInterface_HoldTime_HoldConfig::down_)
-      - PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime_HoldConfig, up_)>(
-          reinterpret_cast<char*>(&up_),
-          reinterpret_cast<char*>(&other->up_));
+      PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime_HoldConfig, _impl_.down_)
+      + sizeof(NetInterface_HoldTime_HoldConfig::_impl_.down_)
+      - PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime_HoldConfig, _impl_.up_)>(
+          reinterpret_cast<char*>(&_impl_.up_),
+          reinterpret_cast<char*>(&other->_impl_.up_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NetInterface_HoldTime_HoldConfig::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[3]);
 }
@@ -2294,47 +2364,50 @@ class NetInterface_HoldTime_HoldState::_Internal {
 NetInterface_HoldTime_HoldState::NetInterface_HoldTime_HoldState(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState)
 }
 NetInterface_HoldTime_HoldState::NetInterface_HoldTime_HoldState(const NetInterface_HoldTime_HoldState& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NetInterface_HoldTime_HoldState* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.up_){}
+    , decltype(_impl_.down_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&up_, &from.up_,
-    static_cast<size_t>(reinterpret_cast<char*>(&down_) -
-    reinterpret_cast<char*>(&up_)) + sizeof(down_));
+  ::memcpy(&_impl_.up_, &from._impl_.up_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.down_) -
+    reinterpret_cast<char*>(&_impl_.up_)) + sizeof(_impl_.down_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState)
 }
 
-inline void NetInterface_HoldTime_HoldState::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&up_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&down_) -
-    reinterpret_cast<char*>(&up_)) + sizeof(down_));
+inline void NetInterface_HoldTime_HoldState::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.up_){0u}
+    , decltype(_impl_.down_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 NetInterface_HoldTime_HoldState::~NetInterface_HoldTime_HoldState() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void NetInterface_HoldTime_HoldState::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void NetInterface_HoldTime_HoldState::ArenaDtor(void* object) {
-  NetInterface_HoldTime_HoldState* _this = reinterpret_cast< NetInterface_HoldTime_HoldState* >(object);
-  (void)_this;
-}
-void NetInterface_HoldTime_HoldState::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void NetInterface_HoldTime_HoldState::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void NetInterface_HoldTime_HoldState::Clear() {
@@ -2343,22 +2416,22 @@ void NetInterface_HoldTime_HoldState::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&up_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&down_) -
-      reinterpret_cast<char*>(&up_)) + sizeof(down_));
+  ::memset(&_impl_.up_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.down_) -
+      reinterpret_cast<char*>(&_impl_.up_)) + sizeof(_impl_.down_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NetInterface_HoldTime_HoldState::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NetInterface_HoldTime_HoldState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint32 up = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          up_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.up_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2366,7 +2439,7 @@ const char* NetInterface_HoldTime_HoldState::_InternalParse(const char* ptr, ::P
       // uint32 down = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          down_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.down_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2403,17 +2476,17 @@ uint8_t* NetInterface_HoldTime_HoldState::_InternalSerialize(
   // uint32 up = 1;
   if (this->_internal_up() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_up(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_up(), target);
   }
 
   // uint32 down = 2;
   if (this->_internal_down() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_down(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_down(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState)
@@ -2430,43 +2503,39 @@ size_t NetInterface_HoldTime_HoldState::ByteSizeLong() const {
 
   // uint32 up = 1;
   if (this->_internal_up() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_up());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_up());
   }
 
   // uint32 down = 2;
   if (this->_internal_down() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_down());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_down());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NetInterface_HoldTime_HoldState::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     NetInterface_HoldTime_HoldState::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NetInterface_HoldTime_HoldState::GetClassData() const { return &_class_data_; }
 
-void NetInterface_HoldTime_HoldState::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NetInterface_HoldTime_HoldState *>(to)->MergeFrom(
-      static_cast<const NetInterface_HoldTime_HoldState &>(from));
-}
 
-
-void NetInterface_HoldTime_HoldState::MergeFrom(const NetInterface_HoldTime_HoldState& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState)
-  GOOGLE_DCHECK_NE(&from, this);
+void NetInterface_HoldTime_HoldState::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<NetInterface_HoldTime_HoldState*>(&to_msg);
+  auto& from = static_cast<const NetInterface_HoldTime_HoldState&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_up() != 0) {
-    _internal_set_up(from._internal_up());
+    _this->_internal_set_up(from._internal_up());
   }
   if (from._internal_down() != 0) {
-    _internal_set_down(from._internal_down());
+    _this->_internal_set_down(from._internal_down());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void NetInterface_HoldTime_HoldState::CopyFrom(const NetInterface_HoldTime_HoldState& from) {
@@ -2484,15 +2553,15 @@ void NetInterface_HoldTime_HoldState::InternalSwap(NetInterface_HoldTime_HoldSta
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime_HoldState, down_)
-      + sizeof(NetInterface_HoldTime_HoldState::down_)
-      - PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime_HoldState, up_)>(
-          reinterpret_cast<char*>(&up_),
-          reinterpret_cast<char*>(&other->up_));
+      PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime_HoldState, _impl_.down_)
+      + sizeof(NetInterface_HoldTime_HoldState::_impl_.down_)
+      - PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime_HoldState, _impl_.up_)>(
+          reinterpret_cast<char*>(&_impl_.up_),
+          reinterpret_cast<char*>(&other->_impl_.up_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NetInterface_HoldTime_HoldState::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[4]);
 }
@@ -2507,65 +2576,64 @@ class NetInterface_HoldTime::_Internal {
 
 const ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig&
 NetInterface_HoldTime::_Internal::hold_config(const NetInterface_HoldTime* msg) {
-  return *msg->hold_config_;
+  return *msg->_impl_.hold_config_;
 }
 const ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState&
 NetInterface_HoldTime::_Internal::hold_state(const NetInterface_HoldTime* msg) {
-  return *msg->hold_state_;
+  return *msg->_impl_.hold_state_;
 }
 NetInterface_HoldTime::NetInterface_HoldTime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.NetInterface.HoldTime)
 }
 NetInterface_HoldTime::NetInterface_HoldTime(const NetInterface_HoldTime& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NetInterface_HoldTime* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.hold_config_){nullptr}
+    , decltype(_impl_.hold_state_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_hold_config()) {
-    hold_config_ = new ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig(*from.hold_config_);
-  } else {
-    hold_config_ = nullptr;
+    _this->_impl_.hold_config_ = new ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig(*from._impl_.hold_config_);
   }
   if (from._internal_has_hold_state()) {
-    hold_state_ = new ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState(*from.hold_state_);
-  } else {
-    hold_state_ = nullptr;
+    _this->_impl_.hold_state_ = new ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState(*from._impl_.hold_state_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.NetInterface.HoldTime)
 }
 
-inline void NetInterface_HoldTime::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&hold_config_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&hold_state_) -
-    reinterpret_cast<char*>(&hold_config_)) + sizeof(hold_state_));
+inline void NetInterface_HoldTime::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.hold_config_){nullptr}
+    , decltype(_impl_.hold_state_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 NetInterface_HoldTime::~NetInterface_HoldTime() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.NetInterface.HoldTime)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void NetInterface_HoldTime::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete hold_config_;
-  if (this != internal_default_instance()) delete hold_state_;
+  if (this != internal_default_instance()) delete _impl_.hold_config_;
+  if (this != internal_default_instance()) delete _impl_.hold_state_;
 }
 
-void NetInterface_HoldTime::ArenaDtor(void* object) {
-  NetInterface_HoldTime* _this = reinterpret_cast< NetInterface_HoldTime* >(object);
-  (void)_this;
-}
-void NetInterface_HoldTime::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void NetInterface_HoldTime::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void NetInterface_HoldTime::Clear() {
@@ -2574,22 +2642,22 @@ void NetInterface_HoldTime::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && hold_config_ != nullptr) {
-    delete hold_config_;
+  if (GetArenaForAllocation() == nullptr && _impl_.hold_config_ != nullptr) {
+    delete _impl_.hold_config_;
   }
-  hold_config_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && hold_state_ != nullptr) {
-    delete hold_state_;
+  _impl_.hold_config_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.hold_state_ != nullptr) {
+    delete _impl_.hold_state_;
   }
-  hold_state_ = nullptr;
+  _impl_.hold_state_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NetInterface_HoldTime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NetInterface_HoldTime::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;
       case 1:
@@ -2638,22 +2706,20 @@ uint8_t* NetInterface_HoldTime::_InternalSerialize(
 
   // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;
   if (this->_internal_has_hold_config()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::hold_config(this), target, stream);
+      InternalWriteMessage(1, _Internal::hold_config(this),
+        _Internal::hold_config(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;
   if (this->_internal_has_hold_state()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::hold_state(this), target, stream);
+      InternalWriteMessage(2, _Internal::hold_state(this),
+        _Internal::hold_state(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.NetInterface.HoldTime)
@@ -2672,45 +2738,43 @@ size_t NetInterface_HoldTime::ByteSizeLong() const {
   if (this->_internal_has_hold_config()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *hold_config_);
+        *_impl_.hold_config_);
   }
 
   // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;
   if (this->_internal_has_hold_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *hold_state_);
+        *_impl_.hold_state_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NetInterface_HoldTime::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     NetInterface_HoldTime::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NetInterface_HoldTime::GetClassData() const { return &_class_data_; }
 
-void NetInterface_HoldTime::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NetInterface_HoldTime *>(to)->MergeFrom(
-      static_cast<const NetInterface_HoldTime &>(from));
-}
 
-
-void NetInterface_HoldTime::MergeFrom(const NetInterface_HoldTime& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.HoldTime)
-  GOOGLE_DCHECK_NE(&from, this);
+void NetInterface_HoldTime::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<NetInterface_HoldTime*>(&to_msg);
+  auto& from = static_cast<const NetInterface_HoldTime&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.HoldTime)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_hold_config()) {
-    _internal_mutable_hold_config()->::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig::MergeFrom(from._internal_hold_config());
+    _this->_internal_mutable_hold_config()->::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig::MergeFrom(
+        from._internal_hold_config());
   }
   if (from._internal_has_hold_state()) {
-    _internal_mutable_hold_state()->::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState::MergeFrom(from._internal_hold_state());
+    _this->_internal_mutable_hold_state()->::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState::MergeFrom(
+        from._internal_hold_state());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void NetInterface_HoldTime::CopyFrom(const NetInterface_HoldTime& from) {
@@ -2728,15 +2792,15 @@ void NetInterface_HoldTime::InternalSwap(NetInterface_HoldTime* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime, hold_state_)
-      + sizeof(NetInterface_HoldTime::hold_state_)
-      - PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime, hold_config_)>(
-          reinterpret_cast<char*>(&hold_config_),
-          reinterpret_cast<char*>(&other->hold_config_));
+      PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime, _impl_.hold_state_)
+      + sizeof(NetInterface_HoldTime::_impl_.hold_state_)
+      - PROTOBUF_FIELD_OFFSET(NetInterface_HoldTime, _impl_.hold_config_)>(
+          reinterpret_cast<char*>(&_impl_.hold_config_),
+          reinterpret_cast<char*>(&other->_impl_.hold_config_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NetInterface_HoldTime::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[5]);
 }
@@ -2750,60 +2814,65 @@ class NetInterface_Subinterfaces_Subinterface_SubifConfig::_Internal {
 NetInterface_Subinterfaces_Subinterface_SubifConfig::NetInterface_Subinterfaces_Subinterface_SubifConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig)
 }
 NetInterface_Subinterfaces_Subinterface_SubifConfig::NetInterface_Subinterfaces_Subinterface_SubifConfig(const NetInterface_Subinterfaces_Subinterface_SubifConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NetInterface_Subinterfaces_Subinterface_SubifConfig* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.description_){}
+    , decltype(_impl_.index_){}
+    , decltype(_impl_.enabled_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.description_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.description_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_description().empty()) {
-    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
-      GetArenaForAllocation());
+    _this->_impl_.description_.Set(from._internal_description(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&index_, &from.index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&enabled_) -
-    reinterpret_cast<char*>(&index_)) + sizeof(enabled_));
+  ::memcpy(&_impl_.index_, &from._impl_.index_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.enabled_) -
+    reinterpret_cast<char*>(&_impl_.index_)) + sizeof(_impl_.enabled_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig)
 }
 
-inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::SharedCtor() {
-description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&index_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&enabled_) -
-    reinterpret_cast<char*>(&index_)) + sizeof(enabled_));
+inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.description_){}
+    , decltype(_impl_.index_){uint64_t{0u}}
+    , decltype(_impl_.enabled_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.description_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.description_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 NetInterface_Subinterfaces_Subinterface_SubifConfig::~NetInterface_Subinterfaces_Subinterface_SubifConfig() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.description_.Destroy();
 }
 
-void NetInterface_Subinterfaces_Subinterface_SubifConfig::ArenaDtor(void* object) {
-  NetInterface_Subinterfaces_Subinterface_SubifConfig* _this = reinterpret_cast< NetInterface_Subinterfaces_Subinterface_SubifConfig* >(object);
-  (void)_this;
-}
-void NetInterface_Subinterfaces_Subinterface_SubifConfig::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void NetInterface_Subinterfaces_Subinterface_SubifConfig::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void NetInterface_Subinterfaces_Subinterface_SubifConfig::Clear() {
@@ -2812,23 +2881,23 @@ void NetInterface_Subinterfaces_Subinterface_SubifConfig::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  description_.ClearToEmpty();
-  ::memset(&index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&enabled_) -
-      reinterpret_cast<char*>(&index_)) + sizeof(enabled_));
+  _impl_.description_.ClearToEmpty();
+  ::memset(&_impl_.index_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.enabled_) -
+      reinterpret_cast<char*>(&_impl_.index_)) + sizeof(_impl_.enabled_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint64 index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2837,16 +2906,16 @@ const char* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalParse(
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_description();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig.description"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig.description"));
         } else
           goto handle_unusual;
         continue;
       // bool enabled = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2883,7 +2952,7 @@ uint8_t* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalSerialize
   // uint64 index = 1;
   if (this->_internal_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_index(), target);
   }
 
   // string description = 2;
@@ -2899,11 +2968,11 @@ uint8_t* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalSerialize
   // bool enabled = 3;
   if (this->_internal_enabled() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_enabled(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_enabled(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig)
@@ -2927,7 +2996,7 @@ size_t NetInterface_Subinterfaces_Subinterface_SubifConfig::ByteSizeLong() const
 
   // uint64 index = 1;
   if (this->_internal_index() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_index());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_index());
   }
 
   // bool enabled = 3;
@@ -2935,38 +3004,34 @@ size_t NetInterface_Subinterfaces_Subinterface_SubifConfig::ByteSizeLong() const
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NetInterface_Subinterfaces_Subinterface_SubifConfig::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     NetInterface_Subinterfaces_Subinterface_SubifConfig::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NetInterface_Subinterfaces_Subinterface_SubifConfig::GetClassData() const { return &_class_data_; }
 
-void NetInterface_Subinterfaces_Subinterface_SubifConfig::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NetInterface_Subinterfaces_Subinterface_SubifConfig *>(to)->MergeFrom(
-      static_cast<const NetInterface_Subinterfaces_Subinterface_SubifConfig &>(from));
-}
 
-
-void NetInterface_Subinterfaces_Subinterface_SubifConfig::MergeFrom(const NetInterface_Subinterfaces_Subinterface_SubifConfig& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig)
-  GOOGLE_DCHECK_NE(&from, this);
+void NetInterface_Subinterfaces_Subinterface_SubifConfig::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<NetInterface_Subinterfaces_Subinterface_SubifConfig*>(&to_msg);
+  auto& from = static_cast<const NetInterface_Subinterfaces_Subinterface_SubifConfig&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_description().empty()) {
-    _internal_set_description(from._internal_description());
+    _this->_internal_set_description(from._internal_description());
   }
   if (from._internal_index() != 0) {
-    _internal_set_index(from._internal_index());
+    _this->_internal_set_index(from._internal_index());
   }
   if (from._internal_enabled() != 0) {
-    _internal_set_enabled(from._internal_enabled());
+    _this->_internal_set_enabled(from._internal_enabled());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void NetInterface_Subinterfaces_Subinterface_SubifConfig::CopyFrom(const NetInterface_Subinterfaces_Subinterface_SubifConfig& from) {
@@ -2986,20 +3051,19 @@ void NetInterface_Subinterfaces_Subinterface_SubifConfig::InternalSwap(NetInterf
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &description_, lhs_arena,
-      &other->description_, rhs_arena
+      &_impl_.description_, lhs_arena,
+      &other->_impl_.description_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NetInterface_Subinterfaces_Subinterface_SubifConfig, enabled_)
-      + sizeof(NetInterface_Subinterfaces_Subinterface_SubifConfig::enabled_)
-      - PROTOBUF_FIELD_OFFSET(NetInterface_Subinterfaces_Subinterface_SubifConfig, index_)>(
-          reinterpret_cast<char*>(&index_),
-          reinterpret_cast<char*>(&other->index_));
+      PROTOBUF_FIELD_OFFSET(NetInterface_Subinterfaces_Subinterface_SubifConfig, _impl_.enabled_)
+      + sizeof(NetInterface_Subinterfaces_Subinterface_SubifConfig::_impl_.enabled_)
+      - PROTOBUF_FIELD_OFFSET(NetInterface_Subinterfaces_Subinterface_SubifConfig, _impl_.index_)>(
+          reinterpret_cast<char*>(&_impl_.index_),
+          reinterpret_cast<char*>(&other->_impl_.index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NetInterface_Subinterfaces_Subinterface_SubifConfig::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[6]);
 }
@@ -3014,66 +3078,67 @@ class NetInterface_Subinterfaces_Subinterface::_Internal {
 
 const ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig&
 NetInterface_Subinterfaces_Subinterface::_Internal::subif_config(const NetInterface_Subinterfaces_Subinterface* msg) {
-  return *msg->subif_config_;
+  return *msg->_impl_.subif_config_;
 }
 const ::opi_api::network::v1alpha1::State&
 NetInterface_Subinterfaces_Subinterface::_Internal::state(const NetInterface_Subinterfaces_Subinterface* msg) {
-  return *msg->state_;
+  return *msg->_impl_.state_;
 }
 NetInterface_Subinterfaces_Subinterface::NetInterface_Subinterfaces_Subinterface(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface)
 }
 NetInterface_Subinterfaces_Subinterface::NetInterface_Subinterfaces_Subinterface(const NetInterface_Subinterfaces_Subinterface& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NetInterface_Subinterfaces_Subinterface* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.subif_config_){nullptr}
+    , decltype(_impl_.state_){nullptr}
+    , decltype(_impl_.index_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_subif_config()) {
-    subif_config_ = new ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig(*from.subif_config_);
-  } else {
-    subif_config_ = nullptr;
+    _this->_impl_.subif_config_ = new ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig(*from._impl_.subif_config_);
   }
   if (from._internal_has_state()) {
-    state_ = new ::opi_api::network::v1alpha1::State(*from.state_);
-  } else {
-    state_ = nullptr;
+    _this->_impl_.state_ = new ::opi_api::network::v1alpha1::State(*from._impl_.state_);
   }
-  index_ = from.index_;
+  _this->_impl_.index_ = from._impl_.index_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface)
 }
 
-inline void NetInterface_Subinterfaces_Subinterface::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&subif_config_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&index_) -
-    reinterpret_cast<char*>(&subif_config_)) + sizeof(index_));
+inline void NetInterface_Subinterfaces_Subinterface::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.subif_config_){nullptr}
+    , decltype(_impl_.state_){nullptr}
+    , decltype(_impl_.index_){int64_t{0}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 NetInterface_Subinterfaces_Subinterface::~NetInterface_Subinterfaces_Subinterface() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void NetInterface_Subinterfaces_Subinterface::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete subif_config_;
-  if (this != internal_default_instance()) delete state_;
+  if (this != internal_default_instance()) delete _impl_.subif_config_;
+  if (this != internal_default_instance()) delete _impl_.state_;
 }
 
-void NetInterface_Subinterfaces_Subinterface::ArenaDtor(void* object) {
-  NetInterface_Subinterfaces_Subinterface* _this = reinterpret_cast< NetInterface_Subinterfaces_Subinterface* >(object);
-  (void)_this;
-}
-void NetInterface_Subinterfaces_Subinterface::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void NetInterface_Subinterfaces_Subinterface::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void NetInterface_Subinterfaces_Subinterface::Clear() {
@@ -3082,28 +3147,28 @@ void NetInterface_Subinterfaces_Subinterface::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && subif_config_ != nullptr) {
-    delete subif_config_;
+  if (GetArenaForAllocation() == nullptr && _impl_.subif_config_ != nullptr) {
+    delete _impl_.subif_config_;
   }
-  subif_config_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && state_ != nullptr) {
-    delete state_;
+  _impl_.subif_config_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.state_ != nullptr) {
+    delete _impl_.state_;
   }
-  state_ = nullptr;
-  index_ = int64_t{0};
+  _impl_.state_ = nullptr;
+  _impl_.index_ = int64_t{0};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NetInterface_Subinterfaces_Subinterface::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NetInterface_Subinterfaces_Subinterface::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int64 index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3156,27 +3221,25 @@ uint8_t* NetInterface_Subinterfaces_Subinterface::_InternalSerialize(
   // int64 index = 1;
   if (this->_internal_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_index(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(1, this->_internal_index(), target);
   }
 
   // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;
   if (this->_internal_has_subif_config()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::subif_config(this), target, stream);
+      InternalWriteMessage(2, _Internal::subif_config(this),
+        _Internal::subif_config(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.v1alpha1.State state = 3;
   if (this->_internal_has_state()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::state(this), target, stream);
+      InternalWriteMessage(3, _Internal::state(this),
+        _Internal::state(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface)
@@ -3195,53 +3258,51 @@ size_t NetInterface_Subinterfaces_Subinterface::ByteSizeLong() const {
   if (this->_internal_has_subif_config()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *subif_config_);
+        *_impl_.subif_config_);
   }
 
   // .opi_api.network.v1alpha1.State state = 3;
   if (this->_internal_has_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *state_);
+        *_impl_.state_);
   }
 
   // int64 index = 1;
   if (this->_internal_index() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_index());
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_index());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NetInterface_Subinterfaces_Subinterface::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     NetInterface_Subinterfaces_Subinterface::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NetInterface_Subinterfaces_Subinterface::GetClassData() const { return &_class_data_; }
 
-void NetInterface_Subinterfaces_Subinterface::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NetInterface_Subinterfaces_Subinterface *>(to)->MergeFrom(
-      static_cast<const NetInterface_Subinterfaces_Subinterface &>(from));
-}
 
-
-void NetInterface_Subinterfaces_Subinterface::MergeFrom(const NetInterface_Subinterfaces_Subinterface& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface)
-  GOOGLE_DCHECK_NE(&from, this);
+void NetInterface_Subinterfaces_Subinterface::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<NetInterface_Subinterfaces_Subinterface*>(&to_msg);
+  auto& from = static_cast<const NetInterface_Subinterfaces_Subinterface&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_subif_config()) {
-    _internal_mutable_subif_config()->::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig::MergeFrom(from._internal_subif_config());
+    _this->_internal_mutable_subif_config()->::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig::MergeFrom(
+        from._internal_subif_config());
   }
   if (from._internal_has_state()) {
-    _internal_mutable_state()->::opi_api::network::v1alpha1::State::MergeFrom(from._internal_state());
+    _this->_internal_mutable_state()->::opi_api::network::v1alpha1::State::MergeFrom(
+        from._internal_state());
   }
   if (from._internal_index() != 0) {
-    _internal_set_index(from._internal_index());
+    _this->_internal_set_index(from._internal_index());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void NetInterface_Subinterfaces_Subinterface::CopyFrom(const NetInterface_Subinterfaces_Subinterface& from) {
@@ -3259,15 +3320,15 @@ void NetInterface_Subinterfaces_Subinterface::InternalSwap(NetInterface_Subinter
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NetInterface_Subinterfaces_Subinterface, index_)
-      + sizeof(NetInterface_Subinterfaces_Subinterface::index_)
-      - PROTOBUF_FIELD_OFFSET(NetInterface_Subinterfaces_Subinterface, subif_config_)>(
-          reinterpret_cast<char*>(&subif_config_),
-          reinterpret_cast<char*>(&other->subif_config_));
+      PROTOBUF_FIELD_OFFSET(NetInterface_Subinterfaces_Subinterface, _impl_.index_)
+      + sizeof(NetInterface_Subinterfaces_Subinterface::_impl_.index_)
+      - PROTOBUF_FIELD_OFFSET(NetInterface_Subinterfaces_Subinterface, _impl_.subif_config_)>(
+          reinterpret_cast<char*>(&_impl_.subif_config_),
+          reinterpret_cast<char*>(&other->_impl_.subif_config_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NetInterface_Subinterfaces_Subinterface::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[7]);
 }
@@ -3280,43 +3341,47 @@ class NetInterface_Subinterfaces::_Internal {
 
 NetInterface_Subinterfaces::NetInterface_Subinterfaces(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  subinterface_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces)
 }
 NetInterface_Subinterfaces::NetInterface_Subinterfaces(const NetInterface_Subinterfaces& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      subinterface_(from.subinterface_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NetInterface_Subinterfaces* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.subinterface_){from._impl_.subinterface_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces)
 }
 
-inline void NetInterface_Subinterfaces::SharedCtor() {
+inline void NetInterface_Subinterfaces::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.subinterface_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 NetInterface_Subinterfaces::~NetInterface_Subinterfaces() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.NetInterface.Subinterfaces)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void NetInterface_Subinterfaces::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.subinterface_.~RepeatedPtrField();
 }
 
-void NetInterface_Subinterfaces::ArenaDtor(void* object) {
-  NetInterface_Subinterfaces* _this = reinterpret_cast< NetInterface_Subinterfaces* >(object);
-  (void)_this;
-}
-void NetInterface_Subinterfaces::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void NetInterface_Subinterfaces::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void NetInterface_Subinterfaces::Clear() {
@@ -3325,15 +3390,15 @@ void NetInterface_Subinterfaces::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  subinterface_.Clear();
+  _impl_.subinterface_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NetInterface_Subinterfaces::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NetInterface_Subinterfaces::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;
       case 2:
@@ -3378,15 +3443,15 @@ uint8_t* NetInterface_Subinterfaces::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_subinterface_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_subinterface_size()); i < n; i++) {
+    const auto& repfield = this->_internal_subinterface(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, this->_internal_subinterface(i), target, stream);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.NetInterface.Subinterfaces)
@@ -3403,35 +3468,31 @@ size_t NetInterface_Subinterfaces::ByteSizeLong() const {
 
   // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;
   total_size += 1UL * this->_internal_subinterface_size();
-  for (const auto& msg : this->subinterface_) {
+  for (const auto& msg : this->_impl_.subinterface_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NetInterface_Subinterfaces::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     NetInterface_Subinterfaces::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NetInterface_Subinterfaces::GetClassData() const { return &_class_data_; }
 
-void NetInterface_Subinterfaces::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NetInterface_Subinterfaces *>(to)->MergeFrom(
-      static_cast<const NetInterface_Subinterfaces &>(from));
-}
 
-
-void NetInterface_Subinterfaces::MergeFrom(const NetInterface_Subinterfaces& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.Subinterfaces)
-  GOOGLE_DCHECK_NE(&from, this);
+void NetInterface_Subinterfaces::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<NetInterface_Subinterfaces*>(&to_msg);
+  auto& from = static_cast<const NetInterface_Subinterfaces&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface.Subinterfaces)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  subinterface_.MergeFrom(from.subinterface_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.subinterface_.MergeFrom(from._impl_.subinterface_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void NetInterface_Subinterfaces::CopyFrom(const NetInterface_Subinterfaces& from) {
@@ -3448,11 +3509,11 @@ bool NetInterface_Subinterfaces::IsInitialized() const {
 void NetInterface_Subinterfaces::InternalSwap(NetInterface_Subinterfaces* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  subinterface_.InternalSwap(&other->subinterface_);
+  _impl_.subinterface_.InternalSwap(&other->_impl_.subinterface_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NetInterface_Subinterfaces::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[8]);
 }
@@ -3469,98 +3530,99 @@ class NetInterface::_Internal {
 
 const ::opi_api::network::v1alpha1::Config&
 NetInterface::_Internal::config(const NetInterface* msg) {
-  return *msg->config_;
+  return *msg->_impl_.config_;
 }
 const ::opi_api::network::v1alpha1::State&
 NetInterface::_Internal::state(const NetInterface* msg) {
-  return *msg->state_;
+  return *msg->_impl_.state_;
 }
 const ::opi_api::network::v1alpha1::NetInterface_HoldTime&
 NetInterface::_Internal::holdtime(const NetInterface* msg) {
-  return *msg->holdtime_;
+  return *msg->_impl_.holdtime_;
 }
 const ::opi_api::network::v1alpha1::NetInterface_Subinterfaces&
 NetInterface::_Internal::subinterfaces(const NetInterface* msg) {
-  return *msg->subinterfaces_;
+  return *msg->_impl_.subinterfaces_;
 }
 NetInterface::NetInterface(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.NetInterface)
 }
 NetInterface::NetInterface(const NetInterface& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NetInterface* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.config_){nullptr}
+    , decltype(_impl_.state_){nullptr}
+    , decltype(_impl_.holdtime_){nullptr}
+    , decltype(_impl_.subinterfaces_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_config()) {
-    config_ = new ::opi_api::network::v1alpha1::Config(*from.config_);
-  } else {
-    config_ = nullptr;
+    _this->_impl_.config_ = new ::opi_api::network::v1alpha1::Config(*from._impl_.config_);
   }
   if (from._internal_has_state()) {
-    state_ = new ::opi_api::network::v1alpha1::State(*from.state_);
-  } else {
-    state_ = nullptr;
+    _this->_impl_.state_ = new ::opi_api::network::v1alpha1::State(*from._impl_.state_);
   }
   if (from._internal_has_holdtime()) {
-    holdtime_ = new ::opi_api::network::v1alpha1::NetInterface_HoldTime(*from.holdtime_);
-  } else {
-    holdtime_ = nullptr;
+    _this->_impl_.holdtime_ = new ::opi_api::network::v1alpha1::NetInterface_HoldTime(*from._impl_.holdtime_);
   }
   if (from._internal_has_subinterfaces()) {
-    subinterfaces_ = new ::opi_api::network::v1alpha1::NetInterface_Subinterfaces(*from.subinterfaces_);
-  } else {
-    subinterfaces_ = nullptr;
+    _this->_impl_.subinterfaces_ = new ::opi_api::network::v1alpha1::NetInterface_Subinterfaces(*from._impl_.subinterfaces_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.NetInterface)
 }
 
-inline void NetInterface::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&config_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&subinterfaces_) -
-    reinterpret_cast<char*>(&config_)) + sizeof(subinterfaces_));
+inline void NetInterface::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.config_){nullptr}
+    , decltype(_impl_.state_){nullptr}
+    , decltype(_impl_.holdtime_){nullptr}
+    , decltype(_impl_.subinterfaces_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 NetInterface::~NetInterface() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.NetInterface)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void NetInterface::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete config_;
-  if (this != internal_default_instance()) delete state_;
-  if (this != internal_default_instance()) delete holdtime_;
-  if (this != internal_default_instance()) delete subinterfaces_;
+  _impl_.name_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.config_;
+  if (this != internal_default_instance()) delete _impl_.state_;
+  if (this != internal_default_instance()) delete _impl_.holdtime_;
+  if (this != internal_default_instance()) delete _impl_.subinterfaces_;
 }
 
-void NetInterface::ArenaDtor(void* object) {
-  NetInterface* _this = reinterpret_cast< NetInterface* >(object);
-  (void)_this;
-}
-void NetInterface::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void NetInterface::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void NetInterface::Clear() {
@@ -3569,39 +3631,39 @@ void NetInterface::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && config_ != nullptr) {
-    delete config_;
+  _impl_.name_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.config_ != nullptr) {
+    delete _impl_.config_;
   }
-  config_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && state_ != nullptr) {
-    delete state_;
+  _impl_.config_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.state_ != nullptr) {
+    delete _impl_.state_;
   }
-  state_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && holdtime_ != nullptr) {
-    delete holdtime_;
+  _impl_.state_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.holdtime_ != nullptr) {
+    delete _impl_.holdtime_;
   }
-  holdtime_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && subinterfaces_ != nullptr) {
-    delete subinterfaces_;
+  _impl_.holdtime_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.subinterfaces_ != nullptr) {
+    delete _impl_.subinterfaces_;
   }
-  subinterfaces_ = nullptr;
+  _impl_.subinterfaces_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NetInterface::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* NetInterface::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.NetInterface.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.NetInterface.name"));
         } else
           goto handle_unusual;
         continue;
@@ -3678,38 +3740,34 @@ uint8_t* NetInterface::_InternalSerialize(
 
   // .opi_api.network.v1alpha1.Config config = 2;
   if (this->_internal_has_config()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::config(this), target, stream);
+      InternalWriteMessage(2, _Internal::config(this),
+        _Internal::config(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.v1alpha1.State state = 3;
   if (this->_internal_has_state()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::state(this), target, stream);
+      InternalWriteMessage(3, _Internal::state(this),
+        _Internal::state(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;
   if (this->_internal_has_holdtime()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::holdtime(this), target, stream);
+      InternalWriteMessage(4, _Internal::holdtime(this),
+        _Internal::holdtime(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;
   if (this->_internal_has_subinterfaces()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::subinterfaces(this), target, stream);
+      InternalWriteMessage(5, _Internal::subinterfaces(this),
+        _Internal::subinterfaces(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.NetInterface)
@@ -3735,68 +3793,68 @@ size_t NetInterface::ByteSizeLong() const {
   if (this->_internal_has_config()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *config_);
+        *_impl_.config_);
   }
 
   // .opi_api.network.v1alpha1.State state = 3;
   if (this->_internal_has_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *state_);
+        *_impl_.state_);
   }
 
   // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;
   if (this->_internal_has_holdtime()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *holdtime_);
+        *_impl_.holdtime_);
   }
 
   // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;
   if (this->_internal_has_subinterfaces()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *subinterfaces_);
+        *_impl_.subinterfaces_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NetInterface::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     NetInterface::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NetInterface::GetClassData() const { return &_class_data_; }
 
-void NetInterface::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NetInterface *>(to)->MergeFrom(
-      static_cast<const NetInterface &>(from));
-}
 
-
-void NetInterface::MergeFrom(const NetInterface& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface)
-  GOOGLE_DCHECK_NE(&from, this);
+void NetInterface::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<NetInterface*>(&to_msg);
+  auto& from = static_cast<const NetInterface&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.NetInterface)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (from._internal_has_config()) {
-    _internal_mutable_config()->::opi_api::network::v1alpha1::Config::MergeFrom(from._internal_config());
+    _this->_internal_mutable_config()->::opi_api::network::v1alpha1::Config::MergeFrom(
+        from._internal_config());
   }
   if (from._internal_has_state()) {
-    _internal_mutable_state()->::opi_api::network::v1alpha1::State::MergeFrom(from._internal_state());
+    _this->_internal_mutable_state()->::opi_api::network::v1alpha1::State::MergeFrom(
+        from._internal_state());
   }
   if (from._internal_has_holdtime()) {
-    _internal_mutable_holdtime()->::opi_api::network::v1alpha1::NetInterface_HoldTime::MergeFrom(from._internal_holdtime());
+    _this->_internal_mutable_holdtime()->::opi_api::network::v1alpha1::NetInterface_HoldTime::MergeFrom(
+        from._internal_holdtime());
   }
   if (from._internal_has_subinterfaces()) {
-    _internal_mutable_subinterfaces()->::opi_api::network::v1alpha1::NetInterface_Subinterfaces::MergeFrom(from._internal_subinterfaces());
+    _this->_internal_mutable_subinterfaces()->::opi_api::network::v1alpha1::NetInterface_Subinterfaces::MergeFrom(
+        from._internal_subinterfaces());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void NetInterface::CopyFrom(const NetInterface& from) {
@@ -3816,20 +3874,19 @@ void NetInterface::InternalSwap(NetInterface* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NetInterface, subinterfaces_)
-      + sizeof(NetInterface::subinterfaces_)
-      - PROTOBUF_FIELD_OFFSET(NetInterface, config_)>(
-          reinterpret_cast<char*>(&config_),
-          reinterpret_cast<char*>(&other->config_));
+      PROTOBUF_FIELD_OFFSET(NetInterface, _impl_.subinterfaces_)
+      + sizeof(NetInterface::_impl_.subinterfaces_)
+      - PROTOBUF_FIELD_OFFSET(NetInterface, _impl_.config_)>(
+          reinterpret_cast<char*>(&_impl_.config_),
+          reinterpret_cast<char*>(&other->_impl_.config_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NetInterface::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[9]);
 }
@@ -3843,53 +3900,58 @@ class GetNetInterfaceRequest::_Internal {
 GetNetInterfaceRequest::GetNetInterfaceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.GetNetInterfaceRequest)
 }
 GetNetInterfaceRequest::GetNetInterfaceRequest(const GetNetInterfaceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetNetInterfaceRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.GetNetInterfaceRequest)
 }
 
-inline void GetNetInterfaceRequest::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void GetNetInterfaceRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GetNetInterfaceRequest::~GetNetInterfaceRequest() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.GetNetInterfaceRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void GetNetInterfaceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.Destroy();
 }
 
-void GetNetInterfaceRequest::ArenaDtor(void* object) {
-  GetNetInterfaceRequest* _this = reinterpret_cast< GetNetInterfaceRequest* >(object);
-  (void)_this;
-}
-void GetNetInterfaceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void GetNetInterfaceRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void GetNetInterfaceRequest::Clear() {
@@ -3898,23 +3960,23 @@ void GetNetInterfaceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
+  _impl_.name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetNetInterfaceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetNetInterfaceRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.GetNetInterfaceRequest.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.GetNetInterfaceRequest.name"));
         } else
           goto handle_unusual;
         continue;
@@ -3958,7 +4020,7 @@ uint8_t* GetNetInterfaceRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.GetNetInterfaceRequest)
@@ -3980,32 +4042,28 @@ size_t GetNetInterfaceRequest::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNetInterfaceRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetNetInterfaceRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNetInterfaceRequest::GetClassData() const { return &_class_data_; }
 
-void GetNetInterfaceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<GetNetInterfaceRequest *>(to)->MergeFrom(
-      static_cast<const GetNetInterfaceRequest &>(from));
-}
 
-
-void GetNetInterfaceRequest::MergeFrom(const GetNetInterfaceRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.GetNetInterfaceRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void GetNetInterfaceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetNetInterfaceRequest*>(&to_msg);
+  auto& from = static_cast<const GetNetInterfaceRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.GetNetInterfaceRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetNetInterfaceRequest::CopyFrom(const GetNetInterfaceRequest& from) {
@@ -4025,14 +4083,13 @@ void GetNetInterfaceRequest::InternalSwap(GetNetInterfaceRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetNetInterfaceRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[10]);
 }
@@ -4046,68 +4103,76 @@ class ListNetInterfacesRequest::_Internal {
 ListNetInterfacesRequest::ListNetInterfacesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.ListNetInterfacesRequest)
 }
 ListNetInterfacesRequest::ListNetInterfacesRequest(const ListNetInterfacesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListNetInterfacesRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.parent_){}
+    , decltype(_impl_.page_token_){}
+    , decltype(_impl_.page_size_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.parent_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.parent_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_parent().empty()) {
-    parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_parent(), 
-      GetArenaForAllocation());
+    _this->_impl_.parent_.Set(from._internal_parent(), 
+      _this->GetArenaForAllocation());
   }
-  page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.page_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.page_token_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_page_token().empty()) {
-    page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_page_token(), 
-      GetArenaForAllocation());
+    _this->_impl_.page_token_.Set(from._internal_page_token(), 
+      _this->GetArenaForAllocation());
   }
-  page_size_ = from.page_size_;
+  _this->_impl_.page_size_ = from._impl_.page_size_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.ListNetInterfacesRequest)
 }
 
-inline void ListNetInterfacesRequest::SharedCtor() {
-parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-page_size_ = 0;
+inline void ListNetInterfacesRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.parent_){}
+    , decltype(_impl_.page_token_){}
+    , decltype(_impl_.page_size_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.parent_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.parent_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.page_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.page_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListNetInterfacesRequest::~ListNetInterfacesRequest() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.ListNetInterfacesRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListNetInterfacesRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  parent_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.parent_.Destroy();
+  _impl_.page_token_.Destroy();
 }
 
-void ListNetInterfacesRequest::ArenaDtor(void* object) {
-  ListNetInterfacesRequest* _this = reinterpret_cast< ListNetInterfacesRequest* >(object);
-  (void)_this;
-}
-void ListNetInterfacesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListNetInterfacesRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListNetInterfacesRequest::Clear() {
@@ -4116,32 +4181,32 @@ void ListNetInterfacesRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  parent_.ClearToEmpty();
-  page_token_.ClearToEmpty();
-  page_size_ = 0;
+  _impl_.parent_.ClearToEmpty();
+  _impl_.page_token_.ClearToEmpty();
+  _impl_.page_size_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListNetInterfacesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListNetInterfacesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_parent();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.ListNetInterfacesRequest.parent"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.ListNetInterfacesRequest.parent"));
         } else
           goto handle_unusual;
         continue;
       // int32 page_size = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4150,9 +4215,9 @@ const char* ListNetInterfacesRequest::_InternalParse(const char* ptr, ::PROTOBUF
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_page_token();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.ListNetInterfacesRequest.page_token"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.ListNetInterfacesRequest.page_token"));
         } else
           goto handle_unusual;
         continue;
@@ -4198,7 +4263,7 @@ uint8_t* ListNetInterfacesRequest::_InternalSerialize(
   // int32 page_size = 2;
   if (this->_internal_page_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_page_size(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_page_size(), target);
   }
 
   // string page_token = 3;
@@ -4212,7 +4277,7 @@ uint8_t* ListNetInterfacesRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.ListNetInterfacesRequest)
@@ -4243,41 +4308,37 @@ size_t ListNetInterfacesRequest::ByteSizeLong() const {
 
   // int32 page_size = 2;
   if (this->_internal_page_size() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNetInterfacesRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListNetInterfacesRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNetInterfacesRequest::GetClassData() const { return &_class_data_; }
 
-void ListNetInterfacesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListNetInterfacesRequest *>(to)->MergeFrom(
-      static_cast<const ListNetInterfacesRequest &>(from));
-}
 
-
-void ListNetInterfacesRequest::MergeFrom(const ListNetInterfacesRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.ListNetInterfacesRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListNetInterfacesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListNetInterfacesRequest*>(&to_msg);
+  auto& from = static_cast<const ListNetInterfacesRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.ListNetInterfacesRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_parent().empty()) {
-    _internal_set_parent(from._internal_parent());
+    _this->_internal_set_parent(from._internal_parent());
   }
   if (!from._internal_page_token().empty()) {
-    _internal_set_page_token(from._internal_page_token());
+    _this->_internal_set_page_token(from._internal_page_token());
   }
   if (from._internal_page_size() != 0) {
-    _internal_set_page_size(from._internal_page_size());
+    _this->_internal_set_page_size(from._internal_page_size());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListNetInterfacesRequest::CopyFrom(const ListNetInterfacesRequest& from) {
@@ -4297,20 +4358,18 @@ void ListNetInterfacesRequest::InternalSwap(ListNetInterfacesRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &parent_, lhs_arena,
-      &other->parent_, rhs_arena
+      &_impl_.parent_, lhs_arena,
+      &other->_impl_.parent_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &page_token_, lhs_arena,
-      &other->page_token_, rhs_arena
+      &_impl_.page_token_, lhs_arena,
+      &other->_impl_.page_token_, rhs_arena
   );
-  swap(page_size_, other->page_size_);
+  swap(_impl_.page_size_, other->_impl_.page_size_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNetInterfacesRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[11]);
 }
@@ -4323,56 +4382,62 @@ class ListNetInterfacesResponse::_Internal {
 
 ListNetInterfacesResponse::ListNetInterfacesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  net_interfaces_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.ListNetInterfacesResponse)
 }
 ListNetInterfacesResponse::ListNetInterfacesResponse(const ListNetInterfacesResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      net_interfaces_(from.net_interfaces_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListNetInterfacesResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.net_interfaces_){from._impl_.net_interfaces_}
+    , decltype(_impl_.next_page_token_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.next_page_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.next_page_token_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_next_page_token().empty()) {
-    next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_page_token(), 
-      GetArenaForAllocation());
+    _this->_impl_.next_page_token_.Set(from._internal_next_page_token(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.ListNetInterfacesResponse)
 }
 
-inline void ListNetInterfacesResponse::SharedCtor() {
-next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void ListNetInterfacesResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.net_interfaces_){arena}
+    , decltype(_impl_.next_page_token_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.next_page_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.next_page_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListNetInterfacesResponse::~ListNetInterfacesResponse() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.ListNetInterfacesResponse)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListNetInterfacesResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  next_page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.net_interfaces_.~RepeatedPtrField();
+  _impl_.next_page_token_.Destroy();
 }
 
-void ListNetInterfacesResponse::ArenaDtor(void* object) {
-  ListNetInterfacesResponse* _this = reinterpret_cast< ListNetInterfacesResponse* >(object);
-  (void)_this;
-}
-void ListNetInterfacesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListNetInterfacesResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListNetInterfacesResponse::Clear() {
@@ -4381,16 +4446,16 @@ void ListNetInterfacesResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  net_interfaces_.Clear();
-  next_page_token_.ClearToEmpty();
+  _impl_.net_interfaces_.Clear();
+  _impl_.next_page_token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListNetInterfacesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListNetInterfacesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.network.v1alpha1.NetInterface net_interfaces = 1;
       case 1:
@@ -4409,9 +4474,9 @@ const char* ListNetInterfacesResponse::_InternalParse(const char* ptr, ::PROTOBU
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_next_page_token();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.v1alpha1.ListNetInterfacesResponse.next_page_token"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.v1alpha1.ListNetInterfacesResponse.next_page_token"));
         } else
           goto handle_unusual;
         continue;
@@ -4445,11 +4510,11 @@ uint8_t* ListNetInterfacesResponse::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.network.v1alpha1.NetInterface net_interfaces = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_net_interfaces_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_net_interfaces_size()); i < n; i++) {
+    const auto& repfield = this->_internal_net_interfaces(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_net_interfaces(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // string next_page_token = 2;
@@ -4463,7 +4528,7 @@ uint8_t* ListNetInterfacesResponse::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.ListNetInterfacesResponse)
@@ -4480,7 +4545,7 @@ size_t ListNetInterfacesResponse::ByteSizeLong() const {
 
   // repeated .opi_api.network.v1alpha1.NetInterface net_interfaces = 1;
   total_size += 1UL * this->_internal_net_interfaces_size();
-  for (const auto& msg : this->net_interfaces_) {
+  for (const auto& msg : this->_impl_.net_interfaces_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -4492,33 +4557,29 @@ size_t ListNetInterfacesResponse::ByteSizeLong() const {
         this->_internal_next_page_token());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNetInterfacesResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListNetInterfacesResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNetInterfacesResponse::GetClassData() const { return &_class_data_; }
 
-void ListNetInterfacesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListNetInterfacesResponse *>(to)->MergeFrom(
-      static_cast<const ListNetInterfacesResponse &>(from));
-}
 
-
-void ListNetInterfacesResponse::MergeFrom(const ListNetInterfacesResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.ListNetInterfacesResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListNetInterfacesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListNetInterfacesResponse*>(&to_msg);
+  auto& from = static_cast<const ListNetInterfacesResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.ListNetInterfacesResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  net_interfaces_.MergeFrom(from.net_interfaces_);
+  _this->_impl_.net_interfaces_.MergeFrom(from._impl_.net_interfaces_);
   if (!from._internal_next_page_token().empty()) {
-    _internal_set_next_page_token(from._internal_next_page_token());
+    _this->_internal_set_next_page_token(from._internal_next_page_token());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListNetInterfacesResponse::CopyFrom(const ListNetInterfacesResponse& from) {
@@ -4537,16 +4598,15 @@ void ListNetInterfacesResponse::InternalSwap(ListNetInterfacesResponse* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  net_interfaces_.InternalSwap(&other->net_interfaces_);
+  _impl_.net_interfaces_.InternalSwap(&other->_impl_.net_interfaces_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &next_page_token_, lhs_arena,
-      &other->next_page_token_, rhs_arena
+      &_impl_.next_page_token_, lhs_arena,
+      &other->_impl_.next_page_token_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNetInterfacesResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[12]);
 }
@@ -4561,71 +4621,70 @@ class UpdateNetInterfaceRequest::_Internal {
 
 const ::opi_api::network::v1alpha1::NetInterface&
 UpdateNetInterfaceRequest::_Internal::net_interface(const UpdateNetInterfaceRequest* msg) {
-  return *msg->net_interface_;
+  return *msg->_impl_.net_interface_;
 }
 const ::PROTOBUF_NAMESPACE_ID::FieldMask&
 UpdateNetInterfaceRequest::_Internal::update_mask(const UpdateNetInterfaceRequest* msg) {
-  return *msg->update_mask_;
+  return *msg->_impl_.update_mask_;
 }
 void UpdateNetInterfaceRequest::clear_update_mask() {
-  if (GetArenaForAllocation() == nullptr && update_mask_ != nullptr) {
-    delete update_mask_;
+  if (GetArenaForAllocation() == nullptr && _impl_.update_mask_ != nullptr) {
+    delete _impl_.update_mask_;
   }
-  update_mask_ = nullptr;
+  _impl_.update_mask_ = nullptr;
 }
 UpdateNetInterfaceRequest::UpdateNetInterfaceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.v1alpha1.UpdateNetInterfaceRequest)
 }
 UpdateNetInterfaceRequest::UpdateNetInterfaceRequest(const UpdateNetInterfaceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  UpdateNetInterfaceRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.net_interface_){nullptr}
+    , decltype(_impl_.update_mask_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_net_interface()) {
-    net_interface_ = new ::opi_api::network::v1alpha1::NetInterface(*from.net_interface_);
-  } else {
-    net_interface_ = nullptr;
+    _this->_impl_.net_interface_ = new ::opi_api::network::v1alpha1::NetInterface(*from._impl_.net_interface_);
   }
   if (from._internal_has_update_mask()) {
-    update_mask_ = new ::PROTOBUF_NAMESPACE_ID::FieldMask(*from.update_mask_);
-  } else {
-    update_mask_ = nullptr;
+    _this->_impl_.update_mask_ = new ::PROTOBUF_NAMESPACE_ID::FieldMask(*from._impl_.update_mask_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.UpdateNetInterfaceRequest)
 }
 
-inline void UpdateNetInterfaceRequest::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&net_interface_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&update_mask_) -
-    reinterpret_cast<char*>(&net_interface_)) + sizeof(update_mask_));
+inline void UpdateNetInterfaceRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.net_interface_){nullptr}
+    , decltype(_impl_.update_mask_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 UpdateNetInterfaceRequest::~UpdateNetInterfaceRequest() {
   // @@protoc_insertion_point(destructor:opi_api.network.v1alpha1.UpdateNetInterfaceRequest)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void UpdateNetInterfaceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete net_interface_;
-  if (this != internal_default_instance()) delete update_mask_;
+  if (this != internal_default_instance()) delete _impl_.net_interface_;
+  if (this != internal_default_instance()) delete _impl_.update_mask_;
 }
 
-void UpdateNetInterfaceRequest::ArenaDtor(void* object) {
-  UpdateNetInterfaceRequest* _this = reinterpret_cast< UpdateNetInterfaceRequest* >(object);
-  (void)_this;
-}
-void UpdateNetInterfaceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void UpdateNetInterfaceRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void UpdateNetInterfaceRequest::Clear() {
@@ -4634,22 +4693,22 @@ void UpdateNetInterfaceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && net_interface_ != nullptr) {
-    delete net_interface_;
+  if (GetArenaForAllocation() == nullptr && _impl_.net_interface_ != nullptr) {
+    delete _impl_.net_interface_;
   }
-  net_interface_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && update_mask_ != nullptr) {
-    delete update_mask_;
+  _impl_.net_interface_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.update_mask_ != nullptr) {
+    delete _impl_.update_mask_;
   }
-  update_mask_ = nullptr;
+  _impl_.update_mask_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* UpdateNetInterfaceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* UpdateNetInterfaceRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.v1alpha1.NetInterface net_interface = 1;
       case 1:
@@ -4698,22 +4757,20 @@ uint8_t* UpdateNetInterfaceRequest::_InternalSerialize(
 
   // .opi_api.network.v1alpha1.NetInterface net_interface = 1;
   if (this->_internal_has_net_interface()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::net_interface(this), target, stream);
+      InternalWriteMessage(1, _Internal::net_interface(this),
+        _Internal::net_interface(this).GetCachedSize(), target, stream);
   }
 
   // .google.protobuf.FieldMask update_mask = 2;
   if (this->_internal_has_update_mask()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::update_mask(this), target, stream);
+      InternalWriteMessage(2, _Internal::update_mask(this),
+        _Internal::update_mask(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.v1alpha1.UpdateNetInterfaceRequest)
@@ -4732,45 +4789,43 @@ size_t UpdateNetInterfaceRequest::ByteSizeLong() const {
   if (this->_internal_has_net_interface()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *net_interface_);
+        *_impl_.net_interface_);
   }
 
   // .google.protobuf.FieldMask update_mask = 2;
   if (this->_internal_has_update_mask()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *update_mask_);
+        *_impl_.update_mask_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateNetInterfaceRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     UpdateNetInterfaceRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateNetInterfaceRequest::GetClassData() const { return &_class_data_; }
 
-void UpdateNetInterfaceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<UpdateNetInterfaceRequest *>(to)->MergeFrom(
-      static_cast<const UpdateNetInterfaceRequest &>(from));
-}
 
-
-void UpdateNetInterfaceRequest::MergeFrom(const UpdateNetInterfaceRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.UpdateNetInterfaceRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void UpdateNetInterfaceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<UpdateNetInterfaceRequest*>(&to_msg);
+  auto& from = static_cast<const UpdateNetInterfaceRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.v1alpha1.UpdateNetInterfaceRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_net_interface()) {
-    _internal_mutable_net_interface()->::opi_api::network::v1alpha1::NetInterface::MergeFrom(from._internal_net_interface());
+    _this->_internal_mutable_net_interface()->::opi_api::network::v1alpha1::NetInterface::MergeFrom(
+        from._internal_net_interface());
   }
   if (from._internal_has_update_mask()) {
-    _internal_mutable_update_mask()->::PROTOBUF_NAMESPACE_ID::FieldMask::MergeFrom(from._internal_update_mask());
+    _this->_internal_mutable_update_mask()->::PROTOBUF_NAMESPACE_ID::FieldMask::MergeFrom(
+        from._internal_update_mask());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void UpdateNetInterfaceRequest::CopyFrom(const UpdateNetInterfaceRequest& from) {
@@ -4788,15 +4843,15 @@ void UpdateNetInterfaceRequest::InternalSwap(UpdateNetInterfaceRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(UpdateNetInterfaceRequest, update_mask_)
-      + sizeof(UpdateNetInterfaceRequest::update_mask_)
-      - PROTOBUF_FIELD_OFFSET(UpdateNetInterfaceRequest, net_interface_)>(
-          reinterpret_cast<char*>(&net_interface_),
-          reinterpret_cast<char*>(&other->net_interface_));
+      PROTOBUF_FIELD_OFFSET(UpdateNetInterfaceRequest, _impl_.update_mask_)
+      + sizeof(UpdateNetInterfaceRequest::_impl_.update_mask_)
+      - PROTOBUF_FIELD_OFFSET(UpdateNetInterfaceRequest, _impl_.net_interface_)>(
+          reinterpret_cast<char*>(&_impl_.net_interface_),
+          reinterpret_cast<char*>(&other->_impl_.net_interface_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateNetInterfaceRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_openconfig_5finterfaces_2eproto_getter, &descriptor_table_openconfig_5finterfaces_2eproto_once,
       file_level_metadata_openconfig_5finterfaces_2eproto[13]);
 }
@@ -4806,46 +4861,60 @@ void UpdateNetInterfaceRequest::InternalSwap(UpdateNetInterfaceRequest* other) {
 }  // namespace network
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::Config* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::Config >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::Config*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::Config >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::Config >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::Counters* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::Counters >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::Counters*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::Counters >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::Counters >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::State* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::State >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::State*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::State >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::State >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldState >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_HoldTime* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_HoldTime >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_HoldTime*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_HoldTime >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::NetInterface_HoldTime >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_Subinterfaces* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface_Subinterfaces*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::NetInterface_Subinterfaces >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::NetInterface*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::NetInterface >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::NetInterface >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::GetNetInterfaceRequest* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::GetNetInterfaceRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::GetNetInterfaceRequest*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::GetNetInterfaceRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::GetNetInterfaceRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::ListNetInterfacesRequest* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::ListNetInterfacesRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::ListNetInterfacesRequest*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::ListNetInterfacesRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::ListNetInterfacesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::ListNetInterfacesResponse* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::ListNetInterfacesResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::ListNetInterfacesResponse*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::ListNetInterfacesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::ListNetInterfacesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::UpdateNetInterfaceRequest* Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::UpdateNetInterfaceRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::v1alpha1::UpdateNetInterfaceRequest*
+Arena::CreateMaybeMessage< ::opi_api::network::v1alpha1::UpdateNetInterfaceRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::v1alpha1::UpdateNetInterfaceRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

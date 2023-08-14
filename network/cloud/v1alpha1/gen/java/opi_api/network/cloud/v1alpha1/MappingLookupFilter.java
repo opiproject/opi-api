@@ -135,6 +135,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -1282,8 +1284,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ipOrMacCase_ == 4) {
           ipKeyBuilder_.mergeFrom(value);
+        } else {
+          ipKeyBuilder_.setMessage(value);
         }
-        ipKeyBuilder_.setMessage(value);
       }
       ipOrMacCase_ = 4;
       return this;
@@ -1459,8 +1462,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ipOrMacCase_ == 5) {
           macKeyBuilder_.mergeFrom(value);
+        } else {
+          macKeyBuilder_.setMessage(value);
         }
-        macKeyBuilder_.setMessage(value);
       }
       ipOrMacCase_ = 5;
       return this;
@@ -1636,8 +1640,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ipOrMacCase_ == 6) {
           ipAddressBuilder_.mergeFrom(value);
+        } else {
+          ipAddressBuilder_.setMessage(value);
         }
-        ipAddressBuilder_.setMessage(value);
       }
       ipOrMacCase_ = 6;
       return this;

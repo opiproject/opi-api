@@ -96,6 +96,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -766,8 +768,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ipEntryCase_ == 1) {
           prefixBuilder_.mergeFrom(value);
+        } else {
+          prefixBuilder_.setMessage(value);
         }
-        prefixBuilder_.setMessage(value);
       }
       ipEntryCase_ = 1;
       return this;
@@ -943,8 +946,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ipEntryCase_ == 2) {
           rangeBuilder_.mergeFrom(value);
+        } else {
+          rangeBuilder_.setMessage(value);
         }
-        rangeBuilder_.setMessage(value);
       }
       ipEntryCase_ = 2;
       return this;

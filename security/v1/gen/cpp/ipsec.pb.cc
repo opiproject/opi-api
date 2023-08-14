@@ -16,687 +16,724 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace opi_api {
 namespace security {
 namespace v1 {
-constexpr Proposals::Proposals(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : crypto_alg_()
-  , _crypto_alg_cached_byte_size_(0)
-  , integ_alg_()
-  , _integ_alg_cached_byte_size_(0)
-  , prf_()
-  , _prf_cached_byte_size_(0)
-  , dhgroups_()
-  , _dhgroups_cached_byte_size_(0){}
+PROTOBUF_CONSTEXPR Proposals::Proposals(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.crypto_alg_)*/{}
+  , /*decltype(_impl_._crypto_alg_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.integ_alg_)*/{}
+  , /*decltype(_impl_._integ_alg_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.prf_)*/{}
+  , /*decltype(_impl_._prf_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.dhgroups_)*/{}
+  , /*decltype(_impl_._dhgroups_cached_byte_size_)*/{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ProposalsDefaultTypeInternal {
-  constexpr ProposalsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ProposalsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ProposalsDefaultTypeInternal() {}
   union {
     Proposals _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProposalsDefaultTypeInternal _Proposals_default_instance_;
-constexpr Vips::Vips(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vip_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProposalsDefaultTypeInternal _Proposals_default_instance_;
+PROTOBUF_CONSTEXPR Vips::Vips(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.vip_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct VipsDefaultTypeInternal {
-  constexpr VipsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR VipsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~VipsDefaultTypeInternal() {}
   union {
     Vips _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VipsDefaultTypeInternal _Vips_default_instance_;
-constexpr Pools::Pools(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : pool_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VipsDefaultTypeInternal _Vips_default_instance_;
+PROTOBUF_CONSTEXPR Pools::Pools(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pool_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PoolsDefaultTypeInternal {
-  constexpr PoolsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PoolsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PoolsDefaultTypeInternal() {}
   union {
     Pools _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PoolsDefaultTypeInternal _Pools_default_instance_;
-constexpr Certs::Certs(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : cert_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PoolsDefaultTypeInternal _Pools_default_instance_;
+PROTOBUF_CONSTEXPR Certs::Certs(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.cert_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CertsDefaultTypeInternal {
-  constexpr CertsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CertsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~CertsDefaultTypeInternal() {}
   union {
     Certs _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CertsDefaultTypeInternal _Certs_default_instance_;
-constexpr PubKeys::PubKeys(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : pubkey_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CertsDefaultTypeInternal _Certs_default_instance_;
+PROTOBUF_CONSTEXPR PubKeys::PubKeys(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pubkey_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PubKeysDefaultTypeInternal {
-  constexpr PubKeysDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PubKeysDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PubKeysDefaultTypeInternal() {}
   union {
     PubKeys _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PubKeysDefaultTypeInternal _PubKeys_default_instance_;
-constexpr Groups::Groups(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : group_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PubKeysDefaultTypeInternal _PubKeys_default_instance_;
+PROTOBUF_CONSTEXPR Groups::Groups(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.group_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GroupsDefaultTypeInternal {
-  constexpr GroupsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GroupsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GroupsDefaultTypeInternal() {}
   union {
     Groups _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GroupsDefaultTypeInternal _Groups_default_instance_;
-constexpr CertPolicy::CertPolicy(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : cert_policy_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GroupsDefaultTypeInternal _Groups_default_instance_;
+PROTOBUF_CONSTEXPR CertPolicy::CertPolicy(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.cert_policy_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CertPolicyDefaultTypeInternal {
-  constexpr CertPolicyDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CertPolicyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~CertPolicyDefaultTypeInternal() {}
   union {
     CertPolicy _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CertPolicyDefaultTypeInternal _CertPolicy_default_instance_;
-constexpr CaCerts::CaCerts(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : cacert_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CertPolicyDefaultTypeInternal _CertPolicy_default_instance_;
+PROTOBUF_CONSTEXPR CaCerts::CaCerts(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.cacert_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CaCertsDefaultTypeInternal {
-  constexpr CaCertsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CaCertsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~CaCertsDefaultTypeInternal() {}
   union {
     CaCerts _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CaCertsDefaultTypeInternal _CaCerts_default_instance_;
-constexpr LocalAuth::LocalAuth(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , eap_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , aaa_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , xauth_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , certs_(nullptr)
-  , pubkeys_(nullptr)
-  , auth_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CaCertsDefaultTypeInternal _CaCerts_default_instance_;
+PROTOBUF_CONSTEXPR LocalAuth::LocalAuth(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.eap_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.aaa_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xauth_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.certs_)*/nullptr
+  , /*decltype(_impl_.pubkeys_)*/nullptr
+  , /*decltype(_impl_.auth_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct LocalAuthDefaultTypeInternal {
-  constexpr LocalAuthDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR LocalAuthDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~LocalAuthDefaultTypeInternal() {}
   union {
     LocalAuth _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LocalAuthDefaultTypeInternal _LocalAuth_default_instance_;
-constexpr RemoteAuth::RemoteAuth(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , eap_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , groups_(nullptr)
-  , cert_policy_(nullptr)
-  , certs_(nullptr)
-  , ca_certs_(nullptr)
-  , pubkeys_(nullptr)
-  , auth_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LocalAuthDefaultTypeInternal _LocalAuth_default_instance_;
+PROTOBUF_CONSTEXPR RemoteAuth::RemoteAuth(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.eap_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.groups_)*/nullptr
+  , /*decltype(_impl_.cert_policy_)*/nullptr
+  , /*decltype(_impl_.certs_)*/nullptr
+  , /*decltype(_impl_.ca_certs_)*/nullptr
+  , /*decltype(_impl_.pubkeys_)*/nullptr
+  , /*decltype(_impl_.auth_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RemoteAuthDefaultTypeInternal {
-  constexpr RemoteAuthDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RemoteAuthDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RemoteAuthDefaultTypeInternal() {}
   union {
     RemoteAuth _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoteAuthDefaultTypeInternal _RemoteAuth_default_instance_;
-constexpr TrafficSelectors_TrafficSelector::TrafficSelectors_TrafficSelector(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : cidr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , proto_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , port_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoteAuthDefaultTypeInternal _RemoteAuth_default_instance_;
+PROTOBUF_CONSTEXPR TrafficSelectors_TrafficSelector::TrafficSelectors_TrafficSelector(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.cidr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.proto_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.port_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct TrafficSelectors_TrafficSelectorDefaultTypeInternal {
-  constexpr TrafficSelectors_TrafficSelectorDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR TrafficSelectors_TrafficSelectorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~TrafficSelectors_TrafficSelectorDefaultTypeInternal() {}
   union {
     TrafficSelectors_TrafficSelector _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TrafficSelectors_TrafficSelectorDefaultTypeInternal _TrafficSelectors_TrafficSelector_default_instance_;
-constexpr TrafficSelectors::TrafficSelectors(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : ts_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TrafficSelectors_TrafficSelectorDefaultTypeInternal _TrafficSelectors_TrafficSelector_default_instance_;
+PROTOBUF_CONSTEXPR TrafficSelectors::TrafficSelectors(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ts_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct TrafficSelectorsDefaultTypeInternal {
-  constexpr TrafficSelectorsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR TrafficSelectorsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~TrafficSelectorsDefaultTypeInternal() {}
   union {
     TrafficSelectors _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TrafficSelectorsDefaultTypeInternal _TrafficSelectors_default_instance_;
-constexpr Addrs::Addrs(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : addr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TrafficSelectorsDefaultTypeInternal _TrafficSelectors_default_instance_;
+PROTOBUF_CONSTEXPR Addrs::Addrs(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AddrsDefaultTypeInternal {
-  constexpr AddrsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AddrsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AddrsDefaultTypeInternal() {}
   union {
     Addrs _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddrsDefaultTypeInternal _Addrs_default_instance_;
-constexpr Child::Child(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , updown_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mark_in_sa_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , hw_offload_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ag_proposals_(nullptr)
-  , esp_proposals_(nullptr)
-  , local_ts_(nullptr)
-  , remote_ts_(nullptr)
-  , rekey_time_(0u)
-  , life_time_(0u)
-  , rand_time_(0u)
-  , inactivity_(0u)
-  , mark_in_(0u)
-  , mark_out_(0u)
-  , set_mark_in_(0u)
-  , set_mark_out_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddrsDefaultTypeInternal _Addrs_default_instance_;
+PROTOBUF_CONSTEXPR Child::Child(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.updown_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mark_in_sa_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.hw_offload_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ag_proposals_)*/nullptr
+  , /*decltype(_impl_.esp_proposals_)*/nullptr
+  , /*decltype(_impl_.local_ts_)*/nullptr
+  , /*decltype(_impl_.remote_ts_)*/nullptr
+  , /*decltype(_impl_.rekey_time_)*/0u
+  , /*decltype(_impl_.life_time_)*/0u
+  , /*decltype(_impl_.rand_time_)*/0u
+  , /*decltype(_impl_.inactivity_)*/0u
+  , /*decltype(_impl_.mark_in_)*/0u
+  , /*decltype(_impl_.mark_out_)*/0u
+  , /*decltype(_impl_.set_mark_in_)*/0u
+  , /*decltype(_impl_.set_mark_out_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ChildDefaultTypeInternal {
-  constexpr ChildDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ChildDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ChildDefaultTypeInternal() {}
   union {
     Child _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ChildDefaultTypeInternal _Child_default_instance_;
-constexpr Connection::Connection(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : local_addrs_()
-  , remote_addrs_()
-  , children_()
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , encap_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mobike_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , proposals_(nullptr)
-  , vips_(nullptr)
-  , pools_(nullptr)
-  , local_auth_(nullptr)
-  , remote_auth_(nullptr)
-  , local_port_(0u)
-  , remote_port_(0u)
-  , dscp_(uint64_t{0u})
-  , dpd_delay_(0u)
-  , dpd_timeout_(0u)
-  , reauth_time_(0u)
-  , rekey_time_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ChildDefaultTypeInternal _Child_default_instance_;
+PROTOBUF_CONSTEXPR Connection::Connection(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.local_addrs_)*/{}
+  , /*decltype(_impl_.remote_addrs_)*/{}
+  , /*decltype(_impl_.children_)*/{}
+  , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.version_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.encap_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mobike_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.proposals_)*/nullptr
+  , /*decltype(_impl_.vips_)*/nullptr
+  , /*decltype(_impl_.pools_)*/nullptr
+  , /*decltype(_impl_.local_auth_)*/nullptr
+  , /*decltype(_impl_.remote_auth_)*/nullptr
+  , /*decltype(_impl_.local_port_)*/0u
+  , /*decltype(_impl_.remote_port_)*/0u
+  , /*decltype(_impl_.dscp_)*/uint64_t{0u}
+  , /*decltype(_impl_.dpd_delay_)*/0u
+  , /*decltype(_impl_.dpd_timeout_)*/0u
+  , /*decltype(_impl_.reauth_time_)*/0u
+  , /*decltype(_impl_.rekey_time_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ConnectionDefaultTypeInternal {
-  constexpr ConnectionDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ConnectionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ConnectionDefaultTypeInternal() {}
   union {
     Connection _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConnectionDefaultTypeInternal _Connection_default_instance_;
-constexpr IPsecVersionReq::IPsecVersionReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConnectionDefaultTypeInternal _Connection_default_instance_;
+PROTOBUF_CONSTEXPR IPsecVersionReq::IPsecVersionReq(
+    ::_pbi::ConstantInitialized) {}
 struct IPsecVersionReqDefaultTypeInternal {
-  constexpr IPsecVersionReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecVersionReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecVersionReqDefaultTypeInternal() {}
   union {
     IPsecVersionReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecVersionReqDefaultTypeInternal _IPsecVersionReq_default_instance_;
-constexpr IPsecVersionResp::IPsecVersionResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : daemon_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , sysname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , release_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , machine_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecVersionReqDefaultTypeInternal _IPsecVersionReq_default_instance_;
+PROTOBUF_CONSTEXPR IPsecVersionResp::IPsecVersionResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.daemon_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.version_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.sysname_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.release_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.machine_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecVersionRespDefaultTypeInternal {
-  constexpr IPsecVersionRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecVersionRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecVersionRespDefaultTypeInternal() {}
   union {
     IPsecVersionResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecVersionRespDefaultTypeInternal _IPsecVersionResp_default_instance_;
-constexpr IPsecStatsReq::IPsecStatsReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecVersionRespDefaultTypeInternal _IPsecVersionResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecStatsReq::IPsecStatsReq(
+    ::_pbi::ConstantInitialized) {}
 struct IPsecStatsReqDefaultTypeInternal {
-  constexpr IPsecStatsReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecStatsReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecStatsReqDefaultTypeInternal() {}
   union {
     IPsecStatsReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecStatsReqDefaultTypeInternal _IPsecStatsReq_default_instance_;
-constexpr IPsecStatsResp::IPsecStatsResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecStatsReqDefaultTypeInternal _IPsecStatsReq_default_instance_;
+PROTOBUF_CONSTEXPR IPsecStatsResp::IPsecStatsResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecStatsRespDefaultTypeInternal {
-  constexpr IPsecStatsRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecStatsRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecStatsRespDefaultTypeInternal() {}
   union {
     IPsecStatsResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecStatsRespDefaultTypeInternal _IPsecStatsResp_default_instance_;
-constexpr IPsecInitiateReq::IPsecInitiateReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : child_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ike_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , timeout_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , loglevel_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecStatsRespDefaultTypeInternal _IPsecStatsResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecInitiateReq::IPsecInitiateReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.child_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ike_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.timeout_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.loglevel_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecInitiateReqDefaultTypeInternal {
-  constexpr IPsecInitiateReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecInitiateReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecInitiateReqDefaultTypeInternal() {}
   union {
     IPsecInitiateReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecInitiateReqDefaultTypeInternal _IPsecInitiateReq_default_instance_;
-constexpr IPsecInitiateResp::IPsecInitiateResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecInitiateReqDefaultTypeInternal _IPsecInitiateReq_default_instance_;
+PROTOBUF_CONSTEXPR IPsecInitiateResp::IPsecInitiateResp(
+    ::_pbi::ConstantInitialized) {}
 struct IPsecInitiateRespDefaultTypeInternal {
-  constexpr IPsecInitiateRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecInitiateRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecInitiateRespDefaultTypeInternal() {}
   union {
     IPsecInitiateResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecInitiateRespDefaultTypeInternal _IPsecInitiateResp_default_instance_;
-constexpr IPsecTerminateReq::IPsecTerminateReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : child_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ike_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , force_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , timeout_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , loglevel_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , child_id_(uint64_t{0u})
-  , ike_id_(uint64_t{0u}){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecInitiateRespDefaultTypeInternal _IPsecInitiateResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecTerminateReq::IPsecTerminateReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.child_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ike_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.force_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.timeout_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.loglevel_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.child_id_)*/uint64_t{0u}
+  , /*decltype(_impl_.ike_id_)*/uint64_t{0u}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecTerminateReqDefaultTypeInternal {
-  constexpr IPsecTerminateReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecTerminateReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecTerminateReqDefaultTypeInternal() {}
   union {
     IPsecTerminateReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecTerminateReqDefaultTypeInternal _IPsecTerminateReq_default_instance_;
-constexpr IPsecTerminateResp::IPsecTerminateResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : success_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , matches_(0u)
-  , terminated_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecTerminateReqDefaultTypeInternal _IPsecTerminateReq_default_instance_;
+PROTOBUF_CONSTEXPR IPsecTerminateResp::IPsecTerminateResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.success_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.matches_)*/0u
+  , /*decltype(_impl_.terminated_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecTerminateRespDefaultTypeInternal {
-  constexpr IPsecTerminateRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecTerminateRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecTerminateRespDefaultTypeInternal() {}
   union {
     IPsecTerminateResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecTerminateRespDefaultTypeInternal _IPsecTerminateResp_default_instance_;
-constexpr IPsecRekeyReq::IPsecRekeyReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : child_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ike_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , reauth_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , child_id_(uint64_t{0u})
-  , ike_id_(uint64_t{0u}){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecTerminateRespDefaultTypeInternal _IPsecTerminateResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecRekeyReq::IPsecRekeyReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.child_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ike_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.reauth_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.child_id_)*/uint64_t{0u}
+  , /*decltype(_impl_.ike_id_)*/uint64_t{0u}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecRekeyReqDefaultTypeInternal {
-  constexpr IPsecRekeyReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecRekeyReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecRekeyReqDefaultTypeInternal() {}
   union {
     IPsecRekeyReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecRekeyReqDefaultTypeInternal _IPsecRekeyReq_default_instance_;
-constexpr IPsecRekeyResp::IPsecRekeyResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : success_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , matches_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecRekeyReqDefaultTypeInternal _IPsecRekeyReq_default_instance_;
+PROTOBUF_CONSTEXPR IPsecRekeyResp::IPsecRekeyResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.success_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.matches_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecRekeyRespDefaultTypeInternal {
-  constexpr IPsecRekeyRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecRekeyRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecRekeyRespDefaultTypeInternal() {}
   union {
     IPsecRekeyResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecRekeyRespDefaultTypeInternal _IPsecRekeyResp_default_instance_;
-constexpr IPsecListSasReq::IPsecListSasReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : noblock_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ike_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , child_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ike_id_(uint64_t{0u})
-  , child_id_(uint64_t{0u}){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecRekeyRespDefaultTypeInternal _IPsecRekeyResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecListSasReq::IPsecListSasReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.noblock_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ike_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.child_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ike_id_)*/uint64_t{0u}
+  , /*decltype(_impl_.child_id_)*/uint64_t{0u}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecListSasReqDefaultTypeInternal {
-  constexpr IPsecListSasReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecListSasReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecListSasReqDefaultTypeInternal() {}
   union {
     IPsecListSasReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecListSasReqDefaultTypeInternal _IPsecListSasReq_default_instance_;
-constexpr ListChildSa::ListChildSa(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , protocol_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , encap_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , spi_in_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , spi_out_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , cpi_in_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , cpi_out_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mark_in_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mark_mask_in_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mark_out_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mark_mask_out_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , if_id_in_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , if_id_out_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , encr_alg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , encr_keysize_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , integ_alg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , integ_keysize_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , dh_group_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , esn_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecListSasReqDefaultTypeInternal _IPsecListSasReq_default_instance_;
+PROTOBUF_CONSTEXPR ListChildSa::ListChildSa(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.protocol_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.encap_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.spi_in_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.spi_out_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.cpi_in_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.cpi_out_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mark_in_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mark_mask_in_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mark_out_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mark_mask_out_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.if_id_in_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.if_id_out_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.encr_alg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.encr_keysize_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.integ_alg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.integ_keysize_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.dh_group_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.esn_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListChildSaDefaultTypeInternal {
-  constexpr ListChildSaDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListChildSaDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListChildSaDefaultTypeInternal() {}
   union {
     ListChildSa _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListChildSaDefaultTypeInternal _ListChildSa_default_instance_;
-constexpr ListIkeSa::ListIkeSa(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : local_vips_()
-  , remote_vips_()
-  , tasks_queued_()
-  , tasks_active_()
-  , tasks_passive_()
-  , childsas_()
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , uniqueid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , local_host_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , local_port_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , local_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , remote_host_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , remote_port_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , remote_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , remote_xauth_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , remote_eap_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , initiator_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , initiator_spi_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , responder_spi_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , nat_local_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , nat_remote_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , nat_fake_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , nat_any_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , if_id_in_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , if_id_out_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , encr_alg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , encr_keysize_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , integ_alg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , integ_keysize_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , prf_alg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , dh_group_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ppk_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , established_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , rekey_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , reauth_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ikestate_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListChildSaDefaultTypeInternal _ListChildSa_default_instance_;
+PROTOBUF_CONSTEXPR ListIkeSa::ListIkeSa(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.local_vips_)*/{}
+  , /*decltype(_impl_.remote_vips_)*/{}
+  , /*decltype(_impl_.tasks_queued_)*/{}
+  , /*decltype(_impl_.tasks_active_)*/{}
+  , /*decltype(_impl_.tasks_passive_)*/{}
+  , /*decltype(_impl_.childsas_)*/{}
+  , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.uniqueid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.version_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.local_host_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.local_port_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.local_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remote_host_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remote_port_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remote_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remote_xauth_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remote_eap_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.initiator_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.initiator_spi_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.responder_spi_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.nat_local_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.nat_remote_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.nat_fake_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.nat_any_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.if_id_in_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.if_id_out_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.encr_alg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.encr_keysize_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.integ_alg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.integ_keysize_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.prf_alg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.dh_group_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ppk_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.established_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.rekey_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.reauth_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ikestate_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListIkeSaDefaultTypeInternal {
-  constexpr ListIkeSaDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListIkeSaDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListIkeSaDefaultTypeInternal() {}
   union {
     ListIkeSa _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListIkeSaDefaultTypeInternal _ListIkeSa_default_instance_;
-constexpr IPsecListSasResp::IPsecListSasResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : ikesas_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListIkeSaDefaultTypeInternal _ListIkeSa_default_instance_;
+PROTOBUF_CONSTEXPR IPsecListSasResp::IPsecListSasResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ikesas_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecListSasRespDefaultTypeInternal {
-  constexpr IPsecListSasRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecListSasRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecListSasRespDefaultTypeInternal() {}
   union {
     IPsecListSasResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecListSasRespDefaultTypeInternal _IPsecListSasResp_default_instance_;
-constexpr IPsecListConnsReq::IPsecListConnsReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : ike_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecListSasRespDefaultTypeInternal _IPsecListSasResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecListConnsReq::IPsecListConnsReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ike_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecListConnsReqDefaultTypeInternal {
-  constexpr IPsecListConnsReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecListConnsReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecListConnsReqDefaultTypeInternal() {}
   union {
     IPsecListConnsReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecListConnsReqDefaultTypeInternal _IPsecListConnsReq_default_instance_;
-constexpr ListConnAuth::ListConnAuth(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : class__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , eaptype_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , eapvendor_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , xauth_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , revocation_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ca_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , aaa_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , eap_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , xauth_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , group_(nullptr)
-  , cert_policy_(nullptr)
-  , certs_(nullptr)
-  , cacerts_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecListConnsReqDefaultTypeInternal _IPsecListConnsReq_default_instance_;
+PROTOBUF_CONSTEXPR ListConnAuth::ListConnAuth(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.class__)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.eaptype_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.eapvendor_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xauth_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.revocation_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ca_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.aaa_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.eap_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xauth_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.group_)*/nullptr
+  , /*decltype(_impl_.cert_policy_)*/nullptr
+  , /*decltype(_impl_.certs_)*/nullptr
+  , /*decltype(_impl_.cacerts_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListConnAuthDefaultTypeInternal {
-  constexpr ListConnAuthDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListConnAuthDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListConnAuthDefaultTypeInternal() {}
   union {
     ListConnAuth _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListConnAuthDefaultTypeInternal _ListConnAuth_default_instance_;
-constexpr ListChild::ListChild(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mode_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , dpd_action_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , close_action_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , interface_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , priority_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , local_ts_(nullptr)
-  , remote_ts_(nullptr)
-  , rekey_time_(0u)
-  , rekey_bytes_(0u)
-  , rekey_packets_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListConnAuthDefaultTypeInternal _ListConnAuth_default_instance_;
+PROTOBUF_CONSTEXPR ListChild::ListChild(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mode_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.label_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.dpd_action_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.close_action_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.interface_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.priority_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.local_ts_)*/nullptr
+  , /*decltype(_impl_.remote_ts_)*/nullptr
+  , /*decltype(_impl_.rekey_time_)*/0u
+  , /*decltype(_impl_.rekey_bytes_)*/0u
+  , /*decltype(_impl_.rekey_packets_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListChildDefaultTypeInternal {
-  constexpr ListChildDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListChildDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListChildDefaultTypeInternal() {}
   union {
     ListChild _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListChildDefaultTypeInternal _ListChild_default_instance_;
-constexpr ListConnResp::ListConnResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : local_addrs_()
-  , remote_addrs_()
-  , local_auth_()
-  , remote_auth_()
-  , children_()
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , unique_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ppk_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ppk_required_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , reauth_time_(0u)
-  , rekey_time_(0u)
-  , dpd_delay_(0u)
-  , dpd_timeout_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListChildDefaultTypeInternal _ListChild_default_instance_;
+PROTOBUF_CONSTEXPR ListConnResp::ListConnResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.local_addrs_)*/{}
+  , /*decltype(_impl_.remote_addrs_)*/{}
+  , /*decltype(_impl_.local_auth_)*/{}
+  , /*decltype(_impl_.remote_auth_)*/{}
+  , /*decltype(_impl_.children_)*/{}
+  , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.version_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.unique_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ppk_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ppk_required_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.reauth_time_)*/0u
+  , /*decltype(_impl_.rekey_time_)*/0u
+  , /*decltype(_impl_.dpd_delay_)*/0u
+  , /*decltype(_impl_.dpd_timeout_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListConnRespDefaultTypeInternal {
-  constexpr ListConnRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListConnRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListConnRespDefaultTypeInternal() {}
   union {
     ListConnResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListConnRespDefaultTypeInternal _ListConnResp_default_instance_;
-constexpr IPsecListConnsResp::IPsecListConnsResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : connection_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListConnRespDefaultTypeInternal _ListConnResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecListConnsResp::IPsecListConnsResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.connection_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecListConnsRespDefaultTypeInternal {
-  constexpr IPsecListConnsRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecListConnsRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecListConnsRespDefaultTypeInternal() {}
   union {
     IPsecListConnsResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecListConnsRespDefaultTypeInternal _IPsecListConnsResp_default_instance_;
-constexpr IPsecListCertsReq::IPsecListCertsReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , flag_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , subject_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecListConnsRespDefaultTypeInternal _IPsecListConnsResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecListCertsReq::IPsecListCertsReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.type_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.flag_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.subject_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecListCertsReqDefaultTypeInternal {
-  constexpr IPsecListCertsReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecListCertsReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecListCertsReqDefaultTypeInternal() {}
   union {
     IPsecListCertsReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecListCertsReqDefaultTypeInternal _IPsecListCertsReq_default_instance_;
-constexpr ListCert::ListCert(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : hasprivkey_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , subject_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , notbefore_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , notafter_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , type_(0)
-
-  , flag_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecListCertsReqDefaultTypeInternal _IPsecListCertsReq_default_instance_;
+PROTOBUF_CONSTEXPR ListCert::ListCert(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.hasprivkey_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.data_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.subject_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.notbefore_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.notafter_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_.flag_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ListCertDefaultTypeInternal {
-  constexpr ListCertDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ListCertDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ListCertDefaultTypeInternal() {}
   union {
     ListCert _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListCertDefaultTypeInternal _ListCert_default_instance_;
-constexpr IPsecListCertsResp::IPsecListCertsResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : certs_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListCertDefaultTypeInternal _ListCert_default_instance_;
+PROTOBUF_CONSTEXPR IPsecListCertsResp::IPsecListCertsResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.certs_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecListCertsRespDefaultTypeInternal {
-  constexpr IPsecListCertsRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecListCertsRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecListCertsRespDefaultTypeInternal() {}
   union {
     IPsecListCertsResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecListCertsRespDefaultTypeInternal _IPsecListCertsResp_default_instance_;
-constexpr IPsecLoadConnReq::IPsecLoadConnReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : connection_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecListCertsRespDefaultTypeInternal _IPsecListCertsResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecLoadConnReq::IPsecLoadConnReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.connection_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecLoadConnReqDefaultTypeInternal {
-  constexpr IPsecLoadConnReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecLoadConnReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecLoadConnReqDefaultTypeInternal() {}
   union {
     IPsecLoadConnReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecLoadConnReqDefaultTypeInternal _IPsecLoadConnReq_default_instance_;
-constexpr IPsecLoadConnResp::IPsecLoadConnResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : success_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecLoadConnReqDefaultTypeInternal _IPsecLoadConnReq_default_instance_;
+PROTOBUF_CONSTEXPR IPsecLoadConnResp::IPsecLoadConnResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.success_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecLoadConnRespDefaultTypeInternal {
-  constexpr IPsecLoadConnRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecLoadConnRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecLoadConnRespDefaultTypeInternal() {}
   union {
     IPsecLoadConnResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecLoadConnRespDefaultTypeInternal _IPsecLoadConnResp_default_instance_;
-constexpr IPsecUnloadConnReq::IPsecUnloadConnReq(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecLoadConnRespDefaultTypeInternal _IPsecLoadConnResp_default_instance_;
+PROTOBUF_CONSTEXPR IPsecUnloadConnReq::IPsecUnloadConnReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecUnloadConnReqDefaultTypeInternal {
-  constexpr IPsecUnloadConnReqDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecUnloadConnReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecUnloadConnReqDefaultTypeInternal() {}
   union {
     IPsecUnloadConnReq _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecUnloadConnReqDefaultTypeInternal _IPsecUnloadConnReq_default_instance_;
-constexpr IPsecUnloadConnResp::IPsecUnloadConnResp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : success_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecUnloadConnReqDefaultTypeInternal _IPsecUnloadConnReq_default_instance_;
+PROTOBUF_CONSTEXPR IPsecUnloadConnResp::IPsecUnloadConnResp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.success_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPsecUnloadConnRespDefaultTypeInternal {
-  constexpr IPsecUnloadConnRespDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPsecUnloadConnRespDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPsecUnloadConnRespDefaultTypeInternal() {}
   union {
     IPsecUnloadConnResp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecUnloadConnRespDefaultTypeInternal _IPsecUnloadConnResp_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPsecUnloadConnRespDefaultTypeInternal _IPsecUnloadConnResp_default_instance_;
 }  // namespace v1
 }  // namespace security
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_ipsec_2eproto[41];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_ipsec_2eproto[10];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_ipsec_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_ipsec_2eproto[41];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_ipsec_2eproto[10];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_ipsec_2eproto = nullptr;
 
 const uint32_t TableStruct_ipsec_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -705,156 +742,156 @@ const uint32_t TableStruct_ipsec_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Proposals, crypto_alg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Proposals, integ_alg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Proposals, prf_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Proposals, dhgroups_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Proposals, _impl_.crypto_alg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Proposals, _impl_.integ_alg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Proposals, _impl_.prf_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Proposals, _impl_.dhgroups_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Vips, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Vips, vip_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Vips, _impl_.vip_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Pools, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Pools, pool_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Pools, _impl_.pool_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Certs, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Certs, cert_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Certs, _impl_.cert_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::PubKeys, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::PubKeys, pubkey_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::PubKeys, _impl_.pubkey_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Groups, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Groups, group_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Groups, _impl_.group_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::CertPolicy, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::CertPolicy, cert_policy_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::CertPolicy, _impl_.cert_policy_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::CaCerts, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::CaCerts, cacert_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::CaCerts, _impl_.cacert_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, auth_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, eap_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, aaa_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, xauth_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, certs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, pubkeys_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, _impl_.auth_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, _impl_.eap_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, _impl_.aaa_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, _impl_.xauth_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, _impl_.certs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::LocalAuth, _impl_.pubkeys_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, auth_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, eap_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, groups_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, cert_policy_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, certs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, ca_certs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, pubkeys_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _impl_.auth_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _impl_.eap_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _impl_.groups_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _impl_.cert_policy_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _impl_.certs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _impl_.ca_certs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::RemoteAuth, _impl_.pubkeys_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors_TrafficSelector, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors_TrafficSelector, cidr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors_TrafficSelector, proto_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors_TrafficSelector, port_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors_TrafficSelector, _impl_.cidr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors_TrafficSelector, _impl_.proto_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors_TrafficSelector, _impl_.port_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors, ts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::TrafficSelectors, _impl_.ts_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Addrs, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Addrs, addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Addrs, _impl_.addr_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, ag_proposals_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, esp_proposals_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, local_ts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, remote_ts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, rekey_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, life_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, rand_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, updown_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, inactivity_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, mark_in_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, mark_in_sa_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, mark_out_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, set_mark_in_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, set_mark_out_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, hw_offload_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.ag_proposals_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.esp_proposals_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.local_ts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.remote_ts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.rekey_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.life_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.rand_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.updown_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.inactivity_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.mark_in_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.mark_in_sa_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.mark_out_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.set_mark_in_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.set_mark_out_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Child, _impl_.hw_offload_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, version_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, local_addrs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, remote_addrs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, local_port_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, remote_port_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, proposals_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, vips_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, dscp_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, encap_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, mobike_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, dpd_delay_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, dpd_timeout_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, reauth_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, rekey_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, pools_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, local_auth_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, remote_auth_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, children_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.version_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.local_addrs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.remote_addrs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.local_port_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.remote_port_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.proposals_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.vips_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.dscp_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.encap_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.mobike_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.dpd_delay_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.dpd_timeout_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.reauth_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.rekey_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.pools_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.local_auth_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.remote_auth_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, _impl_.children_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionReq, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -867,11 +904,11 @@ const uint32_t TableStruct_ipsec_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, daemon_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, version_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, sysname_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, release_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, machine_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, _impl_.daemon_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, _impl_.version_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, _impl_.sysname_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, _impl_.release_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionResp, _impl_.machine_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecStatsReq, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -884,17 +921,17 @@ const uint32_t TableStruct_ipsec_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecStatsResp, status_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecStatsResp, _impl_.status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, child_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, ike_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, timeout_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, loglevel_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, _impl_.child_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, _impl_.ike_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, _impl_.timeout_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateReq, _impl_.loglevel_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecInitiateResp, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -907,258 +944,258 @@ const uint32_t TableStruct_ipsec_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, child_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, ike_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, child_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, ike_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, force_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, timeout_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, loglevel_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, _impl_.child_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, _impl_.ike_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, _impl_.child_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, _impl_.ike_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, _impl_.force_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, _impl_.timeout_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateReq, _impl_.loglevel_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateResp, success_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateResp, matches_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateResp, terminated_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateResp, _impl_.success_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateResp, _impl_.matches_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecTerminateResp, _impl_.terminated_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, child_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, ike_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, child_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, ike_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, reauth_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, _impl_.child_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, _impl_.ike_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, _impl_.child_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, _impl_.ike_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyReq, _impl_.reauth_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyResp, success_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyResp, matches_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyResp, _impl_.success_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecRekeyResp, _impl_.matches_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, noblock_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, ike_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, ike_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, child_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, child_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, _impl_.noblock_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, _impl_.ike_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, _impl_.ike_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, _impl_.child_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasReq, _impl_.child_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, protocol_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, encap_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, spi_in_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, spi_out_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, cpi_in_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, cpi_out_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, mark_in_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, mark_mask_in_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, mark_out_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, mark_mask_out_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, if_id_in_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, if_id_out_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, encr_alg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, encr_keysize_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, integ_alg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, integ_keysize_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, dh_group_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, esn_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.protocol_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.encap_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.spi_in_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.spi_out_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.cpi_in_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.cpi_out_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.mark_in_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.mark_mask_in_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.mark_out_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.mark_mask_out_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.if_id_in_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.if_id_out_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.encr_alg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.encr_keysize_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.integ_alg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.integ_keysize_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.dh_group_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChildSa, _impl_.esn_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, uniqueid_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, version_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, ikestate_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, local_host_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, local_port_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, local_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, remote_host_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, remote_port_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, remote_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, remote_xauth_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, remote_eap_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, initiator_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, initiator_spi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, responder_spi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, nat_local_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, nat_remote_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, nat_fake_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, nat_any_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, if_id_in_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, if_id_out_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, encr_alg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, encr_keysize_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, integ_alg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, integ_keysize_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, prf_alg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, dh_group_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, ppk_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, established_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, rekey_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, reauth_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, local_vips_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, remote_vips_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, tasks_queued_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, tasks_active_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, tasks_passive_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, childsas_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.uniqueid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.version_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.ikestate_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.local_host_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.local_port_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.local_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.remote_host_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.remote_port_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.remote_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.remote_xauth_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.remote_eap_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.initiator_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.initiator_spi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.responder_spi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.nat_local_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.nat_remote_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.nat_fake_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.nat_any_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.if_id_in_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.if_id_out_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.encr_alg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.encr_keysize_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.integ_alg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.integ_keysize_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.prf_alg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.dh_group_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.ppk_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.established_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.rekey_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.reauth_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.local_vips_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.remote_vips_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.tasks_queued_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.tasks_active_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.tasks_passive_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListIkeSa, _impl_.childsas_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasResp, ikesas_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListSasResp, _impl_.ikesas_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListConnsReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListConnsReq, ike_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListConnsReq, _impl_.ike_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, class__),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, eaptype_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, eapvendor_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, xauth_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, revocation_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, ca_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, aaa_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, eap_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, xauth_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, group_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, cert_policy_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, certs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, cacerts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.class__),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.eaptype_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.eapvendor_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.xauth_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.revocation_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.ca_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.aaa_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.eap_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.xauth_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.group_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.cert_policy_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.certs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnAuth, _impl_.cacerts_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, mode_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, label_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, rekey_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, rekey_bytes_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, rekey_packets_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, dpd_action_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, close_action_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, local_ts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, remote_ts_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, interface_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, priority_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.mode_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.label_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.rekey_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.rekey_bytes_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.rekey_packets_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.dpd_action_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.close_action_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.local_ts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.remote_ts_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.interface_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListChild, _impl_.priority_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, local_addrs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, remote_addrs_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, version_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, reauth_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, rekey_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, unique_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, dpd_delay_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, dpd_timeout_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, ppk_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, ppk_required_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, local_auth_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, remote_auth_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, children_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.local_addrs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.remote_addrs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.version_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.reauth_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.rekey_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.unique_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.dpd_delay_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.dpd_timeout_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.ppk_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.ppk_required_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.local_auth_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.remote_auth_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListConnResp, _impl_.children_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListConnsResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListConnsResp, connection_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListConnsResp, _impl_.connection_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsReq, type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsReq, flag_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsReq, subject_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsReq, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsReq, _impl_.flag_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsReq, _impl_.subject_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, flag_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, hasprivkey_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, data_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, subject_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, notbefore_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, notafter_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, _impl_.flag_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, _impl_.hasprivkey_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, _impl_.data_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, _impl_.subject_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, _impl_.notbefore_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::ListCert, _impl_.notafter_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsResp, certs_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecListCertsResp, _impl_.certs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecLoadConnReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecLoadConnReq, connection_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecLoadConnReq, _impl_.connection_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecLoadConnResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecLoadConnResp, success_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecLoadConnResp, _impl_.success_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecUnloadConnReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecUnloadConnReq, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecUnloadConnReq, _impl_.name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecUnloadConnResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecUnloadConnResp, success_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecUnloadConnResp, _impl_.success_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::security::v1::Proposals)},
   { 10, -1, -1, sizeof(::opi_api::security::v1::Vips)},
   { 17, -1, -1, sizeof(::opi_api::security::v1::Pools)},
@@ -1202,48 +1239,48 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 451, -1, -1, sizeof(::opi_api::security::v1::IPsecUnloadConnResp)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Proposals_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Vips_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Pools_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Certs_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_PubKeys_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Groups_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_CertPolicy_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_CaCerts_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_LocalAuth_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_RemoteAuth_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_TrafficSelectors_TrafficSelector_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_TrafficSelectors_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Addrs_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Child_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Connection_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecVersionReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecVersionResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecStatsReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecStatsResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecInitiateReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecInitiateResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecTerminateReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecTerminateResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecRekeyReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecRekeyResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecListSasReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_ListChildSa_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_ListIkeSa_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecListSasResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecListConnsReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_ListConnAuth_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_ListChild_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_ListConnResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecListConnsResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecListCertsReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_ListCert_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecListCertsResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecLoadConnReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecLoadConnResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecUnloadConnReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecUnloadConnResp_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::opi_api::security::v1::_Proposals_default_instance_._instance,
+  &::opi_api::security::v1::_Vips_default_instance_._instance,
+  &::opi_api::security::v1::_Pools_default_instance_._instance,
+  &::opi_api::security::v1::_Certs_default_instance_._instance,
+  &::opi_api::security::v1::_PubKeys_default_instance_._instance,
+  &::opi_api::security::v1::_Groups_default_instance_._instance,
+  &::opi_api::security::v1::_CertPolicy_default_instance_._instance,
+  &::opi_api::security::v1::_CaCerts_default_instance_._instance,
+  &::opi_api::security::v1::_LocalAuth_default_instance_._instance,
+  &::opi_api::security::v1::_RemoteAuth_default_instance_._instance,
+  &::opi_api::security::v1::_TrafficSelectors_TrafficSelector_default_instance_._instance,
+  &::opi_api::security::v1::_TrafficSelectors_default_instance_._instance,
+  &::opi_api::security::v1::_Addrs_default_instance_._instance,
+  &::opi_api::security::v1::_Child_default_instance_._instance,
+  &::opi_api::security::v1::_Connection_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecVersionReq_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecVersionResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecStatsReq_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecStatsResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecInitiateReq_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecInitiateResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecTerminateReq_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecTerminateResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecRekeyReq_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecRekeyResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecListSasReq_default_instance_._instance,
+  &::opi_api::security::v1::_ListChildSa_default_instance_._instance,
+  &::opi_api::security::v1::_ListIkeSa_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecListSasResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecListConnsReq_default_instance_._instance,
+  &::opi_api::security::v1::_ListConnAuth_default_instance_._instance,
+  &::opi_api::security::v1::_ListChild_default_instance_._instance,
+  &::opi_api::security::v1::_ListConnResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecListConnsResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecListCertsReq_default_instance_._instance,
+  &::opi_api::security::v1::_ListCert_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecListCertsResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecLoadConnReq_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecLoadConnResp_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecUnloadConnReq_default_instance_._instance,
+  &::opi_api::security::v1::_IPsecUnloadConnResp_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_ipsec_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -1457,19 +1494,21 @@ const char descriptor_table_protodef_ipsec_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "\000B2Z0github.com/opiproject/opi-api/secur"
   "ity/v1/gen/gob\006proto3"
   ;
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ipsec_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ipsec_2eproto = {
-  false, false, 8341, descriptor_table_protodef_ipsec_2eproto, "ipsec.proto", 
-  &descriptor_table_ipsec_2eproto_once, nullptr, 0, 41,
-  schemas, file_default_instances, TableStruct_ipsec_2eproto::offsets,
-  file_level_metadata_ipsec_2eproto, file_level_enum_descriptors_ipsec_2eproto, file_level_service_descriptors_ipsec_2eproto,
+static ::_pbi::once_flag descriptor_table_ipsec_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_ipsec_2eproto = {
+    false, false, 8341, descriptor_table_protodef_ipsec_2eproto,
+    "ipsec.proto",
+    &descriptor_table_ipsec_2eproto_once, nullptr, 0, 41,
+    schemas, file_default_instances, TableStruct_ipsec_2eproto::offsets,
+    file_level_metadata_ipsec_2eproto, file_level_enum_descriptors_ipsec_2eproto,
+    file_level_service_descriptors_ipsec_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_ipsec_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_ipsec_2eproto_getter() {
   return &descriptor_table_ipsec_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_ipsec_2eproto(&descriptor_table_ipsec_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_ipsec_2eproto(&descriptor_table_ipsec_2eproto);
 namespace opi_api {
 namespace security {
 namespace v1 {
@@ -1674,49 +1713,64 @@ class Proposals::_Internal {
 
 Proposals::Proposals(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  crypto_alg_(arena),
-  integ_alg_(arena),
-  prf_(arena),
-  dhgroups_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Proposals)
 }
 Proposals::Proposals(const Proposals& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      crypto_alg_(from.crypto_alg_),
-      integ_alg_(from.integ_alg_),
-      prf_(from.prf_),
-      dhgroups_(from.dhgroups_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Proposals* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.crypto_alg_){from._impl_.crypto_alg_}
+    , /*decltype(_impl_._crypto_alg_cached_byte_size_)*/{0}
+    , decltype(_impl_.integ_alg_){from._impl_.integ_alg_}
+    , /*decltype(_impl_._integ_alg_cached_byte_size_)*/{0}
+    , decltype(_impl_.prf_){from._impl_.prf_}
+    , /*decltype(_impl_._prf_cached_byte_size_)*/{0}
+    , decltype(_impl_.dhgroups_){from._impl_.dhgroups_}
+    , /*decltype(_impl_._dhgroups_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Proposals)
 }
 
-inline void Proposals::SharedCtor() {
+inline void Proposals::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.crypto_alg_){arena}
+    , /*decltype(_impl_._crypto_alg_cached_byte_size_)*/{0}
+    , decltype(_impl_.integ_alg_){arena}
+    , /*decltype(_impl_._integ_alg_cached_byte_size_)*/{0}
+    , decltype(_impl_.prf_){arena}
+    , /*decltype(_impl_._prf_cached_byte_size_)*/{0}
+    , decltype(_impl_.dhgroups_){arena}
+    , /*decltype(_impl_._dhgroups_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Proposals::~Proposals() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.Proposals)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Proposals::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.crypto_alg_.~RepeatedField();
+  _impl_.integ_alg_.~RepeatedField();
+  _impl_.prf_.~RepeatedField();
+  _impl_.dhgroups_.~RepeatedField();
 }
 
-void Proposals::ArenaDtor(void* object) {
-  Proposals* _this = reinterpret_cast< Proposals* >(object);
-  (void)_this;
-}
-void Proposals::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Proposals::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Proposals::Clear() {
@@ -1725,18 +1779,18 @@ void Proposals::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  crypto_alg_.Clear();
-  integ_alg_.Clear();
-  prf_.Clear();
-  dhgroups_.Clear();
+  _impl_.crypto_alg_.Clear();
+  _impl_.integ_alg_.Clear();
+  _impl_.prf_.Clear();
+  _impl_.dhgroups_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Proposals::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Proposals::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.security.v1.CryptoAlgorithm crypto_alg = 1;
       case 1:
@@ -1817,42 +1871,42 @@ uint8_t* Proposals::_InternalSerialize(
 
   // repeated .opi_api.security.v1.CryptoAlgorithm crypto_alg = 1;
   {
-    int byte_size = _crypto_alg_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._crypto_alg_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteEnumPacked(
-          1, crypto_alg_, byte_size, target);
+          1, _impl_.crypto_alg_, byte_size, target);
     }
   }
 
   // repeated .opi_api.security.v1.IntegAlgorithm integ_alg = 2;
   {
-    int byte_size = _integ_alg_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._integ_alg_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteEnumPacked(
-          2, integ_alg_, byte_size, target);
+          2, _impl_.integ_alg_, byte_size, target);
     }
   }
 
   // repeated .opi_api.security.v1.PseudoRandomFunction prf = 3;
   {
-    int byte_size = _prf_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._prf_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteEnumPacked(
-          3, prf_, byte_size, target);
+          3, _impl_.prf_, byte_size, target);
     }
   }
 
   // repeated .opi_api.security.v1.DiffieHellmanGroups dhgroups = 4;
   {
-    int byte_size = _dhgroups_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._dhgroups_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteEnumPacked(
-          4, dhgroups_, byte_size, target);
+          4, _impl_.dhgroups_, byte_size, target);
     }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Proposals)
@@ -1871,16 +1925,15 @@ size_t Proposals::ByteSizeLong() const {
   {
     size_t data_size = 0;
     unsigned int count = static_cast<unsigned int>(this->_internal_crypto_alg_size());for (unsigned int i = 0; i < count; i++) {
-      data_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
+      data_size += ::_pbi::WireFormatLite::EnumSize(
         this->_internal_crypto_alg(static_cast<int>(i)));
     }
     if (data_size > 0) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<int32_t>(data_size));
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _crypto_alg_cached_byte_size_.store(cached_size,
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._crypto_alg_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -1889,16 +1942,15 @@ size_t Proposals::ByteSizeLong() const {
   {
     size_t data_size = 0;
     unsigned int count = static_cast<unsigned int>(this->_internal_integ_alg_size());for (unsigned int i = 0; i < count; i++) {
-      data_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
+      data_size += ::_pbi::WireFormatLite::EnumSize(
         this->_internal_integ_alg(static_cast<int>(i)));
     }
     if (data_size > 0) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<int32_t>(data_size));
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _integ_alg_cached_byte_size_.store(cached_size,
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._integ_alg_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -1907,16 +1959,15 @@ size_t Proposals::ByteSizeLong() const {
   {
     size_t data_size = 0;
     unsigned int count = static_cast<unsigned int>(this->_internal_prf_size());for (unsigned int i = 0; i < count; i++) {
-      data_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
+      data_size += ::_pbi::WireFormatLite::EnumSize(
         this->_internal_prf(static_cast<int>(i)));
     }
     if (data_size > 0) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<int32_t>(data_size));
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _prf_cached_byte_size_.store(cached_size,
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._prf_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -1925,47 +1976,42 @@ size_t Proposals::ByteSizeLong() const {
   {
     size_t data_size = 0;
     unsigned int count = static_cast<unsigned int>(this->_internal_dhgroups_size());for (unsigned int i = 0; i < count; i++) {
-      data_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
+      data_size += ::_pbi::WireFormatLite::EnumSize(
         this->_internal_dhgroups(static_cast<int>(i)));
     }
     if (data_size > 0) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<int32_t>(data_size));
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _dhgroups_cached_byte_size_.store(cached_size,
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._dhgroups_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Proposals::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Proposals::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Proposals::GetClassData() const { return &_class_data_; }
 
-void Proposals::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Proposals *>(to)->MergeFrom(
-      static_cast<const Proposals &>(from));
-}
 
-
-void Proposals::MergeFrom(const Proposals& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Proposals)
-  GOOGLE_DCHECK_NE(&from, this);
+void Proposals::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Proposals*>(&to_msg);
+  auto& from = static_cast<const Proposals&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Proposals)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  crypto_alg_.MergeFrom(from.crypto_alg_);
-  integ_alg_.MergeFrom(from.integ_alg_);
-  prf_.MergeFrom(from.prf_);
-  dhgroups_.MergeFrom(from.dhgroups_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.crypto_alg_.MergeFrom(from._impl_.crypto_alg_);
+  _this->_impl_.integ_alg_.MergeFrom(from._impl_.integ_alg_);
+  _this->_impl_.prf_.MergeFrom(from._impl_.prf_);
+  _this->_impl_.dhgroups_.MergeFrom(from._impl_.dhgroups_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Proposals::CopyFrom(const Proposals& from) {
@@ -1982,14 +2028,14 @@ bool Proposals::IsInitialized() const {
 void Proposals::InternalSwap(Proposals* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  crypto_alg_.InternalSwap(&other->crypto_alg_);
-  integ_alg_.InternalSwap(&other->integ_alg_);
-  prf_.InternalSwap(&other->prf_);
-  dhgroups_.InternalSwap(&other->dhgroups_);
+  _impl_.crypto_alg_.InternalSwap(&other->_impl_.crypto_alg_);
+  _impl_.integ_alg_.InternalSwap(&other->_impl_.integ_alg_);
+  _impl_.prf_.InternalSwap(&other->_impl_.prf_);
+  _impl_.dhgroups_.InternalSwap(&other->_impl_.dhgroups_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Proposals::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[0]);
 }
@@ -2002,43 +2048,47 @@ class Vips::_Internal {
 
 Vips::Vips(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  vip_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Vips)
 }
 Vips::Vips(const Vips& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      vip_(from.vip_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Vips* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.vip_){from._impl_.vip_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Vips)
 }
 
-inline void Vips::SharedCtor() {
+inline void Vips::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.vip_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Vips::~Vips() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.Vips)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Vips::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.vip_.~RepeatedPtrField();
 }
 
-void Vips::ArenaDtor(void* object) {
-  Vips* _this = reinterpret_cast< Vips* >(object);
-  (void)_this;
-}
-void Vips::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Vips::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Vips::Clear() {
@@ -2047,15 +2097,15 @@ void Vips::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vip_.Clear();
+  _impl_.vip_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Vips::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Vips::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated string vip = 1;
       case 1:
@@ -2064,9 +2114,9 @@ const char* Vips::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           do {
             ptr += 1;
             auto str = _internal_add_vip();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Vips.vip"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Vips.vip"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
@@ -2112,7 +2162,7 @@ uint8_t* Vips::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Vips)
@@ -2129,36 +2179,32 @@ size_t Vips::ByteSizeLong() const {
 
   // repeated string vip = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(vip_.size());
-  for (int i = 0, n = vip_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.vip_.size());
+  for (int i = 0, n = _impl_.vip_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      vip_.Get(i));
+      _impl_.vip_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Vips::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Vips::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Vips::GetClassData() const { return &_class_data_; }
 
-void Vips::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Vips *>(to)->MergeFrom(
-      static_cast<const Vips &>(from));
-}
 
-
-void Vips::MergeFrom(const Vips& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Vips)
-  GOOGLE_DCHECK_NE(&from, this);
+void Vips::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Vips*>(&to_msg);
+  auto& from = static_cast<const Vips&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Vips)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  vip_.MergeFrom(from.vip_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.vip_.MergeFrom(from._impl_.vip_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Vips::CopyFrom(const Vips& from) {
@@ -2175,11 +2221,11 @@ bool Vips::IsInitialized() const {
 void Vips::InternalSwap(Vips* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  vip_.InternalSwap(&other->vip_);
+  _impl_.vip_.InternalSwap(&other->_impl_.vip_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Vips::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[1]);
 }
@@ -2192,43 +2238,47 @@ class Pools::_Internal {
 
 Pools::Pools(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  pool_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Pools)
 }
 Pools::Pools(const Pools& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      pool_(from.pool_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Pools* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pool_){from._impl_.pool_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Pools)
 }
 
-inline void Pools::SharedCtor() {
+inline void Pools::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pool_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Pools::~Pools() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.Pools)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Pools::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.pool_.~RepeatedPtrField();
 }
 
-void Pools::ArenaDtor(void* object) {
-  Pools* _this = reinterpret_cast< Pools* >(object);
-  (void)_this;
-}
-void Pools::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Pools::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Pools::Clear() {
@@ -2237,15 +2287,15 @@ void Pools::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pool_.Clear();
+  _impl_.pool_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Pools::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Pools::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated string pool = 1;
       case 1:
@@ -2254,9 +2304,9 @@ const char* Pools::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           do {
             ptr += 1;
             auto str = _internal_add_pool();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Pools.pool"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Pools.pool"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
@@ -2302,7 +2352,7 @@ uint8_t* Pools::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Pools)
@@ -2319,36 +2369,32 @@ size_t Pools::ByteSizeLong() const {
 
   // repeated string pool = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(pool_.size());
-  for (int i = 0, n = pool_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.pool_.size());
+  for (int i = 0, n = _impl_.pool_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      pool_.Get(i));
+      _impl_.pool_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Pools::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Pools::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Pools::GetClassData() const { return &_class_data_; }
 
-void Pools::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Pools *>(to)->MergeFrom(
-      static_cast<const Pools &>(from));
-}
 
-
-void Pools::MergeFrom(const Pools& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Pools)
-  GOOGLE_DCHECK_NE(&from, this);
+void Pools::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Pools*>(&to_msg);
+  auto& from = static_cast<const Pools&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Pools)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  pool_.MergeFrom(from.pool_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.pool_.MergeFrom(from._impl_.pool_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Pools::CopyFrom(const Pools& from) {
@@ -2365,11 +2411,11 @@ bool Pools::IsInitialized() const {
 void Pools::InternalSwap(Pools* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  pool_.InternalSwap(&other->pool_);
+  _impl_.pool_.InternalSwap(&other->_impl_.pool_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Pools::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[2]);
 }
@@ -2382,43 +2428,47 @@ class Certs::_Internal {
 
 Certs::Certs(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  cert_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Certs)
 }
 Certs::Certs(const Certs& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      cert_(from.cert_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Certs* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.cert_){from._impl_.cert_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Certs)
 }
 
-inline void Certs::SharedCtor() {
+inline void Certs::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.cert_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Certs::~Certs() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.Certs)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Certs::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.cert_.~RepeatedPtrField();
 }
 
-void Certs::ArenaDtor(void* object) {
-  Certs* _this = reinterpret_cast< Certs* >(object);
-  (void)_this;
-}
-void Certs::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Certs::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Certs::Clear() {
@@ -2427,15 +2477,15 @@ void Certs::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cert_.Clear();
+  _impl_.cert_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Certs::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Certs::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated string cert = 1;
       case 1:
@@ -2444,9 +2494,9 @@ const char* Certs::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           do {
             ptr += 1;
             auto str = _internal_add_cert();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Certs.cert"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Certs.cert"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
@@ -2492,7 +2542,7 @@ uint8_t* Certs::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Certs)
@@ -2509,36 +2559,32 @@ size_t Certs::ByteSizeLong() const {
 
   // repeated string cert = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(cert_.size());
-  for (int i = 0, n = cert_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.cert_.size());
+  for (int i = 0, n = _impl_.cert_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      cert_.Get(i));
+      _impl_.cert_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Certs::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Certs::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Certs::GetClassData() const { return &_class_data_; }
 
-void Certs::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Certs *>(to)->MergeFrom(
-      static_cast<const Certs &>(from));
-}
 
-
-void Certs::MergeFrom(const Certs& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Certs)
-  GOOGLE_DCHECK_NE(&from, this);
+void Certs::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Certs*>(&to_msg);
+  auto& from = static_cast<const Certs&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Certs)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cert_.MergeFrom(from.cert_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.cert_.MergeFrom(from._impl_.cert_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Certs::CopyFrom(const Certs& from) {
@@ -2555,11 +2601,11 @@ bool Certs::IsInitialized() const {
 void Certs::InternalSwap(Certs* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  cert_.InternalSwap(&other->cert_);
+  _impl_.cert_.InternalSwap(&other->_impl_.cert_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Certs::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[3]);
 }
@@ -2572,43 +2618,47 @@ class PubKeys::_Internal {
 
 PubKeys::PubKeys(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  pubkey_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.PubKeys)
 }
 PubKeys::PubKeys(const PubKeys& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      pubkey_(from.pubkey_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PubKeys* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pubkey_){from._impl_.pubkey_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.PubKeys)
 }
 
-inline void PubKeys::SharedCtor() {
+inline void PubKeys::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pubkey_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 PubKeys::~PubKeys() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.PubKeys)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PubKeys::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.pubkey_.~RepeatedPtrField();
 }
 
-void PubKeys::ArenaDtor(void* object) {
-  PubKeys* _this = reinterpret_cast< PubKeys* >(object);
-  (void)_this;
-}
-void PubKeys::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PubKeys::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PubKeys::Clear() {
@@ -2617,15 +2667,15 @@ void PubKeys::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pubkey_.Clear();
+  _impl_.pubkey_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PubKeys::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PubKeys::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated string pubkey = 1;
       case 1:
@@ -2634,9 +2684,9 @@ const char* PubKeys::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           do {
             ptr += 1;
             auto str = _internal_add_pubkey();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.PubKeys.pubkey"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.PubKeys.pubkey"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
@@ -2682,7 +2732,7 @@ uint8_t* PubKeys::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.PubKeys)
@@ -2699,36 +2749,32 @@ size_t PubKeys::ByteSizeLong() const {
 
   // repeated string pubkey = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(pubkey_.size());
-  for (int i = 0, n = pubkey_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.pubkey_.size());
+  for (int i = 0, n = _impl_.pubkey_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      pubkey_.Get(i));
+      _impl_.pubkey_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PubKeys::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PubKeys::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PubKeys::GetClassData() const { return &_class_data_; }
 
-void PubKeys::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PubKeys *>(to)->MergeFrom(
-      static_cast<const PubKeys &>(from));
-}
 
-
-void PubKeys::MergeFrom(const PubKeys& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.PubKeys)
-  GOOGLE_DCHECK_NE(&from, this);
+void PubKeys::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PubKeys*>(&to_msg);
+  auto& from = static_cast<const PubKeys&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.PubKeys)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  pubkey_.MergeFrom(from.pubkey_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.pubkey_.MergeFrom(from._impl_.pubkey_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PubKeys::CopyFrom(const PubKeys& from) {
@@ -2745,11 +2791,11 @@ bool PubKeys::IsInitialized() const {
 void PubKeys::InternalSwap(PubKeys* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  pubkey_.InternalSwap(&other->pubkey_);
+  _impl_.pubkey_.InternalSwap(&other->_impl_.pubkey_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PubKeys::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[4]);
 }
@@ -2762,43 +2808,47 @@ class Groups::_Internal {
 
 Groups::Groups(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  group_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Groups)
 }
 Groups::Groups(const Groups& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      group_(from.group_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Groups* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.group_){from._impl_.group_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Groups)
 }
 
-inline void Groups::SharedCtor() {
+inline void Groups::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.group_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Groups::~Groups() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.Groups)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Groups::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.group_.~RepeatedPtrField();
 }
 
-void Groups::ArenaDtor(void* object) {
-  Groups* _this = reinterpret_cast< Groups* >(object);
-  (void)_this;
-}
-void Groups::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Groups::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Groups::Clear() {
@@ -2807,15 +2857,15 @@ void Groups::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  group_.Clear();
+  _impl_.group_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Groups::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Groups::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated string group = 1;
       case 1:
@@ -2824,9 +2874,9 @@ const char* Groups::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           do {
             ptr += 1;
             auto str = _internal_add_group();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Groups.group"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Groups.group"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
@@ -2872,7 +2922,7 @@ uint8_t* Groups::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Groups)
@@ -2889,36 +2939,32 @@ size_t Groups::ByteSizeLong() const {
 
   // repeated string group = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(group_.size());
-  for (int i = 0, n = group_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.group_.size());
+  for (int i = 0, n = _impl_.group_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      group_.Get(i));
+      _impl_.group_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Groups::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Groups::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Groups::GetClassData() const { return &_class_data_; }
 
-void Groups::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Groups *>(to)->MergeFrom(
-      static_cast<const Groups &>(from));
-}
 
-
-void Groups::MergeFrom(const Groups& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Groups)
-  GOOGLE_DCHECK_NE(&from, this);
+void Groups::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Groups*>(&to_msg);
+  auto& from = static_cast<const Groups&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Groups)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  group_.MergeFrom(from.group_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.group_.MergeFrom(from._impl_.group_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Groups::CopyFrom(const Groups& from) {
@@ -2935,11 +2981,11 @@ bool Groups::IsInitialized() const {
 void Groups::InternalSwap(Groups* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  group_.InternalSwap(&other->group_);
+  _impl_.group_.InternalSwap(&other->_impl_.group_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Groups::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[5]);
 }
@@ -2952,43 +2998,47 @@ class CertPolicy::_Internal {
 
 CertPolicy::CertPolicy(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  cert_policy_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.CertPolicy)
 }
 CertPolicy::CertPolicy(const CertPolicy& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      cert_policy_(from.cert_policy_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CertPolicy* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.cert_policy_){from._impl_.cert_policy_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.CertPolicy)
 }
 
-inline void CertPolicy::SharedCtor() {
+inline void CertPolicy::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.cert_policy_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 CertPolicy::~CertPolicy() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.CertPolicy)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void CertPolicy::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.cert_policy_.~RepeatedPtrField();
 }
 
-void CertPolicy::ArenaDtor(void* object) {
-  CertPolicy* _this = reinterpret_cast< CertPolicy* >(object);
-  (void)_this;
-}
-void CertPolicy::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void CertPolicy::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void CertPolicy::Clear() {
@@ -2997,15 +3047,15 @@ void CertPolicy::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cert_policy_.Clear();
+  _impl_.cert_policy_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CertPolicy::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* CertPolicy::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated string cert_policy = 1;
       case 1:
@@ -3014,9 +3064,9 @@ const char* CertPolicy::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           do {
             ptr += 1;
             auto str = _internal_add_cert_policy();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.CertPolicy.cert_policy"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.CertPolicy.cert_policy"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
@@ -3062,7 +3112,7 @@ uint8_t* CertPolicy::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.CertPolicy)
@@ -3079,36 +3129,32 @@ size_t CertPolicy::ByteSizeLong() const {
 
   // repeated string cert_policy = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(cert_policy_.size());
-  for (int i = 0, n = cert_policy_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.cert_policy_.size());
+  for (int i = 0, n = _impl_.cert_policy_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      cert_policy_.Get(i));
+      _impl_.cert_policy_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CertPolicy::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     CertPolicy::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CertPolicy::GetClassData() const { return &_class_data_; }
 
-void CertPolicy::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<CertPolicy *>(to)->MergeFrom(
-      static_cast<const CertPolicy &>(from));
-}
 
-
-void CertPolicy::MergeFrom(const CertPolicy& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.CertPolicy)
-  GOOGLE_DCHECK_NE(&from, this);
+void CertPolicy::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CertPolicy*>(&to_msg);
+  auto& from = static_cast<const CertPolicy&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.CertPolicy)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cert_policy_.MergeFrom(from.cert_policy_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.cert_policy_.MergeFrom(from._impl_.cert_policy_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CertPolicy::CopyFrom(const CertPolicy& from) {
@@ -3125,11 +3171,11 @@ bool CertPolicy::IsInitialized() const {
 void CertPolicy::InternalSwap(CertPolicy* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  cert_policy_.InternalSwap(&other->cert_policy_);
+  _impl_.cert_policy_.InternalSwap(&other->_impl_.cert_policy_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CertPolicy::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[6]);
 }
@@ -3142,43 +3188,47 @@ class CaCerts::_Internal {
 
 CaCerts::CaCerts(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  cacert_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.CaCerts)
 }
 CaCerts::CaCerts(const CaCerts& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      cacert_(from.cacert_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CaCerts* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.cacert_){from._impl_.cacert_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.CaCerts)
 }
 
-inline void CaCerts::SharedCtor() {
+inline void CaCerts::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.cacert_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 CaCerts::~CaCerts() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.CaCerts)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void CaCerts::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.cacert_.~RepeatedPtrField();
 }
 
-void CaCerts::ArenaDtor(void* object) {
-  CaCerts* _this = reinterpret_cast< CaCerts* >(object);
-  (void)_this;
-}
-void CaCerts::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void CaCerts::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void CaCerts::Clear() {
@@ -3187,15 +3237,15 @@ void CaCerts::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cacert_.Clear();
+  _impl_.cacert_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CaCerts::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* CaCerts::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated string cacert = 1;
       case 1:
@@ -3204,9 +3254,9 @@ const char* CaCerts::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           do {
             ptr += 1;
             auto str = _internal_add_cacert();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.CaCerts.cacert"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.CaCerts.cacert"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
@@ -3252,7 +3302,7 @@ uint8_t* CaCerts::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.CaCerts)
@@ -3269,36 +3319,32 @@ size_t CaCerts::ByteSizeLong() const {
 
   // repeated string cacert = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(cacert_.size());
-  for (int i = 0, n = cacert_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.cacert_.size());
+  for (int i = 0, n = _impl_.cacert_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      cacert_.Get(i));
+      _impl_.cacert_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CaCerts::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     CaCerts::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CaCerts::GetClassData() const { return &_class_data_; }
 
-void CaCerts::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<CaCerts *>(to)->MergeFrom(
-      static_cast<const CaCerts &>(from));
-}
 
-
-void CaCerts::MergeFrom(const CaCerts& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.CaCerts)
-  GOOGLE_DCHECK_NE(&from, this);
+void CaCerts::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CaCerts*>(&to_msg);
+  auto& from = static_cast<const CaCerts&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.CaCerts)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cacert_.MergeFrom(from.cacert_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.cacert_.MergeFrom(from._impl_.cacert_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CaCerts::CopyFrom(const CaCerts& from) {
@@ -3315,11 +3361,11 @@ bool CaCerts::IsInitialized() const {
 void CaCerts::InternalSwap(CaCerts* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  cacert_.InternalSwap(&other->cacert_);
+  _impl_.cacert_.InternalSwap(&other->_impl_.cacert_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CaCerts::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[7]);
 }
@@ -3334,118 +3380,127 @@ class LocalAuth::_Internal {
 
 const ::opi_api::security::v1::Certs&
 LocalAuth::_Internal::certs(const LocalAuth* msg) {
-  return *msg->certs_;
+  return *msg->_impl_.certs_;
 }
 const ::opi_api::security::v1::PubKeys&
 LocalAuth::_Internal::pubkeys(const LocalAuth* msg) {
-  return *msg->pubkeys_;
+  return *msg->_impl_.pubkeys_;
 }
 LocalAuth::LocalAuth(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.LocalAuth)
 }
 LocalAuth::LocalAuth(const LocalAuth& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  LocalAuth* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_){}
+    , decltype(_impl_.eap_id_){}
+    , decltype(_impl_.aaa_id_){}
+    , decltype(_impl_.xauth_id_){}
+    , decltype(_impl_.certs_){nullptr}
+    , decltype(_impl_.pubkeys_){nullptr}
+    , decltype(_impl_.auth_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.id_.Set(from._internal_id(), 
+      _this->GetArenaForAllocation());
   }
-  eap_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.eap_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    eap_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.eap_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_eap_id().empty()) {
-    eap_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_eap_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.eap_id_.Set(from._internal_eap_id(), 
+      _this->GetArenaForAllocation());
   }
-  aaa_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.aaa_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    aaa_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.aaa_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_aaa_id().empty()) {
-    aaa_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_aaa_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.aaa_id_.Set(from._internal_aaa_id(), 
+      _this->GetArenaForAllocation());
   }
-  xauth_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.xauth_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    xauth_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.xauth_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_xauth_id().empty()) {
-    xauth_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xauth_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.xauth_id_.Set(from._internal_xauth_id(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_certs()) {
-    certs_ = new ::opi_api::security::v1::Certs(*from.certs_);
-  } else {
-    certs_ = nullptr;
+    _this->_impl_.certs_ = new ::opi_api::security::v1::Certs(*from._impl_.certs_);
   }
   if (from._internal_has_pubkeys()) {
-    pubkeys_ = new ::opi_api::security::v1::PubKeys(*from.pubkeys_);
-  } else {
-    pubkeys_ = nullptr;
+    _this->_impl_.pubkeys_ = new ::opi_api::security::v1::PubKeys(*from._impl_.pubkeys_);
   }
-  auth_ = from.auth_;
+  _this->_impl_.auth_ = from._impl_.auth_;
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.LocalAuth)
 }
 
-inline void LocalAuth::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-eap_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  eap_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-aaa_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  aaa_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xauth_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  xauth_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&certs_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&auth_) -
-    reinterpret_cast<char*>(&certs_)) + sizeof(auth_));
+inline void LocalAuth::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_){}
+    , decltype(_impl_.eap_id_){}
+    , decltype(_impl_.aaa_id_){}
+    , decltype(_impl_.xauth_id_){}
+    , decltype(_impl_.certs_){nullptr}
+    , decltype(_impl_.pubkeys_){nullptr}
+    , decltype(_impl_.auth_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.eap_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.eap_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.aaa_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.aaa_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.xauth_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.xauth_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 LocalAuth::~LocalAuth() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.LocalAuth)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void LocalAuth::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  eap_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  aaa_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  xauth_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete certs_;
-  if (this != internal_default_instance()) delete pubkeys_;
+  _impl_.id_.Destroy();
+  _impl_.eap_id_.Destroy();
+  _impl_.aaa_id_.Destroy();
+  _impl_.xauth_id_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.certs_;
+  if (this != internal_default_instance()) delete _impl_.pubkeys_;
 }
 
-void LocalAuth::ArenaDtor(void* object) {
-  LocalAuth* _this = reinterpret_cast< LocalAuth* >(object);
-  (void)_this;
-}
-void LocalAuth::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void LocalAuth::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void LocalAuth::Clear() {
@@ -3454,27 +3509,27 @@ void LocalAuth::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
-  eap_id_.ClearToEmpty();
-  aaa_id_.ClearToEmpty();
-  xauth_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && certs_ != nullptr) {
-    delete certs_;
+  _impl_.id_.ClearToEmpty();
+  _impl_.eap_id_.ClearToEmpty();
+  _impl_.aaa_id_.ClearToEmpty();
+  _impl_.xauth_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.certs_ != nullptr) {
+    delete _impl_.certs_;
   }
-  certs_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && pubkeys_ != nullptr) {
-    delete pubkeys_;
+  _impl_.certs_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.pubkeys_ != nullptr) {
+    delete _impl_.pubkeys_;
   }
-  pubkeys_ = nullptr;
-  auth_ = 0;
+  _impl_.pubkeys_ = nullptr;
+  _impl_.auth_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* LocalAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* LocalAuth::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.security.v1.AuthType auth = 1;
       case 1:
@@ -3489,9 +3544,9 @@ const char* LocalAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.LocalAuth.id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.LocalAuth.id"));
         } else
           goto handle_unusual;
         continue;
@@ -3499,9 +3554,9 @@ const char* LocalAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_eap_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.LocalAuth.eap_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.LocalAuth.eap_id"));
         } else
           goto handle_unusual;
         continue;
@@ -3509,9 +3564,9 @@ const char* LocalAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_aaa_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.LocalAuth.aaa_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.LocalAuth.aaa_id"));
         } else
           goto handle_unusual;
         continue;
@@ -3519,9 +3574,9 @@ const char* LocalAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_xauth_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.LocalAuth.xauth_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.LocalAuth.xauth_id"));
         } else
           goto handle_unusual;
         continue;
@@ -3573,7 +3628,7 @@ uint8_t* LocalAuth::_InternalSerialize(
   // .opi_api.security.v1.AuthType auth = 1;
   if (this->_internal_auth() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_auth(), target);
   }
 
@@ -3619,22 +3674,20 @@ uint8_t* LocalAuth::_InternalSerialize(
 
   // .opi_api.security.v1.Certs certs = 6;
   if (this->_internal_has_certs()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::certs(this), target, stream);
+      InternalWriteMessage(6, _Internal::certs(this),
+        _Internal::certs(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.PubKeys pubkeys = 7;
   if (this->_internal_has_pubkeys()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        7, _Internal::pubkeys(this), target, stream);
+      InternalWriteMessage(7, _Internal::pubkeys(this),
+        _Internal::pubkeys(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.LocalAuth)
@@ -3681,66 +3734,64 @@ size_t LocalAuth::ByteSizeLong() const {
   if (this->_internal_has_certs()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *certs_);
+        *_impl_.certs_);
   }
 
   // .opi_api.security.v1.PubKeys pubkeys = 7;
   if (this->_internal_has_pubkeys()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *pubkeys_);
+        *_impl_.pubkeys_);
   }
 
   // .opi_api.security.v1.AuthType auth = 1;
   if (this->_internal_auth() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_auth());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_auth());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LocalAuth::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     LocalAuth::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LocalAuth::GetClassData() const { return &_class_data_; }
 
-void LocalAuth::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<LocalAuth *>(to)->MergeFrom(
-      static_cast<const LocalAuth &>(from));
-}
 
-
-void LocalAuth::MergeFrom(const LocalAuth& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.LocalAuth)
-  GOOGLE_DCHECK_NE(&from, this);
+void LocalAuth::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<LocalAuth*>(&to_msg);
+  auto& from = static_cast<const LocalAuth&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.LocalAuth)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+    _this->_internal_set_id(from._internal_id());
   }
   if (!from._internal_eap_id().empty()) {
-    _internal_set_eap_id(from._internal_eap_id());
+    _this->_internal_set_eap_id(from._internal_eap_id());
   }
   if (!from._internal_aaa_id().empty()) {
-    _internal_set_aaa_id(from._internal_aaa_id());
+    _this->_internal_set_aaa_id(from._internal_aaa_id());
   }
   if (!from._internal_xauth_id().empty()) {
-    _internal_set_xauth_id(from._internal_xauth_id());
+    _this->_internal_set_xauth_id(from._internal_xauth_id());
   }
   if (from._internal_has_certs()) {
-    _internal_mutable_certs()->::opi_api::security::v1::Certs::MergeFrom(from._internal_certs());
+    _this->_internal_mutable_certs()->::opi_api::security::v1::Certs::MergeFrom(
+        from._internal_certs());
   }
   if (from._internal_has_pubkeys()) {
-    _internal_mutable_pubkeys()->::opi_api::security::v1::PubKeys::MergeFrom(from._internal_pubkeys());
+    _this->_internal_mutable_pubkeys()->::opi_api::security::v1::PubKeys::MergeFrom(
+        from._internal_pubkeys());
   }
   if (from._internal_auth() != 0) {
-    _internal_set_auth(from._internal_auth());
+    _this->_internal_set_auth(from._internal_auth());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void LocalAuth::CopyFrom(const LocalAuth& from) {
@@ -3760,35 +3811,31 @@ void LocalAuth::InternalSwap(LocalAuth* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &_impl_.id_, lhs_arena,
+      &other->_impl_.id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &eap_id_, lhs_arena,
-      &other->eap_id_, rhs_arena
+      &_impl_.eap_id_, lhs_arena,
+      &other->_impl_.eap_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &aaa_id_, lhs_arena,
-      &other->aaa_id_, rhs_arena
+      &_impl_.aaa_id_, lhs_arena,
+      &other->_impl_.aaa_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &xauth_id_, lhs_arena,
-      &other->xauth_id_, rhs_arena
+      &_impl_.xauth_id_, lhs_arena,
+      &other->_impl_.xauth_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(LocalAuth, auth_)
-      + sizeof(LocalAuth::auth_)
-      - PROTOBUF_FIELD_OFFSET(LocalAuth, certs_)>(
-          reinterpret_cast<char*>(&certs_),
-          reinterpret_cast<char*>(&other->certs_));
+      PROTOBUF_FIELD_OFFSET(LocalAuth, _impl_.auth_)
+      + sizeof(LocalAuth::_impl_.auth_)
+      - PROTOBUF_FIELD_OFFSET(LocalAuth, _impl_.certs_)>(
+          reinterpret_cast<char*>(&_impl_.certs_),
+          reinterpret_cast<char*>(&other->_impl_.certs_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LocalAuth::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[8]);
 }
@@ -3806,122 +3853,127 @@ class RemoteAuth::_Internal {
 
 const ::opi_api::security::v1::Groups&
 RemoteAuth::_Internal::groups(const RemoteAuth* msg) {
-  return *msg->groups_;
+  return *msg->_impl_.groups_;
 }
 const ::opi_api::security::v1::CertPolicy&
 RemoteAuth::_Internal::cert_policy(const RemoteAuth* msg) {
-  return *msg->cert_policy_;
+  return *msg->_impl_.cert_policy_;
 }
 const ::opi_api::security::v1::Certs&
 RemoteAuth::_Internal::certs(const RemoteAuth* msg) {
-  return *msg->certs_;
+  return *msg->_impl_.certs_;
 }
 const ::opi_api::security::v1::CaCerts&
 RemoteAuth::_Internal::ca_certs(const RemoteAuth* msg) {
-  return *msg->ca_certs_;
+  return *msg->_impl_.ca_certs_;
 }
 const ::opi_api::security::v1::PubKeys&
 RemoteAuth::_Internal::pubkeys(const RemoteAuth* msg) {
-  return *msg->pubkeys_;
+  return *msg->_impl_.pubkeys_;
 }
 RemoteAuth::RemoteAuth(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.RemoteAuth)
 }
 RemoteAuth::RemoteAuth(const RemoteAuth& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RemoteAuth* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_){}
+    , decltype(_impl_.eap_id_){}
+    , decltype(_impl_.groups_){nullptr}
+    , decltype(_impl_.cert_policy_){nullptr}
+    , decltype(_impl_.certs_){nullptr}
+    , decltype(_impl_.ca_certs_){nullptr}
+    , decltype(_impl_.pubkeys_){nullptr}
+    , decltype(_impl_.auth_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.id_.Set(from._internal_id(), 
+      _this->GetArenaForAllocation());
   }
-  eap_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.eap_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    eap_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.eap_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_eap_id().empty()) {
-    eap_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_eap_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.eap_id_.Set(from._internal_eap_id(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_groups()) {
-    groups_ = new ::opi_api::security::v1::Groups(*from.groups_);
-  } else {
-    groups_ = nullptr;
+    _this->_impl_.groups_ = new ::opi_api::security::v1::Groups(*from._impl_.groups_);
   }
   if (from._internal_has_cert_policy()) {
-    cert_policy_ = new ::opi_api::security::v1::CertPolicy(*from.cert_policy_);
-  } else {
-    cert_policy_ = nullptr;
+    _this->_impl_.cert_policy_ = new ::opi_api::security::v1::CertPolicy(*from._impl_.cert_policy_);
   }
   if (from._internal_has_certs()) {
-    certs_ = new ::opi_api::security::v1::Certs(*from.certs_);
-  } else {
-    certs_ = nullptr;
+    _this->_impl_.certs_ = new ::opi_api::security::v1::Certs(*from._impl_.certs_);
   }
   if (from._internal_has_ca_certs()) {
-    ca_certs_ = new ::opi_api::security::v1::CaCerts(*from.ca_certs_);
-  } else {
-    ca_certs_ = nullptr;
+    _this->_impl_.ca_certs_ = new ::opi_api::security::v1::CaCerts(*from._impl_.ca_certs_);
   }
   if (from._internal_has_pubkeys()) {
-    pubkeys_ = new ::opi_api::security::v1::PubKeys(*from.pubkeys_);
-  } else {
-    pubkeys_ = nullptr;
+    _this->_impl_.pubkeys_ = new ::opi_api::security::v1::PubKeys(*from._impl_.pubkeys_);
   }
-  auth_ = from.auth_;
+  _this->_impl_.auth_ = from._impl_.auth_;
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.RemoteAuth)
 }
 
-inline void RemoteAuth::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-eap_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  eap_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&groups_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&auth_) -
-    reinterpret_cast<char*>(&groups_)) + sizeof(auth_));
+inline void RemoteAuth::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_){}
+    , decltype(_impl_.eap_id_){}
+    , decltype(_impl_.groups_){nullptr}
+    , decltype(_impl_.cert_policy_){nullptr}
+    , decltype(_impl_.certs_){nullptr}
+    , decltype(_impl_.ca_certs_){nullptr}
+    , decltype(_impl_.pubkeys_){nullptr}
+    , decltype(_impl_.auth_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.eap_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.eap_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 RemoteAuth::~RemoteAuth() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.RemoteAuth)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void RemoteAuth::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  eap_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete groups_;
-  if (this != internal_default_instance()) delete cert_policy_;
-  if (this != internal_default_instance()) delete certs_;
-  if (this != internal_default_instance()) delete ca_certs_;
-  if (this != internal_default_instance()) delete pubkeys_;
+  _impl_.id_.Destroy();
+  _impl_.eap_id_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.groups_;
+  if (this != internal_default_instance()) delete _impl_.cert_policy_;
+  if (this != internal_default_instance()) delete _impl_.certs_;
+  if (this != internal_default_instance()) delete _impl_.ca_certs_;
+  if (this != internal_default_instance()) delete _impl_.pubkeys_;
 }
 
-void RemoteAuth::ArenaDtor(void* object) {
-  RemoteAuth* _this = reinterpret_cast< RemoteAuth* >(object);
-  (void)_this;
-}
-void RemoteAuth::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void RemoteAuth::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void RemoteAuth::Clear() {
@@ -3930,37 +3982,37 @@ void RemoteAuth::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
-  eap_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && groups_ != nullptr) {
-    delete groups_;
+  _impl_.id_.ClearToEmpty();
+  _impl_.eap_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.groups_ != nullptr) {
+    delete _impl_.groups_;
   }
-  groups_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && cert_policy_ != nullptr) {
-    delete cert_policy_;
+  _impl_.groups_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.cert_policy_ != nullptr) {
+    delete _impl_.cert_policy_;
   }
-  cert_policy_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && certs_ != nullptr) {
-    delete certs_;
+  _impl_.cert_policy_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.certs_ != nullptr) {
+    delete _impl_.certs_;
   }
-  certs_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && ca_certs_ != nullptr) {
-    delete ca_certs_;
+  _impl_.certs_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.ca_certs_ != nullptr) {
+    delete _impl_.ca_certs_;
   }
-  ca_certs_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && pubkeys_ != nullptr) {
-    delete pubkeys_;
+  _impl_.ca_certs_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.pubkeys_ != nullptr) {
+    delete _impl_.pubkeys_;
   }
-  pubkeys_ = nullptr;
-  auth_ = 0;
+  _impl_.pubkeys_ = nullptr;
+  _impl_.auth_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RemoteAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* RemoteAuth::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.security.v1.AuthType auth = 1;
       case 1:
@@ -3975,9 +4027,9 @@ const char* RemoteAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.RemoteAuth.id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.RemoteAuth.id"));
         } else
           goto handle_unusual;
         continue;
@@ -3985,9 +4037,9 @@ const char* RemoteAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_eap_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.RemoteAuth.eap_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.RemoteAuth.eap_id"));
         } else
           goto handle_unusual;
         continue;
@@ -4063,7 +4115,7 @@ uint8_t* RemoteAuth::_InternalSerialize(
   // .opi_api.security.v1.AuthType auth = 1;
   if (this->_internal_auth() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_auth(), target);
   }
 
@@ -4089,46 +4141,41 @@ uint8_t* RemoteAuth::_InternalSerialize(
 
   // .opi_api.security.v1.Groups groups = 4;
   if (this->_internal_has_groups()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::groups(this), target, stream);
+      InternalWriteMessage(4, _Internal::groups(this),
+        _Internal::groups(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.CertPolicy cert_policy = 5;
   if (this->_internal_has_cert_policy()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::cert_policy(this), target, stream);
+      InternalWriteMessage(5, _Internal::cert_policy(this),
+        _Internal::cert_policy(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.Certs certs = 6;
   if (this->_internal_has_certs()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::certs(this), target, stream);
+      InternalWriteMessage(6, _Internal::certs(this),
+        _Internal::certs(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.CaCerts ca_certs = 7;
   if (this->_internal_has_ca_certs()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        7, _Internal::ca_certs(this), target, stream);
+      InternalWriteMessage(7, _Internal::ca_certs(this),
+        _Internal::ca_certs(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.PubKeys pubkeys = 8;
   if (this->_internal_has_pubkeys()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        8, _Internal::pubkeys(this), target, stream);
+      InternalWriteMessage(8, _Internal::pubkeys(this),
+        _Internal::pubkeys(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.RemoteAuth)
@@ -4161,90 +4208,91 @@ size_t RemoteAuth::ByteSizeLong() const {
   if (this->_internal_has_groups()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *groups_);
+        *_impl_.groups_);
   }
 
   // .opi_api.security.v1.CertPolicy cert_policy = 5;
   if (this->_internal_has_cert_policy()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *cert_policy_);
+        *_impl_.cert_policy_);
   }
 
   // .opi_api.security.v1.Certs certs = 6;
   if (this->_internal_has_certs()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *certs_);
+        *_impl_.certs_);
   }
 
   // .opi_api.security.v1.CaCerts ca_certs = 7;
   if (this->_internal_has_ca_certs()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *ca_certs_);
+        *_impl_.ca_certs_);
   }
 
   // .opi_api.security.v1.PubKeys pubkeys = 8;
   if (this->_internal_has_pubkeys()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *pubkeys_);
+        *_impl_.pubkeys_);
   }
 
   // .opi_api.security.v1.AuthType auth = 1;
   if (this->_internal_auth() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_auth());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_auth());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RemoteAuth::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     RemoteAuth::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoteAuth::GetClassData() const { return &_class_data_; }
 
-void RemoteAuth::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<RemoteAuth *>(to)->MergeFrom(
-      static_cast<const RemoteAuth &>(from));
-}
 
-
-void RemoteAuth::MergeFrom(const RemoteAuth& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.RemoteAuth)
-  GOOGLE_DCHECK_NE(&from, this);
+void RemoteAuth::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<RemoteAuth*>(&to_msg);
+  auto& from = static_cast<const RemoteAuth&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.RemoteAuth)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+    _this->_internal_set_id(from._internal_id());
   }
   if (!from._internal_eap_id().empty()) {
-    _internal_set_eap_id(from._internal_eap_id());
+    _this->_internal_set_eap_id(from._internal_eap_id());
   }
   if (from._internal_has_groups()) {
-    _internal_mutable_groups()->::opi_api::security::v1::Groups::MergeFrom(from._internal_groups());
+    _this->_internal_mutable_groups()->::opi_api::security::v1::Groups::MergeFrom(
+        from._internal_groups());
   }
   if (from._internal_has_cert_policy()) {
-    _internal_mutable_cert_policy()->::opi_api::security::v1::CertPolicy::MergeFrom(from._internal_cert_policy());
+    _this->_internal_mutable_cert_policy()->::opi_api::security::v1::CertPolicy::MergeFrom(
+        from._internal_cert_policy());
   }
   if (from._internal_has_certs()) {
-    _internal_mutable_certs()->::opi_api::security::v1::Certs::MergeFrom(from._internal_certs());
+    _this->_internal_mutable_certs()->::opi_api::security::v1::Certs::MergeFrom(
+        from._internal_certs());
   }
   if (from._internal_has_ca_certs()) {
-    _internal_mutable_ca_certs()->::opi_api::security::v1::CaCerts::MergeFrom(from._internal_ca_certs());
+    _this->_internal_mutable_ca_certs()->::opi_api::security::v1::CaCerts::MergeFrom(
+        from._internal_ca_certs());
   }
   if (from._internal_has_pubkeys()) {
-    _internal_mutable_pubkeys()->::opi_api::security::v1::PubKeys::MergeFrom(from._internal_pubkeys());
+    _this->_internal_mutable_pubkeys()->::opi_api::security::v1::PubKeys::MergeFrom(
+        from._internal_pubkeys());
   }
   if (from._internal_auth() != 0) {
-    _internal_set_auth(from._internal_auth());
+    _this->_internal_set_auth(from._internal_auth());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RemoteAuth::CopyFrom(const RemoteAuth& from) {
@@ -4264,25 +4312,23 @@ void RemoteAuth::InternalSwap(RemoteAuth* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &_impl_.id_, lhs_arena,
+      &other->_impl_.id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &eap_id_, lhs_arena,
-      &other->eap_id_, rhs_arena
+      &_impl_.eap_id_, lhs_arena,
+      &other->_impl_.eap_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RemoteAuth, auth_)
-      + sizeof(RemoteAuth::auth_)
-      - PROTOBUF_FIELD_OFFSET(RemoteAuth, groups_)>(
-          reinterpret_cast<char*>(&groups_),
-          reinterpret_cast<char*>(&other->groups_));
+      PROTOBUF_FIELD_OFFSET(RemoteAuth, _impl_.auth_)
+      + sizeof(RemoteAuth::_impl_.auth_)
+      - PROTOBUF_FIELD_OFFSET(RemoteAuth, _impl_.groups_)>(
+          reinterpret_cast<char*>(&_impl_.groups_),
+          reinterpret_cast<char*>(&other->_impl_.groups_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoteAuth::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[9]);
 }
@@ -4296,79 +4342,88 @@ class TrafficSelectors_TrafficSelector::_Internal {
 TrafficSelectors_TrafficSelector::TrafficSelectors_TrafficSelector(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.TrafficSelectors.TrafficSelector)
 }
 TrafficSelectors_TrafficSelector::TrafficSelectors_TrafficSelector(const TrafficSelectors_TrafficSelector& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  TrafficSelectors_TrafficSelector* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.cidr_){}
+    , decltype(_impl_.proto_){}
+    , decltype(_impl_.port_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  cidr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.cidr_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    cidr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.cidr_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_cidr().empty()) {
-    cidr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cidr(), 
-      GetArenaForAllocation());
+    _this->_impl_.cidr_.Set(from._internal_cidr(), 
+      _this->GetArenaForAllocation());
   }
-  proto_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.proto_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    proto_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.proto_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_proto().empty()) {
-    proto_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_proto(), 
-      GetArenaForAllocation());
+    _this->_impl_.proto_.Set(from._internal_proto(), 
+      _this->GetArenaForAllocation());
   }
-  port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.port_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.port_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_port().empty()) {
-    port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_port(), 
-      GetArenaForAllocation());
+    _this->_impl_.port_.Set(from._internal_port(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.TrafficSelectors.TrafficSelector)
 }
 
-inline void TrafficSelectors_TrafficSelector::SharedCtor() {
-cidr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  cidr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-proto_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  proto_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void TrafficSelectors_TrafficSelector::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.cidr_){}
+    , decltype(_impl_.proto_){}
+    , decltype(_impl_.port_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.cidr_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.cidr_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.proto_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.proto_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.port_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.port_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 TrafficSelectors_TrafficSelector::~TrafficSelectors_TrafficSelector() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.TrafficSelectors.TrafficSelector)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void TrafficSelectors_TrafficSelector::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  cidr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  proto_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.cidr_.Destroy();
+  _impl_.proto_.Destroy();
+  _impl_.port_.Destroy();
 }
 
-void TrafficSelectors_TrafficSelector::ArenaDtor(void* object) {
-  TrafficSelectors_TrafficSelector* _this = reinterpret_cast< TrafficSelectors_TrafficSelector* >(object);
-  (void)_this;
-}
-void TrafficSelectors_TrafficSelector::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void TrafficSelectors_TrafficSelector::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void TrafficSelectors_TrafficSelector::Clear() {
@@ -4377,25 +4432,25 @@ void TrafficSelectors_TrafficSelector::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cidr_.ClearToEmpty();
-  proto_.ClearToEmpty();
-  port_.ClearToEmpty();
+  _impl_.cidr_.ClearToEmpty();
+  _impl_.proto_.ClearToEmpty();
+  _impl_.port_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* TrafficSelectors_TrafficSelector::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* TrafficSelectors_TrafficSelector::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string cidr = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_cidr();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.TrafficSelectors.TrafficSelector.cidr"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.TrafficSelectors.TrafficSelector.cidr"));
         } else
           goto handle_unusual;
         continue;
@@ -4403,9 +4458,9 @@ const char* TrafficSelectors_TrafficSelector::_InternalParse(const char* ptr, ::
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_proto();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.TrafficSelectors.TrafficSelector.proto"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.TrafficSelectors.TrafficSelector.proto"));
         } else
           goto handle_unusual;
         continue;
@@ -4413,9 +4468,9 @@ const char* TrafficSelectors_TrafficSelector::_InternalParse(const char* ptr, ::
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_port();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.TrafficSelectors.TrafficSelector.port"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.TrafficSelectors.TrafficSelector.port"));
         } else
           goto handle_unusual;
         continue;
@@ -4479,7 +4534,7 @@ uint8_t* TrafficSelectors_TrafficSelector::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.TrafficSelectors.TrafficSelector)
@@ -4515,38 +4570,34 @@ size_t TrafficSelectors_TrafficSelector::ByteSizeLong() const {
         this->_internal_port());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TrafficSelectors_TrafficSelector::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     TrafficSelectors_TrafficSelector::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TrafficSelectors_TrafficSelector::GetClassData() const { return &_class_data_; }
 
-void TrafficSelectors_TrafficSelector::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<TrafficSelectors_TrafficSelector *>(to)->MergeFrom(
-      static_cast<const TrafficSelectors_TrafficSelector &>(from));
-}
 
-
-void TrafficSelectors_TrafficSelector::MergeFrom(const TrafficSelectors_TrafficSelector& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.TrafficSelectors.TrafficSelector)
-  GOOGLE_DCHECK_NE(&from, this);
+void TrafficSelectors_TrafficSelector::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<TrafficSelectors_TrafficSelector*>(&to_msg);
+  auto& from = static_cast<const TrafficSelectors_TrafficSelector&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.TrafficSelectors.TrafficSelector)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_cidr().empty()) {
-    _internal_set_cidr(from._internal_cidr());
+    _this->_internal_set_cidr(from._internal_cidr());
   }
   if (!from._internal_proto().empty()) {
-    _internal_set_proto(from._internal_proto());
+    _this->_internal_set_proto(from._internal_proto());
   }
   if (!from._internal_port().empty()) {
-    _internal_set_port(from._internal_port());
+    _this->_internal_set_port(from._internal_port());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TrafficSelectors_TrafficSelector::CopyFrom(const TrafficSelectors_TrafficSelector& from) {
@@ -4566,24 +4617,21 @@ void TrafficSelectors_TrafficSelector::InternalSwap(TrafficSelectors_TrafficSele
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &cidr_, lhs_arena,
-      &other->cidr_, rhs_arena
+      &_impl_.cidr_, lhs_arena,
+      &other->_impl_.cidr_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &proto_, lhs_arena,
-      &other->proto_, rhs_arena
+      &_impl_.proto_, lhs_arena,
+      &other->_impl_.proto_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &port_, lhs_arena,
-      &other->port_, rhs_arena
+      &_impl_.port_, lhs_arena,
+      &other->_impl_.port_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TrafficSelectors_TrafficSelector::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[10]);
 }
@@ -4596,43 +4644,47 @@ class TrafficSelectors::_Internal {
 
 TrafficSelectors::TrafficSelectors(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  ts_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.TrafficSelectors)
 }
 TrafficSelectors::TrafficSelectors(const TrafficSelectors& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      ts_(from.ts_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  TrafficSelectors* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ts_){from._impl_.ts_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.TrafficSelectors)
 }
 
-inline void TrafficSelectors::SharedCtor() {
+inline void TrafficSelectors::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ts_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 TrafficSelectors::~TrafficSelectors() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.TrafficSelectors)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void TrafficSelectors::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ts_.~RepeatedPtrField();
 }
 
-void TrafficSelectors::ArenaDtor(void* object) {
-  TrafficSelectors* _this = reinterpret_cast< TrafficSelectors* >(object);
-  (void)_this;
-}
-void TrafficSelectors::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void TrafficSelectors::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void TrafficSelectors::Clear() {
@@ -4641,15 +4693,15 @@ void TrafficSelectors::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ts_.Clear();
+  _impl_.ts_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* TrafficSelectors::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* TrafficSelectors::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.security.v1.TrafficSelectors.TrafficSelector ts = 1;
       case 1:
@@ -4694,15 +4746,15 @@ uint8_t* TrafficSelectors::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.security.v1.TrafficSelectors.TrafficSelector ts = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_ts_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_ts_size()); i < n; i++) {
+    const auto& repfield = this->_internal_ts(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_ts(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.TrafficSelectors)
@@ -4719,35 +4771,31 @@ size_t TrafficSelectors::ByteSizeLong() const {
 
   // repeated .opi_api.security.v1.TrafficSelectors.TrafficSelector ts = 1;
   total_size += 1UL * this->_internal_ts_size();
-  for (const auto& msg : this->ts_) {
+  for (const auto& msg : this->_impl_.ts_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TrafficSelectors::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     TrafficSelectors::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TrafficSelectors::GetClassData() const { return &_class_data_; }
 
-void TrafficSelectors::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<TrafficSelectors *>(to)->MergeFrom(
-      static_cast<const TrafficSelectors &>(from));
-}
 
-
-void TrafficSelectors::MergeFrom(const TrafficSelectors& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.TrafficSelectors)
-  GOOGLE_DCHECK_NE(&from, this);
+void TrafficSelectors::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<TrafficSelectors*>(&to_msg);
+  auto& from = static_cast<const TrafficSelectors&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.TrafficSelectors)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  ts_.MergeFrom(from.ts_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.ts_.MergeFrom(from._impl_.ts_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TrafficSelectors::CopyFrom(const TrafficSelectors& from) {
@@ -4764,11 +4812,11 @@ bool TrafficSelectors::IsInitialized() const {
 void TrafficSelectors::InternalSwap(TrafficSelectors* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ts_.InternalSwap(&other->ts_);
+  _impl_.ts_.InternalSwap(&other->_impl_.ts_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TrafficSelectors::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[11]);
 }
@@ -4782,53 +4830,58 @@ class Addrs::_Internal {
 Addrs::Addrs(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Addrs)
 }
 Addrs::Addrs(const Addrs& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Addrs* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.addr_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.addr_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.addr_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_addr().empty()) {
-    addr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_addr(), 
-      GetArenaForAllocation());
+    _this->_impl_.addr_.Set(from._internal_addr(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Addrs)
 }
 
-inline void Addrs::SharedCtor() {
-addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void Addrs::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.addr_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.addr_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.addr_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Addrs::~Addrs() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.Addrs)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Addrs::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.addr_.Destroy();
 }
 
-void Addrs::ArenaDtor(void* object) {
-  Addrs* _this = reinterpret_cast< Addrs* >(object);
-  (void)_this;
-}
-void Addrs::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Addrs::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Addrs::Clear() {
@@ -4837,23 +4890,23 @@ void Addrs::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  addr_.ClearToEmpty();
+  _impl_.addr_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Addrs::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Addrs::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string addr = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_addr();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Addrs.addr"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Addrs.addr"));
         } else
           goto handle_unusual;
         continue;
@@ -4897,7 +4950,7 @@ uint8_t* Addrs::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Addrs)
@@ -4919,32 +4972,28 @@ size_t Addrs::ByteSizeLong() const {
         this->_internal_addr());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Addrs::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Addrs::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Addrs::GetClassData() const { return &_class_data_; }
 
-void Addrs::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Addrs *>(to)->MergeFrom(
-      static_cast<const Addrs &>(from));
-}
 
-
-void Addrs::MergeFrom(const Addrs& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Addrs)
-  GOOGLE_DCHECK_NE(&from, this);
+void Addrs::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Addrs*>(&to_msg);
+  auto& from = static_cast<const Addrs&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Addrs)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_addr().empty()) {
-    _internal_set_addr(from._internal_addr());
+    _this->_internal_set_addr(from._internal_addr());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Addrs::CopyFrom(const Addrs& from) {
@@ -4964,14 +5013,13 @@ void Addrs::InternalSwap(Addrs* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &addr_, lhs_arena,
-      &other->addr_, rhs_arena
+      &_impl_.addr_, lhs_arena,
+      &other->_impl_.addr_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Addrs::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[12]);
 }
@@ -4988,140 +5036,163 @@ class Child::_Internal {
 
 const ::opi_api::security::v1::Proposals&
 Child::_Internal::ag_proposals(const Child* msg) {
-  return *msg->ag_proposals_;
+  return *msg->_impl_.ag_proposals_;
 }
 const ::opi_api::security::v1::Proposals&
 Child::_Internal::esp_proposals(const Child* msg) {
-  return *msg->esp_proposals_;
+  return *msg->_impl_.esp_proposals_;
 }
 const ::opi_api::security::v1::TrafficSelectors&
 Child::_Internal::local_ts(const Child* msg) {
-  return *msg->local_ts_;
+  return *msg->_impl_.local_ts_;
 }
 const ::opi_api::security::v1::TrafficSelectors&
 Child::_Internal::remote_ts(const Child* msg) {
-  return *msg->remote_ts_;
+  return *msg->_impl_.remote_ts_;
 }
 Child::Child(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Child)
 }
 Child::Child(const Child& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Child* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.updown_){}
+    , decltype(_impl_.mark_in_sa_){}
+    , decltype(_impl_.hw_offload_){}
+    , decltype(_impl_.ag_proposals_){nullptr}
+    , decltype(_impl_.esp_proposals_){nullptr}
+    , decltype(_impl_.local_ts_){nullptr}
+    , decltype(_impl_.remote_ts_){nullptr}
+    , decltype(_impl_.rekey_time_){}
+    , decltype(_impl_.life_time_){}
+    , decltype(_impl_.rand_time_){}
+    , decltype(_impl_.inactivity_){}
+    , decltype(_impl_.mark_in_){}
+    , decltype(_impl_.mark_out_){}
+    , decltype(_impl_.set_mark_in_){}
+    , decltype(_impl_.set_mark_out_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  updown_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.updown_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    updown_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.updown_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_updown().empty()) {
-    updown_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updown(), 
-      GetArenaForAllocation());
+    _this->_impl_.updown_.Set(from._internal_updown(), 
+      _this->GetArenaForAllocation());
   }
-  mark_in_sa_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.mark_in_sa_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mark_in_sa_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.mark_in_sa_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mark_in_sa().empty()) {
-    mark_in_sa_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mark_in_sa(), 
-      GetArenaForAllocation());
+    _this->_impl_.mark_in_sa_.Set(from._internal_mark_in_sa(), 
+      _this->GetArenaForAllocation());
   }
-  hw_offload_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.hw_offload_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    hw_offload_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.hw_offload_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_hw_offload().empty()) {
-    hw_offload_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_hw_offload(), 
-      GetArenaForAllocation());
+    _this->_impl_.hw_offload_.Set(from._internal_hw_offload(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_ag_proposals()) {
-    ag_proposals_ = new ::opi_api::security::v1::Proposals(*from.ag_proposals_);
-  } else {
-    ag_proposals_ = nullptr;
+    _this->_impl_.ag_proposals_ = new ::opi_api::security::v1::Proposals(*from._impl_.ag_proposals_);
   }
   if (from._internal_has_esp_proposals()) {
-    esp_proposals_ = new ::opi_api::security::v1::Proposals(*from.esp_proposals_);
-  } else {
-    esp_proposals_ = nullptr;
+    _this->_impl_.esp_proposals_ = new ::opi_api::security::v1::Proposals(*from._impl_.esp_proposals_);
   }
   if (from._internal_has_local_ts()) {
-    local_ts_ = new ::opi_api::security::v1::TrafficSelectors(*from.local_ts_);
-  } else {
-    local_ts_ = nullptr;
+    _this->_impl_.local_ts_ = new ::opi_api::security::v1::TrafficSelectors(*from._impl_.local_ts_);
   }
   if (from._internal_has_remote_ts()) {
-    remote_ts_ = new ::opi_api::security::v1::TrafficSelectors(*from.remote_ts_);
-  } else {
-    remote_ts_ = nullptr;
+    _this->_impl_.remote_ts_ = new ::opi_api::security::v1::TrafficSelectors(*from._impl_.remote_ts_);
   }
-  ::memcpy(&rekey_time_, &from.rekey_time_,
-    static_cast<size_t>(reinterpret_cast<char*>(&set_mark_out_) -
-    reinterpret_cast<char*>(&rekey_time_)) + sizeof(set_mark_out_));
+  ::memcpy(&_impl_.rekey_time_, &from._impl_.rekey_time_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.set_mark_out_) -
+    reinterpret_cast<char*>(&_impl_.rekey_time_)) + sizeof(_impl_.set_mark_out_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Child)
 }
 
-inline void Child::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-updown_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  updown_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mark_in_sa_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mark_in_sa_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-hw_offload_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  hw_offload_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&ag_proposals_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&set_mark_out_) -
-    reinterpret_cast<char*>(&ag_proposals_)) + sizeof(set_mark_out_));
+inline void Child::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.updown_){}
+    , decltype(_impl_.mark_in_sa_){}
+    , decltype(_impl_.hw_offload_){}
+    , decltype(_impl_.ag_proposals_){nullptr}
+    , decltype(_impl_.esp_proposals_){nullptr}
+    , decltype(_impl_.local_ts_){nullptr}
+    , decltype(_impl_.remote_ts_){nullptr}
+    , decltype(_impl_.rekey_time_){0u}
+    , decltype(_impl_.life_time_){0u}
+    , decltype(_impl_.rand_time_){0u}
+    , decltype(_impl_.inactivity_){0u}
+    , decltype(_impl_.mark_in_){0u}
+    , decltype(_impl_.mark_out_){0u}
+    , decltype(_impl_.set_mark_in_){0u}
+    , decltype(_impl_.set_mark_out_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.updown_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.updown_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mark_in_sa_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mark_in_sa_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.hw_offload_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.hw_offload_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Child::~Child() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.Child)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Child::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  updown_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mark_in_sa_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  hw_offload_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete ag_proposals_;
-  if (this != internal_default_instance()) delete esp_proposals_;
-  if (this != internal_default_instance()) delete local_ts_;
-  if (this != internal_default_instance()) delete remote_ts_;
+  _impl_.name_.Destroy();
+  _impl_.updown_.Destroy();
+  _impl_.mark_in_sa_.Destroy();
+  _impl_.hw_offload_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.ag_proposals_;
+  if (this != internal_default_instance()) delete _impl_.esp_proposals_;
+  if (this != internal_default_instance()) delete _impl_.local_ts_;
+  if (this != internal_default_instance()) delete _impl_.remote_ts_;
 }
 
-void Child::ArenaDtor(void* object) {
-  Child* _this = reinterpret_cast< Child* >(object);
-  (void)_this;
-}
-void Child::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Child::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Child::Clear() {
@@ -5130,45 +5201,45 @@ void Child::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  updown_.ClearToEmpty();
-  mark_in_sa_.ClearToEmpty();
-  hw_offload_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && ag_proposals_ != nullptr) {
-    delete ag_proposals_;
+  _impl_.name_.ClearToEmpty();
+  _impl_.updown_.ClearToEmpty();
+  _impl_.mark_in_sa_.ClearToEmpty();
+  _impl_.hw_offload_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.ag_proposals_ != nullptr) {
+    delete _impl_.ag_proposals_;
   }
-  ag_proposals_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && esp_proposals_ != nullptr) {
-    delete esp_proposals_;
+  _impl_.ag_proposals_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.esp_proposals_ != nullptr) {
+    delete _impl_.esp_proposals_;
   }
-  esp_proposals_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && local_ts_ != nullptr) {
-    delete local_ts_;
+  _impl_.esp_proposals_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.local_ts_ != nullptr) {
+    delete _impl_.local_ts_;
   }
-  local_ts_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && remote_ts_ != nullptr) {
-    delete remote_ts_;
+  _impl_.local_ts_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.remote_ts_ != nullptr) {
+    delete _impl_.remote_ts_;
   }
-  remote_ts_ = nullptr;
-  ::memset(&rekey_time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&set_mark_out_) -
-      reinterpret_cast<char*>(&rekey_time_)) + sizeof(set_mark_out_));
+  _impl_.remote_ts_ = nullptr;
+  ::memset(&_impl_.rekey_time_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.set_mark_out_) -
+      reinterpret_cast<char*>(&_impl_.rekey_time_)) + sizeof(_impl_.set_mark_out_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Child::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Child.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Child.name"));
         } else
           goto handle_unusual;
         continue;
@@ -5207,7 +5278,7 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint32 rekey_time = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          rekey_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rekey_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5215,7 +5286,7 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint32 life_time = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          life_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.life_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5223,7 +5294,7 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint32 rand_time = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          rand_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rand_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5232,16 +5303,16 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           auto str = _internal_mutable_updown();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Child.updown"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Child.updown"));
         } else
           goto handle_unusual;
         continue;
       // uint32 inactivity = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          inactivity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.inactivity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5249,7 +5320,7 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint32 mark_in = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          mark_in_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.mark_in_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5258,16 +5329,16 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           auto str = _internal_mutable_mark_in_sa();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Child.mark_in_sa"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Child.mark_in_sa"));
         } else
           goto handle_unusual;
         continue;
       // uint32 mark_out = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          mark_out_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.mark_out_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5275,7 +5346,7 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint32 set_mark_in = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          set_mark_in_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.set_mark_in_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5283,7 +5354,7 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // uint32 set_mark_out = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
-          set_mark_out_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.set_mark_out_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5292,9 +5363,9 @@ const char* Child::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
           auto str = _internal_mutable_hw_offload();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Child.hw_offload"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Child.hw_offload"));
         } else
           goto handle_unusual;
         continue;
@@ -5339,52 +5410,48 @@ uint8_t* Child::_InternalSerialize(
 
   // .opi_api.security.v1.Proposals ag_proposals = 2;
   if (this->_internal_has_ag_proposals()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::ag_proposals(this), target, stream);
+      InternalWriteMessage(2, _Internal::ag_proposals(this),
+        _Internal::ag_proposals(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.Proposals esp_proposals = 3;
   if (this->_internal_has_esp_proposals()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::esp_proposals(this), target, stream);
+      InternalWriteMessage(3, _Internal::esp_proposals(this),
+        _Internal::esp_proposals(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.TrafficSelectors local_ts = 4;
   if (this->_internal_has_local_ts()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::local_ts(this), target, stream);
+      InternalWriteMessage(4, _Internal::local_ts(this),
+        _Internal::local_ts(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.TrafficSelectors remote_ts = 5;
   if (this->_internal_has_remote_ts()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::remote_ts(this), target, stream);
+      InternalWriteMessage(5, _Internal::remote_ts(this),
+        _Internal::remote_ts(this).GetCachedSize(), target, stream);
   }
 
   // uint32 rekey_time = 6;
   if (this->_internal_rekey_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_rekey_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_rekey_time(), target);
   }
 
   // uint32 life_time = 7;
   if (this->_internal_life_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_life_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(7, this->_internal_life_time(), target);
   }
 
   // uint32 rand_time = 8;
   if (this->_internal_rand_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(8, this->_internal_rand_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(8, this->_internal_rand_time(), target);
   }
 
   // string updown = 9;
@@ -5400,13 +5467,13 @@ uint8_t* Child::_InternalSerialize(
   // uint32 inactivity = 10;
   if (this->_internal_inactivity() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(10, this->_internal_inactivity(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(10, this->_internal_inactivity(), target);
   }
 
   // uint32 mark_in = 11;
   if (this->_internal_mark_in() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(11, this->_internal_mark_in(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(11, this->_internal_mark_in(), target);
   }
 
   // string mark_in_sa = 12;
@@ -5422,19 +5489,19 @@ uint8_t* Child::_InternalSerialize(
   // uint32 mark_out = 13;
   if (this->_internal_mark_out() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(13, this->_internal_mark_out(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(13, this->_internal_mark_out(), target);
   }
 
   // uint32 set_mark_in = 14;
   if (this->_internal_set_mark_in() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(14, this->_internal_set_mark_in(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(14, this->_internal_set_mark_in(), target);
   }
 
   // uint32 set_mark_out = 15;
   if (this->_internal_set_mark_out() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(15, this->_internal_set_mark_out(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(15, this->_internal_set_mark_out(), target);
   }
 
   // string hw_offload = 16;
@@ -5448,7 +5515,7 @@ uint8_t* Child::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Child)
@@ -5495,141 +5562,141 @@ size_t Child::ByteSizeLong() const {
   if (this->_internal_has_ag_proposals()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *ag_proposals_);
+        *_impl_.ag_proposals_);
   }
 
   // .opi_api.security.v1.Proposals esp_proposals = 3;
   if (this->_internal_has_esp_proposals()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *esp_proposals_);
+        *_impl_.esp_proposals_);
   }
 
   // .opi_api.security.v1.TrafficSelectors local_ts = 4;
   if (this->_internal_has_local_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *local_ts_);
+        *_impl_.local_ts_);
   }
 
   // .opi_api.security.v1.TrafficSelectors remote_ts = 5;
   if (this->_internal_has_remote_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *remote_ts_);
+        *_impl_.remote_ts_);
   }
 
   // uint32 rekey_time = 6;
   if (this->_internal_rekey_time() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_time());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_time());
   }
 
   // uint32 life_time = 7;
   if (this->_internal_life_time() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_life_time());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_life_time());
   }
 
   // uint32 rand_time = 8;
   if (this->_internal_rand_time() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_rand_time());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_rand_time());
   }
 
   // uint32 inactivity = 10;
   if (this->_internal_inactivity() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_inactivity());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_inactivity());
   }
 
   // uint32 mark_in = 11;
   if (this->_internal_mark_in() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_mark_in());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mark_in());
   }
 
   // uint32 mark_out = 13;
   if (this->_internal_mark_out() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_mark_out());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mark_out());
   }
 
   // uint32 set_mark_in = 14;
   if (this->_internal_set_mark_in() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_set_mark_in());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_set_mark_in());
   }
 
   // uint32 set_mark_out = 15;
   if (this->_internal_set_mark_out() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_set_mark_out());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_set_mark_out());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Child::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Child::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Child::GetClassData() const { return &_class_data_; }
 
-void Child::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Child *>(to)->MergeFrom(
-      static_cast<const Child &>(from));
-}
 
-
-void Child::MergeFrom(const Child& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Child)
-  GOOGLE_DCHECK_NE(&from, this);
+void Child::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Child*>(&to_msg);
+  auto& from = static_cast<const Child&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Child)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_updown().empty()) {
-    _internal_set_updown(from._internal_updown());
+    _this->_internal_set_updown(from._internal_updown());
   }
   if (!from._internal_mark_in_sa().empty()) {
-    _internal_set_mark_in_sa(from._internal_mark_in_sa());
+    _this->_internal_set_mark_in_sa(from._internal_mark_in_sa());
   }
   if (!from._internal_hw_offload().empty()) {
-    _internal_set_hw_offload(from._internal_hw_offload());
+    _this->_internal_set_hw_offload(from._internal_hw_offload());
   }
   if (from._internal_has_ag_proposals()) {
-    _internal_mutable_ag_proposals()->::opi_api::security::v1::Proposals::MergeFrom(from._internal_ag_proposals());
+    _this->_internal_mutable_ag_proposals()->::opi_api::security::v1::Proposals::MergeFrom(
+        from._internal_ag_proposals());
   }
   if (from._internal_has_esp_proposals()) {
-    _internal_mutable_esp_proposals()->::opi_api::security::v1::Proposals::MergeFrom(from._internal_esp_proposals());
+    _this->_internal_mutable_esp_proposals()->::opi_api::security::v1::Proposals::MergeFrom(
+        from._internal_esp_proposals());
   }
   if (from._internal_has_local_ts()) {
-    _internal_mutable_local_ts()->::opi_api::security::v1::TrafficSelectors::MergeFrom(from._internal_local_ts());
+    _this->_internal_mutable_local_ts()->::opi_api::security::v1::TrafficSelectors::MergeFrom(
+        from._internal_local_ts());
   }
   if (from._internal_has_remote_ts()) {
-    _internal_mutable_remote_ts()->::opi_api::security::v1::TrafficSelectors::MergeFrom(from._internal_remote_ts());
+    _this->_internal_mutable_remote_ts()->::opi_api::security::v1::TrafficSelectors::MergeFrom(
+        from._internal_remote_ts());
   }
   if (from._internal_rekey_time() != 0) {
-    _internal_set_rekey_time(from._internal_rekey_time());
+    _this->_internal_set_rekey_time(from._internal_rekey_time());
   }
   if (from._internal_life_time() != 0) {
-    _internal_set_life_time(from._internal_life_time());
+    _this->_internal_set_life_time(from._internal_life_time());
   }
   if (from._internal_rand_time() != 0) {
-    _internal_set_rand_time(from._internal_rand_time());
+    _this->_internal_set_rand_time(from._internal_rand_time());
   }
   if (from._internal_inactivity() != 0) {
-    _internal_set_inactivity(from._internal_inactivity());
+    _this->_internal_set_inactivity(from._internal_inactivity());
   }
   if (from._internal_mark_in() != 0) {
-    _internal_set_mark_in(from._internal_mark_in());
+    _this->_internal_set_mark_in(from._internal_mark_in());
   }
   if (from._internal_mark_out() != 0) {
-    _internal_set_mark_out(from._internal_mark_out());
+    _this->_internal_set_mark_out(from._internal_mark_out());
   }
   if (from._internal_set_mark_in() != 0) {
-    _internal_set_set_mark_in(from._internal_set_mark_in());
+    _this->_internal_set_set_mark_in(from._internal_set_mark_in());
   }
   if (from._internal_set_mark_out() != 0) {
-    _internal_set_set_mark_out(from._internal_set_mark_out());
+    _this->_internal_set_set_mark_out(from._internal_set_mark_out());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Child::CopyFrom(const Child& from) {
@@ -5649,35 +5716,31 @@ void Child::InternalSwap(Child* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &updown_, lhs_arena,
-      &other->updown_, rhs_arena
+      &_impl_.updown_, lhs_arena,
+      &other->_impl_.updown_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mark_in_sa_, lhs_arena,
-      &other->mark_in_sa_, rhs_arena
+      &_impl_.mark_in_sa_, lhs_arena,
+      &other->_impl_.mark_in_sa_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &hw_offload_, lhs_arena,
-      &other->hw_offload_, rhs_arena
+      &_impl_.hw_offload_, lhs_arena,
+      &other->_impl_.hw_offload_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Child, set_mark_out_)
-      + sizeof(Child::set_mark_out_)
-      - PROTOBUF_FIELD_OFFSET(Child, ag_proposals_)>(
-          reinterpret_cast<char*>(&ag_proposals_),
-          reinterpret_cast<char*>(&other->ag_proposals_));
+      PROTOBUF_FIELD_OFFSET(Child, _impl_.set_mark_out_)
+      + sizeof(Child::_impl_.set_mark_out_)
+      - PROTOBUF_FIELD_OFFSET(Child, _impl_.ag_proposals_)>(
+          reinterpret_cast<char*>(&_impl_.ag_proposals_),
+          reinterpret_cast<char*>(&other->_impl_.ag_proposals_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Child::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[13]);
 }
@@ -5695,156 +5758,180 @@ class Connection::_Internal {
 
 const ::opi_api::security::v1::Proposals&
 Connection::_Internal::proposals(const Connection* msg) {
-  return *msg->proposals_;
+  return *msg->_impl_.proposals_;
 }
 const ::opi_api::security::v1::Vips&
 Connection::_Internal::vips(const Connection* msg) {
-  return *msg->vips_;
+  return *msg->_impl_.vips_;
 }
 const ::opi_api::security::v1::Pools&
 Connection::_Internal::pools(const Connection* msg) {
-  return *msg->pools_;
+  return *msg->_impl_.pools_;
 }
 const ::opi_api::security::v1::LocalAuth&
 Connection::_Internal::local_auth(const Connection* msg) {
-  return *msg->local_auth_;
+  return *msg->_impl_.local_auth_;
 }
 const ::opi_api::security::v1::RemoteAuth&
 Connection::_Internal::remote_auth(const Connection* msg) {
-  return *msg->remote_auth_;
+  return *msg->_impl_.remote_auth_;
 }
 Connection::Connection(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  local_addrs_(arena),
-  remote_addrs_(arena),
-  children_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Connection)
 }
 Connection::Connection(const Connection& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      local_addrs_(from.local_addrs_),
-      remote_addrs_(from.remote_addrs_),
-      children_(from.children_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Connection* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_addrs_){from._impl_.local_addrs_}
+    , decltype(_impl_.remote_addrs_){from._impl_.remote_addrs_}
+    , decltype(_impl_.children_){from._impl_.children_}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.version_){}
+    , decltype(_impl_.encap_){}
+    , decltype(_impl_.mobike_){}
+    , decltype(_impl_.proposals_){nullptr}
+    , decltype(_impl_.vips_){nullptr}
+    , decltype(_impl_.pools_){nullptr}
+    , decltype(_impl_.local_auth_){nullptr}
+    , decltype(_impl_.remote_auth_){nullptr}
+    , decltype(_impl_.local_port_){}
+    , decltype(_impl_.remote_port_){}
+    , decltype(_impl_.dscp_){}
+    , decltype(_impl_.dpd_delay_){}
+    , decltype(_impl_.dpd_timeout_){}
+    , decltype(_impl_.reauth_time_){}
+    , decltype(_impl_.rekey_time_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.version_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.version_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_version().empty()) {
-    version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_version(), 
-      GetArenaForAllocation());
+    _this->_impl_.version_.Set(from._internal_version(), 
+      _this->GetArenaForAllocation());
   }
-  encap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.encap_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    encap_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.encap_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_encap().empty()) {
-    encap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_encap(), 
-      GetArenaForAllocation());
+    _this->_impl_.encap_.Set(from._internal_encap(), 
+      _this->GetArenaForAllocation());
   }
-  mobike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.mobike_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mobike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.mobike_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mobike().empty()) {
-    mobike_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mobike(), 
-      GetArenaForAllocation());
+    _this->_impl_.mobike_.Set(from._internal_mobike(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_proposals()) {
-    proposals_ = new ::opi_api::security::v1::Proposals(*from.proposals_);
-  } else {
-    proposals_ = nullptr;
+    _this->_impl_.proposals_ = new ::opi_api::security::v1::Proposals(*from._impl_.proposals_);
   }
   if (from._internal_has_vips()) {
-    vips_ = new ::opi_api::security::v1::Vips(*from.vips_);
-  } else {
-    vips_ = nullptr;
+    _this->_impl_.vips_ = new ::opi_api::security::v1::Vips(*from._impl_.vips_);
   }
   if (from._internal_has_pools()) {
-    pools_ = new ::opi_api::security::v1::Pools(*from.pools_);
-  } else {
-    pools_ = nullptr;
+    _this->_impl_.pools_ = new ::opi_api::security::v1::Pools(*from._impl_.pools_);
   }
   if (from._internal_has_local_auth()) {
-    local_auth_ = new ::opi_api::security::v1::LocalAuth(*from.local_auth_);
-  } else {
-    local_auth_ = nullptr;
+    _this->_impl_.local_auth_ = new ::opi_api::security::v1::LocalAuth(*from._impl_.local_auth_);
   }
   if (from._internal_has_remote_auth()) {
-    remote_auth_ = new ::opi_api::security::v1::RemoteAuth(*from.remote_auth_);
-  } else {
-    remote_auth_ = nullptr;
+    _this->_impl_.remote_auth_ = new ::opi_api::security::v1::RemoteAuth(*from._impl_.remote_auth_);
   }
-  ::memcpy(&local_port_, &from.local_port_,
-    static_cast<size_t>(reinterpret_cast<char*>(&rekey_time_) -
-    reinterpret_cast<char*>(&local_port_)) + sizeof(rekey_time_));
+  ::memcpy(&_impl_.local_port_, &from._impl_.local_port_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.rekey_time_) -
+    reinterpret_cast<char*>(&_impl_.local_port_)) + sizeof(_impl_.rekey_time_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Connection)
 }
 
-inline void Connection::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-encap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  encap_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mobike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mobike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&proposals_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&rekey_time_) -
-    reinterpret_cast<char*>(&proposals_)) + sizeof(rekey_time_));
+inline void Connection::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_addrs_){arena}
+    , decltype(_impl_.remote_addrs_){arena}
+    , decltype(_impl_.children_){arena}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.version_){}
+    , decltype(_impl_.encap_){}
+    , decltype(_impl_.mobike_){}
+    , decltype(_impl_.proposals_){nullptr}
+    , decltype(_impl_.vips_){nullptr}
+    , decltype(_impl_.pools_){nullptr}
+    , decltype(_impl_.local_auth_){nullptr}
+    , decltype(_impl_.remote_auth_){nullptr}
+    , decltype(_impl_.local_port_){0u}
+    , decltype(_impl_.remote_port_){0u}
+    , decltype(_impl_.dscp_){uint64_t{0u}}
+    , decltype(_impl_.dpd_delay_){0u}
+    , decltype(_impl_.dpd_timeout_){0u}
+    , decltype(_impl_.reauth_time_){0u}
+    , decltype(_impl_.rekey_time_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.version_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.version_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.encap_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.encap_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mobike_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mobike_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Connection::~Connection() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.Connection)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Connection::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  encap_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mobike_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete proposals_;
-  if (this != internal_default_instance()) delete vips_;
-  if (this != internal_default_instance()) delete pools_;
-  if (this != internal_default_instance()) delete local_auth_;
-  if (this != internal_default_instance()) delete remote_auth_;
+  _impl_.local_addrs_.~RepeatedPtrField();
+  _impl_.remote_addrs_.~RepeatedPtrField();
+  _impl_.children_.~RepeatedPtrField();
+  _impl_.name_.Destroy();
+  _impl_.version_.Destroy();
+  _impl_.encap_.Destroy();
+  _impl_.mobike_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.proposals_;
+  if (this != internal_default_instance()) delete _impl_.vips_;
+  if (this != internal_default_instance()) delete _impl_.pools_;
+  if (this != internal_default_instance()) delete _impl_.local_auth_;
+  if (this != internal_default_instance()) delete _impl_.remote_auth_;
 }
 
-void Connection::ArenaDtor(void* object) {
-  Connection* _this = reinterpret_cast< Connection* >(object);
-  (void)_this;
-}
-void Connection::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Connection::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Connection::Clear() {
@@ -5853,52 +5940,52 @@ void Connection::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  local_addrs_.Clear();
-  remote_addrs_.Clear();
-  children_.Clear();
-  name_.ClearToEmpty();
-  version_.ClearToEmpty();
-  encap_.ClearToEmpty();
-  mobike_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && proposals_ != nullptr) {
-    delete proposals_;
+  _impl_.local_addrs_.Clear();
+  _impl_.remote_addrs_.Clear();
+  _impl_.children_.Clear();
+  _impl_.name_.ClearToEmpty();
+  _impl_.version_.ClearToEmpty();
+  _impl_.encap_.ClearToEmpty();
+  _impl_.mobike_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.proposals_ != nullptr) {
+    delete _impl_.proposals_;
   }
-  proposals_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && vips_ != nullptr) {
-    delete vips_;
+  _impl_.proposals_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.vips_ != nullptr) {
+    delete _impl_.vips_;
   }
-  vips_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && pools_ != nullptr) {
-    delete pools_;
+  _impl_.vips_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.pools_ != nullptr) {
+    delete _impl_.pools_;
   }
-  pools_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && local_auth_ != nullptr) {
-    delete local_auth_;
+  _impl_.pools_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.local_auth_ != nullptr) {
+    delete _impl_.local_auth_;
   }
-  local_auth_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && remote_auth_ != nullptr) {
-    delete remote_auth_;
+  _impl_.local_auth_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.remote_auth_ != nullptr) {
+    delete _impl_.remote_auth_;
   }
-  remote_auth_ = nullptr;
-  ::memset(&local_port_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rekey_time_) -
-      reinterpret_cast<char*>(&local_port_)) + sizeof(rekey_time_));
+  _impl_.remote_auth_ = nullptr;
+  ::memset(&_impl_.local_port_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.rekey_time_) -
+      reinterpret_cast<char*>(&_impl_.local_port_)) + sizeof(_impl_.rekey_time_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Connection::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Connection.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Connection.name"));
         } else
           goto handle_unusual;
         continue;
@@ -5906,9 +5993,9 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_version();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Connection.version"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Connection.version"));
         } else
           goto handle_unusual;
         continue;
@@ -5941,7 +6028,7 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // uint32 local_port = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          local_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.local_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5949,7 +6036,7 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // uint32 remote_port = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          remote_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.remote_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5973,7 +6060,7 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // uint64 dscp = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          dscp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.dscp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5982,9 +6069,9 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_encap();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Connection.encap"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Connection.encap"));
         } else
           goto handle_unusual;
         continue;
@@ -5992,16 +6079,16 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_mobike();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Connection.mobike"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.Connection.mobike"));
         } else
           goto handle_unusual;
         continue;
       // uint32 dpd_delay = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          dpd_delay_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.dpd_delay_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6009,7 +6096,7 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // uint32 dpd_timeout = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          dpd_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.dpd_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6017,7 +6104,7 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // uint32 reauth_time = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          reauth_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.reauth_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6025,7 +6112,7 @@ const char* Connection::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // uint32 rekey_time = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
-          rekey_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rekey_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6117,53 +6204,51 @@ uint8_t* Connection::_InternalSerialize(
   }
 
   // repeated .opi_api.security.v1.Addrs local_addrs = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_local_addrs_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_local_addrs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_local_addrs(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, this->_internal_local_addrs(i), target, stream);
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .opi_api.security.v1.Addrs remote_addrs = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_remote_addrs_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_remote_addrs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_remote_addrs(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, this->_internal_remote_addrs(i), target, stream);
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // uint32 local_port = 5;
   if (this->_internal_local_port() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_local_port(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_local_port(), target);
   }
 
   // uint32 remote_port = 6;
   if (this->_internal_remote_port() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_remote_port(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_remote_port(), target);
   }
 
   // .opi_api.security.v1.Proposals proposals = 7;
   if (this->_internal_has_proposals()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        7, _Internal::proposals(this), target, stream);
+      InternalWriteMessage(7, _Internal::proposals(this),
+        _Internal::proposals(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.Vips vips = 8;
   if (this->_internal_has_vips()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        8, _Internal::vips(this), target, stream);
+      InternalWriteMessage(8, _Internal::vips(this),
+        _Internal::vips(this).GetCachedSize(), target, stream);
   }
 
   // uint64 dscp = 9;
   if (this->_internal_dscp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_dscp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(9, this->_internal_dscp(), target);
   }
 
   // string encap = 10;
@@ -6189,61 +6274,58 @@ uint8_t* Connection::_InternalSerialize(
   // uint32 dpd_delay = 12;
   if (this->_internal_dpd_delay() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(12, this->_internal_dpd_delay(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(12, this->_internal_dpd_delay(), target);
   }
 
   // uint32 dpd_timeout = 13;
   if (this->_internal_dpd_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(13, this->_internal_dpd_timeout(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(13, this->_internal_dpd_timeout(), target);
   }
 
   // uint32 reauth_time = 14;
   if (this->_internal_reauth_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(14, this->_internal_reauth_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(14, this->_internal_reauth_time(), target);
   }
 
   // uint32 rekey_time = 15;
   if (this->_internal_rekey_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(15, this->_internal_rekey_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(15, this->_internal_rekey_time(), target);
   }
 
   // .opi_api.security.v1.Pools pools = 16;
   if (this->_internal_has_pools()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        16, _Internal::pools(this), target, stream);
+      InternalWriteMessage(16, _Internal::pools(this),
+        _Internal::pools(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.LocalAuth local_auth = 17;
   if (this->_internal_has_local_auth()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        17, _Internal::local_auth(this), target, stream);
+      InternalWriteMessage(17, _Internal::local_auth(this),
+        _Internal::local_auth(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.RemoteAuth remote_auth = 18;
   if (this->_internal_has_remote_auth()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        18, _Internal::remote_auth(this), target, stream);
+      InternalWriteMessage(18, _Internal::remote_auth(this),
+        _Internal::remote_auth(this).GetCachedSize(), target, stream);
   }
 
   // repeated .opi_api.security.v1.Child children = 19;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_children_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_children_size()); i < n; i++) {
+    const auto& repfield = this->_internal_children(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(19, this->_internal_children(i), target, stream);
+        InternalWriteMessage(19, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Connection)
@@ -6260,21 +6342,21 @@ size_t Connection::ByteSizeLong() const {
 
   // repeated .opi_api.security.v1.Addrs local_addrs = 3;
   total_size += 1UL * this->_internal_local_addrs_size();
-  for (const auto& msg : this->local_addrs_) {
+  for (const auto& msg : this->_impl_.local_addrs_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .opi_api.security.v1.Addrs remote_addrs = 4;
   total_size += 1UL * this->_internal_remote_addrs_size();
-  for (const auto& msg : this->remote_addrs_) {
+  for (const auto& msg : this->_impl_.remote_addrs_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .opi_api.security.v1.Child children = 19;
   total_size += 2UL * this->_internal_children_size();
-  for (const auto& msg : this->children_) {
+  for (const auto& msg : this->_impl_.children_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -6311,146 +6393,147 @@ size_t Connection::ByteSizeLong() const {
   if (this->_internal_has_proposals()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *proposals_);
+        *_impl_.proposals_);
   }
 
   // .opi_api.security.v1.Vips vips = 8;
   if (this->_internal_has_vips()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *vips_);
+        *_impl_.vips_);
   }
 
   // .opi_api.security.v1.Pools pools = 16;
   if (this->_internal_has_pools()) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *pools_);
+        *_impl_.pools_);
   }
 
   // .opi_api.security.v1.LocalAuth local_auth = 17;
   if (this->_internal_has_local_auth()) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *local_auth_);
+        *_impl_.local_auth_);
   }
 
   // .opi_api.security.v1.RemoteAuth remote_auth = 18;
   if (this->_internal_has_remote_auth()) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *remote_auth_);
+        *_impl_.remote_auth_);
   }
 
   // uint32 local_port = 5;
   if (this->_internal_local_port() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_local_port());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_local_port());
   }
 
   // uint32 remote_port = 6;
   if (this->_internal_remote_port() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_remote_port());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_remote_port());
   }
 
   // uint64 dscp = 9;
   if (this->_internal_dscp() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_dscp());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_dscp());
   }
 
   // uint32 dpd_delay = 12;
   if (this->_internal_dpd_delay() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_dpd_delay());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_dpd_delay());
   }
 
   // uint32 dpd_timeout = 13;
   if (this->_internal_dpd_timeout() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_dpd_timeout());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_dpd_timeout());
   }
 
   // uint32 reauth_time = 14;
   if (this->_internal_reauth_time() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_reauth_time());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_reauth_time());
   }
 
   // uint32 rekey_time = 15;
   if (this->_internal_rekey_time() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_time());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_time());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Connection::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Connection::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Connection::GetClassData() const { return &_class_data_; }
 
-void Connection::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Connection *>(to)->MergeFrom(
-      static_cast<const Connection &>(from));
-}
 
-
-void Connection::MergeFrom(const Connection& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Connection)
-  GOOGLE_DCHECK_NE(&from, this);
+void Connection::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Connection*>(&to_msg);
+  auto& from = static_cast<const Connection&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Connection)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  local_addrs_.MergeFrom(from.local_addrs_);
-  remote_addrs_.MergeFrom(from.remote_addrs_);
-  children_.MergeFrom(from.children_);
+  _this->_impl_.local_addrs_.MergeFrom(from._impl_.local_addrs_);
+  _this->_impl_.remote_addrs_.MergeFrom(from._impl_.remote_addrs_);
+  _this->_impl_.children_.MergeFrom(from._impl_.children_);
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_version().empty()) {
-    _internal_set_version(from._internal_version());
+    _this->_internal_set_version(from._internal_version());
   }
   if (!from._internal_encap().empty()) {
-    _internal_set_encap(from._internal_encap());
+    _this->_internal_set_encap(from._internal_encap());
   }
   if (!from._internal_mobike().empty()) {
-    _internal_set_mobike(from._internal_mobike());
+    _this->_internal_set_mobike(from._internal_mobike());
   }
   if (from._internal_has_proposals()) {
-    _internal_mutable_proposals()->::opi_api::security::v1::Proposals::MergeFrom(from._internal_proposals());
+    _this->_internal_mutable_proposals()->::opi_api::security::v1::Proposals::MergeFrom(
+        from._internal_proposals());
   }
   if (from._internal_has_vips()) {
-    _internal_mutable_vips()->::opi_api::security::v1::Vips::MergeFrom(from._internal_vips());
+    _this->_internal_mutable_vips()->::opi_api::security::v1::Vips::MergeFrom(
+        from._internal_vips());
   }
   if (from._internal_has_pools()) {
-    _internal_mutable_pools()->::opi_api::security::v1::Pools::MergeFrom(from._internal_pools());
+    _this->_internal_mutable_pools()->::opi_api::security::v1::Pools::MergeFrom(
+        from._internal_pools());
   }
   if (from._internal_has_local_auth()) {
-    _internal_mutable_local_auth()->::opi_api::security::v1::LocalAuth::MergeFrom(from._internal_local_auth());
+    _this->_internal_mutable_local_auth()->::opi_api::security::v1::LocalAuth::MergeFrom(
+        from._internal_local_auth());
   }
   if (from._internal_has_remote_auth()) {
-    _internal_mutable_remote_auth()->::opi_api::security::v1::RemoteAuth::MergeFrom(from._internal_remote_auth());
+    _this->_internal_mutable_remote_auth()->::opi_api::security::v1::RemoteAuth::MergeFrom(
+        from._internal_remote_auth());
   }
   if (from._internal_local_port() != 0) {
-    _internal_set_local_port(from._internal_local_port());
+    _this->_internal_set_local_port(from._internal_local_port());
   }
   if (from._internal_remote_port() != 0) {
-    _internal_set_remote_port(from._internal_remote_port());
+    _this->_internal_set_remote_port(from._internal_remote_port());
   }
   if (from._internal_dscp() != 0) {
-    _internal_set_dscp(from._internal_dscp());
+    _this->_internal_set_dscp(from._internal_dscp());
   }
   if (from._internal_dpd_delay() != 0) {
-    _internal_set_dpd_delay(from._internal_dpd_delay());
+    _this->_internal_set_dpd_delay(from._internal_dpd_delay());
   }
   if (from._internal_dpd_timeout() != 0) {
-    _internal_set_dpd_timeout(from._internal_dpd_timeout());
+    _this->_internal_set_dpd_timeout(from._internal_dpd_timeout());
   }
   if (from._internal_reauth_time() != 0) {
-    _internal_set_reauth_time(from._internal_reauth_time());
+    _this->_internal_set_reauth_time(from._internal_reauth_time());
   }
   if (from._internal_rekey_time() != 0) {
-    _internal_set_rekey_time(from._internal_rekey_time());
+    _this->_internal_set_rekey_time(from._internal_rekey_time());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Connection::CopyFrom(const Connection& from) {
@@ -6469,39 +6552,35 @@ void Connection::InternalSwap(Connection* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  local_addrs_.InternalSwap(&other->local_addrs_);
-  remote_addrs_.InternalSwap(&other->remote_addrs_);
-  children_.InternalSwap(&other->children_);
+  _impl_.local_addrs_.InternalSwap(&other->_impl_.local_addrs_);
+  _impl_.remote_addrs_.InternalSwap(&other->_impl_.remote_addrs_);
+  _impl_.children_.InternalSwap(&other->_impl_.children_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &version_, lhs_arena,
-      &other->version_, rhs_arena
+      &_impl_.version_, lhs_arena,
+      &other->_impl_.version_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &encap_, lhs_arena,
-      &other->encap_, rhs_arena
+      &_impl_.encap_, lhs_arena,
+      &other->_impl_.encap_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mobike_, lhs_arena,
-      &other->mobike_, rhs_arena
+      &_impl_.mobike_, lhs_arena,
+      &other->_impl_.mobike_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Connection, rekey_time_)
-      + sizeof(Connection::rekey_time_)
-      - PROTOBUF_FIELD_OFFSET(Connection, proposals_)>(
-          reinterpret_cast<char*>(&proposals_),
-          reinterpret_cast<char*>(&other->proposals_));
+      PROTOBUF_FIELD_OFFSET(Connection, _impl_.rekey_time_)
+      + sizeof(Connection::_impl_.rekey_time_)
+      - PROTOBUF_FIELD_OFFSET(Connection, _impl_.proposals_)>(
+          reinterpret_cast<char*>(&_impl_.proposals_),
+          reinterpret_cast<char*>(&other->_impl_.proposals_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Connection::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[14]);
 }
@@ -6519,6 +6598,7 @@ IPsecVersionReq::IPsecVersionReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 IPsecVersionReq::IPsecVersionReq(const IPsecVersionReq& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  IPsecVersionReq* const _this = this; (void)_this;
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecVersionReq)
 }
@@ -6540,7 +6620,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecVersionReq::GetClassData(
 
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecVersionReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[15]);
 }
@@ -6554,105 +6634,118 @@ class IPsecVersionResp::_Internal {
 IPsecVersionResp::IPsecVersionResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecVersionResp)
 }
 IPsecVersionResp::IPsecVersionResp(const IPsecVersionResp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecVersionResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.daemon_){}
+    , decltype(_impl_.version_){}
+    , decltype(_impl_.sysname_){}
+    , decltype(_impl_.release_){}
+    , decltype(_impl_.machine_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  daemon_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.daemon_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    daemon_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.daemon_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_daemon().empty()) {
-    daemon_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_daemon(), 
-      GetArenaForAllocation());
+    _this->_impl_.daemon_.Set(from._internal_daemon(), 
+      _this->GetArenaForAllocation());
   }
-  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.version_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.version_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_version().empty()) {
-    version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_version(), 
-      GetArenaForAllocation());
+    _this->_impl_.version_.Set(from._internal_version(), 
+      _this->GetArenaForAllocation());
   }
-  sysname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.sysname_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    sysname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.sysname_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sysname().empty()) {
-    sysname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sysname(), 
-      GetArenaForAllocation());
+    _this->_impl_.sysname_.Set(from._internal_sysname(), 
+      _this->GetArenaForAllocation());
   }
-  release_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.release_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    release_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.release_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_release().empty()) {
-    release_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_release(), 
-      GetArenaForAllocation());
+    _this->_impl_.release_.Set(from._internal_release(), 
+      _this->GetArenaForAllocation());
   }
-  machine_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.machine_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    machine_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.machine_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_machine().empty()) {
-    machine_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_machine(), 
-      GetArenaForAllocation());
+    _this->_impl_.machine_.Set(from._internal_machine(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecVersionResp)
 }
 
-inline void IPsecVersionResp::SharedCtor() {
-daemon_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  daemon_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-sysname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  sysname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-release_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  release_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-machine_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  machine_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void IPsecVersionResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.daemon_){}
+    , decltype(_impl_.version_){}
+    , decltype(_impl_.sysname_){}
+    , decltype(_impl_.release_){}
+    , decltype(_impl_.machine_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.daemon_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.daemon_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.version_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.version_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.sysname_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sysname_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.release_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.release_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.machine_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.machine_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecVersionResp::~IPsecVersionResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecVersionResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecVersionResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  daemon_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sysname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  release_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  machine_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.daemon_.Destroy();
+  _impl_.version_.Destroy();
+  _impl_.sysname_.Destroy();
+  _impl_.release_.Destroy();
+  _impl_.machine_.Destroy();
 }
 
-void IPsecVersionResp::ArenaDtor(void* object) {
-  IPsecVersionResp* _this = reinterpret_cast< IPsecVersionResp* >(object);
-  (void)_this;
-}
-void IPsecVersionResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecVersionResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecVersionResp::Clear() {
@@ -6661,27 +6754,27 @@ void IPsecVersionResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  daemon_.ClearToEmpty();
-  version_.ClearToEmpty();
-  sysname_.ClearToEmpty();
-  release_.ClearToEmpty();
-  machine_.ClearToEmpty();
+  _impl_.daemon_.ClearToEmpty();
+  _impl_.version_.ClearToEmpty();
+  _impl_.sysname_.ClearToEmpty();
+  _impl_.release_.ClearToEmpty();
+  _impl_.machine_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecVersionResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecVersionResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string daemon = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_daemon();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.daemon"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.daemon"));
         } else
           goto handle_unusual;
         continue;
@@ -6689,9 +6782,9 @@ const char* IPsecVersionResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_version();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.version"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.version"));
         } else
           goto handle_unusual;
         continue;
@@ -6699,9 +6792,9 @@ const char* IPsecVersionResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_sysname();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.sysname"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.sysname"));
         } else
           goto handle_unusual;
         continue;
@@ -6709,9 +6802,9 @@ const char* IPsecVersionResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_release();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.release"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.release"));
         } else
           goto handle_unusual;
         continue;
@@ -6719,9 +6812,9 @@ const char* IPsecVersionResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_machine();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.machine"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecVersionResp.machine"));
         } else
           goto handle_unusual;
         continue;
@@ -6805,7 +6898,7 @@ uint8_t* IPsecVersionResp::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecVersionResp)
@@ -6855,44 +6948,40 @@ size_t IPsecVersionResp::ByteSizeLong() const {
         this->_internal_machine());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecVersionResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecVersionResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecVersionResp::GetClassData() const { return &_class_data_; }
 
-void IPsecVersionResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecVersionResp *>(to)->MergeFrom(
-      static_cast<const IPsecVersionResp &>(from));
-}
 
-
-void IPsecVersionResp::MergeFrom(const IPsecVersionResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecVersionResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecVersionResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecVersionResp*>(&to_msg);
+  auto& from = static_cast<const IPsecVersionResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecVersionResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_daemon().empty()) {
-    _internal_set_daemon(from._internal_daemon());
+    _this->_internal_set_daemon(from._internal_daemon());
   }
   if (!from._internal_version().empty()) {
-    _internal_set_version(from._internal_version());
+    _this->_internal_set_version(from._internal_version());
   }
   if (!from._internal_sysname().empty()) {
-    _internal_set_sysname(from._internal_sysname());
+    _this->_internal_set_sysname(from._internal_sysname());
   }
   if (!from._internal_release().empty()) {
-    _internal_set_release(from._internal_release());
+    _this->_internal_set_release(from._internal_release());
   }
   if (!from._internal_machine().empty()) {
-    _internal_set_machine(from._internal_machine());
+    _this->_internal_set_machine(from._internal_machine());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecVersionResp::CopyFrom(const IPsecVersionResp& from) {
@@ -6912,34 +7001,29 @@ void IPsecVersionResp::InternalSwap(IPsecVersionResp* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &daemon_, lhs_arena,
-      &other->daemon_, rhs_arena
+      &_impl_.daemon_, lhs_arena,
+      &other->_impl_.daemon_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &version_, lhs_arena,
-      &other->version_, rhs_arena
+      &_impl_.version_, lhs_arena,
+      &other->_impl_.version_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &sysname_, lhs_arena,
-      &other->sysname_, rhs_arena
+      &_impl_.sysname_, lhs_arena,
+      &other->_impl_.sysname_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &release_, lhs_arena,
-      &other->release_, rhs_arena
+      &_impl_.release_, lhs_arena,
+      &other->_impl_.release_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &machine_, lhs_arena,
-      &other->machine_, rhs_arena
+      &_impl_.machine_, lhs_arena,
+      &other->_impl_.machine_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecVersionResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[16]);
 }
@@ -6957,6 +7041,7 @@ IPsecStatsReq::IPsecStatsReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 IPsecStatsReq::IPsecStatsReq(const IPsecStatsReq& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  IPsecStatsReq* const _this = this; (void)_this;
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecStatsReq)
 }
@@ -6978,7 +7063,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecStatsReq::GetClassData() 
 
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecStatsReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[17]);
 }
@@ -6992,53 +7077,58 @@ class IPsecStatsResp::_Internal {
 IPsecStatsResp::IPsecStatsResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecStatsResp)
 }
 IPsecStatsResp::IPsecStatsResp(const IPsecStatsResp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecStatsResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.status_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.status_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_status().empty()) {
-    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
-      GetArenaForAllocation());
+    _this->_impl_.status_.Set(from._internal_status(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecStatsResp)
 }
 
-inline void IPsecStatsResp::SharedCtor() {
-status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void IPsecStatsResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.status_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.status_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.status_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecStatsResp::~IPsecStatsResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecStatsResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecStatsResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.status_.Destroy();
 }
 
-void IPsecStatsResp::ArenaDtor(void* object) {
-  IPsecStatsResp* _this = reinterpret_cast< IPsecStatsResp* >(object);
-  (void)_this;
-}
-void IPsecStatsResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecStatsResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecStatsResp::Clear() {
@@ -7047,23 +7137,23 @@ void IPsecStatsResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  status_.ClearToEmpty();
+  _impl_.status_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecStatsResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecStatsResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string status = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_status();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecStatsResp.status"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecStatsResp.status"));
         } else
           goto handle_unusual;
         continue;
@@ -7107,7 +7197,7 @@ uint8_t* IPsecStatsResp::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecStatsResp)
@@ -7129,32 +7219,28 @@ size_t IPsecStatsResp::ByteSizeLong() const {
         this->_internal_status());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecStatsResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecStatsResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecStatsResp::GetClassData() const { return &_class_data_; }
 
-void IPsecStatsResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecStatsResp *>(to)->MergeFrom(
-      static_cast<const IPsecStatsResp &>(from));
-}
 
-
-void IPsecStatsResp::MergeFrom(const IPsecStatsResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecStatsResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecStatsResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecStatsResp*>(&to_msg);
+  auto& from = static_cast<const IPsecStatsResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecStatsResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_status().empty()) {
-    _internal_set_status(from._internal_status());
+    _this->_internal_set_status(from._internal_status());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecStatsResp::CopyFrom(const IPsecStatsResp& from) {
@@ -7174,14 +7260,13 @@ void IPsecStatsResp::InternalSwap(IPsecStatsResp* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &status_, lhs_arena,
-      &other->status_, rhs_arena
+      &_impl_.status_, lhs_arena,
+      &other->_impl_.status_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecStatsResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[18]);
 }
@@ -7195,92 +7280,103 @@ class IPsecInitiateReq::_Internal {
 IPsecInitiateReq::IPsecInitiateReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecInitiateReq)
 }
 IPsecInitiateReq::IPsecInitiateReq(const IPsecInitiateReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecInitiateReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.child_){}
+    , decltype(_impl_.ike_){}
+    , decltype(_impl_.timeout_){}
+    , decltype(_impl_.loglevel_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  child_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.child_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    child_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.child_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_child().empty()) {
-    child_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_child(), 
-      GetArenaForAllocation());
+    _this->_impl_.child_.Set(from._internal_child(), 
+      _this->GetArenaForAllocation());
   }
-  ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ike_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ike_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ike().empty()) {
-    ike_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ike(), 
-      GetArenaForAllocation());
+    _this->_impl_.ike_.Set(from._internal_ike(), 
+      _this->GetArenaForAllocation());
   }
-  timeout_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.timeout_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    timeout_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.timeout_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_timeout().empty()) {
-    timeout_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_timeout(), 
-      GetArenaForAllocation());
+    _this->_impl_.timeout_.Set(from._internal_timeout(), 
+      _this->GetArenaForAllocation());
   }
-  loglevel_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.loglevel_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    loglevel_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.loglevel_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_loglevel().empty()) {
-    loglevel_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_loglevel(), 
-      GetArenaForAllocation());
+    _this->_impl_.loglevel_.Set(from._internal_loglevel(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecInitiateReq)
 }
 
-inline void IPsecInitiateReq::SharedCtor() {
-child_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  child_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-timeout_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  timeout_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-loglevel_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  loglevel_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void IPsecInitiateReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.child_){}
+    , decltype(_impl_.ike_){}
+    , decltype(_impl_.timeout_){}
+    , decltype(_impl_.loglevel_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.child_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.child_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ike_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ike_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.timeout_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.timeout_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.loglevel_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.loglevel_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecInitiateReq::~IPsecInitiateReq() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecInitiateReq)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecInitiateReq::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  child_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ike_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  timeout_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  loglevel_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.child_.Destroy();
+  _impl_.ike_.Destroy();
+  _impl_.timeout_.Destroy();
+  _impl_.loglevel_.Destroy();
 }
 
-void IPsecInitiateReq::ArenaDtor(void* object) {
-  IPsecInitiateReq* _this = reinterpret_cast< IPsecInitiateReq* >(object);
-  (void)_this;
-}
-void IPsecInitiateReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecInitiateReq::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecInitiateReq::Clear() {
@@ -7289,26 +7385,26 @@ void IPsecInitiateReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  child_.ClearToEmpty();
-  ike_.ClearToEmpty();
-  timeout_.ClearToEmpty();
-  loglevel_.ClearToEmpty();
+  _impl_.child_.ClearToEmpty();
+  _impl_.ike_.ClearToEmpty();
+  _impl_.timeout_.ClearToEmpty();
+  _impl_.loglevel_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecInitiateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecInitiateReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string child = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_child();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecInitiateReq.child"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecInitiateReq.child"));
         } else
           goto handle_unusual;
         continue;
@@ -7316,9 +7412,9 @@ const char* IPsecInitiateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_ike();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecInitiateReq.ike"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecInitiateReq.ike"));
         } else
           goto handle_unusual;
         continue;
@@ -7326,9 +7422,9 @@ const char* IPsecInitiateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_timeout();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecInitiateReq.timeout"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecInitiateReq.timeout"));
         } else
           goto handle_unusual;
         continue;
@@ -7336,9 +7432,9 @@ const char* IPsecInitiateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_loglevel();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecInitiateReq.loglevel"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecInitiateReq.loglevel"));
         } else
           goto handle_unusual;
         continue;
@@ -7412,7 +7508,7 @@ uint8_t* IPsecInitiateReq::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecInitiateReq)
@@ -7455,41 +7551,37 @@ size_t IPsecInitiateReq::ByteSizeLong() const {
         this->_internal_loglevel());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecInitiateReq::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecInitiateReq::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecInitiateReq::GetClassData() const { return &_class_data_; }
 
-void IPsecInitiateReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecInitiateReq *>(to)->MergeFrom(
-      static_cast<const IPsecInitiateReq &>(from));
-}
 
-
-void IPsecInitiateReq::MergeFrom(const IPsecInitiateReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecInitiateReq)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecInitiateReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecInitiateReq*>(&to_msg);
+  auto& from = static_cast<const IPsecInitiateReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecInitiateReq)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_child().empty()) {
-    _internal_set_child(from._internal_child());
+    _this->_internal_set_child(from._internal_child());
   }
   if (!from._internal_ike().empty()) {
-    _internal_set_ike(from._internal_ike());
+    _this->_internal_set_ike(from._internal_ike());
   }
   if (!from._internal_timeout().empty()) {
-    _internal_set_timeout(from._internal_timeout());
+    _this->_internal_set_timeout(from._internal_timeout());
   }
   if (!from._internal_loglevel().empty()) {
-    _internal_set_loglevel(from._internal_loglevel());
+    _this->_internal_set_loglevel(from._internal_loglevel());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecInitiateReq::CopyFrom(const IPsecInitiateReq& from) {
@@ -7509,29 +7601,25 @@ void IPsecInitiateReq::InternalSwap(IPsecInitiateReq* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &child_, lhs_arena,
-      &other->child_, rhs_arena
+      &_impl_.child_, lhs_arena,
+      &other->_impl_.child_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ike_, lhs_arena,
-      &other->ike_, rhs_arena
+      &_impl_.ike_, lhs_arena,
+      &other->_impl_.ike_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &timeout_, lhs_arena,
-      &other->timeout_, rhs_arena
+      &_impl_.timeout_, lhs_arena,
+      &other->_impl_.timeout_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &loglevel_, lhs_arena,
-      &other->loglevel_, rhs_arena
+      &_impl_.loglevel_, lhs_arena,
+      &other->_impl_.loglevel_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecInitiateReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[19]);
 }
@@ -7549,6 +7637,7 @@ IPsecInitiateResp::IPsecInitiateResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 IPsecInitiateResp::IPsecInitiateResp(const IPsecInitiateResp& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  IPsecInitiateResp* const _this = this; (void)_this;
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecInitiateResp)
 }
@@ -7570,7 +7659,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecInitiateResp::GetClassDat
 
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecInitiateResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[20]);
 }
@@ -7584,112 +7673,125 @@ class IPsecTerminateReq::_Internal {
 IPsecTerminateReq::IPsecTerminateReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecTerminateReq)
 }
 IPsecTerminateReq::IPsecTerminateReq(const IPsecTerminateReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecTerminateReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.child_){}
+    , decltype(_impl_.ike_){}
+    , decltype(_impl_.force_){}
+    , decltype(_impl_.timeout_){}
+    , decltype(_impl_.loglevel_){}
+    , decltype(_impl_.child_id_){}
+    , decltype(_impl_.ike_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  child_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.child_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    child_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.child_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_child().empty()) {
-    child_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_child(), 
-      GetArenaForAllocation());
+    _this->_impl_.child_.Set(from._internal_child(), 
+      _this->GetArenaForAllocation());
   }
-  ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ike_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ike_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ike().empty()) {
-    ike_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ike(), 
-      GetArenaForAllocation());
+    _this->_impl_.ike_.Set(from._internal_ike(), 
+      _this->GetArenaForAllocation());
   }
-  force_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.force_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    force_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.force_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_force().empty()) {
-    force_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_force(), 
-      GetArenaForAllocation());
+    _this->_impl_.force_.Set(from._internal_force(), 
+      _this->GetArenaForAllocation());
   }
-  timeout_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.timeout_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    timeout_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.timeout_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_timeout().empty()) {
-    timeout_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_timeout(), 
-      GetArenaForAllocation());
+    _this->_impl_.timeout_.Set(from._internal_timeout(), 
+      _this->GetArenaForAllocation());
   }
-  loglevel_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.loglevel_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    loglevel_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.loglevel_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_loglevel().empty()) {
-    loglevel_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_loglevel(), 
-      GetArenaForAllocation());
+    _this->_impl_.loglevel_.Set(from._internal_loglevel(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&child_id_, &from.child_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ike_id_) -
-    reinterpret_cast<char*>(&child_id_)) + sizeof(ike_id_));
+  ::memcpy(&_impl_.child_id_, &from._impl_.child_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.ike_id_) -
+    reinterpret_cast<char*>(&_impl_.child_id_)) + sizeof(_impl_.ike_id_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecTerminateReq)
 }
 
-inline void IPsecTerminateReq::SharedCtor() {
-child_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  child_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-force_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  force_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-timeout_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  timeout_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-loglevel_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  loglevel_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&child_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&ike_id_) -
-    reinterpret_cast<char*>(&child_id_)) + sizeof(ike_id_));
+inline void IPsecTerminateReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.child_){}
+    , decltype(_impl_.ike_){}
+    , decltype(_impl_.force_){}
+    , decltype(_impl_.timeout_){}
+    , decltype(_impl_.loglevel_){}
+    , decltype(_impl_.child_id_){uint64_t{0u}}
+    , decltype(_impl_.ike_id_){uint64_t{0u}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.child_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.child_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ike_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ike_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.force_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.force_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.timeout_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.timeout_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.loglevel_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.loglevel_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecTerminateReq::~IPsecTerminateReq() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecTerminateReq)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecTerminateReq::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  child_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ike_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  force_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  timeout_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  loglevel_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.child_.Destroy();
+  _impl_.ike_.Destroy();
+  _impl_.force_.Destroy();
+  _impl_.timeout_.Destroy();
+  _impl_.loglevel_.Destroy();
 }
 
-void IPsecTerminateReq::ArenaDtor(void* object) {
-  IPsecTerminateReq* _this = reinterpret_cast< IPsecTerminateReq* >(object);
-  (void)_this;
-}
-void IPsecTerminateReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecTerminateReq::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecTerminateReq::Clear() {
@@ -7698,30 +7800,30 @@ void IPsecTerminateReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  child_.ClearToEmpty();
-  ike_.ClearToEmpty();
-  force_.ClearToEmpty();
-  timeout_.ClearToEmpty();
-  loglevel_.ClearToEmpty();
-  ::memset(&child_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ike_id_) -
-      reinterpret_cast<char*>(&child_id_)) + sizeof(ike_id_));
+  _impl_.child_.ClearToEmpty();
+  _impl_.ike_.ClearToEmpty();
+  _impl_.force_.ClearToEmpty();
+  _impl_.timeout_.ClearToEmpty();
+  _impl_.loglevel_.ClearToEmpty();
+  ::memset(&_impl_.child_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.ike_id_) -
+      reinterpret_cast<char*>(&_impl_.child_id_)) + sizeof(_impl_.ike_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecTerminateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecTerminateReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string child = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_child();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.child"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.child"));
         } else
           goto handle_unusual;
         continue;
@@ -7729,16 +7831,16 @@ const char* IPsecTerminateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_ike();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.ike"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.ike"));
         } else
           goto handle_unusual;
         continue;
       // uint64 child_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          child_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.child_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7746,7 +7848,7 @@ const char* IPsecTerminateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // uint64 ike_id = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          ike_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.ike_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7755,9 +7857,9 @@ const char* IPsecTerminateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_force();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.force"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.force"));
         } else
           goto handle_unusual;
         continue;
@@ -7765,9 +7867,9 @@ const char* IPsecTerminateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_timeout();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.timeout"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.timeout"));
         } else
           goto handle_unusual;
         continue;
@@ -7775,9 +7877,9 @@ const char* IPsecTerminateReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_loglevel();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.loglevel"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateReq.loglevel"));
         } else
           goto handle_unusual;
         continue;
@@ -7833,13 +7935,13 @@ uint8_t* IPsecTerminateReq::_InternalSerialize(
   // uint64 child_id = 3;
   if (this->_internal_child_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_child_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_child_id(), target);
   }
 
   // uint64 ike_id = 4;
   if (this->_internal_ike_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_ike_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal_ike_id(), target);
   }
 
   // string force = 5;
@@ -7873,7 +7975,7 @@ uint8_t* IPsecTerminateReq::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecTerminateReq)
@@ -7925,58 +8027,54 @@ size_t IPsecTerminateReq::ByteSizeLong() const {
 
   // uint64 child_id = 3;
   if (this->_internal_child_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_child_id());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_child_id());
   }
 
   // uint64 ike_id = 4;
   if (this->_internal_ike_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_ike_id());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_ike_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecTerminateReq::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecTerminateReq::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecTerminateReq::GetClassData() const { return &_class_data_; }
 
-void IPsecTerminateReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecTerminateReq *>(to)->MergeFrom(
-      static_cast<const IPsecTerminateReq &>(from));
-}
 
-
-void IPsecTerminateReq::MergeFrom(const IPsecTerminateReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecTerminateReq)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecTerminateReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecTerminateReq*>(&to_msg);
+  auto& from = static_cast<const IPsecTerminateReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecTerminateReq)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_child().empty()) {
-    _internal_set_child(from._internal_child());
+    _this->_internal_set_child(from._internal_child());
   }
   if (!from._internal_ike().empty()) {
-    _internal_set_ike(from._internal_ike());
+    _this->_internal_set_ike(from._internal_ike());
   }
   if (!from._internal_force().empty()) {
-    _internal_set_force(from._internal_force());
+    _this->_internal_set_force(from._internal_force());
   }
   if (!from._internal_timeout().empty()) {
-    _internal_set_timeout(from._internal_timeout());
+    _this->_internal_set_timeout(from._internal_timeout());
   }
   if (!from._internal_loglevel().empty()) {
-    _internal_set_loglevel(from._internal_loglevel());
+    _this->_internal_set_loglevel(from._internal_loglevel());
   }
   if (from._internal_child_id() != 0) {
-    _internal_set_child_id(from._internal_child_id());
+    _this->_internal_set_child_id(from._internal_child_id());
   }
   if (from._internal_ike_id() != 0) {
-    _internal_set_ike_id(from._internal_ike_id());
+    _this->_internal_set_ike_id(from._internal_ike_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecTerminateReq::CopyFrom(const IPsecTerminateReq& from) {
@@ -7996,40 +8094,35 @@ void IPsecTerminateReq::InternalSwap(IPsecTerminateReq* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &child_, lhs_arena,
-      &other->child_, rhs_arena
+      &_impl_.child_, lhs_arena,
+      &other->_impl_.child_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ike_, lhs_arena,
-      &other->ike_, rhs_arena
+      &_impl_.ike_, lhs_arena,
+      &other->_impl_.ike_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &force_, lhs_arena,
-      &other->force_, rhs_arena
+      &_impl_.force_, lhs_arena,
+      &other->_impl_.force_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &timeout_, lhs_arena,
-      &other->timeout_, rhs_arena
+      &_impl_.timeout_, lhs_arena,
+      &other->_impl_.timeout_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &loglevel_, lhs_arena,
-      &other->loglevel_, rhs_arena
+      &_impl_.loglevel_, lhs_arena,
+      &other->_impl_.loglevel_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IPsecTerminateReq, ike_id_)
-      + sizeof(IPsecTerminateReq::ike_id_)
-      - PROTOBUF_FIELD_OFFSET(IPsecTerminateReq, child_id_)>(
-          reinterpret_cast<char*>(&child_id_),
-          reinterpret_cast<char*>(&other->child_id_));
+      PROTOBUF_FIELD_OFFSET(IPsecTerminateReq, _impl_.ike_id_)
+      + sizeof(IPsecTerminateReq::_impl_.ike_id_)
+      - PROTOBUF_FIELD_OFFSET(IPsecTerminateReq, _impl_.child_id_)>(
+          reinterpret_cast<char*>(&_impl_.child_id_),
+          reinterpret_cast<char*>(&other->_impl_.child_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecTerminateReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[21]);
 }
@@ -8043,60 +8136,65 @@ class IPsecTerminateResp::_Internal {
 IPsecTerminateResp::IPsecTerminateResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecTerminateResp)
 }
 IPsecTerminateResp::IPsecTerminateResp(const IPsecTerminateResp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecTerminateResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.success_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.terminated_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  success_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.success_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    success_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.success_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_success().empty()) {
-    success_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_success(), 
-      GetArenaForAllocation());
+    _this->_impl_.success_.Set(from._internal_success(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&matches_, &from.matches_,
-    static_cast<size_t>(reinterpret_cast<char*>(&terminated_) -
-    reinterpret_cast<char*>(&matches_)) + sizeof(terminated_));
+  ::memcpy(&_impl_.matches_, &from._impl_.matches_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.terminated_) -
+    reinterpret_cast<char*>(&_impl_.matches_)) + sizeof(_impl_.terminated_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecTerminateResp)
 }
 
-inline void IPsecTerminateResp::SharedCtor() {
-success_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  success_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&matches_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&terminated_) -
-    reinterpret_cast<char*>(&matches_)) + sizeof(terminated_));
+inline void IPsecTerminateResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.success_){}
+    , decltype(_impl_.matches_){0u}
+    , decltype(_impl_.terminated_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.success_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.success_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecTerminateResp::~IPsecTerminateResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecTerminateResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecTerminateResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  success_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.success_.Destroy();
 }
 
-void IPsecTerminateResp::ArenaDtor(void* object) {
-  IPsecTerminateResp* _this = reinterpret_cast< IPsecTerminateResp* >(object);
-  (void)_this;
-}
-void IPsecTerminateResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecTerminateResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecTerminateResp::Clear() {
@@ -8105,33 +8203,33 @@ void IPsecTerminateResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  success_.ClearToEmpty();
-  ::memset(&matches_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&terminated_) -
-      reinterpret_cast<char*>(&matches_)) + sizeof(terminated_));
+  _impl_.success_.ClearToEmpty();
+  ::memset(&_impl_.matches_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.terminated_) -
+      reinterpret_cast<char*>(&_impl_.matches_)) + sizeof(_impl_.terminated_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecTerminateResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecTerminateResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string success = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_success();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateResp.success"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecTerminateResp.success"));
         } else
           goto handle_unusual;
         continue;
       // uint32 matches = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          matches_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.matches_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8139,7 +8237,7 @@ const char* IPsecTerminateResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 terminated = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          terminated_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.terminated_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8186,17 +8284,17 @@ uint8_t* IPsecTerminateResp::_InternalSerialize(
   // uint32 matches = 2;
   if (this->_internal_matches() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_matches(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_matches(), target);
   }
 
   // uint32 terminated = 3;
   if (this->_internal_terminated() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_terminated(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_terminated(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecTerminateResp)
@@ -8220,46 +8318,42 @@ size_t IPsecTerminateResp::ByteSizeLong() const {
 
   // uint32 matches = 2;
   if (this->_internal_matches() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_matches());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_matches());
   }
 
   // uint32 terminated = 3;
   if (this->_internal_terminated() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_terminated());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_terminated());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecTerminateResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecTerminateResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecTerminateResp::GetClassData() const { return &_class_data_; }
 
-void IPsecTerminateResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecTerminateResp *>(to)->MergeFrom(
-      static_cast<const IPsecTerminateResp &>(from));
-}
 
-
-void IPsecTerminateResp::MergeFrom(const IPsecTerminateResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecTerminateResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecTerminateResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecTerminateResp*>(&to_msg);
+  auto& from = static_cast<const IPsecTerminateResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecTerminateResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_success().empty()) {
-    _internal_set_success(from._internal_success());
+    _this->_internal_set_success(from._internal_success());
   }
   if (from._internal_matches() != 0) {
-    _internal_set_matches(from._internal_matches());
+    _this->_internal_set_matches(from._internal_matches());
   }
   if (from._internal_terminated() != 0) {
-    _internal_set_terminated(from._internal_terminated());
+    _this->_internal_set_terminated(from._internal_terminated());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecTerminateResp::CopyFrom(const IPsecTerminateResp& from) {
@@ -8279,20 +8373,19 @@ void IPsecTerminateResp::InternalSwap(IPsecTerminateResp* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &success_, lhs_arena,
-      &other->success_, rhs_arena
+      &_impl_.success_, lhs_arena,
+      &other->_impl_.success_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IPsecTerminateResp, terminated_)
-      + sizeof(IPsecTerminateResp::terminated_)
-      - PROTOBUF_FIELD_OFFSET(IPsecTerminateResp, matches_)>(
-          reinterpret_cast<char*>(&matches_),
-          reinterpret_cast<char*>(&other->matches_));
+      PROTOBUF_FIELD_OFFSET(IPsecTerminateResp, _impl_.terminated_)
+      + sizeof(IPsecTerminateResp::_impl_.terminated_)
+      - PROTOBUF_FIELD_OFFSET(IPsecTerminateResp, _impl_.matches_)>(
+          reinterpret_cast<char*>(&_impl_.matches_),
+          reinterpret_cast<char*>(&other->_impl_.matches_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecTerminateResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[22]);
 }
@@ -8306,86 +8399,95 @@ class IPsecRekeyReq::_Internal {
 IPsecRekeyReq::IPsecRekeyReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecRekeyReq)
 }
 IPsecRekeyReq::IPsecRekeyReq(const IPsecRekeyReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecRekeyReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.child_){}
+    , decltype(_impl_.ike_){}
+    , decltype(_impl_.reauth_){}
+    , decltype(_impl_.child_id_){}
+    , decltype(_impl_.ike_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  child_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.child_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    child_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.child_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_child().empty()) {
-    child_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_child(), 
-      GetArenaForAllocation());
+    _this->_impl_.child_.Set(from._internal_child(), 
+      _this->GetArenaForAllocation());
   }
-  ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ike_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ike_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ike().empty()) {
-    ike_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ike(), 
-      GetArenaForAllocation());
+    _this->_impl_.ike_.Set(from._internal_ike(), 
+      _this->GetArenaForAllocation());
   }
-  reauth_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.reauth_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    reauth_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.reauth_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_reauth().empty()) {
-    reauth_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reauth(), 
-      GetArenaForAllocation());
+    _this->_impl_.reauth_.Set(from._internal_reauth(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&child_id_, &from.child_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ike_id_) -
-    reinterpret_cast<char*>(&child_id_)) + sizeof(ike_id_));
+  ::memcpy(&_impl_.child_id_, &from._impl_.child_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.ike_id_) -
+    reinterpret_cast<char*>(&_impl_.child_id_)) + sizeof(_impl_.ike_id_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecRekeyReq)
 }
 
-inline void IPsecRekeyReq::SharedCtor() {
-child_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  child_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-reauth_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  reauth_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&child_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&ike_id_) -
-    reinterpret_cast<char*>(&child_id_)) + sizeof(ike_id_));
+inline void IPsecRekeyReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.child_){}
+    , decltype(_impl_.ike_){}
+    , decltype(_impl_.reauth_){}
+    , decltype(_impl_.child_id_){uint64_t{0u}}
+    , decltype(_impl_.ike_id_){uint64_t{0u}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.child_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.child_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ike_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ike_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.reauth_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.reauth_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecRekeyReq::~IPsecRekeyReq() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecRekeyReq)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecRekeyReq::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  child_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ike_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  reauth_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.child_.Destroy();
+  _impl_.ike_.Destroy();
+  _impl_.reauth_.Destroy();
 }
 
-void IPsecRekeyReq::ArenaDtor(void* object) {
-  IPsecRekeyReq* _this = reinterpret_cast< IPsecRekeyReq* >(object);
-  (void)_this;
-}
-void IPsecRekeyReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecRekeyReq::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecRekeyReq::Clear() {
@@ -8394,28 +8496,28 @@ void IPsecRekeyReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  child_.ClearToEmpty();
-  ike_.ClearToEmpty();
-  reauth_.ClearToEmpty();
-  ::memset(&child_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ike_id_) -
-      reinterpret_cast<char*>(&child_id_)) + sizeof(ike_id_));
+  _impl_.child_.ClearToEmpty();
+  _impl_.ike_.ClearToEmpty();
+  _impl_.reauth_.ClearToEmpty();
+  ::memset(&_impl_.child_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.ike_id_) -
+      reinterpret_cast<char*>(&_impl_.child_id_)) + sizeof(_impl_.ike_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecRekeyReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecRekeyReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string child = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_child();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecRekeyReq.child"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecRekeyReq.child"));
         } else
           goto handle_unusual;
         continue;
@@ -8423,16 +8525,16 @@ const char* IPsecRekeyReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_ike();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecRekeyReq.ike"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecRekeyReq.ike"));
         } else
           goto handle_unusual;
         continue;
       // uint64 child_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          child_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.child_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8440,7 +8542,7 @@ const char* IPsecRekeyReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // uint64 ike_id = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          ike_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.ike_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8449,9 +8551,9 @@ const char* IPsecRekeyReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_reauth();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecRekeyReq.reauth"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecRekeyReq.reauth"));
         } else
           goto handle_unusual;
         continue;
@@ -8507,13 +8609,13 @@ uint8_t* IPsecRekeyReq::_InternalSerialize(
   // uint64 child_id = 3;
   if (this->_internal_child_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_child_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_child_id(), target);
   }
 
   // uint64 ike_id = 4;
   if (this->_internal_ike_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_ike_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal_ike_id(), target);
   }
 
   // string reauth = 5;
@@ -8527,7 +8629,7 @@ uint8_t* IPsecRekeyReq::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecRekeyReq)
@@ -8565,52 +8667,48 @@ size_t IPsecRekeyReq::ByteSizeLong() const {
 
   // uint64 child_id = 3;
   if (this->_internal_child_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_child_id());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_child_id());
   }
 
   // uint64 ike_id = 4;
   if (this->_internal_ike_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_ike_id());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_ike_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecRekeyReq::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecRekeyReq::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecRekeyReq::GetClassData() const { return &_class_data_; }
 
-void IPsecRekeyReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecRekeyReq *>(to)->MergeFrom(
-      static_cast<const IPsecRekeyReq &>(from));
-}
 
-
-void IPsecRekeyReq::MergeFrom(const IPsecRekeyReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecRekeyReq)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecRekeyReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecRekeyReq*>(&to_msg);
+  auto& from = static_cast<const IPsecRekeyReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecRekeyReq)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_child().empty()) {
-    _internal_set_child(from._internal_child());
+    _this->_internal_set_child(from._internal_child());
   }
   if (!from._internal_ike().empty()) {
-    _internal_set_ike(from._internal_ike());
+    _this->_internal_set_ike(from._internal_ike());
   }
   if (!from._internal_reauth().empty()) {
-    _internal_set_reauth(from._internal_reauth());
+    _this->_internal_set_reauth(from._internal_reauth());
   }
   if (from._internal_child_id() != 0) {
-    _internal_set_child_id(from._internal_child_id());
+    _this->_internal_set_child_id(from._internal_child_id());
   }
   if (from._internal_ike_id() != 0) {
-    _internal_set_ike_id(from._internal_ike_id());
+    _this->_internal_set_ike_id(from._internal_ike_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecRekeyReq::CopyFrom(const IPsecRekeyReq& from) {
@@ -8630,30 +8728,27 @@ void IPsecRekeyReq::InternalSwap(IPsecRekeyReq* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &child_, lhs_arena,
-      &other->child_, rhs_arena
+      &_impl_.child_, lhs_arena,
+      &other->_impl_.child_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ike_, lhs_arena,
-      &other->ike_, rhs_arena
+      &_impl_.ike_, lhs_arena,
+      &other->_impl_.ike_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &reauth_, lhs_arena,
-      &other->reauth_, rhs_arena
+      &_impl_.reauth_, lhs_arena,
+      &other->_impl_.reauth_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IPsecRekeyReq, ike_id_)
-      + sizeof(IPsecRekeyReq::ike_id_)
-      - PROTOBUF_FIELD_OFFSET(IPsecRekeyReq, child_id_)>(
-          reinterpret_cast<char*>(&child_id_),
-          reinterpret_cast<char*>(&other->child_id_));
+      PROTOBUF_FIELD_OFFSET(IPsecRekeyReq, _impl_.ike_id_)
+      + sizeof(IPsecRekeyReq::_impl_.ike_id_)
+      - PROTOBUF_FIELD_OFFSET(IPsecRekeyReq, _impl_.child_id_)>(
+          reinterpret_cast<char*>(&_impl_.child_id_),
+          reinterpret_cast<char*>(&other->_impl_.child_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecRekeyReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[23]);
 }
@@ -8667,55 +8762,61 @@ class IPsecRekeyResp::_Internal {
 IPsecRekeyResp::IPsecRekeyResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecRekeyResp)
 }
 IPsecRekeyResp::IPsecRekeyResp(const IPsecRekeyResp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecRekeyResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.success_){}
+    , decltype(_impl_.matches_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  success_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.success_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    success_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.success_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_success().empty()) {
-    success_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_success(), 
-      GetArenaForAllocation());
+    _this->_impl_.success_.Set(from._internal_success(), 
+      _this->GetArenaForAllocation());
   }
-  matches_ = from.matches_;
+  _this->_impl_.matches_ = from._impl_.matches_;
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecRekeyResp)
 }
 
-inline void IPsecRekeyResp::SharedCtor() {
-success_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  success_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-matches_ = 0u;
+inline void IPsecRekeyResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.success_){}
+    , decltype(_impl_.matches_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.success_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.success_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecRekeyResp::~IPsecRekeyResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecRekeyResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecRekeyResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  success_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.success_.Destroy();
 }
 
-void IPsecRekeyResp::ArenaDtor(void* object) {
-  IPsecRekeyResp* _this = reinterpret_cast< IPsecRekeyResp* >(object);
-  (void)_this;
-}
-void IPsecRekeyResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecRekeyResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecRekeyResp::Clear() {
@@ -8724,31 +8825,31 @@ void IPsecRekeyResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  success_.ClearToEmpty();
-  matches_ = 0u;
+  _impl_.success_.ClearToEmpty();
+  _impl_.matches_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecRekeyResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecRekeyResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string success = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_success();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecRekeyResp.success"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecRekeyResp.success"));
         } else
           goto handle_unusual;
         continue;
       // uint32 matches = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          matches_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.matches_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8795,11 +8896,11 @@ uint8_t* IPsecRekeyResp::_InternalSerialize(
   // uint32 matches = 2;
   if (this->_internal_matches() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_matches(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_matches(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecRekeyResp)
@@ -8823,38 +8924,34 @@ size_t IPsecRekeyResp::ByteSizeLong() const {
 
   // uint32 matches = 2;
   if (this->_internal_matches() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_matches());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_matches());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecRekeyResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecRekeyResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecRekeyResp::GetClassData() const { return &_class_data_; }
 
-void IPsecRekeyResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecRekeyResp *>(to)->MergeFrom(
-      static_cast<const IPsecRekeyResp &>(from));
-}
 
-
-void IPsecRekeyResp::MergeFrom(const IPsecRekeyResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecRekeyResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecRekeyResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecRekeyResp*>(&to_msg);
+  auto& from = static_cast<const IPsecRekeyResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecRekeyResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_success().empty()) {
-    _internal_set_success(from._internal_success());
+    _this->_internal_set_success(from._internal_success());
   }
   if (from._internal_matches() != 0) {
-    _internal_set_matches(from._internal_matches());
+    _this->_internal_set_matches(from._internal_matches());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecRekeyResp::CopyFrom(const IPsecRekeyResp& from) {
@@ -8874,15 +8971,14 @@ void IPsecRekeyResp::InternalSwap(IPsecRekeyResp* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &success_, lhs_arena,
-      &other->success_, rhs_arena
+      &_impl_.success_, lhs_arena,
+      &other->_impl_.success_, rhs_arena
   );
-  swap(matches_, other->matches_);
+  swap(_impl_.matches_, other->_impl_.matches_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecRekeyResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[24]);
 }
@@ -8896,86 +8992,95 @@ class IPsecListSasReq::_Internal {
 IPsecListSasReq::IPsecListSasReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecListSasReq)
 }
 IPsecListSasReq::IPsecListSasReq(const IPsecListSasReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecListSasReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.noblock_){}
+    , decltype(_impl_.ike_){}
+    , decltype(_impl_.child_){}
+    , decltype(_impl_.ike_id_){}
+    , decltype(_impl_.child_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  noblock_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.noblock_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    noblock_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.noblock_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_noblock().empty()) {
-    noblock_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_noblock(), 
-      GetArenaForAllocation());
+    _this->_impl_.noblock_.Set(from._internal_noblock(), 
+      _this->GetArenaForAllocation());
   }
-  ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ike_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ike_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ike().empty()) {
-    ike_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ike(), 
-      GetArenaForAllocation());
+    _this->_impl_.ike_.Set(from._internal_ike(), 
+      _this->GetArenaForAllocation());
   }
-  child_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.child_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    child_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.child_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_child().empty()) {
-    child_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_child(), 
-      GetArenaForAllocation());
+    _this->_impl_.child_.Set(from._internal_child(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&ike_id_, &from.ike_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&child_id_) -
-    reinterpret_cast<char*>(&ike_id_)) + sizeof(child_id_));
+  ::memcpy(&_impl_.ike_id_, &from._impl_.ike_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.child_id_) -
+    reinterpret_cast<char*>(&_impl_.ike_id_)) + sizeof(_impl_.child_id_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecListSasReq)
 }
 
-inline void IPsecListSasReq::SharedCtor() {
-noblock_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  noblock_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-child_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  child_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&ike_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&child_id_) -
-    reinterpret_cast<char*>(&ike_id_)) + sizeof(child_id_));
+inline void IPsecListSasReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.noblock_){}
+    , decltype(_impl_.ike_){}
+    , decltype(_impl_.child_){}
+    , decltype(_impl_.ike_id_){uint64_t{0u}}
+    , decltype(_impl_.child_id_){uint64_t{0u}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.noblock_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.noblock_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ike_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ike_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.child_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.child_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecListSasReq::~IPsecListSasReq() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecListSasReq)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecListSasReq::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  noblock_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ike_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  child_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.noblock_.Destroy();
+  _impl_.ike_.Destroy();
+  _impl_.child_.Destroy();
 }
 
-void IPsecListSasReq::ArenaDtor(void* object) {
-  IPsecListSasReq* _this = reinterpret_cast< IPsecListSasReq* >(object);
-  (void)_this;
-}
-void IPsecListSasReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecListSasReq::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecListSasReq::Clear() {
@@ -8984,28 +9089,28 @@ void IPsecListSasReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  noblock_.ClearToEmpty();
-  ike_.ClearToEmpty();
-  child_.ClearToEmpty();
-  ::memset(&ike_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&child_id_) -
-      reinterpret_cast<char*>(&ike_id_)) + sizeof(child_id_));
+  _impl_.noblock_.ClearToEmpty();
+  _impl_.ike_.ClearToEmpty();
+  _impl_.child_.ClearToEmpty();
+  ::memset(&_impl_.ike_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.child_id_) -
+      reinterpret_cast<char*>(&_impl_.ike_id_)) + sizeof(_impl_.child_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecListSasReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecListSasReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string noblock = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_noblock();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecListSasReq.noblock"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecListSasReq.noblock"));
         } else
           goto handle_unusual;
         continue;
@@ -9013,16 +9118,16 @@ const char* IPsecListSasReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_ike();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecListSasReq.ike"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecListSasReq.ike"));
         } else
           goto handle_unusual;
         continue;
       // uint64 ike_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          ike_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.ike_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -9031,16 +9136,16 @@ const char* IPsecListSasReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_child();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecListSasReq.child"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecListSasReq.child"));
         } else
           goto handle_unusual;
         continue;
       // uint64 child_id = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          child_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.child_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -9097,7 +9202,7 @@ uint8_t* IPsecListSasReq::_InternalSerialize(
   // uint64 ike_id = 3;
   if (this->_internal_ike_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_ike_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_ike_id(), target);
   }
 
   // string child = 4;
@@ -9113,11 +9218,11 @@ uint8_t* IPsecListSasReq::_InternalSerialize(
   // uint64 child_id = 5;
   if (this->_internal_child_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_child_id(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal_child_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecListSasReq)
@@ -9155,52 +9260,48 @@ size_t IPsecListSasReq::ByteSizeLong() const {
 
   // uint64 ike_id = 3;
   if (this->_internal_ike_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_ike_id());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_ike_id());
   }
 
   // uint64 child_id = 5;
   if (this->_internal_child_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_child_id());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_child_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecListSasReq::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecListSasReq::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecListSasReq::GetClassData() const { return &_class_data_; }
 
-void IPsecListSasReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecListSasReq *>(to)->MergeFrom(
-      static_cast<const IPsecListSasReq &>(from));
-}
 
-
-void IPsecListSasReq::MergeFrom(const IPsecListSasReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListSasReq)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecListSasReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecListSasReq*>(&to_msg);
+  auto& from = static_cast<const IPsecListSasReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListSasReq)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_noblock().empty()) {
-    _internal_set_noblock(from._internal_noblock());
+    _this->_internal_set_noblock(from._internal_noblock());
   }
   if (!from._internal_ike().empty()) {
-    _internal_set_ike(from._internal_ike());
+    _this->_internal_set_ike(from._internal_ike());
   }
   if (!from._internal_child().empty()) {
-    _internal_set_child(from._internal_child());
+    _this->_internal_set_child(from._internal_child());
   }
   if (from._internal_ike_id() != 0) {
-    _internal_set_ike_id(from._internal_ike_id());
+    _this->_internal_set_ike_id(from._internal_ike_id());
   }
   if (from._internal_child_id() != 0) {
-    _internal_set_child_id(from._internal_child_id());
+    _this->_internal_set_child_id(from._internal_child_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecListSasReq::CopyFrom(const IPsecListSasReq& from) {
@@ -9220,30 +9321,27 @@ void IPsecListSasReq::InternalSwap(IPsecListSasReq* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &noblock_, lhs_arena,
-      &other->noblock_, rhs_arena
+      &_impl_.noblock_, lhs_arena,
+      &other->_impl_.noblock_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ike_, lhs_arena,
-      &other->ike_, rhs_arena
+      &_impl_.ike_, lhs_arena,
+      &other->_impl_.ike_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &child_, lhs_arena,
-      &other->child_, rhs_arena
+      &_impl_.child_, lhs_arena,
+      &other->_impl_.child_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IPsecListSasReq, child_id_)
-      + sizeof(IPsecListSasReq::child_id_)
-      - PROTOBUF_FIELD_OFFSET(IPsecListSasReq, ike_id_)>(
-          reinterpret_cast<char*>(&ike_id_),
-          reinterpret_cast<char*>(&other->ike_id_));
+      PROTOBUF_FIELD_OFFSET(IPsecListSasReq, _impl_.child_id_)
+      + sizeof(IPsecListSasReq::_impl_.child_id_)
+      - PROTOBUF_FIELD_OFFSET(IPsecListSasReq, _impl_.ike_id_)>(
+          reinterpret_cast<char*>(&_impl_.ike_id_),
+          reinterpret_cast<char*>(&other->_impl_.ike_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListSasReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[25]);
 }
@@ -9257,287 +9355,328 @@ class ListChildSa::_Internal {
 ListChildSa::ListChildSa(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.ListChildSa)
 }
 ListChildSa::ListChildSa(const ListChildSa& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListChildSa* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.protocol_){}
+    , decltype(_impl_.encap_){}
+    , decltype(_impl_.spi_in_){}
+    , decltype(_impl_.spi_out_){}
+    , decltype(_impl_.cpi_in_){}
+    , decltype(_impl_.cpi_out_){}
+    , decltype(_impl_.mark_in_){}
+    , decltype(_impl_.mark_mask_in_){}
+    , decltype(_impl_.mark_out_){}
+    , decltype(_impl_.mark_mask_out_){}
+    , decltype(_impl_.if_id_in_){}
+    , decltype(_impl_.if_id_out_){}
+    , decltype(_impl_.encr_alg_){}
+    , decltype(_impl_.encr_keysize_){}
+    , decltype(_impl_.integ_alg_){}
+    , decltype(_impl_.integ_keysize_){}
+    , decltype(_impl_.dh_group_){}
+    , decltype(_impl_.esn_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  protocol_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.protocol_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    protocol_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.protocol_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_protocol().empty()) {
-    protocol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_protocol(), 
-      GetArenaForAllocation());
+    _this->_impl_.protocol_.Set(from._internal_protocol(), 
+      _this->GetArenaForAllocation());
   }
-  encap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.encap_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    encap_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.encap_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_encap().empty()) {
-    encap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_encap(), 
-      GetArenaForAllocation());
+    _this->_impl_.encap_.Set(from._internal_encap(), 
+      _this->GetArenaForAllocation());
   }
-  spi_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.spi_in_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    spi_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.spi_in_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_spi_in().empty()) {
-    spi_in_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_spi_in(), 
-      GetArenaForAllocation());
+    _this->_impl_.spi_in_.Set(from._internal_spi_in(), 
+      _this->GetArenaForAllocation());
   }
-  spi_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.spi_out_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    spi_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.spi_out_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_spi_out().empty()) {
-    spi_out_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_spi_out(), 
-      GetArenaForAllocation());
+    _this->_impl_.spi_out_.Set(from._internal_spi_out(), 
+      _this->GetArenaForAllocation());
   }
-  cpi_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.cpi_in_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    cpi_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.cpi_in_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_cpi_in().empty()) {
-    cpi_in_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cpi_in(), 
-      GetArenaForAllocation());
+    _this->_impl_.cpi_in_.Set(from._internal_cpi_in(), 
+      _this->GetArenaForAllocation());
   }
-  cpi_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.cpi_out_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    cpi_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.cpi_out_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_cpi_out().empty()) {
-    cpi_out_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cpi_out(), 
-      GetArenaForAllocation());
+    _this->_impl_.cpi_out_.Set(from._internal_cpi_out(), 
+      _this->GetArenaForAllocation());
   }
-  mark_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.mark_in_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mark_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.mark_in_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mark_in().empty()) {
-    mark_in_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mark_in(), 
-      GetArenaForAllocation());
+    _this->_impl_.mark_in_.Set(from._internal_mark_in(), 
+      _this->GetArenaForAllocation());
   }
-  mark_mask_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.mark_mask_in_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mark_mask_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.mark_mask_in_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mark_mask_in().empty()) {
-    mark_mask_in_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mark_mask_in(), 
-      GetArenaForAllocation());
+    _this->_impl_.mark_mask_in_.Set(from._internal_mark_mask_in(), 
+      _this->GetArenaForAllocation());
   }
-  mark_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.mark_out_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mark_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.mark_out_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mark_out().empty()) {
-    mark_out_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mark_out(), 
-      GetArenaForAllocation());
+    _this->_impl_.mark_out_.Set(from._internal_mark_out(), 
+      _this->GetArenaForAllocation());
   }
-  mark_mask_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.mark_mask_out_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mark_mask_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.mark_mask_out_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mark_mask_out().empty()) {
-    mark_mask_out_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mark_mask_out(), 
-      GetArenaForAllocation());
+    _this->_impl_.mark_mask_out_.Set(from._internal_mark_mask_out(), 
+      _this->GetArenaForAllocation());
   }
-  if_id_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.if_id_in_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    if_id_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.if_id_in_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_if_id_in().empty()) {
-    if_id_in_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_if_id_in(), 
-      GetArenaForAllocation());
+    _this->_impl_.if_id_in_.Set(from._internal_if_id_in(), 
+      _this->GetArenaForAllocation());
   }
-  if_id_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.if_id_out_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    if_id_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.if_id_out_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_if_id_out().empty()) {
-    if_id_out_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_if_id_out(), 
-      GetArenaForAllocation());
+    _this->_impl_.if_id_out_.Set(from._internal_if_id_out(), 
+      _this->GetArenaForAllocation());
   }
-  encr_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.encr_alg_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    encr_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.encr_alg_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_encr_alg().empty()) {
-    encr_alg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_encr_alg(), 
-      GetArenaForAllocation());
+    _this->_impl_.encr_alg_.Set(from._internal_encr_alg(), 
+      _this->GetArenaForAllocation());
   }
-  encr_keysize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.encr_keysize_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    encr_keysize_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.encr_keysize_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_encr_keysize().empty()) {
-    encr_keysize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_encr_keysize(), 
-      GetArenaForAllocation());
+    _this->_impl_.encr_keysize_.Set(from._internal_encr_keysize(), 
+      _this->GetArenaForAllocation());
   }
-  integ_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.integ_alg_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    integ_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.integ_alg_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_integ_alg().empty()) {
-    integ_alg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integ_alg(), 
-      GetArenaForAllocation());
+    _this->_impl_.integ_alg_.Set(from._internal_integ_alg(), 
+      _this->GetArenaForAllocation());
   }
-  integ_keysize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.integ_keysize_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    integ_keysize_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.integ_keysize_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_integ_keysize().empty()) {
-    integ_keysize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integ_keysize(), 
-      GetArenaForAllocation());
+    _this->_impl_.integ_keysize_.Set(from._internal_integ_keysize(), 
+      _this->GetArenaForAllocation());
   }
-  dh_group_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.dh_group_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    dh_group_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.dh_group_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_dh_group().empty()) {
-    dh_group_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_dh_group(), 
-      GetArenaForAllocation());
+    _this->_impl_.dh_group_.Set(from._internal_dh_group(), 
+      _this->GetArenaForAllocation());
   }
-  esn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.esn_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    esn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.esn_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_esn().empty()) {
-    esn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_esn(), 
-      GetArenaForAllocation());
+    _this->_impl_.esn_.Set(from._internal_esn(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.ListChildSa)
 }
 
-inline void ListChildSa::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-protocol_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  protocol_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-encap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  encap_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-spi_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  spi_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-spi_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  spi_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-cpi_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  cpi_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-cpi_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  cpi_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mark_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mark_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mark_mask_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mark_mask_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mark_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mark_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mark_mask_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mark_mask_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-if_id_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if_id_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-if_id_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if_id_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-encr_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  encr_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-encr_keysize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  encr_keysize_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-integ_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  integ_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-integ_keysize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  integ_keysize_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-dh_group_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  dh_group_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-esn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  esn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void ListChildSa::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.protocol_){}
+    , decltype(_impl_.encap_){}
+    , decltype(_impl_.spi_in_){}
+    , decltype(_impl_.spi_out_){}
+    , decltype(_impl_.cpi_in_){}
+    , decltype(_impl_.cpi_out_){}
+    , decltype(_impl_.mark_in_){}
+    , decltype(_impl_.mark_mask_in_){}
+    , decltype(_impl_.mark_out_){}
+    , decltype(_impl_.mark_mask_out_){}
+    , decltype(_impl_.if_id_in_){}
+    , decltype(_impl_.if_id_out_){}
+    , decltype(_impl_.encr_alg_){}
+    , decltype(_impl_.encr_keysize_){}
+    , decltype(_impl_.integ_alg_){}
+    , decltype(_impl_.integ_keysize_){}
+    , decltype(_impl_.dh_group_){}
+    , decltype(_impl_.esn_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.protocol_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.protocol_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.encap_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.encap_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.spi_in_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.spi_in_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.spi_out_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.spi_out_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.cpi_in_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.cpi_in_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.cpi_out_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.cpi_out_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mark_in_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mark_in_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mark_mask_in_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mark_mask_in_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mark_out_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mark_out_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mark_mask_out_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mark_mask_out_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.if_id_in_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.if_id_in_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.if_id_out_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.if_id_out_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.encr_alg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.encr_alg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.encr_keysize_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.encr_keysize_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.integ_alg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.integ_alg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.integ_keysize_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.integ_keysize_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.dh_group_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.dh_group_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.esn_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.esn_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListChildSa::~ListChildSa() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.ListChildSa)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListChildSa::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  protocol_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  encap_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  spi_in_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  spi_out_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  cpi_in_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  cpi_out_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mark_in_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mark_mask_in_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mark_out_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mark_mask_out_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if_id_in_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if_id_out_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  encr_alg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  encr_keysize_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  integ_alg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  integ_keysize_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  dh_group_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  esn_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.Destroy();
+  _impl_.protocol_.Destroy();
+  _impl_.encap_.Destroy();
+  _impl_.spi_in_.Destroy();
+  _impl_.spi_out_.Destroy();
+  _impl_.cpi_in_.Destroy();
+  _impl_.cpi_out_.Destroy();
+  _impl_.mark_in_.Destroy();
+  _impl_.mark_mask_in_.Destroy();
+  _impl_.mark_out_.Destroy();
+  _impl_.mark_mask_out_.Destroy();
+  _impl_.if_id_in_.Destroy();
+  _impl_.if_id_out_.Destroy();
+  _impl_.encr_alg_.Destroy();
+  _impl_.encr_keysize_.Destroy();
+  _impl_.integ_alg_.Destroy();
+  _impl_.integ_keysize_.Destroy();
+  _impl_.dh_group_.Destroy();
+  _impl_.esn_.Destroy();
 }
 
-void ListChildSa::ArenaDtor(void* object) {
-  ListChildSa* _this = reinterpret_cast< ListChildSa* >(object);
-  (void)_this;
-}
-void ListChildSa::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListChildSa::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListChildSa::Clear() {
@@ -9546,41 +9685,41 @@ void ListChildSa::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  protocol_.ClearToEmpty();
-  encap_.ClearToEmpty();
-  spi_in_.ClearToEmpty();
-  spi_out_.ClearToEmpty();
-  cpi_in_.ClearToEmpty();
-  cpi_out_.ClearToEmpty();
-  mark_in_.ClearToEmpty();
-  mark_mask_in_.ClearToEmpty();
-  mark_out_.ClearToEmpty();
-  mark_mask_out_.ClearToEmpty();
-  if_id_in_.ClearToEmpty();
-  if_id_out_.ClearToEmpty();
-  encr_alg_.ClearToEmpty();
-  encr_keysize_.ClearToEmpty();
-  integ_alg_.ClearToEmpty();
-  integ_keysize_.ClearToEmpty();
-  dh_group_.ClearToEmpty();
-  esn_.ClearToEmpty();
+  _impl_.name_.ClearToEmpty();
+  _impl_.protocol_.ClearToEmpty();
+  _impl_.encap_.ClearToEmpty();
+  _impl_.spi_in_.ClearToEmpty();
+  _impl_.spi_out_.ClearToEmpty();
+  _impl_.cpi_in_.ClearToEmpty();
+  _impl_.cpi_out_.ClearToEmpty();
+  _impl_.mark_in_.ClearToEmpty();
+  _impl_.mark_mask_in_.ClearToEmpty();
+  _impl_.mark_out_.ClearToEmpty();
+  _impl_.mark_mask_out_.ClearToEmpty();
+  _impl_.if_id_in_.ClearToEmpty();
+  _impl_.if_id_out_.ClearToEmpty();
+  _impl_.encr_alg_.ClearToEmpty();
+  _impl_.encr_keysize_.ClearToEmpty();
+  _impl_.integ_alg_.ClearToEmpty();
+  _impl_.integ_keysize_.ClearToEmpty();
+  _impl_.dh_group_.ClearToEmpty();
+  _impl_.esn_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListChildSa::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.name"));
         } else
           goto handle_unusual;
         continue;
@@ -9588,9 +9727,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_protocol();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.protocol"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.protocol"));
         } else
           goto handle_unusual;
         continue;
@@ -9598,9 +9737,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_encap();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.encap"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.encap"));
         } else
           goto handle_unusual;
         continue;
@@ -9608,9 +9747,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_spi_in();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.spi_in"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.spi_in"));
         } else
           goto handle_unusual;
         continue;
@@ -9618,9 +9757,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_spi_out();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.spi_out"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.spi_out"));
         } else
           goto handle_unusual;
         continue;
@@ -9628,9 +9767,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_cpi_in();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.cpi_in"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.cpi_in"));
         } else
           goto handle_unusual;
         continue;
@@ -9638,9 +9777,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_cpi_out();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.cpi_out"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.cpi_out"));
         } else
           goto handle_unusual;
         continue;
@@ -9648,9 +9787,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_mark_in();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.mark_in"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.mark_in"));
         } else
           goto handle_unusual;
         continue;
@@ -9658,9 +9797,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           auto str = _internal_mutable_mark_mask_in();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.mark_mask_in"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.mark_mask_in"));
         } else
           goto handle_unusual;
         continue;
@@ -9668,9 +9807,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_mark_out();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.mark_out"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.mark_out"));
         } else
           goto handle_unusual;
         continue;
@@ -9678,9 +9817,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_mark_mask_out();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.mark_mask_out"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.mark_mask_out"));
         } else
           goto handle_unusual;
         continue;
@@ -9688,9 +9827,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           auto str = _internal_mutable_if_id_in();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.if_id_in"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.if_id_in"));
         } else
           goto handle_unusual;
         continue;
@@ -9698,9 +9837,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           auto str = _internal_mutable_if_id_out();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.if_id_out"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.if_id_out"));
         } else
           goto handle_unusual;
         continue;
@@ -9708,9 +9847,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           auto str = _internal_mutable_encr_alg();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.encr_alg"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.encr_alg"));
         } else
           goto handle_unusual;
         continue;
@@ -9718,9 +9857,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
           auto str = _internal_mutable_encr_keysize();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.encr_keysize"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.encr_keysize"));
         } else
           goto handle_unusual;
         continue;
@@ -9728,9 +9867,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
           auto str = _internal_mutable_integ_alg();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.integ_alg"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.integ_alg"));
         } else
           goto handle_unusual;
         continue;
@@ -9738,9 +9877,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
           auto str = _internal_mutable_integ_keysize();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.integ_keysize"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.integ_keysize"));
         } else
           goto handle_unusual;
         continue;
@@ -9748,9 +9887,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
           auto str = _internal_mutable_dh_group();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.dh_group"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.dh_group"));
         } else
           goto handle_unusual;
         continue;
@@ -9758,9 +9897,9 @@ const char* ListChildSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 19:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
           auto str = _internal_mutable_esn();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.esn"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChildSa.esn"));
         } else
           goto handle_unusual;
         continue;
@@ -9984,7 +10123,7 @@ uint8_t* ListChildSa::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.ListChildSa)
@@ -10132,86 +10271,82 @@ size_t ListChildSa::ByteSizeLong() const {
         this->_internal_esn());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListChildSa::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListChildSa::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListChildSa::GetClassData() const { return &_class_data_; }
 
-void ListChildSa::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListChildSa *>(to)->MergeFrom(
-      static_cast<const ListChildSa &>(from));
-}
 
-
-void ListChildSa::MergeFrom(const ListChildSa& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListChildSa)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListChildSa::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListChildSa*>(&to_msg);
+  auto& from = static_cast<const ListChildSa&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListChildSa)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_protocol().empty()) {
-    _internal_set_protocol(from._internal_protocol());
+    _this->_internal_set_protocol(from._internal_protocol());
   }
   if (!from._internal_encap().empty()) {
-    _internal_set_encap(from._internal_encap());
+    _this->_internal_set_encap(from._internal_encap());
   }
   if (!from._internal_spi_in().empty()) {
-    _internal_set_spi_in(from._internal_spi_in());
+    _this->_internal_set_spi_in(from._internal_spi_in());
   }
   if (!from._internal_spi_out().empty()) {
-    _internal_set_spi_out(from._internal_spi_out());
+    _this->_internal_set_spi_out(from._internal_spi_out());
   }
   if (!from._internal_cpi_in().empty()) {
-    _internal_set_cpi_in(from._internal_cpi_in());
+    _this->_internal_set_cpi_in(from._internal_cpi_in());
   }
   if (!from._internal_cpi_out().empty()) {
-    _internal_set_cpi_out(from._internal_cpi_out());
+    _this->_internal_set_cpi_out(from._internal_cpi_out());
   }
   if (!from._internal_mark_in().empty()) {
-    _internal_set_mark_in(from._internal_mark_in());
+    _this->_internal_set_mark_in(from._internal_mark_in());
   }
   if (!from._internal_mark_mask_in().empty()) {
-    _internal_set_mark_mask_in(from._internal_mark_mask_in());
+    _this->_internal_set_mark_mask_in(from._internal_mark_mask_in());
   }
   if (!from._internal_mark_out().empty()) {
-    _internal_set_mark_out(from._internal_mark_out());
+    _this->_internal_set_mark_out(from._internal_mark_out());
   }
   if (!from._internal_mark_mask_out().empty()) {
-    _internal_set_mark_mask_out(from._internal_mark_mask_out());
+    _this->_internal_set_mark_mask_out(from._internal_mark_mask_out());
   }
   if (!from._internal_if_id_in().empty()) {
-    _internal_set_if_id_in(from._internal_if_id_in());
+    _this->_internal_set_if_id_in(from._internal_if_id_in());
   }
   if (!from._internal_if_id_out().empty()) {
-    _internal_set_if_id_out(from._internal_if_id_out());
+    _this->_internal_set_if_id_out(from._internal_if_id_out());
   }
   if (!from._internal_encr_alg().empty()) {
-    _internal_set_encr_alg(from._internal_encr_alg());
+    _this->_internal_set_encr_alg(from._internal_encr_alg());
   }
   if (!from._internal_encr_keysize().empty()) {
-    _internal_set_encr_keysize(from._internal_encr_keysize());
+    _this->_internal_set_encr_keysize(from._internal_encr_keysize());
   }
   if (!from._internal_integ_alg().empty()) {
-    _internal_set_integ_alg(from._internal_integ_alg());
+    _this->_internal_set_integ_alg(from._internal_integ_alg());
   }
   if (!from._internal_integ_keysize().empty()) {
-    _internal_set_integ_keysize(from._internal_integ_keysize());
+    _this->_internal_set_integ_keysize(from._internal_integ_keysize());
   }
   if (!from._internal_dh_group().empty()) {
-    _internal_set_dh_group(from._internal_dh_group());
+    _this->_internal_set_dh_group(from._internal_dh_group());
   }
   if (!from._internal_esn().empty()) {
-    _internal_set_esn(from._internal_esn());
+    _this->_internal_set_esn(from._internal_esn());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListChildSa::CopyFrom(const ListChildSa& from) {
@@ -10231,104 +10366,85 @@ void ListChildSa::InternalSwap(ListChildSa* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &protocol_, lhs_arena,
-      &other->protocol_, rhs_arena
+      &_impl_.protocol_, lhs_arena,
+      &other->_impl_.protocol_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &encap_, lhs_arena,
-      &other->encap_, rhs_arena
+      &_impl_.encap_, lhs_arena,
+      &other->_impl_.encap_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &spi_in_, lhs_arena,
-      &other->spi_in_, rhs_arena
+      &_impl_.spi_in_, lhs_arena,
+      &other->_impl_.spi_in_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &spi_out_, lhs_arena,
-      &other->spi_out_, rhs_arena
+      &_impl_.spi_out_, lhs_arena,
+      &other->_impl_.spi_out_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &cpi_in_, lhs_arena,
-      &other->cpi_in_, rhs_arena
+      &_impl_.cpi_in_, lhs_arena,
+      &other->_impl_.cpi_in_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &cpi_out_, lhs_arena,
-      &other->cpi_out_, rhs_arena
+      &_impl_.cpi_out_, lhs_arena,
+      &other->_impl_.cpi_out_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mark_in_, lhs_arena,
-      &other->mark_in_, rhs_arena
+      &_impl_.mark_in_, lhs_arena,
+      &other->_impl_.mark_in_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mark_mask_in_, lhs_arena,
-      &other->mark_mask_in_, rhs_arena
+      &_impl_.mark_mask_in_, lhs_arena,
+      &other->_impl_.mark_mask_in_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mark_out_, lhs_arena,
-      &other->mark_out_, rhs_arena
+      &_impl_.mark_out_, lhs_arena,
+      &other->_impl_.mark_out_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mark_mask_out_, lhs_arena,
-      &other->mark_mask_out_, rhs_arena
+      &_impl_.mark_mask_out_, lhs_arena,
+      &other->_impl_.mark_mask_out_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &if_id_in_, lhs_arena,
-      &other->if_id_in_, rhs_arena
+      &_impl_.if_id_in_, lhs_arena,
+      &other->_impl_.if_id_in_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &if_id_out_, lhs_arena,
-      &other->if_id_out_, rhs_arena
+      &_impl_.if_id_out_, lhs_arena,
+      &other->_impl_.if_id_out_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &encr_alg_, lhs_arena,
-      &other->encr_alg_, rhs_arena
+      &_impl_.encr_alg_, lhs_arena,
+      &other->_impl_.encr_alg_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &encr_keysize_, lhs_arena,
-      &other->encr_keysize_, rhs_arena
+      &_impl_.encr_keysize_, lhs_arena,
+      &other->_impl_.encr_keysize_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &integ_alg_, lhs_arena,
-      &other->integ_alg_, rhs_arena
+      &_impl_.integ_alg_, lhs_arena,
+      &other->_impl_.integ_alg_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &integ_keysize_, lhs_arena,
-      &other->integ_keysize_, rhs_arena
+      &_impl_.integ_keysize_, lhs_arena,
+      &other->_impl_.integ_keysize_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &dh_group_, lhs_arena,
-      &other->dh_group_, rhs_arena
+      &_impl_.dh_group_, lhs_arena,
+      &other->_impl_.dh_group_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &esn_, lhs_arena,
-      &other->esn_, rhs_arena
+      &_impl_.esn_, lhs_arena,
+      &other->_impl_.esn_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListChildSa::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[26]);
 }
@@ -10341,445 +10457,515 @@ class ListIkeSa::_Internal {
 
 ListIkeSa::ListIkeSa(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  local_vips_(arena),
-  remote_vips_(arena),
-  tasks_queued_(arena),
-  tasks_active_(arena),
-  tasks_passive_(arena),
-  childsas_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.ListIkeSa)
 }
 ListIkeSa::ListIkeSa(const ListIkeSa& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      local_vips_(from.local_vips_),
-      remote_vips_(from.remote_vips_),
-      tasks_queued_(from.tasks_queued_),
-      tasks_active_(from.tasks_active_),
-      tasks_passive_(from.tasks_passive_),
-      childsas_(from.childsas_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListIkeSa* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_vips_){from._impl_.local_vips_}
+    , decltype(_impl_.remote_vips_){from._impl_.remote_vips_}
+    , decltype(_impl_.tasks_queued_){from._impl_.tasks_queued_}
+    , decltype(_impl_.tasks_active_){from._impl_.tasks_active_}
+    , decltype(_impl_.tasks_passive_){from._impl_.tasks_passive_}
+    , decltype(_impl_.childsas_){from._impl_.childsas_}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.uniqueid_){}
+    , decltype(_impl_.version_){}
+    , decltype(_impl_.local_host_){}
+    , decltype(_impl_.local_port_){}
+    , decltype(_impl_.local_id_){}
+    , decltype(_impl_.remote_host_){}
+    , decltype(_impl_.remote_port_){}
+    , decltype(_impl_.remote_id_){}
+    , decltype(_impl_.remote_xauth_id_){}
+    , decltype(_impl_.remote_eap_id_){}
+    , decltype(_impl_.initiator_){}
+    , decltype(_impl_.initiator_spi_){}
+    , decltype(_impl_.responder_spi_){}
+    , decltype(_impl_.nat_local_){}
+    , decltype(_impl_.nat_remote_){}
+    , decltype(_impl_.nat_fake_){}
+    , decltype(_impl_.nat_any_){}
+    , decltype(_impl_.if_id_in_){}
+    , decltype(_impl_.if_id_out_){}
+    , decltype(_impl_.encr_alg_){}
+    , decltype(_impl_.encr_keysize_){}
+    , decltype(_impl_.integ_alg_){}
+    , decltype(_impl_.integ_keysize_){}
+    , decltype(_impl_.prf_alg_){}
+    , decltype(_impl_.dh_group_){}
+    , decltype(_impl_.ppk_){}
+    , decltype(_impl_.established_){}
+    , decltype(_impl_.rekey_time_){}
+    , decltype(_impl_.reauth_time_){}
+    , decltype(_impl_.ikestate_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  uniqueid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.uniqueid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    uniqueid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.uniqueid_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_uniqueid().empty()) {
-    uniqueid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uniqueid(), 
-      GetArenaForAllocation());
+    _this->_impl_.uniqueid_.Set(from._internal_uniqueid(), 
+      _this->GetArenaForAllocation());
   }
-  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.version_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.version_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_version().empty()) {
-    version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_version(), 
-      GetArenaForAllocation());
+    _this->_impl_.version_.Set(from._internal_version(), 
+      _this->GetArenaForAllocation());
   }
-  local_host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.local_host_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    local_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.local_host_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_local_host().empty()) {
-    local_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_local_host(), 
-      GetArenaForAllocation());
+    _this->_impl_.local_host_.Set(from._internal_local_host(), 
+      _this->GetArenaForAllocation());
   }
-  local_port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.local_port_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    local_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.local_port_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_local_port().empty()) {
-    local_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_local_port(), 
-      GetArenaForAllocation());
+    _this->_impl_.local_port_.Set(from._internal_local_port(), 
+      _this->GetArenaForAllocation());
   }
-  local_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.local_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    local_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.local_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_local_id().empty()) {
-    local_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_local_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.local_id_.Set(from._internal_local_id(), 
+      _this->GetArenaForAllocation());
   }
-  remote_host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.remote_host_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remote_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.remote_host_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remote_host().empty()) {
-    remote_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_remote_host(), 
-      GetArenaForAllocation());
+    _this->_impl_.remote_host_.Set(from._internal_remote_host(), 
+      _this->GetArenaForAllocation());
   }
-  remote_port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.remote_port_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remote_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.remote_port_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remote_port().empty()) {
-    remote_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_remote_port(), 
-      GetArenaForAllocation());
+    _this->_impl_.remote_port_.Set(from._internal_remote_port(), 
+      _this->GetArenaForAllocation());
   }
-  remote_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.remote_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remote_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.remote_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remote_id().empty()) {
-    remote_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_remote_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.remote_id_.Set(from._internal_remote_id(), 
+      _this->GetArenaForAllocation());
   }
-  remote_xauth_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.remote_xauth_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remote_xauth_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.remote_xauth_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remote_xauth_id().empty()) {
-    remote_xauth_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_remote_xauth_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.remote_xauth_id_.Set(from._internal_remote_xauth_id(), 
+      _this->GetArenaForAllocation());
   }
-  remote_eap_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.remote_eap_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remote_eap_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.remote_eap_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remote_eap_id().empty()) {
-    remote_eap_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_remote_eap_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.remote_eap_id_.Set(from._internal_remote_eap_id(), 
+      _this->GetArenaForAllocation());
   }
-  initiator_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.initiator_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    initiator_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.initiator_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_initiator().empty()) {
-    initiator_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_initiator(), 
-      GetArenaForAllocation());
+    _this->_impl_.initiator_.Set(from._internal_initiator(), 
+      _this->GetArenaForAllocation());
   }
-  initiator_spi_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.initiator_spi_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    initiator_spi_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.initiator_spi_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_initiator_spi().empty()) {
-    initiator_spi_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_initiator_spi(), 
-      GetArenaForAllocation());
+    _this->_impl_.initiator_spi_.Set(from._internal_initiator_spi(), 
+      _this->GetArenaForAllocation());
   }
-  responder_spi_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.responder_spi_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    responder_spi_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.responder_spi_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_responder_spi().empty()) {
-    responder_spi_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_responder_spi(), 
-      GetArenaForAllocation());
+    _this->_impl_.responder_spi_.Set(from._internal_responder_spi(), 
+      _this->GetArenaForAllocation());
   }
-  nat_local_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.nat_local_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    nat_local_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.nat_local_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_nat_local().empty()) {
-    nat_local_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nat_local(), 
-      GetArenaForAllocation());
+    _this->_impl_.nat_local_.Set(from._internal_nat_local(), 
+      _this->GetArenaForAllocation());
   }
-  nat_remote_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.nat_remote_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    nat_remote_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.nat_remote_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_nat_remote().empty()) {
-    nat_remote_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nat_remote(), 
-      GetArenaForAllocation());
+    _this->_impl_.nat_remote_.Set(from._internal_nat_remote(), 
+      _this->GetArenaForAllocation());
   }
-  nat_fake_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.nat_fake_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    nat_fake_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.nat_fake_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_nat_fake().empty()) {
-    nat_fake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nat_fake(), 
-      GetArenaForAllocation());
+    _this->_impl_.nat_fake_.Set(from._internal_nat_fake(), 
+      _this->GetArenaForAllocation());
   }
-  nat_any_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.nat_any_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    nat_any_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.nat_any_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_nat_any().empty()) {
-    nat_any_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nat_any(), 
-      GetArenaForAllocation());
+    _this->_impl_.nat_any_.Set(from._internal_nat_any(), 
+      _this->GetArenaForAllocation());
   }
-  if_id_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.if_id_in_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    if_id_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.if_id_in_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_if_id_in().empty()) {
-    if_id_in_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_if_id_in(), 
-      GetArenaForAllocation());
+    _this->_impl_.if_id_in_.Set(from._internal_if_id_in(), 
+      _this->GetArenaForAllocation());
   }
-  if_id_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.if_id_out_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    if_id_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.if_id_out_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_if_id_out().empty()) {
-    if_id_out_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_if_id_out(), 
-      GetArenaForAllocation());
+    _this->_impl_.if_id_out_.Set(from._internal_if_id_out(), 
+      _this->GetArenaForAllocation());
   }
-  encr_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.encr_alg_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    encr_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.encr_alg_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_encr_alg().empty()) {
-    encr_alg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_encr_alg(), 
-      GetArenaForAllocation());
+    _this->_impl_.encr_alg_.Set(from._internal_encr_alg(), 
+      _this->GetArenaForAllocation());
   }
-  encr_keysize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.encr_keysize_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    encr_keysize_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.encr_keysize_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_encr_keysize().empty()) {
-    encr_keysize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_encr_keysize(), 
-      GetArenaForAllocation());
+    _this->_impl_.encr_keysize_.Set(from._internal_encr_keysize(), 
+      _this->GetArenaForAllocation());
   }
-  integ_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.integ_alg_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    integ_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.integ_alg_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_integ_alg().empty()) {
-    integ_alg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integ_alg(), 
-      GetArenaForAllocation());
+    _this->_impl_.integ_alg_.Set(from._internal_integ_alg(), 
+      _this->GetArenaForAllocation());
   }
-  integ_keysize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.integ_keysize_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    integ_keysize_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.integ_keysize_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_integ_keysize().empty()) {
-    integ_keysize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integ_keysize(), 
-      GetArenaForAllocation());
+    _this->_impl_.integ_keysize_.Set(from._internal_integ_keysize(), 
+      _this->GetArenaForAllocation());
   }
-  prf_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.prf_alg_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    prf_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.prf_alg_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_prf_alg().empty()) {
-    prf_alg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_prf_alg(), 
-      GetArenaForAllocation());
+    _this->_impl_.prf_alg_.Set(from._internal_prf_alg(), 
+      _this->GetArenaForAllocation());
   }
-  dh_group_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.dh_group_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    dh_group_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.dh_group_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_dh_group().empty()) {
-    dh_group_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_dh_group(), 
-      GetArenaForAllocation());
+    _this->_impl_.dh_group_.Set(from._internal_dh_group(), 
+      _this->GetArenaForAllocation());
   }
-  ppk_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ppk_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ppk_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ppk_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ppk().empty()) {
-    ppk_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ppk(), 
-      GetArenaForAllocation());
+    _this->_impl_.ppk_.Set(from._internal_ppk(), 
+      _this->GetArenaForAllocation());
   }
-  established_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.established_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    established_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.established_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_established().empty()) {
-    established_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_established(), 
-      GetArenaForAllocation());
+    _this->_impl_.established_.Set(from._internal_established(), 
+      _this->GetArenaForAllocation());
   }
-  rekey_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.rekey_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    rekey_time_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.rekey_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_rekey_time().empty()) {
-    rekey_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rekey_time(), 
-      GetArenaForAllocation());
+    _this->_impl_.rekey_time_.Set(from._internal_rekey_time(), 
+      _this->GetArenaForAllocation());
   }
-  reauth_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.reauth_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    reauth_time_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.reauth_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_reauth_time().empty()) {
-    reauth_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reauth_time(), 
-      GetArenaForAllocation());
+    _this->_impl_.reauth_time_.Set(from._internal_reauth_time(), 
+      _this->GetArenaForAllocation());
   }
-  ikestate_ = from.ikestate_;
+  _this->_impl_.ikestate_ = from._impl_.ikestate_;
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.ListIkeSa)
 }
 
-inline void ListIkeSa::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-uniqueid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  uniqueid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-local_host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  local_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-local_port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  local_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-local_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  local_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remote_host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remote_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remote_port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remote_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remote_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remote_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remote_xauth_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remote_xauth_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remote_eap_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remote_eap_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-initiator_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  initiator_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-initiator_spi_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  initiator_spi_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-responder_spi_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  responder_spi_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-nat_local_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  nat_local_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-nat_remote_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  nat_remote_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-nat_fake_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  nat_fake_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-nat_any_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  nat_any_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-if_id_in_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if_id_in_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-if_id_out_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if_id_out_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-encr_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  encr_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-encr_keysize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  encr_keysize_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-integ_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  integ_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-integ_keysize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  integ_keysize_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-prf_alg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  prf_alg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-dh_group_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  dh_group_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ppk_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ppk_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-established_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  established_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-rekey_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  rekey_time_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-reauth_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  reauth_time_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ikestate_ = 0;
+inline void ListIkeSa::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_vips_){arena}
+    , decltype(_impl_.remote_vips_){arena}
+    , decltype(_impl_.tasks_queued_){arena}
+    , decltype(_impl_.tasks_active_){arena}
+    , decltype(_impl_.tasks_passive_){arena}
+    , decltype(_impl_.childsas_){arena}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.uniqueid_){}
+    , decltype(_impl_.version_){}
+    , decltype(_impl_.local_host_){}
+    , decltype(_impl_.local_port_){}
+    , decltype(_impl_.local_id_){}
+    , decltype(_impl_.remote_host_){}
+    , decltype(_impl_.remote_port_){}
+    , decltype(_impl_.remote_id_){}
+    , decltype(_impl_.remote_xauth_id_){}
+    , decltype(_impl_.remote_eap_id_){}
+    , decltype(_impl_.initiator_){}
+    , decltype(_impl_.initiator_spi_){}
+    , decltype(_impl_.responder_spi_){}
+    , decltype(_impl_.nat_local_){}
+    , decltype(_impl_.nat_remote_){}
+    , decltype(_impl_.nat_fake_){}
+    , decltype(_impl_.nat_any_){}
+    , decltype(_impl_.if_id_in_){}
+    , decltype(_impl_.if_id_out_){}
+    , decltype(_impl_.encr_alg_){}
+    , decltype(_impl_.encr_keysize_){}
+    , decltype(_impl_.integ_alg_){}
+    , decltype(_impl_.integ_keysize_){}
+    , decltype(_impl_.prf_alg_){}
+    , decltype(_impl_.dh_group_){}
+    , decltype(_impl_.ppk_){}
+    , decltype(_impl_.established_){}
+    , decltype(_impl_.rekey_time_){}
+    , decltype(_impl_.reauth_time_){}
+    , decltype(_impl_.ikestate_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.uniqueid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.uniqueid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.version_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.version_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.local_host_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.local_host_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.local_port_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.local_port_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.local_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.local_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remote_host_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remote_host_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remote_port_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remote_port_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remote_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remote_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remote_xauth_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remote_xauth_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remote_eap_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remote_eap_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.initiator_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.initiator_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.initiator_spi_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.initiator_spi_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.responder_spi_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.responder_spi_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.nat_local_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.nat_local_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.nat_remote_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.nat_remote_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.nat_fake_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.nat_fake_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.nat_any_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.nat_any_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.if_id_in_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.if_id_in_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.if_id_out_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.if_id_out_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.encr_alg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.encr_alg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.encr_keysize_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.encr_keysize_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.integ_alg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.integ_alg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.integ_keysize_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.integ_keysize_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.prf_alg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.prf_alg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.dh_group_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.dh_group_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ppk_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ppk_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.established_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.established_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.rekey_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.rekey_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.reauth_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.reauth_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListIkeSa::~ListIkeSa() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.ListIkeSa)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListIkeSa::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  uniqueid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  local_host_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  local_port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  local_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  remote_host_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  remote_port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  remote_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  remote_xauth_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  remote_eap_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  initiator_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  initiator_spi_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  responder_spi_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  nat_local_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  nat_remote_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  nat_fake_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  nat_any_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if_id_in_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if_id_out_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  encr_alg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  encr_keysize_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  integ_alg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  integ_keysize_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  prf_alg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  dh_group_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ppk_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  established_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  rekey_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  reauth_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.local_vips_.~RepeatedPtrField();
+  _impl_.remote_vips_.~RepeatedPtrField();
+  _impl_.tasks_queued_.~RepeatedPtrField();
+  _impl_.tasks_active_.~RepeatedPtrField();
+  _impl_.tasks_passive_.~RepeatedPtrField();
+  _impl_.childsas_.~RepeatedPtrField();
+  _impl_.name_.Destroy();
+  _impl_.uniqueid_.Destroy();
+  _impl_.version_.Destroy();
+  _impl_.local_host_.Destroy();
+  _impl_.local_port_.Destroy();
+  _impl_.local_id_.Destroy();
+  _impl_.remote_host_.Destroy();
+  _impl_.remote_port_.Destroy();
+  _impl_.remote_id_.Destroy();
+  _impl_.remote_xauth_id_.Destroy();
+  _impl_.remote_eap_id_.Destroy();
+  _impl_.initiator_.Destroy();
+  _impl_.initiator_spi_.Destroy();
+  _impl_.responder_spi_.Destroy();
+  _impl_.nat_local_.Destroy();
+  _impl_.nat_remote_.Destroy();
+  _impl_.nat_fake_.Destroy();
+  _impl_.nat_any_.Destroy();
+  _impl_.if_id_in_.Destroy();
+  _impl_.if_id_out_.Destroy();
+  _impl_.encr_alg_.Destroy();
+  _impl_.encr_keysize_.Destroy();
+  _impl_.integ_alg_.Destroy();
+  _impl_.integ_keysize_.Destroy();
+  _impl_.prf_alg_.Destroy();
+  _impl_.dh_group_.Destroy();
+  _impl_.ppk_.Destroy();
+  _impl_.established_.Destroy();
+  _impl_.rekey_time_.Destroy();
+  _impl_.reauth_time_.Destroy();
 }
 
-void ListIkeSa::ArenaDtor(void* object) {
-  ListIkeSa* _this = reinterpret_cast< ListIkeSa* >(object);
-  (void)_this;
-}
-void ListIkeSa::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListIkeSa::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListIkeSa::Clear() {
@@ -10788,59 +10974,59 @@ void ListIkeSa::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  local_vips_.Clear();
-  remote_vips_.Clear();
-  tasks_queued_.Clear();
-  tasks_active_.Clear();
-  tasks_passive_.Clear();
-  childsas_.Clear();
-  name_.ClearToEmpty();
-  uniqueid_.ClearToEmpty();
-  version_.ClearToEmpty();
-  local_host_.ClearToEmpty();
-  local_port_.ClearToEmpty();
-  local_id_.ClearToEmpty();
-  remote_host_.ClearToEmpty();
-  remote_port_.ClearToEmpty();
-  remote_id_.ClearToEmpty();
-  remote_xauth_id_.ClearToEmpty();
-  remote_eap_id_.ClearToEmpty();
-  initiator_.ClearToEmpty();
-  initiator_spi_.ClearToEmpty();
-  responder_spi_.ClearToEmpty();
-  nat_local_.ClearToEmpty();
-  nat_remote_.ClearToEmpty();
-  nat_fake_.ClearToEmpty();
-  nat_any_.ClearToEmpty();
-  if_id_in_.ClearToEmpty();
-  if_id_out_.ClearToEmpty();
-  encr_alg_.ClearToEmpty();
-  encr_keysize_.ClearToEmpty();
-  integ_alg_.ClearToEmpty();
-  integ_keysize_.ClearToEmpty();
-  prf_alg_.ClearToEmpty();
-  dh_group_.ClearToEmpty();
-  ppk_.ClearToEmpty();
-  established_.ClearToEmpty();
-  rekey_time_.ClearToEmpty();
-  reauth_time_.ClearToEmpty();
-  ikestate_ = 0;
+  _impl_.local_vips_.Clear();
+  _impl_.remote_vips_.Clear();
+  _impl_.tasks_queued_.Clear();
+  _impl_.tasks_active_.Clear();
+  _impl_.tasks_passive_.Clear();
+  _impl_.childsas_.Clear();
+  _impl_.name_.ClearToEmpty();
+  _impl_.uniqueid_.ClearToEmpty();
+  _impl_.version_.ClearToEmpty();
+  _impl_.local_host_.ClearToEmpty();
+  _impl_.local_port_.ClearToEmpty();
+  _impl_.local_id_.ClearToEmpty();
+  _impl_.remote_host_.ClearToEmpty();
+  _impl_.remote_port_.ClearToEmpty();
+  _impl_.remote_id_.ClearToEmpty();
+  _impl_.remote_xauth_id_.ClearToEmpty();
+  _impl_.remote_eap_id_.ClearToEmpty();
+  _impl_.initiator_.ClearToEmpty();
+  _impl_.initiator_spi_.ClearToEmpty();
+  _impl_.responder_spi_.ClearToEmpty();
+  _impl_.nat_local_.ClearToEmpty();
+  _impl_.nat_remote_.ClearToEmpty();
+  _impl_.nat_fake_.ClearToEmpty();
+  _impl_.nat_any_.ClearToEmpty();
+  _impl_.if_id_in_.ClearToEmpty();
+  _impl_.if_id_out_.ClearToEmpty();
+  _impl_.encr_alg_.ClearToEmpty();
+  _impl_.encr_keysize_.ClearToEmpty();
+  _impl_.integ_alg_.ClearToEmpty();
+  _impl_.integ_keysize_.ClearToEmpty();
+  _impl_.prf_alg_.ClearToEmpty();
+  _impl_.dh_group_.ClearToEmpty();
+  _impl_.ppk_.ClearToEmpty();
+  _impl_.established_.ClearToEmpty();
+  _impl_.rekey_time_.ClearToEmpty();
+  _impl_.reauth_time_.ClearToEmpty();
+  _impl_.ikestate_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListIkeSa::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.name"));
         } else
           goto handle_unusual;
         continue;
@@ -10848,9 +11034,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_uniqueid();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.uniqueid"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.uniqueid"));
         } else
           goto handle_unusual;
         continue;
@@ -10858,9 +11044,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_version();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.version"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.version"));
         } else
           goto handle_unusual;
         continue;
@@ -10877,9 +11063,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_local_host();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.local_host"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.local_host"));
         } else
           goto handle_unusual;
         continue;
@@ -10887,9 +11073,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_local_port();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.local_port"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.local_port"));
         } else
           goto handle_unusual;
         continue;
@@ -10897,9 +11083,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_local_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.local_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.local_id"));
         } else
           goto handle_unusual;
         continue;
@@ -10907,9 +11093,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_remote_host();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_host"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_host"));
         } else
           goto handle_unusual;
         continue;
@@ -10917,9 +11103,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           auto str = _internal_mutable_remote_port();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_port"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_port"));
         } else
           goto handle_unusual;
         continue;
@@ -10927,9 +11113,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_remote_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_id"));
         } else
           goto handle_unusual;
         continue;
@@ -10937,9 +11123,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_remote_xauth_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_xauth_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_xauth_id"));
         } else
           goto handle_unusual;
         continue;
@@ -10947,9 +11133,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           auto str = _internal_mutable_remote_eap_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_eap_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_eap_id"));
         } else
           goto handle_unusual;
         continue;
@@ -10957,9 +11143,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           auto str = _internal_mutable_initiator();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.initiator"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.initiator"));
         } else
           goto handle_unusual;
         continue;
@@ -10967,9 +11153,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           auto str = _internal_mutable_initiator_spi();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.initiator_spi"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.initiator_spi"));
         } else
           goto handle_unusual;
         continue;
@@ -10977,9 +11163,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
           auto str = _internal_mutable_responder_spi();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.responder_spi"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.responder_spi"));
         } else
           goto handle_unusual;
         continue;
@@ -10987,9 +11173,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
           auto str = _internal_mutable_nat_local();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.nat_local"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.nat_local"));
         } else
           goto handle_unusual;
         continue;
@@ -10997,9 +11183,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
           auto str = _internal_mutable_nat_remote();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.nat_remote"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.nat_remote"));
         } else
           goto handle_unusual;
         continue;
@@ -11007,9 +11193,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
           auto str = _internal_mutable_nat_fake();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.nat_fake"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.nat_fake"));
         } else
           goto handle_unusual;
         continue;
@@ -11017,9 +11203,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 19:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
           auto str = _internal_mutable_nat_any();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.nat_any"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.nat_any"));
         } else
           goto handle_unusual;
         continue;
@@ -11027,9 +11213,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 20:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
           auto str = _internal_mutable_if_id_in();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.if_id_in"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.if_id_in"));
         } else
           goto handle_unusual;
         continue;
@@ -11037,9 +11223,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 21:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
           auto str = _internal_mutable_if_id_out();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.if_id_out"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.if_id_out"));
         } else
           goto handle_unusual;
         continue;
@@ -11047,9 +11233,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 22:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
           auto str = _internal_mutable_encr_alg();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.encr_alg"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.encr_alg"));
         } else
           goto handle_unusual;
         continue;
@@ -11057,9 +11243,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 23:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 186)) {
           auto str = _internal_mutable_encr_keysize();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.encr_keysize"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.encr_keysize"));
         } else
           goto handle_unusual;
         continue;
@@ -11067,9 +11253,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 24:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 194)) {
           auto str = _internal_mutable_integ_alg();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.integ_alg"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.integ_alg"));
         } else
           goto handle_unusual;
         continue;
@@ -11077,9 +11263,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 25:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 202)) {
           auto str = _internal_mutable_integ_keysize();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.integ_keysize"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.integ_keysize"));
         } else
           goto handle_unusual;
         continue;
@@ -11087,9 +11273,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 26:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 210)) {
           auto str = _internal_mutable_prf_alg();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.prf_alg"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.prf_alg"));
         } else
           goto handle_unusual;
         continue;
@@ -11097,9 +11283,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 27:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 218)) {
           auto str = _internal_mutable_dh_group();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.dh_group"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.dh_group"));
         } else
           goto handle_unusual;
         continue;
@@ -11107,9 +11293,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 28:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 226)) {
           auto str = _internal_mutable_ppk();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.ppk"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.ppk"));
         } else
           goto handle_unusual;
         continue;
@@ -11117,9 +11303,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 29:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 234)) {
           auto str = _internal_mutable_established();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.established"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.established"));
         } else
           goto handle_unusual;
         continue;
@@ -11127,9 +11313,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 30:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 242)) {
           auto str = _internal_mutable_rekey_time();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.rekey_time"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.rekey_time"));
         } else
           goto handle_unusual;
         continue;
@@ -11137,9 +11323,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 31:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 250)) {
           auto str = _internal_mutable_reauth_time();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.reauth_time"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.reauth_time"));
         } else
           goto handle_unusual;
         continue;
@@ -11150,9 +11336,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           do {
             ptr += 2;
             auto str = _internal_add_local_vips();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.local_vips"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.local_vips"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<258>(ptr));
         } else
@@ -11165,9 +11351,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           do {
             ptr += 2;
             auto str = _internal_add_remote_vips();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_vips"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.remote_vips"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<266>(ptr));
         } else
@@ -11180,9 +11366,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           do {
             ptr += 2;
             auto str = _internal_add_tasks_queued();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.tasks_queued"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.tasks_queued"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<274>(ptr));
         } else
@@ -11195,9 +11381,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           do {
             ptr += 2;
             auto str = _internal_add_tasks_active();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.tasks_active"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.tasks_active"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<282>(ptr));
         } else
@@ -11210,9 +11396,9 @@ const char* ListIkeSa::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           do {
             ptr += 2;
             auto str = _internal_add_tasks_passive();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.tasks_passive"));
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListIkeSa.tasks_passive"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<290>(ptr));
         } else
@@ -11293,7 +11479,7 @@ uint8_t* ListIkeSa::_InternalSerialize(
   // .opi_api.security.v1.IkeSaState ikestate = 4;
   if (this->_internal_ikestate() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_ikestate(), target);
   }
 
@@ -11618,15 +11804,15 @@ uint8_t* ListIkeSa::_InternalSerialize(
   }
 
   // repeated .opi_api.security.v1.ListChildSa childsas = 37;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_childsas_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_childsas_size()); i < n; i++) {
+    const auto& repfield = this->_internal_childsas(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(37, this->_internal_childsas(i), target, stream);
+        InternalWriteMessage(37, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.ListIkeSa)
@@ -11643,47 +11829,47 @@ size_t ListIkeSa::ByteSizeLong() const {
 
   // repeated string local_vips = 32;
   total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(local_vips_.size());
-  for (int i = 0, n = local_vips_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.local_vips_.size());
+  for (int i = 0, n = _impl_.local_vips_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      local_vips_.Get(i));
+      _impl_.local_vips_.Get(i));
   }
 
   // repeated string remote_vips = 33;
   total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(remote_vips_.size());
-  for (int i = 0, n = remote_vips_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.remote_vips_.size());
+  for (int i = 0, n = _impl_.remote_vips_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      remote_vips_.Get(i));
+      _impl_.remote_vips_.Get(i));
   }
 
   // repeated string tasks_queued = 34;
   total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(tasks_queued_.size());
-  for (int i = 0, n = tasks_queued_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.tasks_queued_.size());
+  for (int i = 0, n = _impl_.tasks_queued_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      tasks_queued_.Get(i));
+      _impl_.tasks_queued_.Get(i));
   }
 
   // repeated string tasks_active = 35;
   total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(tasks_active_.size());
-  for (int i = 0, n = tasks_active_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.tasks_active_.size());
+  for (int i = 0, n = _impl_.tasks_active_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      tasks_active_.Get(i));
+      _impl_.tasks_active_.Get(i));
   }
 
   // repeated string tasks_passive = 36;
   total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(tasks_passive_.size());
-  for (int i = 0, n = tasks_passive_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.tasks_passive_.size());
+  for (int i = 0, n = _impl_.tasks_passive_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      tasks_passive_.Get(i));
+      _impl_.tasks_passive_.Get(i));
   }
 
   // repeated .opi_api.security.v1.ListChildSa childsas = 37;
   total_size += 2UL * this->_internal_childsas_size();
-  for (const auto& msg : this->childsas_) {
+  for (const auto& msg : this->_impl_.childsas_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -11901,131 +12087,127 @@ size_t ListIkeSa::ByteSizeLong() const {
   // .opi_api.security.v1.IkeSaState ikestate = 4;
   if (this->_internal_ikestate() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_ikestate());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_ikestate());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListIkeSa::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListIkeSa::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListIkeSa::GetClassData() const { return &_class_data_; }
 
-void ListIkeSa::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListIkeSa *>(to)->MergeFrom(
-      static_cast<const ListIkeSa &>(from));
-}
 
-
-void ListIkeSa::MergeFrom(const ListIkeSa& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListIkeSa)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListIkeSa::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListIkeSa*>(&to_msg);
+  auto& from = static_cast<const ListIkeSa&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListIkeSa)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  local_vips_.MergeFrom(from.local_vips_);
-  remote_vips_.MergeFrom(from.remote_vips_);
-  tasks_queued_.MergeFrom(from.tasks_queued_);
-  tasks_active_.MergeFrom(from.tasks_active_);
-  tasks_passive_.MergeFrom(from.tasks_passive_);
-  childsas_.MergeFrom(from.childsas_);
+  _this->_impl_.local_vips_.MergeFrom(from._impl_.local_vips_);
+  _this->_impl_.remote_vips_.MergeFrom(from._impl_.remote_vips_);
+  _this->_impl_.tasks_queued_.MergeFrom(from._impl_.tasks_queued_);
+  _this->_impl_.tasks_active_.MergeFrom(from._impl_.tasks_active_);
+  _this->_impl_.tasks_passive_.MergeFrom(from._impl_.tasks_passive_);
+  _this->_impl_.childsas_.MergeFrom(from._impl_.childsas_);
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_uniqueid().empty()) {
-    _internal_set_uniqueid(from._internal_uniqueid());
+    _this->_internal_set_uniqueid(from._internal_uniqueid());
   }
   if (!from._internal_version().empty()) {
-    _internal_set_version(from._internal_version());
+    _this->_internal_set_version(from._internal_version());
   }
   if (!from._internal_local_host().empty()) {
-    _internal_set_local_host(from._internal_local_host());
+    _this->_internal_set_local_host(from._internal_local_host());
   }
   if (!from._internal_local_port().empty()) {
-    _internal_set_local_port(from._internal_local_port());
+    _this->_internal_set_local_port(from._internal_local_port());
   }
   if (!from._internal_local_id().empty()) {
-    _internal_set_local_id(from._internal_local_id());
+    _this->_internal_set_local_id(from._internal_local_id());
   }
   if (!from._internal_remote_host().empty()) {
-    _internal_set_remote_host(from._internal_remote_host());
+    _this->_internal_set_remote_host(from._internal_remote_host());
   }
   if (!from._internal_remote_port().empty()) {
-    _internal_set_remote_port(from._internal_remote_port());
+    _this->_internal_set_remote_port(from._internal_remote_port());
   }
   if (!from._internal_remote_id().empty()) {
-    _internal_set_remote_id(from._internal_remote_id());
+    _this->_internal_set_remote_id(from._internal_remote_id());
   }
   if (!from._internal_remote_xauth_id().empty()) {
-    _internal_set_remote_xauth_id(from._internal_remote_xauth_id());
+    _this->_internal_set_remote_xauth_id(from._internal_remote_xauth_id());
   }
   if (!from._internal_remote_eap_id().empty()) {
-    _internal_set_remote_eap_id(from._internal_remote_eap_id());
+    _this->_internal_set_remote_eap_id(from._internal_remote_eap_id());
   }
   if (!from._internal_initiator().empty()) {
-    _internal_set_initiator(from._internal_initiator());
+    _this->_internal_set_initiator(from._internal_initiator());
   }
   if (!from._internal_initiator_spi().empty()) {
-    _internal_set_initiator_spi(from._internal_initiator_spi());
+    _this->_internal_set_initiator_spi(from._internal_initiator_spi());
   }
   if (!from._internal_responder_spi().empty()) {
-    _internal_set_responder_spi(from._internal_responder_spi());
+    _this->_internal_set_responder_spi(from._internal_responder_spi());
   }
   if (!from._internal_nat_local().empty()) {
-    _internal_set_nat_local(from._internal_nat_local());
+    _this->_internal_set_nat_local(from._internal_nat_local());
   }
   if (!from._internal_nat_remote().empty()) {
-    _internal_set_nat_remote(from._internal_nat_remote());
+    _this->_internal_set_nat_remote(from._internal_nat_remote());
   }
   if (!from._internal_nat_fake().empty()) {
-    _internal_set_nat_fake(from._internal_nat_fake());
+    _this->_internal_set_nat_fake(from._internal_nat_fake());
   }
   if (!from._internal_nat_any().empty()) {
-    _internal_set_nat_any(from._internal_nat_any());
+    _this->_internal_set_nat_any(from._internal_nat_any());
   }
   if (!from._internal_if_id_in().empty()) {
-    _internal_set_if_id_in(from._internal_if_id_in());
+    _this->_internal_set_if_id_in(from._internal_if_id_in());
   }
   if (!from._internal_if_id_out().empty()) {
-    _internal_set_if_id_out(from._internal_if_id_out());
+    _this->_internal_set_if_id_out(from._internal_if_id_out());
   }
   if (!from._internal_encr_alg().empty()) {
-    _internal_set_encr_alg(from._internal_encr_alg());
+    _this->_internal_set_encr_alg(from._internal_encr_alg());
   }
   if (!from._internal_encr_keysize().empty()) {
-    _internal_set_encr_keysize(from._internal_encr_keysize());
+    _this->_internal_set_encr_keysize(from._internal_encr_keysize());
   }
   if (!from._internal_integ_alg().empty()) {
-    _internal_set_integ_alg(from._internal_integ_alg());
+    _this->_internal_set_integ_alg(from._internal_integ_alg());
   }
   if (!from._internal_integ_keysize().empty()) {
-    _internal_set_integ_keysize(from._internal_integ_keysize());
+    _this->_internal_set_integ_keysize(from._internal_integ_keysize());
   }
   if (!from._internal_prf_alg().empty()) {
-    _internal_set_prf_alg(from._internal_prf_alg());
+    _this->_internal_set_prf_alg(from._internal_prf_alg());
   }
   if (!from._internal_dh_group().empty()) {
-    _internal_set_dh_group(from._internal_dh_group());
+    _this->_internal_set_dh_group(from._internal_dh_group());
   }
   if (!from._internal_ppk().empty()) {
-    _internal_set_ppk(from._internal_ppk());
+    _this->_internal_set_ppk(from._internal_ppk());
   }
   if (!from._internal_established().empty()) {
-    _internal_set_established(from._internal_established());
+    _this->_internal_set_established(from._internal_established());
   }
   if (!from._internal_rekey_time().empty()) {
-    _internal_set_rekey_time(from._internal_rekey_time());
+    _this->_internal_set_rekey_time(from._internal_rekey_time());
   }
   if (!from._internal_reauth_time().empty()) {
-    _internal_set_reauth_time(from._internal_reauth_time());
+    _this->_internal_set_reauth_time(from._internal_reauth_time());
   }
   if (from._internal_ikestate() != 0) {
-    _internal_set_ikestate(from._internal_ikestate());
+    _this->_internal_set_ikestate(from._internal_ikestate());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListIkeSa::CopyFrom(const ListIkeSa& from) {
@@ -12044,167 +12226,137 @@ void ListIkeSa::InternalSwap(ListIkeSa* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  local_vips_.InternalSwap(&other->local_vips_);
-  remote_vips_.InternalSwap(&other->remote_vips_);
-  tasks_queued_.InternalSwap(&other->tasks_queued_);
-  tasks_active_.InternalSwap(&other->tasks_active_);
-  tasks_passive_.InternalSwap(&other->tasks_passive_);
-  childsas_.InternalSwap(&other->childsas_);
+  _impl_.local_vips_.InternalSwap(&other->_impl_.local_vips_);
+  _impl_.remote_vips_.InternalSwap(&other->_impl_.remote_vips_);
+  _impl_.tasks_queued_.InternalSwap(&other->_impl_.tasks_queued_);
+  _impl_.tasks_active_.InternalSwap(&other->_impl_.tasks_active_);
+  _impl_.tasks_passive_.InternalSwap(&other->_impl_.tasks_passive_);
+  _impl_.childsas_.InternalSwap(&other->_impl_.childsas_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &uniqueid_, lhs_arena,
-      &other->uniqueid_, rhs_arena
+      &_impl_.uniqueid_, lhs_arena,
+      &other->_impl_.uniqueid_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &version_, lhs_arena,
-      &other->version_, rhs_arena
+      &_impl_.version_, lhs_arena,
+      &other->_impl_.version_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &local_host_, lhs_arena,
-      &other->local_host_, rhs_arena
+      &_impl_.local_host_, lhs_arena,
+      &other->_impl_.local_host_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &local_port_, lhs_arena,
-      &other->local_port_, rhs_arena
+      &_impl_.local_port_, lhs_arena,
+      &other->_impl_.local_port_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &local_id_, lhs_arena,
-      &other->local_id_, rhs_arena
+      &_impl_.local_id_, lhs_arena,
+      &other->_impl_.local_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &remote_host_, lhs_arena,
-      &other->remote_host_, rhs_arena
+      &_impl_.remote_host_, lhs_arena,
+      &other->_impl_.remote_host_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &remote_port_, lhs_arena,
-      &other->remote_port_, rhs_arena
+      &_impl_.remote_port_, lhs_arena,
+      &other->_impl_.remote_port_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &remote_id_, lhs_arena,
-      &other->remote_id_, rhs_arena
+      &_impl_.remote_id_, lhs_arena,
+      &other->_impl_.remote_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &remote_xauth_id_, lhs_arena,
-      &other->remote_xauth_id_, rhs_arena
+      &_impl_.remote_xauth_id_, lhs_arena,
+      &other->_impl_.remote_xauth_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &remote_eap_id_, lhs_arena,
-      &other->remote_eap_id_, rhs_arena
+      &_impl_.remote_eap_id_, lhs_arena,
+      &other->_impl_.remote_eap_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &initiator_, lhs_arena,
-      &other->initiator_, rhs_arena
+      &_impl_.initiator_, lhs_arena,
+      &other->_impl_.initiator_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &initiator_spi_, lhs_arena,
-      &other->initiator_spi_, rhs_arena
+      &_impl_.initiator_spi_, lhs_arena,
+      &other->_impl_.initiator_spi_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &responder_spi_, lhs_arena,
-      &other->responder_spi_, rhs_arena
+      &_impl_.responder_spi_, lhs_arena,
+      &other->_impl_.responder_spi_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &nat_local_, lhs_arena,
-      &other->nat_local_, rhs_arena
+      &_impl_.nat_local_, lhs_arena,
+      &other->_impl_.nat_local_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &nat_remote_, lhs_arena,
-      &other->nat_remote_, rhs_arena
+      &_impl_.nat_remote_, lhs_arena,
+      &other->_impl_.nat_remote_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &nat_fake_, lhs_arena,
-      &other->nat_fake_, rhs_arena
+      &_impl_.nat_fake_, lhs_arena,
+      &other->_impl_.nat_fake_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &nat_any_, lhs_arena,
-      &other->nat_any_, rhs_arena
+      &_impl_.nat_any_, lhs_arena,
+      &other->_impl_.nat_any_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &if_id_in_, lhs_arena,
-      &other->if_id_in_, rhs_arena
+      &_impl_.if_id_in_, lhs_arena,
+      &other->_impl_.if_id_in_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &if_id_out_, lhs_arena,
-      &other->if_id_out_, rhs_arena
+      &_impl_.if_id_out_, lhs_arena,
+      &other->_impl_.if_id_out_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &encr_alg_, lhs_arena,
-      &other->encr_alg_, rhs_arena
+      &_impl_.encr_alg_, lhs_arena,
+      &other->_impl_.encr_alg_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &encr_keysize_, lhs_arena,
-      &other->encr_keysize_, rhs_arena
+      &_impl_.encr_keysize_, lhs_arena,
+      &other->_impl_.encr_keysize_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &integ_alg_, lhs_arena,
-      &other->integ_alg_, rhs_arena
+      &_impl_.integ_alg_, lhs_arena,
+      &other->_impl_.integ_alg_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &integ_keysize_, lhs_arena,
-      &other->integ_keysize_, rhs_arena
+      &_impl_.integ_keysize_, lhs_arena,
+      &other->_impl_.integ_keysize_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &prf_alg_, lhs_arena,
-      &other->prf_alg_, rhs_arena
+      &_impl_.prf_alg_, lhs_arena,
+      &other->_impl_.prf_alg_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &dh_group_, lhs_arena,
-      &other->dh_group_, rhs_arena
+      &_impl_.dh_group_, lhs_arena,
+      &other->_impl_.dh_group_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ppk_, lhs_arena,
-      &other->ppk_, rhs_arena
+      &_impl_.ppk_, lhs_arena,
+      &other->_impl_.ppk_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &established_, lhs_arena,
-      &other->established_, rhs_arena
+      &_impl_.established_, lhs_arena,
+      &other->_impl_.established_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &rekey_time_, lhs_arena,
-      &other->rekey_time_, rhs_arena
+      &_impl_.rekey_time_, lhs_arena,
+      &other->_impl_.rekey_time_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &reauth_time_, lhs_arena,
-      &other->reauth_time_, rhs_arena
+      &_impl_.reauth_time_, lhs_arena,
+      &other->_impl_.reauth_time_, rhs_arena
   );
-  swap(ikestate_, other->ikestate_);
+  swap(_impl_.ikestate_, other->_impl_.ikestate_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListIkeSa::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[27]);
 }
@@ -12217,43 +12369,47 @@ class IPsecListSasResp::_Internal {
 
 IPsecListSasResp::IPsecListSasResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  ikesas_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecListSasResp)
 }
 IPsecListSasResp::IPsecListSasResp(const IPsecListSasResp& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      ikesas_(from.ikesas_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecListSasResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ikesas_){from._impl_.ikesas_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecListSasResp)
 }
 
-inline void IPsecListSasResp::SharedCtor() {
+inline void IPsecListSasResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ikesas_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 IPsecListSasResp::~IPsecListSasResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecListSasResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecListSasResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ikesas_.~RepeatedPtrField();
 }
 
-void IPsecListSasResp::ArenaDtor(void* object) {
-  IPsecListSasResp* _this = reinterpret_cast< IPsecListSasResp* >(object);
-  (void)_this;
-}
-void IPsecListSasResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecListSasResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecListSasResp::Clear() {
@@ -12262,15 +12418,15 @@ void IPsecListSasResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ikesas_.Clear();
+  _impl_.ikesas_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecListSasResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecListSasResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.security.v1.ListIkeSa ikesas = 1;
       case 1:
@@ -12315,15 +12471,15 @@ uint8_t* IPsecListSasResp::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.security.v1.ListIkeSa ikesas = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_ikesas_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_ikesas_size()); i < n; i++) {
+    const auto& repfield = this->_internal_ikesas(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_ikesas(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecListSasResp)
@@ -12340,35 +12496,31 @@ size_t IPsecListSasResp::ByteSizeLong() const {
 
   // repeated .opi_api.security.v1.ListIkeSa ikesas = 1;
   total_size += 1UL * this->_internal_ikesas_size();
-  for (const auto& msg : this->ikesas_) {
+  for (const auto& msg : this->_impl_.ikesas_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecListSasResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecListSasResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecListSasResp::GetClassData() const { return &_class_data_; }
 
-void IPsecListSasResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecListSasResp *>(to)->MergeFrom(
-      static_cast<const IPsecListSasResp &>(from));
-}
 
-
-void IPsecListSasResp::MergeFrom(const IPsecListSasResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListSasResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecListSasResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecListSasResp*>(&to_msg);
+  auto& from = static_cast<const IPsecListSasResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListSasResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  ikesas_.MergeFrom(from.ikesas_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.ikesas_.MergeFrom(from._impl_.ikesas_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecListSasResp::CopyFrom(const IPsecListSasResp& from) {
@@ -12385,11 +12537,11 @@ bool IPsecListSasResp::IsInitialized() const {
 void IPsecListSasResp::InternalSwap(IPsecListSasResp* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ikesas_.InternalSwap(&other->ikesas_);
+  _impl_.ikesas_.InternalSwap(&other->_impl_.ikesas_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListSasResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[28]);
 }
@@ -12403,53 +12555,58 @@ class IPsecListConnsReq::_Internal {
 IPsecListConnsReq::IPsecListConnsReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecListConnsReq)
 }
 IPsecListConnsReq::IPsecListConnsReq(const IPsecListConnsReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecListConnsReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ike_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ike_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ike_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ike().empty()) {
-    ike_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ike(), 
-      GetArenaForAllocation());
+    _this->_impl_.ike_.Set(from._internal_ike(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecListConnsReq)
 }
 
-inline void IPsecListConnsReq::SharedCtor() {
-ike_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ike_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void IPsecListConnsReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ike_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.ike_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ike_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecListConnsReq::~IPsecListConnsReq() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecListConnsReq)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecListConnsReq::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  ike_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ike_.Destroy();
 }
 
-void IPsecListConnsReq::ArenaDtor(void* object) {
-  IPsecListConnsReq* _this = reinterpret_cast< IPsecListConnsReq* >(object);
-  (void)_this;
-}
-void IPsecListConnsReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecListConnsReq::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecListConnsReq::Clear() {
@@ -12458,23 +12615,23 @@ void IPsecListConnsReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ike_.ClearToEmpty();
+  _impl_.ike_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecListConnsReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecListConnsReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string ike = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_ike();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecListConnsReq.ike"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecListConnsReq.ike"));
         } else
           goto handle_unusual;
         continue;
@@ -12518,7 +12675,7 @@ uint8_t* IPsecListConnsReq::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecListConnsReq)
@@ -12540,32 +12697,28 @@ size_t IPsecListConnsReq::ByteSizeLong() const {
         this->_internal_ike());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecListConnsReq::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecListConnsReq::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecListConnsReq::GetClassData() const { return &_class_data_; }
 
-void IPsecListConnsReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecListConnsReq *>(to)->MergeFrom(
-      static_cast<const IPsecListConnsReq &>(from));
-}
 
-
-void IPsecListConnsReq::MergeFrom(const IPsecListConnsReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListConnsReq)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecListConnsReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecListConnsReq*>(&to_msg);
+  auto& from = static_cast<const IPsecListConnsReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListConnsReq)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_ike().empty()) {
-    _internal_set_ike(from._internal_ike());
+    _this->_internal_set_ike(from._internal_ike());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecListConnsReq::CopyFrom(const IPsecListConnsReq& from) {
@@ -12585,14 +12738,13 @@ void IPsecListConnsReq::InternalSwap(IPsecListConnsReq* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ike_, lhs_arena,
-      &other->ike_, rhs_arena
+      &_impl_.ike_, lhs_arena,
+      &other->_impl_.ike_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListConnsReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[29]);
 }
@@ -12609,215 +12761,234 @@ class ListConnAuth::_Internal {
 
 const ::opi_api::security::v1::Groups&
 ListConnAuth::_Internal::group(const ListConnAuth* msg) {
-  return *msg->group_;
+  return *msg->_impl_.group_;
 }
 const ::opi_api::security::v1::CertPolicy&
 ListConnAuth::_Internal::cert_policy(const ListConnAuth* msg) {
-  return *msg->cert_policy_;
+  return *msg->_impl_.cert_policy_;
 }
 const ::opi_api::security::v1::Certs&
 ListConnAuth::_Internal::certs(const ListConnAuth* msg) {
-  return *msg->certs_;
+  return *msg->_impl_.certs_;
 }
 const ::opi_api::security::v1::CaCerts&
 ListConnAuth::_Internal::cacerts(const ListConnAuth* msg) {
-  return *msg->cacerts_;
+  return *msg->_impl_.cacerts_;
 }
 ListConnAuth::ListConnAuth(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.ListConnAuth)
 }
 ListConnAuth::ListConnAuth(const ListConnAuth& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListConnAuth* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.class__){}
+    , decltype(_impl_.eaptype_){}
+    , decltype(_impl_.eapvendor_){}
+    , decltype(_impl_.xauth_){}
+    , decltype(_impl_.revocation_){}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.ca_id_){}
+    , decltype(_impl_.aaa_id_){}
+    , decltype(_impl_.eap_id_){}
+    , decltype(_impl_.xauth_id_){}
+    , decltype(_impl_.group_){nullptr}
+    , decltype(_impl_.cert_policy_){nullptr}
+    , decltype(_impl_.certs_){nullptr}
+    , decltype(_impl_.cacerts_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  class__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.class__.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    class__.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.class__.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_class_().empty()) {
-    class__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_class_(), 
-      GetArenaForAllocation());
+    _this->_impl_.class__.Set(from._internal_class_(), 
+      _this->GetArenaForAllocation());
   }
-  eaptype_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.eaptype_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    eaptype_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.eaptype_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_eaptype().empty()) {
-    eaptype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_eaptype(), 
-      GetArenaForAllocation());
+    _this->_impl_.eaptype_.Set(from._internal_eaptype(), 
+      _this->GetArenaForAllocation());
   }
-  eapvendor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.eapvendor_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    eapvendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.eapvendor_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_eapvendor().empty()) {
-    eapvendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_eapvendor(), 
-      GetArenaForAllocation());
+    _this->_impl_.eapvendor_.Set(from._internal_eapvendor(), 
+      _this->GetArenaForAllocation());
   }
-  xauth_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.xauth_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    xauth_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.xauth_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_xauth().empty()) {
-    xauth_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xauth(), 
-      GetArenaForAllocation());
+    _this->_impl_.xauth_.Set(from._internal_xauth(), 
+      _this->GetArenaForAllocation());
   }
-  revocation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.revocation_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    revocation_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.revocation_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_revocation().empty()) {
-    revocation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_revocation(), 
-      GetArenaForAllocation());
+    _this->_impl_.revocation_.Set(from._internal_revocation(), 
+      _this->GetArenaForAllocation());
   }
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.id_.Set(from._internal_id(), 
+      _this->GetArenaForAllocation());
   }
-  ca_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ca_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ca_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ca_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ca_id().empty()) {
-    ca_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ca_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.ca_id_.Set(from._internal_ca_id(), 
+      _this->GetArenaForAllocation());
   }
-  aaa_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.aaa_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    aaa_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.aaa_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_aaa_id().empty()) {
-    aaa_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_aaa_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.aaa_id_.Set(from._internal_aaa_id(), 
+      _this->GetArenaForAllocation());
   }
-  eap_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.eap_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    eap_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.eap_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_eap_id().empty()) {
-    eap_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_eap_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.eap_id_.Set(from._internal_eap_id(), 
+      _this->GetArenaForAllocation());
   }
-  xauth_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.xauth_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    xauth_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.xauth_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_xauth_id().empty()) {
-    xauth_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xauth_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.xauth_id_.Set(from._internal_xauth_id(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_group()) {
-    group_ = new ::opi_api::security::v1::Groups(*from.group_);
-  } else {
-    group_ = nullptr;
+    _this->_impl_.group_ = new ::opi_api::security::v1::Groups(*from._impl_.group_);
   }
   if (from._internal_has_cert_policy()) {
-    cert_policy_ = new ::opi_api::security::v1::CertPolicy(*from.cert_policy_);
-  } else {
-    cert_policy_ = nullptr;
+    _this->_impl_.cert_policy_ = new ::opi_api::security::v1::CertPolicy(*from._impl_.cert_policy_);
   }
   if (from._internal_has_certs()) {
-    certs_ = new ::opi_api::security::v1::Certs(*from.certs_);
-  } else {
-    certs_ = nullptr;
+    _this->_impl_.certs_ = new ::opi_api::security::v1::Certs(*from._impl_.certs_);
   }
   if (from._internal_has_cacerts()) {
-    cacerts_ = new ::opi_api::security::v1::CaCerts(*from.cacerts_);
-  } else {
-    cacerts_ = nullptr;
+    _this->_impl_.cacerts_ = new ::opi_api::security::v1::CaCerts(*from._impl_.cacerts_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.ListConnAuth)
 }
 
-inline void ListConnAuth::SharedCtor() {
-class__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  class__.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-eaptype_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  eaptype_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-eapvendor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  eapvendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xauth_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  xauth_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-revocation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  revocation_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ca_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ca_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-aaa_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  aaa_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-eap_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  eap_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xauth_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  xauth_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&group_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&cacerts_) -
-    reinterpret_cast<char*>(&group_)) + sizeof(cacerts_));
+inline void ListConnAuth::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.class__){}
+    , decltype(_impl_.eaptype_){}
+    , decltype(_impl_.eapvendor_){}
+    , decltype(_impl_.xauth_){}
+    , decltype(_impl_.revocation_){}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.ca_id_){}
+    , decltype(_impl_.aaa_id_){}
+    , decltype(_impl_.eap_id_){}
+    , decltype(_impl_.xauth_id_){}
+    , decltype(_impl_.group_){nullptr}
+    , decltype(_impl_.cert_policy_){nullptr}
+    , decltype(_impl_.certs_){nullptr}
+    , decltype(_impl_.cacerts_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.class__.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.class__.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.eaptype_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.eaptype_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.eapvendor_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.eapvendor_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.xauth_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.xauth_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.revocation_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.revocation_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ca_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ca_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.aaa_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.aaa_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.eap_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.eap_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.xauth_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.xauth_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListConnAuth::~ListConnAuth() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.ListConnAuth)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListConnAuth::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  class__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  eaptype_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  eapvendor_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  xauth_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  revocation_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ca_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  aaa_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  eap_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  xauth_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete group_;
-  if (this != internal_default_instance()) delete cert_policy_;
-  if (this != internal_default_instance()) delete certs_;
-  if (this != internal_default_instance()) delete cacerts_;
+  _impl_.class__.Destroy();
+  _impl_.eaptype_.Destroy();
+  _impl_.eapvendor_.Destroy();
+  _impl_.xauth_.Destroy();
+  _impl_.revocation_.Destroy();
+  _impl_.id_.Destroy();
+  _impl_.ca_id_.Destroy();
+  _impl_.aaa_id_.Destroy();
+  _impl_.eap_id_.Destroy();
+  _impl_.xauth_id_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.group_;
+  if (this != internal_default_instance()) delete _impl_.cert_policy_;
+  if (this != internal_default_instance()) delete _impl_.certs_;
+  if (this != internal_default_instance()) delete _impl_.cacerts_;
 }
 
-void ListConnAuth::ArenaDtor(void* object) {
-  ListConnAuth* _this = reinterpret_cast< ListConnAuth* >(object);
-  (void)_this;
-}
-void ListConnAuth::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListConnAuth::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListConnAuth::Clear() {
@@ -12826,48 +12997,48 @@ void ListConnAuth::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  class__.ClearToEmpty();
-  eaptype_.ClearToEmpty();
-  eapvendor_.ClearToEmpty();
-  xauth_.ClearToEmpty();
-  revocation_.ClearToEmpty();
-  id_.ClearToEmpty();
-  ca_id_.ClearToEmpty();
-  aaa_id_.ClearToEmpty();
-  eap_id_.ClearToEmpty();
-  xauth_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && group_ != nullptr) {
-    delete group_;
+  _impl_.class__.ClearToEmpty();
+  _impl_.eaptype_.ClearToEmpty();
+  _impl_.eapvendor_.ClearToEmpty();
+  _impl_.xauth_.ClearToEmpty();
+  _impl_.revocation_.ClearToEmpty();
+  _impl_.id_.ClearToEmpty();
+  _impl_.ca_id_.ClearToEmpty();
+  _impl_.aaa_id_.ClearToEmpty();
+  _impl_.eap_id_.ClearToEmpty();
+  _impl_.xauth_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.group_ != nullptr) {
+    delete _impl_.group_;
   }
-  group_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && cert_policy_ != nullptr) {
-    delete cert_policy_;
+  _impl_.group_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.cert_policy_ != nullptr) {
+    delete _impl_.cert_policy_;
   }
-  cert_policy_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && certs_ != nullptr) {
-    delete certs_;
+  _impl_.cert_policy_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.certs_ != nullptr) {
+    delete _impl_.certs_;
   }
-  certs_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && cacerts_ != nullptr) {
-    delete cacerts_;
+  _impl_.certs_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.cacerts_ != nullptr) {
+    delete _impl_.cacerts_;
   }
-  cacerts_ = nullptr;
+  _impl_.cacerts_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListConnAuth::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string class = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_class_();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.class"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.class"));
         } else
           goto handle_unusual;
         continue;
@@ -12875,9 +13046,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_eaptype();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.eaptype"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.eaptype"));
         } else
           goto handle_unusual;
         continue;
@@ -12885,9 +13056,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_eapvendor();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.eapvendor"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.eapvendor"));
         } else
           goto handle_unusual;
         continue;
@@ -12895,9 +13066,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_xauth();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.xauth"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.xauth"));
         } else
           goto handle_unusual;
         continue;
@@ -12905,9 +13076,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_revocation();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.revocation"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.revocation"));
         } else
           goto handle_unusual;
         continue;
@@ -12915,9 +13086,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.id"));
         } else
           goto handle_unusual;
         continue;
@@ -12925,9 +13096,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_ca_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.ca_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.ca_id"));
         } else
           goto handle_unusual;
         continue;
@@ -12935,9 +13106,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_aaa_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.aaa_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.aaa_id"));
         } else
           goto handle_unusual;
         continue;
@@ -12945,9 +13116,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           auto str = _internal_mutable_eap_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.eap_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.eap_id"));
         } else
           goto handle_unusual;
         continue;
@@ -12955,9 +13126,9 @@ const char* ListConnAuth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_xauth_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.xauth_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnAuth.xauth_id"));
         } else
           goto handle_unusual;
         continue;
@@ -13124,38 +13295,34 @@ uint8_t* ListConnAuth::_InternalSerialize(
 
   // .opi_api.security.v1.Groups group = 11;
   if (this->_internal_has_group()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        11, _Internal::group(this), target, stream);
+      InternalWriteMessage(11, _Internal::group(this),
+        _Internal::group(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.CertPolicy cert_policy = 12;
   if (this->_internal_has_cert_policy()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        12, _Internal::cert_policy(this), target, stream);
+      InternalWriteMessage(12, _Internal::cert_policy(this),
+        _Internal::cert_policy(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.Certs certs = 13;
   if (this->_internal_has_certs()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        13, _Internal::certs(this), target, stream);
+      InternalWriteMessage(13, _Internal::certs(this),
+        _Internal::certs(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.CaCerts cacerts = 14;
   if (this->_internal_has_cacerts()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        14, _Internal::cacerts(this), target, stream);
+      InternalWriteMessage(14, _Internal::cacerts(this),
+        _Internal::cacerts(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.ListConnAuth)
@@ -13244,95 +13411,95 @@ size_t ListConnAuth::ByteSizeLong() const {
   if (this->_internal_has_group()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *group_);
+        *_impl_.group_);
   }
 
   // .opi_api.security.v1.CertPolicy cert_policy = 12;
   if (this->_internal_has_cert_policy()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *cert_policy_);
+        *_impl_.cert_policy_);
   }
 
   // .opi_api.security.v1.Certs certs = 13;
   if (this->_internal_has_certs()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *certs_);
+        *_impl_.certs_);
   }
 
   // .opi_api.security.v1.CaCerts cacerts = 14;
   if (this->_internal_has_cacerts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *cacerts_);
+        *_impl_.cacerts_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListConnAuth::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListConnAuth::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListConnAuth::GetClassData() const { return &_class_data_; }
 
-void ListConnAuth::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListConnAuth *>(to)->MergeFrom(
-      static_cast<const ListConnAuth &>(from));
-}
 
-
-void ListConnAuth::MergeFrom(const ListConnAuth& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListConnAuth)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListConnAuth::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListConnAuth*>(&to_msg);
+  auto& from = static_cast<const ListConnAuth&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListConnAuth)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_class_().empty()) {
-    _internal_set_class_(from._internal_class_());
+    _this->_internal_set_class_(from._internal_class_());
   }
   if (!from._internal_eaptype().empty()) {
-    _internal_set_eaptype(from._internal_eaptype());
+    _this->_internal_set_eaptype(from._internal_eaptype());
   }
   if (!from._internal_eapvendor().empty()) {
-    _internal_set_eapvendor(from._internal_eapvendor());
+    _this->_internal_set_eapvendor(from._internal_eapvendor());
   }
   if (!from._internal_xauth().empty()) {
-    _internal_set_xauth(from._internal_xauth());
+    _this->_internal_set_xauth(from._internal_xauth());
   }
   if (!from._internal_revocation().empty()) {
-    _internal_set_revocation(from._internal_revocation());
+    _this->_internal_set_revocation(from._internal_revocation());
   }
   if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+    _this->_internal_set_id(from._internal_id());
   }
   if (!from._internal_ca_id().empty()) {
-    _internal_set_ca_id(from._internal_ca_id());
+    _this->_internal_set_ca_id(from._internal_ca_id());
   }
   if (!from._internal_aaa_id().empty()) {
-    _internal_set_aaa_id(from._internal_aaa_id());
+    _this->_internal_set_aaa_id(from._internal_aaa_id());
   }
   if (!from._internal_eap_id().empty()) {
-    _internal_set_eap_id(from._internal_eap_id());
+    _this->_internal_set_eap_id(from._internal_eap_id());
   }
   if (!from._internal_xauth_id().empty()) {
-    _internal_set_xauth_id(from._internal_xauth_id());
+    _this->_internal_set_xauth_id(from._internal_xauth_id());
   }
   if (from._internal_has_group()) {
-    _internal_mutable_group()->::opi_api::security::v1::Groups::MergeFrom(from._internal_group());
+    _this->_internal_mutable_group()->::opi_api::security::v1::Groups::MergeFrom(
+        from._internal_group());
   }
   if (from._internal_has_cert_policy()) {
-    _internal_mutable_cert_policy()->::opi_api::security::v1::CertPolicy::MergeFrom(from._internal_cert_policy());
+    _this->_internal_mutable_cert_policy()->::opi_api::security::v1::CertPolicy::MergeFrom(
+        from._internal_cert_policy());
   }
   if (from._internal_has_certs()) {
-    _internal_mutable_certs()->::opi_api::security::v1::Certs::MergeFrom(from._internal_certs());
+    _this->_internal_mutable_certs()->::opi_api::security::v1::Certs::MergeFrom(
+        from._internal_certs());
   }
   if (from._internal_has_cacerts()) {
-    _internal_mutable_cacerts()->::opi_api::security::v1::CaCerts::MergeFrom(from._internal_cacerts());
+    _this->_internal_mutable_cacerts()->::opi_api::security::v1::CaCerts::MergeFrom(
+        from._internal_cacerts());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListConnAuth::CopyFrom(const ListConnAuth& from) {
@@ -13352,65 +13519,55 @@ void ListConnAuth::InternalSwap(ListConnAuth* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &class__, lhs_arena,
-      &other->class__, rhs_arena
+      &_impl_.class__, lhs_arena,
+      &other->_impl_.class__, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &eaptype_, lhs_arena,
-      &other->eaptype_, rhs_arena
+      &_impl_.eaptype_, lhs_arena,
+      &other->_impl_.eaptype_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &eapvendor_, lhs_arena,
-      &other->eapvendor_, rhs_arena
+      &_impl_.eapvendor_, lhs_arena,
+      &other->_impl_.eapvendor_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &xauth_, lhs_arena,
-      &other->xauth_, rhs_arena
+      &_impl_.xauth_, lhs_arena,
+      &other->_impl_.xauth_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &revocation_, lhs_arena,
-      &other->revocation_, rhs_arena
+      &_impl_.revocation_, lhs_arena,
+      &other->_impl_.revocation_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
+      &_impl_.id_, lhs_arena,
+      &other->_impl_.id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ca_id_, lhs_arena,
-      &other->ca_id_, rhs_arena
+      &_impl_.ca_id_, lhs_arena,
+      &other->_impl_.ca_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &aaa_id_, lhs_arena,
-      &other->aaa_id_, rhs_arena
+      &_impl_.aaa_id_, lhs_arena,
+      &other->_impl_.aaa_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &eap_id_, lhs_arena,
-      &other->eap_id_, rhs_arena
+      &_impl_.eap_id_, lhs_arena,
+      &other->_impl_.eap_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &xauth_id_, lhs_arena,
-      &other->xauth_id_, rhs_arena
+      &_impl_.xauth_id_, lhs_arena,
+      &other->_impl_.xauth_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ListConnAuth, cacerts_)
-      + sizeof(ListConnAuth::cacerts_)
-      - PROTOBUF_FIELD_OFFSET(ListConnAuth, group_)>(
-          reinterpret_cast<char*>(&group_),
-          reinterpret_cast<char*>(&other->group_));
+      PROTOBUF_FIELD_OFFSET(ListConnAuth, _impl_.cacerts_)
+      + sizeof(ListConnAuth::_impl_.cacerts_)
+      - PROTOBUF_FIELD_OFFSET(ListConnAuth, _impl_.group_)>(
+          reinterpret_cast<char*>(&_impl_.group_),
+          reinterpret_cast<char*>(&other->_impl_.group_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListConnAuth::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[30]);
 }
@@ -13425,159 +13582,178 @@ class ListChild::_Internal {
 
 const ::opi_api::security::v1::TrafficSelectors&
 ListChild::_Internal::local_ts(const ListChild* msg) {
-  return *msg->local_ts_;
+  return *msg->_impl_.local_ts_;
 }
 const ::opi_api::security::v1::TrafficSelectors&
 ListChild::_Internal::remote_ts(const ListChild* msg) {
-  return *msg->remote_ts_;
+  return *msg->_impl_.remote_ts_;
 }
 ListChild::ListChild(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.ListChild)
 }
 ListChild::ListChild(const ListChild& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListChild* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.mode_){}
+    , decltype(_impl_.label_){}
+    , decltype(_impl_.dpd_action_){}
+    , decltype(_impl_.close_action_){}
+    , decltype(_impl_.interface_){}
+    , decltype(_impl_.priority_){}
+    , decltype(_impl_.local_ts_){nullptr}
+    , decltype(_impl_.remote_ts_){nullptr}
+    , decltype(_impl_.rekey_time_){}
+    , decltype(_impl_.rekey_bytes_){}
+    , decltype(_impl_.rekey_packets_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  mode_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.mode_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mode_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.mode_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mode().empty()) {
-    mode_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mode(), 
-      GetArenaForAllocation());
+    _this->_impl_.mode_.Set(from._internal_mode(), 
+      _this->GetArenaForAllocation());
   }
-  label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.label_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.label_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_label().empty()) {
-    label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_label(), 
-      GetArenaForAllocation());
+    _this->_impl_.label_.Set(from._internal_label(), 
+      _this->GetArenaForAllocation());
   }
-  dpd_action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.dpd_action_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    dpd_action_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.dpd_action_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_dpd_action().empty()) {
-    dpd_action_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_dpd_action(), 
-      GetArenaForAllocation());
+    _this->_impl_.dpd_action_.Set(from._internal_dpd_action(), 
+      _this->GetArenaForAllocation());
   }
-  close_action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.close_action_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    close_action_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.close_action_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_close_action().empty()) {
-    close_action_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_close_action(), 
-      GetArenaForAllocation());
+    _this->_impl_.close_action_.Set(from._internal_close_action(), 
+      _this->GetArenaForAllocation());
   }
-  interface_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.interface_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    interface_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.interface_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_interface().empty()) {
-    interface_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_interface(), 
-      GetArenaForAllocation());
+    _this->_impl_.interface_.Set(from._internal_interface(), 
+      _this->GetArenaForAllocation());
   }
-  priority_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.priority_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    priority_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.priority_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_priority().empty()) {
-    priority_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_priority(), 
-      GetArenaForAllocation());
+    _this->_impl_.priority_.Set(from._internal_priority(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_local_ts()) {
-    local_ts_ = new ::opi_api::security::v1::TrafficSelectors(*from.local_ts_);
-  } else {
-    local_ts_ = nullptr;
+    _this->_impl_.local_ts_ = new ::opi_api::security::v1::TrafficSelectors(*from._impl_.local_ts_);
   }
   if (from._internal_has_remote_ts()) {
-    remote_ts_ = new ::opi_api::security::v1::TrafficSelectors(*from.remote_ts_);
-  } else {
-    remote_ts_ = nullptr;
+    _this->_impl_.remote_ts_ = new ::opi_api::security::v1::TrafficSelectors(*from._impl_.remote_ts_);
   }
-  ::memcpy(&rekey_time_, &from.rekey_time_,
-    static_cast<size_t>(reinterpret_cast<char*>(&rekey_packets_) -
-    reinterpret_cast<char*>(&rekey_time_)) + sizeof(rekey_packets_));
+  ::memcpy(&_impl_.rekey_time_, &from._impl_.rekey_time_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.rekey_packets_) -
+    reinterpret_cast<char*>(&_impl_.rekey_time_)) + sizeof(_impl_.rekey_packets_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.ListChild)
 }
 
-inline void ListChild::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mode_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mode_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-dpd_action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  dpd_action_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-close_action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  close_action_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-interface_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  interface_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-priority_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  priority_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&local_ts_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&rekey_packets_) -
-    reinterpret_cast<char*>(&local_ts_)) + sizeof(rekey_packets_));
+inline void ListChild::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.mode_){}
+    , decltype(_impl_.label_){}
+    , decltype(_impl_.dpd_action_){}
+    , decltype(_impl_.close_action_){}
+    , decltype(_impl_.interface_){}
+    , decltype(_impl_.priority_){}
+    , decltype(_impl_.local_ts_){nullptr}
+    , decltype(_impl_.remote_ts_){nullptr}
+    , decltype(_impl_.rekey_time_){0u}
+    , decltype(_impl_.rekey_bytes_){0u}
+    , decltype(_impl_.rekey_packets_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mode_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mode_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.label_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.label_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.dpd_action_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.dpd_action_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.close_action_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.close_action_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.interface_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.interface_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.priority_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.priority_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListChild::~ListChild() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.ListChild)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListChild::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mode_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  dpd_action_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  close_action_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  interface_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  priority_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete local_ts_;
-  if (this != internal_default_instance()) delete remote_ts_;
+  _impl_.name_.Destroy();
+  _impl_.mode_.Destroy();
+  _impl_.label_.Destroy();
+  _impl_.dpd_action_.Destroy();
+  _impl_.close_action_.Destroy();
+  _impl_.interface_.Destroy();
+  _impl_.priority_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.local_ts_;
+  if (this != internal_default_instance()) delete _impl_.remote_ts_;
 }
 
-void ListChild::ArenaDtor(void* object) {
-  ListChild* _this = reinterpret_cast< ListChild* >(object);
-  (void)_this;
-}
-void ListChild::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListChild::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListChild::Clear() {
@@ -13586,40 +13762,40 @@ void ListChild::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  mode_.ClearToEmpty();
-  label_.ClearToEmpty();
-  dpd_action_.ClearToEmpty();
-  close_action_.ClearToEmpty();
-  interface_.ClearToEmpty();
-  priority_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && local_ts_ != nullptr) {
-    delete local_ts_;
+  _impl_.name_.ClearToEmpty();
+  _impl_.mode_.ClearToEmpty();
+  _impl_.label_.ClearToEmpty();
+  _impl_.dpd_action_.ClearToEmpty();
+  _impl_.close_action_.ClearToEmpty();
+  _impl_.interface_.ClearToEmpty();
+  _impl_.priority_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.local_ts_ != nullptr) {
+    delete _impl_.local_ts_;
   }
-  local_ts_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && remote_ts_ != nullptr) {
-    delete remote_ts_;
+  _impl_.local_ts_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.remote_ts_ != nullptr) {
+    delete _impl_.remote_ts_;
   }
-  remote_ts_ = nullptr;
-  ::memset(&rekey_time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rekey_packets_) -
-      reinterpret_cast<char*>(&rekey_time_)) + sizeof(rekey_packets_));
+  _impl_.remote_ts_ = nullptr;
+  ::memset(&_impl_.rekey_time_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.rekey_packets_) -
+      reinterpret_cast<char*>(&_impl_.rekey_time_)) + sizeof(_impl_.rekey_packets_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListChild::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChild.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChild.name"));
         } else
           goto handle_unusual;
         continue;
@@ -13627,9 +13803,9 @@ const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_mode();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChild.mode"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChild.mode"));
         } else
           goto handle_unusual;
         continue;
@@ -13637,16 +13813,16 @@ const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_label();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChild.label"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChild.label"));
         } else
           goto handle_unusual;
         continue;
       // uint32 rekey_time = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          rekey_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rekey_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -13654,7 +13830,7 @@ const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // uint32 rekey_bytes = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          rekey_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rekey_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -13662,7 +13838,7 @@ const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // uint32 rekey_packets = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          rekey_packets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rekey_packets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -13671,9 +13847,9 @@ const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_dpd_action();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChild.dpd_action"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChild.dpd_action"));
         } else
           goto handle_unusual;
         continue;
@@ -13681,9 +13857,9 @@ const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_close_action();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChild.close_action"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChild.close_action"));
         } else
           goto handle_unusual;
         continue;
@@ -13707,9 +13883,9 @@ const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_interface();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChild.interface"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChild.interface"));
         } else
           goto handle_unusual;
         continue;
@@ -13717,9 +13893,9 @@ const char* ListChild::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           auto str = _internal_mutable_priority();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListChild.priority"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListChild.priority"));
         } else
           goto handle_unusual;
         continue;
@@ -13785,19 +13961,19 @@ uint8_t* ListChild::_InternalSerialize(
   // uint32 rekey_time = 4;
   if (this->_internal_rekey_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_rekey_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_rekey_time(), target);
   }
 
   // uint32 rekey_bytes = 5;
   if (this->_internal_rekey_bytes() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_rekey_bytes(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_rekey_bytes(), target);
   }
 
   // uint32 rekey_packets = 6;
   if (this->_internal_rekey_packets() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_rekey_packets(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_rekey_packets(), target);
   }
 
   // string dpd_action = 7;
@@ -13822,18 +13998,16 @@ uint8_t* ListChild::_InternalSerialize(
 
   // .opi_api.security.v1.TrafficSelectors local_ts = 9;
   if (this->_internal_has_local_ts()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        9, _Internal::local_ts(this), target, stream);
+      InternalWriteMessage(9, _Internal::local_ts(this),
+        _Internal::local_ts(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.security.v1.TrafficSelectors remote_ts = 10;
   if (this->_internal_has_remote_ts()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        10, _Internal::remote_ts(this), target, stream);
+      InternalWriteMessage(10, _Internal::remote_ts(this),
+        _Internal::remote_ts(this).GetCachedSize(), target, stream);
   }
 
   // string interface = 11;
@@ -13857,7 +14031,7 @@ uint8_t* ListChild::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.ListChild)
@@ -13925,90 +14099,88 @@ size_t ListChild::ByteSizeLong() const {
   if (this->_internal_has_local_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *local_ts_);
+        *_impl_.local_ts_);
   }
 
   // .opi_api.security.v1.TrafficSelectors remote_ts = 10;
   if (this->_internal_has_remote_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *remote_ts_);
+        *_impl_.remote_ts_);
   }
 
   // uint32 rekey_time = 4;
   if (this->_internal_rekey_time() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_time());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_time());
   }
 
   // uint32 rekey_bytes = 5;
   if (this->_internal_rekey_bytes() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_bytes());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_bytes());
   }
 
   // uint32 rekey_packets = 6;
   if (this->_internal_rekey_packets() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_packets());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_packets());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListChild::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListChild::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListChild::GetClassData() const { return &_class_data_; }
 
-void ListChild::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListChild *>(to)->MergeFrom(
-      static_cast<const ListChild &>(from));
-}
 
-
-void ListChild::MergeFrom(const ListChild& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListChild)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListChild::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListChild*>(&to_msg);
+  auto& from = static_cast<const ListChild&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListChild)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_mode().empty()) {
-    _internal_set_mode(from._internal_mode());
+    _this->_internal_set_mode(from._internal_mode());
   }
   if (!from._internal_label().empty()) {
-    _internal_set_label(from._internal_label());
+    _this->_internal_set_label(from._internal_label());
   }
   if (!from._internal_dpd_action().empty()) {
-    _internal_set_dpd_action(from._internal_dpd_action());
+    _this->_internal_set_dpd_action(from._internal_dpd_action());
   }
   if (!from._internal_close_action().empty()) {
-    _internal_set_close_action(from._internal_close_action());
+    _this->_internal_set_close_action(from._internal_close_action());
   }
   if (!from._internal_interface().empty()) {
-    _internal_set_interface(from._internal_interface());
+    _this->_internal_set_interface(from._internal_interface());
   }
   if (!from._internal_priority().empty()) {
-    _internal_set_priority(from._internal_priority());
+    _this->_internal_set_priority(from._internal_priority());
   }
   if (from._internal_has_local_ts()) {
-    _internal_mutable_local_ts()->::opi_api::security::v1::TrafficSelectors::MergeFrom(from._internal_local_ts());
+    _this->_internal_mutable_local_ts()->::opi_api::security::v1::TrafficSelectors::MergeFrom(
+        from._internal_local_ts());
   }
   if (from._internal_has_remote_ts()) {
-    _internal_mutable_remote_ts()->::opi_api::security::v1::TrafficSelectors::MergeFrom(from._internal_remote_ts());
+    _this->_internal_mutable_remote_ts()->::opi_api::security::v1::TrafficSelectors::MergeFrom(
+        from._internal_remote_ts());
   }
   if (from._internal_rekey_time() != 0) {
-    _internal_set_rekey_time(from._internal_rekey_time());
+    _this->_internal_set_rekey_time(from._internal_rekey_time());
   }
   if (from._internal_rekey_bytes() != 0) {
-    _internal_set_rekey_bytes(from._internal_rekey_bytes());
+    _this->_internal_set_rekey_bytes(from._internal_rekey_bytes());
   }
   if (from._internal_rekey_packets() != 0) {
-    _internal_set_rekey_packets(from._internal_rekey_packets());
+    _this->_internal_set_rekey_packets(from._internal_rekey_packets());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListChild::CopyFrom(const ListChild& from) {
@@ -14028,50 +14200,43 @@ void ListChild::InternalSwap(ListChild* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mode_, lhs_arena,
-      &other->mode_, rhs_arena
+      &_impl_.mode_, lhs_arena,
+      &other->_impl_.mode_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &label_, lhs_arena,
-      &other->label_, rhs_arena
+      &_impl_.label_, lhs_arena,
+      &other->_impl_.label_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &dpd_action_, lhs_arena,
-      &other->dpd_action_, rhs_arena
+      &_impl_.dpd_action_, lhs_arena,
+      &other->_impl_.dpd_action_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &close_action_, lhs_arena,
-      &other->close_action_, rhs_arena
+      &_impl_.close_action_, lhs_arena,
+      &other->_impl_.close_action_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &interface_, lhs_arena,
-      &other->interface_, rhs_arena
+      &_impl_.interface_, lhs_arena,
+      &other->_impl_.interface_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &priority_, lhs_arena,
-      &other->priority_, rhs_arena
+      &_impl_.priority_, lhs_arena,
+      &other->_impl_.priority_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ListChild, rekey_packets_)
-      + sizeof(ListChild::rekey_packets_)
-      - PROTOBUF_FIELD_OFFSET(ListChild, local_ts_)>(
-          reinterpret_cast<char*>(&local_ts_),
-          reinterpret_cast<char*>(&other->local_ts_));
+      PROTOBUF_FIELD_OFFSET(ListChild, _impl_.rekey_packets_)
+      + sizeof(ListChild::_impl_.rekey_packets_)
+      - PROTOBUF_FIELD_OFFSET(ListChild, _impl_.local_ts_)>(
+          reinterpret_cast<char*>(&_impl_.local_ts_),
+          reinterpret_cast<char*>(&other->_impl_.local_ts_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListChild::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[31]);
 }
@@ -14084,123 +14249,145 @@ class ListConnResp::_Internal {
 
 ListConnResp::ListConnResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  local_addrs_(arena),
-  remote_addrs_(arena),
-  local_auth_(arena),
-  remote_auth_(arena),
-  children_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.ListConnResp)
 }
 ListConnResp::ListConnResp(const ListConnResp& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      local_addrs_(from.local_addrs_),
-      remote_addrs_(from.remote_addrs_),
-      local_auth_(from.local_auth_),
-      remote_auth_(from.remote_auth_),
-      children_(from.children_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListConnResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_addrs_){from._impl_.local_addrs_}
+    , decltype(_impl_.remote_addrs_){from._impl_.remote_addrs_}
+    , decltype(_impl_.local_auth_){from._impl_.local_auth_}
+    , decltype(_impl_.remote_auth_){from._impl_.remote_auth_}
+    , decltype(_impl_.children_){from._impl_.children_}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.version_){}
+    , decltype(_impl_.unique_){}
+    , decltype(_impl_.ppk_){}
+    , decltype(_impl_.ppk_required_){}
+    , decltype(_impl_.reauth_time_){}
+    , decltype(_impl_.rekey_time_){}
+    , decltype(_impl_.dpd_delay_){}
+    , decltype(_impl_.dpd_timeout_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
-  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.version_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.version_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_version().empty()) {
-    version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_version(), 
-      GetArenaForAllocation());
+    _this->_impl_.version_.Set(from._internal_version(), 
+      _this->GetArenaForAllocation());
   }
-  unique_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.unique_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    unique_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.unique_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_unique().empty()) {
-    unique_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_unique(), 
-      GetArenaForAllocation());
+    _this->_impl_.unique_.Set(from._internal_unique(), 
+      _this->GetArenaForAllocation());
   }
-  ppk_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ppk_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ppk_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ppk_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ppk().empty()) {
-    ppk_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ppk(), 
-      GetArenaForAllocation());
+    _this->_impl_.ppk_.Set(from._internal_ppk(), 
+      _this->GetArenaForAllocation());
   }
-  ppk_required_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ppk_required_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ppk_required_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ppk_required_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ppk_required().empty()) {
-    ppk_required_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ppk_required(), 
-      GetArenaForAllocation());
+    _this->_impl_.ppk_required_.Set(from._internal_ppk_required(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&reauth_time_, &from.reauth_time_,
-    static_cast<size_t>(reinterpret_cast<char*>(&dpd_timeout_) -
-    reinterpret_cast<char*>(&reauth_time_)) + sizeof(dpd_timeout_));
+  ::memcpy(&_impl_.reauth_time_, &from._impl_.reauth_time_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.dpd_timeout_) -
+    reinterpret_cast<char*>(&_impl_.reauth_time_)) + sizeof(_impl_.dpd_timeout_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.ListConnResp)
 }
 
-inline void ListConnResp::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-unique_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  unique_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ppk_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ppk_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-ppk_required_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ppk_required_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&reauth_time_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&dpd_timeout_) -
-    reinterpret_cast<char*>(&reauth_time_)) + sizeof(dpd_timeout_));
+inline void ListConnResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_addrs_){arena}
+    , decltype(_impl_.remote_addrs_){arena}
+    , decltype(_impl_.local_auth_){arena}
+    , decltype(_impl_.remote_auth_){arena}
+    , decltype(_impl_.children_){arena}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.version_){}
+    , decltype(_impl_.unique_){}
+    , decltype(_impl_.ppk_){}
+    , decltype(_impl_.ppk_required_){}
+    , decltype(_impl_.reauth_time_){0u}
+    , decltype(_impl_.rekey_time_){0u}
+    , decltype(_impl_.dpd_delay_){0u}
+    , decltype(_impl_.dpd_timeout_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.version_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.version_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.unique_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.unique_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ppk_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ppk_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ppk_required_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ppk_required_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListConnResp::~ListConnResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.ListConnResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListConnResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  unique_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ppk_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ppk_required_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.local_addrs_.~RepeatedPtrField();
+  _impl_.remote_addrs_.~RepeatedPtrField();
+  _impl_.local_auth_.~RepeatedPtrField();
+  _impl_.remote_auth_.~RepeatedPtrField();
+  _impl_.children_.~RepeatedPtrField();
+  _impl_.name_.Destroy();
+  _impl_.version_.Destroy();
+  _impl_.unique_.Destroy();
+  _impl_.ppk_.Destroy();
+  _impl_.ppk_required_.Destroy();
 }
 
-void ListConnResp::ArenaDtor(void* object) {
-  ListConnResp* _this = reinterpret_cast< ListConnResp* >(object);
-  (void)_this;
-}
-void ListConnResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListConnResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListConnResp::Clear() {
@@ -14209,35 +14396,35 @@ void ListConnResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  local_addrs_.Clear();
-  remote_addrs_.Clear();
-  local_auth_.Clear();
-  remote_auth_.Clear();
-  children_.Clear();
-  name_.ClearToEmpty();
-  version_.ClearToEmpty();
-  unique_.ClearToEmpty();
-  ppk_.ClearToEmpty();
-  ppk_required_.ClearToEmpty();
-  ::memset(&reauth_time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&dpd_timeout_) -
-      reinterpret_cast<char*>(&reauth_time_)) + sizeof(dpd_timeout_));
+  _impl_.local_addrs_.Clear();
+  _impl_.remote_addrs_.Clear();
+  _impl_.local_auth_.Clear();
+  _impl_.remote_auth_.Clear();
+  _impl_.children_.Clear();
+  _impl_.name_.ClearToEmpty();
+  _impl_.version_.ClearToEmpty();
+  _impl_.unique_.ClearToEmpty();
+  _impl_.ppk_.ClearToEmpty();
+  _impl_.ppk_required_.ClearToEmpty();
+  ::memset(&_impl_.reauth_time_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.dpd_timeout_) -
+      reinterpret_cast<char*>(&_impl_.reauth_time_)) + sizeof(_impl_.dpd_timeout_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListConnResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.name"));
         } else
           goto handle_unusual;
         continue;
@@ -14271,16 +14458,16 @@ const char* ListConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_version();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.version"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.version"));
         } else
           goto handle_unusual;
         continue;
       // uint32 reauth_time = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          reauth_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.reauth_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -14288,7 +14475,7 @@ const char* ListConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       // uint32 rekey_time = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          rekey_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rekey_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -14297,16 +14484,16 @@ const char* ListConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_unique();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.unique"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.unique"));
         } else
           goto handle_unusual;
         continue;
       // uint32 dpd_delay = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          dpd_delay_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.dpd_delay_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -14314,7 +14501,7 @@ const char* ListConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       // uint32 dpd_timeout = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          dpd_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.dpd_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -14323,9 +14510,9 @@ const char* ListConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_ppk();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.ppk"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.ppk"));
         } else
           goto handle_unusual;
         continue;
@@ -14333,9 +14520,9 @@ const char* ListConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_ppk_required();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.ppk_required"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListConnResp.ppk_required"));
         } else
           goto handle_unusual;
         continue;
@@ -14418,19 +14605,19 @@ uint8_t* ListConnResp::_InternalSerialize(
   }
 
   // repeated .opi_api.security.v1.Addrs local_addrs = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_local_addrs_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_local_addrs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_local_addrs(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, this->_internal_local_addrs(i), target, stream);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .opi_api.security.v1.Addrs remote_addrs = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_remote_addrs_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_remote_addrs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_remote_addrs(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, this->_internal_remote_addrs(i), target, stream);
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // string version = 4;
@@ -14446,13 +14633,13 @@ uint8_t* ListConnResp::_InternalSerialize(
   // uint32 reauth_time = 5;
   if (this->_internal_reauth_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_reauth_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_reauth_time(), target);
   }
 
   // uint32 rekey_time = 6;
   if (this->_internal_rekey_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_rekey_time(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_rekey_time(), target);
   }
 
   // string unique = 7;
@@ -14468,13 +14655,13 @@ uint8_t* ListConnResp::_InternalSerialize(
   // uint32 dpd_delay = 8;
   if (this->_internal_dpd_delay() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(8, this->_internal_dpd_delay(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(8, this->_internal_dpd_delay(), target);
   }
 
   // uint32 dpd_timeout = 9;
   if (this->_internal_dpd_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(9, this->_internal_dpd_timeout(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(9, this->_internal_dpd_timeout(), target);
   }
 
   // string ppk = 10;
@@ -14498,31 +14685,31 @@ uint8_t* ListConnResp::_InternalSerialize(
   }
 
   // repeated .opi_api.security.v1.ListConnAuth local_auth = 12;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_local_auth_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_local_auth_size()); i < n; i++) {
+    const auto& repfield = this->_internal_local_auth(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(12, this->_internal_local_auth(i), target, stream);
+        InternalWriteMessage(12, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .opi_api.security.v1.ListConnAuth remote_auth = 13;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_remote_auth_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_remote_auth_size()); i < n; i++) {
+    const auto& repfield = this->_internal_remote_auth(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(13, this->_internal_remote_auth(i), target, stream);
+        InternalWriteMessage(13, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .opi_api.security.v1.ListChild children = 14;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_children_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_children_size()); i < n; i++) {
+    const auto& repfield = this->_internal_children(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(14, this->_internal_children(i), target, stream);
+        InternalWriteMessage(14, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.ListConnResp)
@@ -14539,35 +14726,35 @@ size_t ListConnResp::ByteSizeLong() const {
 
   // repeated .opi_api.security.v1.Addrs local_addrs = 2;
   total_size += 1UL * this->_internal_local_addrs_size();
-  for (const auto& msg : this->local_addrs_) {
+  for (const auto& msg : this->_impl_.local_addrs_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .opi_api.security.v1.Addrs remote_addrs = 3;
   total_size += 1UL * this->_internal_remote_addrs_size();
-  for (const auto& msg : this->remote_addrs_) {
+  for (const auto& msg : this->_impl_.remote_addrs_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .opi_api.security.v1.ListConnAuth local_auth = 12;
   total_size += 1UL * this->_internal_local_auth_size();
-  for (const auto& msg : this->local_auth_) {
+  for (const auto& msg : this->_impl_.local_auth_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .opi_api.security.v1.ListConnAuth remote_auth = 13;
   total_size += 1UL * this->_internal_remote_auth_size();
-  for (const auto& msg : this->remote_auth_) {
+  for (const auto& msg : this->_impl_.remote_auth_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .opi_api.security.v1.ListChild children = 14;
   total_size += 1UL * this->_internal_children_size();
-  for (const auto& msg : this->children_) {
+  for (const auto& msg : this->_impl_.children_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -14609,79 +14796,75 @@ size_t ListConnResp::ByteSizeLong() const {
 
   // uint32 reauth_time = 5;
   if (this->_internal_reauth_time() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_reauth_time());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_reauth_time());
   }
 
   // uint32 rekey_time = 6;
   if (this->_internal_rekey_time() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_time());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_rekey_time());
   }
 
   // uint32 dpd_delay = 8;
   if (this->_internal_dpd_delay() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_dpd_delay());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_dpd_delay());
   }
 
   // uint32 dpd_timeout = 9;
   if (this->_internal_dpd_timeout() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_dpd_timeout());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_dpd_timeout());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListConnResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListConnResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListConnResp::GetClassData() const { return &_class_data_; }
 
-void ListConnResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListConnResp *>(to)->MergeFrom(
-      static_cast<const ListConnResp &>(from));
-}
 
-
-void ListConnResp::MergeFrom(const ListConnResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListConnResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListConnResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListConnResp*>(&to_msg);
+  auto& from = static_cast<const ListConnResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListConnResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  local_addrs_.MergeFrom(from.local_addrs_);
-  remote_addrs_.MergeFrom(from.remote_addrs_);
-  local_auth_.MergeFrom(from.local_auth_);
-  remote_auth_.MergeFrom(from.remote_auth_);
-  children_.MergeFrom(from.children_);
+  _this->_impl_.local_addrs_.MergeFrom(from._impl_.local_addrs_);
+  _this->_impl_.remote_addrs_.MergeFrom(from._impl_.remote_addrs_);
+  _this->_impl_.local_auth_.MergeFrom(from._impl_.local_auth_);
+  _this->_impl_.remote_auth_.MergeFrom(from._impl_.remote_auth_);
+  _this->_impl_.children_.MergeFrom(from._impl_.children_);
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (!from._internal_version().empty()) {
-    _internal_set_version(from._internal_version());
+    _this->_internal_set_version(from._internal_version());
   }
   if (!from._internal_unique().empty()) {
-    _internal_set_unique(from._internal_unique());
+    _this->_internal_set_unique(from._internal_unique());
   }
   if (!from._internal_ppk().empty()) {
-    _internal_set_ppk(from._internal_ppk());
+    _this->_internal_set_ppk(from._internal_ppk());
   }
   if (!from._internal_ppk_required().empty()) {
-    _internal_set_ppk_required(from._internal_ppk_required());
+    _this->_internal_set_ppk_required(from._internal_ppk_required());
   }
   if (from._internal_reauth_time() != 0) {
-    _internal_set_reauth_time(from._internal_reauth_time());
+    _this->_internal_set_reauth_time(from._internal_reauth_time());
   }
   if (from._internal_rekey_time() != 0) {
-    _internal_set_rekey_time(from._internal_rekey_time());
+    _this->_internal_set_rekey_time(from._internal_rekey_time());
   }
   if (from._internal_dpd_delay() != 0) {
-    _internal_set_dpd_delay(from._internal_dpd_delay());
+    _this->_internal_set_dpd_delay(from._internal_dpd_delay());
   }
   if (from._internal_dpd_timeout() != 0) {
-    _internal_set_dpd_timeout(from._internal_dpd_timeout());
+    _this->_internal_set_dpd_timeout(from._internal_dpd_timeout());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListConnResp::CopyFrom(const ListConnResp& from) {
@@ -14700,46 +14883,41 @@ void ListConnResp::InternalSwap(ListConnResp* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  local_addrs_.InternalSwap(&other->local_addrs_);
-  remote_addrs_.InternalSwap(&other->remote_addrs_);
-  local_auth_.InternalSwap(&other->local_auth_);
-  remote_auth_.InternalSwap(&other->remote_auth_);
-  children_.InternalSwap(&other->children_);
+  _impl_.local_addrs_.InternalSwap(&other->_impl_.local_addrs_);
+  _impl_.remote_addrs_.InternalSwap(&other->_impl_.remote_addrs_);
+  _impl_.local_auth_.InternalSwap(&other->_impl_.local_auth_);
+  _impl_.remote_auth_.InternalSwap(&other->_impl_.remote_auth_);
+  _impl_.children_.InternalSwap(&other->_impl_.children_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &version_, lhs_arena,
-      &other->version_, rhs_arena
+      &_impl_.version_, lhs_arena,
+      &other->_impl_.version_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &unique_, lhs_arena,
-      &other->unique_, rhs_arena
+      &_impl_.unique_, lhs_arena,
+      &other->_impl_.unique_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ppk_, lhs_arena,
-      &other->ppk_, rhs_arena
+      &_impl_.ppk_, lhs_arena,
+      &other->_impl_.ppk_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ppk_required_, lhs_arena,
-      &other->ppk_required_, rhs_arena
+      &_impl_.ppk_required_, lhs_arena,
+      &other->_impl_.ppk_required_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ListConnResp, dpd_timeout_)
-      + sizeof(ListConnResp::dpd_timeout_)
-      - PROTOBUF_FIELD_OFFSET(ListConnResp, reauth_time_)>(
-          reinterpret_cast<char*>(&reauth_time_),
-          reinterpret_cast<char*>(&other->reauth_time_));
+      PROTOBUF_FIELD_OFFSET(ListConnResp, _impl_.dpd_timeout_)
+      + sizeof(ListConnResp::_impl_.dpd_timeout_)
+      - PROTOBUF_FIELD_OFFSET(ListConnResp, _impl_.reauth_time_)>(
+          reinterpret_cast<char*>(&_impl_.reauth_time_),
+          reinterpret_cast<char*>(&other->_impl_.reauth_time_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListConnResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[32]);
 }
@@ -14752,43 +14930,47 @@ class IPsecListConnsResp::_Internal {
 
 IPsecListConnsResp::IPsecListConnsResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  connection_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecListConnsResp)
 }
 IPsecListConnsResp::IPsecListConnsResp(const IPsecListConnsResp& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      connection_(from.connection_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecListConnsResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.connection_){from._impl_.connection_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecListConnsResp)
 }
 
-inline void IPsecListConnsResp::SharedCtor() {
+inline void IPsecListConnsResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.connection_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 IPsecListConnsResp::~IPsecListConnsResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecListConnsResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecListConnsResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.connection_.~RepeatedPtrField();
 }
 
-void IPsecListConnsResp::ArenaDtor(void* object) {
-  IPsecListConnsResp* _this = reinterpret_cast< IPsecListConnsResp* >(object);
-  (void)_this;
-}
-void IPsecListConnsResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecListConnsResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecListConnsResp::Clear() {
@@ -14797,15 +14979,15 @@ void IPsecListConnsResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  connection_.Clear();
+  _impl_.connection_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecListConnsResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecListConnsResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.security.v1.ListConnResp connection = 1;
       case 1:
@@ -14850,15 +15032,15 @@ uint8_t* IPsecListConnsResp::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.security.v1.ListConnResp connection = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_connection_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_connection_size()); i < n; i++) {
+    const auto& repfield = this->_internal_connection(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_connection(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecListConnsResp)
@@ -14875,35 +15057,31 @@ size_t IPsecListConnsResp::ByteSizeLong() const {
 
   // repeated .opi_api.security.v1.ListConnResp connection = 1;
   total_size += 1UL * this->_internal_connection_size();
-  for (const auto& msg : this->connection_) {
+  for (const auto& msg : this->_impl_.connection_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecListConnsResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecListConnsResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecListConnsResp::GetClassData() const { return &_class_data_; }
 
-void IPsecListConnsResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecListConnsResp *>(to)->MergeFrom(
-      static_cast<const IPsecListConnsResp &>(from));
-}
 
-
-void IPsecListConnsResp::MergeFrom(const IPsecListConnsResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListConnsResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecListConnsResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecListConnsResp*>(&to_msg);
+  auto& from = static_cast<const IPsecListConnsResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListConnsResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  connection_.MergeFrom(from.connection_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.connection_.MergeFrom(from._impl_.connection_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecListConnsResp::CopyFrom(const IPsecListConnsResp& from) {
@@ -14920,11 +15098,11 @@ bool IPsecListConnsResp::IsInitialized() const {
 void IPsecListConnsResp::InternalSwap(IPsecListConnsResp* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  connection_.InternalSwap(&other->connection_);
+  _impl_.connection_.InternalSwap(&other->_impl_.connection_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListConnsResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[33]);
 }
@@ -14938,79 +15116,88 @@ class IPsecListCertsReq::_Internal {
 IPsecListCertsReq::IPsecListCertsReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecListCertsReq)
 }
 IPsecListCertsReq::IPsecListCertsReq(const IPsecListCertsReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecListCertsReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.type_){}
+    , decltype(_impl_.flag_){}
+    , decltype(_impl_.subject_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.type_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.type_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_type().empty()) {
-    type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_type(), 
-      GetArenaForAllocation());
+    _this->_impl_.type_.Set(from._internal_type(), 
+      _this->GetArenaForAllocation());
   }
-  flag_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.flag_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    flag_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.flag_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_flag().empty()) {
-    flag_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_flag(), 
-      GetArenaForAllocation());
+    _this->_impl_.flag_.Set(from._internal_flag(), 
+      _this->GetArenaForAllocation());
   }
-  subject_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.subject_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    subject_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.subject_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_subject().empty()) {
-    subject_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subject(), 
-      GetArenaForAllocation());
+    _this->_impl_.subject_.Set(from._internal_subject(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecListCertsReq)
 }
 
-inline void IPsecListCertsReq::SharedCtor() {
-type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-flag_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  flag_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-subject_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  subject_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void IPsecListCertsReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.type_){}
+    , decltype(_impl_.flag_){}
+    , decltype(_impl_.subject_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.flag_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.flag_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.subject_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.subject_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecListCertsReq::~IPsecListCertsReq() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecListCertsReq)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecListCertsReq::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  flag_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  subject_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.type_.Destroy();
+  _impl_.flag_.Destroy();
+  _impl_.subject_.Destroy();
 }
 
-void IPsecListCertsReq::ArenaDtor(void* object) {
-  IPsecListCertsReq* _this = reinterpret_cast< IPsecListCertsReq* >(object);
-  (void)_this;
-}
-void IPsecListCertsReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecListCertsReq::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecListCertsReq::Clear() {
@@ -15019,25 +15206,25 @@ void IPsecListCertsReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  type_.ClearToEmpty();
-  flag_.ClearToEmpty();
-  subject_.ClearToEmpty();
+  _impl_.type_.ClearToEmpty();
+  _impl_.flag_.ClearToEmpty();
+  _impl_.subject_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecListCertsReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecListCertsReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_type();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecListCertsReq.type"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecListCertsReq.type"));
         } else
           goto handle_unusual;
         continue;
@@ -15045,9 +15232,9 @@ const char* IPsecListCertsReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_flag();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecListCertsReq.flag"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecListCertsReq.flag"));
         } else
           goto handle_unusual;
         continue;
@@ -15055,9 +15242,9 @@ const char* IPsecListCertsReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_subject();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecListCertsReq.subject"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecListCertsReq.subject"));
         } else
           goto handle_unusual;
         continue;
@@ -15121,7 +15308,7 @@ uint8_t* IPsecListCertsReq::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecListCertsReq)
@@ -15157,38 +15344,34 @@ size_t IPsecListCertsReq::ByteSizeLong() const {
         this->_internal_subject());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecListCertsReq::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecListCertsReq::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecListCertsReq::GetClassData() const { return &_class_data_; }
 
-void IPsecListCertsReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecListCertsReq *>(to)->MergeFrom(
-      static_cast<const IPsecListCertsReq &>(from));
-}
 
-
-void IPsecListCertsReq::MergeFrom(const IPsecListCertsReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListCertsReq)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecListCertsReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecListCertsReq*>(&to_msg);
+  auto& from = static_cast<const IPsecListCertsReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListCertsReq)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_type().empty()) {
-    _internal_set_type(from._internal_type());
+    _this->_internal_set_type(from._internal_type());
   }
   if (!from._internal_flag().empty()) {
-    _internal_set_flag(from._internal_flag());
+    _this->_internal_set_flag(from._internal_flag());
   }
   if (!from._internal_subject().empty()) {
-    _internal_set_subject(from._internal_subject());
+    _this->_internal_set_subject(from._internal_subject());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecListCertsReq::CopyFrom(const IPsecListCertsReq& from) {
@@ -15208,24 +15391,21 @@ void IPsecListCertsReq::InternalSwap(IPsecListCertsReq* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &type_, lhs_arena,
-      &other->type_, rhs_arena
+      &_impl_.type_, lhs_arena,
+      &other->_impl_.type_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &flag_, lhs_arena,
-      &other->flag_, rhs_arena
+      &_impl_.flag_, lhs_arena,
+      &other->_impl_.flag_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &subject_, lhs_arena,
-      &other->subject_, rhs_arena
+      &_impl_.subject_, lhs_arena,
+      &other->_impl_.subject_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListCertsReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[34]);
 }
@@ -15239,112 +15419,125 @@ class ListCert::_Internal {
 ListCert::ListCert(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.ListCert)
 }
 ListCert::ListCert(const ListCert& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListCert* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.hasprivkey_){}
+    , decltype(_impl_.data_){}
+    , decltype(_impl_.subject_){}
+    , decltype(_impl_.notbefore_){}
+    , decltype(_impl_.notafter_){}
+    , decltype(_impl_.type_){}
+    , decltype(_impl_.flag_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  hasprivkey_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.hasprivkey_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    hasprivkey_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.hasprivkey_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_hasprivkey().empty()) {
-    hasprivkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_hasprivkey(), 
-      GetArenaForAllocation());
+    _this->_impl_.hasprivkey_.Set(from._internal_hasprivkey(), 
+      _this->GetArenaForAllocation());
   }
-  data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.data_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.data_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_data().empty()) {
-    data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_data(), 
-      GetArenaForAllocation());
+    _this->_impl_.data_.Set(from._internal_data(), 
+      _this->GetArenaForAllocation());
   }
-  subject_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.subject_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    subject_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.subject_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_subject().empty()) {
-    subject_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subject(), 
-      GetArenaForAllocation());
+    _this->_impl_.subject_.Set(from._internal_subject(), 
+      _this->GetArenaForAllocation());
   }
-  notbefore_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.notbefore_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    notbefore_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.notbefore_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_notbefore().empty()) {
-    notbefore_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_notbefore(), 
-      GetArenaForAllocation());
+    _this->_impl_.notbefore_.Set(from._internal_notbefore(), 
+      _this->GetArenaForAllocation());
   }
-  notafter_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.notafter_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    notafter_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.notafter_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_notafter().empty()) {
-    notafter_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_notafter(), 
-      GetArenaForAllocation());
+    _this->_impl_.notafter_.Set(from._internal_notafter(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&type_, &from.type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&flag_) -
-    reinterpret_cast<char*>(&type_)) + sizeof(flag_));
+  ::memcpy(&_impl_.type_, &from._impl_.type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.flag_) -
+    reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.flag_));
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.ListCert)
 }
 
-inline void ListCert::SharedCtor() {
-hasprivkey_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  hasprivkey_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-subject_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  subject_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-notbefore_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  notbefore_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-notafter_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  notafter_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&type_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&flag_) -
-    reinterpret_cast<char*>(&type_)) + sizeof(flag_));
+inline void ListCert::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.hasprivkey_){}
+    , decltype(_impl_.data_){}
+    , decltype(_impl_.subject_){}
+    , decltype(_impl_.notbefore_){}
+    , decltype(_impl_.notafter_){}
+    , decltype(_impl_.type_){0}
+    , decltype(_impl_.flag_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.hasprivkey_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.hasprivkey_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.data_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.data_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.subject_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.subject_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.notbefore_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.notbefore_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.notafter_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.notafter_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListCert::~ListCert() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.ListCert)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ListCert::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  hasprivkey_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  subject_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  notbefore_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  notafter_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.hasprivkey_.Destroy();
+  _impl_.data_.Destroy();
+  _impl_.subject_.Destroy();
+  _impl_.notbefore_.Destroy();
+  _impl_.notafter_.Destroy();
 }
 
-void ListCert::ArenaDtor(void* object) {
-  ListCert* _this = reinterpret_cast< ListCert* >(object);
-  (void)_this;
-}
-void ListCert::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ListCert::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ListCert::Clear() {
@@ -15353,22 +15546,22 @@ void ListCert::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  hasprivkey_.ClearToEmpty();
-  data_.ClearToEmpty();
-  subject_.ClearToEmpty();
-  notbefore_.ClearToEmpty();
-  notafter_.ClearToEmpty();
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&flag_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(flag_));
+  _impl_.hasprivkey_.ClearToEmpty();
+  _impl_.data_.ClearToEmpty();
+  _impl_.subject_.ClearToEmpty();
+  _impl_.notbefore_.ClearToEmpty();
+  _impl_.notafter_.ClearToEmpty();
+  ::memset(&_impl_.type_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.flag_) -
+      reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.flag_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListCert::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ListCert::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.security.v1.CertificateType type = 1;
       case 1:
@@ -15392,9 +15585,9 @@ const char* ListCert::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_hasprivkey();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListCert.hasprivkey"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListCert.hasprivkey"));
         } else
           goto handle_unusual;
         continue;
@@ -15402,9 +15595,9 @@ const char* ListCert::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_data();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListCert.data"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListCert.data"));
         } else
           goto handle_unusual;
         continue;
@@ -15412,9 +15605,9 @@ const char* ListCert::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_subject();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListCert.subject"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListCert.subject"));
         } else
           goto handle_unusual;
         continue;
@@ -15422,9 +15615,9 @@ const char* ListCert::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_notbefore();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListCert.notbefore"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListCert.notbefore"));
         } else
           goto handle_unusual;
         continue;
@@ -15432,9 +15625,9 @@ const char* ListCert::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_notafter();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.ListCert.notafter"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.ListCert.notafter"));
         } else
           goto handle_unusual;
         continue;
@@ -15470,14 +15663,14 @@ uint8_t* ListCert::_InternalSerialize(
   // .opi_api.security.v1.CertificateType type = 1;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_type(), target);
   }
 
   // .opi_api.security.v1.X509CertificateFlag flag = 2;
   if (this->_internal_flag() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_flag(), target);
   }
 
@@ -15532,7 +15725,7 @@ uint8_t* ListCert::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.ListCert)
@@ -15585,59 +15778,55 @@ size_t ListCert::ByteSizeLong() const {
   // .opi_api.security.v1.CertificateType type = 1;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // .opi_api.security.v1.X509CertificateFlag flag = 2;
   if (this->_internal_flag() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_flag());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_flag());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListCert::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ListCert::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListCert::GetClassData() const { return &_class_data_; }
 
-void ListCert::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ListCert *>(to)->MergeFrom(
-      static_cast<const ListCert &>(from));
-}
 
-
-void ListCert::MergeFrom(const ListCert& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListCert)
-  GOOGLE_DCHECK_NE(&from, this);
+void ListCert::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListCert*>(&to_msg);
+  auto& from = static_cast<const ListCert&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.ListCert)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_hasprivkey().empty()) {
-    _internal_set_hasprivkey(from._internal_hasprivkey());
+    _this->_internal_set_hasprivkey(from._internal_hasprivkey());
   }
   if (!from._internal_data().empty()) {
-    _internal_set_data(from._internal_data());
+    _this->_internal_set_data(from._internal_data());
   }
   if (!from._internal_subject().empty()) {
-    _internal_set_subject(from._internal_subject());
+    _this->_internal_set_subject(from._internal_subject());
   }
   if (!from._internal_notbefore().empty()) {
-    _internal_set_notbefore(from._internal_notbefore());
+    _this->_internal_set_notbefore(from._internal_notbefore());
   }
   if (!from._internal_notafter().empty()) {
-    _internal_set_notafter(from._internal_notafter());
+    _this->_internal_set_notafter(from._internal_notafter());
   }
   if (from._internal_type() != 0) {
-    _internal_set_type(from._internal_type());
+    _this->_internal_set_type(from._internal_type());
   }
   if (from._internal_flag() != 0) {
-    _internal_set_flag(from._internal_flag());
+    _this->_internal_set_flag(from._internal_flag());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ListCert::CopyFrom(const ListCert& from) {
@@ -15657,40 +15846,35 @@ void ListCert::InternalSwap(ListCert* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &hasprivkey_, lhs_arena,
-      &other->hasprivkey_, rhs_arena
+      &_impl_.hasprivkey_, lhs_arena,
+      &other->_impl_.hasprivkey_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &data_, lhs_arena,
-      &other->data_, rhs_arena
+      &_impl_.data_, lhs_arena,
+      &other->_impl_.data_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &subject_, lhs_arena,
-      &other->subject_, rhs_arena
+      &_impl_.subject_, lhs_arena,
+      &other->_impl_.subject_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &notbefore_, lhs_arena,
-      &other->notbefore_, rhs_arena
+      &_impl_.notbefore_, lhs_arena,
+      &other->_impl_.notbefore_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &notafter_, lhs_arena,
-      &other->notafter_, rhs_arena
+      &_impl_.notafter_, lhs_arena,
+      &other->_impl_.notafter_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ListCert, flag_)
-      + sizeof(ListCert::flag_)
-      - PROTOBUF_FIELD_OFFSET(ListCert, type_)>(
-          reinterpret_cast<char*>(&type_),
-          reinterpret_cast<char*>(&other->type_));
+      PROTOBUF_FIELD_OFFSET(ListCert, _impl_.flag_)
+      + sizeof(ListCert::_impl_.flag_)
+      - PROTOBUF_FIELD_OFFSET(ListCert, _impl_.type_)>(
+          reinterpret_cast<char*>(&_impl_.type_),
+          reinterpret_cast<char*>(&other->_impl_.type_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListCert::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[35]);
 }
@@ -15703,43 +15887,47 @@ class IPsecListCertsResp::_Internal {
 
 IPsecListCertsResp::IPsecListCertsResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  certs_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecListCertsResp)
 }
 IPsecListCertsResp::IPsecListCertsResp(const IPsecListCertsResp& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      certs_(from.certs_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecListCertsResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.certs_){from._impl_.certs_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecListCertsResp)
 }
 
-inline void IPsecListCertsResp::SharedCtor() {
+inline void IPsecListCertsResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.certs_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 IPsecListCertsResp::~IPsecListCertsResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecListCertsResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecListCertsResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.certs_.~RepeatedPtrField();
 }
 
-void IPsecListCertsResp::ArenaDtor(void* object) {
-  IPsecListCertsResp* _this = reinterpret_cast< IPsecListCertsResp* >(object);
-  (void)_this;
-}
-void IPsecListCertsResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecListCertsResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecListCertsResp::Clear() {
@@ -15748,15 +15936,15 @@ void IPsecListCertsResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  certs_.Clear();
+  _impl_.certs_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecListCertsResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecListCertsResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.security.v1.ListCert certs = 1;
       case 1:
@@ -15801,15 +15989,15 @@ uint8_t* IPsecListCertsResp::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.security.v1.ListCert certs = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_certs_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_certs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_certs(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_certs(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecListCertsResp)
@@ -15826,35 +16014,31 @@ size_t IPsecListCertsResp::ByteSizeLong() const {
 
   // repeated .opi_api.security.v1.ListCert certs = 1;
   total_size += 1UL * this->_internal_certs_size();
-  for (const auto& msg : this->certs_) {
+  for (const auto& msg : this->_impl_.certs_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecListCertsResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecListCertsResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecListCertsResp::GetClassData() const { return &_class_data_; }
 
-void IPsecListCertsResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecListCertsResp *>(to)->MergeFrom(
-      static_cast<const IPsecListCertsResp &>(from));
-}
 
-
-void IPsecListCertsResp::MergeFrom(const IPsecListCertsResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListCertsResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecListCertsResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecListCertsResp*>(&to_msg);
+  auto& from = static_cast<const IPsecListCertsResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecListCertsResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  certs_.MergeFrom(from.certs_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.certs_.MergeFrom(from._impl_.certs_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecListCertsResp::CopyFrom(const IPsecListCertsResp& from) {
@@ -15871,11 +16055,11 @@ bool IPsecListCertsResp::IsInitialized() const {
 void IPsecListCertsResp::InternalSwap(IPsecListCertsResp* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  certs_.InternalSwap(&other->certs_);
+  _impl_.certs_.InternalSwap(&other->_impl_.certs_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListCertsResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[36]);
 }
@@ -15889,52 +16073,54 @@ class IPsecLoadConnReq::_Internal {
 
 const ::opi_api::security::v1::Connection&
 IPsecLoadConnReq::_Internal::connection(const IPsecLoadConnReq* msg) {
-  return *msg->connection_;
+  return *msg->_impl_.connection_;
 }
 IPsecLoadConnReq::IPsecLoadConnReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecLoadConnReq)
 }
 IPsecLoadConnReq::IPsecLoadConnReq(const IPsecLoadConnReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecLoadConnReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.connection_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_connection()) {
-    connection_ = new ::opi_api::security::v1::Connection(*from.connection_);
-  } else {
-    connection_ = nullptr;
+    _this->_impl_.connection_ = new ::opi_api::security::v1::Connection(*from._impl_.connection_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecLoadConnReq)
 }
 
-inline void IPsecLoadConnReq::SharedCtor() {
-connection_ = nullptr;
+inline void IPsecLoadConnReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.connection_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 IPsecLoadConnReq::~IPsecLoadConnReq() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecLoadConnReq)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecLoadConnReq::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete connection_;
+  if (this != internal_default_instance()) delete _impl_.connection_;
 }
 
-void IPsecLoadConnReq::ArenaDtor(void* object) {
-  IPsecLoadConnReq* _this = reinterpret_cast< IPsecLoadConnReq* >(object);
-  (void)_this;
-}
-void IPsecLoadConnReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecLoadConnReq::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecLoadConnReq::Clear() {
@@ -15943,18 +16129,18 @@ void IPsecLoadConnReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && connection_ != nullptr) {
-    delete connection_;
+  if (GetArenaForAllocation() == nullptr && _impl_.connection_ != nullptr) {
+    delete _impl_.connection_;
   }
-  connection_ = nullptr;
+  _impl_.connection_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecLoadConnReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecLoadConnReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.security.v1.Connection connection = 1;
       case 1:
@@ -15995,14 +16181,13 @@ uint8_t* IPsecLoadConnReq::_InternalSerialize(
 
   // .opi_api.security.v1.Connection connection = 1;
   if (this->_internal_has_connection()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::connection(this), target, stream);
+      InternalWriteMessage(1, _Internal::connection(this),
+        _Internal::connection(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecLoadConnReq)
@@ -16021,35 +16206,32 @@ size_t IPsecLoadConnReq::ByteSizeLong() const {
   if (this->_internal_has_connection()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *connection_);
+        *_impl_.connection_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecLoadConnReq::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecLoadConnReq::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecLoadConnReq::GetClassData() const { return &_class_data_; }
 
-void IPsecLoadConnReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecLoadConnReq *>(to)->MergeFrom(
-      static_cast<const IPsecLoadConnReq &>(from));
-}
 
-
-void IPsecLoadConnReq::MergeFrom(const IPsecLoadConnReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecLoadConnReq)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecLoadConnReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecLoadConnReq*>(&to_msg);
+  auto& from = static_cast<const IPsecLoadConnReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecLoadConnReq)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_connection()) {
-    _internal_mutable_connection()->::opi_api::security::v1::Connection::MergeFrom(from._internal_connection());
+    _this->_internal_mutable_connection()->::opi_api::security::v1::Connection::MergeFrom(
+        from._internal_connection());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecLoadConnReq::CopyFrom(const IPsecLoadConnReq& from) {
@@ -16066,11 +16248,11 @@ bool IPsecLoadConnReq::IsInitialized() const {
 void IPsecLoadConnReq::InternalSwap(IPsecLoadConnReq* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(connection_, other->connection_);
+  swap(_impl_.connection_, other->_impl_.connection_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecLoadConnReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[37]);
 }
@@ -16084,53 +16266,58 @@ class IPsecLoadConnResp::_Internal {
 IPsecLoadConnResp::IPsecLoadConnResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecLoadConnResp)
 }
 IPsecLoadConnResp::IPsecLoadConnResp(const IPsecLoadConnResp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecLoadConnResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.success_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  success_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.success_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    success_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.success_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_success().empty()) {
-    success_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_success(), 
-      GetArenaForAllocation());
+    _this->_impl_.success_.Set(from._internal_success(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecLoadConnResp)
 }
 
-inline void IPsecLoadConnResp::SharedCtor() {
-success_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  success_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void IPsecLoadConnResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.success_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.success_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.success_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecLoadConnResp::~IPsecLoadConnResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecLoadConnResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecLoadConnResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  success_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.success_.Destroy();
 }
 
-void IPsecLoadConnResp::ArenaDtor(void* object) {
-  IPsecLoadConnResp* _this = reinterpret_cast< IPsecLoadConnResp* >(object);
-  (void)_this;
-}
-void IPsecLoadConnResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecLoadConnResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecLoadConnResp::Clear() {
@@ -16139,23 +16326,23 @@ void IPsecLoadConnResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  success_.ClearToEmpty();
+  _impl_.success_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecLoadConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecLoadConnResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string success = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_success();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecLoadConnResp.success"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecLoadConnResp.success"));
         } else
           goto handle_unusual;
         continue;
@@ -16199,7 +16386,7 @@ uint8_t* IPsecLoadConnResp::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecLoadConnResp)
@@ -16221,32 +16408,28 @@ size_t IPsecLoadConnResp::ByteSizeLong() const {
         this->_internal_success());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecLoadConnResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecLoadConnResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecLoadConnResp::GetClassData() const { return &_class_data_; }
 
-void IPsecLoadConnResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecLoadConnResp *>(to)->MergeFrom(
-      static_cast<const IPsecLoadConnResp &>(from));
-}
 
-
-void IPsecLoadConnResp::MergeFrom(const IPsecLoadConnResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecLoadConnResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecLoadConnResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecLoadConnResp*>(&to_msg);
+  auto& from = static_cast<const IPsecLoadConnResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecLoadConnResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_success().empty()) {
-    _internal_set_success(from._internal_success());
+    _this->_internal_set_success(from._internal_success());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecLoadConnResp::CopyFrom(const IPsecLoadConnResp& from) {
@@ -16266,14 +16449,13 @@ void IPsecLoadConnResp::InternalSwap(IPsecLoadConnResp* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &success_, lhs_arena,
-      &other->success_, rhs_arena
+      &_impl_.success_, lhs_arena,
+      &other->_impl_.success_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecLoadConnResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[38]);
 }
@@ -16287,53 +16469,58 @@ class IPsecUnloadConnReq::_Internal {
 IPsecUnloadConnReq::IPsecUnloadConnReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecUnloadConnReq)
 }
 IPsecUnloadConnReq::IPsecUnloadConnReq(const IPsecUnloadConnReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecUnloadConnReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecUnloadConnReq)
 }
 
-inline void IPsecUnloadConnReq::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void IPsecUnloadConnReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecUnloadConnReq::~IPsecUnloadConnReq() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecUnloadConnReq)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecUnloadConnReq::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.Destroy();
 }
 
-void IPsecUnloadConnReq::ArenaDtor(void* object) {
-  IPsecUnloadConnReq* _this = reinterpret_cast< IPsecUnloadConnReq* >(object);
-  (void)_this;
-}
-void IPsecUnloadConnReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecUnloadConnReq::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecUnloadConnReq::Clear() {
@@ -16342,23 +16529,23 @@ void IPsecUnloadConnReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
+  _impl_.name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecUnloadConnReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecUnloadConnReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecUnloadConnReq.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecUnloadConnReq.name"));
         } else
           goto handle_unusual;
         continue;
@@ -16402,7 +16589,7 @@ uint8_t* IPsecUnloadConnReq::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecUnloadConnReq)
@@ -16424,32 +16611,28 @@ size_t IPsecUnloadConnReq::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecUnloadConnReq::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecUnloadConnReq::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecUnloadConnReq::GetClassData() const { return &_class_data_; }
 
-void IPsecUnloadConnReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecUnloadConnReq *>(to)->MergeFrom(
-      static_cast<const IPsecUnloadConnReq &>(from));
-}
 
-
-void IPsecUnloadConnReq::MergeFrom(const IPsecUnloadConnReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecUnloadConnReq)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecUnloadConnReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecUnloadConnReq*>(&to_msg);
+  auto& from = static_cast<const IPsecUnloadConnReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecUnloadConnReq)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecUnloadConnReq::CopyFrom(const IPsecUnloadConnReq& from) {
@@ -16469,14 +16652,13 @@ void IPsecUnloadConnReq::InternalSwap(IPsecUnloadConnReq* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecUnloadConnReq::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[39]);
 }
@@ -16490,53 +16672,58 @@ class IPsecUnloadConnResp::_Internal {
 IPsecUnloadConnResp::IPsecUnloadConnResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.IPsecUnloadConnResp)
 }
 IPsecUnloadConnResp::IPsecUnloadConnResp(const IPsecUnloadConnResp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPsecUnloadConnResp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.success_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  success_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.success_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    success_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.success_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_success().empty()) {
-    success_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_success(), 
-      GetArenaForAllocation());
+    _this->_impl_.success_.Set(from._internal_success(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.IPsecUnloadConnResp)
 }
 
-inline void IPsecUnloadConnResp::SharedCtor() {
-success_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  success_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void IPsecUnloadConnResp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.success_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.success_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.success_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPsecUnloadConnResp::~IPsecUnloadConnResp() {
   // @@protoc_insertion_point(destructor:opi_api.security.v1.IPsecUnloadConnResp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPsecUnloadConnResp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  success_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.success_.Destroy();
 }
 
-void IPsecUnloadConnResp::ArenaDtor(void* object) {
-  IPsecUnloadConnResp* _this = reinterpret_cast< IPsecUnloadConnResp* >(object);
-  (void)_this;
-}
-void IPsecUnloadConnResp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPsecUnloadConnResp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPsecUnloadConnResp::Clear() {
@@ -16545,23 +16732,23 @@ void IPsecUnloadConnResp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  success_.ClearToEmpty();
+  _impl_.success_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPsecUnloadConnResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPsecUnloadConnResp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string success = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_success();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.IPsecUnloadConnResp.success"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.security.v1.IPsecUnloadConnResp.success"));
         } else
           goto handle_unusual;
         continue;
@@ -16605,7 +16792,7 @@ uint8_t* IPsecUnloadConnResp::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.IPsecUnloadConnResp)
@@ -16627,32 +16814,28 @@ size_t IPsecUnloadConnResp::ByteSizeLong() const {
         this->_internal_success());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPsecUnloadConnResp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPsecUnloadConnResp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecUnloadConnResp::GetClassData() const { return &_class_data_; }
 
-void IPsecUnloadConnResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPsecUnloadConnResp *>(to)->MergeFrom(
-      static_cast<const IPsecUnloadConnResp &>(from));
-}
 
-
-void IPsecUnloadConnResp::MergeFrom(const IPsecUnloadConnResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecUnloadConnResp)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPsecUnloadConnResp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPsecUnloadConnResp*>(&to_msg);
+  auto& from = static_cast<const IPsecUnloadConnResp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.IPsecUnloadConnResp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_success().empty()) {
-    _internal_set_success(from._internal_success());
+    _this->_internal_set_success(from._internal_success());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPsecUnloadConnResp::CopyFrom(const IPsecUnloadConnResp& from) {
@@ -16672,14 +16855,13 @@ void IPsecUnloadConnResp::InternalSwap(IPsecUnloadConnResp* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &success_, lhs_arena,
-      &other->success_, rhs_arena
+      &_impl_.success_, lhs_arena,
+      &other->_impl_.success_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecUnloadConnResp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
       file_level_metadata_ipsec_2eproto[40]);
 }
@@ -16689,127 +16871,168 @@ void IPsecUnloadConnResp::InternalSwap(IPsecUnloadConnResp* other) {
 }  // namespace security
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Proposals* Arena::CreateMaybeMessage< ::opi_api::security::v1::Proposals >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Proposals*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::Proposals >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Proposals >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Vips* Arena::CreateMaybeMessage< ::opi_api::security::v1::Vips >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Vips*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::Vips >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Vips >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Pools* Arena::CreateMaybeMessage< ::opi_api::security::v1::Pools >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Pools*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::Pools >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Pools >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Certs* Arena::CreateMaybeMessage< ::opi_api::security::v1::Certs >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Certs*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::Certs >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Certs >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::PubKeys* Arena::CreateMaybeMessage< ::opi_api::security::v1::PubKeys >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::PubKeys*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::PubKeys >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::PubKeys >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Groups* Arena::CreateMaybeMessage< ::opi_api::security::v1::Groups >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Groups*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::Groups >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Groups >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::CertPolicy* Arena::CreateMaybeMessage< ::opi_api::security::v1::CertPolicy >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::CertPolicy*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::CertPolicy >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::CertPolicy >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::CaCerts* Arena::CreateMaybeMessage< ::opi_api::security::v1::CaCerts >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::CaCerts*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::CaCerts >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::CaCerts >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::LocalAuth* Arena::CreateMaybeMessage< ::opi_api::security::v1::LocalAuth >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::LocalAuth*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::LocalAuth >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::LocalAuth >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::RemoteAuth* Arena::CreateMaybeMessage< ::opi_api::security::v1::RemoteAuth >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::RemoteAuth*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::RemoteAuth >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::RemoteAuth >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::TrafficSelectors_TrafficSelector* Arena::CreateMaybeMessage< ::opi_api::security::v1::TrafficSelectors_TrafficSelector >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::TrafficSelectors_TrafficSelector*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::TrafficSelectors_TrafficSelector >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::TrafficSelectors_TrafficSelector >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::TrafficSelectors* Arena::CreateMaybeMessage< ::opi_api::security::v1::TrafficSelectors >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::TrafficSelectors*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::TrafficSelectors >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::TrafficSelectors >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Addrs* Arena::CreateMaybeMessage< ::opi_api::security::v1::Addrs >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Addrs*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::Addrs >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Addrs >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Child* Arena::CreateMaybeMessage< ::opi_api::security::v1::Child >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Child*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::Child >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Child >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Connection* Arena::CreateMaybeMessage< ::opi_api::security::v1::Connection >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Connection*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::Connection >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Connection >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecVersionReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecVersionReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecVersionReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecVersionReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecVersionReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecVersionResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecVersionResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecVersionResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecVersionResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecVersionResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecStatsReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecStatsReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecStatsReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecStatsReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecStatsReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecStatsResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecStatsResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecStatsResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecStatsResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecStatsResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecInitiateReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecInitiateReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecInitiateReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecInitiateReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecInitiateReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecInitiateResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecInitiateResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecInitiateResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecInitiateResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecInitiateResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecTerminateReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecTerminateReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecTerminateReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecTerminateReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecTerminateReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecTerminateResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecTerminateResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecTerminateResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecTerminateResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecTerminateResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecRekeyReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecRekeyReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecRekeyReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecRekeyReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecRekeyReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecRekeyResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecRekeyResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecRekeyResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecRekeyResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecRekeyResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListSasReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListSasReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListSasReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListSasReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecListSasReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListChildSa* Arena::CreateMaybeMessage< ::opi_api::security::v1::ListChildSa >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListChildSa*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::ListChildSa >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::ListChildSa >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListIkeSa* Arena::CreateMaybeMessage< ::opi_api::security::v1::ListIkeSa >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListIkeSa*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::ListIkeSa >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::ListIkeSa >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListSasResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListSasResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListSasResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListSasResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecListSasResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListConnsReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListConnsReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListConnsReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListConnsReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecListConnsReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListConnAuth* Arena::CreateMaybeMessage< ::opi_api::security::v1::ListConnAuth >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListConnAuth*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::ListConnAuth >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::ListConnAuth >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListChild* Arena::CreateMaybeMessage< ::opi_api::security::v1::ListChild >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListChild*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::ListChild >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::ListChild >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListConnResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::ListConnResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListConnResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::ListConnResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::ListConnResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListConnsResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListConnsResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListConnsResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListConnsResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecListConnsResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListCertsReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListCertsReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListCertsReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListCertsReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecListCertsReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListCert* Arena::CreateMaybeMessage< ::opi_api::security::v1::ListCert >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::ListCert*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::ListCert >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::ListCert >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListCertsResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListCertsResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecListCertsResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecListCertsResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecListCertsResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecLoadConnReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecLoadConnReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecLoadConnReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecLoadConnReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecLoadConnReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecLoadConnResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecLoadConnResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecLoadConnResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecLoadConnResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecLoadConnResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecUnloadConnReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecUnloadConnReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecUnloadConnReq*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecUnloadConnReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecUnloadConnReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecUnloadConnResp* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecUnloadConnResp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecUnloadConnResp*
+Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecUnloadConnResp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecUnloadConnResp >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

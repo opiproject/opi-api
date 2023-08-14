@@ -104,6 +104,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -942,8 +944,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (nhinfoCase_ == 2) {
           underlayNhInfoBuilder_.mergeFrom(value);
+        } else {
+          underlayNhInfoBuilder_.setMessage(value);
         }
-        underlayNhInfoBuilder_.setMessage(value);
       }
       nhinfoCase_ = 2;
       return this;
@@ -1119,8 +1122,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (nhinfoCase_ == 3) {
           overlayNhInfoBuilder_.mergeFrom(value);
+        } else {
+          overlayNhInfoBuilder_.setMessage(value);
         }
-        overlayNhInfoBuilder_.setMessage(value);
       }
       nhinfoCase_ = 3;
       return this;

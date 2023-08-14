@@ -159,6 +159,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -1257,8 +1259,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ifinfoCase_ == 3) {
           uplinkSpecBuilder_.mergeFrom(value);
+        } else {
+          uplinkSpecBuilder_.setMessage(value);
         }
-        uplinkSpecBuilder_.setMessage(value);
       }
       ifinfoCase_ = 3;
       return this;
@@ -1434,8 +1437,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ifinfoCase_ == 4) {
           uplinkPcSpecBuilder_.mergeFrom(value);
+        } else {
+          uplinkPcSpecBuilder_.setMessage(value);
         }
-        uplinkPcSpecBuilder_.setMessage(value);
       }
       ifinfoCase_ = 4;
       return this;
@@ -1611,8 +1615,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ifinfoCase_ == 5) {
           l3IfSpecBuilder_.mergeFrom(value);
+        } else {
+          l3IfSpecBuilder_.setMessage(value);
         }
-        l3IfSpecBuilder_.setMessage(value);
       }
       ifinfoCase_ = 5;
       return this;
@@ -1788,8 +1793,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ifinfoCase_ == 6) {
           loopbackIfSpecBuilder_.mergeFrom(value);
+        } else {
+          loopbackIfSpecBuilder_.setMessage(value);
         }
-        loopbackIfSpecBuilder_.setMessage(value);
       }
       ifinfoCase_ = 6;
       return this;
@@ -1965,8 +1971,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ifinfoCase_ == 7) {
           controlIfSpecBuilder_.mergeFrom(value);
+        } else {
+          controlIfSpecBuilder_.setMessage(value);
         }
-        controlIfSpecBuilder_.setMessage(value);
       }
       ifinfoCase_ = 7;
       return this;
@@ -2142,8 +2149,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (ifinfoCase_ == 8) {
           hostIfSpecBuilder_.mergeFrom(value);
+        } else {
+          hostIfSpecBuilder_.setMessage(value);
         }
-        hostIfSpecBuilder_.setMessage(value);
       }
       ifinfoCase_ = 8;
       return this;

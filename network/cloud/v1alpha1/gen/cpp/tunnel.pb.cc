@@ -16,75 +16,82 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace opi_api {
 namespace network {
 namespace cloud {
 namespace v1alpha1 {
-constexpr Tunnel::Tunnel(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , spec_(nullptr)
-  , status_(nullptr){}
+PROTOBUF_CONSTEXPR Tunnel::Tunnel(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.spec_)*/nullptr
+  , /*decltype(_impl_.status_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct TunnelDefaultTypeInternal {
-  constexpr TunnelDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR TunnelDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~TunnelDefaultTypeInternal() {}
   union {
     Tunnel _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TunnelDefaultTypeInternal _Tunnel_default_instance_;
-constexpr TunnelSpec::TunnelSpec(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vpc_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mac_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , local_ip_(nullptr)
-  , remote_ip_(nullptr)
-  , encap_(nullptr)
-  , type_(0)
-
-  , tos_(0)
-  , _oneof_case_{}{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TunnelDefaultTypeInternal _Tunnel_default_instance_;
+PROTOBUF_CONSTEXPR TunnelSpec::TunnelSpec(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.vpc_name_ref_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mac_address_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.local_ip_)*/nullptr
+  , /*decltype(_impl_.remote_ip_)*/nullptr
+  , /*decltype(_impl_.encap_)*/nullptr
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_.tos_)*/0
+  , /*decltype(_impl_.nh_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct TunnelSpecDefaultTypeInternal {
-  constexpr TunnelSpecDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR TunnelSpecDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~TunnelSpecDefaultTypeInternal() {}
   union {
     TunnelSpec _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TunnelSpecDefaultTypeInternal _TunnelSpec_default_instance_;
-constexpr DropNexthop::DropNexthop(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TunnelSpecDefaultTypeInternal _TunnelSpec_default_instance_;
+PROTOBUF_CONSTEXPR DropNexthop::DropNexthop(
+    ::_pbi::ConstantInitialized) {}
 struct DropNexthopDefaultTypeInternal {
-  constexpr DropNexthopDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR DropNexthopDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~DropNexthopDefaultTypeInternal() {}
   union {
     DropNexthop _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DropNexthopDefaultTypeInternal _DropNexthop_default_instance_;
-constexpr TunnelStatus::TunnelStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : hw_handle_(nullptr)
-  , vnic_count_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DropNexthopDefaultTypeInternal _DropNexthop_default_instance_;
+PROTOBUF_CONSTEXPR TunnelStatus::TunnelStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.hw_handle_)*/nullptr
+  , /*decltype(_impl_.vnic_count_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct TunnelStatusDefaultTypeInternal {
-  constexpr TunnelStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR TunnelStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~TunnelStatusDefaultTypeInternal() {}
   union {
     TunnelStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TunnelStatusDefaultTypeInternal _TunnelStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TunnelStatusDefaultTypeInternal _TunnelStatus_default_instance_;
 }  // namespace v1alpha1
 }  // namespace cloud
 }  // namespace network
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_tunnel_2eproto[4];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_tunnel_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_tunnel_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_tunnel_2eproto[4];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_tunnel_2eproto[1];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_tunnel_2eproto = nullptr;
 
 const uint32_t TableStruct_tunnel_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -93,27 +100,27 @@ const uint32_t TableStruct_tunnel_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Tunnel, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Tunnel, spec_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Tunnel, status_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Tunnel, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Tunnel, _impl_.spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Tunnel, _impl_.status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, vpc_name_ref_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, local_ip_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, remote_ip_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, encap_),
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, mac_address_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, tos_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, nh_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_.vpc_name_ref_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_.local_ip_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_.remote_ip_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_.encap_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_.mac_address_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_.tos_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelSpec, _impl_.nh_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DropNexthop, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -126,21 +133,21 @@ const uint32_t TableStruct_tunnel_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelStatus, hw_handle_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelStatus, vnic_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelStatus, _impl_.hw_handle_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::TunnelStatus, _impl_.vnic_count_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Tunnel)},
   { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::TunnelSpec)},
   { 27, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::DropNexthop)},
   { 33, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::TunnelStatus)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_Tunnel_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_TunnelSpec_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_DropNexthop_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_TunnelStatus_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::opi_api::network::cloud::v1alpha1::_Tunnel_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_TunnelSpec_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_DropNexthop_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_TunnelStatus_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_tunnel_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -176,23 +183,25 @@ const char descriptor_table_protodef_tunnel_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "iproject/opi-api/network/cloud/v1alpha1/"
   "gen/gob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_tunnel_2eproto_deps[2] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_tunnel_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_networktypes_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_tunnel_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_tunnel_2eproto = {
-  false, false, 1214, descriptor_table_protodef_tunnel_2eproto, "tunnel.proto", 
-  &descriptor_table_tunnel_2eproto_once, descriptor_table_tunnel_2eproto_deps, 2, 4,
-  schemas, file_default_instances, TableStruct_tunnel_2eproto::offsets,
-  file_level_metadata_tunnel_2eproto, file_level_enum_descriptors_tunnel_2eproto, file_level_service_descriptors_tunnel_2eproto,
+static ::_pbi::once_flag descriptor_table_tunnel_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_tunnel_2eproto = {
+    false, false, 1214, descriptor_table_protodef_tunnel_2eproto,
+    "tunnel.proto",
+    &descriptor_table_tunnel_2eproto_once, descriptor_table_tunnel_2eproto_deps, 2, 4,
+    schemas, file_default_instances, TableStruct_tunnel_2eproto::offsets,
+    file_level_metadata_tunnel_2eproto, file_level_enum_descriptors_tunnel_2eproto,
+    file_level_service_descriptors_tunnel_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_tunnel_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_tunnel_2eproto_getter() {
   return &descriptor_table_tunnel_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_tunnel_2eproto(&descriptor_table_tunnel_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_tunnel_2eproto(&descriptor_table_tunnel_2eproto);
 namespace opi_api {
 namespace network {
 namespace cloud {
@@ -227,78 +236,79 @@ class Tunnel::_Internal {
 
 const ::opi_api::network::cloud::v1alpha1::TunnelSpec&
 Tunnel::_Internal::spec(const Tunnel* msg) {
-  return *msg->spec_;
+  return *msg->_impl_.spec_;
 }
 const ::opi_api::network::cloud::v1alpha1::TunnelStatus&
 Tunnel::_Internal::status(const Tunnel* msg) {
-  return *msg->status_;
+  return *msg->_impl_.status_;
 }
 Tunnel::Tunnel(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.Tunnel)
 }
 Tunnel::Tunnel(const Tunnel& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Tunnel* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_spec()) {
-    spec_ = new ::opi_api::network::cloud::v1alpha1::TunnelSpec(*from.spec_);
-  } else {
-    spec_ = nullptr;
+    _this->_impl_.spec_ = new ::opi_api::network::cloud::v1alpha1::TunnelSpec(*from._impl_.spec_);
   }
   if (from._internal_has_status()) {
-    status_ = new ::opi_api::network::cloud::v1alpha1::TunnelStatus(*from.status_);
-  } else {
-    status_ = nullptr;
+    _this->_impl_.status_ = new ::opi_api::network::cloud::v1alpha1::TunnelStatus(*from._impl_.status_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.Tunnel)
 }
 
-inline void Tunnel::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&spec_)) + sizeof(status_));
+inline void Tunnel::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Tunnel::~Tunnel() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.Tunnel)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Tunnel::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete spec_;
-  if (this != internal_default_instance()) delete status_;
+  _impl_.name_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.spec_;
+  if (this != internal_default_instance()) delete _impl_.status_;
 }
 
-void Tunnel::ArenaDtor(void* object) {
-  Tunnel* _this = reinterpret_cast< Tunnel* >(object);
-  (void)_this;
-}
-void Tunnel::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Tunnel::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Tunnel::Clear() {
@@ -307,31 +317,31 @@ void Tunnel::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
-    delete spec_;
+  _impl_.name_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.spec_ != nullptr) {
+    delete _impl_.spec_;
   }
-  spec_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
-    delete status_;
+  _impl_.spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.status_ != nullptr) {
+    delete _impl_.status_;
   }
-  status_ = nullptr;
+  _impl_.status_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Tunnel::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Tunnel::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Tunnel.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Tunnel.name"));
         } else
           goto handle_unusual;
         continue;
@@ -392,22 +402,20 @@ uint8_t* Tunnel::_InternalSerialize(
 
   // .opi_api.network.cloud.v1alpha1.TunnelSpec spec = 2;
   if (this->_internal_has_spec()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::spec(this), target, stream);
+      InternalWriteMessage(2, _Internal::spec(this),
+        _Internal::spec(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.TunnelStatus status = 3;
   if (this->_internal_has_status()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::status(this), target, stream);
+      InternalWriteMessage(3, _Internal::status(this),
+        _Internal::status(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.Tunnel)
@@ -433,48 +441,46 @@ size_t Tunnel::ByteSizeLong() const {
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *spec_);
+        *_impl_.spec_);
   }
 
   // .opi_api.network.cloud.v1alpha1.TunnelStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *status_);
+        *_impl_.status_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Tunnel::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Tunnel::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Tunnel::GetClassData() const { return &_class_data_; }
 
-void Tunnel::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Tunnel *>(to)->MergeFrom(
-      static_cast<const Tunnel &>(from));
-}
 
-
-void Tunnel::MergeFrom(const Tunnel& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.Tunnel)
-  GOOGLE_DCHECK_NE(&from, this);
+void Tunnel::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Tunnel*>(&to_msg);
+  auto& from = static_cast<const Tunnel&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.Tunnel)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (from._internal_has_spec()) {
-    _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::TunnelSpec::MergeFrom(from._internal_spec());
+    _this->_internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::TunnelSpec::MergeFrom(
+        from._internal_spec());
   }
   if (from._internal_has_status()) {
-    _internal_mutable_status()->::opi_api::network::cloud::v1alpha1::TunnelStatus::MergeFrom(from._internal_status());
+    _this->_internal_mutable_status()->::opi_api::network::cloud::v1alpha1::TunnelStatus::MergeFrom(
+        from._internal_status());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Tunnel::CopyFrom(const Tunnel& from) {
@@ -494,20 +500,19 @@ void Tunnel::InternalSwap(Tunnel* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Tunnel, status_)
-      + sizeof(Tunnel::status_)
-      - PROTOBUF_FIELD_OFFSET(Tunnel, spec_)>(
-          reinterpret_cast<char*>(&spec_),
-          reinterpret_cast<char*>(&other->spec_));
+      PROTOBUF_FIELD_OFFSET(Tunnel, _impl_.status_)
+      + sizeof(Tunnel::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(Tunnel, _impl_.spec_)>(
+          reinterpret_cast<char*>(&_impl_.spec_),
+          reinterpret_cast<char*>(&other->_impl_.spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Tunnel::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_tunnel_2eproto_getter, &descriptor_table_tunnel_2eproto_once,
       file_level_metadata_tunnel_2eproto[0]);
 }
@@ -524,115 +529,120 @@ class TunnelSpec::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 TunnelSpec::_Internal::local_ip(const TunnelSpec* msg) {
-  return *msg->local_ip_;
+  return *msg->_impl_.local_ip_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 TunnelSpec::_Internal::remote_ip(const TunnelSpec* msg) {
-  return *msg->remote_ip_;
+  return *msg->_impl_.remote_ip_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::Encap&
 TunnelSpec::_Internal::encap(const TunnelSpec* msg) {
-  return *msg->encap_;
+  return *msg->_impl_.encap_;
 }
 const ::opi_api::network::cloud::v1alpha1::DropNexthop&
 TunnelSpec::_Internal::drop_next_hop(const TunnelSpec* msg) {
-  return *msg->nh_.drop_next_hop_;
+  return *msg->_impl_.nh_.drop_next_hop_;
 }
 void TunnelSpec::clear_local_ip() {
-  if (GetArenaForAllocation() == nullptr && local_ip_ != nullptr) {
-    delete local_ip_;
+  if (GetArenaForAllocation() == nullptr && _impl_.local_ip_ != nullptr) {
+    delete _impl_.local_ip_;
   }
-  local_ip_ = nullptr;
+  _impl_.local_ip_ = nullptr;
 }
 void TunnelSpec::clear_remote_ip() {
-  if (GetArenaForAllocation() == nullptr && remote_ip_ != nullptr) {
-    delete remote_ip_;
+  if (GetArenaForAllocation() == nullptr && _impl_.remote_ip_ != nullptr) {
+    delete _impl_.remote_ip_;
   }
-  remote_ip_ = nullptr;
+  _impl_.remote_ip_ = nullptr;
 }
 void TunnelSpec::clear_encap() {
-  if (GetArenaForAllocation() == nullptr && encap_ != nullptr) {
-    delete encap_;
+  if (GetArenaForAllocation() == nullptr && _impl_.encap_ != nullptr) {
+    delete _impl_.encap_;
   }
-  encap_ = nullptr;
+  _impl_.encap_ = nullptr;
 }
 void TunnelSpec::set_allocated_drop_next_hop(::opi_api::network::cloud::v1alpha1::DropNexthop* drop_next_hop) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_nh();
   if (drop_next_hop) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::cloud::v1alpha1::DropNexthop>::GetOwningArena(drop_next_hop);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(drop_next_hop);
     if (message_arena != submessage_arena) {
       drop_next_hop = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, drop_next_hop, submessage_arena);
     }
     set_has_drop_next_hop();
-    nh_.drop_next_hop_ = drop_next_hop;
+    _impl_.nh_.drop_next_hop_ = drop_next_hop;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.TunnelSpec.drop_next_hop)
 }
 TunnelSpec::TunnelSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.TunnelSpec)
 }
 TunnelSpec::TunnelSpec(const TunnelSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  TunnelSpec* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.vpc_name_ref_){}
+    , decltype(_impl_.mac_address_){}
+    , decltype(_impl_.local_ip_){nullptr}
+    , decltype(_impl_.remote_ip_){nullptr}
+    , decltype(_impl_.encap_){nullptr}
+    , decltype(_impl_.type_){}
+    , decltype(_impl_.tos_){}
+    , decltype(_impl_.nh_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vpc_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.vpc_name_ref_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.vpc_name_ref_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_vpc_name_ref().empty()) {
-    vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vpc_name_ref(), 
-      GetArenaForAllocation());
+    _this->_impl_.vpc_name_ref_.Set(from._internal_vpc_name_ref(), 
+      _this->GetArenaForAllocation());
   }
-  mac_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.mac_address_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.mac_address_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mac_address().empty()) {
-    mac_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mac_address(), 
-      GetArenaForAllocation());
+    _this->_impl_.mac_address_.Set(from._internal_mac_address(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_local_ip()) {
-    local_ip_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.local_ip_);
-  } else {
-    local_ip_ = nullptr;
+    _this->_impl_.local_ip_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.local_ip_);
   }
   if (from._internal_has_remote_ip()) {
-    remote_ip_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.remote_ip_);
-  } else {
-    remote_ip_ = nullptr;
+    _this->_impl_.remote_ip_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.remote_ip_);
   }
   if (from._internal_has_encap()) {
-    encap_ = new ::opi_api::network::opinetcommon::v1alpha1::Encap(*from.encap_);
-  } else {
-    encap_ = nullptr;
+    _this->_impl_.encap_ = new ::opi_api::network::opinetcommon::v1alpha1::Encap(*from._impl_.encap_);
   }
-  ::memcpy(&type_, &from.type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&tos_) -
-    reinterpret_cast<char*>(&type_)) + sizeof(tos_));
+  ::memcpy(&_impl_.type_, &from._impl_.type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.tos_) -
+    reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.tos_));
   clear_has_nh();
   switch (from.nh_case()) {
     case kNexthopNameRef: {
-      _internal_set_nexthop_name_ref(from._internal_nexthop_name_ref());
+      _this->_internal_set_nexthop_name_ref(from._internal_nexthop_name_ref());
       break;
     }
     case kNexthopGroupNameRef: {
-      _internal_set_nexthop_group_name_ref(from._internal_nexthop_group_name_ref());
+      _this->_internal_set_nexthop_group_name_ref(from._internal_nexthop_group_name_ref());
       break;
     }
     case kTunnelNameRef: {
-      _internal_set_tunnel_name_ref(from._internal_tunnel_name_ref());
+      _this->_internal_set_tunnel_name_ref(from._internal_tunnel_name_ref());
       break;
     }
     case kDropNextHop: {
-      _internal_mutable_drop_next_hop()->::opi_api::network::cloud::v1alpha1::DropNexthop::MergeFrom(from._internal_drop_next_hop());
+      _this->_internal_mutable_drop_next_hop()->::opi_api::network::cloud::v1alpha1::DropNexthop::MergeFrom(
+          from._internal_drop_next_hop());
       break;
     }
     case NH_NOT_SET: {
@@ -642,69 +652,76 @@ TunnelSpec::TunnelSpec(const TunnelSpec& from)
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.TunnelSpec)
 }
 
-inline void TunnelSpec::SharedCtor() {
-vpc_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mac_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&local_ip_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&tos_) -
-    reinterpret_cast<char*>(&local_ip_)) + sizeof(tos_));
-clear_has_nh();
+inline void TunnelSpec::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.vpc_name_ref_){}
+    , decltype(_impl_.mac_address_){}
+    , decltype(_impl_.local_ip_){nullptr}
+    , decltype(_impl_.remote_ip_){nullptr}
+    , decltype(_impl_.encap_){nullptr}
+    , decltype(_impl_.type_){0}
+    , decltype(_impl_.tos_){0}
+    , decltype(_impl_.nh_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  _impl_.vpc_name_ref_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.vpc_name_ref_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mac_address_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mac_address_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  clear_has_nh();
 }
 
 TunnelSpec::~TunnelSpec() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.TunnelSpec)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void TunnelSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  vpc_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mac_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete local_ip_;
-  if (this != internal_default_instance()) delete remote_ip_;
-  if (this != internal_default_instance()) delete encap_;
+  _impl_.vpc_name_ref_.Destroy();
+  _impl_.mac_address_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.local_ip_;
+  if (this != internal_default_instance()) delete _impl_.remote_ip_;
+  if (this != internal_default_instance()) delete _impl_.encap_;
   if (has_nh()) {
     clear_nh();
   }
 }
 
-void TunnelSpec::ArenaDtor(void* object) {
-  TunnelSpec* _this = reinterpret_cast< TunnelSpec* >(object);
-  (void)_this;
-}
-void TunnelSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void TunnelSpec::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void TunnelSpec::clear_nh() {
 // @@protoc_insertion_point(one_of_clear_start:opi_api.network.cloud.v1alpha1.TunnelSpec)
   switch (nh_case()) {
     case kNexthopNameRef: {
-      nh_.nexthop_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      _impl_.nh_.nexthop_name_ref_.Destroy();
       break;
     }
     case kNexthopGroupNameRef: {
-      nh_.nexthop_group_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      _impl_.nh_.nexthop_group_name_ref_.Destroy();
       break;
     }
     case kTunnelNameRef: {
-      nh_.tunnel_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      _impl_.nh_.tunnel_name_ref_.Destroy();
       break;
     }
     case kDropNextHop: {
       if (GetArenaForAllocation() == nullptr) {
-        delete nh_.drop_next_hop_;
+        delete _impl_.nh_.drop_next_hop_;
       }
       break;
     }
@@ -712,7 +729,7 @@ void TunnelSpec::clear_nh() {
       break;
     }
   }
-  _oneof_case_[0] = NH_NOT_SET;
+  _impl_._oneof_case_[0] = NH_NOT_SET;
 }
 
 
@@ -722,40 +739,40 @@ void TunnelSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vpc_name_ref_.ClearToEmpty();
-  mac_address_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && local_ip_ != nullptr) {
-    delete local_ip_;
+  _impl_.vpc_name_ref_.ClearToEmpty();
+  _impl_.mac_address_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.local_ip_ != nullptr) {
+    delete _impl_.local_ip_;
   }
-  local_ip_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && remote_ip_ != nullptr) {
-    delete remote_ip_;
+  _impl_.local_ip_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.remote_ip_ != nullptr) {
+    delete _impl_.remote_ip_;
   }
-  remote_ip_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && encap_ != nullptr) {
-    delete encap_;
+  _impl_.remote_ip_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.encap_ != nullptr) {
+    delete _impl_.encap_;
   }
-  encap_ = nullptr;
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&tos_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(tos_));
+  _impl_.encap_ = nullptr;
+  ::memset(&_impl_.type_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.tos_) -
+      reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.tos_));
   clear_nh();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* TunnelSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* TunnelSpec::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string vpc_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_vpc_name_ref();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.TunnelSpec.vpc_name_ref"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.TunnelSpec.vpc_name_ref"));
         } else
           goto handle_unusual;
         continue;
@@ -796,9 +813,9 @@ const char* TunnelSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_nexthop_name_ref();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.TunnelSpec.nexthop_name_ref"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.TunnelSpec.nexthop_name_ref"));
         } else
           goto handle_unusual;
         continue;
@@ -806,9 +823,9 @@ const char* TunnelSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_nexthop_group_name_ref();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.TunnelSpec.nexthop_group_name_ref"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.TunnelSpec.nexthop_group_name_ref"));
         } else
           goto handle_unusual;
         continue;
@@ -816,9 +833,9 @@ const char* TunnelSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_tunnel_name_ref();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.TunnelSpec.tunnel_name_ref"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.TunnelSpec.tunnel_name_ref"));
         } else
           goto handle_unusual;
         continue;
@@ -834,7 +851,7 @@ const char* TunnelSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_mac_address();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -842,7 +859,7 @@ const char* TunnelSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // int32 tos = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          tos_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.tos_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -888,33 +905,30 @@ uint8_t* TunnelSpec::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;
   if (this->_internal_has_local_ip()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::local_ip(this), target, stream);
+      InternalWriteMessage(2, _Internal::local_ip(this),
+        _Internal::local_ip(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;
   if (this->_internal_has_remote_ip()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::remote_ip(this), target, stream);
+      InternalWriteMessage(3, _Internal::remote_ip(this),
+        _Internal::remote_ip(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.TunnelType type = 4;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_type(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;
   if (this->_internal_has_encap()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::encap(this), target, stream);
+      InternalWriteMessage(5, _Internal::encap(this),
+        _Internal::encap(this).GetCachedSize(), target, stream);
   }
 
   // string nexthop_name_ref = 6;
@@ -949,10 +963,9 @@ uint8_t* TunnelSpec::_InternalSerialize(
 
   // .opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;
   if (_internal_has_drop_next_hop()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        9, _Internal::drop_next_hop(this), target, stream);
+      InternalWriteMessage(9, _Internal::drop_next_hop(this),
+        _Internal::drop_next_hop(this).GetCachedSize(), target, stream);
   }
 
   // bytes mac_address = 10;
@@ -964,11 +977,11 @@ uint8_t* TunnelSpec::_InternalSerialize(
   // int32 tos = 11;
   if (this->_internal_tos() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(11, this->_internal_tos(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_tos(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.TunnelSpec)
@@ -1001,32 +1014,32 @@ size_t TunnelSpec::ByteSizeLong() const {
   if (this->_internal_has_local_ip()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *local_ip_);
+        *_impl_.local_ip_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;
   if (this->_internal_has_remote_ip()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *remote_ip_);
+        *_impl_.remote_ip_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;
   if (this->_internal_has_encap()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *encap_);
+        *_impl_.encap_);
   }
 
   // .opi_api.network.cloud.v1alpha1.TunnelType type = 4;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // int32 tos = 11;
   if (this->_internal_tos() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_tos());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_tos());
   }
 
   switch (nh_case()) {
@@ -1055,78 +1068,78 @@ size_t TunnelSpec::ByteSizeLong() const {
     case kDropNextHop: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *nh_.drop_next_hop_);
+          *_impl_.nh_.drop_next_hop_);
       break;
     }
     case NH_NOT_SET: {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TunnelSpec::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     TunnelSpec::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TunnelSpec::GetClassData() const { return &_class_data_; }
 
-void TunnelSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<TunnelSpec *>(to)->MergeFrom(
-      static_cast<const TunnelSpec &>(from));
-}
 
-
-void TunnelSpec::MergeFrom(const TunnelSpec& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.TunnelSpec)
-  GOOGLE_DCHECK_NE(&from, this);
+void TunnelSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<TunnelSpec*>(&to_msg);
+  auto& from = static_cast<const TunnelSpec&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.TunnelSpec)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_vpc_name_ref().empty()) {
-    _internal_set_vpc_name_ref(from._internal_vpc_name_ref());
+    _this->_internal_set_vpc_name_ref(from._internal_vpc_name_ref());
   }
   if (!from._internal_mac_address().empty()) {
-    _internal_set_mac_address(from._internal_mac_address());
+    _this->_internal_set_mac_address(from._internal_mac_address());
   }
   if (from._internal_has_local_ip()) {
-    _internal_mutable_local_ip()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_local_ip());
+    _this->_internal_mutable_local_ip()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_local_ip());
   }
   if (from._internal_has_remote_ip()) {
-    _internal_mutable_remote_ip()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_remote_ip());
+    _this->_internal_mutable_remote_ip()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_remote_ip());
   }
   if (from._internal_has_encap()) {
-    _internal_mutable_encap()->::opi_api::network::opinetcommon::v1alpha1::Encap::MergeFrom(from._internal_encap());
+    _this->_internal_mutable_encap()->::opi_api::network::opinetcommon::v1alpha1::Encap::MergeFrom(
+        from._internal_encap());
   }
   if (from._internal_type() != 0) {
-    _internal_set_type(from._internal_type());
+    _this->_internal_set_type(from._internal_type());
   }
   if (from._internal_tos() != 0) {
-    _internal_set_tos(from._internal_tos());
+    _this->_internal_set_tos(from._internal_tos());
   }
   switch (from.nh_case()) {
     case kNexthopNameRef: {
-      _internal_set_nexthop_name_ref(from._internal_nexthop_name_ref());
+      _this->_internal_set_nexthop_name_ref(from._internal_nexthop_name_ref());
       break;
     }
     case kNexthopGroupNameRef: {
-      _internal_set_nexthop_group_name_ref(from._internal_nexthop_group_name_ref());
+      _this->_internal_set_nexthop_group_name_ref(from._internal_nexthop_group_name_ref());
       break;
     }
     case kTunnelNameRef: {
-      _internal_set_tunnel_name_ref(from._internal_tunnel_name_ref());
+      _this->_internal_set_tunnel_name_ref(from._internal_tunnel_name_ref());
       break;
     }
     case kDropNextHop: {
-      _internal_mutable_drop_next_hop()->::opi_api::network::cloud::v1alpha1::DropNexthop::MergeFrom(from._internal_drop_next_hop());
+      _this->_internal_mutable_drop_next_hop()->::opi_api::network::cloud::v1alpha1::DropNexthop::MergeFrom(
+          from._internal_drop_next_hop());
       break;
     }
     case NH_NOT_SET: {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TunnelSpec::CopyFrom(const TunnelSpec& from) {
@@ -1146,27 +1159,25 @@ void TunnelSpec::InternalSwap(TunnelSpec* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &vpc_name_ref_, lhs_arena,
-      &other->vpc_name_ref_, rhs_arena
+      &_impl_.vpc_name_ref_, lhs_arena,
+      &other->_impl_.vpc_name_ref_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mac_address_, lhs_arena,
-      &other->mac_address_, rhs_arena
+      &_impl_.mac_address_, lhs_arena,
+      &other->_impl_.mac_address_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TunnelSpec, tos_)
-      + sizeof(TunnelSpec::tos_)
-      - PROTOBUF_FIELD_OFFSET(TunnelSpec, local_ip_)>(
-          reinterpret_cast<char*>(&local_ip_),
-          reinterpret_cast<char*>(&other->local_ip_));
-  swap(nh_, other->nh_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+      PROTOBUF_FIELD_OFFSET(TunnelSpec, _impl_.tos_)
+      + sizeof(TunnelSpec::_impl_.tos_)
+      - PROTOBUF_FIELD_OFFSET(TunnelSpec, _impl_.local_ip_)>(
+          reinterpret_cast<char*>(&_impl_.local_ip_),
+          reinterpret_cast<char*>(&other->_impl_.local_ip_));
+  swap(_impl_.nh_, other->_impl_.nh_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TunnelSpec::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_tunnel_2eproto_getter, &descriptor_table_tunnel_2eproto_once,
       file_level_metadata_tunnel_2eproto[1]);
 }
@@ -1184,6 +1195,7 @@ DropNexthop::DropNexthop(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 DropNexthop::DropNexthop(const DropNexthop& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  DropNexthop* const _this = this; (void)_this;
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.DropNexthop)
 }
@@ -1205,7 +1217,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DropNexthop::GetClassData() co
 
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DropNexthop::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_tunnel_2eproto_getter, &descriptor_table_tunnel_2eproto_once,
       file_level_metadata_tunnel_2eproto[2]);
 }
@@ -1219,62 +1231,63 @@ class TunnelStatus::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::HwHandle&
 TunnelStatus::_Internal::hw_handle(const TunnelStatus* msg) {
-  return *msg->hw_handle_;
+  return *msg->_impl_.hw_handle_;
 }
 void TunnelStatus::clear_hw_handle() {
-  if (GetArenaForAllocation() == nullptr && hw_handle_ != nullptr) {
-    delete hw_handle_;
+  if (GetArenaForAllocation() == nullptr && _impl_.hw_handle_ != nullptr) {
+    delete _impl_.hw_handle_;
   }
-  hw_handle_ = nullptr;
+  _impl_.hw_handle_ = nullptr;
 }
 TunnelStatus::TunnelStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.TunnelStatus)
 }
 TunnelStatus::TunnelStatus(const TunnelStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  TunnelStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.hw_handle_){nullptr}
+    , decltype(_impl_.vnic_count_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_hw_handle()) {
-    hw_handle_ = new ::opi_api::network::opinetcommon::v1alpha1::HwHandle(*from.hw_handle_);
-  } else {
-    hw_handle_ = nullptr;
+    _this->_impl_.hw_handle_ = new ::opi_api::network::opinetcommon::v1alpha1::HwHandle(*from._impl_.hw_handle_);
   }
-  vnic_count_ = from.vnic_count_;
+  _this->_impl_.vnic_count_ = from._impl_.vnic_count_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.TunnelStatus)
 }
 
-inline void TunnelStatus::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&hw_handle_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&vnic_count_) -
-    reinterpret_cast<char*>(&hw_handle_)) + sizeof(vnic_count_));
+inline void TunnelStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.hw_handle_){nullptr}
+    , decltype(_impl_.vnic_count_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 TunnelStatus::~TunnelStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.TunnelStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void TunnelStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete hw_handle_;
+  if (this != internal_default_instance()) delete _impl_.hw_handle_;
 }
 
-void TunnelStatus::ArenaDtor(void* object) {
-  TunnelStatus* _this = reinterpret_cast< TunnelStatus* >(object);
-  (void)_this;
-}
-void TunnelStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void TunnelStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void TunnelStatus::Clear() {
@@ -1283,19 +1296,19 @@ void TunnelStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && hw_handle_ != nullptr) {
-    delete hw_handle_;
+  if (GetArenaForAllocation() == nullptr && _impl_.hw_handle_ != nullptr) {
+    delete _impl_.hw_handle_;
   }
-  hw_handle_ = nullptr;
-  vnic_count_ = 0;
+  _impl_.hw_handle_ = nullptr;
+  _impl_.vnic_count_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* TunnelStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* TunnelStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.HwHandle hw_handle = 1;
       case 1:
@@ -1308,7 +1321,7 @@ const char* TunnelStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       // int32 vnic_count = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          vnic_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.vnic_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1344,20 +1357,19 @@ uint8_t* TunnelStatus::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.HwHandle hw_handle = 1;
   if (this->_internal_has_hw_handle()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::hw_handle(this), target, stream);
+      InternalWriteMessage(1, _Internal::hw_handle(this),
+        _Internal::hw_handle(this).GetCachedSize(), target, stream);
   }
 
   // int32 vnic_count = 2;
   if (this->_internal_vnic_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_vnic_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_vnic_count(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.TunnelStatus)
@@ -1376,43 +1388,40 @@ size_t TunnelStatus::ByteSizeLong() const {
   if (this->_internal_has_hw_handle()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *hw_handle_);
+        *_impl_.hw_handle_);
   }
 
   // int32 vnic_count = 2;
   if (this->_internal_vnic_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vnic_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_vnic_count());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TunnelStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     TunnelStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TunnelStatus::GetClassData() const { return &_class_data_; }
 
-void TunnelStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<TunnelStatus *>(to)->MergeFrom(
-      static_cast<const TunnelStatus &>(from));
-}
 
-
-void TunnelStatus::MergeFrom(const TunnelStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.TunnelStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void TunnelStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<TunnelStatus*>(&to_msg);
+  auto& from = static_cast<const TunnelStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.TunnelStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_hw_handle()) {
-    _internal_mutable_hw_handle()->::opi_api::network::opinetcommon::v1alpha1::HwHandle::MergeFrom(from._internal_hw_handle());
+    _this->_internal_mutable_hw_handle()->::opi_api::network::opinetcommon::v1alpha1::HwHandle::MergeFrom(
+        from._internal_hw_handle());
   }
   if (from._internal_vnic_count() != 0) {
-    _internal_set_vnic_count(from._internal_vnic_count());
+    _this->_internal_set_vnic_count(from._internal_vnic_count());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TunnelStatus::CopyFrom(const TunnelStatus& from) {
@@ -1430,15 +1439,15 @@ void TunnelStatus::InternalSwap(TunnelStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TunnelStatus, vnic_count_)
-      + sizeof(TunnelStatus::vnic_count_)
-      - PROTOBUF_FIELD_OFFSET(TunnelStatus, hw_handle_)>(
-          reinterpret_cast<char*>(&hw_handle_),
-          reinterpret_cast<char*>(&other->hw_handle_));
+      PROTOBUF_FIELD_OFFSET(TunnelStatus, _impl_.vnic_count_)
+      + sizeof(TunnelStatus::_impl_.vnic_count_)
+      - PROTOBUF_FIELD_OFFSET(TunnelStatus, _impl_.hw_handle_)>(
+          reinterpret_cast<char*>(&_impl_.hw_handle_),
+          reinterpret_cast<char*>(&other->_impl_.hw_handle_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TunnelStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_tunnel_2eproto_getter, &descriptor_table_tunnel_2eproto_once,
       file_level_metadata_tunnel_2eproto[3]);
 }
@@ -1449,16 +1458,20 @@ void TunnelStatus::InternalSwap(TunnelStatus* other) {
 }  // namespace network
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::Tunnel* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::Tunnel >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::Tunnel*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::Tunnel >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::Tunnel >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::TunnelSpec* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::TunnelSpec >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::TunnelSpec*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::TunnelSpec >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::TunnelSpec >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::DropNexthop* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::DropNexthop >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::DropNexthop*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::DropNexthop >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::DropNexthop >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::TunnelStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::TunnelStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::TunnelStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::TunnelStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::TunnelStatus >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

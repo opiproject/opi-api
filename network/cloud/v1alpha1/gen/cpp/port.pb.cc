@@ -16,142 +16,138 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace opi_api {
 namespace network {
 namespace cloud {
 namespace v1alpha1 {
-constexpr Port::Port(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , spec_(nullptr)
-  , status_(nullptr){}
+PROTOBUF_CONSTEXPR Port::Port(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.spec_)*/nullptr
+  , /*decltype(_impl_.status_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortDefaultTypeInternal {
-  constexpr PortDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortDefaultTypeInternal() {}
   union {
     Port _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortDefaultTypeInternal _Port_default_instance_;
-constexpr PortSpec::PortSpec(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : port_number_(0)
-  , admin_state_(0)
-
-  , type_(0)
-
-  , speed_(0)
-
-  , fec_type_(0)
-
-  , debounce_timeout_(0)
-  , mtu_(0)
-  , pause_type_(0)
-
-  , autoneg_enable_(false)
-  , tx_pause_en_(false)
-  , rx_pause_en_(false)
-  , loopback_mode_(0)
-
-  , lanes_count_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortDefaultTypeInternal _Port_default_instance_;
+PROTOBUF_CONSTEXPR PortSpec::PortSpec(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.port_number_)*/0
+  , /*decltype(_impl_.admin_state_)*/0
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_.speed_)*/0
+  , /*decltype(_impl_.fec_type_)*/0
+  , /*decltype(_impl_.debounce_timeout_)*/0
+  , /*decltype(_impl_.mtu_)*/0
+  , /*decltype(_impl_.pause_type_)*/0
+  , /*decltype(_impl_.autoneg_enable_)*/false
+  , /*decltype(_impl_.tx_pause_en_)*/false
+  , /*decltype(_impl_.rx_pause_en_)*/false
+  , /*decltype(_impl_.loopback_mode_)*/0
+  , /*decltype(_impl_.lanes_count_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortSpecDefaultTypeInternal {
-  constexpr PortSpecDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortSpecDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortSpecDefaultTypeInternal() {}
   union {
     PortSpec _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortSpecDefaultTypeInternal _PortSpec_default_instance_;
-constexpr PortStatus::PortStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : fsm_record_()
-  , link_status_(nullptr)
-  , xcvr_status_(nullptr)
-  , if_index_(0u)
-  , fsm_state_(0)
-
-  , mac_id_(0)
-  , mac_ch_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortSpecDefaultTypeInternal _PortSpec_default_instance_;
+PROTOBUF_CONSTEXPR PortStatus::PortStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.fsm_record_)*/{}
+  , /*decltype(_impl_.link_status_)*/nullptr
+  , /*decltype(_impl_.xcvr_status_)*/nullptr
+  , /*decltype(_impl_.if_index_)*/0u
+  , /*decltype(_impl_.fsm_state_)*/0
+  , /*decltype(_impl_.mac_id_)*/0
+  , /*decltype(_impl_.mac_ch_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortStatusDefaultTypeInternal {
-  constexpr PortStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortStatusDefaultTypeInternal() {}
   union {
     PortStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortStatusDefaultTypeInternal _PortStatus_default_instance_;
-constexpr PortLinkStatus::PortLinkStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : oper_state_(0)
-
-  , port_speed_(0)
-
-  , autoneg_en_(false)
-  , lanes_count_(0)
-  , fec_type_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortStatusDefaultTypeInternal _PortStatus_default_instance_;
+PROTOBUF_CONSTEXPR PortLinkStatus::PortLinkStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.oper_state_)*/0
+  , /*decltype(_impl_.port_speed_)*/0
+  , /*decltype(_impl_.autoneg_en_)*/false
+  , /*decltype(_impl_.lanes_count_)*/0
+  , /*decltype(_impl_.fec_type_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortLinkStatusDefaultTypeInternal {
-  constexpr PortLinkStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortLinkStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortLinkStatusDefaultTypeInternal() {}
   union {
     PortLinkStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortLinkStatusDefaultTypeInternal _PortLinkStatus_default_instance_;
-constexpr PortXcvrStatus::PortXcvrStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : xcvr_sprom_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , vendorname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , vendor_oui_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , serial_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , part_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , revision_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , port_(0)
-  , state_(0)
-
-  , pid_(0)
-
-  , media_type_(0)
-
-  , encoding_type_(0)
-  , temperature_(0)
-  , warn_temperature_(0)
-  , alarm_temperature_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortLinkStatusDefaultTypeInternal _PortLinkStatus_default_instance_;
+PROTOBUF_CONSTEXPR PortXcvrStatus::PortXcvrStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.xcvr_sprom_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.vendorname_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.vendor_oui_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.serial_number_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.part_number_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.revision_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.port_)*/0
+  , /*decltype(_impl_.state_)*/0
+  , /*decltype(_impl_.pid_)*/0
+  , /*decltype(_impl_.media_type_)*/0
+  , /*decltype(_impl_.encoding_type_)*/0
+  , /*decltype(_impl_.temperature_)*/0
+  , /*decltype(_impl_.warn_temperature_)*/0
+  , /*decltype(_impl_.alarm_temperature_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortXcvrStatusDefaultTypeInternal {
-  constexpr PortXcvrStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortXcvrStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortXcvrStatusDefaultTypeInternal() {}
   union {
     PortXcvrStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortXcvrStatusDefaultTypeInternal _PortXcvrStatus_default_instance_;
-constexpr PortLinkFSMRecord::PortLinkFSMRecord(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : duration_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , state_time_(nullptr)
-  , fsm_state_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortXcvrStatusDefaultTypeInternal _PortXcvrStatus_default_instance_;
+PROTOBUF_CONSTEXPR PortLinkFSMRecord::PortLinkFSMRecord(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.duration_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.state_time_)*/nullptr
+  , /*decltype(_impl_.fsm_state_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortLinkFSMRecordDefaultTypeInternal {
-  constexpr PortLinkFSMRecordDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortLinkFSMRecordDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortLinkFSMRecordDefaultTypeInternal() {}
   union {
     PortLinkFSMRecord _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortLinkFSMRecordDefaultTypeInternal _PortLinkFSMRecord_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortLinkFSMRecordDefaultTypeInternal _PortLinkFSMRecord_default_instance_;
 }  // namespace v1alpha1
 }  // namespace cloud
 }  // namespace network
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_port_2eproto[6];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_port_2eproto[11];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_port_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_port_2eproto[6];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_port_2eproto[11];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_port_2eproto = nullptr;
 
 const uint32_t TableStruct_port_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -160,83 +156,83 @@ const uint32_t TableStruct_port_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pro
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, spec_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, status_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, _impl_.spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, _impl_.status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, port_number_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, admin_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, speed_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, fec_type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, autoneg_enable_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, debounce_timeout_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, mtu_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, pause_type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, tx_pause_en_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, rx_pause_en_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, loopback_mode_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, lanes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.port_number_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.admin_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.speed_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.fec_type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.autoneg_enable_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.debounce_timeout_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.mtu_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.pause_type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.tx_pause_en_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.rx_pause_en_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.loopback_mode_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, _impl_.lanes_count_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, if_index_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, link_status_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, xcvr_status_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, fsm_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, mac_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, mac_ch_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, fsm_record_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, _impl_.if_index_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, _impl_.link_status_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, _impl_.xcvr_status_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, _impl_.fsm_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, _impl_.mac_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, _impl_.mac_ch_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortStatus, _impl_.fsm_record_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, oper_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, port_speed_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, autoneg_en_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, lanes_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, fec_type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, _impl_.oper_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, _impl_.port_speed_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, _impl_.autoneg_en_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, _impl_.lanes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkStatus, _impl_.fec_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, port_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, pid_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, media_type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, xcvr_sprom_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, vendorname_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, vendor_oui_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, encoding_type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, serial_number_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, part_number_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, revision_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, temperature_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, warn_temperature_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, alarm_temperature_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.port_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.pid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.media_type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.xcvr_sprom_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.vendorname_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.vendor_oui_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.encoding_type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.serial_number_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.part_number_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.revision_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.temperature_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.warn_temperature_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortXcvrStatus, _impl_.alarm_temperature_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord, fsm_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord, state_time_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord, duration_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord, _impl_.fsm_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord, _impl_.state_time_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord, _impl_.duration_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Port)},
   { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PortSpec)},
   { 28, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PortStatus)},
@@ -245,13 +241,13 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 72, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_Port_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_PortSpec_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_PortStatus_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_PortLinkStatus_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_PortXcvrStatus_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_PortLinkFSMRecord_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::opi_api::network::cloud::v1alpha1::_Port_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_PortSpec_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_PortStatus_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_PortLinkStatus_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_PortXcvrStatus_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_PortLinkFSMRecord_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_port_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -387,23 +383,25 @@ const char descriptor_table_protodef_port_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "roject/opi-api/network/cloud/v1alpha1/ge"
   "n/gob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_port_2eproto_deps[2] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_port_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_port_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_port_2eproto = {
-  false, false, 5212, descriptor_table_protodef_port_2eproto, "port.proto", 
-  &descriptor_table_port_2eproto_once, descriptor_table_port_2eproto_deps, 2, 6,
-  schemas, file_default_instances, TableStruct_port_2eproto::offsets,
-  file_level_metadata_port_2eproto, file_level_enum_descriptors_port_2eproto, file_level_service_descriptors_port_2eproto,
+static ::_pbi::once_flag descriptor_table_port_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_port_2eproto = {
+    false, false, 5212, descriptor_table_protodef_port_2eproto,
+    "port.proto",
+    &descriptor_table_port_2eproto_once, descriptor_table_port_2eproto_deps, 2, 6,
+    schemas, file_default_instances, TableStruct_port_2eproto::offsets,
+    file_level_metadata_port_2eproto, file_level_enum_descriptors_port_2eproto,
+    file_level_service_descriptors_port_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_port_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_port_2eproto_getter() {
   return &descriptor_table_port_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_port_2eproto(&descriptor_table_port_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_port_2eproto(&descriptor_table_port_2eproto);
 namespace opi_api {
 namespace network {
 namespace cloud {
@@ -646,78 +644,79 @@ class Port::_Internal {
 
 const ::opi_api::network::cloud::v1alpha1::PortSpec&
 Port::_Internal::spec(const Port* msg) {
-  return *msg->spec_;
+  return *msg->_impl_.spec_;
 }
 const ::opi_api::network::cloud::v1alpha1::PortStatus&
 Port::_Internal::status(const Port* msg) {
-  return *msg->status_;
+  return *msg->_impl_.status_;
 }
 Port::Port(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.Port)
 }
 Port::Port(const Port& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Port* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_spec()) {
-    spec_ = new ::opi_api::network::cloud::v1alpha1::PortSpec(*from.spec_);
-  } else {
-    spec_ = nullptr;
+    _this->_impl_.spec_ = new ::opi_api::network::cloud::v1alpha1::PortSpec(*from._impl_.spec_);
   }
   if (from._internal_has_status()) {
-    status_ = new ::opi_api::network::cloud::v1alpha1::PortStatus(*from.status_);
-  } else {
-    status_ = nullptr;
+    _this->_impl_.status_ = new ::opi_api::network::cloud::v1alpha1::PortStatus(*from._impl_.status_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.Port)
 }
 
-inline void Port::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&spec_)) + sizeof(status_));
+inline void Port::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Port::~Port() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.Port)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Port::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete spec_;
-  if (this != internal_default_instance()) delete status_;
+  _impl_.name_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.spec_;
+  if (this != internal_default_instance()) delete _impl_.status_;
 }
 
-void Port::ArenaDtor(void* object) {
-  Port* _this = reinterpret_cast< Port* >(object);
-  (void)_this;
-}
-void Port::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Port::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Port::Clear() {
@@ -726,31 +725,31 @@ void Port::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
-    delete spec_;
+  _impl_.name_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.spec_ != nullptr) {
+    delete _impl_.spec_;
   }
-  spec_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
-    delete status_;
+  _impl_.spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.status_ != nullptr) {
+    delete _impl_.status_;
   }
-  status_ = nullptr;
+  _impl_.status_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Port::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Port::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Port.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Port.name"));
         } else
           goto handle_unusual;
         continue;
@@ -811,22 +810,20 @@ uint8_t* Port::_InternalSerialize(
 
   // .opi_api.network.cloud.v1alpha1.PortSpec spec = 2;
   if (this->_internal_has_spec()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::spec(this), target, stream);
+      InternalWriteMessage(2, _Internal::spec(this),
+        _Internal::spec(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortStatus status = 3;
   if (this->_internal_has_status()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::status(this), target, stream);
+      InternalWriteMessage(3, _Internal::status(this),
+        _Internal::status(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.Port)
@@ -852,48 +849,46 @@ size_t Port::ByteSizeLong() const {
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *spec_);
+        *_impl_.spec_);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *status_);
+        *_impl_.status_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Port::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Port::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Port::GetClassData() const { return &_class_data_; }
 
-void Port::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Port *>(to)->MergeFrom(
-      static_cast<const Port &>(from));
-}
 
-
-void Port::MergeFrom(const Port& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.Port)
-  GOOGLE_DCHECK_NE(&from, this);
+void Port::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Port*>(&to_msg);
+  auto& from = static_cast<const Port&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.Port)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (from._internal_has_spec()) {
-    _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::PortSpec::MergeFrom(from._internal_spec());
+    _this->_internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::PortSpec::MergeFrom(
+        from._internal_spec());
   }
   if (from._internal_has_status()) {
-    _internal_mutable_status()->::opi_api::network::cloud::v1alpha1::PortStatus::MergeFrom(from._internal_status());
+    _this->_internal_mutable_status()->::opi_api::network::cloud::v1alpha1::PortStatus::MergeFrom(
+        from._internal_status());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Port::CopyFrom(const Port& from) {
@@ -913,20 +908,19 @@ void Port::InternalSwap(Port* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Port, status_)
-      + sizeof(Port::status_)
-      - PROTOBUF_FIELD_OFFSET(Port, spec_)>(
-          reinterpret_cast<char*>(&spec_),
-          reinterpret_cast<char*>(&other->spec_));
+      PROTOBUF_FIELD_OFFSET(Port, _impl_.status_)
+      + sizeof(Port::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(Port, _impl_.spec_)>(
+          reinterpret_cast<char*>(&_impl_.spec_),
+          reinterpret_cast<char*>(&other->_impl_.spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Port::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_port_2eproto_getter, &descriptor_table_port_2eproto_once,
       file_level_metadata_port_2eproto[0]);
 }
@@ -940,47 +934,72 @@ class PortSpec::_Internal {
 PortSpec::PortSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.PortSpec)
 }
 PortSpec::PortSpec(const PortSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PortSpec* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.port_number_){}
+    , decltype(_impl_.admin_state_){}
+    , decltype(_impl_.type_){}
+    , decltype(_impl_.speed_){}
+    , decltype(_impl_.fec_type_){}
+    , decltype(_impl_.debounce_timeout_){}
+    , decltype(_impl_.mtu_){}
+    , decltype(_impl_.pause_type_){}
+    , decltype(_impl_.autoneg_enable_){}
+    , decltype(_impl_.tx_pause_en_){}
+    , decltype(_impl_.rx_pause_en_){}
+    , decltype(_impl_.loopback_mode_){}
+    , decltype(_impl_.lanes_count_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&port_number_, &from.port_number_,
-    static_cast<size_t>(reinterpret_cast<char*>(&lanes_count_) -
-    reinterpret_cast<char*>(&port_number_)) + sizeof(lanes_count_));
+  ::memcpy(&_impl_.port_number_, &from._impl_.port_number_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.lanes_count_) -
+    reinterpret_cast<char*>(&_impl_.port_number_)) + sizeof(_impl_.lanes_count_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.PortSpec)
 }
 
-inline void PortSpec::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&port_number_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&lanes_count_) -
-    reinterpret_cast<char*>(&port_number_)) + sizeof(lanes_count_));
+inline void PortSpec::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.port_number_){0}
+    , decltype(_impl_.admin_state_){0}
+    , decltype(_impl_.type_){0}
+    , decltype(_impl_.speed_){0}
+    , decltype(_impl_.fec_type_){0}
+    , decltype(_impl_.debounce_timeout_){0}
+    , decltype(_impl_.mtu_){0}
+    , decltype(_impl_.pause_type_){0}
+    , decltype(_impl_.autoneg_enable_){false}
+    , decltype(_impl_.tx_pause_en_){false}
+    , decltype(_impl_.rx_pause_en_){false}
+    , decltype(_impl_.loopback_mode_){0}
+    , decltype(_impl_.lanes_count_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 PortSpec::~PortSpec() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.PortSpec)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PortSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void PortSpec::ArenaDtor(void* object) {
-  PortSpec* _this = reinterpret_cast< PortSpec* >(object);
-  (void)_this;
-}
-void PortSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PortSpec::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PortSpec::Clear() {
@@ -989,22 +1008,22 @@ void PortSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&port_number_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&lanes_count_) -
-      reinterpret_cast<char*>(&port_number_)) + sizeof(lanes_count_));
+  ::memset(&_impl_.port_number_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.lanes_count_) -
+      reinterpret_cast<char*>(&_impl_.port_number_)) + sizeof(_impl_.lanes_count_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PortSpec::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 port_number = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          port_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.port_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1048,7 +1067,7 @@ const char* PortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // bool autoneg_enable = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          autoneg_enable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.autoneg_enable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1056,7 +1075,7 @@ const char* PortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // int32 debounce_timeout = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          debounce_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.debounce_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1064,7 +1083,7 @@ const char* PortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // int32 mtu = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1081,7 +1100,7 @@ const char* PortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // bool tx_pause_en = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          tx_pause_en_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.tx_pause_en_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1089,7 +1108,7 @@ const char* PortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // bool rx_pause_en = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          rx_pause_en_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.rx_pause_en_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1106,7 +1125,7 @@ const char* PortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // int32 lanes_count = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          lanes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.lanes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1143,89 +1162,89 @@ uint8_t* PortSpec::_InternalSerialize(
   // int32 port_number = 1;
   if (this->_internal_port_number() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_port_number(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_port_number(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;
   if (this->_internal_admin_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_admin_state(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortType type = 3;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       3, this->_internal_type(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;
   if (this->_internal_speed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_speed(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
   if (this->_internal_fec_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       5, this->_internal_fec_type(), target);
   }
 
   // bool autoneg_enable = 6;
   if (this->_internal_autoneg_enable() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_autoneg_enable(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_autoneg_enable(), target);
   }
 
   // int32 debounce_timeout = 7;
   if (this->_internal_debounce_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_debounce_timeout(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_debounce_timeout(), target);
   }
 
   // int32 mtu = 8;
   if (this->_internal_mtu() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_mtu(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_mtu(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;
   if (this->_internal_pause_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       9, this->_internal_pause_type(), target);
   }
 
   // bool tx_pause_en = 10;
   if (this->_internal_tx_pause_en() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(10, this->_internal_tx_pause_en(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(10, this->_internal_tx_pause_en(), target);
   }
 
   // bool rx_pause_en = 11;
   if (this->_internal_rx_pause_en() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_rx_pause_en(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(11, this->_internal_rx_pause_en(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;
   if (this->_internal_loopback_mode() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       12, this->_internal_loopback_mode(), target);
   }
 
   // int32 lanes_count = 13;
   if (this->_internal_lanes_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_lanes_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_lanes_count(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.PortSpec)
@@ -1242,47 +1261,47 @@ size_t PortSpec::ByteSizeLong() const {
 
   // int32 port_number = 1;
   if (this->_internal_port_number() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_port_number());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_port_number());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;
   if (this->_internal_admin_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_admin_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_admin_state());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortType type = 3;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;
   if (this->_internal_speed() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_speed());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_speed());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
   if (this->_internal_fec_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_fec_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_fec_type());
   }
 
   // int32 debounce_timeout = 7;
   if (this->_internal_debounce_timeout() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_debounce_timeout());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_debounce_timeout());
   }
 
   // int32 mtu = 8;
   if (this->_internal_mtu() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_mtu());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mtu());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;
   if (this->_internal_pause_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_pause_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_pause_type());
   }
 
   // bool autoneg_enable = 6;
@@ -1303,76 +1322,72 @@ size_t PortSpec::ByteSizeLong() const {
   // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;
   if (this->_internal_loopback_mode() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_loopback_mode());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_loopback_mode());
   }
 
   // int32 lanes_count = 13;
   if (this->_internal_lanes_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_lanes_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_lanes_count());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PortSpec::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PortSpec::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PortSpec::GetClassData() const { return &_class_data_; }
 
-void PortSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PortSpec *>(to)->MergeFrom(
-      static_cast<const PortSpec &>(from));
-}
 
-
-void PortSpec::MergeFrom(const PortSpec& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortSpec)
-  GOOGLE_DCHECK_NE(&from, this);
+void PortSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PortSpec*>(&to_msg);
+  auto& from = static_cast<const PortSpec&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortSpec)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_port_number() != 0) {
-    _internal_set_port_number(from._internal_port_number());
+    _this->_internal_set_port_number(from._internal_port_number());
   }
   if (from._internal_admin_state() != 0) {
-    _internal_set_admin_state(from._internal_admin_state());
+    _this->_internal_set_admin_state(from._internal_admin_state());
   }
   if (from._internal_type() != 0) {
-    _internal_set_type(from._internal_type());
+    _this->_internal_set_type(from._internal_type());
   }
   if (from._internal_speed() != 0) {
-    _internal_set_speed(from._internal_speed());
+    _this->_internal_set_speed(from._internal_speed());
   }
   if (from._internal_fec_type() != 0) {
-    _internal_set_fec_type(from._internal_fec_type());
+    _this->_internal_set_fec_type(from._internal_fec_type());
   }
   if (from._internal_debounce_timeout() != 0) {
-    _internal_set_debounce_timeout(from._internal_debounce_timeout());
+    _this->_internal_set_debounce_timeout(from._internal_debounce_timeout());
   }
   if (from._internal_mtu() != 0) {
-    _internal_set_mtu(from._internal_mtu());
+    _this->_internal_set_mtu(from._internal_mtu());
   }
   if (from._internal_pause_type() != 0) {
-    _internal_set_pause_type(from._internal_pause_type());
+    _this->_internal_set_pause_type(from._internal_pause_type());
   }
   if (from._internal_autoneg_enable() != 0) {
-    _internal_set_autoneg_enable(from._internal_autoneg_enable());
+    _this->_internal_set_autoneg_enable(from._internal_autoneg_enable());
   }
   if (from._internal_tx_pause_en() != 0) {
-    _internal_set_tx_pause_en(from._internal_tx_pause_en());
+    _this->_internal_set_tx_pause_en(from._internal_tx_pause_en());
   }
   if (from._internal_rx_pause_en() != 0) {
-    _internal_set_rx_pause_en(from._internal_rx_pause_en());
+    _this->_internal_set_rx_pause_en(from._internal_rx_pause_en());
   }
   if (from._internal_loopback_mode() != 0) {
-    _internal_set_loopback_mode(from._internal_loopback_mode());
+    _this->_internal_set_loopback_mode(from._internal_loopback_mode());
   }
   if (from._internal_lanes_count() != 0) {
-    _internal_set_lanes_count(from._internal_lanes_count());
+    _this->_internal_set_lanes_count(from._internal_lanes_count());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PortSpec::CopyFrom(const PortSpec& from) {
@@ -1390,15 +1405,15 @@ void PortSpec::InternalSwap(PortSpec* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PortSpec, lanes_count_)
-      + sizeof(PortSpec::lanes_count_)
-      - PROTOBUF_FIELD_OFFSET(PortSpec, port_number_)>(
-          reinterpret_cast<char*>(&port_number_),
-          reinterpret_cast<char*>(&other->port_number_));
+      PROTOBUF_FIELD_OFFSET(PortSpec, _impl_.lanes_count_)
+      + sizeof(PortSpec::_impl_.lanes_count_)
+      - PROTOBUF_FIELD_OFFSET(PortSpec, _impl_.port_number_)>(
+          reinterpret_cast<char*>(&_impl_.port_number_),
+          reinterpret_cast<char*>(&other->_impl_.port_number_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortSpec::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_port_2eproto_getter, &descriptor_table_port_2eproto_once,
       file_level_metadata_port_2eproto[1]);
 }
@@ -1413,70 +1428,78 @@ class PortStatus::_Internal {
 
 const ::opi_api::network::cloud::v1alpha1::PortLinkStatus&
 PortStatus::_Internal::link_status(const PortStatus* msg) {
-  return *msg->link_status_;
+  return *msg->_impl_.link_status_;
 }
 const ::opi_api::network::cloud::v1alpha1::PortXcvrStatus&
 PortStatus::_Internal::xcvr_status(const PortStatus* msg) {
-  return *msg->xcvr_status_;
+  return *msg->_impl_.xcvr_status_;
 }
 PortStatus::PortStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  fsm_record_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.PortStatus)
 }
 PortStatus::PortStatus(const PortStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      fsm_record_(from.fsm_record_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PortStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.fsm_record_){from._impl_.fsm_record_}
+    , decltype(_impl_.link_status_){nullptr}
+    , decltype(_impl_.xcvr_status_){nullptr}
+    , decltype(_impl_.if_index_){}
+    , decltype(_impl_.fsm_state_){}
+    , decltype(_impl_.mac_id_){}
+    , decltype(_impl_.mac_ch_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_link_status()) {
-    link_status_ = new ::opi_api::network::cloud::v1alpha1::PortLinkStatus(*from.link_status_);
-  } else {
-    link_status_ = nullptr;
+    _this->_impl_.link_status_ = new ::opi_api::network::cloud::v1alpha1::PortLinkStatus(*from._impl_.link_status_);
   }
   if (from._internal_has_xcvr_status()) {
-    xcvr_status_ = new ::opi_api::network::cloud::v1alpha1::PortXcvrStatus(*from.xcvr_status_);
-  } else {
-    xcvr_status_ = nullptr;
+    _this->_impl_.xcvr_status_ = new ::opi_api::network::cloud::v1alpha1::PortXcvrStatus(*from._impl_.xcvr_status_);
   }
-  ::memcpy(&if_index_, &from.if_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&mac_ch_) -
-    reinterpret_cast<char*>(&if_index_)) + sizeof(mac_ch_));
+  ::memcpy(&_impl_.if_index_, &from._impl_.if_index_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.mac_ch_) -
+    reinterpret_cast<char*>(&_impl_.if_index_)) + sizeof(_impl_.mac_ch_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.PortStatus)
 }
 
-inline void PortStatus::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&link_status_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&mac_ch_) -
-    reinterpret_cast<char*>(&link_status_)) + sizeof(mac_ch_));
+inline void PortStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.fsm_record_){arena}
+    , decltype(_impl_.link_status_){nullptr}
+    , decltype(_impl_.xcvr_status_){nullptr}
+    , decltype(_impl_.if_index_){0u}
+    , decltype(_impl_.fsm_state_){0}
+    , decltype(_impl_.mac_id_){0}
+    , decltype(_impl_.mac_ch_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 PortStatus::~PortStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.PortStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PortStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete link_status_;
-  if (this != internal_default_instance()) delete xcvr_status_;
+  _impl_.fsm_record_.~RepeatedPtrField();
+  if (this != internal_default_instance()) delete _impl_.link_status_;
+  if (this != internal_default_instance()) delete _impl_.xcvr_status_;
 }
 
-void PortStatus::ArenaDtor(void* object) {
-  PortStatus* _this = reinterpret_cast< PortStatus* >(object);
-  (void)_this;
-}
-void PortStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PortStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PortStatus::Clear() {
@@ -1485,31 +1508,31 @@ void PortStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  fsm_record_.Clear();
-  if (GetArenaForAllocation() == nullptr && link_status_ != nullptr) {
-    delete link_status_;
+  _impl_.fsm_record_.Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.link_status_ != nullptr) {
+    delete _impl_.link_status_;
   }
-  link_status_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && xcvr_status_ != nullptr) {
-    delete xcvr_status_;
+  _impl_.link_status_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.xcvr_status_ != nullptr) {
+    delete _impl_.xcvr_status_;
   }
-  xcvr_status_ = nullptr;
-  ::memset(&if_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&mac_ch_) -
-      reinterpret_cast<char*>(&if_index_)) + sizeof(mac_ch_));
+  _impl_.xcvr_status_ = nullptr;
+  ::memset(&_impl_.if_index_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.mac_ch_) -
+      reinterpret_cast<char*>(&_impl_.if_index_)) + sizeof(_impl_.mac_ch_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PortStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PortStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint32 if_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          if_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.if_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1542,7 +1565,7 @@ const char* PortStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // int32 mac_id = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          mac_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.mac_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1550,7 +1573,7 @@ const char* PortStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // int32 mac_ch = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          mac_ch_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.mac_ch_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1600,54 +1623,52 @@ uint8_t* PortStatus::_InternalSerialize(
   // uint32 if_index = 1;
   if (this->_internal_if_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_if_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_if_index(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortLinkStatus link_status = 2;
   if (this->_internal_has_link_status()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::link_status(this), target, stream);
+      InternalWriteMessage(2, _Internal::link_status(this),
+        _Internal::link_status(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortXcvrStatus xcvr_status = 3;
   if (this->_internal_has_xcvr_status()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::xcvr_status(this), target, stream);
+      InternalWriteMessage(3, _Internal::xcvr_status(this),
+        _Internal::xcvr_status(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortLinkFSM fsm_state = 4;
   if (this->_internal_fsm_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_fsm_state(), target);
   }
 
   // int32 mac_id = 5;
   if (this->_internal_mac_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_mac_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_mac_id(), target);
   }
 
   // int32 mac_ch = 6;
   if (this->_internal_mac_ch() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_mac_ch(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_mac_ch(), target);
   }
 
   // repeated .opi_api.network.cloud.v1alpha1.PortLinkFSMRecord fsm_record = 7;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_fsm_record_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_fsm_record_size()); i < n; i++) {
+    const auto& repfield = this->_internal_fsm_record(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(7, this->_internal_fsm_record(i), target, stream);
+        InternalWriteMessage(7, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.PortStatus)
@@ -1664,7 +1685,7 @@ size_t PortStatus::ByteSizeLong() const {
 
   // repeated .opi_api.network.cloud.v1alpha1.PortLinkFSMRecord fsm_record = 7;
   total_size += 1UL * this->_internal_fsm_record_size();
-  for (const auto& msg : this->fsm_record_) {
+  for (const auto& msg : this->_impl_.fsm_record_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -1673,79 +1694,77 @@ size_t PortStatus::ByteSizeLong() const {
   if (this->_internal_has_link_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *link_status_);
+        *_impl_.link_status_);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortXcvrStatus xcvr_status = 3;
   if (this->_internal_has_xcvr_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *xcvr_status_);
+        *_impl_.xcvr_status_);
   }
 
   // uint32 if_index = 1;
   if (this->_internal_if_index() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_if_index());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_if_index());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortLinkFSM fsm_state = 4;
   if (this->_internal_fsm_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_fsm_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_fsm_state());
   }
 
   // int32 mac_id = 5;
   if (this->_internal_mac_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_mac_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mac_id());
   }
 
   // int32 mac_ch = 6;
   if (this->_internal_mac_ch() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_mac_ch());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mac_ch());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PortStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PortStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PortStatus::GetClassData() const { return &_class_data_; }
 
-void PortStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PortStatus *>(to)->MergeFrom(
-      static_cast<const PortStatus &>(from));
-}
 
-
-void PortStatus::MergeFrom(const PortStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void PortStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PortStatus*>(&to_msg);
+  auto& from = static_cast<const PortStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  fsm_record_.MergeFrom(from.fsm_record_);
+  _this->_impl_.fsm_record_.MergeFrom(from._impl_.fsm_record_);
   if (from._internal_has_link_status()) {
-    _internal_mutable_link_status()->::opi_api::network::cloud::v1alpha1::PortLinkStatus::MergeFrom(from._internal_link_status());
+    _this->_internal_mutable_link_status()->::opi_api::network::cloud::v1alpha1::PortLinkStatus::MergeFrom(
+        from._internal_link_status());
   }
   if (from._internal_has_xcvr_status()) {
-    _internal_mutable_xcvr_status()->::opi_api::network::cloud::v1alpha1::PortXcvrStatus::MergeFrom(from._internal_xcvr_status());
+    _this->_internal_mutable_xcvr_status()->::opi_api::network::cloud::v1alpha1::PortXcvrStatus::MergeFrom(
+        from._internal_xcvr_status());
   }
   if (from._internal_if_index() != 0) {
-    _internal_set_if_index(from._internal_if_index());
+    _this->_internal_set_if_index(from._internal_if_index());
   }
   if (from._internal_fsm_state() != 0) {
-    _internal_set_fsm_state(from._internal_fsm_state());
+    _this->_internal_set_fsm_state(from._internal_fsm_state());
   }
   if (from._internal_mac_id() != 0) {
-    _internal_set_mac_id(from._internal_mac_id());
+    _this->_internal_set_mac_id(from._internal_mac_id());
   }
   if (from._internal_mac_ch() != 0) {
-    _internal_set_mac_ch(from._internal_mac_ch());
+    _this->_internal_set_mac_ch(from._internal_mac_ch());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PortStatus::CopyFrom(const PortStatus& from) {
@@ -1762,17 +1781,17 @@ bool PortStatus::IsInitialized() const {
 void PortStatus::InternalSwap(PortStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  fsm_record_.InternalSwap(&other->fsm_record_);
+  _impl_.fsm_record_.InternalSwap(&other->_impl_.fsm_record_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PortStatus, mac_ch_)
-      + sizeof(PortStatus::mac_ch_)
-      - PROTOBUF_FIELD_OFFSET(PortStatus, link_status_)>(
-          reinterpret_cast<char*>(&link_status_),
-          reinterpret_cast<char*>(&other->link_status_));
+      PROTOBUF_FIELD_OFFSET(PortStatus, _impl_.mac_ch_)
+      + sizeof(PortStatus::_impl_.mac_ch_)
+      - PROTOBUF_FIELD_OFFSET(PortStatus, _impl_.link_status_)>(
+          reinterpret_cast<char*>(&_impl_.link_status_),
+          reinterpret_cast<char*>(&other->_impl_.link_status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_port_2eproto_getter, &descriptor_table_port_2eproto_once,
       file_level_metadata_port_2eproto[2]);
 }
@@ -1786,47 +1805,56 @@ class PortLinkStatus::_Internal {
 PortLinkStatus::PortLinkStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.PortLinkStatus)
 }
 PortLinkStatus::PortLinkStatus(const PortLinkStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PortLinkStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.oper_state_){}
+    , decltype(_impl_.port_speed_){}
+    , decltype(_impl_.autoneg_en_){}
+    , decltype(_impl_.lanes_count_){}
+    , decltype(_impl_.fec_type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&oper_state_, &from.oper_state_,
-    static_cast<size_t>(reinterpret_cast<char*>(&fec_type_) -
-    reinterpret_cast<char*>(&oper_state_)) + sizeof(fec_type_));
+  ::memcpy(&_impl_.oper_state_, &from._impl_.oper_state_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.fec_type_) -
+    reinterpret_cast<char*>(&_impl_.oper_state_)) + sizeof(_impl_.fec_type_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.PortLinkStatus)
 }
 
-inline void PortLinkStatus::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&oper_state_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&fec_type_) -
-    reinterpret_cast<char*>(&oper_state_)) + sizeof(fec_type_));
+inline void PortLinkStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.oper_state_){0}
+    , decltype(_impl_.port_speed_){0}
+    , decltype(_impl_.autoneg_en_){false}
+    , decltype(_impl_.lanes_count_){0}
+    , decltype(_impl_.fec_type_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 PortLinkStatus::~PortLinkStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.PortLinkStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PortLinkStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void PortLinkStatus::ArenaDtor(void* object) {
-  PortLinkStatus* _this = reinterpret_cast< PortLinkStatus* >(object);
-  (void)_this;
-}
-void PortLinkStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PortLinkStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PortLinkStatus::Clear() {
@@ -1835,17 +1863,17 @@ void PortLinkStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&oper_state_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&fec_type_) -
-      reinterpret_cast<char*>(&oper_state_)) + sizeof(fec_type_));
+  ::memset(&_impl_.oper_state_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.fec_type_) -
+      reinterpret_cast<char*>(&_impl_.oper_state_)) + sizeof(_impl_.fec_type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PortLinkStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PortLinkStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.cloud.v1alpha1.PortOperState oper_state = 1;
       case 1:
@@ -1868,7 +1896,7 @@ const char* PortLinkStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       // bool autoneg_en = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          autoneg_en_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.autoneg_en_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1876,7 +1904,7 @@ const char* PortLinkStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       // int32 lanes_count = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          lanes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.lanes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1922,38 +1950,38 @@ uint8_t* PortLinkStatus::_InternalSerialize(
   // .opi_api.network.cloud.v1alpha1.PortOperState oper_state = 1;
   if (this->_internal_oper_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_oper_state(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortSpeed port_speed = 2;
   if (this->_internal_port_speed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_port_speed(), target);
   }
 
   // bool autoneg_en = 3;
   if (this->_internal_autoneg_en() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_autoneg_en(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_autoneg_en(), target);
   }
 
   // int32 lanes_count = 4;
   if (this->_internal_lanes_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_lanes_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_lanes_count(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
   if (this->_internal_fec_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       5, this->_internal_fec_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.PortLinkStatus)
@@ -1971,13 +1999,13 @@ size_t PortLinkStatus::ByteSizeLong() const {
   // .opi_api.network.cloud.v1alpha1.PortOperState oper_state = 1;
   if (this->_internal_oper_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_oper_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_oper_state());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortSpeed port_speed = 2;
   if (this->_internal_port_speed() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_port_speed());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_port_speed());
   }
 
   // bool autoneg_en = 3;
@@ -1987,53 +2015,49 @@ size_t PortLinkStatus::ByteSizeLong() const {
 
   // int32 lanes_count = 4;
   if (this->_internal_lanes_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_lanes_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_lanes_count());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
   if (this->_internal_fec_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_fec_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_fec_type());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PortLinkStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PortLinkStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PortLinkStatus::GetClassData() const { return &_class_data_; }
 
-void PortLinkStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PortLinkStatus *>(to)->MergeFrom(
-      static_cast<const PortLinkStatus &>(from));
-}
 
-
-void PortLinkStatus::MergeFrom(const PortLinkStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortLinkStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void PortLinkStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PortLinkStatus*>(&to_msg);
+  auto& from = static_cast<const PortLinkStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortLinkStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_oper_state() != 0) {
-    _internal_set_oper_state(from._internal_oper_state());
+    _this->_internal_set_oper_state(from._internal_oper_state());
   }
   if (from._internal_port_speed() != 0) {
-    _internal_set_port_speed(from._internal_port_speed());
+    _this->_internal_set_port_speed(from._internal_port_speed());
   }
   if (from._internal_autoneg_en() != 0) {
-    _internal_set_autoneg_en(from._internal_autoneg_en());
+    _this->_internal_set_autoneg_en(from._internal_autoneg_en());
   }
   if (from._internal_lanes_count() != 0) {
-    _internal_set_lanes_count(from._internal_lanes_count());
+    _this->_internal_set_lanes_count(from._internal_lanes_count());
   }
   if (from._internal_fec_type() != 0) {
-    _internal_set_fec_type(from._internal_fec_type());
+    _this->_internal_set_fec_type(from._internal_fec_type());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PortLinkStatus::CopyFrom(const PortLinkStatus& from) {
@@ -2051,15 +2075,15 @@ void PortLinkStatus::InternalSwap(PortLinkStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PortLinkStatus, fec_type_)
-      + sizeof(PortLinkStatus::fec_type_)
-      - PROTOBUF_FIELD_OFFSET(PortLinkStatus, oper_state_)>(
-          reinterpret_cast<char*>(&oper_state_),
-          reinterpret_cast<char*>(&other->oper_state_));
+      PROTOBUF_FIELD_OFFSET(PortLinkStatus, _impl_.fec_type_)
+      + sizeof(PortLinkStatus::_impl_.fec_type_)
+      - PROTOBUF_FIELD_OFFSET(PortLinkStatus, _impl_.oper_state_)>(
+          reinterpret_cast<char*>(&_impl_.oper_state_),
+          reinterpret_cast<char*>(&other->_impl_.oper_state_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortLinkStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_port_2eproto_getter, &descriptor_table_port_2eproto_once,
       file_level_metadata_port_2eproto[3]);
 }
@@ -2073,125 +2097,152 @@ class PortXcvrStatus::_Internal {
 PortXcvrStatus::PortXcvrStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.PortXcvrStatus)
 }
 PortXcvrStatus::PortXcvrStatus(const PortXcvrStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PortXcvrStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.xcvr_sprom_){}
+    , decltype(_impl_.vendorname_){}
+    , decltype(_impl_.vendor_oui_){}
+    , decltype(_impl_.serial_number_){}
+    , decltype(_impl_.part_number_){}
+    , decltype(_impl_.revision_){}
+    , decltype(_impl_.port_){}
+    , decltype(_impl_.state_){}
+    , decltype(_impl_.pid_){}
+    , decltype(_impl_.media_type_){}
+    , decltype(_impl_.encoding_type_){}
+    , decltype(_impl_.temperature_){}
+    , decltype(_impl_.warn_temperature_){}
+    , decltype(_impl_.alarm_temperature_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  xcvr_sprom_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.xcvr_sprom_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    xcvr_sprom_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.xcvr_sprom_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_xcvr_sprom().empty()) {
-    xcvr_sprom_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xcvr_sprom(), 
-      GetArenaForAllocation());
+    _this->_impl_.xcvr_sprom_.Set(from._internal_xcvr_sprom(), 
+      _this->GetArenaForAllocation());
   }
-  vendorname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.vendorname_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    vendorname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.vendorname_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_vendorname().empty()) {
-    vendorname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vendorname(), 
-      GetArenaForAllocation());
+    _this->_impl_.vendorname_.Set(from._internal_vendorname(), 
+      _this->GetArenaForAllocation());
   }
-  vendor_oui_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.vendor_oui_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    vendor_oui_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.vendor_oui_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_vendor_oui().empty()) {
-    vendor_oui_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vendor_oui(), 
-      GetArenaForAllocation());
+    _this->_impl_.vendor_oui_.Set(from._internal_vendor_oui(), 
+      _this->GetArenaForAllocation());
   }
-  serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.serial_number_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.serial_number_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_serial_number().empty()) {
-    serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_serial_number(), 
-      GetArenaForAllocation());
+    _this->_impl_.serial_number_.Set(from._internal_serial_number(), 
+      _this->GetArenaForAllocation());
   }
-  part_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.part_number_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    part_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.part_number_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_part_number().empty()) {
-    part_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_part_number(), 
-      GetArenaForAllocation());
+    _this->_impl_.part_number_.Set(from._internal_part_number(), 
+      _this->GetArenaForAllocation());
   }
-  revision_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.revision_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.revision_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_revision().empty()) {
-    revision_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_revision(), 
-      GetArenaForAllocation());
+    _this->_impl_.revision_.Set(from._internal_revision(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&port_, &from.port_,
-    static_cast<size_t>(reinterpret_cast<char*>(&alarm_temperature_) -
-    reinterpret_cast<char*>(&port_)) + sizeof(alarm_temperature_));
+  ::memcpy(&_impl_.port_, &from._impl_.port_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.alarm_temperature_) -
+    reinterpret_cast<char*>(&_impl_.port_)) + sizeof(_impl_.alarm_temperature_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.PortXcvrStatus)
 }
 
-inline void PortXcvrStatus::SharedCtor() {
-xcvr_sprom_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  xcvr_sprom_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-vendorname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  vendorname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-vendor_oui_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  vendor_oui_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-part_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  part_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-revision_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&port_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&alarm_temperature_) -
-    reinterpret_cast<char*>(&port_)) + sizeof(alarm_temperature_));
+inline void PortXcvrStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.xcvr_sprom_){}
+    , decltype(_impl_.vendorname_){}
+    , decltype(_impl_.vendor_oui_){}
+    , decltype(_impl_.serial_number_){}
+    , decltype(_impl_.part_number_){}
+    , decltype(_impl_.revision_){}
+    , decltype(_impl_.port_){0}
+    , decltype(_impl_.state_){0}
+    , decltype(_impl_.pid_){0}
+    , decltype(_impl_.media_type_){0}
+    , decltype(_impl_.encoding_type_){0}
+    , decltype(_impl_.temperature_){0}
+    , decltype(_impl_.warn_temperature_){0}
+    , decltype(_impl_.alarm_temperature_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.xcvr_sprom_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.xcvr_sprom_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.vendorname_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.vendorname_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.vendor_oui_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.vendor_oui_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.serial_number_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.serial_number_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.part_number_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.part_number_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.revision_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.revision_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 PortXcvrStatus::~PortXcvrStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.PortXcvrStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PortXcvrStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  xcvr_sprom_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  vendorname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  vendor_oui_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  part_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  revision_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.xcvr_sprom_.Destroy();
+  _impl_.vendorname_.Destroy();
+  _impl_.vendor_oui_.Destroy();
+  _impl_.serial_number_.Destroy();
+  _impl_.part_number_.Destroy();
+  _impl_.revision_.Destroy();
 }
 
-void PortXcvrStatus::ArenaDtor(void* object) {
-  PortXcvrStatus* _this = reinterpret_cast< PortXcvrStatus* >(object);
-  (void)_this;
-}
-void PortXcvrStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PortXcvrStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PortXcvrStatus::Clear() {
@@ -2200,28 +2251,28 @@ void PortXcvrStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  xcvr_sprom_.ClearToEmpty();
-  vendorname_.ClearToEmpty();
-  vendor_oui_.ClearToEmpty();
-  serial_number_.ClearToEmpty();
-  part_number_.ClearToEmpty();
-  revision_.ClearToEmpty();
-  ::memset(&port_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&alarm_temperature_) -
-      reinterpret_cast<char*>(&port_)) + sizeof(alarm_temperature_));
+  _impl_.xcvr_sprom_.ClearToEmpty();
+  _impl_.vendorname_.ClearToEmpty();
+  _impl_.vendor_oui_.ClearToEmpty();
+  _impl_.serial_number_.ClearToEmpty();
+  _impl_.part_number_.ClearToEmpty();
+  _impl_.revision_.ClearToEmpty();
+  ::memset(&_impl_.port_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.alarm_temperature_) -
+      reinterpret_cast<char*>(&_impl_.port_)) + sizeof(_impl_.alarm_temperature_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PortXcvrStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 port = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2257,7 +2308,7 @@ const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_xcvr_sprom();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2266,9 +2317,9 @@ const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_vendorname();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.vendorname"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.vendorname"));
         } else
           goto handle_unusual;
         continue;
@@ -2276,16 +2327,16 @@ const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_vendor_oui();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.vendor_oui"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.vendor_oui"));
         } else
           goto handle_unusual;
         continue;
       // int32 encoding_type = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          encoding_type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.encoding_type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2294,9 +2345,9 @@ const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           auto str = _internal_mutable_serial_number();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.serial_number"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.serial_number"));
         } else
           goto handle_unusual;
         continue;
@@ -2304,9 +2355,9 @@ const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_part_number();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.part_number"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.part_number"));
         } else
           goto handle_unusual;
         continue;
@@ -2314,16 +2365,16 @@ const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_revision();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.revision"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortXcvrStatus.revision"));
         } else
           goto handle_unusual;
         continue;
       // int32 temperature = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2331,7 +2382,7 @@ const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       // int32 warn_temperature = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          warn_temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.warn_temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2339,7 +2390,7 @@ const char* PortXcvrStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       // int32 alarm_temperature = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          alarm_temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.alarm_temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2376,27 +2427,27 @@ uint8_t* PortXcvrStatus::_InternalSerialize(
   // int32 port = 1;
   if (this->_internal_port() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_port(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_port(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortXcvrState state = 2;
   if (this->_internal_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_state(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortXcvrPid pid = 3;
   if (this->_internal_pid() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       3, this->_internal_pid(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.MediaType media_type = 4;
   if (this->_internal_media_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_media_type(), target);
   }
 
@@ -2429,7 +2480,7 @@ uint8_t* PortXcvrStatus::_InternalSerialize(
   // int32 encoding_type = 8;
   if (this->_internal_encoding_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_encoding_type(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_encoding_type(), target);
   }
 
   // string serial_number = 9;
@@ -2465,23 +2516,23 @@ uint8_t* PortXcvrStatus::_InternalSerialize(
   // int32 temperature = 12;
   if (this->_internal_temperature() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(12, this->_internal_temperature(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_temperature(), target);
   }
 
   // int32 warn_temperature = 13;
   if (this->_internal_warn_temperature() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_warn_temperature(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_warn_temperature(), target);
   }
 
   // int32 alarm_temperature = 14;
   if (this->_internal_alarm_temperature() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_alarm_temperature(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_alarm_temperature(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.PortXcvrStatus)
@@ -2540,112 +2591,108 @@ size_t PortXcvrStatus::ByteSizeLong() const {
 
   // int32 port = 1;
   if (this->_internal_port() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_port());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_port());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortXcvrState state = 2;
   if (this->_internal_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_state());
   }
 
   // .opi_api.network.cloud.v1alpha1.PortXcvrPid pid = 3;
   if (this->_internal_pid() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_pid());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_pid());
   }
 
   // .opi_api.network.cloud.v1alpha1.MediaType media_type = 4;
   if (this->_internal_media_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_media_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_media_type());
   }
 
   // int32 encoding_type = 8;
   if (this->_internal_encoding_type() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_encoding_type());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_encoding_type());
   }
 
   // int32 temperature = 12;
   if (this->_internal_temperature() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_temperature());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_temperature());
   }
 
   // int32 warn_temperature = 13;
   if (this->_internal_warn_temperature() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_warn_temperature());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_warn_temperature());
   }
 
   // int32 alarm_temperature = 14;
   if (this->_internal_alarm_temperature() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_alarm_temperature());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_alarm_temperature());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PortXcvrStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PortXcvrStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PortXcvrStatus::GetClassData() const { return &_class_data_; }
 
-void PortXcvrStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PortXcvrStatus *>(to)->MergeFrom(
-      static_cast<const PortXcvrStatus &>(from));
-}
 
-
-void PortXcvrStatus::MergeFrom(const PortXcvrStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortXcvrStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void PortXcvrStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PortXcvrStatus*>(&to_msg);
+  auto& from = static_cast<const PortXcvrStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortXcvrStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_xcvr_sprom().empty()) {
-    _internal_set_xcvr_sprom(from._internal_xcvr_sprom());
+    _this->_internal_set_xcvr_sprom(from._internal_xcvr_sprom());
   }
   if (!from._internal_vendorname().empty()) {
-    _internal_set_vendorname(from._internal_vendorname());
+    _this->_internal_set_vendorname(from._internal_vendorname());
   }
   if (!from._internal_vendor_oui().empty()) {
-    _internal_set_vendor_oui(from._internal_vendor_oui());
+    _this->_internal_set_vendor_oui(from._internal_vendor_oui());
   }
   if (!from._internal_serial_number().empty()) {
-    _internal_set_serial_number(from._internal_serial_number());
+    _this->_internal_set_serial_number(from._internal_serial_number());
   }
   if (!from._internal_part_number().empty()) {
-    _internal_set_part_number(from._internal_part_number());
+    _this->_internal_set_part_number(from._internal_part_number());
   }
   if (!from._internal_revision().empty()) {
-    _internal_set_revision(from._internal_revision());
+    _this->_internal_set_revision(from._internal_revision());
   }
   if (from._internal_port() != 0) {
-    _internal_set_port(from._internal_port());
+    _this->_internal_set_port(from._internal_port());
   }
   if (from._internal_state() != 0) {
-    _internal_set_state(from._internal_state());
+    _this->_internal_set_state(from._internal_state());
   }
   if (from._internal_pid() != 0) {
-    _internal_set_pid(from._internal_pid());
+    _this->_internal_set_pid(from._internal_pid());
   }
   if (from._internal_media_type() != 0) {
-    _internal_set_media_type(from._internal_media_type());
+    _this->_internal_set_media_type(from._internal_media_type());
   }
   if (from._internal_encoding_type() != 0) {
-    _internal_set_encoding_type(from._internal_encoding_type());
+    _this->_internal_set_encoding_type(from._internal_encoding_type());
   }
   if (from._internal_temperature() != 0) {
-    _internal_set_temperature(from._internal_temperature());
+    _this->_internal_set_temperature(from._internal_temperature());
   }
   if (from._internal_warn_temperature() != 0) {
-    _internal_set_warn_temperature(from._internal_warn_temperature());
+    _this->_internal_set_warn_temperature(from._internal_warn_temperature());
   }
   if (from._internal_alarm_temperature() != 0) {
-    _internal_set_alarm_temperature(from._internal_alarm_temperature());
+    _this->_internal_set_alarm_temperature(from._internal_alarm_temperature());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PortXcvrStatus::CopyFrom(const PortXcvrStatus& from) {
@@ -2665,45 +2712,39 @@ void PortXcvrStatus::InternalSwap(PortXcvrStatus* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &xcvr_sprom_, lhs_arena,
-      &other->xcvr_sprom_, rhs_arena
+      &_impl_.xcvr_sprom_, lhs_arena,
+      &other->_impl_.xcvr_sprom_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &vendorname_, lhs_arena,
-      &other->vendorname_, rhs_arena
+      &_impl_.vendorname_, lhs_arena,
+      &other->_impl_.vendorname_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &vendor_oui_, lhs_arena,
-      &other->vendor_oui_, rhs_arena
+      &_impl_.vendor_oui_, lhs_arena,
+      &other->_impl_.vendor_oui_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &serial_number_, lhs_arena,
-      &other->serial_number_, rhs_arena
+      &_impl_.serial_number_, lhs_arena,
+      &other->_impl_.serial_number_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &part_number_, lhs_arena,
-      &other->part_number_, rhs_arena
+      &_impl_.part_number_, lhs_arena,
+      &other->_impl_.part_number_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &revision_, lhs_arena,
-      &other->revision_, rhs_arena
+      &_impl_.revision_, lhs_arena,
+      &other->_impl_.revision_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PortXcvrStatus, alarm_temperature_)
-      + sizeof(PortXcvrStatus::alarm_temperature_)
-      - PROTOBUF_FIELD_OFFSET(PortXcvrStatus, port_)>(
-          reinterpret_cast<char*>(&port_),
-          reinterpret_cast<char*>(&other->port_));
+      PROTOBUF_FIELD_OFFSET(PortXcvrStatus, _impl_.alarm_temperature_)
+      + sizeof(PortXcvrStatus::_impl_.alarm_temperature_)
+      - PROTOBUF_FIELD_OFFSET(PortXcvrStatus, _impl_.port_)>(
+          reinterpret_cast<char*>(&_impl_.port_),
+          reinterpret_cast<char*>(&other->_impl_.port_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortXcvrStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_port_2eproto_getter, &descriptor_table_port_2eproto_once,
       file_level_metadata_port_2eproto[4]);
 }
@@ -2717,75 +2758,78 @@ class PortLinkFSMRecord::_Internal {
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 PortLinkFSMRecord::_Internal::state_time(const PortLinkFSMRecord* msg) {
-  return *msg->state_time_;
+  return *msg->_impl_.state_time_;
 }
 void PortLinkFSMRecord::clear_state_time() {
-  if (GetArenaForAllocation() == nullptr && state_time_ != nullptr) {
-    delete state_time_;
+  if (GetArenaForAllocation() == nullptr && _impl_.state_time_ != nullptr) {
+    delete _impl_.state_time_;
   }
-  state_time_ = nullptr;
+  _impl_.state_time_ = nullptr;
 }
 PortLinkFSMRecord::PortLinkFSMRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.PortLinkFSMRecord)
 }
 PortLinkFSMRecord::PortLinkFSMRecord(const PortLinkFSMRecord& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PortLinkFSMRecord* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.duration_){}
+    , decltype(_impl_.state_time_){nullptr}
+    , decltype(_impl_.fsm_state_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  duration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.duration_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    duration_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.duration_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_duration().empty()) {
-    duration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_duration(), 
-      GetArenaForAllocation());
+    _this->_impl_.duration_.Set(from._internal_duration(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_state_time()) {
-    state_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.state_time_);
-  } else {
-    state_time_ = nullptr;
+    _this->_impl_.state_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.state_time_);
   }
-  fsm_state_ = from.fsm_state_;
+  _this->_impl_.fsm_state_ = from._impl_.fsm_state_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.PortLinkFSMRecord)
 }
 
-inline void PortLinkFSMRecord::SharedCtor() {
-duration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  duration_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&state_time_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&fsm_state_) -
-    reinterpret_cast<char*>(&state_time_)) + sizeof(fsm_state_));
+inline void PortLinkFSMRecord::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.duration_){}
+    , decltype(_impl_.state_time_){nullptr}
+    , decltype(_impl_.fsm_state_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.duration_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.duration_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 PortLinkFSMRecord::~PortLinkFSMRecord() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.PortLinkFSMRecord)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PortLinkFSMRecord::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  duration_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete state_time_;
+  _impl_.duration_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.state_time_;
 }
 
-void PortLinkFSMRecord::ArenaDtor(void* object) {
-  PortLinkFSMRecord* _this = reinterpret_cast< PortLinkFSMRecord* >(object);
-  (void)_this;
-}
-void PortLinkFSMRecord::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PortLinkFSMRecord::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PortLinkFSMRecord::Clear() {
@@ -2794,20 +2838,20 @@ void PortLinkFSMRecord::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  duration_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && state_time_ != nullptr) {
-    delete state_time_;
+  _impl_.duration_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.state_time_ != nullptr) {
+    delete _impl_.state_time_;
   }
-  state_time_ = nullptr;
-  fsm_state_ = 0;
+  _impl_.state_time_ = nullptr;
+  _impl_.fsm_state_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PortLinkFSMRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PortLinkFSMRecord::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.cloud.v1alpha1.PortLinkFSM fsm_state = 1;
       case 1:
@@ -2830,9 +2874,9 @@ const char* PortLinkFSMRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_duration();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortLinkFSMRecord.duration"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.PortLinkFSMRecord.duration"));
         } else
           goto handle_unusual;
         continue;
@@ -2868,16 +2912,15 @@ uint8_t* PortLinkFSMRecord::_InternalSerialize(
   // .opi_api.network.cloud.v1alpha1.PortLinkFSM fsm_state = 1;
   if (this->_internal_fsm_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_fsm_state(), target);
   }
 
   // .google.protobuf.Timestamp state_time = 2;
   if (this->_internal_has_state_time()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::state_time(this), target, stream);
+      InternalWriteMessage(2, _Internal::state_time(this),
+        _Internal::state_time(this).GetCachedSize(), target, stream);
   }
 
   // string duration = 3;
@@ -2891,7 +2934,7 @@ uint8_t* PortLinkFSMRecord::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.PortLinkFSMRecord)
@@ -2917,47 +2960,44 @@ size_t PortLinkFSMRecord::ByteSizeLong() const {
   if (this->_internal_has_state_time()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *state_time_);
+        *_impl_.state_time_);
   }
 
   // .opi_api.network.cloud.v1alpha1.PortLinkFSM fsm_state = 1;
   if (this->_internal_fsm_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_fsm_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_fsm_state());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PortLinkFSMRecord::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PortLinkFSMRecord::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PortLinkFSMRecord::GetClassData() const { return &_class_data_; }
 
-void PortLinkFSMRecord::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PortLinkFSMRecord *>(to)->MergeFrom(
-      static_cast<const PortLinkFSMRecord &>(from));
-}
 
-
-void PortLinkFSMRecord::MergeFrom(const PortLinkFSMRecord& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortLinkFSMRecord)
-  GOOGLE_DCHECK_NE(&from, this);
+void PortLinkFSMRecord::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PortLinkFSMRecord*>(&to_msg);
+  auto& from = static_cast<const PortLinkFSMRecord&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.PortLinkFSMRecord)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_duration().empty()) {
-    _internal_set_duration(from._internal_duration());
+    _this->_internal_set_duration(from._internal_duration());
   }
   if (from._internal_has_state_time()) {
-    _internal_mutable_state_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_state_time());
+    _this->_internal_mutable_state_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_state_time());
   }
   if (from._internal_fsm_state() != 0) {
-    _internal_set_fsm_state(from._internal_fsm_state());
+    _this->_internal_set_fsm_state(from._internal_fsm_state());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PortLinkFSMRecord::CopyFrom(const PortLinkFSMRecord& from) {
@@ -2977,20 +3017,19 @@ void PortLinkFSMRecord::InternalSwap(PortLinkFSMRecord* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &duration_, lhs_arena,
-      &other->duration_, rhs_arena
+      &_impl_.duration_, lhs_arena,
+      &other->_impl_.duration_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PortLinkFSMRecord, fsm_state_)
-      + sizeof(PortLinkFSMRecord::fsm_state_)
-      - PROTOBUF_FIELD_OFFSET(PortLinkFSMRecord, state_time_)>(
-          reinterpret_cast<char*>(&state_time_),
-          reinterpret_cast<char*>(&other->state_time_));
+      PROTOBUF_FIELD_OFFSET(PortLinkFSMRecord, _impl_.fsm_state_)
+      + sizeof(PortLinkFSMRecord::_impl_.fsm_state_)
+      - PROTOBUF_FIELD_OFFSET(PortLinkFSMRecord, _impl_.state_time_)>(
+          reinterpret_cast<char*>(&_impl_.state_time_),
+          reinterpret_cast<char*>(&other->_impl_.state_time_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortLinkFSMRecord::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_port_2eproto_getter, &descriptor_table_port_2eproto_once,
       file_level_metadata_port_2eproto[5]);
 }
@@ -3001,22 +3040,28 @@ void PortLinkFSMRecord::InternalSwap(PortLinkFSMRecord* other) {
 }  // namespace network
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::Port* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::Port >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::Port*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::Port >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::Port >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortSpec* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortSpec >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortSpec*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortSpec >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::PortSpec >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::PortStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortLinkStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortLinkStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortLinkStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortLinkStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::PortLinkStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortXcvrStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortXcvrStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortXcvrStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortXcvrStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::PortXcvrStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::PortLinkFSMRecord >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

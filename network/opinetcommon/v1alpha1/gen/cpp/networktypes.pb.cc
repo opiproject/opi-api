@@ -16,436 +16,467 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace opi_api {
 namespace network {
 namespace opinetcommon {
 namespace v1alpha1 {
-constexpr IPAddress::IPAddress(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : af_(0)
-
-  , _oneof_case_{}{}
+PROTOBUF_CONSTEXPR IPAddress::IPAddress(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.af_)*/0
+  , /*decltype(_impl_.v4_or_v6_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct IPAddressDefaultTypeInternal {
-  constexpr IPAddressDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPAddressDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPAddressDefaultTypeInternal() {}
   union {
     IPAddress _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPAddressDefaultTypeInternal _IPAddress_default_instance_;
-constexpr IPPrefix::IPPrefix(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : addr_(nullptr)
-  , len_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPAddressDefaultTypeInternal _IPAddress_default_instance_;
+PROTOBUF_CONSTEXPR IPPrefix::IPPrefix(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.addr_)*/nullptr
+  , /*decltype(_impl_.len_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPPrefixDefaultTypeInternal {
-  constexpr IPPrefixDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPPrefixDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPPrefixDefaultTypeInternal() {}
   union {
     IPPrefix _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPPrefixDefaultTypeInternal _IPPrefix_default_instance_;
-constexpr IPv4Prefix::IPv4Prefix(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : addr_(0u)
-  , len_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPPrefixDefaultTypeInternal _IPPrefix_default_instance_;
+PROTOBUF_CONSTEXPR IPv4Prefix::IPv4Prefix(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.addr_)*/0u
+  , /*decltype(_impl_.len_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPv4PrefixDefaultTypeInternal {
-  constexpr IPv4PrefixDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPv4PrefixDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPv4PrefixDefaultTypeInternal() {}
   union {
     IPv4Prefix _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPv4PrefixDefaultTypeInternal _IPv4Prefix_default_instance_;
-constexpr IPv6Prefix::IPv6Prefix(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : addr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , len_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPv4PrefixDefaultTypeInternal _IPv4Prefix_default_instance_;
+PROTOBUF_CONSTEXPR IPv6Prefix::IPv6Prefix(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.len_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPv6PrefixDefaultTypeInternal {
-  constexpr IPv6PrefixDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPv6PrefixDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPv6PrefixDefaultTypeInternal() {}
   union {
     IPv6Prefix _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPv6PrefixDefaultTypeInternal _IPv6Prefix_default_instance_;
-constexpr EncapVal::EncapVal(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : _oneof_case_{}{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPv6PrefixDefaultTypeInternal _IPv6Prefix_default_instance_;
+PROTOBUF_CONSTEXPR EncapVal::EncapVal(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.val_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct EncapValDefaultTypeInternal {
-  constexpr EncapValDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR EncapValDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~EncapValDefaultTypeInternal() {}
   union {
     EncapVal _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EncapValDefaultTypeInternal _EncapVal_default_instance_;
-constexpr Encap::Encap(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : value_(nullptr)
-  , type_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EncapValDefaultTypeInternal _EncapVal_default_instance_;
+PROTOBUF_CONSTEXPR Encap::Encap(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.value_)*/nullptr
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct EncapDefaultTypeInternal {
-  constexpr EncapDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR EncapDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~EncapDefaultTypeInternal() {}
   union {
     Encap _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EncapDefaultTypeInternal _Encap_default_instance_;
-constexpr PortRange::PortRange(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : port_low_(0)
-  , port_high_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EncapDefaultTypeInternal _Encap_default_instance_;
+PROTOBUF_CONSTEXPR PortRange::PortRange(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.port_low_)*/0
+  , /*decltype(_impl_.port_high_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortRangeDefaultTypeInternal {
-  constexpr PortRangeDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortRangeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortRangeDefaultTypeInternal() {}
   union {
     PortRange _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortRangeDefaultTypeInternal _PortRange_default_instance_;
-constexpr IPRange::IPRange(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : low_(nullptr)
-  , high_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortRangeDefaultTypeInternal _PortRange_default_instance_;
+PROTOBUF_CONSTEXPR IPRange::IPRange(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.low_)*/nullptr
+  , /*decltype(_impl_.high_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPRangeDefaultTypeInternal {
-  constexpr IPRangeDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPRangeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPRangeDefaultTypeInternal() {}
   union {
     IPRange _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPRangeDefaultTypeInternal _IPRange_default_instance_;
-constexpr AddressRange::AddressRange(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : _oneof_case_{}{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPRangeDefaultTypeInternal _IPRange_default_instance_;
+PROTOBUF_CONSTEXPR AddressRange::AddressRange(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.range_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct AddressRangeDefaultTypeInternal {
-  constexpr AddressRangeDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AddressRangeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AddressRangeDefaultTypeInternal() {}
   union {
     AddressRange _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddressRangeDefaultTypeInternal _AddressRange_default_instance_;
-constexpr IPEntry::IPEntry(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : _oneof_case_{}{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddressRangeDefaultTypeInternal _AddressRange_default_instance_;
+PROTOBUF_CONSTEXPR IPEntry::IPEntry(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ip_entry_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct IPEntryDefaultTypeInternal {
-  constexpr IPEntryDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPEntryDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPEntryDefaultTypeInternal() {}
   union {
     IPEntry _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPEntryDefaultTypeInternal _IPEntry_default_instance_;
-constexpr IPList::IPList(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : ip_entries_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPEntryDefaultTypeInternal _IPEntry_default_instance_;
+PROTOBUF_CONSTEXPR IPList::IPList(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ip_entries_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct IPListDefaultTypeInternal {
-  constexpr IPListDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR IPListDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~IPListDefaultTypeInternal() {}
   union {
     IPList _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPListDefaultTypeInternal _IPList_default_instance_;
-constexpr RuleL3Match::RuleL3Match(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : _oneof_case_{}{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IPListDefaultTypeInternal _IPList_default_instance_;
+PROTOBUF_CONSTEXPR RuleL3Match::RuleL3Match(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.protomatch_)*/{}
+  , /*decltype(_impl_.srcmatch_)*/{}
+  , /*decltype(_impl_.dstmatch_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct RuleL3MatchDefaultTypeInternal {
-  constexpr RuleL3MatchDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RuleL3MatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RuleL3MatchDefaultTypeInternal() {}
   union {
     RuleL3Match _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RuleL3MatchDefaultTypeInternal _RuleL3Match_default_instance_;
-constexpr PortMatch::PortMatch(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : src_port_range_(nullptr)
-  , dst_port_range_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RuleL3MatchDefaultTypeInternal _RuleL3Match_default_instance_;
+PROTOBUF_CONSTEXPR PortMatch::PortMatch(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.src_port_range_)*/nullptr
+  , /*decltype(_impl_.dst_port_range_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortMatchDefaultTypeInternal {
-  constexpr PortMatchDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortMatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortMatchDefaultTypeInternal() {}
   union {
     PortMatch _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortMatchDefaultTypeInternal _PortMatch_default_instance_;
-constexpr ICMPMatch::ICMPMatch(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : _oneof_case_{}{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortMatchDefaultTypeInternal _PortMatch_default_instance_;
+PROTOBUF_CONSTEXPR ICMPMatch::ICMPMatch(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.typematch_)*/{}
+  , /*decltype(_impl_.codematch_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct ICMPMatchDefaultTypeInternal {
-  constexpr ICMPMatchDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ICMPMatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ICMPMatchDefaultTypeInternal() {}
   union {
     ICMPMatch _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ICMPMatchDefaultTypeInternal _ICMPMatch_default_instance_;
-constexpr PortListMatch::PortListMatch(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : src_port_range_()
-  , dst_port_range_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ICMPMatchDefaultTypeInternal _ICMPMatch_default_instance_;
+PROTOBUF_CONSTEXPR PortListMatch::PortListMatch(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.src_port_range_)*/{}
+  , /*decltype(_impl_.dst_port_range_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PortListMatchDefaultTypeInternal {
-  constexpr PortListMatchDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PortListMatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PortListMatchDefaultTypeInternal() {}
   union {
     PortListMatch _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortListMatchDefaultTypeInternal _PortListMatch_default_instance_;
-constexpr ICMPMatchList::ICMPMatchList(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : icmp_match_list_(){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PortListMatchDefaultTypeInternal _PortListMatch_default_instance_;
+PROTOBUF_CONSTEXPR ICMPMatchList::ICMPMatchList(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.icmp_match_list_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ICMPMatchListDefaultTypeInternal {
-  constexpr ICMPMatchListDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ICMPMatchListDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ICMPMatchListDefaultTypeInternal() {}
   union {
     ICMPMatchList _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ICMPMatchListDefaultTypeInternal _ICMPMatchList_default_instance_;
-constexpr RuleL4Match::RuleL4Match(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : _oneof_case_{}{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ICMPMatchListDefaultTypeInternal _ICMPMatchList_default_instance_;
+PROTOBUF_CONSTEXPR RuleL4Match::RuleL4Match(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.l4info_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct RuleL4MatchDefaultTypeInternal {
-  constexpr RuleL4MatchDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RuleL4MatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RuleL4MatchDefaultTypeInternal() {}
   union {
     RuleL4Match _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RuleL4MatchDefaultTypeInternal _RuleL4Match_default_instance_;
-constexpr RuleMatch::RuleMatch(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : l3_match_(nullptr)
-  , l4_match_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RuleL4MatchDefaultTypeInternal _RuleL4Match_default_instance_;
+PROTOBUF_CONSTEXPR RuleMatch::RuleMatch(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.l3_match_)*/nullptr
+  , /*decltype(_impl_.l4_match_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RuleMatchDefaultTypeInternal {
-  constexpr RuleMatchDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RuleMatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RuleMatchDefaultTypeInternal() {}
   union {
     RuleMatch _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RuleMatchDefaultTypeInternal _RuleMatch_default_instance_;
-constexpr HwHandle::HwHandle(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : idx_(uint64_t{0u}){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RuleMatchDefaultTypeInternal _RuleMatch_default_instance_;
+PROTOBUF_CONSTEXPR HwHandle::HwHandle(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.idx_)*/uint64_t{0u}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct HwHandleDefaultTypeInternal {
-  constexpr HwHandleDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR HwHandleDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~HwHandleDefaultTypeInternal() {}
   union {
     HwHandle _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HwHandleDefaultTypeInternal _HwHandle_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HwHandleDefaultTypeInternal _HwHandle_default_instance_;
 }  // namespace v1alpha1
 }  // namespace opinetcommon
 }  // namespace network
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_networktypes_2eproto[19];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_networktypes_2eproto[8];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_networktypes_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_networktypes_2eproto[19];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_networktypes_2eproto[8];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_networktypes_2eproto = nullptr;
 
 const uint32_t TableStruct_networktypes_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPAddress, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPAddress, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPAddress, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPAddress, af_),
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPAddress, v4_or_v6_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPAddress, _impl_.af_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPAddress, _impl_.v4_or_v6_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPPrefix, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPPrefix, addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPPrefix, len_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPPrefix, _impl_.addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPPrefix, _impl_.len_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix, addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix, len_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix, _impl_.addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix, _impl_.len_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix, addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix, len_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix, _impl_.addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix, _impl_.len_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::EncapVal, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::EncapVal, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::EncapVal, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::EncapVal, val_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::EncapVal, _impl_.val_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::Encap, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::Encap, type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::Encap, value_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::Encap, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::Encap, _impl_.value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortRange, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortRange, port_low_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortRange, port_high_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortRange, _impl_.port_low_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortRange, _impl_.port_high_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPRange, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPRange, low_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPRange, high_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPRange, _impl_.low_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPRange, _impl_.high_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::AddressRange, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::AddressRange, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::AddressRange, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::AddressRange, range_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::AddressRange, _impl_.range_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPEntry, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPEntry, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPEntry, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPEntry, ip_entry_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPEntry, _impl_.ip_entry_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPList, ip_entries_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::IPList, _impl_.ip_entries_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, protomatch_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, srcmatch_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, dstmatch_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, _impl_.protomatch_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, _impl_.srcmatch_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL3Match, _impl_.dstmatch_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortMatch, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortMatch, src_port_range_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortMatch, dst_port_range_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortMatch, _impl_.src_port_range_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortMatch, _impl_.dst_port_range_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatch, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatch, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatch, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatch, typematch_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatch, codematch_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatch, _impl_.typematch_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatch, _impl_.codematch_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortListMatch, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortListMatch, src_port_range_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortListMatch, dst_port_range_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortListMatch, _impl_.src_port_range_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::PortListMatch, _impl_.dst_port_range_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList, icmp_match_list_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList, _impl_.icmp_match_list_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL4Match, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL4Match, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL4Match, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL4Match, l4info_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleL4Match, _impl_.l4info_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleMatch, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleMatch, l3_match_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleMatch, l4_match_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleMatch, _impl_.l3_match_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::RuleMatch, _impl_.l4_match_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::HwHandle, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::HwHandle, idx_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::opinetcommon::v1alpha1::HwHandle, _impl_.idx_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::opinetcommon::v1alpha1::IPAddress)},
   { 10, -1, -1, sizeof(::opi_api::network::opinetcommon::v1alpha1::IPPrefix)},
   { 18, -1, -1, sizeof(::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix)},
@@ -467,26 +498,26 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 168, -1, -1, sizeof(::opi_api::network::opinetcommon::v1alpha1::HwHandle)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_IPAddress_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_IPPrefix_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_IPv4Prefix_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_IPv6Prefix_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_EncapVal_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_Encap_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_PortRange_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_IPRange_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_AddressRange_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_IPEntry_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_IPList_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_RuleL3Match_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_PortMatch_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_ICMPMatch_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_PortListMatch_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_ICMPMatchList_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_RuleL4Match_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_RuleMatch_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::opinetcommon::v1alpha1::_HwHandle_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::opi_api::network::opinetcommon::v1alpha1::_IPAddress_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_IPPrefix_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_IPv4Prefix_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_IPv6Prefix_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_EncapVal_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_Encap_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_PortRange_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_IPRange_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_AddressRange_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_IPEntry_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_IPList_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_RuleL3Match_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_PortMatch_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_ICMPMatch_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_PortListMatch_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_ICMPMatchList_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_RuleL4Match_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_RuleMatch_default_instance_._instance,
+  &::opi_api::network::opinetcommon::v1alpha1::_HwHandle_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_networktypes_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -590,19 +621,21 @@ const char descriptor_table_protodef_networktypes_2eproto[] PROTOBUF_SECTION_VAR
   "-api/network/opinetcommon/v1alpha1/gen/g"
   "ob\006proto3"
   ;
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_networktypes_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_networktypes_2eproto = {
-  false, false, 3929, descriptor_table_protodef_networktypes_2eproto, "networktypes.proto", 
-  &descriptor_table_networktypes_2eproto_once, nullptr, 0, 19,
-  schemas, file_default_instances, TableStruct_networktypes_2eproto::offsets,
-  file_level_metadata_networktypes_2eproto, file_level_enum_descriptors_networktypes_2eproto, file_level_service_descriptors_networktypes_2eproto,
+static ::_pbi::once_flag descriptor_table_networktypes_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_networktypes_2eproto = {
+    false, false, 3929, descriptor_table_protodef_networktypes_2eproto,
+    "networktypes.proto",
+    &descriptor_table_networktypes_2eproto_once, nullptr, 0, 19,
+    schemas, file_default_instances, TableStruct_networktypes_2eproto::offsets,
+    file_level_metadata_networktypes_2eproto, file_level_enum_descriptors_networktypes_2eproto,
+    file_level_service_descriptors_networktypes_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_networktypes_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_networktypes_2eproto_getter() {
   return &descriptor_table_networktypes_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_networktypes_2eproto(&descriptor_table_networktypes_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_networktypes_2eproto(&descriptor_table_networktypes_2eproto);
 namespace opi_api {
 namespace network {
 namespace opinetcommon {
@@ -742,24 +775,28 @@ class IPAddress::_Internal {
 IPAddress::IPAddress(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.IPAddress)
 }
 IPAddress::IPAddress(const IPAddress& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPAddress* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.af_){}
+    , decltype(_impl_.v4_or_v6_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  af_ = from.af_;
+  _this->_impl_.af_ = from._impl_.af_;
   clear_has_v4_or_v6();
   switch (from.v4_or_v6_case()) {
     case kV4Addr: {
-      _internal_set_v4_addr(from._internal_v4_addr());
+      _this->_internal_set_v4_addr(from._internal_v4_addr());
       break;
     }
     case kV6Addr: {
-      _internal_set_v6_addr(from._internal_v6_addr());
+      _this->_internal_set_v6_addr(from._internal_v6_addr());
       break;
     }
     case V4_OR_V6_NOT_SET: {
@@ -769,16 +806,26 @@ IPAddress::IPAddress(const IPAddress& from)
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.IPAddress)
 }
 
-inline void IPAddress::SharedCtor() {
-af_ = 0;
-clear_has_v4_or_v6();
+inline void IPAddress::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.af_){0}
+    , decltype(_impl_.v4_or_v6_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_v4_or_v6();
 }
 
 IPAddress::~IPAddress() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.IPAddress)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPAddress::SharedDtor() {
@@ -788,14 +835,8 @@ inline void IPAddress::SharedDtor() {
   }
 }
 
-void IPAddress::ArenaDtor(void* object) {
-  IPAddress* _this = reinterpret_cast< IPAddress* >(object);
-  (void)_this;
-}
-void IPAddress::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPAddress::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPAddress::clear_v4_or_v6() {
@@ -806,14 +847,14 @@ void IPAddress::clear_v4_or_v6() {
       break;
     }
     case kV6Addr: {
-      v4_or_v6_.v6_addr_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      _impl_.v4_or_v6_.v6_addr_.Destroy();
       break;
     }
     case V4_OR_V6_NOT_SET: {
       break;
     }
   }
-  _oneof_case_[0] = V4_OR_V6_NOT_SET;
+  _impl_._oneof_case_[0] = V4_OR_V6_NOT_SET;
 }
 
 
@@ -823,16 +864,16 @@ void IPAddress::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  af_ = 0;
+  _impl_.af_ = 0;
   clear_v4_or_v6();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPAddress::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPAddress::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;
       case 1:
@@ -855,7 +896,7 @@ const char* IPAddress::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_v6_addr();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -892,14 +933,14 @@ uint8_t* IPAddress::_InternalSerialize(
   // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;
   if (this->_internal_af() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_af(), target);
   }
 
   // fixed32 v4_addr = 2;
   if (_internal_has_v4_addr()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(2, this->_internal_v4_addr(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(2, this->_internal_v4_addr(), target);
   }
 
   // bytes v6_addr = 3;
@@ -909,7 +950,7 @@ uint8_t* IPAddress::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.IPAddress)
@@ -927,7 +968,7 @@ size_t IPAddress::ByteSizeLong() const {
   // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;
   if (this->_internal_af() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_af());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_af());
   }
 
   switch (v4_or_v6_case()) {
@@ -947,45 +988,41 @@ size_t IPAddress::ByteSizeLong() const {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPAddress::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPAddress::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPAddress::GetClassData() const { return &_class_data_; }
 
-void IPAddress::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPAddress *>(to)->MergeFrom(
-      static_cast<const IPAddress &>(from));
-}
 
-
-void IPAddress::MergeFrom(const IPAddress& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPAddress)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPAddress::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPAddress*>(&to_msg);
+  auto& from = static_cast<const IPAddress&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPAddress)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_af() != 0) {
-    _internal_set_af(from._internal_af());
+    _this->_internal_set_af(from._internal_af());
   }
   switch (from.v4_or_v6_case()) {
     case kV4Addr: {
-      _internal_set_v4_addr(from._internal_v4_addr());
+      _this->_internal_set_v4_addr(from._internal_v4_addr());
       break;
     }
     case kV6Addr: {
-      _internal_set_v6_addr(from._internal_v6_addr());
+      _this->_internal_set_v6_addr(from._internal_v6_addr());
       break;
     }
     case V4_OR_V6_NOT_SET: {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPAddress::CopyFrom(const IPAddress& from) {
@@ -1002,13 +1039,13 @@ bool IPAddress::IsInitialized() const {
 void IPAddress::InternalSwap(IPAddress* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(af_, other->af_);
-  swap(v4_or_v6_, other->v4_or_v6_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(_impl_.af_, other->_impl_.af_);
+  swap(_impl_.v4_or_v6_, other->_impl_.v4_or_v6_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPAddress::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[0]);
 }
@@ -1022,56 +1059,57 @@ class IPPrefix::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 IPPrefix::_Internal::addr(const IPPrefix* msg) {
-  return *msg->addr_;
+  return *msg->_impl_.addr_;
 }
 IPPrefix::IPPrefix(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.IPPrefix)
 }
 IPPrefix::IPPrefix(const IPPrefix& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPPrefix* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.addr_){nullptr}
+    , decltype(_impl_.len_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_addr()) {
-    addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.addr_);
-  } else {
-    addr_ = nullptr;
+    _this->_impl_.addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.addr_);
   }
-  len_ = from.len_;
+  _this->_impl_.len_ = from._impl_.len_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.IPPrefix)
 }
 
-inline void IPPrefix::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&addr_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&len_) -
-    reinterpret_cast<char*>(&addr_)) + sizeof(len_));
+inline void IPPrefix::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.addr_){nullptr}
+    , decltype(_impl_.len_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 IPPrefix::~IPPrefix() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.IPPrefix)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPPrefix::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete addr_;
+  if (this != internal_default_instance()) delete _impl_.addr_;
 }
 
-void IPPrefix::ArenaDtor(void* object) {
-  IPPrefix* _this = reinterpret_cast< IPPrefix* >(object);
-  (void)_this;
-}
-void IPPrefix::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPPrefix::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPPrefix::Clear() {
@@ -1080,19 +1118,19 @@ void IPPrefix::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && addr_ != nullptr) {
-    delete addr_;
+  if (GetArenaForAllocation() == nullptr && _impl_.addr_ != nullptr) {
+    delete _impl_.addr_;
   }
-  addr_ = nullptr;
-  len_ = 0;
+  _impl_.addr_ = nullptr;
+  _impl_.len_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPPrefix::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPPrefix::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.IPAddress addr = 1;
       case 1:
@@ -1105,7 +1143,7 @@ const char* IPPrefix::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // int32 len = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1141,20 +1179,19 @@ uint8_t* IPPrefix::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress addr = 1;
   if (this->_internal_has_addr()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::addr(this), target, stream);
+      InternalWriteMessage(1, _Internal::addr(this),
+        _Internal::addr(this).GetCachedSize(), target, stream);
   }
 
   // int32 len = 2;
   if (this->_internal_len() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_len(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_len(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.IPPrefix)
@@ -1173,43 +1210,40 @@ size_t IPPrefix::ByteSizeLong() const {
   if (this->_internal_has_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *addr_);
+        *_impl_.addr_);
   }
 
   // int32 len = 2;
   if (this->_internal_len() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_len());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_len());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPPrefix::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPPrefix::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPPrefix::GetClassData() const { return &_class_data_; }
 
-void IPPrefix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPPrefix *>(to)->MergeFrom(
-      static_cast<const IPPrefix &>(from));
-}
 
-
-void IPPrefix::MergeFrom(const IPPrefix& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPPrefix)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPPrefix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPPrefix*>(&to_msg);
+  auto& from = static_cast<const IPPrefix&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPPrefix)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_addr()) {
-    _internal_mutable_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_addr());
+    _this->_internal_mutable_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_addr());
   }
   if (from._internal_len() != 0) {
-    _internal_set_len(from._internal_len());
+    _this->_internal_set_len(from._internal_len());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPPrefix::CopyFrom(const IPPrefix& from) {
@@ -1227,15 +1261,15 @@ void IPPrefix::InternalSwap(IPPrefix* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IPPrefix, len_)
-      + sizeof(IPPrefix::len_)
-      - PROTOBUF_FIELD_OFFSET(IPPrefix, addr_)>(
-          reinterpret_cast<char*>(&addr_),
-          reinterpret_cast<char*>(&other->addr_));
+      PROTOBUF_FIELD_OFFSET(IPPrefix, _impl_.len_)
+      + sizeof(IPPrefix::_impl_.len_)
+      - PROTOBUF_FIELD_OFFSET(IPPrefix, _impl_.addr_)>(
+          reinterpret_cast<char*>(&_impl_.addr_),
+          reinterpret_cast<char*>(&other->_impl_.addr_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPPrefix::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[1]);
 }
@@ -1249,47 +1283,50 @@ class IPv4Prefix::_Internal {
 IPv4Prefix::IPv4Prefix(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.IPv4Prefix)
 }
 IPv4Prefix::IPv4Prefix(const IPv4Prefix& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPv4Prefix* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.addr_){}
+    , decltype(_impl_.len_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&addr_, &from.addr_,
-    static_cast<size_t>(reinterpret_cast<char*>(&len_) -
-    reinterpret_cast<char*>(&addr_)) + sizeof(len_));
+  ::memcpy(&_impl_.addr_, &from._impl_.addr_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.len_) -
+    reinterpret_cast<char*>(&_impl_.addr_)) + sizeof(_impl_.len_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.IPv4Prefix)
 }
 
-inline void IPv4Prefix::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&addr_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&len_) -
-    reinterpret_cast<char*>(&addr_)) + sizeof(len_));
+inline void IPv4Prefix::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.addr_){0u}
+    , decltype(_impl_.len_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 IPv4Prefix::~IPv4Prefix() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.IPv4Prefix)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPv4Prefix::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void IPv4Prefix::ArenaDtor(void* object) {
-  IPv4Prefix* _this = reinterpret_cast< IPv4Prefix* >(object);
-  (void)_this;
-}
-void IPv4Prefix::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPv4Prefix::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPv4Prefix::Clear() {
@@ -1298,22 +1335,22 @@ void IPv4Prefix::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&addr_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&len_) -
-      reinterpret_cast<char*>(&addr_)) + sizeof(len_));
+  ::memset(&_impl_.addr_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.len_) -
+      reinterpret_cast<char*>(&_impl_.addr_)) + sizeof(_impl_.len_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPv4Prefix::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPv4Prefix::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // fixed32 addr = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          addr_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          _impl_.addr_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
           ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
@@ -1321,7 +1358,7 @@ const char* IPv4Prefix::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // int32 len = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1358,17 +1395,17 @@ uint8_t* IPv4Prefix::_InternalSerialize(
   // fixed32 addr = 1;
   if (this->_internal_addr() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(1, this->_internal_addr(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(1, this->_internal_addr(), target);
   }
 
   // int32 len = 2;
   if (this->_internal_len() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_len(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_len(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.IPv4Prefix)
@@ -1390,38 +1427,34 @@ size_t IPv4Prefix::ByteSizeLong() const {
 
   // int32 len = 2;
   if (this->_internal_len() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_len());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_len());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPv4Prefix::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPv4Prefix::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPv4Prefix::GetClassData() const { return &_class_data_; }
 
-void IPv4Prefix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPv4Prefix *>(to)->MergeFrom(
-      static_cast<const IPv4Prefix &>(from));
-}
 
-
-void IPv4Prefix::MergeFrom(const IPv4Prefix& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPv4Prefix)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPv4Prefix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPv4Prefix*>(&to_msg);
+  auto& from = static_cast<const IPv4Prefix&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPv4Prefix)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_addr() != 0) {
-    _internal_set_addr(from._internal_addr());
+    _this->_internal_set_addr(from._internal_addr());
   }
   if (from._internal_len() != 0) {
-    _internal_set_len(from._internal_len());
+    _this->_internal_set_len(from._internal_len());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPv4Prefix::CopyFrom(const IPv4Prefix& from) {
@@ -1439,15 +1472,15 @@ void IPv4Prefix::InternalSwap(IPv4Prefix* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IPv4Prefix, len_)
-      + sizeof(IPv4Prefix::len_)
-      - PROTOBUF_FIELD_OFFSET(IPv4Prefix, addr_)>(
-          reinterpret_cast<char*>(&addr_),
-          reinterpret_cast<char*>(&other->addr_));
+      PROTOBUF_FIELD_OFFSET(IPv4Prefix, _impl_.len_)
+      + sizeof(IPv4Prefix::_impl_.len_)
+      - PROTOBUF_FIELD_OFFSET(IPv4Prefix, _impl_.addr_)>(
+          reinterpret_cast<char*>(&_impl_.addr_),
+          reinterpret_cast<char*>(&other->_impl_.addr_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPv4Prefix::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[2]);
 }
@@ -1461,55 +1494,61 @@ class IPv6Prefix::_Internal {
 IPv6Prefix::IPv6Prefix(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.IPv6Prefix)
 }
 IPv6Prefix::IPv6Prefix(const IPv6Prefix& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPv6Prefix* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.addr_){}
+    , decltype(_impl_.len_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.addr_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.addr_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_addr().empty()) {
-    addr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_addr(), 
-      GetArenaForAllocation());
+    _this->_impl_.addr_.Set(from._internal_addr(), 
+      _this->GetArenaForAllocation());
   }
-  len_ = from.len_;
+  _this->_impl_.len_ = from._impl_.len_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.IPv6Prefix)
 }
 
-inline void IPv6Prefix::SharedCtor() {
-addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-len_ = 0;
+inline void IPv6Prefix::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.addr_){}
+    , decltype(_impl_.len_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.addr_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.addr_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 IPv6Prefix::~IPv6Prefix() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.IPv6Prefix)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPv6Prefix::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.addr_.Destroy();
 }
 
-void IPv6Prefix::ArenaDtor(void* object) {
-  IPv6Prefix* _this = reinterpret_cast< IPv6Prefix* >(object);
-  (void)_this;
-}
-void IPv6Prefix::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPv6Prefix::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPv6Prefix::Clear() {
@@ -1518,22 +1557,22 @@ void IPv6Prefix::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  addr_.ClearToEmpty();
-  len_ = 0;
+  _impl_.addr_.ClearToEmpty();
+  _impl_.len_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPv6Prefix::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPv6Prefix::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bytes addr = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_addr();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1541,7 +1580,7 @@ const char* IPv6Prefix::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // int32 len = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1584,11 +1623,11 @@ uint8_t* IPv6Prefix::_InternalSerialize(
   // int32 len = 2;
   if (this->_internal_len() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_len(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_len(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.IPv6Prefix)
@@ -1612,38 +1651,34 @@ size_t IPv6Prefix::ByteSizeLong() const {
 
   // int32 len = 2;
   if (this->_internal_len() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_len());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_len());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPv6Prefix::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPv6Prefix::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPv6Prefix::GetClassData() const { return &_class_data_; }
 
-void IPv6Prefix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPv6Prefix *>(to)->MergeFrom(
-      static_cast<const IPv6Prefix &>(from));
-}
 
-
-void IPv6Prefix::MergeFrom(const IPv6Prefix& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPv6Prefix)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPv6Prefix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPv6Prefix*>(&to_msg);
+  auto& from = static_cast<const IPv6Prefix&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPv6Prefix)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_addr().empty()) {
-    _internal_set_addr(from._internal_addr());
+    _this->_internal_set_addr(from._internal_addr());
   }
   if (from._internal_len() != 0) {
-    _internal_set_len(from._internal_len());
+    _this->_internal_set_len(from._internal_len());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPv6Prefix::CopyFrom(const IPv6Prefix& from) {
@@ -1663,15 +1698,14 @@ void IPv6Prefix::InternalSwap(IPv6Prefix* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &addr_, lhs_arena,
-      &other->addr_, rhs_arena
+      &_impl_.addr_, lhs_arena,
+      &other->_impl_.addr_, rhs_arena
   );
-  swap(len_, other->len_);
+  swap(_impl_.len_, other->_impl_.len_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPv6Prefix::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[3]);
 }
@@ -1685,31 +1719,34 @@ class EncapVal::_Internal {
 EncapVal::EncapVal(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.EncapVal)
 }
 EncapVal::EncapVal(const EncapVal& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  EncapVal* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.val_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_val();
   switch (from.val_case()) {
     case kVlanId: {
-      _internal_set_vlan_id(from._internal_vlan_id());
+      _this->_internal_set_vlan_id(from._internal_vlan_id());
       break;
     }
     case kMplsTag: {
-      _internal_set_mpls_tag(from._internal_mpls_tag());
+      _this->_internal_set_mpls_tag(from._internal_mpls_tag());
       break;
     }
     case kVnid: {
-      _internal_set_vnid(from._internal_vnid());
+      _this->_internal_set_vnid(from._internal_vnid());
       break;
     }
     case kVsid: {
-      _internal_set_vsid(from._internal_vsid());
+      _this->_internal_set_vsid(from._internal_vsid());
       break;
     }
     case VAL_NOT_SET: {
@@ -1719,15 +1756,25 @@ EncapVal::EncapVal(const EncapVal& from)
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.EncapVal)
 }
 
-inline void EncapVal::SharedCtor() {
-clear_has_val();
+inline void EncapVal::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.val_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_val();
 }
 
 EncapVal::~EncapVal() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.EncapVal)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void EncapVal::SharedDtor() {
@@ -1737,14 +1784,8 @@ inline void EncapVal::SharedDtor() {
   }
 }
 
-void EncapVal::ArenaDtor(void* object) {
-  EncapVal* _this = reinterpret_cast< EncapVal* >(object);
-  (void)_this;
-}
-void EncapVal::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void EncapVal::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void EncapVal::clear_val() {
@@ -1770,7 +1811,7 @@ void EncapVal::clear_val() {
       break;
     }
   }
-  _oneof_case_[0] = VAL_NOT_SET;
+  _impl_._oneof_case_[0] = VAL_NOT_SET;
 }
 
 
@@ -1784,11 +1825,11 @@ void EncapVal::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* EncapVal::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* EncapVal::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 vlan_id = 1;
       case 1:
@@ -1854,29 +1895,29 @@ uint8_t* EncapVal::_InternalSerialize(
   // int32 vlan_id = 1;
   if (_internal_has_vlan_id()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_vlan_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_vlan_id(), target);
   }
 
   // int32 mpls_tag = 2;
   if (_internal_has_mpls_tag()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_mpls_tag(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_mpls_tag(), target);
   }
 
   // int32 vnid = 3;
   if (_internal_has_vnid()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_vnid(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_vnid(), target);
   }
 
   // int32 vsid = 5;
   if (_internal_has_vsid()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_vsid(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_vsid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.EncapVal)
@@ -1894,72 +1935,68 @@ size_t EncapVal::ByteSizeLong() const {
   switch (val_case()) {
     // int32 vlan_id = 1;
     case kVlanId: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vlan_id());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_vlan_id());
       break;
     }
     // int32 mpls_tag = 2;
     case kMplsTag: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_mpls_tag());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mpls_tag());
       break;
     }
     // int32 vnid = 3;
     case kVnid: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vnid());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_vnid());
       break;
     }
     // int32 vsid = 5;
     case kVsid: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vsid());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_vsid());
       break;
     }
     case VAL_NOT_SET: {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData EncapVal::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     EncapVal::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*EncapVal::GetClassData() const { return &_class_data_; }
 
-void EncapVal::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<EncapVal *>(to)->MergeFrom(
-      static_cast<const EncapVal &>(from));
-}
 
-
-void EncapVal::MergeFrom(const EncapVal& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.EncapVal)
-  GOOGLE_DCHECK_NE(&from, this);
+void EncapVal::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<EncapVal*>(&to_msg);
+  auto& from = static_cast<const EncapVal&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.EncapVal)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.val_case()) {
     case kVlanId: {
-      _internal_set_vlan_id(from._internal_vlan_id());
+      _this->_internal_set_vlan_id(from._internal_vlan_id());
       break;
     }
     case kMplsTag: {
-      _internal_set_mpls_tag(from._internal_mpls_tag());
+      _this->_internal_set_mpls_tag(from._internal_mpls_tag());
       break;
     }
     case kVnid: {
-      _internal_set_vnid(from._internal_vnid());
+      _this->_internal_set_vnid(from._internal_vnid());
       break;
     }
     case kVsid: {
-      _internal_set_vsid(from._internal_vsid());
+      _this->_internal_set_vsid(from._internal_vsid());
       break;
     }
     case VAL_NOT_SET: {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void EncapVal::CopyFrom(const EncapVal& from) {
@@ -1976,12 +2013,12 @@ bool EncapVal::IsInitialized() const {
 void EncapVal::InternalSwap(EncapVal* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(val_, other->val_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(_impl_.val_, other->_impl_.val_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata EncapVal::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[4]);
 }
@@ -1995,56 +2032,57 @@ class Encap::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::EncapVal&
 Encap::_Internal::value(const Encap* msg) {
-  return *msg->value_;
+  return *msg->_impl_.value_;
 }
 Encap::Encap(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.Encap)
 }
 Encap::Encap(const Encap& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Encap* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.value_){nullptr}
+    , decltype(_impl_.type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_value()) {
-    value_ = new ::opi_api::network::opinetcommon::v1alpha1::EncapVal(*from.value_);
-  } else {
-    value_ = nullptr;
+    _this->_impl_.value_ = new ::opi_api::network::opinetcommon::v1alpha1::EncapVal(*from._impl_.value_);
   }
-  type_ = from.type_;
+  _this->_impl_.type_ = from._impl_.type_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.Encap)
 }
 
-inline void Encap::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&value_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
-    reinterpret_cast<char*>(&value_)) + sizeof(type_));
+inline void Encap::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.value_){nullptr}
+    , decltype(_impl_.type_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Encap::~Encap() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.Encap)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Encap::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete value_;
+  if (this != internal_default_instance()) delete _impl_.value_;
 }
 
-void Encap::ArenaDtor(void* object) {
-  Encap* _this = reinterpret_cast< Encap* >(object);
-  (void)_this;
-}
-void Encap::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Encap::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Encap::Clear() {
@@ -2053,19 +2091,19 @@ void Encap::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
-    delete value_;
+  if (GetArenaForAllocation() == nullptr && _impl_.value_ != nullptr) {
+    delete _impl_.value_;
   }
-  value_ = nullptr;
-  type_ = 0;
+  _impl_.value_ = nullptr;
+  _impl_.type_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Encap::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Encap::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.EncapType type = 1;
       case 1:
@@ -2116,20 +2154,19 @@ uint8_t* Encap::_InternalSerialize(
   // .opi_api.network.opinetcommon.v1alpha1.EncapType type = 1;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_type(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.EncapVal value = 2;
   if (this->_internal_has_value()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::value(this), target, stream);
+      InternalWriteMessage(2, _Internal::value(this),
+        _Internal::value(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.Encap)
@@ -2148,44 +2185,41 @@ size_t Encap::ByteSizeLong() const {
   if (this->_internal_has_value()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *value_);
+        *_impl_.value_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.EncapType type = 1;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Encap::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Encap::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Encap::GetClassData() const { return &_class_data_; }
 
-void Encap::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Encap *>(to)->MergeFrom(
-      static_cast<const Encap &>(from));
-}
 
-
-void Encap::MergeFrom(const Encap& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.Encap)
-  GOOGLE_DCHECK_NE(&from, this);
+void Encap::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Encap*>(&to_msg);
+  auto& from = static_cast<const Encap&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.Encap)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_value()) {
-    _internal_mutable_value()->::opi_api::network::opinetcommon::v1alpha1::EncapVal::MergeFrom(from._internal_value());
+    _this->_internal_mutable_value()->::opi_api::network::opinetcommon::v1alpha1::EncapVal::MergeFrom(
+        from._internal_value());
   }
   if (from._internal_type() != 0) {
-    _internal_set_type(from._internal_type());
+    _this->_internal_set_type(from._internal_type());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Encap::CopyFrom(const Encap& from) {
@@ -2203,15 +2237,15 @@ void Encap::InternalSwap(Encap* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Encap, type_)
-      + sizeof(Encap::type_)
-      - PROTOBUF_FIELD_OFFSET(Encap, value_)>(
-          reinterpret_cast<char*>(&value_),
-          reinterpret_cast<char*>(&other->value_));
+      PROTOBUF_FIELD_OFFSET(Encap, _impl_.type_)
+      + sizeof(Encap::_impl_.type_)
+      - PROTOBUF_FIELD_OFFSET(Encap, _impl_.value_)>(
+          reinterpret_cast<char*>(&_impl_.value_),
+          reinterpret_cast<char*>(&other->_impl_.value_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Encap::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[5]);
 }
@@ -2225,47 +2259,50 @@ class PortRange::_Internal {
 PortRange::PortRange(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.PortRange)
 }
 PortRange::PortRange(const PortRange& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PortRange* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.port_low_){}
+    , decltype(_impl_.port_high_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&port_low_, &from.port_low_,
-    static_cast<size_t>(reinterpret_cast<char*>(&port_high_) -
-    reinterpret_cast<char*>(&port_low_)) + sizeof(port_high_));
+  ::memcpy(&_impl_.port_low_, &from._impl_.port_low_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.port_high_) -
+    reinterpret_cast<char*>(&_impl_.port_low_)) + sizeof(_impl_.port_high_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.PortRange)
 }
 
-inline void PortRange::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&port_low_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&port_high_) -
-    reinterpret_cast<char*>(&port_low_)) + sizeof(port_high_));
+inline void PortRange::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.port_low_){0}
+    , decltype(_impl_.port_high_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 PortRange::~PortRange() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.PortRange)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PortRange::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void PortRange::ArenaDtor(void* object) {
-  PortRange* _this = reinterpret_cast< PortRange* >(object);
-  (void)_this;
-}
-void PortRange::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PortRange::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PortRange::Clear() {
@@ -2274,22 +2311,22 @@ void PortRange::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&port_low_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&port_high_) -
-      reinterpret_cast<char*>(&port_low_)) + sizeof(port_high_));
+  ::memset(&_impl_.port_low_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.port_high_) -
+      reinterpret_cast<char*>(&_impl_.port_low_)) + sizeof(_impl_.port_high_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PortRange::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PortRange::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 port_low = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          port_low_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.port_low_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2297,7 +2334,7 @@ const char* PortRange::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 port_high = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          port_high_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.port_high_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2334,17 +2371,17 @@ uint8_t* PortRange::_InternalSerialize(
   // int32 port_low = 1;
   if (this->_internal_port_low() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_port_low(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_port_low(), target);
   }
 
   // int32 port_high = 2;
   if (this->_internal_port_high() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_port_high(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_port_high(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.PortRange)
@@ -2361,43 +2398,39 @@ size_t PortRange::ByteSizeLong() const {
 
   // int32 port_low = 1;
   if (this->_internal_port_low() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_port_low());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_port_low());
   }
 
   // int32 port_high = 2;
   if (this->_internal_port_high() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_port_high());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_port_high());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PortRange::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PortRange::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PortRange::GetClassData() const { return &_class_data_; }
 
-void PortRange::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PortRange *>(to)->MergeFrom(
-      static_cast<const PortRange &>(from));
-}
 
-
-void PortRange::MergeFrom(const PortRange& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.PortRange)
-  GOOGLE_DCHECK_NE(&from, this);
+void PortRange::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PortRange*>(&to_msg);
+  auto& from = static_cast<const PortRange&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.PortRange)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_port_low() != 0) {
-    _internal_set_port_low(from._internal_port_low());
+    _this->_internal_set_port_low(from._internal_port_low());
   }
   if (from._internal_port_high() != 0) {
-    _internal_set_port_high(from._internal_port_high());
+    _this->_internal_set_port_high(from._internal_port_high());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PortRange::CopyFrom(const PortRange& from) {
@@ -2415,15 +2448,15 @@ void PortRange::InternalSwap(PortRange* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PortRange, port_high_)
-      + sizeof(PortRange::port_high_)
-      - PROTOBUF_FIELD_OFFSET(PortRange, port_low_)>(
-          reinterpret_cast<char*>(&port_low_),
-          reinterpret_cast<char*>(&other->port_low_));
+      PROTOBUF_FIELD_OFFSET(PortRange, _impl_.port_high_)
+      + sizeof(PortRange::_impl_.port_high_)
+      - PROTOBUF_FIELD_OFFSET(PortRange, _impl_.port_low_)>(
+          reinterpret_cast<char*>(&_impl_.port_low_),
+          reinterpret_cast<char*>(&other->_impl_.port_low_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortRange::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[6]);
 }
@@ -2438,65 +2471,64 @@ class IPRange::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 IPRange::_Internal::low(const IPRange* msg) {
-  return *msg->low_;
+  return *msg->_impl_.low_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 IPRange::_Internal::high(const IPRange* msg) {
-  return *msg->high_;
+  return *msg->_impl_.high_;
 }
 IPRange::IPRange(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.IPRange)
 }
 IPRange::IPRange(const IPRange& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPRange* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.low_){nullptr}
+    , decltype(_impl_.high_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_low()) {
-    low_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.low_);
-  } else {
-    low_ = nullptr;
+    _this->_impl_.low_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.low_);
   }
   if (from._internal_has_high()) {
-    high_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.high_);
-  } else {
-    high_ = nullptr;
+    _this->_impl_.high_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.high_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.IPRange)
 }
 
-inline void IPRange::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&low_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&high_) -
-    reinterpret_cast<char*>(&low_)) + sizeof(high_));
+inline void IPRange::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.low_){nullptr}
+    , decltype(_impl_.high_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 IPRange::~IPRange() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.IPRange)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPRange::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete low_;
-  if (this != internal_default_instance()) delete high_;
+  if (this != internal_default_instance()) delete _impl_.low_;
+  if (this != internal_default_instance()) delete _impl_.high_;
 }
 
-void IPRange::ArenaDtor(void* object) {
-  IPRange* _this = reinterpret_cast< IPRange* >(object);
-  (void)_this;
-}
-void IPRange::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPRange::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPRange::Clear() {
@@ -2505,22 +2537,22 @@ void IPRange::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && low_ != nullptr) {
-    delete low_;
+  if (GetArenaForAllocation() == nullptr && _impl_.low_ != nullptr) {
+    delete _impl_.low_;
   }
-  low_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && high_ != nullptr) {
-    delete high_;
+  _impl_.low_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.high_ != nullptr) {
+    delete _impl_.high_;
   }
-  high_ = nullptr;
+  _impl_.high_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPRange::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPRange::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.IPAddress low = 1;
       case 1:
@@ -2569,22 +2601,20 @@ uint8_t* IPRange::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress low = 1;
   if (this->_internal_has_low()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::low(this), target, stream);
+      InternalWriteMessage(1, _Internal::low(this),
+        _Internal::low(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress high = 2;
   if (this->_internal_has_high()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::high(this), target, stream);
+      InternalWriteMessage(2, _Internal::high(this),
+        _Internal::high(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.IPRange)
@@ -2603,45 +2633,43 @@ size_t IPRange::ByteSizeLong() const {
   if (this->_internal_has_low()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *low_);
+        *_impl_.low_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress high = 2;
   if (this->_internal_has_high()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *high_);
+        *_impl_.high_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPRange::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPRange::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPRange::GetClassData() const { return &_class_data_; }
 
-void IPRange::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPRange *>(to)->MergeFrom(
-      static_cast<const IPRange &>(from));
-}
 
-
-void IPRange::MergeFrom(const IPRange& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPRange)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPRange::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPRange*>(&to_msg);
+  auto& from = static_cast<const IPRange&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPRange)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_low()) {
-    _internal_mutable_low()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_low());
+    _this->_internal_mutable_low()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_low());
   }
   if (from._internal_has_high()) {
-    _internal_mutable_high()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_high());
+    _this->_internal_mutable_high()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_high());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPRange::CopyFrom(const IPRange& from) {
@@ -2659,15 +2687,15 @@ void IPRange::InternalSwap(IPRange* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IPRange, high_)
-      + sizeof(IPRange::high_)
-      - PROTOBUF_FIELD_OFFSET(IPRange, low_)>(
-          reinterpret_cast<char*>(&low_),
-          reinterpret_cast<char*>(&other->low_));
+      PROTOBUF_FIELD_OFFSET(IPRange, _impl_.high_)
+      + sizeof(IPRange::_impl_.high_)
+      - PROTOBUF_FIELD_OFFSET(IPRange, _impl_.low_)>(
+          reinterpret_cast<char*>(&_impl_.low_),
+          reinterpret_cast<char*>(&other->_impl_.low_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPRange::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[7]);
 }
@@ -2682,24 +2710,24 @@ class AddressRange::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPRange&
 AddressRange::_Internal::ipv4_range(const AddressRange* msg) {
-  return *msg->range_.ipv4_range_;
+  return *msg->_impl_.range_.ipv4_range_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPRange&
 AddressRange::_Internal::ipv6_range(const AddressRange* msg) {
-  return *msg->range_.ipv6_range_;
+  return *msg->_impl_.range_.ipv6_range_;
 }
 void AddressRange::set_allocated_ipv4_range(::opi_api::network::opinetcommon::v1alpha1::IPRange* ipv4_range) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_range();
   if (ipv4_range) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::IPRange>::GetOwningArena(ipv4_range);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(ipv4_range);
     if (message_arena != submessage_arena) {
       ipv4_range = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, ipv4_range, submessage_arena);
     }
     set_has_ipv4_range();
-    range_.ipv4_range_ = ipv4_range;
+    _impl_.range_.ipv4_range_ = ipv4_range;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.AddressRange.ipv4_range)
 }
@@ -2708,36 +2736,41 @@ void AddressRange::set_allocated_ipv6_range(::opi_api::network::opinetcommon::v1
   clear_range();
   if (ipv6_range) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::IPRange>::GetOwningArena(ipv6_range);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(ipv6_range);
     if (message_arena != submessage_arena) {
       ipv6_range = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, ipv6_range, submessage_arena);
     }
     set_has_ipv6_range();
-    range_.ipv6_range_ = ipv6_range;
+    _impl_.range_.ipv6_range_ = ipv6_range;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.AddressRange.ipv6_range)
 }
 AddressRange::AddressRange(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.AddressRange)
 }
 AddressRange::AddressRange(const AddressRange& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AddressRange* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.range_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_range();
   switch (from.range_case()) {
     case kIpv4Range: {
-      _internal_mutable_ipv4_range()->::opi_api::network::opinetcommon::v1alpha1::IPRange::MergeFrom(from._internal_ipv4_range());
+      _this->_internal_mutable_ipv4_range()->::opi_api::network::opinetcommon::v1alpha1::IPRange::MergeFrom(
+          from._internal_ipv4_range());
       break;
     }
     case kIpv6Range: {
-      _internal_mutable_ipv6_range()->::opi_api::network::opinetcommon::v1alpha1::IPRange::MergeFrom(from._internal_ipv6_range());
+      _this->_internal_mutable_ipv6_range()->::opi_api::network::opinetcommon::v1alpha1::IPRange::MergeFrom(
+          from._internal_ipv6_range());
       break;
     }
     case RANGE_NOT_SET: {
@@ -2747,15 +2780,25 @@ AddressRange::AddressRange(const AddressRange& from)
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.AddressRange)
 }
 
-inline void AddressRange::SharedCtor() {
-clear_has_range();
+inline void AddressRange::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.range_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_range();
 }
 
 AddressRange::~AddressRange() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.AddressRange)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void AddressRange::SharedDtor() {
@@ -2765,14 +2808,8 @@ inline void AddressRange::SharedDtor() {
   }
 }
 
-void AddressRange::ArenaDtor(void* object) {
-  AddressRange* _this = reinterpret_cast< AddressRange* >(object);
-  (void)_this;
-}
-void AddressRange::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void AddressRange::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void AddressRange::clear_range() {
@@ -2780,13 +2817,13 @@ void AddressRange::clear_range() {
   switch (range_case()) {
     case kIpv4Range: {
       if (GetArenaForAllocation() == nullptr) {
-        delete range_.ipv4_range_;
+        delete _impl_.range_.ipv4_range_;
       }
       break;
     }
     case kIpv6Range: {
       if (GetArenaForAllocation() == nullptr) {
-        delete range_.ipv6_range_;
+        delete _impl_.range_.ipv6_range_;
       }
       break;
     }
@@ -2794,7 +2831,7 @@ void AddressRange::clear_range() {
       break;
     }
   }
-  _oneof_case_[0] = RANGE_NOT_SET;
+  _impl_._oneof_case_[0] = RANGE_NOT_SET;
 }
 
 
@@ -2808,11 +2845,11 @@ void AddressRange::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* AddressRange::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* AddressRange::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.IPRange ipv4_range = 1;
       case 1:
@@ -2861,22 +2898,20 @@ uint8_t* AddressRange::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.IPRange ipv4_range = 1;
   if (_internal_has_ipv4_range()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::ipv4_range(this), target, stream);
+      InternalWriteMessage(1, _Internal::ipv4_range(this),
+        _Internal::ipv4_range(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPRange ipv6_range = 2;
   if (_internal_has_ipv6_range()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::ipv6_range(this), target, stream);
+      InternalWriteMessage(2, _Internal::ipv6_range(this),
+        _Internal::ipv6_range(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.AddressRange)
@@ -2896,56 +2931,54 @@ size_t AddressRange::ByteSizeLong() const {
     case kIpv4Range: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *range_.ipv4_range_);
+          *_impl_.range_.ipv4_range_);
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.IPRange ipv6_range = 2;
     case kIpv6Range: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *range_.ipv6_range_);
+          *_impl_.range_.ipv6_range_);
       break;
     }
     case RANGE_NOT_SET: {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddressRange::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     AddressRange::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddressRange::GetClassData() const { return &_class_data_; }
 
-void AddressRange::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<AddressRange *>(to)->MergeFrom(
-      static_cast<const AddressRange &>(from));
-}
 
-
-void AddressRange::MergeFrom(const AddressRange& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.AddressRange)
-  GOOGLE_DCHECK_NE(&from, this);
+void AddressRange::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AddressRange*>(&to_msg);
+  auto& from = static_cast<const AddressRange&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.AddressRange)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.range_case()) {
     case kIpv4Range: {
-      _internal_mutable_ipv4_range()->::opi_api::network::opinetcommon::v1alpha1::IPRange::MergeFrom(from._internal_ipv4_range());
+      _this->_internal_mutable_ipv4_range()->::opi_api::network::opinetcommon::v1alpha1::IPRange::MergeFrom(
+          from._internal_ipv4_range());
       break;
     }
     case kIpv6Range: {
-      _internal_mutable_ipv6_range()->::opi_api::network::opinetcommon::v1alpha1::IPRange::MergeFrom(from._internal_ipv6_range());
+      _this->_internal_mutable_ipv6_range()->::opi_api::network::opinetcommon::v1alpha1::IPRange::MergeFrom(
+          from._internal_ipv6_range());
       break;
     }
     case RANGE_NOT_SET: {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AddressRange::CopyFrom(const AddressRange& from) {
@@ -2962,12 +2995,12 @@ bool AddressRange::IsInitialized() const {
 void AddressRange::InternalSwap(AddressRange* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(range_, other->range_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(_impl_.range_, other->_impl_.range_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AddressRange::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[8]);
 }
@@ -2982,24 +3015,24 @@ class IPEntry::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix&
 IPEntry::_Internal::prefix(const IPEntry* msg) {
-  return *msg->ip_entry_.prefix_;
+  return *msg->_impl_.ip_entry_.prefix_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::AddressRange&
 IPEntry::_Internal::range(const IPEntry* msg) {
-  return *msg->ip_entry_.range_;
+  return *msg->_impl_.ip_entry_.range_;
 }
 void IPEntry::set_allocated_prefix(::opi_api::network::opinetcommon::v1alpha1::IPPrefix* prefix) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_ip_entry();
   if (prefix) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::IPPrefix>::GetOwningArena(prefix);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(prefix);
     if (message_arena != submessage_arena) {
       prefix = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, prefix, submessage_arena);
     }
     set_has_prefix();
-    ip_entry_.prefix_ = prefix;
+    _impl_.ip_entry_.prefix_ = prefix;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.IPEntry.prefix)
 }
@@ -3008,40 +3041,45 @@ void IPEntry::set_allocated_range(::opi_api::network::opinetcommon::v1alpha1::Ad
   clear_ip_entry();
   if (range) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::AddressRange>::GetOwningArena(range);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(range);
     if (message_arena != submessage_arena) {
       range = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, range, submessage_arena);
     }
     set_has_range();
-    ip_entry_.range_ = range;
+    _impl_.ip_entry_.range_ = range;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.IPEntry.range)
 }
 IPEntry::IPEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.IPEntry)
 }
 IPEntry::IPEntry(const IPEntry& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPEntry* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ip_entry_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_ip_entry();
   switch (from.ip_entry_case()) {
     case kPrefix: {
-      _internal_mutable_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(from._internal_prefix());
+      _this->_internal_mutable_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(
+          from._internal_prefix());
       break;
     }
     case kRange: {
-      _internal_mutable_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(from._internal_range());
+      _this->_internal_mutable_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(
+          from._internal_range());
       break;
     }
     case kTag: {
-      _internal_set_tag(from._internal_tag());
+      _this->_internal_set_tag(from._internal_tag());
       break;
     }
     case IP_ENTRY_NOT_SET: {
@@ -3051,15 +3089,25 @@ IPEntry::IPEntry(const IPEntry& from)
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.IPEntry)
 }
 
-inline void IPEntry::SharedCtor() {
-clear_has_ip_entry();
+inline void IPEntry::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ip_entry_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_ip_entry();
 }
 
 IPEntry::~IPEntry() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.IPEntry)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPEntry::SharedDtor() {
@@ -3069,14 +3117,8 @@ inline void IPEntry::SharedDtor() {
   }
 }
 
-void IPEntry::ArenaDtor(void* object) {
-  IPEntry* _this = reinterpret_cast< IPEntry* >(object);
-  (void)_this;
-}
-void IPEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPEntry::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPEntry::clear_ip_entry() {
@@ -3084,13 +3126,13 @@ void IPEntry::clear_ip_entry() {
   switch (ip_entry_case()) {
     case kPrefix: {
       if (GetArenaForAllocation() == nullptr) {
-        delete ip_entry_.prefix_;
+        delete _impl_.ip_entry_.prefix_;
       }
       break;
     }
     case kRange: {
       if (GetArenaForAllocation() == nullptr) {
-        delete ip_entry_.range_;
+        delete _impl_.ip_entry_.range_;
       }
       break;
     }
@@ -3102,7 +3144,7 @@ void IPEntry::clear_ip_entry() {
       break;
     }
   }
-  _oneof_case_[0] = IP_ENTRY_NOT_SET;
+  _impl_._oneof_case_[0] = IP_ENTRY_NOT_SET;
 }
 
 
@@ -3116,11 +3158,11 @@ void IPEntry::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPEntry::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.IPPrefix prefix = 1;
       case 1:
@@ -3177,28 +3219,26 @@ uint8_t* IPEntry::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.IPPrefix prefix = 1;
   if (_internal_has_prefix()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::prefix(this), target, stream);
+      InternalWriteMessage(1, _Internal::prefix(this),
+        _Internal::prefix(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.AddressRange range = 2;
   if (_internal_has_range()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::range(this), target, stream);
+      InternalWriteMessage(2, _Internal::range(this),
+        _Internal::range(this).GetCachedSize(), target, stream);
   }
 
   // int32 tag = 3;
   if (_internal_has_tag()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_tag(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_tag(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.IPEntry)
@@ -3218,65 +3258,63 @@ size_t IPEntry::ByteSizeLong() const {
     case kPrefix: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *ip_entry_.prefix_);
+          *_impl_.ip_entry_.prefix_);
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.AddressRange range = 2;
     case kRange: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *ip_entry_.range_);
+          *_impl_.ip_entry_.range_);
       break;
     }
     // int32 tag = 3;
     case kTag: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_tag());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_tag());
       break;
     }
     case IP_ENTRY_NOT_SET: {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPEntry::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPEntry::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPEntry::GetClassData() const { return &_class_data_; }
 
-void IPEntry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPEntry *>(to)->MergeFrom(
-      static_cast<const IPEntry &>(from));
-}
 
-
-void IPEntry::MergeFrom(const IPEntry& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPEntry)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPEntry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPEntry*>(&to_msg);
+  auto& from = static_cast<const IPEntry&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPEntry)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.ip_entry_case()) {
     case kPrefix: {
-      _internal_mutable_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(from._internal_prefix());
+      _this->_internal_mutable_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(
+          from._internal_prefix());
       break;
     }
     case kRange: {
-      _internal_mutable_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(from._internal_range());
+      _this->_internal_mutable_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(
+          from._internal_range());
       break;
     }
     case kTag: {
-      _internal_set_tag(from._internal_tag());
+      _this->_internal_set_tag(from._internal_tag());
       break;
     }
     case IP_ENTRY_NOT_SET: {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPEntry::CopyFrom(const IPEntry& from) {
@@ -3293,12 +3331,12 @@ bool IPEntry::IsInitialized() const {
 void IPEntry::InternalSwap(IPEntry* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(ip_entry_, other->ip_entry_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(_impl_.ip_entry_, other->_impl_.ip_entry_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPEntry::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[9]);
 }
@@ -3311,43 +3349,47 @@ class IPList::_Internal {
 
 IPList::IPList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  ip_entries_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.IPList)
 }
 IPList::IPList(const IPList& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      ip_entries_(from.ip_entries_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  IPList* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ip_entries_){from._impl_.ip_entries_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.IPList)
 }
 
-inline void IPList::SharedCtor() {
+inline void IPList::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ip_entries_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 IPList::~IPList() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.IPList)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void IPList::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ip_entries_.~RepeatedPtrField();
 }
 
-void IPList::ArenaDtor(void* object) {
-  IPList* _this = reinterpret_cast< IPList* >(object);
-  (void)_this;
-}
-void IPList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void IPList::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void IPList::Clear() {
@@ -3356,15 +3398,15 @@ void IPList::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ip_entries_.Clear();
+  _impl_.ip_entries_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* IPList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* IPList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.network.opinetcommon.v1alpha1.IPEntry ip_entries = 1;
       case 1:
@@ -3409,15 +3451,15 @@ uint8_t* IPList::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.network.opinetcommon.v1alpha1.IPEntry ip_entries = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_ip_entries_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_ip_entries_size()); i < n; i++) {
+    const auto& repfield = this->_internal_ip_entries(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_ip_entries(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.IPList)
@@ -3434,35 +3476,31 @@ size_t IPList::ByteSizeLong() const {
 
   // repeated .opi_api.network.opinetcommon.v1alpha1.IPEntry ip_entries = 1;
   total_size += 1UL * this->_internal_ip_entries_size();
-  for (const auto& msg : this->ip_entries_) {
+  for (const auto& msg : this->_impl_.ip_entries_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IPList::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     IPList::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPList::GetClassData() const { return &_class_data_; }
 
-void IPList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IPList *>(to)->MergeFrom(
-      static_cast<const IPList &>(from));
-}
 
-
-void IPList::MergeFrom(const IPList& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPList)
-  GOOGLE_DCHECK_NE(&from, this);
+void IPList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<IPList*>(&to_msg);
+  auto& from = static_cast<const IPList&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.IPList)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  ip_entries_.MergeFrom(from.ip_entries_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.ip_entries_.MergeFrom(from._impl_.ip_entries_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void IPList::CopyFrom(const IPList& from) {
@@ -3479,11 +3517,11 @@ bool IPList::IsInitialized() const {
 void IPList::InternalSwap(IPList* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ip_entries_.InternalSwap(&other->ip_entries_);
+  _impl_.ip_entries_.InternalSwap(&other->_impl_.ip_entries_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPList::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[10]);
 }
@@ -3502,40 +3540,40 @@ class RuleL3Match::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix&
 RuleL3Match::_Internal::src_prefix(const RuleL3Match* msg) {
-  return *msg->srcmatch_.src_prefix_;
+  return *msg->_impl_.srcmatch_.src_prefix_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::AddressRange&
 RuleL3Match::_Internal::src_range(const RuleL3Match* msg) {
-  return *msg->srcmatch_.src_range_;
+  return *msg->_impl_.srcmatch_.src_range_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPList&
 RuleL3Match::_Internal::src_ip_list(const RuleL3Match* msg) {
-  return *msg->srcmatch_.src_ip_list_;
+  return *msg->_impl_.srcmatch_.src_ip_list_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix&
 RuleL3Match::_Internal::dst_prefix(const RuleL3Match* msg) {
-  return *msg->dstmatch_.dst_prefix_;
+  return *msg->_impl_.dstmatch_.dst_prefix_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::AddressRange&
 RuleL3Match::_Internal::dst_range(const RuleL3Match* msg) {
-  return *msg->dstmatch_.dst_range_;
+  return *msg->_impl_.dstmatch_.dst_range_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPList&
 RuleL3Match::_Internal::dst_ip_list(const RuleL3Match* msg) {
-  return *msg->dstmatch_.dst_ip_list_;
+  return *msg->_impl_.dstmatch_.dst_ip_list_;
 }
 void RuleL3Match::set_allocated_src_prefix(::opi_api::network::opinetcommon::v1alpha1::IPPrefix* src_prefix) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_srcmatch();
   if (src_prefix) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::IPPrefix>::GetOwningArena(src_prefix);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(src_prefix);
     if (message_arena != submessage_arena) {
       src_prefix = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, src_prefix, submessage_arena);
     }
     set_has_src_prefix();
-    srcmatch_.src_prefix_ = src_prefix;
+    _impl_.srcmatch_.src_prefix_ = src_prefix;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL3Match.src_prefix)
 }
@@ -3544,13 +3582,13 @@ void RuleL3Match::set_allocated_src_range(::opi_api::network::opinetcommon::v1al
   clear_srcmatch();
   if (src_range) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::AddressRange>::GetOwningArena(src_range);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(src_range);
     if (message_arena != submessage_arena) {
       src_range = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, src_range, submessage_arena);
     }
     set_has_src_range();
-    srcmatch_.src_range_ = src_range;
+    _impl_.srcmatch_.src_range_ = src_range;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL3Match.src_range)
 }
@@ -3559,13 +3597,13 @@ void RuleL3Match::set_allocated_src_ip_list(::opi_api::network::opinetcommon::v1
   clear_srcmatch();
   if (src_ip_list) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::IPList>::GetOwningArena(src_ip_list);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(src_ip_list);
     if (message_arena != submessage_arena) {
       src_ip_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, src_ip_list, submessage_arena);
     }
     set_has_src_ip_list();
-    srcmatch_.src_ip_list_ = src_ip_list;
+    _impl_.srcmatch_.src_ip_list_ = src_ip_list;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL3Match.src_ip_list)
 }
@@ -3574,13 +3612,13 @@ void RuleL3Match::set_allocated_dst_prefix(::opi_api::network::opinetcommon::v1a
   clear_dstmatch();
   if (dst_prefix) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::IPPrefix>::GetOwningArena(dst_prefix);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(dst_prefix);
     if (message_arena != submessage_arena) {
       dst_prefix = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, dst_prefix, submessage_arena);
     }
     set_has_dst_prefix();
-    dstmatch_.dst_prefix_ = dst_prefix;
+    _impl_.dstmatch_.dst_prefix_ = dst_prefix;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL3Match.dst_prefix)
 }
@@ -3589,13 +3627,13 @@ void RuleL3Match::set_allocated_dst_range(::opi_api::network::opinetcommon::v1al
   clear_dstmatch();
   if (dst_range) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::AddressRange>::GetOwningArena(dst_range);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(dst_range);
     if (message_arena != submessage_arena) {
       dst_range = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, dst_range, submessage_arena);
     }
     set_has_dst_range();
-    dstmatch_.dst_range_ = dst_range;
+    _impl_.dstmatch_.dst_range_ = dst_range;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL3Match.dst_range)
 }
@@ -3604,36 +3642,41 @@ void RuleL3Match::set_allocated_dst_ip_list(::opi_api::network::opinetcommon::v1
   clear_dstmatch();
   if (dst_ip_list) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::IPList>::GetOwningArena(dst_ip_list);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(dst_ip_list);
     if (message_arena != submessage_arena) {
       dst_ip_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, dst_ip_list, submessage_arena);
     }
     set_has_dst_ip_list();
-    dstmatch_.dst_ip_list_ = dst_ip_list;
+    _impl_.dstmatch_.dst_ip_list_ = dst_ip_list;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL3Match.dst_ip_list)
 }
 RuleL3Match::RuleL3Match(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.RuleL3Match)
 }
 RuleL3Match::RuleL3Match(const RuleL3Match& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RuleL3Match* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.protomatch_){}
+    , decltype(_impl_.srcmatch_){}
+    , decltype(_impl_.dstmatch_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_protomatch();
   switch (from.protomatch_case()) {
     case kProtoNum: {
-      _internal_set_proto_num(from._internal_proto_num());
+      _this->_internal_set_proto_num(from._internal_proto_num());
       break;
     }
     case kProtoWildCard: {
-      _internal_set_proto_wild_card(from._internal_proto_wild_card());
+      _this->_internal_set_proto_wild_card(from._internal_proto_wild_card());
       break;
     }
     case PROTOMATCH_NOT_SET: {
@@ -3643,19 +3686,22 @@ RuleL3Match::RuleL3Match(const RuleL3Match& from)
   clear_has_srcmatch();
   switch (from.srcmatch_case()) {
     case kSrcPrefix: {
-      _internal_mutable_src_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(from._internal_src_prefix());
+      _this->_internal_mutable_src_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(
+          from._internal_src_prefix());
       break;
     }
     case kSrcRange: {
-      _internal_mutable_src_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(from._internal_src_range());
+      _this->_internal_mutable_src_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(
+          from._internal_src_range());
       break;
     }
     case kSrcTag: {
-      _internal_set_src_tag(from._internal_src_tag());
+      _this->_internal_set_src_tag(from._internal_src_tag());
       break;
     }
     case kSrcIpList: {
-      _internal_mutable_src_ip_list()->::opi_api::network::opinetcommon::v1alpha1::IPList::MergeFrom(from._internal_src_ip_list());
+      _this->_internal_mutable_src_ip_list()->::opi_api::network::opinetcommon::v1alpha1::IPList::MergeFrom(
+          from._internal_src_ip_list());
       break;
     }
     case SRCMATCH_NOT_SET: {
@@ -3665,19 +3711,22 @@ RuleL3Match::RuleL3Match(const RuleL3Match& from)
   clear_has_dstmatch();
   switch (from.dstmatch_case()) {
     case kDstPrefix: {
-      _internal_mutable_dst_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(from._internal_dst_prefix());
+      _this->_internal_mutable_dst_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(
+          from._internal_dst_prefix());
       break;
     }
     case kDstRange: {
-      _internal_mutable_dst_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(from._internal_dst_range());
+      _this->_internal_mutable_dst_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(
+          from._internal_dst_range());
       break;
     }
     case kDstTag: {
-      _internal_set_dst_tag(from._internal_dst_tag());
+      _this->_internal_set_dst_tag(from._internal_dst_tag());
       break;
     }
     case kDstIpList: {
-      _internal_mutable_dst_ip_list()->::opi_api::network::opinetcommon::v1alpha1::IPList::MergeFrom(from._internal_dst_ip_list());
+      _this->_internal_mutable_dst_ip_list()->::opi_api::network::opinetcommon::v1alpha1::IPList::MergeFrom(
+          from._internal_dst_ip_list());
       break;
     }
     case DSTMATCH_NOT_SET: {
@@ -3687,17 +3736,29 @@ RuleL3Match::RuleL3Match(const RuleL3Match& from)
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.RuleL3Match)
 }
 
-inline void RuleL3Match::SharedCtor() {
-clear_has_protomatch();
-clear_has_srcmatch();
-clear_has_dstmatch();
+inline void RuleL3Match::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.protomatch_){}
+    , decltype(_impl_.srcmatch_){}
+    , decltype(_impl_.dstmatch_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_protomatch();
+  clear_has_srcmatch();
+  clear_has_dstmatch();
 }
 
 RuleL3Match::~RuleL3Match() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.RuleL3Match)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void RuleL3Match::SharedDtor() {
@@ -3713,14 +3774,8 @@ inline void RuleL3Match::SharedDtor() {
   }
 }
 
-void RuleL3Match::ArenaDtor(void* object) {
-  RuleL3Match* _this = reinterpret_cast< RuleL3Match* >(object);
-  (void)_this;
-}
-void RuleL3Match::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void RuleL3Match::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void RuleL3Match::clear_protomatch() {
@@ -3738,7 +3793,7 @@ void RuleL3Match::clear_protomatch() {
       break;
     }
   }
-  _oneof_case_[0] = PROTOMATCH_NOT_SET;
+  _impl_._oneof_case_[0] = PROTOMATCH_NOT_SET;
 }
 
 void RuleL3Match::clear_srcmatch() {
@@ -3746,13 +3801,13 @@ void RuleL3Match::clear_srcmatch() {
   switch (srcmatch_case()) {
     case kSrcPrefix: {
       if (GetArenaForAllocation() == nullptr) {
-        delete srcmatch_.src_prefix_;
+        delete _impl_.srcmatch_.src_prefix_;
       }
       break;
     }
     case kSrcRange: {
       if (GetArenaForAllocation() == nullptr) {
-        delete srcmatch_.src_range_;
+        delete _impl_.srcmatch_.src_range_;
       }
       break;
     }
@@ -3762,7 +3817,7 @@ void RuleL3Match::clear_srcmatch() {
     }
     case kSrcIpList: {
       if (GetArenaForAllocation() == nullptr) {
-        delete srcmatch_.src_ip_list_;
+        delete _impl_.srcmatch_.src_ip_list_;
       }
       break;
     }
@@ -3770,7 +3825,7 @@ void RuleL3Match::clear_srcmatch() {
       break;
     }
   }
-  _oneof_case_[1] = SRCMATCH_NOT_SET;
+  _impl_._oneof_case_[1] = SRCMATCH_NOT_SET;
 }
 
 void RuleL3Match::clear_dstmatch() {
@@ -3778,13 +3833,13 @@ void RuleL3Match::clear_dstmatch() {
   switch (dstmatch_case()) {
     case kDstPrefix: {
       if (GetArenaForAllocation() == nullptr) {
-        delete dstmatch_.dst_prefix_;
+        delete _impl_.dstmatch_.dst_prefix_;
       }
       break;
     }
     case kDstRange: {
       if (GetArenaForAllocation() == nullptr) {
-        delete dstmatch_.dst_range_;
+        delete _impl_.dstmatch_.dst_range_;
       }
       break;
     }
@@ -3794,7 +3849,7 @@ void RuleL3Match::clear_dstmatch() {
     }
     case kDstIpList: {
       if (GetArenaForAllocation() == nullptr) {
-        delete dstmatch_.dst_ip_list_;
+        delete _impl_.dstmatch_.dst_ip_list_;
       }
       break;
     }
@@ -3802,7 +3857,7 @@ void RuleL3Match::clear_dstmatch() {
       break;
     }
   }
-  _oneof_case_[2] = DSTMATCH_NOT_SET;
+  _impl_._oneof_case_[2] = DSTMATCH_NOT_SET;
 }
 
 
@@ -3818,11 +3873,11 @@ void RuleL3Match::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RuleL3Match::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* RuleL3Match::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 proto_num = 1;
       case 1:
@@ -3937,78 +3992,72 @@ uint8_t* RuleL3Match::_InternalSerialize(
   // int32 proto_num = 1;
   if (_internal_has_proto_num()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_proto_num(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_proto_num(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.WildcardMatch proto_wild_card = 2;
   if (_internal_has_proto_wild_card()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_proto_wild_card(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPPrefix src_prefix = 3;
   if (_internal_has_src_prefix()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::src_prefix(this), target, stream);
+      InternalWriteMessage(3, _Internal::src_prefix(this),
+        _Internal::src_prefix(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.AddressRange src_range = 4;
   if (_internal_has_src_range()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::src_range(this), target, stream);
+      InternalWriteMessage(4, _Internal::src_range(this),
+        _Internal::src_range(this).GetCachedSize(), target, stream);
   }
 
   // int32 src_tag = 5;
   if (_internal_has_src_tag()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_src_tag(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_src_tag(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPList src_ip_list = 6;
   if (_internal_has_src_ip_list()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::src_ip_list(this), target, stream);
+      InternalWriteMessage(6, _Internal::src_ip_list(this),
+        _Internal::src_ip_list(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dst_prefix = 7;
   if (_internal_has_dst_prefix()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        7, _Internal::dst_prefix(this), target, stream);
+      InternalWriteMessage(7, _Internal::dst_prefix(this),
+        _Internal::dst_prefix(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.AddressRange dst_range = 8;
   if (_internal_has_dst_range()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        8, _Internal::dst_range(this), target, stream);
+      InternalWriteMessage(8, _Internal::dst_range(this),
+        _Internal::dst_range(this).GetCachedSize(), target, stream);
   }
 
   // int32 dst_tag = 9;
   if (_internal_has_dst_tag()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_dst_tag(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_dst_tag(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPList dst_ip_list = 10;
   if (_internal_has_dst_ip_list()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        10, _Internal::dst_ip_list(this), target, stream);
+      InternalWriteMessage(10, _Internal::dst_ip_list(this),
+        _Internal::dst_ip_list(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.RuleL3Match)
@@ -4026,13 +4075,13 @@ size_t RuleL3Match::ByteSizeLong() const {
   switch (protomatch_case()) {
     // int32 proto_num = 1;
     case kProtoNum: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_proto_num());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_proto_num());
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.WildcardMatch proto_wild_card = 2;
     case kProtoWildCard: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_proto_wild_card());
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_proto_wild_card());
       break;
     }
     case PROTOMATCH_NOT_SET: {
@@ -4044,26 +4093,26 @@ size_t RuleL3Match::ByteSizeLong() const {
     case kSrcPrefix: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *srcmatch_.src_prefix_);
+          *_impl_.srcmatch_.src_prefix_);
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.AddressRange src_range = 4;
     case kSrcRange: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *srcmatch_.src_range_);
+          *_impl_.srcmatch_.src_range_);
       break;
     }
     // int32 src_tag = 5;
     case kSrcTag: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_src_tag());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_src_tag());
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.IPList src_ip_list = 6;
     case kSrcIpList: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *srcmatch_.src_ip_list_);
+          *_impl_.srcmatch_.src_ip_list_);
       break;
     }
     case SRCMATCH_NOT_SET: {
@@ -4075,61 +4124,57 @@ size_t RuleL3Match::ByteSizeLong() const {
     case kDstPrefix: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *dstmatch_.dst_prefix_);
+          *_impl_.dstmatch_.dst_prefix_);
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.AddressRange dst_range = 8;
     case kDstRange: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *dstmatch_.dst_range_);
+          *_impl_.dstmatch_.dst_range_);
       break;
     }
     // int32 dst_tag = 9;
     case kDstTag: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_dst_tag());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_dst_tag());
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.IPList dst_ip_list = 10;
     case kDstIpList: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *dstmatch_.dst_ip_list_);
+          *_impl_.dstmatch_.dst_ip_list_);
       break;
     }
     case DSTMATCH_NOT_SET: {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RuleL3Match::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     RuleL3Match::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RuleL3Match::GetClassData() const { return &_class_data_; }
 
-void RuleL3Match::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<RuleL3Match *>(to)->MergeFrom(
-      static_cast<const RuleL3Match &>(from));
-}
 
-
-void RuleL3Match::MergeFrom(const RuleL3Match& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.RuleL3Match)
-  GOOGLE_DCHECK_NE(&from, this);
+void RuleL3Match::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<RuleL3Match*>(&to_msg);
+  auto& from = static_cast<const RuleL3Match&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.RuleL3Match)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.protomatch_case()) {
     case kProtoNum: {
-      _internal_set_proto_num(from._internal_proto_num());
+      _this->_internal_set_proto_num(from._internal_proto_num());
       break;
     }
     case kProtoWildCard: {
-      _internal_set_proto_wild_card(from._internal_proto_wild_card());
+      _this->_internal_set_proto_wild_card(from._internal_proto_wild_card());
       break;
     }
     case PROTOMATCH_NOT_SET: {
@@ -4138,19 +4183,22 @@ void RuleL3Match::MergeFrom(const RuleL3Match& from) {
   }
   switch (from.srcmatch_case()) {
     case kSrcPrefix: {
-      _internal_mutable_src_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(from._internal_src_prefix());
+      _this->_internal_mutable_src_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(
+          from._internal_src_prefix());
       break;
     }
     case kSrcRange: {
-      _internal_mutable_src_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(from._internal_src_range());
+      _this->_internal_mutable_src_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(
+          from._internal_src_range());
       break;
     }
     case kSrcTag: {
-      _internal_set_src_tag(from._internal_src_tag());
+      _this->_internal_set_src_tag(from._internal_src_tag());
       break;
     }
     case kSrcIpList: {
-      _internal_mutable_src_ip_list()->::opi_api::network::opinetcommon::v1alpha1::IPList::MergeFrom(from._internal_src_ip_list());
+      _this->_internal_mutable_src_ip_list()->::opi_api::network::opinetcommon::v1alpha1::IPList::MergeFrom(
+          from._internal_src_ip_list());
       break;
     }
     case SRCMATCH_NOT_SET: {
@@ -4159,26 +4207,29 @@ void RuleL3Match::MergeFrom(const RuleL3Match& from) {
   }
   switch (from.dstmatch_case()) {
     case kDstPrefix: {
-      _internal_mutable_dst_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(from._internal_dst_prefix());
+      _this->_internal_mutable_dst_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(
+          from._internal_dst_prefix());
       break;
     }
     case kDstRange: {
-      _internal_mutable_dst_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(from._internal_dst_range());
+      _this->_internal_mutable_dst_range()->::opi_api::network::opinetcommon::v1alpha1::AddressRange::MergeFrom(
+          from._internal_dst_range());
       break;
     }
     case kDstTag: {
-      _internal_set_dst_tag(from._internal_dst_tag());
+      _this->_internal_set_dst_tag(from._internal_dst_tag());
       break;
     }
     case kDstIpList: {
-      _internal_mutable_dst_ip_list()->::opi_api::network::opinetcommon::v1alpha1::IPList::MergeFrom(from._internal_dst_ip_list());
+      _this->_internal_mutable_dst_ip_list()->::opi_api::network::opinetcommon::v1alpha1::IPList::MergeFrom(
+          from._internal_dst_ip_list());
       break;
     }
     case DSTMATCH_NOT_SET: {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RuleL3Match::CopyFrom(const RuleL3Match& from) {
@@ -4195,16 +4246,16 @@ bool RuleL3Match::IsInitialized() const {
 void RuleL3Match::InternalSwap(RuleL3Match* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(protomatch_, other->protomatch_);
-  swap(srcmatch_, other->srcmatch_);
-  swap(dstmatch_, other->dstmatch_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
-  swap(_oneof_case_[1], other->_oneof_case_[1]);
-  swap(_oneof_case_[2], other->_oneof_case_[2]);
+  swap(_impl_.protomatch_, other->_impl_.protomatch_);
+  swap(_impl_.srcmatch_, other->_impl_.srcmatch_);
+  swap(_impl_.dstmatch_, other->_impl_.dstmatch_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+  swap(_impl_._oneof_case_[1], other->_impl_._oneof_case_[1]);
+  swap(_impl_._oneof_case_[2], other->_impl_._oneof_case_[2]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RuleL3Match::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[11]);
 }
@@ -4219,65 +4270,64 @@ class PortMatch::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::PortRange&
 PortMatch::_Internal::src_port_range(const PortMatch* msg) {
-  return *msg->src_port_range_;
+  return *msg->_impl_.src_port_range_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::PortRange&
 PortMatch::_Internal::dst_port_range(const PortMatch* msg) {
-  return *msg->dst_port_range_;
+  return *msg->_impl_.dst_port_range_;
 }
 PortMatch::PortMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.PortMatch)
 }
 PortMatch::PortMatch(const PortMatch& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PortMatch* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.src_port_range_){nullptr}
+    , decltype(_impl_.dst_port_range_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_src_port_range()) {
-    src_port_range_ = new ::opi_api::network::opinetcommon::v1alpha1::PortRange(*from.src_port_range_);
-  } else {
-    src_port_range_ = nullptr;
+    _this->_impl_.src_port_range_ = new ::opi_api::network::opinetcommon::v1alpha1::PortRange(*from._impl_.src_port_range_);
   }
   if (from._internal_has_dst_port_range()) {
-    dst_port_range_ = new ::opi_api::network::opinetcommon::v1alpha1::PortRange(*from.dst_port_range_);
-  } else {
-    dst_port_range_ = nullptr;
+    _this->_impl_.dst_port_range_ = new ::opi_api::network::opinetcommon::v1alpha1::PortRange(*from._impl_.dst_port_range_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.PortMatch)
 }
 
-inline void PortMatch::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&src_port_range_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&dst_port_range_) -
-    reinterpret_cast<char*>(&src_port_range_)) + sizeof(dst_port_range_));
+inline void PortMatch::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.src_port_range_){nullptr}
+    , decltype(_impl_.dst_port_range_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 PortMatch::~PortMatch() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.PortMatch)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PortMatch::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete src_port_range_;
-  if (this != internal_default_instance()) delete dst_port_range_;
+  if (this != internal_default_instance()) delete _impl_.src_port_range_;
+  if (this != internal_default_instance()) delete _impl_.dst_port_range_;
 }
 
-void PortMatch::ArenaDtor(void* object) {
-  PortMatch* _this = reinterpret_cast< PortMatch* >(object);
-  (void)_this;
-}
-void PortMatch::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PortMatch::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PortMatch::Clear() {
@@ -4286,22 +4336,22 @@ void PortMatch::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && src_port_range_ != nullptr) {
-    delete src_port_range_;
+  if (GetArenaForAllocation() == nullptr && _impl_.src_port_range_ != nullptr) {
+    delete _impl_.src_port_range_;
   }
-  src_port_range_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && dst_port_range_ != nullptr) {
-    delete dst_port_range_;
+  _impl_.src_port_range_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.dst_port_range_ != nullptr) {
+    delete _impl_.dst_port_range_;
   }
-  dst_port_range_ = nullptr;
+  _impl_.dst_port_range_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PortMatch::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PortMatch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.PortRange src_port_range = 1;
       case 1:
@@ -4350,22 +4400,20 @@ uint8_t* PortMatch::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.PortRange src_port_range = 1;
   if (this->_internal_has_src_port_range()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::src_port_range(this), target, stream);
+      InternalWriteMessage(1, _Internal::src_port_range(this),
+        _Internal::src_port_range(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.PortRange dst_port_range = 2;
   if (this->_internal_has_dst_port_range()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::dst_port_range(this), target, stream);
+      InternalWriteMessage(2, _Internal::dst_port_range(this),
+        _Internal::dst_port_range(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.PortMatch)
@@ -4384,45 +4432,43 @@ size_t PortMatch::ByteSizeLong() const {
   if (this->_internal_has_src_port_range()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *src_port_range_);
+        *_impl_.src_port_range_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.PortRange dst_port_range = 2;
   if (this->_internal_has_dst_port_range()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *dst_port_range_);
+        *_impl_.dst_port_range_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PortMatch::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PortMatch::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PortMatch::GetClassData() const { return &_class_data_; }
 
-void PortMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PortMatch *>(to)->MergeFrom(
-      static_cast<const PortMatch &>(from));
-}
 
-
-void PortMatch::MergeFrom(const PortMatch& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.PortMatch)
-  GOOGLE_DCHECK_NE(&from, this);
+void PortMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PortMatch*>(&to_msg);
+  auto& from = static_cast<const PortMatch&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.PortMatch)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_src_port_range()) {
-    _internal_mutable_src_port_range()->::opi_api::network::opinetcommon::v1alpha1::PortRange::MergeFrom(from._internal_src_port_range());
+    _this->_internal_mutable_src_port_range()->::opi_api::network::opinetcommon::v1alpha1::PortRange::MergeFrom(
+        from._internal_src_port_range());
   }
   if (from._internal_has_dst_port_range()) {
-    _internal_mutable_dst_port_range()->::opi_api::network::opinetcommon::v1alpha1::PortRange::MergeFrom(from._internal_dst_port_range());
+    _this->_internal_mutable_dst_port_range()->::opi_api::network::opinetcommon::v1alpha1::PortRange::MergeFrom(
+        from._internal_dst_port_range());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PortMatch::CopyFrom(const PortMatch& from) {
@@ -4440,15 +4486,15 @@ void PortMatch::InternalSwap(PortMatch* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PortMatch, dst_port_range_)
-      + sizeof(PortMatch::dst_port_range_)
-      - PROTOBUF_FIELD_OFFSET(PortMatch, src_port_range_)>(
-          reinterpret_cast<char*>(&src_port_range_),
-          reinterpret_cast<char*>(&other->src_port_range_));
+      PROTOBUF_FIELD_OFFSET(PortMatch, _impl_.dst_port_range_)
+      + sizeof(PortMatch::_impl_.dst_port_range_)
+      - PROTOBUF_FIELD_OFFSET(PortMatch, _impl_.src_port_range_)>(
+          reinterpret_cast<char*>(&_impl_.src_port_range_),
+          reinterpret_cast<char*>(&other->_impl_.src_port_range_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortMatch::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[12]);
 }
@@ -4462,23 +4508,27 @@ class ICMPMatch::_Internal {
 ICMPMatch::ICMPMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.ICMPMatch)
 }
 ICMPMatch::ICMPMatch(const ICMPMatch& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ICMPMatch* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.typematch_){}
+    , decltype(_impl_.codematch_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_typematch();
   switch (from.typematch_case()) {
     case kType: {
-      _internal_set_type(from._internal_type());
+      _this->_internal_set_type(from._internal_type());
       break;
     }
     case kTypeWildcard: {
-      _internal_set_type_wildcard(from._internal_type_wildcard());
+      _this->_internal_set_type_wildcard(from._internal_type_wildcard());
       break;
     }
     case TYPEMATCH_NOT_SET: {
@@ -4488,11 +4538,11 @@ ICMPMatch::ICMPMatch(const ICMPMatch& from)
   clear_has_codematch();
   switch (from.codematch_case()) {
     case kCode: {
-      _internal_set_code(from._internal_code());
+      _this->_internal_set_code(from._internal_code());
       break;
     }
     case kCodeWildcard: {
-      _internal_set_code_wildcard(from._internal_code_wildcard());
+      _this->_internal_set_code_wildcard(from._internal_code_wildcard());
       break;
     }
     case CODEMATCH_NOT_SET: {
@@ -4502,16 +4552,27 @@ ICMPMatch::ICMPMatch(const ICMPMatch& from)
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.ICMPMatch)
 }
 
-inline void ICMPMatch::SharedCtor() {
-clear_has_typematch();
-clear_has_codematch();
+inline void ICMPMatch::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.typematch_){}
+    , decltype(_impl_.codematch_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_typematch();
+  clear_has_codematch();
 }
 
 ICMPMatch::~ICMPMatch() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.ICMPMatch)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ICMPMatch::SharedDtor() {
@@ -4524,14 +4585,8 @@ inline void ICMPMatch::SharedDtor() {
   }
 }
 
-void ICMPMatch::ArenaDtor(void* object) {
-  ICMPMatch* _this = reinterpret_cast< ICMPMatch* >(object);
-  (void)_this;
-}
-void ICMPMatch::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ICMPMatch::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ICMPMatch::clear_typematch() {
@@ -4549,7 +4604,7 @@ void ICMPMatch::clear_typematch() {
       break;
     }
   }
-  _oneof_case_[0] = TYPEMATCH_NOT_SET;
+  _impl_._oneof_case_[0] = TYPEMATCH_NOT_SET;
 }
 
 void ICMPMatch::clear_codematch() {
@@ -4567,7 +4622,7 @@ void ICMPMatch::clear_codematch() {
       break;
     }
   }
-  _oneof_case_[1] = CODEMATCH_NOT_SET;
+  _impl_._oneof_case_[1] = CODEMATCH_NOT_SET;
 }
 
 
@@ -4582,11 +4637,11 @@ void ICMPMatch::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ICMPMatch::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ICMPMatch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 type = 1;
       case 1:
@@ -4654,31 +4709,31 @@ uint8_t* ICMPMatch::_InternalSerialize(
   // int32 type = 1;
   if (_internal_has_type()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_type(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_type(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.WildcardMatch type_wildcard = 2;
   if (_internal_has_type_wildcard()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_type_wildcard(), target);
   }
 
   // int32 code = 3;
   if (_internal_has_code()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_code(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_code(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.WildcardMatch code_wildcard = 4;
   if (_internal_has_code_wildcard()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_code_wildcard(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.ICMPMatch)
@@ -4696,13 +4751,13 @@ size_t ICMPMatch::ByteSizeLong() const {
   switch (typematch_case()) {
     // int32 type = 1;
     case kType: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_type());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_type());
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.WildcardMatch type_wildcard = 2;
     case kTypeWildcard: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type_wildcard());
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_type_wildcard());
       break;
     }
     case TYPEMATCH_NOT_SET: {
@@ -4712,48 +4767,44 @@ size_t ICMPMatch::ByteSizeLong() const {
   switch (codematch_case()) {
     // int32 code = 3;
     case kCode: {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_code());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_code());
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.WildcardMatch code_wildcard = 4;
     case kCodeWildcard: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_code_wildcard());
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_code_wildcard());
       break;
     }
     case CODEMATCH_NOT_SET: {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ICMPMatch::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ICMPMatch::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ICMPMatch::GetClassData() const { return &_class_data_; }
 
-void ICMPMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ICMPMatch *>(to)->MergeFrom(
-      static_cast<const ICMPMatch &>(from));
-}
 
-
-void ICMPMatch::MergeFrom(const ICMPMatch& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.ICMPMatch)
-  GOOGLE_DCHECK_NE(&from, this);
+void ICMPMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ICMPMatch*>(&to_msg);
+  auto& from = static_cast<const ICMPMatch&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.ICMPMatch)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.typematch_case()) {
     case kType: {
-      _internal_set_type(from._internal_type());
+      _this->_internal_set_type(from._internal_type());
       break;
     }
     case kTypeWildcard: {
-      _internal_set_type_wildcard(from._internal_type_wildcard());
+      _this->_internal_set_type_wildcard(from._internal_type_wildcard());
       break;
     }
     case TYPEMATCH_NOT_SET: {
@@ -4762,18 +4813,18 @@ void ICMPMatch::MergeFrom(const ICMPMatch& from) {
   }
   switch (from.codematch_case()) {
     case kCode: {
-      _internal_set_code(from._internal_code());
+      _this->_internal_set_code(from._internal_code());
       break;
     }
     case kCodeWildcard: {
-      _internal_set_code_wildcard(from._internal_code_wildcard());
+      _this->_internal_set_code_wildcard(from._internal_code_wildcard());
       break;
     }
     case CODEMATCH_NOT_SET: {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ICMPMatch::CopyFrom(const ICMPMatch& from) {
@@ -4790,14 +4841,14 @@ bool ICMPMatch::IsInitialized() const {
 void ICMPMatch::InternalSwap(ICMPMatch* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(typematch_, other->typematch_);
-  swap(codematch_, other->codematch_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
-  swap(_oneof_case_[1], other->_oneof_case_[1]);
+  swap(_impl_.typematch_, other->_impl_.typematch_);
+  swap(_impl_.codematch_, other->_impl_.codematch_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+  swap(_impl_._oneof_case_[1], other->_impl_._oneof_case_[1]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ICMPMatch::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[13]);
 }
@@ -4810,45 +4861,50 @@ class PortListMatch::_Internal {
 
 PortListMatch::PortListMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  src_port_range_(arena),
-  dst_port_range_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.PortListMatch)
 }
 PortListMatch::PortListMatch(const PortListMatch& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      src_port_range_(from.src_port_range_),
-      dst_port_range_(from.dst_port_range_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PortListMatch* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.src_port_range_){from._impl_.src_port_range_}
+    , decltype(_impl_.dst_port_range_){from._impl_.dst_port_range_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.PortListMatch)
 }
 
-inline void PortListMatch::SharedCtor() {
+inline void PortListMatch::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.src_port_range_){arena}
+    , decltype(_impl_.dst_port_range_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 PortListMatch::~PortListMatch() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.PortListMatch)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void PortListMatch::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.src_port_range_.~RepeatedPtrField();
+  _impl_.dst_port_range_.~RepeatedPtrField();
 }
 
-void PortListMatch::ArenaDtor(void* object) {
-  PortListMatch* _this = reinterpret_cast< PortListMatch* >(object);
-  (void)_this;
-}
-void PortListMatch::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PortListMatch::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void PortListMatch::Clear() {
@@ -4857,16 +4913,16 @@ void PortListMatch::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  src_port_range_.Clear();
-  dst_port_range_.Clear();
+  _impl_.src_port_range_.Clear();
+  _impl_.dst_port_range_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PortListMatch::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PortListMatch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.network.opinetcommon.v1alpha1.PortRange src_port_range = 1;
       case 1:
@@ -4924,23 +4980,23 @@ uint8_t* PortListMatch::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.network.opinetcommon.v1alpha1.PortRange src_port_range = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_src_port_range_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_src_port_range_size()); i < n; i++) {
+    const auto& repfield = this->_internal_src_port_range(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_src_port_range(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .opi_api.network.opinetcommon.v1alpha1.PortRange dst_port_range = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_dst_port_range_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_dst_port_range_size()); i < n; i++) {
+    const auto& repfield = this->_internal_dst_port_range(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, this->_internal_dst_port_range(i), target, stream);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.PortListMatch)
@@ -4957,43 +5013,39 @@ size_t PortListMatch::ByteSizeLong() const {
 
   // repeated .opi_api.network.opinetcommon.v1alpha1.PortRange src_port_range = 1;
   total_size += 1UL * this->_internal_src_port_range_size();
-  for (const auto& msg : this->src_port_range_) {
+  for (const auto& msg : this->_impl_.src_port_range_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .opi_api.network.opinetcommon.v1alpha1.PortRange dst_port_range = 2;
   total_size += 1UL * this->_internal_dst_port_range_size();
-  for (const auto& msg : this->dst_port_range_) {
+  for (const auto& msg : this->_impl_.dst_port_range_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PortListMatch::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PortListMatch::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PortListMatch::GetClassData() const { return &_class_data_; }
 
-void PortListMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PortListMatch *>(to)->MergeFrom(
-      static_cast<const PortListMatch &>(from));
-}
 
-
-void PortListMatch::MergeFrom(const PortListMatch& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.PortListMatch)
-  GOOGLE_DCHECK_NE(&from, this);
+void PortListMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PortListMatch*>(&to_msg);
+  auto& from = static_cast<const PortListMatch&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.PortListMatch)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  src_port_range_.MergeFrom(from.src_port_range_);
-  dst_port_range_.MergeFrom(from.dst_port_range_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.src_port_range_.MergeFrom(from._impl_.src_port_range_);
+  _this->_impl_.dst_port_range_.MergeFrom(from._impl_.dst_port_range_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PortListMatch::CopyFrom(const PortListMatch& from) {
@@ -5010,12 +5062,12 @@ bool PortListMatch::IsInitialized() const {
 void PortListMatch::InternalSwap(PortListMatch* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  src_port_range_.InternalSwap(&other->src_port_range_);
-  dst_port_range_.InternalSwap(&other->dst_port_range_);
+  _impl_.src_port_range_.InternalSwap(&other->_impl_.src_port_range_);
+  _impl_.dst_port_range_.InternalSwap(&other->_impl_.dst_port_range_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortListMatch::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[14]);
 }
@@ -5028,43 +5080,47 @@ class ICMPMatchList::_Internal {
 
 ICMPMatchList::ICMPMatchList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  icmp_match_list_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.ICMPMatchList)
 }
 ICMPMatchList::ICMPMatchList(const ICMPMatchList& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      icmp_match_list_(from.icmp_match_list_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ICMPMatchList* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.icmp_match_list_){from._impl_.icmp_match_list_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.ICMPMatchList)
 }
 
-inline void ICMPMatchList::SharedCtor() {
+inline void ICMPMatchList::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.icmp_match_list_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 ICMPMatchList::~ICMPMatchList() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.ICMPMatchList)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void ICMPMatchList::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.icmp_match_list_.~RepeatedPtrField();
 }
 
-void ICMPMatchList::ArenaDtor(void* object) {
-  ICMPMatchList* _this = reinterpret_cast< ICMPMatchList* >(object);
-  (void)_this;
-}
-void ICMPMatchList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ICMPMatchList::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void ICMPMatchList::Clear() {
@@ -5073,15 +5129,15 @@ void ICMPMatchList::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  icmp_match_list_.Clear();
+  _impl_.icmp_match_list_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ICMPMatchList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ICMPMatchList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .opi_api.network.opinetcommon.v1alpha1.ICMPMatch icmp_match_list = 1;
       case 1:
@@ -5126,15 +5182,15 @@ uint8_t* ICMPMatchList::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .opi_api.network.opinetcommon.v1alpha1.ICMPMatch icmp_match_list = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_icmp_match_list_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_icmp_match_list_size()); i < n; i++) {
+    const auto& repfield = this->_internal_icmp_match_list(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_icmp_match_list(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.ICMPMatchList)
@@ -5151,35 +5207,31 @@ size_t ICMPMatchList::ByteSizeLong() const {
 
   // repeated .opi_api.network.opinetcommon.v1alpha1.ICMPMatch icmp_match_list = 1;
   total_size += 1UL * this->_internal_icmp_match_list_size();
-  for (const auto& msg : this->icmp_match_list_) {
+  for (const auto& msg : this->_impl_.icmp_match_list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ICMPMatchList::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ICMPMatchList::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ICMPMatchList::GetClassData() const { return &_class_data_; }
 
-void ICMPMatchList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<ICMPMatchList *>(to)->MergeFrom(
-      static_cast<const ICMPMatchList &>(from));
-}
 
-
-void ICMPMatchList::MergeFrom(const ICMPMatchList& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.ICMPMatchList)
-  GOOGLE_DCHECK_NE(&from, this);
+void ICMPMatchList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ICMPMatchList*>(&to_msg);
+  auto& from = static_cast<const ICMPMatchList&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.ICMPMatchList)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  icmp_match_list_.MergeFrom(from.icmp_match_list_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.icmp_match_list_.MergeFrom(from._impl_.icmp_match_list_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ICMPMatchList::CopyFrom(const ICMPMatchList& from) {
@@ -5196,11 +5248,11 @@ bool ICMPMatchList::IsInitialized() const {
 void ICMPMatchList::InternalSwap(ICMPMatchList* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  icmp_match_list_.InternalSwap(&other->icmp_match_list_);
+  _impl_.icmp_match_list_.InternalSwap(&other->_impl_.icmp_match_list_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ICMPMatchList::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[15]);
 }
@@ -5217,32 +5269,32 @@ class RuleL4Match::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::PortMatch&
 RuleL4Match::_Internal::ports(const RuleL4Match* msg) {
-  return *msg->l4info_.ports_;
+  return *msg->_impl_.l4info_.ports_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::ICMPMatch&
 RuleL4Match::_Internal::type_code(const RuleL4Match* msg) {
-  return *msg->l4info_.type_code_;
+  return *msg->_impl_.l4info_.type_code_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::PortListMatch&
 RuleL4Match::_Internal::port_list(const RuleL4Match* msg) {
-  return *msg->l4info_.port_list_;
+  return *msg->_impl_.l4info_.port_list_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList&
 RuleL4Match::_Internal::icmp_match_list(const RuleL4Match* msg) {
-  return *msg->l4info_.icmp_match_list_;
+  return *msg->_impl_.l4info_.icmp_match_list_;
 }
 void RuleL4Match::set_allocated_ports(::opi_api::network::opinetcommon::v1alpha1::PortMatch* ports) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_l4info();
   if (ports) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::PortMatch>::GetOwningArena(ports);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(ports);
     if (message_arena != submessage_arena) {
       ports = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, ports, submessage_arena);
     }
     set_has_ports();
-    l4info_.ports_ = ports;
+    _impl_.l4info_.ports_ = ports;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL4Match.ports)
 }
@@ -5251,13 +5303,13 @@ void RuleL4Match::set_allocated_type_code(::opi_api::network::opinetcommon::v1al
   clear_l4info();
   if (type_code) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::ICMPMatch>::GetOwningArena(type_code);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(type_code);
     if (message_arena != submessage_arena) {
       type_code = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, type_code, submessage_arena);
     }
     set_has_type_code();
-    l4info_.type_code_ = type_code;
+    _impl_.l4info_.type_code_ = type_code;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL4Match.type_code)
 }
@@ -5266,13 +5318,13 @@ void RuleL4Match::set_allocated_port_list(::opi_api::network::opinetcommon::v1al
   clear_l4info();
   if (port_list) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::PortListMatch>::GetOwningArena(port_list);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(port_list);
     if (message_arena != submessage_arena) {
       port_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, port_list, submessage_arena);
     }
     set_has_port_list();
-    l4info_.port_list_ = port_list;
+    _impl_.l4info_.port_list_ = port_list;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL4Match.port_list)
 }
@@ -5281,44 +5333,51 @@ void RuleL4Match::set_allocated_icmp_match_list(::opi_api::network::opinetcommon
   clear_l4info();
   if (icmp_match_list) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList>::GetOwningArena(icmp_match_list);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(icmp_match_list);
     if (message_arena != submessage_arena) {
       icmp_match_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, icmp_match_list, submessage_arena);
     }
     set_has_icmp_match_list();
-    l4info_.icmp_match_list_ = icmp_match_list;
+    _impl_.l4info_.icmp_match_list_ = icmp_match_list;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.opinetcommon.v1alpha1.RuleL4Match.icmp_match_list)
 }
 RuleL4Match::RuleL4Match(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.RuleL4Match)
 }
 RuleL4Match::RuleL4Match(const RuleL4Match& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RuleL4Match* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.l4info_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_l4info();
   switch (from.l4info_case()) {
     case kPorts: {
-      _internal_mutable_ports()->::opi_api::network::opinetcommon::v1alpha1::PortMatch::MergeFrom(from._internal_ports());
+      _this->_internal_mutable_ports()->::opi_api::network::opinetcommon::v1alpha1::PortMatch::MergeFrom(
+          from._internal_ports());
       break;
     }
     case kTypeCode: {
-      _internal_mutable_type_code()->::opi_api::network::opinetcommon::v1alpha1::ICMPMatch::MergeFrom(from._internal_type_code());
+      _this->_internal_mutable_type_code()->::opi_api::network::opinetcommon::v1alpha1::ICMPMatch::MergeFrom(
+          from._internal_type_code());
       break;
     }
     case kPortList: {
-      _internal_mutable_port_list()->::opi_api::network::opinetcommon::v1alpha1::PortListMatch::MergeFrom(from._internal_port_list());
+      _this->_internal_mutable_port_list()->::opi_api::network::opinetcommon::v1alpha1::PortListMatch::MergeFrom(
+          from._internal_port_list());
       break;
     }
     case kIcmpMatchList: {
-      _internal_mutable_icmp_match_list()->::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList::MergeFrom(from._internal_icmp_match_list());
+      _this->_internal_mutable_icmp_match_list()->::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList::MergeFrom(
+          from._internal_icmp_match_list());
       break;
     }
     case L4INFO_NOT_SET: {
@@ -5328,15 +5387,25 @@ RuleL4Match::RuleL4Match(const RuleL4Match& from)
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.RuleL4Match)
 }
 
-inline void RuleL4Match::SharedCtor() {
-clear_has_l4info();
+inline void RuleL4Match::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.l4info_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_l4info();
 }
 
 RuleL4Match::~RuleL4Match() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.RuleL4Match)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void RuleL4Match::SharedDtor() {
@@ -5346,14 +5415,8 @@ inline void RuleL4Match::SharedDtor() {
   }
 }
 
-void RuleL4Match::ArenaDtor(void* object) {
-  RuleL4Match* _this = reinterpret_cast< RuleL4Match* >(object);
-  (void)_this;
-}
-void RuleL4Match::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void RuleL4Match::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void RuleL4Match::clear_l4info() {
@@ -5361,25 +5424,25 @@ void RuleL4Match::clear_l4info() {
   switch (l4info_case()) {
     case kPorts: {
       if (GetArenaForAllocation() == nullptr) {
-        delete l4info_.ports_;
+        delete _impl_.l4info_.ports_;
       }
       break;
     }
     case kTypeCode: {
       if (GetArenaForAllocation() == nullptr) {
-        delete l4info_.type_code_;
+        delete _impl_.l4info_.type_code_;
       }
       break;
     }
     case kPortList: {
       if (GetArenaForAllocation() == nullptr) {
-        delete l4info_.port_list_;
+        delete _impl_.l4info_.port_list_;
       }
       break;
     }
     case kIcmpMatchList: {
       if (GetArenaForAllocation() == nullptr) {
-        delete l4info_.icmp_match_list_;
+        delete _impl_.l4info_.icmp_match_list_;
       }
       break;
     }
@@ -5387,7 +5450,7 @@ void RuleL4Match::clear_l4info() {
       break;
     }
   }
-  _oneof_case_[0] = L4INFO_NOT_SET;
+  _impl_._oneof_case_[0] = L4INFO_NOT_SET;
 }
 
 
@@ -5401,11 +5464,11 @@ void RuleL4Match::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RuleL4Match::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* RuleL4Match::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.PortMatch ports = 1;
       case 1:
@@ -5470,38 +5533,34 @@ uint8_t* RuleL4Match::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.PortMatch ports = 1;
   if (_internal_has_ports()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::ports(this), target, stream);
+      InternalWriteMessage(1, _Internal::ports(this),
+        _Internal::ports(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.ICMPMatch type_code = 2;
   if (_internal_has_type_code()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::type_code(this), target, stream);
+      InternalWriteMessage(2, _Internal::type_code(this),
+        _Internal::type_code(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.PortListMatch port_list = 3;
   if (_internal_has_port_list()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::port_list(this), target, stream);
+      InternalWriteMessage(3, _Internal::port_list(this),
+        _Internal::port_list(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.ICMPMatchList icmp_match_list = 4;
   if (_internal_has_icmp_match_list()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::icmp_match_list(this), target, stream);
+      InternalWriteMessage(4, _Internal::icmp_match_list(this),
+        _Internal::icmp_match_list(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.RuleL4Match)
@@ -5521,78 +5580,78 @@ size_t RuleL4Match::ByteSizeLong() const {
     case kPorts: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *l4info_.ports_);
+          *_impl_.l4info_.ports_);
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.ICMPMatch type_code = 2;
     case kTypeCode: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *l4info_.type_code_);
+          *_impl_.l4info_.type_code_);
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.PortListMatch port_list = 3;
     case kPortList: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *l4info_.port_list_);
+          *_impl_.l4info_.port_list_);
       break;
     }
     // .opi_api.network.opinetcommon.v1alpha1.ICMPMatchList icmp_match_list = 4;
     case kIcmpMatchList: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *l4info_.icmp_match_list_);
+          *_impl_.l4info_.icmp_match_list_);
       break;
     }
     case L4INFO_NOT_SET: {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RuleL4Match::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     RuleL4Match::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RuleL4Match::GetClassData() const { return &_class_data_; }
 
-void RuleL4Match::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<RuleL4Match *>(to)->MergeFrom(
-      static_cast<const RuleL4Match &>(from));
-}
 
-
-void RuleL4Match::MergeFrom(const RuleL4Match& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.RuleL4Match)
-  GOOGLE_DCHECK_NE(&from, this);
+void RuleL4Match::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<RuleL4Match*>(&to_msg);
+  auto& from = static_cast<const RuleL4Match&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.RuleL4Match)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.l4info_case()) {
     case kPorts: {
-      _internal_mutable_ports()->::opi_api::network::opinetcommon::v1alpha1::PortMatch::MergeFrom(from._internal_ports());
+      _this->_internal_mutable_ports()->::opi_api::network::opinetcommon::v1alpha1::PortMatch::MergeFrom(
+          from._internal_ports());
       break;
     }
     case kTypeCode: {
-      _internal_mutable_type_code()->::opi_api::network::opinetcommon::v1alpha1::ICMPMatch::MergeFrom(from._internal_type_code());
+      _this->_internal_mutable_type_code()->::opi_api::network::opinetcommon::v1alpha1::ICMPMatch::MergeFrom(
+          from._internal_type_code());
       break;
     }
     case kPortList: {
-      _internal_mutable_port_list()->::opi_api::network::opinetcommon::v1alpha1::PortListMatch::MergeFrom(from._internal_port_list());
+      _this->_internal_mutable_port_list()->::opi_api::network::opinetcommon::v1alpha1::PortListMatch::MergeFrom(
+          from._internal_port_list());
       break;
     }
     case kIcmpMatchList: {
-      _internal_mutable_icmp_match_list()->::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList::MergeFrom(from._internal_icmp_match_list());
+      _this->_internal_mutable_icmp_match_list()->::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList::MergeFrom(
+          from._internal_icmp_match_list());
       break;
     }
     case L4INFO_NOT_SET: {
       break;
     }
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RuleL4Match::CopyFrom(const RuleL4Match& from) {
@@ -5609,12 +5668,12 @@ bool RuleL4Match::IsInitialized() const {
 void RuleL4Match::InternalSwap(RuleL4Match* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(l4info_, other->l4info_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(_impl_.l4info_, other->_impl_.l4info_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RuleL4Match::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[16]);
 }
@@ -5629,65 +5688,64 @@ class RuleMatch::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::RuleL3Match&
 RuleMatch::_Internal::l3_match(const RuleMatch* msg) {
-  return *msg->l3_match_;
+  return *msg->_impl_.l3_match_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::RuleL4Match&
 RuleMatch::_Internal::l4_match(const RuleMatch* msg) {
-  return *msg->l4_match_;
+  return *msg->_impl_.l4_match_;
 }
 RuleMatch::RuleMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.RuleMatch)
 }
 RuleMatch::RuleMatch(const RuleMatch& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RuleMatch* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.l3_match_){nullptr}
+    , decltype(_impl_.l4_match_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_l3_match()) {
-    l3_match_ = new ::opi_api::network::opinetcommon::v1alpha1::RuleL3Match(*from.l3_match_);
-  } else {
-    l3_match_ = nullptr;
+    _this->_impl_.l3_match_ = new ::opi_api::network::opinetcommon::v1alpha1::RuleL3Match(*from._impl_.l3_match_);
   }
   if (from._internal_has_l4_match()) {
-    l4_match_ = new ::opi_api::network::opinetcommon::v1alpha1::RuleL4Match(*from.l4_match_);
-  } else {
-    l4_match_ = nullptr;
+    _this->_impl_.l4_match_ = new ::opi_api::network::opinetcommon::v1alpha1::RuleL4Match(*from._impl_.l4_match_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.RuleMatch)
 }
 
-inline void RuleMatch::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&l3_match_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&l4_match_) -
-    reinterpret_cast<char*>(&l3_match_)) + sizeof(l4_match_));
+inline void RuleMatch::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.l3_match_){nullptr}
+    , decltype(_impl_.l4_match_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 RuleMatch::~RuleMatch() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.RuleMatch)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void RuleMatch::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete l3_match_;
-  if (this != internal_default_instance()) delete l4_match_;
+  if (this != internal_default_instance()) delete _impl_.l3_match_;
+  if (this != internal_default_instance()) delete _impl_.l4_match_;
 }
 
-void RuleMatch::ArenaDtor(void* object) {
-  RuleMatch* _this = reinterpret_cast< RuleMatch* >(object);
-  (void)_this;
-}
-void RuleMatch::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void RuleMatch::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void RuleMatch::Clear() {
@@ -5696,22 +5754,22 @@ void RuleMatch::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && l3_match_ != nullptr) {
-    delete l3_match_;
+  if (GetArenaForAllocation() == nullptr && _impl_.l3_match_ != nullptr) {
+    delete _impl_.l3_match_;
   }
-  l3_match_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && l4_match_ != nullptr) {
-    delete l4_match_;
+  _impl_.l3_match_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.l4_match_ != nullptr) {
+    delete _impl_.l4_match_;
   }
-  l4_match_ = nullptr;
+  _impl_.l4_match_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RuleMatch::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* RuleMatch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.RuleL3Match l3_match = 1;
       case 1:
@@ -5760,22 +5818,20 @@ uint8_t* RuleMatch::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.RuleL3Match l3_match = 1;
   if (this->_internal_has_l3_match()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::l3_match(this), target, stream);
+      InternalWriteMessage(1, _Internal::l3_match(this),
+        _Internal::l3_match(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.RuleL4Match l4_match = 2;
   if (this->_internal_has_l4_match()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::l4_match(this), target, stream);
+      InternalWriteMessage(2, _Internal::l4_match(this),
+        _Internal::l4_match(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.RuleMatch)
@@ -5794,45 +5850,43 @@ size_t RuleMatch::ByteSizeLong() const {
   if (this->_internal_has_l3_match()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *l3_match_);
+        *_impl_.l3_match_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.RuleL4Match l4_match = 2;
   if (this->_internal_has_l4_match()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *l4_match_);
+        *_impl_.l4_match_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RuleMatch::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     RuleMatch::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RuleMatch::GetClassData() const { return &_class_data_; }
 
-void RuleMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<RuleMatch *>(to)->MergeFrom(
-      static_cast<const RuleMatch &>(from));
-}
 
-
-void RuleMatch::MergeFrom(const RuleMatch& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.RuleMatch)
-  GOOGLE_DCHECK_NE(&from, this);
+void RuleMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<RuleMatch*>(&to_msg);
+  auto& from = static_cast<const RuleMatch&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.RuleMatch)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_l3_match()) {
-    _internal_mutable_l3_match()->::opi_api::network::opinetcommon::v1alpha1::RuleL3Match::MergeFrom(from._internal_l3_match());
+    _this->_internal_mutable_l3_match()->::opi_api::network::opinetcommon::v1alpha1::RuleL3Match::MergeFrom(
+        from._internal_l3_match());
   }
   if (from._internal_has_l4_match()) {
-    _internal_mutable_l4_match()->::opi_api::network::opinetcommon::v1alpha1::RuleL4Match::MergeFrom(from._internal_l4_match());
+    _this->_internal_mutable_l4_match()->::opi_api::network::opinetcommon::v1alpha1::RuleL4Match::MergeFrom(
+        from._internal_l4_match());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RuleMatch::CopyFrom(const RuleMatch& from) {
@@ -5850,15 +5904,15 @@ void RuleMatch::InternalSwap(RuleMatch* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RuleMatch, l4_match_)
-      + sizeof(RuleMatch::l4_match_)
-      - PROTOBUF_FIELD_OFFSET(RuleMatch, l3_match_)>(
-          reinterpret_cast<char*>(&l3_match_),
-          reinterpret_cast<char*>(&other->l3_match_));
+      PROTOBUF_FIELD_OFFSET(RuleMatch, _impl_.l4_match_)
+      + sizeof(RuleMatch::_impl_.l4_match_)
+      - PROTOBUF_FIELD_OFFSET(RuleMatch, _impl_.l3_match_)>(
+          reinterpret_cast<char*>(&_impl_.l3_match_),
+          reinterpret_cast<char*>(&other->_impl_.l3_match_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RuleMatch::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[17]);
 }
@@ -5872,42 +5926,46 @@ class HwHandle::_Internal {
 HwHandle::HwHandle(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.opinetcommon.v1alpha1.HwHandle)
 }
 HwHandle::HwHandle(const HwHandle& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  HwHandle* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.idx_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  idx_ = from.idx_;
+  _this->_impl_.idx_ = from._impl_.idx_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.opinetcommon.v1alpha1.HwHandle)
 }
 
-inline void HwHandle::SharedCtor() {
-idx_ = uint64_t{0u};
+inline void HwHandle::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.idx_){uint64_t{0u}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 HwHandle::~HwHandle() {
   // @@protoc_insertion_point(destructor:opi_api.network.opinetcommon.v1alpha1.HwHandle)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void HwHandle::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void HwHandle::ArenaDtor(void* object) {
-  HwHandle* _this = reinterpret_cast< HwHandle* >(object);
-  (void)_this;
-}
-void HwHandle::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void HwHandle::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void HwHandle::Clear() {
@@ -5916,20 +5974,20 @@ void HwHandle::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  idx_ = uint64_t{0u};
+  _impl_.idx_ = uint64_t{0u};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* HwHandle::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* HwHandle::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint64 idx = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          idx_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.idx_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5966,11 +6024,11 @@ uint8_t* HwHandle::_InternalSerialize(
   // uint64 idx = 1;
   if (this->_internal_idx() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_idx(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_idx(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.opinetcommon.v1alpha1.HwHandle)
@@ -5987,35 +6045,31 @@ size_t HwHandle::ByteSizeLong() const {
 
   // uint64 idx = 1;
   if (this->_internal_idx() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_idx());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_idx());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HwHandle::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     HwHandle::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HwHandle::GetClassData() const { return &_class_data_; }
 
-void HwHandle::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<HwHandle *>(to)->MergeFrom(
-      static_cast<const HwHandle &>(from));
-}
 
-
-void HwHandle::MergeFrom(const HwHandle& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.HwHandle)
-  GOOGLE_DCHECK_NE(&from, this);
+void HwHandle::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<HwHandle*>(&to_msg);
+  auto& from = static_cast<const HwHandle&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.opinetcommon.v1alpha1.HwHandle)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_idx() != 0) {
-    _internal_set_idx(from._internal_idx());
+    _this->_internal_set_idx(from._internal_idx());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void HwHandle::CopyFrom(const HwHandle& from) {
@@ -6032,11 +6086,11 @@ bool HwHandle::IsInitialized() const {
 void HwHandle::InternalSwap(HwHandle* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(idx_, other->idx_);
+  swap(_impl_.idx_, other->_impl_.idx_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HwHandle::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_networktypes_2eproto_getter, &descriptor_table_networktypes_2eproto_once,
       file_level_metadata_networktypes_2eproto[18]);
 }
@@ -6047,61 +6101,80 @@ void HwHandle::InternalSwap(HwHandle* other) {
 }  // namespace network
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPAddress* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPAddress >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPAddress*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPAddress >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::IPAddress >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPPrefix >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPPrefix*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPPrefix >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::IPPrefix >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::IPv4Prefix >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::IPv6Prefix >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::EncapVal* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::EncapVal >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::EncapVal*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::EncapVal >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::EncapVal >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::Encap* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::Encap >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::Encap*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::Encap >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::Encap >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::PortRange* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::PortRange >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::PortRange*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::PortRange >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::PortRange >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPRange* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPRange >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPRange*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPRange >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::IPRange >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::AddressRange* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::AddressRange >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::AddressRange*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::AddressRange >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::AddressRange >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPEntry* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPEntry >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPEntry*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPEntry >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::IPEntry >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPList* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPList >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::IPList*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::IPList >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::IPList >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::RuleL3Match* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::RuleL3Match >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::RuleL3Match*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::RuleL3Match >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::RuleL3Match >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::PortMatch* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::PortMatch >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::PortMatch*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::PortMatch >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::PortMatch >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::ICMPMatch* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::ICMPMatch >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::ICMPMatch*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::ICMPMatch >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::ICMPMatch >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::PortListMatch* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::PortListMatch >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::PortListMatch*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::PortListMatch >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::PortListMatch >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::ICMPMatchList >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::RuleL4Match* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::RuleL4Match >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::RuleL4Match*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::RuleL4Match >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::RuleL4Match >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::RuleMatch* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::RuleMatch >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::RuleMatch*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::RuleMatch >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::RuleMatch >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::HwHandle* Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::HwHandle >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::opinetcommon::v1alpha1::HwHandle*
+Arena::CreateMaybeMessage< ::opi_api::network::opinetcommon::v1alpha1::HwHandle >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::opinetcommon::v1alpha1::HwHandle >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

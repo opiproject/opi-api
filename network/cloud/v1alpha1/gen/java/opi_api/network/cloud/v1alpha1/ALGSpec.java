@@ -131,6 +131,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -1088,8 +1090,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (algOptionsCase_ == 3) {
           ftpOptionsBuilder_.mergeFrom(value);
+        } else {
+          ftpOptionsBuilder_.setMessage(value);
         }
-        ftpOptionsBuilder_.setMessage(value);
       }
       algOptionsCase_ = 3;
       return this;
@@ -1265,8 +1268,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (algOptionsCase_ == 4) {
           dnsOptionsBuilder_.mergeFrom(value);
+        } else {
+          dnsOptionsBuilder_.setMessage(value);
         }
-        dnsOptionsBuilder_.setMessage(value);
       }
       algOptionsCase_ = 4;
       return this;
@@ -1442,8 +1446,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (algOptionsCase_ == 5) {
           msrpcOptionsBuilder_.mergeFrom(value);
+        } else {
+          msrpcOptionsBuilder_.setMessage(value);
         }
-        msrpcOptionsBuilder_.setMessage(value);
       }
       algOptionsCase_ = 5;
       return this;
@@ -1619,8 +1624,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (algOptionsCase_ == 6) {
           sunrpcOptionsBuilder_.mergeFrom(value);
+        } else {
+          sunrpcOptionsBuilder_.setMessage(value);
         }
-        sunrpcOptionsBuilder_.setMessage(value);
       }
       algOptionsCase_ = 6;
       return this;

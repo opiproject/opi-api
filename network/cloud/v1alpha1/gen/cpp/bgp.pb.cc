@@ -16,369 +16,362 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace opi_api {
 namespace network {
 namespace cloud {
 namespace v1alpha1 {
-constexpr Bgp::Bgp(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , spec_(nullptr)
-  , status_(nullptr){}
+PROTOBUF_CONSTEXPR Bgp::Bgp(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.spec_)*/nullptr
+  , /*decltype(_impl_.status_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BgpDefaultTypeInternal {
-  constexpr BgpDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BgpDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BgpDefaultTypeInternal() {}
   union {
     Bgp _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BgpDefaultTypeInternal _Bgp_default_instance_;
-constexpr BgpSpec::BgpSpec(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : local_asn_(0u)
-  , router_id_(0u)
-  , cluster_id_(0u)
-  , disable_(false)
-  , suppress_default_resolution_(false){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BgpDefaultTypeInternal _Bgp_default_instance_;
+PROTOBUF_CONSTEXPR BgpSpec::BgpSpec(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.local_asn_)*/0u
+  , /*decltype(_impl_.router_id_)*/0u
+  , /*decltype(_impl_.cluster_id_)*/0u
+  , /*decltype(_impl_.disable_)*/false
+  , /*decltype(_impl_.suppress_default_resolution_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BgpSpecDefaultTypeInternal {
-  constexpr BgpSpecDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BgpSpecDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BgpSpecDefaultTypeInternal() {}
   union {
     BgpSpec _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BgpSpecDefaultTypeInternal _BgpSpec_default_instance_;
-constexpr BgpStatus::BgpStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : oper_state_(0)
-
-  , adj_rib_out_routes_count_(0)
-  , peak_num_adj_rib_out_routes_(0)
-  , rem_delaytime_(0)
-  , table_ver_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BgpSpecDefaultTypeInternal _BgpSpec_default_instance_;
+PROTOBUF_CONSTEXPR BgpStatus::BgpStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.oper_state_)*/0
+  , /*decltype(_impl_.adj_rib_out_routes_count_)*/0
+  , /*decltype(_impl_.peak_num_adj_rib_out_routes_)*/0
+  , /*decltype(_impl_.rem_delaytime_)*/0
+  , /*decltype(_impl_.table_ver_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BgpStatusDefaultTypeInternal {
-  constexpr BgpStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BgpStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BgpStatusDefaultTypeInternal() {}
   union {
     BgpStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BgpStatusDefaultTypeInternal _BgpStatus_default_instance_;
-constexpr BGPPeer::BGPPeer(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , spec_(nullptr)
-  , status_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BgpStatusDefaultTypeInternal _BgpStatus_default_instance_;
+PROTOBUF_CONSTEXPR BGPPeer::BGPPeer(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.spec_)*/nullptr
+  , /*decltype(_impl_.status_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPPeerDefaultTypeInternal {
-  constexpr BGPPeerDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPPeerDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPPeerDefaultTypeInternal() {}
   union {
     BGPPeer _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerDefaultTypeInternal _BGPPeer_default_instance_;
-constexpr BGPPeerSpec::BGPPeerSpec(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , local_address_(nullptr)
-  , peer_addr_(nullptr)
-  , state_(0)
-
-  , remote_asn_(0u)
-  , send_comm_(false)
-  , send_ext_comm_(false)
-  , rr_client_(0)
-
-  , connect_retry_(0)
-  , holdtime_(0)
-  , keep_alive_(0)
-  , ttl_(0)
-  , idle_holdtime_(0)
-  , allow_local_as_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPPeerDefaultTypeInternal _BGPPeer_default_instance_;
+PROTOBUF_CONSTEXPR BGPPeerSpec::BGPPeerSpec(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.password_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.local_address_)*/nullptr
+  , /*decltype(_impl_.peer_addr_)*/nullptr
+  , /*decltype(_impl_.state_)*/0
+  , /*decltype(_impl_.remote_asn_)*/0u
+  , /*decltype(_impl_.send_comm_)*/false
+  , /*decltype(_impl_.send_ext_comm_)*/false
+  , /*decltype(_impl_.rr_client_)*/0
+  , /*decltype(_impl_.connect_retry_)*/0
+  , /*decltype(_impl_.holdtime_)*/0
+  , /*decltype(_impl_.keep_alive_)*/0
+  , /*decltype(_impl_.ttl_)*/0
+  , /*decltype(_impl_.idle_holdtime_)*/0
+  , /*decltype(_impl_.allow_local_as_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPPeerSpecDefaultTypeInternal {
-  constexpr BGPPeerSpecDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPPeerSpecDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPPeerSpecDefaultTypeInternal() {}
   union {
     BGPPeerSpec _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerSpecDefaultTypeInternal _BGPPeerSpec_default_instance_;
-constexpr BGPPeerStatus::BGPPeerStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : last_error_rcvd_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , last_error_sent_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , local_addr_(nullptr)
-  , session_state_(0)
-
-  , prev_session_state_(0)
-
-  , holdtime_(0)
-  , keepalive_(0)
-  , caps_sent_(0)
-  , caps_rcvd_(0)
-  , caps_neg_(0)
-  , sel_local_addr_type_(0)
-
-  , incoming_notifications_(0)
-  , outbound_notifications_(0)
-  , incoming_updates_(0)
-  , outgoing_updates_(0)
-  , incoming_keepalives_(0)
-  , outgoing_keepalives_(0)
-  , incoming_refreshes_(0)
-  , outgoing_refreshes_(0)
-  , incoming_total_messages_(0)
-  , outgoing_total_messages_(0)
-  , fsm_est_transitions_(0)
-  , connect_retry_count_(0)
-  , peergr_(0)
-  , stale_pathtime_(0)
-  , orf_entry_count_(0)
-  , rcvd_msg_elpstime_(0)
-  , route_refr_sent_(0)
-  , route_refr_rcvd_(0)
-  , incoming_prfxes_(0)
-  , outgoing_prfxes_(0)
-  , outgoing_prfxes_advertised_(0)
-  , connect_retry_int_(0)
-  , outgoing_update_elpstime_(0)
-  , outgoing_prfxes_denied_(0)
-  , outgoing_prfxes_imp_wdr_(0)
-  , outgoing_prfxes_exp_wdr_(0)
-  , incoming_prfxes_imp_wdr_(0)
-  , incoming_prfxes_exp_wdr_(0)
-  , received_holdtime_(0)
-  , fsm_establishedtime_(0)
-  , incoming_updates_elpstime_(0)
-  , incoming_opens_(0)
-  , outgoing_opens_(0)
-  , peer_index_(0)
-  , ttl_(0)
-  , oper_state_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPPeerSpecDefaultTypeInternal _BGPPeerSpec_default_instance_;
+PROTOBUF_CONSTEXPR BGPPeerStatus::BGPPeerStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.last_error_rcvd_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.last_error_sent_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.local_addr_)*/nullptr
+  , /*decltype(_impl_.session_state_)*/0
+  , /*decltype(_impl_.prev_session_state_)*/0
+  , /*decltype(_impl_.holdtime_)*/0
+  , /*decltype(_impl_.keepalive_)*/0
+  , /*decltype(_impl_.caps_sent_)*/0
+  , /*decltype(_impl_.caps_rcvd_)*/0
+  , /*decltype(_impl_.caps_neg_)*/0
+  , /*decltype(_impl_.sel_local_addr_type_)*/0
+  , /*decltype(_impl_.incoming_notifications_)*/0
+  , /*decltype(_impl_.outbound_notifications_)*/0
+  , /*decltype(_impl_.incoming_updates_)*/0
+  , /*decltype(_impl_.outgoing_updates_)*/0
+  , /*decltype(_impl_.incoming_keepalives_)*/0
+  , /*decltype(_impl_.outgoing_keepalives_)*/0
+  , /*decltype(_impl_.incoming_refreshes_)*/0
+  , /*decltype(_impl_.outgoing_refreshes_)*/0
+  , /*decltype(_impl_.incoming_total_messages_)*/0
+  , /*decltype(_impl_.outgoing_total_messages_)*/0
+  , /*decltype(_impl_.fsm_est_transitions_)*/0
+  , /*decltype(_impl_.connect_retry_count_)*/0
+  , /*decltype(_impl_.peergr_)*/0
+  , /*decltype(_impl_.stale_pathtime_)*/0
+  , /*decltype(_impl_.orf_entry_count_)*/0
+  , /*decltype(_impl_.rcvd_msg_elpstime_)*/0
+  , /*decltype(_impl_.route_refr_sent_)*/0
+  , /*decltype(_impl_.route_refr_rcvd_)*/0
+  , /*decltype(_impl_.incoming_prfxes_)*/0
+  , /*decltype(_impl_.outgoing_prfxes_)*/0
+  , /*decltype(_impl_.outgoing_prfxes_advertised_)*/0
+  , /*decltype(_impl_.connect_retry_int_)*/0
+  , /*decltype(_impl_.outgoing_update_elpstime_)*/0
+  , /*decltype(_impl_.outgoing_prfxes_denied_)*/0
+  , /*decltype(_impl_.outgoing_prfxes_imp_wdr_)*/0
+  , /*decltype(_impl_.outgoing_prfxes_exp_wdr_)*/0
+  , /*decltype(_impl_.incoming_prfxes_imp_wdr_)*/0
+  , /*decltype(_impl_.incoming_prfxes_exp_wdr_)*/0
+  , /*decltype(_impl_.received_holdtime_)*/0
+  , /*decltype(_impl_.fsm_establishedtime_)*/0
+  , /*decltype(_impl_.incoming_updates_elpstime_)*/0
+  , /*decltype(_impl_.incoming_opens_)*/0
+  , /*decltype(_impl_.outgoing_opens_)*/0
+  , /*decltype(_impl_.peer_index_)*/0
+  , /*decltype(_impl_.ttl_)*/0
+  , /*decltype(_impl_.oper_state_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPPeerStatusDefaultTypeInternal {
-  constexpr BGPPeerStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPPeerStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPPeerStatusDefaultTypeInternal() {}
   union {
     BGPPeerStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerStatusDefaultTypeInternal _BGPPeerStatus_default_instance_;
-constexpr BGPPeerAf::BGPPeerAf(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , spec_(nullptr)
-  , state_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPPeerStatusDefaultTypeInternal _BGPPeerStatus_default_instance_;
+PROTOBUF_CONSTEXPR BGPPeerAf::BGPPeerAf(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.spec_)*/nullptr
+  , /*decltype(_impl_.state_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPPeerAfDefaultTypeInternal {
-  constexpr BGPPeerAfDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPPeerAfDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPPeerAfDefaultTypeInternal() {}
   union {
     BGPPeerAf _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerAfDefaultTypeInternal _BGPPeerAf_default_instance_;
-constexpr BGPPeerAfSpec::BGPPeerAfSpec(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : local_addr_(nullptr)
-  , peer_addr_(nullptr)
-  , afi_(0)
-
-  , safi_(0)
-
-  , nexthop_self_(false)
-  , default_orig_(false)
-  , local_port_(0)
-  , remote_port_(0)
-  , local_addr_scope_id_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPPeerAfDefaultTypeInternal _BGPPeerAf_default_instance_;
+PROTOBUF_CONSTEXPR BGPPeerAfSpec::BGPPeerAfSpec(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.local_addr_)*/nullptr
+  , /*decltype(_impl_.peer_addr_)*/nullptr
+  , /*decltype(_impl_.afi_)*/0
+  , /*decltype(_impl_.safi_)*/0
+  , /*decltype(_impl_.nexthop_self_)*/false
+  , /*decltype(_impl_.default_orig_)*/false
+  , /*decltype(_impl_.local_port_)*/0
+  , /*decltype(_impl_.remote_port_)*/0
+  , /*decltype(_impl_.local_addr_scope_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPPeerAfSpecDefaultTypeInternal {
-  constexpr BGPPeerAfSpecDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPPeerAfSpecDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPPeerAfSpecDefaultTypeInternal() {}
   union {
     BGPPeerAfSpec _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerAfSpecDefaultTypeInternal _BGPPeerAfSpec_default_instance_;
-constexpr BGPPeerAfStatus::BGPPeerAfStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : update_group_(0)
-  , local_addr_scope_id_(0)
-  , route_refresh_(false)
-  , add_path_cap_neg_(0)
-
-  , reflector_client_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPPeerAfSpecDefaultTypeInternal _BGPPeerAfSpec_default_instance_;
+PROTOBUF_CONSTEXPR BGPPeerAfStatus::BGPPeerAfStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.update_group_)*/0
+  , /*decltype(_impl_.local_addr_scope_id_)*/0
+  , /*decltype(_impl_.route_refresh_)*/false
+  , /*decltype(_impl_.add_path_cap_neg_)*/0
+  , /*decltype(_impl_.reflector_client_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPPeerAfStatusDefaultTypeInternal {
-  constexpr BGPPeerAfStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPPeerAfStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPPeerAfStatusDefaultTypeInternal() {}
   union {
     BGPPeerAfStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerAfStatusDefaultTypeInternal _BGPPeerAfStatus_default_instance_;
-constexpr BGPNLRIPrefix::BGPNLRIPrefix(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
-  , state_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPPeerAfStatusDefaultTypeInternal _BGPPeerAfStatus_default_instance_;
+PROTOBUF_CONSTEXPR BGPNLRIPrefix::BGPNLRIPrefix(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.spec_)*/nullptr
+  , /*decltype(_impl_.state_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPNLRIPrefixDefaultTypeInternal {
-  constexpr BGPNLRIPrefixDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPNLRIPrefixDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPNLRIPrefixDefaultTypeInternal() {}
   union {
     BGPNLRIPrefix _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPNLRIPrefixDefaultTypeInternal _BGPNLRIPrefix_default_instance_;
-constexpr BGPNLRIPrefixSpec::BGPNLRIPrefixSpec(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : prefix_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , afi_(0)
-
-  , safi_(0)
-
-  , prefix_len_(0)
-  , route_source_(0)
-
-  , route_source_index_(0)
-  , path_id_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPNLRIPrefixDefaultTypeInternal _BGPNLRIPrefix_default_instance_;
+PROTOBUF_CONSTEXPR BGPNLRIPrefixSpec::BGPNLRIPrefixSpec(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.prefix_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.afi_)*/0
+  , /*decltype(_impl_.safi_)*/0
+  , /*decltype(_impl_.prefix_len_)*/0
+  , /*decltype(_impl_.route_source_)*/0
+  , /*decltype(_impl_.route_source_index_)*/0
+  , /*decltype(_impl_.path_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPNLRIPrefixSpecDefaultTypeInternal {
-  constexpr BGPNLRIPrefixSpecDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPNLRIPrefixSpecDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPNLRIPrefixSpecDefaultTypeInternal() {}
   union {
     BGPNLRIPrefixSpec _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPNLRIPrefixSpecDefaultTypeInternal _BGPNLRIPrefixSpec_default_instance_;
-constexpr BGPNLRIPrefixStatus::BGPNLRIPrefixStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : ext_comm_()
-  , comm_()
-  , prefix_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , as_path_str_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , path_orig_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , next_hop_addr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , peer_addr_(nullptr)
-  , afi_(0)
-
-  , safi_(0)
-
-  , prefix_len_(0)
-  , route_source_(0)
-
-  , route_source_index_(0)
-  , path_id_(0)
-  , as_size_(0)
-
-  , best_route_(false)
-  , ecmp_route_(false)
-  , flap_stats_supprsd_(false)
-  , stale_(false)
-  , flap_stats_flapcnt_(0)
-  , is_active_(0)
-
-  , flap_starttime_(0)
-  , reason_not_best_(0)
-
-  , local_pref_(0)
-  , origin_(0)
-
-  , med_present_(false)
-  , med_(0u)
-  , peer_type_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPNLRIPrefixSpecDefaultTypeInternal _BGPNLRIPrefixSpec_default_instance_;
+PROTOBUF_CONSTEXPR BGPNLRIPrefixStatus::BGPNLRIPrefixStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ext_comm_)*/{}
+  , /*decltype(_impl_.comm_)*/{}
+  , /*decltype(_impl_.prefix_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.as_path_str_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.path_orig_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.next_hop_addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.peer_addr_)*/nullptr
+  , /*decltype(_impl_.afi_)*/0
+  , /*decltype(_impl_.safi_)*/0
+  , /*decltype(_impl_.prefix_len_)*/0
+  , /*decltype(_impl_.route_source_)*/0
+  , /*decltype(_impl_.route_source_index_)*/0
+  , /*decltype(_impl_.path_id_)*/0
+  , /*decltype(_impl_.as_size_)*/0
+  , /*decltype(_impl_.best_route_)*/false
+  , /*decltype(_impl_.ecmp_route_)*/false
+  , /*decltype(_impl_.flap_stats_supprsd_)*/false
+  , /*decltype(_impl_.stale_)*/false
+  , /*decltype(_impl_.flap_stats_flapcnt_)*/0
+  , /*decltype(_impl_.is_active_)*/0
+  , /*decltype(_impl_.flap_starttime_)*/0
+  , /*decltype(_impl_.reason_not_best_)*/0
+  , /*decltype(_impl_.local_pref_)*/0
+  , /*decltype(_impl_.origin_)*/0
+  , /*decltype(_impl_.med_present_)*/false
+  , /*decltype(_impl_.med_)*/0u
+  , /*decltype(_impl_.peer_type_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPNLRIPrefixStatusDefaultTypeInternal {
-  constexpr BGPNLRIPrefixStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPNLRIPrefixStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPNLRIPrefixStatusDefaultTypeInternal() {}
   union {
     BGPNLRIPrefixStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPNLRIPrefixStatusDefaultTypeInternal _BGPNLRIPrefixStatus_default_instance_;
-constexpr BGPNLRIPrefixFilter::BGPNLRIPrefixFilter(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : ext_comm_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , next_hop_(nullptr)
-  , ip_address_(nullptr)
-  , vnid_(0)
-  , route_type_(0)
-  , best_(false){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPNLRIPrefixStatusDefaultTypeInternal _BGPNLRIPrefixStatus_default_instance_;
+PROTOBUF_CONSTEXPR BGPNLRIPrefixFilter::BGPNLRIPrefixFilter(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ext_comm_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.next_hop_)*/nullptr
+  , /*decltype(_impl_.ip_address_)*/nullptr
+  , /*decltype(_impl_.vnid_)*/0
+  , /*decltype(_impl_.route_type_)*/0
+  , /*decltype(_impl_.best_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPNLRIPrefixFilterDefaultTypeInternal {
-  constexpr BGPNLRIPrefixFilterDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPNLRIPrefixFilterDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPNLRIPrefixFilterDefaultTypeInternal() {}
   union {
     BGPNLRIPrefixFilter _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPNLRIPrefixFilterDefaultTypeInternal _BGPNLRIPrefixFilter_default_instance_;
-constexpr BGPAdjRibOut::BGPAdjRibOut(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
-  , status_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPNLRIPrefixFilterDefaultTypeInternal _BGPNLRIPrefixFilter_default_instance_;
+PROTOBUF_CONSTEXPR BGPAdjRibOut::BGPAdjRibOut(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.spec_)*/nullptr
+  , /*decltype(_impl_.status_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPAdjRibOutDefaultTypeInternal {
-  constexpr BGPAdjRibOutDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPAdjRibOutDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPAdjRibOutDefaultTypeInternal() {}
   union {
     BGPAdjRibOut _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPAdjRibOutDefaultTypeInternal _BGPAdjRibOut_default_instance_;
-constexpr BGPAdjRibOutSpec::BGPAdjRibOutSpec(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPAdjRibOutDefaultTypeInternal _BGPAdjRibOut_default_instance_;
+PROTOBUF_CONSTEXPR BGPAdjRibOutSpec::BGPAdjRibOutSpec(
+    ::_pbi::ConstantInitialized) {}
 struct BGPAdjRibOutSpecDefaultTypeInternal {
-  constexpr BGPAdjRibOutSpecDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPAdjRibOutSpecDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPAdjRibOutSpecDefaultTypeInternal() {}
   union {
     BGPAdjRibOutSpec _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPAdjRibOutSpecDefaultTypeInternal _BGPAdjRibOutSpec_default_instance_;
-constexpr BGPAdjRibOutStatus::BGPAdjRibOutStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : comm_()
-  , ext_comm_()
-  , prefix_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , as_path_str_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , peer_addr_(nullptr)
-  , afi_(0)
-
-  , safi_(0)
-
-  , prefix_len_(0)
-  , state_(0)
-
-  , as_size_(0)
-
-  , med_present_(false)
-  , med_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPAdjRibOutSpecDefaultTypeInternal _BGPAdjRibOutSpec_default_instance_;
+PROTOBUF_CONSTEXPR BGPAdjRibOutStatus::BGPAdjRibOutStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.comm_)*/{}
+  , /*decltype(_impl_.ext_comm_)*/{}
+  , /*decltype(_impl_.prefix_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.as_path_str_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.peer_addr_)*/nullptr
+  , /*decltype(_impl_.afi_)*/0
+  , /*decltype(_impl_.safi_)*/0
+  , /*decltype(_impl_.prefix_len_)*/0
+  , /*decltype(_impl_.state_)*/0
+  , /*decltype(_impl_.as_size_)*/0
+  , /*decltype(_impl_.med_present_)*/false
+  , /*decltype(_impl_.med_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BGPAdjRibOutStatusDefaultTypeInternal {
-  constexpr BGPAdjRibOutStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BGPAdjRibOutStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BGPAdjRibOutStatusDefaultTypeInternal() {}
   union {
     BGPAdjRibOutStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPAdjRibOutStatusDefaultTypeInternal _BGPAdjRibOutStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BGPAdjRibOutStatusDefaultTypeInternal _BGPAdjRibOutStatus_default_instance_;
 }  // namespace v1alpha1
 }  // namespace cloud
 }  // namespace network
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_bgp_2eproto[16];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_bgp_2eproto[15];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_bgp_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_bgp_2eproto[16];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_bgp_2eproto[15];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_bgp_2eproto = nullptr;
 
 const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -387,222 +380,222 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, spec_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, status_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, _impl_.spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, _impl_.status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, local_asn_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, router_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, cluster_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, disable_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, suppress_default_resolution_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, _impl_.local_asn_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, _impl_.router_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, _impl_.cluster_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, _impl_.disable_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, _impl_.suppress_default_resolution_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, oper_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, adj_rib_out_routes_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, peak_num_adj_rib_out_routes_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, rem_delaytime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, table_ver_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, _impl_.oper_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, _impl_.adj_rib_out_routes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, _impl_.peak_num_adj_rib_out_routes_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, _impl_.rem_delaytime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpStatus, _impl_.table_ver_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, spec_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, status_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, _impl_.spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, _impl_.status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, local_address_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, peer_addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, remote_asn_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, send_comm_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, send_ext_comm_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, rr_client_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, connect_retry_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, holdtime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, keep_alive_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, password_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, ttl_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, idle_holdtime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, allow_local_as_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.local_address_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.peer_addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.remote_asn_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.send_comm_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.send_ext_comm_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.rr_client_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.connect_retry_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.holdtime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.keep_alive_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.password_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.ttl_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.idle_holdtime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, _impl_.allow_local_as_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, session_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, prev_session_state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, last_error_rcvd_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, last_error_sent_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, local_addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, holdtime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, keepalive_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, caps_sent_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, caps_rcvd_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, caps_neg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, sel_local_addr_type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_notifications_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outbound_notifications_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_updates_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_updates_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_keepalives_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_keepalives_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_refreshes_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_refreshes_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_total_messages_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_total_messages_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, fsm_est_transitions_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, connect_retry_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, peergr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, stale_pathtime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, orf_entry_count_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, rcvd_msg_elpstime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, route_refr_sent_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, route_refr_rcvd_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_prfxes_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_prfxes_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_prfxes_advertised_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, connect_retry_int_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_update_elpstime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_prfxes_denied_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_prfxes_imp_wdr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_prfxes_exp_wdr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_prfxes_imp_wdr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_prfxes_exp_wdr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, received_holdtime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, fsm_establishedtime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_updates_elpstime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, incoming_opens_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, outgoing_opens_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, peer_index_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, ttl_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, oper_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.session_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.prev_session_state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.last_error_rcvd_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.last_error_sent_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.local_addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.holdtime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.keepalive_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.caps_sent_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.caps_rcvd_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.caps_neg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.sel_local_addr_type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_notifications_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outbound_notifications_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_updates_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_updates_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_keepalives_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_keepalives_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_refreshes_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_refreshes_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_total_messages_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_total_messages_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.fsm_est_transitions_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.connect_retry_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.peergr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.stale_pathtime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.orf_entry_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.rcvd_msg_elpstime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.route_refr_sent_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.route_refr_rcvd_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_prfxes_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_prfxes_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_prfxes_advertised_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.connect_retry_int_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_update_elpstime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_prfxes_denied_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_prfxes_imp_wdr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_prfxes_exp_wdr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_prfxes_imp_wdr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_prfxes_exp_wdr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.received_holdtime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.fsm_establishedtime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_updates_elpstime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.incoming_opens_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.outgoing_opens_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.peer_index_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.ttl_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerStatus, _impl_.oper_state_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, spec_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, _impl_.spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, _impl_.state_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, local_addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, peer_addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, afi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, safi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, nexthop_self_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, default_orig_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, local_port_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, remote_port_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, local_addr_scope_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.local_addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.peer_addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.afi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.safi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.nexthop_self_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.default_orig_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.local_port_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.remote_port_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, _impl_.local_addr_scope_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, update_group_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, local_addr_scope_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, route_refresh_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, add_path_cap_neg_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, reflector_client_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, _impl_.update_group_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, _impl_.local_addr_scope_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, _impl_.route_refresh_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, _impl_.add_path_cap_neg_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus, _impl_.reflector_client_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix, spec_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix, state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix, _impl_.spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix, _impl_.state_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, afi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, safi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, prefix_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, prefix_len_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, route_source_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, route_source_index_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, path_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, _impl_.afi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, _impl_.safi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, _impl_.prefix_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, _impl_.prefix_len_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, _impl_.route_source_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, _impl_.route_source_index_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec, _impl_.path_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, afi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, safi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, prefix_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, prefix_len_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, route_source_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, route_source_index_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, path_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, best_route_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, as_path_str_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, path_orig_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, next_hop_addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, as_size_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, ecmp_route_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, peer_addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, flap_stats_flapcnt_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, flap_stats_supprsd_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, is_active_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, stale_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, flap_starttime_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, reason_not_best_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, ext_comm_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, comm_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, local_pref_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, origin_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, med_present_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, med_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, peer_type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.afi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.safi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.prefix_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.prefix_len_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.route_source_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.route_source_index_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.path_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.best_route_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.as_path_str_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.path_orig_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.next_hop_addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.as_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.ecmp_route_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.peer_addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.flap_stats_flapcnt_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.flap_stats_supprsd_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.is_active_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.stale_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.flap_starttime_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.reason_not_best_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.ext_comm_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.comm_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.local_pref_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.origin_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.med_present_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.med_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus, _impl_.peer_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, ext_comm_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, vnid_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, route_type_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, next_hop_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, ip_address_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, best_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, _impl_.ext_comm_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, _impl_.vnid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, _impl_.route_type_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, _impl_.next_hop_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, _impl_.ip_address_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter, _impl_.best_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOut, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOut, spec_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOut, status_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOut, _impl_.spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOut, _impl_.status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -615,20 +608,20 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, peer_addr_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, afi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, safi_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, prefix_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, prefix_len_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, state_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, as_size_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, as_path_str_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, comm_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, ext_comm_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, med_present_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, med_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.peer_addr_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.afi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.safi_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.prefix_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.prefix_len_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.state_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.as_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.as_path_str_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.comm_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.ext_comm_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.med_present_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus, _impl_.med_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Bgp)},
   { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BgpSpec)},
   { 20, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BgpStatus)},
@@ -647,23 +640,23 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 228, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_Bgp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BgpSpec_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BgpStatus_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPPeer_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPPeerSpec_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPPeerStatus_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPPeerAf_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPPeerAfSpec_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPPeerAfStatus_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPNLRIPrefix_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPNLRIPrefixSpec_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPNLRIPrefixStatus_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPNLRIPrefixFilter_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPAdjRibOut_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPAdjRibOutSpec_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_BGPAdjRibOutStatus_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::opi_api::network::cloud::v1alpha1::_Bgp_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BgpSpec_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BgpStatus_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPPeer_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPPeerSpec_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPPeerStatus_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPPeerAf_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPPeerAfSpec_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPPeerAfStatus_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPNLRIPrefix_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPNLRIPrefixSpec_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPNLRIPrefixStatus_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPNLRIPrefixFilter_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPAdjRibOut_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPAdjRibOutSpec_default_instance_._instance,
+  &::opi_api::network::cloud::v1alpha1::_BGPAdjRibOutStatus_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_bgp_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -897,23 +890,25 @@ const char descriptor_table_protodef_bgp_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "ject/opi-api/network/cloud/v1alpha1/gen/"
   "gob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_bgp_2eproto_deps[2] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_bgp_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_networktypes_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_bgp_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_bgp_2eproto = {
-  false, false, 9130, descriptor_table_protodef_bgp_2eproto, "bgp.proto", 
-  &descriptor_table_bgp_2eproto_once, descriptor_table_bgp_2eproto_deps, 2, 16,
-  schemas, file_default_instances, TableStruct_bgp_2eproto::offsets,
-  file_level_metadata_bgp_2eproto, file_level_enum_descriptors_bgp_2eproto, file_level_service_descriptors_bgp_2eproto,
+static ::_pbi::once_flag descriptor_table_bgp_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_bgp_2eproto = {
+    false, false, 9130, descriptor_table_protodef_bgp_2eproto,
+    "bgp.proto",
+    &descriptor_table_bgp_2eproto_once, descriptor_table_bgp_2eproto_deps, 2, 16,
+    schemas, file_default_instances, TableStruct_bgp_2eproto::offsets,
+    file_level_metadata_bgp_2eproto, file_level_enum_descriptors_bgp_2eproto,
+    file_level_service_descriptors_bgp_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_bgp_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_bgp_2eproto_getter() {
   return &descriptor_table_bgp_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_bgp_2eproto(&descriptor_table_bgp_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_bgp_2eproto(&descriptor_table_bgp_2eproto);
 namespace opi_api {
 namespace network {
 namespace cloud {
@@ -1208,78 +1203,79 @@ class Bgp::_Internal {
 
 const ::opi_api::network::cloud::v1alpha1::BgpSpec&
 Bgp::_Internal::spec(const Bgp* msg) {
-  return *msg->spec_;
+  return *msg->_impl_.spec_;
 }
 const ::opi_api::network::cloud::v1alpha1::BgpStatus&
 Bgp::_Internal::status(const Bgp* msg) {
-  return *msg->status_;
+  return *msg->_impl_.status_;
 }
 Bgp::Bgp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.Bgp)
 }
 Bgp::Bgp(const Bgp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Bgp* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_spec()) {
-    spec_ = new ::opi_api::network::cloud::v1alpha1::BgpSpec(*from.spec_);
-  } else {
-    spec_ = nullptr;
+    _this->_impl_.spec_ = new ::opi_api::network::cloud::v1alpha1::BgpSpec(*from._impl_.spec_);
   }
   if (from._internal_has_status()) {
-    status_ = new ::opi_api::network::cloud::v1alpha1::BgpStatus(*from.status_);
-  } else {
-    status_ = nullptr;
+    _this->_impl_.status_ = new ::opi_api::network::cloud::v1alpha1::BgpStatus(*from._impl_.status_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.Bgp)
 }
 
-inline void Bgp::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&spec_)) + sizeof(status_));
+inline void Bgp::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Bgp::~Bgp() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.Bgp)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Bgp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete spec_;
-  if (this != internal_default_instance()) delete status_;
+  _impl_.name_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.spec_;
+  if (this != internal_default_instance()) delete _impl_.status_;
 }
 
-void Bgp::ArenaDtor(void* object) {
-  Bgp* _this = reinterpret_cast< Bgp* >(object);
-  (void)_this;
-}
-void Bgp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Bgp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Bgp::Clear() {
@@ -1288,31 +1284,31 @@ void Bgp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
-    delete spec_;
+  _impl_.name_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.spec_ != nullptr) {
+    delete _impl_.spec_;
   }
-  spec_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
-    delete status_;
+  _impl_.spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.status_ != nullptr) {
+    delete _impl_.status_;
   }
-  status_ = nullptr;
+  _impl_.status_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Bgp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Bgp::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Bgp.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Bgp.name"));
         } else
           goto handle_unusual;
         continue;
@@ -1373,22 +1369,20 @@ uint8_t* Bgp::_InternalSerialize(
 
   // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 2;
   if (this->_internal_has_spec()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::spec(this), target, stream);
+      InternalWriteMessage(2, _Internal::spec(this),
+        _Internal::spec(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpStatus status = 3;
   if (this->_internal_has_status()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::status(this), target, stream);
+      InternalWriteMessage(3, _Internal::status(this),
+        _Internal::status(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.Bgp)
@@ -1414,48 +1408,46 @@ size_t Bgp::ByteSizeLong() const {
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *spec_);
+        *_impl_.spec_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *status_);
+        *_impl_.status_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Bgp::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Bgp::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Bgp::GetClassData() const { return &_class_data_; }
 
-void Bgp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Bgp *>(to)->MergeFrom(
-      static_cast<const Bgp &>(from));
-}
 
-
-void Bgp::MergeFrom(const Bgp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.Bgp)
-  GOOGLE_DCHECK_NE(&from, this);
+void Bgp::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Bgp*>(&to_msg);
+  auto& from = static_cast<const Bgp&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.Bgp)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (from._internal_has_spec()) {
-    _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BgpSpec::MergeFrom(from._internal_spec());
+    _this->_internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BgpSpec::MergeFrom(
+        from._internal_spec());
   }
   if (from._internal_has_status()) {
-    _internal_mutable_status()->::opi_api::network::cloud::v1alpha1::BgpStatus::MergeFrom(from._internal_status());
+    _this->_internal_mutable_status()->::opi_api::network::cloud::v1alpha1::BgpStatus::MergeFrom(
+        from._internal_status());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Bgp::CopyFrom(const Bgp& from) {
@@ -1475,20 +1467,19 @@ void Bgp::InternalSwap(Bgp* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Bgp, status_)
-      + sizeof(Bgp::status_)
-      - PROTOBUF_FIELD_OFFSET(Bgp, spec_)>(
-          reinterpret_cast<char*>(&spec_),
-          reinterpret_cast<char*>(&other->spec_));
+      PROTOBUF_FIELD_OFFSET(Bgp, _impl_.status_)
+      + sizeof(Bgp::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(Bgp, _impl_.spec_)>(
+          reinterpret_cast<char*>(&_impl_.spec_),
+          reinterpret_cast<char*>(&other->_impl_.spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Bgp::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[0]);
 }
@@ -1502,47 +1493,56 @@ class BgpSpec::_Internal {
 BgpSpec::BgpSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BgpSpec)
 }
 BgpSpec::BgpSpec(const BgpSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BgpSpec* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_asn_){}
+    , decltype(_impl_.router_id_){}
+    , decltype(_impl_.cluster_id_){}
+    , decltype(_impl_.disable_){}
+    , decltype(_impl_.suppress_default_resolution_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&local_asn_, &from.local_asn_,
-    static_cast<size_t>(reinterpret_cast<char*>(&suppress_default_resolution_) -
-    reinterpret_cast<char*>(&local_asn_)) + sizeof(suppress_default_resolution_));
+  ::memcpy(&_impl_.local_asn_, &from._impl_.local_asn_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.suppress_default_resolution_) -
+    reinterpret_cast<char*>(&_impl_.local_asn_)) + sizeof(_impl_.suppress_default_resolution_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BgpSpec)
 }
 
-inline void BgpSpec::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&local_asn_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&suppress_default_resolution_) -
-    reinterpret_cast<char*>(&local_asn_)) + sizeof(suppress_default_resolution_));
+inline void BgpSpec::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_asn_){0u}
+    , decltype(_impl_.router_id_){0u}
+    , decltype(_impl_.cluster_id_){0u}
+    , decltype(_impl_.disable_){false}
+    , decltype(_impl_.suppress_default_resolution_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 BgpSpec::~BgpSpec() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BgpSpec)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BgpSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void BgpSpec::ArenaDtor(void* object) {
-  BgpSpec* _this = reinterpret_cast< BgpSpec* >(object);
-  (void)_this;
-}
-void BgpSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BgpSpec::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BgpSpec::Clear() {
@@ -1551,22 +1551,22 @@ void BgpSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&local_asn_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&suppress_default_resolution_) -
-      reinterpret_cast<char*>(&local_asn_)) + sizeof(suppress_default_resolution_));
+  ::memset(&_impl_.local_asn_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.suppress_default_resolution_) -
+      reinterpret_cast<char*>(&_impl_.local_asn_)) + sizeof(_impl_.suppress_default_resolution_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BgpSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BgpSpec::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint32 local_asn = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          local_asn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.local_asn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1574,7 +1574,7 @@ const char* BgpSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       // fixed32 router_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          router_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          _impl_.router_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
           ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
@@ -1582,7 +1582,7 @@ const char* BgpSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       // fixed32 cluster_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          cluster_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          _impl_.cluster_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
           ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
@@ -1590,7 +1590,7 @@ const char* BgpSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       // bool disable = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          disable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.disable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1598,7 +1598,7 @@ const char* BgpSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       // bool suppress_default_resolution = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          suppress_default_resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.suppress_default_resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1635,35 +1635,35 @@ uint8_t* BgpSpec::_InternalSerialize(
   // uint32 local_asn = 1;
   if (this->_internal_local_asn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_local_asn(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_local_asn(), target);
   }
 
   // fixed32 router_id = 2;
   if (this->_internal_router_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(2, this->_internal_router_id(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(2, this->_internal_router_id(), target);
   }
 
   // fixed32 cluster_id = 3;
   if (this->_internal_cluster_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(3, this->_internal_cluster_id(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(3, this->_internal_cluster_id(), target);
   }
 
   // bool disable = 4;
   if (this->_internal_disable() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_disable(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_disable(), target);
   }
 
   // bool suppress_default_resolution = 5;
   if (this->_internal_suppress_default_resolution() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_suppress_default_resolution(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_suppress_default_resolution(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BgpSpec)
@@ -1680,7 +1680,7 @@ size_t BgpSpec::ByteSizeLong() const {
 
   // uint32 local_asn = 1;
   if (this->_internal_local_asn() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_local_asn());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_local_asn());
   }
 
   // fixed32 router_id = 2;
@@ -1703,44 +1703,40 @@ size_t BgpSpec::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BgpSpec::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BgpSpec::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BgpSpec::GetClassData() const { return &_class_data_; }
 
-void BgpSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BgpSpec *>(to)->MergeFrom(
-      static_cast<const BgpSpec &>(from));
-}
 
-
-void BgpSpec::MergeFrom(const BgpSpec& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BgpSpec)
-  GOOGLE_DCHECK_NE(&from, this);
+void BgpSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BgpSpec*>(&to_msg);
+  auto& from = static_cast<const BgpSpec&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BgpSpec)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_local_asn() != 0) {
-    _internal_set_local_asn(from._internal_local_asn());
+    _this->_internal_set_local_asn(from._internal_local_asn());
   }
   if (from._internal_router_id() != 0) {
-    _internal_set_router_id(from._internal_router_id());
+    _this->_internal_set_router_id(from._internal_router_id());
   }
   if (from._internal_cluster_id() != 0) {
-    _internal_set_cluster_id(from._internal_cluster_id());
+    _this->_internal_set_cluster_id(from._internal_cluster_id());
   }
   if (from._internal_disable() != 0) {
-    _internal_set_disable(from._internal_disable());
+    _this->_internal_set_disable(from._internal_disable());
   }
   if (from._internal_suppress_default_resolution() != 0) {
-    _internal_set_suppress_default_resolution(from._internal_suppress_default_resolution());
+    _this->_internal_set_suppress_default_resolution(from._internal_suppress_default_resolution());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BgpSpec::CopyFrom(const BgpSpec& from) {
@@ -1758,15 +1754,15 @@ void BgpSpec::InternalSwap(BgpSpec* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BgpSpec, suppress_default_resolution_)
-      + sizeof(BgpSpec::suppress_default_resolution_)
-      - PROTOBUF_FIELD_OFFSET(BgpSpec, local_asn_)>(
-          reinterpret_cast<char*>(&local_asn_),
-          reinterpret_cast<char*>(&other->local_asn_));
+      PROTOBUF_FIELD_OFFSET(BgpSpec, _impl_.suppress_default_resolution_)
+      + sizeof(BgpSpec::_impl_.suppress_default_resolution_)
+      - PROTOBUF_FIELD_OFFSET(BgpSpec, _impl_.local_asn_)>(
+          reinterpret_cast<char*>(&_impl_.local_asn_),
+          reinterpret_cast<char*>(&other->_impl_.local_asn_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BgpSpec::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[1]);
 }
@@ -1780,47 +1776,56 @@ class BgpStatus::_Internal {
 BgpStatus::BgpStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BgpStatus)
 }
 BgpStatus::BgpStatus(const BgpStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BgpStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.oper_state_){}
+    , decltype(_impl_.adj_rib_out_routes_count_){}
+    , decltype(_impl_.peak_num_adj_rib_out_routes_){}
+    , decltype(_impl_.rem_delaytime_){}
+    , decltype(_impl_.table_ver_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&oper_state_, &from.oper_state_,
-    static_cast<size_t>(reinterpret_cast<char*>(&table_ver_) -
-    reinterpret_cast<char*>(&oper_state_)) + sizeof(table_ver_));
+  ::memcpy(&_impl_.oper_state_, &from._impl_.oper_state_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.table_ver_) -
+    reinterpret_cast<char*>(&_impl_.oper_state_)) + sizeof(_impl_.table_ver_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BgpStatus)
 }
 
-inline void BgpStatus::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&oper_state_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&table_ver_) -
-    reinterpret_cast<char*>(&oper_state_)) + sizeof(table_ver_));
+inline void BgpStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.oper_state_){0}
+    , decltype(_impl_.adj_rib_out_routes_count_){0}
+    , decltype(_impl_.peak_num_adj_rib_out_routes_){0}
+    , decltype(_impl_.rem_delaytime_){0}
+    , decltype(_impl_.table_ver_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 BgpStatus::~BgpStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BgpStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BgpStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void BgpStatus::ArenaDtor(void* object) {
-  BgpStatus* _this = reinterpret_cast< BgpStatus* >(object);
-  (void)_this;
-}
-void BgpStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BgpStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BgpStatus::Clear() {
@@ -1829,17 +1834,17 @@ void BgpStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&oper_state_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&table_ver_) -
-      reinterpret_cast<char*>(&oper_state_)) + sizeof(table_ver_));
+  ::memset(&_impl_.oper_state_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.table_ver_) -
+      reinterpret_cast<char*>(&_impl_.oper_state_)) + sizeof(_impl_.table_ver_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BgpStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BgpStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.cloud.v1alpha1.BGPOperState oper_state = 1;
       case 1:
@@ -1853,7 +1858,7 @@ const char* BgpStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 adj_rib_out_routes_count = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          adj_rib_out_routes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.adj_rib_out_routes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1861,7 +1866,7 @@ const char* BgpStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 peak_num_adj_rib_out_routes = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          peak_num_adj_rib_out_routes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.peak_num_adj_rib_out_routes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1869,7 +1874,7 @@ const char* BgpStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 rem_delaytime = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          rem_delaytime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rem_delaytime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1877,7 +1882,7 @@ const char* BgpStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 table_ver = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          table_ver_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.table_ver_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1914,36 +1919,36 @@ uint8_t* BgpStatus::_InternalSerialize(
   // .opi_api.network.cloud.v1alpha1.BGPOperState oper_state = 1;
   if (this->_internal_oper_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_oper_state(), target);
   }
 
   // int32 adj_rib_out_routes_count = 2;
   if (this->_internal_adj_rib_out_routes_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_adj_rib_out_routes_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_adj_rib_out_routes_count(), target);
   }
 
   // int32 peak_num_adj_rib_out_routes = 3;
   if (this->_internal_peak_num_adj_rib_out_routes() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_peak_num_adj_rib_out_routes(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_peak_num_adj_rib_out_routes(), target);
   }
 
   // int32 rem_delaytime = 4;
   if (this->_internal_rem_delaytime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_rem_delaytime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_rem_delaytime(), target);
   }
 
   // int32 table_ver = 5;
   if (this->_internal_table_ver() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_table_ver(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_table_ver(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BgpStatus)
@@ -1961,67 +1966,63 @@ size_t BgpStatus::ByteSizeLong() const {
   // .opi_api.network.cloud.v1alpha1.BGPOperState oper_state = 1;
   if (this->_internal_oper_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_oper_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_oper_state());
   }
 
   // int32 adj_rib_out_routes_count = 2;
   if (this->_internal_adj_rib_out_routes_count() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_adj_rib_out_routes_count());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_adj_rib_out_routes_count());
   }
 
   // int32 peak_num_adj_rib_out_routes = 3;
   if (this->_internal_peak_num_adj_rib_out_routes() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_peak_num_adj_rib_out_routes());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_peak_num_adj_rib_out_routes());
   }
 
   // int32 rem_delaytime = 4;
   if (this->_internal_rem_delaytime() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_rem_delaytime());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_rem_delaytime());
   }
 
   // int32 table_ver = 5;
   if (this->_internal_table_ver() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_table_ver());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_table_ver());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BgpStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BgpStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BgpStatus::GetClassData() const { return &_class_data_; }
 
-void BgpStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BgpStatus *>(to)->MergeFrom(
-      static_cast<const BgpStatus &>(from));
-}
 
-
-void BgpStatus::MergeFrom(const BgpStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BgpStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void BgpStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BgpStatus*>(&to_msg);
+  auto& from = static_cast<const BgpStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BgpStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_oper_state() != 0) {
-    _internal_set_oper_state(from._internal_oper_state());
+    _this->_internal_set_oper_state(from._internal_oper_state());
   }
   if (from._internal_adj_rib_out_routes_count() != 0) {
-    _internal_set_adj_rib_out_routes_count(from._internal_adj_rib_out_routes_count());
+    _this->_internal_set_adj_rib_out_routes_count(from._internal_adj_rib_out_routes_count());
   }
   if (from._internal_peak_num_adj_rib_out_routes() != 0) {
-    _internal_set_peak_num_adj_rib_out_routes(from._internal_peak_num_adj_rib_out_routes());
+    _this->_internal_set_peak_num_adj_rib_out_routes(from._internal_peak_num_adj_rib_out_routes());
   }
   if (from._internal_rem_delaytime() != 0) {
-    _internal_set_rem_delaytime(from._internal_rem_delaytime());
+    _this->_internal_set_rem_delaytime(from._internal_rem_delaytime());
   }
   if (from._internal_table_ver() != 0) {
-    _internal_set_table_ver(from._internal_table_ver());
+    _this->_internal_set_table_ver(from._internal_table_ver());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BgpStatus::CopyFrom(const BgpStatus& from) {
@@ -2039,15 +2040,15 @@ void BgpStatus::InternalSwap(BgpStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BgpStatus, table_ver_)
-      + sizeof(BgpStatus::table_ver_)
-      - PROTOBUF_FIELD_OFFSET(BgpStatus, oper_state_)>(
-          reinterpret_cast<char*>(&oper_state_),
-          reinterpret_cast<char*>(&other->oper_state_));
+      PROTOBUF_FIELD_OFFSET(BgpStatus, _impl_.table_ver_)
+      + sizeof(BgpStatus::_impl_.table_ver_)
+      - PROTOBUF_FIELD_OFFSET(BgpStatus, _impl_.oper_state_)>(
+          reinterpret_cast<char*>(&_impl_.oper_state_),
+          reinterpret_cast<char*>(&other->_impl_.oper_state_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BgpStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[2]);
 }
@@ -2062,78 +2063,79 @@ class BGPPeer::_Internal {
 
 const ::opi_api::network::cloud::v1alpha1::BGPPeerSpec&
 BGPPeer::_Internal::spec(const BGPPeer* msg) {
-  return *msg->spec_;
+  return *msg->_impl_.spec_;
 }
 const ::opi_api::network::cloud::v1alpha1::BGPPeerStatus&
 BGPPeer::_Internal::status(const BGPPeer* msg) {
-  return *msg->status_;
+  return *msg->_impl_.status_;
 }
 BGPPeer::BGPPeer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPPeer)
 }
 BGPPeer::BGPPeer(const BGPPeer& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPPeer* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_spec()) {
-    spec_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerSpec(*from.spec_);
-  } else {
-    spec_ = nullptr;
+    _this->_impl_.spec_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerSpec(*from._impl_.spec_);
   }
   if (from._internal_has_status()) {
-    status_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerStatus(*from.status_);
-  } else {
-    status_ = nullptr;
+    _this->_impl_.status_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerStatus(*from._impl_.status_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPPeer)
 }
 
-inline void BGPPeer::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&spec_)) + sizeof(status_));
+inline void BGPPeer::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BGPPeer::~BGPPeer() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPPeer)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPPeer::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete spec_;
-  if (this != internal_default_instance()) delete status_;
+  _impl_.name_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.spec_;
+  if (this != internal_default_instance()) delete _impl_.status_;
 }
 
-void BGPPeer::ArenaDtor(void* object) {
-  BGPPeer* _this = reinterpret_cast< BGPPeer* >(object);
-  (void)_this;
-}
-void BGPPeer::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPPeer::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPPeer::Clear() {
@@ -2142,31 +2144,31 @@ void BGPPeer::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
-    delete spec_;
+  _impl_.name_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.spec_ != nullptr) {
+    delete _impl_.spec_;
   }
-  spec_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
-    delete status_;
+  _impl_.spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.status_ != nullptr) {
+    delete _impl_.status_;
   }
-  status_ = nullptr;
+  _impl_.status_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPPeer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPPeer::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.BGPPeer.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.BGPPeer.name"));
         } else
           goto handle_unusual;
         continue;
@@ -2227,22 +2229,20 @@ uint8_t* BGPPeer::_InternalSerialize(
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;
   if (this->_internal_has_spec()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::spec(this), target, stream);
+      InternalWriteMessage(2, _Internal::spec(this),
+        _Internal::spec(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;
   if (this->_internal_has_status()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::status(this), target, stream);
+      InternalWriteMessage(3, _Internal::status(this),
+        _Internal::status(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPPeer)
@@ -2268,48 +2268,46 @@ size_t BGPPeer::ByteSizeLong() const {
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *spec_);
+        *_impl_.spec_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *status_);
+        *_impl_.status_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPPeer::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPPeer::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPPeer::GetClassData() const { return &_class_data_; }
 
-void BGPPeer::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPPeer *>(to)->MergeFrom(
-      static_cast<const BGPPeer &>(from));
-}
 
-
-void BGPPeer::MergeFrom(const BGPPeer& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeer)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPPeer::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPPeer*>(&to_msg);
+  auto& from = static_cast<const BGPPeer&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeer)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (from._internal_has_spec()) {
-    _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPPeerSpec::MergeFrom(from._internal_spec());
+    _this->_internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPPeerSpec::MergeFrom(
+        from._internal_spec());
   }
   if (from._internal_has_status()) {
-    _internal_mutable_status()->::opi_api::network::cloud::v1alpha1::BGPPeerStatus::MergeFrom(from._internal_status());
+    _this->_internal_mutable_status()->::opi_api::network::cloud::v1alpha1::BGPPeerStatus::MergeFrom(
+        from._internal_status());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPPeer::CopyFrom(const BGPPeer& from) {
@@ -2329,20 +2327,19 @@ void BGPPeer::InternalSwap(BGPPeer* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPPeer, status_)
-      + sizeof(BGPPeer::status_)
-      - PROTOBUF_FIELD_OFFSET(BGPPeer, spec_)>(
-          reinterpret_cast<char*>(&spec_),
-          reinterpret_cast<char*>(&other->spec_));
+      PROTOBUF_FIELD_OFFSET(BGPPeer, _impl_.status_)
+      + sizeof(BGPPeer::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(BGPPeer, _impl_.spec_)>(
+          reinterpret_cast<char*>(&_impl_.spec_),
+          reinterpret_cast<char*>(&other->_impl_.spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPPeer::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[3]);
 }
@@ -2357,93 +2354,116 @@ class BGPPeerSpec::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerSpec::_Internal::local_address(const BGPPeerSpec* msg) {
-  return *msg->local_address_;
+  return *msg->_impl_.local_address_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerSpec::_Internal::peer_addr(const BGPPeerSpec* msg) {
-  return *msg->peer_addr_;
+  return *msg->_impl_.peer_addr_;
 }
 void BGPPeerSpec::clear_local_address() {
-  if (GetArenaForAllocation() == nullptr && local_address_ != nullptr) {
-    delete local_address_;
+  if (GetArenaForAllocation() == nullptr && _impl_.local_address_ != nullptr) {
+    delete _impl_.local_address_;
   }
-  local_address_ = nullptr;
+  _impl_.local_address_ = nullptr;
 }
 void BGPPeerSpec::clear_peer_addr() {
-  if (GetArenaForAllocation() == nullptr && peer_addr_ != nullptr) {
-    delete peer_addr_;
+  if (GetArenaForAllocation() == nullptr && _impl_.peer_addr_ != nullptr) {
+    delete _impl_.peer_addr_;
   }
-  peer_addr_ = nullptr;
+  _impl_.peer_addr_ = nullptr;
 }
 BGPPeerSpec::BGPPeerSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPPeerSpec)
 }
 BGPPeerSpec::BGPPeerSpec(const BGPPeerSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPPeerSpec* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.password_){}
+    , decltype(_impl_.local_address_){nullptr}
+    , decltype(_impl_.peer_addr_){nullptr}
+    , decltype(_impl_.state_){}
+    , decltype(_impl_.remote_asn_){}
+    , decltype(_impl_.send_comm_){}
+    , decltype(_impl_.send_ext_comm_){}
+    , decltype(_impl_.rr_client_){}
+    , decltype(_impl_.connect_retry_){}
+    , decltype(_impl_.holdtime_){}
+    , decltype(_impl_.keep_alive_){}
+    , decltype(_impl_.ttl_){}
+    , decltype(_impl_.idle_holdtime_){}
+    , decltype(_impl_.allow_local_as_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.password_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.password_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_password().empty()) {
-    password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_password(), 
-      GetArenaForAllocation());
+    _this->_impl_.password_.Set(from._internal_password(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_local_address()) {
-    local_address_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.local_address_);
-  } else {
-    local_address_ = nullptr;
+    _this->_impl_.local_address_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.local_address_);
   }
   if (from._internal_has_peer_addr()) {
-    peer_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.peer_addr_);
-  } else {
-    peer_addr_ = nullptr;
+    _this->_impl_.peer_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.peer_addr_);
   }
-  ::memcpy(&state_, &from.state_,
-    static_cast<size_t>(reinterpret_cast<char*>(&allow_local_as_) -
-    reinterpret_cast<char*>(&state_)) + sizeof(allow_local_as_));
+  ::memcpy(&_impl_.state_, &from._impl_.state_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.allow_local_as_) -
+    reinterpret_cast<char*>(&_impl_.state_)) + sizeof(_impl_.allow_local_as_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPPeerSpec)
 }
 
-inline void BGPPeerSpec::SharedCtor() {
-password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&local_address_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&allow_local_as_) -
-    reinterpret_cast<char*>(&local_address_)) + sizeof(allow_local_as_));
+inline void BGPPeerSpec::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.password_){}
+    , decltype(_impl_.local_address_){nullptr}
+    , decltype(_impl_.peer_addr_){nullptr}
+    , decltype(_impl_.state_){0}
+    , decltype(_impl_.remote_asn_){0u}
+    , decltype(_impl_.send_comm_){false}
+    , decltype(_impl_.send_ext_comm_){false}
+    , decltype(_impl_.rr_client_){0}
+    , decltype(_impl_.connect_retry_){0}
+    , decltype(_impl_.holdtime_){0}
+    , decltype(_impl_.keep_alive_){0}
+    , decltype(_impl_.ttl_){0}
+    , decltype(_impl_.idle_holdtime_){0}
+    , decltype(_impl_.allow_local_as_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.password_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.password_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BGPPeerSpec::~BGPPeerSpec() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPPeerSpec)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPPeerSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  password_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete local_address_;
-  if (this != internal_default_instance()) delete peer_addr_;
+  _impl_.password_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.local_address_;
+  if (this != internal_default_instance()) delete _impl_.peer_addr_;
 }
 
-void BGPPeerSpec::ArenaDtor(void* object) {
-  BGPPeerSpec* _this = reinterpret_cast< BGPPeerSpec* >(object);
-  (void)_this;
-}
-void BGPPeerSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPPeerSpec::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPPeerSpec::Clear() {
@@ -2452,26 +2472,26 @@ void BGPPeerSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  password_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && local_address_ != nullptr) {
-    delete local_address_;
+  _impl_.password_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.local_address_ != nullptr) {
+    delete _impl_.local_address_;
   }
-  local_address_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && peer_addr_ != nullptr) {
-    delete peer_addr_;
+  _impl_.local_address_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.peer_addr_ != nullptr) {
+    delete _impl_.peer_addr_;
   }
-  peer_addr_ = nullptr;
-  ::memset(&state_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&allow_local_as_) -
-      reinterpret_cast<char*>(&state_)) + sizeof(allow_local_as_));
+  _impl_.peer_addr_ = nullptr;
+  ::memset(&_impl_.state_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.allow_local_as_) -
+      reinterpret_cast<char*>(&_impl_.state_)) + sizeof(_impl_.allow_local_as_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPPeerSpec::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;
       case 1:
@@ -2501,7 +2521,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // uint32 remote_asn = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          remote_asn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.remote_asn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2509,7 +2529,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // bool send_comm = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          send_comm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.send_comm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2517,7 +2537,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // bool send_ext_comm = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          send_ext_comm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.send_ext_comm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2534,7 +2554,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // int32 connect_retry = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          connect_retry_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.connect_retry_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2542,7 +2562,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // int32 holdtime = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2550,7 +2570,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // int32 keep_alive = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          keep_alive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.keep_alive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2559,7 +2579,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_password();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2567,7 +2587,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // int32 ttl = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          ttl_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.ttl_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2575,7 +2595,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // int32 idle_holdtime = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          idle_holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.idle_holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2583,7 +2603,7 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // int32 allow_local_as = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          allow_local_as_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.allow_local_as_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2620,67 +2640,65 @@ uint8_t* BGPPeerSpec::_InternalSerialize(
   // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;
   if (this->_internal_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_state(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;
   if (this->_internal_has_local_address()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::local_address(this), target, stream);
+      InternalWriteMessage(2, _Internal::local_address(this),
+        _Internal::local_address(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
   if (this->_internal_has_peer_addr()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::peer_addr(this), target, stream);
+      InternalWriteMessage(3, _Internal::peer_addr(this),
+        _Internal::peer_addr(this).GetCachedSize(), target, stream);
   }
 
   // uint32 remote_asn = 4;
   if (this->_internal_remote_asn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_remote_asn(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_remote_asn(), target);
   }
 
   // bool send_comm = 5;
   if (this->_internal_send_comm() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_send_comm(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_send_comm(), target);
   }
 
   // bool send_ext_comm = 6;
   if (this->_internal_send_ext_comm() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_send_ext_comm(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_send_ext_comm(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;
   if (this->_internal_rr_client() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       7, this->_internal_rr_client(), target);
   }
 
   // int32 connect_retry = 8;
   if (this->_internal_connect_retry() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_connect_retry(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_connect_retry(), target);
   }
 
   // int32 holdtime = 9;
   if (this->_internal_holdtime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_holdtime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_holdtime(), target);
   }
 
   // int32 keep_alive = 10;
   if (this->_internal_keep_alive() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_keep_alive(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_keep_alive(), target);
   }
 
   // bytes password = 11;
@@ -2692,23 +2710,23 @@ uint8_t* BGPPeerSpec::_InternalSerialize(
   // int32 ttl = 12;
   if (this->_internal_ttl() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(12, this->_internal_ttl(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_ttl(), target);
   }
 
   // int32 idle_holdtime = 13;
   if (this->_internal_idle_holdtime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_idle_holdtime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_idle_holdtime(), target);
   }
 
   // int32 allow_local_as = 14;
   if (this->_internal_allow_local_as() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_allow_local_as(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_allow_local_as(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPPeerSpec)
@@ -2734,25 +2752,25 @@ size_t BGPPeerSpec::ByteSizeLong() const {
   if (this->_internal_has_local_address()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *local_address_);
+        *_impl_.local_address_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
   if (this->_internal_has_peer_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *peer_addr_);
+        *_impl_.peer_addr_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;
   if (this->_internal_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_state());
   }
 
   // uint32 remote_asn = 4;
   if (this->_internal_remote_asn() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_remote_asn());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_remote_asn());
   }
 
   // bool send_comm = 5;
@@ -2768,104 +2786,102 @@ size_t BGPPeerSpec::ByteSizeLong() const {
   // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;
   if (this->_internal_rr_client() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_rr_client());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_rr_client());
   }
 
   // int32 connect_retry = 8;
   if (this->_internal_connect_retry() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_connect_retry());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_connect_retry());
   }
 
   // int32 holdtime = 9;
   if (this->_internal_holdtime() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_holdtime());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_holdtime());
   }
 
   // int32 keep_alive = 10;
   if (this->_internal_keep_alive() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_keep_alive());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_keep_alive());
   }
 
   // int32 ttl = 12;
   if (this->_internal_ttl() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_ttl());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_ttl());
   }
 
   // int32 idle_holdtime = 13;
   if (this->_internal_idle_holdtime() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_idle_holdtime());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_idle_holdtime());
   }
 
   // int32 allow_local_as = 14;
   if (this->_internal_allow_local_as() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_allow_local_as());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_allow_local_as());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPPeerSpec::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPPeerSpec::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPPeerSpec::GetClassData() const { return &_class_data_; }
 
-void BGPPeerSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPPeerSpec *>(to)->MergeFrom(
-      static_cast<const BGPPeerSpec &>(from));
-}
 
-
-void BGPPeerSpec::MergeFrom(const BGPPeerSpec& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerSpec)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPPeerSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPPeerSpec*>(&to_msg);
+  auto& from = static_cast<const BGPPeerSpec&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerSpec)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_password().empty()) {
-    _internal_set_password(from._internal_password());
+    _this->_internal_set_password(from._internal_password());
   }
   if (from._internal_has_local_address()) {
-    _internal_mutable_local_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_local_address());
+    _this->_internal_mutable_local_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_local_address());
   }
   if (from._internal_has_peer_addr()) {
-    _internal_mutable_peer_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_peer_addr());
+    _this->_internal_mutable_peer_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_peer_addr());
   }
   if (from._internal_state() != 0) {
-    _internal_set_state(from._internal_state());
+    _this->_internal_set_state(from._internal_state());
   }
   if (from._internal_remote_asn() != 0) {
-    _internal_set_remote_asn(from._internal_remote_asn());
+    _this->_internal_set_remote_asn(from._internal_remote_asn());
   }
   if (from._internal_send_comm() != 0) {
-    _internal_set_send_comm(from._internal_send_comm());
+    _this->_internal_set_send_comm(from._internal_send_comm());
   }
   if (from._internal_send_ext_comm() != 0) {
-    _internal_set_send_ext_comm(from._internal_send_ext_comm());
+    _this->_internal_set_send_ext_comm(from._internal_send_ext_comm());
   }
   if (from._internal_rr_client() != 0) {
-    _internal_set_rr_client(from._internal_rr_client());
+    _this->_internal_set_rr_client(from._internal_rr_client());
   }
   if (from._internal_connect_retry() != 0) {
-    _internal_set_connect_retry(from._internal_connect_retry());
+    _this->_internal_set_connect_retry(from._internal_connect_retry());
   }
   if (from._internal_holdtime() != 0) {
-    _internal_set_holdtime(from._internal_holdtime());
+    _this->_internal_set_holdtime(from._internal_holdtime());
   }
   if (from._internal_keep_alive() != 0) {
-    _internal_set_keep_alive(from._internal_keep_alive());
+    _this->_internal_set_keep_alive(from._internal_keep_alive());
   }
   if (from._internal_ttl() != 0) {
-    _internal_set_ttl(from._internal_ttl());
+    _this->_internal_set_ttl(from._internal_ttl());
   }
   if (from._internal_idle_holdtime() != 0) {
-    _internal_set_idle_holdtime(from._internal_idle_holdtime());
+    _this->_internal_set_idle_holdtime(from._internal_idle_holdtime());
   }
   if (from._internal_allow_local_as() != 0) {
-    _internal_set_allow_local_as(from._internal_allow_local_as());
+    _this->_internal_set_allow_local_as(from._internal_allow_local_as());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPPeerSpec::CopyFrom(const BGPPeerSpec& from) {
@@ -2885,20 +2901,19 @@ void BGPPeerSpec::InternalSwap(BGPPeerSpec* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &password_, lhs_arena,
-      &other->password_, rhs_arena
+      &_impl_.password_, lhs_arena,
+      &other->_impl_.password_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPPeerSpec, allow_local_as_)
-      + sizeof(BGPPeerSpec::allow_local_as_)
-      - PROTOBUF_FIELD_OFFSET(BGPPeerSpec, local_address_)>(
-          reinterpret_cast<char*>(&local_address_),
-          reinterpret_cast<char*>(&other->local_address_));
+      PROTOBUF_FIELD_OFFSET(BGPPeerSpec, _impl_.allow_local_as_)
+      + sizeof(BGPPeerSpec::_impl_.allow_local_as_)
+      - PROTOBUF_FIELD_OFFSET(BGPPeerSpec, _impl_.local_address_)>(
+          reinterpret_cast<char*>(&_impl_.local_address_),
+          reinterpret_cast<char*>(&other->_impl_.local_address_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPPeerSpec::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[4]);
 }
@@ -2912,90 +2927,181 @@ class BGPPeerStatus::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerStatus::_Internal::local_addr(const BGPPeerStatus* msg) {
-  return *msg->local_addr_;
+  return *msg->_impl_.local_addr_;
 }
 void BGPPeerStatus::clear_local_addr() {
-  if (GetArenaForAllocation() == nullptr && local_addr_ != nullptr) {
-    delete local_addr_;
+  if (GetArenaForAllocation() == nullptr && _impl_.local_addr_ != nullptr) {
+    delete _impl_.local_addr_;
   }
-  local_addr_ = nullptr;
+  _impl_.local_addr_ = nullptr;
 }
 BGPPeerStatus::BGPPeerStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPPeerStatus)
 }
 BGPPeerStatus::BGPPeerStatus(const BGPPeerStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPPeerStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.last_error_rcvd_){}
+    , decltype(_impl_.last_error_sent_){}
+    , decltype(_impl_.local_addr_){nullptr}
+    , decltype(_impl_.session_state_){}
+    , decltype(_impl_.prev_session_state_){}
+    , decltype(_impl_.holdtime_){}
+    , decltype(_impl_.keepalive_){}
+    , decltype(_impl_.caps_sent_){}
+    , decltype(_impl_.caps_rcvd_){}
+    , decltype(_impl_.caps_neg_){}
+    , decltype(_impl_.sel_local_addr_type_){}
+    , decltype(_impl_.incoming_notifications_){}
+    , decltype(_impl_.outbound_notifications_){}
+    , decltype(_impl_.incoming_updates_){}
+    , decltype(_impl_.outgoing_updates_){}
+    , decltype(_impl_.incoming_keepalives_){}
+    , decltype(_impl_.outgoing_keepalives_){}
+    , decltype(_impl_.incoming_refreshes_){}
+    , decltype(_impl_.outgoing_refreshes_){}
+    , decltype(_impl_.incoming_total_messages_){}
+    , decltype(_impl_.outgoing_total_messages_){}
+    , decltype(_impl_.fsm_est_transitions_){}
+    , decltype(_impl_.connect_retry_count_){}
+    , decltype(_impl_.peergr_){}
+    , decltype(_impl_.stale_pathtime_){}
+    , decltype(_impl_.orf_entry_count_){}
+    , decltype(_impl_.rcvd_msg_elpstime_){}
+    , decltype(_impl_.route_refr_sent_){}
+    , decltype(_impl_.route_refr_rcvd_){}
+    , decltype(_impl_.incoming_prfxes_){}
+    , decltype(_impl_.outgoing_prfxes_){}
+    , decltype(_impl_.outgoing_prfxes_advertised_){}
+    , decltype(_impl_.connect_retry_int_){}
+    , decltype(_impl_.outgoing_update_elpstime_){}
+    , decltype(_impl_.outgoing_prfxes_denied_){}
+    , decltype(_impl_.outgoing_prfxes_imp_wdr_){}
+    , decltype(_impl_.outgoing_prfxes_exp_wdr_){}
+    , decltype(_impl_.incoming_prfxes_imp_wdr_){}
+    , decltype(_impl_.incoming_prfxes_exp_wdr_){}
+    , decltype(_impl_.received_holdtime_){}
+    , decltype(_impl_.fsm_establishedtime_){}
+    , decltype(_impl_.incoming_updates_elpstime_){}
+    , decltype(_impl_.incoming_opens_){}
+    , decltype(_impl_.outgoing_opens_){}
+    , decltype(_impl_.peer_index_){}
+    , decltype(_impl_.ttl_){}
+    , decltype(_impl_.oper_state_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  last_error_rcvd_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.last_error_rcvd_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    last_error_rcvd_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.last_error_rcvd_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_last_error_rcvd().empty()) {
-    last_error_rcvd_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_last_error_rcvd(), 
-      GetArenaForAllocation());
+    _this->_impl_.last_error_rcvd_.Set(from._internal_last_error_rcvd(), 
+      _this->GetArenaForAllocation());
   }
-  last_error_sent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.last_error_sent_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    last_error_sent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.last_error_sent_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_last_error_sent().empty()) {
-    last_error_sent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_last_error_sent(), 
-      GetArenaForAllocation());
+    _this->_impl_.last_error_sent_.Set(from._internal_last_error_sent(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_local_addr()) {
-    local_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.local_addr_);
-  } else {
-    local_addr_ = nullptr;
+    _this->_impl_.local_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.local_addr_);
   }
-  ::memcpy(&session_state_, &from.session_state_,
-    static_cast<size_t>(reinterpret_cast<char*>(&oper_state_) -
-    reinterpret_cast<char*>(&session_state_)) + sizeof(oper_state_));
+  ::memcpy(&_impl_.session_state_, &from._impl_.session_state_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.oper_state_) -
+    reinterpret_cast<char*>(&_impl_.session_state_)) + sizeof(_impl_.oper_state_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPPeerStatus)
 }
 
-inline void BGPPeerStatus::SharedCtor() {
-last_error_rcvd_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  last_error_rcvd_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-last_error_sent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  last_error_sent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&local_addr_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&oper_state_) -
-    reinterpret_cast<char*>(&local_addr_)) + sizeof(oper_state_));
+inline void BGPPeerStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.last_error_rcvd_){}
+    , decltype(_impl_.last_error_sent_){}
+    , decltype(_impl_.local_addr_){nullptr}
+    , decltype(_impl_.session_state_){0}
+    , decltype(_impl_.prev_session_state_){0}
+    , decltype(_impl_.holdtime_){0}
+    , decltype(_impl_.keepalive_){0}
+    , decltype(_impl_.caps_sent_){0}
+    , decltype(_impl_.caps_rcvd_){0}
+    , decltype(_impl_.caps_neg_){0}
+    , decltype(_impl_.sel_local_addr_type_){0}
+    , decltype(_impl_.incoming_notifications_){0}
+    , decltype(_impl_.outbound_notifications_){0}
+    , decltype(_impl_.incoming_updates_){0}
+    , decltype(_impl_.outgoing_updates_){0}
+    , decltype(_impl_.incoming_keepalives_){0}
+    , decltype(_impl_.outgoing_keepalives_){0}
+    , decltype(_impl_.incoming_refreshes_){0}
+    , decltype(_impl_.outgoing_refreshes_){0}
+    , decltype(_impl_.incoming_total_messages_){0}
+    , decltype(_impl_.outgoing_total_messages_){0}
+    , decltype(_impl_.fsm_est_transitions_){0}
+    , decltype(_impl_.connect_retry_count_){0}
+    , decltype(_impl_.peergr_){0}
+    , decltype(_impl_.stale_pathtime_){0}
+    , decltype(_impl_.orf_entry_count_){0}
+    , decltype(_impl_.rcvd_msg_elpstime_){0}
+    , decltype(_impl_.route_refr_sent_){0}
+    , decltype(_impl_.route_refr_rcvd_){0}
+    , decltype(_impl_.incoming_prfxes_){0}
+    , decltype(_impl_.outgoing_prfxes_){0}
+    , decltype(_impl_.outgoing_prfxes_advertised_){0}
+    , decltype(_impl_.connect_retry_int_){0}
+    , decltype(_impl_.outgoing_update_elpstime_){0}
+    , decltype(_impl_.outgoing_prfxes_denied_){0}
+    , decltype(_impl_.outgoing_prfxes_imp_wdr_){0}
+    , decltype(_impl_.outgoing_prfxes_exp_wdr_){0}
+    , decltype(_impl_.incoming_prfxes_imp_wdr_){0}
+    , decltype(_impl_.incoming_prfxes_exp_wdr_){0}
+    , decltype(_impl_.received_holdtime_){0}
+    , decltype(_impl_.fsm_establishedtime_){0}
+    , decltype(_impl_.incoming_updates_elpstime_){0}
+    , decltype(_impl_.incoming_opens_){0}
+    , decltype(_impl_.outgoing_opens_){0}
+    , decltype(_impl_.peer_index_){0}
+    , decltype(_impl_.ttl_){0}
+    , decltype(_impl_.oper_state_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.last_error_rcvd_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.last_error_rcvd_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.last_error_sent_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.last_error_sent_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BGPPeerStatus::~BGPPeerStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPPeerStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPPeerStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  last_error_rcvd_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  last_error_sent_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete local_addr_;
+  _impl_.last_error_rcvd_.Destroy();
+  _impl_.last_error_sent_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.local_addr_;
 }
 
-void BGPPeerStatus::ArenaDtor(void* object) {
-  BGPPeerStatus* _this = reinterpret_cast< BGPPeerStatus* >(object);
-  (void)_this;
-}
-void BGPPeerStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPPeerStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPPeerStatus::Clear() {
@@ -3004,23 +3110,23 @@ void BGPPeerStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  last_error_rcvd_.ClearToEmpty();
-  last_error_sent_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && local_addr_ != nullptr) {
-    delete local_addr_;
+  _impl_.last_error_rcvd_.ClearToEmpty();
+  _impl_.last_error_sent_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.local_addr_ != nullptr) {
+    delete _impl_.local_addr_;
   }
-  local_addr_ = nullptr;
-  ::memset(&session_state_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&oper_state_) -
-      reinterpret_cast<char*>(&session_state_)) + sizeof(oper_state_));
+  _impl_.local_addr_ = nullptr;
+  ::memset(&_impl_.session_state_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.oper_state_) -
+      reinterpret_cast<char*>(&_impl_.session_state_)) + sizeof(_impl_.oper_state_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPPeerStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.cloud.v1alpha1.BGPPeerSessionState session_state = 1;
       case 1:
@@ -3044,7 +3150,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_last_error_rcvd();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3053,7 +3159,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_last_error_sent();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3069,7 +3175,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 holdtime = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3077,7 +3183,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 keepalive = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          keepalive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.keepalive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3085,7 +3191,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 caps_sent = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          caps_sent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.caps_sent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3093,7 +3199,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 caps_rcvd = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          caps_rcvd_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.caps_rcvd_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3101,7 +3207,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 caps_neg = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          caps_neg_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.caps_neg_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3118,7 +3224,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_notifications = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          incoming_notifications_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_notifications_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3126,7 +3232,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outbound_notifications = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          outbound_notifications_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outbound_notifications_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3134,7 +3240,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_updates = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          incoming_updates_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_updates_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3142,7 +3248,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_updates = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
-          outgoing_updates_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_updates_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3150,7 +3256,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_keepalives = 16;
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          incoming_keepalives_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_keepalives_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3158,7 +3264,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_keepalives = 17;
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
-          outgoing_keepalives_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_keepalives_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3166,7 +3272,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_refreshes = 18;
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
-          incoming_refreshes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_refreshes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3174,7 +3280,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_refreshes = 19;
       case 19:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
-          outgoing_refreshes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_refreshes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3182,7 +3288,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_total_messages = 20;
       case 20:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
-          incoming_total_messages_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_total_messages_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3190,7 +3296,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_total_messages = 21;
       case 21:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
-          outgoing_total_messages_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_total_messages_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3198,7 +3304,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 fsm_est_transitions = 22;
       case 22:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 176)) {
-          fsm_est_transitions_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.fsm_est_transitions_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3206,7 +3312,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 connect_retry_count = 23;
       case 23:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
-          connect_retry_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.connect_retry_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3214,7 +3320,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 peergr = 24;
       case 24:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 192)) {
-          peergr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.peergr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3222,7 +3328,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 stale_pathtime = 25;
       case 25:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 200)) {
-          stale_pathtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.stale_pathtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3230,7 +3336,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 orf_entry_count = 26;
       case 26:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
-          orf_entry_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.orf_entry_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3238,7 +3344,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 rcvd_msg_elpstime = 27;
       case 27:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 216)) {
-          rcvd_msg_elpstime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.rcvd_msg_elpstime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3246,7 +3352,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 route_refr_sent = 28;
       case 28:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 224)) {
-          route_refr_sent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.route_refr_sent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3254,7 +3360,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 route_refr_rcvd = 29;
       case 29:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 232)) {
-          route_refr_rcvd_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.route_refr_rcvd_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3262,7 +3368,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_prfxes = 30;
       case 30:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 240)) {
-          incoming_prfxes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_prfxes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3270,7 +3376,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_prfxes = 31;
       case 31:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          outgoing_prfxes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_prfxes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3278,7 +3384,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_prfxes_advertised = 32;
       case 32:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 0)) {
-          outgoing_prfxes_advertised_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_prfxes_advertised_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3286,7 +3392,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 connect_retry_int = 33;
       case 33:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          connect_retry_int_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.connect_retry_int_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3294,7 +3400,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_update_elpstime = 34;
       case 34:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          outgoing_update_elpstime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_update_elpstime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3302,7 +3408,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_prfxes_denied = 35;
       case 35:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          outgoing_prfxes_denied_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_prfxes_denied_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3310,7 +3416,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_prfxes_imp_wdr = 36;
       case 36:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          outgoing_prfxes_imp_wdr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_prfxes_imp_wdr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3318,7 +3424,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_prfxes_exp_wdr = 37;
       case 37:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          outgoing_prfxes_exp_wdr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_prfxes_exp_wdr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3326,7 +3432,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_prfxes_imp_wdr = 38;
       case 38:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          incoming_prfxes_imp_wdr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_prfxes_imp_wdr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3334,7 +3440,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_prfxes_exp_wdr = 39;
       case 39:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          incoming_prfxes_exp_wdr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_prfxes_exp_wdr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3342,7 +3448,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 received_holdtime = 40;
       case 40:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          received_holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.received_holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3350,7 +3456,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 fsm_establishedtime = 41;
       case 41:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          fsm_establishedtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.fsm_establishedtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3358,7 +3464,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_updates_elpstime = 42;
       case 42:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          incoming_updates_elpstime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_updates_elpstime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3366,7 +3472,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 incoming_opens = 43;
       case 43:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          incoming_opens_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.incoming_opens_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3374,7 +3480,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 outgoing_opens = 44;
       case 44:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          outgoing_opens_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.outgoing_opens_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3382,7 +3488,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 peer_index = 45;
       case 45:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          peer_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.peer_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3390,7 +3496,7 @@ const char* BGPPeerStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 ttl = 46;
       case 46:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          ttl_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.ttl_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3436,14 +3542,14 @@ uint8_t* BGPPeerStatus::_InternalSerialize(
   // .opi_api.network.cloud.v1alpha1.BGPPeerSessionState session_state = 1;
   if (this->_internal_session_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_session_state(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerSessionState prev_session_state = 2;
   if (this->_internal_prev_session_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_prev_session_state(), target);
   }
 
@@ -3461,268 +3567,267 @@ uint8_t* BGPPeerStatus::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 5;
   if (this->_internal_has_local_addr()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::local_addr(this), target, stream);
+      InternalWriteMessage(5, _Internal::local_addr(this),
+        _Internal::local_addr(this).GetCachedSize(), target, stream);
   }
 
   // int32 holdtime = 6;
   if (this->_internal_holdtime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_holdtime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_holdtime(), target);
   }
 
   // int32 keepalive = 7;
   if (this->_internal_keepalive() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_keepalive(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_keepalive(), target);
   }
 
   // int32 caps_sent = 8;
   if (this->_internal_caps_sent() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_caps_sent(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_caps_sent(), target);
   }
 
   // int32 caps_rcvd = 9;
   if (this->_internal_caps_rcvd() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_caps_rcvd(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_caps_rcvd(), target);
   }
 
   // int32 caps_neg = 10;
   if (this->_internal_caps_neg() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_caps_neg(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_caps_neg(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAddrType sel_local_addr_type = 11;
   if (this->_internal_sel_local_addr_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       11, this->_internal_sel_local_addr_type(), target);
   }
 
   // int32 incoming_notifications = 12;
   if (this->_internal_incoming_notifications() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(12, this->_internal_incoming_notifications(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_incoming_notifications(), target);
   }
 
   // int32 outbound_notifications = 13;
   if (this->_internal_outbound_notifications() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_outbound_notifications(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_outbound_notifications(), target);
   }
 
   // int32 incoming_updates = 14;
   if (this->_internal_incoming_updates() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_incoming_updates(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_incoming_updates(), target);
   }
 
   // int32 outgoing_updates = 15;
   if (this->_internal_outgoing_updates() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(15, this->_internal_outgoing_updates(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(15, this->_internal_outgoing_updates(), target);
   }
 
   // int32 incoming_keepalives = 16;
   if (this->_internal_incoming_keepalives() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(16, this->_internal_incoming_keepalives(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(16, this->_internal_incoming_keepalives(), target);
   }
 
   // int32 outgoing_keepalives = 17;
   if (this->_internal_outgoing_keepalives() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(17, this->_internal_outgoing_keepalives(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(17, this->_internal_outgoing_keepalives(), target);
   }
 
   // int32 incoming_refreshes = 18;
   if (this->_internal_incoming_refreshes() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(18, this->_internal_incoming_refreshes(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(18, this->_internal_incoming_refreshes(), target);
   }
 
   // int32 outgoing_refreshes = 19;
   if (this->_internal_outgoing_refreshes() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(19, this->_internal_outgoing_refreshes(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(19, this->_internal_outgoing_refreshes(), target);
   }
 
   // int32 incoming_total_messages = 20;
   if (this->_internal_incoming_total_messages() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(20, this->_internal_incoming_total_messages(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(20, this->_internal_incoming_total_messages(), target);
   }
 
   // int32 outgoing_total_messages = 21;
   if (this->_internal_outgoing_total_messages() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(21, this->_internal_outgoing_total_messages(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(21, this->_internal_outgoing_total_messages(), target);
   }
 
   // int32 fsm_est_transitions = 22;
   if (this->_internal_fsm_est_transitions() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(22, this->_internal_fsm_est_transitions(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(22, this->_internal_fsm_est_transitions(), target);
   }
 
   // int32 connect_retry_count = 23;
   if (this->_internal_connect_retry_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(23, this->_internal_connect_retry_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(23, this->_internal_connect_retry_count(), target);
   }
 
   // int32 peergr = 24;
   if (this->_internal_peergr() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(24, this->_internal_peergr(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(24, this->_internal_peergr(), target);
   }
 
   // int32 stale_pathtime = 25;
   if (this->_internal_stale_pathtime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(25, this->_internal_stale_pathtime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(25, this->_internal_stale_pathtime(), target);
   }
 
   // int32 orf_entry_count = 26;
   if (this->_internal_orf_entry_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(26, this->_internal_orf_entry_count(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(26, this->_internal_orf_entry_count(), target);
   }
 
   // int32 rcvd_msg_elpstime = 27;
   if (this->_internal_rcvd_msg_elpstime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(27, this->_internal_rcvd_msg_elpstime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(27, this->_internal_rcvd_msg_elpstime(), target);
   }
 
   // int32 route_refr_sent = 28;
   if (this->_internal_route_refr_sent() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(28, this->_internal_route_refr_sent(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(28, this->_internal_route_refr_sent(), target);
   }
 
   // int32 route_refr_rcvd = 29;
   if (this->_internal_route_refr_rcvd() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(29, this->_internal_route_refr_rcvd(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(29, this->_internal_route_refr_rcvd(), target);
   }
 
   // int32 incoming_prfxes = 30;
   if (this->_internal_incoming_prfxes() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(30, this->_internal_incoming_prfxes(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(30, this->_internal_incoming_prfxes(), target);
   }
 
   // int32 outgoing_prfxes = 31;
   if (this->_internal_outgoing_prfxes() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(31, this->_internal_outgoing_prfxes(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(31, this->_internal_outgoing_prfxes(), target);
   }
 
   // int32 outgoing_prfxes_advertised = 32;
   if (this->_internal_outgoing_prfxes_advertised() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(32, this->_internal_outgoing_prfxes_advertised(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(32, this->_internal_outgoing_prfxes_advertised(), target);
   }
 
   // int32 connect_retry_int = 33;
   if (this->_internal_connect_retry_int() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(33, this->_internal_connect_retry_int(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(33, this->_internal_connect_retry_int(), target);
   }
 
   // int32 outgoing_update_elpstime = 34;
   if (this->_internal_outgoing_update_elpstime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(34, this->_internal_outgoing_update_elpstime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(34, this->_internal_outgoing_update_elpstime(), target);
   }
 
   // int32 outgoing_prfxes_denied = 35;
   if (this->_internal_outgoing_prfxes_denied() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(35, this->_internal_outgoing_prfxes_denied(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(35, this->_internal_outgoing_prfxes_denied(), target);
   }
 
   // int32 outgoing_prfxes_imp_wdr = 36;
   if (this->_internal_outgoing_prfxes_imp_wdr() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(36, this->_internal_outgoing_prfxes_imp_wdr(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(36, this->_internal_outgoing_prfxes_imp_wdr(), target);
   }
 
   // int32 outgoing_prfxes_exp_wdr = 37;
   if (this->_internal_outgoing_prfxes_exp_wdr() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(37, this->_internal_outgoing_prfxes_exp_wdr(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(37, this->_internal_outgoing_prfxes_exp_wdr(), target);
   }
 
   // int32 incoming_prfxes_imp_wdr = 38;
   if (this->_internal_incoming_prfxes_imp_wdr() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(38, this->_internal_incoming_prfxes_imp_wdr(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(38, this->_internal_incoming_prfxes_imp_wdr(), target);
   }
 
   // int32 incoming_prfxes_exp_wdr = 39;
   if (this->_internal_incoming_prfxes_exp_wdr() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(39, this->_internal_incoming_prfxes_exp_wdr(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(39, this->_internal_incoming_prfxes_exp_wdr(), target);
   }
 
   // int32 received_holdtime = 40;
   if (this->_internal_received_holdtime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(40, this->_internal_received_holdtime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(40, this->_internal_received_holdtime(), target);
   }
 
   // int32 fsm_establishedtime = 41;
   if (this->_internal_fsm_establishedtime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(41, this->_internal_fsm_establishedtime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(41, this->_internal_fsm_establishedtime(), target);
   }
 
   // int32 incoming_updates_elpstime = 42;
   if (this->_internal_incoming_updates_elpstime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(42, this->_internal_incoming_updates_elpstime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(42, this->_internal_incoming_updates_elpstime(), target);
   }
 
   // int32 incoming_opens = 43;
   if (this->_internal_incoming_opens() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(43, this->_internal_incoming_opens(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(43, this->_internal_incoming_opens(), target);
   }
 
   // int32 outgoing_opens = 44;
   if (this->_internal_outgoing_opens() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(44, this->_internal_outgoing_opens(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(44, this->_internal_outgoing_opens(), target);
   }
 
   // int32 peer_index = 45;
   if (this->_internal_peer_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(45, this->_internal_peer_index(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(45, this->_internal_peer_index(), target);
   }
 
   // int32 ttl = 46;
   if (this->_internal_ttl() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(46, this->_internal_ttl(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(46, this->_internal_ttl(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPOperState oper_state = 47;
   if (this->_internal_oper_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       47, this->_internal_oper_state(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPPeerStatus)
@@ -3755,459 +3860,456 @@ size_t BGPPeerStatus::ByteSizeLong() const {
   if (this->_internal_has_local_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *local_addr_);
+        *_impl_.local_addr_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerSessionState session_state = 1;
   if (this->_internal_session_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_session_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_session_state());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerSessionState prev_session_state = 2;
   if (this->_internal_prev_session_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_prev_session_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_prev_session_state());
   }
 
   // int32 holdtime = 6;
   if (this->_internal_holdtime() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_holdtime());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_holdtime());
   }
 
   // int32 keepalive = 7;
   if (this->_internal_keepalive() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_keepalive());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_keepalive());
   }
 
   // int32 caps_sent = 8;
   if (this->_internal_caps_sent() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_caps_sent());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_caps_sent());
   }
 
   // int32 caps_rcvd = 9;
   if (this->_internal_caps_rcvd() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_caps_rcvd());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_caps_rcvd());
   }
 
   // int32 caps_neg = 10;
   if (this->_internal_caps_neg() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_caps_neg());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_caps_neg());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAddrType sel_local_addr_type = 11;
   if (this->_internal_sel_local_addr_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_sel_local_addr_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_sel_local_addr_type());
   }
 
   // int32 incoming_notifications = 12;
   if (this->_internal_incoming_notifications() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_incoming_notifications());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_incoming_notifications());
   }
 
   // int32 outbound_notifications = 13;
   if (this->_internal_outbound_notifications() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_outbound_notifications());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_outbound_notifications());
   }
 
   // int32 incoming_updates = 14;
   if (this->_internal_incoming_updates() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_incoming_updates());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_incoming_updates());
   }
 
   // int32 outgoing_updates = 15;
   if (this->_internal_outgoing_updates() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_outgoing_updates());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_outgoing_updates());
   }
 
   // int32 incoming_keepalives = 16;
   if (this->_internal_incoming_keepalives() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_incoming_keepalives());
   }
 
   // int32 outgoing_keepalives = 17;
   if (this->_internal_outgoing_keepalives() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_keepalives());
   }
 
   // int32 incoming_refreshes = 18;
   if (this->_internal_incoming_refreshes() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_incoming_refreshes());
   }
 
   // int32 outgoing_refreshes = 19;
   if (this->_internal_outgoing_refreshes() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_refreshes());
   }
 
   // int32 incoming_total_messages = 20;
   if (this->_internal_incoming_total_messages() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_incoming_total_messages());
   }
 
   // int32 outgoing_total_messages = 21;
   if (this->_internal_outgoing_total_messages() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_total_messages());
   }
 
   // int32 fsm_est_transitions = 22;
   if (this->_internal_fsm_est_transitions() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_fsm_est_transitions());
   }
 
   // int32 connect_retry_count = 23;
   if (this->_internal_connect_retry_count() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_connect_retry_count());
   }
 
   // int32 peergr = 24;
   if (this->_internal_peergr() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_peergr());
   }
 
   // int32 stale_pathtime = 25;
   if (this->_internal_stale_pathtime() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_stale_pathtime());
   }
 
   // int32 orf_entry_count = 26;
   if (this->_internal_orf_entry_count() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_orf_entry_count());
   }
 
   // int32 rcvd_msg_elpstime = 27;
   if (this->_internal_rcvd_msg_elpstime() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_rcvd_msg_elpstime());
   }
 
   // int32 route_refr_sent = 28;
   if (this->_internal_route_refr_sent() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_route_refr_sent());
   }
 
   // int32 route_refr_rcvd = 29;
   if (this->_internal_route_refr_rcvd() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_route_refr_rcvd());
   }
 
   // int32 incoming_prfxes = 30;
   if (this->_internal_incoming_prfxes() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_incoming_prfxes());
   }
 
   // int32 outgoing_prfxes = 31;
   if (this->_internal_outgoing_prfxes() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_prfxes());
   }
 
   // int32 outgoing_prfxes_advertised = 32;
   if (this->_internal_outgoing_prfxes_advertised() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_prfxes_advertised());
   }
 
   // int32 connect_retry_int = 33;
   if (this->_internal_connect_retry_int() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_connect_retry_int());
   }
 
   // int32 outgoing_update_elpstime = 34;
   if (this->_internal_outgoing_update_elpstime() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_update_elpstime());
   }
 
   // int32 outgoing_prfxes_denied = 35;
   if (this->_internal_outgoing_prfxes_denied() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_prfxes_denied());
   }
 
   // int32 outgoing_prfxes_imp_wdr = 36;
   if (this->_internal_outgoing_prfxes_imp_wdr() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_prfxes_imp_wdr());
   }
 
   // int32 outgoing_prfxes_exp_wdr = 37;
   if (this->_internal_outgoing_prfxes_exp_wdr() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_prfxes_exp_wdr());
   }
 
   // int32 incoming_prfxes_imp_wdr = 38;
   if (this->_internal_incoming_prfxes_imp_wdr() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_incoming_prfxes_imp_wdr());
   }
 
   // int32 incoming_prfxes_exp_wdr = 39;
   if (this->_internal_incoming_prfxes_exp_wdr() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_incoming_prfxes_exp_wdr());
   }
 
   // int32 received_holdtime = 40;
   if (this->_internal_received_holdtime() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_received_holdtime());
   }
 
   // int32 fsm_establishedtime = 41;
   if (this->_internal_fsm_establishedtime() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_fsm_establishedtime());
   }
 
   // int32 incoming_updates_elpstime = 42;
   if (this->_internal_incoming_updates_elpstime() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_incoming_updates_elpstime());
   }
 
   // int32 incoming_opens = 43;
   if (this->_internal_incoming_opens() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_incoming_opens());
   }
 
   // int32 outgoing_opens = 44;
   if (this->_internal_outgoing_opens() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_outgoing_opens());
   }
 
   // int32 peer_index = 45;
   if (this->_internal_peer_index() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_peer_index());
   }
 
   // int32 ttl = 46;
   if (this->_internal_ttl() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_ttl());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPOperState oper_state = 47;
   if (this->_internal_oper_state() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_oper_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_oper_state());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPPeerStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPPeerStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPPeerStatus::GetClassData() const { return &_class_data_; }
 
-void BGPPeerStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPPeerStatus *>(to)->MergeFrom(
-      static_cast<const BGPPeerStatus &>(from));
-}
 
-
-void BGPPeerStatus::MergeFrom(const BGPPeerStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPPeerStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPPeerStatus*>(&to_msg);
+  auto& from = static_cast<const BGPPeerStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_last_error_rcvd().empty()) {
-    _internal_set_last_error_rcvd(from._internal_last_error_rcvd());
+    _this->_internal_set_last_error_rcvd(from._internal_last_error_rcvd());
   }
   if (!from._internal_last_error_sent().empty()) {
-    _internal_set_last_error_sent(from._internal_last_error_sent());
+    _this->_internal_set_last_error_sent(from._internal_last_error_sent());
   }
   if (from._internal_has_local_addr()) {
-    _internal_mutable_local_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_local_addr());
+    _this->_internal_mutable_local_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_local_addr());
   }
   if (from._internal_session_state() != 0) {
-    _internal_set_session_state(from._internal_session_state());
+    _this->_internal_set_session_state(from._internal_session_state());
   }
   if (from._internal_prev_session_state() != 0) {
-    _internal_set_prev_session_state(from._internal_prev_session_state());
+    _this->_internal_set_prev_session_state(from._internal_prev_session_state());
   }
   if (from._internal_holdtime() != 0) {
-    _internal_set_holdtime(from._internal_holdtime());
+    _this->_internal_set_holdtime(from._internal_holdtime());
   }
   if (from._internal_keepalive() != 0) {
-    _internal_set_keepalive(from._internal_keepalive());
+    _this->_internal_set_keepalive(from._internal_keepalive());
   }
   if (from._internal_caps_sent() != 0) {
-    _internal_set_caps_sent(from._internal_caps_sent());
+    _this->_internal_set_caps_sent(from._internal_caps_sent());
   }
   if (from._internal_caps_rcvd() != 0) {
-    _internal_set_caps_rcvd(from._internal_caps_rcvd());
+    _this->_internal_set_caps_rcvd(from._internal_caps_rcvd());
   }
   if (from._internal_caps_neg() != 0) {
-    _internal_set_caps_neg(from._internal_caps_neg());
+    _this->_internal_set_caps_neg(from._internal_caps_neg());
   }
   if (from._internal_sel_local_addr_type() != 0) {
-    _internal_set_sel_local_addr_type(from._internal_sel_local_addr_type());
+    _this->_internal_set_sel_local_addr_type(from._internal_sel_local_addr_type());
   }
   if (from._internal_incoming_notifications() != 0) {
-    _internal_set_incoming_notifications(from._internal_incoming_notifications());
+    _this->_internal_set_incoming_notifications(from._internal_incoming_notifications());
   }
   if (from._internal_outbound_notifications() != 0) {
-    _internal_set_outbound_notifications(from._internal_outbound_notifications());
+    _this->_internal_set_outbound_notifications(from._internal_outbound_notifications());
   }
   if (from._internal_incoming_updates() != 0) {
-    _internal_set_incoming_updates(from._internal_incoming_updates());
+    _this->_internal_set_incoming_updates(from._internal_incoming_updates());
   }
   if (from._internal_outgoing_updates() != 0) {
-    _internal_set_outgoing_updates(from._internal_outgoing_updates());
+    _this->_internal_set_outgoing_updates(from._internal_outgoing_updates());
   }
   if (from._internal_incoming_keepalives() != 0) {
-    _internal_set_incoming_keepalives(from._internal_incoming_keepalives());
+    _this->_internal_set_incoming_keepalives(from._internal_incoming_keepalives());
   }
   if (from._internal_outgoing_keepalives() != 0) {
-    _internal_set_outgoing_keepalives(from._internal_outgoing_keepalives());
+    _this->_internal_set_outgoing_keepalives(from._internal_outgoing_keepalives());
   }
   if (from._internal_incoming_refreshes() != 0) {
-    _internal_set_incoming_refreshes(from._internal_incoming_refreshes());
+    _this->_internal_set_incoming_refreshes(from._internal_incoming_refreshes());
   }
   if (from._internal_outgoing_refreshes() != 0) {
-    _internal_set_outgoing_refreshes(from._internal_outgoing_refreshes());
+    _this->_internal_set_outgoing_refreshes(from._internal_outgoing_refreshes());
   }
   if (from._internal_incoming_total_messages() != 0) {
-    _internal_set_incoming_total_messages(from._internal_incoming_total_messages());
+    _this->_internal_set_incoming_total_messages(from._internal_incoming_total_messages());
   }
   if (from._internal_outgoing_total_messages() != 0) {
-    _internal_set_outgoing_total_messages(from._internal_outgoing_total_messages());
+    _this->_internal_set_outgoing_total_messages(from._internal_outgoing_total_messages());
   }
   if (from._internal_fsm_est_transitions() != 0) {
-    _internal_set_fsm_est_transitions(from._internal_fsm_est_transitions());
+    _this->_internal_set_fsm_est_transitions(from._internal_fsm_est_transitions());
   }
   if (from._internal_connect_retry_count() != 0) {
-    _internal_set_connect_retry_count(from._internal_connect_retry_count());
+    _this->_internal_set_connect_retry_count(from._internal_connect_retry_count());
   }
   if (from._internal_peergr() != 0) {
-    _internal_set_peergr(from._internal_peergr());
+    _this->_internal_set_peergr(from._internal_peergr());
   }
   if (from._internal_stale_pathtime() != 0) {
-    _internal_set_stale_pathtime(from._internal_stale_pathtime());
+    _this->_internal_set_stale_pathtime(from._internal_stale_pathtime());
   }
   if (from._internal_orf_entry_count() != 0) {
-    _internal_set_orf_entry_count(from._internal_orf_entry_count());
+    _this->_internal_set_orf_entry_count(from._internal_orf_entry_count());
   }
   if (from._internal_rcvd_msg_elpstime() != 0) {
-    _internal_set_rcvd_msg_elpstime(from._internal_rcvd_msg_elpstime());
+    _this->_internal_set_rcvd_msg_elpstime(from._internal_rcvd_msg_elpstime());
   }
   if (from._internal_route_refr_sent() != 0) {
-    _internal_set_route_refr_sent(from._internal_route_refr_sent());
+    _this->_internal_set_route_refr_sent(from._internal_route_refr_sent());
   }
   if (from._internal_route_refr_rcvd() != 0) {
-    _internal_set_route_refr_rcvd(from._internal_route_refr_rcvd());
+    _this->_internal_set_route_refr_rcvd(from._internal_route_refr_rcvd());
   }
   if (from._internal_incoming_prfxes() != 0) {
-    _internal_set_incoming_prfxes(from._internal_incoming_prfxes());
+    _this->_internal_set_incoming_prfxes(from._internal_incoming_prfxes());
   }
   if (from._internal_outgoing_prfxes() != 0) {
-    _internal_set_outgoing_prfxes(from._internal_outgoing_prfxes());
+    _this->_internal_set_outgoing_prfxes(from._internal_outgoing_prfxes());
   }
   if (from._internal_outgoing_prfxes_advertised() != 0) {
-    _internal_set_outgoing_prfxes_advertised(from._internal_outgoing_prfxes_advertised());
+    _this->_internal_set_outgoing_prfxes_advertised(from._internal_outgoing_prfxes_advertised());
   }
   if (from._internal_connect_retry_int() != 0) {
-    _internal_set_connect_retry_int(from._internal_connect_retry_int());
+    _this->_internal_set_connect_retry_int(from._internal_connect_retry_int());
   }
   if (from._internal_outgoing_update_elpstime() != 0) {
-    _internal_set_outgoing_update_elpstime(from._internal_outgoing_update_elpstime());
+    _this->_internal_set_outgoing_update_elpstime(from._internal_outgoing_update_elpstime());
   }
   if (from._internal_outgoing_prfxes_denied() != 0) {
-    _internal_set_outgoing_prfxes_denied(from._internal_outgoing_prfxes_denied());
+    _this->_internal_set_outgoing_prfxes_denied(from._internal_outgoing_prfxes_denied());
   }
   if (from._internal_outgoing_prfxes_imp_wdr() != 0) {
-    _internal_set_outgoing_prfxes_imp_wdr(from._internal_outgoing_prfxes_imp_wdr());
+    _this->_internal_set_outgoing_prfxes_imp_wdr(from._internal_outgoing_prfxes_imp_wdr());
   }
   if (from._internal_outgoing_prfxes_exp_wdr() != 0) {
-    _internal_set_outgoing_prfxes_exp_wdr(from._internal_outgoing_prfxes_exp_wdr());
+    _this->_internal_set_outgoing_prfxes_exp_wdr(from._internal_outgoing_prfxes_exp_wdr());
   }
   if (from._internal_incoming_prfxes_imp_wdr() != 0) {
-    _internal_set_incoming_prfxes_imp_wdr(from._internal_incoming_prfxes_imp_wdr());
+    _this->_internal_set_incoming_prfxes_imp_wdr(from._internal_incoming_prfxes_imp_wdr());
   }
   if (from._internal_incoming_prfxes_exp_wdr() != 0) {
-    _internal_set_incoming_prfxes_exp_wdr(from._internal_incoming_prfxes_exp_wdr());
+    _this->_internal_set_incoming_prfxes_exp_wdr(from._internal_incoming_prfxes_exp_wdr());
   }
   if (from._internal_received_holdtime() != 0) {
-    _internal_set_received_holdtime(from._internal_received_holdtime());
+    _this->_internal_set_received_holdtime(from._internal_received_holdtime());
   }
   if (from._internal_fsm_establishedtime() != 0) {
-    _internal_set_fsm_establishedtime(from._internal_fsm_establishedtime());
+    _this->_internal_set_fsm_establishedtime(from._internal_fsm_establishedtime());
   }
   if (from._internal_incoming_updates_elpstime() != 0) {
-    _internal_set_incoming_updates_elpstime(from._internal_incoming_updates_elpstime());
+    _this->_internal_set_incoming_updates_elpstime(from._internal_incoming_updates_elpstime());
   }
   if (from._internal_incoming_opens() != 0) {
-    _internal_set_incoming_opens(from._internal_incoming_opens());
+    _this->_internal_set_incoming_opens(from._internal_incoming_opens());
   }
   if (from._internal_outgoing_opens() != 0) {
-    _internal_set_outgoing_opens(from._internal_outgoing_opens());
+    _this->_internal_set_outgoing_opens(from._internal_outgoing_opens());
   }
   if (from._internal_peer_index() != 0) {
-    _internal_set_peer_index(from._internal_peer_index());
+    _this->_internal_set_peer_index(from._internal_peer_index());
   }
   if (from._internal_ttl() != 0) {
-    _internal_set_ttl(from._internal_ttl());
+    _this->_internal_set_ttl(from._internal_ttl());
   }
   if (from._internal_oper_state() != 0) {
-    _internal_set_oper_state(from._internal_oper_state());
+    _this->_internal_set_oper_state(from._internal_oper_state());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPPeerStatus::CopyFrom(const BGPPeerStatus& from) {
@@ -4227,25 +4329,23 @@ void BGPPeerStatus::InternalSwap(BGPPeerStatus* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &last_error_rcvd_, lhs_arena,
-      &other->last_error_rcvd_, rhs_arena
+      &_impl_.last_error_rcvd_, lhs_arena,
+      &other->_impl_.last_error_rcvd_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &last_error_sent_, lhs_arena,
-      &other->last_error_sent_, rhs_arena
+      &_impl_.last_error_sent_, lhs_arena,
+      &other->_impl_.last_error_sent_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPPeerStatus, oper_state_)
-      + sizeof(BGPPeerStatus::oper_state_)
-      - PROTOBUF_FIELD_OFFSET(BGPPeerStatus, local_addr_)>(
-          reinterpret_cast<char*>(&local_addr_),
-          reinterpret_cast<char*>(&other->local_addr_));
+      PROTOBUF_FIELD_OFFSET(BGPPeerStatus, _impl_.oper_state_)
+      + sizeof(BGPPeerStatus::_impl_.oper_state_)
+      - PROTOBUF_FIELD_OFFSET(BGPPeerStatus, _impl_.local_addr_)>(
+          reinterpret_cast<char*>(&_impl_.local_addr_),
+          reinterpret_cast<char*>(&other->_impl_.local_addr_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPPeerStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[5]);
 }
@@ -4260,78 +4360,79 @@ class BGPPeerAf::_Internal {
 
 const ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec&
 BGPPeerAf::_Internal::spec(const BGPPeerAf* msg) {
-  return *msg->spec_;
+  return *msg->_impl_.spec_;
 }
 const ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus&
 BGPPeerAf::_Internal::state(const BGPPeerAf* msg) {
-  return *msg->state_;
+  return *msg->_impl_.state_;
 }
 BGPPeerAf::BGPPeerAf(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPPeerAf)
 }
 BGPPeerAf::BGPPeerAf(const BGPPeerAf& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPPeerAf* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.state_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_spec()) {
-    spec_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec(*from.spec_);
-  } else {
-    spec_ = nullptr;
+    _this->_impl_.spec_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec(*from._impl_.spec_);
   }
   if (from._internal_has_state()) {
-    state_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus(*from.state_);
-  } else {
-    state_ = nullptr;
+    _this->_impl_.state_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus(*from._impl_.state_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPPeerAf)
 }
 
-inline void BGPPeerAf::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&state_) -
-    reinterpret_cast<char*>(&spec_)) + sizeof(state_));
+inline void BGPPeerAf::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.state_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BGPPeerAf::~BGPPeerAf() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPPeerAf)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPPeerAf::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete spec_;
-  if (this != internal_default_instance()) delete state_;
+  _impl_.name_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.spec_;
+  if (this != internal_default_instance()) delete _impl_.state_;
 }
 
-void BGPPeerAf::ArenaDtor(void* object) {
-  BGPPeerAf* _this = reinterpret_cast< BGPPeerAf* >(object);
-  (void)_this;
-}
-void BGPPeerAf::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPPeerAf::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPPeerAf::Clear() {
@@ -4340,31 +4441,31 @@ void BGPPeerAf::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
-    delete spec_;
+  _impl_.name_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.spec_ != nullptr) {
+    delete _impl_.spec_;
   }
-  spec_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && state_ != nullptr) {
-    delete state_;
+  _impl_.spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.state_ != nullptr) {
+    delete _impl_.state_;
   }
-  state_ = nullptr;
+  _impl_.state_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPPeerAf::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPPeerAf::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.BGPPeerAf.name"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.BGPPeerAf.name"));
         } else
           goto handle_unusual;
         continue;
@@ -4425,22 +4526,20 @@ uint8_t* BGPPeerAf::_InternalSerialize(
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;
   if (this->_internal_has_spec()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::spec(this), target, stream);
+      InternalWriteMessage(2, _Internal::spec(this),
+        _Internal::spec(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;
   if (this->_internal_has_state()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::state(this), target, stream);
+      InternalWriteMessage(3, _Internal::state(this),
+        _Internal::state(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPPeerAf)
@@ -4466,48 +4565,46 @@ size_t BGPPeerAf::ByteSizeLong() const {
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *spec_);
+        *_impl_.spec_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;
   if (this->_internal_has_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *state_);
+        *_impl_.state_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPPeerAf::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPPeerAf::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPPeerAf::GetClassData() const { return &_class_data_; }
 
-void BGPPeerAf::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPPeerAf *>(to)->MergeFrom(
-      static_cast<const BGPPeerAf &>(from));
-}
 
-
-void BGPPeerAf::MergeFrom(const BGPPeerAf& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerAf)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPPeerAf::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPPeerAf*>(&to_msg);
+  auto& from = static_cast<const BGPPeerAf&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerAf)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+    _this->_internal_set_name(from._internal_name());
   }
   if (from._internal_has_spec()) {
-    _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec::MergeFrom(from._internal_spec());
+    _this->_internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec::MergeFrom(
+        from._internal_spec());
   }
   if (from._internal_has_state()) {
-    _internal_mutable_state()->::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus::MergeFrom(from._internal_state());
+    _this->_internal_mutable_state()->::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus::MergeFrom(
+        from._internal_state());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPPeerAf::CopyFrom(const BGPPeerAf& from) {
@@ -4527,20 +4624,19 @@ void BGPPeerAf::InternalSwap(BGPPeerAf* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPPeerAf, state_)
-      + sizeof(BGPPeerAf::state_)
-      - PROTOBUF_FIELD_OFFSET(BGPPeerAf, spec_)>(
-          reinterpret_cast<char*>(&spec_),
-          reinterpret_cast<char*>(&other->spec_));
+      PROTOBUF_FIELD_OFFSET(BGPPeerAf, _impl_.state_)
+      + sizeof(BGPPeerAf::_impl_.state_)
+      - PROTOBUF_FIELD_OFFSET(BGPPeerAf, _impl_.spec_)>(
+          reinterpret_cast<char*>(&_impl_.spec_),
+          reinterpret_cast<char*>(&other->_impl_.spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPPeerAf::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[6]);
 }
@@ -4555,80 +4651,93 @@ class BGPPeerAfSpec::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerAfSpec::_Internal::local_addr(const BGPPeerAfSpec* msg) {
-  return *msg->local_addr_;
+  return *msg->_impl_.local_addr_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerAfSpec::_Internal::peer_addr(const BGPPeerAfSpec* msg) {
-  return *msg->peer_addr_;
+  return *msg->_impl_.peer_addr_;
 }
 void BGPPeerAfSpec::clear_local_addr() {
-  if (GetArenaForAllocation() == nullptr && local_addr_ != nullptr) {
-    delete local_addr_;
+  if (GetArenaForAllocation() == nullptr && _impl_.local_addr_ != nullptr) {
+    delete _impl_.local_addr_;
   }
-  local_addr_ = nullptr;
+  _impl_.local_addr_ = nullptr;
 }
 void BGPPeerAfSpec::clear_peer_addr() {
-  if (GetArenaForAllocation() == nullptr && peer_addr_ != nullptr) {
-    delete peer_addr_;
+  if (GetArenaForAllocation() == nullptr && _impl_.peer_addr_ != nullptr) {
+    delete _impl_.peer_addr_;
   }
-  peer_addr_ = nullptr;
+  _impl_.peer_addr_ = nullptr;
 }
 BGPPeerAfSpec::BGPPeerAfSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec)
 }
 BGPPeerAfSpec::BGPPeerAfSpec(const BGPPeerAfSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPPeerAfSpec* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_addr_){nullptr}
+    , decltype(_impl_.peer_addr_){nullptr}
+    , decltype(_impl_.afi_){}
+    , decltype(_impl_.safi_){}
+    , decltype(_impl_.nexthop_self_){}
+    , decltype(_impl_.default_orig_){}
+    , decltype(_impl_.local_port_){}
+    , decltype(_impl_.remote_port_){}
+    , decltype(_impl_.local_addr_scope_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_local_addr()) {
-    local_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.local_addr_);
-  } else {
-    local_addr_ = nullptr;
+    _this->_impl_.local_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.local_addr_);
   }
   if (from._internal_has_peer_addr()) {
-    peer_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.peer_addr_);
-  } else {
-    peer_addr_ = nullptr;
+    _this->_impl_.peer_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.peer_addr_);
   }
-  ::memcpy(&afi_, &from.afi_,
-    static_cast<size_t>(reinterpret_cast<char*>(&local_addr_scope_id_) -
-    reinterpret_cast<char*>(&afi_)) + sizeof(local_addr_scope_id_));
+  ::memcpy(&_impl_.afi_, &from._impl_.afi_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.local_addr_scope_id_) -
+    reinterpret_cast<char*>(&_impl_.afi_)) + sizeof(_impl_.local_addr_scope_id_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec)
 }
 
-inline void BGPPeerAfSpec::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&local_addr_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&local_addr_scope_id_) -
-    reinterpret_cast<char*>(&local_addr_)) + sizeof(local_addr_scope_id_));
+inline void BGPPeerAfSpec::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.local_addr_){nullptr}
+    , decltype(_impl_.peer_addr_){nullptr}
+    , decltype(_impl_.afi_){0}
+    , decltype(_impl_.safi_){0}
+    , decltype(_impl_.nexthop_self_){false}
+    , decltype(_impl_.default_orig_){false}
+    , decltype(_impl_.local_port_){0}
+    , decltype(_impl_.remote_port_){0}
+    , decltype(_impl_.local_addr_scope_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 BGPPeerAfSpec::~BGPPeerAfSpec() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPPeerAfSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete local_addr_;
-  if (this != internal_default_instance()) delete peer_addr_;
+  if (this != internal_default_instance()) delete _impl_.local_addr_;
+  if (this != internal_default_instance()) delete _impl_.peer_addr_;
 }
 
-void BGPPeerAfSpec::ArenaDtor(void* object) {
-  BGPPeerAfSpec* _this = reinterpret_cast< BGPPeerAfSpec* >(object);
-  (void)_this;
-}
-void BGPPeerAfSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPPeerAfSpec::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPPeerAfSpec::Clear() {
@@ -4637,25 +4746,25 @@ void BGPPeerAfSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && local_addr_ != nullptr) {
-    delete local_addr_;
+  if (GetArenaForAllocation() == nullptr && _impl_.local_addr_ != nullptr) {
+    delete _impl_.local_addr_;
   }
-  local_addr_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && peer_addr_ != nullptr) {
-    delete peer_addr_;
+  _impl_.local_addr_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.peer_addr_ != nullptr) {
+    delete _impl_.peer_addr_;
   }
-  peer_addr_ = nullptr;
-  ::memset(&afi_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&local_addr_scope_id_) -
-      reinterpret_cast<char*>(&afi_)) + sizeof(local_addr_scope_id_));
+  _impl_.peer_addr_ = nullptr;
+  ::memset(&_impl_.afi_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.local_addr_scope_id_) -
+      reinterpret_cast<char*>(&_impl_.afi_)) + sizeof(_impl_.local_addr_scope_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPPeerAfSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPPeerAfSpec::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
       case 1:
@@ -4694,7 +4803,7 @@ const char* BGPPeerAfSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // bool nexthop_self = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          nexthop_self_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.nexthop_self_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4702,7 +4811,7 @@ const char* BGPPeerAfSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // bool default_orig = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          default_orig_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.default_orig_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4710,7 +4819,7 @@ const char* BGPPeerAfSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 local_port = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          local_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.local_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4718,7 +4827,7 @@ const char* BGPPeerAfSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 remote_port = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          remote_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.remote_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4726,7 +4835,7 @@ const char* BGPPeerAfSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // int32 local_addr_scope_id = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          local_addr_scope_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.local_addr_scope_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4762,66 +4871,64 @@ uint8_t* BGPPeerAfSpec::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
   if (this->_internal_has_local_addr()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::local_addr(this), target, stream);
+      InternalWriteMessage(1, _Internal::local_addr(this),
+        _Internal::local_addr(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;
   if (this->_internal_has_peer_addr()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::peer_addr(this), target, stream);
+      InternalWriteMessage(2, _Internal::peer_addr(this),
+        _Internal::peer_addr(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;
   if (this->_internal_afi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       3, this->_internal_afi(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;
   if (this->_internal_safi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_safi(), target);
   }
 
   // bool nexthop_self = 5;
   if (this->_internal_nexthop_self() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_nexthop_self(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_nexthop_self(), target);
   }
 
   // bool default_orig = 6;
   if (this->_internal_default_orig() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_default_orig(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_default_orig(), target);
   }
 
   // int32 local_port = 7;
   if (this->_internal_local_port() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_local_port(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_local_port(), target);
   }
 
   // int32 remote_port = 8;
   if (this->_internal_remote_port() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_remote_port(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_remote_port(), target);
   }
 
   // int32 local_addr_scope_id = 9;
   if (this->_internal_local_addr_scope_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_local_addr_scope_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_local_addr_scope_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec)
@@ -4840,26 +4947,26 @@ size_t BGPPeerAfSpec::ByteSizeLong() const {
   if (this->_internal_has_local_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *local_addr_);
+        *_impl_.local_addr_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;
   if (this->_internal_has_peer_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *peer_addr_);
+        *_impl_.peer_addr_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;
   if (this->_internal_afi() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_afi());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_afi());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;
   if (this->_internal_safi() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_safi());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_safi());
   }
 
   // bool nexthop_self = 5;
@@ -4874,69 +4981,67 @@ size_t BGPPeerAfSpec::ByteSizeLong() const {
 
   // int32 local_port = 7;
   if (this->_internal_local_port() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_local_port());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_local_port());
   }
 
   // int32 remote_port = 8;
   if (this->_internal_remote_port() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_remote_port());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_remote_port());
   }
 
   // int32 local_addr_scope_id = 9;
   if (this->_internal_local_addr_scope_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_local_addr_scope_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_local_addr_scope_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPPeerAfSpec::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPPeerAfSpec::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPPeerAfSpec::GetClassData() const { return &_class_data_; }
 
-void BGPPeerAfSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPPeerAfSpec *>(to)->MergeFrom(
-      static_cast<const BGPPeerAfSpec &>(from));
-}
 
-
-void BGPPeerAfSpec::MergeFrom(const BGPPeerAfSpec& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPPeerAfSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPPeerAfSpec*>(&to_msg);
+  auto& from = static_cast<const BGPPeerAfSpec&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_local_addr()) {
-    _internal_mutable_local_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_local_addr());
+    _this->_internal_mutable_local_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_local_addr());
   }
   if (from._internal_has_peer_addr()) {
-    _internal_mutable_peer_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_peer_addr());
+    _this->_internal_mutable_peer_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_peer_addr());
   }
   if (from._internal_afi() != 0) {
-    _internal_set_afi(from._internal_afi());
+    _this->_internal_set_afi(from._internal_afi());
   }
   if (from._internal_safi() != 0) {
-    _internal_set_safi(from._internal_safi());
+    _this->_internal_set_safi(from._internal_safi());
   }
   if (from._internal_nexthop_self() != 0) {
-    _internal_set_nexthop_self(from._internal_nexthop_self());
+    _this->_internal_set_nexthop_self(from._internal_nexthop_self());
   }
   if (from._internal_default_orig() != 0) {
-    _internal_set_default_orig(from._internal_default_orig());
+    _this->_internal_set_default_orig(from._internal_default_orig());
   }
   if (from._internal_local_port() != 0) {
-    _internal_set_local_port(from._internal_local_port());
+    _this->_internal_set_local_port(from._internal_local_port());
   }
   if (from._internal_remote_port() != 0) {
-    _internal_set_remote_port(from._internal_remote_port());
+    _this->_internal_set_remote_port(from._internal_remote_port());
   }
   if (from._internal_local_addr_scope_id() != 0) {
-    _internal_set_local_addr_scope_id(from._internal_local_addr_scope_id());
+    _this->_internal_set_local_addr_scope_id(from._internal_local_addr_scope_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPPeerAfSpec::CopyFrom(const BGPPeerAfSpec& from) {
@@ -4954,15 +5059,15 @@ void BGPPeerAfSpec::InternalSwap(BGPPeerAfSpec* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPPeerAfSpec, local_addr_scope_id_)
-      + sizeof(BGPPeerAfSpec::local_addr_scope_id_)
-      - PROTOBUF_FIELD_OFFSET(BGPPeerAfSpec, local_addr_)>(
-          reinterpret_cast<char*>(&local_addr_),
-          reinterpret_cast<char*>(&other->local_addr_));
+      PROTOBUF_FIELD_OFFSET(BGPPeerAfSpec, _impl_.local_addr_scope_id_)
+      + sizeof(BGPPeerAfSpec::_impl_.local_addr_scope_id_)
+      - PROTOBUF_FIELD_OFFSET(BGPPeerAfSpec, _impl_.local_addr_)>(
+          reinterpret_cast<char*>(&_impl_.local_addr_),
+          reinterpret_cast<char*>(&other->_impl_.local_addr_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPPeerAfSpec::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[7]);
 }
@@ -4976,47 +5081,56 @@ class BGPPeerAfStatus::_Internal {
 BGPPeerAfStatus::BGPPeerAfStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPPeerAfStatus)
 }
 BGPPeerAfStatus::BGPPeerAfStatus(const BGPPeerAfStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPPeerAfStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.update_group_){}
+    , decltype(_impl_.local_addr_scope_id_){}
+    , decltype(_impl_.route_refresh_){}
+    , decltype(_impl_.add_path_cap_neg_){}
+    , decltype(_impl_.reflector_client_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&update_group_, &from.update_group_,
-    static_cast<size_t>(reinterpret_cast<char*>(&reflector_client_) -
-    reinterpret_cast<char*>(&update_group_)) + sizeof(reflector_client_));
+  ::memcpy(&_impl_.update_group_, &from._impl_.update_group_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.reflector_client_) -
+    reinterpret_cast<char*>(&_impl_.update_group_)) + sizeof(_impl_.reflector_client_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPPeerAfStatus)
 }
 
-inline void BGPPeerAfStatus::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&update_group_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&reflector_client_) -
-    reinterpret_cast<char*>(&update_group_)) + sizeof(reflector_client_));
+inline void BGPPeerAfStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.update_group_){0}
+    , decltype(_impl_.local_addr_scope_id_){0}
+    , decltype(_impl_.route_refresh_){false}
+    , decltype(_impl_.add_path_cap_neg_){0}
+    , decltype(_impl_.reflector_client_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 BGPPeerAfStatus::~BGPPeerAfStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPPeerAfStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPPeerAfStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void BGPPeerAfStatus::ArenaDtor(void* object) {
-  BGPPeerAfStatus* _this = reinterpret_cast< BGPPeerAfStatus* >(object);
-  (void)_this;
-}
-void BGPPeerAfStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPPeerAfStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPPeerAfStatus::Clear() {
@@ -5025,22 +5139,22 @@ void BGPPeerAfStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&update_group_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&reflector_client_) -
-      reinterpret_cast<char*>(&update_group_)) + sizeof(reflector_client_));
+  ::memset(&_impl_.update_group_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.reflector_client_) -
+      reinterpret_cast<char*>(&_impl_.update_group_)) + sizeof(_impl_.reflector_client_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPPeerAfStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPPeerAfStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 update_group = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          update_group_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.update_group_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5048,7 +5162,7 @@ const char* BGPPeerAfStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       // int32 local_addr_scope_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          local_addr_scope_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.local_addr_scope_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5056,7 +5170,7 @@ const char* BGPPeerAfStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       // bool route_refresh = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          route_refresh_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.route_refresh_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5111,37 +5225,37 @@ uint8_t* BGPPeerAfStatus::_InternalSerialize(
   // int32 update_group = 1;
   if (this->_internal_update_group() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_update_group(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_update_group(), target);
   }
 
   // int32 local_addr_scope_id = 2;
   if (this->_internal_local_addr_scope_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_local_addr_scope_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_local_addr_scope_id(), target);
   }
 
   // bool route_refresh = 3;
   if (this->_internal_route_refresh() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_route_refresh(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_route_refresh(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpAddPathCapNegCap add_path_cap_neg = 4;
   if (this->_internal_add_path_cap_neg() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_add_path_cap_neg(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient reflector_client = 5;
   if (this->_internal_reflector_client() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       5, this->_internal_reflector_client(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPPeerAfStatus)
@@ -5158,12 +5272,12 @@ size_t BGPPeerAfStatus::ByteSizeLong() const {
 
   // int32 update_group = 1;
   if (this->_internal_update_group() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_update_group());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_update_group());
   }
 
   // int32 local_addr_scope_id = 2;
   if (this->_internal_local_addr_scope_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_local_addr_scope_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_local_addr_scope_id());
   }
 
   // bool route_refresh = 3;
@@ -5174,53 +5288,49 @@ size_t BGPPeerAfStatus::ByteSizeLong() const {
   // .opi_api.network.cloud.v1alpha1.BgpAddPathCapNegCap add_path_cap_neg = 4;
   if (this->_internal_add_path_cap_neg() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_add_path_cap_neg());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_add_path_cap_neg());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient reflector_client = 5;
   if (this->_internal_reflector_client() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_reflector_client());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_reflector_client());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPPeerAfStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPPeerAfStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPPeerAfStatus::GetClassData() const { return &_class_data_; }
 
-void BGPPeerAfStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPPeerAfStatus *>(to)->MergeFrom(
-      static_cast<const BGPPeerAfStatus &>(from));
-}
 
-
-void BGPPeerAfStatus::MergeFrom(const BGPPeerAfStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerAfStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPPeerAfStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPPeerAfStatus*>(&to_msg);
+  auto& from = static_cast<const BGPPeerAfStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPPeerAfStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_update_group() != 0) {
-    _internal_set_update_group(from._internal_update_group());
+    _this->_internal_set_update_group(from._internal_update_group());
   }
   if (from._internal_local_addr_scope_id() != 0) {
-    _internal_set_local_addr_scope_id(from._internal_local_addr_scope_id());
+    _this->_internal_set_local_addr_scope_id(from._internal_local_addr_scope_id());
   }
   if (from._internal_route_refresh() != 0) {
-    _internal_set_route_refresh(from._internal_route_refresh());
+    _this->_internal_set_route_refresh(from._internal_route_refresh());
   }
   if (from._internal_add_path_cap_neg() != 0) {
-    _internal_set_add_path_cap_neg(from._internal_add_path_cap_neg());
+    _this->_internal_set_add_path_cap_neg(from._internal_add_path_cap_neg());
   }
   if (from._internal_reflector_client() != 0) {
-    _internal_set_reflector_client(from._internal_reflector_client());
+    _this->_internal_set_reflector_client(from._internal_reflector_client());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPPeerAfStatus::CopyFrom(const BGPPeerAfStatus& from) {
@@ -5238,15 +5348,15 @@ void BGPPeerAfStatus::InternalSwap(BGPPeerAfStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPPeerAfStatus, reflector_client_)
-      + sizeof(BGPPeerAfStatus::reflector_client_)
-      - PROTOBUF_FIELD_OFFSET(BGPPeerAfStatus, update_group_)>(
-          reinterpret_cast<char*>(&update_group_),
-          reinterpret_cast<char*>(&other->update_group_));
+      PROTOBUF_FIELD_OFFSET(BGPPeerAfStatus, _impl_.reflector_client_)
+      + sizeof(BGPPeerAfStatus::_impl_.reflector_client_)
+      - PROTOBUF_FIELD_OFFSET(BGPPeerAfStatus, _impl_.update_group_)>(
+          reinterpret_cast<char*>(&_impl_.update_group_),
+          reinterpret_cast<char*>(&other->_impl_.update_group_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPPeerAfStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[8]);
 }
@@ -5261,65 +5371,64 @@ class BGPNLRIPrefix::_Internal {
 
 const ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec&
 BGPNLRIPrefix::_Internal::spec(const BGPNLRIPrefix* msg) {
-  return *msg->spec_;
+  return *msg->_impl_.spec_;
 }
 const ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus&
 BGPNLRIPrefix::_Internal::state(const BGPNLRIPrefix* msg) {
-  return *msg->state_;
+  return *msg->_impl_.state_;
 }
 BGPNLRIPrefix::BGPNLRIPrefix(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefix)
 }
 BGPNLRIPrefix::BGPNLRIPrefix(const BGPNLRIPrefix& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPNLRIPrefix* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.state_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_spec()) {
-    spec_ = new ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec(*from.spec_);
-  } else {
-    spec_ = nullptr;
+    _this->_impl_.spec_ = new ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec(*from._impl_.spec_);
   }
   if (from._internal_has_state()) {
-    state_ = new ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus(*from.state_);
-  } else {
-    state_ = nullptr;
+    _this->_impl_.state_ = new ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus(*from._impl_.state_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefix)
 }
 
-inline void BGPNLRIPrefix::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&state_) -
-    reinterpret_cast<char*>(&spec_)) + sizeof(state_));
+inline void BGPNLRIPrefix::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.state_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 BGPNLRIPrefix::~BGPNLRIPrefix() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefix)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPNLRIPrefix::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete spec_;
-  if (this != internal_default_instance()) delete state_;
+  if (this != internal_default_instance()) delete _impl_.spec_;
+  if (this != internal_default_instance()) delete _impl_.state_;
 }
 
-void BGPNLRIPrefix::ArenaDtor(void* object) {
-  BGPNLRIPrefix* _this = reinterpret_cast< BGPNLRIPrefix* >(object);
-  (void)_this;
-}
-void BGPNLRIPrefix::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPNLRIPrefix::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPNLRIPrefix::Clear() {
@@ -5328,22 +5437,22 @@ void BGPNLRIPrefix::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
-    delete spec_;
+  if (GetArenaForAllocation() == nullptr && _impl_.spec_ != nullptr) {
+    delete _impl_.spec_;
   }
-  spec_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && state_ != nullptr) {
-    delete state_;
+  _impl_.spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.state_ != nullptr) {
+    delete _impl_.state_;
   }
-  state_ = nullptr;
+  _impl_.state_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPNLRIPrefix::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPNLRIPrefix::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec spec = 1;
       case 1:
@@ -5392,22 +5501,20 @@ uint8_t* BGPNLRIPrefix::_InternalSerialize(
 
   // .opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec spec = 1;
   if (this->_internal_has_spec()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+      InternalWriteMessage(1, _Internal::spec(this),
+        _Internal::spec(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus state = 2;
   if (this->_internal_has_state()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::state(this), target, stream);
+      InternalWriteMessage(2, _Internal::state(this),
+        _Internal::state(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPNLRIPrefix)
@@ -5426,45 +5533,43 @@ size_t BGPNLRIPrefix::ByteSizeLong() const {
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *spec_);
+        *_impl_.spec_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus state = 2;
   if (this->_internal_has_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *state_);
+        *_impl_.state_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPNLRIPrefix::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPNLRIPrefix::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPNLRIPrefix::GetClassData() const { return &_class_data_; }
 
-void BGPNLRIPrefix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPNLRIPrefix *>(to)->MergeFrom(
-      static_cast<const BGPNLRIPrefix &>(from));
-}
 
-
-void BGPNLRIPrefix::MergeFrom(const BGPNLRIPrefix& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPNLRIPrefix)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPNLRIPrefix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPNLRIPrefix*>(&to_msg);
+  auto& from = static_cast<const BGPNLRIPrefix&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPNLRIPrefix)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_spec()) {
-    _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec::MergeFrom(from._internal_spec());
+    _this->_internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec::MergeFrom(
+        from._internal_spec());
   }
   if (from._internal_has_state()) {
-    _internal_mutable_state()->::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus::MergeFrom(from._internal_state());
+    _this->_internal_mutable_state()->::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus::MergeFrom(
+        from._internal_state());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPNLRIPrefix::CopyFrom(const BGPNLRIPrefix& from) {
@@ -5482,15 +5587,15 @@ void BGPNLRIPrefix::InternalSwap(BGPNLRIPrefix* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPNLRIPrefix, state_)
-      + sizeof(BGPNLRIPrefix::state_)
-      - PROTOBUF_FIELD_OFFSET(BGPNLRIPrefix, spec_)>(
-          reinterpret_cast<char*>(&spec_),
-          reinterpret_cast<char*>(&other->spec_));
+      PROTOBUF_FIELD_OFFSET(BGPNLRIPrefix, _impl_.state_)
+      + sizeof(BGPNLRIPrefix::_impl_.state_)
+      - PROTOBUF_FIELD_OFFSET(BGPNLRIPrefix, _impl_.spec_)>(
+          reinterpret_cast<char*>(&_impl_.spec_),
+          reinterpret_cast<char*>(&other->_impl_.spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPNLRIPrefix::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[9]);
 }
@@ -5504,60 +5609,73 @@ class BGPNLRIPrefixSpec::_Internal {
 BGPNLRIPrefixSpec::BGPNLRIPrefixSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec)
 }
 BGPNLRIPrefixSpec::BGPNLRIPrefixSpec(const BGPNLRIPrefixSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPNLRIPrefixSpec* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.prefix_){}
+    , decltype(_impl_.afi_){}
+    , decltype(_impl_.safi_){}
+    , decltype(_impl_.prefix_len_){}
+    , decltype(_impl_.route_source_){}
+    , decltype(_impl_.route_source_index_){}
+    , decltype(_impl_.path_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  prefix_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.prefix_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    prefix_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.prefix_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_prefix().empty()) {
-    prefix_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_prefix(), 
-      GetArenaForAllocation());
+    _this->_impl_.prefix_.Set(from._internal_prefix(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&afi_, &from.afi_,
-    static_cast<size_t>(reinterpret_cast<char*>(&path_id_) -
-    reinterpret_cast<char*>(&afi_)) + sizeof(path_id_));
+  ::memcpy(&_impl_.afi_, &from._impl_.afi_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.path_id_) -
+    reinterpret_cast<char*>(&_impl_.afi_)) + sizeof(_impl_.path_id_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec)
 }
 
-inline void BGPNLRIPrefixSpec::SharedCtor() {
-prefix_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  prefix_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&afi_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&path_id_) -
-    reinterpret_cast<char*>(&afi_)) + sizeof(path_id_));
+inline void BGPNLRIPrefixSpec::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.prefix_){}
+    , decltype(_impl_.afi_){0}
+    , decltype(_impl_.safi_){0}
+    , decltype(_impl_.prefix_len_){0}
+    , decltype(_impl_.route_source_){0}
+    , decltype(_impl_.route_source_index_){0}
+    , decltype(_impl_.path_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.prefix_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.prefix_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BGPNLRIPrefixSpec::~BGPNLRIPrefixSpec() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPNLRIPrefixSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  prefix_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.prefix_.Destroy();
 }
 
-void BGPNLRIPrefixSpec::ArenaDtor(void* object) {
-  BGPNLRIPrefixSpec* _this = reinterpret_cast< BGPNLRIPrefixSpec* >(object);
-  (void)_this;
-}
-void BGPNLRIPrefixSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPNLRIPrefixSpec::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPNLRIPrefixSpec::Clear() {
@@ -5566,18 +5684,18 @@ void BGPNLRIPrefixSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  prefix_.ClearToEmpty();
-  ::memset(&afi_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&path_id_) -
-      reinterpret_cast<char*>(&afi_)) + sizeof(path_id_));
+  _impl_.prefix_.ClearToEmpty();
+  ::memset(&_impl_.afi_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.path_id_) -
+      reinterpret_cast<char*>(&_impl_.afi_)) + sizeof(_impl_.path_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPNLRIPrefixSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPNLRIPrefixSpec::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 1;
       case 1:
@@ -5601,7 +5719,7 @@ const char* BGPNLRIPrefixSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_prefix();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5609,7 +5727,7 @@ const char* BGPNLRIPrefixSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // int32 prefix_len = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          prefix_len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.prefix_len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5626,7 +5744,7 @@ const char* BGPNLRIPrefixSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // int32 route_source_index = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          route_source_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.route_source_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5634,7 +5752,7 @@ const char* BGPNLRIPrefixSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // int32 path_id = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          path_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.path_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5671,14 +5789,14 @@ uint8_t* BGPNLRIPrefixSpec::_InternalSerialize(
   // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 1;
   if (this->_internal_afi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_afi(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 2;
   if (this->_internal_safi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_safi(), target);
   }
 
@@ -5691,30 +5809,30 @@ uint8_t* BGPNLRIPrefixSpec::_InternalSerialize(
   // int32 prefix_len = 4;
   if (this->_internal_prefix_len() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_prefix_len(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_prefix_len(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.NLRISrc route_source = 5;
   if (this->_internal_route_source() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       5, this->_internal_route_source(), target);
   }
 
   // int32 route_source_index = 6;
   if (this->_internal_route_source_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_route_source_index(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_route_source_index(), target);
   }
 
   // int32 path_id = 7;
   if (this->_internal_path_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_path_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_path_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec)
@@ -5739,80 +5857,76 @@ size_t BGPNLRIPrefixSpec::ByteSizeLong() const {
   // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 1;
   if (this->_internal_afi() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_afi());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_afi());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 2;
   if (this->_internal_safi() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_safi());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_safi());
   }
 
   // int32 prefix_len = 4;
   if (this->_internal_prefix_len() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_prefix_len());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_prefix_len());
   }
 
   // .opi_api.network.cloud.v1alpha1.NLRISrc route_source = 5;
   if (this->_internal_route_source() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_route_source());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_route_source());
   }
 
   // int32 route_source_index = 6;
   if (this->_internal_route_source_index() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_route_source_index());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_route_source_index());
   }
 
   // int32 path_id = 7;
   if (this->_internal_path_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_path_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_path_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPNLRIPrefixSpec::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPNLRIPrefixSpec::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPNLRIPrefixSpec::GetClassData() const { return &_class_data_; }
 
-void BGPNLRIPrefixSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPNLRIPrefixSpec *>(to)->MergeFrom(
-      static_cast<const BGPNLRIPrefixSpec &>(from));
-}
 
-
-void BGPNLRIPrefixSpec::MergeFrom(const BGPNLRIPrefixSpec& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPNLRIPrefixSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPNLRIPrefixSpec*>(&to_msg);
+  auto& from = static_cast<const BGPNLRIPrefixSpec&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_prefix().empty()) {
-    _internal_set_prefix(from._internal_prefix());
+    _this->_internal_set_prefix(from._internal_prefix());
   }
   if (from._internal_afi() != 0) {
-    _internal_set_afi(from._internal_afi());
+    _this->_internal_set_afi(from._internal_afi());
   }
   if (from._internal_safi() != 0) {
-    _internal_set_safi(from._internal_safi());
+    _this->_internal_set_safi(from._internal_safi());
   }
   if (from._internal_prefix_len() != 0) {
-    _internal_set_prefix_len(from._internal_prefix_len());
+    _this->_internal_set_prefix_len(from._internal_prefix_len());
   }
   if (from._internal_route_source() != 0) {
-    _internal_set_route_source(from._internal_route_source());
+    _this->_internal_set_route_source(from._internal_route_source());
   }
   if (from._internal_route_source_index() != 0) {
-    _internal_set_route_source_index(from._internal_route_source_index());
+    _this->_internal_set_route_source_index(from._internal_route_source_index());
   }
   if (from._internal_path_id() != 0) {
-    _internal_set_path_id(from._internal_path_id());
+    _this->_internal_set_path_id(from._internal_path_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPNLRIPrefixSpec::CopyFrom(const BGPNLRIPrefixSpec& from) {
@@ -5832,20 +5946,19 @@ void BGPNLRIPrefixSpec::InternalSwap(BGPNLRIPrefixSpec* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &prefix_, lhs_arena,
-      &other->prefix_, rhs_arena
+      &_impl_.prefix_, lhs_arena,
+      &other->_impl_.prefix_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixSpec, path_id_)
-      + sizeof(BGPNLRIPrefixSpec::path_id_)
-      - PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixSpec, afi_)>(
-          reinterpret_cast<char*>(&afi_),
-          reinterpret_cast<char*>(&other->afi_));
+      PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixSpec, _impl_.path_id_)
+      + sizeof(BGPNLRIPrefixSpec::_impl_.path_id_)
+      - PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixSpec, _impl_.afi_)>(
+          reinterpret_cast<char*>(&_impl_.afi_),
+          reinterpret_cast<char*>(&other->_impl_.afi_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPNLRIPrefixSpec::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[10]);
 }
@@ -5859,120 +5972,169 @@ class BGPNLRIPrefixStatus::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPNLRIPrefixStatus::_Internal::peer_addr(const BGPNLRIPrefixStatus* msg) {
-  return *msg->peer_addr_;
+  return *msg->_impl_.peer_addr_;
 }
 void BGPNLRIPrefixStatus::clear_peer_addr() {
-  if (GetArenaForAllocation() == nullptr && peer_addr_ != nullptr) {
-    delete peer_addr_;
+  if (GetArenaForAllocation() == nullptr && _impl_.peer_addr_ != nullptr) {
+    delete _impl_.peer_addr_;
   }
-  peer_addr_ = nullptr;
+  _impl_.peer_addr_ = nullptr;
 }
 BGPNLRIPrefixStatus::BGPNLRIPrefixStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  ext_comm_(arena),
-  comm_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus)
 }
 BGPNLRIPrefixStatus::BGPNLRIPrefixStatus(const BGPNLRIPrefixStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      ext_comm_(from.ext_comm_),
-      comm_(from.comm_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPNLRIPrefixStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ext_comm_){from._impl_.ext_comm_}
+    , decltype(_impl_.comm_){from._impl_.comm_}
+    , decltype(_impl_.prefix_){}
+    , decltype(_impl_.as_path_str_){}
+    , decltype(_impl_.path_orig_id_){}
+    , decltype(_impl_.next_hop_addr_){}
+    , decltype(_impl_.peer_addr_){nullptr}
+    , decltype(_impl_.afi_){}
+    , decltype(_impl_.safi_){}
+    , decltype(_impl_.prefix_len_){}
+    , decltype(_impl_.route_source_){}
+    , decltype(_impl_.route_source_index_){}
+    , decltype(_impl_.path_id_){}
+    , decltype(_impl_.as_size_){}
+    , decltype(_impl_.best_route_){}
+    , decltype(_impl_.ecmp_route_){}
+    , decltype(_impl_.flap_stats_supprsd_){}
+    , decltype(_impl_.stale_){}
+    , decltype(_impl_.flap_stats_flapcnt_){}
+    , decltype(_impl_.is_active_){}
+    , decltype(_impl_.flap_starttime_){}
+    , decltype(_impl_.reason_not_best_){}
+    , decltype(_impl_.local_pref_){}
+    , decltype(_impl_.origin_){}
+    , decltype(_impl_.med_present_){}
+    , decltype(_impl_.med_){}
+    , decltype(_impl_.peer_type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  prefix_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.prefix_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    prefix_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.prefix_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_prefix().empty()) {
-    prefix_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_prefix(), 
-      GetArenaForAllocation());
+    _this->_impl_.prefix_.Set(from._internal_prefix(), 
+      _this->GetArenaForAllocation());
   }
-  as_path_str_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.as_path_str_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    as_path_str_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.as_path_str_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_as_path_str().empty()) {
-    as_path_str_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_as_path_str(), 
-      GetArenaForAllocation());
+    _this->_impl_.as_path_str_.Set(from._internal_as_path_str(), 
+      _this->GetArenaForAllocation());
   }
-  path_orig_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.path_orig_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    path_orig_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.path_orig_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_path_orig_id().empty()) {
-    path_orig_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_path_orig_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.path_orig_id_.Set(from._internal_path_orig_id(), 
+      _this->GetArenaForAllocation());
   }
-  next_hop_addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.next_hop_addr_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    next_hop_addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.next_hop_addr_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_next_hop_addr().empty()) {
-    next_hop_addr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_hop_addr(), 
-      GetArenaForAllocation());
+    _this->_impl_.next_hop_addr_.Set(from._internal_next_hop_addr(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_peer_addr()) {
-    peer_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.peer_addr_);
-  } else {
-    peer_addr_ = nullptr;
+    _this->_impl_.peer_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.peer_addr_);
   }
-  ::memcpy(&afi_, &from.afi_,
-    static_cast<size_t>(reinterpret_cast<char*>(&peer_type_) -
-    reinterpret_cast<char*>(&afi_)) + sizeof(peer_type_));
+  ::memcpy(&_impl_.afi_, &from._impl_.afi_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.peer_type_) -
+    reinterpret_cast<char*>(&_impl_.afi_)) + sizeof(_impl_.peer_type_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus)
 }
 
-inline void BGPNLRIPrefixStatus::SharedCtor() {
-prefix_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  prefix_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-as_path_str_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  as_path_str_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-path_orig_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  path_orig_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-next_hop_addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  next_hop_addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&peer_addr_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&peer_type_) -
-    reinterpret_cast<char*>(&peer_addr_)) + sizeof(peer_type_));
+inline void BGPNLRIPrefixStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ext_comm_){arena}
+    , decltype(_impl_.comm_){arena}
+    , decltype(_impl_.prefix_){}
+    , decltype(_impl_.as_path_str_){}
+    , decltype(_impl_.path_orig_id_){}
+    , decltype(_impl_.next_hop_addr_){}
+    , decltype(_impl_.peer_addr_){nullptr}
+    , decltype(_impl_.afi_){0}
+    , decltype(_impl_.safi_){0}
+    , decltype(_impl_.prefix_len_){0}
+    , decltype(_impl_.route_source_){0}
+    , decltype(_impl_.route_source_index_){0}
+    , decltype(_impl_.path_id_){0}
+    , decltype(_impl_.as_size_){0}
+    , decltype(_impl_.best_route_){false}
+    , decltype(_impl_.ecmp_route_){false}
+    , decltype(_impl_.flap_stats_supprsd_){false}
+    , decltype(_impl_.stale_){false}
+    , decltype(_impl_.flap_stats_flapcnt_){0}
+    , decltype(_impl_.is_active_){0}
+    , decltype(_impl_.flap_starttime_){0}
+    , decltype(_impl_.reason_not_best_){0}
+    , decltype(_impl_.local_pref_){0}
+    , decltype(_impl_.origin_){0}
+    , decltype(_impl_.med_present_){false}
+    , decltype(_impl_.med_){0u}
+    , decltype(_impl_.peer_type_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.prefix_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.prefix_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.as_path_str_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.as_path_str_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.path_orig_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.path_orig_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.next_hop_addr_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.next_hop_addr_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BGPNLRIPrefixStatus::~BGPNLRIPrefixStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPNLRIPrefixStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  prefix_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  as_path_str_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  path_orig_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  next_hop_addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete peer_addr_;
+  _impl_.ext_comm_.~RepeatedPtrField();
+  _impl_.comm_.~RepeatedPtrField();
+  _impl_.prefix_.Destroy();
+  _impl_.as_path_str_.Destroy();
+  _impl_.path_orig_id_.Destroy();
+  _impl_.next_hop_addr_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.peer_addr_;
 }
 
-void BGPNLRIPrefixStatus::ArenaDtor(void* object) {
-  BGPNLRIPrefixStatus* _this = reinterpret_cast< BGPNLRIPrefixStatus* >(object);
-  (void)_this;
-}
-void BGPNLRIPrefixStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPNLRIPrefixStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPNLRIPrefixStatus::Clear() {
@@ -5981,27 +6143,27 @@ void BGPNLRIPrefixStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ext_comm_.Clear();
-  comm_.Clear();
-  prefix_.ClearToEmpty();
-  as_path_str_.ClearToEmpty();
-  path_orig_id_.ClearToEmpty();
-  next_hop_addr_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && peer_addr_ != nullptr) {
-    delete peer_addr_;
+  _impl_.ext_comm_.Clear();
+  _impl_.comm_.Clear();
+  _impl_.prefix_.ClearToEmpty();
+  _impl_.as_path_str_.ClearToEmpty();
+  _impl_.path_orig_id_.ClearToEmpty();
+  _impl_.next_hop_addr_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.peer_addr_ != nullptr) {
+    delete _impl_.peer_addr_;
   }
-  peer_addr_ = nullptr;
-  ::memset(&afi_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&peer_type_) -
-      reinterpret_cast<char*>(&afi_)) + sizeof(peer_type_));
+  _impl_.peer_addr_ = nullptr;
+  ::memset(&_impl_.afi_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.peer_type_) -
+      reinterpret_cast<char*>(&_impl_.afi_)) + sizeof(_impl_.peer_type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 1;
       case 1:
@@ -6025,7 +6187,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_prefix();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6033,7 +6195,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // int32 prefix_len = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          prefix_len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.prefix_len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6050,7 +6212,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // int32 route_source_index = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          route_source_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.route_source_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6058,7 +6220,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // int32 path_id = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          path_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.path_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6066,7 +6228,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // bool best_route = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          best_route_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.best_route_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6075,7 +6237,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           auto str = _internal_mutable_as_path_str();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6084,7 +6246,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_path_orig_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6093,7 +6255,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_next_hop_addr();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6110,7 +6272,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // bool ecmp_route = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          ecmp_route_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.ecmp_route_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6126,7 +6288,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // int32 flap_stats_flapcnt = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
-          flap_stats_flapcnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.flap_stats_flapcnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6134,7 +6296,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // bool flap_stats_supprsd = 16;
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          flap_stats_supprsd_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.flap_stats_supprsd_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6151,7 +6313,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // bool stale = 18;
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
-          stale_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.stale_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6159,7 +6321,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // int32 flap_starttime = 19;
       case 19:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
-          flap_starttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.flap_starttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6180,7 +6342,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           do {
             ptr += 2;
             auto str = _internal_add_ext_comm();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<170>(ptr));
@@ -6194,7 +6356,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           do {
             ptr += 2;
             auto str = _internal_add_comm();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<178>(ptr));
@@ -6204,7 +6366,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // int32 local_pref = 23;
       case 23:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
-          local_pref_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.local_pref_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6221,7 +6383,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // bool med_present = 25;
       case 25:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 200)) {
-          med_present_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.med_present_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6229,7 +6391,7 @@ const char* BGPNLRIPrefixStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // uint32 med = 26;
       case 26:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
-          med_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.med_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6275,14 +6437,14 @@ uint8_t* BGPNLRIPrefixStatus::_InternalSerialize(
   // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 1;
   if (this->_internal_afi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_afi(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 2;
   if (this->_internal_safi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_safi(), target);
   }
 
@@ -6295,32 +6457,32 @@ uint8_t* BGPNLRIPrefixStatus::_InternalSerialize(
   // int32 prefix_len = 4;
   if (this->_internal_prefix_len() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_prefix_len(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_prefix_len(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.NLRISrc route_source = 5;
   if (this->_internal_route_source() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       5, this->_internal_route_source(), target);
   }
 
   // int32 route_source_index = 6;
   if (this->_internal_route_source_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_route_source_index(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_route_source_index(), target);
   }
 
   // int32 path_id = 7;
   if (this->_internal_path_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_path_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_path_id(), target);
   }
 
   // bool best_route = 8;
   if (this->_internal_best_route() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(8, this->_internal_best_route(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(8, this->_internal_best_route(), target);
   }
 
   // bytes as_path_str = 9;
@@ -6344,59 +6506,58 @@ uint8_t* BGPNLRIPrefixStatus::_InternalSerialize(
   // .opi_api.network.cloud.v1alpha1.BgpAsSize as_size = 12;
   if (this->_internal_as_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       12, this->_internal_as_size(), target);
   }
 
   // bool ecmp_route = 13;
   if (this->_internal_ecmp_route() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(13, this->_internal_ecmp_route(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(13, this->_internal_ecmp_route(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 14;
   if (this->_internal_has_peer_addr()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        14, _Internal::peer_addr(this), target, stream);
+      InternalWriteMessage(14, _Internal::peer_addr(this),
+        _Internal::peer_addr(this).GetCachedSize(), target, stream);
   }
 
   // int32 flap_stats_flapcnt = 15;
   if (this->_internal_flap_stats_flapcnt() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(15, this->_internal_flap_stats_flapcnt(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(15, this->_internal_flap_stats_flapcnt(), target);
   }
 
   // bool flap_stats_supprsd = 16;
   if (this->_internal_flap_stats_supprsd() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(16, this->_internal_flap_stats_supprsd(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(16, this->_internal_flap_stats_supprsd(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpNlriIsActive is_active = 17;
   if (this->_internal_is_active() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       17, this->_internal_is_active(), target);
   }
 
   // bool stale = 18;
   if (this->_internal_stale() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(18, this->_internal_stale(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(18, this->_internal_stale(), target);
   }
 
   // int32 flap_starttime = 19;
   if (this->_internal_flap_starttime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(19, this->_internal_flap_starttime(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(19, this->_internal_flap_starttime(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPRsnNotBest reason_not_best = 20;
   if (this->_internal_reason_not_best() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       20, this->_internal_reason_not_best(), target);
   }
 
@@ -6415,37 +6576,37 @@ uint8_t* BGPNLRIPrefixStatus::_InternalSerialize(
   // int32 local_pref = 23;
   if (this->_internal_local_pref() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(23, this->_internal_local_pref(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(23, this->_internal_local_pref(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPOriginAttr origin = 24;
   if (this->_internal_origin() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       24, this->_internal_origin(), target);
   }
 
   // bool med_present = 25;
   if (this->_internal_med_present() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(25, this->_internal_med_present(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(25, this->_internal_med_present(), target);
   }
 
   // uint32 med = 26;
   if (this->_internal_med() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(26, this->_internal_med(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(26, this->_internal_med(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerType peer_type = 27;
   if (this->_internal_peer_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       27, this->_internal_peer_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus)
@@ -6462,18 +6623,18 @@ size_t BGPNLRIPrefixStatus::ByteSizeLong() const {
 
   // repeated bytes ext_comm = 21;
   total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(ext_comm_.size());
-  for (int i = 0, n = ext_comm_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.ext_comm_.size());
+  for (int i = 0, n = _impl_.ext_comm_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-      ext_comm_.Get(i));
+      _impl_.ext_comm_.Get(i));
   }
 
   // repeated bytes comm = 22;
   total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(comm_.size());
-  for (int i = 0, n = comm_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.comm_.size());
+  for (int i = 0, n = _impl_.comm_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-      comm_.Get(i));
+      _impl_.comm_.Get(i));
   }
 
   // bytes prefix = 3;
@@ -6508,46 +6669,46 @@ size_t BGPNLRIPrefixStatus::ByteSizeLong() const {
   if (this->_internal_has_peer_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *peer_addr_);
+        *_impl_.peer_addr_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 1;
   if (this->_internal_afi() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_afi());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_afi());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 2;
   if (this->_internal_safi() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_safi());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_safi());
   }
 
   // int32 prefix_len = 4;
   if (this->_internal_prefix_len() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_prefix_len());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_prefix_len());
   }
 
   // .opi_api.network.cloud.v1alpha1.NLRISrc route_source = 5;
   if (this->_internal_route_source() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_route_source());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_route_source());
   }
 
   // int32 route_source_index = 6;
   if (this->_internal_route_source_index() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_route_source_index());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_route_source_index());
   }
 
   // int32 path_id = 7;
   if (this->_internal_path_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_path_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_path_id());
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpAsSize as_size = 12;
   if (this->_internal_as_size() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_as_size());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_as_size());
   }
 
   // bool best_route = 8;
@@ -6572,39 +6733,39 @@ size_t BGPNLRIPrefixStatus::ByteSizeLong() const {
 
   // int32 flap_stats_flapcnt = 15;
   if (this->_internal_flap_stats_flapcnt() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_flap_stats_flapcnt());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_flap_stats_flapcnt());
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpNlriIsActive is_active = 17;
   if (this->_internal_is_active() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_is_active());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_is_active());
   }
 
   // int32 flap_starttime = 19;
   if (this->_internal_flap_starttime() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_flap_starttime());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPRsnNotBest reason_not_best = 20;
   if (this->_internal_reason_not_best() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_reason_not_best());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_reason_not_best());
   }
 
   // int32 local_pref = 23;
   if (this->_internal_local_pref() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::_pbi::WireFormatLite::Int32Size(
         this->_internal_local_pref());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPOriginAttr origin = 24;
   if (this->_internal_origin() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_origin());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_origin());
   }
 
   // bool med_present = 25;
@@ -6615,116 +6776,113 @@ size_t BGPNLRIPrefixStatus::ByteSizeLong() const {
   // uint32 med = 26;
   if (this->_internal_med() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+      ::_pbi::WireFormatLite::UInt32Size(
         this->_internal_med());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPPeerType peer_type = 27;
   if (this->_internal_peer_type() != 0) {
     total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_peer_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_peer_type());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPNLRIPrefixStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPNLRIPrefixStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPNLRIPrefixStatus::GetClassData() const { return &_class_data_; }
 
-void BGPNLRIPrefixStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPNLRIPrefixStatus *>(to)->MergeFrom(
-      static_cast<const BGPNLRIPrefixStatus &>(from));
-}
 
-
-void BGPNLRIPrefixStatus::MergeFrom(const BGPNLRIPrefixStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPNLRIPrefixStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPNLRIPrefixStatus*>(&to_msg);
+  auto& from = static_cast<const BGPNLRIPrefixStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  ext_comm_.MergeFrom(from.ext_comm_);
-  comm_.MergeFrom(from.comm_);
+  _this->_impl_.ext_comm_.MergeFrom(from._impl_.ext_comm_);
+  _this->_impl_.comm_.MergeFrom(from._impl_.comm_);
   if (!from._internal_prefix().empty()) {
-    _internal_set_prefix(from._internal_prefix());
+    _this->_internal_set_prefix(from._internal_prefix());
   }
   if (!from._internal_as_path_str().empty()) {
-    _internal_set_as_path_str(from._internal_as_path_str());
+    _this->_internal_set_as_path_str(from._internal_as_path_str());
   }
   if (!from._internal_path_orig_id().empty()) {
-    _internal_set_path_orig_id(from._internal_path_orig_id());
+    _this->_internal_set_path_orig_id(from._internal_path_orig_id());
   }
   if (!from._internal_next_hop_addr().empty()) {
-    _internal_set_next_hop_addr(from._internal_next_hop_addr());
+    _this->_internal_set_next_hop_addr(from._internal_next_hop_addr());
   }
   if (from._internal_has_peer_addr()) {
-    _internal_mutable_peer_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_peer_addr());
+    _this->_internal_mutable_peer_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_peer_addr());
   }
   if (from._internal_afi() != 0) {
-    _internal_set_afi(from._internal_afi());
+    _this->_internal_set_afi(from._internal_afi());
   }
   if (from._internal_safi() != 0) {
-    _internal_set_safi(from._internal_safi());
+    _this->_internal_set_safi(from._internal_safi());
   }
   if (from._internal_prefix_len() != 0) {
-    _internal_set_prefix_len(from._internal_prefix_len());
+    _this->_internal_set_prefix_len(from._internal_prefix_len());
   }
   if (from._internal_route_source() != 0) {
-    _internal_set_route_source(from._internal_route_source());
+    _this->_internal_set_route_source(from._internal_route_source());
   }
   if (from._internal_route_source_index() != 0) {
-    _internal_set_route_source_index(from._internal_route_source_index());
+    _this->_internal_set_route_source_index(from._internal_route_source_index());
   }
   if (from._internal_path_id() != 0) {
-    _internal_set_path_id(from._internal_path_id());
+    _this->_internal_set_path_id(from._internal_path_id());
   }
   if (from._internal_as_size() != 0) {
-    _internal_set_as_size(from._internal_as_size());
+    _this->_internal_set_as_size(from._internal_as_size());
   }
   if (from._internal_best_route() != 0) {
-    _internal_set_best_route(from._internal_best_route());
+    _this->_internal_set_best_route(from._internal_best_route());
   }
   if (from._internal_ecmp_route() != 0) {
-    _internal_set_ecmp_route(from._internal_ecmp_route());
+    _this->_internal_set_ecmp_route(from._internal_ecmp_route());
   }
   if (from._internal_flap_stats_supprsd() != 0) {
-    _internal_set_flap_stats_supprsd(from._internal_flap_stats_supprsd());
+    _this->_internal_set_flap_stats_supprsd(from._internal_flap_stats_supprsd());
   }
   if (from._internal_stale() != 0) {
-    _internal_set_stale(from._internal_stale());
+    _this->_internal_set_stale(from._internal_stale());
   }
   if (from._internal_flap_stats_flapcnt() != 0) {
-    _internal_set_flap_stats_flapcnt(from._internal_flap_stats_flapcnt());
+    _this->_internal_set_flap_stats_flapcnt(from._internal_flap_stats_flapcnt());
   }
   if (from._internal_is_active() != 0) {
-    _internal_set_is_active(from._internal_is_active());
+    _this->_internal_set_is_active(from._internal_is_active());
   }
   if (from._internal_flap_starttime() != 0) {
-    _internal_set_flap_starttime(from._internal_flap_starttime());
+    _this->_internal_set_flap_starttime(from._internal_flap_starttime());
   }
   if (from._internal_reason_not_best() != 0) {
-    _internal_set_reason_not_best(from._internal_reason_not_best());
+    _this->_internal_set_reason_not_best(from._internal_reason_not_best());
   }
   if (from._internal_local_pref() != 0) {
-    _internal_set_local_pref(from._internal_local_pref());
+    _this->_internal_set_local_pref(from._internal_local_pref());
   }
   if (from._internal_origin() != 0) {
-    _internal_set_origin(from._internal_origin());
+    _this->_internal_set_origin(from._internal_origin());
   }
   if (from._internal_med_present() != 0) {
-    _internal_set_med_present(from._internal_med_present());
+    _this->_internal_set_med_present(from._internal_med_present());
   }
   if (from._internal_med() != 0) {
-    _internal_set_med(from._internal_med());
+    _this->_internal_set_med(from._internal_med());
   }
   if (from._internal_peer_type() != 0) {
-    _internal_set_peer_type(from._internal_peer_type());
+    _this->_internal_set_peer_type(from._internal_peer_type());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPNLRIPrefixStatus::CopyFrom(const BGPNLRIPrefixStatus& from) {
@@ -6743,38 +6901,34 @@ void BGPNLRIPrefixStatus::InternalSwap(BGPNLRIPrefixStatus* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ext_comm_.InternalSwap(&other->ext_comm_);
-  comm_.InternalSwap(&other->comm_);
+  _impl_.ext_comm_.InternalSwap(&other->_impl_.ext_comm_);
+  _impl_.comm_.InternalSwap(&other->_impl_.comm_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &prefix_, lhs_arena,
-      &other->prefix_, rhs_arena
+      &_impl_.prefix_, lhs_arena,
+      &other->_impl_.prefix_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &as_path_str_, lhs_arena,
-      &other->as_path_str_, rhs_arena
+      &_impl_.as_path_str_, lhs_arena,
+      &other->_impl_.as_path_str_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &path_orig_id_, lhs_arena,
-      &other->path_orig_id_, rhs_arena
+      &_impl_.path_orig_id_, lhs_arena,
+      &other->_impl_.path_orig_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &next_hop_addr_, lhs_arena,
-      &other->next_hop_addr_, rhs_arena
+      &_impl_.next_hop_addr_, lhs_arena,
+      &other->_impl_.next_hop_addr_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixStatus, peer_type_)
-      + sizeof(BGPNLRIPrefixStatus::peer_type_)
-      - PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixStatus, peer_addr_)>(
-          reinterpret_cast<char*>(&peer_addr_),
-          reinterpret_cast<char*>(&other->peer_addr_));
+      PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixStatus, _impl_.peer_type_)
+      + sizeof(BGPNLRIPrefixStatus::_impl_.peer_type_)
+      - PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixStatus, _impl_.peer_addr_)>(
+          reinterpret_cast<char*>(&_impl_.peer_addr_),
+          reinterpret_cast<char*>(&other->_impl_.peer_addr_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPNLRIPrefixStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[11]);
 }
@@ -6789,93 +6943,100 @@ class BGPNLRIPrefixFilter::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPNLRIPrefixFilter::_Internal::next_hop(const BGPNLRIPrefixFilter* msg) {
-  return *msg->next_hop_;
+  return *msg->_impl_.next_hop_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPNLRIPrefixFilter::_Internal::ip_address(const BGPNLRIPrefixFilter* msg) {
-  return *msg->ip_address_;
+  return *msg->_impl_.ip_address_;
 }
 void BGPNLRIPrefixFilter::clear_next_hop() {
-  if (GetArenaForAllocation() == nullptr && next_hop_ != nullptr) {
-    delete next_hop_;
+  if (GetArenaForAllocation() == nullptr && _impl_.next_hop_ != nullptr) {
+    delete _impl_.next_hop_;
   }
-  next_hop_ = nullptr;
+  _impl_.next_hop_ = nullptr;
 }
 void BGPNLRIPrefixFilter::clear_ip_address() {
-  if (GetArenaForAllocation() == nullptr && ip_address_ != nullptr) {
-    delete ip_address_;
+  if (GetArenaForAllocation() == nullptr && _impl_.ip_address_ != nullptr) {
+    delete _impl_.ip_address_;
   }
-  ip_address_ = nullptr;
+  _impl_.ip_address_ = nullptr;
 }
 BGPNLRIPrefixFilter::BGPNLRIPrefixFilter(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixFilter)
 }
 BGPNLRIPrefixFilter::BGPNLRIPrefixFilter(const BGPNLRIPrefixFilter& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPNLRIPrefixFilter* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ext_comm_){}
+    , decltype(_impl_.next_hop_){nullptr}
+    , decltype(_impl_.ip_address_){nullptr}
+    , decltype(_impl_.vnid_){}
+    , decltype(_impl_.route_type_){}
+    , decltype(_impl_.best_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ext_comm_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.ext_comm_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    ext_comm_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.ext_comm_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ext_comm().empty()) {
-    ext_comm_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ext_comm(), 
-      GetArenaForAllocation());
+    _this->_impl_.ext_comm_.Set(from._internal_ext_comm(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_next_hop()) {
-    next_hop_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.next_hop_);
-  } else {
-    next_hop_ = nullptr;
+    _this->_impl_.next_hop_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.next_hop_);
   }
   if (from._internal_has_ip_address()) {
-    ip_address_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.ip_address_);
-  } else {
-    ip_address_ = nullptr;
+    _this->_impl_.ip_address_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.ip_address_);
   }
-  ::memcpy(&vnid_, &from.vnid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&best_) -
-    reinterpret_cast<char*>(&vnid_)) + sizeof(best_));
+  ::memcpy(&_impl_.vnid_, &from._impl_.vnid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.best_) -
+    reinterpret_cast<char*>(&_impl_.vnid_)) + sizeof(_impl_.best_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixFilter)
 }
 
-inline void BGPNLRIPrefixFilter::SharedCtor() {
-ext_comm_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  ext_comm_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&next_hop_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&best_) -
-    reinterpret_cast<char*>(&next_hop_)) + sizeof(best_));
+inline void BGPNLRIPrefixFilter::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ext_comm_){}
+    , decltype(_impl_.next_hop_){nullptr}
+    , decltype(_impl_.ip_address_){nullptr}
+    , decltype(_impl_.vnid_){0}
+    , decltype(_impl_.route_type_){0}
+    , decltype(_impl_.best_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.ext_comm_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ext_comm_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BGPNLRIPrefixFilter::~BGPNLRIPrefixFilter() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixFilter)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPNLRIPrefixFilter::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  ext_comm_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete next_hop_;
-  if (this != internal_default_instance()) delete ip_address_;
+  _impl_.ext_comm_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.next_hop_;
+  if (this != internal_default_instance()) delete _impl_.ip_address_;
 }
 
-void BGPNLRIPrefixFilter::ArenaDtor(void* object) {
-  BGPNLRIPrefixFilter* _this = reinterpret_cast< BGPNLRIPrefixFilter* >(object);
-  (void)_this;
-}
-void BGPNLRIPrefixFilter::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPNLRIPrefixFilter::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPNLRIPrefixFilter::Clear() {
@@ -6884,32 +7045,32 @@ void BGPNLRIPrefixFilter::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ext_comm_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && next_hop_ != nullptr) {
-    delete next_hop_;
+  _impl_.ext_comm_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.next_hop_ != nullptr) {
+    delete _impl_.next_hop_;
   }
-  next_hop_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && ip_address_ != nullptr) {
-    delete ip_address_;
+  _impl_.next_hop_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.ip_address_ != nullptr) {
+    delete _impl_.ip_address_;
   }
-  ip_address_ = nullptr;
-  ::memset(&vnid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&best_) -
-      reinterpret_cast<char*>(&vnid_)) + sizeof(best_));
+  _impl_.ip_address_ = nullptr;
+  ::memset(&_impl_.vnid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.best_) -
+      reinterpret_cast<char*>(&_impl_.vnid_)) + sizeof(_impl_.best_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPNLRIPrefixFilter::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPNLRIPrefixFilter::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bytes ext_comm = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_ext_comm();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6917,7 +7078,7 @@ const char* BGPNLRIPrefixFilter::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // int32 vnid = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          vnid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.vnid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6925,7 +7086,7 @@ const char* BGPNLRIPrefixFilter::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // int32 route_type = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          route_type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.route_type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6949,7 +7110,7 @@ const char* BGPNLRIPrefixFilter::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // bool best = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          best_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.best_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6992,39 +7153,37 @@ uint8_t* BGPNLRIPrefixFilter::_InternalSerialize(
   // int32 vnid = 2;
   if (this->_internal_vnid() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_vnid(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_vnid(), target);
   }
 
   // int32 route_type = 3;
   if (this->_internal_route_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_route_type(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_route_type(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop = 4;
   if (this->_internal_has_next_hop()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::next_hop(this), target, stream);
+      InternalWriteMessage(4, _Internal::next_hop(this),
+        _Internal::next_hop(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress ip_address = 5;
   if (this->_internal_has_ip_address()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::ip_address(this), target, stream);
+      InternalWriteMessage(5, _Internal::ip_address(this),
+        _Internal::ip_address(this).GetCachedSize(), target, stream);
   }
 
   // bool best = 6;
   if (this->_internal_best() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_best(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_best(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixFilter)
@@ -7050,24 +7209,24 @@ size_t BGPNLRIPrefixFilter::ByteSizeLong() const {
   if (this->_internal_has_next_hop()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *next_hop_);
+        *_impl_.next_hop_);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress ip_address = 5;
   if (this->_internal_has_ip_address()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *ip_address_);
+        *_impl_.ip_address_);
   }
 
   // int32 vnid = 2;
   if (this->_internal_vnid() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vnid());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_vnid());
   }
 
   // int32 route_type = 3;
   if (this->_internal_route_type() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_route_type());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_route_type());
   }
 
   // bool best = 6;
@@ -7075,47 +7234,45 @@ size_t BGPNLRIPrefixFilter::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPNLRIPrefixFilter::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPNLRIPrefixFilter::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPNLRIPrefixFilter::GetClassData() const { return &_class_data_; }
 
-void BGPNLRIPrefixFilter::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPNLRIPrefixFilter *>(to)->MergeFrom(
-      static_cast<const BGPNLRIPrefixFilter &>(from));
-}
 
-
-void BGPNLRIPrefixFilter::MergeFrom(const BGPNLRIPrefixFilter& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixFilter)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPNLRIPrefixFilter::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPNLRIPrefixFilter*>(&to_msg);
+  auto& from = static_cast<const BGPNLRIPrefixFilter&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPNLRIPrefixFilter)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_ext_comm().empty()) {
-    _internal_set_ext_comm(from._internal_ext_comm());
+    _this->_internal_set_ext_comm(from._internal_ext_comm());
   }
   if (from._internal_has_next_hop()) {
-    _internal_mutable_next_hop()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_next_hop());
+    _this->_internal_mutable_next_hop()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_next_hop());
   }
   if (from._internal_has_ip_address()) {
-    _internal_mutable_ip_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_ip_address());
+    _this->_internal_mutable_ip_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_ip_address());
   }
   if (from._internal_vnid() != 0) {
-    _internal_set_vnid(from._internal_vnid());
+    _this->_internal_set_vnid(from._internal_vnid());
   }
   if (from._internal_route_type() != 0) {
-    _internal_set_route_type(from._internal_route_type());
+    _this->_internal_set_route_type(from._internal_route_type());
   }
   if (from._internal_best() != 0) {
-    _internal_set_best(from._internal_best());
+    _this->_internal_set_best(from._internal_best());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPNLRIPrefixFilter::CopyFrom(const BGPNLRIPrefixFilter& from) {
@@ -7135,20 +7292,19 @@ void BGPNLRIPrefixFilter::InternalSwap(BGPNLRIPrefixFilter* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ext_comm_, lhs_arena,
-      &other->ext_comm_, rhs_arena
+      &_impl_.ext_comm_, lhs_arena,
+      &other->_impl_.ext_comm_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixFilter, best_)
-      + sizeof(BGPNLRIPrefixFilter::best_)
-      - PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixFilter, next_hop_)>(
-          reinterpret_cast<char*>(&next_hop_),
-          reinterpret_cast<char*>(&other->next_hop_));
+      PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixFilter, _impl_.best_)
+      + sizeof(BGPNLRIPrefixFilter::_impl_.best_)
+      - PROTOBUF_FIELD_OFFSET(BGPNLRIPrefixFilter, _impl_.next_hop_)>(
+          reinterpret_cast<char*>(&_impl_.next_hop_),
+          reinterpret_cast<char*>(&other->_impl_.next_hop_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPNLRIPrefixFilter::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[12]);
 }
@@ -7163,65 +7319,64 @@ class BGPAdjRibOut::_Internal {
 
 const ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec&
 BGPAdjRibOut::_Internal::spec(const BGPAdjRibOut* msg) {
-  return *msg->spec_;
+  return *msg->_impl_.spec_;
 }
 const ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus&
 BGPAdjRibOut::_Internal::status(const BGPAdjRibOut* msg) {
-  return *msg->status_;
+  return *msg->_impl_.status_;
 }
 BGPAdjRibOut::BGPAdjRibOut(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPAdjRibOut)
 }
 BGPAdjRibOut::BGPAdjRibOut(const BGPAdjRibOut& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPAdjRibOut* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_spec()) {
-    spec_ = new ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec(*from.spec_);
-  } else {
-    spec_ = nullptr;
+    _this->_impl_.spec_ = new ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec(*from._impl_.spec_);
   }
   if (from._internal_has_status()) {
-    status_ = new ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus(*from.status_);
-  } else {
-    status_ = nullptr;
+    _this->_impl_.status_ = new ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus(*from._impl_.status_);
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPAdjRibOut)
 }
 
-inline void BGPAdjRibOut::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&spec_)) + sizeof(status_));
+inline void BGPAdjRibOut::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.spec_){nullptr}
+    , decltype(_impl_.status_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 BGPAdjRibOut::~BGPAdjRibOut() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPAdjRibOut)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPAdjRibOut::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete spec_;
-  if (this != internal_default_instance()) delete status_;
+  if (this != internal_default_instance()) delete _impl_.spec_;
+  if (this != internal_default_instance()) delete _impl_.status_;
 }
 
-void BGPAdjRibOut::ArenaDtor(void* object) {
-  BGPAdjRibOut* _this = reinterpret_cast< BGPAdjRibOut* >(object);
-  (void)_this;
-}
-void BGPAdjRibOut::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPAdjRibOut::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPAdjRibOut::Clear() {
@@ -7230,22 +7385,22 @@ void BGPAdjRibOut::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
-    delete spec_;
+  if (GetArenaForAllocation() == nullptr && _impl_.spec_ != nullptr) {
+    delete _impl_.spec_;
   }
-  spec_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
-    delete status_;
+  _impl_.spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.status_ != nullptr) {
+    delete _impl_.status_;
   }
-  status_ = nullptr;
+  _impl_.status_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPAdjRibOut::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPAdjRibOut::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.cloud.v1alpha1.BGPAdjRibOutSpec spec = 1;
       case 1:
@@ -7294,22 +7449,20 @@ uint8_t* BGPAdjRibOut::_InternalSerialize(
 
   // .opi_api.network.cloud.v1alpha1.BGPAdjRibOutSpec spec = 1;
   if (this->_internal_has_spec()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+      InternalWriteMessage(1, _Internal::spec(this),
+        _Internal::spec(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus status = 2;
   if (this->_internal_has_status()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+      InternalWriteMessage(2, _Internal::status(this),
+        _Internal::status(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPAdjRibOut)
@@ -7328,45 +7481,43 @@ size_t BGPAdjRibOut::ByteSizeLong() const {
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *spec_);
+        *_impl_.spec_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus status = 2;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *status_);
+        *_impl_.status_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPAdjRibOut::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPAdjRibOut::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPAdjRibOut::GetClassData() const { return &_class_data_; }
 
-void BGPAdjRibOut::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPAdjRibOut *>(to)->MergeFrom(
-      static_cast<const BGPAdjRibOut &>(from));
-}
 
-
-void BGPAdjRibOut::MergeFrom(const BGPAdjRibOut& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPAdjRibOut)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPAdjRibOut::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPAdjRibOut*>(&to_msg);
+  auto& from = static_cast<const BGPAdjRibOut&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPAdjRibOut)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_spec()) {
-    _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec::MergeFrom(from._internal_spec());
+    _this->_internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec::MergeFrom(
+        from._internal_spec());
   }
   if (from._internal_has_status()) {
-    _internal_mutable_status()->::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus::MergeFrom(from._internal_status());
+    _this->_internal_mutable_status()->::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus::MergeFrom(
+        from._internal_status());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPAdjRibOut::CopyFrom(const BGPAdjRibOut& from) {
@@ -7384,15 +7535,15 @@ void BGPAdjRibOut::InternalSwap(BGPAdjRibOut* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPAdjRibOut, status_)
-      + sizeof(BGPAdjRibOut::status_)
-      - PROTOBUF_FIELD_OFFSET(BGPAdjRibOut, spec_)>(
-          reinterpret_cast<char*>(&spec_),
-          reinterpret_cast<char*>(&other->spec_));
+      PROTOBUF_FIELD_OFFSET(BGPAdjRibOut, _impl_.status_)
+      + sizeof(BGPAdjRibOut::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(BGPAdjRibOut, _impl_.spec_)>(
+          reinterpret_cast<char*>(&_impl_.spec_),
+          reinterpret_cast<char*>(&other->_impl_.spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPAdjRibOut::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[13]);
 }
@@ -7410,6 +7561,7 @@ BGPAdjRibOutSpec::BGPAdjRibOutSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 BGPAdjRibOutSpec::BGPAdjRibOutSpec(const BGPAdjRibOutSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  BGPAdjRibOutSpec* const _this = this; (void)_this;
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPAdjRibOutSpec)
 }
@@ -7431,7 +7583,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPAdjRibOutSpec::GetClassData
 
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPAdjRibOutSpec::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[14]);
 }
@@ -7445,94 +7597,113 @@ class BGPAdjRibOutStatus::_Internal {
 
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPAdjRibOutStatus::_Internal::peer_addr(const BGPAdjRibOutStatus* msg) {
-  return *msg->peer_addr_;
+  return *msg->_impl_.peer_addr_;
 }
 void BGPAdjRibOutStatus::clear_peer_addr() {
-  if (GetArenaForAllocation() == nullptr && peer_addr_ != nullptr) {
-    delete peer_addr_;
+  if (GetArenaForAllocation() == nullptr && _impl_.peer_addr_ != nullptr) {
+    delete _impl_.peer_addr_;
   }
-  peer_addr_ = nullptr;
+  _impl_.peer_addr_ = nullptr;
 }
 BGPAdjRibOutStatus::BGPAdjRibOutStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  comm_(arena),
-  ext_comm_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus)
 }
 BGPAdjRibOutStatus::BGPAdjRibOutStatus(const BGPAdjRibOutStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      comm_(from.comm_),
-      ext_comm_(from.ext_comm_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BGPAdjRibOutStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.comm_){from._impl_.comm_}
+    , decltype(_impl_.ext_comm_){from._impl_.ext_comm_}
+    , decltype(_impl_.prefix_){}
+    , decltype(_impl_.as_path_str_){}
+    , decltype(_impl_.peer_addr_){nullptr}
+    , decltype(_impl_.afi_){}
+    , decltype(_impl_.safi_){}
+    , decltype(_impl_.prefix_len_){}
+    , decltype(_impl_.state_){}
+    , decltype(_impl_.as_size_){}
+    , decltype(_impl_.med_present_){}
+    , decltype(_impl_.med_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  prefix_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.prefix_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    prefix_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.prefix_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_prefix().empty()) {
-    prefix_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_prefix(), 
-      GetArenaForAllocation());
+    _this->_impl_.prefix_.Set(from._internal_prefix(), 
+      _this->GetArenaForAllocation());
   }
-  as_path_str_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.as_path_str_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    as_path_str_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.as_path_str_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_as_path_str().empty()) {
-    as_path_str_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_as_path_str(), 
-      GetArenaForAllocation());
+    _this->_impl_.as_path_str_.Set(from._internal_as_path_str(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_peer_addr()) {
-    peer_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.peer_addr_);
-  } else {
-    peer_addr_ = nullptr;
+    _this->_impl_.peer_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from._impl_.peer_addr_);
   }
-  ::memcpy(&afi_, &from.afi_,
-    static_cast<size_t>(reinterpret_cast<char*>(&med_) -
-    reinterpret_cast<char*>(&afi_)) + sizeof(med_));
+  ::memcpy(&_impl_.afi_, &from._impl_.afi_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.med_) -
+    reinterpret_cast<char*>(&_impl_.afi_)) + sizeof(_impl_.med_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus)
 }
 
-inline void BGPAdjRibOutStatus::SharedCtor() {
-prefix_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  prefix_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-as_path_str_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  as_path_str_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&peer_addr_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&med_) -
-    reinterpret_cast<char*>(&peer_addr_)) + sizeof(med_));
+inline void BGPAdjRibOutStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.comm_){arena}
+    , decltype(_impl_.ext_comm_){arena}
+    , decltype(_impl_.prefix_){}
+    , decltype(_impl_.as_path_str_){}
+    , decltype(_impl_.peer_addr_){nullptr}
+    , decltype(_impl_.afi_){0}
+    , decltype(_impl_.safi_){0}
+    , decltype(_impl_.prefix_len_){0}
+    , decltype(_impl_.state_){0}
+    , decltype(_impl_.as_size_){0}
+    , decltype(_impl_.med_present_){false}
+    , decltype(_impl_.med_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.prefix_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.prefix_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.as_path_str_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.as_path_str_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BGPAdjRibOutStatus::~BGPAdjRibOutStatus() {
   // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void BGPAdjRibOutStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  prefix_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  as_path_str_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete peer_addr_;
+  _impl_.comm_.~RepeatedPtrField();
+  _impl_.ext_comm_.~RepeatedPtrField();
+  _impl_.prefix_.Destroy();
+  _impl_.as_path_str_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.peer_addr_;
 }
 
-void BGPAdjRibOutStatus::ArenaDtor(void* object) {
-  BGPAdjRibOutStatus* _this = reinterpret_cast< BGPAdjRibOutStatus* >(object);
-  (void)_this;
-}
-void BGPAdjRibOutStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void BGPAdjRibOutStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void BGPAdjRibOutStatus::Clear() {
@@ -7541,25 +7712,25 @@ void BGPAdjRibOutStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  comm_.Clear();
-  ext_comm_.Clear();
-  prefix_.ClearToEmpty();
-  as_path_str_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && peer_addr_ != nullptr) {
-    delete peer_addr_;
+  _impl_.comm_.Clear();
+  _impl_.ext_comm_.Clear();
+  _impl_.prefix_.ClearToEmpty();
+  _impl_.as_path_str_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.peer_addr_ != nullptr) {
+    delete _impl_.peer_addr_;
   }
-  peer_addr_ = nullptr;
-  ::memset(&afi_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&med_) -
-      reinterpret_cast<char*>(&afi_)) + sizeof(med_));
+  _impl_.peer_addr_ = nullptr;
+  ::memset(&_impl_.afi_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.med_) -
+      reinterpret_cast<char*>(&_impl_.afi_)) + sizeof(_impl_.med_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 1;
       case 1:
@@ -7591,7 +7762,7 @@ const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_prefix();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7599,7 +7770,7 @@ const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // int32 prefix_len = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          prefix_len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.prefix_len_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7626,7 +7797,7 @@ const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_as_path_str();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7638,7 +7809,7 @@ const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           do {
             ptr += 1;
             auto str = _internal_add_comm();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
@@ -7652,7 +7823,7 @@ const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           do {
             ptr += 1;
             auto str = _internal_add_ext_comm();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
@@ -7662,7 +7833,7 @@ const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // bool med_present = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
-          med_present_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.med_present_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7670,7 +7841,7 @@ const char* BGPAdjRibOutStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 med = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          med_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.med_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7706,23 +7877,22 @@ uint8_t* BGPAdjRibOutStatus::_InternalSerialize(
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 1;
   if (this->_internal_has_peer_addr()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::peer_addr(this), target, stream);
+      InternalWriteMessage(1, _Internal::peer_addr(this),
+        _Internal::peer_addr(this).GetCachedSize(), target, stream);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 2;
   if (this->_internal_afi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_afi(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 3;
   if (this->_internal_safi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       3, this->_internal_safi(), target);
   }
 
@@ -7735,20 +7905,20 @@ uint8_t* BGPAdjRibOutStatus::_InternalSerialize(
   // int32 prefix_len = 5;
   if (this->_internal_prefix_len() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_prefix_len(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_prefix_len(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpAroAdvertState state = 6;
   if (this->_internal_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       6, this->_internal_state(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpAsSize as_size = 7;
   if (this->_internal_as_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       7, this->_internal_as_size(), target);
   }
 
@@ -7773,17 +7943,17 @@ uint8_t* BGPAdjRibOutStatus::_InternalSerialize(
   // bool med_present = 11;
   if (this->_internal_med_present() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_med_present(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(11, this->_internal_med_present(), target);
   }
 
   // uint32 med = 12;
   if (this->_internal_med() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(12, this->_internal_med(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(12, this->_internal_med(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus)
@@ -7800,18 +7970,18 @@ size_t BGPAdjRibOutStatus::ByteSizeLong() const {
 
   // repeated bytes comm = 9;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(comm_.size());
-  for (int i = 0, n = comm_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.comm_.size());
+  for (int i = 0, n = _impl_.comm_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-      comm_.Get(i));
+      _impl_.comm_.Get(i));
   }
 
   // repeated bytes ext_comm = 10;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(ext_comm_.size());
-  for (int i = 0, n = ext_comm_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.ext_comm_.size());
+  for (int i = 0, n = _impl_.ext_comm_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-      ext_comm_.Get(i));
+      _impl_.ext_comm_.Get(i));
   }
 
   // bytes prefix = 4;
@@ -7832,36 +8002,36 @@ size_t BGPAdjRibOutStatus::ByteSizeLong() const {
   if (this->_internal_has_peer_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *peer_addr_);
+        *_impl_.peer_addr_);
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 2;
   if (this->_internal_afi() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_afi());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_afi());
   }
 
   // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 3;
   if (this->_internal_safi() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_safi());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_safi());
   }
 
   // int32 prefix_len = 5;
   if (this->_internal_prefix_len() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_prefix_len());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_prefix_len());
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpAroAdvertState state = 6;
   if (this->_internal_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_state());
   }
 
   // .opi_api.network.cloud.v1alpha1.BgpAsSize as_size = 7;
   if (this->_internal_as_size() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_as_size());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_as_size());
   }
 
   // bool med_present = 11;
@@ -7871,64 +8041,61 @@ size_t BGPAdjRibOutStatus::ByteSizeLong() const {
 
   // uint32 med = 12;
   if (this->_internal_med() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_med());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_med());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BGPAdjRibOutStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BGPAdjRibOutStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BGPAdjRibOutStatus::GetClassData() const { return &_class_data_; }
 
-void BGPAdjRibOutStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<BGPAdjRibOutStatus *>(to)->MergeFrom(
-      static_cast<const BGPAdjRibOutStatus &>(from));
-}
 
-
-void BGPAdjRibOutStatus::MergeFrom(const BGPAdjRibOutStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus)
-  GOOGLE_DCHECK_NE(&from, this);
+void BGPAdjRibOutStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BGPAdjRibOutStatus*>(&to_msg);
+  auto& from = static_cast<const BGPAdjRibOutStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  comm_.MergeFrom(from.comm_);
-  ext_comm_.MergeFrom(from.ext_comm_);
+  _this->_impl_.comm_.MergeFrom(from._impl_.comm_);
+  _this->_impl_.ext_comm_.MergeFrom(from._impl_.ext_comm_);
   if (!from._internal_prefix().empty()) {
-    _internal_set_prefix(from._internal_prefix());
+    _this->_internal_set_prefix(from._internal_prefix());
   }
   if (!from._internal_as_path_str().empty()) {
-    _internal_set_as_path_str(from._internal_as_path_str());
+    _this->_internal_set_as_path_str(from._internal_as_path_str());
   }
   if (from._internal_has_peer_addr()) {
-    _internal_mutable_peer_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_peer_addr());
+    _this->_internal_mutable_peer_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(
+        from._internal_peer_addr());
   }
   if (from._internal_afi() != 0) {
-    _internal_set_afi(from._internal_afi());
+    _this->_internal_set_afi(from._internal_afi());
   }
   if (from._internal_safi() != 0) {
-    _internal_set_safi(from._internal_safi());
+    _this->_internal_set_safi(from._internal_safi());
   }
   if (from._internal_prefix_len() != 0) {
-    _internal_set_prefix_len(from._internal_prefix_len());
+    _this->_internal_set_prefix_len(from._internal_prefix_len());
   }
   if (from._internal_state() != 0) {
-    _internal_set_state(from._internal_state());
+    _this->_internal_set_state(from._internal_state());
   }
   if (from._internal_as_size() != 0) {
-    _internal_set_as_size(from._internal_as_size());
+    _this->_internal_set_as_size(from._internal_as_size());
   }
   if (from._internal_med_present() != 0) {
-    _internal_set_med_present(from._internal_med_present());
+    _this->_internal_set_med_present(from._internal_med_present());
   }
   if (from._internal_med() != 0) {
-    _internal_set_med(from._internal_med());
+    _this->_internal_set_med(from._internal_med());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BGPAdjRibOutStatus::CopyFrom(const BGPAdjRibOutStatus& from) {
@@ -7947,28 +8114,26 @@ void BGPAdjRibOutStatus::InternalSwap(BGPAdjRibOutStatus* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  comm_.InternalSwap(&other->comm_);
-  ext_comm_.InternalSwap(&other->ext_comm_);
+  _impl_.comm_.InternalSwap(&other->_impl_.comm_);
+  _impl_.ext_comm_.InternalSwap(&other->_impl_.ext_comm_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &prefix_, lhs_arena,
-      &other->prefix_, rhs_arena
+      &_impl_.prefix_, lhs_arena,
+      &other->_impl_.prefix_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &as_path_str_, lhs_arena,
-      &other->as_path_str_, rhs_arena
+      &_impl_.as_path_str_, lhs_arena,
+      &other->_impl_.as_path_str_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BGPAdjRibOutStatus, med_)
-      + sizeof(BGPAdjRibOutStatus::med_)
-      - PROTOBUF_FIELD_OFFSET(BGPAdjRibOutStatus, peer_addr_)>(
-          reinterpret_cast<char*>(&peer_addr_),
-          reinterpret_cast<char*>(&other->peer_addr_));
+      PROTOBUF_FIELD_OFFSET(BGPAdjRibOutStatus, _impl_.med_)
+      + sizeof(BGPAdjRibOutStatus::_impl_.med_)
+      - PROTOBUF_FIELD_OFFSET(BGPAdjRibOutStatus, _impl_.peer_addr_)>(
+          reinterpret_cast<char*>(&_impl_.peer_addr_),
+          reinterpret_cast<char*>(&other->_impl_.peer_addr_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPAdjRibOutStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_bgp_2eproto_getter, &descriptor_table_bgp_2eproto_once,
       file_level_metadata_bgp_2eproto[15]);
 }
@@ -7979,52 +8144,68 @@ void BGPAdjRibOutStatus::InternalSwap(BGPAdjRibOutStatus* other) {
 }  // namespace network
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::Bgp* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::Bgp >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::Bgp*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::Bgp >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::Bgp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BgpSpec* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BgpSpec >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BgpSpec*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BgpSpec >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BgpSpec >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BgpStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BgpStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BgpStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BgpStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BgpStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeer* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeer >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeer*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeer >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPPeer >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerSpec* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerSpec >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerSpec*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerSpec >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPPeerSpec >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPPeerStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerAf* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerAf >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerAf*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerAf >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPPeerAf >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixFilter >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPAdjRibOut* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOut >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPAdjRibOut*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOut >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOut >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutSpec >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus*
+Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::BGPAdjRibOutStatus >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

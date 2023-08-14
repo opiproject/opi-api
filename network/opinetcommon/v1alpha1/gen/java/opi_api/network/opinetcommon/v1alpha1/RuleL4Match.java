@@ -119,6 +119,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -876,8 +878,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (l4InfoCase_ == 1) {
           portsBuilder_.mergeFrom(value);
+        } else {
+          portsBuilder_.setMessage(value);
         }
-        portsBuilder_.setMessage(value);
       }
       l4InfoCase_ = 1;
       return this;
@@ -1053,8 +1056,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (l4InfoCase_ == 2) {
           typeCodeBuilder_.mergeFrom(value);
+        } else {
+          typeCodeBuilder_.setMessage(value);
         }
-        typeCodeBuilder_.setMessage(value);
       }
       l4InfoCase_ = 2;
       return this;
@@ -1230,8 +1234,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (l4InfoCase_ == 3) {
           portListBuilder_.mergeFrom(value);
+        } else {
+          portListBuilder_.setMessage(value);
         }
-        portListBuilder_.setMessage(value);
       }
       l4InfoCase_ = 3;
       return this;
@@ -1407,8 +1412,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (l4InfoCase_ == 4) {
           icmpMatchListBuilder_.mergeFrom(value);
+        } else {
+          icmpMatchListBuilder_.setMessage(value);
         }
-        icmpMatchListBuilder_.setMessage(value);
       }
       l4InfoCase_ = 4;
       return this;

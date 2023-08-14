@@ -168,6 +168,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -1590,8 +1592,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (srcmatchCase_ == 3) {
           srcPrefixBuilder_.mergeFrom(value);
+        } else {
+          srcPrefixBuilder_.setMessage(value);
         }
-        srcPrefixBuilder_.setMessage(value);
       }
       srcmatchCase_ = 3;
       return this;
@@ -1767,8 +1770,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (srcmatchCase_ == 4) {
           srcRangeBuilder_.mergeFrom(value);
+        } else {
+          srcRangeBuilder_.setMessage(value);
         }
-        srcRangeBuilder_.setMessage(value);
       }
       srcmatchCase_ = 4;
       return this;
@@ -2001,8 +2005,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (srcmatchCase_ == 6) {
           srcIpListBuilder_.mergeFrom(value);
+        } else {
+          srcIpListBuilder_.setMessage(value);
         }
-        srcIpListBuilder_.setMessage(value);
       }
       srcmatchCase_ = 6;
       return this;
@@ -2178,8 +2183,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (dstmatchCase_ == 7) {
           dstPrefixBuilder_.mergeFrom(value);
+        } else {
+          dstPrefixBuilder_.setMessage(value);
         }
-        dstPrefixBuilder_.setMessage(value);
       }
       dstmatchCase_ = 7;
       return this;
@@ -2355,8 +2361,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (dstmatchCase_ == 8) {
           dstRangeBuilder_.mergeFrom(value);
+        } else {
+          dstRangeBuilder_.setMessage(value);
         }
-        dstRangeBuilder_.setMessage(value);
       }
       dstmatchCase_ = 8;
       return this;
@@ -2589,8 +2596,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (dstmatchCase_ == 10) {
           dstIpListBuilder_.mergeFrom(value);
+        } else {
+          dstIpListBuilder_.setMessage(value);
         }
-        dstIpListBuilder_.setMessage(value);
       }
       dstmatchCase_ = 10;
       return this;
