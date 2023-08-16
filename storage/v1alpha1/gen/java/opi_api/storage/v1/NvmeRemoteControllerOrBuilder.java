@@ -32,55 +32,52 @@ public interface NvmeRemoteControllerOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>bool hdgst = 2;</code>
-   * @return The hdgst.
-   */
-  boolean getHdgst();
-
-  /**
-   * <code>bool ddgst = 3;</code>
-   * @return The ddgst.
-   */
-  boolean getDdgst();
-
-  /**
-   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for multipath.
    */
   int getMultipathValue();
   /**
-   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The multipath.
    */
   opi_api.storage.v1.NvmeMultipath getMultipath();
 
   /**
-   * <code>int64 io_queues_count = 5;</code>
+   * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The ioQueuesCount.
    */
   long getIoQueuesCount();
 
   /**
-   * <code>int64 queue_size = 6;</code>
+   * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The queueSize.
    */
   long getQueueSize();
 
   /**
    * <pre>
-   * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
-   * Use PSK interchange format with base64 encoding as input.
-   * Also use information about hash function in interchange
-   * format for retained PSK generation. If no hash is selected,
-   * use configured PSK as retained PSK.
-   * Check the size of interchange PSK to determine cipher suite.
-   * Calculate CRC-32 bytes to ensure validity of PSK.
-   * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
-   * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+   * Nvme over TCP specific fields
    * </pre>
    *
-   * <code>bytes psk = 7;</code>
-   * @return The psk.
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the tcp field is set.
    */
-  com.google.protobuf.ByteString getPsk();
+  boolean hasTcp();
+  /**
+   * <pre>
+   * Nvme over TCP specific fields
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The tcp.
+   */
+  opi_api.storage.v1.TcpController getTcp();
+  /**
+   * <pre>
+   * Nvme over TCP specific fields
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  opi_api.storage.v1.TcpControllerOrBuilder getTcpOrBuilder();
 }

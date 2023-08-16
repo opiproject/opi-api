@@ -23,12 +23,12 @@ public interface CreateNvmeRemoteControllerRequestOrBuilder extends
   opi_api.storage.v1.NvmeRemoteControllerOrBuilder getNvmeRemoteControllerOrBuilder();
 
   /**
-   * <code>string nvme_remote_controller_id = 2;</code>
+   * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeRemoteControllerId.
    */
   java.lang.String getNvmeRemoteControllerId();
   /**
-   * <code>string nvme_remote_controller_id = 2;</code>
+   * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeRemoteControllerId.
    */
   com.google.protobuf.ByteString

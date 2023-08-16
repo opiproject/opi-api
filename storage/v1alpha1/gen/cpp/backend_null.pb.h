@@ -242,7 +242,7 @@ class NullVolume final :
   std::string* _internal_mutable_name();
   public:
 
-  // .opi_api.common.v1.Uuid uuid = 4;
+  // .opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];
   bool has_uuid() const;
   private:
   bool _internal_has_uuid() const;
@@ -260,7 +260,7 @@ class NullVolume final :
       ::opi_api::common::v1::Uuid* uuid);
   ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
-  // int64 block_size = 2;
+  // int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];
   void clear_block_size();
   int64_t block_size() const;
   void set_block_size(int64_t value);
@@ -269,7 +269,7 @@ class NullVolume final :
   void _internal_set_block_size(int64_t value);
   public:
 
-  // int64 blocks_count = 3;
+  // int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];
   void clear_blocks_count();
   int64_t blocks_count() const;
   void set_blocks_count(int64_t value);
@@ -421,7 +421,7 @@ class CreateNullVolumeRequest final :
     kNullVolumeIdFieldNumber = 2,
     kNullVolumeFieldNumber = 1,
   };
-  // string null_volume_id = 2;
+  // string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_null_volume_id();
   const std::string& null_volume_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -608,7 +608,7 @@ class DeleteNullVolumeRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -759,7 +759,7 @@ class UpdateNullVolumeRequest final :
     kUpdateMaskFieldNumber = 2,
     kAllowMissingFieldNumber = 3,
   };
-  // .opi_api.storage.v1.NullVolume null_volume = 1;
+  // .opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_null_volume() const;
   private:
   bool _internal_has_null_volume() const;
@@ -777,7 +777,7 @@ class UpdateNullVolumeRequest final :
       ::opi_api::storage::v1::NullVolume* null_volume);
   ::opi_api::storage::v1::NullVolume* unsafe_arena_release_null_volume();
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_update_mask() const;
   private:
   bool _internal_has_update_mask() const;
@@ -795,7 +795,7 @@ class UpdateNullVolumeRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -961,7 +961,7 @@ class ListNullVolumesRequest final :
   std::string* _internal_mutable_parent();
   public:
 
-  // string page_token = 3;
+  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -975,7 +975,7 @@ class ListNullVolumesRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 2;
+  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -1697,7 +1697,7 @@ inline void NullVolume::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullVolume.name)
 }
 
-// int64 block_size = 2;
+// int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];
 inline void NullVolume::clear_block_size() {
   _impl_.block_size_ = int64_t{0};
 }
@@ -1717,7 +1717,7 @@ inline void NullVolume::set_block_size(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NullVolume.block_size)
 }
 
-// int64 blocks_count = 3;
+// int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];
 inline void NullVolume::clear_blocks_count() {
   _impl_.blocks_count_ = int64_t{0};
 }
@@ -1737,7 +1737,7 @@ inline void NullVolume::set_blocks_count(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NullVolume.blocks_count)
 }
 
-// .opi_api.common.v1.Uuid uuid = 4;
+// .opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NullVolume::_internal_has_uuid() const {
   return this != internal_default_instance() && _impl_.uuid_ != nullptr;
 }
@@ -1916,7 +1916,7 @@ inline void CreateNullVolumeRequest::set_allocated_null_volume(::opi_api::storag
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNullVolumeRequest.null_volume)
 }
 
-// string null_volume_id = 2;
+// string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateNullVolumeRequest::clear_null_volume_id() {
   _impl_.null_volume_id_.ClearToEmpty();
 }
@@ -2020,7 +2020,7 @@ inline void DeleteNullVolumeRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteNullVolumeRequest.name)
 }
 
-// bool allow_missing = 2;
+// bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void DeleteNullVolumeRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -2044,7 +2044,7 @@ inline void DeleteNullVolumeRequest::set_allow_missing(bool value) {
 
 // UpdateNullVolumeRequest
 
-// .opi_api.storage.v1.NullVolume null_volume = 1;
+// .opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool UpdateNullVolumeRequest::_internal_has_null_volume() const {
   return this != internal_default_instance() && _impl_.null_volume_ != nullptr;
 }
@@ -2134,7 +2134,7 @@ inline void UpdateNullVolumeRequest::set_allocated_null_volume(::opi_api::storag
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNullVolumeRequest.null_volume)
 }
 
-// .google.protobuf.FieldMask update_mask = 2;
+// .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool UpdateNullVolumeRequest::_internal_has_update_mask() const {
   return this != internal_default_instance() && _impl_.update_mask_ != nullptr;
 }
@@ -2219,7 +2219,7 @@ inline void UpdateNullVolumeRequest::set_allocated_update_mask(::PROTOBUF_NAMESP
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNullVolumeRequest.update_mask)
 }
 
-// bool allow_missing = 3;
+// bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void UpdateNullVolumeRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -2293,7 +2293,7 @@ inline void ListNullVolumesRequest::set_allocated_parent(std::string* parent) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListNullVolumesRequest.parent)
 }
 
-// int32 page_size = 2;
+// int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListNullVolumesRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -2313,7 +2313,7 @@ inline void ListNullVolumesRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListNullVolumesRequest.page_size)
 }
 
-// string page_token = 3;
+// string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListNullVolumesRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }

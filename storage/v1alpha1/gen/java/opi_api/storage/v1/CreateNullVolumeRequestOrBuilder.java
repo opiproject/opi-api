@@ -23,12 +23,12 @@ public interface CreateNullVolumeRequestOrBuilder extends
   opi_api.storage.v1.NullVolumeOrBuilder getNullVolumeOrBuilder();
 
   /**
-   * <code>string null_volume_id = 2;</code>
+   * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nullVolumeId.
    */
   java.lang.String getNullVolumeId();
   /**
-   * <code>string null_volume_id = 2;</code>
+   * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nullVolumeId.
    */
   com.google.protobuf.ByteString

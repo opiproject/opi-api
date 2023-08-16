@@ -18,7 +18,6 @@ private static final long serialVersionUID = 0L;
   private NvmeRemoteController() {
     name_ = "";
     multipath_ = 0;
-    psk_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -58,34 +57,32 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 16: {
-
-            hdgst_ = input.readBool();
-            break;
-          }
-          case 24: {
-
-            ddgst_ = input.readBool();
-            break;
-          }
-          case 32: {
             int rawValue = input.readEnum();
 
             multipath_ = rawValue;
             break;
           }
-          case 40: {
+          case 24: {
 
             ioQueuesCount_ = input.readInt64();
             break;
           }
-          case 48: {
+          case 32: {
 
             queueSize_ = input.readInt64();
             break;
           }
-          case 58: {
+          case 42: {
+            opi_api.storage.v1.TcpController.Builder subBuilder = null;
+            if (tcp_ != null) {
+              subBuilder = tcp_.toBuilder();
+            }
+            tcp_ = input.readMessage(opi_api.storage.v1.TcpController.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(tcp_);
+              tcp_ = subBuilder.buildPartial();
+            }
 
-            psk_ = input.readBytes();
             break;
           }
           default: {
@@ -172,39 +169,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int HDGST_FIELD_NUMBER = 2;
-  private boolean hdgst_;
-  /**
-   * <code>bool hdgst = 2;</code>
-   * @return The hdgst.
-   */
-  @java.lang.Override
-  public boolean getHdgst() {
-    return hdgst_;
-  }
-
-  public static final int DDGST_FIELD_NUMBER = 3;
-  private boolean ddgst_;
-  /**
-   * <code>bool ddgst = 3;</code>
-   * @return The ddgst.
-   */
-  @java.lang.Override
-  public boolean getDdgst() {
-    return ddgst_;
-  }
-
-  public static final int MULTIPATH_FIELD_NUMBER = 4;
+  public static final int MULTIPATH_FIELD_NUMBER = 2;
   private int multipath_;
   /**
-   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for multipath.
    */
   @java.lang.Override public int getMultipathValue() {
     return multipath_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+   * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The multipath.
    */
   @java.lang.Override public opi_api.storage.v1.NvmeMultipath getMultipath() {
@@ -213,10 +188,10 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.storage.v1.NvmeMultipath.UNRECOGNIZED : result;
   }
 
-  public static final int IO_QUEUES_COUNT_FIELD_NUMBER = 5;
+  public static final int IO_QUEUES_COUNT_FIELD_NUMBER = 3;
   private long ioQueuesCount_;
   /**
-   * <code>int64 io_queues_count = 5;</code>
+   * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The ioQueuesCount.
    */
   @java.lang.Override
@@ -224,10 +199,10 @@ private static final long serialVersionUID = 0L;
     return ioQueuesCount_;
   }
 
-  public static final int QUEUE_SIZE_FIELD_NUMBER = 6;
+  public static final int QUEUE_SIZE_FIELD_NUMBER = 4;
   private long queueSize_;
   /**
-   * <code>int64 queue_size = 6;</code>
+   * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The queueSize.
    */
   @java.lang.Override
@@ -235,27 +210,42 @@ private static final long serialVersionUID = 0L;
     return queueSize_;
   }
 
-  public static final int PSK_FIELD_NUMBER = 7;
-  private com.google.protobuf.ByteString psk_;
+  public static final int TCP_FIELD_NUMBER = 5;
+  private opi_api.storage.v1.TcpController tcp_;
   /**
    * <pre>
-   * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
-   * Use PSK interchange format with base64 encoding as input.
-   * Also use information about hash function in interchange
-   * format for retained PSK generation. If no hash is selected,
-   * use configured PSK as retained PSK.
-   * Check the size of interchange PSK to determine cipher suite.
-   * Calculate CRC-32 bytes to ensure validity of PSK.
-   * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
-   * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+   * Nvme over TCP specific fields
    * </pre>
    *
-   * <code>bytes psk = 7;</code>
-   * @return The psk.
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the tcp field is set.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPsk() {
-    return psk_;
+  public boolean hasTcp() {
+    return tcp_ != null;
+  }
+  /**
+   * <pre>
+   * Nvme over TCP specific fields
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The tcp.
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.TcpController getTcp() {
+    return tcp_ == null ? opi_api.storage.v1.TcpController.getDefaultInstance() : tcp_;
+  }
+  /**
+   * <pre>
+   * Nvme over TCP specific fields
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.TcpControllerOrBuilder getTcpOrBuilder() {
+    return getTcp();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -275,23 +265,17 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (hdgst_ != false) {
-      output.writeBool(2, hdgst_);
-    }
-    if (ddgst_ != false) {
-      output.writeBool(3, ddgst_);
-    }
     if (multipath_ != opi_api.storage.v1.NvmeMultipath.NVME_MULTIPATH_UNSPECIFIED.getNumber()) {
-      output.writeEnum(4, multipath_);
+      output.writeEnum(2, multipath_);
     }
     if (ioQueuesCount_ != 0L) {
-      output.writeInt64(5, ioQueuesCount_);
+      output.writeInt64(3, ioQueuesCount_);
     }
     if (queueSize_ != 0L) {
-      output.writeInt64(6, queueSize_);
+      output.writeInt64(4, queueSize_);
     }
-    if (!psk_.isEmpty()) {
-      output.writeBytes(7, psk_);
+    if (tcp_ != null) {
+      output.writeMessage(5, getTcp());
     }
     unknownFields.writeTo(output);
   }
@@ -305,29 +289,21 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (hdgst_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, hdgst_);
-    }
-    if (ddgst_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, ddgst_);
-    }
     if (multipath_ != opi_api.storage.v1.NvmeMultipath.NVME_MULTIPATH_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, multipath_);
+        .computeEnumSize(2, multipath_);
     }
     if (ioQueuesCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, ioQueuesCount_);
+        .computeInt64Size(3, ioQueuesCount_);
     }
     if (queueSize_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, queueSize_);
+        .computeInt64Size(4, queueSize_);
     }
-    if (!psk_.isEmpty()) {
+    if (tcp_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(7, psk_);
+        .computeMessageSize(5, getTcp());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -346,17 +322,16 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (getHdgst()
-        != other.getHdgst()) return false;
-    if (getDdgst()
-        != other.getDdgst()) return false;
     if (multipath_ != other.multipath_) return false;
     if (getIoQueuesCount()
         != other.getIoQueuesCount()) return false;
     if (getQueueSize()
         != other.getQueueSize()) return false;
-    if (!getPsk()
-        .equals(other.getPsk())) return false;
+    if (hasTcp() != other.hasTcp()) return false;
+    if (hasTcp()) {
+      if (!getTcp()
+          .equals(other.getTcp())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -370,12 +345,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + HDGST_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getHdgst());
-    hash = (37 * hash) + DDGST_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getDdgst());
     hash = (37 * hash) + MULTIPATH_FIELD_NUMBER;
     hash = (53 * hash) + multipath_;
     hash = (37 * hash) + IO_QUEUES_COUNT_FIELD_NUMBER;
@@ -384,8 +353,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + QUEUE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getQueueSize());
-    hash = (37 * hash) + PSK_FIELD_NUMBER;
-    hash = (53 * hash) + getPsk().hashCode();
+    if (hasTcp()) {
+      hash = (37 * hash) + TCP_FIELD_NUMBER;
+      hash = (53 * hash) + getTcp().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -521,18 +492,18 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      hdgst_ = false;
-
-      ddgst_ = false;
-
       multipath_ = 0;
 
       ioQueuesCount_ = 0L;
 
       queueSize_ = 0L;
 
-      psk_ = com.google.protobuf.ByteString.EMPTY;
-
+      if (tcpBuilder_ == null) {
+        tcp_ = null;
+      } else {
+        tcp_ = null;
+        tcpBuilder_ = null;
+      }
       return this;
     }
 
@@ -560,12 +531,14 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.NvmeRemoteController buildPartial() {
       opi_api.storage.v1.NvmeRemoteController result = new opi_api.storage.v1.NvmeRemoteController(this);
       result.name_ = name_;
-      result.hdgst_ = hdgst_;
-      result.ddgst_ = ddgst_;
       result.multipath_ = multipath_;
       result.ioQueuesCount_ = ioQueuesCount_;
       result.queueSize_ = queueSize_;
-      result.psk_ = psk_;
+      if (tcpBuilder_ == null) {
+        result.tcp_ = tcp_;
+      } else {
+        result.tcp_ = tcpBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -618,12 +591,6 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getHdgst() != false) {
-        setHdgst(other.getHdgst());
-      }
-      if (other.getDdgst() != false) {
-        setDdgst(other.getDdgst());
-      }
       if (other.multipath_ != 0) {
         setMultipathValue(other.getMultipathValue());
       }
@@ -633,8 +600,8 @@ private static final long serialVersionUID = 0L;
       if (other.getQueueSize() != 0L) {
         setQueueSize(other.getQueueSize());
       }
-      if (other.getPsk() != com.google.protobuf.ByteString.EMPTY) {
-        setPsk(other.getPsk());
+      if (other.hasTcp()) {
+        mergeTcp(other.getTcp());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -771,78 +738,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean hdgst_ ;
-    /**
-     * <code>bool hdgst = 2;</code>
-     * @return The hdgst.
-     */
-    @java.lang.Override
-    public boolean getHdgst() {
-      return hdgst_;
-    }
-    /**
-     * <code>bool hdgst = 2;</code>
-     * @param value The hdgst to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHdgst(boolean value) {
-      
-      hdgst_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool hdgst = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearHdgst() {
-      
-      hdgst_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean ddgst_ ;
-    /**
-     * <code>bool ddgst = 3;</code>
-     * @return The ddgst.
-     */
-    @java.lang.Override
-    public boolean getDdgst() {
-      return ddgst_;
-    }
-    /**
-     * <code>bool ddgst = 3;</code>
-     * @param value The ddgst to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDdgst(boolean value) {
-      
-      ddgst_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool ddgst = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDdgst() {
-      
-      ddgst_ = false;
-      onChanged();
-      return this;
-    }
-
     private int multipath_ = 0;
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for multipath.
      */
     @java.lang.Override public int getMultipathValue() {
       return multipath_;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The enum numeric value on the wire for multipath to set.
      * @return This builder for chaining.
      */
@@ -853,7 +758,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The multipath.
      */
     @java.lang.Override
@@ -863,7 +768,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? opi_api.storage.v1.NvmeMultipath.UNRECOGNIZED : result;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The multipath to set.
      * @return This builder for chaining.
      */
@@ -877,7 +782,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 4;</code>
+     * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearMultipath() {
@@ -889,7 +794,7 @@ private static final long serialVersionUID = 0L;
 
     private long ioQueuesCount_ ;
     /**
-     * <code>int64 io_queues_count = 5;</code>
+     * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The ioQueuesCount.
      */
     @java.lang.Override
@@ -897,7 +802,7 @@ private static final long serialVersionUID = 0L;
       return ioQueuesCount_;
     }
     /**
-     * <code>int64 io_queues_count = 5;</code>
+     * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The ioQueuesCount to set.
      * @return This builder for chaining.
      */
@@ -908,7 +813,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 io_queues_count = 5;</code>
+     * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearIoQueuesCount() {
@@ -920,7 +825,7 @@ private static final long serialVersionUID = 0L;
 
     private long queueSize_ ;
     /**
-     * <code>int64 queue_size = 6;</code>
+     * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The queueSize.
      */
     @java.lang.Override
@@ -928,7 +833,7 @@ private static final long serialVersionUID = 0L;
       return queueSize_;
     }
     /**
-     * <code>int64 queue_size = 6;</code>
+     * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The queueSize to set.
      * @return This builder for chaining.
      */
@@ -939,7 +844,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 queue_size = 6;</code>
+     * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearQueueSize() {
@@ -949,74 +854,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.ByteString psk_ = com.google.protobuf.ByteString.EMPTY;
+    private opi_api.storage.v1.TcpController tcp_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.TcpController, opi_api.storage.v1.TcpController.Builder, opi_api.storage.v1.TcpControllerOrBuilder> tcpBuilder_;
     /**
      * <pre>
-     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
-     * Use PSK interchange format with base64 encoding as input.
-     * Also use information about hash function in interchange
-     * format for retained PSK generation. If no hash is selected,
-     * use configured PSK as retained PSK.
-     * Check the size of interchange PSK to determine cipher suite.
-     * Calculate CRC-32 bytes to ensure validity of PSK.
-     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
-     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+     * Nvme over TCP specific fields
      * </pre>
      *
-     * <code>bytes psk = 7;</code>
-     * @return The psk.
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the tcp field is set.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getPsk() {
-      return psk_;
+    public boolean hasTcp() {
+      return tcpBuilder_ != null || tcp_ != null;
     }
     /**
      * <pre>
-     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
-     * Use PSK interchange format with base64 encoding as input.
-     * Also use information about hash function in interchange
-     * format for retained PSK generation. If no hash is selected,
-     * use configured PSK as retained PSK.
-     * Check the size of interchange PSK to determine cipher suite.
-     * Calculate CRC-32 bytes to ensure validity of PSK.
-     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
-     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+     * Nvme over TCP specific fields
      * </pre>
      *
-     * <code>bytes psk = 7;</code>
-     * @param value The psk to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The tcp.
      */
-    public Builder setPsk(com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      psk_ = value;
-      onChanged();
+    public opi_api.storage.v1.TcpController getTcp() {
+      if (tcpBuilder_ == null) {
+        return tcp_ == null ? opi_api.storage.v1.TcpController.getDefaultInstance() : tcp_;
+      } else {
+        return tcpBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Nvme over TCP specific fields
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTcp(opi_api.storage.v1.TcpController value) {
+      if (tcpBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tcp_ = value;
+        onChanged();
+      } else {
+        tcpBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
      * <pre>
-     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
-     * Use PSK interchange format with base64 encoding as input.
-     * Also use information about hash function in interchange
-     * format for retained PSK generation. If no hash is selected,
-     * use configured PSK as retained PSK.
-     * Check the size of interchange PSK to determine cipher suite.
-     * Calculate CRC-32 bytes to ensure validity of PSK.
-     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
-     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+     * Nvme over TCP specific fields
      * </pre>
      *
-     * <code>bytes psk = 7;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder clearPsk() {
+    public Builder setTcp(
+        opi_api.storage.v1.TcpController.Builder builderForValue) {
+      if (tcpBuilder_ == null) {
+        tcp_ = builderForValue.build();
+        onChanged();
+      } else {
+        tcpBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Nvme over TCP specific fields
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeTcp(opi_api.storage.v1.TcpController value) {
+      if (tcpBuilder_ == null) {
+        if (tcp_ != null) {
+          tcp_ =
+            opi_api.storage.v1.TcpController.newBuilder(tcp_).mergeFrom(value).buildPartial();
+        } else {
+          tcp_ = value;
+        }
+        onChanged();
+      } else {
+        tcpBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Nvme over TCP specific fields
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearTcp() {
+      if (tcpBuilder_ == null) {
+        tcp_ = null;
+        onChanged();
+      } else {
+        tcp_ = null;
+        tcpBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Nvme over TCP specific fields
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public opi_api.storage.v1.TcpController.Builder getTcpBuilder() {
       
-      psk_ = getDefaultInstance().getPsk();
       onChanged();
-      return this;
+      return getTcpFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Nvme over TCP specific fields
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public opi_api.storage.v1.TcpControllerOrBuilder getTcpOrBuilder() {
+      if (tcpBuilder_ != null) {
+        return tcpBuilder_.getMessageOrBuilder();
+      } else {
+        return tcp_ == null ?
+            opi_api.storage.v1.TcpController.getDefaultInstance() : tcp_;
+      }
+    }
+    /**
+     * <pre>
+     * Nvme over TCP specific fields
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.TcpController, opi_api.storage.v1.TcpController.Builder, opi_api.storage.v1.TcpControllerOrBuilder> 
+        getTcpFieldBuilder() {
+      if (tcpBuilder_ == null) {
+        tcpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.TcpController, opi_api.storage.v1.TcpController.Builder, opi_api.storage.v1.TcpControllerOrBuilder>(
+                getTcp(),
+                getParentForChildren(),
+                isClean());
+        tcp_ = null;
+      }
+      return tcpBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

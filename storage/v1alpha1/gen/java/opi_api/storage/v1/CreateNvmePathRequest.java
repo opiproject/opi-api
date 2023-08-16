@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_PATH_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nvmePathId_;
   /**
-   * <code>string nvme_path_id = 2;</code>
+   * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmePathId.
    */
   @java.lang.Override
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string nvme_path_id = 2;</code>
+   * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmePathId.
    */
   @java.lang.Override
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmePathId_ = "";
     /**
-     * <code>string nvme_path_id = 2;</code>
+     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nvmePathId.
      */
     public java.lang.String getNvmePathId() {
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_path_id = 2;</code>
+     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nvmePathId.
      */
     public com.google.protobuf.ByteString
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_path_id = 2;</code>
+     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nvmePathId to set.
      * @return This builder for chaining.
      */
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_path_id = 2;</code>
+     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearNvmePathId() {
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_path_id = 2;</code>
+     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nvmePathId to set.
      * @return This builder for chaining.
      */

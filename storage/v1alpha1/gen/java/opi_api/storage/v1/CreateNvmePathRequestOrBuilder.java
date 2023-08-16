@@ -23,12 +23,12 @@ public interface CreateNvmePathRequestOrBuilder extends
   opi_api.storage.v1.NvmePathOrBuilder getNvmePathOrBuilder();
 
   /**
-   * <code>string nvme_path_id = 2;</code>
+   * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmePathId.
    */
   java.lang.String getNvmePathId();
   /**
-   * <code>string nvme_path_id = 2;</code>
+   * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmePathId.
    */
   com.google.protobuf.ByteString

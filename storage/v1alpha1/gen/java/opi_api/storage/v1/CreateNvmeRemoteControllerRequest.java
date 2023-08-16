@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_REMOTE_CONTROLLER_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nvmeRemoteControllerId_;
   /**
-   * <code>string nvme_remote_controller_id = 2;</code>
+   * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeRemoteControllerId.
    */
   @java.lang.Override
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string nvme_remote_controller_id = 2;</code>
+   * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeRemoteControllerId.
    */
   @java.lang.Override
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmeRemoteControllerId_ = "";
     /**
-     * <code>string nvme_remote_controller_id = 2;</code>
+     * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nvmeRemoteControllerId.
      */
     public java.lang.String getNvmeRemoteControllerId() {
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_remote_controller_id = 2;</code>
+     * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nvmeRemoteControllerId.
      */
     public com.google.protobuf.ByteString
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string nvme_remote_controller_id = 2;</code>
+     * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nvmeRemoteControllerId to set.
      * @return This builder for chaining.
      */
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_remote_controller_id = 2;</code>
+     * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearNvmeRemoteControllerId() {
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string nvme_remote_controller_id = 2;</code>
+     * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nvmeRemoteControllerId to set.
      * @return This builder for chaining.
      */

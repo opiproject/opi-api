@@ -44,42 +44,31 @@ public interface NvmePathOrBuilder extends
       getControllerNameRefBytes();
 
   /**
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for trtype.
    */
   int getTrtypeValue();
   /**
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trtype.
    */
   opi_api.storage.v1.NvmeTransportType getTrtype();
 
   /**
-   * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4;</code>
-   * @return The enum numeric value on the wire for adrfam.
-   */
-  int getAdrfamValue();
-  /**
-   * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4;</code>
-   * @return The adrfam.
-   */
-  opi_api.storage.v1.NvmeAddressFamily getAdrfam();
-
-  /**
    * <pre>
-   * Destination address (e.g. IP address)
+   * Destination address (e.g. IP address, BDF for local PCIe)
    * </pre>
    *
-   * <code>string traddr = 5;</code>
+   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The traddr.
    */
   java.lang.String getTraddr();
   /**
    * <pre>
-   * Destination address (e.g. IP address)
+   * Destination address (e.g. IP address, BDF for local PCIe)
    * </pre>
    *
-   * <code>string traddr = 5;</code>
+   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for traddr.
    */
   com.google.protobuf.ByteString
@@ -87,81 +76,28 @@ public interface NvmePathOrBuilder extends
 
   /**
    * <pre>
-   * Destination service id (e.g. Port)
+   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>int64 trsvcid = 6;</code>
-   * @return The trsvcid.
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the fabrics field is set.
    */
-  long getTrsvcid();
-
+  boolean hasFabrics();
   /**
    * <pre>
-   * Subsystem NQN
+   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>string subnqn = 7;</code>
-   * @return The subnqn.
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The fabrics.
    */
-  java.lang.String getSubnqn();
+  opi_api.storage.v1.FabricsPath getFabrics();
   /**
    * <pre>
-   * Subsystem NQN
+   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>string subnqn = 7;</code>
-   * @return The bytes for subnqn.
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  com.google.protobuf.ByteString
-      getSubnqnBytes();
-
-  /**
-   * <pre>
-   * Source address (e.g. IP of local NIC)
-   * </pre>
-   *
-   * <code>string source_traddr = 8;</code>
-   * @return The sourceTraddr.
-   */
-  java.lang.String getSourceTraddr();
-  /**
-   * <pre>
-   * Source address (e.g. IP of local NIC)
-   * </pre>
-   *
-   * <code>string source_traddr = 8;</code>
-   * @return The bytes for sourceTraddr.
-   */
-  com.google.protobuf.ByteString
-      getSourceTraddrBytes();
-
-  /**
-   * <pre>
-   * Source port (e.g. Port of local NIC)
-   * </pre>
-   *
-   * <code>int64 source_trsvcid = 9;</code>
-   * @return The sourceTrsvcid.
-   */
-  long getSourceTrsvcid();
-
-  /**
-   * <pre>
-   * Host NQN
-   * </pre>
-   *
-   * <code>string hostnqn = 10;</code>
-   * @return The hostnqn.
-   */
-  java.lang.String getHostnqn();
-  /**
-   * <pre>
-   * Host NQN
-   * </pre>
-   *
-   * <code>string hostnqn = 10;</code>
-   * @return The bytes for hostnqn.
-   */
-  com.google.protobuf.ByteString
-      getHostnqnBytes();
+  opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder();
 }

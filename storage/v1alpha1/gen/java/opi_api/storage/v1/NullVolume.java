@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
   public static final int BLOCK_SIZE_FIELD_NUMBER = 2;
   private long blockSize_;
   /**
-   * <code>int64 block_size = 2;</code>
+   * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The blockSize.
    */
   @java.lang.Override
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
   public static final int BLOCKS_COUNT_FIELD_NUMBER = 3;
   private long blocksCount_;
   /**
-   * <code>int64 blocks_count = 3;</code>
+   * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The blocksCount.
    */
   @java.lang.Override
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
   public static final int UUID_FIELD_NUMBER = 4;
   private opi_api.common.v1.Uuid uuid_;
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the uuid field is set.
    */
   @java.lang.Override
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
     return uuid_ != null;
   }
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uuid.
    */
   @java.lang.Override
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
     return uuid_ == null ? opi_api.common.v1.Uuid.getDefaultInstance() : uuid_;
   }
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
 
     private long blockSize_ ;
     /**
-     * <code>int64 block_size = 2;</code>
+     * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The blockSize.
      */
     @java.lang.Override
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
       return blockSize_;
     }
     /**
-     * <code>int64 block_size = 2;</code>
+     * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The blockSize to set.
      * @return This builder for chaining.
      */
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 block_size = 2;</code>
+     * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearBlockSize() {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
 
     private long blocksCount_ ;
     /**
-     * <code>int64 blocks_count = 3;</code>
+     * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The blocksCount.
      */
     @java.lang.Override
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
       return blocksCount_;
     }
     /**
-     * <code>int64 blocks_count = 3;</code>
+     * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The blocksCount to set.
      * @return This builder for chaining.
      */
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 blocks_count = 3;</code>
+     * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearBlocksCount() {
@@ -750,14 +750,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> uuidBuilder_;
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the uuid field is set.
      */
     public boolean hasUuid() {
       return uuidBuilder_ != null || uuid_ != null;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The uuid.
      */
     public opi_api.common.v1.Uuid getUuid() {
@@ -768,7 +768,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -784,7 +784,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUuid(
         opi_api.common.v1.Uuid.Builder builderForValue) {
@@ -798,7 +798,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -816,7 +816,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUuid() {
       if (uuidBuilder_ == null) {
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.Uuid.Builder getUuidBuilder() {
       
@@ -838,7 +838,7 @@ private static final long serialVersionUID = 0L;
       return getUuidFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
       if (uuidBuilder_ != null) {
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> 

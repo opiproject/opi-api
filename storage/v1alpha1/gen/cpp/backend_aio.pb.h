@@ -243,7 +243,7 @@ class AioVolume final :
   std::string* _internal_mutable_name();
   public:
 
-  // string filename = 5;
+  // string filename = 5 [(.google.api.field_behavior) = REQUIRED];
   void clear_filename();
   const std::string& filename() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -257,7 +257,7 @@ class AioVolume final :
   std::string* _internal_mutable_filename();
   public:
 
-  // .opi_api.common.v1.Uuid uuid = 4;
+  // .opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];
   bool has_uuid() const;
   private:
   bool _internal_has_uuid() const;
@@ -275,7 +275,7 @@ class AioVolume final :
       ::opi_api::common::v1::Uuid* uuid);
   ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
-  // int64 block_size = 2;
+  // int64 block_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_block_size();
   int64_t block_size() const;
   void set_block_size(int64_t value);
@@ -284,7 +284,7 @@ class AioVolume final :
   void _internal_set_block_size(int64_t value);
   public:
 
-  // int64 blocks_count = 3;
+  // int64 blocks_count = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_blocks_count();
   int64_t blocks_count() const;
   void set_blocks_count(int64_t value);
@@ -437,7 +437,7 @@ class CreateAioVolumeRequest final :
     kAioVolumeIdFieldNumber = 2,
     kAioVolumeFieldNumber = 1,
   };
-  // string aio_volume_id = 2;
+  // string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_aio_volume_id();
   const std::string& aio_volume_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -624,7 +624,7 @@ class DeleteAioVolumeRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -775,7 +775,7 @@ class UpdateAioVolumeRequest final :
     kUpdateMaskFieldNumber = 2,
     kAllowMissingFieldNumber = 3,
   };
-  // .opi_api.storage.v1.AioVolume aio_volume = 1;
+  // .opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_aio_volume() const;
   private:
   bool _internal_has_aio_volume() const;
@@ -793,7 +793,7 @@ class UpdateAioVolumeRequest final :
       ::opi_api::storage::v1::AioVolume* aio_volume);
   ::opi_api::storage::v1::AioVolume* unsafe_arena_release_aio_volume();
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_update_mask() const;
   private:
   bool _internal_has_update_mask() const;
@@ -811,7 +811,7 @@ class UpdateAioVolumeRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -977,7 +977,7 @@ class ListAioVolumesRequest final :
   std::string* _internal_mutable_parent();
   public:
 
-  // string page_token = 3;
+  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -991,7 +991,7 @@ class ListAioVolumesRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 2;
+  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -1713,7 +1713,7 @@ inline void AioVolume::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioVolume.name)
 }
 
-// int64 block_size = 2;
+// int64 block_size = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void AioVolume::clear_block_size() {
   _impl_.block_size_ = int64_t{0};
 }
@@ -1733,7 +1733,7 @@ inline void AioVolume::set_block_size(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioVolume.block_size)
 }
 
-// int64 blocks_count = 3;
+// int64 blocks_count = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void AioVolume::clear_blocks_count() {
   _impl_.blocks_count_ = int64_t{0};
 }
@@ -1753,7 +1753,7 @@ inline void AioVolume::set_blocks_count(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioVolume.blocks_count)
 }
 
-// .opi_api.common.v1.Uuid uuid = 4;
+// .opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];
 inline bool AioVolume::_internal_has_uuid() const {
   return this != internal_default_instance() && _impl_.uuid_ != nullptr;
 }
@@ -1838,7 +1838,7 @@ inline void AioVolume::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioVolume.uuid)
 }
 
-// string filename = 5;
+// string filename = 5 [(.google.api.field_behavior) = REQUIRED];
 inline void AioVolume::clear_filename() {
   _impl_.filename_.ClearToEmpty();
 }
@@ -1982,7 +1982,7 @@ inline void CreateAioVolumeRequest::set_allocated_aio_volume(::opi_api::storage:
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateAioVolumeRequest.aio_volume)
 }
 
-// string aio_volume_id = 2;
+// string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateAioVolumeRequest::clear_aio_volume_id() {
   _impl_.aio_volume_id_.ClearToEmpty();
 }
@@ -2086,7 +2086,7 @@ inline void DeleteAioVolumeRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteAioVolumeRequest.name)
 }
 
-// bool allow_missing = 2;
+// bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void DeleteAioVolumeRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -2110,7 +2110,7 @@ inline void DeleteAioVolumeRequest::set_allow_missing(bool value) {
 
 // UpdateAioVolumeRequest
 
-// .opi_api.storage.v1.AioVolume aio_volume = 1;
+// .opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool UpdateAioVolumeRequest::_internal_has_aio_volume() const {
   return this != internal_default_instance() && _impl_.aio_volume_ != nullptr;
 }
@@ -2200,7 +2200,7 @@ inline void UpdateAioVolumeRequest::set_allocated_aio_volume(::opi_api::storage:
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateAioVolumeRequest.aio_volume)
 }
 
-// .google.protobuf.FieldMask update_mask = 2;
+// .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool UpdateAioVolumeRequest::_internal_has_update_mask() const {
   return this != internal_default_instance() && _impl_.update_mask_ != nullptr;
 }
@@ -2285,7 +2285,7 @@ inline void UpdateAioVolumeRequest::set_allocated_update_mask(::PROTOBUF_NAMESPA
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateAioVolumeRequest.update_mask)
 }
 
-// bool allow_missing = 3;
+// bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void UpdateAioVolumeRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -2359,7 +2359,7 @@ inline void ListAioVolumesRequest::set_allocated_parent(std::string* parent) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListAioVolumesRequest.parent)
 }
 
-// int32 page_size = 2;
+// int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListAioVolumesRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -2379,7 +2379,7 @@ inline void ListAioVolumesRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListAioVolumesRequest.page_size)
 }
 
-// string page_token = 3;
+// string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListAioVolumesRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }

@@ -36,7 +36,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * controller through which the namespace is visible
    * </pre>
    *
-   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The controllerNameRef.
    */
   java.lang.String getControllerNameRef();
@@ -45,7 +45,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * controller through which the namespace is visible
    * </pre>
    *
-   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for controllerNameRef.
    */
   com.google.protobuf.ByteString
@@ -56,7 +56,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * NSID
    * </pre>
    *
-   * <code>int32 nsid = 3;</code>
+   * <code>int32 nsid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The nsid.
    */
   int getNsid();
@@ -66,7 +66,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 4;</code>
+   * <code>string nguid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The nguid.
    */
   java.lang.String getNguid();
@@ -75,7 +75,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 4;</code>
+   * <code>string nguid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for nguid.
    */
   com.google.protobuf.ByteString
@@ -87,7 +87,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * mandatory if guid is not specified
    * </pre>
    *
-   * <code>int64 eui64 = 5;</code>
+   * <code>int64 eui64 = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The eui64.
    */
   long getEui64();
@@ -97,7 +97,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 6;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the uuid field is set.
    */
   boolean hasUuid();
@@ -106,7 +106,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 6;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The uuid.
    */
   opi_api.common.v1.Uuid getUuid();
@@ -115,7 +115,7 @@ public interface NvmeRemoteNamespaceOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 6;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   opi_api.common.v1.UuidOrBuilder getUuidOrBuilder();
 }

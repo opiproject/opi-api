@@ -23,12 +23,12 @@ public interface CreateAioVolumeRequestOrBuilder extends
   opi_api.storage.v1.AioVolumeOrBuilder getAioVolumeOrBuilder();
 
   /**
-   * <code>string aio_volume_id = 2;</code>
+   * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The aioVolumeId.
    */
   java.lang.String getAioVolumeId();
   /**
-   * <code>string aio_volume_id = 2;</code>
+   * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for aioVolumeId.
    */
   com.google.protobuf.ByteString

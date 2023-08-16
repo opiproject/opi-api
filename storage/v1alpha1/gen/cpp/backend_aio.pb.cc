@@ -265,58 +265,59 @@ const char descriptor_table_protodef_backend_5faio_2eproto[] PROTOBUF_SECTION_VA
   "\032\034google/api/annotations.proto\032\037google/a"
   "pi/field_behavior.proto\032 google/protobuf"
   "/field_mask.proto\032\017opicommon.proto\032\nuuid"
-  ".proto\"\336\001\n\tAioVolume\0225\n\004name\030\001 \001(\tB\'\340A\003\340"
-  "A\005\372A\036\n\034opi_api.storage.v1/AioVolume\022\022\n\nb"
-  "lock_size\030\002 \001(\003\022\024\n\014blocks_count\030\003 \001(\003\022%\n"
-  "\004uuid\030\004 \001(\0132\027.opi_api.common.v1.Uuid\022\020\n\010"
-  "filename\030\005 \001(\t:7\352A4\n storage.opiproject."
-  "org/AioVolume\022\020volumes/{volume}\"g\n\026Creat"
-  "eAioVolumeRequest\0226\n\naio_volume\030\001 \001(\0132\035."
-  "opi_api.storage.v1.AioVolumeB\003\340A\002\022\025\n\raio"
-  "_volume_id\030\002 \001(\t\"c\n\026DeleteAioVolumeReque"
-  "st\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storag"
-  "e.v1/AioVolume\022\025\n\rallow_missing\030\002 \001(\010\"\223\001"
-  "\n\026UpdateAioVolumeRequest\0221\n\naio_volume\030\001"
-  " \001(\0132\035.opi_api.storage.v1.AioVolume\022/\n\013u"
-  "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
-  "Mask\022\025\n\rallow_missing\030\003 \001(\010\"t\n\025ListAioVo"
-  "lumesRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034op"
-  "i_api.storage.v1/AioVolume\022\021\n\tpage_size\030"
-  "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"e\n\026ListAioVolu"
-  "mesResponse\0222\n\013aio_volumes\030\001 \003(\0132\035.opi_a"
-  "pi.storage.v1.AioVolume\022\027\n\017next_page_tok"
-  "en\030\002 \001(\t\"I\n\023GetAioVolumeRequest\0222\n\004name\030"
-  "\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/AioVol"
-  "ume\"K\n\025StatsAioVolumeRequest\0222\n\004name\030\001 \001"
-  "(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume"
-  "\"H\n\026StatsAioVolumeResponse\022.\n\005stats\030\001 \001("
-  "\0132\037.opi_api.storage.v1.VolumeStats2\206\007\n\020A"
-  "ioVolumeService\022\230\001\n\017CreateAioVolume\022*.op"
-  "i_api.storage.v1.CreateAioVolumeRequest\032"
-  "\035.opi_api.storage.v1.AioVolume\":\202\323\344\223\002\031\"\013"
-  "/v1/volumes:\naio_volume\332A\030aio_volume,aio"
-  "_volume_id\022}\n\017DeleteAioVolume\022*.opi_api."
-  "storage.v1.DeleteAioVolumeRequest\032\026.goog"
-  "le.protobuf.Empty\"&\202\323\344\223\002\031*\027/v1/{name=Aio"
-  "Volumes/*}\332A\004name\022\253\001\n\017UpdateAioVolume\022*."
-  "opi_api.storage.v1.UpdateAioVolumeReques"
-  "t\032\035.opi_api.storage.v1.AioVolume\"M\202\323\344\223\002."
-  "2 /v1/{aio_volume.name=subsystems}:\naio_"
-  "volume\332A\026aio_volume,update_mask\022\221\001\n\016List"
-  "AioVolumes\022).opi_api.storage.v1.ListAioV"
-  "olumesRequest\032*.opi_api.storage.v1.ListA"
-  "ioVolumesResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=s"
-  "ubsystems}\332A\006parent\022~\n\014GetAioVolume\022\'.op"
-  "i_api.storage.v1.GetAioVolumeRequest\032\035.o"
-  "pi_api.storage.v1.AioVolume\"&\202\323\344\223\002\031\022\027/v1"
-  "/{name=AioVolumes/*}\332A\004name\022\225\001\n\016StatsAio"
-  "Volume\022).opi_api.storage.v1.StatsAioVolu"
-  "meRequest\032*.opi_api.storage.v1.StatsAioV"
-  "olumeResponse\",\202\323\344\223\002\037\022\035/v1/{name=AioVolu"
-  "mes/*}:stats\332A\004nameB^\n\022opi_api.storage.v"
-  "1B\017BackendAioProtoP\001Z5github.com/opiproj"
-  "ect/opi-api/storage/v1alpha1/gen/gob\006pro"
-  "to3"
+  ".proto\"\362\001\n\tAioVolume\0225\n\004name\030\001 \001(\tB\'\340A\003\340"
+  "A\005\372A\036\n\034opi_api.storage.v1/AioVolume\022\027\n\nb"
+  "lock_size\030\002 \001(\003B\003\340A\001\022\031\n\014blocks_count\030\003 \001"
+  "(\003B\003\340A\001\022*\n\004uuid\030\004 \001(\0132\027.opi_api.common.v"
+  "1.UuidB\003\340A\001\022\025\n\010filename\030\005 \001(\tB\003\340A\002:7\352A4\n"
+  " storage.opiproject.org/AioVolume\022\020volum"
+  "es/{volume}\"l\n\026CreateAioVolumeRequest\0226\n"
+  "\naio_volume\030\001 \001(\0132\035.opi_api.storage.v1.A"
+  "ioVolumeB\003\340A\002\022\032\n\raio_volume_id\030\002 \001(\tB\003\340A"
+  "\001\"h\n\026DeleteAioVolumeRequest\0222\n\004name\030\001 \001("
+  "\tB$\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume\022"
+  "\032\n\rallow_missing\030\002 \001(\010B\003\340A\001\"\242\001\n\026UpdateAi"
+  "oVolumeRequest\0226\n\naio_volume\030\001 \001(\0132\035.opi"
+  "_api.storage.v1.AioVolumeB\003\340A\002\0224\n\013update"
+  "_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB"
+  "\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\"~\n\025List"
+  "AioVolumesRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A"
+  "\036\n\034opi_api.storage.v1/AioVolume\022\026\n\tpage_"
+  "size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001"
+  "\"e\n\026ListAioVolumesResponse\0222\n\013aio_volume"
+  "s\030\001 \003(\0132\035.opi_api.storage.v1.AioVolume\022\027"
+  "\n\017next_page_token\030\002 \001(\t\"I\n\023GetAioVolumeR"
+  "equest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.st"
+  "orage.v1/AioVolume\"K\n\025StatsAioVolumeRequ"
+  "est\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.stora"
+  "ge.v1/AioVolume\"H\n\026StatsAioVolumeRespons"
+  "e\022.\n\005stats\030\001 \001(\0132\037.opi_api.storage.v1.Vo"
+  "lumeStats2\206\007\n\020AioVolumeService\022\230\001\n\017Creat"
+  "eAioVolume\022*.opi_api.storage.v1.CreateAi"
+  "oVolumeRequest\032\035.opi_api.storage.v1.AioV"
+  "olume\":\202\323\344\223\002\031\"\013/v1/volumes:\naio_volume\332A"
+  "\030aio_volume,aio_volume_id\022}\n\017DeleteAioVo"
+  "lume\022*.opi_api.storage.v1.DeleteAioVolum"
+  "eRequest\032\026.google.protobuf.Empty\"&\202\323\344\223\002\031"
+  "*\027/v1/{name=AioVolumes/*}\332A\004name\022\253\001\n\017Upd"
+  "ateAioVolume\022*.opi_api.storage.v1.Update"
+  "AioVolumeRequest\032\035.opi_api.storage.v1.Ai"
+  "oVolume\"M\202\323\344\223\002.2 /v1/{aio_volume.name=su"
+  "bsystems}:\naio_volume\332A\026aio_volume,updat"
+  "e_mask\022\221\001\n\016ListAioVolumes\022).opi_api.stor"
+  "age.v1.ListAioVolumesRequest\032*.opi_api.s"
+  "torage.v1.ListAioVolumesResponse\"(\202\323\344\223\002\031"
+  "\022\027/v1/{parent=subsystems}\332A\006parent\022~\n\014Ge"
+  "tAioVolume\022\'.opi_api.storage.v1.GetAioVo"
+  "lumeRequest\032\035.opi_api.storage.v1.AioVolu"
+  "me\"&\202\323\344\223\002\031\022\027/v1/{name=AioVolumes/*}\332A\004na"
+  "me\022\225\001\n\016StatsAioVolume\022).opi_api.storage."
+  "v1.StatsAioVolumeRequest\032*.opi_api.stora"
+  "ge.v1.StatsAioVolumeResponse\",\202\323\344\223\002\037\022\035/v"
+  "1/{name=AioVolumes/*}:stats\332A\004nameB^\n\022op"
+  "i_api.storage.v1B\017BackendAioProtoP\001Z5git"
+  "hub.com/opiproject/opi-api/storage/v1alp"
+  "ha1/gen/gob\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_backend_5faio_2eproto_deps[8] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -330,7 +331,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_backend_5faio_2epro
 };
 static ::_pbi::once_flag descriptor_table_backend_5faio_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_backend_5faio_2eproto = {
-    false, false, 2283, descriptor_table_protodef_backend_5faio_2eproto,
+    false, false, 2338, descriptor_table_protodef_backend_5faio_2eproto,
     "backend_aio.proto",
     &descriptor_table_backend_5faio_2eproto_once, descriptor_table_backend_5faio_2eproto_deps, 8, 9,
     schemas, file_default_instances, TableStruct_backend_5faio_2eproto::offsets,
@@ -483,7 +484,7 @@ const char* AioVolume::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // int64 block_size = 2;
+      // int64 block_size = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.block_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -491,7 +492,7 @@ const char* AioVolume::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // int64 blocks_count = 3;
+      // int64 blocks_count = 3 [(.google.api.field_behavior) = OPTIONAL];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.blocks_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -499,7 +500,7 @@ const char* AioVolume::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.Uuid uuid = 4;
+      // .opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_uuid(), ptr);
@@ -507,7 +508,7 @@ const char* AioVolume::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // string filename = 5;
+      // string filename = 5 [(.google.api.field_behavior) = REQUIRED];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_filename();
@@ -556,26 +557,26 @@ uint8_t* AioVolume::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // int64 block_size = 2;
+  // int64 block_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_block_size() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_block_size(), target);
   }
 
-  // int64 blocks_count = 3;
+  // int64 blocks_count = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_blocks_count() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(3, this->_internal_blocks_count(), target);
   }
 
-  // .opi_api.common.v1.Uuid uuid = 4;
+  // .opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_uuid()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::uuid(this),
         _Internal::uuid(this).GetCachedSize(), target, stream);
   }
 
-  // string filename = 5;
+  // string filename = 5 [(.google.api.field_behavior) = REQUIRED];
   if (!this->_internal_filename().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_filename().data(), static_cast<int>(this->_internal_filename().length()),
@@ -608,26 +609,26 @@ size_t AioVolume::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // string filename = 5;
+  // string filename = 5 [(.google.api.field_behavior) = REQUIRED];
   if (!this->_internal_filename().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_filename());
   }
 
-  // .opi_api.common.v1.Uuid uuid = 4;
+  // .opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_uuid()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.uuid_);
   }
 
-  // int64 block_size = 2;
+  // int64 block_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_block_size() != 0) {
     total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_block_size());
   }
 
-  // int64 blocks_count = 3;
+  // int64 blocks_count = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_blocks_count() != 0) {
     total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_blocks_count());
   }
@@ -809,7 +810,7 @@ const char* CreateAioVolumeRequest::_InternalParse(const char* ptr, ::_pbi::Pars
         } else
           goto handle_unusual;
         continue;
-      // string aio_volume_id = 2;
+      // string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_aio_volume_id();
@@ -855,7 +856,7 @@ uint8_t* CreateAioVolumeRequest::_InternalSerialize(
         _Internal::aio_volume(this).GetCachedSize(), target, stream);
   }
 
-  // string aio_volume_id = 2;
+  // string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (!this->_internal_aio_volume_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_aio_volume_id().data(), static_cast<int>(this->_internal_aio_volume_id().length()),
@@ -881,7 +882,7 @@ size_t CreateAioVolumeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string aio_volume_id = 2;
+  // string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (!this->_internal_aio_volume_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -1045,7 +1046,7 @@ const char* DeleteAioVolumeRequest::_InternalParse(const char* ptr, ::_pbi::Pars
         } else
           goto handle_unusual;
         continue;
-      // bool allow_missing = 2;
+      // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1092,7 +1093,7 @@ uint8_t* DeleteAioVolumeRequest::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_allow_missing() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_allow_missing(), target);
@@ -1121,7 +1122,7 @@ size_t DeleteAioVolumeRequest::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_allow_missing() != 0) {
     total_size += 1 + 1;
   }
@@ -1285,7 +1286,7 @@ const char* UpdateAioVolumeRequest::_InternalParse(const char* ptr, ::_pbi::Pars
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.storage.v1.AioVolume aio_volume = 1;
+      // .opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_aio_volume(), ptr);
@@ -1293,7 +1294,7 @@ const char* UpdateAioVolumeRequest::_InternalParse(const char* ptr, ::_pbi::Pars
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.FieldMask update_mask = 2;
+      // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_update_mask(), ptr);
@@ -1301,7 +1302,7 @@ const char* UpdateAioVolumeRequest::_InternalParse(const char* ptr, ::_pbi::Pars
         } else
           goto handle_unusual;
         continue;
-      // bool allow_missing = 3;
+      // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1338,21 +1339,21 @@ uint8_t* UpdateAioVolumeRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.storage.v1.AioVolume aio_volume = 1;
+  // .opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_aio_volume()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::aio_volume(this),
         _Internal::aio_volume(this).GetCachedSize(), target, stream);
   }
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_update_mask()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::update_mask(this),
         _Internal::update_mask(this).GetCachedSize(), target, stream);
   }
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_allow_missing() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_allow_missing(), target);
@@ -1374,21 +1375,21 @@ size_t UpdateAioVolumeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.storage.v1.AioVolume aio_volume = 1;
+  // .opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_aio_volume()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.aio_volume_);
   }
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_update_mask()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.update_mask_);
   }
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_allow_missing() != 0) {
     total_size += 1 + 1;
   }
@@ -1562,7 +1563,7 @@ const char* ListAioVolumesRequest::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
-      // int32 page_size = 2;
+      // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -1570,7 +1571,7 @@ const char* ListAioVolumesRequest::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
-      // string page_token = 3;
+      // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_page_token();
@@ -1619,13 +1620,13 @@ uint8_t* ListAioVolumesRequest::_InternalSerialize(
         1, this->_internal_parent(), target);
   }
 
-  // int32 page_size = 2;
+  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_page_size() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_page_size(), target);
   }
 
-  // string page_token = 3;
+  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (!this->_internal_page_token().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
@@ -1658,14 +1659,14 @@ size_t ListAioVolumesRequest::ByteSizeLong() const {
         this->_internal_parent());
   }
 
-  // string page_token = 3;
+  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (!this->_internal_page_token().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_page_token());
   }
 
-  // int32 page_size = 2;
+  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_page_size() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
   }
