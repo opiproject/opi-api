@@ -1101,8 +1101,9 @@ Represents a request to create an Nvme Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  | The Nvme Controller to be created. |
-| nvme_controller_id | [string](#string) |  | An optional ID to assign to the Nvme Controller. If this is not provided the system will auto-generate it. |
+| parent | [string](#string) |  |  |
+| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  |  |
+| nvme_controller_id | [string](#string) |  |  |
 
 
 
@@ -1117,8 +1118,9 @@ Represents a request to create an Nvme Namespace.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  | The Nvme Namespace to be created. |
-| nvme_namespace_id | [string](#string) |  | An optional ID to assign to the Nvme Namespace. If this is not provided the system will auto-generate it. |
+| parent | [string](#string) |  |  |
+| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |  |
+| nvme_namespace_id | [string](#string) |  |  |
 
 
 
@@ -1308,9 +1310,14 @@ Represents a request to list all Nvme Subsystems.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+<<<<<<< HEAD
 | parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
+=======
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
+>>>>>>> 926988f (feat(storage): modify storage frontend_nvme_pcie proto file to support http api)
 
 
 
@@ -1359,7 +1366,6 @@ Represents a response to list all Nvme Subsystems.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_controller_id | [int32](#int32) | optional | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
-| subsystem_name_ref | [string](#string) |  | subsystem information |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
 | max_nsq | [int32](#int32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
 | max_ncq | [int32](#int32) |  | maximum number of host completion queues allowed. If not set, the xPU will provide a default. |
@@ -1677,21 +1683,21 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 | CreateNvmeSubsystem | [CreateNvmeSubsystemRequest](#opi_api-storage-v1-CreateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Create an Nvme Subsystem |
 | DeleteNvmeSubsystem | [DeleteNvmeSubsystemRequest](#opi_api-storage-v1-DeleteNvmeSubsystemRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Subsystem Fails if there are any associated objects |
 | UpdateNvmeSubsystem | [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Update an Nvme Subsystem |
-| ListNvmeSubsystems | [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest) | [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse) | List Nvme Subsystems |
-| GetNvmeSubsystem | [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Get an Nvme Subsystem |
-| StatsNvmeSubsystem | [StatsNvmeSubsystemRequest](#opi_api-storage-v1-StatsNvmeSubsystemRequest) | [StatsNvmeSubsystemResponse](#opi_api-storage-v1-StatsNvmeSubsystemResponse) | Get an Nvme Subsystem statistics |
+| ListNvmeSubsystems | [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest) | [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse) |  |
+| GetNvmeSubsystem | [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
+| StatsNvmeSubsystem | [StatsNvmeSubsystemRequest](#opi_api-storage-v1-StatsNvmeSubsystemRequest) | [StatsNvmeSubsystemResponse](#opi_api-storage-v1-StatsNvmeSubsystemResponse) |  |
 | CreateNvmeController | [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Create an Nvme Controller |
 | DeleteNvmeController | [DeleteNvmeControllerRequest](#opi_api-storage-v1-DeleteNvmeControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Controller Fails if there are any associated objects |
 | UpdateNvmeController | [UpdateNvmeControllerRequest](#opi_api-storage-v1-UpdateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Update an Nvme Controller |
-| ListNvmeControllers | [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest) | [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse) | List Nvme Controllers |
-| GetNvmeController | [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Get an Nvme Controller |
-| StatsNvmeController | [StatsNvmeControllerRequest](#opi_api-storage-v1-StatsNvmeControllerRequest) | [StatsNvmeControllerResponse](#opi_api-storage-v1-StatsNvmeControllerResponse) | Get an Nvme Controller statistics |
+| ListNvmeControllers | [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest) | [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse) |  |
+| GetNvmeController | [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
+| StatsNvmeController | [StatsNvmeControllerRequest](#opi_api-storage-v1-StatsNvmeControllerRequest) | [StatsNvmeControllerResponse](#opi_api-storage-v1-StatsNvmeControllerResponse) |  |
 | CreateNvmeNamespace | [CreateNvmeNamespaceRequest](#opi_api-storage-v1-CreateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Create an Nvme Namespace |
 | DeleteNvmeNamespace | [DeleteNvmeNamespaceRequest](#opi_api-storage-v1-DeleteNvmeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Namespace |
 | UpdateNvmeNamespace | [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Update an Nvme Namespace |
-| ListNvmeNamespaces | [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest) | [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse) | List Nvme Namespaces |
-| GetNvmeNamespace | [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Get an Nvme Namespace |
-| StatsNvmeNamespace | [StatsNvmeNamespaceRequest](#opi_api-storage-v1-StatsNvmeNamespaceRequest) | [StatsNvmeNamespaceResponse](#opi_api-storage-v1-StatsNvmeNamespaceResponse) | Get an Nvme Namespace statistics |
+| ListNvmeNamespaces | [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest) | [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse) |  |
+| GetNvmeNamespace | [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
+| StatsNvmeNamespace | [StatsNvmeNamespaceRequest](#opi_api-storage-v1-StatsNvmeNamespaceRequest) | [StatsNvmeNamespaceResponse](#opi_api-storage-v1-StatsNvmeNamespaceResponse) |  |
 
  
 
