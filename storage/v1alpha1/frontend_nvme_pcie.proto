@@ -25,7 +25,7 @@ import "google/protobuf/field_mask.proto";
 service FrontendNvmeService {
     rpc CreateNvmeSubsystem (CreateNvmeSubsystemRequest) returns (NvmeSubsystem) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/nvme_subsystem"
             body: "nvme_subsystem"
         };
         option (google.api.method_signature) = "nvme_subsystem,nvme_subsystem_id";
@@ -33,39 +33,33 @@ service FrontendNvmeService {
     // Fails if there are any associated objects
     rpc DeleteNvmeSubsystem (DeleteNvmeSubsystemRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=NvmeSubsystems/*}"
+            delete: "/v1/nvme_subsystem/{name=subsystem}"
         };
         option (google.api.method_signature) = "name";
     }
     rpc UpdateNvmeSubsystem (UpdateNvmeSubsystemRequest) returns (NvmeSubsystem) {
         option (google.api.http) = {
-            patch: "/v1/{nvme_subsystem.name=subsystems}"
+            patch: "/v1/nvme_subsystem"
             body: "nvme_subsystem"
         };
         option (google.api.method_signature) = "nvme_subsystem,update_mask";
     }
-    rpc ListNvmeSubsystems   (ListNvmeSubsystemsRequest)   returns (ListNvmeSubsystemsResponse)   {
+    rpc ListNvmeSubsystems (ListNvmeSubsystemsRequest) returns (ListNvmeSubsystemsResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/{parent=nvme_subsystem}"
         };
         option (google.api.method_signature) = "parent";
     }
-    rpc GetNvmeSubsystem    (GetNvmeSubsystemRequest)    returns (NvmeSubsystem)    {
+    rpc GetNvmeSubsystem (GetNvmeSubsystemRequest) returns (NvmeSubsystem)    {
         option (google.api.http) = {
-            get: "/v1/{name=NvmeSubsystems/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc StatsNvmeSubsystem  (StatsNvmeSubsystemRequest)  returns (StatsNvmeSubsystemResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=NvmeSubsystems/*}:stats"
+            get: "/v1/nvme_subsystem/{name=subsystem}"
         };
         option (google.api.method_signature) = "name";
     }
 
     rpc CreateNvmeController (CreateNvmeControllerRequest) returns (NvmeController) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/nvme_controller"
             body: "nvme_controller"
         };
         option (google.api.method_signature) = "nvme_controller,nvme_controller_id";
@@ -73,71 +67,60 @@ service FrontendNvmeService {
     // Fails if there are any associated objects
     rpc DeleteNvmeController (DeleteNvmeControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=NvmeControllers/*}"
+            delete: "/v1/nvme_controller/{name=controller}"
         };
         option (google.api.method_signature) = "name";
     }
     rpc UpdateNvmeController (UpdateNvmeControllerRequest) returns (NvmeController) {
         option (google.api.http) = {
-            patch: "/v1/{nvme_controller.name=subsystems}"
+            patch: "/v1/nvme_controller"
             body: "nvme_controller"
         };
         option (google.api.method_signature) = "nvme_controller,update_mask";
     }
-    rpc ListNvmeControllers   (ListNvmeControllersRequest)   returns (ListNvmeControllersResponse)   {
+    rpc ListNvmeControllers (ListNvmeControllersRequest) returns (ListNvmeControllersResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/{parent=nvme_controller}"
         };
         option (google.api.method_signature) = "parent";
     }
-    rpc GetNvmeController    (GetNvmeControllerRequest)    returns (NvmeController)    {
+    rpc GetNvmeController (GetNvmeControllerRequest) returns (NvmeController)    {
         option (google.api.http) = {
-            get: "/v1/{name=NvmeControllers/*}"
+            get: "/v1/nvme_controller/{name=controller}"
         };
         option (google.api.method_signature) = "name";
     }
-    rpc StatsNvmeController  (StatsNvmeControllerRequest)  returns (StatsNvmeControllerResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=NvmeControllers/*}:stats"
-        };
-        option (google.api.method_signature) = "name";
-    }
+    rpc NvmeControllerStats  (NvmeControllerStatsRequest) returns (NvmeControllerStatsResponse)  {}
 
     rpc CreateNvmeNamespace (CreateNvmeNamespaceRequest) returns (NvmeNamespace) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/nvme_namespace"
             body: "nvme_namespace"
         };
         option (google.api.method_signature) = "nvme_namespace,nvme_namespace_id";
     }
     rpc DeleteNvmeNamespace (DeleteNvmeNamespaceRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=NvmeNamespaces/*}"
+            delete: "/v1/nvme_namespace/{name=namespace}"
         };
         option (google.api.method_signature) = "name";
     }
     rpc UpdateNvmeNamespace (UpdateNvmeNamespaceRequest) returns (NvmeNamespace) {
         option (google.api.http) = {
-            patch: "/v1/{nvme_namespace.name=subsystems}"
+            patch: "/v1/nvme_namespace"
             body: "nvme_namespace"
         };
         option (google.api.method_signature) = "nvme_namespace,update_mask";
     }
-    rpc ListNvmeNamespaces   (ListNvmeNamespacesRequest)   returns (ListNvmeNamespacesResponse)   {
+    rpc ListNvmeNamespaces (ListNvmeNamespacesRequest) returns (ListNvmeNamespacesResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/{parent=nvme_namespace}"
         };
         option (google.api.method_signature) = "parent";
     }
-    rpc GetNvmeNamespace    (GetNvmeNamespaceRequest)    returns (NvmeNamespace)    {
+    rpc GetNvmeNamespace (GetNvmeNamespaceRequest) returns (NvmeNamespace)    {
         option (google.api.http) = {
-            get: "/v1/{name=NvmeNamespaces/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc StatsNvmeNamespace  (StatsNvmeNamespaceRequest)  returns (StatsNvmeNamespaceResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=NvmeNamespaces/*}:stats"
+            get: "/v1/nvme_namespace/{name=namespace}"
         };
         option (google.api.method_signature) = "name";
     }
@@ -146,7 +129,7 @@ service FrontendNvmeService {
 message NvmeSubsystem {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeSubsystem"
-        pattern: "volumes/{volume}"
+        pattern: "v1/nvme_subsystem"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -159,7 +142,7 @@ message NvmeSubsystem {
     ];
 
     // spec holds configurable values
-    NvmeSubsystemSpec   spec   = 2 [(google.api.field_behavior) = REQUIRED];
+    NvmeSubsystemSpec spec   = 2;
 
     // status holds server generated values
     NvmeSubsystemStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -192,7 +175,7 @@ message NvmeSubsystemStatus {
 message NvmeController {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeController"
-        pattern: "volumes/{volume}"
+        pattern: "v1/nvme_controller"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -205,7 +188,7 @@ message NvmeController {
     ];
 
     // spec holds configurable values
-    NvmeControllerSpec   spec   = 2 [(google.api.field_behavior) = REQUIRED];
+    NvmeControllerSpec spec   = 2;
 
     // status holds server generated values
     NvmeControllerStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -254,13 +237,13 @@ message NvmeControllerSpec {
 
 message NvmeControllerStatus {
     // Device is in use by host nvme driver
-    bool   active = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    bool active = 1;
 }
 
 message NvmeNamespace {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeNamespace"
-        pattern: "volumes/{volume}"
+        pattern: "v1/nvme_namespace"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -273,7 +256,7 @@ message NvmeNamespace {
     ];
 
     // spec holds configurable values
-    NvmeNamespaceSpec   spec   = 2 [(google.api.field_behavior) = REQUIRED];
+    NvmeNamespaceSpec spec   = 2;
 
     // status holds server generated values
     NvmeNamespaceStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -308,7 +291,7 @@ message NvmeNamespaceSpec {
 
 message NvmeNamespaceStatus {
     // config state of the namespace object, (enabled, disable, deleting)
-    NvmeNamespacePciState      pci_state       = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    NvmeNamespacePciState pci_state = 1;
 
     // Operational state of the namespace object, (connected, disconnected)
     NvmeNamespacePciOperState  pci_oper_state   = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
