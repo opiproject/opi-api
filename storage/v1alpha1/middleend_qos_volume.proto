@@ -75,15 +75,32 @@ message QosVolume {
     ];
 
     // Middleend/backend volume to apply QoS on
-    string volume_name_ref = 2 [ (google.api.field_behavior) = REQUIRED ];
+    string volume_name_ref = 2 [(google.api.field_behavior) = REQUIRED];
 
-    QosLimit min_limit = 3;
-    QosLimit max_limit = 4;
+    // At least one limit value should be set, oitherwise volume does not make
+    // sense.
+    // AIP-203 says that a field should be described as REQUIRED if it is a
+    // field on a resource that a user provides somewhere as input.
+    // In this case, the resource is only valid if a "truthy" value is stored.
+    // "truthy" is defined as:
+    // * For primitives, values other than 0, 0.0, empty string/bytes, and false
+    // * For repeated fields maps, values with at least one entry
+    // * For messages, any message with at least one "truthy" field.
+    // We cannot mark both min and max QosLimit as REQUIRED directly here, since
+    // it forces one limit field is set on both. Limits message is added to
+    // overcome it. REQUIRED on limits forces at least one limit field in
+    // either min/max sub message is set.
+    Limits limits = 3 [(google.api.field_behavior) = REQUIRED];
+}
+
+message Limits {
+    QosLimit min = 1 [(google.api.field_behavior) = OPTIONAL];
+    QosLimit max = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message CreateQosVolumeRequest {
-    QosVolume qos_volume = 1 [ (google.api.field_behavior) = REQUIRED ];
-    string qos_volume_id = 2;
+    QosVolume qos_volume = 1 [(google.api.field_behavior) = REQUIRED];
+    string qos_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteQosVolumeRequest {
@@ -94,17 +111,17 @@ message DeleteQosVolumeRequest {
 
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateQosVolumeRequest {
     // The object's `name` field is used to identify the object to be updated.
-    QosVolume qos_volume = 1;
+    QosVolume qos_volume = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListQosVolumesRequest {
@@ -112,8 +129,8 @@ message ListQosVolumesRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListQosVolumesResponse {

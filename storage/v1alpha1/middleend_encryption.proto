@@ -78,19 +78,19 @@ message EncryptedVolume {
     ];
 
     // The back/middle-end volume to back this volume
-    string volume_name_ref = 2 [ (google.api.field_behavior) = REQUIRED ];
+    string volume_name_ref = 2 [(google.api.field_behavior) = REQUIRED];
 
     // Key to be used for encryption
-    bytes key = 3;
+    bytes key = 3 [(google.api.field_behavior) = REQUIRED];
 
     // Cipher to use
-    EncryptionType cipher = 4;
+    EncryptionType cipher = 4 [(google.api.field_behavior) = REQUIRED];
 
 }
 
 message CreateEncryptedVolumeRequest {
     EncryptedVolume encrypted_volume = 1 [(google.api.field_behavior) = REQUIRED];
-    string encrypted_volume_id = 2;
+    string encrypted_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteEncryptedVolumeRequest {
@@ -100,17 +100,17 @@ message DeleteEncryptedVolumeRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message UpdateEncryptedVolumeRequest {
     // The object's `name` field is used to identify the object to be updated.
-    EncryptedVolume encrypted_volume = 1;
+    EncryptedVolume encrypted_volume = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListEncryptedVolumesRequest {
@@ -118,8 +118,8 @@ message ListEncryptedVolumesRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
     ];
-    int32 page_size = 2;
-    string page_token = 3;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListEncryptedVolumesResponse {
