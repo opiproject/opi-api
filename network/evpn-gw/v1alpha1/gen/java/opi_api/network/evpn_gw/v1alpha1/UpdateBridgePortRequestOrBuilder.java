@@ -12,7 +12,7 @@ public interface UpdateBridgePortRequestOrBuilder extends
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the bridgePort field is set.
    */
   boolean hasBridgePort();
@@ -21,7 +21,7 @@ public interface UpdateBridgePortRequestOrBuilder extends
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bridgePort.
    */
   opi_api.network.evpn_gw.v1alpha1.BridgePort getBridgePort();
@@ -30,7 +30,7 @@ public interface UpdateBridgePortRequestOrBuilder extends
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.network.evpn_gw.v1alpha1.BridgePortOrBuilder getBridgePortOrBuilder();
 
@@ -39,7 +39,7 @@ public interface UpdateBridgePortRequestOrBuilder extends
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
@@ -48,7 +48,7 @@ public interface UpdateBridgePortRequestOrBuilder extends
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
@@ -57,7 +57,7 @@ public interface UpdateBridgePortRequestOrBuilder extends
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -67,7 +67,7 @@ public interface UpdateBridgePortRequestOrBuilder extends
    * In this situation, `update_mask` is ignored.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The allowMissing.
    */
   boolean getAllowMissing();

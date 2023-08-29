@@ -14,7 +14,7 @@ public interface VrfStatusOrBuilder extends
    *     aip.dev/not-precedent: routing_table cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 routing_table = 1;</code>
+   * <code>uint32 routing_table = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The routingTable.
    */
   int getRoutingTable();
@@ -26,7 +26,7 @@ public interface VrfStatusOrBuilder extends
    *     aip.dev/not-precedent: local_as cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 local_as = 2;</code>
+   * <code>uint32 local_as = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The localAs.
    */
   int getLocalAs();
@@ -36,7 +36,7 @@ public interface VrfStatusOrBuilder extends
    * Route distinguisher
    * </pre>
    *
-   * <code>string rd = 3;</code>
+   * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rd.
    */
   java.lang.String getRd();
@@ -45,7 +45,7 @@ public interface VrfStatusOrBuilder extends
    * Route distinguisher
    * </pre>
    *
-   * <code>string rd = 3;</code>
+   * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for rd.
    */
   com.google.protobuf.ByteString
@@ -56,7 +56,7 @@ public interface VrfStatusOrBuilder extends
    * Router MAC address of the Vrf
    * </pre>
    *
-   * <code>bytes rmac = 4;</code>
+   * <code>bytes rmac = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rmac.
    */
   com.google.protobuf.ByteString getRmac();
@@ -66,7 +66,7 @@ public interface VrfStatusOrBuilder extends
    * List of import RTs
    * </pre>
    *
-   * <code>repeated string import_rts = 5;</code>
+   * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return A list containing the importRts.
    */
   java.util.List<java.lang.String>
@@ -76,7 +76,7 @@ public interface VrfStatusOrBuilder extends
    * List of import RTs
    * </pre>
    *
-   * <code>repeated string import_rts = 5;</code>
+   * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The count of importRts.
    */
   int getImportRtsCount();
@@ -85,7 +85,7 @@ public interface VrfStatusOrBuilder extends
    * List of import RTs
    * </pre>
    *
-   * <code>repeated string import_rts = 5;</code>
+   * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the element to return.
    * @return The importRts at the given index.
    */
@@ -95,7 +95,7 @@ public interface VrfStatusOrBuilder extends
    * List of import RTs
    * </pre>
    *
-   * <code>repeated string import_rts = 5;</code>
+   * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the value to return.
    * @return The bytes of the importRts at the given index.
    */
@@ -107,7 +107,7 @@ public interface VrfStatusOrBuilder extends
    * List of export RTs
    * </pre>
    *
-   * <code>repeated string export_rts = 6;</code>
+   * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return A list containing the exportRts.
    */
   java.util.List<java.lang.String>
@@ -117,7 +117,7 @@ public interface VrfStatusOrBuilder extends
    * List of export RTs
    * </pre>
    *
-   * <code>repeated string export_rts = 6;</code>
+   * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The count of exportRts.
    */
   int getExportRtsCount();
@@ -126,7 +126,7 @@ public interface VrfStatusOrBuilder extends
    * List of export RTs
    * </pre>
    *
-   * <code>repeated string export_rts = 6;</code>
+   * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the element to return.
    * @return The exportRts at the given index.
    */
@@ -136,7 +136,7 @@ public interface VrfStatusOrBuilder extends
    * List of export RTs
    * </pre>
    *
-   * <code>repeated string export_rts = 6;</code>
+   * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the value to return.
    * @return The bytes of the exportRts at the given index.
    */
@@ -149,7 +149,7 @@ public interface VrfStatusOrBuilder extends
    * This defines the VLANs that are connected to the Vrf
    * </pre>
    *
-   * <code>repeated string logical_bridges = 7;</code>
+   * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return A list containing the logicalBridges.
    */
   java.util.List<java.lang.String>
@@ -160,7 +160,7 @@ public interface VrfStatusOrBuilder extends
    * This defines the VLANs that are connected to the Vrf
    * </pre>
    *
-   * <code>repeated string logical_bridges = 7;</code>
+   * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The count of logicalBridges.
    */
   int getLogicalBridgesCount();
@@ -170,7 +170,7 @@ public interface VrfStatusOrBuilder extends
    * This defines the VLANs that are connected to the Vrf
    * </pre>
    *
-   * <code>repeated string logical_bridges = 7;</code>
+   * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the element to return.
    * @return The logicalBridges at the given index.
    */
@@ -181,7 +181,7 @@ public interface VrfStatusOrBuilder extends
    * This defines the VLANs that are connected to the Vrf
    * </pre>
    *
-   * <code>repeated string logical_bridges = 7;</code>
+   * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the value to return.
    * @return The bytes of the logicalBridges at the given index.
    */
@@ -193,7 +193,7 @@ public interface VrfStatusOrBuilder extends
    * operational status of a Vrf
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for operStatus.
    */
   int getOperStatusValue();
@@ -202,7 +202,7 @@ public interface VrfStatusOrBuilder extends
    * operational status of a Vrf
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The operStatus.
    */
   opi_api.network.evpn_gw.v1alpha1.VRFOperStatus getOperStatus();

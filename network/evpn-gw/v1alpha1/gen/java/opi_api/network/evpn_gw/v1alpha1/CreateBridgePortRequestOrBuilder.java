@@ -16,7 +16,7 @@ public interface CreateBridgePortRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string bridge_port_id = 1;</code>
+   * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bridgePortId.
    */
   java.lang.String getBridgePortId();
@@ -29,7 +29,7 @@ public interface CreateBridgePortRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string bridge_port_id = 1;</code>
+   * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for bridgePortId.
    */
   com.google.protobuf.ByteString

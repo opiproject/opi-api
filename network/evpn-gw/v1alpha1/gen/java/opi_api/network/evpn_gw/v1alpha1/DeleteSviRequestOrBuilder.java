@@ -35,7 +35,7 @@ public interface DeleteSviRequestOrBuilder extends
    * but no action will be taken on the server
    * </pre>
    *
-   * <code>bool allow_missing = 2;</code>
+   * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The allowMissing.
    */
   boolean getAllowMissing();

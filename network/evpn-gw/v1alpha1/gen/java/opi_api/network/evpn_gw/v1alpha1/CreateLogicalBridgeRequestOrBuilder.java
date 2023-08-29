@@ -16,7 +16,7 @@ public interface CreateLogicalBridgeRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string logical_bridge_id = 1;</code>
+   * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The logicalBridgeId.
    */
   java.lang.String getLogicalBridgeId();
@@ -29,7 +29,7 @@ public interface CreateLogicalBridgeRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string logical_bridge_id = 1;</code>
+   * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for logicalBridgeId.
    */
   com.google.protobuf.ByteString

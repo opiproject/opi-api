@@ -16,7 +16,7 @@ public interface CreateVrfRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string vrf_id = 1;</code>
+   * <code>string vrf_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The vrfId.
    */
   java.lang.String getVrfId();
@@ -29,7 +29,7 @@ public interface CreateVrfRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string vrf_id = 1;</code>
+   * <code>string vrf_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for vrfId.
    */
   com.google.protobuf.ByteString

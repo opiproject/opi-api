@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the vrf field is set.
    */
   @java.lang.Override
@@ -136,7 +136,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vrf.
    */
   @java.lang.Override
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.network.evpn_gw.v1alpha1.VrfOrBuilder getVrfOrBuilder() {
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   @java.lang.Override
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   @java.lang.Override
@@ -186,7 +186,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
    * In this situation, `update_mask` is ignored.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The allowMissing.
    */
   @java.lang.Override
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the vrf field is set.
      */
     public boolean hasVrf() {
@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The vrf.
      */
     public opi_api.network.evpn_gw.v1alpha1.Vrf getVrf() {
@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVrf(opi_api.network.evpn_gw.v1alpha1.Vrf value) {
       if (vrfBuilder_ == null) {
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVrf(
         opi_api.network.evpn_gw.v1alpha1.Vrf.Builder builderForValue) {
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeVrf(opi_api.network.evpn_gw.v1alpha1.Vrf value) {
       if (vrfBuilder_ == null) {
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearVrf() {
       if (vrfBuilder_ == null) {
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.Vrf.Builder getVrfBuilder() {
       
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.VrfOrBuilder getVrfOrBuilder() {
       if (vrfBuilder_ != null) {
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.Vrf, opi_api.network.evpn_gw.v1alpha1.Vrf.Builder, opi_api.network.evpn_gw.v1alpha1.VrfOrBuilder> 
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -825,7 +825,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -855,7 +855,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -870,7 +870,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
@@ -893,7 +893,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The allowMissing.
      */
     @java.lang.Override
@@ -906,7 +906,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The allowMissing to set.
      * @return This builder for chaining.
      */
@@ -922,7 +922,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {

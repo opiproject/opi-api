@@ -110,7 +110,7 @@ public interface SviSpecOrBuilder extends
    * Set to true to enable BGP peering with Vrf on Svi
    * </pre>
    *
-   * <code>bool enable_bgp = 5;</code>
+   * <code>bool enable_bgp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The enableBgp.
    */
   boolean getEnableBgp();
@@ -122,7 +122,7 @@ public interface SviSpecOrBuilder extends
    *     aip.dev/not-precedent: remote_as cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 remote_as = 6;</code>
+   * <code>uint32 remote_as = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The remoteAs.
    */
   int getRemoteAs();

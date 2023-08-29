@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string logical_bridge_id = 1;</code>
+   * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The logicalBridgeId.
    */
   @java.lang.Override
@@ -142,7 +142,7 @@ private static final long serialVersionUID = 0L;
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string logical_bridge_id = 1;</code>
+   * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for logicalBridgeId.
    */
   @java.lang.Override
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string logical_bridge_id = 1;</code>
+     * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The logicalBridgeId.
      */
     public java.lang.String getLogicalBridgeId() {
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string logical_bridge_id = 1;</code>
+     * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for logicalBridgeId.
      */
     public com.google.protobuf.ByteString
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string logical_bridge_id = 1;</code>
+     * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The logicalBridgeId to set.
      * @return This builder for chaining.
      */
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string logical_bridge_id = 1;</code>
+     * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearLogicalBridgeId() {
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string logical_bridge_id = 1;</code>
+     * <code>string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for logicalBridgeId to set.
      * @return This builder for chaining.
      */

@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string bridge_port_id = 1;</code>
+   * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bridgePortId.
    */
   @java.lang.Override
@@ -142,7 +142,7 @@ private static final long serialVersionUID = 0L;
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string bridge_port_id = 1;</code>
+   * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for bridgePortId.
    */
   @java.lang.Override
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string bridge_port_id = 1;</code>
+     * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bridgePortId.
      */
     public java.lang.String getBridgePortId() {
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string bridge_port_id = 1;</code>
+     * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for bridgePortId.
      */
     public com.google.protobuf.ByteString
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string bridge_port_id = 1;</code>
+     * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bridgePortId to set.
      * @return This builder for chaining.
      */
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string bridge_port_id = 1;</code>
+     * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearBridgePortId() {
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string bridge_port_id = 1;</code>
+     * <code>string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for bridgePortId to set.
      * @return This builder for chaining.
      */

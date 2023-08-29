@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
    * but no action will be taken on the server
    * </pre>
    *
-   * <code>bool allow_missing = 2;</code>
+   * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The allowMissing.
    */
   @java.lang.Override
@@ -594,7 +594,7 @@ private static final long serialVersionUID = 0L;
      * but no action will be taken on the server
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The allowMissing.
      */
     @java.lang.Override
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
      * but no action will be taken on the server
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The allowMissing to set.
      * @return This builder for chaining.
      */
@@ -623,7 +623,7 @@ private static final long serialVersionUID = 0L;
      * but no action will be taken on the server
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {

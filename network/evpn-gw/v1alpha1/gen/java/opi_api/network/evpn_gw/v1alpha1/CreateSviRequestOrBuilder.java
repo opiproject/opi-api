@@ -16,7 +16,7 @@ public interface CreateSviRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string svi_id = 1;</code>
+   * <code>string svi_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The sviId.
    */
   java.lang.String getSviId();
@@ -29,7 +29,7 @@ public interface CreateSviRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string svi_id = 1;</code>
+   * <code>string svi_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for sviId.
    */
   com.google.protobuf.ByteString

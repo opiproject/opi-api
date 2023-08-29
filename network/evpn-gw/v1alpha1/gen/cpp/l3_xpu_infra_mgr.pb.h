@@ -709,7 +709,7 @@ class VrfStatus final :
     kLocalAsFieldNumber = 2,
     kOperStatusFieldNumber = 8,
   };
-  // repeated string import_rts = 5;
+  // repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   int import_rts_size() const;
   private:
   int _internal_import_rts_size() const;
@@ -733,7 +733,7 @@ class VrfStatus final :
   std::string* _internal_add_import_rts();
   public:
 
-  // repeated string export_rts = 6;
+  // repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   int export_rts_size() const;
   private:
   int _internal_export_rts_size() const;
@@ -757,7 +757,7 @@ class VrfStatus final :
   std::string* _internal_add_export_rts();
   public:
 
-  // repeated string logical_bridges = 7;
+  // repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   int logical_bridges_size() const;
   private:
   int _internal_logical_bridges_size() const;
@@ -781,7 +781,7 @@ class VrfStatus final :
   std::string* _internal_add_logical_bridges();
   public:
 
-  // string rd = 3;
+  // string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rd();
   const std::string& rd() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -795,7 +795,7 @@ class VrfStatus final :
   std::string* _internal_mutable_rd();
   public:
 
-  // bytes rmac = 4;
+  // bytes rmac = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rmac();
   const std::string& rmac() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -809,7 +809,7 @@ class VrfStatus final :
   std::string* _internal_mutable_rmac();
   public:
 
-  // uint32 routing_table = 1;
+  // uint32 routing_table = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_routing_table();
   uint32_t routing_table() const;
   void set_routing_table(uint32_t value);
@@ -818,7 +818,7 @@ class VrfStatus final :
   void _internal_set_routing_table(uint32_t value);
   public:
 
-  // uint32 local_as = 2;
+  // uint32 local_as = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_local_as();
   uint32_t local_as() const;
   void set_local_as(uint32_t value);
@@ -827,7 +827,7 @@ class VrfStatus final :
   void _internal_set_local_as(uint32_t value);
   public:
 
-  // .opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;
+  // .opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_oper_status();
   ::opi_api::network::evpn_gw::v1alpha1::VRFOperStatus oper_status() const;
   void set_oper_status(::opi_api::network::evpn_gw::v1alpha1::VRFOperStatus value);
@@ -983,7 +983,7 @@ class CreateVrfRequest final :
     kVrfIdFieldNumber = 1,
     kVrfFieldNumber = 2,
   };
-  // string vrf_id = 1;
+  // string vrf_id = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_vrf_id();
   const std::string& vrf_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1156,7 +1156,7 @@ class ListVrfsRequest final :
     kPageTokenFieldNumber = 2,
     kPageSizeFieldNumber = 1,
   };
-  // string page_token = 2;
+  // string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1170,7 +1170,7 @@ class ListVrfsRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 1;
+  // int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -1660,7 +1660,7 @@ class DeleteVrfRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -1811,7 +1811,7 @@ class UpdateVrfRequest final :
     kUpdateMaskFieldNumber = 2,
     kAllowMissingFieldNumber = 3,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;
+  // .opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_vrf() const;
   private:
   bool _internal_has_vrf() const;
@@ -1829,7 +1829,7 @@ class UpdateVrfRequest final :
       ::opi_api::network::evpn_gw::v1alpha1::Vrf* vrf);
   ::opi_api::network::evpn_gw::v1alpha1::Vrf* unsafe_arena_release_vrf();
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_update_mask() const;
   private:
   bool _internal_has_update_mask() const;
@@ -1847,7 +1847,7 @@ class UpdateVrfRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -2255,7 +2255,7 @@ class SviSpec final :
   std::string* _internal_mutable_mac_address();
   public:
 
-  // bool enable_bgp = 5;
+  // bool enable_bgp = 5 [(.google.api.field_behavior) = OPTIONAL];
   void clear_enable_bgp();
   bool enable_bgp() const;
   void set_enable_bgp(bool value);
@@ -2264,7 +2264,7 @@ class SviSpec final :
   void _internal_set_enable_bgp(bool value);
   public:
 
-  // uint32 remote_as = 6;
+  // uint32 remote_as = 6 [(.google.api.field_behavior) = OPTIONAL];
   void clear_remote_as();
   uint32_t remote_as() const;
   void set_remote_as(uint32_t value);
@@ -2566,7 +2566,7 @@ class CreateSviRequest final :
     kSviIdFieldNumber = 1,
     kSviFieldNumber = 2,
   };
-  // string svi_id = 1;
+  // string svi_id = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_svi_id();
   const std::string& svi_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2739,7 +2739,7 @@ class ListSvisRequest final :
     kPageTokenFieldNumber = 2,
     kPageSizeFieldNumber = 1,
   };
-  // string page_token = 2;
+  // string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2753,7 +2753,7 @@ class ListSvisRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 1;
+  // int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -3243,7 +3243,7 @@ class DeleteSviRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -3394,7 +3394,7 @@ class UpdateSviRequest final :
     kUpdateMaskFieldNumber = 2,
     kAllowMissingFieldNumber = 3,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.Svi svi = 1;
+  // .opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_svi() const;
   private:
   bool _internal_has_svi() const;
@@ -3412,7 +3412,7 @@ class UpdateSviRequest final :
       ::opi_api::network::evpn_gw::v1alpha1::Svi* svi);
   ::opi_api::network::evpn_gw::v1alpha1::Svi* unsafe_arena_release_svi();
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_update_mask() const;
   private:
   bool _internal_has_update_mask() const;
@@ -3430,7 +3430,7 @@ class UpdateSviRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -3902,7 +3902,7 @@ inline void VrfSpec::set_allocated_vtep_ip_prefix(::opi_api::network::opinetcomm
 
 // VrfStatus
 
-// uint32 routing_table = 1;
+// uint32 routing_table = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void VrfStatus::clear_routing_table() {
   _impl_.routing_table_ = 0u;
 }
@@ -3922,7 +3922,7 @@ inline void VrfStatus::set_routing_table(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.VrfStatus.routing_table)
 }
 
-// uint32 local_as = 2;
+// uint32 local_as = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void VrfStatus::clear_local_as() {
   _impl_.local_as_ = 0u;
 }
@@ -3942,7 +3942,7 @@ inline void VrfStatus::set_local_as(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.VrfStatus.local_as)
 }
 
-// string rd = 3;
+// string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void VrfStatus::clear_rd() {
   _impl_.rd_.ClearToEmpty();
 }
@@ -3992,7 +3992,7 @@ inline void VrfStatus::set_allocated_rd(std::string* rd) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.VrfStatus.rd)
 }
 
-// bytes rmac = 4;
+// bytes rmac = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void VrfStatus::clear_rmac() {
   _impl_.rmac_.ClearToEmpty();
 }
@@ -4042,7 +4042,7 @@ inline void VrfStatus::set_allocated_rmac(std::string* rmac) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.VrfStatus.rmac)
 }
 
-// repeated string import_rts = 5;
+// repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline int VrfStatus::_internal_import_rts_size() const {
   return _impl_.import_rts_.size();
 }
@@ -4117,7 +4117,7 @@ VrfStatus::mutable_import_rts() {
   return &_impl_.import_rts_;
 }
 
-// repeated string export_rts = 6;
+// repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline int VrfStatus::_internal_export_rts_size() const {
   return _impl_.export_rts_.size();
 }
@@ -4192,7 +4192,7 @@ VrfStatus::mutable_export_rts() {
   return &_impl_.export_rts_;
 }
 
-// repeated string logical_bridges = 7;
+// repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline int VrfStatus::_internal_logical_bridges_size() const {
   return _impl_.logical_bridges_.size();
 }
@@ -4267,7 +4267,7 @@ VrfStatus::mutable_logical_bridges() {
   return &_impl_.logical_bridges_;
 }
 
-// .opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;
+// .opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void VrfStatus::clear_oper_status() {
   _impl_.oper_status_ = 0;
 }
@@ -4291,7 +4291,7 @@ inline void VrfStatus::set_oper_status(::opi_api::network::evpn_gw::v1alpha1::VR
 
 // CreateVrfRequest
 
-// string vrf_id = 1;
+// string vrf_id = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateVrfRequest::clear_vrf_id() {
   _impl_.vrf_id_.ClearToEmpty();
 }
@@ -4435,7 +4435,7 @@ inline void CreateVrfRequest::set_allocated_vrf(::opi_api::network::evpn_gw::v1a
 
 // ListVrfsRequest
 
-// int32 page_size = 1;
+// int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListVrfsRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -4455,7 +4455,7 @@ inline void ListVrfsRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.ListVrfsRequest.page_size)
 }
 
-// string page_token = 2;
+// string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListVrfsRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }
@@ -4707,7 +4707,7 @@ inline void DeleteVrfRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest.name)
 }
 
-// bool allow_missing = 2;
+// bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void DeleteVrfRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -4731,7 +4731,7 @@ inline void DeleteVrfRequest::set_allow_missing(bool value) {
 
 // UpdateVrfRequest
 
-// .opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;
+// .opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool UpdateVrfRequest::_internal_has_vrf() const {
   return this != internal_default_instance() && _impl_.vrf_ != nullptr;
 }
@@ -4821,7 +4821,7 @@ inline void UpdateVrfRequest::set_allocated_vrf(::opi_api::network::evpn_gw::v1a
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.vrf)
 }
 
-// .google.protobuf.FieldMask update_mask = 2;
+// .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool UpdateVrfRequest::_internal_has_update_mask() const {
   return this != internal_default_instance() && _impl_.update_mask_ != nullptr;
 }
@@ -4906,7 +4906,7 @@ inline void UpdateVrfRequest::set_allocated_update_mask(::PROTOBUF_NAMESPACE_ID:
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.update_mask)
 }
 
-// bool allow_missing = 3;
+// bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void UpdateVrfRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -5351,7 +5351,7 @@ SviSpec::gw_ip_prefix() const {
   return _impl_.gw_ip_prefix_;
 }
 
-// bool enable_bgp = 5;
+// bool enable_bgp = 5 [(.google.api.field_behavior) = OPTIONAL];
 inline void SviSpec::clear_enable_bgp() {
   _impl_.enable_bgp_ = false;
 }
@@ -5371,7 +5371,7 @@ inline void SviSpec::set_enable_bgp(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.SviSpec.enable_bgp)
 }
 
-// uint32 remote_as = 6;
+// uint32 remote_as = 6 [(.google.api.field_behavior) = OPTIONAL];
 inline void SviSpec::clear_remote_as() {
   _impl_.remote_as_ = 0u;
 }
@@ -5419,7 +5419,7 @@ inline void SviStatus::set_oper_status(::opi_api::network::evpn_gw::v1alpha1::SV
 
 // CreateSviRequest
 
-// string svi_id = 1;
+// string svi_id = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateSviRequest::clear_svi_id() {
   _impl_.svi_id_.ClearToEmpty();
 }
@@ -5563,7 +5563,7 @@ inline void CreateSviRequest::set_allocated_svi(::opi_api::network::evpn_gw::v1a
 
 // ListSvisRequest
 
-// int32 page_size = 1;
+// int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListSvisRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -5583,7 +5583,7 @@ inline void ListSvisRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.ListSvisRequest.page_size)
 }
 
-// string page_token = 2;
+// string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListSvisRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }
@@ -5835,7 +5835,7 @@ inline void DeleteSviRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest.name)
 }
 
-// bool allow_missing = 2;
+// bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void DeleteSviRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -5859,7 +5859,7 @@ inline void DeleteSviRequest::set_allow_missing(bool value) {
 
 // UpdateSviRequest
 
-// .opi_api.network.evpn_gw.v1alpha1.Svi svi = 1;
+// .opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool UpdateSviRequest::_internal_has_svi() const {
   return this != internal_default_instance() && _impl_.svi_ != nullptr;
 }
@@ -5949,7 +5949,7 @@ inline void UpdateSviRequest::set_allocated_svi(::opi_api::network::evpn_gw::v1a
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.svi)
 }
 
-// .google.protobuf.FieldMask update_mask = 2;
+// .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool UpdateSviRequest::_internal_has_update_mask() const {
   return this != internal_default_instance() && _impl_.update_mask_ != nullptr;
 }
@@ -6034,7 +6034,7 @@ inline void UpdateSviRequest::set_allocated_update_mask(::PROTOBUF_NAMESPACE_ID:
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.update_mask)
 }
 
-// bool allow_missing = 3;
+// bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void UpdateSviRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }

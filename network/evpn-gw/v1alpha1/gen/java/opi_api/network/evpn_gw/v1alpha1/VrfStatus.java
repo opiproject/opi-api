@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: routing_table cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 routing_table = 1;</code>
+   * <code>uint32 routing_table = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The routingTable.
    */
   @java.lang.Override
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: local_as cannot be negative number. --)
    * </pre>
    *
-   * <code>uint32 local_as = 2;</code>
+   * <code>uint32 local_as = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The localAs.
    */
   @java.lang.Override
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
    * Route distinguisher
    * </pre>
    *
-   * <code>string rd = 3;</code>
+   * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rd.
    */
   @java.lang.Override
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
    * Route distinguisher
    * </pre>
    *
-   * <code>string rd = 3;</code>
+   * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for rd.
    */
   @java.lang.Override
@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
    * Router MAC address of the Vrf
    * </pre>
    *
-   * <code>bytes rmac = 4;</code>
+   * <code>bytes rmac = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rmac.
    */
   @java.lang.Override
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
    * List of import RTs
    * </pre>
    *
-   * <code>repeated string import_rts = 5;</code>
+   * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return A list containing the importRts.
    */
   public com.google.protobuf.ProtocolStringList
@@ -270,7 +270,7 @@ private static final long serialVersionUID = 0L;
    * List of import RTs
    * </pre>
    *
-   * <code>repeated string import_rts = 5;</code>
+   * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The count of importRts.
    */
   public int getImportRtsCount() {
@@ -281,7 +281,7 @@ private static final long serialVersionUID = 0L;
    * List of import RTs
    * </pre>
    *
-   * <code>repeated string import_rts = 5;</code>
+   * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the element to return.
    * @return The importRts at the given index.
    */
@@ -293,7 +293,7 @@ private static final long serialVersionUID = 0L;
    * List of import RTs
    * </pre>
    *
-   * <code>repeated string import_rts = 5;</code>
+   * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the value to return.
    * @return The bytes of the importRts at the given index.
    */
@@ -309,7 +309,7 @@ private static final long serialVersionUID = 0L;
    * List of export RTs
    * </pre>
    *
-   * <code>repeated string export_rts = 6;</code>
+   * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return A list containing the exportRts.
    */
   public com.google.protobuf.ProtocolStringList
@@ -321,7 +321,7 @@ private static final long serialVersionUID = 0L;
    * List of export RTs
    * </pre>
    *
-   * <code>repeated string export_rts = 6;</code>
+   * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The count of exportRts.
    */
   public int getExportRtsCount() {
@@ -332,7 +332,7 @@ private static final long serialVersionUID = 0L;
    * List of export RTs
    * </pre>
    *
-   * <code>repeated string export_rts = 6;</code>
+   * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the element to return.
    * @return The exportRts at the given index.
    */
@@ -344,7 +344,7 @@ private static final long serialVersionUID = 0L;
    * List of export RTs
    * </pre>
    *
-   * <code>repeated string export_rts = 6;</code>
+   * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the value to return.
    * @return The bytes of the exportRts at the given index.
    */
@@ -361,7 +361,7 @@ private static final long serialVersionUID = 0L;
    * This defines the VLANs that are connected to the Vrf
    * </pre>
    *
-   * <code>repeated string logical_bridges = 7;</code>
+   * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return A list containing the logicalBridges.
    */
   public com.google.protobuf.ProtocolStringList
@@ -374,7 +374,7 @@ private static final long serialVersionUID = 0L;
    * This defines the VLANs that are connected to the Vrf
    * </pre>
    *
-   * <code>repeated string logical_bridges = 7;</code>
+   * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The count of logicalBridges.
    */
   public int getLogicalBridgesCount() {
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
    * This defines the VLANs that are connected to the Vrf
    * </pre>
    *
-   * <code>repeated string logical_bridges = 7;</code>
+   * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the element to return.
    * @return The logicalBridges at the given index.
    */
@@ -399,7 +399,7 @@ private static final long serialVersionUID = 0L;
    * This defines the VLANs that are connected to the Vrf
    * </pre>
    *
-   * <code>repeated string logical_bridges = 7;</code>
+   * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @param index The index of the value to return.
    * @return The bytes of the logicalBridges at the given index.
    */
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
    * operational status of a Vrf
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for operStatus.
    */
   @java.lang.Override public int getOperStatusValue() {
@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
    * operational status of a Vrf
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The operStatus.
    */
   @java.lang.Override public opi_api.network.evpn_gw.v1alpha1.VRFOperStatus getOperStatus() {
@@ -920,7 +920,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: routing_table cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 routing_table = 1;</code>
+     * <code>uint32 routing_table = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The routingTable.
      */
     @java.lang.Override
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: routing_table cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 routing_table = 1;</code>
+     * <code>uint32 routing_table = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The routingTable to set.
      * @return This builder for chaining.
      */
@@ -951,7 +951,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: routing_table cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 routing_table = 1;</code>
+     * <code>uint32 routing_table = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRoutingTable() {
@@ -969,7 +969,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: local_as cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 local_as = 2;</code>
+     * <code>uint32 local_as = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The localAs.
      */
     @java.lang.Override
@@ -983,7 +983,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: local_as cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 local_as = 2;</code>
+     * <code>uint32 local_as = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The localAs to set.
      * @return This builder for chaining.
      */
@@ -1000,7 +1000,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: local_as cannot be negative number. --)
      * </pre>
      *
-     * <code>uint32 local_as = 2;</code>
+     * <code>uint32 local_as = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearLocalAs() {
@@ -1016,7 +1016,7 @@ private static final long serialVersionUID = 0L;
      * Route distinguisher
      * </pre>
      *
-     * <code>string rd = 3;</code>
+     * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rd.
      */
     public java.lang.String getRd() {
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
      * Route distinguisher
      * </pre>
      *
-     * <code>string rd = 3;</code>
+     * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for rd.
      */
     public com.google.protobuf.ByteString
@@ -1057,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      * Route distinguisher
      * </pre>
      *
-     * <code>string rd = 3;</code>
+     * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rd to set.
      * @return This builder for chaining.
      */
@@ -1076,7 +1076,7 @@ private static final long serialVersionUID = 0L;
      * Route distinguisher
      * </pre>
      *
-     * <code>string rd = 3;</code>
+     * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRd() {
@@ -1090,7 +1090,7 @@ private static final long serialVersionUID = 0L;
      * Route distinguisher
      * </pre>
      *
-     * <code>string rd = 3;</code>
+     * <code>string rd = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for rd to set.
      * @return This builder for chaining.
      */
@@ -1112,7 +1112,7 @@ private static final long serialVersionUID = 0L;
      * Router MAC address of the Vrf
      * </pre>
      *
-     * <code>bytes rmac = 4;</code>
+     * <code>bytes rmac = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rmac.
      */
     @java.lang.Override
@@ -1124,7 +1124,7 @@ private static final long serialVersionUID = 0L;
      * Router MAC address of the Vrf
      * </pre>
      *
-     * <code>bytes rmac = 4;</code>
+     * <code>bytes rmac = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rmac to set.
      * @return This builder for chaining.
      */
@@ -1142,7 +1142,7 @@ private static final long serialVersionUID = 0L;
      * Router MAC address of the Vrf
      * </pre>
      *
-     * <code>bytes rmac = 4;</code>
+     * <code>bytes rmac = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRmac() {
@@ -1164,7 +1164,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return A list containing the importRts.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1176,7 +1176,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The count of importRts.
      */
     public int getImportRtsCount() {
@@ -1187,7 +1187,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index of the element to return.
      * @return The importRts at the given index.
      */
@@ -1199,7 +1199,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index of the value to return.
      * @return The bytes of the importRts at the given index.
      */
@@ -1212,7 +1212,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index to set the value at.
      * @param value The importRts to set.
      * @return This builder for chaining.
@@ -1232,7 +1232,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The importRts to add.
      * @return This builder for chaining.
      */
@@ -1251,7 +1251,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param values The importRts to add.
      * @return This builder for chaining.
      */
@@ -1268,7 +1268,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearImportRts() {
@@ -1282,7 +1282,7 @@ private static final long serialVersionUID = 0L;
      * List of import RTs
      * </pre>
      *
-     * <code>repeated string import_rts = 5;</code>
+     * <code>repeated string import_rts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes of the importRts to add.
      * @return This builder for chaining.
      */
@@ -1310,7 +1310,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return A list containing the exportRts.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1322,7 +1322,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The count of exportRts.
      */
     public int getExportRtsCount() {
@@ -1333,7 +1333,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index of the element to return.
      * @return The exportRts at the given index.
      */
@@ -1345,7 +1345,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index of the value to return.
      * @return The bytes of the exportRts at the given index.
      */
@@ -1358,7 +1358,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index to set the value at.
      * @param value The exportRts to set.
      * @return This builder for chaining.
@@ -1378,7 +1378,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The exportRts to add.
      * @return This builder for chaining.
      */
@@ -1397,7 +1397,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param values The exportRts to add.
      * @return This builder for chaining.
      */
@@ -1414,7 +1414,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearExportRts() {
@@ -1428,7 +1428,7 @@ private static final long serialVersionUID = 0L;
      * List of export RTs
      * </pre>
      *
-     * <code>repeated string export_rts = 6;</code>
+     * <code>repeated string export_rts = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes of the exportRts to add.
      * @return This builder for chaining.
      */
@@ -1457,7 +1457,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return A list containing the logicalBridges.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1470,7 +1470,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The count of logicalBridges.
      */
     public int getLogicalBridgesCount() {
@@ -1482,7 +1482,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index of the element to return.
      * @return The logicalBridges at the given index.
      */
@@ -1495,7 +1495,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index of the value to return.
      * @return The bytes of the logicalBridges at the given index.
      */
@@ -1509,7 +1509,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param index The index to set the value at.
      * @param value The logicalBridges to set.
      * @return This builder for chaining.
@@ -1530,7 +1530,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The logicalBridges to add.
      * @return This builder for chaining.
      */
@@ -1550,7 +1550,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param values The logicalBridges to add.
      * @return This builder for chaining.
      */
@@ -1568,7 +1568,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearLogicalBridges() {
@@ -1583,7 +1583,7 @@ private static final long serialVersionUID = 0L;
      * This defines the VLANs that are connected to the Vrf
      * </pre>
      *
-     * <code>repeated string logical_bridges = 7;</code>
+     * <code>repeated string logical_bridges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes of the logicalBridges to add.
      * @return This builder for chaining.
      */
@@ -1605,7 +1605,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Vrf
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for operStatus.
      */
     @java.lang.Override public int getOperStatusValue() {
@@ -1616,7 +1616,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Vrf
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for operStatus to set.
      * @return This builder for chaining.
      */
@@ -1631,7 +1631,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Vrf
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The operStatus.
      */
     @java.lang.Override
@@ -1645,7 +1645,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Vrf
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The operStatus to set.
      * @return This builder for chaining.
      */
@@ -1663,7 +1663,7 @@ private static final long serialVersionUID = 0L;
      * operational status of a Vrf
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VRFOperStatus oper_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOperStatus() {

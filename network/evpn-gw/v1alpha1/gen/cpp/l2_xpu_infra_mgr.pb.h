@@ -847,7 +847,7 @@ class CreateLogicalBridgeRequest final :
     kLogicalBridgeIdFieldNumber = 1,
     kLogicalBridgeFieldNumber = 2,
   };
-  // string logical_bridge_id = 1;
+  // string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_logical_bridge_id();
   const std::string& logical_bridge_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1020,7 +1020,7 @@ class ListLogicalBridgesRequest final :
     kPageTokenFieldNumber = 2,
     kPageSizeFieldNumber = 1,
   };
-  // string page_token = 2;
+  // string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1034,7 +1034,7 @@ class ListLogicalBridgesRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 1;
+  // int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -1524,7 +1524,7 @@ class DeleteLogicalBridgeRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -1675,7 +1675,7 @@ class UpdateLogicalBridgeRequest final :
     kUpdateMaskFieldNumber = 2,
     kAllowMissingFieldNumber = 3,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1;
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_logical_bridge() const;
   private:
   bool _internal_has_logical_bridge() const;
@@ -1693,7 +1693,7 @@ class UpdateLogicalBridgeRequest final :
       ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* logical_bridge);
   ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* unsafe_arena_release_logical_bridge();
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_update_mask() const;
   private:
   bool _internal_has_update_mask() const;
@@ -1711,7 +1711,7 @@ class UpdateLogicalBridgeRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -2393,7 +2393,7 @@ class CreateBridgePortRequest final :
     kBridgePortIdFieldNumber = 1,
     kBridgePortFieldNumber = 2,
   };
-  // string bridge_port_id = 1;
+  // string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_bridge_port_id();
   const std::string& bridge_port_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2566,7 +2566,7 @@ class ListBridgePortsRequest final :
     kPageTokenFieldNumber = 2,
     kPageSizeFieldNumber = 1,
   };
-  // string page_token = 2;
+  // string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2580,7 +2580,7 @@ class ListBridgePortsRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 1;
+  // int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -3070,7 +3070,7 @@ class DeleteBridgePortRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -3221,7 +3221,7 @@ class UpdateBridgePortRequest final :
     kUpdateMaskFieldNumber = 2,
     kAllowMissingFieldNumber = 3,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1;
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_bridge_port() const;
   private:
   bool _internal_has_bridge_port() const;
@@ -3239,7 +3239,7 @@ class UpdateBridgePortRequest final :
       ::opi_api::network::evpn_gw::v1alpha1::BridgePort* bridge_port);
   ::opi_api::network::evpn_gw::v1alpha1::BridgePort* unsafe_arena_release_bridge_port();
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_update_mask() const;
   private:
   bool _internal_has_update_mask() const;
@@ -3257,7 +3257,7 @@ class UpdateBridgePortRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -3603,7 +3603,7 @@ inline void LogicalBridgeStatus::set_oper_status(::opi_api::network::evpn_gw::v1
 
 // CreateLogicalBridgeRequest
 
-// string logical_bridge_id = 1;
+// string logical_bridge_id = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateLogicalBridgeRequest::clear_logical_bridge_id() {
   _impl_.logical_bridge_id_.ClearToEmpty();
 }
@@ -3747,7 +3747,7 @@ inline void CreateLogicalBridgeRequest::set_allocated_logical_bridge(::opi_api::
 
 // ListLogicalBridgesRequest
 
-// int32 page_size = 1;
+// int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListLogicalBridgesRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -3767,7 +3767,7 @@ inline void ListLogicalBridgesRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.ListLogicalBridgesRequest.page_size)
 }
 
-// string page_token = 2;
+// string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListLogicalBridgesRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }
@@ -4019,7 +4019,7 @@ inline void DeleteLogicalBridgeRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name)
 }
 
-// bool allow_missing = 2;
+// bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void DeleteLogicalBridgeRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -4043,7 +4043,7 @@ inline void DeleteLogicalBridgeRequest::set_allow_missing(bool value) {
 
 // UpdateLogicalBridgeRequest
 
-// .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1;
+// .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool UpdateLogicalBridgeRequest::_internal_has_logical_bridge() const {
   return this != internal_default_instance() && _impl_.logical_bridge_ != nullptr;
 }
@@ -4133,7 +4133,7 @@ inline void UpdateLogicalBridgeRequest::set_allocated_logical_bridge(::opi_api::
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest.logical_bridge)
 }
 
-// .google.protobuf.FieldMask update_mask = 2;
+// .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool UpdateLogicalBridgeRequest::_internal_has_update_mask() const {
   return this != internal_default_instance() && _impl_.update_mask_ != nullptr;
 }
@@ -4218,7 +4218,7 @@ inline void UpdateLogicalBridgeRequest::set_allocated_update_mask(::PROTOBUF_NAM
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest.update_mask)
 }
 
-// bool allow_missing = 3;
+// bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void UpdateLogicalBridgeRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -4649,7 +4649,7 @@ inline void BridgePortStatus::set_oper_status(::opi_api::network::evpn_gw::v1alp
 
 // CreateBridgePortRequest
 
-// string bridge_port_id = 1;
+// string bridge_port_id = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateBridgePortRequest::clear_bridge_port_id() {
   _impl_.bridge_port_id_.ClearToEmpty();
 }
@@ -4793,7 +4793,7 @@ inline void CreateBridgePortRequest::set_allocated_bridge_port(::opi_api::networ
 
 // ListBridgePortsRequest
 
-// int32 page_size = 1;
+// int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListBridgePortsRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -4813,7 +4813,7 @@ inline void ListBridgePortsRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.ListBridgePortsRequest.page_size)
 }
 
-// string page_token = 2;
+// string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListBridgePortsRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }
@@ -5065,7 +5065,7 @@ inline void DeleteBridgePortRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name)
 }
 
-// bool allow_missing = 2;
+// bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void DeleteBridgePortRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -5089,7 +5089,7 @@ inline void DeleteBridgePortRequest::set_allow_missing(bool value) {
 
 // UpdateBridgePortRequest
 
-// .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1;
+// .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool UpdateBridgePortRequest::_internal_has_bridge_port() const {
   return this != internal_default_instance() && _impl_.bridge_port_ != nullptr;
 }
@@ -5179,7 +5179,7 @@ inline void UpdateBridgePortRequest::set_allocated_bridge_port(::opi_api::networ
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest.bridge_port)
 }
 
-// .google.protobuf.FieldMask update_mask = 2;
+// .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool UpdateBridgePortRequest::_internal_has_update_mask() const {
   return this != internal_default_instance() && _impl_.update_mask_ != nullptr;
 }
@@ -5264,7 +5264,7 @@ inline void UpdateBridgePortRequest::set_allocated_update_mask(::PROTOBUF_NAMESP
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest.update_mask)
 }
 
-// bool allow_missing = 3;
+// bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void UpdateBridgePortRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }

@@ -12,7 +12,7 @@ public interface ListLogicalBridgesRequestOrBuilder extends
    * page size of list request
    * </pre>
    *
-   * <code>int32 page_size = 1;</code>
+   * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   int getPageSize();
@@ -22,7 +22,7 @@ public interface ListLogicalBridgesRequestOrBuilder extends
    * page token of list request
    * </pre>
    *
-   * <code>string page_token = 2;</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
@@ -31,7 +31,7 @@ public interface ListLogicalBridgesRequestOrBuilder extends
    * page token of list request
    * </pre>
    *
-   * <code>string page_token = 2;</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
