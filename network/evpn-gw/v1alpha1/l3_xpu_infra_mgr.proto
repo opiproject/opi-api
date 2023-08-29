@@ -114,6 +114,8 @@ message Vrf {
     option (google.api.resource) = {
       type: "opi_api.network.evpn_gw.v1alpha1/Vrf"
       pattern: "vrfs/{vrf}"
+      singular: "vrf"
+      plural: "vrfs"
     };
     // The resource name of the Vrf.
     // "name" is an opaque object handle that is not user settable.
@@ -238,6 +240,8 @@ message Svi {
     option (google.api.resource) = {
       type: "opi_api.network.evpn_gw.v1alpha1/Svi"
       pattern: "svis/{svi}"
+      singular: "svi"
+      plural: "svis"
     };
     // The resource name of the Svi.
     // "name" is an opaque object handle that is not user settable.
