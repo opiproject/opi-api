@@ -149,24 +149,24 @@ message VrfStatus {
     // Routing table number
     // (-- api-linter: core::0141::forbidden-types=disabled
     //     aip.dev/not-precedent: routing_table cannot be negative number. --)
-    uint32 routing_table              = 1;
+    uint32 routing_table              = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Local AS configured for VRF
     // (-- api-linter: core::0141::forbidden-types=disabled
     //     aip.dev/not-precedent: local_as cannot be negative number. --)
-    uint32 local_as                   = 2;
+    uint32 local_as                   = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Route distinguisher
-    string rd                         = 3;
+    string rd                         = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Router MAC address of the Vrf
-    bytes rmac                        = 4;
+    bytes rmac                        = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
     // List of import RTs
-    repeated string import_rts        = 5;
+    repeated string import_rts        = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
     // List of export RTs
-    repeated string export_rts        = 6;
+    repeated string export_rts        = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
     // List of connected Logical Bridges to Vrf
     // This defines the VLANs that are connected to the Vrf
-    repeated string logical_bridges   = 7;
+    repeated string logical_bridges   = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
     // operational status of a Vrf
-    VRFOperStatus oper_status         = 8;
+    VRFOperStatus oper_status         = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateVrfRequest structure
@@ -177,7 +177,7 @@ message CreateVrfRequest {
     // This value should be 4-63 characters, and valid characters
     // are /[a-z][0-9]-/.
     // If this is not provided the system will auto-generate it.
-    string vrf_id = 1;
+    string vrf_id = 1 [(google.api.field_behavior) = OPTIONAL];
 
     // The vrf to create
     Vrf vrf       = 2 [(google.api.field_behavior) = REQUIRED];
@@ -186,9 +186,9 @@ message CreateVrfRequest {
 // ListVrfsRequest structure
 message ListVrfsRequest {
     // page size of list request
-    int32 page_size   = 1;
+    int32 page_size   = 1 [(google.api.field_behavior) = OPTIONAL];
     // page token of list request
-    string page_token = 2;
+    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // ListVrfsResponse structure
@@ -219,18 +219,18 @@ message DeleteVrfRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // UpdateVrfRequest structure
 message UpdateVrfRequest {
     // The object's `name` field is used to identify the object to be updated.
-    Vrf vrf = 1;
+    Vrf vrf = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Svi network configuration
@@ -275,11 +275,11 @@ message SviSpec {
     // The GW IP addresses assigned to the SVI
     repeated network.opinetcommon.v1alpha1.IPPrefix gw_ip_prefix = 4 [(google.api.field_behavior) = REQUIRED];
     // Set to true to enable BGP peering with Vrf on Svi
-    bool enable_bgp                                              = 5;
+    bool enable_bgp                                              = 5 [(google.api.field_behavior) = OPTIONAL];
     // Conditional: The remote AS used by BGP speakers on LB (1-65535)
     // (-- api-linter: core::0141::forbidden-types=disabled
     //     aip.dev/not-precedent: remote_as cannot be negative number. --)
-    uint32 remote_as                                             = 6;
+    uint32 remote_as                                             = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Svi
@@ -296,7 +296,7 @@ message CreateSviRequest {
     // This value should be 4-63 characters, and valid characters
     // are /[a-z][0-9]-/.
     // If this is not provided the system will auto-generate it.
-    string svi_id = 1;
+    string svi_id = 1 [(google.api.field_behavior) = OPTIONAL];
     // The Svi to create
     Svi svi       = 2 [(google.api.field_behavior) = REQUIRED];
 }
@@ -304,9 +304,9 @@ message CreateSviRequest {
 // ListSvisRequest structure
 message ListSvisRequest {
     // page size of list request
-    int32 page_size   = 1;
+    int32 page_size   = 1  [(google.api.field_behavior) = OPTIONAL];
     // page token of list request
-    string page_token = 2;
+    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // ListSvisResponse structure
@@ -337,18 +337,18 @@ message DeleteSviRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // UpdateSviRequest structure
 message UpdateSviRequest {
     // The object's `name` field is used to identify the object to be updated.
-    Svi svi = 1;
+    Svi svi = 1  [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // VRFOperStatus status reflects the operational status of a Vrf

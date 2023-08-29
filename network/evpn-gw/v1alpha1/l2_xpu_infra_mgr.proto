@@ -155,7 +155,7 @@ message CreateLogicalBridgeRequest {
     // This value should be 4-63 characters, and valid characters
     // are /[a-z][0-9]-/.
     // If this is not provided the system will auto-generate it.
-    string logical_bridge_id     = 1;
+    string logical_bridge_id     = 1 [(google.api.field_behavior) = OPTIONAL];
 
     // The logical bridge to create
     LogicalBridge logical_bridge = 2 [(google.api.field_behavior) = REQUIRED];
@@ -164,9 +164,9 @@ message CreateLogicalBridgeRequest {
 // ListLogicalBridgesRequest structure
 message ListLogicalBridgesRequest {
     // page size of list request
-    int32 page_size   = 1;
+    int32 page_size   = 1 [(google.api.field_behavior) = OPTIONAL];
     // page token of list request
-    string page_token = 2;
+    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // ListLogicalBridgesResponse structure
@@ -197,18 +197,18 @@ message DeleteLogicalBridgeRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // UpdateLogicalBridgeRequest structure
 message UpdateLogicalBridgeRequest {
     // The object's `name` field is used to identify the object to be updated.
-    LogicalBridge logical_bridge = 1;
+    LogicalBridge logical_bridge = 1 [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Bridge Port network configuration and status
@@ -259,7 +259,7 @@ message CreateBridgePortRequest {
     // This value should be 4-63 characters, and valid characters
     // are /[a-z][0-9]-/.
     // If this is not provided the system will auto-generate it.
-    string bridge_port_id     = 1;
+    string bridge_port_id     = 1 [(google.api.field_behavior) = OPTIONAL];
     // The bridge port to create
     BridgePort bridge_port    = 2 [(google.api.field_behavior) = REQUIRED];
 }
@@ -267,9 +267,9 @@ message CreateBridgePortRequest {
 // ListBridgePortsRequest structure
 message ListBridgePortsRequest {
     // page size of list request
-    int32 page_size   = 1;
+    int32 page_size   = 1 [(google.api.field_behavior) = OPTIONAL];
     // page token of list request
-    string page_token = 2;
+    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // ListBridgePortsResponse structure
@@ -300,18 +300,18 @@ message DeleteBridgePortRequest {
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
-    bool allow_missing = 2;
+    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // UpdateBridgePortRequest structure
 message UpdateBridgePortRequest {
     // The object's `name` field is used to identify the object to be updated.
-    BridgePort bridge_port = 1;
+    BridgePort bridge_port = 1  [(google.api.field_behavior) = REQUIRED];
     // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2;
+    google.protobuf.FieldMask update_mask = 2  [(google.api.field_behavior) = OPTIONAL];
     // If set to true, and the object is not found, a new object will be created.
     // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3;
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // LBOperStatus status reflects the operational status of a Logical Bridge
