@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private NvmeRemoteController() {
     name_ = "";
     multipath_ = 0;
+    psk_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -72,17 +73,19 @@ private static final long serialVersionUID = 0L;
             queueSize_ = input.readInt64();
             break;
           }
-          case 42: {
-            opi_api.storage.v1.TcpController.Builder subBuilder = null;
-            if (tcp_ != null) {
-              subBuilder = tcp_.toBuilder();
-            }
-            tcp_ = input.readMessage(opi_api.storage.v1.TcpController.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(tcp_);
-              tcp_ = subBuilder.buildPartial();
-            }
+          case 40: {
 
+            hdgst_ = input.readBool();
+            break;
+          }
+          case 48: {
+
+            ddgst_ = input.readBool();
+            break;
+          }
+          case 58: {
+
+            psk_ = input.readBytes();
             break;
           }
           default: {
@@ -210,42 +213,49 @@ private static final long serialVersionUID = 0L;
     return queueSize_;
   }
 
-  public static final int TCP_FIELD_NUMBER = 5;
-  private opi_api.storage.v1.TcpController tcp_;
+  public static final int HDGST_FIELD_NUMBER = 5;
+  private boolean hdgst_;
   /**
-   * <pre>
-   * Nvme over TCP specific fields
-   * </pre>
-   *
-   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return Whether the tcp field is set.
+   * <code>bool hdgst = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The hdgst.
    */
   @java.lang.Override
-  public boolean hasTcp() {
-    return tcp_ != null;
+  public boolean getHdgst() {
+    return hdgst_;
   }
+
+  public static final int DDGST_FIELD_NUMBER = 6;
+  private boolean ddgst_;
   /**
-   * <pre>
-   * Nvme over TCP specific fields
-   * </pre>
-   *
-   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The tcp.
+   * <code>bool ddgst = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The ddgst.
    */
   @java.lang.Override
-  public opi_api.storage.v1.TcpController getTcp() {
-    return tcp_ == null ? opi_api.storage.v1.TcpController.getDefaultInstance() : tcp_;
+  public boolean getDdgst() {
+    return ddgst_;
   }
+
+  public static final int PSK_FIELD_NUMBER = 7;
+  private com.google.protobuf.ByteString psk_;
   /**
    * <pre>
-   * Nvme over TCP specific fields
+   * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+   * Use PSK interchange format with base64 encoding as input.
+   * Also use information about hash function in interchange
+   * format for retained PSK generation. If no hash is selected,
+   * use configured PSK as retained PSK.
+   * Check the size of interchange PSK to determine cipher suite.
+   * Calculate CRC-32 bytes to ensure validity of PSK.
+   * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+   * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
    * </pre>
    *
-   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bytes psk = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The psk.
    */
   @java.lang.Override
-  public opi_api.storage.v1.TcpControllerOrBuilder getTcpOrBuilder() {
-    return getTcp();
+  public com.google.protobuf.ByteString getPsk() {
+    return psk_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -274,8 +284,14 @@ private static final long serialVersionUID = 0L;
     if (queueSize_ != 0L) {
       output.writeInt64(4, queueSize_);
     }
-    if (tcp_ != null) {
-      output.writeMessage(5, getTcp());
+    if (hdgst_ != false) {
+      output.writeBool(5, hdgst_);
+    }
+    if (ddgst_ != false) {
+      output.writeBool(6, ddgst_);
+    }
+    if (!psk_.isEmpty()) {
+      output.writeBytes(7, psk_);
     }
     unknownFields.writeTo(output);
   }
@@ -301,9 +317,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, queueSize_);
     }
-    if (tcp_ != null) {
+    if (hdgst_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getTcp());
+        .computeBoolSize(5, hdgst_);
+    }
+    if (ddgst_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, ddgst_);
+    }
+    if (!psk_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(7, psk_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -327,11 +351,12 @@ private static final long serialVersionUID = 0L;
         != other.getIoQueuesCount()) return false;
     if (getQueueSize()
         != other.getQueueSize()) return false;
-    if (hasTcp() != other.hasTcp()) return false;
-    if (hasTcp()) {
-      if (!getTcp()
-          .equals(other.getTcp())) return false;
-    }
+    if (getHdgst()
+        != other.getHdgst()) return false;
+    if (getDdgst()
+        != other.getDdgst()) return false;
+    if (!getPsk()
+        .equals(other.getPsk())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -353,10 +378,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + QUEUE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getQueueSize());
-    if (hasTcp()) {
-      hash = (37 * hash) + TCP_FIELD_NUMBER;
-      hash = (53 * hash) + getTcp().hashCode();
-    }
+    hash = (37 * hash) + HDGST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getHdgst());
+    hash = (37 * hash) + DDGST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDdgst());
+    hash = (37 * hash) + PSK_FIELD_NUMBER;
+    hash = (53 * hash) + getPsk().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -498,12 +527,12 @@ private static final long serialVersionUID = 0L;
 
       queueSize_ = 0L;
 
-      if (tcpBuilder_ == null) {
-        tcp_ = null;
-      } else {
-        tcp_ = null;
-        tcpBuilder_ = null;
-      }
+      hdgst_ = false;
+
+      ddgst_ = false;
+
+      psk_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -534,11 +563,9 @@ private static final long serialVersionUID = 0L;
       result.multipath_ = multipath_;
       result.ioQueuesCount_ = ioQueuesCount_;
       result.queueSize_ = queueSize_;
-      if (tcpBuilder_ == null) {
-        result.tcp_ = tcp_;
-      } else {
-        result.tcp_ = tcpBuilder_.build();
-      }
+      result.hdgst_ = hdgst_;
+      result.ddgst_ = ddgst_;
+      result.psk_ = psk_;
       onBuilt();
       return result;
     }
@@ -600,8 +627,14 @@ private static final long serialVersionUID = 0L;
       if (other.getQueueSize() != 0L) {
         setQueueSize(other.getQueueSize());
       }
-      if (other.hasTcp()) {
-        mergeTcp(other.getTcp());
+      if (other.getHdgst() != false) {
+        setHdgst(other.getHdgst());
+      }
+      if (other.getDdgst() != false) {
+        setDdgst(other.getDdgst());
+      }
+      if (other.getPsk() != com.google.protobuf.ByteString.EMPTY) {
+        setPsk(other.getPsk());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -854,159 +887,136 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.TcpController tcp_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.TcpController, opi_api.storage.v1.TcpController.Builder, opi_api.storage.v1.TcpControllerOrBuilder> tcpBuilder_;
+    private boolean hdgst_ ;
     /**
-     * <pre>
-     * Nvme over TCP specific fields
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return Whether the tcp field is set.
+     * <code>bool hdgst = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The hdgst.
      */
-    public boolean hasTcp() {
-      return tcpBuilder_ != null || tcp_ != null;
+    @java.lang.Override
+    public boolean getHdgst() {
+      return hdgst_;
     }
     /**
-     * <pre>
-     * Nvme over TCP specific fields
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The tcp.
+     * <code>bool hdgst = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The hdgst to set.
+     * @return This builder for chaining.
      */
-    public opi_api.storage.v1.TcpController getTcp() {
-      if (tcpBuilder_ == null) {
-        return tcp_ == null ? opi_api.storage.v1.TcpController.getDefaultInstance() : tcp_;
-      } else {
-        return tcpBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Nvme over TCP specific fields
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder setTcp(opi_api.storage.v1.TcpController value) {
-      if (tcpBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        tcp_ = value;
-        onChanged();
-      } else {
-        tcpBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Nvme over TCP specific fields
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder setTcp(
-        opi_api.storage.v1.TcpController.Builder builderForValue) {
-      if (tcpBuilder_ == null) {
-        tcp_ = builderForValue.build();
-        onChanged();
-      } else {
-        tcpBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Nvme over TCP specific fields
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder mergeTcp(opi_api.storage.v1.TcpController value) {
-      if (tcpBuilder_ == null) {
-        if (tcp_ != null) {
-          tcp_ =
-            opi_api.storage.v1.TcpController.newBuilder(tcp_).mergeFrom(value).buildPartial();
-        } else {
-          tcp_ = value;
-        }
-        onChanged();
-      } else {
-        tcpBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Nvme over TCP specific fields
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder clearTcp() {
-      if (tcpBuilder_ == null) {
-        tcp_ = null;
-        onChanged();
-      } else {
-        tcp_ = null;
-        tcpBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Nvme over TCP specific fields
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public opi_api.storage.v1.TcpController.Builder getTcpBuilder() {
+    public Builder setHdgst(boolean value) {
       
+      hdgst_ = value;
       onChanged();
-      return getTcpFieldBuilder().getBuilder();
+      return this;
+    }
+    /**
+     * <code>bool hdgst = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHdgst() {
+      
+      hdgst_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean ddgst_ ;
+    /**
+     * <code>bool ddgst = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The ddgst.
+     */
+    @java.lang.Override
+    public boolean getDdgst() {
+      return ddgst_;
+    }
+    /**
+     * <code>bool ddgst = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The ddgst to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDdgst(boolean value) {
+      
+      ddgst_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool ddgst = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDdgst() {
+      
+      ddgst_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString psk_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+     * Use PSK interchange format with base64 encoding as input.
+     * Also use information about hash function in interchange
+     * format for retained PSK generation. If no hash is selected,
+     * use configured PSK as retained PSK.
+     * Check the size of interchange PSK to determine cipher suite.
+     * Calculate CRC-32 bytes to ensure validity of PSK.
+     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+     * </pre>
+     *
+     * <code>bytes psk = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The psk.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPsk() {
+      return psk_;
     }
     /**
      * <pre>
-     * Nvme over TCP specific fields
+     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+     * Use PSK interchange format with base64 encoding as input.
+     * Also use information about hash function in interchange
+     * format for retained PSK generation. If no hash is selected,
+     * use configured PSK as retained PSK.
+     * Check the size of interchange PSK to determine cipher suite.
+     * Calculate CRC-32 bytes to ensure validity of PSK.
+     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
      * </pre>
      *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bytes psk = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The psk to set.
+     * @return This builder for chaining.
      */
-    public opi_api.storage.v1.TcpControllerOrBuilder getTcpOrBuilder() {
-      if (tcpBuilder_ != null) {
-        return tcpBuilder_.getMessageOrBuilder();
-      } else {
-        return tcp_ == null ?
-            opi_api.storage.v1.TcpController.getDefaultInstance() : tcp_;
-      }
+    public Builder setPsk(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      psk_ = value;
+      onChanged();
+      return this;
     }
     /**
      * <pre>
-     * Nvme over TCP specific fields
+     * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
+     * Use PSK interchange format with base64 encoding as input.
+     * Also use information about hash function in interchange
+     * format for retained PSK generation. If no hash is selected,
+     * use configured PSK as retained PSK.
+     * Check the size of interchange PSK to determine cipher suite.
+     * Calculate CRC-32 bytes to ensure validity of PSK.
+     * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
+     * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
      * </pre>
      *
-     * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bytes psk = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.TcpController, opi_api.storage.v1.TcpController.Builder, opi_api.storage.v1.TcpControllerOrBuilder> 
-        getTcpFieldBuilder() {
-      if (tcpBuilder_ == null) {
-        tcpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.storage.v1.TcpController, opi_api.storage.v1.TcpController.Builder, opi_api.storage.v1.TcpControllerOrBuilder>(
-                getTcp(),
-                getParentForChildren(),
-                isClean());
-        tcp_ = null;
-      }
-      return tcpBuilder_;
+    public Builder clearPsk() {
+      
+      psk_ = getDefaultInstance().getPsk();
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
