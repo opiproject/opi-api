@@ -8,10 +8,10 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^Makefile$"],
-      "matchStrings": ["namely/protoc-all:(?<currentValue>.*?)"],
+      "fileMatch": ["(^|\\/)Makefile$"],
+      "matchStrings": ["namely/protoc-all:(?<currentValue>.*?)\\s"],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "docker.io/namely/protoc-all"
+      "depNameTemplate": "namely/protoc-all"
     }
   ]
 }
