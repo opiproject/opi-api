@@ -213,7 +213,7 @@ message VirtioScsiLun {
 
 message CreateVirtioScsiTargetRequest {
     VirtioScsiTarget virtio_scsi_target = 1 [(google.api.field_behavior) = REQUIRED];
-    string virtio_scsi_target_id = 2;
+    string virtio_scsi_target_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteVirtioScsiTargetRequest {
