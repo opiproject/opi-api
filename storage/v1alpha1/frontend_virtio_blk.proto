@@ -65,6 +65,8 @@ message VirtioBlk {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioBlk"
         pattern: "volumes/{volume}"
+        singular: "virtioBlk"
+        plural: "virtioBlks"
     };
 
     // name is an opaque object handle that is not user settable.

@@ -66,6 +66,8 @@ message AioVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/AioVolume"
         pattern: "volumes/{volume}"
+        singular: "aioVolume"
+        plural: "aioVolumes"
     };
 
     // name is an opaque object handle that is not user settable.

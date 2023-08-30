@@ -119,6 +119,8 @@ message NvmeRemoteController {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeRemoteController"
         pattern: "volumes/{volume}"
+        singular: "nvmeRemoteController"
+        plural: "nvmeRemoteControllers"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -153,6 +155,8 @@ message NvmePath {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmePath"
         pattern: "volumes/{volume}"
+        singular: "nvmePath"
+        plural: "nvmePaths"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -196,6 +200,8 @@ message NvmeRemoteNamespace {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeRemoteNamespace"
         pattern: "volumes/{volume}"
+        singular: "nvmeRemoteNamespace"
+        plural: "nvmeRemoteNamespaces"
     };
 
     // name is an opaque object handle that is not user settable.

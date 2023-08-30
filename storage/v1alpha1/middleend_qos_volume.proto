@@ -63,6 +63,8 @@ message QosVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/QosVolume"
         pattern: "volumes/{volume}"
+        singular: "qosVolume"
+        plural: "qosVolumes"
     };
 
     // name is an opaque object handle that is not user settable.

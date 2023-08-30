@@ -147,6 +147,8 @@ message NvmeSubsystem {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeSubsystem"
         pattern: "volumes/{volume}"
+        singular: "nvmeSubsystem"
+        plural: "nvmeSubsystems"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -193,6 +195,8 @@ message NvmeController {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeController"
         pattern: "volumes/{volume}"
+        singular: "nvmeController"
+        plural: "nvmeControllers"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -261,6 +265,8 @@ message NvmeNamespace {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeNamespace"
         pattern: "volumes/{volume}"
+        singular: "nvmeNamespace"
+        plural: "nvmeNamespaces"
     };
 
     // name is an opaque object handle that is not user settable.

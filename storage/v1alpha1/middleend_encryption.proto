@@ -66,6 +66,8 @@ message EncryptedVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/EncryptedVolume"
         pattern: "volumes/{volume}"
+        singular: "encryptedVolume"
+        plural: "encryptedVolumes"
     };
 
     // name is an opaque object handle that is not user settable.

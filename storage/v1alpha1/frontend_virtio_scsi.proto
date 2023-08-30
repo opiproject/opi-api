@@ -143,6 +143,8 @@ message VirtioScsiTarget {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioScsiTarget"
         pattern: "volumes/{volume}"
+        singular: "virtioScsiTarget"
+        plural: "virtioScsiTarget"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -162,6 +164,8 @@ message VirtioScsiController {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioScsiController"
         pattern: "volumes/{volume}"
+        singular: "virtioScsiController"
+        plural: "virtioScsiControllers"
     };
 
     // name is an opaque object handle that is not user settable.
@@ -187,6 +191,8 @@ message VirtioScsiLun {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioScsiLun"
         pattern: "volumes/{volume}"
+        singular: "virtioScsiLun"
+        plural: "virtioScsiLuns"
     };
 
     // name is an opaque object handle that is not user settable.

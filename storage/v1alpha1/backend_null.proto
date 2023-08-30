@@ -66,6 +66,8 @@ message NullVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NullVolume"
         pattern: "volumes/{volume}"
+        singular: "nullVolume"
+        plural: "nullVolumes"
     };
 
     // name is an opaque object handle that is not user settable.
