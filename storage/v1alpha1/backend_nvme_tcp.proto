@@ -198,25 +198,31 @@ message NvmePath {
     ];
 
     NvmeTransportType trtype = 3 [(google.api.field_behavior) = REQUIRED];
-    NvmeAddressFamily adrfam = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // Destination address (e.g. IP address, BDF for local PCIe)
-    string traddr = 5 [(google.api.field_behavior) = REQUIRED];
+    string traddr = 4 [(google.api.field_behavior) = REQUIRED];
 
+    // Not applicable for local PCIe. Required for Nvme over fabrics transport types
+    FabricsPath fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message FabricsPath {
     // Destination service id (e.g. Port)
-    int64 trsvcid = 6 [(google.api.field_behavior) = OPTIONAL];
+    int64 trsvcid = 1 [(google.api.field_behavior) = REQUIRED];
 
     // Subsystem NQN
-    string subnqn = 7 [(google.api.field_behavior) = OPTIONAL];
+    string subnqn = 2 [(google.api.field_behavior) = REQUIRED];
+
+    NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
 
     // Source address (e.g. IP of local NIC)
-    string source_traddr = 8 [(google.api.field_behavior) = OPTIONAL];
+    string source_traddr = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // Source port (e.g. Port of local NIC)
-    int64 source_trsvcid = 9 [(google.api.field_behavior) = OPTIONAL];
+    int64 source_trsvcid = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // Host NQN
-    string hostnqn = 10 [(google.api.field_behavior) = OPTIONAL];
+    string hostnqn = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message NvmeRemoteNamespace {
