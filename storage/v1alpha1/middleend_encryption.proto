@@ -22,6 +22,7 @@ import "google/protobuf/field_mask.proto";
 
 // Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
 service MiddleendEncryptionService {
+    // Create an Encrypted Volume
     rpc CreateEncryptedVolume (CreateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
             post: "/v1/volumes"
@@ -29,12 +30,14 @@ service MiddleendEncryptionService {
         };
         option (google.api.method_signature) = "encrypted_volume,encrypted_volume_id";
     }
+    // Delete an Encrypted Volume
     rpc DeleteEncryptedVolume (DeleteEncryptedVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=EncryptedVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Update an Encrypted Volume
     rpc UpdateEncryptedVolume (UpdateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
             patch: "/v1/{encrypted_volume.name=subsystems}"
@@ -42,18 +45,21 @@ service MiddleendEncryptionService {
         };
         option (google.api.method_signature) = "encrypted_volume,update_mask";
     }
+    // List Encrypted Volumes
     rpc ListEncryptedVolumes   (ListEncryptedVolumesRequest)   returns (ListEncryptedVolumesResponse)   {
         option (google.api.http) = {
             get: "/v1/{parent=volumes}"
         };
         option (google.api.method_signature) = "parent";
     }
+    // Get an Encrypted Volume
     rpc GetEncryptedVolume    (GetEncryptedVolumeRequest)    returns (EncryptedVolume)    {
         option (google.api.http) = {
             get: "/v1/{name=EncryptedVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Get an Encrypted Volume statistics
     rpc StatsEncryptedVolume  (StatsEncryptedVolumeRequest)  returns (StatsEncryptedVolumeResponse)  {
         option (google.api.http) = {
             get: "/v1/{name=EncryptedVolumes/*}:stats"
@@ -90,11 +96,16 @@ message EncryptedVolume {
 
 }
 
+// Represents a request to create an Encrypted Volume.
 message CreateEncryptedVolumeRequest {
+    // The Encrypted Volume to be created.
     EncryptedVolume encrypted_volume = 1 [(google.api.field_behavior) = REQUIRED];
+    // An optional ID to assign to the Encrypted Volume.
+    // If this is not provided the system will auto-generate it.
     string encrypted_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to delete an Encrypted Volume.
 message DeleteEncryptedVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,

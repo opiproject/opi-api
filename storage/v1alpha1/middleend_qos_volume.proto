@@ -19,6 +19,7 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
 service MiddleendQosVolumeService {
+    // Create an Qos Volume
     rpc CreateQosVolume(CreateQosVolumeRequest) returns (QosVolume) {
         option (google.api.http) = {
             post: "/v1/volumes"
@@ -26,12 +27,14 @@ service MiddleendQosVolumeService {
         };
         option (google.api.method_signature) = "qos_volume,qos_volume_id";
     }
+    // Delete an Qos Volume
     rpc DeleteQosVolume(DeleteQosVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=QosVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Update an Qos Volume
     rpc UpdateQosVolume(UpdateQosVolumeRequest) returns (QosVolume) {
         option (google.api.http) = {
             patch : "/v1/{qos_volume.name=subsystems}"
@@ -39,18 +42,21 @@ service MiddleendQosVolumeService {
         };
         option (google.api.method_signature) = "qos_volume,update_mask";
     }
+    // List Qos Volumes
     rpc ListQosVolumes(ListQosVolumesRequest) returns (ListQosVolumesResponse) {
         option (google.api.http) = {
             get : "/v1/{parent=volumes}"
         };
         option (google.api.method_signature) = "parent";
     }
+    // Get an Qos Volume
     rpc GetQosVolume(GetQosVolumeRequest) returns (QosVolume) {
         option (google.api.http) = {
             get: "/v1/{name=QosVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Get an Qos Volume statistics
     rpc StatsQosVolume(StatsQosVolumeRequest) returns (StatsQosVolumeResponse) {
         option (google.api.http) = {
             get: "/v1/{name=QosVolumes/*}:stats"
@@ -100,11 +106,16 @@ message Limits {
     QosLimit max = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to create an QoS Volume.
 message CreateQosVolumeRequest {
+    // The QoS Volume to be created.
     QosVolume qos_volume = 1 [(google.api.field_behavior) = REQUIRED];
+    // An optional ID to assign to the QoS Volume.
+    // If this is not provided the system will auto-generate it.
     string qos_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to delete an Encrypted Volume.
 message DeleteQosVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,

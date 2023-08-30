@@ -21,6 +21,7 @@ import "google/protobuf/field_mask.proto";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
 service FrontendVirtioBlkService {
+    // Create an Virtio Blk
     rpc CreateVirtioBlk (CreateVirtioBlkRequest) returns (VirtioBlk) {
         option (google.api.http) = {
             post: "/v1/volumes"
@@ -28,12 +29,14 @@ service FrontendVirtioBlkService {
         };
         option (google.api.method_signature) = "virtio_blk,virtio_blk_id";
     }
+    // Delete an Virtio Blk
     rpc DeleteVirtioBlk (DeleteVirtioBlkRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=VirtioBlks/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Update an Virtio Blk
     rpc UpdateVirtioBlk (UpdateVirtioBlkRequest) returns (VirtioBlk) {
         option (google.api.http) = {
             patch: "/v1/{virtio_blk.name=subsystems}"
@@ -41,18 +44,21 @@ service FrontendVirtioBlkService {
         };
         option (google.api.method_signature) = "virtio_blk,update_mask";
     }
+    // List Virtio Blks
     rpc ListVirtioBlks   (ListVirtioBlksRequest)   returns (ListVirtioBlksResponse)   {
         option (google.api.http) = {
             get: "/v1/{parent=subsystems}"
         };
         option (google.api.method_signature) = "parent";
     }
+    // Get an Virtio Blk
     rpc GetVirtioBlk    (GetVirtioBlkRequest)    returns (VirtioBlk)    {
         option (google.api.http) = {
             get: "/v1/{name=VirtioBlks/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Get an Virtio Blk statistics
     rpc StatsVirtioBlk  (StatsVirtioBlkRequest)  returns (StatsVirtioBlkResponse)  {
         option (google.api.http) = {
             get: "/v1/{name=VirtioBlks/*}:stats"
@@ -93,11 +99,16 @@ message VirtioBlk {
     QosLimit max_limit = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to create an Virtio Blk.
 message CreateVirtioBlkRequest {
+    // The Virtio Blk to be created.
     VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
+    // An optional ID to assign to the Virtio Blk.
+    // If this is not provided the system will auto-generate it.
     string virtio_blk_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to delete an Virtio Blk.
 message DeleteVirtioBlkRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,

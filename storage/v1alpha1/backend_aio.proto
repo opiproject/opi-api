@@ -22,6 +22,7 @@ import "uuid.proto";
 
 // Back End (network-facing) APIs. This service is for AIO generic kernel block device.
 service AioVolumeService {
+    // Create an Aio Volume
     rpc CreateAioVolume (CreateAioVolumeRequest) returns (AioVolume) {
         option (google.api.http) = {
             post: "/v1/volumes"
@@ -29,12 +30,14 @@ service AioVolumeService {
         };
         option (google.api.method_signature) = "aio_volume,aio_volume_id";
     }
+    // Delete an Aio Volume
     rpc DeleteAioVolume (DeleteAioVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=AioVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Update an Aio Volume
     rpc UpdateAioVolume (UpdateAioVolumeRequest) returns (AioVolume) {
         option (google.api.http) = {
             patch: "/v1/{aio_volume.name=subsystems}"
@@ -42,18 +45,21 @@ service AioVolumeService {
         };
         option (google.api.method_signature) = "aio_volume,update_mask";
     }
+    // List Aio Volumes
     rpc ListAioVolumes   (ListAioVolumesRequest)   returns (ListAioVolumesResponse)   {
         option (google.api.http) = {
             get: "/v1/{parent=subsystems}"
         };
         option (google.api.method_signature) = "parent";
     }
+    // Get an Aio Volume
     rpc GetAioVolume    (GetAioVolumeRequest)    returns (AioVolume)    {
         option (google.api.http) = {
             get: "/v1/{name=AioVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Get an Aio Volume statistics
     rpc StatsAioVolume  (StatsAioVolumeRequest)  returns (StatsAioVolumeResponse)  {
         option (google.api.http) = {
             get: "/v1/{name=AioVolumes/*}:stats"
@@ -79,17 +85,29 @@ message AioVolume {
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
     ];
 
+    // The size of each block in the AioVolume.
     int64 block_size = 2 [(google.api.field_behavior) = OPTIONAL];
+
+    // The total number of blocks in the AioVolume.
     int64 blocks_count = 3 [(google.api.field_behavior) = OPTIONAL];
+
+    // The UUID (Universally Unique Identifier) of the AioVolume.
     common.v1.Uuid uuid = 4 [(google.api.field_behavior) = OPTIONAL];
+
+    // The filename associated with the AioVolume.
     string filename = 5 [(google.api.field_behavior) = REQUIRED];
 }
 
+// Represents a request to create an Aio Volume.
 message CreateAioVolumeRequest {
+    // The Aio Volume to be created.
     AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
+    // An optional ID to assign to the Aio Volume.
+    // If this is not provided the system will auto-generate it.
     string aio_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to delete an AioVolume.
 message DeleteAioVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,

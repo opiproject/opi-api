@@ -22,6 +22,7 @@ import "uuid.proto";
 
 // Back End (network-facing) APIs. This is debug interface for null block devices.
 service NullVolumeService {
+    // Create an Null Volume
     rpc CreateNullVolume (CreateNullVolumeRequest) returns (NullVolume) {
         option (google.api.http) = {
             post: "/v1/volumes"
@@ -29,12 +30,14 @@ service NullVolumeService {
         };
         option (google.api.method_signature) = "null_volume,null_volume_id";
     }
+    // Delete an Null Volume
     rpc DeleteNullVolume (DeleteNullVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=NullVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Update an Null Volume
     rpc UpdateNullVolume (UpdateNullVolumeRequest) returns (NullVolume) {
         option (google.api.http) = {
             patch: "/v1/{null_volume.name=subsystems}"
@@ -42,18 +45,21 @@ service NullVolumeService {
         };
         option (google.api.method_signature) = "null_volume,update_mask";
     }
+    // List Null Volumes
     rpc ListNullVolumes   (ListNullVolumesRequest)   returns (ListNullVolumesResponse)   {
         option (google.api.http) = {
             get: "/v1/{parent=subsystems}"
         };
         option (google.api.method_signature) = "parent";
     }
+    // Get an Null Volume
     rpc GetNullVolume    (GetNullVolumeRequest)    returns (NullVolume)    {
         option (google.api.http) = {
             get: "/v1/{name=NullVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Get an Null Volume statistics
     rpc StatsNullVolume  (StatsNullVolumeRequest)  returns (StatsNullVolumeResponse)  {
         option (google.api.http) = {
             get: "/v1/{name=NullVolumes/*}:stats"
@@ -78,16 +84,27 @@ message NullVolume {
         (google.api.field_behavior) = IMMUTABLE,
         (google.api.resource_reference).type = "opi_api.storage.v1/NullVolume"
     ];
+
+    // The block size of the NullVolume. This field is required.
     int64 block_size = 2 [(google.api.field_behavior) = REQUIRED];
+
+    // The number of blocks in the NullVolume. This field is required.
     int64 blocks_count = 3 [(google.api.field_behavior) = REQUIRED];
+
+    // The UUID of the NullVolume. This field is optional.
     common.v1.Uuid uuid = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to create an Null Volume.
 message CreateNullVolumeRequest {
+    // The Null Volume to be created.
     NullVolume null_volume = 1 [(google.api.field_behavior) = REQUIRED];
+    // An optional ID to assign to the Null Volume.
+    // If this is not provided the system will auto-generate it.
     string null_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to delete an Null Volume.
 message DeleteNullVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
