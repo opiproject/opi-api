@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+   * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the qosVolume field is set.
    */
   @java.lang.Override
@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+   * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The qosVolume.
    */
   @java.lang.Override
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
    * The object's `name` field is used to identify the object to be updated.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+   * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.QosVolumeOrBuilder getQosVolumeOrBuilder() {
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   @java.lang.Override
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   @java.lang.Override
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
    * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
    * In this situation, `update_mask` is ignored.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The allowMissing.
    */
   @java.lang.Override
@@ -576,7 +576,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the qosVolume field is set.
      */
     public boolean hasQosVolume() {
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The qosVolume.
      */
     public opi_api.storage.v1.QosVolume getQosVolume() {
@@ -602,7 +602,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQosVolume(opi_api.storage.v1.QosVolume value) {
       if (qosVolumeBuilder_ == null) {
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQosVolume(
         opi_api.storage.v1.QosVolume.Builder builderForValue) {
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeQosVolume(opi_api.storage.v1.QosVolume value) {
       if (qosVolumeBuilder_ == null) {
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearQosVolume() {
       if (qosVolumeBuilder_ == null) {
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.QosVolume.Builder getQosVolumeBuilder() {
       
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.QosVolumeOrBuilder getQosVolumeOrBuilder() {
       if (qosVolumeBuilder_ != null) {
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
      * The object's `name` field is used to identify the object to be updated.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1;</code>
+     * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosVolume, opi_api.storage.v1.QosVolume.Builder, opi_api.storage.v1.QosVolumeOrBuilder> 
@@ -731,7 +731,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -847,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
      * The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
@@ -885,7 +885,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The allowMissing.
      */
     @java.lang.Override
@@ -898,7 +898,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The allowMissing to set.
      * @return This builder for chaining.
      */
@@ -914,7 +914,7 @@ private static final long serialVersionUID = 0L;
      * In this situation, `update_mask` is ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {

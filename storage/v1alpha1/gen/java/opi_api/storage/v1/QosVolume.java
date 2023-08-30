@@ -63,27 +63,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            opi_api.storage.v1.QosLimit.Builder subBuilder = null;
-            if (minLimit_ != null) {
-              subBuilder = minLimit_.toBuilder();
+            opi_api.storage.v1.Limits.Builder subBuilder = null;
+            if (limits_ != null) {
+              subBuilder = limits_.toBuilder();
             }
-            minLimit_ = input.readMessage(opi_api.storage.v1.QosLimit.parser(), extensionRegistry);
+            limits_ = input.readMessage(opi_api.storage.v1.Limits.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(minLimit_);
-              minLimit_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 34: {
-            opi_api.storage.v1.QosLimit.Builder subBuilder = null;
-            if (maxLimit_ != null) {
-              subBuilder = maxLimit_.toBuilder();
-            }
-            maxLimit_ = input.readMessage(opi_api.storage.v1.QosLimit.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(maxLimit_);
-              maxLimit_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(limits_);
+              limits_ = subBuilder.buildPartial();
             }
 
             break;
@@ -218,56 +205,78 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MIN_LIMIT_FIELD_NUMBER = 3;
-  private opi_api.storage.v1.QosLimit minLimit_;
+  public static final int LIMITS_FIELD_NUMBER = 3;
+  private opi_api.storage.v1.Limits limits_;
   /**
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
-   * @return Whether the minLimit field is set.
+   * <pre>
+   * At least one limit value should be set, oitherwise volume does not make
+   * sense.
+   * AIP-203 says that a field should be described as REQUIRED if it is a
+   * field on a resource that a user provides somewhere as input.
+   * In this case, the resource is only valid if a "truthy" value is stored.
+   * "truthy" is defined as:
+   * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+   * * For repeated fields maps, values with at least one entry
+   * * For messages, any message with at least one "truthy" field.
+   * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+   * it forces one limit field is set on both. Limits message is added to
+   * overcome it. REQUIRED on limits forces at least one limit field in
+   * either min/max sub message is set.
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the limits field is set.
    */
   @java.lang.Override
-  public boolean hasMinLimit() {
-    return minLimit_ != null;
+  public boolean hasLimits() {
+    return limits_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
-   * @return The minLimit.
+   * <pre>
+   * At least one limit value should be set, oitherwise volume does not make
+   * sense.
+   * AIP-203 says that a field should be described as REQUIRED if it is a
+   * field on a resource that a user provides somewhere as input.
+   * In this case, the resource is only valid if a "truthy" value is stored.
+   * "truthy" is defined as:
+   * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+   * * For repeated fields maps, values with at least one entry
+   * * For messages, any message with at least one "truthy" field.
+   * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+   * it forces one limit field is set on both. Limits message is added to
+   * overcome it. REQUIRED on limits forces at least one limit field in
+   * either min/max sub message is set.
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The limits.
    */
   @java.lang.Override
-  public opi_api.storage.v1.QosLimit getMinLimit() {
-    return minLimit_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : minLimit_;
+  public opi_api.storage.v1.Limits getLimits() {
+    return limits_ == null ? opi_api.storage.v1.Limits.getDefaultInstance() : limits_;
   }
   /**
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * <pre>
+   * At least one limit value should be set, oitherwise volume does not make
+   * sense.
+   * AIP-203 says that a field should be described as REQUIRED if it is a
+   * field on a resource that a user provides somewhere as input.
+   * In this case, the resource is only valid if a "truthy" value is stored.
+   * "truthy" is defined as:
+   * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+   * * For repeated fields maps, values with at least one entry
+   * * For messages, any message with at least one "truthy" field.
+   * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+   * it forces one limit field is set on both. Limits message is added to
+   * overcome it. REQUIRED on limits forces at least one limit field in
+   * either min/max sub message is set.
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
-    return getMinLimit();
-  }
-
-  public static final int MAX_LIMIT_FIELD_NUMBER = 4;
-  private opi_api.storage.v1.QosLimit maxLimit_;
-  /**
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-   * @return Whether the maxLimit field is set.
-   */
-  @java.lang.Override
-  public boolean hasMaxLimit() {
-    return maxLimit_ != null;
-  }
-  /**
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-   * @return The maxLimit.
-   */
-  @java.lang.Override
-  public opi_api.storage.v1.QosLimit getMaxLimit() {
-    return maxLimit_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : maxLimit_;
-  }
-  /**
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-   */
-  @java.lang.Override
-  public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
-    return getMaxLimit();
+  public opi_api.storage.v1.LimitsOrBuilder getLimitsOrBuilder() {
+    return getLimits();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -290,11 +299,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeNameRef_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, volumeNameRef_);
     }
-    if (minLimit_ != null) {
-      output.writeMessage(3, getMinLimit());
-    }
-    if (maxLimit_ != null) {
-      output.writeMessage(4, getMaxLimit());
+    if (limits_ != null) {
+      output.writeMessage(3, getLimits());
     }
     unknownFields.writeTo(output);
   }
@@ -311,13 +317,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeNameRef_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, volumeNameRef_);
     }
-    if (minLimit_ != null) {
+    if (limits_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getMinLimit());
-    }
-    if (maxLimit_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getMaxLimit());
+        .computeMessageSize(3, getLimits());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -338,15 +340,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getVolumeNameRef()
         .equals(other.getVolumeNameRef())) return false;
-    if (hasMinLimit() != other.hasMinLimit()) return false;
-    if (hasMinLimit()) {
-      if (!getMinLimit()
-          .equals(other.getMinLimit())) return false;
-    }
-    if (hasMaxLimit() != other.hasMaxLimit()) return false;
-    if (hasMaxLimit()) {
-      if (!getMaxLimit()
-          .equals(other.getMaxLimit())) return false;
+    if (hasLimits() != other.hasLimits()) return false;
+    if (hasLimits()) {
+      if (!getLimits()
+          .equals(other.getLimits())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -363,13 +360,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + VOLUME_NAME_REF_FIELD_NUMBER;
     hash = (53 * hash) + getVolumeNameRef().hashCode();
-    if (hasMinLimit()) {
-      hash = (37 * hash) + MIN_LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + getMinLimit().hashCode();
-    }
-    if (hasMaxLimit()) {
-      hash = (37 * hash) + MAX_LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxLimit().hashCode();
+    if (hasLimits()) {
+      hash = (37 * hash) + LIMITS_FIELD_NUMBER;
+      hash = (53 * hash) + getLimits().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -508,17 +501,11 @@ private static final long serialVersionUID = 0L;
 
       volumeNameRef_ = "";
 
-      if (minLimitBuilder_ == null) {
-        minLimit_ = null;
+      if (limitsBuilder_ == null) {
+        limits_ = null;
       } else {
-        minLimit_ = null;
-        minLimitBuilder_ = null;
-      }
-      if (maxLimitBuilder_ == null) {
-        maxLimit_ = null;
-      } else {
-        maxLimit_ = null;
-        maxLimitBuilder_ = null;
+        limits_ = null;
+        limitsBuilder_ = null;
       }
       return this;
     }
@@ -548,15 +535,10 @@ private static final long serialVersionUID = 0L;
       opi_api.storage.v1.QosVolume result = new opi_api.storage.v1.QosVolume(this);
       result.name_ = name_;
       result.volumeNameRef_ = volumeNameRef_;
-      if (minLimitBuilder_ == null) {
-        result.minLimit_ = minLimit_;
+      if (limitsBuilder_ == null) {
+        result.limits_ = limits_;
       } else {
-        result.minLimit_ = minLimitBuilder_.build();
-      }
-      if (maxLimitBuilder_ == null) {
-        result.maxLimit_ = maxLimit_;
-      } else {
-        result.maxLimit_ = maxLimitBuilder_.build();
+        result.limits_ = limitsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -614,11 +596,8 @@ private static final long serialVersionUID = 0L;
         volumeNameRef_ = other.volumeNameRef_;
         onChanged();
       }
-      if (other.hasMinLimit()) {
-        mergeMinLimit(other.getMinLimit());
-      }
-      if (other.hasMaxLimit()) {
-        mergeMaxLimit(other.getMaxLimit());
+      if (other.hasLimits()) {
+        mergeLimits(other.getLimits());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -851,242 +830,267 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.QosLimit minLimit_;
+    private opi_api.storage.v1.Limits limits_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> minLimitBuilder_;
+        opi_api.storage.v1.Limits, opi_api.storage.v1.Limits.Builder, opi_api.storage.v1.LimitsOrBuilder> limitsBuilder_;
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
-     * @return Whether the minLimit field is set.
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the limits field is set.
      */
-    public boolean hasMinLimit() {
-      return minLimitBuilder_ != null || minLimit_ != null;
+    public boolean hasLimits() {
+      return limitsBuilder_ != null || limits_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
-     * @return The minLimit.
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The limits.
      */
-    public opi_api.storage.v1.QosLimit getMinLimit() {
-      if (minLimitBuilder_ == null) {
-        return minLimit_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : minLimit_;
+    public opi_api.storage.v1.Limits getLimits() {
+      if (limitsBuilder_ == null) {
+        return limits_ == null ? opi_api.storage.v1.Limits.getDefaultInstance() : limits_;
       } else {
-        return minLimitBuilder_.getMessage();
+        return limitsBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setMinLimit(opi_api.storage.v1.QosLimit value) {
-      if (minLimitBuilder_ == null) {
+    public Builder setLimits(opi_api.storage.v1.Limits value) {
+      if (limitsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        minLimit_ = value;
+        limits_ = value;
         onChanged();
       } else {
-        minLimitBuilder_.setMessage(value);
+        limitsBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setMinLimit(
-        opi_api.storage.v1.QosLimit.Builder builderForValue) {
-      if (minLimitBuilder_ == null) {
-        minLimit_ = builderForValue.build();
+    public Builder setLimits(
+        opi_api.storage.v1.Limits.Builder builderForValue) {
+      if (limitsBuilder_ == null) {
+        limits_ = builderForValue.build();
         onChanged();
       } else {
-        minLimitBuilder_.setMessage(builderForValue.build());
+        limitsBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeMinLimit(opi_api.storage.v1.QosLimit value) {
-      if (minLimitBuilder_ == null) {
-        if (minLimit_ != null) {
-          minLimit_ =
-            opi_api.storage.v1.QosLimit.newBuilder(minLimit_).mergeFrom(value).buildPartial();
+    public Builder mergeLimits(opi_api.storage.v1.Limits value) {
+      if (limitsBuilder_ == null) {
+        if (limits_ != null) {
+          limits_ =
+            opi_api.storage.v1.Limits.newBuilder(limits_).mergeFrom(value).buildPartial();
         } else {
-          minLimit_ = value;
+          limits_ = value;
         }
         onChanged();
       } else {
-        minLimitBuilder_.mergeFrom(value);
+        limitsBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearMinLimit() {
-      if (minLimitBuilder_ == null) {
-        minLimit_ = null;
+    public Builder clearLimits() {
+      if (limitsBuilder_ == null) {
+        limits_ = null;
         onChanged();
       } else {
-        minLimit_ = null;
-        minLimitBuilder_ = null;
+        limits_ = null;
+        limitsBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.QosLimit.Builder getMinLimitBuilder() {
+    public opi_api.storage.v1.Limits.Builder getLimitsBuilder() {
       
       onChanged();
-      return getMinLimitFieldBuilder().getBuilder();
+      return getLimitsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
-      if (minLimitBuilder_ != null) {
-        return minLimitBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.LimitsOrBuilder getLimitsOrBuilder() {
+      if (limitsBuilder_ != null) {
+        return limitsBuilder_.getMessageOrBuilder();
       } else {
-        return minLimit_ == null ?
-            opi_api.storage.v1.QosLimit.getDefaultInstance() : minLimit_;
+        return limits_ == null ?
+            opi_api.storage.v1.Limits.getDefaultInstance() : limits_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * <pre>
+     * At least one limit value should be set, oitherwise volume does not make
+     * sense.
+     * AIP-203 says that a field should be described as REQUIRED if it is a
+     * field on a resource that a user provides somewhere as input.
+     * In this case, the resource is only valid if a "truthy" value is stored.
+     * "truthy" is defined as:
+     * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+     * * For repeated fields maps, values with at least one entry
+     * * For messages, any message with at least one "truthy" field.
+     * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+     * it forces one limit field is set on both. Limits message is added to
+     * overcome it. REQUIRED on limits forces at least one limit field in
+     * either min/max sub message is set.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 
-        getMinLimitFieldBuilder() {
-      if (minLimitBuilder_ == null) {
-        minLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder>(
-                getMinLimit(),
+        opi_api.storage.v1.Limits, opi_api.storage.v1.Limits.Builder, opi_api.storage.v1.LimitsOrBuilder> 
+        getLimitsFieldBuilder() {
+      if (limitsBuilder_ == null) {
+        limitsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.Limits, opi_api.storage.v1.Limits.Builder, opi_api.storage.v1.LimitsOrBuilder>(
+                getLimits(),
                 getParentForChildren(),
                 isClean());
-        minLimit_ = null;
+        limits_ = null;
       }
-      return minLimitBuilder_;
-    }
-
-    private opi_api.storage.v1.QosLimit maxLimit_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> maxLimitBuilder_;
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     * @return Whether the maxLimit field is set.
-     */
-    public boolean hasMaxLimit() {
-      return maxLimitBuilder_ != null || maxLimit_ != null;
-    }
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     * @return The maxLimit.
-     */
-    public opi_api.storage.v1.QosLimit getMaxLimit() {
-      if (maxLimitBuilder_ == null) {
-        return maxLimit_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : maxLimit_;
-      } else {
-        return maxLimitBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     */
-    public Builder setMaxLimit(opi_api.storage.v1.QosLimit value) {
-      if (maxLimitBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        maxLimit_ = value;
-        onChanged();
-      } else {
-        maxLimitBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     */
-    public Builder setMaxLimit(
-        opi_api.storage.v1.QosLimit.Builder builderForValue) {
-      if (maxLimitBuilder_ == null) {
-        maxLimit_ = builderForValue.build();
-        onChanged();
-      } else {
-        maxLimitBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     */
-    public Builder mergeMaxLimit(opi_api.storage.v1.QosLimit value) {
-      if (maxLimitBuilder_ == null) {
-        if (maxLimit_ != null) {
-          maxLimit_ =
-            opi_api.storage.v1.QosLimit.newBuilder(maxLimit_).mergeFrom(value).buildPartial();
-        } else {
-          maxLimit_ = value;
-        }
-        onChanged();
-      } else {
-        maxLimitBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     */
-    public Builder clearMaxLimit() {
-      if (maxLimitBuilder_ == null) {
-        maxLimit_ = null;
-        onChanged();
-      } else {
-        maxLimit_ = null;
-        maxLimitBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     */
-    public opi_api.storage.v1.QosLimit.Builder getMaxLimitBuilder() {
-      
-      onChanged();
-      return getMaxLimitFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     */
-    public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
-      if (maxLimitBuilder_ != null) {
-        return maxLimitBuilder_.getMessageOrBuilder();
-      } else {
-        return maxLimit_ == null ?
-            opi_api.storage.v1.QosLimit.getDefaultInstance() : maxLimit_;
-      }
-    }
-    /**
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 
-        getMaxLimitFieldBuilder() {
-      if (maxLimitBuilder_ == null) {
-        maxLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder>(
-                getMaxLimit(),
-                getParentForChildren(),
-                isClean());
-        maxLimit_ = null;
-      }
-      return maxLimitBuilder_;
+      return limitsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

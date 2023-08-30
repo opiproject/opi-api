@@ -23,12 +23,12 @@ public interface CreateEncryptedVolumeRequestOrBuilder extends
   opi_api.storage.v1.EncryptedVolumeOrBuilder getEncryptedVolumeOrBuilder();
 
   /**
-   * <code>string encrypted_volume_id = 2;</code>
+   * <code>string encrypted_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The encryptedVolumeId.
    */
   java.lang.String getEncryptedVolumeId();
   /**
-   * <code>string encrypted_volume_id = 2;</code>
+   * <code>string encrypted_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for encryptedVolumeId.
    */
   com.google.protobuf.ByteString

@@ -212,7 +212,7 @@ private static final long serialVersionUID = 0L;
    * Key to be used for encryption
    * </pre>
    *
-   * <code>bytes key = 3;</code>
+   * <code>bytes key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The key.
    */
   @java.lang.Override
@@ -227,7 +227,7 @@ private static final long serialVersionUID = 0L;
    * Cipher to use
    * </pre>
    *
-   * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+   * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for cipher.
    */
   @java.lang.Override public int getCipherValue() {
@@ -238,7 +238,7 @@ private static final long serialVersionUID = 0L;
    * Cipher to use
    * </pre>
    *
-   * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+   * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The cipher.
    */
   @java.lang.Override public opi_api.storage.v1.EncryptionType getCipher() {
@@ -807,7 +807,7 @@ private static final long serialVersionUID = 0L;
      * Key to be used for encryption
      * </pre>
      *
-     * <code>bytes key = 3;</code>
+     * <code>bytes key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The key.
      */
     @java.lang.Override
@@ -819,7 +819,7 @@ private static final long serialVersionUID = 0L;
      * Key to be used for encryption
      * </pre>
      *
-     * <code>bytes key = 3;</code>
+     * <code>bytes key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The key to set.
      * @return This builder for chaining.
      */
@@ -837,7 +837,7 @@ private static final long serialVersionUID = 0L;
      * Key to be used for encryption
      * </pre>
      *
-     * <code>bytes key = 3;</code>
+     * <code>bytes key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearKey() {
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
      * Cipher to use
      * </pre>
      *
-     * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+     * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for cipher.
      */
     @java.lang.Override public int getCipherValue() {
@@ -864,7 +864,7 @@ private static final long serialVersionUID = 0L;
      * Cipher to use
      * </pre>
      *
-     * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+     * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The enum numeric value on the wire for cipher to set.
      * @return This builder for chaining.
      */
@@ -879,7 +879,7 @@ private static final long serialVersionUID = 0L;
      * Cipher to use
      * </pre>
      *
-     * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+     * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The cipher.
      */
     @java.lang.Override
@@ -893,7 +893,7 @@ private static final long serialVersionUID = 0L;
      * Cipher to use
      * </pre>
      *
-     * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+     * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The cipher to set.
      * @return This builder for chaining.
      */
@@ -911,7 +911,7 @@ private static final long serialVersionUID = 0L;
      * Cipher to use
      * </pre>
      *
-     * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+     * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearCipher() {

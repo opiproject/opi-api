@@ -255,7 +255,7 @@ class EncryptedVolume final :
   std::string* _internal_mutable_volume_name_ref();
   public:
 
-  // bytes key = 3;
+  // bytes key = 3 [(.google.api.field_behavior) = REQUIRED];
   void clear_key();
   const std::string& key() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -269,7 +269,7 @@ class EncryptedVolume final :
   std::string* _internal_mutable_key();
   public:
 
-  // .opi_api.storage.v1.EncryptionType cipher = 4;
+  // .opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];
   void clear_cipher();
   ::opi_api::storage::v1::EncryptionType cipher() const;
   void set_cipher(::opi_api::storage::v1::EncryptionType value);
@@ -421,7 +421,7 @@ class CreateEncryptedVolumeRequest final :
     kEncryptedVolumeIdFieldNumber = 2,
     kEncryptedVolumeFieldNumber = 1,
   };
-  // string encrypted_volume_id = 2;
+  // string encrypted_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_encrypted_volume_id();
   const std::string& encrypted_volume_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -608,7 +608,7 @@ class DeleteEncryptedVolumeRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // bool allow_missing = 2;
+  // bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -759,7 +759,7 @@ class UpdateEncryptedVolumeRequest final :
     kUpdateMaskFieldNumber = 2,
     kAllowMissingFieldNumber = 3,
   };
-  // .opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;
+  // .opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_encrypted_volume() const;
   private:
   bool _internal_has_encrypted_volume() const;
@@ -777,7 +777,7 @@ class UpdateEncryptedVolumeRequest final :
       ::opi_api::storage::v1::EncryptedVolume* encrypted_volume);
   ::opi_api::storage::v1::EncryptedVolume* unsafe_arena_release_encrypted_volume();
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_update_mask() const;
   private:
   bool _internal_has_update_mask() const;
@@ -795,7 +795,7 @@ class UpdateEncryptedVolumeRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
-  // bool allow_missing = 3;
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_allow_missing();
   bool allow_missing() const;
   void set_allow_missing(bool value);
@@ -961,7 +961,7 @@ class ListEncryptedVolumesRequest final :
   std::string* _internal_mutable_parent();
   public:
 
-  // string page_token = 3;
+  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -975,7 +975,7 @@ class ListEncryptedVolumesRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 2;
+  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -1747,7 +1747,7 @@ inline void EncryptedVolume::set_allocated_volume_name_ref(std::string* volume_n
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.EncryptedVolume.volume_name_ref)
 }
 
-// bytes key = 3;
+// bytes key = 3 [(.google.api.field_behavior) = REQUIRED];
 inline void EncryptedVolume::clear_key() {
   _impl_.key_.ClearToEmpty();
 }
@@ -1797,7 +1797,7 @@ inline void EncryptedVolume::set_allocated_key(std::string* key) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.EncryptedVolume.key)
 }
 
-// .opi_api.storage.v1.EncryptionType cipher = 4;
+// .opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];
 inline void EncryptedVolume::clear_cipher() {
   _impl_.cipher_ = 0;
 }
@@ -1911,7 +1911,7 @@ inline void CreateEncryptedVolumeRequest::set_allocated_encrypted_volume(::opi_a
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateEncryptedVolumeRequest.encrypted_volume)
 }
 
-// string encrypted_volume_id = 2;
+// string encrypted_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateEncryptedVolumeRequest::clear_encrypted_volume_id() {
   _impl_.encrypted_volume_id_.ClearToEmpty();
 }
@@ -2015,7 +2015,7 @@ inline void DeleteEncryptedVolumeRequest::set_allocated_name(std::string* name) 
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteEncryptedVolumeRequest.name)
 }
 
-// bool allow_missing = 2;
+// bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void DeleteEncryptedVolumeRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -2039,7 +2039,7 @@ inline void DeleteEncryptedVolumeRequest::set_allow_missing(bool value) {
 
 // UpdateEncryptedVolumeRequest
 
-// .opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;
+// .opi_api.storage.v1.EncryptedVolume encrypted_volume = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool UpdateEncryptedVolumeRequest::_internal_has_encrypted_volume() const {
   return this != internal_default_instance() && _impl_.encrypted_volume_ != nullptr;
 }
@@ -2129,7 +2129,7 @@ inline void UpdateEncryptedVolumeRequest::set_allocated_encrypted_volume(::opi_a
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateEncryptedVolumeRequest.encrypted_volume)
 }
 
-// .google.protobuf.FieldMask update_mask = 2;
+// .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool UpdateEncryptedVolumeRequest::_internal_has_update_mask() const {
   return this != internal_default_instance() && _impl_.update_mask_ != nullptr;
 }
@@ -2214,7 +2214,7 @@ inline void UpdateEncryptedVolumeRequest::set_allocated_update_mask(::PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateEncryptedVolumeRequest.update_mask)
 }
 
-// bool allow_missing = 3;
+// bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void UpdateEncryptedVolumeRequest::clear_allow_missing() {
   _impl_.allow_missing_ = false;
 }
@@ -2288,7 +2288,7 @@ inline void ListEncryptedVolumesRequest::set_allocated_parent(std::string* paren
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListEncryptedVolumesRequest.parent)
 }
 
-// int32 page_size = 2;
+// int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListEncryptedVolumesRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -2308,7 +2308,7 @@ inline void ListEncryptedVolumesRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListEncryptedVolumesRequest.page_size)
 }
 
-// string page_token = 3;
+// string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListEncryptedVolumesRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }

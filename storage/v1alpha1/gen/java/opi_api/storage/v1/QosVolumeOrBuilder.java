@@ -52,32 +52,65 @@ public interface QosVolumeOrBuilder extends
       getVolumeNameRefBytes();
 
   /**
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
-   * @return Whether the minLimit field is set.
+   * <pre>
+   * At least one limit value should be set, oitherwise volume does not make
+   * sense.
+   * AIP-203 says that a field should be described as REQUIRED if it is a
+   * field on a resource that a user provides somewhere as input.
+   * In this case, the resource is only valid if a "truthy" value is stored.
+   * "truthy" is defined as:
+   * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+   * * For repeated fields maps, values with at least one entry
+   * * For messages, any message with at least one "truthy" field.
+   * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+   * it forces one limit field is set on both. Limits message is added to
+   * overcome it. REQUIRED on limits forces at least one limit field in
+   * either min/max sub message is set.
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the limits field is set.
    */
-  boolean hasMinLimit();
+  boolean hasLimits();
   /**
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
-   * @return The minLimit.
+   * <pre>
+   * At least one limit value should be set, oitherwise volume does not make
+   * sense.
+   * AIP-203 says that a field should be described as REQUIRED if it is a
+   * field on a resource that a user provides somewhere as input.
+   * In this case, the resource is only valid if a "truthy" value is stored.
+   * "truthy" is defined as:
+   * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+   * * For repeated fields maps, values with at least one entry
+   * * For messages, any message with at least one "truthy" field.
+   * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+   * it forces one limit field is set on both. Limits message is added to
+   * overcome it. REQUIRED on limits forces at least one limit field in
+   * either min/max sub message is set.
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The limits.
    */
-  opi_api.storage.v1.QosLimit getMinLimit();
+  opi_api.storage.v1.Limits getLimits();
   /**
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * <pre>
+   * At least one limit value should be set, oitherwise volume does not make
+   * sense.
+   * AIP-203 says that a field should be described as REQUIRED if it is a
+   * field on a resource that a user provides somewhere as input.
+   * In this case, the resource is only valid if a "truthy" value is stored.
+   * "truthy" is defined as:
+   * * For primitives, values other than 0, 0.0, empty string/bytes, and false
+   * * For repeated fields maps, values with at least one entry
+   * * For messages, any message with at least one "truthy" field.
+   * We cannot mark both min and max QosLimit as REQUIRED directly here, since
+   * it forces one limit field is set on both. Limits message is added to
+   * overcome it. REQUIRED on limits forces at least one limit field in
+   * either min/max sub message is set.
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.Limits limits = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder();
-
-  /**
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-   * @return Whether the maxLimit field is set.
-   */
-  boolean hasMaxLimit();
-  /**
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-   * @return The maxLimit.
-   */
-  opi_api.storage.v1.QosLimit getMaxLimit();
-  /**
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
-   */
-  opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder();
+  opi_api.storage.v1.LimitsOrBuilder getLimitsOrBuilder();
 }

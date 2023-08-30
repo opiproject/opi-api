@@ -56,7 +56,7 @@ public interface EncryptedVolumeOrBuilder extends
    * Key to be used for encryption
    * </pre>
    *
-   * <code>bytes key = 3;</code>
+   * <code>bytes key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The key.
    */
   com.google.protobuf.ByteString getKey();
@@ -66,7 +66,7 @@ public interface EncryptedVolumeOrBuilder extends
    * Cipher to use
    * </pre>
    *
-   * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+   * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for cipher.
    */
   int getCipherValue();
@@ -75,7 +75,7 @@ public interface EncryptedVolumeOrBuilder extends
    * Cipher to use
    * </pre>
    *
-   * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
+   * <code>.opi_api.storage.v1.EncryptionType cipher = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The cipher.
    */
   opi_api.storage.v1.EncryptionType getCipher();

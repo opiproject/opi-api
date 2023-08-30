@@ -163,6 +163,7 @@
     - [CreateQosVolumeRequest](#opi_api-storage-v1-CreateQosVolumeRequest)
     - [DeleteQosVolumeRequest](#opi_api-storage-v1-DeleteQosVolumeRequest)
     - [GetQosVolumeRequest](#opi_api-storage-v1-GetQosVolumeRequest)
+    - [Limits](#opi_api-storage-v1-Limits)
     - [ListQosVolumesRequest](#opi_api-storage-v1-ListQosVolumesRequest)
     - [ListQosVolumesResponse](#opi_api-storage-v1-ListQosVolumesResponse)
     - [QosVolume](#opi_api-storage-v1-QosVolume)
@@ -2547,6 +2548,22 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 
 
+<a name="opi_api-storage-v1-Limits"></a>
+
+### Limits
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| min | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
+| max | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-ListQosVolumesRequest"></a>
 
 ### ListQosVolumesRequest
@@ -2590,8 +2607,7 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | volume_name_ref | [string](#string) |  | Middleend/backend volume to apply QoS on |
-| min_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
-| max_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
+| limits | [Limits](#opi_api-storage-v1-Limits) |  | At least one limit value should be set, oitherwise volume does not make sense. AIP-203 says that a field should be described as REQUIRED if it is a field on a resource that a user provides somewhere as input. In this case, the resource is only valid if a &#34;truthy&#34; value is stored. &#34;truthy&#34; is defined as: * For primitives, values other than 0, 0.0, empty string/bytes, and false * For repeated fields maps, values with at least one entry * For messages, any message with at least one &#34;truthy&#34; field. We cannot mark both min and max QosLimit as REQUIRED directly here, since it forces one limit field is set on both. Limits message is added to overcome it. REQUIRED on limits forces at least one limit field in either min/max sub message is set. |
 
 
 

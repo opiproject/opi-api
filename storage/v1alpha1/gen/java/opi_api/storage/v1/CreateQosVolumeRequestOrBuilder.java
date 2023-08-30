@@ -23,12 +23,12 @@ public interface CreateQosVolumeRequestOrBuilder extends
   opi_api.storage.v1.QosVolumeOrBuilder getQosVolumeOrBuilder();
 
   /**
-   * <code>string qos_volume_id = 2;</code>
+   * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The qosVolumeId.
    */
   java.lang.String getQosVolumeId();
   /**
-   * <code>string qos_volume_id = 2;</code>
+   * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for qosVolumeId.
    */
   com.google.protobuf.ByteString
