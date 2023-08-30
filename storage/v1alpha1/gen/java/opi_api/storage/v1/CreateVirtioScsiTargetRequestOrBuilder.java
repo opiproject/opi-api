@@ -23,12 +23,12 @@ public interface CreateVirtioScsiTargetRequestOrBuilder extends
   opi_api.storage.v1.VirtioScsiTargetOrBuilder getVirtioScsiTargetOrBuilder();
 
   /**
-   * <code>string virtio_scsi_target_id = 2;</code>
+   * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioScsiTargetId.
    */
   java.lang.String getVirtioScsiTargetId();
   /**
-   * <code>string virtio_scsi_target_id = 2;</code>
+   * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioScsiTargetId.
    */
   com.google.protobuf.ByteString

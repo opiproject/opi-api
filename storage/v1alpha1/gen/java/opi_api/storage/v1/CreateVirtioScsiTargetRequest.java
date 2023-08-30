@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
   public static final int VIRTIO_SCSI_TARGET_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object virtioScsiTargetId_;
   /**
-   * <code>string virtio_scsi_target_id = 2;</code>
+   * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioScsiTargetId.
    */
   @java.lang.Override
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string virtio_scsi_target_id = 2;</code>
+   * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioScsiTargetId.
    */
   @java.lang.Override
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object virtioScsiTargetId_ = "";
     /**
-     * <code>string virtio_scsi_target_id = 2;</code>
+     * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The virtioScsiTargetId.
      */
     public java.lang.String getVirtioScsiTargetId() {
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string virtio_scsi_target_id = 2;</code>
+     * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for virtioScsiTargetId.
      */
     public com.google.protobuf.ByteString
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string virtio_scsi_target_id = 2;</code>
+     * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The virtioScsiTargetId to set.
      * @return This builder for chaining.
      */
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string virtio_scsi_target_id = 2;</code>
+     * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearVirtioScsiTargetId() {
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string virtio_scsi_target_id = 2;</code>
+     * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for virtioScsiTargetId to set.
      * @return This builder for chaining.
      */

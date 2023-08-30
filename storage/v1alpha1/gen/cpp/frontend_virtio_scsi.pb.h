@@ -859,7 +859,7 @@ class CreateVirtioScsiTargetRequest final :
     kVirtioScsiTargetIdFieldNumber = 2,
     kVirtioScsiTargetFieldNumber = 1,
   };
-  // string virtio_scsi_target_id = 2;
+  // string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_virtio_scsi_target_id();
   const std::string& virtio_scsi_target_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -5410,7 +5410,7 @@ inline void CreateVirtioScsiTargetRequest::set_allocated_virtio_scsi_target(::op
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateVirtioScsiTargetRequest.virtio_scsi_target)
 }
 
-// string virtio_scsi_target_id = 2;
+// string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateVirtioScsiTargetRequest::clear_virtio_scsi_target_id() {
   _impl_.virtio_scsi_target_id_.ClearToEmpty();
 }

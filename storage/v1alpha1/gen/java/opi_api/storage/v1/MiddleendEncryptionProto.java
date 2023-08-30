@@ -74,66 +74,67 @@ public final class MiddleendEncryptionProto {
       "oogle/protobuf/empty.proto\032\034google/api/a" +
       "nnotations.proto\032\037google/api/field_behav" +
       "ior.proto\032 google/protobuf/field_mask.pr" +
-      "oto\"\366\001\n\017EncryptedVolume\022;\n\004name\030\001 \001(\tB-\340" +
+      "oto\"\231\002\n\017EncryptedVolume\022;\n\004name\030\001 \001(\tB-\340" +
       "A\003\340A\005\372A$\n\"opi_api.storage.v1/EncryptedVo" +
       "lume\022\034\n\017volume_name_ref\030\002 \001(\tB\003\340A\002\022\020\n\003ke" +
       "y\030\003 \001(\014B\003\340A\002\0227\n\006cipher\030\004 \001(\0162\".opi_api.s" +
-      "torage.v1.EncryptionTypeB\003\340A\002:=\352A:\n&stor" +
+      "torage.v1.EncryptionTypeB\003\340A\002:`\352A]\n&stor" +
       "age.opiproject.org/EncryptedVolume\022\020volu" +
-      "mes/{volume}\"\204\001\n\034CreateEncryptedVolumeRe" +
-      "quest\022B\n\020encrypted_volume\030\001 \001(\0132#.opi_ap" +
-      "i.storage.v1.EncryptedVolumeB\003\340A\002\022 \n\023enc" +
-      "rypted_volume_id\030\002 \001(\tB\003\340A\001\"t\n\034DeleteEnc" +
-      "ryptedVolumeRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A" +
-      "$\n\"opi_api.storage.v1/EncryptedVolume\022\032\n" +
-      "\rallow_missing\030\002 \001(\010B\003\340A\001\"\264\001\n\034UpdateEncr" +
-      "yptedVolumeRequest\022B\n\020encrypted_volume\030\001" +
-      " \001(\0132#.opi_api.storage.v1.EncryptedVolum" +
-      "eB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.pro" +
-      "tobuf.FieldMaskB\003\340A\001\022\032\n\rallow_missing\030\003 " +
-      "\001(\010B\003\340A\001\"\212\001\n\033ListEncryptedVolumesRequest" +
-      "\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.storag" +
-      "e.v1/EncryptedVolume\022\026\n\tpage_size\030\002 \001(\005B" +
-      "\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"w\n\034ListEnc" +
-      "ryptedVolumesResponse\022>\n\021encrypted_volum" +
-      "es\030\001 \003(\0132#.opi_api.storage.v1.EncryptedV" +
-      "olume\022\027\n\017next_page_token\030\002 \001(\t\"U\n\031GetEnc" +
-      "ryptedVolumeRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A" +
-      "$\n\"opi_api.storage.v1/EncryptedVolume\"W\n" +
-      "\033StatsEncryptedVolumeRequest\0228\n\004name\030\001 \001" +
-      "(\tB*\340A\002\372A$\n\"opi_api.storage.v1/Encrypted" +
-      "Volume\"N\n\034StatsEncryptedVolumeResponse\022." +
-      "\n\005stats\030\001 \001(\0132\037.opi_api.storage.v1.Volum" +
-      "eStats2\253\010\n\032MiddleendEncryptionService\022\274\001" +
-      "\n\025CreateEncryptedVolume\0220.opi_api.storag" +
-      "e.v1.CreateEncryptedVolumeRequest\032#.opi_" +
-      "api.storage.v1.EncryptedVolume\"L\202\323\344\223\002\037\"\013" +
-      "/v1/volumes:\020encrypted_volume\332A$encrypte" +
-      "d_volume,encrypted_volume_id\022\217\001\n\025DeleteE" +
-      "ncryptedVolume\0220.opi_api.storage.v1.Dele" +
-      "teEncryptedVolumeRequest\032\026.google.protob" +
-      "uf.Empty\",\202\323\344\223\002\037*\035/v1/{name=EncryptedVol" +
-      "umes/*}\332A\004name\022\317\001\n\025UpdateEncryptedVolume" +
-      "\0220.opi_api.storage.v1.UpdateEncryptedVol" +
-      "umeRequest\032#.opi_api.storage.v1.Encrypte" +
-      "dVolume\"_\202\323\344\223\002:2&/v1/{encrypted_volume.n" +
-      "ame=subsystems}:\020encrypted_volume\332A\034encr" +
-      "ypted_volume,update_mask\022\240\001\n\024ListEncrypt" +
-      "edVolumes\022/.opi_api.storage.v1.ListEncry" +
-      "ptedVolumesRequest\0320.opi_api.storage.v1." +
-      "ListEncryptedVolumesResponse\"%\202\323\344\223\002\026\022\024/v" +
-      "1/{parent=volumes}\332A\006parent\022\226\001\n\022GetEncry" +
-      "ptedVolume\022-.opi_api.storage.v1.GetEncry" +
-      "ptedVolumeRequest\032#.opi_api.storage.v1.E" +
-      "ncryptedVolume\",\202\323\344\223\002\037\022\035/v1/{name=Encryp" +
-      "tedVolumes/*}\332A\004name\022\255\001\n\024StatsEncryptedV" +
-      "olume\022/.opi_api.storage.v1.StatsEncrypte" +
-      "dVolumeRequest\0320.opi_api.storage.v1.Stat" +
-      "sEncryptedVolumeResponse\"2\202\323\344\223\002%\022#/v1/{n" +
-      "ame=EncryptedVolumes/*}:stats\332A\004nameBg\n\022" +
-      "opi_api.storage.v1B\030MiddleendEncryptionP" +
-      "rotoP\001Z5github.com/opiproject/opi-api/st" +
-      "orage/v1alpha1/gen/gob\006proto3"
+      "mes/{volume}*\020encryptedVolumes2\017encrypte" +
+      "dVolume\"\204\001\n\034CreateEncryptedVolumeRequest" +
+      "\022B\n\020encrypted_volume\030\001 \001(\0132#.opi_api.sto" +
+      "rage.v1.EncryptedVolumeB\003\340A\002\022 \n\023encrypte" +
+      "d_volume_id\030\002 \001(\tB\003\340A\001\"t\n\034DeleteEncrypte" +
+      "dVolumeRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"op" +
+      "i_api.storage.v1/EncryptedVolume\022\032\n\rallo" +
+      "w_missing\030\002 \001(\010B\003\340A\001\"\264\001\n\034UpdateEncrypted" +
+      "VolumeRequest\022B\n\020encrypted_volume\030\001 \001(\0132" +
+      "#.opi_api.storage.v1.EncryptedVolumeB\003\340A" +
+      "\002\0224\n\013update_mask\030\002 \001(\0132\032.google.protobuf" +
+      ".FieldMaskB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003" +
+      "\340A\001\"\212\001\n\033ListEncryptedVolumesRequest\022:\n\006p" +
+      "arent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.storage.v1/" +
+      "EncryptedVolume\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022" +
+      "\027\n\npage_token\030\003 \001(\tB\003\340A\001\"w\n\034ListEncrypte" +
+      "dVolumesResponse\022>\n\021encrypted_volumes\030\001 " +
+      "\003(\0132#.opi_api.storage.v1.EncryptedVolume" +
+      "\022\027\n\017next_page_token\030\002 \001(\t\"U\n\031GetEncrypte" +
+      "dVolumeRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"op" +
+      "i_api.storage.v1/EncryptedVolume\"W\n\033Stat" +
+      "sEncryptedVolumeRequest\0228\n\004name\030\001 \001(\tB*\340" +
+      "A\002\372A$\n\"opi_api.storage.v1/EncryptedVolum" +
+      "e\"N\n\034StatsEncryptedVolumeResponse\022.\n\005sta" +
+      "ts\030\001 \001(\0132\037.opi_api.storage.v1.VolumeStat" +
+      "s2\253\010\n\032MiddleendEncryptionService\022\274\001\n\025Cre" +
+      "ateEncryptedVolume\0220.opi_api.storage.v1." +
+      "CreateEncryptedVolumeRequest\032#.opi_api.s" +
+      "torage.v1.EncryptedVolume\"L\202\323\344\223\002\037\"\013/v1/v" +
+      "olumes:\020encrypted_volume\332A$encrypted_vol" +
+      "ume,encrypted_volume_id\022\217\001\n\025DeleteEncryp" +
+      "tedVolume\0220.opi_api.storage.v1.DeleteEnc" +
+      "ryptedVolumeRequest\032\026.google.protobuf.Em" +
+      "pty\",\202\323\344\223\002\037*\035/v1/{name=EncryptedVolumes/" +
+      "*}\332A\004name\022\317\001\n\025UpdateEncryptedVolume\0220.op" +
+      "i_api.storage.v1.UpdateEncryptedVolumeRe" +
+      "quest\032#.opi_api.storage.v1.EncryptedVolu" +
+      "me\"_\202\323\344\223\002:2&/v1/{encrypted_volume.name=s" +
+      "ubsystems}:\020encrypted_volume\332A\034encrypted" +
+      "_volume,update_mask\022\240\001\n\024ListEncryptedVol" +
+      "umes\022/.opi_api.storage.v1.ListEncryptedV" +
+      "olumesRequest\0320.opi_api.storage.v1.ListE" +
+      "ncryptedVolumesResponse\"%\202\323\344\223\002\026\022\024/v1/{pa" +
+      "rent=volumes}\332A\006parent\022\226\001\n\022GetEncryptedV" +
+      "olume\022-.opi_api.storage.v1.GetEncryptedV" +
+      "olumeRequest\032#.opi_api.storage.v1.Encryp" +
+      "tedVolume\",\202\323\344\223\002\037\022\035/v1/{name=EncryptedVo" +
+      "lumes/*}\332A\004name\022\255\001\n\024StatsEncryptedVolume" +
+      "\022/.opi_api.storage.v1.StatsEncryptedVolu" +
+      "meRequest\0320.opi_api.storage.v1.StatsEncr" +
+      "yptedVolumeResponse\"2\202\323\344\223\002%\022#/v1/{name=E" +
+      "ncryptedVolumes/*}:stats\332A\004nameBg\n\022opi_a" +
+      "pi.storage.v1B\030MiddleendEncryptionProtoP" +
+      "\001Z5github.com/opiproject/opi-api/storage" +
+      "/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
