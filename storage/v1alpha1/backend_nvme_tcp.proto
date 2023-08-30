@@ -155,8 +155,13 @@ message NvmeRemoteController {
     int64 io_queues_count = 3 [(google.api.field_behavior) = OPTIONAL];
     int64 queue_size = 4 [(google.api.field_behavior) = OPTIONAL];
 
-    bool hdgst = 5 [(google.api.field_behavior) = OPTIONAL];
-    bool ddgst = 6 [(google.api.field_behavior) = OPTIONAL];
+    // Nvme over TCP specific fields
+    TcpController tcp = 5 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message TcpController {
+    bool hdgst = 1 [(google.api.field_behavior) = OPTIONAL];
+    bool ddgst = 2 [(google.api.field_behavior) = OPTIONAL];
 
     // Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
     // Use PSK interchange format with base64 encoding as input.
@@ -167,7 +172,7 @@ message NvmeRemoteController {
     // Calculate CRC-32 bytes to ensure validity of PSK.
     // Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
     // if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
-    bytes psk = 7 [(google.api.field_behavior) = OPTIONAL];
+    bytes psk = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message NvmePath {
