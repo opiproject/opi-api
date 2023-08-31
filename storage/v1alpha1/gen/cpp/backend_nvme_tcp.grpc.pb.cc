@@ -32,6 +32,7 @@ static const char* NvmeRemoteControllerService_method_names[] = {
   "/opi_api.storage.v1.NvmeRemoteControllerService/ResetNvmeRemoteController",
   "/opi_api.storage.v1.NvmeRemoteControllerService/StatsNvmeRemoteController",
   "/opi_api.storage.v1.NvmeRemoteControllerService/ListNvmeRemoteNamespaces",
+  "/opi_api.storage.v1.NvmeRemoteControllerService/GetNvmeRemoteNamespace",
   "/opi_api.storage.v1.NvmeRemoteControllerService/CreateNvmePath",
   "/opi_api.storage.v1.NvmeRemoteControllerService/DeleteNvmePath",
   "/opi_api.storage.v1.NvmeRemoteControllerService/UpdateNvmePath",
@@ -55,12 +56,13 @@ NvmeRemoteControllerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelIn
   , rpcmethod_ResetNvmeRemoteController_(NvmeRemoteControllerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_StatsNvmeRemoteController_(NvmeRemoteControllerService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListNvmeRemoteNamespaces_(NvmeRemoteControllerService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateNvmePath_(NvmeRemoteControllerService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteNvmePath_(NvmeRemoteControllerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateNvmePath_(NvmeRemoteControllerService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListNvmePaths_(NvmeRemoteControllerService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetNvmePath_(NvmeRemoteControllerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_StatsNvmePath_(NvmeRemoteControllerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetNvmeRemoteNamespace_(NvmeRemoteControllerService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateNvmePath_(NvmeRemoteControllerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteNvmePath_(NvmeRemoteControllerService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateNvmePath_(NvmeRemoteControllerService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListNvmePaths_(NvmeRemoteControllerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetNvmePath_(NvmeRemoteControllerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StatsNvmePath_(NvmeRemoteControllerService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status NvmeRemoteControllerService::Stub::CreateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeRemoteControllerRequest& request, ::opi_api::storage::v1::NvmeRemoteController* response) {
@@ -243,6 +245,29 @@ void NvmeRemoteControllerService::Stub::async::ListNvmeRemoteNamespaces(::grpc::
 ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>* NvmeRemoteControllerService::Stub::AsyncListNvmeRemoteNamespacesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncListNvmeRemoteNamespacesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status NvmeRemoteControllerService::Stub::GetNvmeRemoteNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest& request, ::opi_api::storage::v1::NvmeRemoteNamespace* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest, ::opi_api::storage::v1::NvmeRemoteNamespace, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNvmeRemoteNamespace_, context, request, response);
+}
+
+void NvmeRemoteControllerService::Stub::async::GetNvmeRemoteNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest* request, ::opi_api::storage::v1::NvmeRemoteNamespace* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest, ::opi_api::storage::v1::NvmeRemoteNamespace, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNvmeRemoteNamespace_, context, request, response, std::move(f));
+}
+
+void NvmeRemoteControllerService::Stub::async::GetNvmeRemoteNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest* request, ::opi_api::storage::v1::NvmeRemoteNamespace* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNvmeRemoteNamespace_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteNamespace>* NvmeRemoteControllerService::Stub::PrepareAsyncGetNvmeRemoteNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NvmeRemoteNamespace, ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNvmeRemoteNamespace_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NvmeRemoteNamespace>* NvmeRemoteControllerService::Stub::AsyncGetNvmeRemoteNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetNvmeRemoteNamespaceRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -469,6 +494,16 @@ NvmeRemoteControllerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NvmeRemoteControllerService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NvmeRemoteControllerService::Service, ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest, ::opi_api::storage::v1::NvmeRemoteNamespace, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](NvmeRemoteControllerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest* req,
+             ::opi_api::storage::v1::NvmeRemoteNamespace* resp) {
+               return service->GetNvmeRemoteNamespace(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NvmeRemoteControllerService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< NvmeRemoteControllerService::Service, ::opi_api::storage::v1::CreateNvmePathRequest, ::opi_api::storage::v1::NvmePath, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NvmeRemoteControllerService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -477,7 +512,7 @@ NvmeRemoteControllerService::Service::Service() {
                return service->CreateNvmePath(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      NvmeRemoteControllerService_method_names[9],
+      NvmeRemoteControllerService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< NvmeRemoteControllerService::Service, ::opi_api::storage::v1::DeleteNvmePathRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NvmeRemoteControllerService::Service* service,
@@ -487,7 +522,7 @@ NvmeRemoteControllerService::Service::Service() {
                return service->DeleteNvmePath(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      NvmeRemoteControllerService_method_names[10],
+      NvmeRemoteControllerService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< NvmeRemoteControllerService::Service, ::opi_api::storage::v1::UpdateNvmePathRequest, ::opi_api::storage::v1::NvmePath, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NvmeRemoteControllerService::Service* service,
@@ -497,7 +532,7 @@ NvmeRemoteControllerService::Service::Service() {
                return service->UpdateNvmePath(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      NvmeRemoteControllerService_method_names[11],
+      NvmeRemoteControllerService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< NvmeRemoteControllerService::Service, ::opi_api::storage::v1::ListNvmePathsRequest, ::opi_api::storage::v1::ListNvmePathsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NvmeRemoteControllerService::Service* service,
@@ -507,7 +542,7 @@ NvmeRemoteControllerService::Service::Service() {
                return service->ListNvmePaths(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      NvmeRemoteControllerService_method_names[12],
+      NvmeRemoteControllerService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< NvmeRemoteControllerService::Service, ::opi_api::storage::v1::GetNvmePathRequest, ::opi_api::storage::v1::NvmePath, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NvmeRemoteControllerService::Service* service,
@@ -517,7 +552,7 @@ NvmeRemoteControllerService::Service::Service() {
                return service->GetNvmePath(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      NvmeRemoteControllerService_method_names[13],
+      NvmeRemoteControllerService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< NvmeRemoteControllerService::Service, ::opi_api::storage::v1::StatsNvmePathRequest, ::opi_api::storage::v1::StatsNvmePathResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NvmeRemoteControllerService::Service* service,
@@ -581,6 +616,13 @@ NvmeRemoteControllerService::Service::~Service() {
 }
 
 ::grpc::Status NvmeRemoteControllerService::Service::ListNvmeRemoteNamespaces(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NvmeRemoteControllerService::Service::GetNvmeRemoteNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest* request, ::opi_api::storage::v1::NvmeRemoteNamespace* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -266,6 +266,37 @@ public final class NvmeRemoteControllerServiceGrpc {
     return getListNvmeRemoteNamespacesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetNvmeRemoteNamespaceRequest,
+      opi_api.storage.v1.NvmeRemoteNamespace> getGetNvmeRemoteNamespaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNvmeRemoteNamespace",
+      requestType = opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.class,
+      responseType = opi_api.storage.v1.NvmeRemoteNamespace.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.GetNvmeRemoteNamespaceRequest,
+      opi_api.storage.v1.NvmeRemoteNamespace> getGetNvmeRemoteNamespaceMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.GetNvmeRemoteNamespaceRequest, opi_api.storage.v1.NvmeRemoteNamespace> getGetNvmeRemoteNamespaceMethod;
+    if ((getGetNvmeRemoteNamespaceMethod = NvmeRemoteControllerServiceGrpc.getGetNvmeRemoteNamespaceMethod) == null) {
+      synchronized (NvmeRemoteControllerServiceGrpc.class) {
+        if ((getGetNvmeRemoteNamespaceMethod = NvmeRemoteControllerServiceGrpc.getGetNvmeRemoteNamespaceMethod) == null) {
+          NvmeRemoteControllerServiceGrpc.getGetNvmeRemoteNamespaceMethod = getGetNvmeRemoteNamespaceMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.GetNvmeRemoteNamespaceRequest, opi_api.storage.v1.NvmeRemoteNamespace>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNvmeRemoteNamespace"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.NvmeRemoteNamespace.getDefaultInstance()))
+              .setSchemaDescriptor(new NvmeRemoteControllerServiceMethodDescriptorSupplier("GetNvmeRemoteNamespace"))
+              .build();
+        }
+      }
+    }
+    return getGetNvmeRemoteNamespaceMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateNvmePathRequest,
       opi_api.storage.v1.NvmePath> getCreateNvmePathMethod;
 
@@ -585,6 +616,16 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      * <pre>
+     * Get an Nvme Remote Namespace
+     * </pre>
+     */
+    public void getNvmeRemoteNamespace(opi_api.storage.v1.GetNvmeRemoteNamespaceRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteNamespace> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNvmeRemoteNamespaceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Create an Nvme Path
      * </pre>
      */
@@ -701,6 +742,13 @@ public final class NvmeRemoteControllerServiceGrpc {
                 opi_api.storage.v1.ListNvmeRemoteNamespacesRequest,
                 opi_api.storage.v1.ListNvmeRemoteNamespacesResponse>(
                   this, METHODID_LIST_NVME_REMOTE_NAMESPACES)))
+          .addMethod(
+            getGetNvmeRemoteNamespaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.storage.v1.GetNvmeRemoteNamespaceRequest,
+                opi_api.storage.v1.NvmeRemoteNamespace>(
+                  this, METHODID_GET_NVME_REMOTE_NAMESPACE)))
           .addMethod(
             getCreateNvmePathMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -850,6 +898,17 @@ public final class NvmeRemoteControllerServiceGrpc {
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeRemoteNamespacesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListNvmeRemoteNamespacesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get an Nvme Remote Namespace
+     * </pre>
+     */
+    public void getNvmeRemoteNamespace(opi_api.storage.v1.GetNvmeRemoteNamespaceRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteNamespace> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNvmeRemoteNamespaceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1014,6 +1073,16 @@ public final class NvmeRemoteControllerServiceGrpc {
     public opi_api.storage.v1.ListNvmeRemoteNamespacesResponse listNvmeRemoteNamespaces(opi_api.storage.v1.ListNvmeRemoteNamespacesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListNvmeRemoteNamespacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get an Nvme Remote Namespace
+     * </pre>
+     */
+    public opi_api.storage.v1.NvmeRemoteNamespace getNvmeRemoteNamespace(opi_api.storage.v1.GetNvmeRemoteNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNvmeRemoteNamespaceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1184,6 +1253,17 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     /**
      * <pre>
+     * Get an Nvme Remote Namespace
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmeRemoteNamespace> getNvmeRemoteNamespace(
+        opi_api.storage.v1.GetNvmeRemoteNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNvmeRemoteNamespaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Create an Nvme Path
      * </pre>
      */
@@ -1257,12 +1337,13 @@ public final class NvmeRemoteControllerServiceGrpc {
   private static final int METHODID_RESET_NVME_REMOTE_CONTROLLER = 5;
   private static final int METHODID_STATS_NVME_REMOTE_CONTROLLER = 6;
   private static final int METHODID_LIST_NVME_REMOTE_NAMESPACES = 7;
-  private static final int METHODID_CREATE_NVME_PATH = 8;
-  private static final int METHODID_DELETE_NVME_PATH = 9;
-  private static final int METHODID_UPDATE_NVME_PATH = 10;
-  private static final int METHODID_LIST_NVME_PATHS = 11;
-  private static final int METHODID_GET_NVME_PATH = 12;
-  private static final int METHODID_STATS_NVME_PATH = 13;
+  private static final int METHODID_GET_NVME_REMOTE_NAMESPACE = 8;
+  private static final int METHODID_CREATE_NVME_PATH = 9;
+  private static final int METHODID_DELETE_NVME_PATH = 10;
+  private static final int METHODID_UPDATE_NVME_PATH = 11;
+  private static final int METHODID_LIST_NVME_PATHS = 12;
+  private static final int METHODID_GET_NVME_PATH = 13;
+  private static final int METHODID_STATS_NVME_PATH = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1312,6 +1393,10 @@ public final class NvmeRemoteControllerServiceGrpc {
         case METHODID_LIST_NVME_REMOTE_NAMESPACES:
           serviceImpl.listNvmeRemoteNamespaces((opi_api.storage.v1.ListNvmeRemoteNamespacesRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeRemoteNamespacesResponse>) responseObserver);
+          break;
+        case METHODID_GET_NVME_REMOTE_NAMESPACE:
+          serviceImpl.getNvmeRemoteNamespace((opi_api.storage.v1.GetNvmeRemoteNamespaceRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteNamespace>) responseObserver);
           break;
         case METHODID_CREATE_NVME_PATH:
           serviceImpl.createNvmePath((opi_api.storage.v1.CreateNvmePathRequest) request,
@@ -1406,6 +1491,7 @@ public final class NvmeRemoteControllerServiceGrpc {
               .addMethod(getResetNvmeRemoteControllerMethod())
               .addMethod(getStatsNvmeRemoteControllerMethod())
               .addMethod(getListNvmeRemoteNamespacesMethod())
+              .addMethod(getGetNvmeRemoteNamespaceMethod())
               .addMethod(getCreateNvmePathMethod())
               .addMethod(getDeleteNvmePathMethod())
               .addMethod(getUpdateNvmePathMethod())

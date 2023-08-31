@@ -38,6 +38,7 @@
     - [DeleteNvmeRemoteControllerRequest](#opi_api-storage-v1-DeleteNvmeRemoteControllerRequest)
     - [GetNvmePathRequest](#opi_api-storage-v1-GetNvmePathRequest)
     - [GetNvmeRemoteControllerRequest](#opi_api-storage-v1-GetNvmeRemoteControllerRequest)
+    - [GetNvmeRemoteNamespaceRequest](#opi_api-storage-v1-GetNvmeRemoteNamespaceRequest)
     - [ListNvmePathsRequest](#opi_api-storage-v1-ListNvmePathsRequest)
     - [ListNvmePathsResponse](#opi_api-storage-v1-ListNvmePathsResponse)
     - [ListNvmeRemoteControllersRequest](#opi_api-storage-v1-ListNvmeRemoteControllersRequest)
@@ -686,6 +687,21 @@ Represents a request to delete an Nvme Remote Controller.
 
 
 
+<a name="opi_api-storage-v1-GetNvmeRemoteNamespaceRequest"></a>
+
+### GetNvmeRemoteNamespaceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-ListNvmePathsRequest"></a>
 
 ### ListNvmePathsRequest
@@ -1026,6 +1042,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | ResetNvmeRemoteController | [ResetNvmeRemoteControllerRequest](#opi_api-storage-v1-ResetNvmeRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Reset an Nvme Remote Controller |
 | StatsNvmeRemoteController | [StatsNvmeRemoteControllerRequest](#opi_api-storage-v1-StatsNvmeRemoteControllerRequest) | [StatsNvmeRemoteControllerResponse](#opi_api-storage-v1-StatsNvmeRemoteControllerResponse) | Get an Nvme Remote Controller statistics |
 | ListNvmeRemoteNamespaces | [ListNvmeRemoteNamespacesRequest](#opi_api-storage-v1-ListNvmeRemoteNamespacesRequest) | [ListNvmeRemoteNamespacesResponse](#opi_api-storage-v1-ListNvmeRemoteNamespacesResponse) | List Nvme Remote Namespaces |
+| GetNvmeRemoteNamespace | [GetNvmeRemoteNamespaceRequest](#opi_api-storage-v1-GetNvmeRemoteNamespaceRequest) | [NvmeRemoteNamespace](#opi_api-storage-v1-NvmeRemoteNamespace) | Get an Nvme Remote Namespace |
 | CreateNvmePath | [CreateNvmePathRequest](#opi_api-storage-v1-CreateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) | Create an Nvme Path |
 | DeleteNvmePath | [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Path |
 | UpdateNvmePath | [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) | Update an Nvme Path |

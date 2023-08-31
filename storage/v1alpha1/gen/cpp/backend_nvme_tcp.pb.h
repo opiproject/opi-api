@@ -74,6 +74,9 @@ extern GetNvmePathRequestDefaultTypeInternal _GetNvmePathRequest_default_instanc
 class GetNvmeRemoteControllerRequest;
 struct GetNvmeRemoteControllerRequestDefaultTypeInternal;
 extern GetNvmeRemoteControllerRequestDefaultTypeInternal _GetNvmeRemoteControllerRequest_default_instance_;
+class GetNvmeRemoteNamespaceRequest;
+struct GetNvmeRemoteNamespaceRequestDefaultTypeInternal;
+extern GetNvmeRemoteNamespaceRequestDefaultTypeInternal _GetNvmeRemoteNamespaceRequest_default_instance_;
 class ListNvmePathsRequest;
 struct ListNvmePathsRequestDefaultTypeInternal;
 extern ListNvmePathsRequestDefaultTypeInternal _ListNvmePathsRequest_default_instance_;
@@ -132,6 +135,7 @@ template<> ::opi_api::storage::v1::DeleteNvmePathRequest* Arena::CreateMaybeMess
 template<> ::opi_api::storage::v1::DeleteNvmeRemoteControllerRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::DeleteNvmeRemoteControllerRequest>(Arena*);
 template<> ::opi_api::storage::v1::GetNvmePathRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::GetNvmePathRequest>(Arena*);
 template<> ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::GetNvmeRemoteControllerRequest>(Arena*);
+template<> ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest>(Arena*);
 template<> ::opi_api::storage::v1::ListNvmePathsRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListNvmePathsRequest>(Arena*);
 template<> ::opi_api::storage::v1::ListNvmePathsResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListNvmePathsResponse>(Arena*);
 template<> ::opi_api::storage::v1::ListNvmeRemoteControllersRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListNvmeRemoteControllersRequest>(Arena*);
@@ -2815,6 +2819,159 @@ class ListNvmeRemoteNamespacesResponse final :
 };
 // -------------------------------------------------------------------
 
+class GetNvmeRemoteNamespaceRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest) */ {
+ public:
+  inline GetNvmeRemoteNamespaceRequest() : GetNvmeRemoteNamespaceRequest(nullptr) {}
+  ~GetNvmeRemoteNamespaceRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetNvmeRemoteNamespaceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetNvmeRemoteNamespaceRequest(const GetNvmeRemoteNamespaceRequest& from);
+  GetNvmeRemoteNamespaceRequest(GetNvmeRemoteNamespaceRequest&& from) noexcept
+    : GetNvmeRemoteNamespaceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNvmeRemoteNamespaceRequest& operator=(const GetNvmeRemoteNamespaceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetNvmeRemoteNamespaceRequest& operator=(GetNvmeRemoteNamespaceRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetNvmeRemoteNamespaceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetNvmeRemoteNamespaceRequest* internal_default_instance() {
+    return reinterpret_cast<const GetNvmeRemoteNamespaceRequest*>(
+               &_GetNvmeRemoteNamespaceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(GetNvmeRemoteNamespaceRequest& a, GetNvmeRemoteNamespaceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetNvmeRemoteNamespaceRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetNvmeRemoteNamespaceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetNvmeRemoteNamespaceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetNvmeRemoteNamespaceRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetNvmeRemoteNamespaceRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetNvmeRemoteNamespaceRequest& from) {
+    GetNvmeRemoteNamespaceRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNvmeRemoteNamespaceRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.storage.v1.GetNvmeRemoteNamespaceRequest";
+  }
+  protected:
+  explicit GetNvmeRemoteNamespaceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+  };
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_backend_5fnvme_5ftcp_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CreateNvmePathRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.CreateNvmePathRequest) */ {
  public:
@@ -2863,7 +3020,7 @@ class CreateNvmePathRequest final :
                &_CreateNvmePathRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(CreateNvmePathRequest& a, CreateNvmePathRequest& b) {
     a.Swap(&b);
@@ -3036,7 +3193,7 @@ class DeleteNvmePathRequest final :
                &_DeleteNvmePathRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(DeleteNvmePathRequest& a, DeleteNvmePathRequest& b) {
     a.Swap(&b);
@@ -3200,7 +3357,7 @@ class UpdateNvmePathRequest final :
                &_UpdateNvmePathRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(UpdateNvmePathRequest& a, UpdateNvmePathRequest& b) {
     a.Swap(&b);
@@ -3388,7 +3545,7 @@ class ListNvmePathsRequest final :
                &_ListNvmePathsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(ListNvmePathsRequest& a, ListNvmePathsRequest& b) {
     a.Swap(&b);
@@ -3568,7 +3725,7 @@ class ListNvmePathsResponse final :
                &_ListNvmePathsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(ListNvmePathsResponse& a, ListNvmePathsResponse& b) {
     a.Swap(&b);
@@ -3741,7 +3898,7 @@ class GetNvmePathRequest final :
                &_GetNvmePathRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(GetNvmePathRequest& a, GetNvmePathRequest& b) {
     a.Swap(&b);
@@ -3894,7 +4051,7 @@ class StatsNvmePathRequest final :
                &_StatsNvmePathRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(StatsNvmePathRequest& a, StatsNvmePathRequest& b) {
     a.Swap(&b);
@@ -4047,7 +4204,7 @@ class StatsNvmePathResponse final :
                &_StatsNvmePathResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(StatsNvmePathResponse& a, StatsNvmePathResponse& b) {
     a.Swap(&b);
@@ -6134,6 +6291,60 @@ inline void ListNvmeRemoteNamespacesResponse::set_allocated_next_page_token(std:
 
 // -------------------------------------------------------------------
 
+// GetNvmeRemoteNamespaceRequest
+
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetNvmeRemoteNamespaceRequest::clear_name() {
+  _impl_.name_.ClearToEmpty();
+}
+inline const std::string& GetNvmeRemoteNamespaceRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetNvmeRemoteNamespaceRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.name)
+}
+inline std::string* GetNvmeRemoteNamespaceRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.name)
+  return _s;
+}
+inline const std::string& GetNvmeRemoteNamespaceRequest::_internal_name() const {
+  return _impl_.name_.Get();
+}
+inline void GetNvmeRemoteNamespaceRequest::_internal_set_name(const std::string& value) {
+  
+  _impl_.name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetNvmeRemoteNamespaceRequest::_internal_mutable_name() {
+  
+  return _impl_.name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetNvmeRemoteNamespaceRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.name)
+  return _impl_.name_.Release();
+}
+inline void GetNvmeRemoteNamespaceRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.name_.SetAllocated(name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.name_.IsDefault()) {
+    _impl_.name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.name)
+}
+
+// -------------------------------------------------------------------
+
 // CreateNvmePathRequest
 
 // .opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -6967,6 +7178,8 @@ inline void StatsNvmePathResponse::set_allocated_stats(::opi_api::storage::v1::V
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

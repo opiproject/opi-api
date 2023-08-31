@@ -235,6 +235,19 @@ struct ListNvmeRemoteNamespacesResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListNvmeRemoteNamespacesResponseDefaultTypeInternal _ListNvmeRemoteNamespacesResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetNvmeRemoteNamespaceRequest::GetNvmeRemoteNamespaceRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetNvmeRemoteNamespaceRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetNvmeRemoteNamespaceRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetNvmeRemoteNamespaceRequestDefaultTypeInternal() {}
+  union {
+    GetNvmeRemoteNamespaceRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNvmeRemoteNamespaceRequestDefaultTypeInternal _GetNvmeRemoteNamespaceRequest_default_instance_;
 PROTOBUF_CONSTEXPR CreateNvmePathRequest::CreateNvmePathRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.nvme_path_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -349,7 +362,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
-static ::_pb::Metadata file_level_metadata_backend_5fnvme_5ftcp_2eproto[22];
+static ::_pb::Metadata file_level_metadata_backend_5fnvme_5ftcp_2eproto[23];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_backend_5fnvme_5ftcp_2eproto[3];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_backend_5fnvme_5ftcp_2eproto = nullptr;
 
@@ -483,6 +496,13 @@ const uint32_t TableStruct_backend_5fnvme_5ftcp_2eproto::offsets[] PROTOBUF_SECT
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse, _impl_.nvme_remote_namespaces_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse, _impl_.next_page_token_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest, _impl_.name_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateNvmePathRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -561,14 +581,15 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 104, -1, -1, sizeof(::opi_api::storage::v1::StatsNvmeRemoteControllerResponse)},
   { 111, -1, -1, sizeof(::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest)},
   { 120, -1, -1, sizeof(::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse)},
-  { 128, -1, -1, sizeof(::opi_api::storage::v1::CreateNvmePathRequest)},
-  { 136, -1, -1, sizeof(::opi_api::storage::v1::DeleteNvmePathRequest)},
-  { 144, -1, -1, sizeof(::opi_api::storage::v1::UpdateNvmePathRequest)},
-  { 153, -1, -1, sizeof(::opi_api::storage::v1::ListNvmePathsRequest)},
-  { 162, -1, -1, sizeof(::opi_api::storage::v1::ListNvmePathsResponse)},
-  { 170, -1, -1, sizeof(::opi_api::storage::v1::GetNvmePathRequest)},
-  { 177, -1, -1, sizeof(::opi_api::storage::v1::StatsNvmePathRequest)},
-  { 184, -1, -1, sizeof(::opi_api::storage::v1::StatsNvmePathResponse)},
+  { 128, -1, -1, sizeof(::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest)},
+  { 135, -1, -1, sizeof(::opi_api::storage::v1::CreateNvmePathRequest)},
+  { 143, -1, -1, sizeof(::opi_api::storage::v1::DeleteNvmePathRequest)},
+  { 151, -1, -1, sizeof(::opi_api::storage::v1::UpdateNvmePathRequest)},
+  { 160, -1, -1, sizeof(::opi_api::storage::v1::ListNvmePathsRequest)},
+  { 169, -1, -1, sizeof(::opi_api::storage::v1::ListNvmePathsResponse)},
+  { 177, -1, -1, sizeof(::opi_api::storage::v1::GetNvmePathRequest)},
+  { 184, -1, -1, sizeof(::opi_api::storage::v1::StatsNvmePathRequest)},
+  { 191, -1, -1, sizeof(::opi_api::storage::v1::StatsNvmePathResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -586,6 +607,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::opi_api::storage::v1::_StatsNvmeRemoteControllerResponse_default_instance_._instance,
   &::opi_api::storage::v1::_ListNvmeRemoteNamespacesRequest_default_instance_._instance,
   &::opi_api::storage::v1::_ListNvmeRemoteNamespacesResponse_default_instance_._instance,
+  &::opi_api::storage::v1::_GetNvmeRemoteNamespaceRequest_default_instance_._instance,
   &::opi_api::storage::v1::_CreateNvmePathRequest_default_instance_._instance,
   &::opi_api::storage::v1::_DeleteNvmePathRequest_default_instance_._instance,
   &::opi_api::storage::v1::_UpdateNvmePathRequest_default_instance_._instance,
@@ -670,103 +692,109 @@ const char descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto[] PROTOBUF_SEC
   "istNvmeRemoteNamespacesResponse\022G\n\026nvme_"
   "remote_namespaces\030\001 \003(\0132\'.opi_api.storag"
   "e.v1.NvmeRemoteNamespace\022\027\n\017next_page_to"
-  "ken\030\002 \001(\t\"h\n\025CreateNvmePathRequest\0224\n\tnv"
-  "me_path\030\001 \001(\0132\034.opi_api.storage.v1.NvmeP"
-  "athB\003\340A\002\022\031\n\014nvme_path_id\030\002 \001(\tB\003\340A\001\"f\n\025D"
-  "eleteNvmePathRequest\0221\n\004name\030\001 \001(\tB#\340A\002\372"
-  "A\035\n\033opi_api.storage.v1/NvmePath\022\032\n\rallow"
-  "_missing\030\002 \001(\010B\003\340A\001\"\237\001\n\025UpdateNvmePathRe"
-  "quest\0224\n\tnvme_path\030\001 \001(\0132\034.opi_api.stora"
-  "ge.v1.NvmePathB\003\340A\002\0224\n\013update_mask\030\002 \001(\013"
-  "2\032.google.protobuf.FieldMaskB\003\340A\001\022\032\n\rall"
-  "ow_missing\030\003 \001(\010B\003\340A\001\"|\n\024ListNvmePathsRe"
-  "quest\0223\n\006parent\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.s"
-  "torage.v1/NvmePath\022\026\n\tpage_size\030\002 \001(\005B\003\340"
-  "A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"b\n\025ListNvmeP"
-  "athsResponse\0220\n\nnvme_paths\030\001 \003(\0132\034.opi_a"
-  "pi.storage.v1.NvmePath\022\027\n\017next_page_toke"
-  "n\030\002 \001(\t\"G\n\022GetNvmePathRequest\0221\n\004name\030\001 "
-  "\001(\tB#\340A\002\372A\035\n\033opi_api.storage.v1/NvmePath"
-  "\"I\n\024StatsNvmePathRequest\0221\n\004name\030\001 \001(\tB#"
-  "\340A\002\372A\035\n\033opi_api.storage.v1/NvmePath\"G\n\025S"
-  "tatsNvmePathResponse\022.\n\005stats\030\001 \001(\0132\037.op"
-  "i_api.storage.v1.VolumeStats*\264\001\n\021NvmeTra"
-  "nsportType\022#\n\037NVME_TRANSPORT_TYPE_UNSPEC"
-  "IFIED\020\000\022\025\n\021NVME_TRANSPORT_FC\020\001\022\027\n\023NVME_T"
-  "RANSPORT_PCIE\020\002\022\027\n\023NVME_TRANSPORT_RDMA\020\003"
-  "\022\026\n\022NVME_TRANSPORT_TCP\020\004\022\031\n\025NVME_TRANSPO"
-  "RT_CUSTOM\020\005*\250\001\n\021NvmeAddressFamily\022#\n\037NVM"
-  "E_ADDRESS_FAMILY_UNSPECIFIED\020\000\022\024\n\020NVME_A"
-  "DRFAM_IPV4\020\001\022\024\n\020NVME_ADRFAM_IPV6\020\002\022\022\n\016NV"
-  "ME_ADRFAM_IB\020\003\022\022\n\016NVME_ADRFAM_FC\020\004\022\032\n\026NV"
-  "ME_ADRFAM_INTRA_HOST\020\005*\206\001\n\rNvmeMultipath"
-  "\022\036\n\032NVME_MULTIPATH_UNSPECIFIED\020\000\022\032\n\026NVME"
-  "_MULTIPATH_DISABLE\020\001\022\033\n\027NVME_MULTIPATH_F"
-  "AILOVER\020\002\022\034\n\030NVME_MULTIPATH_MULTIPATH\020\0032"
-  "\353\022\n\033NvmeRemoteControllerService\022\335\001\n\032Crea"
+  "ken\030\002 \001(\t\"]\n\035GetNvmeRemoteNamespaceReque"
+  "st\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&opi_api.storag"
+  "e.v1/NvmeRemoteNamespace\"h\n\025CreateNvmePa"
+  "thRequest\0224\n\tnvme_path\030\001 \001(\0132\034.opi_api.s"
+  "torage.v1.NvmePathB\003\340A\002\022\031\n\014nvme_path_id\030"
+  "\002 \001(\tB\003\340A\001\"f\n\025DeleteNvmePathRequest\0221\n\004n"
+  "ame\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.storage.v1/Nv"
+  "mePath\022\032\n\rallow_missing\030\002 \001(\010B\003\340A\001\"\237\001\n\025U"
+  "pdateNvmePathRequest\0224\n\tnvme_path\030\001 \001(\0132"
+  "\034.opi_api.storage.v1.NvmePathB\003\340A\002\0224\n\013up"
+  "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
+  "askB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\"|\n\024"
+  "ListNvmePathsRequest\0223\n\006parent\030\001 \001(\tB#\340A"
+  "\002\372A\035\n\033opi_api.storage.v1/NvmePath\022\026\n\tpag"
+  "e_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340"
+  "A\001\"b\n\025ListNvmePathsResponse\0220\n\nnvme_path"
+  "s\030\001 \003(\0132\034.opi_api.storage.v1.NvmePath\022\027\n"
+  "\017next_page_token\030\002 \001(\t\"G\n\022GetNvmePathReq"
+  "uest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.stor"
+  "age.v1/NvmePath\"I\n\024StatsNvmePathRequest\022"
+  "1\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.storage.v"
+  "1/NvmePath\"G\n\025StatsNvmePathResponse\022.\n\005s"
+  "tats\030\001 \001(\0132\037.opi_api.storage.v1.VolumeSt"
+  "ats*\264\001\n\021NvmeTransportType\022#\n\037NVME_TRANSP"
+  "ORT_TYPE_UNSPECIFIED\020\000\022\025\n\021NVME_TRANSPORT"
+  "_FC\020\001\022\027\n\023NVME_TRANSPORT_PCIE\020\002\022\027\n\023NVME_T"
+  "RANSPORT_RDMA\020\003\022\026\n\022NVME_TRANSPORT_TCP\020\004\022"
+  "\031\n\025NVME_TRANSPORT_CUSTOM\020\005*\250\001\n\021NvmeAddre"
+  "ssFamily\022#\n\037NVME_ADDRESS_FAMILY_UNSPECIF"
+  "IED\020\000\022\024\n\020NVME_ADRFAM_IPV4\020\001\022\024\n\020NVME_ADRF"
+  "AM_IPV6\020\002\022\022\n\016NVME_ADRFAM_IB\020\003\022\022\n\016NVME_AD"
+  "RFAM_FC\020\004\022\032\n\026NVME_ADRFAM_INTRA_HOST\020\005*\206\001"
+  "\n\rNvmeMultipath\022\036\n\032NVME_MULTIPATH_UNSPEC"
+  "IFIED\020\000\022\032\n\026NVME_MULTIPATH_DISABLE\020\001\022\033\n\027N"
+  "VME_MULTIPATH_FAILOVER\020\002\022\034\n\030NVME_MULTIPA"
+  "TH_MULTIPATH\020\0032\224\024\n\033NvmeRemoteControllerS"
+  "ervice\022\335\001\n\032CreateNvmeRemoteController\0225."
+  "opi_api.storage.v1.CreateNvmeRemoteContr"
+  "ollerRequest\032(.opi_api.storage.v1.NvmeRe"
+  "moteController\"^\202\323\344\223\002%\"\013/v1/volumes:\026nvm"
+  "e_remote_controller\332A0nvme_remote_contro"
+  "ller,nvme_remote_controller_id\022\236\001\n\032Delet"
+  "eNvmeRemoteController\0225.opi_api.storage."
+  "v1.DeleteNvmeRemoteControllerRequest\032\026.g"
+  "oogle.protobuf.Empty\"1\202\323\344\223\002$*\"/v1/{name="
+  "NvmeRemoteControllers/*}\332A\004name\022\360\001\n\032Upda"
   "teNvmeRemoteController\0225.opi_api.storage"
-  ".v1.CreateNvmeRemoteControllerRequest\032(."
+  ".v1.UpdateNvmeRemoteControllerRequest\032(."
   "opi_api.storage.v1.NvmeRemoteController\""
-  "^\202\323\344\223\002%\"\013/v1/volumes:\026nvme_remote_contro"
-  "ller\332A0nvme_remote_controller,nvme_remot"
-  "e_controller_id\022\236\001\n\032DeleteNvmeRemoteCont"
-  "roller\0225.opi_api.storage.v1.DeleteNvmeRe"
-  "moteControllerRequest\032\026.google.protobuf."
-  "Empty\"1\202\323\344\223\002$*\"/v1/{name=NvmeRemoteContr"
-  "ollers/*}\332A\004name\022\360\001\n\032UpdateNvmeRemoteCon"
-  "troller\0225.opi_api.storage.v1.UpdateNvmeR"
-  "emoteControllerRequest\032(.opi_api.storage"
-  ".v1.NvmeRemoteController\"q\202\323\344\223\002F2,/v1/{n"
-  "vme_remote_controller.name=subsystems}:\026"
-  "nvme_remote_controller\332A\"nvme_remote_con"
-  "troller,update_mask\022\262\001\n\031ListNvmeRemoteCo"
-  "ntrollers\0224.opi_api.storage.v1.ListNvmeR"
-  "emoteControllersRequest\0325.opi_api.storag"
-  "e.v1.ListNvmeRemoteControllersResponse\"("
-  "\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent"
-  "\022\252\001\n\027GetNvmeRemoteController\0222.opi_api.s"
-  "torage.v1.GetNvmeRemoteControllerRequest"
-  "\032(.opi_api.storage.v1.NvmeRemoteControll"
-  "er\"1\202\323\344\223\002$\022\"/v1/{name=NvmeRemoteControll"
-  "ers/*}\332A\004name\022\245\001\n\031ResetNvmeRemoteControl"
-  "ler\0224.opi_api.storage.v1.ResetNvmeRemote"
-  "ControllerRequest\032\026.google.protobuf.Empt"
-  "y\":\202\323\344\223\002-\"(/v1/{name=NvmeRemoteControlle"
-  "rs/*}:reset:\001*\332A\004name\022\301\001\n\031StatsNvmeRemot"
-  "eController\0224.opi_api.storage.v1.StatsNv"
-  "meRemoteControllerRequest\0325.opi_api.stor"
-  "age.v1.StatsNvmeRemoteControllerResponse"
-  "\"7\202\323\344\223\002*\022(/v1/{name=NvmeRemoteController"
-  "s/*}:stats\332A\004name\022\257\001\n\030ListNvmeRemoteName"
-  "spaces\0223.opi_api.storage.v1.ListNvmeRemo"
-  "teNamespacesRequest\0324.opi_api.storage.v1"
-  ".ListNvmeRemoteNamespacesResponse\"(\202\323\344\223\002"
-  "\031\022\027/v1/{parent=subsystems}\332A\006parent\022\222\001\n\016"
-  "CreateNvmePath\022).opi_api.storage.v1.Crea"
-  "teNvmePathRequest\032\034.opi_api.storage.v1.N"
-  "vmePath\"7\202\323\344\223\002\030\"\013/v1/volumes:\tnvme_path\332"
-  "A\026nvme_path,nvme_path_id\022z\n\016DeleteNvmePa"
-  "th\022).opi_api.storage.v1.DeleteNvmePathRe"
-  "quest\032\026.google.protobuf.Empty\"%\202\323\344\223\002\030*\026/"
-  "v1/{name=NvmePaths/*}\332A\004name\022\245\001\n\016UpdateN"
-  "vmePath\022).opi_api.storage.v1.UpdateNvmeP"
-  "athRequest\032\034.opi_api.storage.v1.NvmePath"
-  "\"J\202\323\344\223\002,2\037/v1/{nvme_path.name=subsystems"
-  "}:\tnvme_path\332A\025nvme_path,update_mask\022\216\001\n"
-  "\rListNvmePaths\022(.opi_api.storage.v1.List"
-  "NvmePathsRequest\032).opi_api.storage.v1.Li"
-  "stNvmePathsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent"
-  "=subsystems}\332A\006parent\022z\n\013GetNvmePath\022&.o"
-  "pi_api.storage.v1.GetNvmePathRequest\032\034.o"
-  "pi_api.storage.v1.NvmePath\"%\202\323\344\223\002\030\022\026/v1/"
-  "{name=NvmePaths/*}\332A\004name\022\221\001\n\rStatsNvmeP"
-  "ath\022(.opi_api.storage.v1.StatsNvmePathRe"
-  "quest\032).opi_api.storage.v1.StatsNvmePath"
-  "Response\"+\202\323\344\223\002\036\022\034/v1/{name=NvmePaths/*}"
-  ":stats\332A\004nameBb\n\022opi_api.storage.v1B\023Bac"
-  "kendNvmeTcpProtoP\001Z5github.com/opiprojec"
-  "t/opi-api/storage/v1alpha1/gen/gob\006proto"
-  "3"
+  "q\202\323\344\223\002F2,/v1/{nvme_remote_controller.nam"
+  "e=subsystems}:\026nvme_remote_controller\332A\""
+  "nvme_remote_controller,update_mask\022\262\001\n\031L"
+  "istNvmeRemoteControllers\0224.opi_api.stora"
+  "ge.v1.ListNvmeRemoteControllersRequest\0325"
+  ".opi_api.storage.v1.ListNvmeRemoteContro"
+  "llersResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsy"
+  "stems}\332A\006parent\022\252\001\n\027GetNvmeRemoteControl"
+  "ler\0222.opi_api.storage.v1.GetNvmeRemoteCo"
+  "ntrollerRequest\032(.opi_api.storage.v1.Nvm"
+  "eRemoteController\"1\202\323\344\223\002$\022\"/v1/{name=Nvm"
+  "eRemoteControllers/*}\332A\004name\022\245\001\n\031ResetNv"
+  "meRemoteController\0224.opi_api.storage.v1."
+  "ResetNvmeRemoteControllerRequest\032\026.googl"
+  "e.protobuf.Empty\":\202\323\344\223\002-\"(/v1/{name=Nvme"
+  "RemoteControllers/*}:reset:\001*\332A\004name\022\301\001\n"
+  "\031StatsNvmeRemoteController\0224.opi_api.sto"
+  "rage.v1.StatsNvmeRemoteControllerRequest"
+  "\0325.opi_api.storage.v1.StatsNvmeRemoteCon"
+  "trollerResponse\"7\202\323\344\223\002*\022(/v1/{name=NvmeR"
+  "emoteControllers/*}:stats\332A\004name\022\257\001\n\030Lis"
+  "tNvmeRemoteNamespaces\0223.opi_api.storage."
+  "v1.ListNvmeRemoteNamespacesRequest\0324.opi"
+  "_api.storage.v1.ListNvmeRemoteNamespaces"
+  "Response\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems"
+  "}\332A\006parent\022\246\001\n\026GetNvmeRemoteNamespace\0221."
+  "opi_api.storage.v1.GetNvmeRemoteNamespac"
+  "eRequest\032\'.opi_api.storage.v1.NvmeRemote"
+  "Namespace\"0\202\323\344\223\002#\022!/v1/{name=NvmeRemoteN"
+  "amespaces/*}\332A\004name\022\222\001\n\016CreateNvmePath\022)"
+  ".opi_api.storage.v1.CreateNvmePathReques"
+  "t\032\034.opi_api.storage.v1.NvmePath\"7\202\323\344\223\002\030\""
+  "\013/v1/volumes:\tnvme_path\332A\026nvme_path,nvme"
+  "_path_id\022z\n\016DeleteNvmePath\022).opi_api.sto"
+  "rage.v1.DeleteNvmePathRequest\032\026.google.p"
+  "rotobuf.Empty\"%\202\323\344\223\002\030*\026/v1/{name=NvmePat"
+  "hs/*}\332A\004name\022\245\001\n\016UpdateNvmePath\022).opi_ap"
+  "i.storage.v1.UpdateNvmePathRequest\032\034.opi"
+  "_api.storage.v1.NvmePath\"J\202\323\344\223\002,2\037/v1/{n"
+  "vme_path.name=subsystems}:\tnvme_path\332A\025n"
+  "vme_path,update_mask\022\216\001\n\rListNvmePaths\022("
+  ".opi_api.storage.v1.ListNvmePathsRequest"
+  "\032).opi_api.storage.v1.ListNvmePathsRespo"
+  "nse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006p"
+  "arent\022z\n\013GetNvmePath\022&.opi_api.storage.v"
+  "1.GetNvmePathRequest\032\034.opi_api.storage.v"
+  "1.NvmePath\"%\202\323\344\223\002\030\022\026/v1/{name=NvmePaths/"
+  "*}\332A\004name\022\221\001\n\rStatsNvmePath\022(.opi_api.st"
+  "orage.v1.StatsNvmePathRequest\032).opi_api."
+  "storage.v1.StatsNvmePathResponse\"+\202\323\344\223\002\036"
+  "\022\034/v1/{name=NvmePaths/*}:stats\332A\004nameBb\n"
+  "\022opi_api.storage.v1B\023BackendNvmeTcpProto"
+  "P\001Z5github.com/opiproject/opi-api/storag"
+  "e/v1alpha1/gen/gob\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_backend_5fnvme_5ftcp_2eproto_deps[8] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -780,9 +808,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_backend_5fnvme_5ftc
 };
 static ::_pbi::once_flag descriptor_table_backend_5fnvme_5ftcp_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_backend_5fnvme_5ftcp_2eproto = {
-    false, false, 6761, descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto,
+    false, false, 7025, descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto,
     "backend_nvme_tcp.proto",
-    &descriptor_table_backend_5fnvme_5ftcp_2eproto_once, descriptor_table_backend_5fnvme_5ftcp_2eproto_deps, 8, 22,
+    &descriptor_table_backend_5fnvme_5ftcp_2eproto_once, descriptor_table_backend_5fnvme_5ftcp_2eproto_deps, 8, 23,
     schemas, file_default_instances, TableStruct_backend_5fnvme_5ftcp_2eproto::offsets,
     file_level_metadata_backend_5fnvme_5ftcp_2eproto, file_level_enum_descriptors_backend_5fnvme_5ftcp_2eproto,
     file_level_service_descriptors_backend_5fnvme_5ftcp_2eproto,
@@ -4799,6 +4827,209 @@ void ListNvmeRemoteNamespacesResponse::InternalSwap(ListNvmeRemoteNamespacesResp
 
 // ===================================================================
 
+class GetNvmeRemoteNamespaceRequest::_Internal {
+ public:
+};
+
+GetNvmeRemoteNamespaceRequest::GetNvmeRemoteNamespaceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+}
+GetNvmeRemoteNamespaceRequest::GetNvmeRemoteNamespaceRequest(const GetNvmeRemoteNamespaceRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetNvmeRemoteNamespaceRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+}
+
+inline void GetNvmeRemoteNamespaceRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+GetNvmeRemoteNamespaceRequest::~GetNvmeRemoteNamespaceRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetNvmeRemoteNamespaceRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.name_.Destroy();
+}
+
+void GetNvmeRemoteNamespaceRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetNvmeRemoteNamespaceRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetNvmeRemoteNamespaceRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.name"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetNvmeRemoteNamespaceRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.GetNvmeRemoteNamespaceRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+  return target;
+}
+
+size_t GetNvmeRemoteNamespaceRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNvmeRemoteNamespaceRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetNvmeRemoteNamespaceRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNvmeRemoteNamespaceRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetNvmeRemoteNamespaceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetNvmeRemoteNamespaceRequest*>(&to_msg);
+  auto& from = static_cast<const GetNvmeRemoteNamespaceRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _this->_internal_set_name(from._internal_name());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetNvmeRemoteNamespaceRequest::CopyFrom(const GetNvmeRemoteNamespaceRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.GetNvmeRemoteNamespaceRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetNvmeRemoteNamespaceRequest::IsInitialized() const {
+  return true;
+}
+
+void GetNvmeRemoteNamespaceRequest::InternalSwap(GetNvmeRemoteNamespaceRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetNvmeRemoteNamespaceRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[14]);
+}
+
+// ===================================================================
+
 class CreateNvmePathRequest::_Internal {
  public:
   static const ::opi_api::storage::v1::NvmePath& nvme_path(const CreateNvmePathRequest* msg);
@@ -5039,7 +5270,7 @@ void CreateNvmePathRequest::InternalSwap(CreateNvmePathRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateNvmePathRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[14]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[15]);
 }
 
 // ===================================================================
@@ -5269,7 +5500,7 @@ void DeleteNvmePathRequest::InternalSwap(DeleteNvmePathRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteNvmePathRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[15]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[16]);
 }
 
 // ===================================================================
@@ -5540,7 +5771,7 @@ void UpdateNvmePathRequest::InternalSwap(UpdateNvmePathRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateNvmePathRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[16]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[17]);
 }
 
 // ===================================================================
@@ -5820,7 +6051,7 @@ void ListNvmePathsRequest::InternalSwap(ListNvmePathsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNvmePathsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[17]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[18]);
 }
 
 // ===================================================================
@@ -6057,7 +6288,7 @@ void ListNvmePathsResponse::InternalSwap(ListNvmePathsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNvmePathsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[18]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[19]);
 }
 
 // ===================================================================
@@ -6260,7 +6491,7 @@ void GetNvmePathRequest::InternalSwap(GetNvmePathRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetNvmePathRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[19]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[20]);
 }
 
 // ===================================================================
@@ -6463,7 +6694,7 @@ void StatsNvmePathRequest::InternalSwap(StatsNvmePathRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata StatsNvmePathRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[20]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[21]);
 }
 
 // ===================================================================
@@ -6662,7 +6893,7 @@ void StatsNvmePathResponse::InternalSwap(StatsNvmePathResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata StatsNvmePathResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_backend_5fnvme_5ftcp_2eproto_getter, &descriptor_table_backend_5fnvme_5ftcp_2eproto_once,
-      file_level_metadata_backend_5fnvme_5ftcp_2eproto[21]);
+      file_level_metadata_backend_5fnvme_5ftcp_2eproto[22]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -6725,6 +6956,10 @@ Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListNvmeRemoteNamespacesReque
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse*
 Arena::CreateMaybeMessage< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest*
+Arena::CreateMaybeMessage< ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::GetNvmeRemoteNamespaceRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::CreateNvmePathRequest*
 Arena::CreateMaybeMessage< ::opi_api::storage::v1::CreateNvmePathRequest >(Arena* arena) {

@@ -39,6 +39,8 @@ type NvmeRemoteControllerServiceClient interface {
 	StatsNvmeRemoteController(ctx context.Context, in *StatsNvmeRemoteControllerRequest, opts ...grpc.CallOption) (*StatsNvmeRemoteControllerResponse, error)
 	// List Nvme Remote Namespaces
 	ListNvmeRemoteNamespaces(ctx context.Context, in *ListNvmeRemoteNamespacesRequest, opts ...grpc.CallOption) (*ListNvmeRemoteNamespacesResponse, error)
+	// Get an Nvme Remote Namespace
+	GetNvmeRemoteNamespace(ctx context.Context, in *GetNvmeRemoteNamespaceRequest, opts ...grpc.CallOption) (*NvmeRemoteNamespace, error)
 	// Create an Nvme Path
 	CreateNvmePath(ctx context.Context, in *CreateNvmePathRequest, opts ...grpc.CallOption) (*NvmePath, error)
 	// Delete an Nvme Path
@@ -133,6 +135,15 @@ func (c *nvmeRemoteControllerServiceClient) ListNvmeRemoteNamespaces(ctx context
 	return out, nil
 }
 
+func (c *nvmeRemoteControllerServiceClient) GetNvmeRemoteNamespace(ctx context.Context, in *GetNvmeRemoteNamespaceRequest, opts ...grpc.CallOption) (*NvmeRemoteNamespace, error) {
+	out := new(NvmeRemoteNamespace)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.NvmeRemoteControllerService/GetNvmeRemoteNamespace", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *nvmeRemoteControllerServiceClient) CreateNvmePath(ctx context.Context, in *CreateNvmePathRequest, opts ...grpc.CallOption) (*NvmePath, error) {
 	out := new(NvmePath)
 	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.NvmeRemoteControllerService/CreateNvmePath", in, out, opts...)
@@ -207,6 +218,8 @@ type NvmeRemoteControllerServiceServer interface {
 	StatsNvmeRemoteController(context.Context, *StatsNvmeRemoteControllerRequest) (*StatsNvmeRemoteControllerResponse, error)
 	// List Nvme Remote Namespaces
 	ListNvmeRemoteNamespaces(context.Context, *ListNvmeRemoteNamespacesRequest) (*ListNvmeRemoteNamespacesResponse, error)
+	// Get an Nvme Remote Namespace
+	GetNvmeRemoteNamespace(context.Context, *GetNvmeRemoteNamespaceRequest) (*NvmeRemoteNamespace, error)
 	// Create an Nvme Path
 	CreateNvmePath(context.Context, *CreateNvmePathRequest) (*NvmePath, error)
 	// Delete an Nvme Path
@@ -248,6 +261,9 @@ func (UnimplementedNvmeRemoteControllerServiceServer) StatsNvmeRemoteController(
 }
 func (UnimplementedNvmeRemoteControllerServiceServer) ListNvmeRemoteNamespaces(context.Context, *ListNvmeRemoteNamespacesRequest) (*ListNvmeRemoteNamespacesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListNvmeRemoteNamespaces not implemented")
+}
+func (UnimplementedNvmeRemoteControllerServiceServer) GetNvmeRemoteNamespace(context.Context, *GetNvmeRemoteNamespaceRequest) (*NvmeRemoteNamespace, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNvmeRemoteNamespace not implemented")
 }
 func (UnimplementedNvmeRemoteControllerServiceServer) CreateNvmePath(context.Context, *CreateNvmePathRequest) (*NvmePath, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNvmePath not implemented")
@@ -423,6 +439,24 @@ func _NvmeRemoteControllerService_ListNvmeRemoteNamespaces_Handler(srv interface
 	return interceptor(ctx, in, info, handler)
 }
 
+func _NvmeRemoteControllerService_GetNvmeRemoteNamespace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNvmeRemoteNamespaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NvmeRemoteControllerServiceServer).GetNvmeRemoteNamespace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/opi_api.storage.v1.NvmeRemoteControllerService/GetNvmeRemoteNamespace",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NvmeRemoteControllerServiceServer).GetNvmeRemoteNamespace(ctx, req.(*GetNvmeRemoteNamespaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _NvmeRemoteControllerService_CreateNvmePath_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateNvmePathRequest)
 	if err := dec(in); err != nil {
@@ -569,6 +603,10 @@ var NvmeRemoteControllerService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListNvmeRemoteNamespaces",
 			Handler:    _NvmeRemoteControllerService_ListNvmeRemoteNamespaces_Handler,
+		},
+		{
+			MethodName: "GetNvmeRemoteNamespace",
+			Handler:    _NvmeRemoteControllerService_GetNvmeRemoteNamespace_Handler,
 		},
 		{
 			MethodName: "CreateNvmePath",
