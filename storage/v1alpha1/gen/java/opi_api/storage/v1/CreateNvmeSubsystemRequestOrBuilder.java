@@ -8,26 +8,48 @@ public interface CreateNvmeSubsystemRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The Nvme Subsystem to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeSubsystem field is set.
    */
   boolean hasNvmeSubsystem();
   /**
+   * <pre>
+   * The Nvme Subsystem to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeSubsystem.
    */
   opi_api.storage.v1.NvmeSubsystem getNvmeSubsystem();
   /**
+   * <pre>
+   * The Nvme Subsystem to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeSubsystemOrBuilder getNvmeSubsystemOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Subsystem.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeSubsystemId.
    */
   java.lang.String getNvmeSubsystemId();
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Subsystem.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeSubsystemId.
    */

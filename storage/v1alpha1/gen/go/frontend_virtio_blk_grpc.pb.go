@@ -23,11 +23,17 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type FrontendVirtioBlkServiceClient interface {
+	// Create an Virtio Blk
 	CreateVirtioBlk(ctx context.Context, in *CreateVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
+	// Delete an Virtio Blk
 	DeleteVirtioBlk(ctx context.Context, in *DeleteVirtioBlkRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Virtio Blk
 	UpdateVirtioBlk(ctx context.Context, in *UpdateVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
+	// List Virtio Blks
 	ListVirtioBlks(ctx context.Context, in *ListVirtioBlksRequest, opts ...grpc.CallOption) (*ListVirtioBlksResponse, error)
+	// Get an Virtio Blk
 	GetVirtioBlk(ctx context.Context, in *GetVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
+	// Get an Virtio Blk statistics
 	StatsVirtioBlk(ctx context.Context, in *StatsVirtioBlkRequest, opts ...grpc.CallOption) (*StatsVirtioBlkResponse, error)
 }
 
@@ -97,11 +103,17 @@ func (c *frontendVirtioBlkServiceClient) StatsVirtioBlk(ctx context.Context, in 
 // All implementations should embed UnimplementedFrontendVirtioBlkServiceServer
 // for forward compatibility
 type FrontendVirtioBlkServiceServer interface {
+	// Create an Virtio Blk
 	CreateVirtioBlk(context.Context, *CreateVirtioBlkRequest) (*VirtioBlk, error)
+	// Delete an Virtio Blk
 	DeleteVirtioBlk(context.Context, *DeleteVirtioBlkRequest) (*emptypb.Empty, error)
+	// Update an Virtio Blk
 	UpdateVirtioBlk(context.Context, *UpdateVirtioBlkRequest) (*VirtioBlk, error)
+	// List Virtio Blks
 	ListVirtioBlks(context.Context, *ListVirtioBlksRequest) (*ListVirtioBlksResponse, error)
+	// Get an Virtio Blk
 	GetVirtioBlk(context.Context, *GetVirtioBlkRequest) (*VirtioBlk, error)
+	// Get an Virtio Blk statistics
 	StatsVirtioBlk(context.Context, *StatsVirtioBlkRequest) (*StatsVirtioBlkResponse, error)
 }
 

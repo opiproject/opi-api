@@ -256,6 +256,9 @@ public final class NullVolumeServiceGrpc {
   public static abstract class NullVolumeServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Create an Null Volume
+     * </pre>
      */
     public void createNullVolume(opi_api.storage.v1.CreateNullVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolume> responseObserver) {
@@ -263,6 +266,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Null Volume
+     * </pre>
      */
     public void deleteNullVolume(opi_api.storage.v1.DeleteNullVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -270,6 +276,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Null Volume
+     * </pre>
      */
     public void updateNullVolume(opi_api.storage.v1.UpdateNullVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolume> responseObserver) {
@@ -277,6 +286,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Null Volumes
+     * </pre>
      */
     public void listNullVolumes(opi_api.storage.v1.ListNullVolumesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNullVolumesResponse> responseObserver) {
@@ -284,6 +296,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Null Volume
+     * </pre>
      */
     public void getNullVolume(opi_api.storage.v1.GetNullVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolume> responseObserver) {
@@ -291,6 +306,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Null Volume statistics
+     * </pre>
      */
     public void statsNullVolume(opi_api.storage.v1.StatsNullVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNullVolumeResponse> responseObserver) {
@@ -363,6 +381,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Null Volume
+     * </pre>
      */
     public void createNullVolume(opi_api.storage.v1.CreateNullVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolume> responseObserver) {
@@ -371,6 +392,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Null Volume
+     * </pre>
      */
     public void deleteNullVolume(opi_api.storage.v1.DeleteNullVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -379,6 +403,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Null Volume
+     * </pre>
      */
     public void updateNullVolume(opi_api.storage.v1.UpdateNullVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolume> responseObserver) {
@@ -387,6 +414,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Null Volumes
+     * </pre>
      */
     public void listNullVolumes(opi_api.storage.v1.ListNullVolumesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNullVolumesResponse> responseObserver) {
@@ -395,6 +425,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Null Volume
+     * </pre>
      */
     public void getNullVolume(opi_api.storage.v1.GetNullVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullVolume> responseObserver) {
@@ -403,6 +436,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Null Volume statistics
+     * </pre>
      */
     public void statsNullVolume(opi_api.storage.v1.StatsNullVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNullVolumeResponse> responseObserver) {
@@ -429,6 +465,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Null Volume
+     * </pre>
      */
     public opi_api.storage.v1.NullVolume createNullVolume(opi_api.storage.v1.CreateNullVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -436,6 +475,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Null Volume
+     * </pre>
      */
     public com.google.protobuf.Empty deleteNullVolume(opi_api.storage.v1.DeleteNullVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -443,6 +485,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Null Volume
+     * </pre>
      */
     public opi_api.storage.v1.NullVolume updateNullVolume(opi_api.storage.v1.UpdateNullVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -450,6 +495,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Null Volumes
+     * </pre>
      */
     public opi_api.storage.v1.ListNullVolumesResponse listNullVolumes(opi_api.storage.v1.ListNullVolumesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -457,6 +505,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Null Volume
+     * </pre>
      */
     public opi_api.storage.v1.NullVolume getNullVolume(opi_api.storage.v1.GetNullVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -464,6 +515,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Null Volume statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsNullVolumeResponse statsNullVolume(opi_api.storage.v1.StatsNullVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -489,6 +543,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Null Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullVolume> createNullVolume(
         opi_api.storage.v1.CreateNullVolumeRequest request) {
@@ -497,6 +554,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Null Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNullVolume(
         opi_api.storage.v1.DeleteNullVolumeRequest request) {
@@ -505,6 +565,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Null Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullVolume> updateNullVolume(
         opi_api.storage.v1.UpdateNullVolumeRequest request) {
@@ -513,6 +576,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Null Volumes
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNullVolumesResponse> listNullVolumes(
         opi_api.storage.v1.ListNullVolumesRequest request) {
@@ -521,6 +587,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Null Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullVolume> getNullVolume(
         opi_api.storage.v1.GetNullVolumeRequest request) {
@@ -529,6 +598,9 @@ public final class NullVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Null Volume statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNullVolumeResponse> statsNullVolume(
         opi_api.storage.v1.StatsNullVolumeRequest request) {

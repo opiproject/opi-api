@@ -256,6 +256,9 @@ public final class MiddleendEncryptionServiceGrpc {
   public static abstract class MiddleendEncryptionServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Create an Encrypted Volume
+     * </pre>
      */
     public void createEncryptedVolume(opi_api.storage.v1.CreateEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
@@ -263,6 +266,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Encrypted Volume
+     * </pre>
      */
     public void deleteEncryptedVolume(opi_api.storage.v1.DeleteEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -270,6 +276,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Encrypted Volume
+     * </pre>
      */
     public void updateEncryptedVolume(opi_api.storage.v1.UpdateEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
@@ -277,6 +286,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Encrypted Volumes
+     * </pre>
      */
     public void listEncryptedVolumes(opi_api.storage.v1.ListEncryptedVolumesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumesResponse> responseObserver) {
@@ -284,6 +296,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Encrypted Volume
+     * </pre>
      */
     public void getEncryptedVolume(opi_api.storage.v1.GetEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
@@ -291,6 +306,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Encrypted Volume statistics
+     * </pre>
      */
     public void statsEncryptedVolume(opi_api.storage.v1.StatsEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsEncryptedVolumeResponse> responseObserver) {
@@ -363,6 +381,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Encrypted Volume
+     * </pre>
      */
     public void createEncryptedVolume(opi_api.storage.v1.CreateEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
@@ -371,6 +392,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Encrypted Volume
+     * </pre>
      */
     public void deleteEncryptedVolume(opi_api.storage.v1.DeleteEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -379,6 +403,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Encrypted Volume
+     * </pre>
      */
     public void updateEncryptedVolume(opi_api.storage.v1.UpdateEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
@@ -387,6 +414,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Encrypted Volumes
+     * </pre>
      */
     public void listEncryptedVolumes(opi_api.storage.v1.ListEncryptedVolumesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumesResponse> responseObserver) {
@@ -395,6 +425,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Encrypted Volume
+     * </pre>
      */
     public void getEncryptedVolume(opi_api.storage.v1.GetEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
@@ -403,6 +436,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Encrypted Volume statistics
+     * </pre>
      */
     public void statsEncryptedVolume(opi_api.storage.v1.StatsEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsEncryptedVolumeResponse> responseObserver) {
@@ -429,6 +465,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Encrypted Volume
+     * </pre>
      */
     public opi_api.storage.v1.EncryptedVolume createEncryptedVolume(opi_api.storage.v1.CreateEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -436,6 +475,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Encrypted Volume
+     * </pre>
      */
     public com.google.protobuf.Empty deleteEncryptedVolume(opi_api.storage.v1.DeleteEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -443,6 +485,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Encrypted Volume
+     * </pre>
      */
     public opi_api.storage.v1.EncryptedVolume updateEncryptedVolume(opi_api.storage.v1.UpdateEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -450,6 +495,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Encrypted Volumes
+     * </pre>
      */
     public opi_api.storage.v1.ListEncryptedVolumesResponse listEncryptedVolumes(opi_api.storage.v1.ListEncryptedVolumesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -457,6 +505,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Encrypted Volume
+     * </pre>
      */
     public opi_api.storage.v1.EncryptedVolume getEncryptedVolume(opi_api.storage.v1.GetEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -464,6 +515,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Encrypted Volume statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsEncryptedVolumeResponse statsEncryptedVolume(opi_api.storage.v1.StatsEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -489,6 +543,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Encrypted Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.EncryptedVolume> createEncryptedVolume(
         opi_api.storage.v1.CreateEncryptedVolumeRequest request) {
@@ -497,6 +554,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Encrypted Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteEncryptedVolume(
         opi_api.storage.v1.DeleteEncryptedVolumeRequest request) {
@@ -505,6 +565,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Encrypted Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.EncryptedVolume> updateEncryptedVolume(
         opi_api.storage.v1.UpdateEncryptedVolumeRequest request) {
@@ -513,6 +576,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Encrypted Volumes
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListEncryptedVolumesResponse> listEncryptedVolumes(
         opi_api.storage.v1.ListEncryptedVolumesRequest request) {
@@ -521,6 +587,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Encrypted Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.EncryptedVolume> getEncryptedVolume(
         opi_api.storage.v1.GetEncryptedVolumeRequest request) {
@@ -529,6 +598,9 @@ public final class MiddleendEncryptionServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Encrypted Volume statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsEncryptedVolumeResponse> statsEncryptedVolume(
         opi_api.storage.v1.StatsEncryptedVolumeRequest request) {

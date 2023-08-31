@@ -8,26 +8,48 @@ public interface CreateNvmePathRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The Nvme Path to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmePath field is set.
    */
   boolean hasNvmePath();
   /**
+   * <pre>
+   * The Nvme Path to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmePath.
    */
   opi_api.storage.v1.NvmePath getNvmePath();
   /**
+   * <pre>
+   * The Nvme Path to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmePathOrBuilder getNvmePathOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Path.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmePathId.
    */
   java.lang.String getNvmePathId();
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Path.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmePathId.
    */

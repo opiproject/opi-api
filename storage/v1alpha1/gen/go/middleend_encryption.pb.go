@@ -105,13 +105,17 @@ func (x *EncryptedVolume) GetCipher() EncryptionType {
 	return EncryptionType_ENCRYPTION_TYPE_UNSPECIFIED
 }
 
+// Represents a request to create an Encrypted Volume.
 type CreateEncryptedVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	EncryptedVolume   *EncryptedVolume `protobuf:"bytes,1,opt,name=encrypted_volume,json=encryptedVolume,proto3" json:"encrypted_volume,omitempty"`
-	EncryptedVolumeId string           `protobuf:"bytes,2,opt,name=encrypted_volume_id,json=encryptedVolumeId,proto3" json:"encrypted_volume_id,omitempty"`
+	// The Encrypted Volume to be created.
+	EncryptedVolume *EncryptedVolume `protobuf:"bytes,1,opt,name=encrypted_volume,json=encryptedVolume,proto3" json:"encrypted_volume,omitempty"`
+	// An optional ID to assign to the Encrypted Volume.
+	// If this is not provided the system will auto-generate it.
+	EncryptedVolumeId string `protobuf:"bytes,2,opt,name=encrypted_volume_id,json=encryptedVolumeId,proto3" json:"encrypted_volume_id,omitempty"`
 }
 
 func (x *CreateEncryptedVolumeRequest) Reset() {
@@ -160,6 +164,7 @@ func (x *CreateEncryptedVolumeRequest) GetEncryptedVolumeId() string {
 	return ""
 }
 
+// Represents a request to delete an Encrypted Volume.
 type DeleteEncryptedVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

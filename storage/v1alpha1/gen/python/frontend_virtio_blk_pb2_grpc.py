@@ -53,37 +53,43 @@ class FrontendVirtioBlkServiceServicer(object):
     """
 
     def CreateVirtioBlk(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Virtio Blk
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteVirtioBlk(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an Virtio Blk
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateVirtioBlk(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Virtio Blk
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListVirtioBlks(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Virtio Blks
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetVirtioBlk(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Virtio Blk
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsVirtioBlk(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Virtio Blk statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

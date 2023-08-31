@@ -23,19 +23,33 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type NvmeRemoteControllerServiceClient interface {
+	// Create an Nvme Remote Controller
 	CreateNvmeRemoteController(ctx context.Context, in *CreateNvmeRemoteControllerRequest, opts ...grpc.CallOption) (*NvmeRemoteController, error)
+	// Delete an Nvme Remote Controller
 	DeleteNvmeRemoteController(ctx context.Context, in *DeleteNvmeRemoteControllerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Nvme Remote Controller
 	UpdateNvmeRemoteController(ctx context.Context, in *UpdateNvmeRemoteControllerRequest, opts ...grpc.CallOption) (*NvmeRemoteController, error)
+	// List Nvme Remote Controllers
 	ListNvmeRemoteControllers(ctx context.Context, in *ListNvmeRemoteControllersRequest, opts ...grpc.CallOption) (*ListNvmeRemoteControllersResponse, error)
+	// Get an Nvme Remote Controller
 	GetNvmeRemoteController(ctx context.Context, in *GetNvmeRemoteControllerRequest, opts ...grpc.CallOption) (*NvmeRemoteController, error)
+	// Reset an Nvme Remote Controller
 	ResetNvmeRemoteController(ctx context.Context, in *ResetNvmeRemoteControllerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get an Nvme Remote Controller statistics
 	StatsNvmeRemoteController(ctx context.Context, in *StatsNvmeRemoteControllerRequest, opts ...grpc.CallOption) (*StatsNvmeRemoteControllerResponse, error)
+	// List Nvme Remote Namespaces
 	ListNvmeRemoteNamespaces(ctx context.Context, in *ListNvmeRemoteNamespacesRequest, opts ...grpc.CallOption) (*ListNvmeRemoteNamespacesResponse, error)
+	// Create an Nvme Path
 	CreateNvmePath(ctx context.Context, in *CreateNvmePathRequest, opts ...grpc.CallOption) (*NvmePath, error)
+	// Delete an Nvme Path
 	DeleteNvmePath(ctx context.Context, in *DeleteNvmePathRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Nvme Path
 	UpdateNvmePath(ctx context.Context, in *UpdateNvmePathRequest, opts ...grpc.CallOption) (*NvmePath, error)
+	// List Nvme Paths
 	ListNvmePaths(ctx context.Context, in *ListNvmePathsRequest, opts ...grpc.CallOption) (*ListNvmePathsResponse, error)
+	// Get an Nvme Path
 	GetNvmePath(ctx context.Context, in *GetNvmePathRequest, opts ...grpc.CallOption) (*NvmePath, error)
+	// Get an Nvme Path statistics
 	StatsNvmePath(ctx context.Context, in *StatsNvmePathRequest, opts ...grpc.CallOption) (*StatsNvmePathResponse, error)
 }
 
@@ -177,19 +191,33 @@ func (c *nvmeRemoteControllerServiceClient) StatsNvmePath(ctx context.Context, i
 // All implementations should embed UnimplementedNvmeRemoteControllerServiceServer
 // for forward compatibility
 type NvmeRemoteControllerServiceServer interface {
+	// Create an Nvme Remote Controller
 	CreateNvmeRemoteController(context.Context, *CreateNvmeRemoteControllerRequest) (*NvmeRemoteController, error)
+	// Delete an Nvme Remote Controller
 	DeleteNvmeRemoteController(context.Context, *DeleteNvmeRemoteControllerRequest) (*emptypb.Empty, error)
+	// Update an Nvme Remote Controller
 	UpdateNvmeRemoteController(context.Context, *UpdateNvmeRemoteControllerRequest) (*NvmeRemoteController, error)
+	// List Nvme Remote Controllers
 	ListNvmeRemoteControllers(context.Context, *ListNvmeRemoteControllersRequest) (*ListNvmeRemoteControllersResponse, error)
+	// Get an Nvme Remote Controller
 	GetNvmeRemoteController(context.Context, *GetNvmeRemoteControllerRequest) (*NvmeRemoteController, error)
+	// Reset an Nvme Remote Controller
 	ResetNvmeRemoteController(context.Context, *ResetNvmeRemoteControllerRequest) (*emptypb.Empty, error)
+	// Get an Nvme Remote Controller statistics
 	StatsNvmeRemoteController(context.Context, *StatsNvmeRemoteControllerRequest) (*StatsNvmeRemoteControllerResponse, error)
+	// List Nvme Remote Namespaces
 	ListNvmeRemoteNamespaces(context.Context, *ListNvmeRemoteNamespacesRequest) (*ListNvmeRemoteNamespacesResponse, error)
+	// Create an Nvme Path
 	CreateNvmePath(context.Context, *CreateNvmePathRequest) (*NvmePath, error)
+	// Delete an Nvme Path
 	DeleteNvmePath(context.Context, *DeleteNvmePathRequest) (*emptypb.Empty, error)
+	// Update an Nvme Path
 	UpdateNvmePath(context.Context, *UpdateNvmePathRequest) (*NvmePath, error)
+	// List Nvme Paths
 	ListNvmePaths(context.Context, *ListNvmePathsRequest) (*ListNvmePathsResponse, error)
+	// Get an Nvme Path
 	GetNvmePath(context.Context, *GetNvmePathRequest) (*NvmePath, error)
+	// Get an Nvme Path statistics
 	StatsNvmePath(context.Context, *StatsNvmePathRequest) (*StatsNvmePathResponse, error)
 }
 

@@ -113,111 +113,129 @@ class FrontendNvmeServiceServicer(object):
     """
 
     def CreateNvmeSubsystem(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Nvme Subsystem
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteNvmeSubsystem(self, request, context):
-        """Fails if there are any associated objects
+        """Delete an Nvme Subsystem
+        Fails if there are any associated objects
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateNvmeSubsystem(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Nvme Subsystem
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListNvmeSubsystems(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Nvme Subsystems
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetNvmeSubsystem(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Nvme Subsystem
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsNvmeSubsystem(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Nvme Subsystem statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateNvmeController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Nvme Controller
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteNvmeController(self, request, context):
-        """Fails if there are any associated objects
+        """Delete an Nvme Controller
+        Fails if there are any associated objects
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateNvmeController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Nvme Controller
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListNvmeControllers(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Nvme Controllers
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetNvmeController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Nvme Controller
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsNvmeController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Nvme Controller statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateNvmeNamespace(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Nvme Namespace
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteNvmeNamespace(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an Nvme Namespace
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateNvmeNamespace(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Nvme Namespace
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListNvmeNamespaces(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Nvme Namespaces
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetNvmeNamespace(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Nvme Namespace
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsNvmeNamespace(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Nvme Namespace statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

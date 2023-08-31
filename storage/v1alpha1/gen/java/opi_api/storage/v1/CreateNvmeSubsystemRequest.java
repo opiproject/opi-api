@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to create an Nvme Subsystem.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.CreateNvmeSubsystemRequest}
  */
 public final class CreateNvmeSubsystemRequest extends
@@ -105,6 +109,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_SUBSYSTEM_FIELD_NUMBER = 1;
   private opi_api.storage.v1.NvmeSubsystem nvmeSubsystem_;
   /**
+   * <pre>
+   * The Nvme Subsystem to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeSubsystem field is set.
    */
@@ -113,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return nvmeSubsystem_ != null;
   }
   /**
+   * <pre>
+   * The Nvme Subsystem to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeSubsystem.
    */
@@ -121,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return nvmeSubsystem_ == null ? opi_api.storage.v1.NvmeSubsystem.getDefaultInstance() : nvmeSubsystem_;
   }
   /**
+   * <pre>
+   * The Nvme Subsystem to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
@@ -131,6 +147,11 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_SUBSYSTEM_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nvmeSubsystemId_;
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Subsystem.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeSubsystemId.
    */
@@ -148,6 +169,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Subsystem.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeSubsystemId.
    */
@@ -337,6 +363,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to create an Nvme Subsystem.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.CreateNvmeSubsystemRequest}
    */
   public static final class Builder extends
@@ -502,6 +532,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeSubsystem, opi_api.storage.v1.NvmeSubsystem.Builder, opi_api.storage.v1.NvmeSubsystemOrBuilder> nvmeSubsystemBuilder_;
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nvmeSubsystem field is set.
      */
@@ -509,6 +543,10 @@ private static final long serialVersionUID = 0L;
       return nvmeSubsystemBuilder_ != null || nvmeSubsystem_ != null;
     }
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nvmeSubsystem.
      */
@@ -520,6 +558,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeSubsystem(opi_api.storage.v1.NvmeSubsystem value) {
@@ -536,6 +578,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeSubsystem(
@@ -550,6 +596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNvmeSubsystem(opi_api.storage.v1.NvmeSubsystem value) {
@@ -568,6 +618,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNvmeSubsystem() {
@@ -582,6 +636,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeSubsystem.Builder getNvmeSubsystemBuilder() {
@@ -590,6 +648,10 @@ private static final long serialVersionUID = 0L;
       return getNvmeSubsystemFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeSubsystemOrBuilder getNvmeSubsystemOrBuilder() {
@@ -601,6 +663,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Nvme Subsystem to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeSubsystem nvme_subsystem = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,6 +685,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmeSubsystemId_ = "";
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Subsystem.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nvmeSubsystemId.
      */
@@ -635,6 +706,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Subsystem.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nvmeSubsystemId.
      */
@@ -652,6 +728,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Subsystem.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nvmeSubsystemId to set.
      * @return This builder for chaining.
@@ -667,6 +748,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Subsystem.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -677,6 +763,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Subsystem.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_subsystem_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nvmeSubsystemId to set.
      * @return This builder for chaining.

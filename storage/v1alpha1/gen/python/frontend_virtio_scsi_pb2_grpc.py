@@ -113,109 +113,127 @@ class FrontendVirtioScsiServiceServicer(object):
     """
 
     def CreateVirtioScsiTarget(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Virtio Scsi Target
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteVirtioScsiTarget(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an Virtio Scsi Target
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateVirtioScsiTarget(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Virtio Scsi Target
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListVirtioScsiTargets(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Virtio Scsi Targets
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetVirtioScsiTarget(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Virtio Scsi Target
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsVirtioScsiTarget(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Virtio Scsi Target statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateVirtioScsiController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Virtio Scsi Controller
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteVirtioScsiController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an Virtio Scsi Controller
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateVirtioScsiController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Virtio Scsi Controller
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListVirtioScsiControllers(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Virtio Scsi Controllers
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetVirtioScsiController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Virtio Scsi Controller
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsVirtioScsiController(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Virtio Scsi Controller statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateVirtioScsiLun(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Virtio Scsi Lun
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteVirtioScsiLun(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an Virtio Scsi Lun
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateVirtioScsiLun(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Virtio Scsi Lun
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListVirtioScsiLuns(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Virtio Scsi Luns
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetVirtioScsiLun(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Virtio Scsi Lun
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsVirtioScsiLun(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Virtio Scsi Lun statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

@@ -504,6 +504,9 @@ public final class NvmeRemoteControllerServiceGrpc {
   public static abstract class NvmeRemoteControllerServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Create an Nvme Remote Controller
+     * </pre>
      */
     public void createNvmeRemoteController(opi_api.storage.v1.CreateNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteController> responseObserver) {
@@ -511,6 +514,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Nvme Remote Controller
+     * </pre>
      */
     public void deleteNvmeRemoteController(opi_api.storage.v1.DeleteNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -518,6 +524,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Nvme Remote Controller
+     * </pre>
      */
     public void updateNvmeRemoteController(opi_api.storage.v1.UpdateNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteController> responseObserver) {
@@ -525,6 +534,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Remote Controllers
+     * </pre>
      */
     public void listNvmeRemoteControllers(opi_api.storage.v1.ListNvmeRemoteControllersRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeRemoteControllersResponse> responseObserver) {
@@ -532,6 +544,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Remote Controller
+     * </pre>
      */
     public void getNvmeRemoteController(opi_api.storage.v1.GetNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteController> responseObserver) {
@@ -539,6 +554,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Reset an Nvme Remote Controller
+     * </pre>
      */
     public void resetNvmeRemoteController(opi_api.storage.v1.ResetNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -546,6 +564,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Remote Controller statistics
+     * </pre>
      */
     public void statsNvmeRemoteController(opi_api.storage.v1.StatsNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeRemoteControllerResponse> responseObserver) {
@@ -553,6 +574,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Remote Namespaces
+     * </pre>
      */
     public void listNvmeRemoteNamespaces(opi_api.storage.v1.ListNvmeRemoteNamespacesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeRemoteNamespacesResponse> responseObserver) {
@@ -560,6 +584,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Nvme Path
+     * </pre>
      */
     public void createNvmePath(opi_api.storage.v1.CreateNvmePathRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePath> responseObserver) {
@@ -567,6 +594,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Nvme Path
+     * </pre>
      */
     public void deleteNvmePath(opi_api.storage.v1.DeleteNvmePathRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -574,6 +604,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Nvme Path
+     * </pre>
      */
     public void updateNvmePath(opi_api.storage.v1.UpdateNvmePathRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePath> responseObserver) {
@@ -581,6 +614,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Paths
+     * </pre>
      */
     public void listNvmePaths(opi_api.storage.v1.ListNvmePathsRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmePathsResponse> responseObserver) {
@@ -588,6 +624,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Path
+     * </pre>
      */
     public void getNvmePath(opi_api.storage.v1.GetNvmePathRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePath> responseObserver) {
@@ -595,6 +634,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Path statistics
+     * </pre>
      */
     public void statsNvmePath(opi_api.storage.v1.StatsNvmePathRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmePathResponse> responseObserver) {
@@ -723,6 +765,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Nvme Remote Controller
+     * </pre>
      */
     public void createNvmeRemoteController(opi_api.storage.v1.CreateNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteController> responseObserver) {
@@ -731,6 +776,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Nvme Remote Controller
+     * </pre>
      */
     public void deleteNvmeRemoteController(opi_api.storage.v1.DeleteNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -739,6 +787,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Nvme Remote Controller
+     * </pre>
      */
     public void updateNvmeRemoteController(opi_api.storage.v1.UpdateNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteController> responseObserver) {
@@ -747,6 +798,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Remote Controllers
+     * </pre>
      */
     public void listNvmeRemoteControllers(opi_api.storage.v1.ListNvmeRemoteControllersRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeRemoteControllersResponse> responseObserver) {
@@ -755,6 +809,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Remote Controller
+     * </pre>
      */
     public void getNvmeRemoteController(opi_api.storage.v1.GetNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeRemoteController> responseObserver) {
@@ -763,6 +820,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Reset an Nvme Remote Controller
+     * </pre>
      */
     public void resetNvmeRemoteController(opi_api.storage.v1.ResetNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -771,6 +831,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Remote Controller statistics
+     * </pre>
      */
     public void statsNvmeRemoteController(opi_api.storage.v1.StatsNvmeRemoteControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeRemoteControllerResponse> responseObserver) {
@@ -779,6 +842,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Remote Namespaces
+     * </pre>
      */
     public void listNvmeRemoteNamespaces(opi_api.storage.v1.ListNvmeRemoteNamespacesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeRemoteNamespacesResponse> responseObserver) {
@@ -787,6 +853,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Nvme Path
+     * </pre>
      */
     public void createNvmePath(opi_api.storage.v1.CreateNvmePathRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePath> responseObserver) {
@@ -795,6 +864,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Nvme Path
+     * </pre>
      */
     public void deleteNvmePath(opi_api.storage.v1.DeleteNvmePathRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -803,6 +875,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Nvme Path
+     * </pre>
      */
     public void updateNvmePath(opi_api.storage.v1.UpdateNvmePathRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePath> responseObserver) {
@@ -811,6 +886,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Paths
+     * </pre>
      */
     public void listNvmePaths(opi_api.storage.v1.ListNvmePathsRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmePathsResponse> responseObserver) {
@@ -819,6 +897,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Path
+     * </pre>
      */
     public void getNvmePath(opi_api.storage.v1.GetNvmePathRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmePath> responseObserver) {
@@ -827,6 +908,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Path statistics
+     * </pre>
      */
     public void statsNvmePath(opi_api.storage.v1.StatsNvmePathRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmePathResponse> responseObserver) {
@@ -853,6 +937,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Nvme Remote Controller
+     * </pre>
      */
     public opi_api.storage.v1.NvmeRemoteController createNvmeRemoteController(opi_api.storage.v1.CreateNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -860,6 +947,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Nvme Remote Controller
+     * </pre>
      */
     public com.google.protobuf.Empty deleteNvmeRemoteController(opi_api.storage.v1.DeleteNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -867,6 +957,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Nvme Remote Controller
+     * </pre>
      */
     public opi_api.storage.v1.NvmeRemoteController updateNvmeRemoteController(opi_api.storage.v1.UpdateNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -874,6 +967,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Remote Controllers
+     * </pre>
      */
     public opi_api.storage.v1.ListNvmeRemoteControllersResponse listNvmeRemoteControllers(opi_api.storage.v1.ListNvmeRemoteControllersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -881,6 +977,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Remote Controller
+     * </pre>
      */
     public opi_api.storage.v1.NvmeRemoteController getNvmeRemoteController(opi_api.storage.v1.GetNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -888,6 +987,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Reset an Nvme Remote Controller
+     * </pre>
      */
     public com.google.protobuf.Empty resetNvmeRemoteController(opi_api.storage.v1.ResetNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -895,6 +997,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Remote Controller statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsNvmeRemoteControllerResponse statsNvmeRemoteController(opi_api.storage.v1.StatsNvmeRemoteControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -902,6 +1007,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Remote Namespaces
+     * </pre>
      */
     public opi_api.storage.v1.ListNvmeRemoteNamespacesResponse listNvmeRemoteNamespaces(opi_api.storage.v1.ListNvmeRemoteNamespacesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -909,6 +1017,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Nvme Path
+     * </pre>
      */
     public opi_api.storage.v1.NvmePath createNvmePath(opi_api.storage.v1.CreateNvmePathRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -916,6 +1027,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Nvme Path
+     * </pre>
      */
     public com.google.protobuf.Empty deleteNvmePath(opi_api.storage.v1.DeleteNvmePathRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -923,6 +1037,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Nvme Path
+     * </pre>
      */
     public opi_api.storage.v1.NvmePath updateNvmePath(opi_api.storage.v1.UpdateNvmePathRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -930,6 +1047,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Paths
+     * </pre>
      */
     public opi_api.storage.v1.ListNvmePathsResponse listNvmePaths(opi_api.storage.v1.ListNvmePathsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -937,6 +1057,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Path
+     * </pre>
      */
     public opi_api.storage.v1.NvmePath getNvmePath(opi_api.storage.v1.GetNvmePathRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -944,6 +1067,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Path statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsNvmePathResponse statsNvmePath(opi_api.storage.v1.StatsNvmePathRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -969,6 +1095,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Nvme Remote Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmeRemoteController> createNvmeRemoteController(
         opi_api.storage.v1.CreateNvmeRemoteControllerRequest request) {
@@ -977,6 +1106,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Nvme Remote Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNvmeRemoteController(
         opi_api.storage.v1.DeleteNvmeRemoteControllerRequest request) {
@@ -985,6 +1117,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Nvme Remote Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmeRemoteController> updateNvmeRemoteController(
         opi_api.storage.v1.UpdateNvmeRemoteControllerRequest request) {
@@ -993,6 +1128,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Remote Controllers
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNvmeRemoteControllersResponse> listNvmeRemoteControllers(
         opi_api.storage.v1.ListNvmeRemoteControllersRequest request) {
@@ -1001,6 +1139,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Remote Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmeRemoteController> getNvmeRemoteController(
         opi_api.storage.v1.GetNvmeRemoteControllerRequest request) {
@@ -1009,6 +1150,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Reset an Nvme Remote Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> resetNvmeRemoteController(
         opi_api.storage.v1.ResetNvmeRemoteControllerRequest request) {
@@ -1017,6 +1161,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Remote Controller statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNvmeRemoteControllerResponse> statsNvmeRemoteController(
         opi_api.storage.v1.StatsNvmeRemoteControllerRequest request) {
@@ -1025,6 +1172,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Remote Namespaces
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNvmeRemoteNamespacesResponse> listNvmeRemoteNamespaces(
         opi_api.storage.v1.ListNvmeRemoteNamespacesRequest request) {
@@ -1033,6 +1183,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Nvme Path
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmePath> createNvmePath(
         opi_api.storage.v1.CreateNvmePathRequest request) {
@@ -1041,6 +1194,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Nvme Path
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNvmePath(
         opi_api.storage.v1.DeleteNvmePathRequest request) {
@@ -1049,6 +1205,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Nvme Path
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmePath> updateNvmePath(
         opi_api.storage.v1.UpdateNvmePathRequest request) {
@@ -1057,6 +1216,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Paths
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNvmePathsResponse> listNvmePaths(
         opi_api.storage.v1.ListNvmePathsRequest request) {
@@ -1065,6 +1227,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Path
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmePath> getNvmePath(
         opi_api.storage.v1.GetNvmePathRequest request) {
@@ -1073,6 +1238,9 @@ public final class NvmeRemoteControllerServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Path statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNvmePathResponse> statsNvmePath(
         opi_api.storage.v1.StatsNvmePathRequest request) {

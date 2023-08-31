@@ -814,13 +814,17 @@ func (x *NvmeNamespaceStatus) GetPciOperState() NvmeNamespacePciOperState {
 	return NvmeNamespacePciOperState_NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED
 }
 
+// Represents a request to create an Nvme Subsystem.
 type CreateNvmeSubsystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NvmeSubsystem   *NvmeSubsystem `protobuf:"bytes,1,opt,name=nvme_subsystem,json=nvmeSubsystem,proto3" json:"nvme_subsystem,omitempty"`
-	NvmeSubsystemId string         `protobuf:"bytes,2,opt,name=nvme_subsystem_id,json=nvmeSubsystemId,proto3" json:"nvme_subsystem_id,omitempty"`
+	// The Nvme Subsystem to be created.
+	NvmeSubsystem *NvmeSubsystem `protobuf:"bytes,1,opt,name=nvme_subsystem,json=nvmeSubsystem,proto3" json:"nvme_subsystem,omitempty"`
+	// An optional ID to assign to the Nvme Subsystem.
+	// If this is not provided the system will auto-generate it.
+	NvmeSubsystemId string `protobuf:"bytes,2,opt,name=nvme_subsystem_id,json=nvmeSubsystemId,proto3" json:"nvme_subsystem_id,omitempty"`
 }
 
 func (x *CreateNvmeSubsystemRequest) Reset() {
@@ -869,6 +873,7 @@ func (x *CreateNvmeSubsystemRequest) GetNvmeSubsystemId() string {
 	return ""
 }
 
+// Represents a request to delete an Nvme Subsystem.
 type DeleteNvmeSubsystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1252,13 +1257,17 @@ func (x *StatsNvmeSubsystemResponse) GetStats() *VolumeStats {
 	return nil
 }
 
+// Represents a request to create an Nvme Controller.
 type CreateNvmeControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NvmeController   *NvmeController `protobuf:"bytes,1,opt,name=nvme_controller,json=nvmeController,proto3" json:"nvme_controller,omitempty"`
-	NvmeControllerId string          `protobuf:"bytes,2,opt,name=nvme_controller_id,json=nvmeControllerId,proto3" json:"nvme_controller_id,omitempty"`
+	// The Nvme Controller to be created.
+	NvmeController *NvmeController `protobuf:"bytes,1,opt,name=nvme_controller,json=nvmeController,proto3" json:"nvme_controller,omitempty"`
+	// An optional ID to assign to the Nvme Controller.
+	// If this is not provided the system will auto-generate it.
+	NvmeControllerId string `protobuf:"bytes,2,opt,name=nvme_controller_id,json=nvmeControllerId,proto3" json:"nvme_controller_id,omitempty"`
 }
 
 func (x *CreateNvmeControllerRequest) Reset() {
@@ -1307,6 +1316,7 @@ func (x *CreateNvmeControllerRequest) GetNvmeControllerId() string {
 	return ""
 }
 
+// Represents a request to delete an Nvme Controller.
 type DeleteNvmeControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1690,13 +1700,17 @@ func (x *StatsNvmeControllerResponse) GetStats() *VolumeStats {
 	return nil
 }
 
+// Represents a request to create an Nvme Namespace.
 type CreateNvmeNamespaceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NvmeNamespace   *NvmeNamespace `protobuf:"bytes,1,opt,name=nvme_namespace,json=nvmeNamespace,proto3" json:"nvme_namespace,omitempty"`
-	NvmeNamespaceId string         `protobuf:"bytes,2,opt,name=nvme_namespace_id,json=nvmeNamespaceId,proto3" json:"nvme_namespace_id,omitempty"`
+	// The Nvme Namespace to be created.
+	NvmeNamespace *NvmeNamespace `protobuf:"bytes,1,opt,name=nvme_namespace,json=nvmeNamespace,proto3" json:"nvme_namespace,omitempty"`
+	// An optional ID to assign to the Nvme Namespace.
+	// If this is not provided the system will auto-generate it.
+	NvmeNamespaceId string `protobuf:"bytes,2,opt,name=nvme_namespace_id,json=nvmeNamespaceId,proto3" json:"nvme_namespace_id,omitempty"`
 }
 
 func (x *CreateNvmeNamespaceRequest) Reset() {
@@ -1745,6 +1759,7 @@ func (x *CreateNvmeNamespaceRequest) GetNvmeNamespaceId() string {
 	return ""
 }
 
+// Represents a request to delete an Nvme Namespace.
 type DeleteNvmeNamespaceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

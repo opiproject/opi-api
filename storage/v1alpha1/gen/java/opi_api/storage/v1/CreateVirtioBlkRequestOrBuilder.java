@@ -8,26 +8,48 @@ public interface CreateVirtioBlkRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The Virtio Blk to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioBlk field is set.
    */
   boolean hasVirtioBlk();
   /**
+   * <pre>
+   * The Virtio Blk to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioBlk.
    */
   opi_api.storage.v1.VirtioBlk getVirtioBlk();
   /**
+   * <pre>
+   * The Virtio Blk to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlkOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the Virtio Blk.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioBlkId.
    */
   java.lang.String getVirtioBlkId();
   /**
+   * <pre>
+   * An optional ID to assign to the Virtio Blk.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string virtio_blk_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioBlkId.
    */

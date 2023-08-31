@@ -628,6 +628,9 @@ public final class FrontendVirtioScsiServiceGrpc {
   public static abstract class FrontendVirtioScsiServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Target
+     * </pre>
      */
     public void createVirtioScsiTarget(opi_api.storage.v1.CreateVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiTarget> responseObserver) {
@@ -635,6 +638,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Target
+     * </pre>
      */
     public void deleteVirtioScsiTarget(opi_api.storage.v1.DeleteVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -642,6 +648,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Target
+     * </pre>
      */
     public void updateVirtioScsiTarget(opi_api.storage.v1.UpdateVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiTarget> responseObserver) {
@@ -649,6 +658,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Targets
+     * </pre>
      */
     public void listVirtioScsiTargets(opi_api.storage.v1.ListVirtioScsiTargetsRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiTargetsResponse> responseObserver) {
@@ -656,6 +668,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Target
+     * </pre>
      */
     public void getVirtioScsiTarget(opi_api.storage.v1.GetVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiTarget> responseObserver) {
@@ -663,6 +678,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Target statistics
+     * </pre>
      */
     public void statsVirtioScsiTarget(opi_api.storage.v1.StatsVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsVirtioScsiTargetResponse> responseObserver) {
@@ -670,6 +688,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Controller
+     * </pre>
      */
     public void createVirtioScsiController(opi_api.storage.v1.CreateVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
@@ -677,6 +698,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Controller
+     * </pre>
      */
     public void deleteVirtioScsiController(opi_api.storage.v1.DeleteVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -684,6 +708,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Controller
+     * </pre>
      */
     public void updateVirtioScsiController(opi_api.storage.v1.UpdateVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
@@ -691,6 +718,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Controllers
+     * </pre>
      */
     public void listVirtioScsiControllers(opi_api.storage.v1.ListVirtioScsiControllersRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiControllersResponse> responseObserver) {
@@ -698,6 +728,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Controller
+     * </pre>
      */
     public void getVirtioScsiController(opi_api.storage.v1.GetVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
@@ -705,6 +738,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Controller statistics
+     * </pre>
      */
     public void statsVirtioScsiController(opi_api.storage.v1.StatsVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsVirtioScsiControllerResponse> responseObserver) {
@@ -712,6 +748,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Lun
+     * </pre>
      */
     public void createVirtioScsiLun(opi_api.storage.v1.CreateVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
@@ -719,6 +758,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Lun
+     * </pre>
      */
     public void deleteVirtioScsiLun(opi_api.storage.v1.DeleteVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -726,6 +768,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Lun
+     * </pre>
      */
     public void updateVirtioScsiLun(opi_api.storage.v1.UpdateVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
@@ -733,6 +778,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Luns
+     * </pre>
      */
     public void listVirtioScsiLuns(opi_api.storage.v1.ListVirtioScsiLunsRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiLunsResponse> responseObserver) {
@@ -740,6 +788,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Lun
+     * </pre>
      */
     public void getVirtioScsiLun(opi_api.storage.v1.GetVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
@@ -747,6 +798,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Lun statistics
+     * </pre>
      */
     public void statsVirtioScsiLun(opi_api.storage.v1.StatsVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsVirtioScsiLunResponse> responseObserver) {
@@ -903,6 +957,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Target
+     * </pre>
      */
     public void createVirtioScsiTarget(opi_api.storage.v1.CreateVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiTarget> responseObserver) {
@@ -911,6 +968,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Target
+     * </pre>
      */
     public void deleteVirtioScsiTarget(opi_api.storage.v1.DeleteVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -919,6 +979,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Target
+     * </pre>
      */
     public void updateVirtioScsiTarget(opi_api.storage.v1.UpdateVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiTarget> responseObserver) {
@@ -927,6 +990,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Targets
+     * </pre>
      */
     public void listVirtioScsiTargets(opi_api.storage.v1.ListVirtioScsiTargetsRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiTargetsResponse> responseObserver) {
@@ -935,6 +1001,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Target
+     * </pre>
      */
     public void getVirtioScsiTarget(opi_api.storage.v1.GetVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiTarget> responseObserver) {
@@ -943,6 +1012,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Target statistics
+     * </pre>
      */
     public void statsVirtioScsiTarget(opi_api.storage.v1.StatsVirtioScsiTargetRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsVirtioScsiTargetResponse> responseObserver) {
@@ -951,6 +1023,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Controller
+     * </pre>
      */
     public void createVirtioScsiController(opi_api.storage.v1.CreateVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
@@ -959,6 +1034,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Controller
+     * </pre>
      */
     public void deleteVirtioScsiController(opi_api.storage.v1.DeleteVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -967,6 +1045,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Controller
+     * </pre>
      */
     public void updateVirtioScsiController(opi_api.storage.v1.UpdateVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
@@ -975,6 +1056,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Controllers
+     * </pre>
      */
     public void listVirtioScsiControllers(opi_api.storage.v1.ListVirtioScsiControllersRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiControllersResponse> responseObserver) {
@@ -983,6 +1067,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Controller
+     * </pre>
      */
     public void getVirtioScsiController(opi_api.storage.v1.GetVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
@@ -991,6 +1078,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Controller statistics
+     * </pre>
      */
     public void statsVirtioScsiController(opi_api.storage.v1.StatsVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsVirtioScsiControllerResponse> responseObserver) {
@@ -999,6 +1089,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Lun
+     * </pre>
      */
     public void createVirtioScsiLun(opi_api.storage.v1.CreateVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
@@ -1007,6 +1100,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Lun
+     * </pre>
      */
     public void deleteVirtioScsiLun(opi_api.storage.v1.DeleteVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1015,6 +1111,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Lun
+     * </pre>
      */
     public void updateVirtioScsiLun(opi_api.storage.v1.UpdateVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
@@ -1023,6 +1122,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Luns
+     * </pre>
      */
     public void listVirtioScsiLuns(opi_api.storage.v1.ListVirtioScsiLunsRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiLunsResponse> responseObserver) {
@@ -1031,6 +1133,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Lun
+     * </pre>
      */
     public void getVirtioScsiLun(opi_api.storage.v1.GetVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
@@ -1039,6 +1144,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Lun statistics
+     * </pre>
      */
     public void statsVirtioScsiLun(opi_api.storage.v1.StatsVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsVirtioScsiLunResponse> responseObserver) {
@@ -1065,6 +1173,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Target
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiTarget createVirtioScsiTarget(opi_api.storage.v1.CreateVirtioScsiTargetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1072,6 +1183,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Target
+     * </pre>
      */
     public com.google.protobuf.Empty deleteVirtioScsiTarget(opi_api.storage.v1.DeleteVirtioScsiTargetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1079,6 +1193,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Target
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiTarget updateVirtioScsiTarget(opi_api.storage.v1.UpdateVirtioScsiTargetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1086,6 +1203,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Targets
+     * </pre>
      */
     public opi_api.storage.v1.ListVirtioScsiTargetsResponse listVirtioScsiTargets(opi_api.storage.v1.ListVirtioScsiTargetsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1093,6 +1213,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Target
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiTarget getVirtioScsiTarget(opi_api.storage.v1.GetVirtioScsiTargetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1100,6 +1223,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Target statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsVirtioScsiTargetResponse statsVirtioScsiTarget(opi_api.storage.v1.StatsVirtioScsiTargetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1107,6 +1233,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Controller
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiController createVirtioScsiController(opi_api.storage.v1.CreateVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1114,6 +1243,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Controller
+     * </pre>
      */
     public com.google.protobuf.Empty deleteVirtioScsiController(opi_api.storage.v1.DeleteVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1121,6 +1253,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Controller
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiController updateVirtioScsiController(opi_api.storage.v1.UpdateVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1128,6 +1263,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Controllers
+     * </pre>
      */
     public opi_api.storage.v1.ListVirtioScsiControllersResponse listVirtioScsiControllers(opi_api.storage.v1.ListVirtioScsiControllersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1135,6 +1273,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Controller
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiController getVirtioScsiController(opi_api.storage.v1.GetVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1142,6 +1283,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Controller statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsVirtioScsiControllerResponse statsVirtioScsiController(opi_api.storage.v1.StatsVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1149,6 +1293,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Lun
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiLun createVirtioScsiLun(opi_api.storage.v1.CreateVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1156,6 +1303,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Lun
+     * </pre>
      */
     public com.google.protobuf.Empty deleteVirtioScsiLun(opi_api.storage.v1.DeleteVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1163,6 +1313,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Lun
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiLun updateVirtioScsiLun(opi_api.storage.v1.UpdateVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1170,6 +1323,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Luns
+     * </pre>
      */
     public opi_api.storage.v1.ListVirtioScsiLunsResponse listVirtioScsiLuns(opi_api.storage.v1.ListVirtioScsiLunsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1177,6 +1333,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Lun
+     * </pre>
      */
     public opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun(opi_api.storage.v1.GetVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1184,6 +1343,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Lun statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsVirtioScsiLunResponse statsVirtioScsiLun(opi_api.storage.v1.StatsVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1209,6 +1371,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Target
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiTarget> createVirtioScsiTarget(
         opi_api.storage.v1.CreateVirtioScsiTargetRequest request) {
@@ -1217,6 +1382,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Target
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteVirtioScsiTarget(
         opi_api.storage.v1.DeleteVirtioScsiTargetRequest request) {
@@ -1225,6 +1393,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Target
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiTarget> updateVirtioScsiTarget(
         opi_api.storage.v1.UpdateVirtioScsiTargetRequest request) {
@@ -1233,6 +1404,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Targets
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListVirtioScsiTargetsResponse> listVirtioScsiTargets(
         opi_api.storage.v1.ListVirtioScsiTargetsRequest request) {
@@ -1241,6 +1415,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Target
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiTarget> getVirtioScsiTarget(
         opi_api.storage.v1.GetVirtioScsiTargetRequest request) {
@@ -1249,6 +1426,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Target statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsVirtioScsiTargetResponse> statsVirtioScsiTarget(
         opi_api.storage.v1.StatsVirtioScsiTargetRequest request) {
@@ -1257,6 +1437,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> createVirtioScsiController(
         opi_api.storage.v1.CreateVirtioScsiControllerRequest request) {
@@ -1265,6 +1448,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteVirtioScsiController(
         opi_api.storage.v1.DeleteVirtioScsiControllerRequest request) {
@@ -1273,6 +1459,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> updateVirtioScsiController(
         opi_api.storage.v1.UpdateVirtioScsiControllerRequest request) {
@@ -1281,6 +1470,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Controllers
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListVirtioScsiControllersResponse> listVirtioScsiControllers(
         opi_api.storage.v1.ListVirtioScsiControllersRequest request) {
@@ -1289,6 +1481,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> getVirtioScsiController(
         opi_api.storage.v1.GetVirtioScsiControllerRequest request) {
@@ -1297,6 +1492,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Controller statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsVirtioScsiControllerResponse> statsVirtioScsiController(
         opi_api.storage.v1.StatsVirtioScsiControllerRequest request) {
@@ -1305,6 +1503,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Scsi Lun
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> createVirtioScsiLun(
         opi_api.storage.v1.CreateVirtioScsiLunRequest request) {
@@ -1313,6 +1514,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Scsi Lun
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteVirtioScsiLun(
         opi_api.storage.v1.DeleteVirtioScsiLunRequest request) {
@@ -1321,6 +1525,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Scsi Lun
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> updateVirtioScsiLun(
         opi_api.storage.v1.UpdateVirtioScsiLunRequest request) {
@@ -1329,6 +1536,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Scsi Luns
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListVirtioScsiLunsResponse> listVirtioScsiLuns(
         opi_api.storage.v1.ListVirtioScsiLunsRequest request) {
@@ -1337,6 +1547,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Lun
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLun(
         opi_api.storage.v1.GetVirtioScsiLunRequest request) {
@@ -1345,6 +1558,9 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Scsi Lun statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsVirtioScsiLunResponse> statsVirtioScsiLun(
         opi_api.storage.v1.StatsVirtioScsiLunRequest request) {

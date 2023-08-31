@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to create an Nvme Remote Controller.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.CreateNvmeRemoteControllerRequest}
  */
 public final class CreateNvmeRemoteControllerRequest extends
@@ -105,6 +109,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_REMOTE_CONTROLLER_FIELD_NUMBER = 1;
   private opi_api.storage.v1.NvmeRemoteController nvmeRemoteController_;
   /**
+   * <pre>
+   * The Nvme Remote Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeRemoteController field is set.
    */
@@ -113,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteController_ != null;
   }
   /**
+   * <pre>
+   * The Nvme Remote Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeRemoteController.
    */
@@ -121,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteController_ == null ? opi_api.storage.v1.NvmeRemoteController.getDefaultInstance() : nvmeRemoteController_;
   }
   /**
+   * <pre>
+   * The Nvme Remote Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
@@ -131,6 +147,11 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_REMOTE_CONTROLLER_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nvmeRemoteControllerId_;
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Remote Controller.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeRemoteControllerId.
    */
@@ -148,6 +169,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Remote Controller.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeRemoteControllerId.
    */
@@ -337,6 +363,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to create an Nvme Remote Controller.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.CreateNvmeRemoteControllerRequest}
    */
   public static final class Builder extends
@@ -502,6 +532,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeRemoteController, opi_api.storage.v1.NvmeRemoteController.Builder, opi_api.storage.v1.NvmeRemoteControllerOrBuilder> nvmeRemoteControllerBuilder_;
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nvmeRemoteController field is set.
      */
@@ -509,6 +543,10 @@ private static final long serialVersionUID = 0L;
       return nvmeRemoteControllerBuilder_ != null || nvmeRemoteController_ != null;
     }
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nvmeRemoteController.
      */
@@ -520,6 +558,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeRemoteController(opi_api.storage.v1.NvmeRemoteController value) {
@@ -536,6 +578,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeRemoteController(
@@ -550,6 +596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNvmeRemoteController(opi_api.storage.v1.NvmeRemoteController value) {
@@ -568,6 +618,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNvmeRemoteController() {
@@ -582,6 +636,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeRemoteController.Builder getNvmeRemoteControllerBuilder() {
@@ -590,6 +648,10 @@ private static final long serialVersionUID = 0L;
       return getNvmeRemoteControllerFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeRemoteControllerOrBuilder getNvmeRemoteControllerOrBuilder() {
@@ -601,6 +663,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Nvme Remote Controller to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,6 +685,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmeRemoteControllerId_ = "";
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Remote Controller.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nvmeRemoteControllerId.
      */
@@ -635,6 +706,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Remote Controller.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nvmeRemoteControllerId.
      */
@@ -652,6 +728,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Remote Controller.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nvmeRemoteControllerId to set.
      * @return This builder for chaining.
@@ -667,6 +748,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Remote Controller.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -677,6 +763,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Remote Controller.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nvmeRemoteControllerId to set.
      * @return This builder for chaining.

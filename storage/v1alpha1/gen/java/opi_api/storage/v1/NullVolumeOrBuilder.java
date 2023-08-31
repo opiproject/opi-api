@@ -32,28 +32,48 @@ public interface NullVolumeOrBuilder extends
       getNameBytes();
 
   /**
+   * <pre>
+   * The block size of the NullVolume. This field is required.
+   * </pre>
+   *
    * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The blockSize.
    */
   long getBlockSize();
 
   /**
+   * <pre>
+   * The number of blocks in the NullVolume. This field is required.
+   * </pre>
+   *
    * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The blocksCount.
    */
   long getBlocksCount();
 
   /**
+   * <pre>
+   * The UUID of the NullVolume. This field is optional.
+   * </pre>
+   *
    * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the uuid field is set.
    */
   boolean hasUuid();
   /**
+   * <pre>
+   * The UUID of the NullVolume. This field is optional.
+   * </pre>
+   *
    * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uuid.
    */
   opi_api.common.v1.Uuid getUuid();
   /**
+   * <pre>
+   * The UUID of the NullVolume. This field is optional.
+   * </pre>
+   *
    * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.common.v1.UuidOrBuilder getUuidOrBuilder();

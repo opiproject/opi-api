@@ -231,13 +231,17 @@ func (x *VirtioScsiLun) GetVolumeNameRef() string {
 	return ""
 }
 
+// Represents a request to create an Virtio Scsi Target.
 type CreateVirtioScsiTargetRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	VirtioScsiTarget   *VirtioScsiTarget `protobuf:"bytes,1,opt,name=virtio_scsi_target,json=virtioScsiTarget,proto3" json:"virtio_scsi_target,omitempty"`
-	VirtioScsiTargetId string            `protobuf:"bytes,2,opt,name=virtio_scsi_target_id,json=virtioScsiTargetId,proto3" json:"virtio_scsi_target_id,omitempty"`
+	// The Virtio Scsi Target to be created.
+	VirtioScsiTarget *VirtioScsiTarget `protobuf:"bytes,1,opt,name=virtio_scsi_target,json=virtioScsiTarget,proto3" json:"virtio_scsi_target,omitempty"`
+	// An optional ID to assign to the Virtio Scsi Target.
+	// If this is not provided the system will auto-generate it.
+	VirtioScsiTargetId string `protobuf:"bytes,2,opt,name=virtio_scsi_target_id,json=virtioScsiTargetId,proto3" json:"virtio_scsi_target_id,omitempty"`
 }
 
 func (x *CreateVirtioScsiTargetRequest) Reset() {
@@ -286,6 +290,7 @@ func (x *CreateVirtioScsiTargetRequest) GetVirtioScsiTargetId() string {
 	return ""
 }
 
+// Represents a request to delete an Virtio Scsi Target.
 type DeleteVirtioScsiTargetRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -669,13 +674,17 @@ func (x *StatsVirtioScsiTargetResponse) GetStats() *VolumeStats {
 	return nil
 }
 
+// Represents a request to create an Virtio Scsi Controller.
 type CreateVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	VirtioScsiController   *VirtioScsiController `protobuf:"bytes,1,opt,name=virtio_scsi_controller,json=virtioScsiController,proto3" json:"virtio_scsi_controller,omitempty"`
-	VirtioScsiControllerId string                `protobuf:"bytes,2,opt,name=virtio_scsi_controller_id,json=virtioScsiControllerId,proto3" json:"virtio_scsi_controller_id,omitempty"`
+	// The Virtio Scsi Controller to be created.
+	VirtioScsiController *VirtioScsiController `protobuf:"bytes,1,opt,name=virtio_scsi_controller,json=virtioScsiController,proto3" json:"virtio_scsi_controller,omitempty"`
+	// An optional ID to assign to the Virtio Scsi Controller.
+	// If this is not provided the system will auto-generate it.
+	VirtioScsiControllerId string `protobuf:"bytes,2,opt,name=virtio_scsi_controller_id,json=virtioScsiControllerId,proto3" json:"virtio_scsi_controller_id,omitempty"`
 }
 
 func (x *CreateVirtioScsiControllerRequest) Reset() {
@@ -724,6 +733,7 @@ func (x *CreateVirtioScsiControllerRequest) GetVirtioScsiControllerId() string {
 	return ""
 }
 
+// Represents a request to delete an Virtio Scsi Controller.
 type DeleteVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1107,13 +1117,17 @@ func (x *StatsVirtioScsiControllerResponse) GetStats() *VolumeStats {
 	return nil
 }
 
+// Represents a request to create an Virtio Scsi Lun.
 type CreateVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	VirtioScsiLun   *VirtioScsiLun `protobuf:"bytes,1,opt,name=virtio_scsi_lun,json=virtioScsiLun,proto3" json:"virtio_scsi_lun,omitempty"`
-	VirtioScsiLunId string         `protobuf:"bytes,2,opt,name=virtio_scsi_lun_id,json=virtioScsiLunId,proto3" json:"virtio_scsi_lun_id,omitempty"`
+	// The Virtio Scsi Lun to be created.
+	VirtioScsiLun *VirtioScsiLun `protobuf:"bytes,1,opt,name=virtio_scsi_lun,json=virtioScsiLun,proto3" json:"virtio_scsi_lun,omitempty"`
+	// An optional ID to assign to the Virtio Scsi Lun.
+	// If this is not provided the system will auto-generate it.
+	VirtioScsiLunId string `protobuf:"bytes,2,opt,name=virtio_scsi_lun_id,json=virtioScsiLunId,proto3" json:"virtio_scsi_lun_id,omitempty"`
 }
 
 func (x *CreateVirtioScsiLunRequest) Reset() {
@@ -1162,6 +1176,7 @@ func (x *CreateVirtioScsiLunRequest) GetVirtioScsiLunId() string {
 	return ""
 }
 
+// Represents a request to delete an Virtio Scsi Lun.
 type DeleteVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

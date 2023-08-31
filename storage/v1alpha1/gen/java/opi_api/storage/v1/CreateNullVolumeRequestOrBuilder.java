@@ -8,26 +8,48 @@ public interface CreateNullVolumeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The Null Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nullVolume field is set.
    */
   boolean hasNullVolume();
   /**
+   * <pre>
+   * The Null Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nullVolume.
    */
   opi_api.storage.v1.NullVolume getNullVolume();
   /**
+   * <pre>
+   * The Null Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NullVolumeOrBuilder getNullVolumeOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the Null Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nullVolumeId.
    */
   java.lang.String getNullVolumeId();
   /**
+   * <pre>
+   * An optional ID to assign to the Null Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nullVolumeId.
    */

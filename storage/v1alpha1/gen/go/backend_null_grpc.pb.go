@@ -23,11 +23,17 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type NullVolumeServiceClient interface {
+	// Create an Null Volume
 	CreateNullVolume(ctx context.Context, in *CreateNullVolumeRequest, opts ...grpc.CallOption) (*NullVolume, error)
+	// Delete an Null Volume
 	DeleteNullVolume(ctx context.Context, in *DeleteNullVolumeRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Null Volume
 	UpdateNullVolume(ctx context.Context, in *UpdateNullVolumeRequest, opts ...grpc.CallOption) (*NullVolume, error)
+	// List Null Volumes
 	ListNullVolumes(ctx context.Context, in *ListNullVolumesRequest, opts ...grpc.CallOption) (*ListNullVolumesResponse, error)
+	// Get an Null Volume
 	GetNullVolume(ctx context.Context, in *GetNullVolumeRequest, opts ...grpc.CallOption) (*NullVolume, error)
+	// Get an Null Volume statistics
 	StatsNullVolume(ctx context.Context, in *StatsNullVolumeRequest, opts ...grpc.CallOption) (*StatsNullVolumeResponse, error)
 }
 
@@ -97,11 +103,17 @@ func (c *nullVolumeServiceClient) StatsNullVolume(ctx context.Context, in *Stats
 // All implementations should embed UnimplementedNullVolumeServiceServer
 // for forward compatibility
 type NullVolumeServiceServer interface {
+	// Create an Null Volume
 	CreateNullVolume(context.Context, *CreateNullVolumeRequest) (*NullVolume, error)
+	// Delete an Null Volume
 	DeleteNullVolume(context.Context, *DeleteNullVolumeRequest) (*emptypb.Empty, error)
+	// Update an Null Volume
 	UpdateNullVolume(context.Context, *UpdateNullVolumeRequest) (*NullVolume, error)
+	// List Null Volumes
 	ListNullVolumes(context.Context, *ListNullVolumesRequest) (*ListNullVolumesResponse, error)
+	// Get an Null Volume
 	GetNullVolume(context.Context, *GetNullVolumeRequest) (*NullVolume, error)
+	// Get an Null Volume statistics
 	StatsNullVolume(context.Context, *StatsNullVolumeRequest) (*StatsNullVolumeResponse, error)
 }
 

@@ -256,6 +256,9 @@ public final class AioVolumeServiceGrpc {
   public static abstract class AioVolumeServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Create an Aio Volume
+     * </pre>
      */
     public void createAioVolume(opi_api.storage.v1.CreateAioVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolume> responseObserver) {
@@ -263,6 +266,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Aio Volume
+     * </pre>
      */
     public void deleteAioVolume(opi_api.storage.v1.DeleteAioVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -270,6 +276,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Aio Volume
+     * </pre>
      */
     public void updateAioVolume(opi_api.storage.v1.UpdateAioVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolume> responseObserver) {
@@ -277,6 +286,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Aio Volumes
+     * </pre>
      */
     public void listAioVolumes(opi_api.storage.v1.ListAioVolumesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListAioVolumesResponse> responseObserver) {
@@ -284,6 +296,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Aio Volume
+     * </pre>
      */
     public void getAioVolume(opi_api.storage.v1.GetAioVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolume> responseObserver) {
@@ -291,6 +306,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Aio Volume statistics
+     * </pre>
      */
     public void statsAioVolume(opi_api.storage.v1.StatsAioVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsAioVolumeResponse> responseObserver) {
@@ -363,6 +381,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Aio Volume
+     * </pre>
      */
     public void createAioVolume(opi_api.storage.v1.CreateAioVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolume> responseObserver) {
@@ -371,6 +392,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Aio Volume
+     * </pre>
      */
     public void deleteAioVolume(opi_api.storage.v1.DeleteAioVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -379,6 +403,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Aio Volume
+     * </pre>
      */
     public void updateAioVolume(opi_api.storage.v1.UpdateAioVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolume> responseObserver) {
@@ -387,6 +414,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Aio Volumes
+     * </pre>
      */
     public void listAioVolumes(opi_api.storage.v1.ListAioVolumesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListAioVolumesResponse> responseObserver) {
@@ -395,6 +425,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Aio Volume
+     * </pre>
      */
     public void getAioVolume(opi_api.storage.v1.GetAioVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.AioVolume> responseObserver) {
@@ -403,6 +436,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Aio Volume statistics
+     * </pre>
      */
     public void statsAioVolume(opi_api.storage.v1.StatsAioVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsAioVolumeResponse> responseObserver) {
@@ -429,6 +465,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Aio Volume
+     * </pre>
      */
     public opi_api.storage.v1.AioVolume createAioVolume(opi_api.storage.v1.CreateAioVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -436,6 +475,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Aio Volume
+     * </pre>
      */
     public com.google.protobuf.Empty deleteAioVolume(opi_api.storage.v1.DeleteAioVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -443,6 +485,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Aio Volume
+     * </pre>
      */
     public opi_api.storage.v1.AioVolume updateAioVolume(opi_api.storage.v1.UpdateAioVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -450,6 +495,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Aio Volumes
+     * </pre>
      */
     public opi_api.storage.v1.ListAioVolumesResponse listAioVolumes(opi_api.storage.v1.ListAioVolumesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -457,6 +505,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Aio Volume
+     * </pre>
      */
     public opi_api.storage.v1.AioVolume getAioVolume(opi_api.storage.v1.GetAioVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -464,6 +515,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Aio Volume statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsAioVolumeResponse statsAioVolume(opi_api.storage.v1.StatsAioVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -489,6 +543,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Aio Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.AioVolume> createAioVolume(
         opi_api.storage.v1.CreateAioVolumeRequest request) {
@@ -497,6 +554,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Aio Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteAioVolume(
         opi_api.storage.v1.DeleteAioVolumeRequest request) {
@@ -505,6 +565,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Aio Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.AioVolume> updateAioVolume(
         opi_api.storage.v1.UpdateAioVolumeRequest request) {
@@ -513,6 +576,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Aio Volumes
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListAioVolumesResponse> listAioVolumes(
         opi_api.storage.v1.ListAioVolumesRequest request) {
@@ -521,6 +587,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Aio Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.AioVolume> getAioVolume(
         opi_api.storage.v1.GetAioVolumeRequest request) {
@@ -529,6 +598,9 @@ public final class AioVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Aio Volume statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsAioVolumeResponse> statsAioVolume(
         opi_api.storage.v1.StatsAioVolumeRequest request) {

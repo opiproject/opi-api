@@ -8,26 +8,48 @@ public interface CreateVirtioScsiTargetRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The Virtio Scsi Target to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioScsiTarget field is set.
    */
   boolean hasVirtioScsiTarget();
   /**
+   * <pre>
+   * The Virtio Scsi Target to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioScsiTarget.
    */
   opi_api.storage.v1.VirtioScsiTarget getVirtioScsiTarget();
   /**
+   * <pre>
+   * The Virtio Scsi Target to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.VirtioScsiTargetOrBuilder getVirtioScsiTargetOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the Virtio Scsi Target.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioScsiTargetId.
    */
   java.lang.String getVirtioScsiTargetId();
   /**
+   * <pre>
+   * An optional ID to assign to the Virtio Scsi Target.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string virtio_scsi_target_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioScsiTargetId.
    */

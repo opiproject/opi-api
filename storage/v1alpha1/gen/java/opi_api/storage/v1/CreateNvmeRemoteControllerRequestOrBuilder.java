@@ -8,26 +8,48 @@ public interface CreateNvmeRemoteControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The Nvme Remote Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeRemoteController field is set.
    */
   boolean hasNvmeRemoteController();
   /**
+   * <pre>
+   * The Nvme Remote Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeRemoteController.
    */
   opi_api.storage.v1.NvmeRemoteController getNvmeRemoteController();
   /**
+   * <pre>
+   * The Nvme Remote Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeRemoteController nvme_remote_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeRemoteControllerOrBuilder getNvmeRemoteControllerOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Remote Controller.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeRemoteControllerId.
    */
   java.lang.String getNvmeRemoteControllerId();
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Remote Controller.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_remote_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeRemoteControllerId.
    */

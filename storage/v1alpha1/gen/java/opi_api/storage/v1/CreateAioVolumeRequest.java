@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to create an Aio Volume.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.CreateAioVolumeRequest}
  */
 public final class CreateAioVolumeRequest extends
@@ -105,6 +109,10 @@ private static final long serialVersionUID = 0L;
   public static final int AIO_VOLUME_FIELD_NUMBER = 1;
   private opi_api.storage.v1.AioVolume aioVolume_;
   /**
+   * <pre>
+   * The Aio Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the aioVolume field is set.
    */
@@ -113,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return aioVolume_ != null;
   }
   /**
+   * <pre>
+   * The Aio Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The aioVolume.
    */
@@ -121,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return aioVolume_ == null ? opi_api.storage.v1.AioVolume.getDefaultInstance() : aioVolume_;
   }
   /**
+   * <pre>
+   * The Aio Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
@@ -131,6 +147,11 @@ private static final long serialVersionUID = 0L;
   public static final int AIO_VOLUME_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object aioVolumeId_;
   /**
+   * <pre>
+   * An optional ID to assign to the Aio Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The aioVolumeId.
    */
@@ -148,6 +169,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * An optional ID to assign to the Aio Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for aioVolumeId.
    */
@@ -337,6 +363,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to create an Aio Volume.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.CreateAioVolumeRequest}
    */
   public static final class Builder extends
@@ -502,6 +532,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.AioVolume, opi_api.storage.v1.AioVolume.Builder, opi_api.storage.v1.AioVolumeOrBuilder> aioVolumeBuilder_;
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the aioVolume field is set.
      */
@@ -509,6 +543,10 @@ private static final long serialVersionUID = 0L;
       return aioVolumeBuilder_ != null || aioVolume_ != null;
     }
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The aioVolume.
      */
@@ -520,6 +558,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAioVolume(opi_api.storage.v1.AioVolume value) {
@@ -536,6 +578,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAioVolume(
@@ -550,6 +596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeAioVolume(opi_api.storage.v1.AioVolume value) {
@@ -568,6 +618,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearAioVolume() {
@@ -582,6 +636,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.AioVolume.Builder getAioVolumeBuilder() {
@@ -590,6 +648,10 @@ private static final long serialVersionUID = 0L;
       return getAioVolumeFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.AioVolumeOrBuilder getAioVolumeOrBuilder() {
@@ -601,6 +663,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Aio Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.AioVolume aio_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,6 +685,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object aioVolumeId_ = "";
     /**
+     * <pre>
+     * An optional ID to assign to the Aio Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The aioVolumeId.
      */
@@ -635,6 +706,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Aio Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for aioVolumeId.
      */
@@ -652,6 +728,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Aio Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The aioVolumeId to set.
      * @return This builder for chaining.
@@ -667,6 +748,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Aio Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -677,6 +763,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Aio Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string aio_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for aioVolumeId to set.
      * @return This builder for chaining.

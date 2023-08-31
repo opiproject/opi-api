@@ -121,13 +121,17 @@ func (x *VirtioBlk) GetMaxLimit() *QosLimit {
 	return nil
 }
 
+// Represents a request to create an Virtio Blk.
 type CreateVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	VirtioBlk   *VirtioBlk `protobuf:"bytes,1,opt,name=virtio_blk,json=virtioBlk,proto3" json:"virtio_blk,omitempty"`
-	VirtioBlkId string     `protobuf:"bytes,2,opt,name=virtio_blk_id,json=virtioBlkId,proto3" json:"virtio_blk_id,omitempty"`
+	// The Virtio Blk to be created.
+	VirtioBlk *VirtioBlk `protobuf:"bytes,1,opt,name=virtio_blk,json=virtioBlk,proto3" json:"virtio_blk,omitempty"`
+	// An optional ID to assign to the Virtio Blk.
+	// If this is not provided the system will auto-generate it.
+	VirtioBlkId string `protobuf:"bytes,2,opt,name=virtio_blk_id,json=virtioBlkId,proto3" json:"virtio_blk_id,omitempty"`
 }
 
 func (x *CreateVirtioBlkRequest) Reset() {
@@ -176,6 +180,7 @@ func (x *CreateVirtioBlkRequest) GetVirtioBlkId() string {
 	return ""
 }
 
+// Represents a request to delete an Virtio Blk.
 type DeleteVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

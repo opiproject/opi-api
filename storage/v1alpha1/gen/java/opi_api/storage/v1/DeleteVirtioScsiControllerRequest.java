@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to delete an Virtio Scsi Controller.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.DeleteVirtioScsiControllerRequest}
  */
 public final class DeleteVirtioScsiControllerRequest extends
@@ -315,6 +319,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to delete an Virtio Scsi Controller.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.DeleteVirtioScsiControllerRequest}
    */
   public static final class Builder extends

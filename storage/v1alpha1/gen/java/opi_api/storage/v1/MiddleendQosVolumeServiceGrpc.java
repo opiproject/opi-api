@@ -250,6 +250,9 @@ public final class MiddleendQosVolumeServiceGrpc {
   public static abstract class MiddleendQosVolumeServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Create an Qos Volume
+     * </pre>
      */
     public void createQosVolume(opi_api.storage.v1.CreateQosVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolume> responseObserver) {
@@ -257,6 +260,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Qos Volume
+     * </pre>
      */
     public void deleteQosVolume(opi_api.storage.v1.DeleteQosVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -264,6 +270,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Qos Volume
+     * </pre>
      */
     public void updateQosVolume(opi_api.storage.v1.UpdateQosVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolume> responseObserver) {
@@ -271,6 +280,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Qos Volumes
+     * </pre>
      */
     public void listQosVolumes(opi_api.storage.v1.ListQosVolumesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListQosVolumesResponse> responseObserver) {
@@ -278,6 +290,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Qos Volume
+     * </pre>
      */
     public void getQosVolume(opi_api.storage.v1.GetQosVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolume> responseObserver) {
@@ -285,6 +300,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Qos Volume statistics
+     * </pre>
      */
     public void statsQosVolume(opi_api.storage.v1.StatsQosVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsQosVolumeResponse> responseObserver) {
@@ -354,6 +372,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Qos Volume
+     * </pre>
      */
     public void createQosVolume(opi_api.storage.v1.CreateQosVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolume> responseObserver) {
@@ -362,6 +383,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Qos Volume
+     * </pre>
      */
     public void deleteQosVolume(opi_api.storage.v1.DeleteQosVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -370,6 +394,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Qos Volume
+     * </pre>
      */
     public void updateQosVolume(opi_api.storage.v1.UpdateQosVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolume> responseObserver) {
@@ -378,6 +405,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Qos Volumes
+     * </pre>
      */
     public void listQosVolumes(opi_api.storage.v1.ListQosVolumesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListQosVolumesResponse> responseObserver) {
@@ -386,6 +416,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Qos Volume
+     * </pre>
      */
     public void getQosVolume(opi_api.storage.v1.GetQosVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.QosVolume> responseObserver) {
@@ -394,6 +427,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Qos Volume statistics
+     * </pre>
      */
     public void statsQosVolume(opi_api.storage.v1.StatsQosVolumeRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsQosVolumeResponse> responseObserver) {
@@ -417,6 +453,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Qos Volume
+     * </pre>
      */
     public opi_api.storage.v1.QosVolume createQosVolume(opi_api.storage.v1.CreateQosVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -424,6 +463,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Qos Volume
+     * </pre>
      */
     public com.google.protobuf.Empty deleteQosVolume(opi_api.storage.v1.DeleteQosVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -431,6 +473,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Qos Volume
+     * </pre>
      */
     public opi_api.storage.v1.QosVolume updateQosVolume(opi_api.storage.v1.UpdateQosVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -438,6 +483,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Qos Volumes
+     * </pre>
      */
     public opi_api.storage.v1.ListQosVolumesResponse listQosVolumes(opi_api.storage.v1.ListQosVolumesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -445,6 +493,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Qos Volume
+     * </pre>
      */
     public opi_api.storage.v1.QosVolume getQosVolume(opi_api.storage.v1.GetQosVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -452,6 +503,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Qos Volume statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsQosVolumeResponse statsQosVolume(opi_api.storage.v1.StatsQosVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -474,6 +528,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Qos Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.QosVolume> createQosVolume(
         opi_api.storage.v1.CreateQosVolumeRequest request) {
@@ -482,6 +539,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Qos Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteQosVolume(
         opi_api.storage.v1.DeleteQosVolumeRequest request) {
@@ -490,6 +550,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Qos Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.QosVolume> updateQosVolume(
         opi_api.storage.v1.UpdateQosVolumeRequest request) {
@@ -498,6 +561,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Qos Volumes
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListQosVolumesResponse> listQosVolumes(
         opi_api.storage.v1.ListQosVolumesRequest request) {
@@ -506,6 +572,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Qos Volume
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.QosVolume> getQosVolume(
         opi_api.storage.v1.GetQosVolumeRequest request) {
@@ -514,6 +583,9 @@ public final class MiddleendQosVolumeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Qos Volume statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsQosVolumeResponse> statsQosVolume(
         opi_api.storage.v1.StatsQosVolumeRequest request) {

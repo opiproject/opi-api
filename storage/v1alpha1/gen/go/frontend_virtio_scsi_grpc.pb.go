@@ -23,23 +23,41 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type FrontendVirtioScsiServiceClient interface {
+	// Create an Virtio Scsi Target
 	CreateVirtioScsiTarget(ctx context.Context, in *CreateVirtioScsiTargetRequest, opts ...grpc.CallOption) (*VirtioScsiTarget, error)
+	// Delete an Virtio Scsi Target
 	DeleteVirtioScsiTarget(ctx context.Context, in *DeleteVirtioScsiTargetRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Virtio Scsi Target
 	UpdateVirtioScsiTarget(ctx context.Context, in *UpdateVirtioScsiTargetRequest, opts ...grpc.CallOption) (*VirtioScsiTarget, error)
+	// List Virtio Scsi Targets
 	ListVirtioScsiTargets(ctx context.Context, in *ListVirtioScsiTargetsRequest, opts ...grpc.CallOption) (*ListVirtioScsiTargetsResponse, error)
+	// Get an Virtio Scsi Target
 	GetVirtioScsiTarget(ctx context.Context, in *GetVirtioScsiTargetRequest, opts ...grpc.CallOption) (*VirtioScsiTarget, error)
+	// Get an Virtio Scsi Target statistics
 	StatsVirtioScsiTarget(ctx context.Context, in *StatsVirtioScsiTargetRequest, opts ...grpc.CallOption) (*StatsVirtioScsiTargetResponse, error)
+	// Create an Virtio Scsi Controller
 	CreateVirtioScsiController(ctx context.Context, in *CreateVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
+	// Delete an Virtio Scsi Controller
 	DeleteVirtioScsiController(ctx context.Context, in *DeleteVirtioScsiControllerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Virtio Scsi Controller
 	UpdateVirtioScsiController(ctx context.Context, in *UpdateVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
+	// List Virtio Scsi Controllers
 	ListVirtioScsiControllers(ctx context.Context, in *ListVirtioScsiControllersRequest, opts ...grpc.CallOption) (*ListVirtioScsiControllersResponse, error)
+	// Get an Virtio Scsi Controller
 	GetVirtioScsiController(ctx context.Context, in *GetVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
+	// Get an Virtio Scsi Controller statistics
 	StatsVirtioScsiController(ctx context.Context, in *StatsVirtioScsiControllerRequest, opts ...grpc.CallOption) (*StatsVirtioScsiControllerResponse, error)
+	// Create an Virtio Scsi Lun
 	CreateVirtioScsiLun(ctx context.Context, in *CreateVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
+	// Delete an Virtio Scsi Lun
 	DeleteVirtioScsiLun(ctx context.Context, in *DeleteVirtioScsiLunRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Virtio Scsi Lun
 	UpdateVirtioScsiLun(ctx context.Context, in *UpdateVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
+	// List Virtio Scsi Luns
 	ListVirtioScsiLuns(ctx context.Context, in *ListVirtioScsiLunsRequest, opts ...grpc.CallOption) (*ListVirtioScsiLunsResponse, error)
+	// Get an Virtio Scsi Lun
 	GetVirtioScsiLun(ctx context.Context, in *GetVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
+	// Get an Virtio Scsi Lun statistics
 	StatsVirtioScsiLun(ctx context.Context, in *StatsVirtioScsiLunRequest, opts ...grpc.CallOption) (*StatsVirtioScsiLunResponse, error)
 }
 
@@ -217,23 +235,41 @@ func (c *frontendVirtioScsiServiceClient) StatsVirtioScsiLun(ctx context.Context
 // All implementations should embed UnimplementedFrontendVirtioScsiServiceServer
 // for forward compatibility
 type FrontendVirtioScsiServiceServer interface {
+	// Create an Virtio Scsi Target
 	CreateVirtioScsiTarget(context.Context, *CreateVirtioScsiTargetRequest) (*VirtioScsiTarget, error)
+	// Delete an Virtio Scsi Target
 	DeleteVirtioScsiTarget(context.Context, *DeleteVirtioScsiTargetRequest) (*emptypb.Empty, error)
+	// Update an Virtio Scsi Target
 	UpdateVirtioScsiTarget(context.Context, *UpdateVirtioScsiTargetRequest) (*VirtioScsiTarget, error)
+	// List Virtio Scsi Targets
 	ListVirtioScsiTargets(context.Context, *ListVirtioScsiTargetsRequest) (*ListVirtioScsiTargetsResponse, error)
+	// Get an Virtio Scsi Target
 	GetVirtioScsiTarget(context.Context, *GetVirtioScsiTargetRequest) (*VirtioScsiTarget, error)
+	// Get an Virtio Scsi Target statistics
 	StatsVirtioScsiTarget(context.Context, *StatsVirtioScsiTargetRequest) (*StatsVirtioScsiTargetResponse, error)
+	// Create an Virtio Scsi Controller
 	CreateVirtioScsiController(context.Context, *CreateVirtioScsiControllerRequest) (*VirtioScsiController, error)
+	// Delete an Virtio Scsi Controller
 	DeleteVirtioScsiController(context.Context, *DeleteVirtioScsiControllerRequest) (*emptypb.Empty, error)
+	// Update an Virtio Scsi Controller
 	UpdateVirtioScsiController(context.Context, *UpdateVirtioScsiControllerRequest) (*VirtioScsiController, error)
+	// List Virtio Scsi Controllers
 	ListVirtioScsiControllers(context.Context, *ListVirtioScsiControllersRequest) (*ListVirtioScsiControllersResponse, error)
+	// Get an Virtio Scsi Controller
 	GetVirtioScsiController(context.Context, *GetVirtioScsiControllerRequest) (*VirtioScsiController, error)
+	// Get an Virtio Scsi Controller statistics
 	StatsVirtioScsiController(context.Context, *StatsVirtioScsiControllerRequest) (*StatsVirtioScsiControllerResponse, error)
+	// Create an Virtio Scsi Lun
 	CreateVirtioScsiLun(context.Context, *CreateVirtioScsiLunRequest) (*VirtioScsiLun, error)
+	// Delete an Virtio Scsi Lun
 	DeleteVirtioScsiLun(context.Context, *DeleteVirtioScsiLunRequest) (*emptypb.Empty, error)
+	// Update an Virtio Scsi Lun
 	UpdateVirtioScsiLun(context.Context, *UpdateVirtioScsiLunRequest) (*VirtioScsiLun, error)
+	// List Virtio Scsi Luns
 	ListVirtioScsiLuns(context.Context, *ListVirtioScsiLunsRequest) (*ListVirtioScsiLunsResponse, error)
+	// Get an Virtio Scsi Lun
 	GetVirtioScsiLun(context.Context, *GetVirtioScsiLunRequest) (*VirtioScsiLun, error)
+	// Get an Virtio Scsi Lun statistics
 	StatsVirtioScsiLun(context.Context, *StatsVirtioScsiLunRequest) (*StatsVirtioScsiLunResponse, error)
 }
 

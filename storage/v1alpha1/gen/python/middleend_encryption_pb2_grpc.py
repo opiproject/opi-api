@@ -53,37 +53,43 @@ class MiddleendEncryptionServiceServicer(object):
     """
 
     def CreateEncryptedVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Encrypted Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteEncryptedVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an Encrypted Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateEncryptedVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Encrypted Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListEncryptedVolumes(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Encrypted Volumes
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetEncryptedVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Encrypted Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsEncryptedVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Encrypted Volume statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

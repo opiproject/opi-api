@@ -23,11 +23,17 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddleendQosVolumeServiceClient interface {
+	// Create an Qos Volume
 	CreateQosVolume(ctx context.Context, in *CreateQosVolumeRequest, opts ...grpc.CallOption) (*QosVolume, error)
+	// Delete an Qos Volume
 	DeleteQosVolume(ctx context.Context, in *DeleteQosVolumeRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Qos Volume
 	UpdateQosVolume(ctx context.Context, in *UpdateQosVolumeRequest, opts ...grpc.CallOption) (*QosVolume, error)
+	// List Qos Volumes
 	ListQosVolumes(ctx context.Context, in *ListQosVolumesRequest, opts ...grpc.CallOption) (*ListQosVolumesResponse, error)
+	// Get an Qos Volume
 	GetQosVolume(ctx context.Context, in *GetQosVolumeRequest, opts ...grpc.CallOption) (*QosVolume, error)
+	// Get an Qos Volume statistics
 	StatsQosVolume(ctx context.Context, in *StatsQosVolumeRequest, opts ...grpc.CallOption) (*StatsQosVolumeResponse, error)
 }
 
@@ -97,11 +103,17 @@ func (c *middleendQosVolumeServiceClient) StatsQosVolume(ctx context.Context, in
 // All implementations should embed UnimplementedMiddleendQosVolumeServiceServer
 // for forward compatibility
 type MiddleendQosVolumeServiceServer interface {
+	// Create an Qos Volume
 	CreateQosVolume(context.Context, *CreateQosVolumeRequest) (*QosVolume, error)
+	// Delete an Qos Volume
 	DeleteQosVolume(context.Context, *DeleteQosVolumeRequest) (*emptypb.Empty, error)
+	// Update an Qos Volume
 	UpdateQosVolume(context.Context, *UpdateQosVolumeRequest) (*QosVolume, error)
+	// List Qos Volumes
 	ListQosVolumes(context.Context, *ListQosVolumesRequest) (*ListQosVolumesResponse, error)
+	// Get an Qos Volume
 	GetQosVolume(context.Context, *GetQosVolumeRequest) (*QosVolume, error)
+	// Get an Qos Volume statistics
 	StatsQosVolume(context.Context, *StatsQosVolumeRequest) (*StatsQosVolumeResponse, error)
 }
 

@@ -526,13 +526,17 @@ func (x *NvmeRemoteNamespace) GetUuid() *_go.Uuid {
 	return nil
 }
 
+// Represents a request to create an Nvme Remote Controller.
 type CreateNvmeRemoteControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NvmeRemoteController   *NvmeRemoteController `protobuf:"bytes,1,opt,name=nvme_remote_controller,json=nvmeRemoteController,proto3" json:"nvme_remote_controller,omitempty"`
-	NvmeRemoteControllerId string                `protobuf:"bytes,2,opt,name=nvme_remote_controller_id,json=nvmeRemoteControllerId,proto3" json:"nvme_remote_controller_id,omitempty"`
+	// The Nvme Remote Controller to be created.
+	NvmeRemoteController *NvmeRemoteController `protobuf:"bytes,1,opt,name=nvme_remote_controller,json=nvmeRemoteController,proto3" json:"nvme_remote_controller,omitempty"`
+	// An optional ID to assign to the Nvme Remote Controller.
+	// If this is not provided the system will auto-generate it.
+	NvmeRemoteControllerId string `protobuf:"bytes,2,opt,name=nvme_remote_controller_id,json=nvmeRemoteControllerId,proto3" json:"nvme_remote_controller_id,omitempty"`
 }
 
 func (x *CreateNvmeRemoteControllerRequest) Reset() {
@@ -581,6 +585,7 @@ func (x *CreateNvmeRemoteControllerRequest) GetNvmeRemoteControllerId() string {
 	return ""
 }
 
+// Represents a request to delete an Nvme Remote Controller.
 type DeleteNvmeRemoteControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1131,13 +1136,17 @@ func (x *ListNvmeRemoteNamespacesResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to create an Nvme Path.
 type CreateNvmePathRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NvmePath   *NvmePath `protobuf:"bytes,1,opt,name=nvme_path,json=nvmePath,proto3" json:"nvme_path,omitempty"`
-	NvmePathId string    `protobuf:"bytes,2,opt,name=nvme_path_id,json=nvmePathId,proto3" json:"nvme_path_id,omitempty"`
+	// The Nvme Path to be created.
+	NvmePath *NvmePath `protobuf:"bytes,1,opt,name=nvme_path,json=nvmePath,proto3" json:"nvme_path,omitempty"`
+	// An optional ID to assign to the Nvme Path.
+	// If this is not provided the system will auto-generate it.
+	NvmePathId string `protobuf:"bytes,2,opt,name=nvme_path_id,json=nvmePathId,proto3" json:"nvme_path_id,omitempty"`
 }
 
 func (x *CreateNvmePathRequest) Reset() {
@@ -1186,6 +1195,7 @@ func (x *CreateNvmePathRequest) GetNvmePathId() string {
 	return ""
 }
 
+// Represents a request to delete an Nvme Path.
 type DeleteNvmePathRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

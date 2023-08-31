@@ -42,6 +42,7 @@ class AioVolumeService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Create an Aio Volume
     virtual ::grpc::Status CreateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest& request, ::opi_api::storage::v1::AioVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>> AsyncCreateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>>(AsyncCreateAioVolumeRaw(context, request, cq));
@@ -49,6 +50,7 @@ class AioVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>> PrepareAsyncCreateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>>(PrepareAsyncCreateAioVolumeRaw(context, request, cq));
     }
+    // Delete an Aio Volume
     virtual ::grpc::Status DeleteAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteAioVolumeRaw(context, request, cq));
@@ -56,6 +58,7 @@ class AioVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteAioVolumeRaw(context, request, cq));
     }
+    // Update an Aio Volume
     virtual ::grpc::Status UpdateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest& request, ::opi_api::storage::v1::AioVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>> AsyncUpdateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>>(AsyncUpdateAioVolumeRaw(context, request, cq));
@@ -63,6 +66,7 @@ class AioVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>> PrepareAsyncUpdateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>>(PrepareAsyncUpdateAioVolumeRaw(context, request, cq));
     }
+    // List Aio Volumes
     virtual ::grpc::Status ListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest& request, ::opi_api::storage::v1::ListAioVolumesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListAioVolumesResponse>> AsyncListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListAioVolumesResponse>>(AsyncListAioVolumesRaw(context, request, cq));
@@ -70,6 +74,7 @@ class AioVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListAioVolumesResponse>> PrepareAsyncListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListAioVolumesResponse>>(PrepareAsyncListAioVolumesRaw(context, request, cq));
     }
+    // Get an Aio Volume
     virtual ::grpc::Status GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::opi_api::storage::v1::AioVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>> AsyncGetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>>(AsyncGetAioVolumeRaw(context, request, cq));
@@ -77,6 +82,7 @@ class AioVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>> PrepareAsyncGetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::AioVolume>>(PrepareAsyncGetAioVolumeRaw(context, request, cq));
     }
+    // Get an Aio Volume statistics
     virtual ::grpc::Status StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::opi_api::storage::v1::StatsAioVolumeResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsAioVolumeResponse>> AsyncStatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsAioVolumeResponse>>(AsyncStatsAioVolumeRaw(context, request, cq));
@@ -87,16 +93,22 @@ class AioVolumeService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
+      // Create an Aio Volume
       virtual void CreateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Delete an Aio Volume
       virtual void DeleteAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update an Aio Volume
       virtual void UpdateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Aio Volumes
       virtual void ListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListAioVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Aio Volume
       virtual void GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Aio Volume statistics
       virtual void StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StatsAioVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -213,11 +225,17 @@ class AioVolumeService final {
    public:
     Service();
     virtual ~Service();
+    // Create an Aio Volume
     virtual ::grpc::Status CreateAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response);
+    // Delete an Aio Volume
     virtual ::grpc::Status DeleteAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteAioVolumeRequest* request, ::google::protobuf::Empty* response);
+    // Update an Aio Volume
     virtual ::grpc::Status UpdateAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response);
+    // List Aio Volumes
     virtual ::grpc::Status ListAioVolumes(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListAioVolumesRequest* request, ::opi_api::storage::v1::ListAioVolumesResponse* response);
+    // Get an Aio Volume
     virtual ::grpc::Status GetAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetAioVolumeRequest* request, ::opi_api::storage::v1::AioVolume* response);
+    // Get an Aio Volume statistics
     virtual ::grpc::Status StatsAioVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsAioVolumeRequest* request, ::opi_api::storage::v1::StatsAioVolumeResponse* response);
   };
   template <class BaseClass>

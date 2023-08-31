@@ -41,6 +41,7 @@ class MiddleendQosVolumeService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Create an Qos Volume
     virtual ::grpc::Status CreateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateQosVolumeRequest& request, ::opi_api::storage::v1::QosVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>> AsyncCreateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>>(AsyncCreateQosVolumeRaw(context, request, cq));
@@ -48,6 +49,7 @@ class MiddleendQosVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>> PrepareAsyncCreateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>>(PrepareAsyncCreateQosVolumeRaw(context, request, cq));
     }
+    // Delete an Qos Volume
     virtual ::grpc::Status DeleteQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteQosVolumeRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteQosVolumeRaw(context, request, cq));
@@ -55,6 +57,7 @@ class MiddleendQosVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteQosVolumeRaw(context, request, cq));
     }
+    // Update an Qos Volume
     virtual ::grpc::Status UpdateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateQosVolumeRequest& request, ::opi_api::storage::v1::QosVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>> AsyncUpdateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>>(AsyncUpdateQosVolumeRaw(context, request, cq));
@@ -62,6 +65,7 @@ class MiddleendQosVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>> PrepareAsyncUpdateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>>(PrepareAsyncUpdateQosVolumeRaw(context, request, cq));
     }
+    // List Qos Volumes
     virtual ::grpc::Status ListQosVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest& request, ::opi_api::storage::v1::ListQosVolumesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListQosVolumesResponse>> AsyncListQosVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListQosVolumesResponse>>(AsyncListQosVolumesRaw(context, request, cq));
@@ -69,6 +73,7 @@ class MiddleendQosVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListQosVolumesResponse>> PrepareAsyncListQosVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListQosVolumesResponse>>(PrepareAsyncListQosVolumesRaw(context, request, cq));
     }
+    // Get an Qos Volume
     virtual ::grpc::Status GetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::opi_api::storage::v1::QosVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>> AsyncGetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>>(AsyncGetQosVolumeRaw(context, request, cq));
@@ -76,6 +81,7 @@ class MiddleendQosVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>> PrepareAsyncGetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::QosVolume>>(PrepareAsyncGetQosVolumeRaw(context, request, cq));
     }
+    // Get an Qos Volume statistics
     virtual ::grpc::Status StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::opi_api::storage::v1::StatsQosVolumeResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsQosVolumeResponse>> AsyncStatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsQosVolumeResponse>>(AsyncStatsQosVolumeRaw(context, request, cq));
@@ -86,16 +92,22 @@ class MiddleendQosVolumeService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
+      // Create an Qos Volume
       virtual void CreateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Delete an Qos Volume
       virtual void DeleteQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteQosVolumeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteQosVolumeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update an Qos Volume
       virtual void UpdateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Qos Volumes
       virtual void ListQosVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest* request, ::opi_api::storage::v1::ListQosVolumesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListQosVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest* request, ::opi_api::storage::v1::ListQosVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Qos Volume
       virtual void GetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Qos Volume statistics
       virtual void StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StatsQosVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -212,11 +224,17 @@ class MiddleendQosVolumeService final {
    public:
     Service();
     virtual ~Service();
+    // Create an Qos Volume
     virtual ::grpc::Status CreateQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response);
+    // Delete an Qos Volume
     virtual ::grpc::Status DeleteQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteQosVolumeRequest* request, ::google::protobuf::Empty* response);
+    // Update an Qos Volume
     virtual ::grpc::Status UpdateQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response);
+    // List Qos Volumes
     virtual ::grpc::Status ListQosVolumes(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListQosVolumesRequest* request, ::opi_api::storage::v1::ListQosVolumesResponse* response);
+    // Get an Qos Volume
     virtual ::grpc::Status GetQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetQosVolumeRequest* request, ::opi_api::storage::v1::QosVolume* response);
+    // Get an Qos Volume statistics
     virtual ::grpc::Status StatsQosVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsQosVolumeRequest* request, ::opi_api::storage::v1::StatsQosVolumeResponse* response);
   };
   template <class BaseClass>

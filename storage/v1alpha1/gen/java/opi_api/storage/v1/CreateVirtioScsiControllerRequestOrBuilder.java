@@ -8,26 +8,48 @@ public interface CreateVirtioScsiControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The Virtio Scsi Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioScsiController field is set.
    */
   boolean hasVirtioScsiController();
   /**
+   * <pre>
+   * The Virtio Scsi Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioScsiController.
    */
   opi_api.storage.v1.VirtioScsiController getVirtioScsiController();
   /**
+   * <pre>
+   * The Virtio Scsi Controller to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the Virtio Scsi Controller.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string virtio_scsi_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioScsiControllerId.
    */
   java.lang.String getVirtioScsiControllerId();
   /**
+   * <pre>
+   * An optional ID to assign to the Virtio Scsi Controller.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string virtio_scsi_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioScsiControllerId.
    */

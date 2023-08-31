@@ -23,11 +23,17 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AioVolumeServiceClient interface {
+	// Create an Aio Volume
 	CreateAioVolume(ctx context.Context, in *CreateAioVolumeRequest, opts ...grpc.CallOption) (*AioVolume, error)
+	// Delete an Aio Volume
 	DeleteAioVolume(ctx context.Context, in *DeleteAioVolumeRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Aio Volume
 	UpdateAioVolume(ctx context.Context, in *UpdateAioVolumeRequest, opts ...grpc.CallOption) (*AioVolume, error)
+	// List Aio Volumes
 	ListAioVolumes(ctx context.Context, in *ListAioVolumesRequest, opts ...grpc.CallOption) (*ListAioVolumesResponse, error)
+	// Get an Aio Volume
 	GetAioVolume(ctx context.Context, in *GetAioVolumeRequest, opts ...grpc.CallOption) (*AioVolume, error)
+	// Get an Aio Volume statistics
 	StatsAioVolume(ctx context.Context, in *StatsAioVolumeRequest, opts ...grpc.CallOption) (*StatsAioVolumeResponse, error)
 }
 
@@ -97,11 +103,17 @@ func (c *aioVolumeServiceClient) StatsAioVolume(ctx context.Context, in *StatsAi
 // All implementations should embed UnimplementedAioVolumeServiceServer
 // for forward compatibility
 type AioVolumeServiceServer interface {
+	// Create an Aio Volume
 	CreateAioVolume(context.Context, *CreateAioVolumeRequest) (*AioVolume, error)
+	// Delete an Aio Volume
 	DeleteAioVolume(context.Context, *DeleteAioVolumeRequest) (*emptypb.Empty, error)
+	// Update an Aio Volume
 	UpdateAioVolume(context.Context, *UpdateAioVolumeRequest) (*AioVolume, error)
+	// List Aio Volumes
 	ListAioVolumes(context.Context, *ListAioVolumesRequest) (*ListAioVolumesResponse, error)
+	// Get an Aio Volume
 	GetAioVolume(context.Context, *GetAioVolumeRequest) (*AioVolume, error)
+	// Get an Aio Volume statistics
 	StatsAioVolume(context.Context, *StatsAioVolumeRequest) (*StatsAioVolumeResponse, error)
 }
 

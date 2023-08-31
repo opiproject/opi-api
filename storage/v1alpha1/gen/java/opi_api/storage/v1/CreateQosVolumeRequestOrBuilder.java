@@ -8,26 +8,48 @@ public interface CreateQosVolumeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The QoS Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the qosVolume field is set.
    */
   boolean hasQosVolume();
   /**
+   * <pre>
+   * The QoS Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The qosVolume.
    */
   opi_api.storage.v1.QosVolume getQosVolume();
   /**
+   * <pre>
+   * The QoS Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.QosVolumeOrBuilder getQosVolumeOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the QoS Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The qosVolumeId.
    */
   java.lang.String getQosVolumeId();
   /**
+   * <pre>
+   * An optional ID to assign to the QoS Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for qosVolumeId.
    */

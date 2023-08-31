@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to delete an Virtio Blk.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.DeleteVirtioBlkRequest}
  */
 public final class DeleteVirtioBlkRequest extends
@@ -315,6 +319,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to delete an Virtio Blk.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.DeleteVirtioBlkRequest}
    */
   public static final class Builder extends

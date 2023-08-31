@@ -53,37 +53,43 @@ class NullVolumeServiceServicer(object):
     """
 
     def CreateNullVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Null Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteNullVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an Null Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateNullVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Null Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListNullVolumes(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Null Volumes
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetNullVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Null Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsNullVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Null Volume statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

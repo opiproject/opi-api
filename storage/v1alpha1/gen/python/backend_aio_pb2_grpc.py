@@ -53,37 +53,43 @@ class AioVolumeServiceServicer(object):
     """
 
     def CreateAioVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an Aio Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteAioVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an Aio Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAioVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an Aio Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAioVolumes(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List Aio Volumes
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetAioVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Aio Volume
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StatsAioVolume(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get an Aio Volume statistics
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

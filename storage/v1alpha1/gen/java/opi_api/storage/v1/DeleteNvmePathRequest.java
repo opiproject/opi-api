@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to delete an Nvme Path.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.DeleteNvmePathRequest}
  */
 public final class DeleteNvmePathRequest extends
@@ -323,6 +327,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to delete an Nvme Path.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.DeleteNvmePathRequest}
    */
   public static final class Builder extends

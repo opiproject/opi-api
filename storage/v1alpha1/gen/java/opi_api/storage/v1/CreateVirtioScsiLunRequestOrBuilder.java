@@ -8,26 +8,48 @@ public interface CreateVirtioScsiLunRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The Virtio Scsi Lun to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioScsiLun field is set.
    */
   boolean hasVirtioScsiLun();
   /**
+   * <pre>
+   * The Virtio Scsi Lun to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The virtioScsiLun.
    */
   opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun();
   /**
+   * <pre>
+   * The Virtio Scsi Lun to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder();
 
   /**
+   * <pre>
+   * An optional ID to assign to the Virtio Scsi Lun.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string virtio_scsi_lun_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The virtioScsiLunId.
    */
   java.lang.String getVirtioScsiLunId();
   /**
+   * <pre>
+   * An optional ID to assign to the Virtio Scsi Lun.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string virtio_scsi_lun_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for virtioScsiLunId.
    */

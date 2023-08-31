@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to create an Nvme Path.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.CreateNvmePathRequest}
  */
 public final class CreateNvmePathRequest extends
@@ -105,6 +109,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_PATH_FIELD_NUMBER = 1;
   private opi_api.storage.v1.NvmePath nvmePath_;
   /**
+   * <pre>
+   * The Nvme Path to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmePath field is set.
    */
@@ -113,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return nvmePath_ != null;
   }
   /**
+   * <pre>
+   * The Nvme Path to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmePath.
    */
@@ -121,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return nvmePath_ == null ? opi_api.storage.v1.NvmePath.getDefaultInstance() : nvmePath_;
   }
   /**
+   * <pre>
+   * The Nvme Path to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
@@ -131,6 +147,11 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_PATH_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nvmePathId_;
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Path.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmePathId.
    */
@@ -148,6 +169,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Path.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmePathId.
    */
@@ -337,6 +363,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to create an Nvme Path.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.CreateNvmePathRequest}
    */
   public static final class Builder extends
@@ -502,6 +532,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmePath, opi_api.storage.v1.NvmePath.Builder, opi_api.storage.v1.NvmePathOrBuilder> nvmePathBuilder_;
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nvmePath field is set.
      */
@@ -509,6 +543,10 @@ private static final long serialVersionUID = 0L;
       return nvmePathBuilder_ != null || nvmePath_ != null;
     }
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nvmePath.
      */
@@ -520,6 +558,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmePath(opi_api.storage.v1.NvmePath value) {
@@ -536,6 +578,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmePath(
@@ -550,6 +596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNvmePath(opi_api.storage.v1.NvmePath value) {
@@ -568,6 +618,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNvmePath() {
@@ -582,6 +636,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmePath.Builder getNvmePathBuilder() {
@@ -590,6 +648,10 @@ private static final long serialVersionUID = 0L;
       return getNvmePathFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmePathOrBuilder getNvmePathOrBuilder() {
@@ -601,6 +663,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Nvme Path to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,6 +685,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmePathId_ = "";
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Path.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nvmePathId.
      */
@@ -635,6 +706,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Path.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nvmePathId.
      */
@@ -652,6 +728,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Path.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nvmePathId to set.
      * @return This builder for chaining.
@@ -667,6 +748,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Path.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -677,6 +763,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Path.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nvmePathId to set.
      * @return This builder for chaining.

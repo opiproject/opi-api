@@ -23,11 +23,17 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddleendEncryptionServiceClient interface {
+	// Create an Encrypted Volume
 	CreateEncryptedVolume(ctx context.Context, in *CreateEncryptedVolumeRequest, opts ...grpc.CallOption) (*EncryptedVolume, error)
+	// Delete an Encrypted Volume
 	DeleteEncryptedVolume(ctx context.Context, in *DeleteEncryptedVolumeRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Update an Encrypted Volume
 	UpdateEncryptedVolume(ctx context.Context, in *UpdateEncryptedVolumeRequest, opts ...grpc.CallOption) (*EncryptedVolume, error)
+	// List Encrypted Volumes
 	ListEncryptedVolumes(ctx context.Context, in *ListEncryptedVolumesRequest, opts ...grpc.CallOption) (*ListEncryptedVolumesResponse, error)
+	// Get an Encrypted Volume
 	GetEncryptedVolume(ctx context.Context, in *GetEncryptedVolumeRequest, opts ...grpc.CallOption) (*EncryptedVolume, error)
+	// Get an Encrypted Volume statistics
 	StatsEncryptedVolume(ctx context.Context, in *StatsEncryptedVolumeRequest, opts ...grpc.CallOption) (*StatsEncryptedVolumeResponse, error)
 }
 
@@ -97,11 +103,17 @@ func (c *middleendEncryptionServiceClient) StatsEncryptedVolume(ctx context.Cont
 // All implementations should embed UnimplementedMiddleendEncryptionServiceServer
 // for forward compatibility
 type MiddleendEncryptionServiceServer interface {
+	// Create an Encrypted Volume
 	CreateEncryptedVolume(context.Context, *CreateEncryptedVolumeRequest) (*EncryptedVolume, error)
+	// Delete an Encrypted Volume
 	DeleteEncryptedVolume(context.Context, *DeleteEncryptedVolumeRequest) (*emptypb.Empty, error)
+	// Update an Encrypted Volume
 	UpdateEncryptedVolume(context.Context, *UpdateEncryptedVolumeRequest) (*EncryptedVolume, error)
+	// List Encrypted Volumes
 	ListEncryptedVolumes(context.Context, *ListEncryptedVolumesRequest) (*ListEncryptedVolumesResponse, error)
+	// Get an Encrypted Volume
 	GetEncryptedVolume(context.Context, *GetEncryptedVolumeRequest) (*EncryptedVolume, error)
+	// Get an Encrypted Volume statistics
 	StatsEncryptedVolume(context.Context, *StatsEncryptedVolumeRequest) (*StatsEncryptedVolumeResponse, error)
 }
 

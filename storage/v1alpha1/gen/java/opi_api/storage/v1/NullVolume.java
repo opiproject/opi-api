@@ -165,6 +165,10 @@ private static final long serialVersionUID = 0L;
   public static final int BLOCK_SIZE_FIELD_NUMBER = 2;
   private long blockSize_;
   /**
+   * <pre>
+   * The block size of the NullVolume. This field is required.
+   * </pre>
+   *
    * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The blockSize.
    */
@@ -176,6 +180,10 @@ private static final long serialVersionUID = 0L;
   public static final int BLOCKS_COUNT_FIELD_NUMBER = 3;
   private long blocksCount_;
   /**
+   * <pre>
+   * The number of blocks in the NullVolume. This field is required.
+   * </pre>
+   *
    * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The blocksCount.
    */
@@ -187,6 +195,10 @@ private static final long serialVersionUID = 0L;
   public static final int UUID_FIELD_NUMBER = 4;
   private opi_api.common.v1.Uuid uuid_;
   /**
+   * <pre>
+   * The UUID of the NullVolume. This field is optional.
+   * </pre>
+   *
    * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the uuid field is set.
    */
@@ -195,6 +207,10 @@ private static final long serialVersionUID = 0L;
     return uuid_ != null;
   }
   /**
+   * <pre>
+   * The UUID of the NullVolume. This field is optional.
+   * </pre>
+   *
    * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uuid.
    */
@@ -203,6 +219,10 @@ private static final long serialVersionUID = 0L;
     return uuid_ == null ? opi_api.common.v1.Uuid.getDefaultInstance() : uuid_;
   }
   /**
+   * <pre>
+   * The UUID of the NullVolume. This field is optional.
+   * </pre>
+   *
    * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
@@ -686,6 +706,10 @@ private static final long serialVersionUID = 0L;
 
     private long blockSize_ ;
     /**
+     * <pre>
+     * The block size of the NullVolume. This field is required.
+     * </pre>
+     *
      * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The blockSize.
      */
@@ -694,6 +718,10 @@ private static final long serialVersionUID = 0L;
       return blockSize_;
     }
     /**
+     * <pre>
+     * The block size of the NullVolume. This field is required.
+     * </pre>
+     *
      * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The blockSize to set.
      * @return This builder for chaining.
@@ -705,6 +733,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The block size of the NullVolume. This field is required.
+     * </pre>
+     *
      * <code>int64 block_size = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
@@ -717,6 +749,10 @@ private static final long serialVersionUID = 0L;
 
     private long blocksCount_ ;
     /**
+     * <pre>
+     * The number of blocks in the NullVolume. This field is required.
+     * </pre>
+     *
      * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The blocksCount.
      */
@@ -725,6 +761,10 @@ private static final long serialVersionUID = 0L;
       return blocksCount_;
     }
     /**
+     * <pre>
+     * The number of blocks in the NullVolume. This field is required.
+     * </pre>
+     *
      * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The blocksCount to set.
      * @return This builder for chaining.
@@ -736,6 +776,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The number of blocks in the NullVolume. This field is required.
+     * </pre>
+     *
      * <code>int64 blocks_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
@@ -750,6 +794,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> uuidBuilder_;
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the uuid field is set.
      */
@@ -757,6 +805,10 @@ private static final long serialVersionUID = 0L;
       return uuidBuilder_ != null || uuid_ != null;
     }
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The uuid.
      */
@@ -768,6 +820,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUuid(opi_api.common.v1.Uuid value) {
@@ -784,6 +840,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUuid(
@@ -798,6 +858,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUuid(opi_api.common.v1.Uuid value) {
@@ -816,6 +880,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUuid() {
@@ -830,6 +898,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.Uuid.Builder getUuidBuilder() {
@@ -838,6 +910,10 @@ private static final long serialVersionUID = 0L;
       return getUuidFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
@@ -849,6 +925,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The UUID of the NullVolume. This field is optional.
+     * </pre>
+     *
      * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

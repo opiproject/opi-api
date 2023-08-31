@@ -256,6 +256,9 @@ public final class FrontendVirtioBlkServiceGrpc {
   public static abstract class FrontendVirtioBlkServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Create an Virtio Blk
+     * </pre>
      */
     public void createVirtioBlk(opi_api.storage.v1.CreateVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
@@ -263,6 +266,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Blk
+     * </pre>
      */
     public void deleteVirtioBlk(opi_api.storage.v1.DeleteVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -270,6 +276,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Blk
+     * </pre>
      */
     public void updateVirtioBlk(opi_api.storage.v1.UpdateVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
@@ -277,6 +286,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Blks
+     * </pre>
      */
     public void listVirtioBlks(opi_api.storage.v1.ListVirtioBlksRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioBlksResponse> responseObserver) {
@@ -284,6 +296,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Blk
+     * </pre>
      */
     public void getVirtioBlk(opi_api.storage.v1.GetVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
@@ -291,6 +306,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Blk statistics
+     * </pre>
      */
     public void statsVirtioBlk(opi_api.storage.v1.StatsVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsVirtioBlkResponse> responseObserver) {
@@ -363,6 +381,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Blk
+     * </pre>
      */
     public void createVirtioBlk(opi_api.storage.v1.CreateVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
@@ -371,6 +392,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Blk
+     * </pre>
      */
     public void deleteVirtioBlk(opi_api.storage.v1.DeleteVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -379,6 +403,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Blk
+     * </pre>
      */
     public void updateVirtioBlk(opi_api.storage.v1.UpdateVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
@@ -387,6 +414,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Blks
+     * </pre>
      */
     public void listVirtioBlks(opi_api.storage.v1.ListVirtioBlksRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioBlksResponse> responseObserver) {
@@ -395,6 +425,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Blk
+     * </pre>
      */
     public void getVirtioBlk(opi_api.storage.v1.GetVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
@@ -403,6 +436,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Blk statistics
+     * </pre>
      */
     public void statsVirtioBlk(opi_api.storage.v1.StatsVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsVirtioBlkResponse> responseObserver) {
@@ -429,6 +465,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Blk
+     * </pre>
      */
     public opi_api.storage.v1.VirtioBlk createVirtioBlk(opi_api.storage.v1.CreateVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -436,6 +475,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Blk
+     * </pre>
      */
     public com.google.protobuf.Empty deleteVirtioBlk(opi_api.storage.v1.DeleteVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -443,6 +485,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Blk
+     * </pre>
      */
     public opi_api.storage.v1.VirtioBlk updateVirtioBlk(opi_api.storage.v1.UpdateVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -450,6 +495,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Blks
+     * </pre>
      */
     public opi_api.storage.v1.ListVirtioBlksResponse listVirtioBlks(opi_api.storage.v1.ListVirtioBlksRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -457,6 +505,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Blk
+     * </pre>
      */
     public opi_api.storage.v1.VirtioBlk getVirtioBlk(opi_api.storage.v1.GetVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -464,6 +515,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Blk statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsVirtioBlkResponse statsVirtioBlk(opi_api.storage.v1.StatsVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -489,6 +543,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create an Virtio Blk
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> createVirtioBlk(
         opi_api.storage.v1.CreateVirtioBlkRequest request) {
@@ -497,6 +554,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete an Virtio Blk
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteVirtioBlk(
         opi_api.storage.v1.DeleteVirtioBlkRequest request) {
@@ -505,6 +565,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update an Virtio Blk
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> updateVirtioBlk(
         opi_api.storage.v1.UpdateVirtioBlkRequest request) {
@@ -513,6 +576,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Virtio Blks
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListVirtioBlksResponse> listVirtioBlks(
         opi_api.storage.v1.ListVirtioBlksRequest request) {
@@ -521,6 +587,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Blk
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> getVirtioBlk(
         opi_api.storage.v1.GetVirtioBlkRequest request) {
@@ -529,6 +598,9 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Virtio Blk statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsVirtioBlkResponse> statsVirtioBlk(
         opi_api.storage.v1.StatsVirtioBlkRequest request) {

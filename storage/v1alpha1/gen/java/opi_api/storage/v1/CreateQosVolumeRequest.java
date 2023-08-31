@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to create an QoS Volume.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.CreateQosVolumeRequest}
  */
 public final class CreateQosVolumeRequest extends
@@ -105,6 +109,10 @@ private static final long serialVersionUID = 0L;
   public static final int QOS_VOLUME_FIELD_NUMBER = 1;
   private opi_api.storage.v1.QosVolume qosVolume_;
   /**
+   * <pre>
+   * The QoS Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the qosVolume field is set.
    */
@@ -113,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return qosVolume_ != null;
   }
   /**
+   * <pre>
+   * The QoS Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The qosVolume.
    */
@@ -121,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return qosVolume_ == null ? opi_api.storage.v1.QosVolume.getDefaultInstance() : qosVolume_;
   }
   /**
+   * <pre>
+   * The QoS Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
@@ -131,6 +147,11 @@ private static final long serialVersionUID = 0L;
   public static final int QOS_VOLUME_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object qosVolumeId_;
   /**
+   * <pre>
+   * An optional ID to assign to the QoS Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The qosVolumeId.
    */
@@ -148,6 +169,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * An optional ID to assign to the QoS Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for qosVolumeId.
    */
@@ -337,6 +363,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to create an QoS Volume.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.CreateQosVolumeRequest}
    */
   public static final class Builder extends
@@ -502,6 +532,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosVolume, opi_api.storage.v1.QosVolume.Builder, opi_api.storage.v1.QosVolumeOrBuilder> qosVolumeBuilder_;
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the qosVolume field is set.
      */
@@ -509,6 +543,10 @@ private static final long serialVersionUID = 0L;
       return qosVolumeBuilder_ != null || qosVolume_ != null;
     }
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The qosVolume.
      */
@@ -520,6 +558,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQosVolume(opi_api.storage.v1.QosVolume value) {
@@ -536,6 +578,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQosVolume(
@@ -550,6 +596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeQosVolume(opi_api.storage.v1.QosVolume value) {
@@ -568,6 +618,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearQosVolume() {
@@ -582,6 +636,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.QosVolume.Builder getQosVolumeBuilder() {
@@ -590,6 +648,10 @@ private static final long serialVersionUID = 0L;
       return getQosVolumeFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.QosVolumeOrBuilder getQosVolumeOrBuilder() {
@@ -601,6 +663,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The QoS Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosVolume qos_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,6 +685,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object qosVolumeId_ = "";
     /**
+     * <pre>
+     * An optional ID to assign to the QoS Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The qosVolumeId.
      */
@@ -635,6 +706,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the QoS Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for qosVolumeId.
      */
@@ -652,6 +728,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the QoS Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The qosVolumeId to set.
      * @return This builder for chaining.
@@ -667,6 +748,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the QoS Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -677,6 +763,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the QoS Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string qos_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for qosVolumeId to set.
      * @return This builder for chaining.

@@ -42,6 +42,7 @@ class NvmeRemoteControllerService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Create an Nvme Remote Controller
     virtual ::grpc::Status CreateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeRemoteControllerRequest& request, ::opi_api::storage::v1::NvmeRemoteController* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>> AsyncCreateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>>(AsyncCreateNvmeRemoteControllerRaw(context, request, cq));
@@ -49,6 +50,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>> PrepareAsyncCreateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>>(PrepareAsyncCreateNvmeRemoteControllerRaw(context, request, cq));
     }
+    // Delete an Nvme Remote Controller
     virtual ::grpc::Status DeleteNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeRemoteControllerRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteNvmeRemoteControllerRaw(context, request, cq));
@@ -56,6 +58,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteNvmeRemoteControllerRaw(context, request, cq));
     }
+    // Update an Nvme Remote Controller
     virtual ::grpc::Status UpdateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeRemoteControllerRequest& request, ::opi_api::storage::v1::NvmeRemoteController* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>> AsyncUpdateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>>(AsyncUpdateNvmeRemoteControllerRaw(context, request, cq));
@@ -63,6 +66,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>> PrepareAsyncUpdateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>>(PrepareAsyncUpdateNvmeRemoteControllerRaw(context, request, cq));
     }
+    // List Nvme Remote Controllers
     virtual ::grpc::Status ListNvmeRemoteControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest& request, ::opi_api::storage::v1::ListNvmeRemoteControllersResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteControllersResponse>> AsyncListNvmeRemoteControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteControllersResponse>>(AsyncListNvmeRemoteControllersRaw(context, request, cq));
@@ -70,6 +74,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteControllersResponse>> PrepareAsyncListNvmeRemoteControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteControllersResponse>>(PrepareAsyncListNvmeRemoteControllersRaw(context, request, cq));
     }
+    // Get an Nvme Remote Controller
     virtual ::grpc::Status GetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::opi_api::storage::v1::NvmeRemoteController* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>> AsyncGetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>>(AsyncGetNvmeRemoteControllerRaw(context, request, cq));
@@ -77,6 +82,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>> PrepareAsyncGetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeRemoteController>>(PrepareAsyncGetNvmeRemoteControllerRaw(context, request, cq));
     }
+    // Reset an Nvme Remote Controller
     virtual ::grpc::Status ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncResetNvmeRemoteControllerRaw(context, request, cq));
@@ -84,6 +90,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncResetNvmeRemoteControllerRaw(context, request, cq));
     }
+    // Get an Nvme Remote Controller statistics
     virtual ::grpc::Status StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>> AsyncStatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>>(AsyncStatsNvmeRemoteControllerRaw(context, request, cq));
@@ -91,6 +98,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>> PrepareAsyncStatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse>>(PrepareAsyncStatsNvmeRemoteControllerRaw(context, request, cq));
     }
+    // List Nvme Remote Namespaces
     virtual ::grpc::Status ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>> AsyncListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>>(AsyncListNvmeRemoteNamespacesRaw(context, request, cq));
@@ -98,6 +106,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>> PrepareAsyncListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse>>(PrepareAsyncListNvmeRemoteNamespacesRaw(context, request, cq));
     }
+    // Create an Nvme Path
     virtual ::grpc::Status CreateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest& request, ::opi_api::storage::v1::NvmePath* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>> AsyncCreateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>>(AsyncCreateNvmePathRaw(context, request, cq));
@@ -105,6 +114,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>> PrepareAsyncCreateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>>(PrepareAsyncCreateNvmePathRaw(context, request, cq));
     }
+    // Delete an Nvme Path
     virtual ::grpc::Status DeleteNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmePathRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteNvmePathRaw(context, request, cq));
@@ -112,6 +122,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteNvmePathRaw(context, request, cq));
     }
+    // Update an Nvme Path
     virtual ::grpc::Status UpdateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmePathRequest& request, ::opi_api::storage::v1::NvmePath* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>> AsyncUpdateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>>(AsyncUpdateNvmePathRaw(context, request, cq));
@@ -119,6 +130,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>> PrepareAsyncUpdateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>>(PrepareAsyncUpdateNvmePathRaw(context, request, cq));
     }
+    // List Nvme Paths
     virtual ::grpc::Status ListNvmePaths(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest& request, ::opi_api::storage::v1::ListNvmePathsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmePathsResponse>> AsyncListNvmePaths(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmePathsResponse>>(AsyncListNvmePathsRaw(context, request, cq));
@@ -126,6 +138,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmePathsResponse>> PrepareAsyncListNvmePaths(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmePathsResponse>>(PrepareAsyncListNvmePathsRaw(context, request, cq));
     }
+    // Get an Nvme Path
     virtual ::grpc::Status GetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::opi_api::storage::v1::NvmePath* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>> AsyncGetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>>(AsyncGetNvmePathRaw(context, request, cq));
@@ -133,6 +146,7 @@ class NvmeRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>> PrepareAsyncGetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmePath>>(PrepareAsyncGetNvmePathRaw(context, request, cq));
     }
+    // Get an Nvme Path statistics
     virtual ::grpc::Status StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::opi_api::storage::v1::StatsNvmePathResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmePathResponse>> AsyncStatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmePathResponse>>(AsyncStatsNvmePathRaw(context, request, cq));
@@ -143,32 +157,46 @@ class NvmeRemoteControllerService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
+      // Create an Nvme Remote Controller
       virtual void CreateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Delete an Nvme Remote Controller
       virtual void DeleteNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update an Nvme Remote Controller
       virtual void UpdateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Nvme Remote Controllers
       virtual void ListNvmeRemoteControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest* request, ::opi_api::storage::v1::ListNvmeRemoteControllersResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNvmeRemoteControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest* request, ::opi_api::storage::v1::ListNvmeRemoteControllersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Remote Controller
       virtual void GetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Reset an Nvme Remote Controller
       virtual void ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ResetNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Remote Controller statistics
       virtual void StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StatsNvmeRemoteController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Nvme Remote Namespaces
       virtual void ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNvmeRemoteNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Create an Nvme Path
       virtual void CreateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Delete an Nvme Path
       virtual void DeleteNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmePathRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmePathRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update an Nvme Path
       virtual void UpdateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Nvme Paths
       virtual void ListNvmePaths(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest* request, ::opi_api::storage::v1::ListNvmePathsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNvmePaths(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest* request, ::opi_api::storage::v1::ListNvmePathsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Path
       virtual void GetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Path statistics
       virtual void StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StatsNvmePath(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -397,19 +425,33 @@ class NvmeRemoteControllerService final {
    public:
     Service();
     virtual ~Service();
+    // Create an Nvme Remote Controller
     virtual ::grpc::Status CreateNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response);
+    // Delete an Nvme Remote Controller
     virtual ::grpc::Status DeleteNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response);
+    // Update an Nvme Remote Controller
     virtual ::grpc::Status UpdateNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response);
+    // List Nvme Remote Controllers
     virtual ::grpc::Status ListNvmeRemoteControllers(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeRemoteControllersRequest* request, ::opi_api::storage::v1::ListNvmeRemoteControllersResponse* response);
+    // Get an Nvme Remote Controller
     virtual ::grpc::Status GetNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::NvmeRemoteController* response);
+    // Reset an Nvme Remote Controller
     virtual ::grpc::Status ResetNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::ResetNvmeRemoteControllerRequest* request, ::google::protobuf::Empty* response);
+    // Get an Nvme Remote Controller statistics
     virtual ::grpc::Status StatsNvmeRemoteController(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNvmeRemoteControllerRequest* request, ::opi_api::storage::v1::StatsNvmeRemoteControllerResponse* response);
+    // List Nvme Remote Namespaces
     virtual ::grpc::Status ListNvmeRemoteNamespaces(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeRemoteNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeRemoteNamespacesResponse* response);
+    // Create an Nvme Path
     virtual ::grpc::Status CreateNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response);
+    // Delete an Nvme Path
     virtual ::grpc::Status DeleteNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNvmePathRequest* request, ::google::protobuf::Empty* response);
+    // Update an Nvme Path
     virtual ::grpc::Status UpdateNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response);
+    // List Nvme Paths
     virtual ::grpc::Status ListNvmePaths(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmePathsRequest* request, ::opi_api::storage::v1::ListNvmePathsResponse* response);
+    // Get an Nvme Path
     virtual ::grpc::Status GetNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmePathRequest* request, ::opi_api::storage::v1::NvmePath* response);
+    // Get an Nvme Path statistics
     virtual ::grpc::Status StatsNvmePath(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNvmePathRequest* request, ::opi_api::storage::v1::StatsNvmePathResponse* response);
   };
   template <class BaseClass>

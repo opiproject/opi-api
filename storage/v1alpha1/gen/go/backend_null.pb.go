@@ -35,10 +35,13 @@ type NullVolume struct {
 	// name is an opaque object handle that is not user settable.
 	// name will be returned with created object
 	// user can only set {resource}_id on the Create request object
-	Name        string    `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	BlockSize   int64     `protobuf:"varint,2,opt,name=block_size,json=blockSize,proto3" json:"block_size,omitempty"`
-	BlocksCount int64     `protobuf:"varint,3,opt,name=blocks_count,json=blocksCount,proto3" json:"blocks_count,omitempty"`
-	Uuid        *_go.Uuid `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	// The block size of the NullVolume. This field is required.
+	BlockSize int64 `protobuf:"varint,2,opt,name=block_size,json=blockSize,proto3" json:"block_size,omitempty"`
+	// The number of blocks in the NullVolume. This field is required.
+	BlocksCount int64 `protobuf:"varint,3,opt,name=blocks_count,json=blocksCount,proto3" json:"blocks_count,omitempty"`
+	// The UUID of the NullVolume. This field is optional.
+	Uuid *_go.Uuid `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 }
 
 func (x *NullVolume) Reset() {
@@ -101,13 +104,17 @@ func (x *NullVolume) GetUuid() *_go.Uuid {
 	return nil
 }
 
+// Represents a request to create an Null Volume.
 type CreateNullVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NullVolume   *NullVolume `protobuf:"bytes,1,opt,name=null_volume,json=nullVolume,proto3" json:"null_volume,omitempty"`
-	NullVolumeId string      `protobuf:"bytes,2,opt,name=null_volume_id,json=nullVolumeId,proto3" json:"null_volume_id,omitempty"`
+	// The Null Volume to be created.
+	NullVolume *NullVolume `protobuf:"bytes,1,opt,name=null_volume,json=nullVolume,proto3" json:"null_volume,omitempty"`
+	// An optional ID to assign to the Null Volume.
+	// If this is not provided the system will auto-generate it.
+	NullVolumeId string `protobuf:"bytes,2,opt,name=null_volume_id,json=nullVolumeId,proto3" json:"null_volume_id,omitempty"`
 }
 
 func (x *CreateNullVolumeRequest) Reset() {
@@ -156,6 +163,7 @@ func (x *CreateNullVolumeRequest) GetNullVolumeId() string {
 	return ""
 }
 
+// Represents a request to delete an Null Volume.
 type DeleteNullVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

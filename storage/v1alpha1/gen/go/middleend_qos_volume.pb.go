@@ -161,13 +161,17 @@ func (x *Limits) GetMax() *QosLimit {
 	return nil
 }
 
+// Represents a request to create an QoS Volume.
 type CreateQosVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	QosVolume   *QosVolume `protobuf:"bytes,1,opt,name=qos_volume,json=qosVolume,proto3" json:"qos_volume,omitempty"`
-	QosVolumeId string     `protobuf:"bytes,2,opt,name=qos_volume_id,json=qosVolumeId,proto3" json:"qos_volume_id,omitempty"`
+	// The QoS Volume to be created.
+	QosVolume *QosVolume `protobuf:"bytes,1,opt,name=qos_volume,json=qosVolume,proto3" json:"qos_volume,omitempty"`
+	// An optional ID to assign to the QoS Volume.
+	// If this is not provided the system will auto-generate it.
+	QosVolumeId string `protobuf:"bytes,2,opt,name=qos_volume_id,json=qosVolumeId,proto3" json:"qos_volume_id,omitempty"`
 }
 
 func (x *CreateQosVolumeRequest) Reset() {
@@ -216,6 +220,7 @@ func (x *CreateQosVolumeRequest) GetQosVolumeId() string {
 	return ""
 }
 
+// Represents a request to delete an Encrypted Volume.
 type DeleteQosVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

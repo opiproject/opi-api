@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to create an Null Volume.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.CreateNullVolumeRequest}
  */
 public final class CreateNullVolumeRequest extends
@@ -105,6 +109,10 @@ private static final long serialVersionUID = 0L;
   public static final int NULL_VOLUME_FIELD_NUMBER = 1;
   private opi_api.storage.v1.NullVolume nullVolume_;
   /**
+   * <pre>
+   * The Null Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nullVolume field is set.
    */
@@ -113,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return nullVolume_ != null;
   }
   /**
+   * <pre>
+   * The Null Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nullVolume.
    */
@@ -121,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return nullVolume_ == null ? opi_api.storage.v1.NullVolume.getDefaultInstance() : nullVolume_;
   }
   /**
+   * <pre>
+   * The Null Volume to be created.
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
@@ -131,6 +147,11 @@ private static final long serialVersionUID = 0L;
   public static final int NULL_VOLUME_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nullVolumeId_;
   /**
+   * <pre>
+   * An optional ID to assign to the Null Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nullVolumeId.
    */
@@ -148,6 +169,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * An optional ID to assign to the Null Volume.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nullVolumeId.
    */
@@ -337,6 +363,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to create an Null Volume.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.CreateNullVolumeRequest}
    */
   public static final class Builder extends
@@ -502,6 +532,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NullVolume, opi_api.storage.v1.NullVolume.Builder, opi_api.storage.v1.NullVolumeOrBuilder> nullVolumeBuilder_;
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nullVolume field is set.
      */
@@ -509,6 +543,10 @@ private static final long serialVersionUID = 0L;
       return nullVolumeBuilder_ != null || nullVolume_ != null;
     }
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nullVolume.
      */
@@ -520,6 +558,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNullVolume(opi_api.storage.v1.NullVolume value) {
@@ -536,6 +578,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNullVolume(
@@ -550,6 +596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNullVolume(opi_api.storage.v1.NullVolume value) {
@@ -568,6 +618,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNullVolume() {
@@ -582,6 +636,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NullVolume.Builder getNullVolumeBuilder() {
@@ -590,6 +648,10 @@ private static final long serialVersionUID = 0L;
       return getNullVolumeFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NullVolumeOrBuilder getNullVolumeOrBuilder() {
@@ -601,6 +663,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Null Volume to be created.
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NullVolume null_volume = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,6 +685,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nullVolumeId_ = "";
     /**
+     * <pre>
+     * An optional ID to assign to the Null Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nullVolumeId.
      */
@@ -635,6 +706,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Null Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nullVolumeId.
      */
@@ -652,6 +728,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Null Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nullVolumeId to set.
      * @return This builder for chaining.
@@ -667,6 +748,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Null Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -677,6 +763,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Null Volume.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string null_volume_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nullVolumeId to set.
      * @return This builder for chaining.

@@ -35,11 +35,15 @@ type AioVolume struct {
 	// name is an opaque object handle that is not user settable.
 	// name will be returned with created object
 	// user can only set {resource}_id on the Create request object
-	Name        string    `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	BlockSize   int64     `protobuf:"varint,2,opt,name=block_size,json=blockSize,proto3" json:"block_size,omitempty"`
-	BlocksCount int64     `protobuf:"varint,3,opt,name=blocks_count,json=blocksCount,proto3" json:"blocks_count,omitempty"`
-	Uuid        *_go.Uuid `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	Filename    string    `protobuf:"bytes,5,opt,name=filename,proto3" json:"filename,omitempty"`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	// The size of each block in the AioVolume.
+	BlockSize int64 `protobuf:"varint,2,opt,name=block_size,json=blockSize,proto3" json:"block_size,omitempty"`
+	// The total number of blocks in the AioVolume.
+	BlocksCount int64 `protobuf:"varint,3,opt,name=blocks_count,json=blocksCount,proto3" json:"blocks_count,omitempty"`
+	// The UUID (Universally Unique Identifier) of the AioVolume.
+	Uuid *_go.Uuid `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	// The filename associated with the AioVolume.
+	Filename string `protobuf:"bytes,5,opt,name=filename,proto3" json:"filename,omitempty"`
 }
 
 func (x *AioVolume) Reset() {
@@ -109,13 +113,17 @@ func (x *AioVolume) GetFilename() string {
 	return ""
 }
 
+// Represents a request to create an Aio Volume.
 type CreateAioVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AioVolume   *AioVolume `protobuf:"bytes,1,opt,name=aio_volume,json=aioVolume,proto3" json:"aio_volume,omitempty"`
-	AioVolumeId string     `protobuf:"bytes,2,opt,name=aio_volume_id,json=aioVolumeId,proto3" json:"aio_volume_id,omitempty"`
+	// The Aio Volume to be created.
+	AioVolume *AioVolume `protobuf:"bytes,1,opt,name=aio_volume,json=aioVolume,proto3" json:"aio_volume,omitempty"`
+	// An optional ID to assign to the Aio Volume.
+	// If this is not provided the system will auto-generate it.
+	AioVolumeId string `protobuf:"bytes,2,opt,name=aio_volume_id,json=aioVolumeId,proto3" json:"aio_volume_id,omitempty"`
 }
 
 func (x *CreateAioVolumeRequest) Reset() {
@@ -164,6 +172,7 @@ func (x *CreateAioVolumeRequest) GetAioVolumeId() string {
 	return ""
 }
 
+// Represents a request to delete an AioVolume.
 type DeleteAioVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

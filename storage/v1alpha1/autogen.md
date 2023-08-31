@@ -216,10 +216,10 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| block_size | [int64](#int64) |  |  |
-| blocks_count | [int64](#int64) |  |  |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
-| filename | [string](#string) |  |  |
+| block_size | [int64](#int64) |  | The size of each block in the AioVolume. |
+| blocks_count | [int64](#int64) |  | The total number of blocks in the AioVolume. |
+| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | The UUID (Universally Unique Identifier) of the AioVolume. |
+| filename | [string](#string) |  | The filename associated with the AioVolume. |
 
 
 
@@ -229,13 +229,13 @@
 <a name="opi_api-storage-v1-CreateAioVolumeRequest"></a>
 
 ### CreateAioVolumeRequest
-
+Represents a request to create an Aio Volume.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| aio_volume | [AioVolume](#opi_api-storage-v1-AioVolume) |  |  |
-| aio_volume_id | [string](#string) |  |  |
+| aio_volume | [AioVolume](#opi_api-storage-v1-AioVolume) |  | The Aio Volume to be created. |
+| aio_volume_id | [string](#string) |  | An optional ID to assign to the Aio Volume. If this is not provided the system will auto-generate it. |
 
 
 
@@ -245,7 +245,7 @@
 <a name="opi_api-storage-v1-DeleteAioVolumeRequest"></a>
 
 ### DeleteAioVolumeRequest
-
+Represents a request to delete an AioVolume.
 
 
 | Field | Type | Label | Description |
@@ -366,12 +366,12 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateAioVolume | [CreateAioVolumeRequest](#opi_api-storage-v1-CreateAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) |  |
-| DeleteAioVolume | [DeleteAioVolumeRequest](#opi_api-storage-v1-DeleteAioVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateAioVolume | [UpdateAioVolumeRequest](#opi_api-storage-v1-UpdateAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) |  |
-| ListAioVolumes | [ListAioVolumesRequest](#opi_api-storage-v1-ListAioVolumesRequest) | [ListAioVolumesResponse](#opi_api-storage-v1-ListAioVolumesResponse) |  |
-| GetAioVolume | [GetAioVolumeRequest](#opi_api-storage-v1-GetAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) |  |
-| StatsAioVolume | [StatsAioVolumeRequest](#opi_api-storage-v1-StatsAioVolumeRequest) | [StatsAioVolumeResponse](#opi_api-storage-v1-StatsAioVolumeResponse) |  |
+| CreateAioVolume | [CreateAioVolumeRequest](#opi_api-storage-v1-CreateAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) | Create an Aio Volume |
+| DeleteAioVolume | [DeleteAioVolumeRequest](#opi_api-storage-v1-DeleteAioVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Aio Volume |
+| UpdateAioVolume | [UpdateAioVolumeRequest](#opi_api-storage-v1-UpdateAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) | Update an Aio Volume |
+| ListAioVolumes | [ListAioVolumesRequest](#opi_api-storage-v1-ListAioVolumesRequest) | [ListAioVolumesResponse](#opi_api-storage-v1-ListAioVolumesResponse) | List Aio Volumes |
+| GetAioVolume | [GetAioVolumeRequest](#opi_api-storage-v1-GetAioVolumeRequest) | [AioVolume](#opi_api-storage-v1-AioVolume) | Get an Aio Volume |
+| StatsAioVolume | [StatsAioVolumeRequest](#opi_api-storage-v1-StatsAioVolumeRequest) | [StatsAioVolumeResponse](#opi_api-storage-v1-StatsAioVolumeResponse) | Get an Aio Volume statistics |
 
  
 
@@ -403,13 +403,13 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 <a name="opi_api-storage-v1-CreateNullVolumeRequest"></a>
 
 ### CreateNullVolumeRequest
-
+Represents a request to create an Null Volume.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| null_volume | [NullVolume](#opi_api-storage-v1-NullVolume) |  |  |
-| null_volume_id | [string](#string) |  |  |
+| null_volume | [NullVolume](#opi_api-storage-v1-NullVolume) |  | The Null Volume to be created. |
+| null_volume_id | [string](#string) |  | An optional ID to assign to the Null Volume. If this is not provided the system will auto-generate it. |
 
 
 
@@ -419,7 +419,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 <a name="opi_api-storage-v1-DeleteNullVolumeRequest"></a>
 
 ### DeleteNullVolumeRequest
-
+Represents a request to delete an Null Volume.
 
 
 | Field | Type | Label | Description |
@@ -489,9 +489,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| block_size | [int64](#int64) |  |  |
-| blocks_count | [int64](#int64) |  |  |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
+| block_size | [int64](#int64) |  | The block size of the NullVolume. This field is required. |
+| blocks_count | [int64](#int64) |  | The number of blocks in the NullVolume. This field is required. |
+| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | The UUID of the NullVolume. This field is optional. |
 
 
 
@@ -558,12 +558,12 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateNullVolume | [CreateNullVolumeRequest](#opi_api-storage-v1-CreateNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) |  |
-| DeleteNullVolume | [DeleteNullVolumeRequest](#opi_api-storage-v1-DeleteNullVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNullVolume | [UpdateNullVolumeRequest](#opi_api-storage-v1-UpdateNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) |  |
-| ListNullVolumes | [ListNullVolumesRequest](#opi_api-storage-v1-ListNullVolumesRequest) | [ListNullVolumesResponse](#opi_api-storage-v1-ListNullVolumesResponse) |  |
-| GetNullVolume | [GetNullVolumeRequest](#opi_api-storage-v1-GetNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) |  |
-| StatsNullVolume | [StatsNullVolumeRequest](#opi_api-storage-v1-StatsNullVolumeRequest) | [StatsNullVolumeResponse](#opi_api-storage-v1-StatsNullVolumeResponse) |  |
+| CreateNullVolume | [CreateNullVolumeRequest](#opi_api-storage-v1-CreateNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) | Create an Null Volume |
+| DeleteNullVolume | [DeleteNullVolumeRequest](#opi_api-storage-v1-DeleteNullVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Null Volume |
+| UpdateNullVolume | [UpdateNullVolumeRequest](#opi_api-storage-v1-UpdateNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) | Update an Null Volume |
+| ListNullVolumes | [ListNullVolumesRequest](#opi_api-storage-v1-ListNullVolumesRequest) | [ListNullVolumesResponse](#opi_api-storage-v1-ListNullVolumesResponse) | List Null Volumes |
+| GetNullVolume | [GetNullVolumeRequest](#opi_api-storage-v1-GetNullVolumeRequest) | [NullVolume](#opi_api-storage-v1-NullVolume) | Get an Null Volume |
+| StatsNullVolume | [StatsNullVolumeRequest](#opi_api-storage-v1-StatsNullVolumeRequest) | [StatsNullVolumeResponse](#opi_api-storage-v1-StatsNullVolumeResponse) | Get an Null Volume statistics |
 
  
 
@@ -595,13 +595,13 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 <a name="opi_api-storage-v1-CreateNvmePathRequest"></a>
 
 ### CreateNvmePathRequest
-
+Represents a request to create an Nvme Path.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_path | [NvmePath](#opi_api-storage-v1-NvmePath) |  |  |
-| nvme_path_id | [string](#string) |  |  |
+| nvme_path | [NvmePath](#opi_api-storage-v1-NvmePath) |  | The Nvme Path to be created. |
+| nvme_path_id | [string](#string) |  | An optional ID to assign to the Nvme Path. If this is not provided the system will auto-generate it. |
 
 
 
@@ -611,13 +611,13 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 <a name="opi_api-storage-v1-CreateNvmeRemoteControllerRequest"></a>
 
 ### CreateNvmeRemoteControllerRequest
-
+Represents a request to create an Nvme Remote Controller.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_remote_controller | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |  |
-| nvme_remote_controller_id | [string](#string) |  |  |
+| nvme_remote_controller | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  | The Nvme Remote Controller to be created. |
+| nvme_remote_controller_id | [string](#string) |  | An optional ID to assign to the Nvme Remote Controller. If this is not provided the system will auto-generate it. |
 
 
 
@@ -627,7 +627,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 <a name="opi_api-storage-v1-DeleteNvmePathRequest"></a>
 
 ### DeleteNvmePathRequest
-
+Represents a request to delete an Nvme Path.
 
 
 | Field | Type | Label | Description |
@@ -643,7 +643,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 <a name="opi_api-storage-v1-DeleteNvmeRemoteControllerRequest"></a>
 
 ### DeleteNvmeRemoteControllerRequest
-
+Represents a request to delete an Nvme Remote Controller.
 
 
 | Field | Type | Label | Description |
@@ -1018,20 +1018,20 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateNvmeRemoteController | [CreateNvmeRemoteControllerRequest](#opi_api-storage-v1-CreateNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |
-| DeleteNvmeRemoteController | [DeleteNvmeRemoteControllerRequest](#opi_api-storage-v1-DeleteNvmeRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNvmeRemoteController | [UpdateNvmeRemoteControllerRequest](#opi_api-storage-v1-UpdateNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |
-| ListNvmeRemoteControllers | [ListNvmeRemoteControllersRequest](#opi_api-storage-v1-ListNvmeRemoteControllersRequest) | [ListNvmeRemoteControllersResponse](#opi_api-storage-v1-ListNvmeRemoteControllersResponse) |  |
-| GetNvmeRemoteController | [GetNvmeRemoteControllerRequest](#opi_api-storage-v1-GetNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) |  |
-| ResetNvmeRemoteController | [ResetNvmeRemoteControllerRequest](#opi_api-storage-v1-ResetNvmeRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| StatsNvmeRemoteController | [StatsNvmeRemoteControllerRequest](#opi_api-storage-v1-StatsNvmeRemoteControllerRequest) | [StatsNvmeRemoteControllerResponse](#opi_api-storage-v1-StatsNvmeRemoteControllerResponse) |  |
-| ListNvmeRemoteNamespaces | [ListNvmeRemoteNamespacesRequest](#opi_api-storage-v1-ListNvmeRemoteNamespacesRequest) | [ListNvmeRemoteNamespacesResponse](#opi_api-storage-v1-ListNvmeRemoteNamespacesResponse) |  |
-| CreateNvmePath | [CreateNvmePathRequest](#opi_api-storage-v1-CreateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
-| DeleteNvmePath | [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNvmePath | [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
-| ListNvmePaths | [ListNvmePathsRequest](#opi_api-storage-v1-ListNvmePathsRequest) | [ListNvmePathsResponse](#opi_api-storage-v1-ListNvmePathsResponse) |  |
-| GetNvmePath | [GetNvmePathRequest](#opi_api-storage-v1-GetNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) |  |
-| StatsNvmePath | [StatsNvmePathRequest](#opi_api-storage-v1-StatsNvmePathRequest) | [StatsNvmePathResponse](#opi_api-storage-v1-StatsNvmePathResponse) |  |
+| CreateNvmeRemoteController | [CreateNvmeRemoteControllerRequest](#opi_api-storage-v1-CreateNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) | Create an Nvme Remote Controller |
+| DeleteNvmeRemoteController | [DeleteNvmeRemoteControllerRequest](#opi_api-storage-v1-DeleteNvmeRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Remote Controller |
+| UpdateNvmeRemoteController | [UpdateNvmeRemoteControllerRequest](#opi_api-storage-v1-UpdateNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) | Update an Nvme Remote Controller |
+| ListNvmeRemoteControllers | [ListNvmeRemoteControllersRequest](#opi_api-storage-v1-ListNvmeRemoteControllersRequest) | [ListNvmeRemoteControllersResponse](#opi_api-storage-v1-ListNvmeRemoteControllersResponse) | List Nvme Remote Controllers |
+| GetNvmeRemoteController | [GetNvmeRemoteControllerRequest](#opi_api-storage-v1-GetNvmeRemoteControllerRequest) | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) | Get an Nvme Remote Controller |
+| ResetNvmeRemoteController | [ResetNvmeRemoteControllerRequest](#opi_api-storage-v1-ResetNvmeRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Reset an Nvme Remote Controller |
+| StatsNvmeRemoteController | [StatsNvmeRemoteControllerRequest](#opi_api-storage-v1-StatsNvmeRemoteControllerRequest) | [StatsNvmeRemoteControllerResponse](#opi_api-storage-v1-StatsNvmeRemoteControllerResponse) | Get an Nvme Remote Controller statistics |
+| ListNvmeRemoteNamespaces | [ListNvmeRemoteNamespacesRequest](#opi_api-storage-v1-ListNvmeRemoteNamespacesRequest) | [ListNvmeRemoteNamespacesResponse](#opi_api-storage-v1-ListNvmeRemoteNamespacesResponse) | List Nvme Remote Namespaces |
+| CreateNvmePath | [CreateNvmePathRequest](#opi_api-storage-v1-CreateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) | Create an Nvme Path |
+| DeleteNvmePath | [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Path |
+| UpdateNvmePath | [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) | Update an Nvme Path |
+| ListNvmePaths | [ListNvmePathsRequest](#opi_api-storage-v1-ListNvmePathsRequest) | [ListNvmePathsResponse](#opi_api-storage-v1-ListNvmePathsResponse) | List Nvme Paths |
+| GetNvmePath | [GetNvmePathRequest](#opi_api-storage-v1-GetNvmePathRequest) | [NvmePath](#opi_api-storage-v1-NvmePath) | Get an Nvme Path |
+| StatsNvmePath | [StatsNvmePathRequest](#opi_api-storage-v1-StatsNvmePathRequest) | [StatsNvmePathResponse](#opi_api-storage-v1-StatsNvmePathResponse) | Get an Nvme Path statistics |
 
  
 
@@ -1047,13 +1047,13 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 <a name="opi_api-storage-v1-CreateNvmeControllerRequest"></a>
 
 ### CreateNvmeControllerRequest
-
+Represents a request to create an Nvme Controller.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  |  |
-| nvme_controller_id | [string](#string) |  |  |
+| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  | The Nvme Controller to be created. |
+| nvme_controller_id | [string](#string) |  | An optional ID to assign to the Nvme Controller. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1063,13 +1063,13 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 <a name="opi_api-storage-v1-CreateNvmeNamespaceRequest"></a>
 
 ### CreateNvmeNamespaceRequest
-
+Represents a request to create an Nvme Namespace.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |  |
-| nvme_namespace_id | [string](#string) |  |  |
+| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  | The Nvme Namespace to be created. |
+| nvme_namespace_id | [string](#string) |  | An optional ID to assign to the Nvme Namespace. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1079,13 +1079,13 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 <a name="opi_api-storage-v1-CreateNvmeSubsystemRequest"></a>
 
 ### CreateNvmeSubsystemRequest
-
+Represents a request to create an Nvme Subsystem.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_subsystem | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |  |
-| nvme_subsystem_id | [string](#string) |  |  |
+| nvme_subsystem | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  | The Nvme Subsystem to be created. |
+| nvme_subsystem_id | [string](#string) |  | An optional ID to assign to the Nvme Subsystem. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1095,7 +1095,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 <a name="opi_api-storage-v1-DeleteNvmeControllerRequest"></a>
 
 ### DeleteNvmeControllerRequest
-
+Represents a request to delete an Nvme Controller.
 
 
 | Field | Type | Label | Description |
@@ -1111,7 +1111,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 <a name="opi_api-storage-v1-DeleteNvmeNamespaceRequest"></a>
 
 ### DeleteNvmeNamespaceRequest
-
+Represents a request to delete an Nvme Namespace.
 
 
 | Field | Type | Label | Description |
@@ -1127,7 +1127,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 <a name="opi_api-storage-v1-DeleteNvmeSubsystemRequest"></a>
 
 ### DeleteNvmeSubsystemRequest
-
+Represents a request to delete an Nvme Subsystem.
 
 
 | Field | Type | Label | Description |
@@ -1625,24 +1625,24 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateNvmeSubsystem | [CreateNvmeSubsystemRequest](#opi_api-storage-v1-CreateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
-| DeleteNvmeSubsystem | [DeleteNvmeSubsystemRequest](#opi_api-storage-v1-DeleteNvmeSubsystemRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Fails if there are any associated objects |
-| UpdateNvmeSubsystem | [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
-| ListNvmeSubsystems | [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest) | [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse) |  |
-| GetNvmeSubsystem | [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
-| StatsNvmeSubsystem | [StatsNvmeSubsystemRequest](#opi_api-storage-v1-StatsNvmeSubsystemRequest) | [StatsNvmeSubsystemResponse](#opi_api-storage-v1-StatsNvmeSubsystemResponse) |  |
-| CreateNvmeController | [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
-| DeleteNvmeController | [DeleteNvmeControllerRequest](#opi_api-storage-v1-DeleteNvmeControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Fails if there are any associated objects |
-| UpdateNvmeController | [UpdateNvmeControllerRequest](#opi_api-storage-v1-UpdateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
-| ListNvmeControllers | [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest) | [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse) |  |
-| GetNvmeController | [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
-| StatsNvmeController | [StatsNvmeControllerRequest](#opi_api-storage-v1-StatsNvmeControllerRequest) | [StatsNvmeControllerResponse](#opi_api-storage-v1-StatsNvmeControllerResponse) |  |
-| CreateNvmeNamespace | [CreateNvmeNamespaceRequest](#opi_api-storage-v1-CreateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
-| DeleteNvmeNamespace | [DeleteNvmeNamespaceRequest](#opi_api-storage-v1-DeleteNvmeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNvmeNamespace | [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
-| ListNvmeNamespaces | [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest) | [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse) |  |
-| GetNvmeNamespace | [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
-| StatsNvmeNamespace | [StatsNvmeNamespaceRequest](#opi_api-storage-v1-StatsNvmeNamespaceRequest) | [StatsNvmeNamespaceResponse](#opi_api-storage-v1-StatsNvmeNamespaceResponse) |  |
+| CreateNvmeSubsystem | [CreateNvmeSubsystemRequest](#opi_api-storage-v1-CreateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Create an Nvme Subsystem |
+| DeleteNvmeSubsystem | [DeleteNvmeSubsystemRequest](#opi_api-storage-v1-DeleteNvmeSubsystemRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Subsystem Fails if there are any associated objects |
+| UpdateNvmeSubsystem | [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Update an Nvme Subsystem |
+| ListNvmeSubsystems | [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest) | [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse) | List Nvme Subsystems |
+| GetNvmeSubsystem | [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Get an Nvme Subsystem |
+| StatsNvmeSubsystem | [StatsNvmeSubsystemRequest](#opi_api-storage-v1-StatsNvmeSubsystemRequest) | [StatsNvmeSubsystemResponse](#opi_api-storage-v1-StatsNvmeSubsystemResponse) | Get an Nvme Subsystem statistics |
+| CreateNvmeController | [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Create an Nvme Controller |
+| DeleteNvmeController | [DeleteNvmeControllerRequest](#opi_api-storage-v1-DeleteNvmeControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Controller Fails if there are any associated objects |
+| UpdateNvmeController | [UpdateNvmeControllerRequest](#opi_api-storage-v1-UpdateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Update an Nvme Controller |
+| ListNvmeControllers | [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest) | [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse) | List Nvme Controllers |
+| GetNvmeController | [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Get an Nvme Controller |
+| StatsNvmeController | [StatsNvmeControllerRequest](#opi_api-storage-v1-StatsNvmeControllerRequest) | [StatsNvmeControllerResponse](#opi_api-storage-v1-StatsNvmeControllerResponse) | Get an Nvme Controller statistics |
+| CreateNvmeNamespace | [CreateNvmeNamespaceRequest](#opi_api-storage-v1-CreateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Create an Nvme Namespace |
+| DeleteNvmeNamespace | [DeleteNvmeNamespaceRequest](#opi_api-storage-v1-DeleteNvmeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Namespace |
+| UpdateNvmeNamespace | [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Update an Nvme Namespace |
+| ListNvmeNamespaces | [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest) | [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse) | List Nvme Namespaces |
+| GetNvmeNamespace | [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Get an Nvme Namespace |
+| StatsNvmeNamespace | [StatsNvmeNamespaceRequest](#opi_api-storage-v1-StatsNvmeNamespaceRequest) | [StatsNvmeNamespaceResponse](#opi_api-storage-v1-StatsNvmeNamespaceResponse) | Get an Nvme Namespace statistics |
 
  
 
@@ -1658,13 +1658,13 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 <a name="opi_api-storage-v1-CreateVirtioBlkRequest"></a>
 
 ### CreateVirtioBlkRequest
-
+Represents a request to create an Virtio Blk.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_blk | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
-| virtio_blk_id | [string](#string) |  |  |
+| virtio_blk | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  | The Virtio Blk to be created. |
+| virtio_blk_id | [string](#string) |  | An optional ID to assign to the Virtio Blk. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1674,7 +1674,7 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 <a name="opi_api-storage-v1-DeleteVirtioBlkRequest"></a>
 
 ### DeleteVirtioBlkRequest
-
+Represents a request to delete an Virtio Blk.
 
 
 | Field | Type | Label | Description |
@@ -1815,12 +1815,12 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateVirtioBlk | [CreateVirtioBlkRequest](#opi_api-storage-v1-CreateVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
-| DeleteVirtioBlk | [DeleteVirtioBlkRequest](#opi_api-storage-v1-DeleteVirtioBlkRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateVirtioBlk | [UpdateVirtioBlkRequest](#opi_api-storage-v1-UpdateVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
-| ListVirtioBlks | [ListVirtioBlksRequest](#opi_api-storage-v1-ListVirtioBlksRequest) | [ListVirtioBlksResponse](#opi_api-storage-v1-ListVirtioBlksResponse) |  |
-| GetVirtioBlk | [GetVirtioBlkRequest](#opi_api-storage-v1-GetVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
-| StatsVirtioBlk | [StatsVirtioBlkRequest](#opi_api-storage-v1-StatsVirtioBlkRequest) | [StatsVirtioBlkResponse](#opi_api-storage-v1-StatsVirtioBlkResponse) |  |
+| CreateVirtioBlk | [CreateVirtioBlkRequest](#opi_api-storage-v1-CreateVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | Create an Virtio Blk |
+| DeleteVirtioBlk | [DeleteVirtioBlkRequest](#opi_api-storage-v1-DeleteVirtioBlkRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Virtio Blk |
+| UpdateVirtioBlk | [UpdateVirtioBlkRequest](#opi_api-storage-v1-UpdateVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | Update an Virtio Blk |
+| ListVirtioBlks | [ListVirtioBlksRequest](#opi_api-storage-v1-ListVirtioBlksRequest) | [ListVirtioBlksResponse](#opi_api-storage-v1-ListVirtioBlksResponse) | List Virtio Blks |
+| GetVirtioBlk | [GetVirtioBlkRequest](#opi_api-storage-v1-GetVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | Get an Virtio Blk |
+| StatsVirtioBlk | [StatsVirtioBlkRequest](#opi_api-storage-v1-StatsVirtioBlkRequest) | [StatsVirtioBlkResponse](#opi_api-storage-v1-StatsVirtioBlkResponse) | Get an Virtio Blk statistics |
 
  
 
@@ -1852,13 +1852,13 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 <a name="opi_api-storage-v1-CreateVirtioScsiControllerRequest"></a>
 
 ### CreateVirtioScsiControllerRequest
-
+Represents a request to create an Virtio Scsi Controller.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
-| virtio_scsi_controller_id | [string](#string) |  |  |
+| virtio_scsi_controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  | The Virtio Scsi Controller to be created. |
+| virtio_scsi_controller_id | [string](#string) |  | An optional ID to assign to the Virtio Scsi Controller. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1868,13 +1868,13 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 <a name="opi_api-storage-v1-CreateVirtioScsiLunRequest"></a>
 
 ### CreateVirtioScsiLunRequest
-
+Represents a request to create an Virtio Scsi Lun.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
-| virtio_scsi_lun_id | [string](#string) |  |  |
+| virtio_scsi_lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  | The Virtio Scsi Lun to be created. |
+| virtio_scsi_lun_id | [string](#string) |  | An optional ID to assign to the Virtio Scsi Lun. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1884,13 +1884,13 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 <a name="opi_api-storage-v1-CreateVirtioScsiTargetRequest"></a>
 
 ### CreateVirtioScsiTargetRequest
-
+Represents a request to create an Virtio Scsi Target.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
-| virtio_scsi_target_id | [string](#string) |  |  |
+| virtio_scsi_target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  | The Virtio Scsi Target to be created. |
+| virtio_scsi_target_id | [string](#string) |  | An optional ID to assign to the Virtio Scsi Target. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1900,7 +1900,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 <a name="opi_api-storage-v1-DeleteVirtioScsiControllerRequest"></a>
 
 ### DeleteVirtioScsiControllerRequest
-
+Represents a request to delete an Virtio Scsi Controller.
 
 
 | Field | Type | Label | Description |
@@ -1916,7 +1916,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 <a name="opi_api-storage-v1-DeleteVirtioScsiLunRequest"></a>
 
 ### DeleteVirtioScsiLunRequest
-
+Represents a request to delete an Virtio Scsi Lun.
 
 
 | Field | Type | Label | Description |
@@ -1932,7 +1932,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 <a name="opi_api-storage-v1-DeleteVirtioScsiTargetRequest"></a>
 
 ### DeleteVirtioScsiTargetRequest
-
+Represents a request to delete an Virtio Scsi Target.
 
 
 | Field | Type | Label | Description |
@@ -2295,24 +2295,24 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateVirtioScsiTarget | [CreateVirtioScsiTargetRequest](#opi_api-storage-v1-CreateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
-| DeleteVirtioScsiTarget | [DeleteVirtioScsiTargetRequest](#opi_api-storage-v1-DeleteVirtioScsiTargetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateVirtioScsiTarget | [UpdateVirtioScsiTargetRequest](#opi_api-storage-v1-UpdateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
-| ListVirtioScsiTargets | [ListVirtioScsiTargetsRequest](#opi_api-storage-v1-ListVirtioScsiTargetsRequest) | [ListVirtioScsiTargetsResponse](#opi_api-storage-v1-ListVirtioScsiTargetsResponse) |  |
-| GetVirtioScsiTarget | [GetVirtioScsiTargetRequest](#opi_api-storage-v1-GetVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
-| StatsVirtioScsiTarget | [StatsVirtioScsiTargetRequest](#opi_api-storage-v1-StatsVirtioScsiTargetRequest) | [StatsVirtioScsiTargetResponse](#opi_api-storage-v1-StatsVirtioScsiTargetResponse) |  |
-| CreateVirtioScsiController | [CreateVirtioScsiControllerRequest](#opi_api-storage-v1-CreateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
-| DeleteVirtioScsiController | [DeleteVirtioScsiControllerRequest](#opi_api-storage-v1-DeleteVirtioScsiControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateVirtioScsiController | [UpdateVirtioScsiControllerRequest](#opi_api-storage-v1-UpdateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
-| ListVirtioScsiControllers | [ListVirtioScsiControllersRequest](#opi_api-storage-v1-ListVirtioScsiControllersRequest) | [ListVirtioScsiControllersResponse](#opi_api-storage-v1-ListVirtioScsiControllersResponse) |  |
-| GetVirtioScsiController | [GetVirtioScsiControllerRequest](#opi_api-storage-v1-GetVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
-| StatsVirtioScsiController | [StatsVirtioScsiControllerRequest](#opi_api-storage-v1-StatsVirtioScsiControllerRequest) | [StatsVirtioScsiControllerResponse](#opi_api-storage-v1-StatsVirtioScsiControllerResponse) |  |
-| CreateVirtioScsiLun | [CreateVirtioScsiLunRequest](#opi_api-storage-v1-CreateVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
-| DeleteVirtioScsiLun | [DeleteVirtioScsiLunRequest](#opi_api-storage-v1-DeleteVirtioScsiLunRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateVirtioScsiLun | [UpdateVirtioScsiLunRequest](#opi_api-storage-v1-UpdateVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
-| ListVirtioScsiLuns | [ListVirtioScsiLunsRequest](#opi_api-storage-v1-ListVirtioScsiLunsRequest) | [ListVirtioScsiLunsResponse](#opi_api-storage-v1-ListVirtioScsiLunsResponse) |  |
-| GetVirtioScsiLun | [GetVirtioScsiLunRequest](#opi_api-storage-v1-GetVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
-| StatsVirtioScsiLun | [StatsVirtioScsiLunRequest](#opi_api-storage-v1-StatsVirtioScsiLunRequest) | [StatsVirtioScsiLunResponse](#opi_api-storage-v1-StatsVirtioScsiLunResponse) |  |
+| CreateVirtioScsiTarget | [CreateVirtioScsiTargetRequest](#opi_api-storage-v1-CreateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | Create an Virtio Scsi Target |
+| DeleteVirtioScsiTarget | [DeleteVirtioScsiTargetRequest](#opi_api-storage-v1-DeleteVirtioScsiTargetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Virtio Scsi Target |
+| UpdateVirtioScsiTarget | [UpdateVirtioScsiTargetRequest](#opi_api-storage-v1-UpdateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | Update an Virtio Scsi Target |
+| ListVirtioScsiTargets | [ListVirtioScsiTargetsRequest](#opi_api-storage-v1-ListVirtioScsiTargetsRequest) | [ListVirtioScsiTargetsResponse](#opi_api-storage-v1-ListVirtioScsiTargetsResponse) | List Virtio Scsi Targets |
+| GetVirtioScsiTarget | [GetVirtioScsiTargetRequest](#opi_api-storage-v1-GetVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | Get an Virtio Scsi Target |
+| StatsVirtioScsiTarget | [StatsVirtioScsiTargetRequest](#opi_api-storage-v1-StatsVirtioScsiTargetRequest) | [StatsVirtioScsiTargetResponse](#opi_api-storage-v1-StatsVirtioScsiTargetResponse) | Get an Virtio Scsi Target statistics |
+| CreateVirtioScsiController | [CreateVirtioScsiControllerRequest](#opi_api-storage-v1-CreateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | Create an Virtio Scsi Controller |
+| DeleteVirtioScsiController | [DeleteVirtioScsiControllerRequest](#opi_api-storage-v1-DeleteVirtioScsiControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Virtio Scsi Controller |
+| UpdateVirtioScsiController | [UpdateVirtioScsiControllerRequest](#opi_api-storage-v1-UpdateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | Update an Virtio Scsi Controller |
+| ListVirtioScsiControllers | [ListVirtioScsiControllersRequest](#opi_api-storage-v1-ListVirtioScsiControllersRequest) | [ListVirtioScsiControllersResponse](#opi_api-storage-v1-ListVirtioScsiControllersResponse) | List Virtio Scsi Controllers |
+| GetVirtioScsiController | [GetVirtioScsiControllerRequest](#opi_api-storage-v1-GetVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | Get an Virtio Scsi Controller |
+| StatsVirtioScsiController | [StatsVirtioScsiControllerRequest](#opi_api-storage-v1-StatsVirtioScsiControllerRequest) | [StatsVirtioScsiControllerResponse](#opi_api-storage-v1-StatsVirtioScsiControllerResponse) | Get an Virtio Scsi Controller statistics |
+| CreateVirtioScsiLun | [CreateVirtioScsiLunRequest](#opi_api-storage-v1-CreateVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | Create an Virtio Scsi Lun |
+| DeleteVirtioScsiLun | [DeleteVirtioScsiLunRequest](#opi_api-storage-v1-DeleteVirtioScsiLunRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Virtio Scsi Lun |
+| UpdateVirtioScsiLun | [UpdateVirtioScsiLunRequest](#opi_api-storage-v1-UpdateVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | Update an Virtio Scsi Lun |
+| ListVirtioScsiLuns | [ListVirtioScsiLunsRequest](#opi_api-storage-v1-ListVirtioScsiLunsRequest) | [ListVirtioScsiLunsResponse](#opi_api-storage-v1-ListVirtioScsiLunsResponse) | List Virtio Scsi Luns |
+| GetVirtioScsiLun | [GetVirtioScsiLunRequest](#opi_api-storage-v1-GetVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | Get an Virtio Scsi Lun |
+| StatsVirtioScsiLun | [StatsVirtioScsiLunRequest](#opi_api-storage-v1-StatsVirtioScsiLunRequest) | [StatsVirtioScsiLunResponse](#opi_api-storage-v1-StatsVirtioScsiLunResponse) | Get an Virtio Scsi Lun statistics |
 
  
 
@@ -2328,13 +2328,13 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 <a name="opi_api-storage-v1-CreateEncryptedVolumeRequest"></a>
 
 ### CreateEncryptedVolumeRequest
-
+Represents a request to create an Encrypted Volume.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| encrypted_volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
-| encrypted_volume_id | [string](#string) |  |  |
+| encrypted_volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  | The Encrypted Volume to be created. |
+| encrypted_volume_id | [string](#string) |  | An optional ID to assign to the Encrypted Volume. If this is not provided the system will auto-generate it. |
 
 
 
@@ -2344,7 +2344,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 <a name="opi_api-storage-v1-DeleteEncryptedVolumeRequest"></a>
 
 ### DeleteEncryptedVolumeRequest
-
+Represents a request to delete an Encrypted Volume.
 
 
 | Field | Type | Label | Description |
@@ -2483,12 +2483,12 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateEncryptedVolume | [CreateEncryptedVolumeRequest](#opi_api-storage-v1-CreateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
-| DeleteEncryptedVolume | [DeleteEncryptedVolumeRequest](#opi_api-storage-v1-DeleteEncryptedVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateEncryptedVolume | [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
-| ListEncryptedVolumes | [ListEncryptedVolumesRequest](#opi_api-storage-v1-ListEncryptedVolumesRequest) | [ListEncryptedVolumesResponse](#opi_api-storage-v1-ListEncryptedVolumesResponse) |  |
-| GetEncryptedVolume | [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
-| StatsEncryptedVolume | [StatsEncryptedVolumeRequest](#opi_api-storage-v1-StatsEncryptedVolumeRequest) | [StatsEncryptedVolumeResponse](#opi_api-storage-v1-StatsEncryptedVolumeResponse) |  |
+| CreateEncryptedVolume | [CreateEncryptedVolumeRequest](#opi_api-storage-v1-CreateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | Create an Encrypted Volume |
+| DeleteEncryptedVolume | [DeleteEncryptedVolumeRequest](#opi_api-storage-v1-DeleteEncryptedVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Encrypted Volume |
+| UpdateEncryptedVolume | [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | Update an Encrypted Volume |
+| ListEncryptedVolumes | [ListEncryptedVolumesRequest](#opi_api-storage-v1-ListEncryptedVolumesRequest) | [ListEncryptedVolumesResponse](#opi_api-storage-v1-ListEncryptedVolumesResponse) | List Encrypted Volumes |
+| GetEncryptedVolume | [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | Get an Encrypted Volume |
+| StatsEncryptedVolume | [StatsEncryptedVolumeRequest](#opi_api-storage-v1-StatsEncryptedVolumeRequest) | [StatsEncryptedVolumeResponse](#opi_api-storage-v1-StatsEncryptedVolumeResponse) | Get an Encrypted Volume statistics |
 
  
 
@@ -2504,13 +2504,13 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 <a name="opi_api-storage-v1-CreateQosVolumeRequest"></a>
 
 ### CreateQosVolumeRequest
-
+Represents a request to create an QoS Volume.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| qos_volume | [QosVolume](#opi_api-storage-v1-QosVolume) |  |  |
-| qos_volume_id | [string](#string) |  |  |
+| qos_volume | [QosVolume](#opi_api-storage-v1-QosVolume) |  | The QoS Volume to be created. |
+| qos_volume_id | [string](#string) |  | An optional ID to assign to the QoS Volume. If this is not provided the system will auto-generate it. |
 
 
 
@@ -2520,7 +2520,7 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 <a name="opi_api-storage-v1-DeleteQosVolumeRequest"></a>
 
 ### DeleteQosVolumeRequest
-
+Represents a request to delete an Encrypted Volume.
 
 
 | Field | Type | Label | Description |
@@ -2674,12 +2674,12 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateQosVolume | [CreateQosVolumeRequest](#opi_api-storage-v1-CreateQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) |  |
-| DeleteQosVolume | [DeleteQosVolumeRequest](#opi_api-storage-v1-DeleteQosVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateQosVolume | [UpdateQosVolumeRequest](#opi_api-storage-v1-UpdateQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) |  |
-| ListQosVolumes | [ListQosVolumesRequest](#opi_api-storage-v1-ListQosVolumesRequest) | [ListQosVolumesResponse](#opi_api-storage-v1-ListQosVolumesResponse) |  |
-| GetQosVolume | [GetQosVolumeRequest](#opi_api-storage-v1-GetQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) |  |
-| StatsQosVolume | [StatsQosVolumeRequest](#opi_api-storage-v1-StatsQosVolumeRequest) | [StatsQosVolumeResponse](#opi_api-storage-v1-StatsQosVolumeResponse) |  |
+| CreateQosVolume | [CreateQosVolumeRequest](#opi_api-storage-v1-CreateQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) | Create an Qos Volume |
+| DeleteQosVolume | [DeleteQosVolumeRequest](#opi_api-storage-v1-DeleteQosVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Qos Volume |
+| UpdateQosVolume | [UpdateQosVolumeRequest](#opi_api-storage-v1-UpdateQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) | Update an Qos Volume |
+| ListQosVolumes | [ListQosVolumesRequest](#opi_api-storage-v1-ListQosVolumesRequest) | [ListQosVolumesResponse](#opi_api-storage-v1-ListQosVolumesResponse) | List Qos Volumes |
+| GetQosVolume | [GetQosVolumeRequest](#opi_api-storage-v1-GetQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) | Get an Qos Volume |
+| StatsQosVolume | [StatsQosVolumeRequest](#opi_api-storage-v1-StatsQosVolumeRequest) | [StatsQosVolumeResponse](#opi_api-storage-v1-StatsQosVolumeResponse) | Get an Qos Volume statistics |
 
  
 

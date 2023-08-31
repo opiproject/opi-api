@@ -42,6 +42,7 @@ class NullVolumeService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Create an Null Volume
     virtual ::grpc::Status CreateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNullVolumeRequest& request, ::opi_api::storage::v1::NullVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>> AsyncCreateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>>(AsyncCreateNullVolumeRaw(context, request, cq));
@@ -49,6 +50,7 @@ class NullVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>> PrepareAsyncCreateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>>(PrepareAsyncCreateNullVolumeRaw(context, request, cq));
     }
+    // Delete an Null Volume
     virtual ::grpc::Status DeleteNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNullVolumeRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteNullVolumeRaw(context, request, cq));
@@ -56,6 +58,7 @@ class NullVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteNullVolumeRaw(context, request, cq));
     }
+    // Update an Null Volume
     virtual ::grpc::Status UpdateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNullVolumeRequest& request, ::opi_api::storage::v1::NullVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>> AsyncUpdateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>>(AsyncUpdateNullVolumeRaw(context, request, cq));
@@ -63,6 +66,7 @@ class NullVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>> PrepareAsyncUpdateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>>(PrepareAsyncUpdateNullVolumeRaw(context, request, cq));
     }
+    // List Null Volumes
     virtual ::grpc::Status ListNullVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest& request, ::opi_api::storage::v1::ListNullVolumesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNullVolumesResponse>> AsyncListNullVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNullVolumesResponse>>(AsyncListNullVolumesRaw(context, request, cq));
@@ -70,6 +74,7 @@ class NullVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNullVolumesResponse>> PrepareAsyncListNullVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNullVolumesResponse>>(PrepareAsyncListNullVolumesRaw(context, request, cq));
     }
+    // Get an Null Volume
     virtual ::grpc::Status GetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::opi_api::storage::v1::NullVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>> AsyncGetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>>(AsyncGetNullVolumeRaw(context, request, cq));
@@ -77,6 +82,7 @@ class NullVolumeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>> PrepareAsyncGetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullVolume>>(PrepareAsyncGetNullVolumeRaw(context, request, cq));
     }
+    // Get an Null Volume statistics
     virtual ::grpc::Status StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::opi_api::storage::v1::StatsNullVolumeResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNullVolumeResponse>> AsyncStatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNullVolumeResponse>>(AsyncStatsNullVolumeRaw(context, request, cq));
@@ -87,16 +93,22 @@ class NullVolumeService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
+      // Create an Null Volume
       virtual void CreateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Delete an Null Volume
       virtual void DeleteNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNullVolumeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNullVolumeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update an Null Volume
       virtual void UpdateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Null Volumes
       virtual void ListNullVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest* request, ::opi_api::storage::v1::ListNullVolumesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNullVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest* request, ::opi_api::storage::v1::ListNullVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Null Volume
       virtual void GetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Null Volume statistics
       virtual void StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StatsNullVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -213,11 +225,17 @@ class NullVolumeService final {
    public:
     Service();
     virtual ~Service();
+    // Create an Null Volume
     virtual ::grpc::Status CreateNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response);
+    // Delete an Null Volume
     virtual ::grpc::Status DeleteNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNullVolumeRequest* request, ::google::protobuf::Empty* response);
+    // Update an Null Volume
     virtual ::grpc::Status UpdateNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response);
+    // List Null Volumes
     virtual ::grpc::Status ListNullVolumes(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNullVolumesRequest* request, ::opi_api::storage::v1::ListNullVolumesResponse* response);
+    // Get an Null Volume
     virtual ::grpc::Status GetNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNullVolumeRequest* request, ::opi_api::storage::v1::NullVolume* response);
+    // Get an Null Volume statistics
     virtual ::grpc::Status StatsNullVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNullVolumeRequest* request, ::opi_api::storage::v1::StatsNullVolumeResponse* response);
   };
   template <class BaseClass>
