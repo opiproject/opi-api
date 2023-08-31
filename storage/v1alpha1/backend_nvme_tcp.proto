@@ -81,6 +81,13 @@ service NvmeRemoteControllerService {
         };
         option (google.api.method_signature) = "parent";
     }
+    // Get an Nvme Remote Namespace
+    rpc GetNvmeRemoteNamespace (GetNvmeRemoteNamespaceRequest) returns (NvmeRemoteNamespace) {
+        option (google.api.http) = {
+            get: "/v1/{name=NvmeRemoteNamespaces/*}"
+        };
+        option (google.api.method_signature) = "name";
+    }
     // Create an Nvme Path
     rpc CreateNvmePath (CreateNvmePathRequest) returns (NvmePath) {
         option (google.api.http) = {
@@ -330,6 +337,13 @@ message ListNvmeRemoteNamespacesRequest {
 message ListNvmeRemoteNamespacesResponse {
     repeated NvmeRemoteNamespace nvme_remote_namespaces = 1;
     string next_page_token = 2;
+}
+
+message GetNvmeRemoteNamespaceRequest {
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteNamespace"
+    ];
 }
 
 // Represents a request to create an Nvme Path.
