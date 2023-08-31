@@ -41,4 +41,31 @@ public interface LogicalBridgeSpecOrBuilder extends
    * @return The vni.
    */
   int getVni();
+
+  /**
+   * <pre>
+   * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+   * </pre>
+   *
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the vtepIpPrefix field is set.
+   */
+  boolean hasVtepIpPrefix();
+  /**
+   * <pre>
+   * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+   * </pre>
+   *
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The vtepIpPrefix.
+   */
+  opi_api.network.opinetcommon.v1alpha1.IPPrefix getVtepIpPrefix();
+  /**
+   * <pre>
+   * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+   * </pre>
+   *
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getVtepIpPrefixOrBuilder();
 }

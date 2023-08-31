@@ -63,6 +63,19 @@ private static final long serialVersionUID = 0L;
             vni_ = input.readUInt32();
             break;
           }
+          case 26: {
+            opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder subBuilder = null;
+            if (vtepIpPrefix_ != null) {
+              subBuilder = vtepIpPrefix_.toBuilder();
+            }
+            vtepIpPrefix_ = input.readMessage(opi_api.network.opinetcommon.v1alpha1.IPPrefix.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(vtepIpPrefix_);
+              vtepIpPrefix_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -146,6 +159,44 @@ private static final long serialVersionUID = 0L;
     return vni_;
   }
 
+  public static final int VTEP_IP_PREFIX_FIELD_NUMBER = 3;
+  private opi_api.network.opinetcommon.v1alpha1.IPPrefix vtepIpPrefix_;
+  /**
+   * <pre>
+   * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+   * </pre>
+   *
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the vtepIpPrefix field is set.
+   */
+  @java.lang.Override
+  public boolean hasVtepIpPrefix() {
+    return vtepIpPrefix_ != null;
+  }
+  /**
+   * <pre>
+   * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+   * </pre>
+   *
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The vtepIpPrefix.
+   */
+  @java.lang.Override
+  public opi_api.network.opinetcommon.v1alpha1.IPPrefix getVtepIpPrefix() {
+    return vtepIpPrefix_ == null ? opi_api.network.opinetcommon.v1alpha1.IPPrefix.getDefaultInstance() : vtepIpPrefix_;
+  }
+  /**
+   * <pre>
+   * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+   * </pre>
+   *
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getVtepIpPrefixOrBuilder() {
+    return getVtepIpPrefix();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -166,6 +217,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt32(2, vni_);
     }
+    if (vtepIpPrefix_ != null) {
+      output.writeMessage(3, getVtepIpPrefix());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -182,6 +236,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, vni_);
+    }
+    if (vtepIpPrefix_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getVtepIpPrefix());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,6 +263,11 @@ private static final long serialVersionUID = 0L;
       if (getVni()
           != other.getVni()) return false;
     }
+    if (hasVtepIpPrefix() != other.hasVtepIpPrefix()) return false;
+    if (hasVtepIpPrefix()) {
+      if (!getVtepIpPrefix()
+          .equals(other.getVtepIpPrefix())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -221,6 +284,10 @@ private static final long serialVersionUID = 0L;
     if (hasVni()) {
       hash = (37 * hash) + VNI_FIELD_NUMBER;
       hash = (53 * hash) + getVni();
+    }
+    if (hasVtepIpPrefix()) {
+      hash = (37 * hash) + VTEP_IP_PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getVtepIpPrefix().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -363,6 +430,12 @@ private static final long serialVersionUID = 0L;
 
       vni_ = 0;
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (vtepIpPrefixBuilder_ == null) {
+        vtepIpPrefix_ = null;
+      } else {
+        vtepIpPrefix_ = null;
+        vtepIpPrefixBuilder_ = null;
+      }
       return this;
     }
 
@@ -395,6 +468,11 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.vni_ = vni_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (vtepIpPrefixBuilder_ == null) {
+        result.vtepIpPrefix_ = vtepIpPrefix_;
+      } else {
+        result.vtepIpPrefix_ = vtepIpPrefixBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -450,6 +528,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasVni()) {
         setVni(other.getVni());
+      }
+      if (other.hasVtepIpPrefix()) {
+        mergeVtepIpPrefix(other.getVtepIpPrefix());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -591,6 +672,161 @@ private static final long serialVersionUID = 0L;
       vni_ = 0;
       onChanged();
       return this;
+    }
+
+    private opi_api.network.opinetcommon.v1alpha1.IPPrefix vtepIpPrefix_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.opinetcommon.v1alpha1.IPPrefix, opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder, opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder> vtepIpPrefixBuilder_;
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the vtepIpPrefix field is set.
+     */
+    public boolean hasVtepIpPrefix() {
+      return vtepIpPrefixBuilder_ != null || vtepIpPrefix_ != null;
+    }
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The vtepIpPrefix.
+     */
+    public opi_api.network.opinetcommon.v1alpha1.IPPrefix getVtepIpPrefix() {
+      if (vtepIpPrefixBuilder_ == null) {
+        return vtepIpPrefix_ == null ? opi_api.network.opinetcommon.v1alpha1.IPPrefix.getDefaultInstance() : vtepIpPrefix_;
+      } else {
+        return vtepIpPrefixBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setVtepIpPrefix(opi_api.network.opinetcommon.v1alpha1.IPPrefix value) {
+      if (vtepIpPrefixBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vtepIpPrefix_ = value;
+        onChanged();
+      } else {
+        vtepIpPrefixBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setVtepIpPrefix(
+        opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder builderForValue) {
+      if (vtepIpPrefixBuilder_ == null) {
+        vtepIpPrefix_ = builderForValue.build();
+        onChanged();
+      } else {
+        vtepIpPrefixBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeVtepIpPrefix(opi_api.network.opinetcommon.v1alpha1.IPPrefix value) {
+      if (vtepIpPrefixBuilder_ == null) {
+        if (vtepIpPrefix_ != null) {
+          vtepIpPrefix_ =
+            opi_api.network.opinetcommon.v1alpha1.IPPrefix.newBuilder(vtepIpPrefix_).mergeFrom(value).buildPartial();
+        } else {
+          vtepIpPrefix_ = value;
+        }
+        onChanged();
+      } else {
+        vtepIpPrefixBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearVtepIpPrefix() {
+      if (vtepIpPrefixBuilder_ == null) {
+        vtepIpPrefix_ = null;
+        onChanged();
+      } else {
+        vtepIpPrefix_ = null;
+        vtepIpPrefixBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder getVtepIpPrefixBuilder() {
+      
+      onChanged();
+      return getVtepIpPrefixFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getVtepIpPrefixOrBuilder() {
+      if (vtepIpPrefixBuilder_ != null) {
+        return vtepIpPrefixBuilder_.getMessageOrBuilder();
+      } else {
+        return vtepIpPrefix_ == null ?
+            opi_api.network.opinetcommon.v1alpha1.IPPrefix.getDefaultInstance() : vtepIpPrefix_;
+      }
+    }
+    /**
+     * <pre>
+     * IPv4 or IPv6 IP address prefix for the VXLAN TEP
+     * </pre>
+     *
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.opinetcommon.v1alpha1.IPPrefix, opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder, opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder> 
+        getVtepIpPrefixFieldBuilder() {
+      if (vtepIpPrefixBuilder_ == null) {
+        vtepIpPrefixBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.opinetcommon.v1alpha1.IPPrefix, opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder, opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder>(
+                getVtepIpPrefix(),
+                getParentForChildren(),
+                isClean());
+        vtepIpPrefix_ = null;
+      }
+      return vtepIpPrefixBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

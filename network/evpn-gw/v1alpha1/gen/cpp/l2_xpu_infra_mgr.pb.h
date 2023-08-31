@@ -31,6 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "networktypes.pb.h"
 #include "google/api/annotations.pb.h"
 #include "google/api/client.pb.h"
 #include <google/protobuf/empty.pb.h>
@@ -532,9 +533,28 @@ class LogicalBridgeSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kVtepIpPrefixFieldNumber = 3,
     kVlanIdFieldNumber = 1,
     kVniFieldNumber = 2,
   };
+  // .opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];
+  bool has_vtep_ip_prefix() const;
+  private:
+  bool _internal_has_vtep_ip_prefix() const;
+  public:
+  void clear_vtep_ip_prefix();
+  const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix& vtep_ip_prefix() const;
+  PROTOBUF_NODISCARD ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* release_vtep_ip_prefix();
+  ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* mutable_vtep_ip_prefix();
+  void set_allocated_vtep_ip_prefix(::opi_api::network::opinetcommon::v1alpha1::IPPrefix* vtep_ip_prefix);
+  private:
+  const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix& _internal_vtep_ip_prefix() const;
+  ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* _internal_mutable_vtep_ip_prefix();
+  public:
+  void unsafe_arena_set_allocated_vtep_ip_prefix(
+      ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* vtep_ip_prefix);
+  ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* unsafe_arena_release_vtep_ip_prefix();
+
   // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
   void clear_vlan_id();
   uint32_t vlan_id() const;
@@ -567,6 +587,7 @@ class LogicalBridgeSpec final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* vtep_ip_prefix_;
     uint32_t vlan_id_;
     uint32_t vni_;
   };
@@ -3573,6 +3594,91 @@ inline void LogicalBridgeSpec::_internal_set_vni(uint32_t value) {
 inline void LogicalBridgeSpec::set_vni(uint32_t value) {
   _internal_set_vni(value);
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vni)
+}
+
+// .opi_api.network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(.google.api.field_behavior) = OPTIONAL];
+inline bool LogicalBridgeSpec::_internal_has_vtep_ip_prefix() const {
+  return this != internal_default_instance() && _impl_.vtep_ip_prefix_ != nullptr;
+}
+inline bool LogicalBridgeSpec::has_vtep_ip_prefix() const {
+  return _internal_has_vtep_ip_prefix();
+}
+inline const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix& LogicalBridgeSpec::_internal_vtep_ip_prefix() const {
+  const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* p = _impl_.vtep_ip_prefix_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix&>(
+      ::opi_api::network::opinetcommon::v1alpha1::_IPPrefix_default_instance_);
+}
+inline const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix& LogicalBridgeSpec::vtep_ip_prefix() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vtep_ip_prefix)
+  return _internal_vtep_ip_prefix();
+}
+inline void LogicalBridgeSpec::unsafe_arena_set_allocated_vtep_ip_prefix(
+    ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* vtep_ip_prefix) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.vtep_ip_prefix_);
+  }
+  _impl_.vtep_ip_prefix_ = vtep_ip_prefix;
+  if (vtep_ip_prefix) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vtep_ip_prefix)
+}
+inline ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* LogicalBridgeSpec::release_vtep_ip_prefix() {
+  
+  ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* temp = _impl_.vtep_ip_prefix_;
+  _impl_.vtep_ip_prefix_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* LogicalBridgeSpec::unsafe_arena_release_vtep_ip_prefix() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vtep_ip_prefix)
+  
+  ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* temp = _impl_.vtep_ip_prefix_;
+  _impl_.vtep_ip_prefix_ = nullptr;
+  return temp;
+}
+inline ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* LogicalBridgeSpec::_internal_mutable_vtep_ip_prefix() {
+  
+  if (_impl_.vtep_ip_prefix_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::network::opinetcommon::v1alpha1::IPPrefix>(GetArenaForAllocation());
+    _impl_.vtep_ip_prefix_ = p;
+  }
+  return _impl_.vtep_ip_prefix_;
+}
+inline ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* LogicalBridgeSpec::mutable_vtep_ip_prefix() {
+  ::opi_api::network::opinetcommon::v1alpha1::IPPrefix* _msg = _internal_mutable_vtep_ip_prefix();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vtep_ip_prefix)
+  return _msg;
+}
+inline void LogicalBridgeSpec::set_allocated_vtep_ip_prefix(::opi_api::network::opinetcommon::v1alpha1::IPPrefix* vtep_ip_prefix) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.vtep_ip_prefix_);
+  }
+  if (vtep_ip_prefix) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vtep_ip_prefix));
+    if (message_arena != submessage_arena) {
+      vtep_ip_prefix = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, vtep_ip_prefix, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.vtep_ip_prefix_ = vtep_ip_prefix;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vtep_ip_prefix)
 }
 
 // -------------------------------------------------------------------

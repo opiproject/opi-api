@@ -321,6 +321,7 @@ Logical Bridge network configuration
 | ----- | ---- | ----- | ----------- |
 | vlan_id | [uint32](#uint32) |  | the VLAN of the L2 domain (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
 | vni | [uint32](#uint32) | optional | VXLAN VNI for the L2 EVPN. Also used as EVPN route target (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vni cannot be negative number. --) |
+| vtep_ip_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | IPv4 or IPv6 IP address prefix for the VXLAN TEP |
 
 
 
