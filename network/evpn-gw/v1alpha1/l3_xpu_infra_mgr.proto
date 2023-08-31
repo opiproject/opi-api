@@ -123,8 +123,7 @@ message Vrf {
     // user can only set {resource}_id on the Create request object
     // Format: vrfs/{vrf}
     string name      = 1 [
-        (google.api.field_behavior) = OUTPUT_ONLY,
-        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.field_behavior) = IDENTIFIER,
         (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
     ];
 
@@ -249,8 +248,7 @@ message Svi {
     // user can only set {resource}_id on the Create request object
     // Format: svis/{svi}
     string name      = 1 [
-        (google.api.field_behavior) = OUTPUT_ONLY,
-        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.field_behavior) = IDENTIFIER,
         (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
     ];
 

@@ -149,8 +149,7 @@ message NetInterface {
     // Name of the interface.  This is an opaque object that is not
     // user settable.  It is returned by the created object
     string name             = 1 [
-        (google.api.field_behavior) = OUTPUT_ONLY,
-        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.field_behavior) = IDENTIFIER,
         (google.api.resource_reference).type = "opi_api.network.opinetcommon.v1alpha1/NetInterface"
     ];
     // Configuration settings - rw
