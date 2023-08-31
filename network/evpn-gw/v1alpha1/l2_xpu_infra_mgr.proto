@@ -19,6 +19,8 @@ option java_package = "opi_api.network.evpn_gw.v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "L2XpuInfraMgrProto";
 
+import "networktypes.proto";
+
 import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/protobuf/empty.proto";
@@ -136,11 +138,13 @@ message LogicalBridgeSpec {
     // the VLAN of the L2 domain
     // (-- api-linter: core::0141::forbidden-types=disabled
     //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    uint32 vlan_id         = 1 [(google.api.field_behavior) = REQUIRED];
+    uint32 vlan_id                                        = 1 [(google.api.field_behavior) = REQUIRED];
     //VXLAN VNI for the L2 EVPN. Also used as EVPN route target
     // (-- api-linter: core::0141::forbidden-types=disabled
     //     aip.dev/not-precedent: vni cannot be negative number. --)
-    optional uint32 vni    = 2 [(google.api.field_behavior) = OPTIONAL];
+    optional uint32 vni                                   = 2 [(google.api.field_behavior) = OPTIONAL];
+    // IPv4 or IPv6 IP address prefix for the VXLAN TEP
+    network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Logical Bridge
