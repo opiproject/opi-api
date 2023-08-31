@@ -160,7 +160,7 @@ message VirtioScsiTarget {
         type: "storage.opiproject.org/VirtioScsiTarget"
         pattern: "volumes/{volume}"
         singular: "virtioScsiTarget"
-        plural: "virtioScsiTarget"
+        plural: "virtioScsiTargets"
     };
 
     // name is an opaque object handle that is not user settable.
