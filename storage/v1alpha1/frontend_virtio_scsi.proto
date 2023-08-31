@@ -168,8 +168,7 @@ message VirtioScsiTarget {
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
     string name = 1 [
-        (google.api.field_behavior) = OUTPUT_ONLY,
-        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.field_behavior) = IDENTIFIER,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
 
@@ -190,8 +189,7 @@ message VirtioScsiController {
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
     string name = 1 [
-        (google.api.field_behavior) = OUTPUT_ONLY,
-        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.field_behavior) = IDENTIFIER,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
 
@@ -218,8 +216,7 @@ message VirtioScsiLun {
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
     string name = 1 [
-        (google.api.field_behavior) = OUTPUT_ONLY,
-        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.field_behavior) = IDENTIFIER,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
 
