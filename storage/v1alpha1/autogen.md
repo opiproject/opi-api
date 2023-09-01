@@ -1420,7 +1420,6 @@ Represents a response to list all Nvme Subsystems.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_name_ref | [string](#string) |  | subsystem for this namespace |
 | host_nsid | [int32](#int32) |  | NSID present to the host by the Nvme PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
