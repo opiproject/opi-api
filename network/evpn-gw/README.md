@@ -4,6 +4,20 @@ EVPN is one of the most well known technologies when it comes to data center net
 
 We present a lean and tailor-made EVPN Gateway API for provisioning integrated L2 and L3 network instances on an xPU, with the option to connect these to L2- and/or L3-VPN instances through an EVPN GW function hosted on the xPU.
 
+## Demos
+
+see <https://github.com/opiproject/opi-poc/tree/main/demos/network>
+
+## Clients
+
+see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
+
+## Reference implementations
+
+* <https://github.com/opiproject/opi-evpn-bridge>
+
+_All implementations above are reference only and __not__ meant to be used as-is in production_
+
 ## Provision of Tenant VPNs and Networks
 
 Tenant networks are provisioned on the xPU through the EVPN Gateway API, which is realized through gRPC and specified through the Protobuf definitions.
