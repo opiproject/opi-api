@@ -16,7 +16,7 @@ see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/god
 - <https://github.com/opiproject/opi-intel-bridge>
 - AMD (WIP)
 
-_All implementations above are reference only and not meant to be used as-is in production_
+_All implementations above are reference only and __not__ meant to be used as-is in production_
 
 ## Storage API sub-group Goals & Deliverables
 
