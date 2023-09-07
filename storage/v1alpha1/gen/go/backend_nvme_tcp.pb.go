@@ -643,6 +643,7 @@ func (x *DeleteNvmeRemoteControllerRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Nvme Remote Controller.
 type UpdateNvmeRemoteControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -710,13 +711,16 @@ func (x *UpdateNvmeRemoteControllerRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Nvme Remote Controllers.
 type ListNvmeRemoteControllersRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -773,13 +777,15 @@ func (x *ListNvmeRemoteControllersRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Nvme Remote Controllers.
 type ListNvmeRemoteControllersResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	NvmeRemoteControllers []*NvmeRemoteController `protobuf:"bytes,1,rep,name=nvme_remote_controllers,json=nvmeRemoteControllers,proto3" json:"nvme_remote_controllers,omitempty"`
-	NextPageToken         string                  `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListNvmeRemoteControllersResponse) Reset() {
@@ -828,6 +834,7 @@ func (x *ListNvmeRemoteControllersResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Nvme Remote Controller.
 type GetNvmeRemoteControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -875,6 +882,7 @@ func (x *GetNvmeRemoteControllerRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to reset an Nvme Remote Controller.
 type ResetNvmeRemoteControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -922,6 +930,7 @@ func (x *ResetNvmeRemoteControllerRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Nvme Remote Controller statistics.
 type StatsNvmeRemoteControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -969,6 +978,7 @@ func (x *StatsNvmeRemoteControllerRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an Nvme Remote Controller statistics.
 type StatsNvmeRemoteControllerResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1016,6 +1026,7 @@ func (x *StatsNvmeRemoteControllerResponse) GetStats() *VolumeStats {
 	return nil
 }
 
+// Represents a request to list all Nvme Remote Namespaces.
 type ListNvmeRemoteNamespacesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1023,8 +1034,10 @@ type ListNvmeRemoteNamespacesRequest struct {
 
 	// The controller's unique object identifier. This lists
 	// namespaces for a particular controller.
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -1081,13 +1094,15 @@ func (x *ListNvmeRemoteNamespacesRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Nvme Remote Namespaces.
 type ListNvmeRemoteNamespacesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	NvmeRemoteNamespaces []*NvmeRemoteNamespace `protobuf:"bytes,1,rep,name=nvme_remote_namespaces,json=nvmeRemoteNamespaces,proto3" json:"nvme_remote_namespaces,omitempty"`
-	NextPageToken        string                 `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListNvmeRemoteNamespacesResponse) Reset() {
@@ -1136,6 +1151,7 @@ func (x *ListNvmeRemoteNamespacesResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Nvme Remote Namespace.
 type GetNvmeRemoteNamespaceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1301,6 +1317,7 @@ func (x *DeleteNvmePathRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Nvme Path.
 type UpdateNvmePathRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1368,13 +1385,16 @@ func (x *UpdateNvmePathRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Nvme Paths.
 type ListNvmePathsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -1431,13 +1451,15 @@ func (x *ListNvmePathsRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Nvme Paths.
 type ListNvmePathsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NvmePaths     []*NvmePath `protobuf:"bytes,1,rep,name=nvme_paths,json=nvmePaths,proto3" json:"nvme_paths,omitempty"`
-	NextPageToken string      `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	NvmePaths []*NvmePath `protobuf:"bytes,1,rep,name=nvme_paths,json=nvmePaths,proto3" json:"nvme_paths,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListNvmePathsResponse) Reset() {
@@ -1486,6 +1508,7 @@ func (x *ListNvmePathsResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Nvme Path.
 type GetNvmePathRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1533,6 +1556,7 @@ func (x *GetNvmePathRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Nvme Path statistics.
 type StatsNvmePathRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1580,6 +1604,7 @@ func (x *StatsNvmePathRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an Nvme Path statistics.
 type StatsNvmePathResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

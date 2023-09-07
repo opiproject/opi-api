@@ -238,6 +238,7 @@ func (x *DeleteVirtioBlkRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Virtio Blk.
 type UpdateVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -305,13 +306,16 @@ func (x *UpdateVirtioBlkRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Virtio Blks.
 type ListVirtioBlksRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -368,13 +372,15 @@ func (x *ListVirtioBlksRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Virtio Blks.
 type ListVirtioBlksResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	VirtioBlks    []*VirtioBlk `protobuf:"bytes,1,rep,name=virtio_blks,json=virtioBlks,proto3" json:"virtio_blks,omitempty"`
-	NextPageToken string       `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	VirtioBlks []*VirtioBlk `protobuf:"bytes,1,rep,name=virtio_blks,json=virtioBlks,proto3" json:"virtio_blks,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListVirtioBlksResponse) Reset() {
@@ -423,6 +429,7 @@ func (x *ListVirtioBlksResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Virtio Blk.
 type GetVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -470,6 +477,7 @@ func (x *GetVirtioBlkRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Virtio Blk statistics.
 type StatsVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -517,6 +525,7 @@ func (x *StatsVirtioBlkRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an Virtio Blk statistics.
 type StatsVirtioBlkResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

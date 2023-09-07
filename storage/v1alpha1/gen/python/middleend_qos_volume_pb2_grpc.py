@@ -7,7 +7,8 @@ import middleend_qos_volume_pb2 as middleend__qos__volume__pb2
 
 
 class MiddleendQosVolumeServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -48,7 +49,8 @@ class MiddleendQosVolumeServiceStub(object):
 
 
 class MiddleendQosVolumeServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+    """
 
     def CreateQosVolume(self, request, context):
         """Create an Qos Volume
@@ -133,7 +135,8 @@ def add_MiddleendQosVolumeServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class MiddleendQosVolumeService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+    """
 
     @staticmethod
     def CreateQosVolume(request,

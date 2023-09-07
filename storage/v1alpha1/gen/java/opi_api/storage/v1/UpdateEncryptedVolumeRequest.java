@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to update an Encrypted Volume.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.UpdateEncryptedVolumeRequest}
  */
 public final class UpdateEncryptedVolumeRequest extends
@@ -394,6 +398,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to update an Encrypted Volume.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.UpdateEncryptedVolumeRequest}
    */
   public static final class Builder extends

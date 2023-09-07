@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to update an QoS Volume.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.UpdateQosVolumeRequest}
  */
 public final class UpdateQosVolumeRequest extends
@@ -394,6 +398,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to update an QoS Volume.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.UpdateQosVolumeRequest}
    */
   public static final class Builder extends

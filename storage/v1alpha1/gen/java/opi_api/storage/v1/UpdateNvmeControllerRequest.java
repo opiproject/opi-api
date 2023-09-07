@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to update an Nvme Controller.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.UpdateNvmeControllerRequest}
  */
 public final class UpdateNvmeControllerRequest extends
@@ -394,6 +398,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to update an Nvme Controller.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.UpdateNvmeControllerRequest}
    */
   public static final class Builder extends

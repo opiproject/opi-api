@@ -348,6 +348,7 @@ func (x *DeleteVirtioScsiTargetRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Virtio Scsi Target.
 type UpdateVirtioScsiTargetRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -415,13 +416,16 @@ func (x *UpdateVirtioScsiTargetRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Virtio Scsi Targets.
 type ListVirtioScsiTargetsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -478,13 +482,15 @@ func (x *ListVirtioScsiTargetsRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Virtio Scsi Targets.
 type ListVirtioScsiTargetsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	VirtioScsiTargets []*VirtioScsiTarget `protobuf:"bytes,1,rep,name=virtio_scsi_targets,json=virtioScsiTargets,proto3" json:"virtio_scsi_targets,omitempty"`
-	NextPageToken     string              `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListVirtioScsiTargetsResponse) Reset() {
@@ -533,6 +539,7 @@ func (x *ListVirtioScsiTargetsResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Virtio Scsi Target.
 type GetVirtioScsiTargetRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -580,6 +587,7 @@ func (x *GetVirtioScsiTargetRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Virtio Scsi Target statistics.
 type StatsVirtioScsiTargetRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -627,6 +635,7 @@ func (x *StatsVirtioScsiTargetRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an Virtio Scsi Target statistics.
 type StatsVirtioScsiTargetResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -791,6 +800,7 @@ func (x *DeleteVirtioScsiControllerRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Virtio Scsi Controller.
 type UpdateVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -858,13 +868,16 @@ func (x *UpdateVirtioScsiControllerRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Virtio Scsi Controllers.
 type ListVirtioScsiControllersRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -921,13 +934,15 @@ func (x *ListVirtioScsiControllersRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Virtio Scsi Controllers.
 type ListVirtioScsiControllersResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	VirtioScsiControllers []*VirtioScsiController `protobuf:"bytes,1,rep,name=virtio_scsi_controllers,json=virtioScsiControllers,proto3" json:"virtio_scsi_controllers,omitempty"`
-	NextPageToken         string                  `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListVirtioScsiControllersResponse) Reset() {
@@ -976,6 +991,7 @@ func (x *ListVirtioScsiControllersResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Virtio Scsi Controller.
 type GetVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1023,6 +1039,7 @@ func (x *GetVirtioScsiControllerRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Virtio Scsi Controller statistics.
 type StatsVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1070,6 +1087,7 @@ func (x *StatsVirtioScsiControllerRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an Virtio Scsi Controller statistics.
 type StatsVirtioScsiControllerResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1234,6 +1252,7 @@ func (x *DeleteVirtioScsiLunRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Virtio Scsi Lun.
 type UpdateVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1301,13 +1320,16 @@ func (x *UpdateVirtioScsiLunRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Virtio Scsi Luns.
 type ListVirtioScsiLunsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -1364,13 +1386,15 @@ func (x *ListVirtioScsiLunsRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Virtio Scsi Luns.
 type ListVirtioScsiLunsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	VirtioScsiLuns []*VirtioScsiLun `protobuf:"bytes,1,rep,name=virtio_scsi_luns,json=virtioScsiLuns,proto3" json:"virtio_scsi_luns,omitempty"`
-	NextPageToken  string           `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListVirtioScsiLunsResponse) Reset() {
@@ -1419,6 +1443,7 @@ func (x *ListVirtioScsiLunsResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Virtio Scsi Lun.
 type GetVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1466,6 +1491,7 @@ func (x *GetVirtioScsiLunRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Virtio Scsi Lun statistics.
 type StatsVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1521,6 +1547,7 @@ func (x *StatsVirtioScsiLunRequest) GetControllerNameRef() string {
 	return ""
 }
 
+// Represents a response to get an Virtio Scsi Lun statistics.
 type StatsVirtioScsiLunResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

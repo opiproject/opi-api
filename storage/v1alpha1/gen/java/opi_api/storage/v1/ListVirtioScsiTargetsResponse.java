@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a response to list all Virtio Scsi Targets.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.ListVirtioScsiTargetsResponse}
  */
 public final class ListVirtioScsiTargetsResponse extends
@@ -146,6 +150,10 @@ private static final long serialVersionUID = 0L;
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   * <pre>
+   * Next page token of list response
+   * </pre>
+   *
    * <code>string next_page_token = 2;</code>
    * @return The nextPageToken.
    */
@@ -163,6 +171,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Next page token of list response
+   * </pre>
+   *
    * <code>string next_page_token = 2;</code>
    * @return The bytes for nextPageToken.
    */
@@ -349,6 +361,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a response to list all Virtio Scsi Targets.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.ListVirtioScsiTargetsResponse}
    */
   public static final class Builder extends
@@ -782,6 +798,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     * <pre>
+     * Next page token of list response
+     * </pre>
+     *
      * <code>string next_page_token = 2;</code>
      * @return The nextPageToken.
      */
@@ -798,6 +818,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Next page token of list response
+     * </pre>
+     *
      * <code>string next_page_token = 2;</code>
      * @return The bytes for nextPageToken.
      */
@@ -815,6 +839,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Next page token of list response
+     * </pre>
+     *
      * <code>string next_page_token = 2;</code>
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -830,6 +858,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Next page token of list response
+     * </pre>
+     *
      * <code>string next_page_token = 2;</code>
      * @return This builder for chaining.
      */
@@ -840,6 +872,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Next page token of list response
+     * </pre>
+     *
      * <code>string next_page_token = 2;</code>
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.

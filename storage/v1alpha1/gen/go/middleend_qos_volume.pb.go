@@ -220,7 +220,7 @@ func (x *CreateQosVolumeRequest) GetQosVolumeId() string {
 	return ""
 }
 
-// Represents a request to delete an Encrypted Volume.
+// Represents a request to delete an QoS Volume.
 type DeleteQosVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -278,6 +278,7 @@ func (x *DeleteQosVolumeRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an QoS Volume.
 type UpdateQosVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -345,13 +346,16 @@ func (x *UpdateQosVolumeRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all QoS Volumes.
 type ListQosVolumesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -408,13 +412,15 @@ func (x *ListQosVolumesRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all QoS Volumes.
 type ListQosVolumesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	QosVolumes    []*QosVolume `protobuf:"bytes,1,rep,name=qos_volumes,json=qosVolumes,proto3" json:"qos_volumes,omitempty"`
-	NextPageToken string       `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	QosVolumes []*QosVolume `protobuf:"bytes,1,rep,name=qos_volumes,json=qosVolumes,proto3" json:"qos_volumes,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListQosVolumesResponse) Reset() {
@@ -463,6 +469,7 @@ func (x *ListQosVolumesResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an QoS Volume.
 type GetQosVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -510,6 +517,7 @@ func (x *GetQosVolumeRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an QoS Volume statistics.
 type StatsQosVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -557,6 +565,7 @@ func (x *StatsQosVolumeRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an QoS Volume statistics.
 type StatsQosVolumeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

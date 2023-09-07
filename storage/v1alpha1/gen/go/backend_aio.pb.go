@@ -172,7 +172,7 @@ func (x *CreateAioVolumeRequest) GetAioVolumeId() string {
 	return ""
 }
 
-// Represents a request to delete an AioVolume.
+// Represents a request to delete an Aio Volume.
 type DeleteAioVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -230,6 +230,7 @@ func (x *DeleteAioVolumeRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Aio Volume.
 type UpdateAioVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -297,13 +298,16 @@ func (x *UpdateAioVolumeRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Aio Volumes.
 type ListAioVolumesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -360,13 +364,15 @@ func (x *ListAioVolumesRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Aio Volumes.
 type ListAioVolumesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AioVolumes    []*AioVolume `protobuf:"bytes,1,rep,name=aio_volumes,json=aioVolumes,proto3" json:"aio_volumes,omitempty"`
-	NextPageToken string       `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	AioVolumes []*AioVolume `protobuf:"bytes,1,rep,name=aio_volumes,json=aioVolumes,proto3" json:"aio_volumes,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListAioVolumesResponse) Reset() {
@@ -415,6 +421,7 @@ func (x *ListAioVolumesResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Aio Volume.
 type GetAioVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -462,6 +469,7 @@ func (x *GetAioVolumeRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Aio Volume statistics.
 type StatsAioVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -509,6 +517,7 @@ func (x *StatsAioVolumeRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an Aio Volume statistics.
 type StatsAioVolumeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

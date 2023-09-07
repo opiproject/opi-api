@@ -222,6 +222,7 @@ func (x *DeleteEncryptedVolumeRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Encrypted Volume.
 type UpdateEncryptedVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -289,13 +290,16 @@ func (x *UpdateEncryptedVolumeRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Encrypted Volumes.
 type ListEncryptedVolumesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -352,13 +356,15 @@ func (x *ListEncryptedVolumesRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Encrypted Volumes.
 type ListEncryptedVolumesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	EncryptedVolumes []*EncryptedVolume `protobuf:"bytes,1,rep,name=encrypted_volumes,json=encryptedVolumes,proto3" json:"encrypted_volumes,omitempty"`
-	NextPageToken    string             `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListEncryptedVolumesResponse) Reset() {
@@ -407,6 +413,7 @@ func (x *ListEncryptedVolumesResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Encrypted Volume.
 type GetEncryptedVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -454,6 +461,7 @@ func (x *GetEncryptedVolumeRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Encrypted Volume statistics.
 type StatsEncryptedVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -501,6 +509,7 @@ func (x *StatsEncryptedVolumeRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an Encrypted Volume statistics.
 type StatsEncryptedVolumeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -3,6 +3,9 @@ package opi_api.storage.v1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -246,6 +249,9 @@ public final class MiddleendQosVolumeServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+   * </pre>
    */
   public static abstract class MiddleendQosVolumeServiceImplBase implements io.grpc.BindableService {
 
@@ -358,6 +364,9 @@ public final class MiddleendQosVolumeServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+   * </pre>
    */
   public static final class MiddleendQosVolumeServiceStub extends io.grpc.stub.AbstractAsyncStub<MiddleendQosVolumeServiceStub> {
     private MiddleendQosVolumeServiceStub(
@@ -439,6 +448,9 @@ public final class MiddleendQosVolumeServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+   * </pre>
    */
   public static final class MiddleendQosVolumeServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<MiddleendQosVolumeServiceBlockingStub> {
     private MiddleendQosVolumeServiceBlockingStub(
@@ -514,6 +526,9 @@ public final class MiddleendQosVolumeServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+   * </pre>
    */
   public static final class MiddleendQosVolumeServiceFutureStub extends io.grpc.stub.AbstractFutureStub<MiddleendQosVolumeServiceFutureStub> {
     private MiddleendQosVolumeServiceFutureStub(

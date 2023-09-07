@@ -20,17 +20,29 @@ public interface ListVirtioBlksRequestOrBuilder extends
       getParentBytes();
 
   /**
+   * <pre>
+   * page size of list request
+   * </pre>
+   *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   int getPageSize();
 
   /**
+   * <pre>
+   * page token of list request
+   * </pre>
+   *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
+   * <pre>
+   * page token of list request
+   * </pre>
+   *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */

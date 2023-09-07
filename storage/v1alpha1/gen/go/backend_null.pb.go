@@ -221,6 +221,7 @@ func (x *DeleteNullVolumeRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to update an Null Volume.
 type UpdateNullVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -288,13 +289,16 @@ func (x *UpdateNullVolumeRequest) GetAllowMissing() bool {
 	return false
 }
 
+// Represents a request to list all Null Volumes.
 type ListNullVolumesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Parent    string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	PageSize  int32  `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	// page size of list request
+	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// page token of list request
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
@@ -351,13 +355,15 @@ func (x *ListNullVolumesRequest) GetPageToken() string {
 	return ""
 }
 
+// Represents a response to list all Null Volumes.
 type ListNullVolumesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NullVolumes   []*NullVolume `protobuf:"bytes,1,rep,name=null_volumes,json=nullVolumes,proto3" json:"null_volumes,omitempty"`
-	NextPageToken string        `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	NullVolumes []*NullVolume `protobuf:"bytes,1,rep,name=null_volumes,json=nullVolumes,proto3" json:"null_volumes,omitempty"`
+	// Next page token of list response
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
 func (x *ListNullVolumesResponse) Reset() {
@@ -406,6 +412,7 @@ func (x *ListNullVolumesResponse) GetNextPageToken() string {
 	return ""
 }
 
+// Represents a request to get an Null Volume.
 type GetNullVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -453,6 +460,7 @@ func (x *GetNullVolumeRequest) GetName() string {
 	return ""
 }
 
+// Represents a request to get an Null Volume statistics.
 type StatsNullVolumeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -500,6 +508,7 @@ func (x *StatsNullVolumeRequest) GetName() string {
 	return ""
 }
 
+// Represents a response to get an Null Volume statistics.
 type StatsNullVolumeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

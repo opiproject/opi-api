@@ -246,7 +246,7 @@ Represents a request to create an Aio Volume.
 <a name="opi_api-storage-v1-DeleteAioVolumeRequest"></a>
 
 ### DeleteAioVolumeRequest
-Represents a request to delete an AioVolume.
+Represents a request to delete an Aio Volume.
 
 
 | Field | Type | Label | Description |
@@ -262,7 +262,7 @@ Represents a request to delete an AioVolume.
 <a name="opi_api-storage-v1-GetAioVolumeRequest"></a>
 
 ### GetAioVolumeRequest
-
+Represents a request to get an Aio Volume.
 
 
 | Field | Type | Label | Description |
@@ -277,14 +277,14 @@ Represents a request to delete an AioVolume.
 <a name="opi_api-storage-v1-ListAioVolumesRequest"></a>
 
 ### ListAioVolumesRequest
-
+Represents a request to list all Aio Volumes.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -294,13 +294,13 @@ Represents a request to delete an AioVolume.
 <a name="opi_api-storage-v1-ListAioVolumesResponse"></a>
 
 ### ListAioVolumesResponse
-
+Represents a response to list all Aio Volumes.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | aio_volumes | [AioVolume](#opi_api-storage-v1-AioVolume) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -310,7 +310,7 @@ Represents a request to delete an AioVolume.
 <a name="opi_api-storage-v1-StatsAioVolumeRequest"></a>
 
 ### StatsAioVolumeRequest
-
+Represents a request to get an Aio Volume statistics.
 
 
 | Field | Type | Label | Description |
@@ -325,7 +325,7 @@ Represents a request to delete an AioVolume.
 <a name="opi_api-storage-v1-StatsAioVolumeResponse"></a>
 
 ### StatsAioVolumeResponse
-
+Represents a response to get an Aio Volume statistics.
 
 
 | Field | Type | Label | Description |
@@ -340,7 +340,7 @@ Represents a request to delete an AioVolume.
 <a name="opi_api-storage-v1-UpdateAioVolumeRequest"></a>
 
 ### UpdateAioVolumeRequest
-
+Represents a request to update an Aio Volume.
 
 
 | Field | Type | Label | Description |
@@ -436,7 +436,7 @@ Represents a request to delete an Null Volume.
 <a name="opi_api-storage-v1-GetNullVolumeRequest"></a>
 
 ### GetNullVolumeRequest
-
+Represents a request to get an Null Volume.
 
 
 | Field | Type | Label | Description |
@@ -451,14 +451,14 @@ Represents a request to delete an Null Volume.
 <a name="opi_api-storage-v1-ListNullVolumesRequest"></a>
 
 ### ListNullVolumesRequest
-
+Represents a request to list all Null Volumes.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -468,13 +468,13 @@ Represents a request to delete an Null Volume.
 <a name="opi_api-storage-v1-ListNullVolumesResponse"></a>
 
 ### ListNullVolumesResponse
-
+Represents a response to list all Null Volumes.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | null_volumes | [NullVolume](#opi_api-storage-v1-NullVolume) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -502,7 +502,7 @@ Represents a request to delete an Null Volume.
 <a name="opi_api-storage-v1-StatsNullVolumeRequest"></a>
 
 ### StatsNullVolumeRequest
-
+Represents a request to get an Null Volume statistics.
 
 
 | Field | Type | Label | Description |
@@ -517,7 +517,7 @@ Represents a request to delete an Null Volume.
 <a name="opi_api-storage-v1-StatsNullVolumeResponse"></a>
 
 ### StatsNullVolumeResponse
-
+Represents a response to get an Null Volume statistics.
 
 
 | Field | Type | Label | Description |
@@ -532,7 +532,7 @@ Represents a request to delete an Null Volume.
 <a name="opi_api-storage-v1-UpdateNullVolumeRequest"></a>
 
 ### UpdateNullVolumeRequest
-
+Represents a request to update an Null Volume.
 
 
 | Field | Type | Label | Description |
@@ -660,7 +660,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-GetNvmePathRequest"></a>
 
 ### GetNvmePathRequest
-
+Represents a request to get an Nvme Path.
 
 
 | Field | Type | Label | Description |
@@ -675,7 +675,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-GetNvmeRemoteControllerRequest"></a>
 
 ### GetNvmeRemoteControllerRequest
-
+Represents a request to get an Nvme Remote Controller.
 
 
 | Field | Type | Label | Description |
@@ -690,7 +690,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-GetNvmeRemoteNamespaceRequest"></a>
 
 ### GetNvmeRemoteNamespaceRequest
-
+Represents a request to get an Nvme Remote Namespace.
 
 
 | Field | Type | Label | Description |
@@ -705,14 +705,14 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-ListNvmePathsRequest"></a>
 
 ### ListNvmePathsRequest
-
+Represents a request to list all Nvme Paths.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -722,13 +722,13 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-ListNvmePathsResponse"></a>
 
 ### ListNvmePathsResponse
-
+Represents a response to list all Nvme Paths.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_paths | [NvmePath](#opi_api-storage-v1-NvmePath) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -738,14 +738,14 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-ListNvmeRemoteControllersRequest"></a>
 
 ### ListNvmeRemoteControllersRequest
-
+Represents a request to list all Nvme Remote Controllers.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -755,13 +755,13 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-ListNvmeRemoteControllersResponse"></a>
 
 ### ListNvmeRemoteControllersResponse
-
+Represents a response to list all Nvme Remote Controllers.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_remote_controllers | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -771,14 +771,14 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-ListNvmeRemoteNamespacesRequest"></a>
 
 ### ListNvmeRemoteNamespacesRequest
-
+Represents a request to list all Nvme Remote Namespaces.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  | The controller&#39;s unique object identifier. This lists namespaces for a particular controller. |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -788,13 +788,13 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-ListNvmeRemoteNamespacesResponse"></a>
 
 ### ListNvmeRemoteNamespacesResponse
-
+Represents a response to list all Nvme Remote Namespaces.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_remote_namespaces | [NvmeRemoteNamespace](#opi_api-storage-v1-NvmeRemoteNamespace) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -869,7 +869,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-ResetNvmeRemoteControllerRequest"></a>
 
 ### ResetNvmeRemoteControllerRequest
-
+Represents a request to reset an Nvme Remote Controller.
 
 
 | Field | Type | Label | Description |
@@ -884,7 +884,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-StatsNvmePathRequest"></a>
 
 ### StatsNvmePathRequest
-
+Represents a request to get an Nvme Path statistics.
 
 
 | Field | Type | Label | Description |
@@ -899,7 +899,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-StatsNvmePathResponse"></a>
 
 ### StatsNvmePathResponse
-
+Represents a response to get an Nvme Path statistics.
 
 
 | Field | Type | Label | Description |
@@ -914,7 +914,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-StatsNvmeRemoteControllerRequest"></a>
 
 ### StatsNvmeRemoteControllerRequest
-
+Represents a request to get an Nvme Remote Controller statistics.
 
 
 | Field | Type | Label | Description |
@@ -929,7 +929,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-StatsNvmeRemoteControllerResponse"></a>
 
 ### StatsNvmeRemoteControllerResponse
-
+Represents a response to get an Nvme Remote Controller statistics.
 
 
 | Field | Type | Label | Description |
@@ -944,7 +944,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-UpdateNvmePathRequest"></a>
 
 ### UpdateNvmePathRequest
-
+Represents a request to update an Nvme Path.
 
 
 | Field | Type | Label | Description |
@@ -961,7 +961,7 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-UpdateNvmeRemoteControllerRequest"></a>
 
 ### UpdateNvmeRemoteControllerRequest
-
+Represents a request to update an Nvme Remote Controller.
 
 
 | Field | Type | Label | Description |
@@ -1160,7 +1160,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-GetNvmeControllerRequest"></a>
 
 ### GetNvmeControllerRequest
-
+Represents a request to get an Nvme Controller.
 
 
 | Field | Type | Label | Description |
@@ -1175,7 +1175,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-GetNvmeNamespaceRequest"></a>
 
 ### GetNvmeNamespaceRequest
-
+Represents a request to get an Nvme Namespace.
 
 
 | Field | Type | Label | Description |
@@ -1190,7 +1190,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-GetNvmeSubsystemRequest"></a>
 
 ### GetNvmeSubsystemRequest
-
+Represents a request to get an Nvme Subsystem.
 
 
 | Field | Type | Label | Description |
@@ -1205,14 +1205,14 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-ListNvmeControllersRequest"></a>
 
 ### ListNvmeControllersRequest
-
+Represents a request to list all Nvme Controllers.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -1222,13 +1222,13 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-ListNvmeControllersResponse"></a>
 
 ### ListNvmeControllersResponse
-
+Represents a response to list all Nvme Controllers.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_controllers | [NvmeController](#opi_api-storage-v1-NvmeController) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -1238,14 +1238,14 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-ListNvmeNamespacesRequest"></a>
 
 ### ListNvmeNamespacesRequest
-
+Represents a request to list all Nvme Namespaces.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -1255,13 +1255,13 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-ListNvmeNamespacesResponse"></a>
 
 ### ListNvmeNamespacesResponse
-
+Represents a response to list all Nvme Namespaces.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_namespaces | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -1271,14 +1271,14 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-ListNvmeSubsystemsRequest"></a>
 
 ### ListNvmeSubsystemsRequest
-
+Represents a request to list all Nvme Subsystems.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -1288,13 +1288,13 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-ListNvmeSubsystemsResponse"></a>
 
 ### ListNvmeSubsystemsResponse
-
+Represents a response to list all Nvme Subsystems.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_subsystems | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -1464,7 +1464,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-StatsNvmeControllerRequest"></a>
 
 ### StatsNvmeControllerRequest
-
+Represents a request to get an Nvme Controller statistics.
 
 
 | Field | Type | Label | Description |
@@ -1479,7 +1479,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-StatsNvmeControllerResponse"></a>
 
 ### StatsNvmeControllerResponse
-
+Represents a response to get an Nvme Controller statistics.
 
 
 | Field | Type | Label | Description |
@@ -1494,7 +1494,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-StatsNvmeNamespaceRequest"></a>
 
 ### StatsNvmeNamespaceRequest
-
+Represents a request to get an Nvme Namespace statistics.
 
 
 | Field | Type | Label | Description |
@@ -1509,7 +1509,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-StatsNvmeNamespaceResponse"></a>
 
 ### StatsNvmeNamespaceResponse
-
+Represents a response to get an Nvme Namespace statistics.
 
 
 | Field | Type | Label | Description |
@@ -1524,7 +1524,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-StatsNvmeSubsystemRequest"></a>
 
 ### StatsNvmeSubsystemRequest
-
+Represents a request to get an Nvme Subsystems statistics.
 
 
 | Field | Type | Label | Description |
@@ -1539,7 +1539,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-StatsNvmeSubsystemResponse"></a>
 
 ### StatsNvmeSubsystemResponse
-
+Represents a response to get an Nvme Subsystems statistics.
 
 
 | Field | Type | Label | Description |
@@ -1554,7 +1554,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-UpdateNvmeControllerRequest"></a>
 
 ### UpdateNvmeControllerRequest
-
+Represents a request to update an Nvme Controller.
 
 
 | Field | Type | Label | Description |
@@ -1571,7 +1571,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-UpdateNvmeNamespaceRequest"></a>
 
 ### UpdateNvmeNamespaceRequest
-
+Represents a request to update an Nvme Namespace.
 
 
 | Field | Type | Label | Description |
@@ -1588,7 +1588,7 @@ Represents a request to delete an Nvme Subsystem.
 <a name="opi_api-storage-v1-UpdateNvmeSubsystemRequest"></a>
 
 ### UpdateNvmeSubsystemRequest
-
+Represents a request to update an Nvme Subsystem.
 
 
 | Field | Type | Label | Description |
@@ -1707,7 +1707,7 @@ Represents a request to delete an Virtio Blk.
 <a name="opi_api-storage-v1-GetVirtioBlkRequest"></a>
 
 ### GetVirtioBlkRequest
-
+Represents a request to get an Virtio Blk.
 
 
 | Field | Type | Label | Description |
@@ -1722,14 +1722,14 @@ Represents a request to delete an Virtio Blk.
 <a name="opi_api-storage-v1-ListVirtioBlksRequest"></a>
 
 ### ListVirtioBlksRequest
-
+Represents a request to list all Virtio Blks.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -1739,13 +1739,13 @@ Represents a request to delete an Virtio Blk.
 <a name="opi_api-storage-v1-ListVirtioBlksResponse"></a>
 
 ### ListVirtioBlksResponse
-
+Represents a response to list all Virtio Blks.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | virtio_blks | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -1755,7 +1755,7 @@ Represents a request to delete an Virtio Blk.
 <a name="opi_api-storage-v1-StatsVirtioBlkRequest"></a>
 
 ### StatsVirtioBlkRequest
-
+Represents a request to get an Virtio Blk statistics.
 
 
 | Field | Type | Label | Description |
@@ -1770,7 +1770,7 @@ Represents a request to delete an Virtio Blk.
 <a name="opi_api-storage-v1-StatsVirtioBlkResponse"></a>
 
 ### StatsVirtioBlkResponse
-
+Represents a response to get an Virtio Blk statistics.
 
 
 | Field | Type | Label | Description |
@@ -1785,7 +1785,7 @@ Represents a request to delete an Virtio Blk.
 <a name="opi_api-storage-v1-UpdateVirtioBlkRequest"></a>
 
 ### UpdateVirtioBlkRequest
-
+Represents a request to update an Virtio Blk.
 
 
 | Field | Type | Label | Description |
@@ -1965,7 +1965,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-GetVirtioScsiControllerRequest"></a>
 
 ### GetVirtioScsiControllerRequest
-
+Represents a request to get an Virtio Scsi Controller.
 
 
 | Field | Type | Label | Description |
@@ -1980,7 +1980,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-GetVirtioScsiLunRequest"></a>
 
 ### GetVirtioScsiLunRequest
-
+Represents a request to get an Virtio Scsi Lun.
 
 
 | Field | Type | Label | Description |
@@ -1995,7 +1995,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-GetVirtioScsiTargetRequest"></a>
 
 ### GetVirtioScsiTargetRequest
-
+Represents a request to get an Virtio Scsi Target.
 
 
 | Field | Type | Label | Description |
@@ -2010,14 +2010,14 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-ListVirtioScsiControllersRequest"></a>
 
 ### ListVirtioScsiControllersRequest
-
+Represents a request to list all Virtio Scsi Controllers.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -2027,13 +2027,13 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-ListVirtioScsiControllersResponse"></a>
 
 ### ListVirtioScsiControllersResponse
-
+Represents a response to list all Virtio Scsi Controllers.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | virtio_scsi_controllers | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -2043,14 +2043,14 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-ListVirtioScsiLunsRequest"></a>
 
 ### ListVirtioScsiLunsRequest
-
+Represents a request to list all Virtio Scsi Luns.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -2060,13 +2060,13 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-ListVirtioScsiLunsResponse"></a>
 
 ### ListVirtioScsiLunsResponse
-
+Represents a response to list all Virtio Scsi Luns.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | virtio_scsi_luns | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -2076,14 +2076,14 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-ListVirtioScsiTargetsRequest"></a>
 
 ### ListVirtioScsiTargetsRequest
-
+Represents a request to list all Virtio Scsi Targets.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -2093,13 +2093,13 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-ListVirtioScsiTargetsResponse"></a>
 
 ### ListVirtioScsiTargetsResponse
-
+Represents a response to list all Virtio Scsi Targets.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | virtio_scsi_targets | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -2109,7 +2109,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-StatsVirtioScsiControllerRequest"></a>
 
 ### StatsVirtioScsiControllerRequest
-
+Represents a request to get an Virtio Scsi Controller statistics.
 
 
 | Field | Type | Label | Description |
@@ -2124,7 +2124,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-StatsVirtioScsiControllerResponse"></a>
 
 ### StatsVirtioScsiControllerResponse
-
+Represents a response to get an Virtio Scsi Controller statistics.
 
 
 | Field | Type | Label | Description |
@@ -2139,7 +2139,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-StatsVirtioScsiLunRequest"></a>
 
 ### StatsVirtioScsiLunRequest
-
+Represents a request to get an Virtio Scsi Lun statistics.
 
 
 | Field | Type | Label | Description |
@@ -2155,7 +2155,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-StatsVirtioScsiLunResponse"></a>
 
 ### StatsVirtioScsiLunResponse
-
+Represents a response to get an Virtio Scsi Lun statistics.
 
 
 | Field | Type | Label | Description |
@@ -2170,7 +2170,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-StatsVirtioScsiTargetRequest"></a>
 
 ### StatsVirtioScsiTargetRequest
-
+Represents a request to get an Virtio Scsi Target statistics.
 
 
 | Field | Type | Label | Description |
@@ -2185,7 +2185,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-StatsVirtioScsiTargetResponse"></a>
 
 ### StatsVirtioScsiTargetResponse
-
+Represents a response to get an Virtio Scsi Target statistics.
 
 
 | Field | Type | Label | Description |
@@ -2200,7 +2200,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-UpdateVirtioScsiControllerRequest"></a>
 
 ### UpdateVirtioScsiControllerRequest
-
+Represents a request to update an Virtio Scsi Controller.
 
 
 | Field | Type | Label | Description |
@@ -2217,7 +2217,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-UpdateVirtioScsiLunRequest"></a>
 
 ### UpdateVirtioScsiLunRequest
-
+Represents a request to update an Virtio Scsi Lun.
 
 
 | Field | Type | Label | Description |
@@ -2234,7 +2234,7 @@ Represents a request to delete an Virtio Scsi Target.
 <a name="opi_api-storage-v1-UpdateVirtioScsiTargetRequest"></a>
 
 ### UpdateVirtioScsiTargetRequest
-
+Represents a request to update an Virtio Scsi Target.
 
 
 | Field | Type | Label | Description |
@@ -2395,7 +2395,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-GetEncryptedVolumeRequest"></a>
 
 ### GetEncryptedVolumeRequest
-
+Represents a request to get an Encrypted Volume.
 
 
 | Field | Type | Label | Description |
@@ -2410,14 +2410,14 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-ListEncryptedVolumesRequest"></a>
 
 ### ListEncryptedVolumesRequest
-
+Represents a request to list all Encrypted Volumes.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -2427,13 +2427,13 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-ListEncryptedVolumesResponse"></a>
 
 ### ListEncryptedVolumesResponse
-
+Represents a response to list all Encrypted Volumes.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | encrypted_volumes | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -2443,7 +2443,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-StatsEncryptedVolumeRequest"></a>
 
 ### StatsEncryptedVolumeRequest
-
+Represents a request to get an Encrypted Volume statistics.
 
 
 | Field | Type | Label | Description |
@@ -2458,7 +2458,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-StatsEncryptedVolumeResponse"></a>
 
 ### StatsEncryptedVolumeResponse
-
+Represents a response to get an Encrypted Volume statistics.
 
 
 | Field | Type | Label | Description |
@@ -2473,7 +2473,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-UpdateEncryptedVolumeRequest"></a>
 
 ### UpdateEncryptedVolumeRequest
-
+Represents a request to update an Encrypted Volume.
 
 
 | Field | Type | Label | Description |
@@ -2537,7 +2537,7 @@ Represents a request to create an QoS Volume.
 <a name="opi_api-storage-v1-DeleteQosVolumeRequest"></a>
 
 ### DeleteQosVolumeRequest
-Represents a request to delete an Encrypted Volume.
+Represents a request to delete an QoS Volume.
 
 
 | Field | Type | Label | Description |
@@ -2553,7 +2553,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-GetQosVolumeRequest"></a>
 
 ### GetQosVolumeRequest
-
+Represents a request to get an QoS Volume.
 
 
 | Field | Type | Label | Description |
@@ -2584,14 +2584,14 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-ListQosVolumesRequest"></a>
 
 ### ListQosVolumesRequest
-
+Represents a request to list all QoS Volumes.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
 
 
 
@@ -2601,13 +2601,13 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-ListQosVolumesResponse"></a>
 
 ### ListQosVolumesResponse
-
+Represents a response to list all QoS Volumes.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | qos_volumes | [QosVolume](#opi_api-storage-v1-QosVolume) | repeated |  |
-| next_page_token | [string](#string) |  |  |
+| next_page_token | [string](#string) |  | Next page token of list response |
 
 
 
@@ -2634,7 +2634,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-StatsQosVolumeRequest"></a>
 
 ### StatsQosVolumeRequest
-
+Represents a request to get an QoS Volume statistics.
 
 
 | Field | Type | Label | Description |
@@ -2649,7 +2649,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-StatsQosVolumeResponse"></a>
 
 ### StatsQosVolumeResponse
-
+Represents a response to get an QoS Volume statistics.
 
 
 | Field | Type | Label | Description |
@@ -2664,7 +2664,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-UpdateQosVolumeRequest"></a>
 
 ### UpdateQosVolumeRequest
-
+Represents a request to update an QoS Volume.
 
 
 | Field | Type | Label | Description |
@@ -2687,7 +2687,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-MiddleendQosVolumeService"></a>
 
 ### MiddleendQosVolumeService
-
+Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|

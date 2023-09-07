@@ -32,11 +32,19 @@ public interface ListNvmeRemoteNamespacesResponseOrBuilder extends
       int index);
 
   /**
+   * <pre>
+   * Next page token of list response
+   * </pre>
+   *
    * <code>string next_page_token = 2;</code>
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
+   * <pre>
+   * Next page token of list response
+   * </pre>
+   *
    * <code>string next_page_token = 2;</code>
    * @return The bytes for nextPageToken.
    */

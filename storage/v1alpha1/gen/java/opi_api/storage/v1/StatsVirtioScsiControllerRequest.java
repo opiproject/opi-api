@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to get an Virtio Scsi Controller statistics.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.StatsVirtioScsiControllerRequest}
  */
 public final class StatsVirtioScsiControllerRequest extends
@@ -282,6 +286,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to get an Virtio Scsi Controller statistics.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.StatsVirtioScsiControllerRequest}
    */
   public static final class Builder extends

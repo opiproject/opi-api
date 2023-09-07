@@ -5,7 +5,7 @@ package opi_api.storage.v1;
 
 /**
  * <pre>
- * Represents a request to delete an AioVolume.
+ * Represents a request to delete an Aio Volume.
  * </pre>
  *
  * Protobuf type {@code opi_api.storage.v1.DeleteAioVolumeRequest}
@@ -320,7 +320,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Represents a request to delete an AioVolume.
+   * Represents a request to delete an Aio Volume.
    * </pre>
    *
    * Protobuf type {@code opi_api.storage.v1.DeleteAioVolumeRequest}

@@ -33,6 +33,7 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
+// Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
 class MiddleendQosVolumeService final {
  public:
   static constexpr char const* service_full_name() {

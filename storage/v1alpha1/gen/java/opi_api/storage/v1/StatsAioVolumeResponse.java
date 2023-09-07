@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a response to get an Aio Volume statistics.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.StatsAioVolumeResponse}
  */
 public final class StatsAioVolumeResponse extends
@@ -282,6 +286,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a response to get an Aio Volume statistics.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.StatsAioVolumeResponse}
    */
   public static final class Builder extends

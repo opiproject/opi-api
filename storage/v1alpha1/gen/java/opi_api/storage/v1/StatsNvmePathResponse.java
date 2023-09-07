@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a response to get an Nvme Path statistics.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.StatsNvmePathResponse}
  */
 public final class StatsNvmePathResponse extends
@@ -282,6 +286,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a response to get an Nvme Path statistics.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.StatsNvmePathResponse}
    */
   public static final class Builder extends

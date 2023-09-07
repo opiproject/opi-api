@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a request to list all Nvme Paths.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.ListNvmePathsRequest}
  */
 public final class ListNvmePathsRequest extends
@@ -142,6 +146,10 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_;
   /**
+   * <pre>
+   * page size of list request
+   * </pre>
+   *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
@@ -153,6 +161,10 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
   private volatile java.lang.Object pageToken_;
   /**
+   * <pre>
+   * page token of list request
+   * </pre>
+   *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
@@ -170,6 +182,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * page token of list request
+   * </pre>
+   *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
@@ -364,6 +380,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a request to list all Nvme Paths.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.ListNvmePathsRequest}
    */
   public static final class Builder extends
@@ -602,6 +622,10 @@ private static final long serialVersionUID = 0L;
 
     private int pageSize_ ;
     /**
+     * <pre>
+     * page size of list request
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageSize.
      */
@@ -610,6 +634,10 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     * <pre>
+     * page size of list request
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -621,6 +649,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * page size of list request
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -633,6 +665,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
+     * <pre>
+     * page token of list request
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageToken.
      */
@@ -649,6 +685,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * page token of list request
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for pageToken.
      */
@@ -666,6 +706,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * page token of list request
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -681,6 +725,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * page token of list request
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -691,6 +739,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * page token of list request
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
