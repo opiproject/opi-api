@@ -18,6 +18,7 @@ import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
+// Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
 service MiddleendQosVolumeService {
     // Create an Qos Volume
     rpc CreateQosVolume(CreateQosVolumeRequest) returns (QosVolume) {
@@ -115,7 +116,7 @@ message CreateQosVolumeRequest {
     string qos_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents a request to delete an Encrypted Volume.
+// Represents a request to delete an QoS Volume.
 message DeleteQosVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -127,6 +128,7 @@ message DeleteQosVolumeRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an QoS Volume.
 message UpdateQosVolumeRequest {
     // The object's `name` field is used to identify the object to be updated.
     QosVolume qos_volume = 1 [(google.api.field_behavior) = REQUIRED];
@@ -137,20 +139,26 @@ message UpdateQosVolumeRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all QoS Volumes.
 message ListQosVolumesRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all QoS Volumes.
 message ListQosVolumesResponse {
     repeated QosVolume qos_volumes = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an QoS Volume.
 message GetQosVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -158,6 +166,7 @@ message GetQosVolumeRequest {
     ];
 }
 
+// Represents a request to get an QoS Volume statistics.
 message StatsQosVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -165,6 +174,7 @@ message StatsQosVolumeRequest {
     ];
 }
 
+// Represents a response to get an QoS Volume statistics.
 message StatsQosVolumeResponse {
     VolumeStats stats = 1;
 }

@@ -116,6 +116,7 @@ message DeleteEncryptedVolumeRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Encrypted Volume.
 message UpdateEncryptedVolumeRequest {
     // The object's `name` field is used to identify the object to be updated.
     EncryptedVolume encrypted_volume = 1 [(google.api.field_behavior) = REQUIRED];
@@ -126,20 +127,26 @@ message UpdateEncryptedVolumeRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Encrypted Volumes.
 message ListEncryptedVolumesRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Encrypted Volumes.
 message ListEncryptedVolumesResponse {
     repeated EncryptedVolume encrypted_volumes = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Encrypted Volume.
 message GetEncryptedVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -147,6 +154,7 @@ message GetEncryptedVolumeRequest {
     ];
 }
 
+// Represents a request to get an Encrypted Volume statistics.
 message StatsEncryptedVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -154,6 +162,7 @@ message StatsEncryptedVolumeRequest {
     ];
 }
 
+// Represents a response to get an Encrypted Volume statistics.
 message StatsEncryptedVolumeResponse {
     VolumeStats stats = 1;
 }

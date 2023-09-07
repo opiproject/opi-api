@@ -119,6 +119,7 @@ message DeleteVirtioBlkRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Virtio Blk.
 message UpdateVirtioBlkRequest {
     // The object's `name` field is used to identify the object to be updated.
     VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
@@ -129,20 +130,26 @@ message UpdateVirtioBlkRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Virtio Blks.
 message ListVirtioBlksRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Virtio Blks.
 message ListVirtioBlksResponse {
     repeated VirtioBlk virtio_blks = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Virtio Blk.
 message GetVirtioBlkRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -150,6 +157,7 @@ message GetVirtioBlkRequest {
     ];
 }
 
+// Represents a request to get an Virtio Blk statistics.
 message StatsVirtioBlkRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -157,6 +165,7 @@ message StatsVirtioBlkRequest {
     ];
 }
 
+// Represents a response to get an Virtio Blk statistics.
 message StatsVirtioBlkResponse {
     VolumeStats stats = 1;
 }

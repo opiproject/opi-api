@@ -115,6 +115,7 @@ message DeleteNullVolumeRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Null Volume.
 message UpdateNullVolumeRequest {
     // The object's `name` field is used to identify the object to be updated.
     NullVolume null_volume = 1 [(google.api.field_behavior) = REQUIRED];
@@ -125,20 +126,26 @@ message UpdateNullVolumeRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Null Volumes.
 message ListNullVolumesRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NullVolume"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Null Volumes.
 message ListNullVolumesResponse {
     repeated NullVolume null_volumes = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Null Volume.
 message GetNullVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -146,6 +153,7 @@ message GetNullVolumeRequest {
     ];
 }
 
+// Represents a request to get an Null Volume statistics.
 message StatsNullVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -153,6 +161,7 @@ message StatsNullVolumeRequest {
     ];
 }
 
+// Represents a response to get an Null Volume statistics.
 message StatsNullVolumeResponse {
     VolumeStats stats = 1;
 }

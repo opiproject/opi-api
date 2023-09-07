@@ -107,7 +107,7 @@ message CreateAioVolumeRequest {
     string aio_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents a request to delete an AioVolume.
+// Represents a request to delete an Aio Volume.
 message DeleteAioVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -118,6 +118,7 @@ message DeleteAioVolumeRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Aio Volume.
 message UpdateAioVolumeRequest {
     // The object's `name` field is used to identify the object to be updated.
     AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
@@ -128,20 +129,26 @@ message UpdateAioVolumeRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Aio Volumes.
 message ListAioVolumesRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
-message ListAioVolumesResponse{
+// Represents a response to list all Aio Volumes.
+message ListAioVolumesResponse {
     repeated AioVolume aio_volumes = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Aio Volume.
 message GetAioVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -149,6 +156,7 @@ message GetAioVolumeRequest {
     ];
 }
 
+// Represents a request to get an Aio Volume statistics.
 message StatsAioVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -156,6 +164,7 @@ message StatsAioVolumeRequest {
     ];
 }
 
+// Represents a response to get an Aio Volume statistics.
 message StatsAioVolumeResponse {
     VolumeStats stats = 1;
 }

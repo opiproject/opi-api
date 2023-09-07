@@ -247,6 +247,7 @@ message DeleteVirtioScsiTargetRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Virtio Scsi Target.
 message UpdateVirtioScsiTargetRequest {
     // The object's `name` field is used to identify the object to be updated.
     VirtioScsiTarget virtio_scsi_target = 1 [(google.api.field_behavior) = REQUIRED];
@@ -257,20 +258,26 @@ message UpdateVirtioScsiTargetRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Virtio Scsi Targets.
 message ListVirtioScsiTargetsRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Virtio Scsi Targets.
 message ListVirtioScsiTargetsResponse {
     repeated VirtioScsiTarget virtio_scsi_targets = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Virtio Scsi Target.
 message GetVirtioScsiTargetRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -278,6 +285,7 @@ message GetVirtioScsiTargetRequest {
     ];
 }
 
+// Represents a request to get an Virtio Scsi Target statistics.
 message StatsVirtioScsiTargetRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -285,6 +293,7 @@ message StatsVirtioScsiTargetRequest {
     ];
 }
 
+// Represents a response to get an Virtio Scsi Target statistics.
 message StatsVirtioScsiTargetResponse {
     VolumeStats stats = 1;
 }
@@ -309,6 +318,7 @@ message DeleteVirtioScsiControllerRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Virtio Scsi Controller.
 message UpdateVirtioScsiControllerRequest {
     // The object's `name` field is used to identify the object to be updated.
     VirtioScsiController virtio_scsi_controller = 1 [(google.api.field_behavior) = REQUIRED];
@@ -319,20 +329,26 @@ message UpdateVirtioScsiControllerRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Virtio Scsi Controllers.
 message ListVirtioScsiControllersRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Virtio Scsi Controllers.
 message ListVirtioScsiControllersResponse {
     repeated VirtioScsiController virtio_scsi_controllers = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Virtio Scsi Controller.
 message GetVirtioScsiControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -340,6 +356,7 @@ message GetVirtioScsiControllerRequest {
     ];
 }
 
+// Represents a request to get an Virtio Scsi Controller statistics.
 message StatsVirtioScsiControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -347,6 +364,7 @@ message StatsVirtioScsiControllerRequest {
     ];
 }
 
+// Represents a response to get an Virtio Scsi Controller statistics.
 message StatsVirtioScsiControllerResponse {
     VolumeStats stats = 1;
 }
@@ -371,6 +389,7 @@ message DeleteVirtioScsiLunRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Virtio Scsi Lun.
 message UpdateVirtioScsiLunRequest {
     // The object's `name` field is used to identify the object to be updated.
     VirtioScsiLun virtio_scsi_lun = 1 [(google.api.field_behavior) = REQUIRED];
@@ -381,20 +400,26 @@ message UpdateVirtioScsiLunRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Virtio Scsi Luns.
 message ListVirtioScsiLunsRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Virtio Scsi Luns.
 message ListVirtioScsiLunsResponse {
     repeated VirtioScsiLun virtio_scsi_luns = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Virtio Scsi Lun.
 message GetVirtioScsiLunRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -402,6 +427,7 @@ message GetVirtioScsiLunRequest {
     ];
 }
 
+// Represents a request to get an Virtio Scsi Lun statistics.
 message StatsVirtioScsiLunRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -410,6 +436,7 @@ message StatsVirtioScsiLunRequest {
     string controller_name_ref = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to get an Virtio Scsi Lun statistics.
 message StatsVirtioScsiLunResponse {
     VolumeStats stats = 1;
 }

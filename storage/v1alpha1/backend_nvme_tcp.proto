@@ -274,6 +274,7 @@ message DeleteNvmeRemoteControllerRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Nvme Remote Controller.
 message UpdateNvmeRemoteControllerRequest {
     // The object's `name` field is used to identify the object to be updated.
     NvmeRemoteController nvme_remote_controller = 1 [(google.api.field_behavior) = REQUIRED];
@@ -284,20 +285,26 @@ message UpdateNvmeRemoteControllerRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Nvme Remote Controllers.
 message ListNvmeRemoteControllersRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Nvme Remote Controllers.
 message ListNvmeRemoteControllersResponse {
     repeated NvmeRemoteController nvme_remote_controllers = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Nvme Remote Controller.
 message GetNvmeRemoteControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -305,6 +312,7 @@ message GetNvmeRemoteControllerRequest {
     ];
 }
 
+// Represents a request to reset an Nvme Remote Controller.
 message ResetNvmeRemoteControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -312,6 +320,7 @@ message ResetNvmeRemoteControllerRequest {
     ];
 }
 
+// Represents a request to get an Nvme Remote Controller statistics.
 message StatsNvmeRemoteControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -319,10 +328,12 @@ message StatsNvmeRemoteControllerRequest {
     ];
 }
 
+// Represents a response to get an Nvme Remote Controller statistics.
 message StatsNvmeRemoteControllerResponse {
     VolumeStats stats = 1;
 }
 
+// Represents a request to list all Nvme Remote Namespaces.
 message ListNvmeRemoteNamespacesRequest {
     // The controller's unique object identifier. This lists
     // namespaces for a particular controller.
@@ -330,15 +341,20 @@ message ListNvmeRemoteNamespacesRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteNamespace"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Nvme Remote Namespaces.
 message ListNvmeRemoteNamespacesResponse {
     repeated NvmeRemoteNamespace nvme_remote_namespaces = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Nvme Remote Namespace.
 message GetNvmeRemoteNamespaceRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -367,6 +383,7 @@ message DeleteNvmePathRequest {
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to update an Nvme Path.
 message UpdateNvmePathRequest {
     // The object's `name` field is used to identify the object to be updated.
     NvmePath nvme_path = 1 [(google.api.field_behavior) = REQUIRED];
@@ -377,20 +394,26 @@ message UpdateNvmePathRequest {
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a request to list all Nvme Paths.
 message ListNvmePathsRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
     ];
+    // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // page token of list request
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a response to list all Nvme Paths.
 message ListNvmePathsResponse {
     repeated NvmePath nvme_paths = 1;
+    // Next page token of list response
     string next_page_token = 2;
 }
 
+// Represents a request to get an Nvme Path.
 message GetNvmePathRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -398,6 +421,7 @@ message GetNvmePathRequest {
     ];
 }
 
+// Represents a request to get an Nvme Path statistics.
 message StatsNvmePathRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -405,6 +429,7 @@ message StatsNvmePathRequest {
     ];
 }
 
+// Represents a response to get an Nvme Path statistics.
 message StatsNvmePathResponse {
     VolumeStats stats = 1;
 }
