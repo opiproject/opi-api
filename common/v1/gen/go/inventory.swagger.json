@@ -1,0 +1,294 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "inventory.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/{name=inventory/*/inventory/*}": {
+      "get": {
+        "summary": "retrieves the inventory data for the device",
+        "operationId": "InventorySvc_GetInventory",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1Inventory"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "description": "The name of the inventory to retrieve - blank for the full inventory",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "InventorySvc"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BIOSInfo": {
+      "type": "object",
+      "properties": {
+        "vendor": {
+          "type": "string",
+          "description": "String number of the BIOS Vendor’s Name."
+        },
+        "version": {
+          "type": "string",
+          "description": "String number of the BIOS Version. This value is a\nfree-form string that may contain Core and OEM\nversion information."
+        },
+        "date": {
+          "type": "string",
+          "description": "String number of the BIOS release date. The date\nstring, if supplied, is in either mm/dd/yy or\nmm/dd/yyyy format. If the year portion of the string\nis two digits, the year is assumed to be 19yy.\nNOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy\nformat is only used."
+        }
+      },
+      "title": "BIOS Information (Type 0)"
+    },
+    "v1BaseboardInfo": {
+      "type": "object",
+      "properties": {
+        "asset_tag": {
+          "type": "string",
+          "title": "Number of a null-terminated string"
+        },
+        "serial_number": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "vendor": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "version": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "product": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        }
+      },
+      "title": "Baseboard (or Module) Information (Type 2)\n The information in this structure defines attributes of a system baseboard (for\n example, a motherboard, planar, server blade, or other standard system module)"
+    },
+    "v1CPUInfo": {
+      "type": "object",
+      "properties": {
+        "total_cores": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Number of cores per processor socket\nSee 7.5.6. If the value is unknown, the field is set\nto 0. For core counts of 256 or greater, the Core\nCount field is set to FFh and the Core Count 2\nfield is set to the number of cores."
+        },
+        "total_threads": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Number of threads per processor socket\nSee 7.5.8. If the value is unknown, the field is set\nto 0. For thread counts of 256 or greater, the\nThread Count field is set to FFh and the Thread\nCount 2 field is set to the number of threads."
+        }
+      },
+      "description": "Processor Information (Type 4)\n The information in this structure (see Table 21) defines the attributes of a single processor; a separate\n structure instance is provided for each system processor socket/slot. For example, a system with an\n IntelDX2™ processor would have a single structure instance while a system with an IntelSX2™ processor\n would have a structure to describe the main CPU and a second structure to describe the 80487 co1054 processor."
+    },
+    "v1ChassisInfo": {
+      "type": "object",
+      "properties": {
+        "asset_tag": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "serial_number": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "type": {
+          "type": "string",
+          "description": "Bit 7 Chassis lock is present if 1.\nOtherwise, either a lock is not present, or it is unknown if the enclosure has a lock.\nBits 6:0 Enumeration value; see below."
+        },
+        "type_description": {
+          "type": "string",
+          "title": "Table 17 shows the byte values for the System Enclosure or Chassis Types field\nNumber of null-terminated string"
+        },
+        "vendor": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "version": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        }
+      },
+      "description": "System Enclosure or Chassis (Type 3)\n The information in this structure (see Table 16) defines attributes of the system’s mechanical\n enclosure(s). For example, if a system included a separate enclosure for its peripheral devices, two\n structures would be returned: one for the main system enclosure and the second for the peripheral device\n enclosure. The additions to this structure in version 2.1 of this specification support the population of the\n CIM_Chassis class."
+    },
+    "v1Inventory": {
+      "type": "object",
+      "properties": {
+        "bios": {
+          "$ref": "#/definitions/v1BIOSInfo",
+          "title": "BIOS Inventory"
+        },
+        "system": {
+          "$ref": "#/definitions/v1SystemInfo",
+          "title": "System Inventory"
+        },
+        "baseboard": {
+          "$ref": "#/definitions/v1BaseboardInfo",
+          "title": "Baseboard Inventory"
+        },
+        "chassis": {
+          "$ref": "#/definitions/v1ChassisInfo",
+          "title": "Chassis Inventory"
+        },
+        "processor": {
+          "$ref": "#/definitions/v1CPUInfo",
+          "title": "CPU Inventory"
+        },
+        "memory": {
+          "$ref": "#/definitions/v1MemoryInfo",
+          "title": "Memory Inventory"
+        },
+        "pci": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PCIeDeviceInfo"
+          },
+          "title": "PCI Devices Inventory"
+        }
+      },
+      "title": "Response for device inventory data"
+    },
+    "v1MemoryInfo": {
+      "type": "object",
+      "properties": {
+        "total_physical_bytes": {
+          "type": "string",
+          "format": "int64",
+          "description": "Maximum memory capacity, in kilobytes, for this array\nIf the capacity is not represented in this field, then this\nfield contains 8000 0000h and the Extended\nMaximum Capacity field should be used. Values 2 TB\n(8000 0000h) or greater must be represented in the\nExtended Maximum Capacity field."
+        },
+        "total_usable_bytes": {
+          "type": "string",
+          "format": "int64",
+          "title": "TBD"
+        }
+      },
+      "description": "Physical Memory Array (Type 16)\n This structure describes a collection of memory devices that operate together to form a memory address\n space."
+    },
+    "v1PCIeDeviceInfo": {
+      "type": "object",
+      "properties": {
+        "driver": {
+          "type": "string",
+          "title": "Driver assiociated with the device"
+        },
+        "address": {
+          "type": "string",
+          "title": "BDF address in a string format, for example \"0000:00:17.7\""
+        },
+        "vendor": {
+          "type": "string",
+          "title": "string vendor info"
+        },
+        "product": {
+          "type": "string",
+          "title": "string product info"
+        },
+        "revision": {
+          "type": "string",
+          "title": "string revision info"
+        },
+        "subsystem": {
+          "type": "string",
+          "title": "string subsystem info"
+        },
+        "class": {
+          "type": "string",
+          "title": "string class info"
+        },
+        "subclass": {
+          "type": "string",
+          "title": "string subclass info"
+        }
+      },
+      "description": "PCI device information\n TBD: Type 9 or Type 41 ?\n This structure describes a collection of PCI devices."
+    },
+    "v1SystemInfo": {
+      "type": "object",
+      "properties": {
+        "family": {
+          "type": "string",
+          "description": "Number of null-terminated string\nThis text string identifies the family to which a\nparticular computer belongs. A family refers to a\nset of computers that are similar but not identical\nfrom a hardware or software point of view.\nTypically, a family is composed of different\ncomputer models, which have different\nconfigurations and pricing points. Computers in\nthe same family often have similar branding and\ncosmetic features."
+        },
+        "name": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "vendor": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "serial_number": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        },
+        "uuid": {
+          "type": "string",
+          "description": "A UUID is an identifier that is designed to be unique across both time and space. It requires no central\nregistration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field\ncontents are opaque and not significant to the SMBIOS specification, which is only concerned with the\nbyte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow\nhistorical practice."
+        },
+        "sku": {
+          "type": "string",
+          "description": "Number of null-terminated string\nThis text string identifies a particular computer\nconfiguration for sale. It is sometimes also called\na product ID or purchase order number. This\nnumber is frequently found in existing fields, but\nthere is no standard format. Typically for a given\nsystem board from a given OEM, there are tens\nof unique processor, memory, hard drive, and\noptical drive configurations."
+        },
+        "version": {
+          "type": "string",
+          "title": "Number of null-terminated string"
+        }
+      },
+      "description": "System Information (Type 1)\n The information in this structure defines attributes of the overall system and is intended to be associated\n with the Component ID group of the system’s MIF. An SMBIOS implementation is associated with a single\n system instance and contains one and only one System Information (Type 1) structure. Table 10 shows\n the contents of this structure."
+    }
+  }
+}
