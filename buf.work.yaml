@@ -1,0 +1,10 @@
+version: v1
+directories:
+- common
+- security
+#  - storage
+#  - network/opinetcommon
+#  - network/cloud
+#  - network/evpn-gw
+#  - network/k8s
+#  - network/telco

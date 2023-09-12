@@ -1,0 +1,6 @@
+version: v1beta1
+name: buf.build/opiproject/k8s
+deps:
+- buf.build/googleapis/googleapis
+- buf.build/grpc-ecosystem/grpc-gateway
+
