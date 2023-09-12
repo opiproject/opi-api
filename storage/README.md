@@ -55,7 +55,7 @@ docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../commo
 Linter it as:
 
 ```bash
-docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.56.1 -c "api-linter -I /common /out/*.proto --output-format github --set-exit-status"
+docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.57.0 -c "api-linter -I /common /out/*.proto --output-format github --set-exit-status"
 ```
 
 Generate [docs](v1alpha1/autogen.md) as:
