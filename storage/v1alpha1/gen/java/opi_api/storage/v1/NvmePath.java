@@ -19,11 +19,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     controllerNameRef_ = "";
     trtype_ = 0;
-    adrfam_ = 0;
     traddr_ = "";
-    subnqn_ = "";
-    sourceTraddr_ = "";
-    hostnqn_ = "";
   }
 
   @java.lang.Override
@@ -74,44 +70,23 @@ private static final long serialVersionUID = 0L;
             trtype_ = rawValue;
             break;
           }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            adrfam_ = rawValue;
-            break;
-          }
-          case 42: {
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
             traddr_ = s;
             break;
           }
-          case 48: {
+          case 42: {
+            opi_api.storage.v1.FabricsPath.Builder subBuilder = null;
+            if (fabrics_ != null) {
+              subBuilder = fabrics_.toBuilder();
+            }
+            fabrics_ = input.readMessage(opi_api.storage.v1.FabricsPath.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(fabrics_);
+              fabrics_ = subBuilder.buildPartial();
+            }
 
-            trsvcid_ = input.readInt64();
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            subnqn_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            sourceTraddr_ = s;
-            break;
-          }
-          case 72: {
-
-            sourceTrsvcid_ = input.readInt64();
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            hostnqn_ = s;
             break;
           }
           default: {
@@ -255,33 +230,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.storage.v1.NvmeTransportType.UNRECOGNIZED : result;
   }
 
-  public static final int ADRFAM_FIELD_NUMBER = 4;
-  private int adrfam_;
-  /**
-   * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The enum numeric value on the wire for adrfam.
-   */
-  @java.lang.Override public int getAdrfamValue() {
-    return adrfam_;
-  }
-  /**
-   * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The adrfam.
-   */
-  @java.lang.Override public opi_api.storage.v1.NvmeAddressFamily getAdrfam() {
-    @SuppressWarnings("deprecation")
-    opi_api.storage.v1.NvmeAddressFamily result = opi_api.storage.v1.NvmeAddressFamily.valueOf(adrfam_);
-    return result == null ? opi_api.storage.v1.NvmeAddressFamily.UNRECOGNIZED : result;
-  }
-
-  public static final int TRADDR_FIELD_NUMBER = 5;
+  public static final int TRADDR_FIELD_NUMBER = 4;
   private volatile java.lang.Object traddr_;
   /**
    * <pre>
    * Destination address (e.g. IP address, BDF for local PCIe)
    * </pre>
    *
-   * <code>string traddr = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The traddr.
    */
   @java.lang.Override
@@ -302,7 +258,7 @@ private static final long serialVersionUID = 0L;
    * Destination address (e.g. IP address, BDF for local PCIe)
    * </pre>
    *
-   * <code>string traddr = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for traddr.
    */
   @java.lang.Override
@@ -320,172 +276,42 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TRSVCID_FIELD_NUMBER = 6;
-  private long trsvcid_;
+  public static final int FABRICS_FIELD_NUMBER = 5;
+  private opi_api.storage.v1.FabricsPath fabrics_;
   /**
    * <pre>
-   * Destination service id (e.g. Port)
+   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>int64 trsvcid = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The trsvcid.
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the fabrics field is set.
    */
   @java.lang.Override
-  public long getTrsvcid() {
-    return trsvcid_;
-  }
-
-  public static final int SUBNQN_FIELD_NUMBER = 7;
-  private volatile java.lang.Object subnqn_;
-  /**
-   * <pre>
-   * Subsystem NQN
-   * </pre>
-   *
-   * <code>string subnqn = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The subnqn.
-   */
-  @java.lang.Override
-  public java.lang.String getSubnqn() {
-    java.lang.Object ref = subnqn_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      subnqn_ = s;
-      return s;
-    }
+  public boolean hasFabrics() {
+    return fabrics_ != null;
   }
   /**
    * <pre>
-   * Subsystem NQN
+   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>string subnqn = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for subnqn.
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The fabrics.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSubnqnBytes() {
-    java.lang.Object ref = subnqn_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      subnqn_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SOURCE_TRADDR_FIELD_NUMBER = 8;
-  private volatile java.lang.Object sourceTraddr_;
-  /**
-   * <pre>
-   * Source address (e.g. IP of local NIC)
-   * </pre>
-   *
-   * <code>string source_traddr = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The sourceTraddr.
-   */
-  @java.lang.Override
-  public java.lang.String getSourceTraddr() {
-    java.lang.Object ref = sourceTraddr_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sourceTraddr_ = s;
-      return s;
-    }
+  public opi_api.storage.v1.FabricsPath getFabrics() {
+    return fabrics_ == null ? opi_api.storage.v1.FabricsPath.getDefaultInstance() : fabrics_;
   }
   /**
    * <pre>
-   * Source address (e.g. IP of local NIC)
+   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>string source_traddr = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for sourceTraddr.
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSourceTraddrBytes() {
-    java.lang.Object ref = sourceTraddr_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      sourceTraddr_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SOURCE_TRSVCID_FIELD_NUMBER = 9;
-  private long sourceTrsvcid_;
-  /**
-   * <pre>
-   * Source port (e.g. Port of local NIC)
-   * </pre>
-   *
-   * <code>int64 source_trsvcid = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The sourceTrsvcid.
-   */
-  @java.lang.Override
-  public long getSourceTrsvcid() {
-    return sourceTrsvcid_;
-  }
-
-  public static final int HOSTNQN_FIELD_NUMBER = 10;
-  private volatile java.lang.Object hostnqn_;
-  /**
-   * <pre>
-   * Host NQN
-   * </pre>
-   *
-   * <code>string hostnqn = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The hostnqn.
-   */
-  @java.lang.Override
-  public java.lang.String getHostnqn() {
-    java.lang.Object ref = hostnqn_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      hostnqn_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Host NQN
-   * </pre>
-   *
-   * <code>string hostnqn = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for hostnqn.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getHostnqnBytes() {
-    java.lang.Object ref = hostnqn_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      hostnqn_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder() {
+    return getFabrics();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -511,26 +337,11 @@ private static final long serialVersionUID = 0L;
     if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, trtype_);
     }
-    if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVME_ADDRESS_FAMILY_UNSPECIFIED.getNumber()) {
-      output.writeEnum(4, adrfam_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, traddr_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, traddr_);
     }
-    if (trsvcid_ != 0L) {
-      output.writeInt64(6, trsvcid_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnqn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, subnqn_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceTraddr_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sourceTraddr_);
-    }
-    if (sourceTrsvcid_ != 0L) {
-      output.writeInt64(9, sourceTrsvcid_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostnqn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, hostnqn_);
+    if (fabrics_ != null) {
+      output.writeMessage(5, getFabrics());
     }
     unknownFields.writeTo(output);
   }
@@ -551,29 +362,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, trtype_);
     }
-    if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVME_ADDRESS_FAMILY_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, adrfam_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, traddr_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, traddr_);
     }
-    if (trsvcid_ != 0L) {
+    if (fabrics_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, trsvcid_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnqn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, subnqn_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceTraddr_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sourceTraddr_);
-    }
-    if (sourceTrsvcid_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(9, sourceTrsvcid_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostnqn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, hostnqn_);
+        .computeMessageSize(5, getFabrics());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -595,19 +389,13 @@ private static final long serialVersionUID = 0L;
     if (!getControllerNameRef()
         .equals(other.getControllerNameRef())) return false;
     if (trtype_ != other.trtype_) return false;
-    if (adrfam_ != other.adrfam_) return false;
     if (!getTraddr()
         .equals(other.getTraddr())) return false;
-    if (getTrsvcid()
-        != other.getTrsvcid()) return false;
-    if (!getSubnqn()
-        .equals(other.getSubnqn())) return false;
-    if (!getSourceTraddr()
-        .equals(other.getSourceTraddr())) return false;
-    if (getSourceTrsvcid()
-        != other.getSourceTrsvcid()) return false;
-    if (!getHostnqn()
-        .equals(other.getHostnqn())) return false;
+    if (hasFabrics() != other.hasFabrics()) return false;
+    if (hasFabrics()) {
+      if (!getFabrics()
+          .equals(other.getFabrics())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -625,22 +413,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getControllerNameRef().hashCode();
     hash = (37 * hash) + TRTYPE_FIELD_NUMBER;
     hash = (53 * hash) + trtype_;
-    hash = (37 * hash) + ADRFAM_FIELD_NUMBER;
-    hash = (53 * hash) + adrfam_;
     hash = (37 * hash) + TRADDR_FIELD_NUMBER;
     hash = (53 * hash) + getTraddr().hashCode();
-    hash = (37 * hash) + TRSVCID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTrsvcid());
-    hash = (37 * hash) + SUBNQN_FIELD_NUMBER;
-    hash = (53 * hash) + getSubnqn().hashCode();
-    hash = (37 * hash) + SOURCE_TRADDR_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceTraddr().hashCode();
-    hash = (37 * hash) + SOURCE_TRSVCID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getSourceTrsvcid());
-    hash = (37 * hash) + HOSTNQN_FIELD_NUMBER;
-    hash = (53 * hash) + getHostnqn().hashCode();
+    if (hasFabrics()) {
+      hash = (37 * hash) + FABRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getFabrics().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -780,20 +558,14 @@ private static final long serialVersionUID = 0L;
 
       trtype_ = 0;
 
-      adrfam_ = 0;
-
       traddr_ = "";
 
-      trsvcid_ = 0L;
-
-      subnqn_ = "";
-
-      sourceTraddr_ = "";
-
-      sourceTrsvcid_ = 0L;
-
-      hostnqn_ = "";
-
+      if (fabricsBuilder_ == null) {
+        fabrics_ = null;
+      } else {
+        fabrics_ = null;
+        fabricsBuilder_ = null;
+      }
       return this;
     }
 
@@ -823,13 +595,12 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.controllerNameRef_ = controllerNameRef_;
       result.trtype_ = trtype_;
-      result.adrfam_ = adrfam_;
       result.traddr_ = traddr_;
-      result.trsvcid_ = trsvcid_;
-      result.subnqn_ = subnqn_;
-      result.sourceTraddr_ = sourceTraddr_;
-      result.sourceTrsvcid_ = sourceTrsvcid_;
-      result.hostnqn_ = hostnqn_;
+      if (fabricsBuilder_ == null) {
+        result.fabrics_ = fabrics_;
+      } else {
+        result.fabrics_ = fabricsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -889,30 +660,12 @@ private static final long serialVersionUID = 0L;
       if (other.trtype_ != 0) {
         setTrtypeValue(other.getTrtypeValue());
       }
-      if (other.adrfam_ != 0) {
-        setAdrfamValue(other.getAdrfamValue());
-      }
       if (!other.getTraddr().isEmpty()) {
         traddr_ = other.traddr_;
         onChanged();
       }
-      if (other.getTrsvcid() != 0L) {
-        setTrsvcid(other.getTrsvcid());
-      }
-      if (!other.getSubnqn().isEmpty()) {
-        subnqn_ = other.subnqn_;
-        onChanged();
-      }
-      if (!other.getSourceTraddr().isEmpty()) {
-        sourceTraddr_ = other.sourceTraddr_;
-        onChanged();
-      }
-      if (other.getSourceTrsvcid() != 0L) {
-        setSourceTrsvcid(other.getSourceTrsvcid());
-      }
-      if (!other.getHostnqn().isEmpty()) {
-        hostnqn_ = other.hostnqn_;
-        onChanged();
+      if (other.hasFabrics()) {
+        mergeFabrics(other.getFabrics());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1179,67 +932,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int adrfam_ = 0;
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The enum numeric value on the wire for adrfam.
-     */
-    @java.lang.Override public int getAdrfamValue() {
-      return adrfam_;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The enum numeric value on the wire for adrfam to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdrfamValue(int value) {
-      
-      adrfam_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The adrfam.
-     */
-    @java.lang.Override
-    public opi_api.storage.v1.NvmeAddressFamily getAdrfam() {
-      @SuppressWarnings("deprecation")
-      opi_api.storage.v1.NvmeAddressFamily result = opi_api.storage.v1.NvmeAddressFamily.valueOf(adrfam_);
-      return result == null ? opi_api.storage.v1.NvmeAddressFamily.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The adrfam to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdrfam(opi_api.storage.v1.NvmeAddressFamily value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      adrfam_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAdrfam() {
-      
-      adrfam_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object traddr_ = "";
     /**
      * <pre>
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The traddr.
      */
     public java.lang.String getTraddr() {
@@ -1259,7 +958,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for traddr.
      */
     public com.google.protobuf.ByteString
@@ -1280,7 +979,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The traddr to set.
      * @return This builder for chaining.
      */
@@ -1299,7 +998,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearTraddr() {
@@ -1313,7 +1012,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for traddr to set.
      * @return This builder for chaining.
      */
@@ -1329,378 +1028,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long trsvcid_ ;
+    private opi_api.storage.v1.FabricsPath fabrics_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.FabricsPath, opi_api.storage.v1.FabricsPath.Builder, opi_api.storage.v1.FabricsPathOrBuilder> fabricsBuilder_;
     /**
      * <pre>
-     * Destination service id (e.g. Port)
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>int64 trsvcid = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The trsvcid.
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the fabrics field is set.
      */
-    @java.lang.Override
-    public long getTrsvcid() {
-      return trsvcid_;
+    public boolean hasFabrics() {
+      return fabricsBuilder_ != null || fabrics_ != null;
     }
     /**
      * <pre>
-     * Destination service id (e.g. Port)
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>int64 trsvcid = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The trsvcid to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The fabrics.
      */
-    public Builder setTrsvcid(long value) {
-      
-      trsvcid_ = value;
-      onChanged();
-      return this;
+    public opi_api.storage.v1.FabricsPath getFabrics() {
+      if (fabricsBuilder_ == null) {
+        return fabrics_ == null ? opi_api.storage.v1.FabricsPath.getDefaultInstance() : fabrics_;
+      } else {
+        return fabricsBuilder_.getMessage();
+      }
     }
     /**
      * <pre>
-     * Destination service id (e.g. Port)
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>int64 trsvcid = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder clearTrsvcid() {
-      
-      trsvcid_ = 0L;
-      onChanged();
-      return this;
-    }
+    public Builder setFabrics(opi_api.storage.v1.FabricsPath value) {
+      if (fabricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fabrics_ = value;
+        onChanged();
+      } else {
+        fabricsBuilder_.setMessage(value);
+      }
 
-    private java.lang.Object subnqn_ = "";
+      return this;
+    }
     /**
      * <pre>
-     * Subsystem NQN
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>string subnqn = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The subnqn.
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.lang.String getSubnqn() {
-      java.lang.Object ref = subnqn_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        subnqn_ = s;
-        return s;
+    public Builder setFabrics(
+        opi_api.storage.v1.FabricsPath.Builder builderForValue) {
+      if (fabricsBuilder_ == null) {
+        fabrics_ = builderForValue.build();
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        fabricsBuilder_.setMessage(builderForValue.build());
       }
-    }
-    /**
-     * <pre>
-     * Subsystem NQN
-     * </pre>
-     *
-     * <code>string subnqn = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for subnqn.
-     */
-    public com.google.protobuf.ByteString
-        getSubnqnBytes() {
-      java.lang.Object ref = subnqn_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        subnqn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Subsystem NQN
-     * </pre>
-     *
-     * <code>string subnqn = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The subnqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubnqn(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      subnqn_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Subsystem NQN
-     * </pre>
-     *
-     * <code>string subnqn = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSubnqn() {
-      
-      subnqn_ = getDefaultInstance().getSubnqn();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Subsystem NQN
-     * </pre>
-     *
-     * <code>string subnqn = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for subnqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubnqnBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      subnqn_ = value;
-      onChanged();
-      return this;
-    }
 
-    private java.lang.Object sourceTraddr_ = "";
+      return this;
+    }
     /**
      * <pre>
-     * Source address (e.g. IP of local NIC)
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>string source_traddr = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The sourceTraddr.
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.lang.String getSourceTraddr() {
-      java.lang.Object ref = sourceTraddr_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceTraddr_ = s;
-        return s;
+    public Builder mergeFabrics(opi_api.storage.v1.FabricsPath value) {
+      if (fabricsBuilder_ == null) {
+        if (fabrics_ != null) {
+          fabrics_ =
+            opi_api.storage.v1.FabricsPath.newBuilder(fabrics_).mergeFrom(value).buildPartial();
+        } else {
+          fabrics_ = value;
+        }
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        fabricsBuilder_.mergeFrom(value);
       }
-    }
-    /**
-     * <pre>
-     * Source address (e.g. IP of local NIC)
-     * </pre>
-     *
-     * <code>string source_traddr = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for sourceTraddr.
-     */
-    public com.google.protobuf.ByteString
-        getSourceTraddrBytes() {
-      java.lang.Object ref = sourceTraddr_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceTraddr_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Source address (e.g. IP of local NIC)
-     * </pre>
-     *
-     * <code>string source_traddr = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The sourceTraddr to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourceTraddr(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      sourceTraddr_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Source address (e.g. IP of local NIC)
-     * </pre>
-     *
-     * <code>string source_traddr = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSourceTraddr() {
-      
-      sourceTraddr_ = getDefaultInstance().getSourceTraddr();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Source address (e.g. IP of local NIC)
-     * </pre>
-     *
-     * <code>string source_traddr = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for sourceTraddr to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourceTraddrBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      sourceTraddr_ = value;
-      onChanged();
-      return this;
-    }
 
-    private long sourceTrsvcid_ ;
-    /**
-     * <pre>
-     * Source port (e.g. Port of local NIC)
-     * </pre>
-     *
-     * <code>int64 source_trsvcid = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The sourceTrsvcid.
-     */
-    @java.lang.Override
-    public long getSourceTrsvcid() {
-      return sourceTrsvcid_;
-    }
-    /**
-     * <pre>
-     * Source port (e.g. Port of local NIC)
-     * </pre>
-     *
-     * <code>int64 source_trsvcid = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The sourceTrsvcid to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourceTrsvcid(long value) {
-      
-      sourceTrsvcid_ = value;
-      onChanged();
       return this;
     }
     /**
      * <pre>
-     * Source port (e.g. Port of local NIC)
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>int64 source_trsvcid = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder clearSourceTrsvcid() {
-      
-      sourceTrsvcid_ = 0L;
-      onChanged();
-      return this;
-    }
+    public Builder clearFabrics() {
+      if (fabricsBuilder_ == null) {
+        fabrics_ = null;
+        onChanged();
+      } else {
+        fabrics_ = null;
+        fabricsBuilder_ = null;
+      }
 
-    private java.lang.Object hostnqn_ = "";
+      return this;
+    }
     /**
      * <pre>
-     * Host NQN
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>string hostnqn = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The hostnqn.
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.lang.String getHostnqn() {
-      java.lang.Object ref = hostnqn_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        hostnqn_ = s;
-        return s;
+    public opi_api.storage.v1.FabricsPath.Builder getFabricsBuilder() {
+      
+      onChanged();
+      return getFabricsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder() {
+      if (fabricsBuilder_ != null) {
+        return fabricsBuilder_.getMessageOrBuilder();
       } else {
-        return (java.lang.String) ref;
+        return fabrics_ == null ?
+            opi_api.storage.v1.FabricsPath.getDefaultInstance() : fabrics_;
       }
     }
     /**
      * <pre>
-     * Host NQN
+     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>string hostnqn = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for hostnqn.
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public com.google.protobuf.ByteString
-        getHostnqnBytes() {
-      java.lang.Object ref = hostnqn_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        hostnqn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.FabricsPath, opi_api.storage.v1.FabricsPath.Builder, opi_api.storage.v1.FabricsPathOrBuilder> 
+        getFabricsFieldBuilder() {
+      if (fabricsBuilder_ == null) {
+        fabricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.FabricsPath, opi_api.storage.v1.FabricsPath.Builder, opi_api.storage.v1.FabricsPathOrBuilder>(
+                getFabrics(),
+                getParentForChildren(),
+                isClean());
+        fabrics_ = null;
       }
-    }
-    /**
-     * <pre>
-     * Host NQN
-     * </pre>
-     *
-     * <code>string hostnqn = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The hostnqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHostnqn(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      hostnqn_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Host NQN
-     * </pre>
-     *
-     * <code>string hostnqn = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearHostnqn() {
-      
-      hostnqn_ = getDefaultInstance().getHostnqn();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Host NQN
-     * </pre>
-     *
-     * <code>string hostnqn = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for hostnqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHostnqnBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      hostnqn_ = value;
-      onChanged();
-      return this;
+      return fabricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

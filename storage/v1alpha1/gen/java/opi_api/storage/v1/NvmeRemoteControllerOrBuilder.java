@@ -55,32 +55,29 @@ public interface NvmeRemoteControllerOrBuilder extends
   long getQueueSize();
 
   /**
-   * <code>bool hdgst = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The hdgst.
-   */
-  boolean getHdgst();
-
-  /**
-   * <code>bool ddgst = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The ddgst.
-   */
-  boolean getDdgst();
-
-  /**
    * <pre>
-   * Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
-   * Use PSK interchange format with base64 encoding as input.
-   * Also use information about hash function in interchange
-   * format for retained PSK generation. If no hash is selected,
-   * use configured PSK as retained PSK.
-   * Check the size of interchange PSK to determine cipher suite.
-   * Calculate CRC-32 bytes to ensure validity of PSK.
-   * Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
-   * if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
+   * Nvme over TCP specific fields
    * </pre>
    *
-   * <code>bytes psk = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The psk.
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the tcp field is set.
    */
-  com.google.protobuf.ByteString getPsk();
+  boolean hasTcp();
+  /**
+   * <pre>
+   * Nvme over TCP specific fields
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The tcp.
+   */
+  opi_api.storage.v1.TcpController getTcp();
+  /**
+   * <pre>
+   * Nvme over TCP specific fields
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  opi_api.storage.v1.TcpControllerOrBuilder getTcpOrBuilder();
 }

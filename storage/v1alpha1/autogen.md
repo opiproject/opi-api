@@ -36,6 +36,7 @@
     - [CreateNvmeRemoteControllerRequest](#opi_api-storage-v1-CreateNvmeRemoteControllerRequest)
     - [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest)
     - [DeleteNvmeRemoteControllerRequest](#opi_api-storage-v1-DeleteNvmeRemoteControllerRequest)
+    - [FabricsPath](#opi_api-storage-v1-FabricsPath)
     - [GetNvmePathRequest](#opi_api-storage-v1-GetNvmePathRequest)
     - [GetNvmeRemoteControllerRequest](#opi_api-storage-v1-GetNvmeRemoteControllerRequest)
     - [GetNvmeRemoteNamespaceRequest](#opi_api-storage-v1-GetNvmeRemoteNamespaceRequest)
@@ -53,6 +54,7 @@
     - [StatsNvmePathResponse](#opi_api-storage-v1-StatsNvmePathResponse)
     - [StatsNvmeRemoteControllerRequest](#opi_api-storage-v1-StatsNvmeRemoteControllerRequest)
     - [StatsNvmeRemoteControllerResponse](#opi_api-storage-v1-StatsNvmeRemoteControllerResponse)
+    - [TcpController](#opi_api-storage-v1-TcpController)
     - [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest)
     - [UpdateNvmeRemoteControllerRequest](#opi_api-storage-v1-UpdateNvmeRemoteControllerRequest)
   
@@ -657,6 +659,26 @@ Represents a request to delete an Nvme Remote Controller.
 
 
 
+<a name="opi_api-storage-v1-FabricsPath"></a>
+
+### FabricsPath
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| trsvcid | [int64](#int64) |  | Destination service id (e.g. Port) |
+| subnqn | [string](#string) |  | Subsystem NQN |
+| adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  |  |
+| source_traddr | [string](#string) |  | Source address (e.g. IP of local NIC) |
+| source_trsvcid | [int64](#int64) |  | Source port (e.g. Port of local NIC) |
+| hostnqn | [string](#string) |  | Host NQN |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-GetNvmePathRequest"></a>
 
 ### GetNvmePathRequest
@@ -812,13 +834,8 @@ Represents a response to list all Nvme Remote Namespaces.
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | controller_name_ref | [string](#string) |  |  |
 | trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  |  |
-| adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  |  |
 | traddr | [string](#string) |  | Destination address (e.g. IP address, BDF for local PCIe) |
-| trsvcid | [int64](#int64) |  | Destination service id (e.g. Port) |
-| subnqn | [string](#string) |  | Subsystem NQN |
-| source_traddr | [string](#string) |  | Source address (e.g. IP of local NIC) |
-| source_trsvcid | [int64](#int64) |  | Source port (e.g. Port of local NIC) |
-| hostnqn | [string](#string) |  | Host NQN |
+| fabrics | [FabricsPath](#opi_api-storage-v1-FabricsPath) |  | Not applicable for local PCIe. Required for Nvme over fabrics transport types |
 
 
 
@@ -837,9 +854,7 @@ Represents a response to list all Nvme Remote Namespaces.
 | multipath | [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath) |  |  |
 | io_queues_count | [int64](#int64) |  |  |
 | queue_size | [int64](#int64) |  |  |
-| hdgst | [bool](#bool) |  |  |
-| ddgst | [bool](#bool) |  |  |
-| psk | [bytes](#bytes) |  | Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK. Use PSK interchange format with base64 encoding as input. Also use information about hash function in interchange format for retained PSK generation. If no hash is selected, use configured PSK as retained PSK. Check the size of interchange PSK to determine cipher suite. Calculate CRC-32 bytes to ensure validity of PSK. Example: &#34;NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9&#43;wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:&#34; if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made |
+| tcp | [TcpController](#opi_api-storage-v1-TcpController) |  | Nvme over TCP specific fields |
 
 
 
@@ -935,6 +950,23 @@ Represents a response to get an Nvme Remote Controller statistics.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-TcpController"></a>
+
+### TcpController
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| hdgst | [bool](#bool) |  |  |
+| ddgst | [bool](#bool) |  |  |
+| psk | [bytes](#bytes) |  | Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK. Use PSK interchange format with base64 encoding as input. Also use information about hash function in interchange format for retained PSK generation. If no hash is selected, use configured PSK as retained PSK. Check the size of interchange PSK to determine cipher suite. Calculate CRC-32 bytes to ensure validity of PSK. Example: &#34;NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9&#43;wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:&#34; if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made |
 
 
 
