@@ -1101,6 +1101,7 @@ Represents a request to create an Nvme Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | The Nvme Subsystem this Controller belongs to |
 | nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  | The Nvme Controller to be created. |
 | nvme_controller_id | [string](#string) |  | An optional ID to assign to the Nvme Controller. If this is not provided the system will auto-generate it. |
 
@@ -1117,6 +1118,7 @@ Represents a request to create an Nvme Namespace.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | The Nvme Subsystem this Namespace belongs to |
 | nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  | The Nvme Namespace to be created. |
 | nvme_namespace_id | [string](#string) |  | An optional ID to assign to the Nvme Namespace. If this is not provided the system will auto-generate it. |
 
@@ -1242,7 +1244,7 @@ Represents a request to list all Nvme Controllers.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | The Nvme Subsystem this Controller belongs to |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -1275,7 +1277,7 @@ Represents a request to list all Nvme Namespaces.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | The Nvme Subsystem this Namespace belongs to |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -1359,7 +1361,6 @@ Represents a response to list all Nvme Subsystems.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_controller_id | [int32](#int32) | optional | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
-| subsystem_name_ref | [string](#string) |  | subsystem information |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
 | max_nsq | [int32](#int32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
 | max_ncq | [int32](#int32) |  | maximum number of host completion queues allowed. If not set, the xPU will provide a default. |
@@ -1414,7 +1415,6 @@ Represents a response to list all Nvme Subsystems.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_name_ref | [string](#string) |  | subsystem for this namespace |
 | host_nsid | [int32](#int32) |  | NSID present to the host by the Nvme PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |

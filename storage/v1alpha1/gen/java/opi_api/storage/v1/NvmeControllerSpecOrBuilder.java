@@ -30,30 +30,10 @@ public interface NvmeControllerSpecOrBuilder extends
 
   /**
    * <pre>
-   * subsystem information
-   * </pre>
-   *
-   * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The subsystemNameRef.
-   */
-  java.lang.String getSubsystemNameRef();
-  /**
-   * <pre>
-   * subsystem information
-   * </pre>
-   *
-   * <code>string subsystem_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for subsystemNameRef.
-   */
-  com.google.protobuf.ByteString
-      getSubsystemNameRefBytes();
-
-  /**
-   * <pre>
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
@@ -62,7 +42,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The pcieId.
    */
   opi_api.storage.v1.PciEndpoint getPcieId();
@@ -71,7 +51,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder();
 
@@ -81,7 +61,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>int32 max_nsq = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 max_nsq = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxNsq.
    */
   int getMaxNsq();
@@ -92,7 +72,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>int32 max_ncq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 max_ncq = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxNcq.
    */
   int getMaxNcq();
@@ -103,7 +83,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * default value as per spec is 6
    * </pre>
    *
-   * <code>int32 sqes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 sqes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The sqes.
    */
   int getSqes();
@@ -114,7 +94,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * default value as per spec is 4
    * </pre>
    *
-   * <code>int32 cqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 cqes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The cqes.
    */
   int getCqes();
@@ -125,7 +105,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * the controller.
    * </pre>
    *
-   * <code>int32 max_namespaces = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 max_namespaces = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxNamespaces.
    */
   int getMaxNamespaces();
@@ -135,7 +115,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the minLimit field is set.
    */
   boolean hasMinLimit();
@@ -144,7 +124,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The minLimit.
    */
   opi_api.storage.v1.QosLimit getMinLimit();
@@ -153,7 +133,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder();
 
@@ -162,7 +142,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the maxLimit field is set.
    */
   boolean hasMaxLimit();
@@ -171,7 +151,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxLimit.
    */
   opi_api.storage.v1.QosLimit getMaxLimit();
@@ -180,7 +160,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder();
 }

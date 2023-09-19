@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeNamespaceSpec() {
-    subsystemNameRef_ = "";
     nguid_ = "";
     volumeNameRef_ = "";
   }
@@ -51,29 +50,23 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            subsystemNameRef_ = s;
-            break;
-          }
-          case 16: {
+          case 8: {
 
             hostNsid_ = input.readInt32();
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             nguid_ = s;
             break;
           }
-          case 32: {
+          case 24: {
 
             eui64_ = input.readInt64();
             break;
           }
-          case 42: {
+          case 34: {
             opi_api.common.v1.Uuid.Builder subBuilder = null;
             if (uuid_ != null) {
               subBuilder = uuid_.toBuilder();
@@ -86,7 +79,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 50: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             volumeNameRef_ = s;
@@ -126,53 +119,7 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NvmeNamespaceSpec.class, opi_api.storage.v1.NvmeNamespaceSpec.Builder.class);
   }
 
-  public static final int SUBSYSTEM_NAME_REF_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subsystemNameRef_;
-  /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The subsystemNameRef.
-   */
-  @java.lang.Override
-  public java.lang.String getSubsystemNameRef() {
-    java.lang.Object ref = subsystemNameRef_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      subsystemNameRef_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for subsystemNameRef.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSubsystemNameRefBytes() {
-    java.lang.Object ref = subsystemNameRef_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      subsystemNameRef_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int HOST_NSID_FIELD_NUMBER = 2;
+  public static final int HOST_NSID_FIELD_NUMBER = 1;
   private int hostNsid_;
   /**
    * <pre>
@@ -182,7 +129,7 @@ private static final long serialVersionUID = 0L;
    * for live migration
    * </pre>
    *
-   * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 host_nsid = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The hostNsid.
    */
   @java.lang.Override
@@ -190,14 +137,14 @@ private static final long serialVersionUID = 0L;
     return hostNsid_;
   }
 
-  public static final int NGUID_FIELD_NUMBER = 3;
+  public static final int NGUID_FIELD_NUMBER = 2;
   private volatile java.lang.Object nguid_;
   /**
    * <pre>
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nguid.
    */
   @java.lang.Override
@@ -218,7 +165,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nguid.
    */
   @java.lang.Override
@@ -236,7 +183,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int EUI64_FIELD_NUMBER = 4;
+  public static final int EUI64_FIELD_NUMBER = 3;
   private long eui64_;
   /**
    * <pre>
@@ -244,7 +191,7 @@ private static final long serialVersionUID = 0L;
    * mandatory if guid is not specified
    * </pre>
    *
-   * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int64 eui64 = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The eui64.
    */
   @java.lang.Override
@@ -252,14 +199,14 @@ private static final long serialVersionUID = 0L;
     return eui64_;
   }
 
-  public static final int UUID_FIELD_NUMBER = 5;
+  public static final int UUID_FIELD_NUMBER = 4;
   private opi_api.common.v1.Uuid uuid_;
   /**
    * <pre>
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the uuid field is set.
    */
   @java.lang.Override
@@ -271,7 +218,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uuid.
    */
   @java.lang.Override
@@ -283,21 +230,21 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
     return getUuid();
   }
 
-  public static final int VOLUME_NAME_REF_FIELD_NUMBER = 6;
+  public static final int VOLUME_NAME_REF_FIELD_NUMBER = 5;
   private volatile java.lang.Object volumeNameRef_;
   /**
    * <pre>
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The volumeNameRef.
    */
   @java.lang.Override
@@ -318,7 +265,7 @@ private static final long serialVersionUID = 0L;
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for volumeNameRef.
    */
   @java.lang.Override
@@ -350,23 +297,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subsystemNameRef_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subsystemNameRef_);
-    }
     if (hostNsid_ != 0) {
-      output.writeInt32(2, hostNsid_);
+      output.writeInt32(1, hostNsid_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nguid_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nguid_);
     }
     if (eui64_ != 0L) {
-      output.writeInt64(4, eui64_);
+      output.writeInt64(3, eui64_);
     }
     if (uuid_ != null) {
-      output.writeMessage(5, getUuid());
+      output.writeMessage(4, getUuid());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeNameRef_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, volumeNameRef_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, volumeNameRef_);
     }
     unknownFields.writeTo(output);
   }
@@ -377,26 +321,23 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subsystemNameRef_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subsystemNameRef_);
-    }
     if (hostNsid_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, hostNsid_);
+        .computeInt32Size(1, hostNsid_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nguid_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nguid_);
     }
     if (eui64_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, eui64_);
+        .computeInt64Size(3, eui64_);
     }
     if (uuid_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getUuid());
+        .computeMessageSize(4, getUuid());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeNameRef_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, volumeNameRef_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, volumeNameRef_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -413,8 +354,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NvmeNamespaceSpec other = (opi_api.storage.v1.NvmeNamespaceSpec) obj;
 
-    if (!getSubsystemNameRef()
-        .equals(other.getSubsystemNameRef())) return false;
     if (getHostNsid()
         != other.getHostNsid()) return false;
     if (!getNguid()
@@ -439,8 +378,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUBSYSTEM_NAME_REF_FIELD_NUMBER;
-    hash = (53 * hash) + getSubsystemNameRef().hashCode();
     hash = (37 * hash) + HOST_NSID_FIELD_NUMBER;
     hash = (53 * hash) + getHostNsid();
     hash = (37 * hash) + NGUID_FIELD_NUMBER;
@@ -587,8 +524,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      subsystemNameRef_ = "";
-
       hostNsid_ = 0;
 
       nguid_ = "";
@@ -629,7 +564,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NvmeNamespaceSpec buildPartial() {
       opi_api.storage.v1.NvmeNamespaceSpec result = new opi_api.storage.v1.NvmeNamespaceSpec(this);
-      result.subsystemNameRef_ = subsystemNameRef_;
       result.hostNsid_ = hostNsid_;
       result.nguid_ = nguid_;
       result.eui64_ = eui64_;
@@ -687,10 +621,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NvmeNamespaceSpec other) {
       if (other == opi_api.storage.v1.NvmeNamespaceSpec.getDefaultInstance()) return this;
-      if (!other.getSubsystemNameRef().isEmpty()) {
-        subsystemNameRef_ = other.subsystemNameRef_;
-        onChanged();
-      }
       if (other.getHostNsid() != 0) {
         setHostNsid(other.getHostNsid());
       }
@@ -737,102 +667,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object subsystemNameRef_ = "";
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The subsystemNameRef.
-     */
-    public java.lang.String getSubsystemNameRef() {
-      java.lang.Object ref = subsystemNameRef_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        subsystemNameRef_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for subsystemNameRef.
-     */
-    public com.google.protobuf.ByteString
-        getSubsystemNameRefBytes() {
-      java.lang.Object ref = subsystemNameRef_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        subsystemNameRef_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The subsystemNameRef to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubsystemNameRef(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      subsystemNameRef_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSubsystemNameRef() {
-      
-      subsystemNameRef_ = getDefaultInstance().getSubsystemNameRef();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for subsystemNameRef to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubsystemNameRefBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      subsystemNameRef_ = value;
-      onChanged();
-      return this;
-    }
-
     private int hostNsid_ ;
     /**
      * <pre>
@@ -842,7 +676,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 host_nsid = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The hostNsid.
      */
     @java.lang.Override
@@ -857,7 +691,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 host_nsid = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The hostNsid to set.
      * @return This builder for chaining.
      */
@@ -875,7 +709,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 host_nsid = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearHostNsid() {
@@ -891,7 +725,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nguid.
      */
     public java.lang.String getNguid() {
@@ -911,7 +745,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nguid.
      */
     public com.google.protobuf.ByteString
@@ -932,7 +766,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nguid to set.
      * @return This builder for chaining.
      */
@@ -951,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearNguid() {
@@ -965,7 +799,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nguid to set.
      * @return This builder for chaining.
      */
@@ -988,7 +822,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int64 eui64 = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The eui64.
      */
     @java.lang.Override
@@ -1001,7 +835,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int64 eui64 = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The eui64 to set.
      * @return This builder for chaining.
      */
@@ -1017,7 +851,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int64 eui64 = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearEui64() {
@@ -1035,7 +869,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the uuid field is set.
      */
     public boolean hasUuid() {
@@ -1046,7 +880,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The uuid.
      */
     public opi_api.common.v1.Uuid getUuid() {
@@ -1061,7 +895,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -1081,7 +915,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUuid(
         opi_api.common.v1.Uuid.Builder builderForValue) {
@@ -1099,7 +933,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -1121,7 +955,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUuid() {
       if (uuidBuilder_ == null) {
@@ -1139,7 +973,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.Uuid.Builder getUuidBuilder() {
       
@@ -1151,7 +985,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
       if (uuidBuilder_ != null) {
@@ -1166,7 +1000,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> 
@@ -1188,7 +1022,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The volumeNameRef.
      */
     public java.lang.String getVolumeNameRef() {
@@ -1208,7 +1042,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for volumeNameRef.
      */
     public com.google.protobuf.ByteString
@@ -1229,7 +1063,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The volumeNameRef to set.
      * @return This builder for chaining.
      */
@@ -1248,7 +1082,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearVolumeNameRef() {
@@ -1262,7 +1096,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for volumeNameRef to set.
      * @return This builder for chaining.
      */

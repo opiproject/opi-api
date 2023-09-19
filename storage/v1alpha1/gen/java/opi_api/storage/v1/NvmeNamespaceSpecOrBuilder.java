@@ -9,33 +9,13 @@ public interface NvmeNamespaceSpecOrBuilder extends
 
   /**
    * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The subsystemNameRef.
-   */
-  java.lang.String getSubsystemNameRef();
-  /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>string subsystem_name_ref = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for subsystemNameRef.
-   */
-  com.google.protobuf.ByteString
-      getSubsystemNameRefBytes();
-
-  /**
-   * <pre>
    * NSID present to the host by the Nvme PCIe controller.
    * If not provided, then the controller will assign an unused NSID
    * within the max namespace range - auto assigned nsid may not work
    * for live migration
    * </pre>
    *
-   * <code>int32 host_nsid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 host_nsid = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The hostNsid.
    */
   int getHostNsid();
@@ -45,7 +25,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nguid.
    */
   java.lang.String getNguid();
@@ -54,7 +34,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nguid = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nguid.
    */
   com.google.protobuf.ByteString
@@ -66,7 +46,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * mandatory if guid is not specified
    * </pre>
    *
-   * <code>int64 eui64 = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int64 eui64 = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The eui64.
    */
   long getEui64();
@@ -76,7 +56,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the uuid field is set.
    */
   boolean hasUuid();
@@ -85,7 +65,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uuid.
    */
   opi_api.common.v1.Uuid getUuid();
@@ -94,7 +74,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.common.v1.UuidOrBuilder getUuidOrBuilder();
 
@@ -103,7 +83,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The volumeNameRef.
    */
   java.lang.String getVolumeNameRef();
@@ -112,7 +92,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>string volume_name_ref = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string volume_name_ref = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for volumeNameRef.
    */
   com.google.protobuf.ByteString

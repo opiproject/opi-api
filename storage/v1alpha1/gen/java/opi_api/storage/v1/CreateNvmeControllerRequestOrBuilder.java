@@ -9,10 +9,30 @@ public interface CreateNvmeControllerRequestOrBuilder extends
 
   /**
    * <pre>
+   * The Nvme Subsystem this Controller belongs to
+   * </pre>
+   *
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   * <pre>
+   * The Nvme Subsystem this Controller belongs to
+   * </pre>
+   *
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString
+      getParentBytes();
+
+  /**
+   * <pre>
    * The Nvme Controller to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeController field is set.
    */
   boolean hasNvmeController();
@@ -21,7 +41,7 @@ public interface CreateNvmeControllerRequestOrBuilder extends
    * The Nvme Controller to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeController.
    */
   opi_api.storage.v1.NvmeController getNvmeController();
@@ -30,7 +50,7 @@ public interface CreateNvmeControllerRequestOrBuilder extends
    * The Nvme Controller to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeController nvme_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmeControllerOrBuilder getNvmeControllerOrBuilder();
 
@@ -40,7 +60,7 @@ public interface CreateNvmeControllerRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string nvme_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nvme_controller_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeControllerId.
    */
   java.lang.String getNvmeControllerId();
@@ -50,7 +70,7 @@ public interface CreateNvmeControllerRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string nvme_controller_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nvme_controller_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeControllerId.
    */
   com.google.protobuf.ByteString
