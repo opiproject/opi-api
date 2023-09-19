@@ -23,7 +23,7 @@ service MiddleendQosVolumeService {
     // Create an Qos Volume
     rpc CreateQosVolume(CreateQosVolumeRequest) returns (QosVolume) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/qosVolumes"
             body : "qos_volume"
         };
         option (google.api.method_signature) = "qos_volume,qos_volume_id";
@@ -31,14 +31,14 @@ service MiddleendQosVolumeService {
     // Delete an Qos Volume
     rpc DeleteQosVolume(DeleteQosVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=QosVolumes/*}"
+            delete: "/v1/{name=qosVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Qos Volume
     rpc UpdateQosVolume(UpdateQosVolumeRequest) returns (QosVolume) {
         option (google.api.http) = {
-            patch : "/v1/{qos_volume.name=subsystems}"
+            patch : "/v1/{qos_volume.name=qosVolumes/*}"
             body : "qos_volume"
         };
         option (google.api.method_signature) = "qos_volume,update_mask";
@@ -53,14 +53,14 @@ service MiddleendQosVolumeService {
     // Get an Qos Volume
     rpc GetQosVolume(GetQosVolumeRequest) returns (QosVolume) {
         option (google.api.http) = {
-            get: "/v1/{name=QosVolumes/*}"
+            get: "/v1/{name=qosVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Qos Volume statistics
     rpc StatsQosVolume(StatsQosVolumeRequest) returns (StatsQosVolumeResponse) {
         option (google.api.http) = {
-            get: "/v1/{name=QosVolumes/*}:stats"
+            get: "/v1/{name=qosVolumes/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
@@ -69,7 +69,7 @@ service MiddleendQosVolumeService {
 message QosVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/QosVolume"
-        pattern: "volumes/{volume}"
+        pattern: "qosVolumes/{volume}"
         singular: "qosVolume"
         plural: "qosVolumes"
     };

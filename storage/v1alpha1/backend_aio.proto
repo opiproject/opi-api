@@ -25,7 +25,7 @@ service AioVolumeService {
     // Create an Aio Volume
     rpc CreateAioVolume (CreateAioVolumeRequest) returns (AioVolume) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/aioVolumes"
             body: "aio_volume"
         };
         option (google.api.method_signature) = "aio_volume,aio_volume_id";
@@ -33,14 +33,14 @@ service AioVolumeService {
     // Delete an Aio Volume
     rpc DeleteAioVolume (DeleteAioVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=AioVolumes/*}"
+            delete: "/v1/{name=aioVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Aio Volume
     rpc UpdateAioVolume (UpdateAioVolumeRequest) returns (AioVolume) {
         option (google.api.http) = {
-            patch: "/v1/{aio_volume.name=subsystems}"
+            patch: "/v1/{aio_volume.name=aioVolumes/*}"
             body: "aio_volume"
         };
         option (google.api.method_signature) = "aio_volume,update_mask";
@@ -55,14 +55,14 @@ service AioVolumeService {
     // Get an Aio Volume
     rpc GetAioVolume    (GetAioVolumeRequest)    returns (AioVolume)    {
         option (google.api.http) = {
-            get: "/v1/{name=AioVolumes/*}"
+            get: "/v1/{name=aioVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Aio Volume statistics
     rpc StatsAioVolume  (StatsAioVolumeRequest)  returns (StatsAioVolumeResponse)  {
         option (google.api.http) = {
-            get: "/v1/{name=AioVolumes/*}:stats"
+            get: "/v1/{name=aioVolumes/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
@@ -71,7 +71,7 @@ service AioVolumeService {
 message AioVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/AioVolume"
-        pattern: "volumes/{volume}"
+        pattern: "aioVolumes/{volume}"
         singular: "aioVolume"
         plural: "aioVolumes"
     };

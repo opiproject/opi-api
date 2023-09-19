@@ -24,7 +24,7 @@ service FrontendVirtioScsiService {
     // Create an Virtio Scsi Target
     rpc CreateVirtioScsiTarget (CreateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/virtioScsiTargets"
             body: "virtio_scsi_target"
         };
         option (google.api.method_signature) = "virtio_scsi_target,virtio_scsi_target_id";
@@ -32,14 +32,14 @@ service FrontendVirtioScsiService {
     // Delete an Virtio Scsi Target
     rpc DeleteVirtioScsiTarget (DeleteVirtioScsiTargetRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=VirtioScsiTargets/*}"
+            delete: "/v1/{name=virtioScsiTargets/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Virtio Scsi Target
     rpc UpdateVirtioScsiTarget (UpdateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
         option (google.api.http) = {
-            patch: "/v1/{virtio_scsi_target.name=subsystems}"
+            patch: "/v1/{virtio_scsi_target.name=virtioScsiTargets/*}"
             body: "virtio_scsi_target"
         };
         option (google.api.method_signature) = "virtio_scsi_target,update_mask";
@@ -54,21 +54,21 @@ service FrontendVirtioScsiService {
     // Get an Virtio Scsi Target
     rpc GetVirtioScsiTarget    (GetVirtioScsiTargetRequest)    returns (VirtioScsiTarget)    {
         option (google.api.http) = {
-            get: "/v1/{name=VirtioScsiTargets/*}"
+            get: "/v1/{name=virtioScsiTargets/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Virtio Scsi Target statistics
     rpc StatsVirtioScsiTarget  (StatsVirtioScsiTargetRequest)  returns (StatsVirtioScsiTargetResponse)  {
         option (google.api.http) = {
-            get: "/v1/{name=VirtioScsiTargets/*}:stats"
+            get: "/v1/{name=virtioScsiTargets/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
     // Create an Virtio Scsi Controller
     rpc CreateVirtioScsiController (CreateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/virtioScsiControllers"
             body: "virtio_scsi_controller"
         };
         option (google.api.method_signature) = "virtio_scsi_controller,virtio_scsi_controller_id";
@@ -76,14 +76,14 @@ service FrontendVirtioScsiService {
     // Delete an Virtio Scsi Controller
     rpc DeleteVirtioScsiController (DeleteVirtioScsiControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=VirtioScsiControllers/*}"
+            delete: "/v1/{name=virtioScsiControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Virtio Scsi Controller
     rpc UpdateVirtioScsiController (UpdateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
-            patch: "/v1/{virtio_scsi_controller.name=subsystems}"
+            patch: "/v1/{virtio_scsi_controller.name=virtioScsiControllers/*}"
             body: "virtio_scsi_controller"
         };
         option (google.api.method_signature) = "virtio_scsi_controller,update_mask";
@@ -91,28 +91,28 @@ service FrontendVirtioScsiService {
     // List Virtio Scsi Controllers
     rpc ListVirtioScsiControllers   (ListVirtioScsiControllersRequest)   returns (ListVirtioScsiControllersResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/{parent=virtioScsiControllers}"
         };
         option (google.api.method_signature) = "parent";
     }
     // Get an Virtio Scsi Controller
     rpc GetVirtioScsiController    (GetVirtioScsiControllerRequest)    returns (VirtioScsiController)    {
         option (google.api.http) = {
-            get: "/v1/{name=VirtioScsiControllers/*}"
+            get: "/v1/{name=virtioScsiControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Virtio Scsi Controller statistics
     rpc StatsVirtioScsiController  (StatsVirtioScsiControllerRequest)  returns (StatsVirtioScsiControllerResponse)  {
         option (google.api.http) = {
-            get: "/v1/{name=VirtioScsiControllers/*}:stats"
+            get: "/v1/{name=virtioScsiControllers/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
     // Create an Virtio Scsi Lun
     rpc CreateVirtioScsiLun (CreateVirtioScsiLunRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/virtioScsiLuns"
             body: "virtio_scsi_lun"
         };
         option (google.api.method_signature) = "virtio_scsi_lun,virtio_scsi_lun_id";
@@ -120,14 +120,14 @@ service FrontendVirtioScsiService {
     // Delete an Virtio Scsi Lun
     rpc DeleteVirtioScsiLun (DeleteVirtioScsiLunRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=VirtioScsiLuns/*}"
+            delete: "/v1/{name=virtioScsiLuns/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Virtio Scsi Lun
     rpc UpdateVirtioScsiLun (UpdateVirtioScsiLunRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
-            patch: "/v1/{virtio_scsi_lun.name=subsystems}"
+            patch: "/v1/{virtio_scsi_lun.name=virtioScsiLuns/*}"
             body: "virtio_scsi_lun"
         };
         option (google.api.method_signature) = "virtio_scsi_lun,update_mask";
@@ -142,14 +142,14 @@ service FrontendVirtioScsiService {
     // Get an Virtio Scsi Lun
     rpc GetVirtioScsiLun    (GetVirtioScsiLunRequest)    returns (VirtioScsiLun)    {
         option (google.api.http) = {
-            get: "/v1/{name=VirtioScsiLuns/*}"
+            get: "/v1/{name=virtioScsiLuns/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Virtio Scsi Lun statistics
     rpc StatsVirtioScsiLun  (StatsVirtioScsiLunRequest)  returns (StatsVirtioScsiLunResponse)  {
         option (google.api.http) = {
-            get: "/v1/{name=VirtioScsiLuns/*}:stats"
+            get: "/v1/{name=virtioScsiLuns/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
@@ -158,7 +158,7 @@ service FrontendVirtioScsiService {
 message VirtioScsiTarget {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioScsiTarget"
-        pattern: "volumes/{volume}"
+        pattern: "virtioScsiTargets/{volume}"
         singular: "virtioScsiTarget"
         plural: "virtioScsiTargets"
     };
@@ -179,7 +179,7 @@ message VirtioScsiTarget {
 message VirtioScsiController {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioScsiController"
-        pattern: "volumes/{volume}"
+        pattern: "virtioScsiControllers/{volume}"
         singular: "virtioScsiController"
         plural: "virtioScsiControllers"
     };
@@ -206,7 +206,7 @@ message VirtioScsiController {
 message VirtioScsiLun {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioScsiLun"
-        pattern: "volumes/{volume}"
+        pattern: "virtioScsiLuns/{volume}"
         singular: "virtioScsiLun"
         plural: "virtioScsiLuns"
     };

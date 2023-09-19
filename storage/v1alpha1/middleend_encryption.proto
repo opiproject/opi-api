@@ -25,7 +25,7 @@ service MiddleendEncryptionService {
     // Create an Encrypted Volume
     rpc CreateEncryptedVolume (CreateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/encryptedVolumes"
             body: "encrypted_volume"
         };
         option (google.api.method_signature) = "encrypted_volume,encrypted_volume_id";
@@ -33,14 +33,14 @@ service MiddleendEncryptionService {
     // Delete an Encrypted Volume
     rpc DeleteEncryptedVolume (DeleteEncryptedVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=EncryptedVolumes/*}"
+            delete: "/v1/{name=encryptedVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Encrypted Volume
     rpc UpdateEncryptedVolume (UpdateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
-            patch: "/v1/{encrypted_volume.name=subsystems}"
+            patch: "/v1/{encrypted_volume.name=encryptedVolumes/*}"
             body: "encrypted_volume"
         };
         option (google.api.method_signature) = "encrypted_volume,update_mask";
@@ -55,14 +55,14 @@ service MiddleendEncryptionService {
     // Get an Encrypted Volume
     rpc GetEncryptedVolume    (GetEncryptedVolumeRequest)    returns (EncryptedVolume)    {
         option (google.api.http) = {
-            get: "/v1/{name=EncryptedVolumes/*}"
+            get: "/v1/{name=encryptedVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Encrypted Volume statistics
     rpc StatsEncryptedVolume  (StatsEncryptedVolumeRequest)  returns (StatsEncryptedVolumeResponse)  {
         option (google.api.http) = {
-            get: "/v1/{name=EncryptedVolumes/*}:stats"
+            get: "/v1/{name=encryptedVolumes/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
@@ -71,7 +71,7 @@ service MiddleendEncryptionService {
 message EncryptedVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/EncryptedVolume"
-        pattern: "volumes/{volume}"
+        pattern: "encryptedVolumes/{volume}"
         singular: "encryptedVolume"
         plural: "encryptedVolumes"
     };

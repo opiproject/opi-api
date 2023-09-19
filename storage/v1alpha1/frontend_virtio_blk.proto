@@ -24,7 +24,7 @@ service FrontendVirtioBlkService {
     // Create an Virtio Blk
     rpc CreateVirtioBlk (CreateVirtioBlkRequest) returns (VirtioBlk) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/virtioBlks"
             body: "virtio_blk"
         };
         option (google.api.method_signature) = "virtio_blk,virtio_blk_id";
@@ -32,14 +32,14 @@ service FrontendVirtioBlkService {
     // Delete an Virtio Blk
     rpc DeleteVirtioBlk (DeleteVirtioBlkRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=VirtioBlks/*}"
+            delete: "/v1/{name=virtioBlks/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Virtio Blk
     rpc UpdateVirtioBlk (UpdateVirtioBlkRequest) returns (VirtioBlk) {
         option (google.api.http) = {
-            patch: "/v1/{virtio_blk.name=subsystems}"
+            patch: "/v1/{virtio_blk.name=virtioBlks/*}"
             body: "virtio_blk"
         };
         option (google.api.method_signature) = "virtio_blk,update_mask";
@@ -54,14 +54,14 @@ service FrontendVirtioBlkService {
     // Get an Virtio Blk
     rpc GetVirtioBlk    (GetVirtioBlkRequest)    returns (VirtioBlk)    {
         option (google.api.http) = {
-            get: "/v1/{name=VirtioBlks/*}"
+            get: "/v1/{name=virtioBlks/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Virtio Blk statistics
     rpc StatsVirtioBlk  (StatsVirtioBlkRequest)  returns (StatsVirtioBlkResponse)  {
         option (google.api.http) = {
-            get: "/v1/{name=VirtioBlks/*}:stats"
+            get: "/v1/{name=virtioBlks/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
@@ -70,7 +70,7 @@ service FrontendVirtioBlkService {
 message VirtioBlk {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioBlk"
-        pattern: "volumes/{volume}"
+        pattern: "virtioBlks/{volume}"
         singular: "virtioBlk"
         plural: "virtioBlks"
     };

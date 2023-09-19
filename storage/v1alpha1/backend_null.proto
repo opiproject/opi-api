@@ -25,7 +25,7 @@ service NullVolumeService {
     // Create an Null Volume
     rpc CreateNullVolume (CreateNullVolumeRequest) returns (NullVolume) {
         option (google.api.http) = {
-            post: "/v1/volumes"
+            post: "/v1/nullVolumes"
             body: "null_volume"
         };
         option (google.api.method_signature) = "null_volume,null_volume_id";
@@ -33,14 +33,14 @@ service NullVolumeService {
     // Delete an Null Volume
     rpc DeleteNullVolume (DeleteNullVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=NullVolumes/*}"
+            delete: "/v1/{name=nullVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Null Volume
     rpc UpdateNullVolume (UpdateNullVolumeRequest) returns (NullVolume) {
         option (google.api.http) = {
-            patch: "/v1/{null_volume.name=subsystems}"
+            patch: "/v1/{null_volume.name=nullVolumes/*}"
             body: "null_volume"
         };
         option (google.api.method_signature) = "null_volume,update_mask";
@@ -55,14 +55,14 @@ service NullVolumeService {
     // Get an Null Volume
     rpc GetNullVolume    (GetNullVolumeRequest)    returns (NullVolume)    {
         option (google.api.http) = {
-            get: "/v1/{name=NullVolumes/*}"
+            get: "/v1/{name=nullVolumes/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Null Volume statistics
     rpc StatsNullVolume  (StatsNullVolumeRequest)  returns (StatsNullVolumeResponse)  {
         option (google.api.http) = {
-            get: "/v1/{name=NullVolumes/*}:stats"
+            get: "/v1/{name=nullVolumes/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
@@ -71,7 +71,7 @@ service NullVolumeService {
 message NullVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NullVolume"
-        pattern: "volumes/{volume}"
+        pattern: "nullVolumes/{volume}"
         singular: "nullVolume"
         plural: "nullVolumes"
     };
