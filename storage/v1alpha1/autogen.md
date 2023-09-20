@@ -1310,14 +1310,8 @@ Represents a request to list all Nvme Subsystems.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-<<<<<<< HEAD
-| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
-=======
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
->>>>>>> 926988f (feat(storage): modify storage frontend_nvme_pcie proto file to support http api)
 
 
 

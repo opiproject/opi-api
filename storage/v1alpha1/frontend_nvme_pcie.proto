@@ -347,10 +347,6 @@ message UpdateNvmeSubsystemRequest {
 
 // Represents a request to list all Nvme Subsystems.
 message ListNvmeSubsystemsRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
-    ];
     // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
     // page token of list request
