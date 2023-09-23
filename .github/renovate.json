@@ -16,6 +16,12 @@
     },
     {
       "fileMatch": ["(^|\\/)Makefile$"],
+      "matchStrings": ["pseudomuto/protoc-gen-doc:(?<currentValue>.*?)\\s"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "pseudomuto/protoc-gen-doc"
+    },
+    {
+      "fileMatch": ["(^|\\/)Makefile$"],
       "matchStrings": ["google-api-linter:(?<currentValue>.*?)\\s"],
       "datasourceTemplate": "docker",
       "depNameTemplate": "ghcr.io/docker-multiarch/google-api-linter"
