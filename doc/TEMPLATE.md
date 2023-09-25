@@ -21,7 +21,7 @@ Include references to any demos in this section
 
 ## Additional Information related to the API
 
-Include topic areas such as below (These would become headings in this documentation section).  Replace this section header with the Header(s) for the additions that are being added:
+Include topic areas such as the examples below (These would become headings in this documentation section).  Replace this section header with the Header(s) for the additions that are being added:
 
 - Use Case Examples
   - Use Case #1
