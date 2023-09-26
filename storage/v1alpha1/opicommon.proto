@@ -43,6 +43,18 @@ message PciEndpoint {
     google.protobuf.Int32Value  virtual_function = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
+// Represents Fabrics Endpoint
+message FabricsEndpoint {
+    // ip address for TCP and RDMA
+    string traddr = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // port for TCP and RDMA
+    string trsvcid = 2 [(google.api.field_behavior) = REQUIRED];
+
+    // address family
+    NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
+}
+
 // Represents Volume statistics
 message VolumeStats {
     // Count of read bytes

@@ -240,34 +240,46 @@ message NvmeControllerSpec {
     // must not be reused under the same subsystem
     optional int32 nvme_controller_id  = 1 [(google.api.field_behavior) = OPTIONAL];
 
-    // xPU's PCI ID for the controller
-    PciEndpoint pcie_id = 3 [(google.api.field_behavior) = REQUIRED];
+    // transport type
+    NvmeTransportType trtype = 2 [(google.api.field_behavior) = REQUIRED];
+
+    // xPU's PCI/Fabrics endpoint for the controller.
+    // One of the values is required
+    // see https://github.com/aip-dev/google.aip.dev/issues/1147 for field_behavior annotations
+    oneof endpoint {
+        // Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
+        PciEndpoint pcie_id = 3 [(google.api.field_behavior) = OPTIONAL];
+
+        // Required for Nvme over fabrics transport types to create
+        // Nvme over Fabrics controllers to expose for example local SSDs over a network
+        FabricsEndpoint fabrics_id = 4 [(google.api.field_behavior) = OPTIONAL];
+    };
 
     // maximum number of host submission queues allowed.
     // If not set, the xPU will provide a default.
-    int32 max_nsq = 4 [(google.api.field_behavior) = OPTIONAL];
+    int32 max_nsq = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum number of host completion queues allowed.
     // If not set, the xPU will provide a default.
-    int32 max_ncq = 5 [(google.api.field_behavior) = OPTIONAL];
+    int32 max_ncq = 6 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum number of submission queue entries per submission queue, as a power of 2.
     // default value as per spec is 6
-    int32 sqes = 6 [(google.api.field_behavior) = OPTIONAL];
+    int32 sqes = 7 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum number of completion queue entries per completion queue, as a power of 2.
     // default value as per spec is 4
-    int32 cqes = 7 [(google.api.field_behavior) = OPTIONAL];
+    int32 cqes = 8 [(google.api.field_behavior) = OPTIONAL];
 
     // maximum Number of namespaces that will be provisioned under
     // the controller.
-    int32 max_namespaces = 8 [(google.api.field_behavior) = OPTIONAL];
+    int32 max_namespaces = 9 [(google.api.field_behavior) = OPTIONAL];
 
     // min QoS limits for the controller
-    QosLimit min_limit = 9 [(google.api.field_behavior) = OPTIONAL];
+    QosLimit min_limit = 10 [(google.api.field_behavior) = OPTIONAL];
 
     // max QoS limits for the controller
-    QosLimit max_limit = 10 [(google.api.field_behavior) = OPTIONAL];
+    QosLimit max_limit = 11 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents Nvme Controller status
