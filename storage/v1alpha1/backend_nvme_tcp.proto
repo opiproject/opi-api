@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// Copyright (C) 2023 Intel Corporation
 
 syntax = "proto3";
 package opi_api.storage.v1;
@@ -134,6 +135,7 @@ service NvmeRemoteControllerService {
     }
 }
 
+// Represents a target controller
 message NvmeRemoteController {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeRemoteController"
@@ -151,16 +153,25 @@ message NvmeRemoteController {
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
 
+    // Multipath mode
     NvmeMultipath multipath = 2 [(google.api.field_behavior) = REQUIRED];
+
+    // IO queues count
     int64 io_queues_count = 3 [(google.api.field_behavior) = OPTIONAL];
+
+    // Queue size
     int64 queue_size = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // Nvme over TCP specific fields
     TcpController tcp = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents parameters specific for TCP target controller
 message TcpController {
+    // Header digest
     bool hdgst = 1 [(google.api.field_behavior) = OPTIONAL];
+
+    // Data digest
     bool ddgst = 2 [(google.api.field_behavior) = OPTIONAL];
 
     // Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK.
@@ -175,6 +186,7 @@ message TcpController {
     bytes psk = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents a specific path to target controller
 message NvmePath {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmePath"
@@ -192,11 +204,13 @@ message NvmePath {
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
     ];
 
+    // Nvme Remote Controller this path corresponds to
     string controller_name_ref = 2 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
     ];
 
+    // Transport type
     NvmeTransportType trtype = 3 [(google.api.field_behavior) = REQUIRED];
 
     // Destination address (e.g. IP address, BDF for local PCIe)
@@ -206,6 +220,7 @@ message NvmePath {
     FabricsPath fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents Fabrics transport path parameters
 message FabricsPath {
     // Destination service id (e.g. Port)
     int64 trsvcid = 1 [(google.api.field_behavior) = REQUIRED];
@@ -213,6 +228,7 @@ message FabricsPath {
     // Subsystem NQN
     string subnqn = 2 [(google.api.field_behavior) = REQUIRED];
 
+    // Address family
     NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
 
     // Source address (e.g. IP of local NIC)
@@ -225,6 +241,7 @@ message FabricsPath {
     string hostnqn = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represent Nvme namespace created on bridge after connection to a target
 message NvmeRemoteNamespace {
     // namespace's unique key. Assign to middle/front-end objects.
     option (google.api.resource) = {
@@ -276,6 +293,7 @@ message CreateNvmeRemoteControllerRequest {
 
 // Represents a request to delete an Nvme Remote Controller.
 message DeleteNvmeRemoteControllerRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
@@ -298,6 +316,7 @@ message UpdateNvmeRemoteControllerRequest {
 
 // Represents a request to list all Nvme Remote Controllers.
 message ListNvmeRemoteControllersRequest {
+    // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
@@ -310,6 +329,7 @@ message ListNvmeRemoteControllersRequest {
 
 // Represents a response to list all Nvme Remote Controllers.
 message ListNvmeRemoteControllersResponse {
+    // List of Nvme Remote Controllers
     repeated NvmeRemoteController nvme_remote_controllers = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -317,6 +337,7 @@ message ListNvmeRemoteControllersResponse {
 
 // Represents a request to get an Nvme Remote Controller.
 message GetNvmeRemoteControllerRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
@@ -325,6 +346,7 @@ message GetNvmeRemoteControllerRequest {
 
 // Represents a request to reset an Nvme Remote Controller.
 message ResetNvmeRemoteControllerRequest {
+    // Object's unique identifier to reset
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
@@ -333,6 +355,7 @@ message ResetNvmeRemoteControllerRequest {
 
 // Represents a request to get an Nvme Remote Controller statistics.
 message StatsNvmeRemoteControllerRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
@@ -341,6 +364,7 @@ message StatsNvmeRemoteControllerRequest {
 
 // Represents a response to get an Nvme Remote Controller statistics.
 message StatsNvmeRemoteControllerResponse {
+    // Controller statistics
     VolumeStats stats = 1;
 }
 
@@ -360,6 +384,7 @@ message ListNvmeRemoteNamespacesRequest {
 
 // Represents a response to list all Nvme Remote Namespaces.
 message ListNvmeRemoteNamespacesResponse {
+    // List of Remote Namespaces
     repeated NvmeRemoteNamespace nvme_remote_namespaces = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -367,6 +392,7 @@ message ListNvmeRemoteNamespacesResponse {
 
 // Represents a request to get an Nvme Remote Namespace.
 message GetNvmeRemoteNamespaceRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteNamespace"
@@ -407,6 +433,7 @@ message UpdateNvmePathRequest {
 
 // Represents a request to list all Nvme Paths.
 message ListNvmePathsRequest {
+    // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
@@ -419,6 +446,7 @@ message ListNvmePathsRequest {
 
 // Represents a response to list all Nvme Paths.
 message ListNvmePathsResponse {
+    // List of Nvme Paths
     repeated NvmePath nvme_paths = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -426,6 +454,7 @@ message ListNvmePathsResponse {
 
 // Represents a request to get an Nvme Path.
 message GetNvmePathRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
@@ -434,6 +463,7 @@ message GetNvmePathRequest {
 
 // Represents a request to get an Nvme Path statistics.
 message StatsNvmePathRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmePath"
@@ -442,30 +472,51 @@ message StatsNvmePathRequest {
 
 // Represents a response to get an Nvme Path statistics.
 message StatsNvmePathResponse {
+    // Path statistics
     VolumeStats stats = 1;
 }
 
+// Transport type value options
 enum NvmeTransportType {
+    // Transport type is not specified
     NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;
+    // Fibre channel transport type
     NVME_TRANSPORT_FC               = 1;
+    // Pcie transport type
     NVME_TRANSPORT_PCIE             = 2;
+    // RDMA transport type
     NVME_TRANSPORT_RDMA             = 3;
+    // TCP transport type
     NVME_TRANSPORT_TCP              = 4;
+    // Custom transport type
     NVME_TRANSPORT_CUSTOM           = 5;
 }
 
+// Address family value options
 enum NvmeAddressFamily {
+    // Address family is not specified
     NVME_ADDRESS_FAMILY_UNSPECIFIED = 0;
+    // IPv4 address family
     NVME_ADRFAM_IPV4                = 1;
+    // IPv6 address family
     NVME_ADRFAM_IPV6                = 2;
+    // InfiniBand address family
     NVME_ADRFAM_IB                  = 3;
+    // Fibre channel address family
     NVME_ADRFAM_FC                  = 4;
+    // Intra host address family
     NVME_ADRFAM_INTRA_HOST          = 5;
 }
 
+// Multipath mode value options
 enum NvmeMultipath {
+    // Multipath mode is not specified
     NVME_MULTIPATH_UNSPECIFIED = 0;
+    // Multipathing is disabled
     NVME_MULTIPATH_DISABLE     = 1;
+    // Failover mode where only one active connection is maintained and
+    // path is changed only at switch-over
     NVME_MULTIPATH_FAILOVER    = 2;
+    // Multipath mode where active connections are maintained for every path
     NVME_MULTIPATH_MULTIPATH   = 3;
 }
