@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// Copyright (C) 2023 Intel Corporation
 
 syntax = "proto3";
 package opi_api.storage.v1;
@@ -68,6 +69,7 @@ service NullVolumeService {
     }
 }
 
+// Null volume which discards writes and returns random reads
 message NullVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NullVolume"
@@ -106,6 +108,7 @@ message CreateNullVolumeRequest {
 
 // Represents a request to delete an Null Volume.
 message DeleteNullVolumeRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NullVolume"
@@ -128,6 +131,7 @@ message UpdateNullVolumeRequest {
 
 // Represents a request to list all Null Volumes.
 message ListNullVolumesRequest {
+    // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NullVolume"
@@ -140,6 +144,7 @@ message ListNullVolumesRequest {
 
 // Represents a response to list all Null Volumes.
 message ListNullVolumesResponse {
+    // List of Null volumes
     repeated NullVolume null_volumes = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -147,6 +152,7 @@ message ListNullVolumesResponse {
 
 // Represents a request to get an Null Volume.
 message GetNullVolumeRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NullVolume"
@@ -155,6 +161,7 @@ message GetNullVolumeRequest {
 
 // Represents a request to get an Null Volume statistics.
 message StatsNullVolumeRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NullVolume"
@@ -163,6 +170,7 @@ message StatsNullVolumeRequest {
 
 // Represents a response to get an Null Volume statistics.
 message StatsNullVolumeResponse {
+    // Volume statistics
     VolumeStats stats = 1;
 }
 
