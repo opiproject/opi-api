@@ -67,6 +67,7 @@ service FrontendVirtioBlkService {
     }
 }
 
+// Represnts emulated Virtio-blk device
 message VirtioBlk {
     option (google.api.resource) = {
         type: "storage.opiproject.org/VirtioBlk"
@@ -90,6 +91,7 @@ message VirtioBlk {
     // The back/middle-end volume to back this controller
     string volume_name_ref = 3 [(google.api.field_behavior) = REQUIRED];
 
+    // Max IO queue pairs
     int64 max_io_qps = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // min QoS limits for the virtio-blk device
@@ -110,6 +112,7 @@ message CreateVirtioBlkRequest {
 
 // Represents a request to delete an Virtio Blk.
 message DeleteVirtioBlkRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
@@ -132,6 +135,7 @@ message UpdateVirtioBlkRequest {
 
 // Represents a request to list all Virtio Blks.
 message ListVirtioBlksRequest {
+    // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
@@ -144,6 +148,7 @@ message ListVirtioBlksRequest {
 
 // Represents a response to list all Virtio Blks.
 message ListVirtioBlksResponse {
+    // List of Virtio-Blk devices
     repeated VirtioBlk virtio_blks = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -151,6 +156,7 @@ message ListVirtioBlksResponse {
 
 // Represents a request to get an Virtio Blk.
 message GetVirtioBlkRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
@@ -159,6 +165,7 @@ message GetVirtioBlkRequest {
 
 // Represents a request to get an Virtio Blk statistics.
 message StatsVirtioBlkRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
@@ -167,5 +174,6 @@ message StatsVirtioBlkRequest {
 
 // Represents a response to get an Virtio Blk statistics.
 message StatsVirtioBlkResponse {
+    // Device statistics
     VolumeStats stats = 1;
 }
