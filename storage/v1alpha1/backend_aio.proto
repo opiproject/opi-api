@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// Copyright (C) 2023 Intel Corporation
 
 syntax = "proto3";
 package opi_api.storage.v1;
@@ -68,6 +69,7 @@ service AioVolumeService {
     }
 }
 
+// Volume represented by Linux kernel block device or a file on a Linux filesystem
 message AioVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/AioVolume"
@@ -109,6 +111,7 @@ message CreateAioVolumeRequest {
 
 // Represents a request to delete an Aio Volume.
 message DeleteAioVolumeRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
@@ -131,6 +134,7 @@ message UpdateAioVolumeRequest {
 
 // Represents a request to list all Aio Volumes.
 message ListAioVolumesRequest {
+    // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
@@ -143,6 +147,7 @@ message ListAioVolumesRequest {
 
 // Represents a response to list all Aio Volumes.
 message ListAioVolumesResponse {
+    // List of Aio volumes
     repeated AioVolume aio_volumes = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -150,6 +155,7 @@ message ListAioVolumesResponse {
 
 // Represents a request to get an Aio Volume.
 message GetAioVolumeRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
@@ -158,6 +164,7 @@ message GetAioVolumeRequest {
 
 // Represents a request to get an Aio Volume statistics.
 message StatsAioVolumeRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
@@ -166,6 +173,6 @@ message StatsAioVolumeRequest {
 
 // Represents a response to get an Aio Volume statistics.
 message StatsAioVolumeResponse {
+    // Volume statistics
     VolumeStats stats = 1;
 }
-
