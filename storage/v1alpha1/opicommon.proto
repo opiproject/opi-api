@@ -99,3 +99,35 @@ enum EncryptionType {
     // AES XTS 256 encryption type
     ENCRYPTION_TYPE_AES_XTS_256 = 6;
 }
+
+// Transport type value options
+enum NvmeTransportType {
+    // Transport type is not specified
+    NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;
+    // Fibre channel transport type
+    NVME_TRANSPORT_FC               = 1;
+    // Pcie transport type
+    NVME_TRANSPORT_PCIE             = 2;
+    // RDMA transport type
+    NVME_TRANSPORT_RDMA             = 3;
+    // TCP transport type
+    NVME_TRANSPORT_TCP              = 4;
+    // Custom transport type
+    NVME_TRANSPORT_CUSTOM           = 5;
+}
+
+// Address family value options
+enum NvmeAddressFamily {
+    // Address family is not specified
+    NVME_ADDRESS_FAMILY_UNSPECIFIED = 0;
+    // IPv4 address family
+    NVME_ADRFAM_IPV4                = 1;
+    // IPv6 address family
+    NVME_ADRFAM_IPV6                = 2;
+    // InfiniBand address family
+    NVME_ADRFAM_IB                  = 3;
+    // Fibre channel address family
+    NVME_ADRFAM_FC                  = 4;
+    // Intra host address family
+    NVME_ADRFAM_INTRA_HOST          = 5;
+}
