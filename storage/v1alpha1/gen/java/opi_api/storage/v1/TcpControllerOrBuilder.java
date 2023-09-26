@@ -8,12 +8,20 @@ public interface TcpControllerOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Header digest
+   * </pre>
+   *
    * <code>bool hdgst = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The hdgst.
    */
   boolean getHdgst();
 
   /**
+   * <pre>
+   * Data digest
+   * </pre>
+   *
    * <code>bool ddgst = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The ddgst.
    */

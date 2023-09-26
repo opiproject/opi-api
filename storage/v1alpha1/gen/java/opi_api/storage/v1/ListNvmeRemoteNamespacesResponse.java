@@ -110,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_REMOTE_NAMESPACES_FIELD_NUMBER = 1;
   private java.util.List<opi_api.storage.v1.NvmeRemoteNamespace> nvmeRemoteNamespaces_;
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteNamespaces_;
   }
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteNamespaces_;
   }
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -132,6 +144,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteNamespaces_.size();
   }
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -139,6 +155,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteNamespaces_.get(index);
   }
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -569,6 +589,10 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.NvmeRemoteNamespace, opi_api.storage.v1.NvmeRemoteNamespace.Builder, opi_api.storage.v1.NvmeRemoteNamespaceOrBuilder> nvmeRemoteNamespacesBuilder_;
 
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NvmeRemoteNamespace> getNvmeRemoteNamespacesList() {
@@ -579,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public int getNvmeRemoteNamespacesCount() {
@@ -589,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteNamespace getNvmeRemoteNamespaces(int index) {
@@ -599,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder setNvmeRemoteNamespaces(
@@ -616,6 +652,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder setNvmeRemoteNamespaces(
@@ -630,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder addNvmeRemoteNamespaces(opi_api.storage.v1.NvmeRemoteNamespace value) {
@@ -646,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder addNvmeRemoteNamespaces(
@@ -663,6 +711,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder addNvmeRemoteNamespaces(
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder addNvmeRemoteNamespaces(
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder addAllNvmeRemoteNamespaces(
@@ -706,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder clearNvmeRemoteNamespaces() {
@@ -719,6 +783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public Builder removeNvmeRemoteNamespaces(int index) {
@@ -732,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteNamespace.Builder getNvmeRemoteNamespacesBuilder(
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return getNvmeRemoteNamespacesFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteNamespaceOrBuilder getNvmeRemoteNamespacesOrBuilder(
@@ -749,6 +825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.NvmeRemoteNamespaceOrBuilder> 
@@ -760,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteNamespace.Builder addNvmeRemoteNamespacesBuilder() {
@@ -767,6 +851,10 @@ private static final long serialVersionUID = 0L;
           opi_api.storage.v1.NvmeRemoteNamespace.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteNamespace.Builder addNvmeRemoteNamespacesBuilder(
@@ -775,6 +863,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.storage.v1.NvmeRemoteNamespace.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Remote Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NvmeRemoteNamespace.Builder> 

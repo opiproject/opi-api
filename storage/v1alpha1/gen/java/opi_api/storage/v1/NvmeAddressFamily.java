@@ -4,31 +4,59 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Address family value options
+ * </pre>
+ *
  * Protobuf enum {@code opi_api.storage.v1.NvmeAddressFamily}
  */
 public enum NvmeAddressFamily
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Address family is not specified
+   * </pre>
+   *
    * <code>NVME_ADDRESS_FAMILY_UNSPECIFIED = 0;</code>
    */
   NVME_ADDRESS_FAMILY_UNSPECIFIED(0),
   /**
+   * <pre>
+   * IPv4 address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_IPV4 = 1;</code>
    */
   NVME_ADRFAM_IPV4(1),
   /**
+   * <pre>
+   * IPv6 address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_IPV6 = 2;</code>
    */
   NVME_ADRFAM_IPV6(2),
   /**
+   * <pre>
+   * InfiniBand address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_IB = 3;</code>
    */
   NVME_ADRFAM_IB(3),
   /**
+   * <pre>
+   * Fibre channel address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_FC = 4;</code>
    */
   NVME_ADRFAM_FC(4),
   /**
+   * <pre>
+   * Intra host address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_INTRA_HOST = 5;</code>
    */
   NVME_ADRFAM_INTRA_HOST(5),
@@ -36,26 +64,50 @@ public enum NvmeAddressFamily
   ;
 
   /**
+   * <pre>
+   * Address family is not specified
+   * </pre>
+   *
    * <code>NVME_ADDRESS_FAMILY_UNSPECIFIED = 0;</code>
    */
   public static final int NVME_ADDRESS_FAMILY_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * IPv4 address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_IPV4 = 1;</code>
    */
   public static final int NVME_ADRFAM_IPV4_VALUE = 1;
   /**
+   * <pre>
+   * IPv6 address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_IPV6 = 2;</code>
    */
   public static final int NVME_ADRFAM_IPV6_VALUE = 2;
   /**
+   * <pre>
+   * InfiniBand address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_IB = 3;</code>
    */
   public static final int NVME_ADRFAM_IB_VALUE = 3;
   /**
+   * <pre>
+   * Fibre channel address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_FC = 4;</code>
    */
   public static final int NVME_ADRFAM_FC_VALUE = 4;
   /**
+   * <pre>
+   * Intra host address family
+   * </pre>
+   *
    * <code>NVME_ADRFAM_INTRA_HOST = 5;</code>
    */
   public static final int NVME_ADRFAM_INTRA_HOST_VALUE = 5;

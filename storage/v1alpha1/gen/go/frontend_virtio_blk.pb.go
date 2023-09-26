@@ -27,6 +27,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Represnts emulated Virtio-blk device
 type VirtioBlk struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -40,7 +41,8 @@ type VirtioBlk struct {
 	PcieId *PciEndpoint `protobuf:"bytes,2,opt,name=pcie_id,json=pcieId,proto3" json:"pcie_id,omitempty"`
 	// The back/middle-end volume to back this controller
 	VolumeNameRef string `protobuf:"bytes,3,opt,name=volume_name_ref,json=volumeNameRef,proto3" json:"volume_name_ref,omitempty"`
-	MaxIoQps      int64  `protobuf:"varint,4,opt,name=max_io_qps,json=maxIoQps,proto3" json:"max_io_qps,omitempty"`
+	// Max IO queue pairs
+	MaxIoQps int64 `protobuf:"varint,4,opt,name=max_io_qps,json=maxIoQps,proto3" json:"max_io_qps,omitempty"`
 	// min QoS limits for the virtio-blk device
 	MinLimit *QosLimit `protobuf:"bytes,5,opt,name=min_limit,json=minLimit,proto3" json:"min_limit,omitempty"`
 	// max QoS limits for the virtio-blk device
@@ -186,6 +188,7 @@ type DeleteVirtioBlkRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to delete
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// If set to true, and the resource is not found, the request will succeed
 	// but no action will be taken on the server
@@ -312,6 +315,7 @@ type ListVirtioBlksRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Parent's object unique identifier
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// page size of list request
 	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
@@ -378,6 +382,7 @@ type ListVirtioBlksResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// List of Virtio-Blk devices
 	VirtioBlks []*VirtioBlk `protobuf:"bytes,1,rep,name=virtio_blks,json=virtioBlks,proto3" json:"virtio_blks,omitempty"`
 	// Next page token of list response
 	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
@@ -435,6 +440,7 @@ type GetVirtioBlkRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to retrieve
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
@@ -483,6 +489,7 @@ type StatsVirtioBlkRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to retrieve statistics
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
@@ -531,6 +538,7 @@ type StatsVirtioBlkResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Device statistics
 	Stats *VolumeStats `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
 }
 

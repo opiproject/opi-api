@@ -110,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_REMOTE_CONTROLLERS_FIELD_NUMBER = 1;
   private java.util.List<opi_api.storage.v1.NvmeRemoteController> nvmeRemoteControllers_;
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   @java.lang.Override
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteControllers_;
   }
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   @java.lang.Override
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteControllers_;
   }
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   @java.lang.Override
@@ -132,6 +144,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteControllers_.size();
   }
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   @java.lang.Override
@@ -139,6 +155,10 @@ private static final long serialVersionUID = 0L;
     return nvmeRemoteControllers_.get(index);
   }
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   @java.lang.Override
@@ -569,6 +589,10 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.NvmeRemoteController, opi_api.storage.v1.NvmeRemoteController.Builder, opi_api.storage.v1.NvmeRemoteControllerOrBuilder> nvmeRemoteControllersBuilder_;
 
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NvmeRemoteController> getNvmeRemoteControllersList() {
@@ -579,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public int getNvmeRemoteControllersCount() {
@@ -589,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteController getNvmeRemoteControllers(int index) {
@@ -599,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder setNvmeRemoteControllers(
@@ -616,6 +652,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder setNvmeRemoteControllers(
@@ -630,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder addNvmeRemoteControllers(opi_api.storage.v1.NvmeRemoteController value) {
@@ -646,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder addNvmeRemoteControllers(
@@ -663,6 +711,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder addNvmeRemoteControllers(
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder addNvmeRemoteControllers(
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder addAllNvmeRemoteControllers(
@@ -706,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder clearNvmeRemoteControllers() {
@@ -719,6 +783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public Builder removeNvmeRemoteControllers(int index) {
@@ -732,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteController.Builder getNvmeRemoteControllersBuilder(
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return getNvmeRemoteControllersFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteControllerOrBuilder getNvmeRemoteControllersOrBuilder(
@@ -749,6 +825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.NvmeRemoteControllerOrBuilder> 
@@ -760,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteController.Builder addNvmeRemoteControllersBuilder() {
@@ -767,6 +851,10 @@ private static final long serialVersionUID = 0L;
           opi_api.storage.v1.NvmeRemoteController.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public opi_api.storage.v1.NvmeRemoteController.Builder addNvmeRemoteControllersBuilder(
@@ -775,6 +863,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.storage.v1.NvmeRemoteController.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Nvme Remote Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NvmeRemoteController.Builder> 

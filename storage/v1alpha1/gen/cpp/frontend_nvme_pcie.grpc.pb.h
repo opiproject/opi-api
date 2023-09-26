@@ -69,6 +69,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeSubsystem>> PrepareAsyncUpdateNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeSubsystemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeSubsystem>>(PrepareAsyncUpdateNvmeSubsystemRaw(context, request, cq));
     }
+    // List Nvme Subsystems
     virtual ::grpc::Status ListNvmeSubsystems(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeSubsystemsRequest& request, ::opi_api::storage::v1::ListNvmeSubsystemsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeSubsystemsResponse>> AsyncListNvmeSubsystems(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeSubsystemsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeSubsystemsResponse>>(AsyncListNvmeSubsystemsRaw(context, request, cq));
@@ -76,6 +77,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeSubsystemsResponse>> PrepareAsyncListNvmeSubsystems(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeSubsystemsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeSubsystemsResponse>>(PrepareAsyncListNvmeSubsystemsRaw(context, request, cq));
     }
+    // Get an Nvme Subsystem
     virtual ::grpc::Status GetNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeSubsystemRequest& request, ::opi_api::storage::v1::NvmeSubsystem* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeSubsystem>> AsyncGetNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeSubsystemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeSubsystem>>(AsyncGetNvmeSubsystemRaw(context, request, cq));
@@ -83,6 +85,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeSubsystem>> PrepareAsyncGetNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeSubsystemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeSubsystem>>(PrepareAsyncGetNvmeSubsystemRaw(context, request, cq));
     }
+    // Get an Nvme Subsystem statistics
     virtual ::grpc::Status StatsNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeSubsystemRequest& request, ::opi_api::storage::v1::StatsNvmeSubsystemResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeSubsystemResponse>> AsyncStatsNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeSubsystemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeSubsystemResponse>>(AsyncStatsNvmeSubsystemRaw(context, request, cq));
@@ -115,6 +118,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeController>> PrepareAsyncUpdateNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeController>>(PrepareAsyncUpdateNvmeControllerRaw(context, request, cq));
     }
+    // List Nvme Controllers
     virtual ::grpc::Status ListNvmeControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeControllersRequest& request, ::opi_api::storage::v1::ListNvmeControllersResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeControllersResponse>> AsyncListNvmeControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeControllersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeControllersResponse>>(AsyncListNvmeControllersRaw(context, request, cq));
@@ -122,6 +126,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeControllersResponse>> PrepareAsyncListNvmeControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeControllersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeControllersResponse>>(PrepareAsyncListNvmeControllersRaw(context, request, cq));
     }
+    // Get an Nvme Controller
     virtual ::grpc::Status GetNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeControllerRequest& request, ::opi_api::storage::v1::NvmeController* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeController>> AsyncGetNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeController>>(AsyncGetNvmeControllerRaw(context, request, cq));
@@ -129,6 +134,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeController>> PrepareAsyncGetNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeController>>(PrepareAsyncGetNvmeControllerRaw(context, request, cq));
     }
+    // Get an Nvme Controller statistics
     virtual ::grpc::Status StatsNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeControllerRequest& request, ::opi_api::storage::v1::StatsNvmeControllerResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeControllerResponse>> AsyncStatsNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeControllerResponse>>(AsyncStatsNvmeControllerRaw(context, request, cq));
@@ -160,6 +166,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeNamespace>> PrepareAsyncUpdateNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeNamespace>>(PrepareAsyncUpdateNvmeNamespaceRaw(context, request, cq));
     }
+    // List Nvme Namespaces
     virtual ::grpc::Status ListNvmeNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeNamespacesRequest& request, ::opi_api::storage::v1::ListNvmeNamespacesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeNamespacesResponse>> AsyncListNvmeNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeNamespacesResponse>>(AsyncListNvmeNamespacesRaw(context, request, cq));
@@ -167,6 +174,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeNamespacesResponse>> PrepareAsyncListNvmeNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeNamespacesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListNvmeNamespacesResponse>>(PrepareAsyncListNvmeNamespacesRaw(context, request, cq));
     }
+    // Get an Nvme Namespace
     virtual ::grpc::Status GetNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeNamespaceRequest& request, ::opi_api::storage::v1::NvmeNamespace* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeNamespace>> AsyncGetNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeNamespace>>(AsyncGetNvmeNamespaceRaw(context, request, cq));
@@ -174,6 +182,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeNamespace>> PrepareAsyncGetNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeNamespace>>(PrepareAsyncGetNvmeNamespaceRaw(context, request, cq));
     }
+    // Get an Nvme Namespace statistics
     virtual ::grpc::Status StatsNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeNamespaceRequest& request, ::opi_api::storage::v1::StatsNvmeNamespaceResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeNamespaceResponse>> AsyncStatsNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::StatsNvmeNamespaceResponse>>(AsyncStatsNvmeNamespaceRaw(context, request, cq));
@@ -194,10 +203,13 @@ class FrontendNvmeService final {
       // Update an Nvme Subsystem
       virtual void UpdateNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Nvme Subsystems
       virtual void ListNvmeSubsystems(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeSubsystemsRequest* request, ::opi_api::storage::v1::ListNvmeSubsystemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNvmeSubsystems(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeSubsystemsRequest* request, ::opi_api::storage::v1::ListNvmeSubsystemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Subsystem
       virtual void GetNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Subsystem statistics
       virtual void StatsNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeSubsystemRequest* request, ::opi_api::storage::v1::StatsNvmeSubsystemResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StatsNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeSubsystemRequest* request, ::opi_api::storage::v1::StatsNvmeSubsystemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // Create an Nvme Controller
@@ -210,10 +222,13 @@ class FrontendNvmeService final {
       // Update an Nvme Controller
       virtual void UpdateNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Nvme Controllers
       virtual void ListNvmeControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeControllersRequest* request, ::opi_api::storage::v1::ListNvmeControllersResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNvmeControllers(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeControllersRequest* request, ::opi_api::storage::v1::ListNvmeControllersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Controller
       virtual void GetNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Controller statistics
       virtual void StatsNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeControllerRequest* request, ::opi_api::storage::v1::StatsNvmeControllerResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StatsNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeControllerRequest* request, ::opi_api::storage::v1::StatsNvmeControllerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // Create an Nvme Namespace
@@ -225,10 +240,13 @@ class FrontendNvmeService final {
       // Update an Nvme Namespace
       virtual void UpdateNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeNamespaceRequest* request, ::opi_api::storage::v1::NvmeNamespace* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeNamespaceRequest* request, ::opi_api::storage::v1::NvmeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // List Nvme Namespaces
       virtual void ListNvmeNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeNamespacesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNvmeNamespaces(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNvmeNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeNamespacesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Namespace
       virtual void GetNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeNamespaceRequest* request, ::opi_api::storage::v1::NvmeNamespace* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNvmeNamespaceRequest* request, ::opi_api::storage::v1::NvmeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get an Nvme Namespace statistics
       virtual void StatsNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeNamespaceRequest* request, ::opi_api::storage::v1::StatsNvmeNamespaceResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StatsNvmeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::StatsNvmeNamespaceRequest* request, ::opi_api::storage::v1::StatsNvmeNamespaceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -520,8 +538,11 @@ class FrontendNvmeService final {
     virtual ::grpc::Status DeleteNvmeSubsystem(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNvmeSubsystemRequest* request, ::google::protobuf::Empty* response);
     // Update an Nvme Subsystem
     virtual ::grpc::Status UpdateNvmeSubsystem(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response);
+    // List Nvme Subsystems
     virtual ::grpc::Status ListNvmeSubsystems(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeSubsystemsRequest* request, ::opi_api::storage::v1::ListNvmeSubsystemsResponse* response);
+    // Get an Nvme Subsystem
     virtual ::grpc::Status GetNvmeSubsystem(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response);
+    // Get an Nvme Subsystem statistics
     virtual ::grpc::Status StatsNvmeSubsystem(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNvmeSubsystemRequest* request, ::opi_api::storage::v1::StatsNvmeSubsystemResponse* response);
     // Create an Nvme Controller
     virtual ::grpc::Status CreateNvmeController(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response);
@@ -530,8 +551,11 @@ class FrontendNvmeService final {
     virtual ::grpc::Status DeleteNvmeController(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNvmeControllerRequest* request, ::google::protobuf::Empty* response);
     // Update an Nvme Controller
     virtual ::grpc::Status UpdateNvmeController(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response);
+    // List Nvme Controllers
     virtual ::grpc::Status ListNvmeControllers(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeControllersRequest* request, ::opi_api::storage::v1::ListNvmeControllersResponse* response);
+    // Get an Nvme Controller
     virtual ::grpc::Status GetNvmeController(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response);
+    // Get an Nvme Controller statistics
     virtual ::grpc::Status StatsNvmeController(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNvmeControllerRequest* request, ::opi_api::storage::v1::StatsNvmeControllerResponse* response);
     // Create an Nvme Namespace
     virtual ::grpc::Status CreateNvmeNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNvmeNamespaceRequest* request, ::opi_api::storage::v1::NvmeNamespace* response);
@@ -539,8 +563,11 @@ class FrontendNvmeService final {
     virtual ::grpc::Status DeleteNvmeNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNvmeNamespaceRequest* request, ::google::protobuf::Empty* response);
     // Update an Nvme Namespace
     virtual ::grpc::Status UpdateNvmeNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmeNamespaceRequest* request, ::opi_api::storage::v1::NvmeNamespace* response);
+    // List Nvme Namespaces
     virtual ::grpc::Status ListNvmeNamespaces(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeNamespacesRequest* request, ::opi_api::storage::v1::ListNvmeNamespacesResponse* response);
+    // Get an Nvme Namespace
     virtual ::grpc::Status GetNvmeNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmeNamespaceRequest* request, ::opi_api::storage::v1::NvmeNamespace* response);
+    // Get an Nvme Namespace statistics
     virtual ::grpc::Status StatsNvmeNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::StatsNvmeNamespaceRequest* request, ::opi_api::storage::v1::StatsNvmeNamespaceResponse* response);
   };
   template <class BaseClass>

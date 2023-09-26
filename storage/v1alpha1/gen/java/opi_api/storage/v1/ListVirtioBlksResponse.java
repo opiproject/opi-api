@@ -110,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int VIRTIO_BLKS_FIELD_NUMBER = 1;
   private java.util.List<opi_api.storage.v1.VirtioBlk> virtioBlks_;
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   @java.lang.Override
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return virtioBlks_;
   }
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   @java.lang.Override
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return virtioBlks_;
   }
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   @java.lang.Override
@@ -132,6 +144,10 @@ private static final long serialVersionUID = 0L;
     return virtioBlks_.size();
   }
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   @java.lang.Override
@@ -139,6 +155,10 @@ private static final long serialVersionUID = 0L;
     return virtioBlks_.get(index);
   }
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   @java.lang.Override
@@ -569,6 +589,10 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.VirtioBlk, opi_api.storage.v1.VirtioBlk.Builder, opi_api.storage.v1.VirtioBlkOrBuilder> virtioBlksBuilder_;
 
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioBlk> getVirtioBlksList() {
@@ -579,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public int getVirtioBlksCount() {
@@ -589,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public opi_api.storage.v1.VirtioBlk getVirtioBlks(int index) {
@@ -599,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder setVirtioBlks(
@@ -616,6 +652,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder setVirtioBlks(
@@ -630,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder addVirtioBlks(opi_api.storage.v1.VirtioBlk value) {
@@ -646,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder addVirtioBlks(
@@ -663,6 +711,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder addVirtioBlks(
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder addVirtioBlks(
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder addAllVirtioBlks(
@@ -706,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder clearVirtioBlks() {
@@ -719,6 +783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public Builder removeVirtioBlks(int index) {
@@ -732,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public opi_api.storage.v1.VirtioBlk.Builder getVirtioBlksBuilder(
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return getVirtioBlksFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlksOrBuilder(
@@ -749,6 +825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.VirtioBlkOrBuilder> 
@@ -760,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public opi_api.storage.v1.VirtioBlk.Builder addVirtioBlksBuilder() {
@@ -767,6 +851,10 @@ private static final long serialVersionUID = 0L;
           opi_api.storage.v1.VirtioBlk.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public opi_api.storage.v1.VirtioBlk.Builder addVirtioBlksBuilder(
@@ -775,6 +863,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.storage.v1.VirtioBlk.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Virtio-Blk devices
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioBlk.Builder> 

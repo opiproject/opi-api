@@ -32,11 +32,19 @@ public interface NvmePathOrBuilder extends
       getNameBytes();
 
   /**
+   * <pre>
+   * Nvme Remote Controller this path corresponds to
+   * </pre>
+   *
    * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The controllerNameRef.
    */
   java.lang.String getControllerNameRef();
   /**
+   * <pre>
+   * Nvme Remote Controller this path corresponds to
+   * </pre>
+   *
    * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for controllerNameRef.
    */
@@ -44,11 +52,19 @@ public interface NvmePathOrBuilder extends
       getControllerNameRefBytes();
 
   /**
+   * <pre>
+   * Transport type
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for trtype.
    */
   int getTrtypeValue();
   /**
+   * <pre>
+   * Transport type
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trtype.
    */

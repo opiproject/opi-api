@@ -30,8 +30,11 @@ type FrontendNvmeServiceClient interface {
 	DeleteNvmeSubsystem(ctx context.Context, in *DeleteNvmeSubsystemRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Update an Nvme Subsystem
 	UpdateNvmeSubsystem(ctx context.Context, in *UpdateNvmeSubsystemRequest, opts ...grpc.CallOption) (*NvmeSubsystem, error)
+	// List Nvme Subsystems
 	ListNvmeSubsystems(ctx context.Context, in *ListNvmeSubsystemsRequest, opts ...grpc.CallOption) (*ListNvmeSubsystemsResponse, error)
+	// Get an Nvme Subsystem
 	GetNvmeSubsystem(ctx context.Context, in *GetNvmeSubsystemRequest, opts ...grpc.CallOption) (*NvmeSubsystem, error)
+	// Get an Nvme Subsystem statistics
 	StatsNvmeSubsystem(ctx context.Context, in *StatsNvmeSubsystemRequest, opts ...grpc.CallOption) (*StatsNvmeSubsystemResponse, error)
 	// Create an Nvme Controller
 	CreateNvmeController(ctx context.Context, in *CreateNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error)
@@ -40,8 +43,11 @@ type FrontendNvmeServiceClient interface {
 	DeleteNvmeController(ctx context.Context, in *DeleteNvmeControllerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Update an Nvme Controller
 	UpdateNvmeController(ctx context.Context, in *UpdateNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error)
+	// List Nvme Controllers
 	ListNvmeControllers(ctx context.Context, in *ListNvmeControllersRequest, opts ...grpc.CallOption) (*ListNvmeControllersResponse, error)
+	// Get an Nvme Controller
 	GetNvmeController(ctx context.Context, in *GetNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error)
+	// Get an Nvme Controller statistics
 	StatsNvmeController(ctx context.Context, in *StatsNvmeControllerRequest, opts ...grpc.CallOption) (*StatsNvmeControllerResponse, error)
 	// Create an Nvme Namespace
 	CreateNvmeNamespace(ctx context.Context, in *CreateNvmeNamespaceRequest, opts ...grpc.CallOption) (*NvmeNamespace, error)
@@ -49,8 +55,11 @@ type FrontendNvmeServiceClient interface {
 	DeleteNvmeNamespace(ctx context.Context, in *DeleteNvmeNamespaceRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Update an Nvme Namespace
 	UpdateNvmeNamespace(ctx context.Context, in *UpdateNvmeNamespaceRequest, opts ...grpc.CallOption) (*NvmeNamespace, error)
+	// List Nvme Namespaces
 	ListNvmeNamespaces(ctx context.Context, in *ListNvmeNamespacesRequest, opts ...grpc.CallOption) (*ListNvmeNamespacesResponse, error)
+	// Get an Nvme Namespace
 	GetNvmeNamespace(ctx context.Context, in *GetNvmeNamespaceRequest, opts ...grpc.CallOption) (*NvmeNamespace, error)
+	// Get an Nvme Namespace statistics
 	StatsNvmeNamespace(ctx context.Context, in *StatsNvmeNamespaceRequest, opts ...grpc.CallOption) (*StatsNvmeNamespaceResponse, error)
 }
 
@@ -235,8 +244,11 @@ type FrontendNvmeServiceServer interface {
 	DeleteNvmeSubsystem(context.Context, *DeleteNvmeSubsystemRequest) (*emptypb.Empty, error)
 	// Update an Nvme Subsystem
 	UpdateNvmeSubsystem(context.Context, *UpdateNvmeSubsystemRequest) (*NvmeSubsystem, error)
+	// List Nvme Subsystems
 	ListNvmeSubsystems(context.Context, *ListNvmeSubsystemsRequest) (*ListNvmeSubsystemsResponse, error)
+	// Get an Nvme Subsystem
 	GetNvmeSubsystem(context.Context, *GetNvmeSubsystemRequest) (*NvmeSubsystem, error)
+	// Get an Nvme Subsystem statistics
 	StatsNvmeSubsystem(context.Context, *StatsNvmeSubsystemRequest) (*StatsNvmeSubsystemResponse, error)
 	// Create an Nvme Controller
 	CreateNvmeController(context.Context, *CreateNvmeControllerRequest) (*NvmeController, error)
@@ -245,8 +257,11 @@ type FrontendNvmeServiceServer interface {
 	DeleteNvmeController(context.Context, *DeleteNvmeControllerRequest) (*emptypb.Empty, error)
 	// Update an Nvme Controller
 	UpdateNvmeController(context.Context, *UpdateNvmeControllerRequest) (*NvmeController, error)
+	// List Nvme Controllers
 	ListNvmeControllers(context.Context, *ListNvmeControllersRequest) (*ListNvmeControllersResponse, error)
+	// Get an Nvme Controller
 	GetNvmeController(context.Context, *GetNvmeControllerRequest) (*NvmeController, error)
+	// Get an Nvme Controller statistics
 	StatsNvmeController(context.Context, *StatsNvmeControllerRequest) (*StatsNvmeControllerResponse, error)
 	// Create an Nvme Namespace
 	CreateNvmeNamespace(context.Context, *CreateNvmeNamespaceRequest) (*NvmeNamespace, error)
@@ -254,8 +269,11 @@ type FrontendNvmeServiceServer interface {
 	DeleteNvmeNamespace(context.Context, *DeleteNvmeNamespaceRequest) (*emptypb.Empty, error)
 	// Update an Nvme Namespace
 	UpdateNvmeNamespace(context.Context, *UpdateNvmeNamespaceRequest) (*NvmeNamespace, error)
+	// List Nvme Namespaces
 	ListNvmeNamespaces(context.Context, *ListNvmeNamespacesRequest) (*ListNvmeNamespacesResponse, error)
+	// Get an Nvme Namespace
 	GetNvmeNamespace(context.Context, *GetNvmeNamespaceRequest) (*NvmeNamespace, error)
+	// Get an Nvme Namespace statistics
 	StatsNvmeNamespace(context.Context, *StatsNvmeNamespaceRequest) (*StatsNvmeNamespaceResponse, error)
 }
 

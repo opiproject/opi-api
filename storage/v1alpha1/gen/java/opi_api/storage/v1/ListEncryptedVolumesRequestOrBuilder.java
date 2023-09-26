@@ -8,11 +8,19 @@ public interface ListEncryptedVolumesRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Parent's object unique identifier
+   * </pre>
+   *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   java.lang.String getParent();
   /**
+   * <pre>
+   * Parent's object unique identifier
+   * </pre>
+   *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */

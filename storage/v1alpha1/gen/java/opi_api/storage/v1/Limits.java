@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents limits for Qos Volume
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.Limits}
  */
 public final class Limits extends
@@ -111,6 +115,10 @@ private static final long serialVersionUID = 0L;
   public static final int MIN_FIELD_NUMBER = 1;
   private opi_api.storage.v1.QosLimit min_;
   /**
+   * <pre>
+   * Min QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the min field is set.
    */
@@ -119,6 +127,10 @@ private static final long serialVersionUID = 0L;
     return min_ != null;
   }
   /**
+   * <pre>
+   * Min QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The min.
    */
@@ -127,6 +139,10 @@ private static final long serialVersionUID = 0L;
     return min_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : min_;
   }
   /**
+   * <pre>
+   * Min QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
@@ -137,6 +153,10 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_FIELD_NUMBER = 2;
   private opi_api.storage.v1.QosLimit max_;
   /**
+   * <pre>
+   * Max QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the max field is set.
    */
@@ -145,6 +165,10 @@ private static final long serialVersionUID = 0L;
     return max_ != null;
   }
   /**
+   * <pre>
+   * Max QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The max.
    */
@@ -153,6 +177,10 @@ private static final long serialVersionUID = 0L;
     return max_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : max_;
   }
   /**
+   * <pre>
+   * Max QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
@@ -337,6 +365,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents limits for Qos Volume
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.Limits}
    */
   public static final class Builder extends
@@ -509,6 +541,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> minBuilder_;
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the min field is set.
      */
@@ -516,6 +552,10 @@ private static final long serialVersionUID = 0L;
       return minBuilder_ != null || min_ != null;
     }
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The min.
      */
@@ -527,6 +567,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMin(opi_api.storage.v1.QosLimit value) {
@@ -543,6 +587,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMin(
@@ -557,6 +605,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMin(opi_api.storage.v1.QosLimit value) {
@@ -575,6 +627,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMin() {
@@ -589,6 +645,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimit.Builder getMinBuilder() {
@@ -597,6 +657,10 @@ private static final long serialVersionUID = 0L;
       return getMinFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimitOrBuilder getMinOrBuilder() {
@@ -608,6 +672,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Min QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -628,6 +696,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> maxBuilder_;
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the max field is set.
      */
@@ -635,6 +707,10 @@ private static final long serialVersionUID = 0L;
       return maxBuilder_ != null || max_ != null;
     }
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The max.
      */
@@ -646,6 +722,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMax(opi_api.storage.v1.QosLimit value) {
@@ -662,6 +742,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMax(
@@ -676,6 +760,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMax(opi_api.storage.v1.QosLimit value) {
@@ -694,6 +782,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMax() {
@@ -708,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimit.Builder getMaxBuilder() {
@@ -716,6 +812,10 @@ private static final long serialVersionUID = 0L;
       return getMaxFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimitOrBuilder getMaxOrBuilder() {
@@ -727,6 +827,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Max QoS limits for the volume
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

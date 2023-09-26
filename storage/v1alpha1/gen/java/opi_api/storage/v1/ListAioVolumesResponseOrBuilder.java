@@ -8,24 +8,44 @@ public interface ListAioVolumesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Aio volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.AioVolume aio_volumes = 1;</code>
    */
   java.util.List<opi_api.storage.v1.AioVolume> 
       getAioVolumesList();
   /**
+   * <pre>
+   * List of Aio volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.AioVolume aio_volumes = 1;</code>
    */
   opi_api.storage.v1.AioVolume getAioVolumes(int index);
   /**
+   * <pre>
+   * List of Aio volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.AioVolume aio_volumes = 1;</code>
    */
   int getAioVolumesCount();
   /**
+   * <pre>
+   * List of Aio volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.AioVolume aio_volumes = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.AioVolumeOrBuilder> 
       getAioVolumesOrBuilderList();
   /**
+   * <pre>
+   * List of Aio volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.AioVolume aio_volumes = 1;</code>
    */
   opi_api.storage.v1.AioVolumeOrBuilder getAioVolumesOrBuilder(

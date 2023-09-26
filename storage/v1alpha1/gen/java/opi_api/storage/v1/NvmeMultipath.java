@@ -4,23 +4,44 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Multipath mode value options
+ * </pre>
+ *
  * Protobuf enum {@code opi_api.storage.v1.NvmeMultipath}
  */
 public enum NvmeMultipath
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Multipath mode is not specified
+   * </pre>
+   *
    * <code>NVME_MULTIPATH_UNSPECIFIED = 0;</code>
    */
   NVME_MULTIPATH_UNSPECIFIED(0),
   /**
+   * <pre>
+   * Multipathing is disabled
+   * </pre>
+   *
    * <code>NVME_MULTIPATH_DISABLE = 1;</code>
    */
   NVME_MULTIPATH_DISABLE(1),
   /**
+   * <pre>
+   * Failover mode where only one active connection is maintained and
+   * path is changed only at switch-over
+   * </pre>
+   *
    * <code>NVME_MULTIPATH_FAILOVER = 2;</code>
    */
   NVME_MULTIPATH_FAILOVER(2),
   /**
+   * <pre>
+   * Multipath mode where active connections are maintained for every path
+   * </pre>
+   *
    * <code>NVME_MULTIPATH_MULTIPATH = 3;</code>
    */
   NVME_MULTIPATH_MULTIPATH(3),
@@ -28,18 +49,35 @@ public enum NvmeMultipath
   ;
 
   /**
+   * <pre>
+   * Multipath mode is not specified
+   * </pre>
+   *
    * <code>NVME_MULTIPATH_UNSPECIFIED = 0;</code>
    */
   public static final int NVME_MULTIPATH_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * Multipathing is disabled
+   * </pre>
+   *
    * <code>NVME_MULTIPATH_DISABLE = 1;</code>
    */
   public static final int NVME_MULTIPATH_DISABLE_VALUE = 1;
   /**
+   * <pre>
+   * Failover mode where only one active connection is maintained and
+   * path is changed only at switch-over
+   * </pre>
+   *
    * <code>NVME_MULTIPATH_FAILOVER = 2;</code>
    */
   public static final int NVME_MULTIPATH_FAILOVER_VALUE = 2;
   /**
+   * <pre>
+   * Multipath mode where active connections are maintained for every path
+   * </pre>
+   *
    * <code>NVME_MULTIPATH_MULTIPATH = 3;</code>
    */
   public static final int NVME_MULTIPATH_MULTIPATH_VALUE = 3;

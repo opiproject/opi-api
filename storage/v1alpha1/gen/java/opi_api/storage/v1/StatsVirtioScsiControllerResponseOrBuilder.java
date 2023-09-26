@@ -8,16 +8,28 @@ public interface StatsVirtioScsiControllerResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Scsi Controller statistics
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return Whether the stats field is set.
    */
   boolean hasStats();
   /**
+   * <pre>
+   * Scsi Controller statistics
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return The stats.
    */
   opi_api.storage.v1.VolumeStats getStats();
   /**
+   * <pre>
+   * Scsi Controller statistics
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    */
   opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder();

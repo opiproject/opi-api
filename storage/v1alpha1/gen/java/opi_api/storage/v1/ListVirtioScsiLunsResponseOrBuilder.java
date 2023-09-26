@@ -8,24 +8,44 @@ public interface ListVirtioScsiLunsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   java.util.List<opi_api.storage.v1.VirtioScsiLun> 
       getVirtioScsiLunsList();
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   opi_api.storage.v1.VirtioScsiLun getVirtioScsiLuns(int index);
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   int getVirtioScsiLunsCount();
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.VirtioScsiLunOrBuilder> 
       getVirtioScsiLunsOrBuilderList();
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunsOrBuilder(

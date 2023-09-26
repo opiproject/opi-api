@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a target controller
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.NvmeRemoteController}
  */
 public final class NvmeRemoteController extends
@@ -172,6 +176,10 @@ private static final long serialVersionUID = 0L;
   public static final int MULTIPATH_FIELD_NUMBER = 2;
   private int multipath_;
   /**
+   * <pre>
+   * Multipath mode
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for multipath.
    */
@@ -179,6 +187,10 @@ private static final long serialVersionUID = 0L;
     return multipath_;
   }
   /**
+   * <pre>
+   * Multipath mode
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The multipath.
    */
@@ -191,6 +203,10 @@ private static final long serialVersionUID = 0L;
   public static final int IO_QUEUES_COUNT_FIELD_NUMBER = 3;
   private long ioQueuesCount_;
   /**
+   * <pre>
+   * IO queues count
+   * </pre>
+   *
    * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The ioQueuesCount.
    */
@@ -202,6 +218,10 @@ private static final long serialVersionUID = 0L;
   public static final int QUEUE_SIZE_FIELD_NUMBER = 4;
   private long queueSize_;
   /**
+   * <pre>
+   * Queue size
+   * </pre>
+   *
    * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The queueSize.
    */
@@ -453,6 +473,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a target controller
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.NvmeRemoteController}
    */
   public static final class Builder extends
@@ -740,6 +764,10 @@ private static final long serialVersionUID = 0L;
 
     private int multipath_ = 0;
     /**
+     * <pre>
+     * Multipath mode
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for multipath.
      */
@@ -747,6 +775,10 @@ private static final long serialVersionUID = 0L;
       return multipath_;
     }
     /**
+     * <pre>
+     * Multipath mode
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The enum numeric value on the wire for multipath to set.
      * @return This builder for chaining.
@@ -758,6 +790,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Multipath mode
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The multipath.
      */
@@ -768,6 +804,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? opi_api.storage.v1.NvmeMultipath.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * Multipath mode
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The multipath to set.
      * @return This builder for chaining.
@@ -782,6 +822,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Multipath mode
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
@@ -794,6 +838,10 @@ private static final long serialVersionUID = 0L;
 
     private long ioQueuesCount_ ;
     /**
+     * <pre>
+     * IO queues count
+     * </pre>
+     *
      * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The ioQueuesCount.
      */
@@ -802,6 +850,10 @@ private static final long serialVersionUID = 0L;
       return ioQueuesCount_;
     }
     /**
+     * <pre>
+     * IO queues count
+     * </pre>
+     *
      * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The ioQueuesCount to set.
      * @return This builder for chaining.
@@ -813,6 +865,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * IO queues count
+     * </pre>
+     *
      * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -825,6 +881,10 @@ private static final long serialVersionUID = 0L;
 
     private long queueSize_ ;
     /**
+     * <pre>
+     * Queue size
+     * </pre>
+     *
      * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The queueSize.
      */
@@ -833,6 +893,10 @@ private static final long serialVersionUID = 0L;
       return queueSize_;
     }
     /**
+     * <pre>
+     * Queue size
+     * </pre>
+     *
      * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The queueSize to set.
      * @return This builder for chaining.
@@ -844,6 +908,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Queue size
+     * </pre>
+     *
      * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */

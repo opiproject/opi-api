@@ -32,23 +32,39 @@ public interface NvmeRemoteControllerOrBuilder extends
       getNameBytes();
 
   /**
+   * <pre>
+   * Multipath mode
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for multipath.
    */
   int getMultipathValue();
   /**
+   * <pre>
+   * Multipath mode
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeMultipath multipath = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The multipath.
    */
   opi_api.storage.v1.NvmeMultipath getMultipath();
 
   /**
+   * <pre>
+   * IO queues count
+   * </pre>
+   *
    * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The ioQueuesCount.
    */
   long getIoQueuesCount();
 
   /**
+   * <pre>
+   * Queue size
+   * </pre>
+   *
    * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The queueSize.
    */

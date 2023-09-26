@@ -110,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int VIRTIO_SCSI_TARGETS_FIELD_NUMBER = 1;
   private java.util.List<opi_api.storage.v1.VirtioScsiTarget> virtioScsiTargets_;
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   @java.lang.Override
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiTargets_;
   }
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   @java.lang.Override
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiTargets_;
   }
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   @java.lang.Override
@@ -132,6 +144,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiTargets_.size();
   }
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   @java.lang.Override
@@ -139,6 +155,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiTargets_.get(index);
   }
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   @java.lang.Override
@@ -569,6 +589,10 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.VirtioScsiTarget, opi_api.storage.v1.VirtioScsiTarget.Builder, opi_api.storage.v1.VirtioScsiTargetOrBuilder> virtioScsiTargetsBuilder_;
 
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioScsiTarget> getVirtioScsiTargetsList() {
@@ -579,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public int getVirtioScsiTargetsCount() {
@@ -589,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiTarget getVirtioScsiTargets(int index) {
@@ -599,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder setVirtioScsiTargets(
@@ -616,6 +652,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder setVirtioScsiTargets(
@@ -630,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder addVirtioScsiTargets(opi_api.storage.v1.VirtioScsiTarget value) {
@@ -646,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder addVirtioScsiTargets(
@@ -663,6 +711,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder addVirtioScsiTargets(
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder addVirtioScsiTargets(
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder addAllVirtioScsiTargets(
@@ -706,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder clearVirtioScsiTargets() {
@@ -719,6 +783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public Builder removeVirtioScsiTargets(int index) {
@@ -732,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiTarget.Builder getVirtioScsiTargetsBuilder(
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return getVirtioScsiTargetsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiTargetOrBuilder getVirtioScsiTargetsOrBuilder(
@@ -749,6 +825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.VirtioScsiTargetOrBuilder> 
@@ -760,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiTarget.Builder addVirtioScsiTargetsBuilder() {
@@ -767,6 +851,10 @@ private static final long serialVersionUID = 0L;
           opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiTarget.Builder addVirtioScsiTargetsBuilder(
@@ -775,6 +863,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Scsi Targets
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioScsiTarget.Builder> 

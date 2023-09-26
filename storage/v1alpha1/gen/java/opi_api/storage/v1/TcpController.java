@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents parameters specific for TCP target controller
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.TcpController}
  */
 public final class TcpController extends
@@ -101,6 +105,10 @@ private static final long serialVersionUID = 0L;
   public static final int HDGST_FIELD_NUMBER = 1;
   private boolean hdgst_;
   /**
+   * <pre>
+   * Header digest
+   * </pre>
+   *
    * <code>bool hdgst = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The hdgst.
    */
@@ -112,6 +120,10 @@ private static final long serialVersionUID = 0L;
   public static final int DDGST_FIELD_NUMBER = 2;
   private boolean ddgst_;
   /**
+   * <pre>
+   * Data digest
+   * </pre>
+   *
    * <code>bool ddgst = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The ddgst.
    */
@@ -323,6 +335,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents parameters specific for TCP target controller
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.TcpController}
    */
   public static final class Builder extends
@@ -483,6 +499,10 @@ private static final long serialVersionUID = 0L;
 
     private boolean hdgst_ ;
     /**
+     * <pre>
+     * Header digest
+     * </pre>
+     *
      * <code>bool hdgst = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The hdgst.
      */
@@ -491,6 +511,10 @@ private static final long serialVersionUID = 0L;
       return hdgst_;
     }
     /**
+     * <pre>
+     * Header digest
+     * </pre>
+     *
      * <code>bool hdgst = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The hdgst to set.
      * @return This builder for chaining.
@@ -502,6 +526,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Header digest
+     * </pre>
+     *
      * <code>bool hdgst = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -514,6 +542,10 @@ private static final long serialVersionUID = 0L;
 
     private boolean ddgst_ ;
     /**
+     * <pre>
+     * Data digest
+     * </pre>
+     *
      * <code>bool ddgst = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The ddgst.
      */
@@ -522,6 +554,10 @@ private static final long serialVersionUID = 0L;
       return ddgst_;
     }
     /**
+     * <pre>
+     * Data digest
+     * </pre>
+     *
      * <code>bool ddgst = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The ddgst to set.
      * @return This builder for chaining.
@@ -533,6 +569,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Data digest
+     * </pre>
+     *
      * <code>bool ddgst = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */

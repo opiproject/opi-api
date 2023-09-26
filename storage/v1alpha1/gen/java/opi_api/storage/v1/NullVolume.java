@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Null volume which discards writes and returns random reads
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.NullVolume}
  */
 public final class NullVolume extends
@@ -425,6 +429,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Null volume which discards writes and returns random reads
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.NullVolume}
    */
   public static final class Builder extends

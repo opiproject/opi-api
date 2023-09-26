@@ -4,31 +4,59 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Transport type value options
+ * </pre>
+ *
  * Protobuf enum {@code opi_api.storage.v1.NvmeTransportType}
  */
 public enum NvmeTransportType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Transport type is not specified
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;</code>
    */
   NVME_TRANSPORT_TYPE_UNSPECIFIED(0),
   /**
+   * <pre>
+   * Fibre channel transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_FC = 1;</code>
    */
   NVME_TRANSPORT_FC(1),
   /**
+   * <pre>
+   * Pcie transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_PCIE = 2;</code>
    */
   NVME_TRANSPORT_PCIE(2),
   /**
+   * <pre>
+   * RDMA transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_RDMA = 3;</code>
    */
   NVME_TRANSPORT_RDMA(3),
   /**
+   * <pre>
+   * TCP transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_TCP = 4;</code>
    */
   NVME_TRANSPORT_TCP(4),
   /**
+   * <pre>
+   * Custom transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_CUSTOM = 5;</code>
    */
   NVME_TRANSPORT_CUSTOM(5),
@@ -36,26 +64,50 @@ public enum NvmeTransportType
   ;
 
   /**
+   * <pre>
+   * Transport type is not specified
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int NVME_TRANSPORT_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * Fibre channel transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_FC = 1;</code>
    */
   public static final int NVME_TRANSPORT_FC_VALUE = 1;
   /**
+   * <pre>
+   * Pcie transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_PCIE = 2;</code>
    */
   public static final int NVME_TRANSPORT_PCIE_VALUE = 2;
   /**
+   * <pre>
+   * RDMA transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_RDMA = 3;</code>
    */
   public static final int NVME_TRANSPORT_RDMA_VALUE = 3;
   /**
+   * <pre>
+   * TCP transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_TCP = 4;</code>
    */
   public static final int NVME_TRANSPORT_TCP_VALUE = 4;
   /**
+   * <pre>
+   * Custom transport type
+   * </pre>
+   *
    * <code>NVME_TRANSPORT_CUSTOM = 5;</code>
    */
   public static final int NVME_TRANSPORT_CUSTOM_VALUE = 5;

@@ -103,6 +103,10 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   * <pre>
+   * Object's unique identifier to retrieve statistics
+   * </pre>
+   *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
@@ -120,6 +124,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Object's unique identifier to retrieve statistics
+   * </pre>
+   *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
@@ -141,6 +149,10 @@ private static final long serialVersionUID = 0L;
   public static final int CONTROLLER_NAME_REF_FIELD_NUMBER = 2;
   private volatile java.lang.Object controllerNameRef_;
   /**
+   * <pre>
+   * Controller's uniqie identifier
+   * </pre>
+   *
    * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The controllerNameRef.
    */
@@ -158,6 +170,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Controller's uniqie identifier
+   * </pre>
+   *
    * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for controllerNameRef.
    */
@@ -501,6 +517,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     * <pre>
+     * Object's unique identifier to retrieve statistics
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
@@ -517,6 +537,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Object's unique identifier to retrieve statistics
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
@@ -534,6 +558,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Object's unique identifier to retrieve statistics
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
@@ -549,6 +577,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Object's unique identifier to retrieve statistics
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -559,6 +591,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Object's unique identifier to retrieve statistics
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -577,6 +613,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object controllerNameRef_ = "";
     /**
+     * <pre>
+     * Controller's uniqie identifier
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The controllerNameRef.
      */
@@ -593,6 +633,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Controller's uniqie identifier
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for controllerNameRef.
      */
@@ -610,6 +654,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Controller's uniqie identifier
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The controllerNameRef to set.
      * @return This builder for chaining.
@@ -625,6 +673,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Controller's uniqie identifier
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -635,6 +687,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Controller's uniqie identifier
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for controllerNameRef to set.
      * @return This builder for chaining.

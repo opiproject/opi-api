@@ -8,24 +8,44 @@ public interface ListNvmeSubsystemsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Nvme Subsystems
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeSubsystem nvme_subsystems = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NvmeSubsystem> 
       getNvmeSubsystemsList();
   /**
+   * <pre>
+   * List of Nvme Subsystems
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeSubsystem nvme_subsystems = 1;</code>
    */
   opi_api.storage.v1.NvmeSubsystem getNvmeSubsystems(int index);
   /**
+   * <pre>
+   * List of Nvme Subsystems
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeSubsystem nvme_subsystems = 1;</code>
    */
   int getNvmeSubsystemsCount();
   /**
+   * <pre>
+   * List of Nvme Subsystems
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeSubsystem nvme_subsystems = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NvmeSubsystemOrBuilder> 
       getNvmeSubsystemsOrBuilderList();
   /**
+   * <pre>
+   * List of Nvme Subsystems
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeSubsystem nvme_subsystems = 1;</code>
    */
   opi_api.storage.v1.NvmeSubsystemOrBuilder getNvmeSubsystemsOrBuilder(

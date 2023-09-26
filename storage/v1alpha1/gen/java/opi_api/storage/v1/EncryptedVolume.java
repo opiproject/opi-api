@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents volume encrypting IOs
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.EncryptedVolume}
  */
 public final class EncryptedVolume extends
@@ -433,6 +437,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents volume encrypting IOs
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.EncryptedVolume}
    */
   public static final class Builder extends

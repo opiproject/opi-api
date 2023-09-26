@@ -31,12 +31,19 @@ const (
 type EncryptionType int32
 
 const (
+	// Encryption type is not specified
 	EncryptionType_ENCRYPTION_TYPE_UNSPECIFIED EncryptionType = 0
+	// AES CBC 128 encryption type
 	EncryptionType_ENCRYPTION_TYPE_AES_CBC_128 EncryptionType = 1
+	// AES CBC 192 encryption type
 	EncryptionType_ENCRYPTION_TYPE_AES_CBC_192 EncryptionType = 2
+	// AES CBC 256 encryption type
 	EncryptionType_ENCRYPTION_TYPE_AES_CBC_256 EncryptionType = 3
+	// AES XTS 128 encryption type
 	EncryptionType_ENCRYPTION_TYPE_AES_XTS_128 EncryptionType = 4
+	// AES XTS 192 encryption type
 	EncryptionType_ENCRYPTION_TYPE_AES_XTS_192 EncryptionType = 5
+	// AES XTS 256 encryption type
 	EncryptionType_ENCRYPTION_TYPE_AES_XTS_256 EncryptionType = 6
 )
 
@@ -172,19 +179,29 @@ func (x *PciEndpoint) GetVirtualFunction() *wrapperspb.Int32Value {
 	return nil
 }
 
+// Represents Volume statistics
 type VolumeStats struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ReadBytesCount    int32 `protobuf:"varint,1,opt,name=read_bytes_count,json=readBytesCount,proto3" json:"read_bytes_count,omitempty"`
-	ReadOpsCount      int32 `protobuf:"varint,2,opt,name=read_ops_count,json=readOpsCount,proto3" json:"read_ops_count,omitempty"`
-	WriteBytesCount   int32 `protobuf:"varint,3,opt,name=write_bytes_count,json=writeBytesCount,proto3" json:"write_bytes_count,omitempty"`
-	WriteOpsCount     int32 `protobuf:"varint,4,opt,name=write_ops_count,json=writeOpsCount,proto3" json:"write_ops_count,omitempty"`
-	UnmapBytesCount   int32 `protobuf:"varint,5,opt,name=unmap_bytes_count,json=unmapBytesCount,proto3" json:"unmap_bytes_count,omitempty"`
-	UnmapOpsCount     int32 `protobuf:"varint,6,opt,name=unmap_ops_count,json=unmapOpsCount,proto3" json:"unmap_ops_count,omitempty"`
-	ReadLatencyTicks  int32 `protobuf:"varint,7,opt,name=read_latency_ticks,json=readLatencyTicks,proto3" json:"read_latency_ticks,omitempty"`
+	// Count of read bytes
+	ReadBytesCount int32 `protobuf:"varint,1,opt,name=read_bytes_count,json=readBytesCount,proto3" json:"read_bytes_count,omitempty"`
+	// Count of read operations
+	ReadOpsCount int32 `protobuf:"varint,2,opt,name=read_ops_count,json=readOpsCount,proto3" json:"read_ops_count,omitempty"`
+	// Count of written bytes
+	WriteBytesCount int32 `protobuf:"varint,3,opt,name=write_bytes_count,json=writeBytesCount,proto3" json:"write_bytes_count,omitempty"`
+	// Count of write opeations
+	WriteOpsCount int32 `protobuf:"varint,4,opt,name=write_ops_count,json=writeOpsCount,proto3" json:"write_ops_count,omitempty"`
+	// Count of unmapped bytes
+	UnmapBytesCount int32 `protobuf:"varint,5,opt,name=unmap_bytes_count,json=unmapBytesCount,proto3" json:"unmap_bytes_count,omitempty"`
+	// Count of unmap operations
+	UnmapOpsCount int32 `protobuf:"varint,6,opt,name=unmap_ops_count,json=unmapOpsCount,proto3" json:"unmap_ops_count,omitempty"`
+	// Read latency ticks
+	ReadLatencyTicks int32 `protobuf:"varint,7,opt,name=read_latency_ticks,json=readLatencyTicks,proto3" json:"read_latency_ticks,omitempty"`
+	// Write latency ticks
 	WriteLatencyTicks int32 `protobuf:"varint,8,opt,name=write_latency_ticks,json=writeLatencyTicks,proto3" json:"write_latency_ticks,omitempty"`
+	// Unmap latency ticks
 	UnmapLatencyTicks int32 `protobuf:"varint,9,opt,name=unmap_latency_ticks,json=unmapLatencyTicks,proto3" json:"unmap_latency_ticks,omitempty"`
 }
 

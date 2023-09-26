@@ -102,6 +102,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATS_FIELD_NUMBER = 1;
   private opi_api.storage.v1.VolumeStats stats_;
   /**
+   * <pre>
+   * Namespace statistics
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return Whether the stats field is set.
    */
@@ -110,6 +114,10 @@ private static final long serialVersionUID = 0L;
     return stats_ != null;
   }
   /**
+   * <pre>
+   * Namespace statistics
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return The stats.
    */
@@ -118,6 +126,10 @@ private static final long serialVersionUID = 0L;
     return stats_ == null ? opi_api.storage.v1.VolumeStats.getDefaultInstance() : stats_;
   }
   /**
+   * <pre>
+   * Namespace statistics
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    */
   @java.lang.Override
@@ -448,6 +460,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VolumeStats, opi_api.storage.v1.VolumeStats.Builder, opi_api.storage.v1.VolumeStatsOrBuilder> statsBuilder_;
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      * @return Whether the stats field is set.
      */
@@ -455,6 +471,10 @@ private static final long serialVersionUID = 0L;
       return statsBuilder_ != null || stats_ != null;
     }
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      * @return The stats.
      */
@@ -466,6 +486,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder setStats(opi_api.storage.v1.VolumeStats value) {
@@ -482,6 +506,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder setStats(
@@ -496,6 +524,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder mergeStats(opi_api.storage.v1.VolumeStats value) {
@@ -514,6 +546,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder clearStats() {
@@ -528,6 +564,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public opi_api.storage.v1.VolumeStats.Builder getStatsBuilder() {
@@ -536,6 +576,10 @@ private static final long serialVersionUID = 0L;
       return getStatsFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder() {
@@ -547,6 +591,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Namespace statistics
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

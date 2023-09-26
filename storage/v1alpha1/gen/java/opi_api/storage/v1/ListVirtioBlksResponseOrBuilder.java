@@ -8,24 +8,44 @@ public interface ListVirtioBlksResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   java.util.List<opi_api.storage.v1.VirtioBlk> 
       getVirtioBlksList();
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   opi_api.storage.v1.VirtioBlk getVirtioBlks(int index);
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   int getVirtioBlksCount();
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.VirtioBlkOrBuilder> 
       getVirtioBlksOrBuilderList();
   /**
+   * <pre>
+   * List of Virtio-Blk devices
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioBlk virtio_blks = 1;</code>
    */
   opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlksOrBuilder(

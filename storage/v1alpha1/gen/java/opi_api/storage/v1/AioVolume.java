@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Volume represented by Linux kernel block device or a file on a Linux filesystem
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.AioVolume}
  */
 public final class AioVolume extends
@@ -488,6 +492,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Volume represented by Linux kernel block device or a file on a Linux filesystem
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.AioVolume}
    */
   public static final class Builder extends

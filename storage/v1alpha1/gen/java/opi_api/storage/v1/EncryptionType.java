@@ -13,30 +13,58 @@ package opi_api.storage.v1;
 public enum EncryptionType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Encryption type is not specified
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_UNSPECIFIED = 0;</code>
    */
   ENCRYPTION_TYPE_UNSPECIFIED(0),
   /**
+   * <pre>
+   * AES CBC 128 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_CBC_128 = 1;</code>
    */
   ENCRYPTION_TYPE_AES_CBC_128(1),
   /**
+   * <pre>
+   * AES CBC 192 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_CBC_192 = 2;</code>
    */
   ENCRYPTION_TYPE_AES_CBC_192(2),
   /**
+   * <pre>
+   * AES CBC 256 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_CBC_256 = 3;</code>
    */
   ENCRYPTION_TYPE_AES_CBC_256(3),
   /**
+   * <pre>
+   * AES XTS 128 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_XTS_128 = 4;</code>
    */
   ENCRYPTION_TYPE_AES_XTS_128(4),
   /**
+   * <pre>
+   * AES XTS 192 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_XTS_192 = 5;</code>
    */
   ENCRYPTION_TYPE_AES_XTS_192(5),
   /**
+   * <pre>
+   * AES XTS 256 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_XTS_256 = 6;</code>
    */
   ENCRYPTION_TYPE_AES_XTS_256(6),
@@ -44,30 +72,58 @@ public enum EncryptionType
   ;
 
   /**
+   * <pre>
+   * Encryption type is not specified
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ENCRYPTION_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * AES CBC 128 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_CBC_128 = 1;</code>
    */
   public static final int ENCRYPTION_TYPE_AES_CBC_128_VALUE = 1;
   /**
+   * <pre>
+   * AES CBC 192 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_CBC_192 = 2;</code>
    */
   public static final int ENCRYPTION_TYPE_AES_CBC_192_VALUE = 2;
   /**
+   * <pre>
+   * AES CBC 256 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_CBC_256 = 3;</code>
    */
   public static final int ENCRYPTION_TYPE_AES_CBC_256_VALUE = 3;
   /**
+   * <pre>
+   * AES XTS 128 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_XTS_128 = 4;</code>
    */
   public static final int ENCRYPTION_TYPE_AES_XTS_128_VALUE = 4;
   /**
+   * <pre>
+   * AES XTS 192 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_XTS_192 = 5;</code>
    */
   public static final int ENCRYPTION_TYPE_AES_XTS_192_VALUE = 5;
   /**
+   * <pre>
+   * AES XTS 256 encryption type
+   * </pre>
+   *
    * <code>ENCRYPTION_TYPE_AES_XTS_256 = 6;</code>
    */
   public static final int ENCRYPTION_TYPE_AES_XTS_256_VALUE = 6;

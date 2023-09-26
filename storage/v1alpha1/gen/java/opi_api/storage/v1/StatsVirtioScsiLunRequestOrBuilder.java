@@ -8,11 +8,19 @@ public interface StatsVirtioScsiLunRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Object's unique identifier to retrieve statistics
+   * </pre>
+   *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
+   * <pre>
+   * Object's unique identifier to retrieve statistics
+   * </pre>
+   *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
@@ -20,11 +28,19 @@ public interface StatsVirtioScsiLunRequestOrBuilder extends
       getNameBytes();
 
   /**
+   * <pre>
+   * Controller's uniqie identifier
+   * </pre>
+   *
    * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The controllerNameRef.
    */
   java.lang.String getControllerNameRef();
   /**
+   * <pre>
+   * Controller's uniqie identifier
+   * </pre>
+   *
    * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for controllerNameRef.
    */

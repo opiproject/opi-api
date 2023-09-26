@@ -8,24 +8,44 @@ public interface ListNvmeNamespacesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NvmeNamespace> 
       getNvmeNamespacesList();
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   opi_api.storage.v1.NvmeNamespace getNvmeNamespaces(int index);
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   int getNvmeNamespacesCount();
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NvmeNamespaceOrBuilder> 
       getNvmeNamespacesOrBuilderList();
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   opi_api.storage.v1.NvmeNamespaceOrBuilder getNvmeNamespacesOrBuilder(

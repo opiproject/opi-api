@@ -659,6 +659,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Subsystems
+     * </pre>
      */
     public void listNvmeSubsystems(opi_api.storage.v1.ListNvmeSubsystemsRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeSubsystemsResponse> responseObserver) {
@@ -666,6 +669,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Subsystem
+     * </pre>
      */
     public void getNvmeSubsystem(opi_api.storage.v1.GetNvmeSubsystemRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeSubsystem> responseObserver) {
@@ -673,6 +679,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Subsystem statistics
+     * </pre>
      */
     public void statsNvmeSubsystem(opi_api.storage.v1.StatsNvmeSubsystemRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeSubsystemResponse> responseObserver) {
@@ -711,6 +720,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Controllers
+     * </pre>
      */
     public void listNvmeControllers(opi_api.storage.v1.ListNvmeControllersRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeControllersResponse> responseObserver) {
@@ -718,6 +730,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Controller
+     * </pre>
      */
     public void getNvmeController(opi_api.storage.v1.GetNvmeControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeController> responseObserver) {
@@ -725,6 +740,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Controller statistics
+     * </pre>
      */
     public void statsNvmeController(opi_api.storage.v1.StatsNvmeControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeControllerResponse> responseObserver) {
@@ -762,6 +780,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Namespaces
+     * </pre>
      */
     public void listNvmeNamespaces(opi_api.storage.v1.ListNvmeNamespacesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeNamespacesResponse> responseObserver) {
@@ -769,6 +790,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Namespace
+     * </pre>
      */
     public void getNvmeNamespace(opi_api.storage.v1.GetNvmeNamespaceRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeNamespace> responseObserver) {
@@ -776,6 +800,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Namespace statistics
+     * </pre>
      */
     public void statsNvmeNamespace(opi_api.storage.v1.StatsNvmeNamespaceRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeNamespaceResponse> responseObserver) {
@@ -966,6 +993,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Subsystems
+     * </pre>
      */
     public void listNvmeSubsystems(opi_api.storage.v1.ListNvmeSubsystemsRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeSubsystemsResponse> responseObserver) {
@@ -974,6 +1004,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Subsystem
+     * </pre>
      */
     public void getNvmeSubsystem(opi_api.storage.v1.GetNvmeSubsystemRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeSubsystem> responseObserver) {
@@ -982,6 +1015,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Subsystem statistics
+     * </pre>
      */
     public void statsNvmeSubsystem(opi_api.storage.v1.StatsNvmeSubsystemRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeSubsystemResponse> responseObserver) {
@@ -1024,6 +1060,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Controllers
+     * </pre>
      */
     public void listNvmeControllers(opi_api.storage.v1.ListNvmeControllersRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeControllersResponse> responseObserver) {
@@ -1032,6 +1071,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Controller
+     * </pre>
      */
     public void getNvmeController(opi_api.storage.v1.GetNvmeControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeController> responseObserver) {
@@ -1040,6 +1082,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Controller statistics
+     * </pre>
      */
     public void statsNvmeController(opi_api.storage.v1.StatsNvmeControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeControllerResponse> responseObserver) {
@@ -1081,6 +1126,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Namespaces
+     * </pre>
      */
     public void listNvmeNamespaces(opi_api.storage.v1.ListNvmeNamespacesRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNvmeNamespacesResponse> responseObserver) {
@@ -1089,6 +1137,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Namespace
+     * </pre>
      */
     public void getNvmeNamespace(opi_api.storage.v1.GetNvmeNamespaceRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NvmeNamespace> responseObserver) {
@@ -1097,6 +1148,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Namespace statistics
+     * </pre>
      */
     public void statsNvmeNamespace(opi_api.storage.v1.StatsNvmeNamespaceRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.StatsNvmeNamespaceResponse> responseObserver) {
@@ -1154,6 +1208,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Subsystems
+     * </pre>
      */
     public opi_api.storage.v1.ListNvmeSubsystemsResponse listNvmeSubsystems(opi_api.storage.v1.ListNvmeSubsystemsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1161,6 +1218,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Subsystem
+     * </pre>
      */
     public opi_api.storage.v1.NvmeSubsystem getNvmeSubsystem(opi_api.storage.v1.GetNvmeSubsystemRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1168,6 +1228,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Subsystem statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsNvmeSubsystemResponse statsNvmeSubsystem(opi_api.storage.v1.StatsNvmeSubsystemRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1206,6 +1269,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Controllers
+     * </pre>
      */
     public opi_api.storage.v1.ListNvmeControllersResponse listNvmeControllers(opi_api.storage.v1.ListNvmeControllersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1213,6 +1279,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Controller
+     * </pre>
      */
     public opi_api.storage.v1.NvmeController getNvmeController(opi_api.storage.v1.GetNvmeControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1220,6 +1289,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Controller statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsNvmeControllerResponse statsNvmeController(opi_api.storage.v1.StatsNvmeControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1257,6 +1329,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Namespaces
+     * </pre>
      */
     public opi_api.storage.v1.ListNvmeNamespacesResponse listNvmeNamespaces(opi_api.storage.v1.ListNvmeNamespacesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1264,6 +1339,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Namespace
+     * </pre>
      */
     public opi_api.storage.v1.NvmeNamespace getNvmeNamespace(opi_api.storage.v1.GetNvmeNamespaceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1271,6 +1349,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Namespace statistics
+     * </pre>
      */
     public opi_api.storage.v1.StatsNvmeNamespaceResponse statsNvmeNamespace(opi_api.storage.v1.StatsNvmeNamespaceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1330,6 +1411,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Subsystems
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNvmeSubsystemsResponse> listNvmeSubsystems(
         opi_api.storage.v1.ListNvmeSubsystemsRequest request) {
@@ -1338,6 +1422,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Subsystem
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmeSubsystem> getNvmeSubsystem(
         opi_api.storage.v1.GetNvmeSubsystemRequest request) {
@@ -1346,6 +1433,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Subsystem statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNvmeSubsystemResponse> statsNvmeSubsystem(
         opi_api.storage.v1.StatsNvmeSubsystemRequest request) {
@@ -1388,6 +1478,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Controllers
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNvmeControllersResponse> listNvmeControllers(
         opi_api.storage.v1.ListNvmeControllersRequest request) {
@@ -1396,6 +1489,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Controller
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmeController> getNvmeController(
         opi_api.storage.v1.GetNvmeControllerRequest request) {
@@ -1404,6 +1500,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Controller statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNvmeControllerResponse> statsNvmeController(
         opi_api.storage.v1.StatsNvmeControllerRequest request) {
@@ -1445,6 +1544,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Nvme Namespaces
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNvmeNamespacesResponse> listNvmeNamespaces(
         opi_api.storage.v1.ListNvmeNamespacesRequest request) {
@@ -1453,6 +1555,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Namespace
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NvmeNamespace> getNvmeNamespace(
         opi_api.storage.v1.GetNvmeNamespaceRequest request) {
@@ -1461,6 +1566,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Get an Nvme Namespace statistics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.StatsNvmeNamespaceResponse> statsNvmeNamespace(
         opi_api.storage.v1.StatsNvmeNamespaceRequest request) {

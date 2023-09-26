@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents volume providing quality of service capabilities
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.QosVolume}
  */
 public final class QosVolume extends
@@ -460,6 +464,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents volume providing quality of service capabilities
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.QosVolume}
    */
   public static final class Builder extends

@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represent Nvme namespace created on bridge after connection to a target
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.NvmeRemoteNamespace}
  */
 public final class NvmeRemoteNamespace extends
@@ -551,6 +555,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represent Nvme namespace created on bridge after connection to a target
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.NvmeRemoteNamespace}
    */
   public static final class Builder extends

@@ -8,24 +8,44 @@ public interface ListNullVolumesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Null volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NullVolume null_volumes = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NullVolume> 
       getNullVolumesList();
   /**
+   * <pre>
+   * List of Null volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NullVolume null_volumes = 1;</code>
    */
   opi_api.storage.v1.NullVolume getNullVolumes(int index);
   /**
+   * <pre>
+   * List of Null volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NullVolume null_volumes = 1;</code>
    */
   int getNullVolumesCount();
   /**
+   * <pre>
+   * List of Null volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NullVolume null_volumes = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NullVolumeOrBuilder> 
       getNullVolumesOrBuilderList();
   /**
+   * <pre>
+   * List of Null volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NullVolume null_volumes = 1;</code>
    */
   opi_api.storage.v1.NullVolumeOrBuilder getNullVolumesOrBuilder(

@@ -116,6 +116,10 @@ private static final long serialVersionUID = 0L;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   * <pre>
+   * Parent's subsystem unique identifier
+   * </pre>
+   *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
@@ -133,6 +137,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Parent's subsystem unique identifier
+   * </pre>
+   *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
@@ -154,6 +162,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_NAMESPACE_FIELD_NUMBER = 2;
   private opi_api.storage.v1.NvmeNamespace nvmeNamespace_;
   /**
+   * <pre>
+   * The Nvme Namespace to be created
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmeNamespace field is set.
    */
@@ -162,6 +174,10 @@ private static final long serialVersionUID = 0L;
     return nvmeNamespace_ != null;
   }
   /**
+   * <pre>
+   * The Nvme Namespace to be created
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmeNamespace.
    */
@@ -170,6 +186,10 @@ private static final long serialVersionUID = 0L;
     return nvmeNamespace_ == null ? opi_api.storage.v1.NvmeNamespace.getDefaultInstance() : nvmeNamespace_;
   }
   /**
+   * <pre>
+   * The Nvme Namespace to be created
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
@@ -180,6 +200,11 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_NAMESPACE_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object nvmeNamespaceId_;
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Namespace.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_namespace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmeNamespaceId.
    */
@@ -197,6 +222,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * An optional ID to assign to the Nvme Namespace.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
    * <code>string nvme_namespace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmeNamespaceId.
    */
@@ -570,6 +600,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     * <pre>
+     * Parent's subsystem unique identifier
+     * </pre>
+     *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The parent.
      */
@@ -586,6 +620,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Parent's subsystem unique identifier
+     * </pre>
+     *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for parent.
      */
@@ -603,6 +641,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Parent's subsystem unique identifier
+     * </pre>
+     *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -618,6 +660,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Parent's subsystem unique identifier
+     * </pre>
+     *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -628,6 +674,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Parent's subsystem unique identifier
+     * </pre>
+     *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -648,6 +698,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeNamespace, opi_api.storage.v1.NvmeNamespace.Builder, opi_api.storage.v1.NvmeNamespaceOrBuilder> nvmeNamespaceBuilder_;
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nvmeNamespace field is set.
      */
@@ -655,6 +709,10 @@ private static final long serialVersionUID = 0L;
       return nvmeNamespaceBuilder_ != null || nvmeNamespace_ != null;
     }
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nvmeNamespace.
      */
@@ -666,6 +724,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeNamespace(opi_api.storage.v1.NvmeNamespace value) {
@@ -682,6 +744,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmeNamespace(
@@ -696,6 +762,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNvmeNamespace(opi_api.storage.v1.NvmeNamespace value) {
@@ -714,6 +784,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNvmeNamespace() {
@@ -728,6 +802,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeNamespace.Builder getNvmeNamespaceBuilder() {
@@ -736,6 +814,10 @@ private static final long serialVersionUID = 0L;
       return getNvmeNamespaceFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmeNamespaceOrBuilder getNvmeNamespaceOrBuilder() {
@@ -747,6 +829,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The Nvme Namespace to be created
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeNamespace nvme_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -765,6 +851,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nvmeNamespaceId_ = "";
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Namespace.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_namespace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nvmeNamespaceId.
      */
@@ -781,6 +872,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Namespace.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_namespace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nvmeNamespaceId.
      */
@@ -798,6 +894,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Namespace.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_namespace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nvmeNamespaceId to set.
      * @return This builder for chaining.
@@ -813,6 +914,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Namespace.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_namespace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
@@ -823,6 +929,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * An optional ID to assign to the Nvme Namespace.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
      * <code>string nvme_namespace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nvmeNamespaceId to set.
      * @return This builder for chaining.

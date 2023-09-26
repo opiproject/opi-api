@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents Scsi Target
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.VirtioScsiTarget}
  */
 public final class VirtioScsiTarget extends
@@ -325,6 +329,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents Scsi Target
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.VirtioScsiTarget}
    */
   public static final class Builder extends

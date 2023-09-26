@@ -38,11 +38,19 @@ public interface FabricsPathOrBuilder extends
       getSubnqnBytes();
 
   /**
+   * <pre>
+   * Address family
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for adrfam.
    */
   int getAdrfamValue();
   /**
+   * <pre>
+   * Address family
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The adrfam.
    */

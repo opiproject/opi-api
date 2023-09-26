@@ -8,24 +8,44 @@ public interface ListNvmeControllersResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Nvme controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeController nvme_controllers = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NvmeController> 
       getNvmeControllersList();
   /**
+   * <pre>
+   * List of Nvme controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeController nvme_controllers = 1;</code>
    */
   opi_api.storage.v1.NvmeController getNvmeControllers(int index);
   /**
+   * <pre>
+   * List of Nvme controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeController nvme_controllers = 1;</code>
    */
   int getNvmeControllersCount();
   /**
+   * <pre>
+   * List of Nvme controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeController nvme_controllers = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NvmeControllerOrBuilder> 
       getNvmeControllersOrBuilderList();
   /**
+   * <pre>
+   * List of Nvme controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeController nvme_controllers = 1;</code>
    */
   opi_api.storage.v1.NvmeControllerOrBuilder getNvmeControllersOrBuilder(

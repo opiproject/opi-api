@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents a specific path to target controller
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.NvmePath}
  */
 public final class NvmePath extends
@@ -176,6 +180,10 @@ private static final long serialVersionUID = 0L;
   public static final int CONTROLLER_NAME_REF_FIELD_NUMBER = 2;
   private volatile java.lang.Object controllerNameRef_;
   /**
+   * <pre>
+   * Nvme Remote Controller this path corresponds to
+   * </pre>
+   *
    * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The controllerNameRef.
    */
@@ -193,6 +201,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Nvme Remote Controller this path corresponds to
+   * </pre>
+   *
    * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for controllerNameRef.
    */
@@ -214,6 +226,10 @@ private static final long serialVersionUID = 0L;
   public static final int TRTYPE_FIELD_NUMBER = 3;
   private int trtype_;
   /**
+   * <pre>
+   * Transport type
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for trtype.
    */
@@ -221,6 +237,10 @@ private static final long serialVersionUID = 0L;
     return trtype_;
   }
   /**
+   * <pre>
+   * Transport type
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trtype.
    */
@@ -515,6 +535,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents a specific path to target controller
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.NvmePath}
    */
   public static final class Builder extends
@@ -804,6 +828,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object controllerNameRef_ = "";
     /**
+     * <pre>
+     * Nvme Remote Controller this path corresponds to
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The controllerNameRef.
      */
@@ -820,6 +848,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Nvme Remote Controller this path corresponds to
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for controllerNameRef.
      */
@@ -837,6 +869,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Nvme Remote Controller this path corresponds to
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The controllerNameRef to set.
      * @return This builder for chaining.
@@ -852,6 +888,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Nvme Remote Controller this path corresponds to
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -862,6 +902,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Nvme Remote Controller this path corresponds to
+     * </pre>
+     *
      * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for controllerNameRef to set.
      * @return This builder for chaining.
@@ -880,6 +924,10 @@ private static final long serialVersionUID = 0L;
 
     private int trtype_ = 0;
     /**
+     * <pre>
+     * Transport type
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for trtype.
      */
@@ -887,6 +935,10 @@ private static final long serialVersionUID = 0L;
       return trtype_;
     }
     /**
+     * <pre>
+     * Transport type
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The enum numeric value on the wire for trtype to set.
      * @return This builder for chaining.
@@ -898,6 +950,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Transport type
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The trtype.
      */
@@ -908,6 +964,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? opi_api.storage.v1.NvmeTransportType.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * Transport type
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The trtype to set.
      * @return This builder for chaining.
@@ -922,6 +982,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Transport type
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */

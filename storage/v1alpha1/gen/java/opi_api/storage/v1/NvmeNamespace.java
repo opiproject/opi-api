@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents Nvme Namespace
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.NvmeNamespace}
  */
 public final class NvmeNamespace extends
@@ -428,6 +432,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents Nvme Namespace
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.NvmeNamespace}
    */
   public static final class Builder extends

@@ -8,24 +8,44 @@ public interface ListVirtioScsiTargetsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   java.util.List<opi_api.storage.v1.VirtioScsiTarget> 
       getVirtioScsiTargetsList();
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   opi_api.storage.v1.VirtioScsiTarget getVirtioScsiTargets(int index);
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   int getVirtioScsiTargetsCount();
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.VirtioScsiTargetOrBuilder> 
       getVirtioScsiTargetsOrBuilderList();
   /**
+   * <pre>
+   * List of Scsi Targets
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiTarget virtio_scsi_targets = 1;</code>
    */
   opi_api.storage.v1.VirtioScsiTargetOrBuilder getVirtioScsiTargetsOrBuilder(

@@ -79,6 +79,10 @@ public interface VirtioBlkOrBuilder extends
       getVolumeNameRefBytes();
 
   /**
+   * <pre>
+   * Max IO queue pairs
+   * </pre>
+   *
    * <code>int64 max_io_qps = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxIoQps.
    */

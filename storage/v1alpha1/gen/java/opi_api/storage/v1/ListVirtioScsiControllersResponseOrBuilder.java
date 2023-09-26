@@ -8,24 +8,44 @@ public interface ListVirtioScsiControllersResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   java.util.List<opi_api.storage.v1.VirtioScsiController> 
       getVirtioScsiControllersList();
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   opi_api.storage.v1.VirtioScsiController getVirtioScsiControllers(int index);
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   int getVirtioScsiControllersCount();
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.VirtioScsiControllerOrBuilder> 
       getVirtioScsiControllersOrBuilderList();
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllersOrBuilder(

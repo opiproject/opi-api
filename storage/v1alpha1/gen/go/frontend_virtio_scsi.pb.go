@@ -27,6 +27,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Represents Scsi Target
 type VirtioScsiTarget struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -86,6 +87,7 @@ func (x *VirtioScsiTarget) GetMaxLuns() int32 {
 	return 0
 }
 
+// Represents Scsi Controller
 type VirtioScsiController struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -163,6 +165,7 @@ func (x *VirtioScsiController) GetMaxLimit() *QosLimit {
 	return nil
 }
 
+// Represents Scsi Lun
 type VirtioScsiLun struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -296,6 +299,7 @@ type DeleteVirtioScsiTargetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to delete
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// If set to true, and the resource is not found, the request will succeed
 	// but no action will be taken on the server
@@ -422,6 +426,7 @@ type ListVirtioScsiTargetsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Parent's object unique identifier
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// page size of list request
 	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
@@ -488,6 +493,7 @@ type ListVirtioScsiTargetsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// List of Scsi Targets
 	VirtioScsiTargets []*VirtioScsiTarget `protobuf:"bytes,1,rep,name=virtio_scsi_targets,json=virtioScsiTargets,proto3" json:"virtio_scsi_targets,omitempty"`
 	// Next page token of list response
 	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
@@ -545,6 +551,7 @@ type GetVirtioScsiTargetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to retrieve
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
@@ -593,6 +600,7 @@ type StatsVirtioScsiTargetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to retrieve statistics
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
@@ -641,6 +649,7 @@ type StatsVirtioScsiTargetResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Scsi Target statistics
 	Stats *VolumeStats `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
 }
 
@@ -748,6 +757,7 @@ type DeleteVirtioScsiControllerRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to delete
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// If set to true, and the resource is not found, the request will succeed
 	// but no action will be taken on the server
@@ -874,6 +884,7 @@ type ListVirtioScsiControllersRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Parent's object unique identifier
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// page size of list request
 	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
@@ -940,6 +951,7 @@ type ListVirtioScsiControllersResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// List of Scsi Controllers
 	VirtioScsiControllers []*VirtioScsiController `protobuf:"bytes,1,rep,name=virtio_scsi_controllers,json=virtioScsiControllers,proto3" json:"virtio_scsi_controllers,omitempty"`
 	// Next page token of list response
 	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
@@ -997,6 +1009,7 @@ type GetVirtioScsiControllerRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to retrieve
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
@@ -1045,6 +1058,7 @@ type StatsVirtioScsiControllerRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to retrieve statistics
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
@@ -1093,6 +1107,7 @@ type StatsVirtioScsiControllerResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Scsi Controller statistics
 	Stats *VolumeStats `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
 }
 
@@ -1200,6 +1215,7 @@ type DeleteVirtioScsiLunRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to delete
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// If set to true, and the resource is not found, the request will succeed
 	// but no action will be taken on the server
@@ -1326,6 +1342,7 @@ type ListVirtioScsiLunsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Parent's object unique identifier
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// page size of list request
 	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
@@ -1392,6 +1409,7 @@ type ListVirtioScsiLunsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// List of Scsi Luns
 	VirtioScsiLuns []*VirtioScsiLun `protobuf:"bytes,1,rep,name=virtio_scsi_luns,json=virtioScsiLuns,proto3" json:"virtio_scsi_luns,omitempty"`
 	// Next page token of list response
 	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
@@ -1449,6 +1467,7 @@ type GetVirtioScsiLunRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Object's unique identifier to retrieve
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
@@ -1497,7 +1516,9 @@ type StatsVirtioScsiLunRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name              string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	// Object's unique identifier to retrieve statistics
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	// Controller's uniqie identifier
 	ControllerNameRef string `protobuf:"bytes,2,opt,name=controller_name_ref,json=controllerNameRef,proto3" json:"controller_name_ref,omitempty"`
 }
 
@@ -1553,6 +1574,7 @@ type StatsVirtioScsiLunResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Scsi Lun statistics
 	Stats *VolumeStats `protobuf:"bytes,1,opt,name=stats,proto3" json:"stats,omitempty"`
 }
 

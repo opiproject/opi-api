@@ -110,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_NAMESPACES_FIELD_NUMBER = 1;
   private java.util.List<opi_api.storage.v1.NvmeNamespace> nvmeNamespaces_;
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return nvmeNamespaces_;
   }
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return nvmeNamespaces_;
   }
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -132,6 +144,10 @@ private static final long serialVersionUID = 0L;
     return nvmeNamespaces_.size();
   }
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -139,6 +155,10 @@ private static final long serialVersionUID = 0L;
     return nvmeNamespaces_.get(index);
   }
   /**
+   * <pre>
+   * List of Nvme Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
    */
   @java.lang.Override
@@ -569,6 +589,10 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.NvmeNamespace, opi_api.storage.v1.NvmeNamespace.Builder, opi_api.storage.v1.NvmeNamespaceOrBuilder> nvmeNamespacesBuilder_;
 
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NvmeNamespace> getNvmeNamespacesList() {
@@ -579,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public int getNvmeNamespacesCount() {
@@ -589,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeNamespace getNvmeNamespaces(int index) {
@@ -599,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder setNvmeNamespaces(
@@ -616,6 +652,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder setNvmeNamespaces(
@@ -630,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder addNvmeNamespaces(opi_api.storage.v1.NvmeNamespace value) {
@@ -646,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder addNvmeNamespaces(
@@ -663,6 +711,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder addNvmeNamespaces(
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder addNvmeNamespaces(
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder addAllNvmeNamespaces(
@@ -706,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder clearNvmeNamespaces() {
@@ -719,6 +783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public Builder removeNvmeNamespaces(int index) {
@@ -732,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeNamespace.Builder getNvmeNamespacesBuilder(
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return getNvmeNamespacesFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeNamespaceOrBuilder getNvmeNamespacesOrBuilder(
@@ -749,6 +825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.NvmeNamespaceOrBuilder> 
@@ -760,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeNamespace.Builder addNvmeNamespacesBuilder() {
@@ -767,6 +851,10 @@ private static final long serialVersionUID = 0L;
           opi_api.storage.v1.NvmeNamespace.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public opi_api.storage.v1.NvmeNamespace.Builder addNvmeNamespacesBuilder(
@@ -775,6 +863,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.storage.v1.NvmeNamespace.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Nvme Namespaces
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmeNamespace nvme_namespaces = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NvmeNamespace.Builder> 

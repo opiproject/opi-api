@@ -110,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int VIRTIO_SCSI_CONTROLLERS_FIELD_NUMBER = 1;
   private java.util.List<opi_api.storage.v1.VirtioScsiController> virtioScsiControllers_;
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   @java.lang.Override
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiControllers_;
   }
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   @java.lang.Override
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiControllers_;
   }
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   @java.lang.Override
@@ -132,6 +144,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiControllers_.size();
   }
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   @java.lang.Override
@@ -139,6 +155,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiControllers_.get(index);
   }
   /**
+   * <pre>
+   * List of Scsi Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
    */
   @java.lang.Override
@@ -569,6 +589,10 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.VirtioScsiController, opi_api.storage.v1.VirtioScsiController.Builder, opi_api.storage.v1.VirtioScsiControllerOrBuilder> virtioScsiControllersBuilder_;
 
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllersList() {
@@ -579,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public int getVirtioScsiControllersCount() {
@@ -589,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiController getVirtioScsiControllers(int index) {
@@ -599,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder setVirtioScsiControllers(
@@ -616,6 +652,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder setVirtioScsiControllers(
@@ -630,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder addVirtioScsiControllers(opi_api.storage.v1.VirtioScsiController value) {
@@ -646,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder addVirtioScsiControllers(
@@ -663,6 +711,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder addVirtioScsiControllers(
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder addVirtioScsiControllers(
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder addAllVirtioScsiControllers(
@@ -706,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder clearVirtioScsiControllers() {
@@ -719,6 +783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public Builder removeVirtioScsiControllers(int index) {
@@ -732,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiController.Builder getVirtioScsiControllersBuilder(
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return getVirtioScsiControllersFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllersOrBuilder(
@@ -749,6 +825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.VirtioScsiControllerOrBuilder> 
@@ -760,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiController.Builder addVirtioScsiControllersBuilder() {
@@ -767,6 +851,10 @@ private static final long serialVersionUID = 0L;
           opi_api.storage.v1.VirtioScsiController.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiController.Builder addVirtioScsiControllersBuilder(
@@ -775,6 +863,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.storage.v1.VirtioScsiController.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Scsi Controllers
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiController virtio_scsi_controllers = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioScsiController.Builder> 

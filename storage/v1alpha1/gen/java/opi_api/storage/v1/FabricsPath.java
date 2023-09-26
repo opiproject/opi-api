@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents Fabrics transport path parameters
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.FabricsPath}
  */
 public final class FabricsPath extends
@@ -184,6 +188,10 @@ private static final long serialVersionUID = 0L;
   public static final int ADRFAM_FIELD_NUMBER = 3;
   private int adrfam_;
   /**
+   * <pre>
+   * Address family
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for adrfam.
    */
@@ -191,6 +199,10 @@ private static final long serialVersionUID = 0L;
     return adrfam_;
   }
   /**
+   * <pre>
+   * Address family
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The adrfam.
    */
@@ -516,6 +528,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents Fabrics transport path parameters
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.FabricsPath}
    */
   public static final class Builder extends
@@ -836,6 +852,10 @@ private static final long serialVersionUID = 0L;
 
     private int adrfam_ = 0;
     /**
+     * <pre>
+     * Address family
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for adrfam.
      */
@@ -843,6 +863,10 @@ private static final long serialVersionUID = 0L;
       return adrfam_;
     }
     /**
+     * <pre>
+     * Address family
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The enum numeric value on the wire for adrfam to set.
      * @return This builder for chaining.
@@ -854,6 +878,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Address family
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The adrfam.
      */
@@ -864,6 +892,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? opi_api.storage.v1.NvmeAddressFamily.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * Address family
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The adrfam to set.
      * @return This builder for chaining.
@@ -878,6 +910,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Address family
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */

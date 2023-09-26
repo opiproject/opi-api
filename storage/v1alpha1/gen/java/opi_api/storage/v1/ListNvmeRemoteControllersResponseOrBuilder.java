@@ -8,24 +8,44 @@ public interface ListNvmeRemoteControllersResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NvmeRemoteController> 
       getNvmeRemoteControllersList();
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   opi_api.storage.v1.NvmeRemoteController getNvmeRemoteControllers(int index);
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   int getNvmeRemoteControllersCount();
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NvmeRemoteControllerOrBuilder> 
       getNvmeRemoteControllersOrBuilderList();
   /**
+   * <pre>
+   * List of Nvme Remote Controllers
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteController nvme_remote_controllers = 1;</code>
    */
   opi_api.storage.v1.NvmeRemoteControllerOrBuilder getNvmeRemoteControllersOrBuilder(

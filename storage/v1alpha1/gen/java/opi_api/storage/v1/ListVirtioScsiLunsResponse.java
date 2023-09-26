@@ -110,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int VIRTIO_SCSI_LUNS_FIELD_NUMBER = 1;
   private java.util.List<opi_api.storage.v1.VirtioScsiLun> virtioScsiLuns_;
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   @java.lang.Override
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiLuns_;
   }
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   @java.lang.Override
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiLuns_;
   }
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   @java.lang.Override
@@ -132,6 +144,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiLuns_.size();
   }
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   @java.lang.Override
@@ -139,6 +155,10 @@ private static final long serialVersionUID = 0L;
     return virtioScsiLuns_.get(index);
   }
   /**
+   * <pre>
+   * List of Scsi Luns
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
    */
   @java.lang.Override
@@ -569,6 +589,10 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> virtioScsiLunsBuilder_;
 
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunsList() {
@@ -579,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public int getVirtioScsiLunsCount() {
@@ -589,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiLun getVirtioScsiLuns(int index) {
@@ -599,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder setVirtioScsiLuns(
@@ -616,6 +652,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder setVirtioScsiLuns(
@@ -630,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder addVirtioScsiLuns(opi_api.storage.v1.VirtioScsiLun value) {
@@ -646,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder addVirtioScsiLuns(
@@ -663,6 +711,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder addVirtioScsiLuns(
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder addVirtioScsiLuns(
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder addAllVirtioScsiLuns(
@@ -706,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder clearVirtioScsiLuns() {
@@ -719,6 +783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public Builder removeVirtioScsiLuns(int index) {
@@ -732,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiLun.Builder getVirtioScsiLunsBuilder(
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return getVirtioScsiLunsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunsOrBuilder(
@@ -749,6 +825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.VirtioScsiLunOrBuilder> 
@@ -760,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiLun.Builder addVirtioScsiLunsBuilder() {
@@ -767,6 +851,10 @@ private static final long serialVersionUID = 0L;
           opi_api.storage.v1.VirtioScsiLun.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public opi_api.storage.v1.VirtioScsiLun.Builder addVirtioScsiLunsBuilder(
@@ -775,6 +863,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.storage.v1.VirtioScsiLun.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Scsi Luns
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.VirtioScsiLun virtio_scsi_luns = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioScsiLun.Builder> 

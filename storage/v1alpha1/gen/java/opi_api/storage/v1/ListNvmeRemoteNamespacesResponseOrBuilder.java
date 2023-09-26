@@ -8,24 +8,44 @@ public interface ListNvmeRemoteNamespacesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NvmeRemoteNamespace> 
       getNvmeRemoteNamespacesList();
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   opi_api.storage.v1.NvmeRemoteNamespace getNvmeRemoteNamespaces(int index);
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   int getNvmeRemoteNamespacesCount();
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NvmeRemoteNamespaceOrBuilder> 
       getNvmeRemoteNamespacesOrBuilderList();
   /**
+   * <pre>
+   * List of Remote Namespaces
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmeRemoteNamespace nvme_remote_namespaces = 1;</code>
    */
   opi_api.storage.v1.NvmeRemoteNamespaceOrBuilder getNvmeRemoteNamespacesOrBuilder(

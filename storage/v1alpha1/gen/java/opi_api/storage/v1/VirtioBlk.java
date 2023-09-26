@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represnts emulated Virtio-blk device
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.VirtioBlk}
  */
 public final class VirtioBlk extends
@@ -277,6 +281,10 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_IO_QPS_FIELD_NUMBER = 4;
   private long maxIoQps_;
   /**
+   * <pre>
+   * Max IO queue pairs
+   * </pre>
+   *
    * <code>int64 max_io_qps = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxIoQps.
    */
@@ -586,6 +594,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represnts emulated Virtio-blk device
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.VirtioBlk}
    */
   public static final class Builder extends
@@ -1147,6 +1159,10 @@ private static final long serialVersionUID = 0L;
 
     private long maxIoQps_ ;
     /**
+     * <pre>
+     * Max IO queue pairs
+     * </pre>
+     *
      * <code>int64 max_io_qps = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxIoQps.
      */
@@ -1155,6 +1171,10 @@ private static final long serialVersionUID = 0L;
       return maxIoQps_;
     }
     /**
+     * <pre>
+     * Max IO queue pairs
+     * </pre>
+     *
      * <code>int64 max_io_qps = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The maxIoQps to set.
      * @return This builder for chaining.
@@ -1166,6 +1186,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Max IO queue pairs
+     * </pre>
+     *
      * <code>int64 max_io_qps = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */

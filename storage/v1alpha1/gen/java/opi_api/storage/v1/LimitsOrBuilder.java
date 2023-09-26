@@ -8,31 +8,55 @@ public interface LimitsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Min QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the min field is set.
    */
   boolean hasMin();
   /**
+   * <pre>
+   * Min QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The min.
    */
   opi_api.storage.v1.QosLimit getMin();
   /**
+   * <pre>
+   * Min QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit min = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMinOrBuilder();
 
   /**
+   * <pre>
+   * Max QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the max field is set.
    */
   boolean hasMax();
   /**
+   * <pre>
+   * Max QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The max.
    */
   opi_api.storage.v1.QosLimit getMax();
   /**
+   * <pre>
+   * Max QoS limits for the volume
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.QosLimit max = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMaxOrBuilder();

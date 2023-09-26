@@ -8,24 +8,44 @@ public interface ListNvmePathsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NvmePath> 
       getNvmePathsList();
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   opi_api.storage.v1.NvmePath getNvmePaths(int index);
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   int getNvmePathsCount();
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NvmePathOrBuilder> 
       getNvmePathsOrBuilderList();
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   opi_api.storage.v1.NvmePathOrBuilder getNvmePathsOrBuilder(

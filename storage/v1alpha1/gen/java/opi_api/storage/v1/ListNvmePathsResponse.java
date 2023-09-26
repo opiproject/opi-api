@@ -110,6 +110,10 @@ private static final long serialVersionUID = 0L;
   public static final int NVME_PATHS_FIELD_NUMBER = 1;
   private java.util.List<opi_api.storage.v1.NvmePath> nvmePaths_;
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   @java.lang.Override
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return nvmePaths_;
   }
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   @java.lang.Override
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return nvmePaths_;
   }
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   @java.lang.Override
@@ -132,6 +144,10 @@ private static final long serialVersionUID = 0L;
     return nvmePaths_.size();
   }
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   @java.lang.Override
@@ -139,6 +155,10 @@ private static final long serialVersionUID = 0L;
     return nvmePaths_.get(index);
   }
   /**
+   * <pre>
+   * List of Nvme Paths
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
    */
   @java.lang.Override
@@ -569,6 +589,10 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.NvmePath, opi_api.storage.v1.NvmePath.Builder, opi_api.storage.v1.NvmePathOrBuilder> nvmePathsBuilder_;
 
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NvmePath> getNvmePathsList() {
@@ -579,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public int getNvmePathsCount() {
@@ -589,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public opi_api.storage.v1.NvmePath getNvmePaths(int index) {
@@ -599,6 +631,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder setNvmePaths(
@@ -616,6 +652,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder setNvmePaths(
@@ -630,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder addNvmePaths(opi_api.storage.v1.NvmePath value) {
@@ -646,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder addNvmePaths(
@@ -663,6 +711,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder addNvmePaths(
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder addNvmePaths(
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder addAllNvmePaths(
@@ -706,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder clearNvmePaths() {
@@ -719,6 +783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public Builder removeNvmePaths(int index) {
@@ -732,6 +800,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public opi_api.storage.v1.NvmePath.Builder getNvmePathsBuilder(
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return getNvmePathsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public opi_api.storage.v1.NvmePathOrBuilder getNvmePathsOrBuilder(
@@ -749,6 +825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.NvmePathOrBuilder> 
@@ -760,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public opi_api.storage.v1.NvmePath.Builder addNvmePathsBuilder() {
@@ -767,6 +851,10 @@ private static final long serialVersionUID = 0L;
           opi_api.storage.v1.NvmePath.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public opi_api.storage.v1.NvmePath.Builder addNvmePathsBuilder(
@@ -775,6 +863,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.storage.v1.NvmePath.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of Nvme Paths
+     * </pre>
+     *
      * <code>repeated .opi_api.storage.v1.NvmePath nvme_paths = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NvmePath.Builder> 

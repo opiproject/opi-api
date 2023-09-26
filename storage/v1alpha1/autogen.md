@@ -213,7 +213,7 @@
 <a name="opi_api-storage-v1-AioVolume"></a>
 
 ### AioVolume
-
+Volume represented by Linux kernel block device or a file on a Linux filesystem
 
 
 | Field | Type | Label | Description |
@@ -253,7 +253,7 @@ Represents a request to delete an Aio Volume.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -269,7 +269,7 @@ Represents a request to get an Aio Volume.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -284,7 +284,7 @@ Represents a request to list all Aio Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -301,7 +301,7 @@ Represents a response to list all Aio Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| aio_volumes | [AioVolume](#opi_api-storage-v1-AioVolume) | repeated |  |
+| aio_volumes | [AioVolume](#opi_api-storage-v1-AioVolume) | repeated | List of Aio volumes |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -317,7 +317,7 @@ Represents a request to get an Aio Volume statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -332,7 +332,7 @@ Represents a response to get an Aio Volume statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Volume statistics |
 
 
 
@@ -427,7 +427,7 @@ Represents a request to delete an Null Volume.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -443,7 +443,7 @@ Represents a request to get an Null Volume.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -458,7 +458,7 @@ Represents a request to list all Null Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -475,7 +475,7 @@ Represents a response to list all Null Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| null_volumes | [NullVolume](#opi_api-storage-v1-NullVolume) | repeated |  |
+| null_volumes | [NullVolume](#opi_api-storage-v1-NullVolume) | repeated | List of Null volumes |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -486,7 +486,7 @@ Represents a response to list all Null Volumes.
 <a name="opi_api-storage-v1-NullVolume"></a>
 
 ### NullVolume
-
+Null volume which discards writes and returns random reads
 
 
 | Field | Type | Label | Description |
@@ -509,7 +509,7 @@ Represents a request to get an Null Volume statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -524,7 +524,7 @@ Represents a response to get an Null Volume statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Volume statistics |
 
 
 
@@ -651,7 +651,7 @@ Represents a request to delete an Nvme Remote Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -662,14 +662,14 @@ Represents a request to delete an Nvme Remote Controller.
 <a name="opi_api-storage-v1-FabricsPath"></a>
 
 ### FabricsPath
-
+Represents Fabrics transport path parameters
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | trsvcid | [int64](#int64) |  | Destination service id (e.g. Port) |
 | subnqn | [string](#string) |  | Subsystem NQN |
-| adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  |  |
+| adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  | Address family |
 | source_traddr | [string](#string) |  | Source address (e.g. IP of local NIC) |
 | source_trsvcid | [int64](#int64) |  | Source port (e.g. Port of local NIC) |
 | hostnqn | [string](#string) |  | Host NQN |
@@ -687,7 +687,7 @@ Represents a request to get an Nvme Path.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -702,7 +702,7 @@ Represents a request to get an Nvme Remote Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -717,7 +717,7 @@ Represents a request to get an Nvme Remote Namespace.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -732,7 +732,7 @@ Represents a request to list all Nvme Paths.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -749,7 +749,7 @@ Represents a response to list all Nvme Paths.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_paths | [NvmePath](#opi_api-storage-v1-NvmePath) | repeated |  |
+| nvme_paths | [NvmePath](#opi_api-storage-v1-NvmePath) | repeated | List of Nvme Paths |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -765,7 +765,7 @@ Represents a request to list all Nvme Remote Controllers.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -782,7 +782,7 @@ Represents a response to list all Nvme Remote Controllers.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_remote_controllers | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) | repeated |  |
+| nvme_remote_controllers | [NvmeRemoteController](#opi_api-storage-v1-NvmeRemoteController) | repeated | List of Nvme Remote Controllers |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -815,7 +815,7 @@ Represents a response to list all Nvme Remote Namespaces.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_remote_namespaces | [NvmeRemoteNamespace](#opi_api-storage-v1-NvmeRemoteNamespace) | repeated |  |
+| nvme_remote_namespaces | [NvmeRemoteNamespace](#opi_api-storage-v1-NvmeRemoteNamespace) | repeated | List of Remote Namespaces |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -826,14 +826,14 @@ Represents a response to list all Nvme Remote Namespaces.
 <a name="opi_api-storage-v1-NvmePath"></a>
 
 ### NvmePath
-
+Represents a specific path to target controller
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| controller_name_ref | [string](#string) |  |  |
-| trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  |  |
+| controller_name_ref | [string](#string) |  | Nvme Remote Controller this path corresponds to |
+| trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  | Transport type |
 | traddr | [string](#string) |  | Destination address (e.g. IP address, BDF for local PCIe) |
 | fabrics | [FabricsPath](#opi_api-storage-v1-FabricsPath) |  | Not applicable for local PCIe. Required for Nvme over fabrics transport types |
 
@@ -845,15 +845,15 @@ Represents a response to list all Nvme Remote Namespaces.
 <a name="opi_api-storage-v1-NvmeRemoteController"></a>
 
 ### NvmeRemoteController
-
+Represents a target controller
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| multipath | [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath) |  |  |
-| io_queues_count | [int64](#int64) |  |  |
-| queue_size | [int64](#int64) |  |  |
+| multipath | [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath) |  | Multipath mode |
+| io_queues_count | [int64](#int64) |  | IO queues count |
+| queue_size | [int64](#int64) |  | Queue size |
 | tcp | [TcpController](#opi_api-storage-v1-TcpController) |  | Nvme over TCP specific fields |
 
 
@@ -864,7 +864,7 @@ Represents a response to list all Nvme Remote Namespaces.
 <a name="opi_api-storage-v1-NvmeRemoteNamespace"></a>
 
 ### NvmeRemoteNamespace
-
+Represent Nvme namespace created on bridge after connection to a target
 
 
 | Field | Type | Label | Description |
@@ -889,7 +889,7 @@ Represents a request to reset an Nvme Remote Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to reset |
 
 
 
@@ -904,7 +904,7 @@ Represents a request to get an Nvme Path statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -919,7 +919,7 @@ Represents a response to get an Nvme Path statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Path statistics |
 
 
 
@@ -934,7 +934,7 @@ Represents a request to get an Nvme Remote Controller statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -949,7 +949,7 @@ Represents a response to get an Nvme Remote Controller statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Controller statistics |
 
 
 
@@ -959,13 +959,13 @@ Represents a response to get an Nvme Remote Controller statistics.
 <a name="opi_api-storage-v1-TcpController"></a>
 
 ### TcpController
-
+Represents parameters specific for TCP target controller
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| hdgst | [bool](#bool) |  |  |
-| ddgst | [bool](#bool) |  |  |
+| hdgst | [bool](#bool) |  | Header digest |
+| ddgst | [bool](#bool) |  | Data digest |
 | psk | [bytes](#bytes) |  | Nvme/TCP published secure channel specification (TP 8011) based on TLS 1.3 and PSK. Use PSK interchange format with base64 encoding as input. Also use information about hash function in interchange format for retained PSK generation. If no hash is selected, use configured PSK as retained PSK. Check the size of interchange PSK to determine cipher suite. Calculate CRC-32 bytes to ensure validity of PSK. Example: &#34;NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9&#43;wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:&#34; if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made |
 
 
@@ -1012,46 +1012,46 @@ Represents a request to update an Nvme Remote Controller.
 <a name="opi_api-storage-v1-NvmeAddressFamily"></a>
 
 ### NvmeAddressFamily
-
+Address family value options
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NVME_ADDRESS_FAMILY_UNSPECIFIED | 0 |  |
-| NVME_ADRFAM_IPV4 | 1 |  |
-| NVME_ADRFAM_IPV6 | 2 |  |
-| NVME_ADRFAM_IB | 3 |  |
-| NVME_ADRFAM_FC | 4 |  |
-| NVME_ADRFAM_INTRA_HOST | 5 |  |
+| NVME_ADDRESS_FAMILY_UNSPECIFIED | 0 | Address family is not specified |
+| NVME_ADRFAM_IPV4 | 1 | IPv4 address family |
+| NVME_ADRFAM_IPV6 | 2 | IPv6 address family |
+| NVME_ADRFAM_IB | 3 | InfiniBand address family |
+| NVME_ADRFAM_FC | 4 | Fibre channel address family |
+| NVME_ADRFAM_INTRA_HOST | 5 | Intra host address family |
 
 
 
 <a name="opi_api-storage-v1-NvmeMultipath"></a>
 
 ### NvmeMultipath
-
+Multipath mode value options
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NVME_MULTIPATH_UNSPECIFIED | 0 |  |
-| NVME_MULTIPATH_DISABLE | 1 |  |
-| NVME_MULTIPATH_FAILOVER | 2 |  |
-| NVME_MULTIPATH_MULTIPATH | 3 |  |
+| NVME_MULTIPATH_UNSPECIFIED | 0 | Multipath mode is not specified |
+| NVME_MULTIPATH_DISABLE | 1 | Multipathing is disabled |
+| NVME_MULTIPATH_FAILOVER | 2 | Failover mode where only one active connection is maintained and path is changed only at switch-over |
+| NVME_MULTIPATH_MULTIPATH | 3 | Multipath mode where active connections are maintained for every path |
 
 
 
 <a name="opi_api-storage-v1-NvmeTransportType"></a>
 
 ### NvmeTransportType
-
+Transport type value options
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NVME_TRANSPORT_TYPE_UNSPECIFIED | 0 |  |
-| NVME_TRANSPORT_FC | 1 |  |
-| NVME_TRANSPORT_PCIE | 2 |  |
-| NVME_TRANSPORT_RDMA | 3 |  |
-| NVME_TRANSPORT_TCP | 4 |  |
-| NVME_TRANSPORT_CUSTOM | 5 |  |
+| NVME_TRANSPORT_TYPE_UNSPECIFIED | 0 | Transport type is not specified |
+| NVME_TRANSPORT_FC | 1 | Fibre channel transport type |
+| NVME_TRANSPORT_PCIE | 2 | Pcie transport type |
+| NVME_TRANSPORT_RDMA | 3 | RDMA transport type |
+| NVME_TRANSPORT_TCP | 4 | TCP transport type |
+| NVME_TRANSPORT_CUSTOM | 5 | Custom transport type |
 
 
  
@@ -1101,9 +1101,9 @@ Represents a request to create an Nvme Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
-| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  |  |
-| nvme_controller_id | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s subsystem unique identifier |
+| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  | The Nvme Controller to be created |
+| nvme_controller_id | [string](#string) |  | An optional ID to assign to the Nvme Controller. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1118,9 +1118,9 @@ Represents a request to create an Nvme Namespace.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
-| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |  |
-| nvme_namespace_id | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s subsystem unique identifier |
+| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  | The Nvme Namespace to be created |
+| nvme_namespace_id | [string](#string) |  | An optional ID to assign to the Nvme Namespace. If this is not provided the system will auto-generate it. |
 
 
 
@@ -1151,7 +1151,7 @@ Represents a request to delete an Nvme Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1167,7 +1167,7 @@ Represents a request to delete an Nvme Namespace.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1183,7 +1183,7 @@ Represents a request to delete an Nvme Subsystem.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1199,7 +1199,7 @@ Represents a request to get an Nvme Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -1214,7 +1214,7 @@ Represents a request to get an Nvme Namespace.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -1229,7 +1229,7 @@ Represents a request to get an Nvme Subsystem.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -1244,7 +1244,7 @@ Represents a request to list all Nvme Controllers.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s subsystem unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -1261,7 +1261,7 @@ Represents a response to list all Nvme Controllers.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_controllers | [NvmeController](#opi_api-storage-v1-NvmeController) | repeated |  |
+| nvme_controllers | [NvmeController](#opi_api-storage-v1-NvmeController) | repeated | List of Nvme controllers |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -1277,7 +1277,7 @@ Represents a request to list all Nvme Namespaces.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s subsystem unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -1294,7 +1294,7 @@ Represents a response to list all Nvme Namespaces.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_namespaces | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | repeated |  |
+| nvme_namespaces | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | repeated | List of Nvme Namespaces |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -1326,7 +1326,7 @@ Represents a response to list all Nvme Subsystems.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nvme_subsystems | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | repeated |  |
+| nvme_subsystems | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | repeated | List of Nvme Subsystems |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -1337,7 +1337,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeController"></a>
 
 ### NvmeController
-
+Represents Nvme Controller
 
 
 | Field | Type | Label | Description |
@@ -1354,7 +1354,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeControllerSpec"></a>
 
 ### NvmeControllerSpec
-
+Represents Nvme Controller configuration
 
 
 | Field | Type | Label | Description |
@@ -1377,7 +1377,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeControllerStatus"></a>
 
 ### NvmeControllerStatus
-
+Represents Nvme Controller status
 
 
 | Field | Type | Label | Description |
@@ -1392,7 +1392,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeNamespace"></a>
 
 ### NvmeNamespace
-
+Represents Nvme Namespace
 
 
 | Field | Type | Label | Description |
@@ -1409,7 +1409,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeNamespaceSpec"></a>
 
 ### NvmeNamespaceSpec
-
+Represents Nvme Namespace configuration
 
 
 | Field | Type | Label | Description |
@@ -1428,7 +1428,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeNamespaceStatus"></a>
 
 ### NvmeNamespaceStatus
-
+Represents Nvme Namespace status
 
 
 | Field | Type | Label | Description |
@@ -1444,7 +1444,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeSubsystem"></a>
 
 ### NvmeSubsystem
-
+Represents Nvme Subsystem
 
 
 | Field | Type | Label | Description |
@@ -1461,7 +1461,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeSubsystemSpec"></a>
 
 ### NvmeSubsystemSpec
-
+Represents Nvme Subsystem configuration
 
 
 | Field | Type | Label | Description |
@@ -1479,7 +1479,7 @@ Represents a response to list all Nvme Subsystems.
 <a name="opi_api-storage-v1-NvmeSubsystemStatus"></a>
 
 ### NvmeSubsystemStatus
-
+Represents Nvme Subsystem status
 
 
 | Field | Type | Label | Description |
@@ -1500,7 +1500,7 @@ Represents a request to get an Nvme Controller statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -1515,7 +1515,7 @@ Represents a response to get an Nvme Controller statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Controller statistics |
 
 
 
@@ -1530,7 +1530,7 @@ Represents a request to get an Nvme Namespace statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -1545,7 +1545,7 @@ Represents a response to get an Nvme Namespace statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Namespace statistics |
 
 
 
@@ -1560,7 +1560,7 @@ Represents a request to get an Nvme Subsystems statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -1575,7 +1575,7 @@ Represents a response to get an Nvme Subsystems statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Subsystem statistics |
 
 
 
@@ -1676,21 +1676,21 @@ Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host prese
 | CreateNvmeSubsystem | [CreateNvmeSubsystemRequest](#opi_api-storage-v1-CreateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Create an Nvme Subsystem |
 | DeleteNvmeSubsystem | [DeleteNvmeSubsystemRequest](#opi_api-storage-v1-DeleteNvmeSubsystemRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Subsystem Fails if there are any associated objects |
 | UpdateNvmeSubsystem | [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Update an Nvme Subsystem |
-| ListNvmeSubsystems | [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest) | [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse) |  |
-| GetNvmeSubsystem | [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
-| StatsNvmeSubsystem | [StatsNvmeSubsystemRequest](#opi_api-storage-v1-StatsNvmeSubsystemRequest) | [StatsNvmeSubsystemResponse](#opi_api-storage-v1-StatsNvmeSubsystemResponse) |  |
+| ListNvmeSubsystems | [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest) | [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse) | List Nvme Subsystems |
+| GetNvmeSubsystem | [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | Get an Nvme Subsystem |
+| StatsNvmeSubsystem | [StatsNvmeSubsystemRequest](#opi_api-storage-v1-StatsNvmeSubsystemRequest) | [StatsNvmeSubsystemResponse](#opi_api-storage-v1-StatsNvmeSubsystemResponse) | Get an Nvme Subsystem statistics |
 | CreateNvmeController | [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Create an Nvme Controller |
 | DeleteNvmeController | [DeleteNvmeControllerRequest](#opi_api-storage-v1-DeleteNvmeControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Controller Fails if there are any associated objects |
 | UpdateNvmeController | [UpdateNvmeControllerRequest](#opi_api-storage-v1-UpdateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Update an Nvme Controller |
-| ListNvmeControllers | [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest) | [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse) |  |
-| GetNvmeController | [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
-| StatsNvmeController | [StatsNvmeControllerRequest](#opi_api-storage-v1-StatsNvmeControllerRequest) | [StatsNvmeControllerResponse](#opi_api-storage-v1-StatsNvmeControllerResponse) |  |
+| ListNvmeControllers | [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest) | [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse) | List Nvme Controllers |
+| GetNvmeController | [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) | Get an Nvme Controller |
+| StatsNvmeController | [StatsNvmeControllerRequest](#opi_api-storage-v1-StatsNvmeControllerRequest) | [StatsNvmeControllerResponse](#opi_api-storage-v1-StatsNvmeControllerResponse) | Get an Nvme Controller statistics |
 | CreateNvmeNamespace | [CreateNvmeNamespaceRequest](#opi_api-storage-v1-CreateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Create an Nvme Namespace |
 | DeleteNvmeNamespace | [DeleteNvmeNamespaceRequest](#opi_api-storage-v1-DeleteNvmeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an Nvme Namespace |
 | UpdateNvmeNamespace | [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Update an Nvme Namespace |
-| ListNvmeNamespaces | [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest) | [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse) |  |
-| GetNvmeNamespace | [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
-| StatsNvmeNamespace | [StatsNvmeNamespaceRequest](#opi_api-storage-v1-StatsNvmeNamespaceRequest) | [StatsNvmeNamespaceResponse](#opi_api-storage-v1-StatsNvmeNamespaceResponse) |  |
+| ListNvmeNamespaces | [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest) | [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse) | List Nvme Namespaces |
+| GetNvmeNamespace | [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | Get an Nvme Namespace |
+| StatsNvmeNamespace | [StatsNvmeNamespaceRequest](#opi_api-storage-v1-StatsNvmeNamespaceRequest) | [StatsNvmeNamespaceResponse](#opi_api-storage-v1-StatsNvmeNamespaceResponse) | Get an Nvme Namespace statistics |
 
  
 
@@ -1727,7 +1727,7 @@ Represents a request to delete an Virtio Blk.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1743,7 +1743,7 @@ Represents a request to get an Virtio Blk.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -1758,7 +1758,7 @@ Represents a request to list all Virtio Blks.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -1775,7 +1775,7 @@ Represents a response to list all Virtio Blks.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_blks | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | repeated |  |
+| virtio_blks | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | repeated | List of Virtio-Blk devices |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -1791,7 +1791,7 @@ Represents a request to get an Virtio Blk statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -1806,7 +1806,7 @@ Represents a response to get an Virtio Blk statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Device statistics |
 
 
 
@@ -1833,7 +1833,7 @@ Represents a request to update an Virtio Blk.
 <a name="opi_api-storage-v1-VirtioBlk"></a>
 
 ### VirtioBlk
-
+Represnts emulated Virtio-blk device
 
 
 | Field | Type | Label | Description |
@@ -1841,7 +1841,7 @@ Represents a request to update an Virtio Blk.
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | The PCI endpoint where this device should appear |
 | volume_name_ref | [string](#string) |  | The back/middle-end volume to back this controller |
-| max_io_qps | [int64](#int64) |  |  |
+| max_io_qps | [int64](#int64) |  | Max IO queue pairs |
 | min_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | min QoS limits for the virtio-blk device |
 | max_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | max QoS limits for the virtio-blk device |
 
@@ -1953,7 +1953,7 @@ Represents a request to delete an Virtio Scsi Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1969,7 +1969,7 @@ Represents a request to delete an Virtio Scsi Lun.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -1985,7 +1985,7 @@ Represents a request to delete an Virtio Scsi Target.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -2001,7 +2001,7 @@ Represents a request to get an Virtio Scsi Controller.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -2016,7 +2016,7 @@ Represents a request to get an Virtio Scsi Lun.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -2031,7 +2031,7 @@ Represents a request to get an Virtio Scsi Target.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -2046,7 +2046,7 @@ Represents a request to list all Virtio Scsi Controllers.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -2063,7 +2063,7 @@ Represents a response to list all Virtio Scsi Controllers.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_controllers | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | repeated |  |
+| virtio_scsi_controllers | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | repeated | List of Scsi Controllers |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -2079,7 +2079,7 @@ Represents a request to list all Virtio Scsi Luns.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -2096,7 +2096,7 @@ Represents a response to list all Virtio Scsi Luns.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_luns | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | repeated |  |
+| virtio_scsi_luns | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | repeated | List of Scsi Luns |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -2112,7 +2112,7 @@ Represents a request to list all Virtio Scsi Targets.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -2129,7 +2129,7 @@ Represents a response to list all Virtio Scsi Targets.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| virtio_scsi_targets | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | repeated |  |
+| virtio_scsi_targets | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | repeated | List of Scsi Targets |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -2145,7 +2145,7 @@ Represents a request to get an Virtio Scsi Controller statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -2160,7 +2160,7 @@ Represents a response to get an Virtio Scsi Controller statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Scsi Controller statistics |
 
 
 
@@ -2175,8 +2175,8 @@ Represents a request to get an Virtio Scsi Lun statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| controller_name_ref | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
+| controller_name_ref | [string](#string) |  | Controller&#39;s uniqie identifier |
 
 
 
@@ -2191,7 +2191,7 @@ Represents a response to get an Virtio Scsi Lun statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Scsi Lun statistics |
 
 
 
@@ -2206,7 +2206,7 @@ Represents a request to get an Virtio Scsi Target statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -2221,7 +2221,7 @@ Represents a response to get an Virtio Scsi Target statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Scsi Target statistics |
 
 
 
@@ -2282,7 +2282,7 @@ Represents a request to update an Virtio Scsi Target.
 <a name="opi_api-storage-v1-VirtioScsiController"></a>
 
 ### VirtioScsiController
-
+Represents Scsi Controller
 
 
 | Field | Type | Label | Description |
@@ -2300,7 +2300,7 @@ Represents a request to update an Virtio Scsi Target.
 <a name="opi_api-storage-v1-VirtioScsiLun"></a>
 
 ### VirtioScsiLun
-
+Represents Scsi Lun
 
 
 | Field | Type | Label | Description |
@@ -2317,7 +2317,7 @@ Represents a request to update an Virtio Scsi Target.
 <a name="opi_api-storage-v1-VirtioScsiTarget"></a>
 
 ### VirtioScsiTarget
-
+Represents Scsi Target
 
 
 | Field | Type | Label | Description |
@@ -2397,7 +2397,7 @@ Represents a request to delete an Encrypted Volume.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -2408,7 +2408,7 @@ Represents a request to delete an Encrypted Volume.
 <a name="opi_api-storage-v1-EncryptedVolume"></a>
 
 ### EncryptedVolume
-
+Represents volume encrypting IOs
 
 
 | Field | Type | Label | Description |
@@ -2431,7 +2431,7 @@ Represents a request to get an Encrypted Volume.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -2446,7 +2446,7 @@ Represents a request to list all Encrypted Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -2463,7 +2463,7 @@ Represents a response to list all Encrypted Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| encrypted_volumes | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | repeated |  |
+| encrypted_volumes | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | repeated | List of Encrypted Volumes |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -2479,7 +2479,7 @@ Represents a request to get an Encrypted Volume statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -2494,7 +2494,7 @@ Represents a response to get an Encrypted Volume statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Volume statistics |
 
 
 
@@ -2573,7 +2573,7 @@ Represents a request to delete an QoS Volume.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
 | allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
@@ -2589,7 +2589,7 @@ Represents a request to get an QoS Volume.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
 
 
 
@@ -2599,13 +2599,13 @@ Represents a request to get an QoS Volume.
 <a name="opi_api-storage-v1-Limits"></a>
 
 ### Limits
-
+Represents limits for Qos Volume
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| min | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
-| max | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
+| min | [QosLimit](#opi_api-storage-v1-QosLimit) |  | Min QoS limits for the volume |
+| max | [QosLimit](#opi_api-storage-v1-QosLimit) |  | Max QoS limits for the volume |
 
 
 
@@ -2620,7 +2620,7 @@ Represents a request to list all QoS Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
+| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -2637,7 +2637,7 @@ Represents a response to list all QoS Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| qos_volumes | [QosVolume](#opi_api-storage-v1-QosVolume) | repeated |  |
+| qos_volumes | [QosVolume](#opi_api-storage-v1-QosVolume) | repeated | List of Qos Volumes |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -2648,7 +2648,7 @@ Represents a response to list all QoS Volumes.
 <a name="opi_api-storage-v1-QosVolume"></a>
 
 ### QosVolume
-
+Represents volume providing quality of service capabilities
 
 
 | Field | Type | Label | Description |
@@ -2670,7 +2670,7 @@ Represents a request to get an QoS Volume statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
 
 
 
@@ -2685,7 +2685,7 @@ Represents a response to get an QoS Volume statistics.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Volume statistics |
 
 
 
@@ -2787,20 +2787,20 @@ QoS limits applied to volumes/devices
 <a name="opi_api-storage-v1-VolumeStats"></a>
 
 ### VolumeStats
-
+Represents Volume statistics
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| read_bytes_count | [int32](#int32) |  |  |
-| read_ops_count | [int32](#int32) |  |  |
-| write_bytes_count | [int32](#int32) |  |  |
-| write_ops_count | [int32](#int32) |  |  |
-| unmap_bytes_count | [int32](#int32) |  |  |
-| unmap_ops_count | [int32](#int32) |  |  |
-| read_latency_ticks | [int32](#int32) |  |  |
-| write_latency_ticks | [int32](#int32) |  |  |
-| unmap_latency_ticks | [int32](#int32) |  |  |
+| read_bytes_count | [int32](#int32) |  | Count of read bytes |
+| read_ops_count | [int32](#int32) |  | Count of read operations |
+| write_bytes_count | [int32](#int32) |  | Count of written bytes |
+| write_ops_count | [int32](#int32) |  | Count of write opeations |
+| unmap_bytes_count | [int32](#int32) |  | Count of unmapped bytes |
+| unmap_ops_count | [int32](#int32) |  | Count of unmap operations |
+| read_latency_ticks | [int32](#int32) |  | Read latency ticks |
+| write_latency_ticks | [int32](#int32) |  | Write latency ticks |
+| unmap_latency_ticks | [int32](#int32) |  | Unmap latency ticks |
 
 
 
@@ -2816,13 +2816,13 @@ AES encryption types
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| ENCRYPTION_TYPE_UNSPECIFIED | 0 |  |
-| ENCRYPTION_TYPE_AES_CBC_128 | 1 |  |
-| ENCRYPTION_TYPE_AES_CBC_192 | 2 |  |
-| ENCRYPTION_TYPE_AES_CBC_256 | 3 |  |
-| ENCRYPTION_TYPE_AES_XTS_128 | 4 |  |
-| ENCRYPTION_TYPE_AES_XTS_192 | 5 |  |
-| ENCRYPTION_TYPE_AES_XTS_256 | 6 |  |
+| ENCRYPTION_TYPE_UNSPECIFIED | 0 | Encryption type is not specified |
+| ENCRYPTION_TYPE_AES_CBC_128 | 1 | AES CBC 128 encryption type |
+| ENCRYPTION_TYPE_AES_CBC_192 | 2 | AES CBC 192 encryption type |
+| ENCRYPTION_TYPE_AES_CBC_256 | 3 | AES CBC 256 encryption type |
+| ENCRYPTION_TYPE_AES_XTS_128 | 4 | AES XTS 128 encryption type |
+| ENCRYPTION_TYPE_AES_XTS_192 | 5 | AES XTS 192 encryption type |
+| ENCRYPTION_TYPE_AES_XTS_256 | 6 | AES XTS 256 encryption type |
 
 
  

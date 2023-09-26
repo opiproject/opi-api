@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Represents Nvme Subsystem status
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.NvmeSubsystemStatus}
  */
 public final class NvmeSubsystemStatus extends
@@ -322,6 +326,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Represents Nvme Subsystem status
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.NvmeSubsystemStatus}
    */
   public static final class Builder extends

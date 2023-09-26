@@ -8,24 +8,44 @@ public interface ListQosVolumesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Qos Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.QosVolume qos_volumes = 1;</code>
    */
   java.util.List<opi_api.storage.v1.QosVolume> 
       getQosVolumesList();
   /**
+   * <pre>
+   * List of Qos Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.QosVolume qos_volumes = 1;</code>
    */
   opi_api.storage.v1.QosVolume getQosVolumes(int index);
   /**
+   * <pre>
+   * List of Qos Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.QosVolume qos_volumes = 1;</code>
    */
   int getQosVolumesCount();
   /**
+   * <pre>
+   * List of Qos Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.QosVolume qos_volumes = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.QosVolumeOrBuilder> 
       getQosVolumesOrBuilderList();
   /**
+   * <pre>
+   * List of Qos Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.QosVolume qos_volumes = 1;</code>
    */
   opi_api.storage.v1.QosVolumeOrBuilder getQosVolumesOrBuilder(

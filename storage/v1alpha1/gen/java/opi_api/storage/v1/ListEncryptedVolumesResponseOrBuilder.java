@@ -8,24 +8,44 @@ public interface ListEncryptedVolumesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * List of Encrypted Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.EncryptedVolume encrypted_volumes = 1;</code>
    */
   java.util.List<opi_api.storage.v1.EncryptedVolume> 
       getEncryptedVolumesList();
   /**
+   * <pre>
+   * List of Encrypted Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.EncryptedVolume encrypted_volumes = 1;</code>
    */
   opi_api.storage.v1.EncryptedVolume getEncryptedVolumes(int index);
   /**
+   * <pre>
+   * List of Encrypted Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.EncryptedVolume encrypted_volumes = 1;</code>
    */
   int getEncryptedVolumesCount();
   /**
+   * <pre>
+   * List of Encrypted Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.EncryptedVolume encrypted_volumes = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.EncryptedVolumeOrBuilder> 
       getEncryptedVolumesOrBuilderList();
   /**
+   * <pre>
+   * List of Encrypted Volumes
+   * </pre>
+   *
    * <code>repeated .opi_api.storage.v1.EncryptedVolume encrypted_volumes = 1;</code>
    */
   opi_api.storage.v1.EncryptedVolumeOrBuilder getEncryptedVolumesOrBuilder(
