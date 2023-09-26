@@ -43,15 +43,25 @@ message PciEndpoint {
     google.protobuf.Int32Value  virtual_function = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
+// Represents Volume statistics
 message VolumeStats {
+    // Count of read bytes
     int32    read_bytes_count       = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Count of read operations
     int32    read_ops_count         = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Count of written bytes
     int32    write_bytes_count      = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Count of write opeations
     int32    write_ops_count        = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Count of unmapped bytes
     int32    unmap_bytes_count      = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Count of unmap operations
     int32    unmap_ops_count        = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Read latency ticks
     int32    read_latency_ticks     = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Write latency ticks
     int32    write_latency_ticks    = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Unmap latency ticks
     int32    unmap_latency_ticks    = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
@@ -74,11 +84,18 @@ message QosLimit {
 
 // AES encryption types
 enum EncryptionType {
+    // Encryption type is not specified
     ENCRYPTION_TYPE_UNSPECIFIED = 0;
+    // AES CBC 128 encryption type
     ENCRYPTION_TYPE_AES_CBC_128 = 1;
+    // AES CBC 192 encryption type
     ENCRYPTION_TYPE_AES_CBC_192 = 2;
+    // AES CBC 256 encryption type
     ENCRYPTION_TYPE_AES_CBC_256 = 3;
+    // AES XTS 128 encryption type
     ENCRYPTION_TYPE_AES_XTS_128 = 4;
+    // AES XTS 192 encryption type
     ENCRYPTION_TYPE_AES_XTS_192 = 5;
+    // AES XTS 256 encryption type
     ENCRYPTION_TYPE_AES_XTS_256 = 6;
 }
