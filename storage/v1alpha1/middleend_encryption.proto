@@ -68,6 +68,7 @@ service MiddleendEncryptionService {
     }
 }
 
+// Represents volume encrypting IOs
 message EncryptedVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/EncryptedVolume"
@@ -107,6 +108,7 @@ message CreateEncryptedVolumeRequest {
 
 // Represents a request to delete an Encrypted Volume.
 message DeleteEncryptedVolumeRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
@@ -129,6 +131,7 @@ message UpdateEncryptedVolumeRequest {
 
 // Represents a request to list all Encrypted Volumes.
 message ListEncryptedVolumesRequest {
+    // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
@@ -141,6 +144,7 @@ message ListEncryptedVolumesRequest {
 
 // Represents a response to list all Encrypted Volumes.
 message ListEncryptedVolumesResponse {
+    // List of Encrypted Volumes
     repeated EncryptedVolume encrypted_volumes = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -148,6 +152,7 @@ message ListEncryptedVolumesResponse {
 
 // Represents a request to get an Encrypted Volume.
 message GetEncryptedVolumeRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
@@ -156,6 +161,7 @@ message GetEncryptedVolumeRequest {
 
 // Represents a request to get an Encrypted Volume statistics.
 message StatsEncryptedVolumeRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
@@ -164,5 +170,6 @@ message StatsEncryptedVolumeRequest {
 
 // Represents a response to get an Encrypted Volume statistics.
 message StatsEncryptedVolumeResponse {
+    // Volume statistics
     VolumeStats stats = 1;
 }
