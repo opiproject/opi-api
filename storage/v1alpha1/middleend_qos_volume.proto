@@ -66,6 +66,7 @@ service MiddleendQosVolumeService {
     }
 }
 
+// Represents volume providing quality of service capabilities
 message QosVolume {
     option (google.api.resource) = {
         type: "storage.opiproject.org/QosVolume"
@@ -102,8 +103,12 @@ message QosVolume {
     Limits limits = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
+// Represents limits for Qos Volume
 message Limits {
+    // Min QoS limits for the volume
     QosLimit min = 1 [(google.api.field_behavior) = OPTIONAL];
+
+    // Max QoS limits for the volume
     QosLimit max = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
@@ -118,6 +123,7 @@ message CreateQosVolumeRequest {
 
 // Represents a request to delete an QoS Volume.
 message DeleteQosVolumeRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
@@ -141,6 +147,7 @@ message UpdateQosVolumeRequest {
 
 // Represents a request to list all QoS Volumes.
 message ListQosVolumesRequest {
+    // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
@@ -153,6 +160,7 @@ message ListQosVolumesRequest {
 
 // Represents a response to list all QoS Volumes.
 message ListQosVolumesResponse {
+    // List of Qos Volumes
     repeated QosVolume qos_volumes = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -160,6 +168,7 @@ message ListQosVolumesResponse {
 
 // Represents a request to get an QoS Volume.
 message GetQosVolumeRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
@@ -168,6 +177,7 @@ message GetQosVolumeRequest {
 
 // Represents a request to get an QoS Volume statistics.
 message StatsQosVolumeRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
@@ -176,5 +186,6 @@ message StatsQosVolumeRequest {
 
 // Represents a response to get an QoS Volume statistics.
 message StatsQosVolumeResponse {
+    // Volume statistics
     VolumeStats stats = 1;
 }
