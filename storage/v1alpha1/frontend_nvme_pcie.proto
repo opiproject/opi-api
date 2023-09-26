@@ -47,17 +47,20 @@ service FrontendNvmeService {
         };
         option (google.api.method_signature) = "nvme_subsystem,update_mask";
     }
+    // List Nvme Subsystems
     rpc ListNvmeSubsystems (ListNvmeSubsystemsRequest) returns (ListNvmeSubsystemsResponse)   {
         option (google.api.http) = {
             get: "/v1/nvmeSubsystems"
         };
     }
+    // Get an Nvme Subsystem
     rpc GetNvmeSubsystem (GetNvmeSubsystemRequest) returns (NvmeSubsystem)    {
         option (google.api.http) = {
             get: "/v1/{name=nvmeSubsystems/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Get an Nvme Subsystem statistics
     rpc StatsNvmeSubsystem (StatsNvmeSubsystemRequest) returns (StatsNvmeSubsystemResponse)  {
         option (google.api.http) = {
             get: "/v1/{name=nvmeSubsystems/*}:stats"
@@ -88,18 +91,21 @@ service FrontendNvmeService {
         };
         option (google.api.method_signature) = "nvme_controller,update_mask";
     }
+    // List Nvme Controllers
     rpc ListNvmeControllers (ListNvmeControllersRequest) returns (ListNvmeControllersResponse)   {
         option (google.api.http) = {
             get: "/v1/{parent=nvmeSubsystems/*}/nvmeControllers"
         };
         option (google.api.method_signature) = "parent";
     }
+    // Get an Nvme Controller
     rpc GetNvmeController (GetNvmeControllerRequest) returns (NvmeController)    {
         option (google.api.http) = {
             get: "/v1/{name=nvmeSubsystems/*/nvmeControllers/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Get an Nvme Controller statistics
     rpc StatsNvmeController (StatsNvmeControllerRequest) returns (StatsNvmeControllerResponse)  {
         option (google.api.http) = {
             get: "/v1/{name=nvmeSubsystems/*/nvmeControllers/*}:stats"
@@ -129,18 +135,21 @@ service FrontendNvmeService {
         };
         option (google.api.method_signature) = "nvme_namespace,update_mask";
     }
+    // List Nvme Namespaces
     rpc ListNvmeNamespaces (ListNvmeNamespacesRequest) returns (ListNvmeNamespacesResponse)   {
         option (google.api.http) = {
             get: "/v1/{parent=nvmeSubsystems/*}/nvmeNamespaces"
         };
         option (google.api.method_signature) = "parent";
     }
+    // Get an Nvme Namespace
     rpc GetNvmeNamespace (GetNvmeNamespaceRequest) returns (NvmeNamespace)    {
         option (google.api.http) = {
             get: "/v1/{name=nvmeSubsystems/*/nvmeNamespaces/*}"
         };
         option (google.api.method_signature) = "name";
     }
+    // Get an Nvme Namespace statistics
     rpc StatsNvmeNamespace (StatsNvmeNamespaceRequest) returns (StatsNvmeNamespaceResponse)  {
         option (google.api.http) = {
             get: "/v1/{name=nvmeSubsystems/*/nvmeNamespaces/*}:stats"
@@ -149,6 +158,7 @@ service FrontendNvmeService {
     }
 }
 
+// Represents Nvme Subsystem
 message NvmeSubsystem {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeSubsystem"
@@ -173,6 +183,7 @@ message NvmeSubsystem {
     NvmeSubsystemStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
+// Represents Nvme Subsystem configuration
 message NvmeSubsystemSpec {
     // Nvme subsystem NQN to which the controller belongs
     // Refer to the NQN format in the Nvme base specifications, must not
@@ -189,6 +200,7 @@ message NvmeSubsystemSpec {
     int64 max_namespaces = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents Nvme Subsystem status
 message NvmeSubsystemStatus {
     // firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
     string firmware_revision  = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -197,6 +209,7 @@ message NvmeSubsystemStatus {
     bytes fru_guid = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
+// Represents Nvme Controller
 message NvmeController {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeController"
@@ -221,6 +234,7 @@ message NvmeController {
     NvmeControllerStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
+// Represents Nvme Controller configuration
 message NvmeControllerSpec {
     // subsystem controller id range: 0 to 65535.
     // must not be reused under the same subsystem
@@ -256,11 +270,13 @@ message NvmeControllerSpec {
     QosLimit max_limit = 10 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Represents Nvme Controller status
 message NvmeControllerStatus {
     // Device is in use by host nvme driver
     bool   active = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
+// Represents Nvme Namespace
 message NvmeNamespace {
     option (google.api.resource) = {
         type: "storage.opiproject.org/NvmeNamespace"
@@ -285,6 +301,7 @@ message NvmeNamespace {
     NvmeNamespaceStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
+// Represents Nvme Namespace configuration
 message NvmeNamespaceSpec {
     // NSID present to the host by the Nvme PCIe controller.
     // If not provided, then the controller will assign an unused NSID
@@ -306,6 +323,7 @@ message NvmeNamespaceSpec {
     string volume_name_ref = 6 [(google.api.field_behavior) = REQUIRED];
 }
 
+// Represents Nvme Namespace status
 message NvmeNamespaceStatus {
     // config state of the namespace object, (enabled, disable, deleting)
     NvmeNamespacePciState      pci_state       = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -325,6 +343,7 @@ message CreateNvmeSubsystemRequest {
 
 // Represents a request to delete an Nvme Subsystem.
 message DeleteNvmeSubsystemRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
@@ -355,6 +374,7 @@ message ListNvmeSubsystemsRequest {
 
 // Represents a response to list all Nvme Subsystems.
 message ListNvmeSubsystemsResponse {
+    // List of Nvme Subsystems
     repeated NvmeSubsystem nvme_subsystems = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -362,6 +382,7 @@ message ListNvmeSubsystemsResponse {
 
 // Represents a request to get an Nvme Subsystem.
 message GetNvmeSubsystemRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
@@ -370,6 +391,7 @@ message GetNvmeSubsystemRequest {
 
 // Represents a request to get an Nvme Subsystems statistics.
 message StatsNvmeSubsystemRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
@@ -378,21 +400,27 @@ message StatsNvmeSubsystemRequest {
 
 // Represents a response to get an Nvme Subsystems statistics.
 message StatsNvmeSubsystemResponse {
+    // Subsystem statistics
     VolumeStats stats = 1;
 }
 
 // Represents a request to create an Nvme Controller.
 message CreateNvmeControllerRequest {
+    // Parent's subsystem unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
     ];
+    // The Nvme Controller to be created
     NvmeController nvme_controller = 2 [(google.api.field_behavior) = REQUIRED];
+    // An optional ID to assign to the Nvme Controller.
+    // If this is not provided the system will auto-generate it.
     string nvme_controller_id = 3 [ (google.api.field_behavior) = OPTIONAL ];
 }
 
 // Represents a request to delete an Nvme Controller.
 message DeleteNvmeControllerRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
@@ -415,6 +443,7 @@ message UpdateNvmeControllerRequest {
 
 // Represents a request to list all Nvme Controllers.
 message ListNvmeControllersRequest {
+    // Parent's subsystem unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
@@ -427,6 +456,7 @@ message ListNvmeControllersRequest {
 
 // Represents a response to list all Nvme Controllers.
 message ListNvmeControllersResponse {
+    // List of Nvme controllers
     repeated NvmeController nvme_controllers = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -434,6 +464,7 @@ message ListNvmeControllersResponse {
 
 // Represents a request to get an Nvme Controller.
 message GetNvmeControllerRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
@@ -442,6 +473,7 @@ message GetNvmeControllerRequest {
 
 // Represents a request to get an Nvme Controller statistics.
 message StatsNvmeControllerRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
@@ -450,21 +482,27 @@ message StatsNvmeControllerRequest {
 
 // Represents a response to get an Nvme Controller statistics.
 message StatsNvmeControllerResponse {
+    // Controller statistics
     VolumeStats stats = 1;
 }
 
 // Represents a request to create an Nvme Namespace.
 message CreateNvmeNamespaceRequest {
+    // Parent's subsystem unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
     ];
+    // The Nvme Namespace to be created
     NvmeNamespace nvme_namespace = 2 [(google.api.field_behavior) = REQUIRED];
+    // An optional ID to assign to the Nvme Namespace.
+    // If this is not provided the system will auto-generate it.
     string nvme_namespace_id = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to delete an Nvme Namespace.
 message DeleteNvmeNamespaceRequest {
+    // Object's unique identifier to delete
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
@@ -487,6 +525,7 @@ message UpdateNvmeNamespaceRequest {
 
 // Represents a request to list all Nvme Namespaces.
 message ListNvmeNamespacesRequest {
+    // Parent's subsystem unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
@@ -499,6 +538,7 @@ message ListNvmeNamespacesRequest {
 
 // Represents a response to list all Nvme Namespaces.
 message ListNvmeNamespacesResponse {
+    // List of Nvme Namespaces
     repeated NvmeNamespace nvme_namespaces = 1;
     // Next page token of list response
     string next_page_token = 2;
@@ -506,6 +546,7 @@ message ListNvmeNamespacesResponse {
 
 // Represents a request to get an Nvme Namespace.
 message GetNvmeNamespaceRequest {
+    // Object's unique identifier to retrieve
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
@@ -514,6 +555,7 @@ message GetNvmeNamespaceRequest {
 
 // Represents a request to get an Nvme Namespace statistics.
 message StatsNvmeNamespaceRequest {
+    // Object's unique identifier to retrieve statistics
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
@@ -522,6 +564,7 @@ message StatsNvmeNamespaceRequest {
 
 // Represents a response to get an Nvme Namespace statistics.
 message StatsNvmeNamespaceResponse {
+    // Namespace statistics
     VolumeStats stats = 1;
 }
 
