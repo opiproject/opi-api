@@ -141,7 +141,7 @@ public enum NvmeMultipath
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return opi_api.storage.v1.BackendNvmeTcpProto.getDescriptor().getEnumTypes().get(2);
+    return opi_api.storage.v1.BackendNvmeTcpProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final NvmeMultipath[] VALUES = values();

@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeControllerSpec() {
+    trtype_ = 0;
   }
 
   @java.lang.Override
@@ -58,45 +59,66 @@ private static final long serialVersionUID = 0L;
             nvmeControllerId_ = input.readInt32();
             break;
           }
-          case 26: {
-            opi_api.storage.v1.PciEndpoint.Builder subBuilder = null;
-            if (pcieId_ != null) {
-              subBuilder = pcieId_.toBuilder();
-            }
-            pcieId_ = input.readMessage(opi_api.storage.v1.PciEndpoint.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(pcieId_);
-              pcieId_ = subBuilder.buildPartial();
-            }
+          case 16: {
+            int rawValue = input.readEnum();
 
+            trtype_ = rawValue;
             break;
           }
-          case 32: {
-
-            maxNsq_ = input.readInt32();
+          case 26: {
+            opi_api.storage.v1.PciEndpoint.Builder subBuilder = null;
+            if (endpointCase_ == 3) {
+              subBuilder = ((opi_api.storage.v1.PciEndpoint) endpoint_).toBuilder();
+            }
+            endpoint_ =
+                input.readMessage(opi_api.storage.v1.PciEndpoint.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((opi_api.storage.v1.PciEndpoint) endpoint_);
+              endpoint_ = subBuilder.buildPartial();
+            }
+            endpointCase_ = 3;
+            break;
+          }
+          case 34: {
+            opi_api.storage.v1.FabricsEndpoint.Builder subBuilder = null;
+            if (endpointCase_ == 4) {
+              subBuilder = ((opi_api.storage.v1.FabricsEndpoint) endpoint_).toBuilder();
+            }
+            endpoint_ =
+                input.readMessage(opi_api.storage.v1.FabricsEndpoint.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((opi_api.storage.v1.FabricsEndpoint) endpoint_);
+              endpoint_ = subBuilder.buildPartial();
+            }
+            endpointCase_ = 4;
             break;
           }
           case 40: {
 
-            maxNcq_ = input.readInt32();
+            maxNsq_ = input.readInt32();
             break;
           }
           case 48: {
 
-            sqes_ = input.readInt32();
+            maxNcq_ = input.readInt32();
             break;
           }
           case 56: {
 
-            cqes_ = input.readInt32();
+            sqes_ = input.readInt32();
             break;
           }
           case 64: {
 
+            cqes_ = input.readInt32();
+            break;
+          }
+          case 72: {
+
             maxNamespaces_ = input.readInt32();
             break;
           }
-          case 74: {
+          case 82: {
             opi_api.storage.v1.QosLimit.Builder subBuilder = null;
             if (minLimit_ != null) {
               subBuilder = minLimit_.toBuilder();
@@ -109,7 +131,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 82: {
+          case 90: {
             opi_api.storage.v1.QosLimit.Builder subBuilder = null;
             if (maxLimit_ != null) {
               subBuilder = maxLimit_.toBuilder();
@@ -157,6 +179,47 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
+  private int endpointCase_ = 0;
+  private java.lang.Object endpoint_;
+  public enum EndpointCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PCIE_ID(3),
+    FABRICS_ID(4),
+    ENDPOINT_NOT_SET(0);
+    private final int value;
+    private EndpointCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EndpointCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static EndpointCase forNumber(int value) {
+      switch (value) {
+        case 3: return PCIE_ID;
+        case 4: return FABRICS_ID;
+        case 0: return ENDPOINT_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public EndpointCase
+  getEndpointCase() {
+    return EndpointCase.forNumber(
+        endpointCase_);
+  }
+
   public static final int NVME_CONTROLLER_ID_FIELD_NUMBER = 1;
   private int nvmeControllerId_;
   /**
@@ -186,45 +249,123 @@ private static final long serialVersionUID = 0L;
     return nvmeControllerId_;
   }
 
-  public static final int PCIE_ID_FIELD_NUMBER = 3;
-  private opi_api.storage.v1.PciEndpoint pcieId_;
+  public static final int TRTYPE_FIELD_NUMBER = 2;
+  private int trtype_;
   /**
    * <pre>
-   * xPU's PCI ID for the controller
+   * transport type
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for trtype.
+   */
+  @java.lang.Override public int getTrtypeValue() {
+    return trtype_;
+  }
+  /**
+   * <pre>
+   * transport type
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The trtype.
+   */
+  @java.lang.Override public opi_api.storage.v1.NvmeTransportType getTrtype() {
+    @SuppressWarnings("deprecation")
+    opi_api.storage.v1.NvmeTransportType result = opi_api.storage.v1.NvmeTransportType.valueOf(trtype_);
+    return result == null ? opi_api.storage.v1.NvmeTransportType.UNRECOGNIZED : result;
+  }
+
+  public static final int PCIE_ID_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the pcieId field is set.
    */
   @java.lang.Override
   public boolean hasPcieId() {
-    return pcieId_ != null;
+    return endpointCase_ == 3;
   }
   /**
    * <pre>
-   * xPU's PCI ID for the controller
+   * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pcieId.
    */
   @java.lang.Override
   public opi_api.storage.v1.PciEndpoint getPcieId() {
-    return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
+    if (endpointCase_ == 3) {
+       return (opi_api.storage.v1.PciEndpoint) endpoint_;
+    }
+    return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
   }
   /**
    * <pre>
-   * xPU's PCI ID for the controller
+   * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
-    return getPcieId();
+    if (endpointCase_ == 3) {
+       return (opi_api.storage.v1.PciEndpoint) endpoint_;
+    }
+    return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
   }
 
-  public static final int MAX_NSQ_FIELD_NUMBER = 4;
+  public static final int FABRICS_ID_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Required for Nvme over fabrics transport types to create
+   * Nvme over Fabrics controllers to expose for example local SSDs over a network
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the fabricsId field is set.
+   */
+  @java.lang.Override
+  public boolean hasFabricsId() {
+    return endpointCase_ == 4;
+  }
+  /**
+   * <pre>
+   * Required for Nvme over fabrics transport types to create
+   * Nvme over Fabrics controllers to expose for example local SSDs over a network
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The fabricsId.
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.FabricsEndpoint getFabricsId() {
+    if (endpointCase_ == 4) {
+       return (opi_api.storage.v1.FabricsEndpoint) endpoint_;
+    }
+    return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Required for Nvme over fabrics transport types to create
+   * Nvme over Fabrics controllers to expose for example local SSDs over a network
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.FabricsEndpointOrBuilder getFabricsIdOrBuilder() {
+    if (endpointCase_ == 4) {
+       return (opi_api.storage.v1.FabricsEndpoint) endpoint_;
+    }
+    return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
+  }
+
+  public static final int MAX_NSQ_FIELD_NUMBER = 5;
   private int maxNsq_;
   /**
    * <pre>
@@ -232,7 +373,7 @@ private static final long serialVersionUID = 0L;
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>int32 max_nsq = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 max_nsq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxNsq.
    */
   @java.lang.Override
@@ -240,7 +381,7 @@ private static final long serialVersionUID = 0L;
     return maxNsq_;
   }
 
-  public static final int MAX_NCQ_FIELD_NUMBER = 5;
+  public static final int MAX_NCQ_FIELD_NUMBER = 6;
   private int maxNcq_;
   /**
    * <pre>
@@ -248,7 +389,7 @@ private static final long serialVersionUID = 0L;
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>int32 max_ncq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 max_ncq = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxNcq.
    */
   @java.lang.Override
@@ -256,7 +397,7 @@ private static final long serialVersionUID = 0L;
     return maxNcq_;
   }
 
-  public static final int SQES_FIELD_NUMBER = 6;
+  public static final int SQES_FIELD_NUMBER = 7;
   private int sqes_;
   /**
    * <pre>
@@ -264,7 +405,7 @@ private static final long serialVersionUID = 0L;
    * default value as per spec is 6
    * </pre>
    *
-   * <code>int32 sqes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 sqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The sqes.
    */
   @java.lang.Override
@@ -272,7 +413,7 @@ private static final long serialVersionUID = 0L;
     return sqes_;
   }
 
-  public static final int CQES_FIELD_NUMBER = 7;
+  public static final int CQES_FIELD_NUMBER = 8;
   private int cqes_;
   /**
    * <pre>
@@ -280,7 +421,7 @@ private static final long serialVersionUID = 0L;
    * default value as per spec is 4
    * </pre>
    *
-   * <code>int32 cqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 cqes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The cqes.
    */
   @java.lang.Override
@@ -288,7 +429,7 @@ private static final long serialVersionUID = 0L;
     return cqes_;
   }
 
-  public static final int MAX_NAMESPACES_FIELD_NUMBER = 8;
+  public static final int MAX_NAMESPACES_FIELD_NUMBER = 9;
   private int maxNamespaces_;
   /**
    * <pre>
@@ -296,7 +437,7 @@ private static final long serialVersionUID = 0L;
    * the controller.
    * </pre>
    *
-   * <code>int32 max_namespaces = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 max_namespaces = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxNamespaces.
    */
   @java.lang.Override
@@ -304,14 +445,14 @@ private static final long serialVersionUID = 0L;
     return maxNamespaces_;
   }
 
-  public static final int MIN_LIMIT_FIELD_NUMBER = 9;
+  public static final int MIN_LIMIT_FIELD_NUMBER = 10;
   private opi_api.storage.v1.QosLimit minLimit_;
   /**
    * <pre>
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the minLimit field is set.
    */
   @java.lang.Override
@@ -323,7 +464,7 @@ private static final long serialVersionUID = 0L;
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The minLimit.
    */
   @java.lang.Override
@@ -335,21 +476,21 @@ private static final long serialVersionUID = 0L;
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
     return getMinLimit();
   }
 
-  public static final int MAX_LIMIT_FIELD_NUMBER = 10;
+  public static final int MAX_LIMIT_FIELD_NUMBER = 11;
   private opi_api.storage.v1.QosLimit maxLimit_;
   /**
    * <pre>
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the maxLimit field is set.
    */
   @java.lang.Override
@@ -361,7 +502,7 @@ private static final long serialVersionUID = 0L;
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxLimit.
    */
   @java.lang.Override
@@ -373,7 +514,7 @@ private static final long serialVersionUID = 0L;
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
@@ -397,29 +538,35 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(1, nvmeControllerId_);
     }
-    if (pcieId_ != null) {
-      output.writeMessage(3, getPcieId());
+    if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, trtype_);
+    }
+    if (endpointCase_ == 3) {
+      output.writeMessage(3, (opi_api.storage.v1.PciEndpoint) endpoint_);
+    }
+    if (endpointCase_ == 4) {
+      output.writeMessage(4, (opi_api.storage.v1.FabricsEndpoint) endpoint_);
     }
     if (maxNsq_ != 0) {
-      output.writeInt32(4, maxNsq_);
+      output.writeInt32(5, maxNsq_);
     }
     if (maxNcq_ != 0) {
-      output.writeInt32(5, maxNcq_);
+      output.writeInt32(6, maxNcq_);
     }
     if (sqes_ != 0) {
-      output.writeInt32(6, sqes_);
+      output.writeInt32(7, sqes_);
     }
     if (cqes_ != 0) {
-      output.writeInt32(7, cqes_);
+      output.writeInt32(8, cqes_);
     }
     if (maxNamespaces_ != 0) {
-      output.writeInt32(8, maxNamespaces_);
+      output.writeInt32(9, maxNamespaces_);
     }
     if (minLimit_ != null) {
-      output.writeMessage(9, getMinLimit());
+      output.writeMessage(10, getMinLimit());
     }
     if (maxLimit_ != null) {
-      output.writeMessage(10, getMaxLimit());
+      output.writeMessage(11, getMaxLimit());
     }
     unknownFields.writeTo(output);
   }
@@ -434,37 +581,45 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, nvmeControllerId_);
     }
-    if (pcieId_ != null) {
+    if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getPcieId());
+        .computeEnumSize(2, trtype_);
+    }
+    if (endpointCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (opi_api.storage.v1.PciEndpoint) endpoint_);
+    }
+    if (endpointCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, (opi_api.storage.v1.FabricsEndpoint) endpoint_);
     }
     if (maxNsq_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, maxNsq_);
+        .computeInt32Size(5, maxNsq_);
     }
     if (maxNcq_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, maxNcq_);
+        .computeInt32Size(6, maxNcq_);
     }
     if (sqes_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, sqes_);
+        .computeInt32Size(7, sqes_);
     }
     if (cqes_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, cqes_);
+        .computeInt32Size(8, cqes_);
     }
     if (maxNamespaces_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, maxNamespaces_);
+        .computeInt32Size(9, maxNamespaces_);
     }
     if (minLimit_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getMinLimit());
+        .computeMessageSize(10, getMinLimit());
     }
     if (maxLimit_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getMaxLimit());
+        .computeMessageSize(11, getMaxLimit());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -486,11 +641,7 @@ private static final long serialVersionUID = 0L;
       if (getNvmeControllerId()
           != other.getNvmeControllerId()) return false;
     }
-    if (hasPcieId() != other.hasPcieId()) return false;
-    if (hasPcieId()) {
-      if (!getPcieId()
-          .equals(other.getPcieId())) return false;
-    }
+    if (trtype_ != other.trtype_) return false;
     if (getMaxNsq()
         != other.getMaxNsq()) return false;
     if (getMaxNcq()
@@ -511,6 +662,19 @@ private static final long serialVersionUID = 0L;
       if (!getMaxLimit()
           .equals(other.getMaxLimit())) return false;
     }
+    if (!getEndpointCase().equals(other.getEndpointCase())) return false;
+    switch (endpointCase_) {
+      case 3:
+        if (!getPcieId()
+            .equals(other.getPcieId())) return false;
+        break;
+      case 4:
+        if (!getFabricsId()
+            .equals(other.getFabricsId())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -526,10 +690,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NVME_CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNvmeControllerId();
     }
-    if (hasPcieId()) {
-      hash = (37 * hash) + PCIE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPcieId().hashCode();
-    }
+    hash = (37 * hash) + TRTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + trtype_;
     hash = (37 * hash) + MAX_NSQ_FIELD_NUMBER;
     hash = (53 * hash) + getMaxNsq();
     hash = (37 * hash) + MAX_NCQ_FIELD_NUMBER;
@@ -547,6 +709,18 @@ private static final long serialVersionUID = 0L;
     if (hasMaxLimit()) {
       hash = (37 * hash) + MAX_LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getMaxLimit().hashCode();
+    }
+    switch (endpointCase_) {
+      case 3:
+        hash = (37 * hash) + PCIE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getPcieId().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + FABRICS_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getFabricsId().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -687,12 +861,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       nvmeControllerId_ = 0;
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (pcieIdBuilder_ == null) {
-        pcieId_ = null;
-      } else {
-        pcieId_ = null;
-        pcieIdBuilder_ = null;
-      }
+      trtype_ = 0;
+
       maxNsq_ = 0;
 
       maxNcq_ = 0;
@@ -715,6 +885,8 @@ private static final long serialVersionUID = 0L;
         maxLimit_ = null;
         maxLimitBuilder_ = null;
       }
+      endpointCase_ = 0;
+      endpoint_ = null;
       return this;
     }
 
@@ -747,10 +919,20 @@ private static final long serialVersionUID = 0L;
         result.nvmeControllerId_ = nvmeControllerId_;
         to_bitField0_ |= 0x00000001;
       }
-      if (pcieIdBuilder_ == null) {
-        result.pcieId_ = pcieId_;
-      } else {
-        result.pcieId_ = pcieIdBuilder_.build();
+      result.trtype_ = trtype_;
+      if (endpointCase_ == 3) {
+        if (pcieIdBuilder_ == null) {
+          result.endpoint_ = endpoint_;
+        } else {
+          result.endpoint_ = pcieIdBuilder_.build();
+        }
+      }
+      if (endpointCase_ == 4) {
+        if (fabricsIdBuilder_ == null) {
+          result.endpoint_ = endpoint_;
+        } else {
+          result.endpoint_ = fabricsIdBuilder_.build();
+        }
       }
       result.maxNsq_ = maxNsq_;
       result.maxNcq_ = maxNcq_;
@@ -768,6 +950,7 @@ private static final long serialVersionUID = 0L;
         result.maxLimit_ = maxLimitBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
+      result.endpointCase_ = endpointCase_;
       onBuilt();
       return result;
     }
@@ -819,8 +1002,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasNvmeControllerId()) {
         setNvmeControllerId(other.getNvmeControllerId());
       }
-      if (other.hasPcieId()) {
-        mergePcieId(other.getPcieId());
+      if (other.trtype_ != 0) {
+        setTrtypeValue(other.getTrtypeValue());
       }
       if (other.getMaxNsq() != 0) {
         setMaxNsq(other.getMaxNsq());
@@ -842,6 +1025,19 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMaxLimit()) {
         mergeMaxLimit(other.getMaxLimit());
+      }
+      switch (other.getEndpointCase()) {
+        case PCIE_ID: {
+          mergePcieId(other.getPcieId());
+          break;
+        }
+        case FABRICS_ID: {
+          mergeFabricsId(other.getFabricsId());
+          break;
+        }
+        case ENDPOINT_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -871,6 +1067,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int endpointCase_ = 0;
+    private java.lang.Object endpoint_;
+    public EndpointCase
+        getEndpointCase() {
+      return EndpointCase.forNumber(
+          endpointCase_);
+    }
+
+    public Builder clearEndpoint() {
+      endpointCase_ = 0;
+      endpoint_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private int nvmeControllerId_ ;
@@ -932,159 +1143,443 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.PciEndpoint pcieId_;
+    private int trtype_ = 0;
+    /**
+     * <pre>
+     * transport type
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for trtype.
+     */
+    @java.lang.Override public int getTrtypeValue() {
+      return trtype_;
+    }
+    /**
+     * <pre>
+     * transport type
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for trtype to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrtypeValue(int value) {
+      
+      trtype_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * transport type
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The trtype.
+     */
+    @java.lang.Override
+    public opi_api.storage.v1.NvmeTransportType getTrtype() {
+      @SuppressWarnings("deprecation")
+      opi_api.storage.v1.NvmeTransportType result = opi_api.storage.v1.NvmeTransportType.valueOf(trtype_);
+      return result == null ? opi_api.storage.v1.NvmeTransportType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * transport type
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The trtype to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrtype(opi_api.storage.v1.NvmeTransportType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      trtype_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * transport type
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrtype() {
+      
+      trtype_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> pcieIdBuilder_;
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the pcieId field is set.
      */
+    @java.lang.Override
     public boolean hasPcieId() {
-      return pcieIdBuilder_ != null || pcieId_ != null;
+      return endpointCase_ == 3;
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pcieId.
      */
+    @java.lang.Override
     public opi_api.storage.v1.PciEndpoint getPcieId() {
       if (pcieIdBuilder_ == null) {
-        return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
+        if (endpointCase_ == 3) {
+          return (opi_api.storage.v1.PciEndpoint) endpoint_;
+        }
+        return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
       } else {
-        return pcieIdBuilder_.getMessage();
+        if (endpointCase_ == 3) {
+          return pcieIdBuilder_.getMessage();
+        }
+        return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPcieId(opi_api.storage.v1.PciEndpoint value) {
       if (pcieIdBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        pcieId_ = value;
+        endpoint_ = value;
         onChanged();
       } else {
         pcieIdBuilder_.setMessage(value);
       }
-
+      endpointCase_ = 3;
       return this;
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPcieId(
         opi_api.storage.v1.PciEndpoint.Builder builderForValue) {
       if (pcieIdBuilder_ == null) {
-        pcieId_ = builderForValue.build();
+        endpoint_ = builderForValue.build();
         onChanged();
       } else {
         pcieIdBuilder_.setMessage(builderForValue.build());
       }
-
+      endpointCase_ = 3;
       return this;
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergePcieId(opi_api.storage.v1.PciEndpoint value) {
       if (pcieIdBuilder_ == null) {
-        if (pcieId_ != null) {
-          pcieId_ =
-            opi_api.storage.v1.PciEndpoint.newBuilder(pcieId_).mergeFrom(value).buildPartial();
+        if (endpointCase_ == 3 &&
+            endpoint_ != opi_api.storage.v1.PciEndpoint.getDefaultInstance()) {
+          endpoint_ = opi_api.storage.v1.PciEndpoint.newBuilder((opi_api.storage.v1.PciEndpoint) endpoint_)
+              .mergeFrom(value).buildPartial();
         } else {
-          pcieId_ = value;
+          endpoint_ = value;
         }
         onChanged();
       } else {
-        pcieIdBuilder_.mergeFrom(value);
+        if (endpointCase_ == 3) {
+          pcieIdBuilder_.mergeFrom(value);
+        } else {
+          pcieIdBuilder_.setMessage(value);
+        }
       }
-
+      endpointCase_ = 3;
       return this;
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPcieId() {
       if (pcieIdBuilder_ == null) {
-        pcieId_ = null;
-        onChanged();
+        if (endpointCase_ == 3) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+          onChanged();
+        }
       } else {
-        pcieId_ = null;
-        pcieIdBuilder_ = null;
+        if (endpointCase_ == 3) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+        }
+        pcieIdBuilder_.clear();
       }
-
       return this;
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.PciEndpoint.Builder getPcieIdBuilder() {
-      
-      onChanged();
       return getPcieIdFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
-      if (pcieIdBuilder_ != null) {
+      if ((endpointCase_ == 3) && (pcieIdBuilder_ != null)) {
         return pcieIdBuilder_.getMessageOrBuilder();
       } else {
-        return pcieId_ == null ?
-            opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
+        if (endpointCase_ == 3) {
+          return (opi_api.storage.v1.PciEndpoint) endpoint_;
+        }
+        return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * Required for pcie transport type to expose emulated Pcie Nvme controllers to Host
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> 
         getPcieIdFieldBuilder() {
       if (pcieIdBuilder_ == null) {
+        if (!(endpointCase_ == 3)) {
+          endpoint_ = opi_api.storage.v1.PciEndpoint.getDefaultInstance();
+        }
         pcieIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder>(
-                getPcieId(),
+                (opi_api.storage.v1.PciEndpoint) endpoint_,
                 getParentForChildren(),
                 isClean());
-        pcieId_ = null;
+        endpoint_ = null;
       }
+      endpointCase_ = 3;
+      onChanged();;
       return pcieIdBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.FabricsEndpoint, opi_api.storage.v1.FabricsEndpoint.Builder, opi_api.storage.v1.FabricsEndpointOrBuilder> fabricsIdBuilder_;
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the fabricsId field is set.
+     */
+    @java.lang.Override
+    public boolean hasFabricsId() {
+      return endpointCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The fabricsId.
+     */
+    @java.lang.Override
+    public opi_api.storage.v1.FabricsEndpoint getFabricsId() {
+      if (fabricsIdBuilder_ == null) {
+        if (endpointCase_ == 4) {
+          return (opi_api.storage.v1.FabricsEndpoint) endpoint_;
+        }
+        return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
+      } else {
+        if (endpointCase_ == 4) {
+          return fabricsIdBuilder_.getMessage();
+        }
+        return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setFabricsId(opi_api.storage.v1.FabricsEndpoint value) {
+      if (fabricsIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endpoint_ = value;
+        onChanged();
+      } else {
+        fabricsIdBuilder_.setMessage(value);
+      }
+      endpointCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setFabricsId(
+        opi_api.storage.v1.FabricsEndpoint.Builder builderForValue) {
+      if (fabricsIdBuilder_ == null) {
+        endpoint_ = builderForValue.build();
+        onChanged();
+      } else {
+        fabricsIdBuilder_.setMessage(builderForValue.build());
+      }
+      endpointCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeFabricsId(opi_api.storage.v1.FabricsEndpoint value) {
+      if (fabricsIdBuilder_ == null) {
+        if (endpointCase_ == 4 &&
+            endpoint_ != opi_api.storage.v1.FabricsEndpoint.getDefaultInstance()) {
+          endpoint_ = opi_api.storage.v1.FabricsEndpoint.newBuilder((opi_api.storage.v1.FabricsEndpoint) endpoint_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          endpoint_ = value;
+        }
+        onChanged();
+      } else {
+        if (endpointCase_ == 4) {
+          fabricsIdBuilder_.mergeFrom(value);
+        } else {
+          fabricsIdBuilder_.setMessage(value);
+        }
+      }
+      endpointCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearFabricsId() {
+      if (fabricsIdBuilder_ == null) {
+        if (endpointCase_ == 4) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+          onChanged();
+        }
+      } else {
+        if (endpointCase_ == 4) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+        }
+        fabricsIdBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public opi_api.storage.v1.FabricsEndpoint.Builder getFabricsIdBuilder() {
+      return getFabricsIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public opi_api.storage.v1.FabricsEndpointOrBuilder getFabricsIdOrBuilder() {
+      if ((endpointCase_ == 4) && (fabricsIdBuilder_ != null)) {
+        return fabricsIdBuilder_.getMessageOrBuilder();
+      } else {
+        if (endpointCase_ == 4) {
+          return (opi_api.storage.v1.FabricsEndpoint) endpoint_;
+        }
+        return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Required for Nvme over fabrics transport types to create
+     * Nvme over Fabrics controllers to expose for example local SSDs over a network
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.FabricsEndpoint, opi_api.storage.v1.FabricsEndpoint.Builder, opi_api.storage.v1.FabricsEndpointOrBuilder> 
+        getFabricsIdFieldBuilder() {
+      if (fabricsIdBuilder_ == null) {
+        if (!(endpointCase_ == 4)) {
+          endpoint_ = opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
+        }
+        fabricsIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.FabricsEndpoint, opi_api.storage.v1.FabricsEndpoint.Builder, opi_api.storage.v1.FabricsEndpointOrBuilder>(
+                (opi_api.storage.v1.FabricsEndpoint) endpoint_,
+                getParentForChildren(),
+                isClean());
+        endpoint_ = null;
+      }
+      endpointCase_ = 4;
+      onChanged();;
+      return fabricsIdBuilder_;
     }
 
     private int maxNsq_ ;
@@ -1094,7 +1589,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_nsq = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_nsq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxNsq.
      */
     @java.lang.Override
@@ -1107,7 +1602,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_nsq = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_nsq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The maxNsq to set.
      * @return This builder for chaining.
      */
@@ -1123,7 +1618,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_nsq = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_nsq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNsq() {
@@ -1140,7 +1635,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_ncq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_ncq = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxNcq.
      */
     @java.lang.Override
@@ -1153,7 +1648,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_ncq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_ncq = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The maxNcq to set.
      * @return This builder for chaining.
      */
@@ -1169,7 +1664,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_ncq = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_ncq = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNcq() {
@@ -1186,7 +1681,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>int32 sqes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 sqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The sqes.
      */
     @java.lang.Override
@@ -1199,7 +1694,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>int32 sqes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 sqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The sqes to set.
      * @return This builder for chaining.
      */
@@ -1215,7 +1710,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>int32 sqes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 sqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearSqes() {
@@ -1232,7 +1727,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>int32 cqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 cqes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The cqes.
      */
     @java.lang.Override
@@ -1245,7 +1740,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>int32 cqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 cqes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The cqes to set.
      * @return This builder for chaining.
      */
@@ -1261,7 +1756,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>int32 cqes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 cqes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearCqes() {
@@ -1278,7 +1773,7 @@ private static final long serialVersionUID = 0L;
      * the controller.
      * </pre>
      *
-     * <code>int32 max_namespaces = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_namespaces = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxNamespaces.
      */
     @java.lang.Override
@@ -1291,7 +1786,7 @@ private static final long serialVersionUID = 0L;
      * the controller.
      * </pre>
      *
-     * <code>int32 max_namespaces = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_namespaces = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The maxNamespaces to set.
      * @return This builder for chaining.
      */
@@ -1307,7 +1802,7 @@ private static final long serialVersionUID = 0L;
      * the controller.
      * </pre>
      *
-     * <code>int32 max_namespaces = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 max_namespaces = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNamespaces() {
@@ -1325,7 +1820,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the minLimit field is set.
      */
     public boolean hasMinLimit() {
@@ -1336,7 +1831,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The minLimit.
      */
     public opi_api.storage.v1.QosLimit getMinLimit() {
@@ -1351,7 +1846,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMinLimit(opi_api.storage.v1.QosLimit value) {
       if (minLimitBuilder_ == null) {
@@ -1371,7 +1866,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMinLimit(
         opi_api.storage.v1.QosLimit.Builder builderForValue) {
@@ -1389,7 +1884,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMinLimit(opi_api.storage.v1.QosLimit value) {
       if (minLimitBuilder_ == null) {
@@ -1411,7 +1906,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMinLimit() {
       if (minLimitBuilder_ == null) {
@@ -1429,7 +1924,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimit.Builder getMinLimitBuilder() {
       
@@ -1441,7 +1936,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
       if (minLimitBuilder_ != null) {
@@ -1456,7 +1951,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 
@@ -1480,7 +1975,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the maxLimit field is set.
      */
     public boolean hasMaxLimit() {
@@ -1491,7 +1986,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxLimit.
      */
     public opi_api.storage.v1.QosLimit getMaxLimit() {
@@ -1506,7 +2001,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxLimit(opi_api.storage.v1.QosLimit value) {
       if (maxLimitBuilder_ == null) {
@@ -1526,7 +2021,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxLimit(
         opi_api.storage.v1.QosLimit.Builder builderForValue) {
@@ -1544,7 +2039,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMaxLimit(opi_api.storage.v1.QosLimit value) {
       if (maxLimitBuilder_ == null) {
@@ -1566,7 +2061,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMaxLimit() {
       if (maxLimitBuilder_ == null) {
@@ -1584,7 +2079,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimit.Builder getMaxLimitBuilder() {
       
@@ -1596,7 +2091,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
       if (maxLimitBuilder_ != null) {
@@ -1611,7 +2106,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 

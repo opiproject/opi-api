@@ -50,6 +50,9 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace opi_api {
 namespace storage {
 namespace v1 {
+class FabricsEndpoint;
+struct FabricsEndpointDefaultTypeInternal;
+extern FabricsEndpointDefaultTypeInternal _FabricsEndpoint_default_instance_;
 class PciEndpoint;
 struct PciEndpointDefaultTypeInternal;
 extern PciEndpointDefaultTypeInternal _PciEndpoint_default_instance_;
@@ -63,6 +66,7 @@ extern VolumeStatsDefaultTypeInternal _VolumeStats_default_instance_;
 }  // namespace storage
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
+template<> ::opi_api::storage::v1::FabricsEndpoint* Arena::CreateMaybeMessage<::opi_api::storage::v1::FabricsEndpoint>(Arena*);
 template<> ::opi_api::storage::v1::PciEndpoint* Arena::CreateMaybeMessage<::opi_api::storage::v1::PciEndpoint>(Arena*);
 template<> ::opi_api::storage::v1::QosLimit* Arena::CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(Arena*);
 template<> ::opi_api::storage::v1::VolumeStats* Arena::CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(Arena*);
@@ -100,6 +104,64 @@ inline bool EncryptionType_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EncryptionType* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EncryptionType>(
     EncryptionType_descriptor(), name, value);
+}
+enum NvmeTransportType : int {
+  NVME_TRANSPORT_TYPE_UNSPECIFIED = 0,
+  NVME_TRANSPORT_FC = 1,
+  NVME_TRANSPORT_PCIE = 2,
+  NVME_TRANSPORT_RDMA = 3,
+  NVME_TRANSPORT_TCP = 4,
+  NVME_TRANSPORT_CUSTOM = 5,
+  NvmeTransportType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  NvmeTransportType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool NvmeTransportType_IsValid(int value);
+constexpr NvmeTransportType NvmeTransportType_MIN = NVME_TRANSPORT_TYPE_UNSPECIFIED;
+constexpr NvmeTransportType NvmeTransportType_MAX = NVME_TRANSPORT_CUSTOM;
+constexpr int NvmeTransportType_ARRAYSIZE = NvmeTransportType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeTransportType_descriptor();
+template<typename T>
+inline const std::string& NvmeTransportType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, NvmeTransportType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function NvmeTransportType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    NvmeTransportType_descriptor(), enum_t_value);
+}
+inline bool NvmeTransportType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmeTransportType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmeTransportType>(
+    NvmeTransportType_descriptor(), name, value);
+}
+enum NvmeAddressFamily : int {
+  NVME_ADDRESS_FAMILY_UNSPECIFIED = 0,
+  NVME_ADRFAM_IPV4 = 1,
+  NVME_ADRFAM_IPV6 = 2,
+  NVME_ADRFAM_IB = 3,
+  NVME_ADRFAM_FC = 4,
+  NVME_ADRFAM_INTRA_HOST = 5,
+  NvmeAddressFamily_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  NvmeAddressFamily_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool NvmeAddressFamily_IsValid(int value);
+constexpr NvmeAddressFamily NvmeAddressFamily_MIN = NVME_ADDRESS_FAMILY_UNSPECIFIED;
+constexpr NvmeAddressFamily NvmeAddressFamily_MAX = NVME_ADRFAM_INTRA_HOST;
+constexpr int NvmeAddressFamily_ARRAYSIZE = NvmeAddressFamily_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeAddressFamily_descriptor();
+template<typename T>
+inline const std::string& NvmeAddressFamily_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, NvmeAddressFamily>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function NvmeAddressFamily_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    NvmeAddressFamily_descriptor(), enum_t_value);
+}
+inline bool NvmeAddressFamily_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmeAddressFamily* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmeAddressFamily>(
+    NvmeAddressFamily_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -300,6 +362,186 @@ class PciEndpoint final :
 };
 // -------------------------------------------------------------------
 
+class FabricsEndpoint final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.FabricsEndpoint) */ {
+ public:
+  inline FabricsEndpoint() : FabricsEndpoint(nullptr) {}
+  ~FabricsEndpoint() override;
+  explicit PROTOBUF_CONSTEXPR FabricsEndpoint(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FabricsEndpoint(const FabricsEndpoint& from);
+  FabricsEndpoint(FabricsEndpoint&& from) noexcept
+    : FabricsEndpoint() {
+    *this = ::std::move(from);
+  }
+
+  inline FabricsEndpoint& operator=(const FabricsEndpoint& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FabricsEndpoint& operator=(FabricsEndpoint&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FabricsEndpoint& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FabricsEndpoint* internal_default_instance() {
+    return reinterpret_cast<const FabricsEndpoint*>(
+               &_FabricsEndpoint_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(FabricsEndpoint& a, FabricsEndpoint& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FabricsEndpoint* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FabricsEndpoint* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FabricsEndpoint* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FabricsEndpoint>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FabricsEndpoint& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const FabricsEndpoint& from) {
+    FabricsEndpoint::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FabricsEndpoint* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.storage.v1.FabricsEndpoint";
+  }
+  protected:
+  explicit FabricsEndpoint(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTraddrFieldNumber = 1,
+    kTrsvcidFieldNumber = 2,
+    kAdrfamFieldNumber = 3,
+  };
+  // string traddr = 1 [(.google.api.field_behavior) = REQUIRED];
+  void clear_traddr();
+  const std::string& traddr() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_traddr(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_traddr();
+  PROTOBUF_NODISCARD std::string* release_traddr();
+  void set_allocated_traddr(std::string* traddr);
+  private:
+  const std::string& _internal_traddr() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_traddr(const std::string& value);
+  std::string* _internal_mutable_traddr();
+  public:
+
+  // string trsvcid = 2 [(.google.api.field_behavior) = REQUIRED];
+  void clear_trsvcid();
+  const std::string& trsvcid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_trsvcid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_trsvcid();
+  PROTOBUF_NODISCARD std::string* release_trsvcid();
+  void set_allocated_trsvcid(std::string* trsvcid);
+  private:
+  const std::string& _internal_trsvcid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_trsvcid(const std::string& value);
+  std::string* _internal_mutable_trsvcid();
+  public:
+
+  // .opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];
+  void clear_adrfam();
+  ::opi_api::storage::v1::NvmeAddressFamily adrfam() const;
+  void set_adrfam(::opi_api::storage::v1::NvmeAddressFamily value);
+  private:
+  ::opi_api::storage::v1::NvmeAddressFamily _internal_adrfam() const;
+  void _internal_set_adrfam(::opi_api::storage::v1::NvmeAddressFamily value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.FabricsEndpoint)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traddr_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trsvcid_;
+    int adrfam_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_opicommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class VolumeStats final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VolumeStats) */ {
  public:
@@ -348,7 +590,7 @@ class VolumeStats final :
                &_VolumeStats_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(VolumeStats& a, VolumeStats& b) {
     a.Swap(&b);
@@ -584,7 +826,7 @@ class QosLimit final :
                &_QosLimit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(QosLimit& a, QosLimit& b) {
     a.Swap(&b);
@@ -1005,6 +1247,130 @@ inline void PciEndpoint::set_allocated_virtual_function(::PROTOBUF_NAMESPACE_ID:
 
 // -------------------------------------------------------------------
 
+// FabricsEndpoint
+
+// string traddr = 1 [(.google.api.field_behavior) = REQUIRED];
+inline void FabricsEndpoint::clear_traddr() {
+  _impl_.traddr_.ClearToEmpty();
+}
+inline const std::string& FabricsEndpoint::traddr() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.FabricsEndpoint.traddr)
+  return _internal_traddr();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FabricsEndpoint::set_traddr(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.traddr_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.FabricsEndpoint.traddr)
+}
+inline std::string* FabricsEndpoint::mutable_traddr() {
+  std::string* _s = _internal_mutable_traddr();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.FabricsEndpoint.traddr)
+  return _s;
+}
+inline const std::string& FabricsEndpoint::_internal_traddr() const {
+  return _impl_.traddr_.Get();
+}
+inline void FabricsEndpoint::_internal_set_traddr(const std::string& value) {
+  
+  _impl_.traddr_.Set(value, GetArenaForAllocation());
+}
+inline std::string* FabricsEndpoint::_internal_mutable_traddr() {
+  
+  return _impl_.traddr_.Mutable(GetArenaForAllocation());
+}
+inline std::string* FabricsEndpoint::release_traddr() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.FabricsEndpoint.traddr)
+  return _impl_.traddr_.Release();
+}
+inline void FabricsEndpoint::set_allocated_traddr(std::string* traddr) {
+  if (traddr != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.traddr_.SetAllocated(traddr, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.traddr_.IsDefault()) {
+    _impl_.traddr_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.FabricsEndpoint.traddr)
+}
+
+// string trsvcid = 2 [(.google.api.field_behavior) = REQUIRED];
+inline void FabricsEndpoint::clear_trsvcid() {
+  _impl_.trsvcid_.ClearToEmpty();
+}
+inline const std::string& FabricsEndpoint::trsvcid() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.FabricsEndpoint.trsvcid)
+  return _internal_trsvcid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FabricsEndpoint::set_trsvcid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.trsvcid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.FabricsEndpoint.trsvcid)
+}
+inline std::string* FabricsEndpoint::mutable_trsvcid() {
+  std::string* _s = _internal_mutable_trsvcid();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.FabricsEndpoint.trsvcid)
+  return _s;
+}
+inline const std::string& FabricsEndpoint::_internal_trsvcid() const {
+  return _impl_.trsvcid_.Get();
+}
+inline void FabricsEndpoint::_internal_set_trsvcid(const std::string& value) {
+  
+  _impl_.trsvcid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* FabricsEndpoint::_internal_mutable_trsvcid() {
+  
+  return _impl_.trsvcid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* FabricsEndpoint::release_trsvcid() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.FabricsEndpoint.trsvcid)
+  return _impl_.trsvcid_.Release();
+}
+inline void FabricsEndpoint::set_allocated_trsvcid(std::string* trsvcid) {
+  if (trsvcid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.trsvcid_.SetAllocated(trsvcid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.trsvcid_.IsDefault()) {
+    _impl_.trsvcid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.FabricsEndpoint.trsvcid)
+}
+
+// .opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];
+inline void FabricsEndpoint::clear_adrfam() {
+  _impl_.adrfam_ = 0;
+}
+inline ::opi_api::storage::v1::NvmeAddressFamily FabricsEndpoint::_internal_adrfam() const {
+  return static_cast< ::opi_api::storage::v1::NvmeAddressFamily >(_impl_.adrfam_);
+}
+inline ::opi_api::storage::v1::NvmeAddressFamily FabricsEndpoint::adrfam() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.FabricsEndpoint.adrfam)
+  return _internal_adrfam();
+}
+inline void FabricsEndpoint::_internal_set_adrfam(::opi_api::storage::v1::NvmeAddressFamily value) {
+  
+  _impl_.adrfam_ = value;
+}
+inline void FabricsEndpoint::set_adrfam(::opi_api::storage::v1::NvmeAddressFamily value) {
+  _internal_set_adrfam(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.FabricsEndpoint.adrfam)
+}
+
+// -------------------------------------------------------------------
+
 // VolumeStats
 
 // int32 read_bytes_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1318,6 +1684,8 @@ inline void QosLimit::set_rw_bandwidth_mbs(int64_t value) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -1331,6 +1699,16 @@ template <> struct is_proto_enum< ::opi_api::storage::v1::EncryptionType> : ::st
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::EncryptionType>() {
   return ::opi_api::storage::v1::EncryptionType_descriptor();
+}
+template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeTransportType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeTransportType>() {
+  return ::opi_api::storage::v1::NvmeTransportType_descriptor();
+}
+template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeAddressFamily> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeAddressFamily>() {
+  return ::opi_api::storage::v1::NvmeAddressFamily_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

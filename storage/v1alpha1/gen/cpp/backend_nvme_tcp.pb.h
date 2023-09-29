@@ -165,64 +165,6 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-enum NvmeTransportType : int {
-  NVME_TRANSPORT_TYPE_UNSPECIFIED = 0,
-  NVME_TRANSPORT_FC = 1,
-  NVME_TRANSPORT_PCIE = 2,
-  NVME_TRANSPORT_RDMA = 3,
-  NVME_TRANSPORT_TCP = 4,
-  NVME_TRANSPORT_CUSTOM = 5,
-  NvmeTransportType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  NvmeTransportType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
-};
-bool NvmeTransportType_IsValid(int value);
-constexpr NvmeTransportType NvmeTransportType_MIN = NVME_TRANSPORT_TYPE_UNSPECIFIED;
-constexpr NvmeTransportType NvmeTransportType_MAX = NVME_TRANSPORT_CUSTOM;
-constexpr int NvmeTransportType_ARRAYSIZE = NvmeTransportType_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeTransportType_descriptor();
-template<typename T>
-inline const std::string& NvmeTransportType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, NvmeTransportType>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function NvmeTransportType_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    NvmeTransportType_descriptor(), enum_t_value);
-}
-inline bool NvmeTransportType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmeTransportType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmeTransportType>(
-    NvmeTransportType_descriptor(), name, value);
-}
-enum NvmeAddressFamily : int {
-  NVME_ADDRESS_FAMILY_UNSPECIFIED = 0,
-  NVME_ADRFAM_IPV4 = 1,
-  NVME_ADRFAM_IPV6 = 2,
-  NVME_ADRFAM_IB = 3,
-  NVME_ADRFAM_FC = 4,
-  NVME_ADRFAM_INTRA_HOST = 5,
-  NvmeAddressFamily_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  NvmeAddressFamily_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
-};
-bool NvmeAddressFamily_IsValid(int value);
-constexpr NvmeAddressFamily NvmeAddressFamily_MIN = NVME_ADDRESS_FAMILY_UNSPECIFIED;
-constexpr NvmeAddressFamily NvmeAddressFamily_MAX = NVME_ADRFAM_INTRA_HOST;
-constexpr int NvmeAddressFamily_ARRAYSIZE = NvmeAddressFamily_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeAddressFamily_descriptor();
-template<typename T>
-inline const std::string& NvmeAddressFamily_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, NvmeAddressFamily>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function NvmeAddressFamily_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    NvmeAddressFamily_descriptor(), enum_t_value);
-}
-inline bool NvmeAddressFamily_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmeAddressFamily* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmeAddressFamily>(
-    NvmeAddressFamily_descriptor(), name, value);
-}
 enum NvmeMultipath : int {
   NVME_MULTIPATH_UNSPECIFIED = 0,
   NVME_MULTIPATH_DISABLE = 1,
@@ -7745,16 +7687,6 @@ inline void StatsNvmePathResponse::set_allocated_stats(::opi_api::storage::v1::V
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeTransportType> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeTransportType>() {
-  return ::opi_api::storage::v1::NvmeTransportType_descriptor();
-}
-template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeAddressFamily> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeAddressFamily>() {
-  return ::opi_api::storage::v1::NvmeAddressFamily_descriptor();
-}
 template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeMultipath> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeMultipath>() {

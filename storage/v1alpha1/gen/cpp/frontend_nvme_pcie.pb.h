@@ -1046,6 +1046,12 @@ class NvmeControllerSpec final :
   static const NvmeControllerSpec& default_instance() {
     return *internal_default_instance();
   }
+  enum EndpointCase {
+    kPcieId = 3,
+    kFabricsId = 4,
+    ENDPOINT_NOT_SET = 0,
+  };
+
   static inline const NvmeControllerSpec* internal_default_instance() {
     return reinterpret_cast<const NvmeControllerSpec*>(
                &_NvmeControllerSpec_default_instance_);
@@ -1124,35 +1130,19 @@ class NvmeControllerSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPcieIdFieldNumber = 3,
-    kMinLimitFieldNumber = 9,
-    kMaxLimitFieldNumber = 10,
+    kMinLimitFieldNumber = 10,
+    kMaxLimitFieldNumber = 11,
     kNvmeControllerIdFieldNumber = 1,
-    kMaxNsqFieldNumber = 4,
-    kMaxNcqFieldNumber = 5,
-    kSqesFieldNumber = 6,
-    kCqesFieldNumber = 7,
-    kMaxNamespacesFieldNumber = 8,
+    kTrtypeFieldNumber = 2,
+    kMaxNsqFieldNumber = 5,
+    kMaxNcqFieldNumber = 6,
+    kSqesFieldNumber = 7,
+    kCqesFieldNumber = 8,
+    kMaxNamespacesFieldNumber = 9,
+    kPcieIdFieldNumber = 3,
+    kFabricsIdFieldNumber = 4,
   };
-  // .opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];
-  bool has_pcie_id() const;
-  private:
-  bool _internal_has_pcie_id() const;
-  public:
-  void clear_pcie_id();
-  const ::opi_api::storage::v1::PciEndpoint& pcie_id() const;
-  PROTOBUF_NODISCARD ::opi_api::storage::v1::PciEndpoint* release_pcie_id();
-  ::opi_api::storage::v1::PciEndpoint* mutable_pcie_id();
-  void set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint* pcie_id);
-  private:
-  const ::opi_api::storage::v1::PciEndpoint& _internal_pcie_id() const;
-  ::opi_api::storage::v1::PciEndpoint* _internal_mutable_pcie_id();
-  public:
-  void unsafe_arena_set_allocated_pcie_id(
-      ::opi_api::storage::v1::PciEndpoint* pcie_id);
-  ::opi_api::storage::v1::PciEndpoint* unsafe_arena_release_pcie_id();
-
-  // .opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];
+  // .opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
   bool has_min_limit() const;
   private:
   bool _internal_has_min_limit() const;
@@ -1170,7 +1160,7 @@ class NvmeControllerSpec final :
       ::opi_api::storage::v1::QosLimit* min_limit);
   ::opi_api::storage::v1::QosLimit* unsafe_arena_release_min_limit();
 
-  // .opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+  // .opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];
   bool has_max_limit() const;
   private:
   bool _internal_has_max_limit() const;
@@ -1201,7 +1191,16 @@ class NvmeControllerSpec final :
   void _internal_set_nvme_controller_id(int32_t value);
   public:
 
-  // int32 max_nsq = 4 [(.google.api.field_behavior) = OPTIONAL];
+  // .opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];
+  void clear_trtype();
+  ::opi_api::storage::v1::NvmeTransportType trtype() const;
+  void set_trtype(::opi_api::storage::v1::NvmeTransportType value);
+  private:
+  ::opi_api::storage::v1::NvmeTransportType _internal_trtype() const;
+  void _internal_set_trtype(::opi_api::storage::v1::NvmeTransportType value);
+  public:
+
+  // int32 max_nsq = 5 [(.google.api.field_behavior) = OPTIONAL];
   void clear_max_nsq();
   int32_t max_nsq() const;
   void set_max_nsq(int32_t value);
@@ -1210,7 +1209,7 @@ class NvmeControllerSpec final :
   void _internal_set_max_nsq(int32_t value);
   public:
 
-  // int32 max_ncq = 5 [(.google.api.field_behavior) = OPTIONAL];
+  // int32 max_ncq = 6 [(.google.api.field_behavior) = OPTIONAL];
   void clear_max_ncq();
   int32_t max_ncq() const;
   void set_max_ncq(int32_t value);
@@ -1219,7 +1218,7 @@ class NvmeControllerSpec final :
   void _internal_set_max_ncq(int32_t value);
   public:
 
-  // int32 sqes = 6 [(.google.api.field_behavior) = OPTIONAL];
+  // int32 sqes = 7 [(.google.api.field_behavior) = OPTIONAL];
   void clear_sqes();
   int32_t sqes() const;
   void set_sqes(int32_t value);
@@ -1228,7 +1227,7 @@ class NvmeControllerSpec final :
   void _internal_set_sqes(int32_t value);
   public:
 
-  // int32 cqes = 7 [(.google.api.field_behavior) = OPTIONAL];
+  // int32 cqes = 8 [(.google.api.field_behavior) = OPTIONAL];
   void clear_cqes();
   int32_t cqes() const;
   void set_cqes(int32_t value);
@@ -1237,7 +1236,7 @@ class NvmeControllerSpec final :
   void _internal_set_cqes(int32_t value);
   public:
 
-  // int32 max_namespaces = 8 [(.google.api.field_behavior) = OPTIONAL];
+  // int32 max_namespaces = 9 [(.google.api.field_behavior) = OPTIONAL];
   void clear_max_namespaces();
   int32_t max_namespaces() const;
   void set_max_namespaces(int32_t value);
@@ -1246,9 +1245,52 @@ class NvmeControllerSpec final :
   void _internal_set_max_namespaces(int32_t value);
   public:
 
+  // .opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+  bool has_pcie_id() const;
+  private:
+  bool _internal_has_pcie_id() const;
+  public:
+  void clear_pcie_id();
+  const ::opi_api::storage::v1::PciEndpoint& pcie_id() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::PciEndpoint* release_pcie_id();
+  ::opi_api::storage::v1::PciEndpoint* mutable_pcie_id();
+  void set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint* pcie_id);
+  private:
+  const ::opi_api::storage::v1::PciEndpoint& _internal_pcie_id() const;
+  ::opi_api::storage::v1::PciEndpoint* _internal_mutable_pcie_id();
+  public:
+  void unsafe_arena_set_allocated_pcie_id(
+      ::opi_api::storage::v1::PciEndpoint* pcie_id);
+  ::opi_api::storage::v1::PciEndpoint* unsafe_arena_release_pcie_id();
+
+  // .opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+  bool has_fabrics_id() const;
+  private:
+  bool _internal_has_fabrics_id() const;
+  public:
+  void clear_fabrics_id();
+  const ::opi_api::storage::v1::FabricsEndpoint& fabrics_id() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::FabricsEndpoint* release_fabrics_id();
+  ::opi_api::storage::v1::FabricsEndpoint* mutable_fabrics_id();
+  void set_allocated_fabrics_id(::opi_api::storage::v1::FabricsEndpoint* fabrics_id);
+  private:
+  const ::opi_api::storage::v1::FabricsEndpoint& _internal_fabrics_id() const;
+  ::opi_api::storage::v1::FabricsEndpoint* _internal_mutable_fabrics_id();
+  public:
+  void unsafe_arena_set_allocated_fabrics_id(
+      ::opi_api::storage::v1::FabricsEndpoint* fabrics_id);
+  ::opi_api::storage::v1::FabricsEndpoint* unsafe_arena_release_fabrics_id();
+
+  void clear_endpoint();
+  EndpointCase endpoint_case() const;
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeControllerSpec)
  private:
   class _Internal;
+  void set_has_pcie_id();
+  void set_has_fabrics_id();
+
+  inline bool has_endpoint() const;
+  inline void clear_has_endpoint();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -1256,15 +1298,23 @@ class NvmeControllerSpec final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::opi_api::storage::v1::PciEndpoint* pcie_id_;
     ::opi_api::storage::v1::QosLimit* min_limit_;
     ::opi_api::storage::v1::QosLimit* max_limit_;
     int32_t nvme_controller_id_;
+    int trtype_;
     int32_t max_nsq_;
     int32_t max_ncq_;
     int32_t sqes_;
     int32_t cqes_;
     int32_t max_namespaces_;
+    union EndpointUnion {
+      constexpr EndpointUnion() : _constinit_{} {}
+        ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+      ::opi_api::storage::v1::PciEndpoint* pcie_id_;
+      ::opi_api::storage::v1::FabricsEndpoint* fabrics_id_;
+    } endpoint_;
+    uint32_t _oneof_case_[1];
+
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -6804,92 +6854,159 @@ inline void NvmeControllerSpec::set_nvme_controller_id(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerSpec.nvme_controller_id)
 }
 
-// .opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = REQUIRED];
+// .opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];
+inline void NvmeControllerSpec::clear_trtype() {
+  _impl_.trtype_ = 0;
+}
+inline ::opi_api::storage::v1::NvmeTransportType NvmeControllerSpec::_internal_trtype() const {
+  return static_cast< ::opi_api::storage::v1::NvmeTransportType >(_impl_.trtype_);
+}
+inline ::opi_api::storage::v1::NvmeTransportType NvmeControllerSpec::trtype() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerSpec.trtype)
+  return _internal_trtype();
+}
+inline void NvmeControllerSpec::_internal_set_trtype(::opi_api::storage::v1::NvmeTransportType value) {
+  
+  _impl_.trtype_ = value;
+}
+inline void NvmeControllerSpec::set_trtype(::opi_api::storage::v1::NvmeTransportType value) {
+  _internal_set_trtype(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerSpec.trtype)
+}
+
+// .opi_api.storage.v1.PciEndpoint pcie_id = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NvmeControllerSpec::_internal_has_pcie_id() const {
-  return this != internal_default_instance() && _impl_.pcie_id_ != nullptr;
+  return endpoint_case() == kPcieId;
 }
 inline bool NvmeControllerSpec::has_pcie_id() const {
   return _internal_has_pcie_id();
 }
+inline void NvmeControllerSpec::set_has_pcie_id() {
+  _impl_._oneof_case_[0] = kPcieId;
+}
+inline ::opi_api::storage::v1::PciEndpoint* NvmeControllerSpec::release_pcie_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeControllerSpec.pcie_id)
+  if (_internal_has_pcie_id()) {
+    clear_has_endpoint();
+    ::opi_api::storage::v1::PciEndpoint* temp = _impl_.endpoint_.pcie_id_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.endpoint_.pcie_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
 inline const ::opi_api::storage::v1::PciEndpoint& NvmeControllerSpec::_internal_pcie_id() const {
-  const ::opi_api::storage::v1::PciEndpoint* p = _impl_.pcie_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::PciEndpoint&>(
-      ::opi_api::storage::v1::_PciEndpoint_default_instance_);
+  return _internal_has_pcie_id()
+      ? *_impl_.endpoint_.pcie_id_
+      : reinterpret_cast< ::opi_api::storage::v1::PciEndpoint&>(::opi_api::storage::v1::_PciEndpoint_default_instance_);
 }
 inline const ::opi_api::storage::v1::PciEndpoint& NvmeControllerSpec::pcie_id() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerSpec.pcie_id)
   return _internal_pcie_id();
 }
-inline void NvmeControllerSpec::unsafe_arena_set_allocated_pcie_id(
-    ::opi_api::storage::v1::PciEndpoint* pcie_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.pcie_id_);
-  }
-  _impl_.pcie_id_ = pcie_id;
-  if (pcie_id) {
-    
+inline ::opi_api::storage::v1::PciEndpoint* NvmeControllerSpec::unsafe_arena_release_pcie_id() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.storage.v1.NvmeControllerSpec.pcie_id)
+  if (_internal_has_pcie_id()) {
+    clear_has_endpoint();
+    ::opi_api::storage::v1::PciEndpoint* temp = _impl_.endpoint_.pcie_id_;
+    _impl_.endpoint_.pcie_id_ = nullptr;
+    return temp;
   } else {
-    
+    return nullptr;
+  }
+}
+inline void NvmeControllerSpec::unsafe_arena_set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint* pcie_id) {
+  clear_endpoint();
+  if (pcie_id) {
+    set_has_pcie_id();
+    _impl_.endpoint_.pcie_id_ = pcie_id;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NvmeControllerSpec.pcie_id)
 }
-inline ::opi_api::storage::v1::PciEndpoint* NvmeControllerSpec::release_pcie_id() {
-  
-  ::opi_api::storage::v1::PciEndpoint* temp = _impl_.pcie_id_;
-  _impl_.pcie_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::storage::v1::PciEndpoint* NvmeControllerSpec::unsafe_arena_release_pcie_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeControllerSpec.pcie_id)
-  
-  ::opi_api::storage::v1::PciEndpoint* temp = _impl_.pcie_id_;
-  _impl_.pcie_id_ = nullptr;
-  return temp;
-}
 inline ::opi_api::storage::v1::PciEndpoint* NvmeControllerSpec::_internal_mutable_pcie_id() {
-  
-  if (_impl_.pcie_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::storage::v1::PciEndpoint>(GetArenaForAllocation());
-    _impl_.pcie_id_ = p;
+  if (!_internal_has_pcie_id()) {
+    clear_endpoint();
+    set_has_pcie_id();
+    _impl_.endpoint_.pcie_id_ = CreateMaybeMessage< ::opi_api::storage::v1::PciEndpoint >(GetArenaForAllocation());
   }
-  return _impl_.pcie_id_;
+  return _impl_.endpoint_.pcie_id_;
 }
 inline ::opi_api::storage::v1::PciEndpoint* NvmeControllerSpec::mutable_pcie_id() {
   ::opi_api::storage::v1::PciEndpoint* _msg = _internal_mutable_pcie_id();
   // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeControllerSpec.pcie_id)
   return _msg;
 }
-inline void NvmeControllerSpec::set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint* pcie_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.pcie_id_);
-  }
-  if (pcie_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pcie_id));
-    if (message_arena != submessage_arena) {
-      pcie_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, pcie_id, submessage_arena);
+
+// .opi_api.storage.v1.FabricsEndpoint fabrics_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+inline bool NvmeControllerSpec::_internal_has_fabrics_id() const {
+  return endpoint_case() == kFabricsId;
+}
+inline bool NvmeControllerSpec::has_fabrics_id() const {
+  return _internal_has_fabrics_id();
+}
+inline void NvmeControllerSpec::set_has_fabrics_id() {
+  _impl_._oneof_case_[0] = kFabricsId;
+}
+inline ::opi_api::storage::v1::FabricsEndpoint* NvmeControllerSpec::release_fabrics_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeControllerSpec.fabrics_id)
+  if (_internal_has_fabrics_id()) {
+    clear_has_endpoint();
+    ::opi_api::storage::v1::FabricsEndpoint* temp = _impl_.endpoint_.fabrics_id_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    
+    _impl_.endpoint_.fabrics_id_ = nullptr;
+    return temp;
   } else {
-    
+    return nullptr;
   }
-  _impl_.pcie_id_ = pcie_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeControllerSpec.pcie_id)
+}
+inline const ::opi_api::storage::v1::FabricsEndpoint& NvmeControllerSpec::_internal_fabrics_id() const {
+  return _internal_has_fabrics_id()
+      ? *_impl_.endpoint_.fabrics_id_
+      : reinterpret_cast< ::opi_api::storage::v1::FabricsEndpoint&>(::opi_api::storage::v1::_FabricsEndpoint_default_instance_);
+}
+inline const ::opi_api::storage::v1::FabricsEndpoint& NvmeControllerSpec::fabrics_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerSpec.fabrics_id)
+  return _internal_fabrics_id();
+}
+inline ::opi_api::storage::v1::FabricsEndpoint* NvmeControllerSpec::unsafe_arena_release_fabrics_id() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.storage.v1.NvmeControllerSpec.fabrics_id)
+  if (_internal_has_fabrics_id()) {
+    clear_has_endpoint();
+    ::opi_api::storage::v1::FabricsEndpoint* temp = _impl_.endpoint_.fabrics_id_;
+    _impl_.endpoint_.fabrics_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void NvmeControllerSpec::unsafe_arena_set_allocated_fabrics_id(::opi_api::storage::v1::FabricsEndpoint* fabrics_id) {
+  clear_endpoint();
+  if (fabrics_id) {
+    set_has_fabrics_id();
+    _impl_.endpoint_.fabrics_id_ = fabrics_id;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NvmeControllerSpec.fabrics_id)
+}
+inline ::opi_api::storage::v1::FabricsEndpoint* NvmeControllerSpec::_internal_mutable_fabrics_id() {
+  if (!_internal_has_fabrics_id()) {
+    clear_endpoint();
+    set_has_fabrics_id();
+    _impl_.endpoint_.fabrics_id_ = CreateMaybeMessage< ::opi_api::storage::v1::FabricsEndpoint >(GetArenaForAllocation());
+  }
+  return _impl_.endpoint_.fabrics_id_;
+}
+inline ::opi_api::storage::v1::FabricsEndpoint* NvmeControllerSpec::mutable_fabrics_id() {
+  ::opi_api::storage::v1::FabricsEndpoint* _msg = _internal_mutable_fabrics_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeControllerSpec.fabrics_id)
+  return _msg;
 }
 
-// int32 max_nsq = 4 [(.google.api.field_behavior) = OPTIONAL];
+// int32 max_nsq = 5 [(.google.api.field_behavior) = OPTIONAL];
 inline void NvmeControllerSpec::clear_max_nsq() {
   _impl_.max_nsq_ = 0;
 }
@@ -6909,7 +7026,7 @@ inline void NvmeControllerSpec::set_max_nsq(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerSpec.max_nsq)
 }
 
-// int32 max_ncq = 5 [(.google.api.field_behavior) = OPTIONAL];
+// int32 max_ncq = 6 [(.google.api.field_behavior) = OPTIONAL];
 inline void NvmeControllerSpec::clear_max_ncq() {
   _impl_.max_ncq_ = 0;
 }
@@ -6929,7 +7046,7 @@ inline void NvmeControllerSpec::set_max_ncq(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerSpec.max_ncq)
 }
 
-// int32 sqes = 6 [(.google.api.field_behavior) = OPTIONAL];
+// int32 sqes = 7 [(.google.api.field_behavior) = OPTIONAL];
 inline void NvmeControllerSpec::clear_sqes() {
   _impl_.sqes_ = 0;
 }
@@ -6949,7 +7066,7 @@ inline void NvmeControllerSpec::set_sqes(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerSpec.sqes)
 }
 
-// int32 cqes = 7 [(.google.api.field_behavior) = OPTIONAL];
+// int32 cqes = 8 [(.google.api.field_behavior) = OPTIONAL];
 inline void NvmeControllerSpec::clear_cqes() {
   _impl_.cqes_ = 0;
 }
@@ -6969,7 +7086,7 @@ inline void NvmeControllerSpec::set_cqes(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerSpec.cqes)
 }
 
-// int32 max_namespaces = 8 [(.google.api.field_behavior) = OPTIONAL];
+// int32 max_namespaces = 9 [(.google.api.field_behavior) = OPTIONAL];
 inline void NvmeControllerSpec::clear_max_namespaces() {
   _impl_.max_namespaces_ = 0;
 }
@@ -6989,7 +7106,7 @@ inline void NvmeControllerSpec::set_max_namespaces(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerSpec.max_namespaces)
 }
 
-// .opi_api.storage.v1.QosLimit min_limit = 9 [(.google.api.field_behavior) = OPTIONAL];
+// .opi_api.storage.v1.QosLimit min_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NvmeControllerSpec::_internal_has_min_limit() const {
   return this != internal_default_instance() && _impl_.min_limit_ != nullptr;
 }
@@ -7074,7 +7191,7 @@ inline void NvmeControllerSpec::set_allocated_min_limit(::opi_api::storage::v1::
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeControllerSpec.min_limit)
 }
 
-// .opi_api.storage.v1.QosLimit max_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+// .opi_api.storage.v1.QosLimit max_limit = 11 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NvmeControllerSpec::_internal_has_max_limit() const {
   return this != internal_default_instance() && _impl_.max_limit_ != nullptr;
 }
@@ -7159,6 +7276,15 @@ inline void NvmeControllerSpec::set_allocated_max_limit(::opi_api::storage::v1::
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeControllerSpec.max_limit)
 }
 
+inline bool NvmeControllerSpec::has_endpoint() const {
+  return endpoint_case() != ENDPOINT_NOT_SET;
+}
+inline void NvmeControllerSpec::clear_has_endpoint() {
+  _impl_._oneof_case_[0] = ENDPOINT_NOT_SET;
+}
+inline NvmeControllerSpec::EndpointCase NvmeControllerSpec::endpoint_case() const {
+  return NvmeControllerSpec::EndpointCase(_impl_._oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // NvmeControllerStatus

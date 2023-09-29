@@ -20,6 +20,11 @@ public final class OpiCommonProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_PciEndpoint_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_FabricsEndpoint_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_FabricsEndpoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_storage_v1_VolumeStats_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -45,28 +50,40 @@ public final class OpiCommonProto {
       "alueB\003\340A\002\022;\n\021physical_function\030\002 \001(\0132\033.g" +
       "oogle.protobuf.Int32ValueB\003\340A\002\022:\n\020virtua" +
       "l_function\030\003 \001(\0132\033.google.protobuf.Int32" +
-      "ValueB\003\340A\002\"\252\002\n\013VolumeStats\022\035\n\020read_bytes" +
-      "_count\030\001 \001(\005B\003\340A\003\022\033\n\016read_ops_count\030\002 \001(" +
-      "\005B\003\340A\003\022\036\n\021write_bytes_count\030\003 \001(\005B\003\340A\003\022\034" +
-      "\n\017write_ops_count\030\004 \001(\005B\003\340A\003\022\036\n\021unmap_by" +
-      "tes_count\030\005 \001(\005B\003\340A\003\022\034\n\017unmap_ops_count\030" +
-      "\006 \001(\005B\003\340A\003\022\037\n\022read_latency_ticks\030\007 \001(\005B\003" +
-      "\340A\003\022 \n\023write_latency_ticks\030\010 \001(\005B\003\340A\003\022 \n" +
-      "\023unmap_latency_ticks\030\t \001(\005B\003\340A\003\"\273\001\n\010QosL" +
-      "imit\022\032\n\rrd_iops_kiops\030\001 \001(\003B\003\340A\001\022\032\n\rwr_i" +
-      "ops_kiops\030\002 \001(\003B\003\340A\001\022\032\n\rrw_iops_kiops\030\003 " +
-      "\001(\003B\003\340A\001\022\035\n\020rd_bandwidth_mbs\030\004 \001(\003B\003\340A\001\022" +
-      "\035\n\020wr_bandwidth_mbs\030\005 \001(\003B\003\340A\001\022\035\n\020rw_ban" +
-      "dwidth_mbs\030\006 \001(\003B\003\340A\001*\367\001\n\016EncryptionType" +
-      "\022\037\n\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033ENC" +
-      "RYPTION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTION" +
-      "_TYPE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE_A" +
-      "ES_CBC_256\020\003\022\037\n\033ENCRYPTION_TYPE_AES_XTS_" +
-      "128\020\004\022\037\n\033ENCRYPTION_TYPE_AES_XTS_192\020\005\022\037" +
-      "\n\033ENCRYPTION_TYPE_AES_XTS_256\020\006B]\n\022opi_a" +
-      "pi.storage.v1B\016OpiCommonProtoP\001Z5github." +
-      "com/opiproject/opi-api/storage/v1alpha1/" +
-      "gen/gob\006proto3"
+      "ValueB\003\340A\002\"x\n\017FabricsEndpoint\022\023\n\006traddr\030" +
+      "\001 \001(\tB\003\340A\002\022\024\n\007trsvcid\030\002 \001(\tB\003\340A\002\022:\n\006adrf" +
+      "am\030\003 \001(\0162%.opi_api.storage.v1.NvmeAddres" +
+      "sFamilyB\003\340A\002\"\252\002\n\013VolumeStats\022\035\n\020read_byt" +
+      "es_count\030\001 \001(\005B\003\340A\003\022\033\n\016read_ops_count\030\002 " +
+      "\001(\005B\003\340A\003\022\036\n\021write_bytes_count\030\003 \001(\005B\003\340A\003" +
+      "\022\034\n\017write_ops_count\030\004 \001(\005B\003\340A\003\022\036\n\021unmap_" +
+      "bytes_count\030\005 \001(\005B\003\340A\003\022\034\n\017unmap_ops_coun" +
+      "t\030\006 \001(\005B\003\340A\003\022\037\n\022read_latency_ticks\030\007 \001(\005" +
+      "B\003\340A\003\022 \n\023write_latency_ticks\030\010 \001(\005B\003\340A\003\022" +
+      " \n\023unmap_latency_ticks\030\t \001(\005B\003\340A\003\"\273\001\n\010Qo" +
+      "sLimit\022\032\n\rrd_iops_kiops\030\001 \001(\003B\003\340A\001\022\032\n\rwr" +
+      "_iops_kiops\030\002 \001(\003B\003\340A\001\022\032\n\rrw_iops_kiops\030" +
+      "\003 \001(\003B\003\340A\001\022\035\n\020rd_bandwidth_mbs\030\004 \001(\003B\003\340A" +
+      "\001\022\035\n\020wr_bandwidth_mbs\030\005 \001(\003B\003\340A\001\022\035\n\020rw_b" +
+      "andwidth_mbs\030\006 \001(\003B\003\340A\001*\367\001\n\016EncryptionTy" +
+      "pe\022\037\n\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033E" +
+      "NCRYPTION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTI" +
+      "ON_TYPE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE" +
+      "_AES_CBC_256\020\003\022\037\n\033ENCRYPTION_TYPE_AES_XT" +
+      "S_128\020\004\022\037\n\033ENCRYPTION_TYPE_AES_XTS_192\020\005" +
+      "\022\037\n\033ENCRYPTION_TYPE_AES_XTS_256\020\006*\264\001\n\021Nv" +
+      "meTransportType\022#\n\037NVME_TRANSPORT_TYPE_U" +
+      "NSPECIFIED\020\000\022\025\n\021NVME_TRANSPORT_FC\020\001\022\027\n\023N" +
+      "VME_TRANSPORT_PCIE\020\002\022\027\n\023NVME_TRANSPORT_R" +
+      "DMA\020\003\022\026\n\022NVME_TRANSPORT_TCP\020\004\022\031\n\025NVME_TR" +
+      "ANSPORT_CUSTOM\020\005*\250\001\n\021NvmeAddressFamily\022#" +
+      "\n\037NVME_ADDRESS_FAMILY_UNSPECIFIED\020\000\022\024\n\020N" +
+      "VME_ADRFAM_IPV4\020\001\022\024\n\020NVME_ADRFAM_IPV6\020\002\022" +
+      "\022\n\016NVME_ADRFAM_IB\020\003\022\022\n\016NVME_ADRFAM_FC\020\004\022" +
+      "\032\n\026NVME_ADRFAM_INTRA_HOST\020\005B]\n\022opi_api.s" +
+      "torage.v1B\016OpiCommonProtoP\001Z5github.com/" +
+      "opiproject/opi-api/storage/v1alpha1/gen/" +
+      "gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -80,14 +97,20 @@ public final class OpiCommonProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_PciEndpoint_descriptor,
         new java.lang.String[] { "PortId", "PhysicalFunction", "VirtualFunction", });
-    internal_static_opi_api_storage_v1_VolumeStats_descriptor =
+    internal_static_opi_api_storage_v1_FabricsEndpoint_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_opi_api_storage_v1_FabricsEndpoint_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_FabricsEndpoint_descriptor,
+        new java.lang.String[] { "Traddr", "Trsvcid", "Adrfam", });
+    internal_static_opi_api_storage_v1_VolumeStats_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_storage_v1_VolumeStats_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_VolumeStats_descriptor,
         new java.lang.String[] { "ReadBytesCount", "ReadOpsCount", "WriteBytesCount", "WriteOpsCount", "UnmapBytesCount", "UnmapOpsCount", "ReadLatencyTicks", "WriteLatencyTicks", "UnmapLatencyTicks", });
     internal_static_opi_api_storage_v1_QosLimit_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_storage_v1_QosLimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_QosLimit_descriptor,

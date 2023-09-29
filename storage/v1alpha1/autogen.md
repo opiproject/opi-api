@@ -58,9 +58,7 @@
     - [UpdateNvmePathRequest](#opi_api-storage-v1-UpdateNvmePathRequest)
     - [UpdateNvmeRemoteControllerRequest](#opi_api-storage-v1-UpdateNvmeRemoteControllerRequest)
   
-    - [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily)
     - [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath)
-    - [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType)
   
     - [NvmeRemoteControllerService](#opi_api-storage-v1-NvmeRemoteControllerService)
   
@@ -177,11 +175,14 @@
     - [MiddleendQosVolumeService](#opi_api-storage-v1-MiddleendQosVolumeService)
   
 - [opicommon.proto](#opicommon-proto)
+    - [FabricsEndpoint](#opi_api-storage-v1-FabricsEndpoint)
     - [PciEndpoint](#opi_api-storage-v1-PciEndpoint)
     - [QosLimit](#opi_api-storage-v1-QosLimit)
     - [VolumeStats](#opi_api-storage-v1-VolumeStats)
   
     - [EncryptionType](#opi_api-storage-v1-EncryptionType)
+    - [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily)
+    - [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType)
   
 - [inventory.proto](#inventory-proto)
     - [BIOSInfo](#opi_api-inventory-v1-BIOSInfo)
@@ -1009,22 +1010,6 @@ Represents a request to update an Nvme Remote Controller.
  
 
 
-<a name="opi_api-storage-v1-NvmeAddressFamily"></a>
-
-### NvmeAddressFamily
-Address family value options
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| NVME_ADDRESS_FAMILY_UNSPECIFIED | 0 | Address family is not specified |
-| NVME_ADRFAM_IPV4 | 1 | IPv4 address family |
-| NVME_ADRFAM_IPV6 | 2 | IPv6 address family |
-| NVME_ADRFAM_IB | 3 | InfiniBand address family |
-| NVME_ADRFAM_FC | 4 | Fibre channel address family |
-| NVME_ADRFAM_INTRA_HOST | 5 | Intra host address family |
-
-
-
 <a name="opi_api-storage-v1-NvmeMultipath"></a>
 
 ### NvmeMultipath
@@ -1036,22 +1021,6 @@ Multipath mode value options
 | NVME_MULTIPATH_DISABLE | 1 | Multipathing is disabled |
 | NVME_MULTIPATH_FAILOVER | 2 | Failover mode where only one active connection is maintained and path is changed only at switch-over |
 | NVME_MULTIPATH_MULTIPATH | 3 | Multipath mode where active connections are maintained for every path |
-
-
-
-<a name="opi_api-storage-v1-NvmeTransportType"></a>
-
-### NvmeTransportType
-Transport type value options
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| NVME_TRANSPORT_TYPE_UNSPECIFIED | 0 | Transport type is not specified |
-| NVME_TRANSPORT_FC | 1 | Fibre channel transport type |
-| NVME_TRANSPORT_PCIE | 2 | Pcie transport type |
-| NVME_TRANSPORT_RDMA | 3 | RDMA transport type |
-| NVME_TRANSPORT_TCP | 4 | TCP transport type |
-| NVME_TRANSPORT_CUSTOM | 5 | Custom transport type |
 
 
  
@@ -1360,7 +1329,9 @@ Represents Nvme Controller configuration
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nvme_controller_id | [int32](#int32) | optional | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
-| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
+| trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  | transport type |
+| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | Required for pcie transport type to expose emulated Pcie Nvme controllers to Host |
+| fabrics_id | [FabricsEndpoint](#opi_api-storage-v1-FabricsEndpoint) |  | Required for Nvme over fabrics transport types to create Nvme over Fabrics controllers to expose for example local SSDs over a network |
 | max_nsq | [int32](#int32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
 | max_ncq | [int32](#int32) |  | maximum number of host completion queues allowed. If not set, the xPU will provide a default. |
 | sqes | [int32](#int32) |  | maximum number of submission queue entries per submission queue, as a power of 2. default value as per spec is 6 |
@@ -2740,6 +2711,23 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 
 
+<a name="opi_api-storage-v1-FabricsEndpoint"></a>
+
+### FabricsEndpoint
+Represents Fabrics Endpoint
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| traddr | [string](#string) |  | ip address for TCP and RDMA |
+| trsvcid | [string](#string) |  | port for TCP and RDMA |
+| adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  | address family |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-PciEndpoint"></a>
 
 ### PciEndpoint
@@ -2823,6 +2811,38 @@ AES encryption types
 | ENCRYPTION_TYPE_AES_XTS_128 | 4 | AES XTS 128 encryption type |
 | ENCRYPTION_TYPE_AES_XTS_192 | 5 | AES XTS 192 encryption type |
 | ENCRYPTION_TYPE_AES_XTS_256 | 6 | AES XTS 256 encryption type |
+
+
+
+<a name="opi_api-storage-v1-NvmeAddressFamily"></a>
+
+### NvmeAddressFamily
+Address family value options
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NVME_ADDRESS_FAMILY_UNSPECIFIED | 0 | Address family is not specified |
+| NVME_ADRFAM_IPV4 | 1 | IPv4 address family |
+| NVME_ADRFAM_IPV6 | 2 | IPv6 address family |
+| NVME_ADRFAM_IB | 3 | InfiniBand address family |
+| NVME_ADRFAM_FC | 4 | Fibre channel address family |
+| NVME_ADRFAM_INTRA_HOST | 5 | Intra host address family |
+
+
+
+<a name="opi_api-storage-v1-NvmeTransportType"></a>
+
+### NvmeTransportType
+Transport type value options
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NVME_TRANSPORT_TYPE_UNSPECIFIED | 0 | Transport type is not specified |
+| NVME_TRANSPORT_FC | 1 | Fibre channel transport type |
+| NVME_TRANSPORT_PCIE | 2 | Pcie transport type |
+| NVME_TRANSPORT_RDMA | 3 | RDMA transport type |
+| NVME_TRANSPORT_TCP | 4 | TCP transport type |
+| NVME_TRANSPORT_CUSTOM | 5 | Custom transport type |
 
 
  

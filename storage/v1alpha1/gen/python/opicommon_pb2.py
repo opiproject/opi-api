@@ -15,7 +15,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fopicommon.proto\x12\x12opi_api.storage.v1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xb9\x01\n\x0bPciEndpoint\x12\x31\n\x07port_id\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x03\xe0\x41\x02\x12;\n\x11physical_function\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x03\xe0\x41\x02\x12:\n\x10virtual_function\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x03\xe0\x41\x02\"\xaa\x02\n\x0bVolumeStats\x12\x1d\n\x10read_bytes_count\x18\x01 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1b\n\x0eread_ops_count\x18\x02 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1e\n\x11write_bytes_count\x18\x03 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1c\n\x0fwrite_ops_count\x18\x04 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1e\n\x11unmap_bytes_count\x18\x05 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1c\n\x0funmap_ops_count\x18\x06 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1f\n\x12read_latency_ticks\x18\x07 \x01(\x05\x42\x03\xe0\x41\x03\x12 \n\x13write_latency_ticks\x18\x08 \x01(\x05\x42\x03\xe0\x41\x03\x12 \n\x13unmap_latency_ticks\x18\t \x01(\x05\x42\x03\xe0\x41\x03\"\xbb\x01\n\x08QosLimit\x12\x1a\n\rrd_iops_kiops\x18\x01 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1a\n\rwr_iops_kiops\x18\x02 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1a\n\rrw_iops_kiops\x18\x03 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1d\n\x10rd_bandwidth_mbs\x18\x04 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1d\n\x10wr_bandwidth_mbs\x18\x05 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1d\n\x10rw_bandwidth_mbs\x18\x06 \x01(\x03\x42\x03\xe0\x41\x01*\xf7\x01\n\x0e\x45ncryptionType\x12\x1f\n\x1b\x45NCRYPTION_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_128\x10\x01\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_192\x10\x02\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_256\x10\x03\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_128\x10\x04\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_192\x10\x05\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_256\x10\x06\x42]\n\x12opi_api.storage.v1B\x0eOpiCommonProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fopicommon.proto\x12\x12opi_api.storage.v1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xb9\x01\n\x0bPciEndpoint\x12\x31\n\x07port_id\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x03\xe0\x41\x02\x12;\n\x11physical_function\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x03\xe0\x41\x02\x12:\n\x10virtual_function\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x03\xe0\x41\x02\"x\n\x0f\x46\x61\x62ricsEndpoint\x12\x13\n\x06traddr\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x14\n\x07trsvcid\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12:\n\x06\x61\x64rfam\x18\x03 \x01(\x0e\x32%.opi_api.storage.v1.NvmeAddressFamilyB\x03\xe0\x41\x02\"\xaa\x02\n\x0bVolumeStats\x12\x1d\n\x10read_bytes_count\x18\x01 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1b\n\x0eread_ops_count\x18\x02 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1e\n\x11write_bytes_count\x18\x03 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1c\n\x0fwrite_ops_count\x18\x04 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1e\n\x11unmap_bytes_count\x18\x05 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1c\n\x0funmap_ops_count\x18\x06 \x01(\x05\x42\x03\xe0\x41\x03\x12\x1f\n\x12read_latency_ticks\x18\x07 \x01(\x05\x42\x03\xe0\x41\x03\x12 \n\x13write_latency_ticks\x18\x08 \x01(\x05\x42\x03\xe0\x41\x03\x12 \n\x13unmap_latency_ticks\x18\t \x01(\x05\x42\x03\xe0\x41\x03\"\xbb\x01\n\x08QosLimit\x12\x1a\n\rrd_iops_kiops\x18\x01 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1a\n\rwr_iops_kiops\x18\x02 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1a\n\rrw_iops_kiops\x18\x03 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1d\n\x10rd_bandwidth_mbs\x18\x04 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1d\n\x10wr_bandwidth_mbs\x18\x05 \x01(\x03\x42\x03\xe0\x41\x01\x12\x1d\n\x10rw_bandwidth_mbs\x18\x06 \x01(\x03\x42\x03\xe0\x41\x01*\xf7\x01\n\x0e\x45ncryptionType\x12\x1f\n\x1b\x45NCRYPTION_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_128\x10\x01\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_192\x10\x02\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_256\x10\x03\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_128\x10\x04\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_192\x10\x05\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_256\x10\x06*\xb4\x01\n\x11NvmeTransportType\x12#\n\x1fNVME_TRANSPORT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11NVME_TRANSPORT_FC\x10\x01\x12\x17\n\x13NVME_TRANSPORT_PCIE\x10\x02\x12\x17\n\x13NVME_TRANSPORT_RDMA\x10\x03\x12\x16\n\x12NVME_TRANSPORT_TCP\x10\x04\x12\x19\n\x15NVME_TRANSPORT_CUSTOM\x10\x05*\xa8\x01\n\x11NvmeAddressFamily\x12#\n\x1fNVME_ADDRESS_FAMILY_UNSPECIFIED\x10\x00\x12\x14\n\x10NVME_ADRFAM_IPV4\x10\x01\x12\x14\n\x10NVME_ADRFAM_IPV6\x10\x02\x12\x12\n\x0eNVME_ADRFAM_IB\x10\x03\x12\x12\n\x0eNVME_ADRFAM_FC\x10\x04\x12\x1a\n\x16NVME_ADRFAM_INTRA_HOST\x10\x05\x42]\n\x12opi_api.storage.v1B\x0eOpiCommonProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'opicommon_pb2', globals())
@@ -29,6 +29,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PCIENDPOINT.fields_by_name['physical_function']._serialized_options = b'\340A\002'
   _PCIENDPOINT.fields_by_name['virtual_function']._options = None
   _PCIENDPOINT.fields_by_name['virtual_function']._serialized_options = b'\340A\002'
+  _FABRICSENDPOINT.fields_by_name['traddr']._options = None
+  _FABRICSENDPOINT.fields_by_name['traddr']._serialized_options = b'\340A\002'
+  _FABRICSENDPOINT.fields_by_name['trsvcid']._options = None
+  _FABRICSENDPOINT.fields_by_name['trsvcid']._serialized_options = b'\340A\002'
+  _FABRICSENDPOINT.fields_by_name['adrfam']._options = None
+  _FABRICSENDPOINT.fields_by_name['adrfam']._serialized_options = b'\340A\002'
   _VOLUMESTATS.fields_by_name['read_bytes_count']._options = None
   _VOLUMESTATS.fields_by_name['read_bytes_count']._serialized_options = b'\340A\003'
   _VOLUMESTATS.fields_by_name['read_ops_count']._options = None
@@ -59,12 +65,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _QOSLIMIT.fields_by_name['wr_bandwidth_mbs']._serialized_options = b'\340A\001'
   _QOSLIMIT.fields_by_name['rw_bandwidth_mbs']._options = None
   _QOSLIMIT.fields_by_name['rw_bandwidth_mbs']._serialized_options = b'\340A\001'
-  _ENCRYPTIONTYPE._serialized_start=784
-  _ENCRYPTIONTYPE._serialized_end=1031
+  _ENCRYPTIONTYPE._serialized_start=906
+  _ENCRYPTIONTYPE._serialized_end=1153
+  _NVMETRANSPORTTYPE._serialized_start=1156
+  _NVMETRANSPORTTYPE._serialized_end=1336
+  _NVMEADDRESSFAMILY._serialized_start=1339
+  _NVMEADDRESSFAMILY._serialized_end=1507
   _PCIENDPOINT._serialized_start=105
   _PCIENDPOINT._serialized_end=290
-  _VOLUMESTATS._serialized_start=293
-  _VOLUMESTATS._serialized_end=591
-  _QOSLIMIT._serialized_start=594
-  _QOSLIMIT._serialized_end=781
+  _FABRICSENDPOINT._serialized_start=292
+  _FABRICSENDPOINT._serialized_end=412
+  _VOLUMESTATS._serialized_start=415
+  _VOLUMESTATS._serialized_end=713
+  _QOSLIMIT._serialized_start=716
+  _QOSLIMIT._serialized_end=903
 # @@protoc_insertion_point(module_scope)
