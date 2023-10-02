@@ -215,23 +215,18 @@ message NvmePath {
 
 // Represents Fabrics transport path parameters
 message FabricsPath {
-    // Destination service id (e.g. Port)
-    int64 trsvcid = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Destination fabrics endpoint
+    FabricsEndpoint dst = 1 [(google.api.field_behavior) = REQUIRED];
 
     // Subsystem NQN
     string subnqn = 2 [(google.api.field_behavior) = REQUIRED];
 
-    // Address family
-    NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
-
-    // Source address (e.g. IP of local NIC)
-    string source_traddr = 4 [(google.api.field_behavior) = OPTIONAL];
-
-    // Source port (e.g. Port of local NIC)
-    int64 source_trsvcid = 5 [(google.api.field_behavior) = OPTIONAL];
+    // Source fabrics endpoint
+    FabricsEndpoint src = 3 [(google.api.field_behavior) = OPTIONAL];
 
     // Host NQN
-    string hostnqn = 6 [(google.api.field_behavior) = OPTIONAL];
+    string hostnqn = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represent Nvme namespace created on bridge after connection to a target
