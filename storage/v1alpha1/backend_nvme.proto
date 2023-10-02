@@ -206,11 +206,16 @@ message NvmePath {
     // Transport type
     NvmeTransportType trtype = 3 [(google.api.field_behavior) = REQUIRED];
 
-    // Destination address (e.g. IP address, BDF for local PCIe)
-    string traddr = 4 [(google.api.field_behavior) = REQUIRED];
+    // xPU's PCI/Fabrics endpoint for the controller.
+    // One of the values is required
+    // see https://github.com/aip-dev/google.aip.dev/issues/1147 for field_behavior annotations
+    oneof path {
+        // Required for pcie transport type. Shall contain BDF
+        string pcie = 4 [(google.api.field_behavior) = OPTIONAL];
 
-    // Not applicable for local PCIe. Required for Nvme over fabrics transport types
-    FabricsPath fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
+        // Required for Nvme over fabrics transport types
+        FabricsPath fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
+    }
 }
 
 // Represents Fabrics transport path parameters
