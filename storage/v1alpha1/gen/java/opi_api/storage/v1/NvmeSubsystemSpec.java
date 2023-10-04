@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     nqn_ = "";
     serialNumber_ = "";
     modelNumber_ = "";
+    hostnqn_ = "";
+    psk_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -76,6 +78,17 @@ private static final long serialVersionUID = 0L;
           case 32: {
 
             maxNamespaces_ = input.readInt64();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            hostnqn_ = s;
+            break;
+          }
+          case 50: {
+
+            psk_ = input.readBytes();
             break;
           }
           default: {
@@ -269,6 +282,67 @@ private static final long serialVersionUID = 0L;
     return maxNamespaces_;
   }
 
+  public static final int HOSTNQN_FIELD_NUMBER = 5;
+  private volatile java.lang.Object hostnqn_;
+  /**
+   * <pre>
+   * host NQN
+   * </pre>
+   *
+   * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The hostnqn.
+   */
+  @java.lang.Override
+  public java.lang.String getHostnqn() {
+    java.lang.Object ref = hostnqn_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      hostnqn_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * host NQN
+   * </pre>
+   *
+   * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for hostnqn.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getHostnqnBytes() {
+    java.lang.Object ref = hostnqn_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      hostnqn_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PSK_FIELD_NUMBER = 6;
+  private com.google.protobuf.ByteString psk_;
+  /**
+   * <pre>
+   * psk key for TCP transport
+   * </pre>
+   *
+   * <code>bytes psk = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The psk.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPsk() {
+    return psk_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -295,6 +369,12 @@ private static final long serialVersionUID = 0L;
     if (maxNamespaces_ != 0L) {
       output.writeInt64(4, maxNamespaces_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostnqn_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, hostnqn_);
+    }
+    if (!psk_.isEmpty()) {
+      output.writeBytes(6, psk_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -316,6 +396,13 @@ private static final long serialVersionUID = 0L;
     if (maxNamespaces_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, maxNamespaces_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostnqn_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, hostnqn_);
+    }
+    if (!psk_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(6, psk_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -340,6 +427,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelNumber())) return false;
     if (getMaxNamespaces()
         != other.getMaxNamespaces()) return false;
+    if (!getHostnqn()
+        .equals(other.getHostnqn())) return false;
+    if (!getPsk()
+        .equals(other.getPsk())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -360,6 +451,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MAX_NAMESPACES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMaxNamespaces());
+    hash = (37 * hash) + HOSTNQN_FIELD_NUMBER;
+    hash = (53 * hash) + getHostnqn().hashCode();
+    hash = (37 * hash) + PSK_FIELD_NUMBER;
+    hash = (53 * hash) + getPsk().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -505,6 +600,10 @@ private static final long serialVersionUID = 0L;
 
       maxNamespaces_ = 0L;
 
+      hostnqn_ = "";
+
+      psk_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -535,6 +634,8 @@ private static final long serialVersionUID = 0L;
       result.serialNumber_ = serialNumber_;
       result.modelNumber_ = modelNumber_;
       result.maxNamespaces_ = maxNamespaces_;
+      result.hostnqn_ = hostnqn_;
+      result.psk_ = psk_;
       onBuilt();
       return result;
     }
@@ -597,6 +698,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMaxNamespaces() != 0L) {
         setMaxNamespaces(other.getMaxNamespaces());
+      }
+      if (!other.getHostnqn().isEmpty()) {
+        hostnqn_ = other.hostnqn_;
+        onChanged();
+      }
+      if (other.getPsk() != com.google.protobuf.ByteString.EMPTY) {
+        setPsk(other.getPsk());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -964,6 +1072,148 @@ private static final long serialVersionUID = 0L;
     public Builder clearMaxNamespaces() {
       
       maxNamespaces_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object hostnqn_ = "";
+    /**
+     * <pre>
+     * host NQN
+     * </pre>
+     *
+     * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The hostnqn.
+     */
+    public java.lang.String getHostnqn() {
+      java.lang.Object ref = hostnqn_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hostnqn_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * host NQN
+     * </pre>
+     *
+     * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for hostnqn.
+     */
+    public com.google.protobuf.ByteString
+        getHostnqnBytes() {
+      java.lang.Object ref = hostnqn_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hostnqn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * host NQN
+     * </pre>
+     *
+     * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The hostnqn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHostnqn(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      hostnqn_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * host NQN
+     * </pre>
+     *
+     * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHostnqn() {
+      
+      hostnqn_ = getDefaultInstance().getHostnqn();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * host NQN
+     * </pre>
+     *
+     * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for hostnqn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHostnqnBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      hostnqn_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString psk_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * psk key for TCP transport
+     * </pre>
+     *
+     * <code>bytes psk = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The psk.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPsk() {
+      return psk_;
+    }
+    /**
+     * <pre>
+     * psk key for TCP transport
+     * </pre>
+     *
+     * <code>bytes psk = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The psk to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPsk(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      psk_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * psk key for TCP transport
+     * </pre>
+     *
+     * <code>bytes psk = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPsk() {
+      
+      psk_ = getDefaultInstance().getPsk();
       onChanged();
       return this;
     }

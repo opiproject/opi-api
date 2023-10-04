@@ -1441,6 +1441,8 @@ Represents Nvme Subsystem configuration
 | serial_number | [string](#string) |  | serial number must not exceed &#39;NSV_CTRLR_SERIAL_NO_LEN&#39; bytes |
 | model_number | [string](#string) |  | model number, must not exceed &#39;NSV_CTRLR_MODEL_NO_LEN&#39; bytes |
 | max_namespaces | [int64](#int64) |  | maximum namespaces within a subsystem |
+| hostnqn | [string](#string) |  | host NQN |
+| psk | [bytes](#bytes) |  | psk key for TCP transport |
 
 
 

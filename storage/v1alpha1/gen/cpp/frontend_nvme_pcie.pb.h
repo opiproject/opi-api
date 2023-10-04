@@ -569,6 +569,8 @@ class NvmeSubsystemSpec final :
     kNqnFieldNumber = 1,
     kSerialNumberFieldNumber = 2,
     kModelNumberFieldNumber = 3,
+    kHostnqnFieldNumber = 5,
+    kPskFieldNumber = 6,
     kMaxNamespacesFieldNumber = 4,
   };
   // string nqn = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -613,6 +615,34 @@ class NvmeSubsystemSpec final :
   std::string* _internal_mutable_model_number();
   public:
 
+  // string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];
+  void clear_hostnqn();
+  const std::string& hostnqn() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_hostnqn(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_hostnqn();
+  PROTOBUF_NODISCARD std::string* release_hostnqn();
+  void set_allocated_hostnqn(std::string* hostnqn);
+  private:
+  const std::string& _internal_hostnqn() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hostnqn(const std::string& value);
+  std::string* _internal_mutable_hostnqn();
+  public:
+
+  // bytes psk = 6 [(.google.api.field_behavior) = OPTIONAL];
+  void clear_psk();
+  const std::string& psk() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_psk(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_psk();
+  PROTOBUF_NODISCARD std::string* release_psk();
+  void set_allocated_psk(std::string* psk);
+  private:
+  const std::string& _internal_psk() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_psk(const std::string& value);
+  std::string* _internal_mutable_psk();
+  public:
+
   // int64 max_namespaces = 4 [(.google.api.field_behavior) = OPTIONAL];
   void clear_max_namespaces();
   int64_t max_namespaces() const;
@@ -633,6 +663,8 @@ class NvmeSubsystemSpec final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nqn_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serial_number_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr model_number_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hostnqn_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr psk_;
     int64_t max_namespaces_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -6482,6 +6514,106 @@ inline void NvmeSubsystemSpec::_internal_set_max_namespaces(int64_t value) {
 inline void NvmeSubsystemSpec::set_max_namespaces(int64_t value) {
   _internal_set_max_namespaces(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeSubsystemSpec.max_namespaces)
+}
+
+// string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];
+inline void NvmeSubsystemSpec::clear_hostnqn() {
+  _impl_.hostnqn_.ClearToEmpty();
+}
+inline const std::string& NvmeSubsystemSpec::hostnqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeSubsystemSpec.hostnqn)
+  return _internal_hostnqn();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void NvmeSubsystemSpec::set_hostnqn(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.hostnqn_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeSubsystemSpec.hostnqn)
+}
+inline std::string* NvmeSubsystemSpec::mutable_hostnqn() {
+  std::string* _s = _internal_mutable_hostnqn();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeSubsystemSpec.hostnqn)
+  return _s;
+}
+inline const std::string& NvmeSubsystemSpec::_internal_hostnqn() const {
+  return _impl_.hostnqn_.Get();
+}
+inline void NvmeSubsystemSpec::_internal_set_hostnqn(const std::string& value) {
+  
+  _impl_.hostnqn_.Set(value, GetArenaForAllocation());
+}
+inline std::string* NvmeSubsystemSpec::_internal_mutable_hostnqn() {
+  
+  return _impl_.hostnqn_.Mutable(GetArenaForAllocation());
+}
+inline std::string* NvmeSubsystemSpec::release_hostnqn() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeSubsystemSpec.hostnqn)
+  return _impl_.hostnqn_.Release();
+}
+inline void NvmeSubsystemSpec::set_allocated_hostnqn(std::string* hostnqn) {
+  if (hostnqn != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.hostnqn_.SetAllocated(hostnqn, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.hostnqn_.IsDefault()) {
+    _impl_.hostnqn_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeSubsystemSpec.hostnqn)
+}
+
+// bytes psk = 6 [(.google.api.field_behavior) = OPTIONAL];
+inline void NvmeSubsystemSpec::clear_psk() {
+  _impl_.psk_.ClearToEmpty();
+}
+inline const std::string& NvmeSubsystemSpec::psk() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeSubsystemSpec.psk)
+  return _internal_psk();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void NvmeSubsystemSpec::set_psk(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.psk_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeSubsystemSpec.psk)
+}
+inline std::string* NvmeSubsystemSpec::mutable_psk() {
+  std::string* _s = _internal_mutable_psk();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeSubsystemSpec.psk)
+  return _s;
+}
+inline const std::string& NvmeSubsystemSpec::_internal_psk() const {
+  return _impl_.psk_.Get();
+}
+inline void NvmeSubsystemSpec::_internal_set_psk(const std::string& value) {
+  
+  _impl_.psk_.Set(value, GetArenaForAllocation());
+}
+inline std::string* NvmeSubsystemSpec::_internal_mutable_psk() {
+  
+  return _impl_.psk_.Mutable(GetArenaForAllocation());
+}
+inline std::string* NvmeSubsystemSpec::release_psk() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeSubsystemSpec.psk)
+  return _impl_.psk_.Release();
+}
+inline void NvmeSubsystemSpec::set_allocated_psk(std::string* psk) {
+  if (psk != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.psk_.SetAllocated(psk, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.psk_.IsDefault()) {
+    _impl_.psk_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeSubsystemSpec.psk)
 }
 
 // -------------------------------------------------------------------

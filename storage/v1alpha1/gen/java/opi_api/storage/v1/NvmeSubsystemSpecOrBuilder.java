@@ -80,4 +80,34 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * @return The maxNamespaces.
    */
   long getMaxNamespaces();
+
+  /**
+   * <pre>
+   * host NQN
+   * </pre>
+   *
+   * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The hostnqn.
+   */
+  java.lang.String getHostnqn();
+  /**
+   * <pre>
+   * host NQN
+   * </pre>
+   *
+   * <code>string hostnqn = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for hostnqn.
+   */
+  com.google.protobuf.ByteString
+      getHostnqnBytes();
+
+  /**
+   * <pre>
+   * psk key for TCP transport
+   * </pre>
+   *
+   * <code>bytes psk = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The psk.
+   */
+  com.google.protobuf.ByteString getPsk();
 }
