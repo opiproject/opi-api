@@ -198,6 +198,12 @@ message NvmeSubsystemSpec {
 
     // maximum namespaces within a subsystem
     int64 max_namespaces = 4 [(google.api.field_behavior) = OPTIONAL];
+
+    // host NQN
+    string hostnqn = 5 [(google.api.field_behavior) = OPTIONAL];
+
+    // psk key for TCP transport
+    bytes psk = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents Nvme Subsystem status
