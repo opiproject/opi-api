@@ -21,7 +21,8 @@ import "google/protobuf/field_mask.proto";
 import "opicommon.proto";
 import "uuid.proto";
 
-// Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+// Back End APIs. Reponsible for connection to external Nvme devices
+// e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
 service NvmeRemoteControllerService {
     // Create an Nvme Remote Controller
     rpc CreateNvmeRemoteController (CreateNvmeRemoteControllerRequest) returns (NvmeRemoteController) {

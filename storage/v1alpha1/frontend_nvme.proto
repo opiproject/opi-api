@@ -21,7 +21,9 @@ import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
-// Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host presentation.
+// Front End APIs. Used for creation of xPU managed Nvme devices
+// e.g. emulated host-facing Nvme/Pcie controllers as well as
+// Nvme-oF controllers
 service FrontendNvmeService {
     // Create an Nvme Subsystem
     rpc CreateNvmeSubsystem (CreateNvmeSubsystemRequest) returns (NvmeSubsystem) {
