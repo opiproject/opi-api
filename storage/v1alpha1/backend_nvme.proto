@@ -7,7 +7,7 @@ package opi_api.storage.v1;
 
 option java_package = "opi_api.storage.v1";
 option java_multiple_files = true;
-option java_outer_classname = "BackendNvmeTcpProto";
+option java_outer_classname = "BackendNvmeProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
