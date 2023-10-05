@@ -323,7 +323,7 @@ message NvmeNamespace {
 
 // Represents Nvme Namespace configuration
 message NvmeNamespaceSpec {
-    // NSID present to the host by the Nvme PCIe controller.
+    // NSID presented by the Nvme controller.
     // If not provided, then the controller will assign an unused NSID
     // within the max namespace range - auto assigned nsid may not work
     // for live migration
@@ -345,11 +345,31 @@ message NvmeNamespaceSpec {
 
 // Represents Nvme Namespace status
 message NvmeNamespaceStatus {
+    // Namespace  Administrative States
+    enum State {
+        // unspecified
+        STATE_UNSPECIFIED = 0;
+        // namespace disabled state
+        STATE_DISABLED    = 1;
+        // namespace enabled state
+        STATE_ENABLED     = 2;
+        // namespace being deleted
+        STATE_DELETING    = 3;
+    }
     // config state of the namespace object, (enabled, disable, deleting)
-    NvmeNamespacePciState      pci_state       = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    State state = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
+    // Namespace operational states
+    enum OperState {
+        // unspecified
+        OPER_STATE_UNSPECIFIED = 0;
+        // namespace is online and operational
+        OPER_STATE_ONLINE = 1;
+        // namespace is offline
+        OPER_STATE_OFFLINE= 2;
+    }
     // Operational state of the namespace object, (connected, disconnected)
-    NvmeNamespacePciOperState  pci_oper_state   = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+    OperState oper_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents a request to create an Nvme Subsystem.
@@ -588,24 +608,4 @@ message StatsNvmeNamespaceResponse {
     VolumeStats stats = 1;
 }
 
-// Namespace  Administrative States
-enum NvmeNamespacePciState {
-    // unspecified
-    NVME_NAMESPACE_PCI_STATE_UNSPECIFIED = 0;
-    // namespace disabled state
-    NVME_NAMESPACE_PCI_STATE_DISABLED    = 1;
-    // namespace enabled state
-    NVME_NAMESPACE_PCI_STATE_ENABLED     = 2;
-    // namespace being deleted
-    NVME_NAMESPACE_PCI_STATE_DELETING    = 3;
-}
 
-// Namespace PCIe operational states
-enum NvmeNamespacePciOperState {
-    // unspecified
-    NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED = 0;
-    // namespace is online and operational
-    NVME_NAMESPACE_PCI_OPER_STATE_ONLINE = 1;
-    // namespace is offline
-    NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE= 2;
-}
