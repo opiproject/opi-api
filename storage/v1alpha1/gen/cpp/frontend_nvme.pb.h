@@ -197,58 +197,58 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-enum NvmeNamespacePciState : int {
-  NVME_NAMESPACE_PCI_STATE_UNSPECIFIED = 0,
-  NVME_NAMESPACE_PCI_STATE_DISABLED = 1,
-  NVME_NAMESPACE_PCI_STATE_ENABLED = 2,
-  NVME_NAMESPACE_PCI_STATE_DELETING = 3,
-  NvmeNamespacePciState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  NvmeNamespacePciState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum NvmeNamespaceStatus_State : int {
+  NvmeNamespaceStatus_State_STATE_UNSPECIFIED = 0,
+  NvmeNamespaceStatus_State_STATE_DISABLED = 1,
+  NvmeNamespaceStatus_State_STATE_ENABLED = 2,
+  NvmeNamespaceStatus_State_STATE_DELETING = 3,
+  NvmeNamespaceStatus_State_NvmeNamespaceStatus_State_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  NvmeNamespaceStatus_State_NvmeNamespaceStatus_State_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool NvmeNamespacePciState_IsValid(int value);
-constexpr NvmeNamespacePciState NvmeNamespacePciState_MIN = NVME_NAMESPACE_PCI_STATE_UNSPECIFIED;
-constexpr NvmeNamespacePciState NvmeNamespacePciState_MAX = NVME_NAMESPACE_PCI_STATE_DELETING;
-constexpr int NvmeNamespacePciState_ARRAYSIZE = NvmeNamespacePciState_MAX + 1;
+bool NvmeNamespaceStatus_State_IsValid(int value);
+constexpr NvmeNamespaceStatus_State NvmeNamespaceStatus_State_State_MIN = NvmeNamespaceStatus_State_STATE_UNSPECIFIED;
+constexpr NvmeNamespaceStatus_State NvmeNamespaceStatus_State_State_MAX = NvmeNamespaceStatus_State_STATE_DELETING;
+constexpr int NvmeNamespaceStatus_State_State_ARRAYSIZE = NvmeNamespaceStatus_State_State_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeNamespacePciState_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeNamespaceStatus_State_descriptor();
 template<typename T>
-inline const std::string& NvmeNamespacePciState_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, NvmeNamespacePciState>::value ||
+inline const std::string& NvmeNamespaceStatus_State_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, NvmeNamespaceStatus_State>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function NvmeNamespacePciState_Name.");
+    "Incorrect type passed to function NvmeNamespaceStatus_State_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    NvmeNamespacePciState_descriptor(), enum_t_value);
+    NvmeNamespaceStatus_State_descriptor(), enum_t_value);
 }
-inline bool NvmeNamespacePciState_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmeNamespacePciState* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmeNamespacePciState>(
-    NvmeNamespacePciState_descriptor(), name, value);
+inline bool NvmeNamespaceStatus_State_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmeNamespaceStatus_State* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmeNamespaceStatus_State>(
+    NvmeNamespaceStatus_State_descriptor(), name, value);
 }
-enum NvmeNamespacePciOperState : int {
-  NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED = 0,
-  NVME_NAMESPACE_PCI_OPER_STATE_ONLINE = 1,
-  NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE = 2,
-  NvmeNamespacePciOperState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  NvmeNamespacePciOperState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum NvmeNamespaceStatus_OperState : int {
+  NvmeNamespaceStatus_OperState_OPER_STATE_UNSPECIFIED = 0,
+  NvmeNamespaceStatus_OperState_OPER_STATE_ONLINE = 1,
+  NvmeNamespaceStatus_OperState_OPER_STATE_OFFLINE = 2,
+  NvmeNamespaceStatus_OperState_NvmeNamespaceStatus_OperState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  NvmeNamespaceStatus_OperState_NvmeNamespaceStatus_OperState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool NvmeNamespacePciOperState_IsValid(int value);
-constexpr NvmeNamespacePciOperState NvmeNamespacePciOperState_MIN = NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED;
-constexpr NvmeNamespacePciOperState NvmeNamespacePciOperState_MAX = NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE;
-constexpr int NvmeNamespacePciOperState_ARRAYSIZE = NvmeNamespacePciOperState_MAX + 1;
+bool NvmeNamespaceStatus_OperState_IsValid(int value);
+constexpr NvmeNamespaceStatus_OperState NvmeNamespaceStatus_OperState_OperState_MIN = NvmeNamespaceStatus_OperState_OPER_STATE_UNSPECIFIED;
+constexpr NvmeNamespaceStatus_OperState NvmeNamespaceStatus_OperState_OperState_MAX = NvmeNamespaceStatus_OperState_OPER_STATE_OFFLINE;
+constexpr int NvmeNamespaceStatus_OperState_OperState_ARRAYSIZE = NvmeNamespaceStatus_OperState_OperState_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeNamespacePciOperState_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeNamespaceStatus_OperState_descriptor();
 template<typename T>
-inline const std::string& NvmeNamespacePciOperState_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, NvmeNamespacePciOperState>::value ||
+inline const std::string& NvmeNamespaceStatus_OperState_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, NvmeNamespaceStatus_OperState>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function NvmeNamespacePciOperState_Name.");
+    "Incorrect type passed to function NvmeNamespaceStatus_OperState_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    NvmeNamespacePciOperState_descriptor(), enum_t_value);
+    NvmeNamespaceStatus_OperState_descriptor(), enum_t_value);
 }
-inline bool NvmeNamespacePciOperState_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmeNamespacePciOperState* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmeNamespacePciOperState>(
-    NvmeNamespacePciOperState_descriptor(), name, value);
+inline bool NvmeNamespaceStatus_OperState_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmeNamespaceStatus_OperState* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmeNamespaceStatus_OperState>(
+    NvmeNamespaceStatus_OperState_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -2023,28 +2023,94 @@ class NvmeNamespaceStatus final :
 
   // nested types ----------------------------------------------------
 
+  typedef NvmeNamespaceStatus_State State;
+  static constexpr State STATE_UNSPECIFIED =
+    NvmeNamespaceStatus_State_STATE_UNSPECIFIED;
+  static constexpr State STATE_DISABLED =
+    NvmeNamespaceStatus_State_STATE_DISABLED;
+  static constexpr State STATE_ENABLED =
+    NvmeNamespaceStatus_State_STATE_ENABLED;
+  static constexpr State STATE_DELETING =
+    NvmeNamespaceStatus_State_STATE_DELETING;
+  static inline bool State_IsValid(int value) {
+    return NvmeNamespaceStatus_State_IsValid(value);
+  }
+  static constexpr State State_MIN =
+    NvmeNamespaceStatus_State_State_MIN;
+  static constexpr State State_MAX =
+    NvmeNamespaceStatus_State_State_MAX;
+  static constexpr int State_ARRAYSIZE =
+    NvmeNamespaceStatus_State_State_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  State_descriptor() {
+    return NvmeNamespaceStatus_State_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& State_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, State>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function State_Name.");
+    return NvmeNamespaceStatus_State_Name(enum_t_value);
+  }
+  static inline bool State_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      State* value) {
+    return NvmeNamespaceStatus_State_Parse(name, value);
+  }
+
+  typedef NvmeNamespaceStatus_OperState OperState;
+  static constexpr OperState OPER_STATE_UNSPECIFIED =
+    NvmeNamespaceStatus_OperState_OPER_STATE_UNSPECIFIED;
+  static constexpr OperState OPER_STATE_ONLINE =
+    NvmeNamespaceStatus_OperState_OPER_STATE_ONLINE;
+  static constexpr OperState OPER_STATE_OFFLINE =
+    NvmeNamespaceStatus_OperState_OPER_STATE_OFFLINE;
+  static inline bool OperState_IsValid(int value) {
+    return NvmeNamespaceStatus_OperState_IsValid(value);
+  }
+  static constexpr OperState OperState_MIN =
+    NvmeNamespaceStatus_OperState_OperState_MIN;
+  static constexpr OperState OperState_MAX =
+    NvmeNamespaceStatus_OperState_OperState_MAX;
+  static constexpr int OperState_ARRAYSIZE =
+    NvmeNamespaceStatus_OperState_OperState_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  OperState_descriptor() {
+    return NvmeNamespaceStatus_OperState_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& OperState_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, OperState>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function OperState_Name.");
+    return NvmeNamespaceStatus_OperState_Name(enum_t_value);
+  }
+  static inline bool OperState_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      OperState* value) {
+    return NvmeNamespaceStatus_OperState_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPciStateFieldNumber = 1,
-    kPciOperStateFieldNumber = 2,
+    kStateFieldNumber = 1,
+    kOperStateFieldNumber = 2,
   };
-  // .opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-  void clear_pci_state();
-  ::opi_api::storage::v1::NvmeNamespacePciState pci_state() const;
-  void set_pci_state(::opi_api::storage::v1::NvmeNamespacePciState value);
+  // .opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+  void clear_state();
+  ::opi_api::storage::v1::NvmeNamespaceStatus_State state() const;
+  void set_state(::opi_api::storage::v1::NvmeNamespaceStatus_State value);
   private:
-  ::opi_api::storage::v1::NvmeNamespacePciState _internal_pci_state() const;
-  void _internal_set_pci_state(::opi_api::storage::v1::NvmeNamespacePciState value);
+  ::opi_api::storage::v1::NvmeNamespaceStatus_State _internal_state() const;
+  void _internal_set_state(::opi_api::storage::v1::NvmeNamespaceStatus_State value);
   public:
 
-  // .opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-  void clear_pci_oper_state();
-  ::opi_api::storage::v1::NvmeNamespacePciOperState pci_oper_state() const;
-  void set_pci_oper_state(::opi_api::storage::v1::NvmeNamespacePciOperState value);
+  // .opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+  void clear_oper_state();
+  ::opi_api::storage::v1::NvmeNamespaceStatus_OperState oper_state() const;
+  void set_oper_state(::opi_api::storage::v1::NvmeNamespaceStatus_OperState value);
   private:
-  ::opi_api::storage::v1::NvmeNamespacePciOperState _internal_pci_oper_state() const;
-  void _internal_set_pci_oper_state(::opi_api::storage::v1::NvmeNamespacePciOperState value);
+  ::opi_api::storage::v1::NvmeNamespaceStatus_OperState _internal_oper_state() const;
+  void _internal_set_oper_state(::opi_api::storage::v1::NvmeNamespaceStatus_OperState value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeNamespaceStatus)
@@ -2055,8 +2121,8 @@ class NvmeNamespaceStatus final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    int pci_state_;
-    int pci_oper_state_;
+    int state_;
+    int oper_state_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -7908,44 +7974,44 @@ inline void NvmeNamespaceSpec::set_allocated_volume_name_ref(std::string* volume
 
 // NvmeNamespaceStatus
 
-// .opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-inline void NvmeNamespaceStatus::clear_pci_state() {
-  _impl_.pci_state_ = 0;
+// .opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+inline void NvmeNamespaceStatus::clear_state() {
+  _impl_.state_ = 0;
 }
-inline ::opi_api::storage::v1::NvmeNamespacePciState NvmeNamespaceStatus::_internal_pci_state() const {
-  return static_cast< ::opi_api::storage::v1::NvmeNamespacePciState >(_impl_.pci_state_);
+inline ::opi_api::storage::v1::NvmeNamespaceStatus_State NvmeNamespaceStatus::_internal_state() const {
+  return static_cast< ::opi_api::storage::v1::NvmeNamespaceStatus_State >(_impl_.state_);
 }
-inline ::opi_api::storage::v1::NvmeNamespacePciState NvmeNamespaceStatus::pci_state() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeNamespaceStatus.pci_state)
-  return _internal_pci_state();
+inline ::opi_api::storage::v1::NvmeNamespaceStatus_State NvmeNamespaceStatus::state() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeNamespaceStatus.state)
+  return _internal_state();
 }
-inline void NvmeNamespaceStatus::_internal_set_pci_state(::opi_api::storage::v1::NvmeNamespacePciState value) {
+inline void NvmeNamespaceStatus::_internal_set_state(::opi_api::storage::v1::NvmeNamespaceStatus_State value) {
   
-  _impl_.pci_state_ = value;
+  _impl_.state_ = value;
 }
-inline void NvmeNamespaceStatus::set_pci_state(::opi_api::storage::v1::NvmeNamespacePciState value) {
-  _internal_set_pci_state(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeNamespaceStatus.pci_state)
+inline void NvmeNamespaceStatus::set_state(::opi_api::storage::v1::NvmeNamespaceStatus_State value) {
+  _internal_set_state(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeNamespaceStatus.state)
 }
 
-// .opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-inline void NvmeNamespaceStatus::clear_pci_oper_state() {
-  _impl_.pci_oper_state_ = 0;
+// .opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+inline void NvmeNamespaceStatus::clear_oper_state() {
+  _impl_.oper_state_ = 0;
 }
-inline ::opi_api::storage::v1::NvmeNamespacePciOperState NvmeNamespaceStatus::_internal_pci_oper_state() const {
-  return static_cast< ::opi_api::storage::v1::NvmeNamespacePciOperState >(_impl_.pci_oper_state_);
+inline ::opi_api::storage::v1::NvmeNamespaceStatus_OperState NvmeNamespaceStatus::_internal_oper_state() const {
+  return static_cast< ::opi_api::storage::v1::NvmeNamespaceStatus_OperState >(_impl_.oper_state_);
 }
-inline ::opi_api::storage::v1::NvmeNamespacePciOperState NvmeNamespaceStatus::pci_oper_state() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeNamespaceStatus.pci_oper_state)
-  return _internal_pci_oper_state();
+inline ::opi_api::storage::v1::NvmeNamespaceStatus_OperState NvmeNamespaceStatus::oper_state() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeNamespaceStatus.oper_state)
+  return _internal_oper_state();
 }
-inline void NvmeNamespaceStatus::_internal_set_pci_oper_state(::opi_api::storage::v1::NvmeNamespacePciOperState value) {
+inline void NvmeNamespaceStatus::_internal_set_oper_state(::opi_api::storage::v1::NvmeNamespaceStatus_OperState value) {
   
-  _impl_.pci_oper_state_ = value;
+  _impl_.oper_state_ = value;
 }
-inline void NvmeNamespaceStatus::set_pci_oper_state(::opi_api::storage::v1::NvmeNamespacePciOperState value) {
-  _internal_set_pci_oper_state(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeNamespaceStatus.pci_oper_state)
+inline void NvmeNamespaceStatus::set_oper_state(::opi_api::storage::v1::NvmeNamespaceStatus_OperState value) {
+  _internal_set_oper_state(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeNamespaceStatus.oper_state)
 }
 
 // -------------------------------------------------------------------
@@ -10570,15 +10636,15 @@ inline void StatsNvmeNamespaceResponse::set_allocated_stats(::opi_api::storage::
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeNamespacePciState> : ::std::true_type {};
+template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeNamespaceStatus_State> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeNamespacePciState>() {
-  return ::opi_api::storage::v1::NvmeNamespacePciState_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeNamespaceStatus_State>() {
+  return ::opi_api::storage::v1::NvmeNamespaceStatus_State_descriptor();
 }
-template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeNamespacePciOperState> : ::std::true_type {};
+template <> struct is_proto_enum< ::opi_api::storage::v1::NvmeNamespaceStatus_OperState> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeNamespacePciOperState>() {
-  return ::opi_api::storage::v1::NvmeNamespacePciOperState_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmeNamespaceStatus_OperState>() {
+  return ::opi_api::storage::v1::NvmeNamespaceStatus_OperState_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

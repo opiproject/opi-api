@@ -9,7 +9,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
 
   /**
    * <pre>
-   * NSID present to the host by the Nvme PCIe controller.
+   * NSID presented by the Nvme controller.
    * If not provided, then the controller will assign an unused NSID
    * within the max namespace range - auto assigned nsid may not work
    * for live migration

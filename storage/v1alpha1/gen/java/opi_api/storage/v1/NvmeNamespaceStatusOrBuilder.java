@@ -9,39 +9,39 @@ public interface NvmeNamespaceStatusOrBuilder extends
 
   /**
    * <pre>
-   * config state of the namespace object, (enabled, disable, deleting)
+   * State of the namespace object, (enabled, disable, deleting)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The enum numeric value on the wire for pciState.
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for state.
    */
-  int getPciStateValue();
+  int getStateValue();
   /**
    * <pre>
-   * config state of the namespace object, (enabled, disable, deleting)
+   * State of the namespace object, (enabled, disable, deleting)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The pciState.
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The state.
    */
-  opi_api.storage.v1.NvmeNamespacePciState getPciState();
+  opi_api.storage.v1.NvmeNamespaceStatus.State getState();
 
   /**
    * <pre>
    * Operational state of the namespace object, (connected, disconnected)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The enum numeric value on the wire for pciOperState.
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for operState.
    */
-  int getPciOperStateValue();
+  int getOperStateValue();
   /**
    * <pre>
    * Operational state of the namespace object, (connected, disconnected)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The pciOperState.
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The operState.
    */
-  opi_api.storage.v1.NvmeNamespacePciOperState getPciOperState();
+  opi_api.storage.v1.NvmeNamespaceStatus.OperState getOperState();
 }

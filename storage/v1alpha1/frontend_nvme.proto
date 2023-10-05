@@ -345,7 +345,7 @@ message NvmeNamespaceSpec {
 
 // Represents Nvme Namespace status
 message NvmeNamespaceStatus {
-    // Namespace  Administrative States
+    // Namespace Administrative States
     enum State {
         // unspecified
         STATE_UNSPECIFIED = 0;
@@ -356,7 +356,7 @@ message NvmeNamespaceStatus {
         // namespace being deleted
         STATE_DELETING    = 3;
     }
-    // config state of the namespace object, (enabled, disable, deleting)
+    // State of the namespace object, (enabled, disable, deleting)
     State state = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Namespace operational states

@@ -20,8 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeNamespaceStatus() {
-    pciState_ = 0;
-    pciOperState_ = 0;
+    state_ = 0;
+    operState_ = 0;
   }
 
   @java.lang.Override
@@ -57,13 +57,13 @@ private static final long serialVersionUID = 0L;
           case 8: {
             int rawValue = input.readEnum();
 
-            pciState_ = rawValue;
+            state_ = rawValue;
             break;
           }
           case 16: {
             int rawValue = input.readEnum();
 
-            pciOperState_ = rawValue;
+            operState_ = rawValue;
             break;
           }
           default: {
@@ -100,58 +100,365 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NvmeNamespaceStatus.class, opi_api.storage.v1.NvmeNamespaceStatus.Builder.class);
   }
 
-  public static final int PCI_STATE_FIELD_NUMBER = 1;
-  private int pciState_;
   /**
    * <pre>
-   * config state of the namespace object, (enabled, disable, deleting)
+   * Namespace Administrative States
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The enum numeric value on the wire for pciState.
+   * Protobuf enum {@code opi_api.storage.v1.NvmeNamespaceStatus.State}
    */
-  @java.lang.Override public int getPciStateValue() {
-    return pciState_;
-  }
-  /**
-   * <pre>
-   * config state of the namespace object, (enabled, disable, deleting)
-   * </pre>
-   *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The pciState.
-   */
-  @java.lang.Override public opi_api.storage.v1.NvmeNamespacePciState getPciState() {
-    @SuppressWarnings("deprecation")
-    opi_api.storage.v1.NvmeNamespacePciState result = opi_api.storage.v1.NvmeNamespacePciState.valueOf(pciState_);
-    return result == null ? opi_api.storage.v1.NvmeNamespacePciState.UNRECOGNIZED : result;
+  public enum State
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * unspecified
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * namespace disabled state
+     * </pre>
+     *
+     * <code>STATE_DISABLED = 1;</code>
+     */
+    STATE_DISABLED(1),
+    /**
+     * <pre>
+     * namespace enabled state
+     * </pre>
+     *
+     * <code>STATE_ENABLED = 2;</code>
+     */
+    STATE_ENABLED(2),
+    /**
+     * <pre>
+     * namespace being deleted
+     * </pre>
+     *
+     * <code>STATE_DELETING = 3;</code>
+     */
+    STATE_DELETING(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * unspecified
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * namespace disabled state
+     * </pre>
+     *
+     * <code>STATE_DISABLED = 1;</code>
+     */
+    public static final int STATE_DISABLED_VALUE = 1;
+    /**
+     * <pre>
+     * namespace enabled state
+     * </pre>
+     *
+     * <code>STATE_ENABLED = 2;</code>
+     */
+    public static final int STATE_ENABLED_VALUE = 2;
+    /**
+     * <pre>
+     * namespace being deleted
+     * </pre>
+     *
+     * <code>STATE_DELETING = 3;</code>
+     */
+    public static final int STATE_DELETING_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0: return STATE_UNSPECIFIED;
+        case 1: return STATE_DISABLED;
+        case 2: return STATE_ENABLED;
+        case 3: return STATE_DELETING;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return opi_api.storage.v1.NvmeNamespaceStatus.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:opi_api.storage.v1.NvmeNamespaceStatus.State)
   }
 
-  public static final int PCI_OPER_STATE_FIELD_NUMBER = 2;
-  private int pciOperState_;
+  /**
+   * <pre>
+   * Namespace operational states
+   * </pre>
+   *
+   * Protobuf enum {@code opi_api.storage.v1.NvmeNamespaceStatus.OperState}
+   */
+  public enum OperState
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * unspecified
+     * </pre>
+     *
+     * <code>OPER_STATE_UNSPECIFIED = 0;</code>
+     */
+    OPER_STATE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * namespace is online and operational
+     * </pre>
+     *
+     * <code>OPER_STATE_ONLINE = 1;</code>
+     */
+    OPER_STATE_ONLINE(1),
+    /**
+     * <pre>
+     * namespace is offline
+     * </pre>
+     *
+     * <code>OPER_STATE_OFFLINE = 2;</code>
+     */
+    OPER_STATE_OFFLINE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * unspecified
+     * </pre>
+     *
+     * <code>OPER_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int OPER_STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * namespace is online and operational
+     * </pre>
+     *
+     * <code>OPER_STATE_ONLINE = 1;</code>
+     */
+    public static final int OPER_STATE_ONLINE_VALUE = 1;
+    /**
+     * <pre>
+     * namespace is offline
+     * </pre>
+     *
+     * <code>OPER_STATE_OFFLINE = 2;</code>
+     */
+    public static final int OPER_STATE_OFFLINE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OperState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OperState forNumber(int value) {
+      switch (value) {
+        case 0: return OPER_STATE_UNSPECIFIED;
+        case 1: return OPER_STATE_ONLINE;
+        case 2: return OPER_STATE_OFFLINE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OperState>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        OperState> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OperState>() {
+            public OperState findValueByNumber(int number) {
+              return OperState.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return opi_api.storage.v1.NvmeNamespaceStatus.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final OperState[] VALUES = values();
+
+    public static OperState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OperState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:opi_api.storage.v1.NvmeNamespaceStatus.OperState)
+  }
+
+  public static final int STATE_FIELD_NUMBER = 1;
+  private int state_;
+  /**
+   * <pre>
+   * State of the namespace object, (enabled, disable, deleting)
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override public int getStateValue() {
+    return state_;
+  }
+  /**
+   * <pre>
+   * State of the namespace object, (enabled, disable, deleting)
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The state.
+   */
+  @java.lang.Override public opi_api.storage.v1.NvmeNamespaceStatus.State getState() {
+    @SuppressWarnings("deprecation")
+    opi_api.storage.v1.NvmeNamespaceStatus.State result = opi_api.storage.v1.NvmeNamespaceStatus.State.valueOf(state_);
+    return result == null ? opi_api.storage.v1.NvmeNamespaceStatus.State.UNRECOGNIZED : result;
+  }
+
+  public static final int OPER_STATE_FIELD_NUMBER = 2;
+  private int operState_;
   /**
    * <pre>
    * Operational state of the namespace object, (connected, disconnected)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The enum numeric value on the wire for pciOperState.
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for operState.
    */
-  @java.lang.Override public int getPciOperStateValue() {
-    return pciOperState_;
+  @java.lang.Override public int getOperStateValue() {
+    return operState_;
   }
   /**
    * <pre>
    * Operational state of the namespace object, (connected, disconnected)
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The pciOperState.
+   * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The operState.
    */
-  @java.lang.Override public opi_api.storage.v1.NvmeNamespacePciOperState getPciOperState() {
+  @java.lang.Override public opi_api.storage.v1.NvmeNamespaceStatus.OperState getOperState() {
     @SuppressWarnings("deprecation")
-    opi_api.storage.v1.NvmeNamespacePciOperState result = opi_api.storage.v1.NvmeNamespacePciOperState.valueOf(pciOperState_);
-    return result == null ? opi_api.storage.v1.NvmeNamespacePciOperState.UNRECOGNIZED : result;
+    opi_api.storage.v1.NvmeNamespaceStatus.OperState result = opi_api.storage.v1.NvmeNamespaceStatus.OperState.valueOf(operState_);
+    return result == null ? opi_api.storage.v1.NvmeNamespaceStatus.OperState.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -168,11 +475,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (pciState_ != opi_api.storage.v1.NvmeNamespacePciState.NVME_NAMESPACE_PCI_STATE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(1, pciState_);
+    if (state_ != opi_api.storage.v1.NvmeNamespaceStatus.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(1, state_);
     }
-    if (pciOperState_ != opi_api.storage.v1.NvmeNamespacePciOperState.NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, pciOperState_);
+    if (operState_ != opi_api.storage.v1.NvmeNamespaceStatus.OperState.OPER_STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, operState_);
     }
     unknownFields.writeTo(output);
   }
@@ -183,13 +490,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (pciState_ != opi_api.storage.v1.NvmeNamespacePciState.NVME_NAMESPACE_PCI_STATE_UNSPECIFIED.getNumber()) {
+    if (state_ != opi_api.storage.v1.NvmeNamespaceStatus.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, pciState_);
+        .computeEnumSize(1, state_);
     }
-    if (pciOperState_ != opi_api.storage.v1.NvmeNamespacePciOperState.NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED.getNumber()) {
+    if (operState_ != opi_api.storage.v1.NvmeNamespaceStatus.OperState.OPER_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, pciOperState_);
+        .computeEnumSize(2, operState_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -206,8 +513,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NvmeNamespaceStatus other = (opi_api.storage.v1.NvmeNamespaceStatus) obj;
 
-    if (pciState_ != other.pciState_) return false;
-    if (pciOperState_ != other.pciOperState_) return false;
+    if (state_ != other.state_) return false;
+    if (operState_ != other.operState_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -219,10 +526,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PCI_STATE_FIELD_NUMBER;
-    hash = (53 * hash) + pciState_;
-    hash = (37 * hash) + PCI_OPER_STATE_FIELD_NUMBER;
-    hash = (53 * hash) + pciOperState_;
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
+    hash = (37 * hash) + OPER_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + operState_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -360,9 +667,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      pciState_ = 0;
+      state_ = 0;
 
-      pciOperState_ = 0;
+      operState_ = 0;
 
       return this;
     }
@@ -390,8 +697,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NvmeNamespaceStatus buildPartial() {
       opi_api.storage.v1.NvmeNamespaceStatus result = new opi_api.storage.v1.NvmeNamespaceStatus(this);
-      result.pciState_ = pciState_;
-      result.pciOperState_ = pciOperState_;
+      result.state_ = state_;
+      result.operState_ = operState_;
       onBuilt();
       return result;
     }
@@ -440,11 +747,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NvmeNamespaceStatus other) {
       if (other == opi_api.storage.v1.NvmeNamespaceStatus.getDefaultInstance()) return this;
-      if (other.pciState_ != 0) {
-        setPciStateValue(other.getPciStateValue());
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
       }
-      if (other.pciOperState_ != 0) {
-        setPciOperStateValue(other.getPciOperStateValue());
+      if (other.operState_ != 0) {
+        setOperStateValue(other.getOperStateValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -475,104 +782,104 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int pciState_ = 0;
+    private int state_ = 0;
     /**
      * <pre>
-     * config state of the namespace object, (enabled, disable, deleting)
+     * State of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The enum numeric value on the wire for pciState.
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for state.
      */
-    @java.lang.Override public int getPciStateValue() {
-      return pciState_;
+    @java.lang.Override public int getStateValue() {
+      return state_;
     }
     /**
      * <pre>
-     * config state of the namespace object, (enabled, disable, deleting)
+     * State of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param value The enum numeric value on the wire for pciState to set.
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
-    public Builder setPciStateValue(int value) {
+    public Builder setStateValue(int value) {
       
-      pciState_ = value;
+      state_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * config state of the namespace object, (enabled, disable, deleting)
+     * State of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The pciState.
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The state.
      */
     @java.lang.Override
-    public opi_api.storage.v1.NvmeNamespacePciState getPciState() {
+    public opi_api.storage.v1.NvmeNamespaceStatus.State getState() {
       @SuppressWarnings("deprecation")
-      opi_api.storage.v1.NvmeNamespacePciState result = opi_api.storage.v1.NvmeNamespacePciState.valueOf(pciState_);
-      return result == null ? opi_api.storage.v1.NvmeNamespacePciState.UNRECOGNIZED : result;
+      opi_api.storage.v1.NvmeNamespaceStatus.State result = opi_api.storage.v1.NvmeNamespaceStatus.State.valueOf(state_);
+      return result == null ? opi_api.storage.v1.NvmeNamespaceStatus.State.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     * config state of the namespace object, (enabled, disable, deleting)
+     * State of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param value The pciState to set.
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setPciState(opi_api.storage.v1.NvmeNamespacePciState value) {
+    public Builder setState(opi_api.storage.v1.NvmeNamespaceStatus.State value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      pciState_ = value.getNumber();
+      state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * config state of the namespace object, (enabled, disable, deleting)
+     * State of the namespace object, (enabled, disable, deleting)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciState pci_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
-    public Builder clearPciState() {
+    public Builder clearState() {
       
-      pciState_ = 0;
+      state_ = 0;
       onChanged();
       return this;
     }
 
-    private int pciOperState_ = 0;
+    private int operState_ = 0;
     /**
      * <pre>
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The enum numeric value on the wire for pciOperState.
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for operState.
      */
-    @java.lang.Override public int getPciOperStateValue() {
-      return pciOperState_;
+    @java.lang.Override public int getOperStateValue() {
+      return operState_;
     }
     /**
      * <pre>
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param value The enum numeric value on the wire for pciOperState to set.
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The enum numeric value on the wire for operState to set.
      * @return This builder for chaining.
      */
-    public Builder setPciOperStateValue(int value) {
+    public Builder setOperStateValue(int value) {
       
-      pciOperState_ = value;
+      operState_ = value;
       onChanged();
       return this;
     }
@@ -581,30 +888,30 @@ private static final long serialVersionUID = 0L;
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The pciOperState.
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The operState.
      */
     @java.lang.Override
-    public opi_api.storage.v1.NvmeNamespacePciOperState getPciOperState() {
+    public opi_api.storage.v1.NvmeNamespaceStatus.OperState getOperState() {
       @SuppressWarnings("deprecation")
-      opi_api.storage.v1.NvmeNamespacePciOperState result = opi_api.storage.v1.NvmeNamespacePciOperState.valueOf(pciOperState_);
-      return result == null ? opi_api.storage.v1.NvmeNamespacePciOperState.UNRECOGNIZED : result;
+      opi_api.storage.v1.NvmeNamespaceStatus.OperState result = opi_api.storage.v1.NvmeNamespaceStatus.OperState.valueOf(operState_);
+      return result == null ? opi_api.storage.v1.NvmeNamespaceStatus.OperState.UNRECOGNIZED : result;
     }
     /**
      * <pre>
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param value The pciOperState to set.
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The operState to set.
      * @return This builder for chaining.
      */
-    public Builder setPciOperState(opi_api.storage.v1.NvmeNamespacePciOperState value) {
+    public Builder setOperState(opi_api.storage.v1.NvmeNamespaceStatus.OperState value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      pciOperState_ = value.getNumber();
+      operState_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -613,12 +920,12 @@ private static final long serialVersionUID = 0L;
      * Operational state of the namespace object, (connected, disconnected)
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeNamespacePciOperState pci_oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.opi_api.storage.v1.NvmeNamespaceStatus.OperState oper_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
-    public Builder clearPciOperState() {
+    public Builder clearOperState() {
       
-      pciOperState_ = 0;
+      operState_ = 0;
       onChanged();
       return this;
     }

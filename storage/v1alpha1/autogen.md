@@ -96,8 +96,8 @@
     - [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest)
     - [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest)
   
-    - [NvmeNamespacePciOperState](#opi_api-storage-v1-NvmeNamespacePciOperState)
-    - [NvmeNamespacePciState](#opi_api-storage-v1-NvmeNamespacePciState)
+    - [NvmeNamespaceStatus.OperState](#opi_api-storage-v1-NvmeNamespaceStatus-OperState)
+    - [NvmeNamespaceStatus.State](#opi_api-storage-v1-NvmeNamespaceStatus-State)
   
     - [FrontendNvmeService](#opi_api-storage-v1-FrontendNvmeService)
   
@@ -1369,7 +1369,7 @@ Represents Nvme Namespace configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| host_nsid | [int32](#int32) |  | NSID present to the host by the Nvme PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
+| host_nsid | [int32](#int32) |  | NSID presented by the Nvme controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
@@ -1388,8 +1388,8 @@ Represents Nvme Namespace status
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| pci_state | [NvmeNamespacePciState](#opi_api-storage-v1-NvmeNamespacePciState) |  | config state of the namespace object, (enabled, disable, deleting) |
-| pci_oper_state | [NvmeNamespacePciOperState](#opi_api-storage-v1-NvmeNamespacePciOperState) |  | Operational state of the namespace object, (connected, disconnected) |
+| state | [NvmeNamespaceStatus.State](#opi_api-storage-v1-NvmeNamespaceStatus-State) |  | State of the namespace object, (enabled, disable, deleting) |
+| oper_state | [NvmeNamespaceStatus.OperState](#opi_api-storage-v1-NvmeNamespaceStatus-OperState) |  | Operational state of the namespace object, (connected, disconnected) |
 
 
 
@@ -1592,30 +1592,30 @@ Represents a request to update an Nvme Subsystem.
  
 
 
-<a name="opi_api-storage-v1-NvmeNamespacePciOperState"></a>
+<a name="opi_api-storage-v1-NvmeNamespaceStatus-OperState"></a>
 
-### NvmeNamespacePciOperState
-Namespace PCIe operational states
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED | 0 | unspecified |
-| NVME_NAMESPACE_PCI_OPER_STATE_ONLINE | 1 | namespace is online and operational |
-| NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE | 2 | namespace is offline |
-
-
-
-<a name="opi_api-storage-v1-NvmeNamespacePciState"></a>
-
-### NvmeNamespacePciState
-Namespace  Administrative States
+### NvmeNamespaceStatus.OperState
+Namespace operational states
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NVME_NAMESPACE_PCI_STATE_UNSPECIFIED | 0 | unspecified |
-| NVME_NAMESPACE_PCI_STATE_DISABLED | 1 | namespace disabled state |
-| NVME_NAMESPACE_PCI_STATE_ENABLED | 2 | namespace enabled state |
-| NVME_NAMESPACE_PCI_STATE_DELETING | 3 | namespace being deleted |
+| OPER_STATE_UNSPECIFIED | 0 | unspecified |
+| OPER_STATE_ONLINE | 1 | namespace is online and operational |
+| OPER_STATE_OFFLINE | 2 | namespace is offline |
+
+
+
+<a name="opi_api-storage-v1-NvmeNamespaceStatus-State"></a>
+
+### NvmeNamespaceStatus.State
+Namespace Administrative States
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| STATE_UNSPECIFIED | 0 | unspecified |
+| STATE_DISABLED | 1 | namespace disabled state |
+| STATE_ENABLED | 2 | namespace enabled state |
+| STATE_DELETING | 3 | namespace being deleted |
 
 
  
