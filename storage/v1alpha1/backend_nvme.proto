@@ -210,8 +210,8 @@ message NvmePath {
     // One of the values is required
     // see https://github.com/aip-dev/google.aip.dev/issues/1147 for field_behavior annotations
     oneof path {
-        // Required for pcie transport type. Shall contain BDF
-        string pcie = 4 [(google.api.field_behavior) = OPTIONAL];
+        // Required for pcie transport type.
+        PciEndpoint pcie = 4 [(google.api.field_behavior) = OPTIONAL];
 
         // Required for Nvme over fabrics transport types
         FabricsPath fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
