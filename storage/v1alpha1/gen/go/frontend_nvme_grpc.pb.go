@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.6
-// source: frontend_nvme_pcie.proto
+// source: frontend_nvme.proto
 
 package _go
 
@@ -752,5 +752,5 @@ var FrontendNvmeService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "frontend_nvme_pcie.proto",
+	Metadata: "frontend_nvme.proto",
 }

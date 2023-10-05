@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.6
-// source: backend_nvme_tcp.proto
+// source: backend_nvme.proto
 
 package _go
 
@@ -634,5 +634,5 @@ var NvmeRemoteControllerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "backend_nvme_tcp.proto",
+	Metadata: "backend_nvme.proto",
 }

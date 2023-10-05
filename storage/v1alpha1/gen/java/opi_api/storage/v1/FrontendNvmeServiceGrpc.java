@@ -4,12 +4,14 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host presentation.
+ * Front End APIs. Used for creation of xPU managed Nvme devices
+ * e.g. emulated host-facing Nvme/Pcie controllers as well as
+ * Nvme-oF controllers
  * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
-    comments = "Source: frontend_nvme_pcie.proto")
+    comments = "Source: frontend_nvme.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FrontendNvmeServiceGrpc {
 
@@ -622,7 +624,9 @@ public final class FrontendNvmeServiceGrpc {
 
   /**
    * <pre>
-   * Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host presentation.
+   * Front End APIs. Used for creation of xPU managed Nvme devices
+   * e.g. emulated host-facing Nvme/Pcie controllers as well as
+   * Nvme-oF controllers
    * </pre>
    */
   public static abstract class FrontendNvmeServiceImplBase implements io.grpc.BindableService {
@@ -943,7 +947,9 @@ public final class FrontendNvmeServiceGrpc {
 
   /**
    * <pre>
-   * Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host presentation.
+   * Front End APIs. Used for creation of xPU managed Nvme devices
+   * e.g. emulated host-facing Nvme/Pcie controllers as well as
+   * Nvme-oF controllers
    * </pre>
    */
   public static final class FrontendNvmeServiceStub extends io.grpc.stub.AbstractAsyncStub<FrontendNvmeServiceStub> {
@@ -1161,7 +1167,9 @@ public final class FrontendNvmeServiceGrpc {
 
   /**
    * <pre>
-   * Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host presentation.
+   * Front End APIs. Used for creation of xPU managed Nvme devices
+   * e.g. emulated host-facing Nvme/Pcie controllers as well as
+   * Nvme-oF controllers
    * </pre>
    */
   public static final class FrontendNvmeServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<FrontendNvmeServiceBlockingStub> {
@@ -1361,7 +1369,9 @@ public final class FrontendNvmeServiceGrpc {
 
   /**
    * <pre>
-   * Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host presentation.
+   * Front End APIs. Used for creation of xPU managed Nvme devices
+   * e.g. emulated host-facing Nvme/Pcie controllers as well as
+   * Nvme-oF controllers
    * </pre>
    */
   public static final class FrontendNvmeServiceFutureStub extends io.grpc.stub.AbstractFutureStub<FrontendNvmeServiceFutureStub> {
@@ -1707,7 +1717,7 @@ public final class FrontendNvmeServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return opi_api.storage.v1.FrontendNvmePcieProto.getDescriptor();
+      return opi_api.storage.v1.FrontendNvmeProto.getDescriptor();
     }
 
     @java.lang.Override

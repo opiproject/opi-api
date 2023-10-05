@@ -4,12 +4,13 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+ * Back End APIs. Reponsible for connection to external Nvme devices
+ * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
  * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
-    comments = "Source: backend_nvme_tcp.proto")
+    comments = "Source: backend_nvme.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NvmeRemoteControllerServiceGrpc {
 
@@ -529,7 +530,8 @@ public final class NvmeRemoteControllerServiceGrpc {
 
   /**
    * <pre>
-   * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+   * Back End APIs. Reponsible for connection to external Nvme devices
+   * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
    * </pre>
    */
   public static abstract class NvmeRemoteControllerServiceImplBase implements io.grpc.BindableService {
@@ -797,7 +799,8 @@ public final class NvmeRemoteControllerServiceGrpc {
 
   /**
    * <pre>
-   * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+   * Back End APIs. Reponsible for connection to external Nvme devices
+   * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
    * </pre>
    */
   public static final class NvmeRemoteControllerServiceStub extends io.grpc.stub.AbstractAsyncStub<NvmeRemoteControllerServiceStub> {
@@ -980,7 +983,8 @@ public final class NvmeRemoteControllerServiceGrpc {
 
   /**
    * <pre>
-   * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+   * Back End APIs. Reponsible for connection to external Nvme devices
+   * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
    * </pre>
    */
   public static final class NvmeRemoteControllerServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<NvmeRemoteControllerServiceBlockingStub> {
@@ -1148,7 +1152,8 @@ public final class NvmeRemoteControllerServiceGrpc {
 
   /**
    * <pre>
-   * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+   * Back End APIs. Reponsible for connection to external Nvme devices
+   * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
    * </pre>
    */
   public static final class NvmeRemoteControllerServiceFutureStub extends io.grpc.stub.AbstractFutureStub<NvmeRemoteControllerServiceFutureStub> {
@@ -1444,7 +1449,7 @@ public final class NvmeRemoteControllerServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return opi_api.storage.v1.BackendNvmeTcpProto.getDescriptor();
+      return opi_api.storage.v1.BackendNvmeProto.getDescriptor();
     }
 
     @java.lang.Override

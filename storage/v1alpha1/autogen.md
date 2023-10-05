@@ -30,8 +30,7 @@
   
     - [NullVolumeService](#opi_api-storage-v1-NullVolumeService)
   
-- [backend_nvme_pcie.proto](#backend_nvme_pcie-proto)
-- [backend_nvme_tcp.proto](#backend_nvme_tcp-proto)
+- [backend_nvme.proto](#backend_nvme-proto)
     - [CreateNvmePathRequest](#opi_api-storage-v1-CreateNvmePathRequest)
     - [CreateNvmeRemoteControllerRequest](#opi_api-storage-v1-CreateNvmeRemoteControllerRequest)
     - [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest)
@@ -62,7 +61,7 @@
   
     - [NvmeRemoteControllerService](#opi_api-storage-v1-NvmeRemoteControllerService)
   
-- [frontend_nvme_pcie.proto](#frontend_nvme_pcie-proto)
+- [frontend_nvme.proto](#frontend_nvme-proto)
     - [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest)
     - [CreateNvmeNamespaceRequest](#opi_api-storage-v1-CreateNvmeNamespaceRequest)
     - [CreateNvmeSubsystemRequest](#opi_api-storage-v1-CreateNvmeSubsystemRequest)
@@ -573,26 +572,10 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="backend_nvme_pcie-proto"></a>
+<a name="backend_nvme-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## backend_nvme_pcie.proto
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="backend_nvme_tcp-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## backend_nvme_tcp.proto
+## backend_nvme.proto
 
 
 
@@ -1031,7 +1014,8 @@ Multipath mode value options
 <a name="opi_api-storage-v1-NvmeRemoteControllerService"></a>
 
 ### NvmeRemoteControllerService
-Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+Back End APIs. Reponsible for connection to external Nvme devices
+e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
@@ -1055,10 +1039,10 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="frontend_nvme_pcie-proto"></a>
+<a name="frontend_nvme-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## frontend_nvme_pcie.proto
+## frontend_nvme.proto
 
 
 
@@ -1642,7 +1626,9 @@ Namespace  Administrative States
 <a name="opi_api-storage-v1-FrontendNvmeService"></a>
 
 ### FrontendNvmeService
-Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host presentation.
+Front End APIs. Used for creation of xPU managed Nvme devices
+e.g. emulated host-facing Nvme/Pcie controllers as well as
+Nvme-oF controllers
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
