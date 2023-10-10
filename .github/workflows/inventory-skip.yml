@@ -1,0 +1,31 @@
+---
+name: 'OPI Inventory API CI'
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'inventory/v1/**'
+      - 'inventory/Makefile'
+      - '.github/workflows/inventory.yml'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'inventory/v1/**'
+      - 'inventory/Makefile'
+      - '.github/workflows/inventory.yml'
+
+concurrency:
+  # if workflow for PR or push is already running stop it, and start new one
+  group: inventory-api-skip-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-inventory-protobuf:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No inventory API test run required"'
