@@ -1,0 +1,8 @@
+version: v1
+name: buf.build/opiproject/inventory
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/grpc-ecosystem/grpc-gateway
+lint:
+  except:
+    - PACKAGE_DIRECTORY_MATCH
