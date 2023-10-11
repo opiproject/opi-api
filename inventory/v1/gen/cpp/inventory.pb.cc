@@ -337,10 +337,10 @@ const char descriptor_table_protodef_inventory_2eproto[] PROTOBUF_SECTION_VARIAB
   "vc\022\215\001\n\014GetInventory\022).opi_api.inventory."
   "v1.GetInventoryRequest\032\037.opi_api.invento"
   "ry.v1.Inventory\"1\202\323\344\223\002$\022\"/v1/{name=inven"
-  "tory/*/inventory/*}\332A\004nameBX\n\024opi_api.in"
-  "ventory.v1B\016InventoryProtoP\001Z.github.com"
-  "/opiproject/opi-api/common/v1/gen/gob\006pr"
-  "oto3"
+  "tory/*/inventory/*}\332A\004nameB[\n\024opi_api.in"
+  "ventory.v1B\016InventoryProtoP\001Z1github.com"
+  "/opiproject/opi-api/inventory/v1/gen/gob"
+  "\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_inventory_2eproto_deps[4] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -350,7 +350,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_inventory_2eproto_d
 };
 static ::_pbi::once_flag descriptor_table_inventory_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_inventory_2eproto = {
-    false, false, 1564, descriptor_table_protodef_inventory_2eproto,
+    false, false, 1567, descriptor_table_protodef_inventory_2eproto,
     "inventory.proto",
     &descriptor_table_inventory_2eproto_once, descriptor_table_inventory_2eproto_deps, 4, 9,
     schemas, file_default_instances, TableStruct_inventory_2eproto::offsets,

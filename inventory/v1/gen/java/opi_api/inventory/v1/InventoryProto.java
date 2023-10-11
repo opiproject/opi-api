@@ -104,10 +104,10 @@ public final class InventoryProto {
       "vc\022\215\001\n\014GetInventory\022).opi_api.inventory." +
       "v1.GetInventoryRequest\032\037.opi_api.invento" +
       "ry.v1.Inventory\"1\202\323\344\223\002$\022\"/v1/{name=inven" +
-      "tory/*/inventory/*}\332A\004nameBX\n\024opi_api.in" +
-      "ventory.v1B\016InventoryProtoP\001Z.github.com" +
-      "/opiproject/opi-api/common/v1/gen/gob\006pr" +
-      "oto3"
+      "tory/*/inventory/*}\332A\004nameB[\n\024opi_api.in" +
+      "ventory.v1B\016InventoryProtoP\001Z1github.com" +
+      "/opiproject/opi-api/inventory/v1/gen/gob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

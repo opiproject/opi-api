@@ -16,7 +16,7 @@ option java_package = "opi_api.inventory.v1";
 option java_multiple_files = true;
 option java_outer_classname = "InventoryProto";
 
-option go_package = "github.com/opiproject/opi-api/common/v1/gen/go";
+option go_package = "github.com/opiproject/opi-api/inventory/v1/gen/go";
 
 import "google/api/client.proto";
 import "google/api/resource.proto";
