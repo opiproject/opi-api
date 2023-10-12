@@ -122,10 +122,7 @@ message Vrf {
     // "name" will be returned with created object
     // user can only set {resource}_id on the Create request object
     // Format: vrfs/{vrf}
-    string name      = 1 [
-        (google.api.field_behavior) = IDENTIFIER,
-        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
-    ];
+    string name      = 1 [(google.api.field_behavior) = IDENTIFIER];
 
     // Vrf's network configuration
     VrfSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
@@ -247,10 +244,7 @@ message Svi {
     // "name" will be returned with created object
     // user can only set {resource}_id on the Create request object
     // Format: svis/{svi}
-    string name      = 1 [
-        (google.api.field_behavior) = IDENTIFIER,
-        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
-    ];
+    string name      = 1 [(google.api.field_behavior) = IDENTIFIER];
 
     // Svi's network configuration
     SviSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];

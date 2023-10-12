@@ -121,10 +121,7 @@ message LogicalBridge {
     // "name" will be returned with created object
     // user can only set {resource}_id on the Create request object
     // Format: logicalBridges/{logical_bridge}
-    string name                = 1 [
-        (google.api.field_behavior) = IDENTIFIER,
-        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
-    ];
+    string name                = 1 [(google.api.field_behavior) = IDENTIFIER];
 
     // Logical Bridge network configuration
     LogicalBridgeSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
@@ -229,10 +226,7 @@ message BridgePort {
     // "name" will be returned with created object
     // user can only set {resource}_id on the Create request object
     // Format: bridge_ports/{bridge_port}
-    string name             = 1 [
-        (google.api.field_behavior) = IDENTIFIER,
-        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/BridgePort"
-    ];
+    string name             = 1 [(google.api.field_behavior) = IDENTIFIER];
 
     // Bridge Port network configuration
     BridgePortSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
