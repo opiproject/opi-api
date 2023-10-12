@@ -297,7 +297,7 @@ class VirtioScsiTarget final :
     kNameFieldNumber = 1,
     kMaxLunsFieldNumber = 2,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -463,7 +463,7 @@ class VirtioScsiController final :
     kMinLimitFieldNumber = 3,
     kMaxLimitFieldNumber = 4,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -675,7 +675,7 @@ class VirtioScsiLun final :
     kTargetNameRefFieldNumber = 2,
     kVolumeNameRefFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4783,7 +4783,7 @@ class StatsVirtioScsiLunResponse final :
 #endif  // __GNUC__
 // VirtioScsiTarget
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
 inline void VirtioScsiTarget::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -4857,7 +4857,7 @@ inline void VirtioScsiTarget::set_max_luns(int32_t value) {
 
 // VirtioScsiController
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
 inline void VirtioScsiController::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -5166,7 +5166,7 @@ inline void VirtioScsiController::set_allocated_max_limit(::opi_api::storage::v1
 
 // VirtioScsiLun
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
 inline void VirtioScsiLun::clear_name() {
   _impl_.name_.ClearToEmpty();
 }

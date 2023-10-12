@@ -16,7 +16,7 @@ public interface BridgePortOrBuilder extends
    * Format: bridge_ports/{bridge_port}
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -29,7 +29,7 @@ public interface BridgePortOrBuilder extends
    * Format: bridge_ports/{bridge_port}
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

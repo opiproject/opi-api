@@ -635,8 +635,6 @@ List of Interfaces Response
 
 ### NetInterface
 Interface - physical or virtual interface reported
-(-- api-linter: core::0123::resource-annotation=disabled
-    aip.dev/not-precedent: the name field is an opaque object --)
 
 
 | Field | Type | Label | Description |

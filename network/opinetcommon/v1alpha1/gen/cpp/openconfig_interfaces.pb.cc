@@ -484,71 +484,72 @@ const char descriptor_table_protodef_openconfig_5finterfaces_2eproto[] PROTOBUF_
   "\013last_change\030\n \001(\004B\003\340A\003\022\024\n\007logical\030\013 \001(\010"
   "B\003\340A\003\022\027\n\nmanagement\030\014 \001(\010B\003\340A\003\022\020\n\003cpu\030\r "
   "\001(\010B\003\340A\003\0229\n\010counters\030\016 \001(\0132\".opi_api.net"
-  "work.v1alpha1.CountersB\003\340A\003\"\202\010\n\014NetInter"
-  "face\022K\n\004name\030\001 \001(\tB=\340A\003\340A\005\372A4\n2opi_api.n"
-  "etwork.opinetcommon.v1alpha1/NetInterfac"
-  "e\0225\n\006config\030\002 \001(\0132 .opi_api.network.v1al"
-  "pha1.ConfigB\003\340A\002\0223\n\005state\030\003 \001(\0132\037.opi_ap"
-  "i.network.v1alpha1.StateB\003\340A\003\022F\n\010holdtim"
-  "e\030\004 \001(\0132/.opi_api.network.v1alpha1.NetIn"
-  "terface.HoldTimeB\003\340A\001\022P\n\rsubinterfaces\030\005"
-  " \001(\01324.opi_api.network.v1alpha1.NetInter"
-  "face.SubinterfacesB\003\340A\001\032\227\002\n\010HoldTime\022T\n\013"
-  "hold_config\030\001 \001(\0132:.opi_api.network.v1al"
-  "pha1.NetInterface.HoldTime.HoldConfigB\003\340"
-  "A\001\022R\n\nhold_state\030\002 \001(\01329.opi_api.network"
-  ".v1alpha1.NetInterface.HoldTime.HoldStat"
-  "eB\003\340A\003\0320\n\nHoldConfig\022\017\n\002up\030\001 \001(\rB\003\340A\001\022\021\n"
-  "\004down\030\002 \001(\rB\003\340A\001\032/\n\tHoldState\022\017\n\002up\030\001 \001("
-  "\rB\003\340A\003\022\021\n\004down\030\002 \001(\rB\003\340A\003\032\204\003\n\rSubinterfa"
-  "ces\022\\\n\014subinterface\030\002 \003(\0132A.opi_api.netw"
-  "ork.v1alpha1.NetInterface.Subinterfaces."
-  "SubinterfaceB\003\340A\001\032\224\002\n\014Subinterface\022\022\n\005in"
-  "dex\030\001 \001(\003B\003\340A\001\022h\n\014subif_config\030\002 \001(\0132M.o"
-  "pi_api.network.v1alpha1.NetInterface.Sub"
-  "interfaces.Subinterface.SubifConfigB\003\340A\001"
-  "\0223\n\005state\030\003 \001(\0132\037.opi_api.network.v1alph"
-  "a1.StateB\003\340A\003\032Q\n\013SubifConfig\022\022\n\005index\030\001 "
-  "\001(\004B\003\340A\001\022\030\n\013description\030\002 \001(\tB\003\340A\001\022\024\n\007en"
-  "abled\030\003 \001(\010B\003\340A\001\"M\n\026GetNetInterfaceReque"
-  "st\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.networ"
-  "k.v1/Interfaces\"\202\001\n\030ListNetInterfacesReq"
-  "uest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.ne"
-  "twork.v1/Interfaces\022\026\n\tpage_size\030\002 \001(\005B\003"
-  "\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"t\n\031ListNetI"
-  "nterfacesResponse\022>\n\016net_interfaces\030\001 \003("
-  "\0132&.opi_api.network.v1alpha1.NetInterfac"
-  "e\022\027\n\017next_page_token\030\002 \001(\t\"\261\001\n\031UpdateNet"
-  "InterfaceRequest\022B\n\rnet_interface\030\001 \001(\0132"
-  "&.opi_api.network.v1alpha1.NetInterfaceB"
-  "\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.proto"
-  "buf.FieldMaskB\003\340A\001\022\032\n\rallow_missing\030\003 \001("
-  "\010B\003\340A\001*K\n\rInterfaceType\022\036\n\032INTERFACE_TYP"
-  "E_UNSPECIFIED\020\000\022\014\n\010ETHERNET\020\001\022\014\n\010LOOPBAC"
-  "K\020\002*\324\001\n\tOperState\022\032\n\026OPER_STATE_UNSPECIF"
-  "IED\020\000\022\021\n\rOPER_STATE_UP\020\002\022\023\n\017OPER_STATE_D"
-  "OWN\020\003\022\026\n\022OPER_STATE_TESTING\020\004\022\026\n\022OPER_ST"
-  "ATE_UNKNOWN\020\005\022\026\n\022OPER_STATE_DORMANT\020\006\022\032\n"
-  "\026OPER_STATE_NOT_PRESENT\020\007\022\037\n\033OPER_STATE_"
-  "LOWER_LAYER_DOWN\020\0102\272\004\n\023NetInterfaceServi"
-  "ce\022\237\001\n\017GetNetInterface\0220.opi_api.network"
-  ".v1alpha1.GetNetInterfaceRequest\032&.opi_a"
-  "pi.network.v1alpha1.NetInterface\"2\202\323\344\223\002%"
-  "\022#/v1/{name=interfaces/*/interface/*}\332A\004"
-  "name\022\246\001\n\021ListNetInterfaces\0222.opi_api.net"
-  "work.v1alpha1.ListNetInterfacesRequest\0323"
-  ".opi_api.network.v1alpha1.ListNetInterfa"
-  "cesResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=interfa"
-  "ces}\332A\006parent\022\327\001\n\022UpdateNetInterface\0223.o"
-  "pi_api.network.v1alpha1.UpdateNetInterfa"
-  "ceRequest\032&.opi_api.network.v1alpha1.Net"
-  "Interface\"d\202\323\344\223\002B21/v1/{net_interface.na"
-  "me=interfaces/*/interface/*}:\rnet_interf"
-  "ace\332A\031net_interface,update_maskB{\n\030opi_a"
-  "pi.network.v1alpha1B\031OpenconfigInterface"
-  "sProtoP\001ZBgithub.com/opiproject/opi-api/"
-  "network/opinetcommon/v1alpha1/gen/gob\006pr"
-  "oto3"
+  "work.v1alpha1.CountersB\003\340A\003\"\262\010\n\014NetInter"
+  "face\022\021\n\004name\030\001 \001(\tB\003\340A\010\0225\n\006config\030\002 \001(\0132"
+  " .opi_api.network.v1alpha1.ConfigB\003\340A\002\0223"
+  "\n\005state\030\003 \001(\0132\037.opi_api.network.v1alpha1"
+  ".StateB\003\340A\003\022F\n\010holdtime\030\004 \001(\0132/.opi_api."
+  "network.v1alpha1.NetInterface.HoldTimeB\003"
+  "\340A\001\022P\n\rsubinterfaces\030\005 \001(\01324.opi_api.net"
+  "work.v1alpha1.NetInterface.Subinterfaces"
+  "B\003\340A\001\032\227\002\n\010HoldTime\022T\n\013hold_config\030\001 \001(\0132"
+  ":.opi_api.network.v1alpha1.NetInterface."
+  "HoldTime.HoldConfigB\003\340A\001\022R\n\nhold_state\030\002"
+  " \001(\01329.opi_api.network.v1alpha1.NetInter"
+  "face.HoldTime.HoldStateB\003\340A\003\0320\n\nHoldConf"
+  "ig\022\017\n\002up\030\001 \001(\rB\003\340A\001\022\021\n\004down\030\002 \001(\rB\003\340A\001\032/"
+  "\n\tHoldState\022\017\n\002up\030\001 \001(\rB\003\340A\003\022\021\n\004down\030\002 \001"
+  "(\rB\003\340A\003\032\204\003\n\rSubinterfaces\022\\\n\014subinterfac"
+  "e\030\002 \003(\0132A.opi_api.network.v1alpha1.NetIn"
+  "terface.Subinterfaces.SubinterfaceB\003\340A\001\032"
+  "\224\002\n\014Subinterface\022\022\n\005index\030\001 \001(\003B\003\340A\001\022h\n\014"
+  "subif_config\030\002 \001(\0132M.opi_api.network.v1a"
+  "lpha1.NetInterface.Subinterfaces.Subinte"
+  "rface.SubifConfigB\003\340A\001\0223\n\005state\030\003 \001(\0132\037."
+  "opi_api.network.v1alpha1.StateB\003\340A\003\032Q\n\013S"
+  "ubifConfig\022\022\n\005index\030\001 \001(\004B\003\340A\001\022\030\n\013descri"
+  "ption\030\002 \001(\tB\003\340A\001\022\024\n\007enabled\030\003 \001(\010B\003\340A\001:h"
+  "\352Ae\n,opi_api.network.common.v1alpha1/Net"
+  "Interface\022\030netInterface/{interface}*\rnet"
+  "Interfaces2\014netInterface\"M\n\026GetNetInterf"
+  "aceRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_ap"
+  "i.network.v1/Interfaces\"\202\001\n\030ListNetInter"
+  "facesRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035op"
+  "i_api.network.v1/Interfaces\022\026\n\tpage_size"
+  "\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"t\n\031"
+  "ListNetInterfacesResponse\022>\n\016net_interfa"
+  "ces\030\001 \003(\0132&.opi_api.network.v1alpha1.Net"
+  "Interface\022\027\n\017next_page_token\030\002 \001(\t\"\261\001\n\031U"
+  "pdateNetInterfaceRequest\022B\n\rnet_interfac"
+  "e\030\001 \001(\0132&.opi_api.network.v1alpha1.NetIn"
+  "terfaceB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.goog"
+  "le.protobuf.FieldMaskB\003\340A\001\022\032\n\rallow_miss"
+  "ing\030\003 \001(\010B\003\340A\001*K\n\rInterfaceType\022\036\n\032INTER"
+  "FACE_TYPE_UNSPECIFIED\020\000\022\014\n\010ETHERNET\020\001\022\014\n"
+  "\010LOOPBACK\020\002*\324\001\n\tOperState\022\032\n\026OPER_STATE_"
+  "UNSPECIFIED\020\000\022\021\n\rOPER_STATE_UP\020\002\022\023\n\017OPER"
+  "_STATE_DOWN\020\003\022\026\n\022OPER_STATE_TESTING\020\004\022\026\n"
+  "\022OPER_STATE_UNKNOWN\020\005\022\026\n\022OPER_STATE_DORM"
+  "ANT\020\006\022\032\n\026OPER_STATE_NOT_PRESENT\020\007\022\037\n\033OPE"
+  "R_STATE_LOWER_LAYER_DOWN\020\0102\272\004\n\023NetInterf"
+  "aceService\022\237\001\n\017GetNetInterface\0220.opi_api"
+  ".network.v1alpha1.GetNetInterfaceRequest"
+  "\032&.opi_api.network.v1alpha1.NetInterface"
+  "\"2\202\323\344\223\002%\022#/v1/{name=interfaces/*/interfa"
+  "ce/*}\332A\004name\022\246\001\n\021ListNetInterfaces\0222.opi"
+  "_api.network.v1alpha1.ListNetInterfacesR"
+  "equest\0323.opi_api.network.v1alpha1.ListNe"
+  "tInterfacesResponse\"(\202\323\344\223\002\031\022\027/v1/{parent"
+  "=interfaces}\332A\006parent\022\327\001\n\022UpdateNetInter"
+  "face\0223.opi_api.network.v1alpha1.UpdateNe"
+  "tInterfaceRequest\032&.opi_api.network.v1al"
+  "pha1.NetInterface\"d\202\323\344\223\002B21/v1/{net_inte"
+  "rface.name=interfaces/*/interface/*}:\rne"
+  "t_interface\332A\031net_interface,update_maskB"
+  "{\n\030opi_api.network.v1alpha1B\031OpenconfigI"
+  "nterfacesProtoP\001ZBgithub.com/opiproject/"
+  "opi-api/network/opinetcommon/v1alpha1/ge"
+  "n/gob\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_openconfig_5finterfaces_2eproto_deps[6] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -560,7 +561,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_openconfig_5finterf
 };
 static ::_pbi::once_flag descriptor_table_openconfig_5finterfaces_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_openconfig_5finterfaces_2eproto = {
-    false, false, 3964, descriptor_table_protodef_openconfig_5finterfaces_2eproto,
+    false, false, 4012, descriptor_table_protodef_openconfig_5finterfaces_2eproto,
     "openconfig_interfaces.proto",
     &descriptor_table_openconfig_5finterfaces_2eproto_once, descriptor_table_openconfig_5finterfaces_2eproto_deps, 6, 14,
     schemas, file_default_instances, TableStruct_openconfig_5finterfaces_2eproto::offsets,
@@ -3669,7 +3670,7 @@ const char* NetInterface::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
@@ -3740,7 +3741,7 @@ uint8_t* NetInterface::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
@@ -3794,7 +3795,7 @@ size_t NetInterface::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(

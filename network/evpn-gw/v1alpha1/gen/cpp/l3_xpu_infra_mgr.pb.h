@@ -318,7 +318,7 @@ class Vrf final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1999,7 +1999,7 @@ class Svi final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3466,7 +3466,7 @@ class UpdateSviRequest final :
 #endif  // __GNUC__
 // Vrf
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
 inline void Vrf::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -4930,7 +4930,7 @@ inline void UpdateVrfRequest::set_allow_missing(bool value) {
 
 // Svi
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
 inline void Svi::clear_name() {
   _impl_.name_.ClearToEmpty();
 }

@@ -321,7 +321,7 @@ class NvmeRemoteController final :
     kQueueSizeFieldNumber = 4,
     kMultipathFieldNumber = 2,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -702,7 +702,7 @@ class NvmePath final :
     kFabricsFieldNumber = 5,
     kTrtypeFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1137,7 +1137,7 @@ class NvmeRemoteNamespace final :
     kEui64FieldNumber = 5,
     kNsidFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4586,7 +4586,7 @@ class StatsNvmePathResponse final :
 #endif  // __GNUC__
 // NvmeRemoteController
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
 inline void NvmeRemoteController::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -4884,7 +4884,7 @@ inline void TcpController::set_allocated_psk(std::string* psk) {
 
 // NvmePath
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
 inline void NvmePath::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -5362,7 +5362,7 @@ inline void FabricsPath::set_allocated_hostnqn(std::string* hostnqn) {
 
 // NvmeRemoteNamespace
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
 inline void NvmeRemoteNamespace::clear_name() {
   _impl_.name_.ClearToEmpty();
 }

@@ -265,60 +265,60 @@ const char descriptor_table_protodef_backend_5faio_2eproto[] PROTOBUF_SECTION_VA
   "\032\034google/api/annotations.proto\032\037google/a"
   "pi/field_behavior.proto\032 google/protobuf"
   "/field_mask.proto\032\017opicommon.proto\032\nuuid"
-  ".proto\"\214\002\n\tAioVolume\0225\n\004name\030\001 \001(\tB\'\340A\003\340"
-  "A\005\372A\036\n\034opi_api.storage.v1/AioVolume\022\027\n\nb"
-  "lock_size\030\002 \001(\003B\003\340A\001\022\031\n\014blocks_count\030\003 \001"
-  "(\003B\003\340A\001\022*\n\004uuid\030\004 \001(\0132\027.opi_api.common.v"
-  "1.UuidB\003\340A\001\022\025\n\010filename\030\005 \001(\tB\003\340A\002:Q\352AN\n"
-  " storage.opiproject.org/AioVolume\022\023aioVo"
-  "lumes/{volume}*\naioVolumes2\taioVolume\"l\n"
-  "\026CreateAioVolumeRequest\0226\n\naio_volume\030\001 "
-  "\001(\0132\035.opi_api.storage.v1.AioVolumeB\003\340A\002\022"
-  "\032\n\raio_volume_id\030\002 \001(\tB\003\340A\001\"h\n\026DeleteAio"
-  "VolumeRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi"
-  "_api.storage.v1/AioVolume\022\032\n\rallow_missi"
-  "ng\030\002 \001(\010B\003\340A\001\"\242\001\n\026UpdateAioVolumeRequest"
-  "\0226\n\naio_volume\030\001 \001(\0132\035.opi_api.storage.v"
-  "1.AioVolumeB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032."
-  "google.protobuf.FieldMaskB\003\340A\001\022\032\n\rallow_"
-  "missing\030\003 \001(\010B\003\340A\001\"~\n\025ListAioVolumesRequ"
-  "est\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.sto"
-  "rage.v1/AioVolume\022\026\n\tpage_size\030\002 \001(\005B\003\340A"
-  "\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"e\n\026ListAioVol"
-  "umesResponse\0222\n\013aio_volumes\030\001 \003(\0132\035.opi_"
-  "api.storage.v1.AioVolume\022\027\n\017next_page_to"
-  "ken\030\002 \001(\t\"I\n\023GetAioVolumeRequest\0222\n\004name"
-  "\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/AioVo"
-  "lume\"K\n\025StatsAioVolumeRequest\0222\n\004name\030\001 "
+  ".proto\"\211\002\n\tAioVolume\0222\n\004name\030\001 \001(\tB$\340A\010\372"
+  "A\036\n\034opi_api.storage.v1/AioVolume\022\027\n\nbloc"
+  "k_size\030\002 \001(\003B\003\340A\001\022\031\n\014blocks_count\030\003 \001(\003B"
+  "\003\340A\001\022*\n\004uuid\030\004 \001(\0132\027.opi_api.common.v1.U"
+  "uidB\003\340A\001\022\025\n\010filename\030\005 \001(\tB\003\340A\002:Q\352AN\n st"
+  "orage.opiproject.org/AioVolume\022\023aioVolum"
+  "es/{volume}*\naioVolumes2\taioVolume\"l\n\026Cr"
+  "eateAioVolumeRequest\0226\n\naio_volume\030\001 \001(\013"
+  "2\035.opi_api.storage.v1.AioVolumeB\003\340A\002\022\032\n\r"
+  "aio_volume_id\030\002 \001(\tB\003\340A\001\"h\n\026DeleteAioVol"
+  "umeRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_ap"
+  "i.storage.v1/AioVolume\022\032\n\rallow_missing\030"
+  "\002 \001(\010B\003\340A\001\"\242\001\n\026UpdateAioVolumeRequest\0226\n"
+  "\naio_volume\030\001 \001(\0132\035.opi_api.storage.v1.A"
+  "ioVolumeB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.goo"
+  "gle.protobuf.FieldMaskB\003\340A\001\022\032\n\rallow_mis"
+  "sing\030\003 \001(\010B\003\340A\001\"~\n\025ListAioVolumesRequest"
+  "\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storag"
+  "e.v1/AioVolume\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027"
+  "\n\npage_token\030\003 \001(\tB\003\340A\001\"e\n\026ListAioVolume"
+  "sResponse\0222\n\013aio_volumes\030\001 \003(\0132\035.opi_api"
+  ".storage.v1.AioVolume\022\027\n\017next_page_token"
+  "\030\002 \001(\t\"I\n\023GetAioVolumeRequest\0222\n\004name\030\001 "
   "\001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/AioVolum"
-  "e\"H\n\026StatsAioVolumeResponse\022.\n\005stats\030\001 \001"
-  "(\0132\037.opi_api.storage.v1.VolumeStats2\213\007\n\020"
-  "AioVolumeService\022\233\001\n\017CreateAioVolume\022*.o"
-  "pi_api.storage.v1.CreateAioVolumeRequest"
-  "\032\035.opi_api.storage.v1.AioVolume\"=\202\323\344\223\002\034\""
-  "\016/v1/aioVolumes:\naio_volume\332A\030aio_volume"
-  ",aio_volume_id\022}\n\017DeleteAioVolume\022*.opi_"
-  "api.storage.v1.DeleteAioVolumeRequest\032\026."
-  "google.protobuf.Empty\"&\202\323\344\223\002\031*\027/v1/{name"
-  "=aioVolumes/*}\332A\004name\022\255\001\n\017UpdateAioVolum"
-  "e\022*.opi_api.storage.v1.UpdateAioVolumeRe"
-  "quest\032\035.opi_api.storage.v1.AioVolume\"O\202\323"
-  "\344\223\00202\"/v1/{aio_volume.name=aioVolumes/*}"
-  ":\naio_volume\332A\026aio_volume,update_mask\022\221\001"
-  "\n\016ListAioVolumes\022).opi_api.storage.v1.Li"
-  "stAioVolumesRequest\032*.opi_api.storage.v1"
-  ".ListAioVolumesResponse\"(\202\323\344\223\002\031\022\027/v1/{pa"
-  "rent=subsystems}\332A\006parent\022~\n\014GetAioVolum"
-  "e\022\'.opi_api.storage.v1.GetAioVolumeReque"
-  "st\032\035.opi_api.storage.v1.AioVolume\"&\202\323\344\223\002"
-  "\031\022\027/v1/{name=aioVolumes/*}\332A\004name\022\225\001\n\016St"
-  "atsAioVolume\022).opi_api.storage.v1.StatsA"
-  "ioVolumeRequest\032*.opi_api.storage.v1.Sta"
-  "tsAioVolumeResponse\",\202\323\344\223\002\037\022\035/v1/{name=a"
-  "ioVolumes/*}:stats\332A\004nameB^\n\022opi_api.sto"
-  "rage.v1B\017BackendAioProtoP\001Z5github.com/o"
-  "piproject/opi-api/storage/v1alpha1/gen/g"
-  "ob\006proto3"
+  "e\"K\n\025StatsAioVolumeRequest\0222\n\004name\030\001 \001(\t"
+  "B$\340A\002\372A\036\n\034opi_api.storage.v1/AioVolume\"H"
+  "\n\026StatsAioVolumeResponse\022.\n\005stats\030\001 \001(\0132"
+  "\037.opi_api.storage.v1.VolumeStats2\213\007\n\020Aio"
+  "VolumeService\022\233\001\n\017CreateAioVolume\022*.opi_"
+  "api.storage.v1.CreateAioVolumeRequest\032\035."
+  "opi_api.storage.v1.AioVolume\"=\202\323\344\223\002\034\"\016/v"
+  "1/aioVolumes:\naio_volume\332A\030aio_volume,ai"
+  "o_volume_id\022}\n\017DeleteAioVolume\022*.opi_api"
+  ".storage.v1.DeleteAioVolumeRequest\032\026.goo"
+  "gle.protobuf.Empty\"&\202\323\344\223\002\031*\027/v1/{name=ai"
+  "oVolumes/*}\332A\004name\022\255\001\n\017UpdateAioVolume\022*"
+  ".opi_api.storage.v1.UpdateAioVolumeReque"
+  "st\032\035.opi_api.storage.v1.AioVolume\"O\202\323\344\223\002"
+  "02\"/v1/{aio_volume.name=aioVolumes/*}:\na"
+  "io_volume\332A\026aio_volume,update_mask\022\221\001\n\016L"
+  "istAioVolumes\022).opi_api.storage.v1.ListA"
+  "ioVolumesRequest\032*.opi_api.storage.v1.Li"
+  "stAioVolumesResponse\"(\202\323\344\223\002\031\022\027/v1/{paren"
+  "t=subsystems}\332A\006parent\022~\n\014GetAioVolume\022\'"
+  ".opi_api.storage.v1.GetAioVolumeRequest\032"
+  "\035.opi_api.storage.v1.AioVolume\"&\202\323\344\223\002\031\022\027"
+  "/v1/{name=aioVolumes/*}\332A\004name\022\225\001\n\016Stats"
+  "AioVolume\022).opi_api.storage.v1.StatsAioV"
+  "olumeRequest\032*.opi_api.storage.v1.StatsA"
+  "ioVolumeResponse\",\202\323\344\223\002\037\022\035/v1/{name=aioV"
+  "olumes/*}:stats\332A\004nameB^\n\022opi_api.storag"
+  "e.v1B\017BackendAioProtoP\001Z5github.com/opip"
+  "roject/opi-api/storage/v1alpha1/gen/gob\006"
+  "proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_backend_5faio_2eproto_deps[8] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -332,7 +332,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_backend_5faio_2epro
 };
 static ::_pbi::once_flag descriptor_table_backend_5faio_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_backend_5faio_2eproto = {
-    false, false, 2369, descriptor_table_protodef_backend_5faio_2eproto,
+    false, false, 2366, descriptor_table_protodef_backend_5faio_2eproto,
     "backend_aio.proto",
     &descriptor_table_backend_5faio_2eproto_once, descriptor_table_backend_5faio_2eproto_deps, 8, 9,
     schemas, file_default_instances, TableStruct_backend_5faio_2eproto::offsets,
@@ -475,7 +475,7 @@ const char* AioVolume::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+      // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
@@ -548,7 +548,7 @@ uint8_t* AioVolume::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
@@ -603,7 +603,7 @@ size_t AioVolume::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(

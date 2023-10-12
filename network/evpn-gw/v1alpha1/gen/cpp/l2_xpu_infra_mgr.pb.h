@@ -344,7 +344,7 @@ class LogicalBridge final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1884,7 +1884,7 @@ class BridgePort final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3314,7 +3314,7 @@ class UpdateBridgePortRequest final :
 #endif  // __GNUC__
 // LogicalBridge
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
 inline void LogicalBridge::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -4348,7 +4348,7 @@ inline void UpdateLogicalBridgeRequest::set_allow_missing(bool value) {
 
 // BridgePort
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
 inline void BridgePort::clear_name() {
   _impl_.name_.ClearToEmpty();
 }

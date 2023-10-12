@@ -229,7 +229,7 @@ class VirtioBlk final :
     kMaxLimitFieldNumber = 6,
     kMaxIoQpsFieldNumber = 4,
   };
-  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1691,7 +1691,7 @@ class StatsVirtioBlkResponse final :
 #endif  // __GNUC__
 // VirtioBlk
 
-// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
 inline void VirtioBlk::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
