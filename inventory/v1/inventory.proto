@@ -198,7 +198,7 @@ message GetInventoryRequest {
     // The name of the inventory to retrieve - blank for the full inventory
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.common.v1/Inventory"
+        (google.api.resource_reference).type = "opi_api.inventory.v1/Inventory"
     ];
 }
 

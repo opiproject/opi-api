@@ -322,25 +322,25 @@ const char descriptor_table_protodef_inventory_2eproto[] PROTOBUF_SECTION_VARIAB
   "ceInfo\022\016\n\006driver\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022"
   "\016\n\006vendor\030\003 \001(\t\022\017\n\007product\030\004 \001(\t\022\020\n\010revi"
   "sion\030\005 \001(\t\022\021\n\tsubsystem\030\006 \001(\t\022\r\n\005class\030\007"
-  " \001(\t\022\020\n\010subclass\030\010 \001(\t\"H\n\023GetInventoryRe"
-  "quest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.com"
-  "mon.v1/Inventory\"\356\002\n\tInventory\022,\n\004bios\030\001"
-  " \001(\0132\036.opi_api.inventory.v1.BIOSInfo\0220\n\006"
-  "system\030\002 \001(\0132 .opi_api.inventory.v1.Syst"
-  "emInfo\0226\n\tbaseboard\030\003 \001(\0132#.opi_api.inve"
-  "ntory.v1.BaseboardInfo\0222\n\007chassis\030\004 \001(\0132"
-  "!.opi_api.inventory.v1.ChassisInfo\0220\n\tpr"
-  "ocessor\030\005 \001(\0132\035.opi_api.inventory.v1.CPU"
-  "Info\0220\n\006memory\030\006 \001(\0132 .opi_api.inventory"
-  ".v1.MemoryInfo\0221\n\003pci\030\007 \003(\0132$.opi_api.in"
-  "ventory.v1.PCIeDeviceInfo2\236\001\n\014InventoryS"
-  "vc\022\215\001\n\014GetInventory\022).opi_api.inventory."
-  "v1.GetInventoryRequest\032\037.opi_api.invento"
-  "ry.v1.Inventory\"1\202\323\344\223\002$\022\"/v1/{name=inven"
-  "tory/*/inventory/*}\332A\004nameB[\n\024opi_api.in"
-  "ventory.v1B\016InventoryProtoP\001Z1github.com"
-  "/opiproject/opi-api/inventory/v1/gen/gob"
-  "\006proto3"
+  " \001(\t\022\020\n\010subclass\030\010 \001(\t\"K\n\023GetInventoryRe"
+  "quest\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036opi_api.inv"
+  "entory.v1/Inventory\"\356\002\n\tInventory\022,\n\004bio"
+  "s\030\001 \001(\0132\036.opi_api.inventory.v1.BIOSInfo\022"
+  "0\n\006system\030\002 \001(\0132 .opi_api.inventory.v1.S"
+  "ystemInfo\0226\n\tbaseboard\030\003 \001(\0132#.opi_api.i"
+  "nventory.v1.BaseboardInfo\0222\n\007chassis\030\004 \001"
+  "(\0132!.opi_api.inventory.v1.ChassisInfo\0220\n"
+  "\tprocessor\030\005 \001(\0132\035.opi_api.inventory.v1."
+  "CPUInfo\0220\n\006memory\030\006 \001(\0132 .opi_api.invent"
+  "ory.v1.MemoryInfo\0221\n\003pci\030\007 \003(\0132$.opi_api"
+  ".inventory.v1.PCIeDeviceInfo2\236\001\n\014Invento"
+  "rySvc\022\215\001\n\014GetInventory\022).opi_api.invento"
+  "ry.v1.GetInventoryRequest\032\037.opi_api.inve"
+  "ntory.v1.Inventory\"1\202\323\344\223\002$\022\"/v1/{name=in"
+  "ventory/*/inventory/*}\332A\004nameB[\n\024opi_api"
+  ".inventory.v1B\016InventoryProtoP\001Z1github."
+  "com/opiproject/opi-api/inventory/v1/gen/"
+  "gob\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_inventory_2eproto_deps[4] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -350,7 +350,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_inventory_2eproto_d
 };
 static ::_pbi::once_flag descriptor_table_inventory_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_inventory_2eproto = {
-    false, false, 1567, descriptor_table_protodef_inventory_2eproto,
+    false, false, 1570, descriptor_table_protodef_inventory_2eproto,
     "inventory.proto",
     &descriptor_table_inventory_2eproto_once, descriptor_table_inventory_2eproto_deps, 4, 9,
     schemas, file_default_instances, TableStruct_inventory_2eproto::offsets,
