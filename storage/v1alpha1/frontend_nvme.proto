@@ -369,6 +369,11 @@ message CreateNvmeSubsystemRequest {
     string nvme_subsystem_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// (-- api-linter: core::0135::force-field=disabled
+//     aip.dev/not-precedent: disabled since cascade deleting is a dangerous
+//                            operation and we want to force a user to delete
+//                            all child resources(controllers and namespaces) on
+//                            its own --)
 // Represents a request to delete an Nvme Subsystem.
 message DeleteNvmeSubsystemRequest {
     // Object's unique identifier to delete
