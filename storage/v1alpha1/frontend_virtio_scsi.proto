@@ -255,7 +255,7 @@ message ListVirtioScsiTargetsRequest {
     // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
+        (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
     // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
@@ -332,7 +332,7 @@ message ListVirtioScsiControllersRequest {
     // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
+        (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiController"
     ];
     // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
@@ -409,7 +409,7 @@ message ListVirtioScsiLunsRequest {
     // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
+        (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiLun"
     ];
     // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];

@@ -130,7 +130,7 @@ message ListNullVolumesRequest {
     // Parent's object unique identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/NullVolume"
+        (google.api.resource_reference).child_type = "opi_api.storage.v1/NullVolume"
     ];
     // page size of list request
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
