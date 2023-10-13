@@ -72,7 +72,7 @@ service AioVolumeService {
 // Volume represented by Linux kernel block device or a file on a Linux filesystem
 message AioVolume {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/AioVolume"
+        type: "opi_api.storage.v1/AioVolume"
         pattern: "aioVolumes/{volume}"
         singular: "aioVolume"
         plural: "aioVolumes"

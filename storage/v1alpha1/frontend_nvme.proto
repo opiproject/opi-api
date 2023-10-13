@@ -163,7 +163,7 @@ service FrontendNvmeService {
 // Represents Nvme Subsystem
 message NvmeSubsystem {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmeSubsystem"
+        type: "opi_api.storage.v1/NvmeSubsystem"
         pattern: "nvmeSubsystems/{subsystem}"
         singular: "nvmeSubsystem"
         plural: "nvmeSubsystems"
@@ -216,7 +216,7 @@ message NvmeSubsystemStatus {
 // Represents Nvme Controller
 message NvmeController {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmeController"
+        type: "opi_api.storage.v1/NvmeController"
         pattern: "nvmeSubsystems/{subsystem}/nvmeControllers/{controller}"
         singular: "nvmeController"
         plural: "nvmeControllers"
@@ -291,7 +291,7 @@ message NvmeControllerStatus {
 // Represents Nvme Namespace
 message NvmeNamespace {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmeNamespace"
+        type: "opi_api.storage.v1/NvmeNamespace"
         pattern: "nvmeSubsystems/{subsystem}/nvmeNamespaces/{namespace}"
         singular: "nvmeNamespace"
         plural: "nvmeNamespaces"

@@ -139,7 +139,7 @@ service NvmeRemoteControllerService {
 // Represents a target controller
 message NvmeRemoteController {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmeRemoteController"
+        type: "opi_api.storage.v1/NvmeRemoteController"
         pattern: "nvmeRemoteControllers/{volume}"
         singular: "nvmeRemoteController"
         plural: "nvmeRemoteControllers"
@@ -186,7 +186,7 @@ message TcpController {
 // Represents a specific path to target controller
 message NvmePath {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmePath"
+        type: "opi_api.storage.v1/NvmePath"
         pattern: "nvmePaths/{volume}"
         singular: "nvmePath"
         plural: "nvmePaths"
@@ -238,7 +238,7 @@ message FabricsPath {
 message NvmeRemoteNamespace {
     // namespace's unique key. Assign to middle/front-end objects.
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmeRemoteNamespace"
+        type: "opi_api.storage.v1/NvmeRemoteNamespace"
         pattern: "nvmeRemoteNamespaces/{volume}"
         singular: "nvmeRemoteNamespace"
         plural: "nvmeRemoteNamespaces"

@@ -70,7 +70,7 @@ service FrontendVirtioBlkService {
 // Represnts emulated Virtio-blk device
 message VirtioBlk {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/VirtioBlk"
+        type: "opi_api.storage.v1/VirtioBlk"
         pattern: "virtioBlks/{volume}"
         singular: "virtioBlk"
         plural: "virtioBlks"

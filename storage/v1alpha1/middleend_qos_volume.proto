@@ -69,7 +69,7 @@ service MiddleendQosVolumeService {
 // Represents volume providing quality of service capabilities
 message QosVolume {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/QosVolume"
+        type: "opi_api.storage.v1/QosVolume"
         pattern: "qosVolumes/{volume}"
         singular: "qosVolume"
         plural: "qosVolumes"

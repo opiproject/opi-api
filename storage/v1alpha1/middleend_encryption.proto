@@ -71,7 +71,7 @@ service MiddleendEncryptionService {
 // Represents volume encrypting IOs
 message EncryptedVolume {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/EncryptedVolume"
+        type: "opi_api.storage.v1/EncryptedVolume"
         pattern: "encryptedVolumes/{volume}"
         singular: "encryptedVolume"
         plural: "encryptedVolumes"

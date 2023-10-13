@@ -158,7 +158,7 @@ service FrontendVirtioScsiService {
 // Represents Scsi Target
 message VirtioScsiTarget {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/VirtioScsiTarget"
+        type: "opi_api.storage.v1/VirtioScsiTarget"
         pattern: "virtioScsiTargets/{volume}"
         singular: "virtioScsiTarget"
         plural: "virtioScsiTargets"
@@ -176,7 +176,7 @@ message VirtioScsiTarget {
 // Represents Scsi Controller
 message VirtioScsiController {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/VirtioScsiController"
+        type: "opi_api.storage.v1/VirtioScsiController"
         pattern: "virtioScsiControllers/{volume}"
         singular: "virtioScsiController"
         plural: "virtioScsiControllers"
@@ -200,7 +200,7 @@ message VirtioScsiController {
 // Represents Scsi Lun
 message VirtioScsiLun {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/VirtioScsiLun"
+        type: "opi_api.storage.v1/VirtioScsiLun"
         pattern: "virtioScsiLuns/{volume}"
         singular: "virtioScsiLun"
         plural: "virtioScsiLuns"
