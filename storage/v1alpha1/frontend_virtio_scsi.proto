@@ -167,10 +167,7 @@ message VirtioScsiTarget {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    string name = 1 [
-        (google.api.field_behavior) = IDENTIFIER,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
-    ];
+    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
     // maximum LUNs within a target
     int32 max_luns = 2 [(google.api.field_behavior) = OPTIONAL];
@@ -188,10 +185,7 @@ message VirtioScsiController {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    string name = 1 [
-        (google.api.field_behavior) = IDENTIFIER,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
-    ];
+    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
     // xPU's PCI ID for the controller
     PciEndpoint pcie_id = 2 [(google.api.field_behavior) = REQUIRED];
@@ -215,10 +209,7 @@ message VirtioScsiLun {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    string name = 1 [
-        (google.api.field_behavior) = IDENTIFIER,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
-    ];
+    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
     // The target that this LUN is in
     string target_name_ref = 2 [(google.api.field_behavior) = REQUIRED];
