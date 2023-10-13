@@ -14,7 +14,7 @@ public interface QosVolumeOrBuilder extends
    * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -25,7 +25,7 @@ public interface QosVolumeOrBuilder extends
    * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

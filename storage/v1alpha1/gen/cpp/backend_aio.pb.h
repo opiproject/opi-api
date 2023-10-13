@@ -229,7 +229,7 @@ class AioVolume final :
     kBlockSizeFieldNumber = 2,
     kBlocksCountFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1663,7 +1663,7 @@ class StatsAioVolumeResponse final :
 #endif  // __GNUC__
 // AioVolume
 
-// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
 inline void AioVolume::clear_name() {
   _impl_.name_.ClearToEmpty();
 }

@@ -74,61 +74,60 @@ public final class BackendNullProto {
       "o\032\034google/api/annotations.proto\032\037google/" +
       "api/field_behavior.proto\032 google/protobu" +
       "f/field_mask.proto\032\017opicommon.proto\032\nuui" +
-      "d.proto\"\370\001\n\nNullVolume\0223\n\004name\030\001 \001(\tB%\340A" +
-      "\010\372A\037\n\035opi_api.storage.v1/NullVolume\022\027\n\nb" +
-      "lock_size\030\002 \001(\003B\003\340A\002\022\031\n\014blocks_count\030\003 \001" +
-      "(\003B\003\340A\002\022*\n\004uuid\030\004 \001(\0132\027.opi_api.common.v" +
-      "1.UuidB\003\340A\001:U\352AR\n!storage.opiproject.org" +
-      "/NullVolume\022\024nullVolumes/{volume}*\013nullV" +
-      "olumes2\nnullVolume\"p\n\027CreateNullVolumeRe" +
-      "quest\0228\n\013null_volume\030\001 \001(\0132\036.opi_api.sto" +
-      "rage.v1.NullVolumeB\003\340A\002\022\033\n\016null_volume_i" +
-      "d\030\002 \001(\tB\003\340A\001\"j\n\027DeleteNullVolumeRequest\022" +
-      "3\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.storage.v" +
-      "1/NullVolume\022\032\n\rallow_missing\030\002 \001(\010B\003\340A\001" +
-      "\"\245\001\n\027UpdateNullVolumeRequest\0228\n\013null_vol" +
-      "ume\030\001 \001(\0132\036.opi_api.storage.v1.NullVolum" +
-      "eB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.pro" +
-      "tobuf.FieldMaskB\003\340A\001\022\032\n\rallow_missing\030\003 " +
-      "\001(\010B\003\340A\001\"\200\001\n\026ListNullVolumesRequest\0225\n\006p" +
-      "arent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.storage.v1/" +
-      "NullVolume\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npa" +
-      "ge_token\030\003 \001(\tB\003\340A\001\"h\n\027ListNullVolumesRe" +
-      "sponse\0224\n\014null_volumes\030\001 \003(\0132\036.opi_api.s" +
-      "torage.v1.NullVolume\022\027\n\017next_page_token\030" +
-      "\002 \001(\t\"K\n\024GetNullVolumeRequest\0223\n\004name\030\001 " +
-      "\001(\tB%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolu" +
-      "me\"M\n\026StatsNullVolumeRequest\0223\n\004name\030\001 \001" +
-      "(\tB%\340A\002\372A\037\n\035opi_api.storage.v1/NullVolum" +
-      "e\"I\n\027StatsNullVolumeResponse\022.\n\005stats\030\001 " +
-      "\001(\0132\037.opi_api.storage.v1.VolumeStats2\252\007\n" +
-      "\021NullVolumeService\022\242\001\n\020CreateNullVolume\022" +
-      "+.opi_api.storage.v1.CreateNullVolumeReq" +
-      "uest\032\036.opi_api.storage.v1.NullVolume\"A\202\323" +
-      "\344\223\002\036\"\017/v1/nullVolumes:\013null_volume\332A\032nul" +
-      "l_volume,null_volume_id\022\200\001\n\020DeleteNullVo" +
-      "lume\022+.opi_api.storage.v1.DeleteNullVolu" +
-      "meRequest\032\026.google.protobuf.Empty\"\'\202\323\344\223\002" +
-      "\032*\030/v1/{name=nullVolumes/*}\332A\004name\022\264\001\n\020U" +
-      "pdateNullVolume\022+.opi_api.storage.v1.Upd" +
-      "ateNullVolumeRequest\032\036.opi_api.storage.v" +
-      "1.NullVolume\"S\202\323\344\223\00232$/v1/{null_volume.n" +
-      "ame=nullVolumes/*}:\013null_volume\332A\027null_v" +
-      "olume,update_mask\022\224\001\n\017ListNullVolumes\022*." +
-      "opi_api.storage.v1.ListNullVolumesReques" +
-      "t\032+.opi_api.storage.v1.ListNullVolumesRe" +
-      "sponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332" +
-      "A\006parent\022\202\001\n\rGetNullVolume\022(.opi_api.sto" +
-      "rage.v1.GetNullVolumeRequest\032\036.opi_api.s" +
-      "torage.v1.NullVolume\"\'\202\323\344\223\002\032\022\030/v1/{name=" +
-      "nullVolumes/*}\332A\004name\022\231\001\n\017StatsNullVolum" +
-      "e\022*.opi_api.storage.v1.StatsNullVolumeRe" +
-      "quest\032+.opi_api.storage.v1.StatsNullVolu" +
-      "meResponse\"-\202\323\344\223\002 \022\036/v1/{name=nullVolume" +
-      "s/*}:stats\332A\004nameB_\n\022opi_api.storage.v1B" +
-      "\020BackendNullProtoP\001Z5github.com/opiproje" +
-      "ct/opi-api/storage/v1alpha1/gen/gob\006prot" +
-      "o3"
+      "d.proto\"\326\001\n\nNullVolume\022\021\n\004name\030\001 \001(\tB\003\340A" +
+      "\010\022\027\n\nblock_size\030\002 \001(\003B\003\340A\002\022\031\n\014blocks_cou" +
+      "nt\030\003 \001(\003B\003\340A\002\022*\n\004uuid\030\004 \001(\0132\027.opi_api.co" +
+      "mmon.v1.UuidB\003\340A\001:U\352AR\n!storage.opiproje" +
+      "ct.org/NullVolume\022\024nullVolumes/{volume}*" +
+      "\013nullVolumes2\nnullVolume\"p\n\027CreateNullVo" +
+      "lumeRequest\0228\n\013null_volume\030\001 \001(\0132\036.opi_a" +
+      "pi.storage.v1.NullVolumeB\003\340A\002\022\033\n\016null_vo" +
+      "lume_id\030\002 \001(\tB\003\340A\001\"j\n\027DeleteNullVolumeRe" +
+      "quest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.sto" +
+      "rage.v1/NullVolume\022\032\n\rallow_missing\030\002 \001(" +
+      "\010B\003\340A\001\"\245\001\n\027UpdateNullVolumeRequest\0228\n\013nu" +
+      "ll_volume\030\001 \001(\0132\036.opi_api.storage.v1.Nul" +
+      "lVolumeB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.goog" +
+      "le.protobuf.FieldMaskB\003\340A\001\022\032\n\rallow_miss" +
+      "ing\030\003 \001(\010B\003\340A\001\"\200\001\n\026ListNullVolumesReques" +
+      "t\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.stora" +
+      "ge.v1/NullVolume\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001" +
+      "\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"h\n\027ListNullVol" +
+      "umesResponse\0224\n\014null_volumes\030\001 \003(\0132\036.opi" +
+      "_api.storage.v1.NullVolume\022\027\n\017next_page_" +
+      "token\030\002 \001(\t\"K\n\024GetNullVolumeRequest\0223\n\004n" +
+      "ame\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.storage.v1/Nu" +
+      "llVolume\"M\n\026StatsNullVolumeRequest\0223\n\004na" +
+      "me\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.storage.v1/Nul" +
+      "lVolume\"I\n\027StatsNullVolumeResponse\022.\n\005st" +
+      "ats\030\001 \001(\0132\037.opi_api.storage.v1.VolumeSta" +
+      "ts2\252\007\n\021NullVolumeService\022\242\001\n\020CreateNullV" +
+      "olume\022+.opi_api.storage.v1.CreateNullVol" +
+      "umeRequest\032\036.opi_api.storage.v1.NullVolu" +
+      "me\"A\202\323\344\223\002\036\"\017/v1/nullVolumes:\013null_volume" +
+      "\332A\032null_volume,null_volume_id\022\200\001\n\020Delete" +
+      "NullVolume\022+.opi_api.storage.v1.DeleteNu" +
+      "llVolumeRequest\032\026.google.protobuf.Empty\"" +
+      "\'\202\323\344\223\002\032*\030/v1/{name=nullVolumes/*}\332A\004name" +
+      "\022\264\001\n\020UpdateNullVolume\022+.opi_api.storage." +
+      "v1.UpdateNullVolumeRequest\032\036.opi_api.sto" +
+      "rage.v1.NullVolume\"S\202\323\344\223\00232$/v1/{null_vo" +
+      "lume.name=nullVolumes/*}:\013null_volume\332A\027" +
+      "null_volume,update_mask\022\224\001\n\017ListNullVolu" +
+      "mes\022*.opi_api.storage.v1.ListNullVolumes" +
+      "Request\032+.opi_api.storage.v1.ListNullVol" +
+      "umesResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsys" +
+      "tems}\332A\006parent\022\202\001\n\rGetNullVolume\022(.opi_a" +
+      "pi.storage.v1.GetNullVolumeRequest\032\036.opi" +
+      "_api.storage.v1.NullVolume\"\'\202\323\344\223\002\032\022\030/v1/" +
+      "{name=nullVolumes/*}\332A\004name\022\231\001\n\017StatsNul" +
+      "lVolume\022*.opi_api.storage.v1.StatsNullVo" +
+      "lumeRequest\032+.opi_api.storage.v1.StatsNu" +
+      "llVolumeResponse\"-\202\323\344\223\002 \022\036/v1/{name=null" +
+      "Volumes/*}:stats\332A\004nameB_\n\022opi_api.stora" +
+      "ge.v1B\020BackendNullProtoP\001Z5github.com/op" +
+      "iproject/opi-api/storage/v1alpha1/gen/go" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

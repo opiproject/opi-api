@@ -377,7 +377,7 @@ class NvmeSubsystem final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -967,7 +967,7 @@ class NvmeController final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1626,7 +1626,7 @@ class NvmeNamespace final :
     kSpecFieldNumber = 2,
     kStatusFieldNumber = 3,
   };
-  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
+  // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -6178,7 +6178,7 @@ class StatsNvmeNamespaceResponse final :
 #endif  // __GNUC__
 // NvmeSubsystem
 
-// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
 inline void NvmeSubsystem::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -6790,7 +6790,7 @@ inline void NvmeSubsystemStatus::set_allocated_fru_guid(std::string* fru_guid) {
 
 // NvmeController
 
-// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
 inline void NvmeController::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -7511,7 +7511,7 @@ inline void NvmeControllerStatus::set_active(bool value) {
 
 // NvmeNamespace
 
-// string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = {
+// string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
 inline void NvmeNamespace::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
