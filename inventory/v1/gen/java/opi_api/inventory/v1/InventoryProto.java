@@ -100,14 +100,14 @@ public final class InventoryProto {
       "\tprocessor\030\005 \001(\0132\035.opi_api.inventory.v1." +
       "CPUInfo\0220\n\006memory\030\006 \001(\0132 .opi_api.invent" +
       "ory.v1.MemoryInfo\0221\n\003pci\030\007 \003(\0132$.opi_api" +
-      ".inventory.v1.PCIeDeviceInfo2\236\001\n\014Invento" +
-      "rySvc\022\215\001\n\014GetInventory\022).opi_api.invento" +
-      "ry.v1.GetInventoryRequest\032\037.opi_api.inve" +
-      "ntory.v1.Inventory\"1\202\323\344\223\002$\022\"/v1/{name=in" +
-      "ventory/*/inventory/*}\332A\004nameB[\n\024opi_api" +
-      ".inventory.v1B\016InventoryProtoP\001Z1github." +
-      "com/opiproject/opi-api/inventory/v1/gen/" +
-      "gob\006proto3"
+      ".inventory.v1.PCIeDeviceInfo2\242\001\n\020Invento" +
+      "ryService\022\215\001\n\014GetInventory\022).opi_api.inv" +
+      "entory.v1.GetInventoryRequest\032\037.opi_api." +
+      "inventory.v1.Inventory\"1\202\323\344\223\002$\022\"/v1/{nam" +
+      "e=inventory/*/inventory/*}\332A\004nameB[\n\024opi" +
+      "_api.inventory.v1B\016InventoryProtoP\001Z1git" +
+      "hub.com/opiproject/opi-api/inventory/v1/" +
+      "gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -11,11 +11,11 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
     value = "by gRPC proto compiler",
     comments = "Source: inventory.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-public final class InventorySvcGrpc {
+public final class InventoryServiceGrpc {
 
-  private InventorySvcGrpc() {}
+  private InventoryServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "opi_api.inventory.v1.InventorySvc";
+  public static final String SERVICE_NAME = "opi_api.inventory.v1.InventoryService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<opi_api.inventory.v1.GetInventoryRequest,
@@ -29,10 +29,10 @@ public final class InventorySvcGrpc {
   public static io.grpc.MethodDescriptor<opi_api.inventory.v1.GetInventoryRequest,
       opi_api.inventory.v1.Inventory> getGetInventoryMethod() {
     io.grpc.MethodDescriptor<opi_api.inventory.v1.GetInventoryRequest, opi_api.inventory.v1.Inventory> getGetInventoryMethod;
-    if ((getGetInventoryMethod = InventorySvcGrpc.getGetInventoryMethod) == null) {
-      synchronized (InventorySvcGrpc.class) {
-        if ((getGetInventoryMethod = InventorySvcGrpc.getGetInventoryMethod) == null) {
-          InventorySvcGrpc.getGetInventoryMethod = getGetInventoryMethod =
+    if ((getGetInventoryMethod = InventoryServiceGrpc.getGetInventoryMethod) == null) {
+      synchronized (InventoryServiceGrpc.class) {
+        if ((getGetInventoryMethod = InventoryServiceGrpc.getGetInventoryMethod) == null) {
+          InventoryServiceGrpc.getGetInventoryMethod = getGetInventoryMethod =
               io.grpc.MethodDescriptor.<opi_api.inventory.v1.GetInventoryRequest, opi_api.inventory.v1.Inventory>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInventory"))
@@ -41,7 +41,7 @@ public final class InventorySvcGrpc {
                   opi_api.inventory.v1.GetInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.inventory.v1.Inventory.getDefaultInstance()))
-              .setSchemaDescriptor(new InventorySvcMethodDescriptorSupplier("GetInventory"))
+              .setSchemaDescriptor(new InventoryServiceMethodDescriptorSupplier("GetInventory"))
               .build();
         }
       }
@@ -52,45 +52,45 @@ public final class InventorySvcGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static InventorySvcStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<InventorySvcStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<InventorySvcStub>() {
+  public static InventoryServiceStub newStub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<InventoryServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<InventoryServiceStub>() {
         @java.lang.Override
-        public InventorySvcStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new InventorySvcStub(channel, callOptions);
+        public InventoryServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new InventoryServiceStub(channel, callOptions);
         }
       };
-    return InventorySvcStub.newStub(factory, channel);
+    return InventoryServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static InventorySvcBlockingStub newBlockingStub(
+  public static InventoryServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<InventorySvcBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<InventorySvcBlockingStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<InventoryServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<InventoryServiceBlockingStub>() {
         @java.lang.Override
-        public InventorySvcBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new InventorySvcBlockingStub(channel, callOptions);
+        public InventoryServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new InventoryServiceBlockingStub(channel, callOptions);
         }
       };
-    return InventorySvcBlockingStub.newStub(factory, channel);
+    return InventoryServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static InventorySvcFutureStub newFutureStub(
+  public static InventoryServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<InventorySvcFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<InventorySvcFutureStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<InventoryServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<InventoryServiceFutureStub>() {
         @java.lang.Override
-        public InventorySvcFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new InventorySvcFutureStub(channel, callOptions);
+        public InventoryServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new InventoryServiceFutureStub(channel, callOptions);
         }
       };
-    return InventorySvcFutureStub.newStub(factory, channel);
+    return InventoryServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -98,7 +98,7 @@ public final class InventorySvcGrpc {
    * Service functions for the device inventory data
    * </pre>
    */
-  public static abstract class InventorySvcImplBase implements io.grpc.BindableService {
+  public static abstract class InventoryServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
@@ -128,16 +128,16 @@ public final class InventorySvcGrpc {
    * Service functions for the device inventory data
    * </pre>
    */
-  public static final class InventorySvcStub extends io.grpc.stub.AbstractAsyncStub<InventorySvcStub> {
-    private InventorySvcStub(
+  public static final class InventoryServiceStub extends io.grpc.stub.AbstractAsyncStub<InventoryServiceStub> {
+    private InventoryServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected InventorySvcStub build(
+    protected InventoryServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new InventorySvcStub(channel, callOptions);
+      return new InventoryServiceStub(channel, callOptions);
     }
 
     /**
@@ -157,16 +157,16 @@ public final class InventorySvcGrpc {
    * Service functions for the device inventory data
    * </pre>
    */
-  public static final class InventorySvcBlockingStub extends io.grpc.stub.AbstractBlockingStub<InventorySvcBlockingStub> {
-    private InventorySvcBlockingStub(
+  public static final class InventoryServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<InventoryServiceBlockingStub> {
+    private InventoryServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected InventorySvcBlockingStub build(
+    protected InventoryServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new InventorySvcBlockingStub(channel, callOptions);
+      return new InventoryServiceBlockingStub(channel, callOptions);
     }
 
     /**
@@ -185,16 +185,16 @@ public final class InventorySvcGrpc {
    * Service functions for the device inventory data
    * </pre>
    */
-  public static final class InventorySvcFutureStub extends io.grpc.stub.AbstractFutureStub<InventorySvcFutureStub> {
-    private InventorySvcFutureStub(
+  public static final class InventoryServiceFutureStub extends io.grpc.stub.AbstractFutureStub<InventoryServiceFutureStub> {
+    private InventoryServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected InventorySvcFutureStub build(
+    protected InventoryServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new InventorySvcFutureStub(channel, callOptions);
+      return new InventoryServiceFutureStub(channel, callOptions);
     }
 
     /**
@@ -216,10 +216,10 @@ public final class InventorySvcGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final InventorySvcImplBase serviceImpl;
+    private final InventoryServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(InventorySvcImplBase serviceImpl, int methodId) {
+    MethodHandlers(InventoryServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -248,9 +248,9 @@ public final class InventorySvcGrpc {
     }
   }
 
-  private static abstract class InventorySvcBaseDescriptorSupplier
+  private static abstract class InventoryServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    InventorySvcBaseDescriptorSupplier() {}
+    InventoryServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -259,21 +259,21 @@ public final class InventorySvcGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("InventorySvc");
+      return getFileDescriptor().findServiceByName("InventoryService");
     }
   }
 
-  private static final class InventorySvcFileDescriptorSupplier
-      extends InventorySvcBaseDescriptorSupplier {
-    InventorySvcFileDescriptorSupplier() {}
+  private static final class InventoryServiceFileDescriptorSupplier
+      extends InventoryServiceBaseDescriptorSupplier {
+    InventoryServiceFileDescriptorSupplier() {}
   }
 
-  private static final class InventorySvcMethodDescriptorSupplier
-      extends InventorySvcBaseDescriptorSupplier
+  private static final class InventoryServiceMethodDescriptorSupplier
+      extends InventoryServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    InventorySvcMethodDescriptorSupplier(String methodName) {
+    InventoryServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -288,11 +288,11 @@ public final class InventorySvcGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (InventorySvcGrpc.class) {
+      synchronized (InventoryServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new InventorySvcFileDescriptorSupplier())
+              .setSchemaDescriptor(new InventoryServiceFileDescriptorSupplier())
               .addMethod(getGetInventoryMethod())
               .build();
         }

@@ -5,7 +5,7 @@ import grpc
 import inventory_pb2 as inventory__pb2
 
 
-class InventorySvcStub(object):
+class InventoryServiceStub(object):
     """Service functions for the device inventory data
     """
 
@@ -16,13 +16,13 @@ class InventorySvcStub(object):
             channel: A grpc.Channel.
         """
         self.GetInventory = channel.unary_unary(
-                '/opi_api.inventory.v1.InventorySvc/GetInventory',
+                '/opi_api.inventory.v1.InventoryService/GetInventory',
                 request_serializer=inventory__pb2.GetInventoryRequest.SerializeToString,
                 response_deserializer=inventory__pb2.Inventory.FromString,
                 )
 
 
-class InventorySvcServicer(object):
+class InventoryServiceServicer(object):
     """Service functions for the device inventory data
     """
 
@@ -34,7 +34,7 @@ class InventorySvcServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_InventorySvcServicer_to_server(servicer, server):
+def add_InventoryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetInventory': grpc.unary_unary_rpc_method_handler(
                     servicer.GetInventory,
@@ -43,12 +43,12 @@ def add_InventorySvcServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'opi_api.inventory.v1.InventorySvc', rpc_method_handlers)
+            'opi_api.inventory.v1.InventoryService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class InventorySvc(object):
+class InventoryService(object):
     """Service functions for the device inventory data
     """
 
@@ -63,7 +63,7 @@ class InventorySvc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.inventory.v1.InventorySvc/GetInventory',
+        return grpc.experimental.unary_unary(request, target, '/opi_api.inventory.v1.InventoryService/GetInventory',
             inventory__pb2.GetInventoryRequest.SerializeToString,
             inventory__pb2.Inventory.FromString,
             options, channel_credentials,

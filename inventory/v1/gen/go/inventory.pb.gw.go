@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_InventorySvc_GetInventory_0(ctx context.Context, marshaler runtime.Marshaler, client InventorySvcClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_InventoryService_GetInventory_0(ctx context.Context, marshaler runtime.Marshaler, client InventoryServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetInventoryRequest
 	var metadata runtime.ServerMetadata
 
@@ -57,7 +57,7 @@ func request_InventorySvc_GetInventory_0(ctx context.Context, marshaler runtime.
 
 }
 
-func local_request_InventorySvc_GetInventory_0(ctx context.Context, marshaler runtime.Marshaler, server InventorySvcServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_InventoryService_GetInventory_0(ctx context.Context, marshaler runtime.Marshaler, server InventoryServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetInventoryRequest
 	var metadata runtime.ServerMetadata
 
@@ -83,24 +83,24 @@ func local_request_InventorySvc_GetInventory_0(ctx context.Context, marshaler ru
 
 }
 
-// RegisterInventorySvcHandlerServer registers the http handlers for service InventorySvc to "mux".
-// UnaryRPC     :call InventorySvcServer directly.
+// RegisterInventoryServiceHandlerServer registers the http handlers for service InventoryService to "mux".
+// UnaryRPC     :call InventoryServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterInventorySvcHandlerFromEndpoint instead.
-func RegisterInventorySvcHandlerServer(ctx context.Context, mux *runtime.ServeMux, server InventorySvcServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterInventoryServiceHandlerFromEndpoint instead.
+func RegisterInventoryServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server InventoryServiceServer) error {
 
-	mux.Handle("GET", pattern_InventorySvc_GetInventory_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_InventoryService_GetInventory_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.inventory.v1.InventorySvc/GetInventory")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.inventory.v1.InventoryService/GetInventory")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_InventorySvc_GetInventory_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_InventoryService_GetInventory_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -108,16 +108,16 @@ func RegisterInventorySvcHandlerServer(ctx context.Context, mux *runtime.ServeMu
 			return
 		}
 
-		forward_InventorySvc_GetInventory_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_InventoryService_GetInventory_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterInventorySvcHandlerFromEndpoint is same as RegisterInventorySvcHandler but
+// RegisterInventoryServiceHandlerFromEndpoint is same as RegisterInventoryServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterInventorySvcHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterInventoryServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -137,39 +137,39 @@ func RegisterInventorySvcHandlerFromEndpoint(ctx context.Context, mux *runtime.S
 		}()
 	}()
 
-	return RegisterInventorySvcHandler(ctx, mux, conn)
+	return RegisterInventoryServiceHandler(ctx, mux, conn)
 }
 
-// RegisterInventorySvcHandler registers the http handlers for service InventorySvc to "mux".
+// RegisterInventoryServiceHandler registers the http handlers for service InventoryService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterInventorySvcHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterInventorySvcHandlerClient(ctx, mux, NewInventorySvcClient(conn))
+func RegisterInventoryServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterInventoryServiceHandlerClient(ctx, mux, NewInventoryServiceClient(conn))
 }
 
-// RegisterInventorySvcHandlerClient registers the http handlers for service InventorySvc
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "InventorySvcClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "InventorySvcClient"
+// RegisterInventoryServiceHandlerClient registers the http handlers for service InventoryService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "InventoryServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "InventoryServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "InventorySvcClient" to call the correct interceptors.
-func RegisterInventorySvcHandlerClient(ctx context.Context, mux *runtime.ServeMux, client InventorySvcClient) error {
+// "InventoryServiceClient" to call the correct interceptors.
+func RegisterInventoryServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client InventoryServiceClient) error {
 
-	mux.Handle("GET", pattern_InventorySvc_GetInventory_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_InventoryService_GetInventory_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.inventory.v1.InventorySvc/GetInventory")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.inventory.v1.InventoryService/GetInventory")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_InventorySvc_GetInventory_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_InventoryService_GetInventory_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_InventorySvc_GetInventory_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_InventoryService_GetInventory_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -177,9 +177,9 @@ func RegisterInventorySvcHandlerClient(ctx context.Context, mux *runtime.ServeMu
 }
 
 var (
-	pattern_InventorySvc_GetInventory_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 1, 1, 0, 4, 4, 5, 2}, []string{"v1", "inventory", "name"}, ""))
+	pattern_InventoryService_GetInventory_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 1, 1, 0, 4, 4, 5, 2}, []string{"v1", "inventory", "name"}, ""))
 )
 
 var (
-	forward_InventorySvc_GetInventory_0 = runtime.ForwardResponseMessage
+	forward_InventoryService_GetInventory_0 = runtime.ForwardResponseMessage
 )

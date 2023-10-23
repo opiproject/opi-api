@@ -14,7 +14,7 @@
     - [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo)
     - [SystemInfo](#opi_api-inventory-v1-SystemInfo)
   
-    - [InventorySvc](#opi_api-inventory-v1-InventorySvc)
+    - [InventoryService](#opi_api-inventory-v1-InventoryService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -219,9 +219,9 @@ System Information (Type 1)
  
 
 
-<a name="opi_api-inventory-v1-InventorySvc"></a>
+<a name="opi_api-inventory-v1-InventoryService"></a>
 
-### InventorySvc
+### InventoryService
 Service functions for the device inventory data
 
 | Method Name | Request Type | Response Type | Description |

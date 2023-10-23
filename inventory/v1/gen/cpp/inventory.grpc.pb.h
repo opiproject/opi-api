@@ -42,10 +42,10 @@ namespace inventory {
 namespace v1 {
 
 // Service functions for the device inventory data
-class InventorySvc final {
+class InventoryService final {
  public:
   static constexpr char const* service_full_name() {
-    return "opi_api.inventory.v1.InventorySvc";
+    return "opi_api.inventory.v1.InventoryService";
   }
   class StubInterface {
    public:

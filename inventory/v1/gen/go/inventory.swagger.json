@@ -14,7 +14,7 @@
     "/v1/{name=inventory/*/inventory/*}": {
       "get": {
         "summary": "retrieves the inventory data for the device",
-        "operationId": "InventorySvc_GetInventory",
+        "operationId": "InventoryService_GetInventory",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -39,7 +39,7 @@
           }
         ],
         "tags": [
-          "InventorySvc"
+          "InventoryService"
         ]
       }
     }
