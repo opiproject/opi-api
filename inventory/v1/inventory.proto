@@ -24,7 +24,7 @@ import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
 
 // Service functions for the device inventory data
-service InventorySvc {
+service InventoryService {
     // retrieves the inventory data for the device
     rpc GetInventory (GetInventoryRequest) returns (Inventory) {
         option (google.api.http) = {
