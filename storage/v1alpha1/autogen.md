@@ -1118,6 +1118,11 @@ Represents a request to delete an Nvme Namespace.
 <a name="opi_api-storage-v1-DeleteNvmeSubsystemRequest"></a>
 
 ### DeleteNvmeSubsystemRequest
+(-- api-linter: core::0135::force-field=disabled
+    aip.dev/not-precedent: disabled since cascade deleting is a dangerous
+                           operation and we want to force a user to delete
+                           all child resources(controllers and namespaces) on
+                           its own --)
 Represents a request to delete an Nvme Subsystem.
 
 

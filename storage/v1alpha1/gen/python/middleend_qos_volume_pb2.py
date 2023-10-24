@@ -20,7 +20,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1amiddleend_qos_volume.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\"\xc0\x01\n\tQosVolume\x12\x11\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x08\x12\x1c\n\x0fvolume_name_ref\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12/\n\x06limits\x18\x03 \x01(\x0b\x32\x1a.opi_api.storage.v1.LimitsB\x03\xe0\x41\x02:Q\xea\x41N\n storage.opiproject.org/QosVolume\x12\x13qosVolumes/{volume}*\nqosVolumes2\tqosVolume\"h\n\x06Limits\x12.\n\x03min\x18\x01 \x01(\x0b\x32\x1c.opi_api.storage.v1.QosLimitB\x03\xe0\x41\x01\x12.\n\x03max\x18\x02 \x01(\x0b\x32\x1c.opi_api.storage.v1.QosLimitB\x03\xe0\x41\x01\"l\n\x16\x43reateQosVolumeRequest\x12\x36\n\nqos_volume\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.QosVolumeB\x03\xe0\x41\x02\x12\x1a\n\rqos_volume_id\x18\x02 \x01(\tB\x03\xe0\x41\x01\"h\n\x16\x44\x65leteQosVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/QosVolume\x12\x1a\n\rallow_missing\x18\x02 \x01(\x08\x42\x03\xe0\x41\x01\"\xa2\x01\n\x16UpdateQosVolumeRequest\x12\x36\n\nqos_volume\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.QosVolumeB\x03\xe0\x41\x02\x12\x34\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x03\xe0\x41\x01\x12\x1a\n\rallow_missing\x18\x03 \x01(\x08\x42\x03\xe0\x41\x01\"~\n\x15ListQosVolumesRequest\x12\x34\n\x06parent\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/QosVolume\x12\x16\n\tpage_size\x18\x02 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x03 \x01(\tB\x03\xe0\x41\x01\"e\n\x16ListQosVolumesResponse\x12\x32\n\x0bqos_volumes\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.QosVolume\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"I\n\x13GetQosVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/QosVolume\"K\n\x15StatsQosVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/QosVolume\"H\n\x16StatsQosVolumeResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats2\x91\x07\n\x19MiddleendQosVolumeService\x12\x9b\x01\n\x0f\x43reateQosVolume\x12*.opi_api.storage.v1.CreateQosVolumeRequest\x1a\x1d.opi_api.storage.v1.QosVolume\"=\x82\xd3\xe4\x93\x02\x1c\"\x0e/v1/qosVolumes:\nqos_volume\xda\x41\x18qos_volume,qos_volume_id\x12}\n\x0f\x44\x65leteQosVolume\x12*.opi_api.storage.v1.DeleteQosVolumeRequest\x1a\x16.google.protobuf.Empty\"&\x82\xd3\xe4\x93\x02\x19*\x17/v1/{name=qosVolumes/*}\xda\x41\x04name\x12\xad\x01\n\x0fUpdateQosVolume\x12*.opi_api.storage.v1.UpdateQosVolumeRequest\x1a\x1d.opi_api.storage.v1.QosVolume\"O\x82\xd3\xe4\x93\x02\x30\x32\"/v1/{qos_volume.name=qosVolumes/*}:\nqos_volume\xda\x41\x16qos_volume,update_mask\x12\x8e\x01\n\x0eListQosVolumes\x12).opi_api.storage.v1.ListQosVolumesRequest\x1a*.opi_api.storage.v1.ListQosVolumesResponse\"%\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/{parent=volumes}\xda\x41\x06parent\x12~\n\x0cGetQosVolume\x12\'.opi_api.storage.v1.GetQosVolumeRequest\x1a\x1d.opi_api.storage.v1.QosVolume\"&\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{name=qosVolumes/*}\xda\x41\x04name\x12\x95\x01\n\x0eStatsQosVolume\x12).opi_api.storage.v1.StatsQosVolumeRequest\x1a*.opi_api.storage.v1.StatsQosVolumeResponse\",\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/{name=qosVolumes/*}:stats\xda\x41\x04nameBf\n\x12opi_api.storage.v1B\x17MiddleendQosVolumeProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1amiddleend_qos_volume.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\"\xbc\x01\n\tQosVolume\x12\x11\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x08\x12\x1c\n\x0fvolume_name_ref\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12/\n\x06limits\x18\x03 \x01(\x0b\x32\x1a.opi_api.storage.v1.LimitsB\x03\xe0\x41\x02:M\xea\x41J\n\x1copi_api.storage.v1/QosVolume\x12\x13qosVolumes/{volume}*\nqosVolumes2\tqosVolume\"h\n\x06Limits\x12.\n\x03min\x18\x01 \x01(\x0b\x32\x1c.opi_api.storage.v1.QosLimitB\x03\xe0\x41\x01\x12.\n\x03max\x18\x02 \x01(\x0b\x32\x1c.opi_api.storage.v1.QosLimitB\x03\xe0\x41\x01\"l\n\x16\x43reateQosVolumeRequest\x12\x36\n\nqos_volume\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.QosVolumeB\x03\xe0\x41\x02\x12\x1a\n\rqos_volume_id\x18\x02 \x01(\tB\x03\xe0\x41\x01\"h\n\x16\x44\x65leteQosVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/QosVolume\x12\x1a\n\rallow_missing\x18\x02 \x01(\x08\x42\x03\xe0\x41\x01\"\xa2\x01\n\x16UpdateQosVolumeRequest\x12\x36\n\nqos_volume\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.QosVolumeB\x03\xe0\x41\x02\x12\x34\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x03\xe0\x41\x01\x12\x1a\n\rallow_missing\x18\x03 \x01(\x08\x42\x03\xe0\x41\x01\"~\n\x15ListQosVolumesRequest\x12\x34\n\x06parent\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\x12\x1copi_api.storage.v1/QosVolume\x12\x16\n\tpage_size\x18\x02 \x01(\x05\x42\x03\xe0\x41\x01\x12\x17\n\npage_token\x18\x03 \x01(\tB\x03\xe0\x41\x01\"e\n\x16ListQosVolumesResponse\x12\x32\n\x0bqos_volumes\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.QosVolume\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"I\n\x13GetQosVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/QosVolume\"K\n\x15StatsQosVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi_api.storage.v1/QosVolume\"H\n\x16StatsQosVolumeResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats2\x91\x07\n\x19MiddleendQosVolumeService\x12\x9b\x01\n\x0f\x43reateQosVolume\x12*.opi_api.storage.v1.CreateQosVolumeRequest\x1a\x1d.opi_api.storage.v1.QosVolume\"=\x82\xd3\xe4\x93\x02\x1c\"\x0e/v1/qosVolumes:\nqos_volume\xda\x41\x18qos_volume,qos_volume_id\x12}\n\x0f\x44\x65leteQosVolume\x12*.opi_api.storage.v1.DeleteQosVolumeRequest\x1a\x16.google.protobuf.Empty\"&\x82\xd3\xe4\x93\x02\x19*\x17/v1/{name=qosVolumes/*}\xda\x41\x04name\x12\xad\x01\n\x0fUpdateQosVolume\x12*.opi_api.storage.v1.UpdateQosVolumeRequest\x1a\x1d.opi_api.storage.v1.QosVolume\"O\x82\xd3\xe4\x93\x02\x30\x32\"/v1/{qos_volume.name=qosVolumes/*}:\nqos_volume\xda\x41\x16qos_volume,update_mask\x12\x8e\x01\n\x0eListQosVolumes\x12).opi_api.storage.v1.ListQosVolumesRequest\x1a*.opi_api.storage.v1.ListQosVolumesResponse\"%\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/{parent=volumes}\xda\x41\x06parent\x12~\n\x0cGetQosVolume\x12\'.opi_api.storage.v1.GetQosVolumeRequest\x1a\x1d.opi_api.storage.v1.QosVolume\"&\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{name=qosVolumes/*}\xda\x41\x04name\x12\x95\x01\n\x0eStatsQosVolume\x12).opi_api.storage.v1.StatsQosVolumeRequest\x1a*.opi_api.storage.v1.StatsQosVolumeResponse\",\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/{name=qosVolumes/*}:stats\xda\x41\x04nameBf\n\x12opi_api.storage.v1B\x17MiddleendQosVolumeProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'middleend_qos_volume_pb2', globals())
@@ -35,7 +35,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _QOSVOLUME.fields_by_name['limits']._options = None
   _QOSVOLUME.fields_by_name['limits']._serialized_options = b'\340A\002'
   _QOSVOLUME._options = None
-  _QOSVOLUME._serialized_options = b'\352AN\n storage.opiproject.org/QosVolume\022\023qosVolumes/{volume}*\nqosVolumes2\tqosVolume'
+  _QOSVOLUME._serialized_options = b'\352AJ\n\034opi_api.storage.v1/QosVolume\022\023qosVolumes/{volume}*\nqosVolumes2\tqosVolume'
   _LIMITS.fields_by_name['min']._options = None
   _LIMITS.fields_by_name['min']._serialized_options = b'\340A\001'
   _LIMITS.fields_by_name['max']._options = None
@@ -55,7 +55,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATEQOSVOLUMEREQUEST.fields_by_name['allow_missing']._options = None
   _UPDATEQOSVOLUMEREQUEST.fields_by_name['allow_missing']._serialized_options = b'\340A\001'
   _LISTQOSVOLUMESREQUEST.fields_by_name['parent']._options = None
-  _LISTQOSVOLUMESREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\036\n\034opi_api.storage.v1/QosVolume'
+  _LISTQOSVOLUMESREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\036\022\034opi_api.storage.v1/QosVolume'
   _LISTQOSVOLUMESREQUEST.fields_by_name['page_size']._options = None
   _LISTQOSVOLUMESREQUEST.fields_by_name['page_size']._serialized_options = b'\340A\001'
   _LISTQOSVOLUMESREQUEST.fields_by_name['page_token']._options = None
@@ -77,25 +77,25 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MIDDLEENDQOSVOLUMESERVICE.methods_by_name['StatsQosVolume']._options = None
   _MIDDLEENDQOSVOLUMESERVICE.methods_by_name['StatsQosVolume']._serialized_options = b'\202\323\344\223\002\037\022\035/v1/{name=qosVolumes/*}:stats\332A\004name'
   _QOSVOLUME._serialized_start=246
-  _QOSVOLUME._serialized_end=438
-  _LIMITS._serialized_start=440
-  _LIMITS._serialized_end=544
-  _CREATEQOSVOLUMEREQUEST._serialized_start=546
-  _CREATEQOSVOLUMEREQUEST._serialized_end=654
-  _DELETEQOSVOLUMEREQUEST._serialized_start=656
-  _DELETEQOSVOLUMEREQUEST._serialized_end=760
-  _UPDATEQOSVOLUMEREQUEST._serialized_start=763
-  _UPDATEQOSVOLUMEREQUEST._serialized_end=925
-  _LISTQOSVOLUMESREQUEST._serialized_start=927
-  _LISTQOSVOLUMESREQUEST._serialized_end=1053
-  _LISTQOSVOLUMESRESPONSE._serialized_start=1055
-  _LISTQOSVOLUMESRESPONSE._serialized_end=1156
-  _GETQOSVOLUMEREQUEST._serialized_start=1158
-  _GETQOSVOLUMEREQUEST._serialized_end=1231
-  _STATSQOSVOLUMEREQUEST._serialized_start=1233
-  _STATSQOSVOLUMEREQUEST._serialized_end=1308
-  _STATSQOSVOLUMERESPONSE._serialized_start=1310
-  _STATSQOSVOLUMERESPONSE._serialized_end=1382
-  _MIDDLEENDQOSVOLUMESERVICE._serialized_start=1385
-  _MIDDLEENDQOSVOLUMESERVICE._serialized_end=2298
+  _QOSVOLUME._serialized_end=434
+  _LIMITS._serialized_start=436
+  _LIMITS._serialized_end=540
+  _CREATEQOSVOLUMEREQUEST._serialized_start=542
+  _CREATEQOSVOLUMEREQUEST._serialized_end=650
+  _DELETEQOSVOLUMEREQUEST._serialized_start=652
+  _DELETEQOSVOLUMEREQUEST._serialized_end=756
+  _UPDATEQOSVOLUMEREQUEST._serialized_start=759
+  _UPDATEQOSVOLUMEREQUEST._serialized_end=921
+  _LISTQOSVOLUMESREQUEST._serialized_start=923
+  _LISTQOSVOLUMESREQUEST._serialized_end=1049
+  _LISTQOSVOLUMESRESPONSE._serialized_start=1051
+  _LISTQOSVOLUMESRESPONSE._serialized_end=1152
+  _GETQOSVOLUMEREQUEST._serialized_start=1154
+  _GETQOSVOLUMEREQUEST._serialized_end=1227
+  _STATSQOSVOLUMEREQUEST._serialized_start=1229
+  _STATSQOSVOLUMEREQUEST._serialized_end=1304
+  _STATSQOSVOLUMERESPONSE._serialized_start=1306
+  _STATSQOSVOLUMERESPONSE._serialized_end=1378
+  _MIDDLEENDQOSVOLUMESERVICE._serialized_start=1381
+  _MIDDLEENDQOSVOLUMESERVICE._serialized_end=2294
 # @@protoc_insertion_point(module_scope)
