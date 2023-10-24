@@ -18,408 +18,408 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// IPsecClient is the client API for IPsec service.
+// IPsecServiceClient is the client API for IPsecService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type IPsecClient interface {
-	IPsecVersion(ctx context.Context, in *IPsecVersionReq, opts ...grpc.CallOption) (*IPsecVersionResp, error)
-	IPsecStats(ctx context.Context, in *IPsecStatsReq, opts ...grpc.CallOption) (*IPsecStatsResp, error)
-	IPsecInitiate(ctx context.Context, in *IPsecInitiateReq, opts ...grpc.CallOption) (*IPsecInitiateResp, error)
-	IPsecTerminate(ctx context.Context, in *IPsecTerminateReq, opts ...grpc.CallOption) (*IPsecTerminateResp, error)
-	IPsecRekey(ctx context.Context, in *IPsecRekeyReq, opts ...grpc.CallOption) (*IPsecRekeyResp, error)
-	IPsecListSas(ctx context.Context, in *IPsecListSasReq, opts ...grpc.CallOption) (*IPsecListSasResp, error)
-	IPsecListConns(ctx context.Context, in *IPsecListConnsReq, opts ...grpc.CallOption) (*IPsecListConnsResp, error)
-	IPsecListCerts(ctx context.Context, in *IPsecListCertsReq, opts ...grpc.CallOption) (*IPsecListCertsResp, error)
-	IPsecLoadConn(ctx context.Context, in *IPsecLoadConnReq, opts ...grpc.CallOption) (*IPsecLoadConnResp, error)
-	IPsecUnloadConn(ctx context.Context, in *IPsecUnloadConnReq, opts ...grpc.CallOption) (*IPsecUnloadConnResp, error)
+type IPsecServiceClient interface {
+	IPsecVersion(ctx context.Context, in *IPsecVersionRequest, opts ...grpc.CallOption) (*IPsecVersionResponse, error)
+	IPsecStats(ctx context.Context, in *IPsecStatsRequest, opts ...grpc.CallOption) (*IPsecStatsResponse, error)
+	IPsecInitiate(ctx context.Context, in *IPsecInitiateRequest, opts ...grpc.CallOption) (*IPsecInitiateResponse, error)
+	IPsecTerminate(ctx context.Context, in *IPsecTerminateRequest, opts ...grpc.CallOption) (*IPsecTerminateResponse, error)
+	IPsecRekey(ctx context.Context, in *IPsecRekeyRequest, opts ...grpc.CallOption) (*IPsecRekeyResponse, error)
+	IPsecListSas(ctx context.Context, in *IPsecListSasRequest, opts ...grpc.CallOption) (*IPsecListSasResponse, error)
+	IPsecListConns(ctx context.Context, in *IPsecListConnsRequest, opts ...grpc.CallOption) (*IPsecListConnsResponse, error)
+	IPsecListCerts(ctx context.Context, in *IPsecListCertsRequest, opts ...grpc.CallOption) (*IPsecListCertsResponse, error)
+	IPsecLoadConn(ctx context.Context, in *IPsecLoadConnRequest, opts ...grpc.CallOption) (*IPsecLoadConnResponse, error)
+	IPsecUnloadConn(ctx context.Context, in *IPsecUnloadConnRequest, opts ...grpc.CallOption) (*IPsecUnloadConnResponse, error)
 }
 
-type iPsecClient struct {
+type iPsecServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewIPsecClient(cc grpc.ClientConnInterface) IPsecClient {
-	return &iPsecClient{cc}
+func NewIPsecServiceClient(cc grpc.ClientConnInterface) IPsecServiceClient {
+	return &iPsecServiceClient{cc}
 }
 
-func (c *iPsecClient) IPsecVersion(ctx context.Context, in *IPsecVersionReq, opts ...grpc.CallOption) (*IPsecVersionResp, error) {
-	out := new(IPsecVersionResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecVersion", in, out, opts...)
+func (c *iPsecServiceClient) IPsecVersion(ctx context.Context, in *IPsecVersionRequest, opts ...grpc.CallOption) (*IPsecVersionResponse, error) {
+	out := new(IPsecVersionResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecStats(ctx context.Context, in *IPsecStatsReq, opts ...grpc.CallOption) (*IPsecStatsResp, error) {
-	out := new(IPsecStatsResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecStats", in, out, opts...)
+func (c *iPsecServiceClient) IPsecStats(ctx context.Context, in *IPsecStatsRequest, opts ...grpc.CallOption) (*IPsecStatsResponse, error) {
+	out := new(IPsecStatsResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecStats", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecInitiate(ctx context.Context, in *IPsecInitiateReq, opts ...grpc.CallOption) (*IPsecInitiateResp, error) {
-	out := new(IPsecInitiateResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecInitiate", in, out, opts...)
+func (c *iPsecServiceClient) IPsecInitiate(ctx context.Context, in *IPsecInitiateRequest, opts ...grpc.CallOption) (*IPsecInitiateResponse, error) {
+	out := new(IPsecInitiateResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecInitiate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecTerminate(ctx context.Context, in *IPsecTerminateReq, opts ...grpc.CallOption) (*IPsecTerminateResp, error) {
-	out := new(IPsecTerminateResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecTerminate", in, out, opts...)
+func (c *iPsecServiceClient) IPsecTerminate(ctx context.Context, in *IPsecTerminateRequest, opts ...grpc.CallOption) (*IPsecTerminateResponse, error) {
+	out := new(IPsecTerminateResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecTerminate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecRekey(ctx context.Context, in *IPsecRekeyReq, opts ...grpc.CallOption) (*IPsecRekeyResp, error) {
-	out := new(IPsecRekeyResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecRekey", in, out, opts...)
+func (c *iPsecServiceClient) IPsecRekey(ctx context.Context, in *IPsecRekeyRequest, opts ...grpc.CallOption) (*IPsecRekeyResponse, error) {
+	out := new(IPsecRekeyResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecRekey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecListSas(ctx context.Context, in *IPsecListSasReq, opts ...grpc.CallOption) (*IPsecListSasResp, error) {
-	out := new(IPsecListSasResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecListSas", in, out, opts...)
+func (c *iPsecServiceClient) IPsecListSas(ctx context.Context, in *IPsecListSasRequest, opts ...grpc.CallOption) (*IPsecListSasResponse, error) {
+	out := new(IPsecListSasResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecListSas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecListConns(ctx context.Context, in *IPsecListConnsReq, opts ...grpc.CallOption) (*IPsecListConnsResp, error) {
-	out := new(IPsecListConnsResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecListConns", in, out, opts...)
+func (c *iPsecServiceClient) IPsecListConns(ctx context.Context, in *IPsecListConnsRequest, opts ...grpc.CallOption) (*IPsecListConnsResponse, error) {
+	out := new(IPsecListConnsResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecListConns", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecListCerts(ctx context.Context, in *IPsecListCertsReq, opts ...grpc.CallOption) (*IPsecListCertsResp, error) {
-	out := new(IPsecListCertsResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecListCerts", in, out, opts...)
+func (c *iPsecServiceClient) IPsecListCerts(ctx context.Context, in *IPsecListCertsRequest, opts ...grpc.CallOption) (*IPsecListCertsResponse, error) {
+	out := new(IPsecListCertsResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecListCerts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecLoadConn(ctx context.Context, in *IPsecLoadConnReq, opts ...grpc.CallOption) (*IPsecLoadConnResp, error) {
-	out := new(IPsecLoadConnResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecLoadConn", in, out, opts...)
+func (c *iPsecServiceClient) IPsecLoadConn(ctx context.Context, in *IPsecLoadConnRequest, opts ...grpc.CallOption) (*IPsecLoadConnResponse, error) {
+	out := new(IPsecLoadConnResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecLoadConn", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *iPsecClient) IPsecUnloadConn(ctx context.Context, in *IPsecUnloadConnReq, opts ...grpc.CallOption) (*IPsecUnloadConnResp, error) {
-	out := new(IPsecUnloadConnResp)
-	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsec/IPsecUnloadConn", in, out, opts...)
+func (c *iPsecServiceClient) IPsecUnloadConn(ctx context.Context, in *IPsecUnloadConnRequest, opts ...grpc.CallOption) (*IPsecUnloadConnResponse, error) {
+	out := new(IPsecUnloadConnResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.security.v1.IPsecService/IPsecUnloadConn", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// IPsecServer is the server API for IPsec service.
-// All implementations should embed UnimplementedIPsecServer
+// IPsecServiceServer is the server API for IPsecService service.
+// All implementations should embed UnimplementedIPsecServiceServer
 // for forward compatibility
-type IPsecServer interface {
-	IPsecVersion(context.Context, *IPsecVersionReq) (*IPsecVersionResp, error)
-	IPsecStats(context.Context, *IPsecStatsReq) (*IPsecStatsResp, error)
-	IPsecInitiate(context.Context, *IPsecInitiateReq) (*IPsecInitiateResp, error)
-	IPsecTerminate(context.Context, *IPsecTerminateReq) (*IPsecTerminateResp, error)
-	IPsecRekey(context.Context, *IPsecRekeyReq) (*IPsecRekeyResp, error)
-	IPsecListSas(context.Context, *IPsecListSasReq) (*IPsecListSasResp, error)
-	IPsecListConns(context.Context, *IPsecListConnsReq) (*IPsecListConnsResp, error)
-	IPsecListCerts(context.Context, *IPsecListCertsReq) (*IPsecListCertsResp, error)
-	IPsecLoadConn(context.Context, *IPsecLoadConnReq) (*IPsecLoadConnResp, error)
-	IPsecUnloadConn(context.Context, *IPsecUnloadConnReq) (*IPsecUnloadConnResp, error)
+type IPsecServiceServer interface {
+	IPsecVersion(context.Context, *IPsecVersionRequest) (*IPsecVersionResponse, error)
+	IPsecStats(context.Context, *IPsecStatsRequest) (*IPsecStatsResponse, error)
+	IPsecInitiate(context.Context, *IPsecInitiateRequest) (*IPsecInitiateResponse, error)
+	IPsecTerminate(context.Context, *IPsecTerminateRequest) (*IPsecTerminateResponse, error)
+	IPsecRekey(context.Context, *IPsecRekeyRequest) (*IPsecRekeyResponse, error)
+	IPsecListSas(context.Context, *IPsecListSasRequest) (*IPsecListSasResponse, error)
+	IPsecListConns(context.Context, *IPsecListConnsRequest) (*IPsecListConnsResponse, error)
+	IPsecListCerts(context.Context, *IPsecListCertsRequest) (*IPsecListCertsResponse, error)
+	IPsecLoadConn(context.Context, *IPsecLoadConnRequest) (*IPsecLoadConnResponse, error)
+	IPsecUnloadConn(context.Context, *IPsecUnloadConnRequest) (*IPsecUnloadConnResponse, error)
 }
 
-// UnimplementedIPsecServer should be embedded to have forward compatible implementations.
-type UnimplementedIPsecServer struct {
+// UnimplementedIPsecServiceServer should be embedded to have forward compatible implementations.
+type UnimplementedIPsecServiceServer struct {
 }
 
-func (UnimplementedIPsecServer) IPsecVersion(context.Context, *IPsecVersionReq) (*IPsecVersionResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecVersion(context.Context, *IPsecVersionRequest) (*IPsecVersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecVersion not implemented")
 }
-func (UnimplementedIPsecServer) IPsecStats(context.Context, *IPsecStatsReq) (*IPsecStatsResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecStats(context.Context, *IPsecStatsRequest) (*IPsecStatsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecStats not implemented")
 }
-func (UnimplementedIPsecServer) IPsecInitiate(context.Context, *IPsecInitiateReq) (*IPsecInitiateResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecInitiate(context.Context, *IPsecInitiateRequest) (*IPsecInitiateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecInitiate not implemented")
 }
-func (UnimplementedIPsecServer) IPsecTerminate(context.Context, *IPsecTerminateReq) (*IPsecTerminateResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecTerminate(context.Context, *IPsecTerminateRequest) (*IPsecTerminateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecTerminate not implemented")
 }
-func (UnimplementedIPsecServer) IPsecRekey(context.Context, *IPsecRekeyReq) (*IPsecRekeyResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecRekey(context.Context, *IPsecRekeyRequest) (*IPsecRekeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecRekey not implemented")
 }
-func (UnimplementedIPsecServer) IPsecListSas(context.Context, *IPsecListSasReq) (*IPsecListSasResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecListSas(context.Context, *IPsecListSasRequest) (*IPsecListSasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecListSas not implemented")
 }
-func (UnimplementedIPsecServer) IPsecListConns(context.Context, *IPsecListConnsReq) (*IPsecListConnsResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecListConns(context.Context, *IPsecListConnsRequest) (*IPsecListConnsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecListConns not implemented")
 }
-func (UnimplementedIPsecServer) IPsecListCerts(context.Context, *IPsecListCertsReq) (*IPsecListCertsResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecListCerts(context.Context, *IPsecListCertsRequest) (*IPsecListCertsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecListCerts not implemented")
 }
-func (UnimplementedIPsecServer) IPsecLoadConn(context.Context, *IPsecLoadConnReq) (*IPsecLoadConnResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecLoadConn(context.Context, *IPsecLoadConnRequest) (*IPsecLoadConnResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecLoadConn not implemented")
 }
-func (UnimplementedIPsecServer) IPsecUnloadConn(context.Context, *IPsecUnloadConnReq) (*IPsecUnloadConnResp, error) {
+func (UnimplementedIPsecServiceServer) IPsecUnloadConn(context.Context, *IPsecUnloadConnRequest) (*IPsecUnloadConnResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IPsecUnloadConn not implemented")
 }
 
-// UnsafeIPsecServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to IPsecServer will
+// UnsafeIPsecServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to IPsecServiceServer will
 // result in compilation errors.
-type UnsafeIPsecServer interface {
-	mustEmbedUnimplementedIPsecServer()
+type UnsafeIPsecServiceServer interface {
+	mustEmbedUnimplementedIPsecServiceServer()
 }
 
-func RegisterIPsecServer(s grpc.ServiceRegistrar, srv IPsecServer) {
-	s.RegisterService(&IPsec_ServiceDesc, srv)
+func RegisterIPsecServiceServer(s grpc.ServiceRegistrar, srv IPsecServiceServer) {
+	s.RegisterService(&IPsecService_ServiceDesc, srv)
 }
 
-func _IPsec_IPsecVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecVersionReq)
+func _IPsecService_IPsecVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecVersionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecVersion(ctx, in)
+		return srv.(IPsecServiceServer).IPsecVersion(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecVersion",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecVersion(ctx, req.(*IPsecVersionReq))
+		return srv.(IPsecServiceServer).IPsecVersion(ctx, req.(*IPsecVersionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecStatsReq)
+func _IPsecService_IPsecStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecStatsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecStats(ctx, in)
+		return srv.(IPsecServiceServer).IPsecStats(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecStats",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecStats",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecStats(ctx, req.(*IPsecStatsReq))
+		return srv.(IPsecServiceServer).IPsecStats(ctx, req.(*IPsecStatsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecInitiate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecInitiateReq)
+func _IPsecService_IPsecInitiate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecInitiateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecInitiate(ctx, in)
+		return srv.(IPsecServiceServer).IPsecInitiate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecInitiate",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecInitiate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecInitiate(ctx, req.(*IPsecInitiateReq))
+		return srv.(IPsecServiceServer).IPsecInitiate(ctx, req.(*IPsecInitiateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecTerminate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecTerminateReq)
+func _IPsecService_IPsecTerminate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecTerminateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecTerminate(ctx, in)
+		return srv.(IPsecServiceServer).IPsecTerminate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecTerminate",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecTerminate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecTerminate(ctx, req.(*IPsecTerminateReq))
+		return srv.(IPsecServiceServer).IPsecTerminate(ctx, req.(*IPsecTerminateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecRekey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecRekeyReq)
+func _IPsecService_IPsecRekey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecRekeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecRekey(ctx, in)
+		return srv.(IPsecServiceServer).IPsecRekey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecRekey",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecRekey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecRekey(ctx, req.(*IPsecRekeyReq))
+		return srv.(IPsecServiceServer).IPsecRekey(ctx, req.(*IPsecRekeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecListSas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecListSasReq)
+func _IPsecService_IPsecListSas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecListSasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecListSas(ctx, in)
+		return srv.(IPsecServiceServer).IPsecListSas(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecListSas",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecListSas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecListSas(ctx, req.(*IPsecListSasReq))
+		return srv.(IPsecServiceServer).IPsecListSas(ctx, req.(*IPsecListSasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecListConns_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecListConnsReq)
+func _IPsecService_IPsecListConns_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecListConnsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecListConns(ctx, in)
+		return srv.(IPsecServiceServer).IPsecListConns(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecListConns",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecListConns",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecListConns(ctx, req.(*IPsecListConnsReq))
+		return srv.(IPsecServiceServer).IPsecListConns(ctx, req.(*IPsecListConnsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecListCerts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecListCertsReq)
+func _IPsecService_IPsecListCerts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecListCertsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecListCerts(ctx, in)
+		return srv.(IPsecServiceServer).IPsecListCerts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecListCerts",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecListCerts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecListCerts(ctx, req.(*IPsecListCertsReq))
+		return srv.(IPsecServiceServer).IPsecListCerts(ctx, req.(*IPsecListCertsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecLoadConn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecLoadConnReq)
+func _IPsecService_IPsecLoadConn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecLoadConnRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecLoadConn(ctx, in)
+		return srv.(IPsecServiceServer).IPsecLoadConn(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecLoadConn",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecLoadConn",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecLoadConn(ctx, req.(*IPsecLoadConnReq))
+		return srv.(IPsecServiceServer).IPsecLoadConn(ctx, req.(*IPsecLoadConnRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IPsec_IPsecUnloadConn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IPsecUnloadConnReq)
+func _IPsecService_IPsecUnloadConn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IPsecUnloadConnRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IPsecServer).IPsecUnloadConn(ctx, in)
+		return srv.(IPsecServiceServer).IPsecUnloadConn(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.security.v1.IPsec/IPsecUnloadConn",
+		FullMethod: "/opi_api.security.v1.IPsecService/IPsecUnloadConn",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IPsecServer).IPsecUnloadConn(ctx, req.(*IPsecUnloadConnReq))
+		return srv.(IPsecServiceServer).IPsecUnloadConn(ctx, req.(*IPsecUnloadConnRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// IPsec_ServiceDesc is the grpc.ServiceDesc for IPsec service.
+// IPsecService_ServiceDesc is the grpc.ServiceDesc for IPsecService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var IPsec_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "opi_api.security.v1.IPsec",
-	HandlerType: (*IPsecServer)(nil),
+var IPsecService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "opi_api.security.v1.IPsecService",
+	HandlerType: (*IPsecServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "IPsecVersion",
-			Handler:    _IPsec_IPsecVersion_Handler,
+			Handler:    _IPsecService_IPsecVersion_Handler,
 		},
 		{
 			MethodName: "IPsecStats",
-			Handler:    _IPsec_IPsecStats_Handler,
+			Handler:    _IPsecService_IPsecStats_Handler,
 		},
 		{
 			MethodName: "IPsecInitiate",
-			Handler:    _IPsec_IPsecInitiate_Handler,
+			Handler:    _IPsecService_IPsecInitiate_Handler,
 		},
 		{
 			MethodName: "IPsecTerminate",
-			Handler:    _IPsec_IPsecTerminate_Handler,
+			Handler:    _IPsecService_IPsecTerminate_Handler,
 		},
 		{
 			MethodName: "IPsecRekey",
-			Handler:    _IPsec_IPsecRekey_Handler,
+			Handler:    _IPsecService_IPsecRekey_Handler,
 		},
 		{
 			MethodName: "IPsecListSas",
-			Handler:    _IPsec_IPsecListSas_Handler,
+			Handler:    _IPsecService_IPsecListSas_Handler,
 		},
 		{
 			MethodName: "IPsecListConns",
-			Handler:    _IPsec_IPsecListConns_Handler,
+			Handler:    _IPsecService_IPsecListConns_Handler,
 		},
 		{
 			MethodName: "IPsecListCerts",
-			Handler:    _IPsec_IPsecListCerts_Handler,
+			Handler:    _IPsecService_IPsecListCerts_Handler,
 		},
 		{
 			MethodName: "IPsecLoadConn",
-			Handler:    _IPsec_IPsecLoadConn_Handler,
+			Handler:    _IPsecService_IPsecLoadConn_Handler,
 		},
 		{
 			MethodName: "IPsecUnloadConn",
-			Handler:    _IPsec_IPsecUnloadConn_Handler,
+			Handler:    _IPsecService_IPsecUnloadConn_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

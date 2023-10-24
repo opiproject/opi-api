@@ -11,26 +11,26 @@
     - [Child](#opi_api-security-v1-Child)
     - [Connection](#opi_api-security-v1-Connection)
     - [Groups](#opi_api-security-v1-Groups)
-    - [IPsecInitiateReq](#opi_api-security-v1-IPsecInitiateReq)
-    - [IPsecInitiateResp](#opi_api-security-v1-IPsecInitiateResp)
-    - [IPsecListCertsReq](#opi_api-security-v1-IPsecListCertsReq)
-    - [IPsecListCertsResp](#opi_api-security-v1-IPsecListCertsResp)
-    - [IPsecListConnsReq](#opi_api-security-v1-IPsecListConnsReq)
-    - [IPsecListConnsResp](#opi_api-security-v1-IPsecListConnsResp)
-    - [IPsecListSasReq](#opi_api-security-v1-IPsecListSasReq)
-    - [IPsecListSasResp](#opi_api-security-v1-IPsecListSasResp)
-    - [IPsecLoadConnReq](#opi_api-security-v1-IPsecLoadConnReq)
-    - [IPsecLoadConnResp](#opi_api-security-v1-IPsecLoadConnResp)
-    - [IPsecRekeyReq](#opi_api-security-v1-IPsecRekeyReq)
-    - [IPsecRekeyResp](#opi_api-security-v1-IPsecRekeyResp)
-    - [IPsecStatsReq](#opi_api-security-v1-IPsecStatsReq)
-    - [IPsecStatsResp](#opi_api-security-v1-IPsecStatsResp)
-    - [IPsecTerminateReq](#opi_api-security-v1-IPsecTerminateReq)
-    - [IPsecTerminateResp](#opi_api-security-v1-IPsecTerminateResp)
-    - [IPsecUnloadConnReq](#opi_api-security-v1-IPsecUnloadConnReq)
-    - [IPsecUnloadConnResp](#opi_api-security-v1-IPsecUnloadConnResp)
-    - [IPsecVersionReq](#opi_api-security-v1-IPsecVersionReq)
-    - [IPsecVersionResp](#opi_api-security-v1-IPsecVersionResp)
+    - [IPsecInitiateRequest](#opi_api-security-v1-IPsecInitiateRequest)
+    - [IPsecInitiateResponse](#opi_api-security-v1-IPsecInitiateResponse)
+    - [IPsecListCertsRequest](#opi_api-security-v1-IPsecListCertsRequest)
+    - [IPsecListCertsResponse](#opi_api-security-v1-IPsecListCertsResponse)
+    - [IPsecListConnsRequest](#opi_api-security-v1-IPsecListConnsRequest)
+    - [IPsecListConnsResponse](#opi_api-security-v1-IPsecListConnsResponse)
+    - [IPsecListSasRequest](#opi_api-security-v1-IPsecListSasRequest)
+    - [IPsecListSasResponse](#opi_api-security-v1-IPsecListSasResponse)
+    - [IPsecLoadConnRequest](#opi_api-security-v1-IPsecLoadConnRequest)
+    - [IPsecLoadConnResponse](#opi_api-security-v1-IPsecLoadConnResponse)
+    - [IPsecRekeyRequest](#opi_api-security-v1-IPsecRekeyRequest)
+    - [IPsecRekeyResponse](#opi_api-security-v1-IPsecRekeyResponse)
+    - [IPsecStatsRequest](#opi_api-security-v1-IPsecStatsRequest)
+    - [IPsecStatsResponse](#opi_api-security-v1-IPsecStatsResponse)
+    - [IPsecTerminateRequest](#opi_api-security-v1-IPsecTerminateRequest)
+    - [IPsecTerminateResponse](#opi_api-security-v1-IPsecTerminateResponse)
+    - [IPsecUnloadConnRequest](#opi_api-security-v1-IPsecUnloadConnRequest)
+    - [IPsecUnloadConnResponse](#opi_api-security-v1-IPsecUnloadConnResponse)
+    - [IPsecVersionRequest](#opi_api-security-v1-IPsecVersionRequest)
+    - [IPsecVersionResponse](#opi_api-security-v1-IPsecVersionResponse)
     - [ListCert](#opi_api-security-v1-ListCert)
     - [ListChild](#opi_api-security-v1-ListChild)
     - [ListChildSa](#opi_api-security-v1-ListChildSa)
@@ -50,14 +50,14 @@
     - [CertificateType](#opi_api-security-v1-CertificateType)
     - [ChildSaState](#opi_api-security-v1-ChildSaState)
     - [CryptoAlgorithm](#opi_api-security-v1-CryptoAlgorithm)
-    - [DiffieHellmanGroups](#opi_api-security-v1-DiffieHellmanGroups)
-    - [IPsecMode](#opi_api-security-v1-IPsecMode)
+    - [DHGroups](#opi_api-security-v1-DHGroups)
     - [IkeSaState](#opi_api-security-v1-IkeSaState)
     - [IntegAlgorithm](#opi_api-security-v1-IntegAlgorithm)
-    - [PseudoRandomFunction](#opi_api-security-v1-PseudoRandomFunction)
+    - [IpsecMode](#opi_api-security-v1-IpsecMode)
+    - [PRFunction](#opi_api-security-v1-PRFunction)
     - [X509CertificateFlag](#opi_api-security-v1-X509CertificateFlag)
   
-    - [IPsec](#opi_api-security-v1-IPsec)
+    - [IPsecService](#opi_api-security-v1-IPsecService)
   
 - [uuid.proto](#uuid-proto)
     - [Uuid](#opi_api-common-v1-Uuid)
@@ -71,6 +71,7 @@
 
 ## ipsec.proto
 Copyright (C) 2021 Intel Corporation
+Copyright (c) 2023 Dell Inc, or its subsidiaries.
 SPDX-License-Identifier: Apache-2.0
 
 Major pieces taken from:
@@ -215,9 +216,9 @@ IKE connection
 
 
 
-<a name="opi_api-security-v1-IPsecInitiateReq"></a>
+<a name="opi_api-security-v1-IPsecInitiateRequest"></a>
 
-### IPsecInitiateReq
+### IPsecInitiateRequest
 
 
 
@@ -233,9 +234,9 @@ IKE connection
 
 
 
-<a name="opi_api-security-v1-IPsecInitiateResp"></a>
+<a name="opi_api-security-v1-IPsecInitiateResponse"></a>
 
-### IPsecInitiateResp
+### IPsecInitiateResponse
 Intentionally empty
 
 
@@ -243,9 +244,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecListCertsReq"></a>
+<a name="opi_api-security-v1-IPsecListCertsRequest"></a>
 
-### IPsecListCertsReq
+### IPsecListCertsRequest
 
 
 
@@ -260,9 +261,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecListCertsResp"></a>
+<a name="opi_api-security-v1-IPsecListCertsResponse"></a>
 
-### IPsecListCertsResp
+### IPsecListCertsResponse
 
 
 
@@ -275,9 +276,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecListConnsReq"></a>
+<a name="opi_api-security-v1-IPsecListConnsRequest"></a>
 
-### IPsecListConnsReq
+### IPsecListConnsRequest
 
 
 
@@ -290,9 +291,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecListConnsResp"></a>
+<a name="opi_api-security-v1-IPsecListConnsResponse"></a>
 
-### IPsecListConnsResp
+### IPsecListConnsResponse
 
 
 
@@ -305,9 +306,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecListSasReq"></a>
+<a name="opi_api-security-v1-IPsecListSasRequest"></a>
 
-### IPsecListSasReq
+### IPsecListSasRequest
 
 
 
@@ -324,9 +325,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecListSasResp"></a>
+<a name="opi_api-security-v1-IPsecListSasResponse"></a>
 
-### IPsecListSasResp
+### IPsecListSasResponse
 
 
 
@@ -339,9 +340,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecLoadConnReq"></a>
+<a name="opi_api-security-v1-IPsecLoadConnRequest"></a>
 
-### IPsecLoadConnReq
+### IPsecLoadConnRequest
 
 
 
@@ -354,9 +355,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecLoadConnResp"></a>
+<a name="opi_api-security-v1-IPsecLoadConnResponse"></a>
 
-### IPsecLoadConnResp
+### IPsecLoadConnResponse
 
 
 
@@ -369,9 +370,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecRekeyReq"></a>
+<a name="opi_api-security-v1-IPsecRekeyRequest"></a>
 
-### IPsecRekeyReq
+### IPsecRekeyRequest
 
 
 
@@ -388,9 +389,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecRekeyResp"></a>
+<a name="opi_api-security-v1-IPsecRekeyResponse"></a>
 
-### IPsecRekeyResp
+### IPsecRekeyResponse
 
 
 
@@ -404,9 +405,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecStatsReq"></a>
+<a name="opi_api-security-v1-IPsecStatsRequest"></a>
 
-### IPsecStatsReq
+### IPsecStatsRequest
 Intentionally empty
 
 
@@ -414,9 +415,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecStatsResp"></a>
+<a name="opi_api-security-v1-IPsecStatsResponse"></a>
 
-### IPsecStatsResp
+### IPsecStatsResponse
 
 
 
@@ -429,9 +430,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecTerminateReq"></a>
+<a name="opi_api-security-v1-IPsecTerminateRequest"></a>
 
-### IPsecTerminateReq
+### IPsecTerminateRequest
 
 
 
@@ -450,9 +451,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecTerminateResp"></a>
+<a name="opi_api-security-v1-IPsecTerminateResponse"></a>
 
-### IPsecTerminateResp
+### IPsecTerminateResponse
 
 
 
@@ -467,9 +468,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecUnloadConnReq"></a>
+<a name="opi_api-security-v1-IPsecUnloadConnRequest"></a>
 
-### IPsecUnloadConnReq
+### IPsecUnloadConnRequest
 
 
 
@@ -482,9 +483,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecUnloadConnResp"></a>
+<a name="opi_api-security-v1-IPsecUnloadConnResponse"></a>
 
-### IPsecUnloadConnResp
+### IPsecUnloadConnResponse
 
 
 
@@ -497,9 +498,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecVersionReq"></a>
+<a name="opi_api-security-v1-IPsecVersionRequest"></a>
 
-### IPsecVersionReq
+### IPsecVersionRequest
 Intentionally empty
 
 
@@ -507,9 +508,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-security-v1-IPsecVersionResp"></a>
+<a name="opi_api-security-v1-IPsecVersionResponse"></a>
 
-### IPsecVersionResp
+### IPsecVersionResponse
 
 
 
@@ -759,8 +760,8 @@ list-cert
 | ----- | ---- | ----- | ----------- |
 | crypto_alg | [CryptoAlgorithm](#opi_api-security-v1-CryptoAlgorithm) | repeated |  |
 | integ_alg | [IntegAlgorithm](#opi_api-security-v1-IntegAlgorithm) | repeated |  |
-| prf | [PseudoRandomFunction](#opi_api-security-v1-PseudoRandomFunction) | repeated |  |
-| dhgroups | [DiffieHellmanGroups](#opi_api-security-v1-DiffieHellmanGroups) | repeated |  |
+| prf | [PRFunction](#opi_api-security-v1-PRFunction) | repeated |  |
+| dhgroups | [DHGroups](#opi_api-security-v1-DHGroups) | repeated |  |
 
 
 
@@ -860,10 +861,11 @@ Authentication Type
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| PUBKEY | 0 |  |
-| PSK | 1 |  |
-| XAUTH | 2 |  |
-| EAP | 3 |  |
+| AUTH_TYPE_UNSPECIFIED | 0 |  |
+| AUTH_TYPE_PUBKEY | 1 |  |
+| AUTH_TYPE_PSK | 2 |  |
+| AUTH_TYPE_XAUTH | 3 |  |
+| AUTH_TYPE_EAP | 4 |  |
 
 
 
@@ -874,11 +876,11 @@ Certificate type
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| CERT_X509 | 0 |  |
-| CERT_X509_AC | 1 |  |
-| CERT_X509_CRL | 2 |  |
-| CERT_OCSP_RESPONSE | 3 |  |
-| CERT_PUBKEY | 4 |  |
+| CERTIFICATE_TYPE_X509_UNSPECIFIED | 0 |  |
+| CERTIFICATE_TYPE_X509_AC | 1 |  |
+| CERTIFICATE_TYPE_X509_CRL | 2 |  |
+| CERTIFICATE_TYPE_OCSP_RESPONSE | 3 |  |
+| CERTIFICATE_TYPE_PUBKEY | 4 |  |
 
 
 
@@ -889,17 +891,18 @@ CHILD_SA state
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| CHILD_CREATED | 0 |  |
-| CHILD_ROUTED | 1 |  |
-| CHILD_INSTALLING | 2 |  |
-| CHILD_INSTALLED | 3 |  |
-| CHILD_UPDATING | 4 |  |
-| CHILD_REKEYING | 5 |  |
-| CHILD_REKEYED | 6 |  |
-| CHILD_RETRYING | 7 |  |
-| CHILD_DELETING | 8 |  |
-| CHILD_DELETED | 9 |  |
-| CHILD_DESTROYING | 10 |  |
+| CHILD_SA_STATE_UNSPECIFIED | 0 |  |
+| CHILD_SA_STATE_CREATED | 1 |  |
+| CHILD_SA_STATE_ROUTED | 2 |  |
+| CHILD_SA_STATE_INSTALLING | 3 |  |
+| CHILD_SA_STATE_INSTALLED | 4 |  |
+| CHILD_SA_STATE_UPDATING | 5 |  |
+| CHILD_SA_STATE_REKEYING | 6 |  |
+| CHILD_SA_STATE_REKEYED | 7 |  |
+| CHILD_SA_STATE_RETRYING | 8 |  |
+| CHILD_SA_STATE_DELETING | 9 |  |
+| CHILD_SA_STATE_DELETED | 10 |  |
+| CHILD_SA_STATE_DESTROYING | 11 |  |
 
 
 
@@ -910,49 +913,37 @@ Cryptographic algorithm for encryption
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NONE_CRYPTO | 0 |  |
-| AES128 | 1 |  |
-| AES192 | 2 |  |
-| AES256 | 3 |  |
-| AES128GCM128 | 4 |  |
-| AES256GCM128 | 5 |  |
-| AES128GMAC | 6 |  |
-| AES256GMAC | 7 |  |
+| CRYPTO_ALGORITHM_UNSPECIFIED | 0 |  |
+| CRYPTO_ALGORITHM_AES128 | 1 |  |
+| CRYPTO_ALGORITHM_AES192 | 2 |  |
+| CRYPTO_ALGORITHM_AES256 | 3 |  |
+| CRYPTO_ALGORITHM_AES128GCM128 | 4 |  |
+| CRYPTO_ALGORITHM_AES256GCM128 | 5 |  |
+| CRYPTO_ALGORITHM_AES128GMAC | 6 |  |
+| CRYPTO_ALGORITHM_AES256GMAC | 7 |  |
 
 
 
-<a name="opi_api-security-v1-DiffieHellmanGroups"></a>
+<a name="opi_api-security-v1-DHGroups"></a>
 
-### DiffieHellmanGroups
+### DHGroups
 Diffie Hellman Groups
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NONE_DH_GROUP | 0 |  |
-| MODP768 | 1 |  |
-| MODP1024 | 2 |  |
-| MODP1536 | 3 |  |
-| MODP2048 | 4 |  |
-| MODP3072 | 5 |  |
-| MODP4096 | 6 |  |
-| MODP6144 | 7 |  |
-| MODP8192 | 8 |  |
-| MODP1024S160 | 9 |  |
-| MODP2048S224 | 10 |  |
-| MODP2048S256 | 11 |  |
-| CURVE25519 | 12 |  |
-
-
-
-<a name="opi_api-security-v1-IPsecMode"></a>
-
-### IPsecMode
-Tunnel mode
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TUNNEL_MODE | 0 |  |
-| TRANSPORT_MODE | 1 |  |
+| DH_GROUPS_UNSPECIFIED | 0 |  |
+| DH_GROUPS_MODP768 | 1 |  |
+| DH_GROUPS_MODP1024 | 2 |  |
+| DH_GROUPS_MODP1536 | 3 |  |
+| DH_GROUPS_MODP2048 | 4 |  |
+| DH_GROUPS_MODP3072 | 5 |  |
+| DH_GROUPS_MODP4096 | 6 |  |
+| DH_GROUPS_MODP6144 | 7 |  |
+| DH_GROUPS_MODP8192 | 8 |  |
+| DH_GROUPS_MODP1024S160 | 9 |  |
+| DH_GROUPS_MODP2048S224 | 10 |  |
+| DH_GROUPS_MODP2048S256 | 11 |  |
+| DH_GROUPS_CURVE25519 | 12 |  |
 
 
 
@@ -963,14 +954,15 @@ IKE_SA state
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| CREATED | 0 |  |
-| CONNECTING | 1 |  |
-| ESTABLISHED | 2 |  |
-| PASSIVE | 3 |  |
-| REKEYING | 4 |  |
-| REKEYED | 5 |  |
-| DELETING | 6 |  |
-| DESTROYING | 7 |  |
+| IKE_SA_STATE_UNSPECIFIED | 0 |  |
+| IKE_SA_STATE_CREATED | 1 |  |
+| IKE_SA_STATE_CONNECTING | 2 |  |
+| IKE_SA_STATE_ESTABLISHED | 3 |  |
+| IKE_SA_STATE_PASSIVE | 4 |  |
+| IKE_SA_STATE_REKEYING | 5 |  |
+| IKE_SA_STATE_REKEYED | 6 |  |
+| IKE_SA_STATE_DELETING | 7 |  |
+| IKE_SA_STATE_DESTROYING | 8 |  |
 
 
 
@@ -981,33 +973,46 @@ Cryptographic algorithm for authentication
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NONE_INTEG | 0 |  |
-| MD5 | 1 |  |
-| MD5_128 | 2 |  |
-| SHA1 | 3 |  |
-| SHA1_160 | 4 |  |
-| SHA256 | 5 |  |
-| SHA384 | 7 |  |
-| SHA512 | 8 |  |
-| SHA256_96 | 9 |  |
+| INTEG_ALGORITHM_UNSPECIFIED | 0 |  |
+| INTEG_ALGORITHM_MD5 | 1 |  |
+| INTEG_ALGORITHM_MD5_128 | 2 |  |
+| INTEG_ALGORITHM_SHA1 | 3 |  |
+| INTEG_ALGORITHM_SHA1_160 | 4 |  |
+| INTEG_ALGORITHM_SHA256 | 5 |  |
+| INTEG_ALGORITHM_SHA384 | 7 |  |
+| INTEG_ALGORITHM_SHA512 | 8 |  |
+| INTEG_ALGORITHM_SHA256_96 | 9 |  |
 
 
 
-<a name="opi_api-security-v1-PseudoRandomFunction"></a>
+<a name="opi_api-security-v1-IpsecMode"></a>
 
-### PseudoRandomFunction
-
+### IpsecMode
+Tunnel mode
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NONE_PRF | 0 |  |
-| PRFMD5 | 1 |  |
-| PRFSHA1 | 2 |  |
-| PRFAESXCBC | 3 |  |
-| PRFAESCMAC | 4 |  |
-| PRFSHA256 | 5 |  |
-| PRFSHA384 | 6 |  |
-| PRFSHA512 | 7 |  |
+| IPSEC_MODE_UNSPECIFIED | 0 |  |
+| IPSEC_MODE_TUNNEL_MODE | 1 |  |
+| IPSEC_MODE_TRANSPORT_MODE | 2 |  |
+
+
+
+<a name="opi_api-security-v1-PRFunction"></a>
+
+### PRFunction
+Pesudo Random Function
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PR_FUNCTION_UNSPECIFIED | 0 |  |
+| PR_FUNCTION_MD5 | 1 |  |
+| PR_FUNCTION_SHA1 | 2 |  |
+| PR_FUNCTION_AESXCBC | 3 |  |
+| PR_FUNCTION_AESCMAC | 4 |  |
+| PR_FUNCTION_SHA256 | 5 |  |
+| PR_FUNCTION_SHA384 | 6 |  |
+| PR_FUNCTION_SHA512 | 7 |  |
 
 
 
@@ -1018,10 +1023,10 @@ X.509 certificate flag
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| X509_CERT_FLAG_NONE | 0 |  |
-| X509_CERT_FLAG_CA | 1 |  |
-| X509_CERT_FLAG_AA | 2 |  |
-| X509_CERT_FLAG_OCSP | 3 |  |
+| X509_CERTIFICATE_FLAG_UNSPECIFIED | 0 |  |
+| X509_CERTIFICATE_FLAG_CA | 1 |  |
+| X509_CERTIFICATE_FLAG_AA | 2 |  |
+| X509_CERTIFICATE_FLAG_OCSP | 3 |  |
 
 
  
@@ -1029,23 +1034,23 @@ X.509 certificate flag
  
 
 
-<a name="opi_api-security-v1-IPsec"></a>
+<a name="opi_api-security-v1-IPsecService"></a>
 
-### IPsec
-
+### IPsecService
+Service functions for IPSec Protocol
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| IPsecVersion | [IPsecVersionReq](#opi_api-security-v1-IPsecVersionReq) | [IPsecVersionResp](#opi_api-security-v1-IPsecVersionResp) |  |
-| IPsecStats | [IPsecStatsReq](#opi_api-security-v1-IPsecStatsReq) | [IPsecStatsResp](#opi_api-security-v1-IPsecStatsResp) |  |
-| IPsecInitiate | [IPsecInitiateReq](#opi_api-security-v1-IPsecInitiateReq) | [IPsecInitiateResp](#opi_api-security-v1-IPsecInitiateResp) |  |
-| IPsecTerminate | [IPsecTerminateReq](#opi_api-security-v1-IPsecTerminateReq) | [IPsecTerminateResp](#opi_api-security-v1-IPsecTerminateResp) |  |
-| IPsecRekey | [IPsecRekeyReq](#opi_api-security-v1-IPsecRekeyReq) | [IPsecRekeyResp](#opi_api-security-v1-IPsecRekeyResp) |  |
-| IPsecListSas | [IPsecListSasReq](#opi_api-security-v1-IPsecListSasReq) | [IPsecListSasResp](#opi_api-security-v1-IPsecListSasResp) |  |
-| IPsecListConns | [IPsecListConnsReq](#opi_api-security-v1-IPsecListConnsReq) | [IPsecListConnsResp](#opi_api-security-v1-IPsecListConnsResp) |  |
-| IPsecListCerts | [IPsecListCertsReq](#opi_api-security-v1-IPsecListCertsReq) | [IPsecListCertsResp](#opi_api-security-v1-IPsecListCertsResp) |  |
-| IPsecLoadConn | [IPsecLoadConnReq](#opi_api-security-v1-IPsecLoadConnReq) | [IPsecLoadConnResp](#opi_api-security-v1-IPsecLoadConnResp) |  |
-| IPsecUnloadConn | [IPsecUnloadConnReq](#opi_api-security-v1-IPsecUnloadConnReq) | [IPsecUnloadConnResp](#opi_api-security-v1-IPsecUnloadConnResp) |  |
+| IPsecVersion | [IPsecVersionRequest](#opi_api-security-v1-IPsecVersionRequest) | [IPsecVersionResponse](#opi_api-security-v1-IPsecVersionResponse) |  |
+| IPsecStats | [IPsecStatsRequest](#opi_api-security-v1-IPsecStatsRequest) | [IPsecStatsResponse](#opi_api-security-v1-IPsecStatsResponse) |  |
+| IPsecInitiate | [IPsecInitiateRequest](#opi_api-security-v1-IPsecInitiateRequest) | [IPsecInitiateResponse](#opi_api-security-v1-IPsecInitiateResponse) |  |
+| IPsecTerminate | [IPsecTerminateRequest](#opi_api-security-v1-IPsecTerminateRequest) | [IPsecTerminateResponse](#opi_api-security-v1-IPsecTerminateResponse) |  |
+| IPsecRekey | [IPsecRekeyRequest](#opi_api-security-v1-IPsecRekeyRequest) | [IPsecRekeyResponse](#opi_api-security-v1-IPsecRekeyResponse) |  |
+| IPsecListSas | [IPsecListSasRequest](#opi_api-security-v1-IPsecListSasRequest) | [IPsecListSasResponse](#opi_api-security-v1-IPsecListSasResponse) |  |
+| IPsecListConns | [IPsecListConnsRequest](#opi_api-security-v1-IPsecListConnsRequest) | [IPsecListConnsResponse](#opi_api-security-v1-IPsecListConnsResponse) |  |
+| IPsecListCerts | [IPsecListCertsRequest](#opi_api-security-v1-IPsecListCertsRequest) | [IPsecListCertsResponse](#opi_api-security-v1-IPsecListCertsResponse) |  |
+| IPsecLoadConn | [IPsecLoadConnRequest](#opi_api-security-v1-IPsecLoadConnRequest) | [IPsecLoadConnResponse](#opi_api-security-v1-IPsecLoadConnResponse) |  |
+| IPsecUnloadConn | [IPsecUnloadConnRequest](#opi_api-security-v1-IPsecUnloadConnRequest) | [IPsecUnloadConnResponse](#opi_api-security-v1-IPsecUnloadConnResponse) |  |
 
  
 

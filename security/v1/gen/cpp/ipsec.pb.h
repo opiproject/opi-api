@@ -70,66 +70,66 @@ extern ConnectionDefaultTypeInternal _Connection_default_instance_;
 class Groups;
 struct GroupsDefaultTypeInternal;
 extern GroupsDefaultTypeInternal _Groups_default_instance_;
-class IPsecInitiateReq;
-struct IPsecInitiateReqDefaultTypeInternal;
-extern IPsecInitiateReqDefaultTypeInternal _IPsecInitiateReq_default_instance_;
-class IPsecInitiateResp;
-struct IPsecInitiateRespDefaultTypeInternal;
-extern IPsecInitiateRespDefaultTypeInternal _IPsecInitiateResp_default_instance_;
-class IPsecListCertsReq;
-struct IPsecListCertsReqDefaultTypeInternal;
-extern IPsecListCertsReqDefaultTypeInternal _IPsecListCertsReq_default_instance_;
-class IPsecListCertsResp;
-struct IPsecListCertsRespDefaultTypeInternal;
-extern IPsecListCertsRespDefaultTypeInternal _IPsecListCertsResp_default_instance_;
-class IPsecListConnsReq;
-struct IPsecListConnsReqDefaultTypeInternal;
-extern IPsecListConnsReqDefaultTypeInternal _IPsecListConnsReq_default_instance_;
-class IPsecListConnsResp;
-struct IPsecListConnsRespDefaultTypeInternal;
-extern IPsecListConnsRespDefaultTypeInternal _IPsecListConnsResp_default_instance_;
-class IPsecListSasReq;
-struct IPsecListSasReqDefaultTypeInternal;
-extern IPsecListSasReqDefaultTypeInternal _IPsecListSasReq_default_instance_;
-class IPsecListSasResp;
-struct IPsecListSasRespDefaultTypeInternal;
-extern IPsecListSasRespDefaultTypeInternal _IPsecListSasResp_default_instance_;
-class IPsecLoadConnReq;
-struct IPsecLoadConnReqDefaultTypeInternal;
-extern IPsecLoadConnReqDefaultTypeInternal _IPsecLoadConnReq_default_instance_;
-class IPsecLoadConnResp;
-struct IPsecLoadConnRespDefaultTypeInternal;
-extern IPsecLoadConnRespDefaultTypeInternal _IPsecLoadConnResp_default_instance_;
-class IPsecRekeyReq;
-struct IPsecRekeyReqDefaultTypeInternal;
-extern IPsecRekeyReqDefaultTypeInternal _IPsecRekeyReq_default_instance_;
-class IPsecRekeyResp;
-struct IPsecRekeyRespDefaultTypeInternal;
-extern IPsecRekeyRespDefaultTypeInternal _IPsecRekeyResp_default_instance_;
-class IPsecStatsReq;
-struct IPsecStatsReqDefaultTypeInternal;
-extern IPsecStatsReqDefaultTypeInternal _IPsecStatsReq_default_instance_;
-class IPsecStatsResp;
-struct IPsecStatsRespDefaultTypeInternal;
-extern IPsecStatsRespDefaultTypeInternal _IPsecStatsResp_default_instance_;
-class IPsecTerminateReq;
-struct IPsecTerminateReqDefaultTypeInternal;
-extern IPsecTerminateReqDefaultTypeInternal _IPsecTerminateReq_default_instance_;
-class IPsecTerminateResp;
-struct IPsecTerminateRespDefaultTypeInternal;
-extern IPsecTerminateRespDefaultTypeInternal _IPsecTerminateResp_default_instance_;
-class IPsecUnloadConnReq;
-struct IPsecUnloadConnReqDefaultTypeInternal;
-extern IPsecUnloadConnReqDefaultTypeInternal _IPsecUnloadConnReq_default_instance_;
-class IPsecUnloadConnResp;
-struct IPsecUnloadConnRespDefaultTypeInternal;
-extern IPsecUnloadConnRespDefaultTypeInternal _IPsecUnloadConnResp_default_instance_;
-class IPsecVersionReq;
-struct IPsecVersionReqDefaultTypeInternal;
-extern IPsecVersionReqDefaultTypeInternal _IPsecVersionReq_default_instance_;
-class IPsecVersionResp;
-struct IPsecVersionRespDefaultTypeInternal;
-extern IPsecVersionRespDefaultTypeInternal _IPsecVersionResp_default_instance_;
+class IPsecInitiateRequest;
+struct IPsecInitiateRequestDefaultTypeInternal;
+extern IPsecInitiateRequestDefaultTypeInternal _IPsecInitiateRequest_default_instance_;
+class IPsecInitiateResponse;
+struct IPsecInitiateResponseDefaultTypeInternal;
+extern IPsecInitiateResponseDefaultTypeInternal _IPsecInitiateResponse_default_instance_;
+class IPsecListCertsRequest;
+struct IPsecListCertsRequestDefaultTypeInternal;
+extern IPsecListCertsRequestDefaultTypeInternal _IPsecListCertsRequest_default_instance_;
+class IPsecListCertsResponse;
+struct IPsecListCertsResponseDefaultTypeInternal;
+extern IPsecListCertsResponseDefaultTypeInternal _IPsecListCertsResponse_default_instance_;
+class IPsecListConnsRequest;
+struct IPsecListConnsRequestDefaultTypeInternal;
+extern IPsecListConnsRequestDefaultTypeInternal _IPsecListConnsRequest_default_instance_;
+class IPsecListConnsResponse;
+struct IPsecListConnsResponseDefaultTypeInternal;
+extern IPsecListConnsResponseDefaultTypeInternal _IPsecListConnsResponse_default_instance_;
+class IPsecListSasRequest;
+struct IPsecListSasRequestDefaultTypeInternal;
+extern IPsecListSasRequestDefaultTypeInternal _IPsecListSasRequest_default_instance_;
+class IPsecListSasResponse;
+struct IPsecListSasResponseDefaultTypeInternal;
+extern IPsecListSasResponseDefaultTypeInternal _IPsecListSasResponse_default_instance_;
+class IPsecLoadConnRequest;
+struct IPsecLoadConnRequestDefaultTypeInternal;
+extern IPsecLoadConnRequestDefaultTypeInternal _IPsecLoadConnRequest_default_instance_;
+class IPsecLoadConnResponse;
+struct IPsecLoadConnResponseDefaultTypeInternal;
+extern IPsecLoadConnResponseDefaultTypeInternal _IPsecLoadConnResponse_default_instance_;
+class IPsecRekeyRequest;
+struct IPsecRekeyRequestDefaultTypeInternal;
+extern IPsecRekeyRequestDefaultTypeInternal _IPsecRekeyRequest_default_instance_;
+class IPsecRekeyResponse;
+struct IPsecRekeyResponseDefaultTypeInternal;
+extern IPsecRekeyResponseDefaultTypeInternal _IPsecRekeyResponse_default_instance_;
+class IPsecStatsRequest;
+struct IPsecStatsRequestDefaultTypeInternal;
+extern IPsecStatsRequestDefaultTypeInternal _IPsecStatsRequest_default_instance_;
+class IPsecStatsResponse;
+struct IPsecStatsResponseDefaultTypeInternal;
+extern IPsecStatsResponseDefaultTypeInternal _IPsecStatsResponse_default_instance_;
+class IPsecTerminateRequest;
+struct IPsecTerminateRequestDefaultTypeInternal;
+extern IPsecTerminateRequestDefaultTypeInternal _IPsecTerminateRequest_default_instance_;
+class IPsecTerminateResponse;
+struct IPsecTerminateResponseDefaultTypeInternal;
+extern IPsecTerminateResponseDefaultTypeInternal _IPsecTerminateResponse_default_instance_;
+class IPsecUnloadConnRequest;
+struct IPsecUnloadConnRequestDefaultTypeInternal;
+extern IPsecUnloadConnRequestDefaultTypeInternal _IPsecUnloadConnRequest_default_instance_;
+class IPsecUnloadConnResponse;
+struct IPsecUnloadConnResponseDefaultTypeInternal;
+extern IPsecUnloadConnResponseDefaultTypeInternal _IPsecUnloadConnResponse_default_instance_;
+class IPsecVersionRequest;
+struct IPsecVersionRequestDefaultTypeInternal;
+extern IPsecVersionRequestDefaultTypeInternal _IPsecVersionRequest_default_instance_;
+class IPsecVersionResponse;
+struct IPsecVersionResponseDefaultTypeInternal;
+extern IPsecVersionResponseDefaultTypeInternal _IPsecVersionResponse_default_instance_;
 class ListCert;
 struct ListCertDefaultTypeInternal;
 extern ListCertDefaultTypeInternal _ListCert_default_instance_;
@@ -183,26 +183,26 @@ template<> ::opi_api::security::v1::Certs* Arena::CreateMaybeMessage<::opi_api::
 template<> ::opi_api::security::v1::Child* Arena::CreateMaybeMessage<::opi_api::security::v1::Child>(Arena*);
 template<> ::opi_api::security::v1::Connection* Arena::CreateMaybeMessage<::opi_api::security::v1::Connection>(Arena*);
 template<> ::opi_api::security::v1::Groups* Arena::CreateMaybeMessage<::opi_api::security::v1::Groups>(Arena*);
-template<> ::opi_api::security::v1::IPsecInitiateReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecInitiateReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecInitiateResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecInitiateResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecListCertsReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListCertsReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecListCertsResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListCertsResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecListConnsReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListConnsReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecListConnsResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListConnsResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecListSasReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListSasReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecListSasResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListSasResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecLoadConnReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecLoadConnReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecLoadConnResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecLoadConnResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecRekeyReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecRekeyReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecRekeyResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecRekeyResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecStatsReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecStatsReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecStatsResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecStatsResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecTerminateReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecTerminateReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecTerminateResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecTerminateResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecUnloadConnReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecUnloadConnReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecUnloadConnResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecUnloadConnResp>(Arena*);
-template<> ::opi_api::security::v1::IPsecVersionReq* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecVersionReq>(Arena*);
-template<> ::opi_api::security::v1::IPsecVersionResp* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecVersionResp>(Arena*);
+template<> ::opi_api::security::v1::IPsecInitiateRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecInitiateRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecInitiateResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecInitiateResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecListCertsRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListCertsRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecListCertsResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListCertsResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecListConnsRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListConnsRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecListConnsResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListConnsResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecListSasRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListSasRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecListSasResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecListSasResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecLoadConnRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecLoadConnRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecLoadConnResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecLoadConnResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecRekeyRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecRekeyRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecRekeyResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecRekeyResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecStatsRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecStatsRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecStatsResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecStatsResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecTerminateRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecTerminateRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecTerminateResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecTerminateResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecUnloadConnRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecUnloadConnRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecUnloadConnResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecUnloadConnResponse>(Arena*);
+template<> ::opi_api::security::v1::IPsecVersionRequest* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecVersionRequest>(Arena*);
+template<> ::opi_api::security::v1::IPsecVersionResponse* Arena::CreateMaybeMessage<::opi_api::security::v1::IPsecVersionResponse>(Arena*);
 template<> ::opi_api::security::v1::ListCert* Arena::CreateMaybeMessage<::opi_api::security::v1::ListCert>(Arena*);
 template<> ::opi_api::security::v1::ListChild* Arena::CreateMaybeMessage<::opi_api::security::v1::ListChild>(Arena*);
 template<> ::opi_api::security::v1::ListChildSa* Arena::CreateMaybeMessage<::opi_api::security::v1::ListChildSa>(Arena*);
@@ -223,20 +223,20 @@ namespace security {
 namespace v1 {
 
 enum CryptoAlgorithm : int {
-  NONE_CRYPTO = 0,
-  AES128 = 1,
-  AES192 = 2,
-  AES256 = 3,
-  AES128GCM128 = 4,
-  AES256GCM128 = 5,
-  AES128GMAC = 6,
-  AES256GMAC = 7,
+  CRYPTO_ALGORITHM_UNSPECIFIED = 0,
+  CRYPTO_ALGORITHM_AES128 = 1,
+  CRYPTO_ALGORITHM_AES192 = 2,
+  CRYPTO_ALGORITHM_AES256 = 3,
+  CRYPTO_ALGORITHM_AES128GCM128 = 4,
+  CRYPTO_ALGORITHM_AES256GCM128 = 5,
+  CRYPTO_ALGORITHM_AES128GMAC = 6,
+  CRYPTO_ALGORITHM_AES256GMAC = 7,
   CryptoAlgorithm_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   CryptoAlgorithm_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool CryptoAlgorithm_IsValid(int value);
-constexpr CryptoAlgorithm CryptoAlgorithm_MIN = NONE_CRYPTO;
-constexpr CryptoAlgorithm CryptoAlgorithm_MAX = AES256GMAC;
+constexpr CryptoAlgorithm CryptoAlgorithm_MIN = CRYPTO_ALGORITHM_UNSPECIFIED;
+constexpr CryptoAlgorithm CryptoAlgorithm_MAX = CRYPTO_ALGORITHM_AES256GMAC;
 constexpr int CryptoAlgorithm_ARRAYSIZE = CryptoAlgorithm_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CryptoAlgorithm_descriptor();
@@ -254,21 +254,21 @@ inline bool CryptoAlgorithm_Parse(
     CryptoAlgorithm_descriptor(), name, value);
 }
 enum IntegAlgorithm : int {
-  NONE_INTEG = 0,
-  MD5 = 1,
-  MD5_128 = 2,
-  SHA1 = 3,
-  SHA1_160 = 4,
-  SHA256 = 5,
-  SHA384 = 7,
-  SHA512 = 8,
-  SHA256_96 = 9,
+  INTEG_ALGORITHM_UNSPECIFIED = 0,
+  INTEG_ALGORITHM_MD5 = 1,
+  INTEG_ALGORITHM_MD5_128 = 2,
+  INTEG_ALGORITHM_SHA1 = 3,
+  INTEG_ALGORITHM_SHA1_160 = 4,
+  INTEG_ALGORITHM_SHA256 = 5,
+  INTEG_ALGORITHM_SHA384 = 7,
+  INTEG_ALGORITHM_SHA512 = 8,
+  INTEG_ALGORITHM_SHA256_96 = 9,
   IntegAlgorithm_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   IntegAlgorithm_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool IntegAlgorithm_IsValid(int value);
-constexpr IntegAlgorithm IntegAlgorithm_MIN = NONE_INTEG;
-constexpr IntegAlgorithm IntegAlgorithm_MAX = SHA256_96;
+constexpr IntegAlgorithm IntegAlgorithm_MIN = INTEG_ALGORITHM_UNSPECIFIED;
+constexpr IntegAlgorithm IntegAlgorithm_MAX = INTEG_ALGORITHM_SHA256_96;
 constexpr int IntegAlgorithm_ARRAYSIZE = IntegAlgorithm_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* IntegAlgorithm_descriptor();
@@ -285,109 +285,111 @@ inline bool IntegAlgorithm_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<IntegAlgorithm>(
     IntegAlgorithm_descriptor(), name, value);
 }
-enum DiffieHellmanGroups : int {
-  NONE_DH_GROUP = 0,
-  MODP768 = 1,
-  MODP1024 = 2,
-  MODP1536 = 3,
-  MODP2048 = 4,
-  MODP3072 = 5,
-  MODP4096 = 6,
-  MODP6144 = 7,
-  MODP8192 = 8,
-  MODP1024S160 = 9,
-  MODP2048S224 = 10,
-  MODP2048S256 = 11,
-  CURVE25519 = 12,
-  DiffieHellmanGroups_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  DiffieHellmanGroups_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum DHGroups : int {
+  DH_GROUPS_UNSPECIFIED = 0,
+  DH_GROUPS_MODP768 = 1,
+  DH_GROUPS_MODP1024 = 2,
+  DH_GROUPS_MODP1536 = 3,
+  DH_GROUPS_MODP2048 = 4,
+  DH_GROUPS_MODP3072 = 5,
+  DH_GROUPS_MODP4096 = 6,
+  DH_GROUPS_MODP6144 = 7,
+  DH_GROUPS_MODP8192 = 8,
+  DH_GROUPS_MODP1024S160 = 9,
+  DH_GROUPS_MODP2048S224 = 10,
+  DH_GROUPS_MODP2048S256 = 11,
+  DH_GROUPS_CURVE25519 = 12,
+  DHGroups_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  DHGroups_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool DiffieHellmanGroups_IsValid(int value);
-constexpr DiffieHellmanGroups DiffieHellmanGroups_MIN = NONE_DH_GROUP;
-constexpr DiffieHellmanGroups DiffieHellmanGroups_MAX = CURVE25519;
-constexpr int DiffieHellmanGroups_ARRAYSIZE = DiffieHellmanGroups_MAX + 1;
+bool DHGroups_IsValid(int value);
+constexpr DHGroups DHGroups_MIN = DH_GROUPS_UNSPECIFIED;
+constexpr DHGroups DHGroups_MAX = DH_GROUPS_CURVE25519;
+constexpr int DHGroups_ARRAYSIZE = DHGroups_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DiffieHellmanGroups_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DHGroups_descriptor();
 template<typename T>
-inline const std::string& DiffieHellmanGroups_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, DiffieHellmanGroups>::value ||
+inline const std::string& DHGroups_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, DHGroups>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function DiffieHellmanGroups_Name.");
+    "Incorrect type passed to function DHGroups_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    DiffieHellmanGroups_descriptor(), enum_t_value);
+    DHGroups_descriptor(), enum_t_value);
 }
-inline bool DiffieHellmanGroups_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, DiffieHellmanGroups* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<DiffieHellmanGroups>(
-    DiffieHellmanGroups_descriptor(), name, value);
+inline bool DHGroups_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, DHGroups* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<DHGroups>(
+    DHGroups_descriptor(), name, value);
 }
-enum PseudoRandomFunction : int {
-  NONE_PRF = 0,
-  PRFMD5 = 1,
-  PRFSHA1 = 2,
-  PRFAESXCBC = 3,
-  PRFAESCMAC = 4,
-  PRFSHA256 = 5,
-  PRFSHA384 = 6,
-  PRFSHA512 = 7,
-  PseudoRandomFunction_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  PseudoRandomFunction_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum PRFunction : int {
+  PR_FUNCTION_UNSPECIFIED = 0,
+  PR_FUNCTION_MD5 = 1,
+  PR_FUNCTION_SHA1 = 2,
+  PR_FUNCTION_AESXCBC = 3,
+  PR_FUNCTION_AESCMAC = 4,
+  PR_FUNCTION_SHA256 = 5,
+  PR_FUNCTION_SHA384 = 6,
+  PR_FUNCTION_SHA512 = 7,
+  PRFunction_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  PRFunction_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool PseudoRandomFunction_IsValid(int value);
-constexpr PseudoRandomFunction PseudoRandomFunction_MIN = NONE_PRF;
-constexpr PseudoRandomFunction PseudoRandomFunction_MAX = PRFSHA512;
-constexpr int PseudoRandomFunction_ARRAYSIZE = PseudoRandomFunction_MAX + 1;
+bool PRFunction_IsValid(int value);
+constexpr PRFunction PRFunction_MIN = PR_FUNCTION_UNSPECIFIED;
+constexpr PRFunction PRFunction_MAX = PR_FUNCTION_SHA512;
+constexpr int PRFunction_ARRAYSIZE = PRFunction_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PseudoRandomFunction_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PRFunction_descriptor();
 template<typename T>
-inline const std::string& PseudoRandomFunction_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, PseudoRandomFunction>::value ||
+inline const std::string& PRFunction_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, PRFunction>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function PseudoRandomFunction_Name.");
+    "Incorrect type passed to function PRFunction_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    PseudoRandomFunction_descriptor(), enum_t_value);
+    PRFunction_descriptor(), enum_t_value);
 }
-inline bool PseudoRandomFunction_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, PseudoRandomFunction* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<PseudoRandomFunction>(
-    PseudoRandomFunction_descriptor(), name, value);
+inline bool PRFunction_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, PRFunction* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<PRFunction>(
+    PRFunction_descriptor(), name, value);
 }
-enum IPsecMode : int {
-  TUNNEL_MODE = 0,
-  TRANSPORT_MODE = 1,
-  IPsecMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  IPsecMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum IpsecMode : int {
+  IPSEC_MODE_UNSPECIFIED = 0,
+  IPSEC_MODE_TUNNEL_MODE = 1,
+  IPSEC_MODE_TRANSPORT_MODE = 2,
+  IpsecMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  IpsecMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool IPsecMode_IsValid(int value);
-constexpr IPsecMode IPsecMode_MIN = TUNNEL_MODE;
-constexpr IPsecMode IPsecMode_MAX = TRANSPORT_MODE;
-constexpr int IPsecMode_ARRAYSIZE = IPsecMode_MAX + 1;
+bool IpsecMode_IsValid(int value);
+constexpr IpsecMode IpsecMode_MIN = IPSEC_MODE_UNSPECIFIED;
+constexpr IpsecMode IpsecMode_MAX = IPSEC_MODE_TRANSPORT_MODE;
+constexpr int IpsecMode_ARRAYSIZE = IpsecMode_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* IPsecMode_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* IpsecMode_descriptor();
 template<typename T>
-inline const std::string& IPsecMode_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, IPsecMode>::value ||
+inline const std::string& IpsecMode_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, IpsecMode>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function IPsecMode_Name.");
+    "Incorrect type passed to function IpsecMode_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    IPsecMode_descriptor(), enum_t_value);
+    IpsecMode_descriptor(), enum_t_value);
 }
-inline bool IPsecMode_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, IPsecMode* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<IPsecMode>(
-    IPsecMode_descriptor(), name, value);
+inline bool IpsecMode_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, IpsecMode* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<IpsecMode>(
+    IpsecMode_descriptor(), name, value);
 }
 enum AuthType : int {
-  PUBKEY = 0,
-  PSK = 1,
-  XAUTH = 2,
-  EAP = 3,
+  AUTH_TYPE_UNSPECIFIED = 0,
+  AUTH_TYPE_PUBKEY = 1,
+  AUTH_TYPE_PSK = 2,
+  AUTH_TYPE_XAUTH = 3,
+  AUTH_TYPE_EAP = 4,
   AuthType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   AuthType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool AuthType_IsValid(int value);
-constexpr AuthType AuthType_MIN = PUBKEY;
-constexpr AuthType AuthType_MAX = EAP;
+constexpr AuthType AuthType_MIN = AUTH_TYPE_UNSPECIFIED;
+constexpr AuthType AuthType_MAX = AUTH_TYPE_EAP;
 constexpr int AuthType_ARRAYSIZE = AuthType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AuthType_descriptor();
@@ -405,20 +407,21 @@ inline bool AuthType_Parse(
     AuthType_descriptor(), name, value);
 }
 enum IkeSaState : int {
-  CREATED = 0,
-  CONNECTING = 1,
-  ESTABLISHED = 2,
-  PASSIVE = 3,
-  REKEYING = 4,
-  REKEYED = 5,
-  DELETING = 6,
-  DESTROYING = 7,
+  IKE_SA_STATE_UNSPECIFIED = 0,
+  IKE_SA_STATE_CREATED = 1,
+  IKE_SA_STATE_CONNECTING = 2,
+  IKE_SA_STATE_ESTABLISHED = 3,
+  IKE_SA_STATE_PASSIVE = 4,
+  IKE_SA_STATE_REKEYING = 5,
+  IKE_SA_STATE_REKEYED = 6,
+  IKE_SA_STATE_DELETING = 7,
+  IKE_SA_STATE_DESTROYING = 8,
   IkeSaState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   IkeSaState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool IkeSaState_IsValid(int value);
-constexpr IkeSaState IkeSaState_MIN = CREATED;
-constexpr IkeSaState IkeSaState_MAX = DESTROYING;
+constexpr IkeSaState IkeSaState_MIN = IKE_SA_STATE_UNSPECIFIED;
+constexpr IkeSaState IkeSaState_MAX = IKE_SA_STATE_DESTROYING;
 constexpr int IkeSaState_ARRAYSIZE = IkeSaState_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* IkeSaState_descriptor();
@@ -436,23 +439,24 @@ inline bool IkeSaState_Parse(
     IkeSaState_descriptor(), name, value);
 }
 enum ChildSaState : int {
-  CHILD_CREATED = 0,
-  CHILD_ROUTED = 1,
-  CHILD_INSTALLING = 2,
-  CHILD_INSTALLED = 3,
-  CHILD_UPDATING = 4,
-  CHILD_REKEYING = 5,
-  CHILD_REKEYED = 6,
-  CHILD_RETRYING = 7,
-  CHILD_DELETING = 8,
-  CHILD_DELETED = 9,
-  CHILD_DESTROYING = 10,
+  CHILD_SA_STATE_UNSPECIFIED = 0,
+  CHILD_SA_STATE_CREATED = 1,
+  CHILD_SA_STATE_ROUTED = 2,
+  CHILD_SA_STATE_INSTALLING = 3,
+  CHILD_SA_STATE_INSTALLED = 4,
+  CHILD_SA_STATE_UPDATING = 5,
+  CHILD_SA_STATE_REKEYING = 6,
+  CHILD_SA_STATE_REKEYED = 7,
+  CHILD_SA_STATE_RETRYING = 8,
+  CHILD_SA_STATE_DELETING = 9,
+  CHILD_SA_STATE_DELETED = 10,
+  CHILD_SA_STATE_DESTROYING = 11,
   ChildSaState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   ChildSaState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool ChildSaState_IsValid(int value);
-constexpr ChildSaState ChildSaState_MIN = CHILD_CREATED;
-constexpr ChildSaState ChildSaState_MAX = CHILD_DESTROYING;
+constexpr ChildSaState ChildSaState_MIN = CHILD_SA_STATE_UNSPECIFIED;
+constexpr ChildSaState ChildSaState_MAX = CHILD_SA_STATE_DESTROYING;
 constexpr int ChildSaState_ARRAYSIZE = ChildSaState_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ChildSaState_descriptor();
@@ -470,17 +474,17 @@ inline bool ChildSaState_Parse(
     ChildSaState_descriptor(), name, value);
 }
 enum CertificateType : int {
-  CERT_X509 = 0,
-  CERT_X509_AC = 1,
-  CERT_X509_CRL = 2,
-  CERT_OCSP_RESPONSE = 3,
-  CERT_PUBKEY = 4,
+  CERTIFICATE_TYPE_X509_UNSPECIFIED = 0,
+  CERTIFICATE_TYPE_X509_AC = 1,
+  CERTIFICATE_TYPE_X509_CRL = 2,
+  CERTIFICATE_TYPE_OCSP_RESPONSE = 3,
+  CERTIFICATE_TYPE_PUBKEY = 4,
   CertificateType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   CertificateType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool CertificateType_IsValid(int value);
-constexpr CertificateType CertificateType_MIN = CERT_X509;
-constexpr CertificateType CertificateType_MAX = CERT_PUBKEY;
+constexpr CertificateType CertificateType_MIN = CERTIFICATE_TYPE_X509_UNSPECIFIED;
+constexpr CertificateType CertificateType_MAX = CERTIFICATE_TYPE_PUBKEY;
 constexpr int CertificateType_ARRAYSIZE = CertificateType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CertificateType_descriptor();
@@ -498,16 +502,16 @@ inline bool CertificateType_Parse(
     CertificateType_descriptor(), name, value);
 }
 enum X509CertificateFlag : int {
-  X509_CERT_FLAG_NONE = 0,
-  X509_CERT_FLAG_CA = 1,
-  X509_CERT_FLAG_AA = 2,
-  X509_CERT_FLAG_OCSP = 3,
+  X509_CERTIFICATE_FLAG_UNSPECIFIED = 0,
+  X509_CERTIFICATE_FLAG_CA = 1,
+  X509_CERTIFICATE_FLAG_AA = 2,
+  X509_CERTIFICATE_FLAG_OCSP = 3,
   X509CertificateFlag_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   X509CertificateFlag_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool X509CertificateFlag_IsValid(int value);
-constexpr X509CertificateFlag X509CertificateFlag_MIN = X509_CERT_FLAG_NONE;
-constexpr X509CertificateFlag X509CertificateFlag_MAX = X509_CERT_FLAG_OCSP;
+constexpr X509CertificateFlag X509CertificateFlag_MIN = X509_CERTIFICATE_FLAG_UNSPECIFIED;
+constexpr X509CertificateFlag X509CertificateFlag_MAX = X509_CERTIFICATE_FLAG_OCSP;
 constexpr int X509CertificateFlag_ARRAYSIZE = X509CertificateFlag_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* X509CertificateFlag_descriptor();
@@ -686,37 +690,37 @@ class Proposals final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>& integ_alg() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* mutable_integ_alg();
 
-  // repeated .opi_api.security.v1.PseudoRandomFunction prf = 3;
+  // repeated .opi_api.security.v1.PRFunction prf = 3;
   int prf_size() const;
   private:
   int _internal_prf_size() const;
   public:
   void clear_prf();
   private:
-  ::opi_api::security::v1::PseudoRandomFunction _internal_prf(int index) const;
-  void _internal_add_prf(::opi_api::security::v1::PseudoRandomFunction value);
+  ::opi_api::security::v1::PRFunction _internal_prf(int index) const;
+  void _internal_add_prf(::opi_api::security::v1::PRFunction value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* _internal_mutable_prf();
   public:
-  ::opi_api::security::v1::PseudoRandomFunction prf(int index) const;
-  void set_prf(int index, ::opi_api::security::v1::PseudoRandomFunction value);
-  void add_prf(::opi_api::security::v1::PseudoRandomFunction value);
+  ::opi_api::security::v1::PRFunction prf(int index) const;
+  void set_prf(int index, ::opi_api::security::v1::PRFunction value);
+  void add_prf(::opi_api::security::v1::PRFunction value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>& prf() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* mutable_prf();
 
-  // repeated .opi_api.security.v1.DiffieHellmanGroups dhgroups = 4;
+  // repeated .opi_api.security.v1.DHGroups dhgroups = 4;
   int dhgroups_size() const;
   private:
   int _internal_dhgroups_size() const;
   public:
   void clear_dhgroups();
   private:
-  ::opi_api::security::v1::DiffieHellmanGroups _internal_dhgroups(int index) const;
-  void _internal_add_dhgroups(::opi_api::security::v1::DiffieHellmanGroups value);
+  ::opi_api::security::v1::DHGroups _internal_dhgroups(int index) const;
+  void _internal_add_dhgroups(::opi_api::security::v1::DHGroups value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* _internal_mutable_dhgroups();
   public:
-  ::opi_api::security::v1::DiffieHellmanGroups dhgroups(int index) const;
-  void set_dhgroups(int index, ::opi_api::security::v1::DiffieHellmanGroups value);
-  void add_dhgroups(::opi_api::security::v1::DiffieHellmanGroups value);
+  ::opi_api::security::v1::DHGroups dhgroups(int index) const;
+  void set_dhgroups(int index, ::opi_api::security::v1::DHGroups value);
+  void add_dhgroups(::opi_api::security::v1::DHGroups value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>& dhgroups() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* mutable_dhgroups();
 
@@ -3720,23 +3724,23 @@ class Connection final :
 };
 // -------------------------------------------------------------------
 
-class IPsecVersionReq final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecVersionReq) */ {
+class IPsecVersionRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecVersionRequest) */ {
  public:
-  inline IPsecVersionReq() : IPsecVersionReq(nullptr) {}
-  explicit PROTOBUF_CONSTEXPR IPsecVersionReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecVersionRequest() : IPsecVersionRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR IPsecVersionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecVersionReq(const IPsecVersionReq& from);
-  IPsecVersionReq(IPsecVersionReq&& from) noexcept
-    : IPsecVersionReq() {
+  IPsecVersionRequest(const IPsecVersionRequest& from);
+  IPsecVersionRequest(IPsecVersionRequest&& from) noexcept
+    : IPsecVersionRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecVersionReq& operator=(const IPsecVersionReq& from) {
+  inline IPsecVersionRequest& operator=(const IPsecVersionRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecVersionReq& operator=(IPsecVersionReq&& from) noexcept {
+  inline IPsecVersionRequest& operator=(IPsecVersionRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -3759,20 +3763,20 @@ class IPsecVersionReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecVersionReq& default_instance() {
+  static const IPsecVersionRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecVersionReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecVersionReq*>(
-               &_IPsecVersionReq_default_instance_);
+  static inline const IPsecVersionRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecVersionRequest*>(
+               &_IPsecVersionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     15;
 
-  friend void swap(IPsecVersionReq& a, IPsecVersionReq& b) {
+  friend void swap(IPsecVersionRequest& a, IPsecVersionRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecVersionReq* other) {
+  inline void Swap(IPsecVersionRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -3785,7 +3789,7 @@ class IPsecVersionReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecVersionReq* other) {
+  void UnsafeArenaSwap(IPsecVersionRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3793,15 +3797,15 @@ class IPsecVersionReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecVersionReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecVersionReq>(arena);
+  IPsecVersionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecVersionRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const IPsecVersionReq& from) {
+  inline void CopyFrom(const IPsecVersionRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const IPsecVersionReq& from) {
+  void MergeFrom(const IPsecVersionRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
   }
   public:
@@ -3809,10 +3813,10 @@ class IPsecVersionReq final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecVersionReq";
+    return "opi_api.security.v1.IPsecVersionRequest";
   }
   protected:
-  explicit IPsecVersionReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecVersionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -3825,7 +3829,7 @@ class IPsecVersionReq final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecVersionReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecVersionRequest)
  private:
   class _Internal;
 
@@ -3838,24 +3842,24 @@ class IPsecVersionReq final :
 };
 // -------------------------------------------------------------------
 
-class IPsecVersionResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecVersionResp) */ {
+class IPsecVersionResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecVersionResponse) */ {
  public:
-  inline IPsecVersionResp() : IPsecVersionResp(nullptr) {}
-  ~IPsecVersionResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecVersionResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecVersionResponse() : IPsecVersionResponse(nullptr) {}
+  ~IPsecVersionResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecVersionResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecVersionResp(const IPsecVersionResp& from);
-  IPsecVersionResp(IPsecVersionResp&& from) noexcept
-    : IPsecVersionResp() {
+  IPsecVersionResponse(const IPsecVersionResponse& from);
+  IPsecVersionResponse(IPsecVersionResponse&& from) noexcept
+    : IPsecVersionResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecVersionResp& operator=(const IPsecVersionResp& from) {
+  inline IPsecVersionResponse& operator=(const IPsecVersionResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecVersionResp& operator=(IPsecVersionResp&& from) noexcept {
+  inline IPsecVersionResponse& operator=(IPsecVersionResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -3878,20 +3882,20 @@ class IPsecVersionResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecVersionResp& default_instance() {
+  static const IPsecVersionResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecVersionResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecVersionResp*>(
-               &_IPsecVersionResp_default_instance_);
+  static inline const IPsecVersionResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecVersionResponse*>(
+               &_IPsecVersionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     16;
 
-  friend void swap(IPsecVersionResp& a, IPsecVersionResp& b) {
+  friend void swap(IPsecVersionResponse& a, IPsecVersionResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecVersionResp* other) {
+  inline void Swap(IPsecVersionResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -3904,7 +3908,7 @@ class IPsecVersionResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecVersionResp* other) {
+  void UnsafeArenaSwap(IPsecVersionResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3912,14 +3916,14 @@ class IPsecVersionResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecVersionResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecVersionResp>(arena);
+  IPsecVersionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecVersionResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecVersionResp& from);
+  void CopyFrom(const IPsecVersionResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecVersionResp& from) {
-    IPsecVersionResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecVersionResponse& from) {
+    IPsecVersionResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -3937,15 +3941,15 @@ class IPsecVersionResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecVersionResp* other);
+  void InternalSwap(IPsecVersionResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecVersionResp";
+    return "opi_api.security.v1.IPsecVersionResponse";
   }
   protected:
-  explicit IPsecVersionResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecVersionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -4035,7 +4039,7 @@ class IPsecVersionResp final :
   std::string* _internal_mutable_machine();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecVersionResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecVersionResponse)
  private:
   class _Internal;
 
@@ -4055,23 +4059,23 @@ class IPsecVersionResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecStatsReq final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecStatsReq) */ {
+class IPsecStatsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecStatsRequest) */ {
  public:
-  inline IPsecStatsReq() : IPsecStatsReq(nullptr) {}
-  explicit PROTOBUF_CONSTEXPR IPsecStatsReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecStatsRequest() : IPsecStatsRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR IPsecStatsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecStatsReq(const IPsecStatsReq& from);
-  IPsecStatsReq(IPsecStatsReq&& from) noexcept
-    : IPsecStatsReq() {
+  IPsecStatsRequest(const IPsecStatsRequest& from);
+  IPsecStatsRequest(IPsecStatsRequest&& from) noexcept
+    : IPsecStatsRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecStatsReq& operator=(const IPsecStatsReq& from) {
+  inline IPsecStatsRequest& operator=(const IPsecStatsRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecStatsReq& operator=(IPsecStatsReq&& from) noexcept {
+  inline IPsecStatsRequest& operator=(IPsecStatsRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -4094,20 +4098,20 @@ class IPsecStatsReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecStatsReq& default_instance() {
+  static const IPsecStatsRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecStatsReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecStatsReq*>(
-               &_IPsecStatsReq_default_instance_);
+  static inline const IPsecStatsRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecStatsRequest*>(
+               &_IPsecStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     17;
 
-  friend void swap(IPsecStatsReq& a, IPsecStatsReq& b) {
+  friend void swap(IPsecStatsRequest& a, IPsecStatsRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecStatsReq* other) {
+  inline void Swap(IPsecStatsRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -4120,7 +4124,7 @@ class IPsecStatsReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecStatsReq* other) {
+  void UnsafeArenaSwap(IPsecStatsRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4128,15 +4132,15 @@ class IPsecStatsReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecStatsReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecStatsReq>(arena);
+  IPsecStatsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecStatsRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const IPsecStatsReq& from) {
+  inline void CopyFrom(const IPsecStatsRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const IPsecStatsReq& from) {
+  void MergeFrom(const IPsecStatsRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
   }
   public:
@@ -4144,10 +4148,10 @@ class IPsecStatsReq final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecStatsReq";
+    return "opi_api.security.v1.IPsecStatsRequest";
   }
   protected:
-  explicit IPsecStatsReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -4160,7 +4164,7 @@ class IPsecStatsReq final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecStatsReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecStatsRequest)
  private:
   class _Internal;
 
@@ -4173,24 +4177,24 @@ class IPsecStatsReq final :
 };
 // -------------------------------------------------------------------
 
-class IPsecStatsResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecStatsResp) */ {
+class IPsecStatsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecStatsResponse) */ {
  public:
-  inline IPsecStatsResp() : IPsecStatsResp(nullptr) {}
-  ~IPsecStatsResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecStatsResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecStatsResponse() : IPsecStatsResponse(nullptr) {}
+  ~IPsecStatsResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecStatsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecStatsResp(const IPsecStatsResp& from);
-  IPsecStatsResp(IPsecStatsResp&& from) noexcept
-    : IPsecStatsResp() {
+  IPsecStatsResponse(const IPsecStatsResponse& from);
+  IPsecStatsResponse(IPsecStatsResponse&& from) noexcept
+    : IPsecStatsResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecStatsResp& operator=(const IPsecStatsResp& from) {
+  inline IPsecStatsResponse& operator=(const IPsecStatsResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecStatsResp& operator=(IPsecStatsResp&& from) noexcept {
+  inline IPsecStatsResponse& operator=(IPsecStatsResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -4213,20 +4217,20 @@ class IPsecStatsResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecStatsResp& default_instance() {
+  static const IPsecStatsResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecStatsResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecStatsResp*>(
-               &_IPsecStatsResp_default_instance_);
+  static inline const IPsecStatsResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecStatsResponse*>(
+               &_IPsecStatsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     18;
 
-  friend void swap(IPsecStatsResp& a, IPsecStatsResp& b) {
+  friend void swap(IPsecStatsResponse& a, IPsecStatsResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecStatsResp* other) {
+  inline void Swap(IPsecStatsResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -4239,7 +4243,7 @@ class IPsecStatsResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecStatsResp* other) {
+  void UnsafeArenaSwap(IPsecStatsResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4247,14 +4251,14 @@ class IPsecStatsResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecStatsResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecStatsResp>(arena);
+  IPsecStatsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecStatsResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecStatsResp& from);
+  void CopyFrom(const IPsecStatsResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecStatsResp& from) {
-    IPsecStatsResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecStatsResponse& from) {
+    IPsecStatsResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -4272,15 +4276,15 @@ class IPsecStatsResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecStatsResp* other);
+  void InternalSwap(IPsecStatsResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecStatsResp";
+    return "opi_api.security.v1.IPsecStatsResponse";
   }
   protected:
-  explicit IPsecStatsResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecStatsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -4310,7 +4314,7 @@ class IPsecStatsResp final :
   std::string* _internal_mutable_status();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecStatsResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecStatsResponse)
  private:
   class _Internal;
 
@@ -4326,24 +4330,24 @@ class IPsecStatsResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecInitiateReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecInitiateReq) */ {
+class IPsecInitiateRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecInitiateRequest) */ {
  public:
-  inline IPsecInitiateReq() : IPsecInitiateReq(nullptr) {}
-  ~IPsecInitiateReq() override;
-  explicit PROTOBUF_CONSTEXPR IPsecInitiateReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecInitiateRequest() : IPsecInitiateRequest(nullptr) {}
+  ~IPsecInitiateRequest() override;
+  explicit PROTOBUF_CONSTEXPR IPsecInitiateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecInitiateReq(const IPsecInitiateReq& from);
-  IPsecInitiateReq(IPsecInitiateReq&& from) noexcept
-    : IPsecInitiateReq() {
+  IPsecInitiateRequest(const IPsecInitiateRequest& from);
+  IPsecInitiateRequest(IPsecInitiateRequest&& from) noexcept
+    : IPsecInitiateRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecInitiateReq& operator=(const IPsecInitiateReq& from) {
+  inline IPsecInitiateRequest& operator=(const IPsecInitiateRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecInitiateReq& operator=(IPsecInitiateReq&& from) noexcept {
+  inline IPsecInitiateRequest& operator=(IPsecInitiateRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -4366,20 +4370,20 @@ class IPsecInitiateReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecInitiateReq& default_instance() {
+  static const IPsecInitiateRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecInitiateReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecInitiateReq*>(
-               &_IPsecInitiateReq_default_instance_);
+  static inline const IPsecInitiateRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecInitiateRequest*>(
+               &_IPsecInitiateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     19;
 
-  friend void swap(IPsecInitiateReq& a, IPsecInitiateReq& b) {
+  friend void swap(IPsecInitiateRequest& a, IPsecInitiateRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecInitiateReq* other) {
+  inline void Swap(IPsecInitiateRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -4392,7 +4396,7 @@ class IPsecInitiateReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecInitiateReq* other) {
+  void UnsafeArenaSwap(IPsecInitiateRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4400,14 +4404,14 @@ class IPsecInitiateReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecInitiateReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecInitiateReq>(arena);
+  IPsecInitiateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecInitiateRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecInitiateReq& from);
+  void CopyFrom(const IPsecInitiateRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecInitiateReq& from) {
-    IPsecInitiateReq::MergeImpl(*this, from);
+  void MergeFrom( const IPsecInitiateRequest& from) {
+    IPsecInitiateRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -4425,15 +4429,15 @@ class IPsecInitiateReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecInitiateReq* other);
+  void InternalSwap(IPsecInitiateRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecInitiateReq";
+    return "opi_api.security.v1.IPsecInitiateRequest";
   }
   protected:
-  explicit IPsecInitiateReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecInitiateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -4508,7 +4512,7 @@ class IPsecInitiateReq final :
   std::string* _internal_mutable_loglevel();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecInitiateReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecInitiateRequest)
  private:
   class _Internal;
 
@@ -4527,23 +4531,23 @@ class IPsecInitiateReq final :
 };
 // -------------------------------------------------------------------
 
-class IPsecInitiateResp final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecInitiateResp) */ {
+class IPsecInitiateResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecInitiateResponse) */ {
  public:
-  inline IPsecInitiateResp() : IPsecInitiateResp(nullptr) {}
-  explicit PROTOBUF_CONSTEXPR IPsecInitiateResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecInitiateResponse() : IPsecInitiateResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR IPsecInitiateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecInitiateResp(const IPsecInitiateResp& from);
-  IPsecInitiateResp(IPsecInitiateResp&& from) noexcept
-    : IPsecInitiateResp() {
+  IPsecInitiateResponse(const IPsecInitiateResponse& from);
+  IPsecInitiateResponse(IPsecInitiateResponse&& from) noexcept
+    : IPsecInitiateResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecInitiateResp& operator=(const IPsecInitiateResp& from) {
+  inline IPsecInitiateResponse& operator=(const IPsecInitiateResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecInitiateResp& operator=(IPsecInitiateResp&& from) noexcept {
+  inline IPsecInitiateResponse& operator=(IPsecInitiateResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -4566,20 +4570,20 @@ class IPsecInitiateResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecInitiateResp& default_instance() {
+  static const IPsecInitiateResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecInitiateResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecInitiateResp*>(
-               &_IPsecInitiateResp_default_instance_);
+  static inline const IPsecInitiateResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecInitiateResponse*>(
+               &_IPsecInitiateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     20;
 
-  friend void swap(IPsecInitiateResp& a, IPsecInitiateResp& b) {
+  friend void swap(IPsecInitiateResponse& a, IPsecInitiateResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecInitiateResp* other) {
+  inline void Swap(IPsecInitiateResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -4592,7 +4596,7 @@ class IPsecInitiateResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecInitiateResp* other) {
+  void UnsafeArenaSwap(IPsecInitiateResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4600,15 +4604,15 @@ class IPsecInitiateResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecInitiateResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecInitiateResp>(arena);
+  IPsecInitiateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecInitiateResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const IPsecInitiateResp& from) {
+  inline void CopyFrom(const IPsecInitiateResponse& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const IPsecInitiateResp& from) {
+  void MergeFrom(const IPsecInitiateResponse& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
   }
   public:
@@ -4616,10 +4620,10 @@ class IPsecInitiateResp final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecInitiateResp";
+    return "opi_api.security.v1.IPsecInitiateResponse";
   }
   protected:
-  explicit IPsecInitiateResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecInitiateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -4632,7 +4636,7 @@ class IPsecInitiateResp final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecInitiateResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecInitiateResponse)
  private:
   class _Internal;
 
@@ -4645,24 +4649,24 @@ class IPsecInitiateResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecTerminateReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecTerminateReq) */ {
+class IPsecTerminateRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecTerminateRequest) */ {
  public:
-  inline IPsecTerminateReq() : IPsecTerminateReq(nullptr) {}
-  ~IPsecTerminateReq() override;
-  explicit PROTOBUF_CONSTEXPR IPsecTerminateReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecTerminateRequest() : IPsecTerminateRequest(nullptr) {}
+  ~IPsecTerminateRequest() override;
+  explicit PROTOBUF_CONSTEXPR IPsecTerminateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecTerminateReq(const IPsecTerminateReq& from);
-  IPsecTerminateReq(IPsecTerminateReq&& from) noexcept
-    : IPsecTerminateReq() {
+  IPsecTerminateRequest(const IPsecTerminateRequest& from);
+  IPsecTerminateRequest(IPsecTerminateRequest&& from) noexcept
+    : IPsecTerminateRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecTerminateReq& operator=(const IPsecTerminateReq& from) {
+  inline IPsecTerminateRequest& operator=(const IPsecTerminateRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecTerminateReq& operator=(IPsecTerminateReq&& from) noexcept {
+  inline IPsecTerminateRequest& operator=(IPsecTerminateRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -4685,20 +4689,20 @@ class IPsecTerminateReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecTerminateReq& default_instance() {
+  static const IPsecTerminateRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecTerminateReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecTerminateReq*>(
-               &_IPsecTerminateReq_default_instance_);
+  static inline const IPsecTerminateRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecTerminateRequest*>(
+               &_IPsecTerminateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     21;
 
-  friend void swap(IPsecTerminateReq& a, IPsecTerminateReq& b) {
+  friend void swap(IPsecTerminateRequest& a, IPsecTerminateRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecTerminateReq* other) {
+  inline void Swap(IPsecTerminateRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -4711,7 +4715,7 @@ class IPsecTerminateReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecTerminateReq* other) {
+  void UnsafeArenaSwap(IPsecTerminateRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4719,14 +4723,14 @@ class IPsecTerminateReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecTerminateReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecTerminateReq>(arena);
+  IPsecTerminateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecTerminateRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecTerminateReq& from);
+  void CopyFrom(const IPsecTerminateRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecTerminateReq& from) {
-    IPsecTerminateReq::MergeImpl(*this, from);
+  void MergeFrom( const IPsecTerminateRequest& from) {
+    IPsecTerminateRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -4744,15 +4748,15 @@ class IPsecTerminateReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecTerminateReq* other);
+  void InternalSwap(IPsecTerminateRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecTerminateReq";
+    return "opi_api.security.v1.IPsecTerminateRequest";
   }
   protected:
-  explicit IPsecTerminateReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecTerminateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -4862,7 +4866,7 @@ class IPsecTerminateReq final :
   void _internal_set_ike_id(uint64_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecTerminateReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecTerminateRequest)
  private:
   class _Internal;
 
@@ -4884,24 +4888,24 @@ class IPsecTerminateReq final :
 };
 // -------------------------------------------------------------------
 
-class IPsecTerminateResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecTerminateResp) */ {
+class IPsecTerminateResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecTerminateResponse) */ {
  public:
-  inline IPsecTerminateResp() : IPsecTerminateResp(nullptr) {}
-  ~IPsecTerminateResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecTerminateResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecTerminateResponse() : IPsecTerminateResponse(nullptr) {}
+  ~IPsecTerminateResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecTerminateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecTerminateResp(const IPsecTerminateResp& from);
-  IPsecTerminateResp(IPsecTerminateResp&& from) noexcept
-    : IPsecTerminateResp() {
+  IPsecTerminateResponse(const IPsecTerminateResponse& from);
+  IPsecTerminateResponse(IPsecTerminateResponse&& from) noexcept
+    : IPsecTerminateResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecTerminateResp& operator=(const IPsecTerminateResp& from) {
+  inline IPsecTerminateResponse& operator=(const IPsecTerminateResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecTerminateResp& operator=(IPsecTerminateResp&& from) noexcept {
+  inline IPsecTerminateResponse& operator=(IPsecTerminateResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -4924,20 +4928,20 @@ class IPsecTerminateResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecTerminateResp& default_instance() {
+  static const IPsecTerminateResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecTerminateResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecTerminateResp*>(
-               &_IPsecTerminateResp_default_instance_);
+  static inline const IPsecTerminateResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecTerminateResponse*>(
+               &_IPsecTerminateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     22;
 
-  friend void swap(IPsecTerminateResp& a, IPsecTerminateResp& b) {
+  friend void swap(IPsecTerminateResponse& a, IPsecTerminateResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecTerminateResp* other) {
+  inline void Swap(IPsecTerminateResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -4950,7 +4954,7 @@ class IPsecTerminateResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecTerminateResp* other) {
+  void UnsafeArenaSwap(IPsecTerminateResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4958,14 +4962,14 @@ class IPsecTerminateResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecTerminateResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecTerminateResp>(arena);
+  IPsecTerminateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecTerminateResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecTerminateResp& from);
+  void CopyFrom(const IPsecTerminateResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecTerminateResp& from) {
-    IPsecTerminateResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecTerminateResponse& from) {
+    IPsecTerminateResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -4983,15 +4987,15 @@ class IPsecTerminateResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecTerminateResp* other);
+  void InternalSwap(IPsecTerminateResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecTerminateResp";
+    return "opi_api.security.v1.IPsecTerminateResponse";
   }
   protected:
-  explicit IPsecTerminateResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecTerminateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -5041,7 +5045,7 @@ class IPsecTerminateResp final :
   void _internal_set_terminated(uint32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecTerminateResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecTerminateResponse)
  private:
   class _Internal;
 
@@ -5059,24 +5063,24 @@ class IPsecTerminateResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecRekeyReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecRekeyReq) */ {
+class IPsecRekeyRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecRekeyRequest) */ {
  public:
-  inline IPsecRekeyReq() : IPsecRekeyReq(nullptr) {}
-  ~IPsecRekeyReq() override;
-  explicit PROTOBUF_CONSTEXPR IPsecRekeyReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecRekeyRequest() : IPsecRekeyRequest(nullptr) {}
+  ~IPsecRekeyRequest() override;
+  explicit PROTOBUF_CONSTEXPR IPsecRekeyRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecRekeyReq(const IPsecRekeyReq& from);
-  IPsecRekeyReq(IPsecRekeyReq&& from) noexcept
-    : IPsecRekeyReq() {
+  IPsecRekeyRequest(const IPsecRekeyRequest& from);
+  IPsecRekeyRequest(IPsecRekeyRequest&& from) noexcept
+    : IPsecRekeyRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecRekeyReq& operator=(const IPsecRekeyReq& from) {
+  inline IPsecRekeyRequest& operator=(const IPsecRekeyRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecRekeyReq& operator=(IPsecRekeyReq&& from) noexcept {
+  inline IPsecRekeyRequest& operator=(IPsecRekeyRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -5099,20 +5103,20 @@ class IPsecRekeyReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecRekeyReq& default_instance() {
+  static const IPsecRekeyRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecRekeyReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecRekeyReq*>(
-               &_IPsecRekeyReq_default_instance_);
+  static inline const IPsecRekeyRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecRekeyRequest*>(
+               &_IPsecRekeyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     23;
 
-  friend void swap(IPsecRekeyReq& a, IPsecRekeyReq& b) {
+  friend void swap(IPsecRekeyRequest& a, IPsecRekeyRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecRekeyReq* other) {
+  inline void Swap(IPsecRekeyRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -5125,7 +5129,7 @@ class IPsecRekeyReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecRekeyReq* other) {
+  void UnsafeArenaSwap(IPsecRekeyRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -5133,14 +5137,14 @@ class IPsecRekeyReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecRekeyReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecRekeyReq>(arena);
+  IPsecRekeyRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecRekeyRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecRekeyReq& from);
+  void CopyFrom(const IPsecRekeyRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecRekeyReq& from) {
-    IPsecRekeyReq::MergeImpl(*this, from);
+  void MergeFrom( const IPsecRekeyRequest& from) {
+    IPsecRekeyRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -5158,15 +5162,15 @@ class IPsecRekeyReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecRekeyReq* other);
+  void InternalSwap(IPsecRekeyRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecRekeyReq";
+    return "opi_api.security.v1.IPsecRekeyRequest";
   }
   protected:
-  explicit IPsecRekeyReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecRekeyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -5246,7 +5250,7 @@ class IPsecRekeyReq final :
   void _internal_set_ike_id(uint64_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecRekeyReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecRekeyRequest)
  private:
   class _Internal;
 
@@ -5266,24 +5270,24 @@ class IPsecRekeyReq final :
 };
 // -------------------------------------------------------------------
 
-class IPsecRekeyResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecRekeyResp) */ {
+class IPsecRekeyResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecRekeyResponse) */ {
  public:
-  inline IPsecRekeyResp() : IPsecRekeyResp(nullptr) {}
-  ~IPsecRekeyResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecRekeyResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecRekeyResponse() : IPsecRekeyResponse(nullptr) {}
+  ~IPsecRekeyResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecRekeyResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecRekeyResp(const IPsecRekeyResp& from);
-  IPsecRekeyResp(IPsecRekeyResp&& from) noexcept
-    : IPsecRekeyResp() {
+  IPsecRekeyResponse(const IPsecRekeyResponse& from);
+  IPsecRekeyResponse(IPsecRekeyResponse&& from) noexcept
+    : IPsecRekeyResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecRekeyResp& operator=(const IPsecRekeyResp& from) {
+  inline IPsecRekeyResponse& operator=(const IPsecRekeyResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecRekeyResp& operator=(IPsecRekeyResp&& from) noexcept {
+  inline IPsecRekeyResponse& operator=(IPsecRekeyResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -5306,20 +5310,20 @@ class IPsecRekeyResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecRekeyResp& default_instance() {
+  static const IPsecRekeyResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecRekeyResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecRekeyResp*>(
-               &_IPsecRekeyResp_default_instance_);
+  static inline const IPsecRekeyResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecRekeyResponse*>(
+               &_IPsecRekeyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     24;
 
-  friend void swap(IPsecRekeyResp& a, IPsecRekeyResp& b) {
+  friend void swap(IPsecRekeyResponse& a, IPsecRekeyResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecRekeyResp* other) {
+  inline void Swap(IPsecRekeyResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -5332,7 +5336,7 @@ class IPsecRekeyResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecRekeyResp* other) {
+  void UnsafeArenaSwap(IPsecRekeyResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -5340,14 +5344,14 @@ class IPsecRekeyResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecRekeyResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecRekeyResp>(arena);
+  IPsecRekeyResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecRekeyResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecRekeyResp& from);
+  void CopyFrom(const IPsecRekeyResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecRekeyResp& from) {
-    IPsecRekeyResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecRekeyResponse& from) {
+    IPsecRekeyResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -5365,15 +5369,15 @@ class IPsecRekeyResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecRekeyResp* other);
+  void InternalSwap(IPsecRekeyResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecRekeyResp";
+    return "opi_api.security.v1.IPsecRekeyResponse";
   }
   protected:
-  explicit IPsecRekeyResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecRekeyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -5413,7 +5417,7 @@ class IPsecRekeyResp final :
   void _internal_set_matches(uint32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecRekeyResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecRekeyResponse)
  private:
   class _Internal;
 
@@ -5430,24 +5434,24 @@ class IPsecRekeyResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecListSasReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListSasReq) */ {
+class IPsecListSasRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListSasRequest) */ {
  public:
-  inline IPsecListSasReq() : IPsecListSasReq(nullptr) {}
-  ~IPsecListSasReq() override;
-  explicit PROTOBUF_CONSTEXPR IPsecListSasReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecListSasRequest() : IPsecListSasRequest(nullptr) {}
+  ~IPsecListSasRequest() override;
+  explicit PROTOBUF_CONSTEXPR IPsecListSasRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecListSasReq(const IPsecListSasReq& from);
-  IPsecListSasReq(IPsecListSasReq&& from) noexcept
-    : IPsecListSasReq() {
+  IPsecListSasRequest(const IPsecListSasRequest& from);
+  IPsecListSasRequest(IPsecListSasRequest&& from) noexcept
+    : IPsecListSasRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecListSasReq& operator=(const IPsecListSasReq& from) {
+  inline IPsecListSasRequest& operator=(const IPsecListSasRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecListSasReq& operator=(IPsecListSasReq&& from) noexcept {
+  inline IPsecListSasRequest& operator=(IPsecListSasRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -5470,20 +5474,20 @@ class IPsecListSasReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecListSasReq& default_instance() {
+  static const IPsecListSasRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecListSasReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecListSasReq*>(
-               &_IPsecListSasReq_default_instance_);
+  static inline const IPsecListSasRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecListSasRequest*>(
+               &_IPsecListSasRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     25;
 
-  friend void swap(IPsecListSasReq& a, IPsecListSasReq& b) {
+  friend void swap(IPsecListSasRequest& a, IPsecListSasRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecListSasReq* other) {
+  inline void Swap(IPsecListSasRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -5496,7 +5500,7 @@ class IPsecListSasReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecListSasReq* other) {
+  void UnsafeArenaSwap(IPsecListSasRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -5504,14 +5508,14 @@ class IPsecListSasReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecListSasReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecListSasReq>(arena);
+  IPsecListSasRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecListSasRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecListSasReq& from);
+  void CopyFrom(const IPsecListSasRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecListSasReq& from) {
-    IPsecListSasReq::MergeImpl(*this, from);
+  void MergeFrom( const IPsecListSasRequest& from) {
+    IPsecListSasRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -5529,15 +5533,15 @@ class IPsecListSasReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecListSasReq* other);
+  void InternalSwap(IPsecListSasRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecListSasReq";
+    return "opi_api.security.v1.IPsecListSasRequest";
   }
   protected:
-  explicit IPsecListSasReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecListSasRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -5617,7 +5621,7 @@ class IPsecListSasReq final :
   void _internal_set_child_id(uint64_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListSasReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListSasRequest)
  private:
   class _Internal;
 
@@ -6856,24 +6860,24 @@ class ListIkeSa final :
 };
 // -------------------------------------------------------------------
 
-class IPsecListSasResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListSasResp) */ {
+class IPsecListSasResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListSasResponse) */ {
  public:
-  inline IPsecListSasResp() : IPsecListSasResp(nullptr) {}
-  ~IPsecListSasResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecListSasResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecListSasResponse() : IPsecListSasResponse(nullptr) {}
+  ~IPsecListSasResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecListSasResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecListSasResp(const IPsecListSasResp& from);
-  IPsecListSasResp(IPsecListSasResp&& from) noexcept
-    : IPsecListSasResp() {
+  IPsecListSasResponse(const IPsecListSasResponse& from);
+  IPsecListSasResponse(IPsecListSasResponse&& from) noexcept
+    : IPsecListSasResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecListSasResp& operator=(const IPsecListSasResp& from) {
+  inline IPsecListSasResponse& operator=(const IPsecListSasResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecListSasResp& operator=(IPsecListSasResp&& from) noexcept {
+  inline IPsecListSasResponse& operator=(IPsecListSasResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -6896,20 +6900,20 @@ class IPsecListSasResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecListSasResp& default_instance() {
+  static const IPsecListSasResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecListSasResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecListSasResp*>(
-               &_IPsecListSasResp_default_instance_);
+  static inline const IPsecListSasResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecListSasResponse*>(
+               &_IPsecListSasResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     28;
 
-  friend void swap(IPsecListSasResp& a, IPsecListSasResp& b) {
+  friend void swap(IPsecListSasResponse& a, IPsecListSasResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecListSasResp* other) {
+  inline void Swap(IPsecListSasResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -6922,7 +6926,7 @@ class IPsecListSasResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecListSasResp* other) {
+  void UnsafeArenaSwap(IPsecListSasResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -6930,14 +6934,14 @@ class IPsecListSasResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecListSasResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecListSasResp>(arena);
+  IPsecListSasResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecListSasResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecListSasResp& from);
+  void CopyFrom(const IPsecListSasResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecListSasResp& from) {
-    IPsecListSasResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecListSasResponse& from) {
+    IPsecListSasResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -6955,15 +6959,15 @@ class IPsecListSasResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecListSasResp* other);
+  void InternalSwap(IPsecListSasResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecListSasResp";
+    return "opi_api.security.v1.IPsecListSasResponse";
   }
   protected:
-  explicit IPsecListSasResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecListSasResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -6997,7 +7001,7 @@ class IPsecListSasResp final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListIkeSa >&
       ikesas() const;
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListSasResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListSasResponse)
  private:
   class _Internal;
 
@@ -7013,24 +7017,24 @@ class IPsecListSasResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecListConnsReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListConnsReq) */ {
+class IPsecListConnsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListConnsRequest) */ {
  public:
-  inline IPsecListConnsReq() : IPsecListConnsReq(nullptr) {}
-  ~IPsecListConnsReq() override;
-  explicit PROTOBUF_CONSTEXPR IPsecListConnsReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecListConnsRequest() : IPsecListConnsRequest(nullptr) {}
+  ~IPsecListConnsRequest() override;
+  explicit PROTOBUF_CONSTEXPR IPsecListConnsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecListConnsReq(const IPsecListConnsReq& from);
-  IPsecListConnsReq(IPsecListConnsReq&& from) noexcept
-    : IPsecListConnsReq() {
+  IPsecListConnsRequest(const IPsecListConnsRequest& from);
+  IPsecListConnsRequest(IPsecListConnsRequest&& from) noexcept
+    : IPsecListConnsRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecListConnsReq& operator=(const IPsecListConnsReq& from) {
+  inline IPsecListConnsRequest& operator=(const IPsecListConnsRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecListConnsReq& operator=(IPsecListConnsReq&& from) noexcept {
+  inline IPsecListConnsRequest& operator=(IPsecListConnsRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -7053,20 +7057,20 @@ class IPsecListConnsReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecListConnsReq& default_instance() {
+  static const IPsecListConnsRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecListConnsReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecListConnsReq*>(
-               &_IPsecListConnsReq_default_instance_);
+  static inline const IPsecListConnsRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecListConnsRequest*>(
+               &_IPsecListConnsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     29;
 
-  friend void swap(IPsecListConnsReq& a, IPsecListConnsReq& b) {
+  friend void swap(IPsecListConnsRequest& a, IPsecListConnsRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecListConnsReq* other) {
+  inline void Swap(IPsecListConnsRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -7079,7 +7083,7 @@ class IPsecListConnsReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecListConnsReq* other) {
+  void UnsafeArenaSwap(IPsecListConnsRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -7087,14 +7091,14 @@ class IPsecListConnsReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecListConnsReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecListConnsReq>(arena);
+  IPsecListConnsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecListConnsRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecListConnsReq& from);
+  void CopyFrom(const IPsecListConnsRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecListConnsReq& from) {
-    IPsecListConnsReq::MergeImpl(*this, from);
+  void MergeFrom( const IPsecListConnsRequest& from) {
+    IPsecListConnsRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -7112,15 +7116,15 @@ class IPsecListConnsReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecListConnsReq* other);
+  void InternalSwap(IPsecListConnsRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecListConnsReq";
+    return "opi_api.security.v1.IPsecListConnsRequest";
   }
   protected:
-  explicit IPsecListConnsReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecListConnsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -7150,7 +7154,7 @@ class IPsecListConnsReq final :
   std::string* _internal_mutable_ike();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListConnsReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListConnsRequest)
  private:
   class _Internal;
 
@@ -8226,24 +8230,24 @@ class ListConnResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecListConnsResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListConnsResp) */ {
+class IPsecListConnsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListConnsResponse) */ {
  public:
-  inline IPsecListConnsResp() : IPsecListConnsResp(nullptr) {}
-  ~IPsecListConnsResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecListConnsResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecListConnsResponse() : IPsecListConnsResponse(nullptr) {}
+  ~IPsecListConnsResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecListConnsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecListConnsResp(const IPsecListConnsResp& from);
-  IPsecListConnsResp(IPsecListConnsResp&& from) noexcept
-    : IPsecListConnsResp() {
+  IPsecListConnsResponse(const IPsecListConnsResponse& from);
+  IPsecListConnsResponse(IPsecListConnsResponse&& from) noexcept
+    : IPsecListConnsResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecListConnsResp& operator=(const IPsecListConnsResp& from) {
+  inline IPsecListConnsResponse& operator=(const IPsecListConnsResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecListConnsResp& operator=(IPsecListConnsResp&& from) noexcept {
+  inline IPsecListConnsResponse& operator=(IPsecListConnsResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -8266,20 +8270,20 @@ class IPsecListConnsResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecListConnsResp& default_instance() {
+  static const IPsecListConnsResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecListConnsResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecListConnsResp*>(
-               &_IPsecListConnsResp_default_instance_);
+  static inline const IPsecListConnsResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecListConnsResponse*>(
+               &_IPsecListConnsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     33;
 
-  friend void swap(IPsecListConnsResp& a, IPsecListConnsResp& b) {
+  friend void swap(IPsecListConnsResponse& a, IPsecListConnsResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecListConnsResp* other) {
+  inline void Swap(IPsecListConnsResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -8292,7 +8296,7 @@ class IPsecListConnsResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecListConnsResp* other) {
+  void UnsafeArenaSwap(IPsecListConnsResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -8300,14 +8304,14 @@ class IPsecListConnsResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecListConnsResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecListConnsResp>(arena);
+  IPsecListConnsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecListConnsResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecListConnsResp& from);
+  void CopyFrom(const IPsecListConnsResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecListConnsResp& from) {
-    IPsecListConnsResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecListConnsResponse& from) {
+    IPsecListConnsResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -8325,15 +8329,15 @@ class IPsecListConnsResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecListConnsResp* other);
+  void InternalSwap(IPsecListConnsResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecListConnsResp";
+    return "opi_api.security.v1.IPsecListConnsResponse";
   }
   protected:
-  explicit IPsecListConnsResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecListConnsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -8367,7 +8371,7 @@ class IPsecListConnsResp final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListConnResp >&
       connection() const;
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListConnsResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListConnsResponse)
  private:
   class _Internal;
 
@@ -8383,24 +8387,24 @@ class IPsecListConnsResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecListCertsReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListCertsReq) */ {
+class IPsecListCertsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListCertsRequest) */ {
  public:
-  inline IPsecListCertsReq() : IPsecListCertsReq(nullptr) {}
-  ~IPsecListCertsReq() override;
-  explicit PROTOBUF_CONSTEXPR IPsecListCertsReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecListCertsRequest() : IPsecListCertsRequest(nullptr) {}
+  ~IPsecListCertsRequest() override;
+  explicit PROTOBUF_CONSTEXPR IPsecListCertsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecListCertsReq(const IPsecListCertsReq& from);
-  IPsecListCertsReq(IPsecListCertsReq&& from) noexcept
-    : IPsecListCertsReq() {
+  IPsecListCertsRequest(const IPsecListCertsRequest& from);
+  IPsecListCertsRequest(IPsecListCertsRequest&& from) noexcept
+    : IPsecListCertsRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecListCertsReq& operator=(const IPsecListCertsReq& from) {
+  inline IPsecListCertsRequest& operator=(const IPsecListCertsRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecListCertsReq& operator=(IPsecListCertsReq&& from) noexcept {
+  inline IPsecListCertsRequest& operator=(IPsecListCertsRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -8423,20 +8427,20 @@ class IPsecListCertsReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecListCertsReq& default_instance() {
+  static const IPsecListCertsRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecListCertsReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecListCertsReq*>(
-               &_IPsecListCertsReq_default_instance_);
+  static inline const IPsecListCertsRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecListCertsRequest*>(
+               &_IPsecListCertsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     34;
 
-  friend void swap(IPsecListCertsReq& a, IPsecListCertsReq& b) {
+  friend void swap(IPsecListCertsRequest& a, IPsecListCertsRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecListCertsReq* other) {
+  inline void Swap(IPsecListCertsRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -8449,7 +8453,7 @@ class IPsecListCertsReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecListCertsReq* other) {
+  void UnsafeArenaSwap(IPsecListCertsRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -8457,14 +8461,14 @@ class IPsecListCertsReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecListCertsReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecListCertsReq>(arena);
+  IPsecListCertsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecListCertsRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecListCertsReq& from);
+  void CopyFrom(const IPsecListCertsRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecListCertsReq& from) {
-    IPsecListCertsReq::MergeImpl(*this, from);
+  void MergeFrom( const IPsecListCertsRequest& from) {
+    IPsecListCertsRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -8482,15 +8486,15 @@ class IPsecListCertsReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecListCertsReq* other);
+  void InternalSwap(IPsecListCertsRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecListCertsReq";
+    return "opi_api.security.v1.IPsecListCertsRequest";
   }
   protected:
-  explicit IPsecListCertsReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecListCertsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -8550,7 +8554,7 @@ class IPsecListCertsReq final :
   std::string* _internal_mutable_subject();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListCertsReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListCertsRequest)
  private:
   class _Internal;
 
@@ -8807,24 +8811,24 @@ class ListCert final :
 };
 // -------------------------------------------------------------------
 
-class IPsecListCertsResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListCertsResp) */ {
+class IPsecListCertsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecListCertsResponse) */ {
  public:
-  inline IPsecListCertsResp() : IPsecListCertsResp(nullptr) {}
-  ~IPsecListCertsResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecListCertsResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecListCertsResponse() : IPsecListCertsResponse(nullptr) {}
+  ~IPsecListCertsResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecListCertsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecListCertsResp(const IPsecListCertsResp& from);
-  IPsecListCertsResp(IPsecListCertsResp&& from) noexcept
-    : IPsecListCertsResp() {
+  IPsecListCertsResponse(const IPsecListCertsResponse& from);
+  IPsecListCertsResponse(IPsecListCertsResponse&& from) noexcept
+    : IPsecListCertsResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecListCertsResp& operator=(const IPsecListCertsResp& from) {
+  inline IPsecListCertsResponse& operator=(const IPsecListCertsResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecListCertsResp& operator=(IPsecListCertsResp&& from) noexcept {
+  inline IPsecListCertsResponse& operator=(IPsecListCertsResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -8847,20 +8851,20 @@ class IPsecListCertsResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecListCertsResp& default_instance() {
+  static const IPsecListCertsResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecListCertsResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecListCertsResp*>(
-               &_IPsecListCertsResp_default_instance_);
+  static inline const IPsecListCertsResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecListCertsResponse*>(
+               &_IPsecListCertsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     36;
 
-  friend void swap(IPsecListCertsResp& a, IPsecListCertsResp& b) {
+  friend void swap(IPsecListCertsResponse& a, IPsecListCertsResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecListCertsResp* other) {
+  inline void Swap(IPsecListCertsResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -8873,7 +8877,7 @@ class IPsecListCertsResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecListCertsResp* other) {
+  void UnsafeArenaSwap(IPsecListCertsResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -8881,14 +8885,14 @@ class IPsecListCertsResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecListCertsResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecListCertsResp>(arena);
+  IPsecListCertsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecListCertsResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecListCertsResp& from);
+  void CopyFrom(const IPsecListCertsResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecListCertsResp& from) {
-    IPsecListCertsResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecListCertsResponse& from) {
+    IPsecListCertsResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -8906,15 +8910,15 @@ class IPsecListCertsResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecListCertsResp* other);
+  void InternalSwap(IPsecListCertsResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecListCertsResp";
+    return "opi_api.security.v1.IPsecListCertsResponse";
   }
   protected:
-  explicit IPsecListCertsResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecListCertsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -8948,7 +8952,7 @@ class IPsecListCertsResp final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListCert >&
       certs() const;
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListCertsResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecListCertsResponse)
  private:
   class _Internal;
 
@@ -8964,24 +8968,24 @@ class IPsecListCertsResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecLoadConnReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecLoadConnReq) */ {
+class IPsecLoadConnRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecLoadConnRequest) */ {
  public:
-  inline IPsecLoadConnReq() : IPsecLoadConnReq(nullptr) {}
-  ~IPsecLoadConnReq() override;
-  explicit PROTOBUF_CONSTEXPR IPsecLoadConnReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecLoadConnRequest() : IPsecLoadConnRequest(nullptr) {}
+  ~IPsecLoadConnRequest() override;
+  explicit PROTOBUF_CONSTEXPR IPsecLoadConnRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecLoadConnReq(const IPsecLoadConnReq& from);
-  IPsecLoadConnReq(IPsecLoadConnReq&& from) noexcept
-    : IPsecLoadConnReq() {
+  IPsecLoadConnRequest(const IPsecLoadConnRequest& from);
+  IPsecLoadConnRequest(IPsecLoadConnRequest&& from) noexcept
+    : IPsecLoadConnRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecLoadConnReq& operator=(const IPsecLoadConnReq& from) {
+  inline IPsecLoadConnRequest& operator=(const IPsecLoadConnRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecLoadConnReq& operator=(IPsecLoadConnReq&& from) noexcept {
+  inline IPsecLoadConnRequest& operator=(IPsecLoadConnRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -9004,20 +9008,20 @@ class IPsecLoadConnReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecLoadConnReq& default_instance() {
+  static const IPsecLoadConnRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecLoadConnReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecLoadConnReq*>(
-               &_IPsecLoadConnReq_default_instance_);
+  static inline const IPsecLoadConnRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecLoadConnRequest*>(
+               &_IPsecLoadConnRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     37;
 
-  friend void swap(IPsecLoadConnReq& a, IPsecLoadConnReq& b) {
+  friend void swap(IPsecLoadConnRequest& a, IPsecLoadConnRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecLoadConnReq* other) {
+  inline void Swap(IPsecLoadConnRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -9030,7 +9034,7 @@ class IPsecLoadConnReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecLoadConnReq* other) {
+  void UnsafeArenaSwap(IPsecLoadConnRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -9038,14 +9042,14 @@ class IPsecLoadConnReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecLoadConnReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecLoadConnReq>(arena);
+  IPsecLoadConnRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecLoadConnRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecLoadConnReq& from);
+  void CopyFrom(const IPsecLoadConnRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecLoadConnReq& from) {
-    IPsecLoadConnReq::MergeImpl(*this, from);
+  void MergeFrom( const IPsecLoadConnRequest& from) {
+    IPsecLoadConnRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -9063,15 +9067,15 @@ class IPsecLoadConnReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecLoadConnReq* other);
+  void InternalSwap(IPsecLoadConnRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecLoadConnReq";
+    return "opi_api.security.v1.IPsecLoadConnRequest";
   }
   protected:
-  explicit IPsecLoadConnReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecLoadConnRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -9105,7 +9109,7 @@ class IPsecLoadConnReq final :
       ::opi_api::security::v1::Connection* connection);
   ::opi_api::security::v1::Connection* unsafe_arena_release_connection();
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecLoadConnReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecLoadConnRequest)
  private:
   class _Internal;
 
@@ -9121,24 +9125,24 @@ class IPsecLoadConnReq final :
 };
 // -------------------------------------------------------------------
 
-class IPsecLoadConnResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecLoadConnResp) */ {
+class IPsecLoadConnResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecLoadConnResponse) */ {
  public:
-  inline IPsecLoadConnResp() : IPsecLoadConnResp(nullptr) {}
-  ~IPsecLoadConnResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecLoadConnResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecLoadConnResponse() : IPsecLoadConnResponse(nullptr) {}
+  ~IPsecLoadConnResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecLoadConnResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecLoadConnResp(const IPsecLoadConnResp& from);
-  IPsecLoadConnResp(IPsecLoadConnResp&& from) noexcept
-    : IPsecLoadConnResp() {
+  IPsecLoadConnResponse(const IPsecLoadConnResponse& from);
+  IPsecLoadConnResponse(IPsecLoadConnResponse&& from) noexcept
+    : IPsecLoadConnResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecLoadConnResp& operator=(const IPsecLoadConnResp& from) {
+  inline IPsecLoadConnResponse& operator=(const IPsecLoadConnResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecLoadConnResp& operator=(IPsecLoadConnResp&& from) noexcept {
+  inline IPsecLoadConnResponse& operator=(IPsecLoadConnResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -9161,20 +9165,20 @@ class IPsecLoadConnResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecLoadConnResp& default_instance() {
+  static const IPsecLoadConnResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecLoadConnResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecLoadConnResp*>(
-               &_IPsecLoadConnResp_default_instance_);
+  static inline const IPsecLoadConnResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecLoadConnResponse*>(
+               &_IPsecLoadConnResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     38;
 
-  friend void swap(IPsecLoadConnResp& a, IPsecLoadConnResp& b) {
+  friend void swap(IPsecLoadConnResponse& a, IPsecLoadConnResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecLoadConnResp* other) {
+  inline void Swap(IPsecLoadConnResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -9187,7 +9191,7 @@ class IPsecLoadConnResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecLoadConnResp* other) {
+  void UnsafeArenaSwap(IPsecLoadConnResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -9195,14 +9199,14 @@ class IPsecLoadConnResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecLoadConnResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecLoadConnResp>(arena);
+  IPsecLoadConnResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecLoadConnResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecLoadConnResp& from);
+  void CopyFrom(const IPsecLoadConnResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecLoadConnResp& from) {
-    IPsecLoadConnResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecLoadConnResponse& from) {
+    IPsecLoadConnResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -9220,15 +9224,15 @@ class IPsecLoadConnResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecLoadConnResp* other);
+  void InternalSwap(IPsecLoadConnResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecLoadConnResp";
+    return "opi_api.security.v1.IPsecLoadConnResponse";
   }
   protected:
-  explicit IPsecLoadConnResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecLoadConnResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -9258,7 +9262,7 @@ class IPsecLoadConnResp final :
   std::string* _internal_mutable_success();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecLoadConnResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecLoadConnResponse)
  private:
   class _Internal;
 
@@ -9274,24 +9278,24 @@ class IPsecLoadConnResp final :
 };
 // -------------------------------------------------------------------
 
-class IPsecUnloadConnReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecUnloadConnReq) */ {
+class IPsecUnloadConnRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecUnloadConnRequest) */ {
  public:
-  inline IPsecUnloadConnReq() : IPsecUnloadConnReq(nullptr) {}
-  ~IPsecUnloadConnReq() override;
-  explicit PROTOBUF_CONSTEXPR IPsecUnloadConnReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecUnloadConnRequest() : IPsecUnloadConnRequest(nullptr) {}
+  ~IPsecUnloadConnRequest() override;
+  explicit PROTOBUF_CONSTEXPR IPsecUnloadConnRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecUnloadConnReq(const IPsecUnloadConnReq& from);
-  IPsecUnloadConnReq(IPsecUnloadConnReq&& from) noexcept
-    : IPsecUnloadConnReq() {
+  IPsecUnloadConnRequest(const IPsecUnloadConnRequest& from);
+  IPsecUnloadConnRequest(IPsecUnloadConnRequest&& from) noexcept
+    : IPsecUnloadConnRequest() {
     *this = ::std::move(from);
   }
 
-  inline IPsecUnloadConnReq& operator=(const IPsecUnloadConnReq& from) {
+  inline IPsecUnloadConnRequest& operator=(const IPsecUnloadConnRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecUnloadConnReq& operator=(IPsecUnloadConnReq&& from) noexcept {
+  inline IPsecUnloadConnRequest& operator=(IPsecUnloadConnRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -9314,20 +9318,20 @@ class IPsecUnloadConnReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecUnloadConnReq& default_instance() {
+  static const IPsecUnloadConnRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecUnloadConnReq* internal_default_instance() {
-    return reinterpret_cast<const IPsecUnloadConnReq*>(
-               &_IPsecUnloadConnReq_default_instance_);
+  static inline const IPsecUnloadConnRequest* internal_default_instance() {
+    return reinterpret_cast<const IPsecUnloadConnRequest*>(
+               &_IPsecUnloadConnRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     39;
 
-  friend void swap(IPsecUnloadConnReq& a, IPsecUnloadConnReq& b) {
+  friend void swap(IPsecUnloadConnRequest& a, IPsecUnloadConnRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecUnloadConnReq* other) {
+  inline void Swap(IPsecUnloadConnRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -9340,7 +9344,7 @@ class IPsecUnloadConnReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecUnloadConnReq* other) {
+  void UnsafeArenaSwap(IPsecUnloadConnRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -9348,14 +9352,14 @@ class IPsecUnloadConnReq final :
 
   // implements Message ----------------------------------------------
 
-  IPsecUnloadConnReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecUnloadConnReq>(arena);
+  IPsecUnloadConnRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecUnloadConnRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecUnloadConnReq& from);
+  void CopyFrom(const IPsecUnloadConnRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecUnloadConnReq& from) {
-    IPsecUnloadConnReq::MergeImpl(*this, from);
+  void MergeFrom( const IPsecUnloadConnRequest& from) {
+    IPsecUnloadConnRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -9373,15 +9377,15 @@ class IPsecUnloadConnReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecUnloadConnReq* other);
+  void InternalSwap(IPsecUnloadConnRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecUnloadConnReq";
+    return "opi_api.security.v1.IPsecUnloadConnRequest";
   }
   protected:
-  explicit IPsecUnloadConnReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecUnloadConnRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -9411,7 +9415,7 @@ class IPsecUnloadConnReq final :
   std::string* _internal_mutable_name();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecUnloadConnReq)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecUnloadConnRequest)
  private:
   class _Internal;
 
@@ -9427,24 +9431,24 @@ class IPsecUnloadConnReq final :
 };
 // -------------------------------------------------------------------
 
-class IPsecUnloadConnResp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecUnloadConnResp) */ {
+class IPsecUnloadConnResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecUnloadConnResponse) */ {
  public:
-  inline IPsecUnloadConnResp() : IPsecUnloadConnResp(nullptr) {}
-  ~IPsecUnloadConnResp() override;
-  explicit PROTOBUF_CONSTEXPR IPsecUnloadConnResp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline IPsecUnloadConnResponse() : IPsecUnloadConnResponse(nullptr) {}
+  ~IPsecUnloadConnResponse() override;
+  explicit PROTOBUF_CONSTEXPR IPsecUnloadConnResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  IPsecUnloadConnResp(const IPsecUnloadConnResp& from);
-  IPsecUnloadConnResp(IPsecUnloadConnResp&& from) noexcept
-    : IPsecUnloadConnResp() {
+  IPsecUnloadConnResponse(const IPsecUnloadConnResponse& from);
+  IPsecUnloadConnResponse(IPsecUnloadConnResponse&& from) noexcept
+    : IPsecUnloadConnResponse() {
     *this = ::std::move(from);
   }
 
-  inline IPsecUnloadConnResp& operator=(const IPsecUnloadConnResp& from) {
+  inline IPsecUnloadConnResponse& operator=(const IPsecUnloadConnResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IPsecUnloadConnResp& operator=(IPsecUnloadConnResp&& from) noexcept {
+  inline IPsecUnloadConnResponse& operator=(IPsecUnloadConnResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -9467,20 +9471,20 @@ class IPsecUnloadConnResp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const IPsecUnloadConnResp& default_instance() {
+  static const IPsecUnloadConnResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const IPsecUnloadConnResp* internal_default_instance() {
-    return reinterpret_cast<const IPsecUnloadConnResp*>(
-               &_IPsecUnloadConnResp_default_instance_);
+  static inline const IPsecUnloadConnResponse* internal_default_instance() {
+    return reinterpret_cast<const IPsecUnloadConnResponse*>(
+               &_IPsecUnloadConnResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     40;
 
-  friend void swap(IPsecUnloadConnResp& a, IPsecUnloadConnResp& b) {
+  friend void swap(IPsecUnloadConnResponse& a, IPsecUnloadConnResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IPsecUnloadConnResp* other) {
+  inline void Swap(IPsecUnloadConnResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -9493,7 +9497,7 @@ class IPsecUnloadConnResp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(IPsecUnloadConnResp* other) {
+  void UnsafeArenaSwap(IPsecUnloadConnResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -9501,14 +9505,14 @@ class IPsecUnloadConnResp final :
 
   // implements Message ----------------------------------------------
 
-  IPsecUnloadConnResp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IPsecUnloadConnResp>(arena);
+  IPsecUnloadConnResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<IPsecUnloadConnResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const IPsecUnloadConnResp& from);
+  void CopyFrom(const IPsecUnloadConnResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const IPsecUnloadConnResp& from) {
-    IPsecUnloadConnResp::MergeImpl(*this, from);
+  void MergeFrom( const IPsecUnloadConnResponse& from) {
+    IPsecUnloadConnResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -9526,15 +9530,15 @@ class IPsecUnloadConnResp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IPsecUnloadConnResp* other);
+  void InternalSwap(IPsecUnloadConnResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.IPsecUnloadConnResp";
+    return "opi_api.security.v1.IPsecUnloadConnResponse";
   }
   protected:
-  explicit IPsecUnloadConnResp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit IPsecUnloadConnResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -9564,7 +9568,7 @@ class IPsecUnloadConnResp final :
   std::string* _internal_mutable_success();
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecUnloadConnResp)
+  // @@protoc_insertion_point(class_scope:opi_api.security.v1.IPsecUnloadConnResponse)
  private:
   class _Internal;
 
@@ -9675,7 +9679,7 @@ Proposals::mutable_integ_alg() {
   return _internal_mutable_integ_alg();
 }
 
-// repeated .opi_api.security.v1.PseudoRandomFunction prf = 3;
+// repeated .opi_api.security.v1.PRFunction prf = 3;
 inline int Proposals::_internal_prf_size() const {
   return _impl_.prf_.size();
 }
@@ -9685,21 +9689,21 @@ inline int Proposals::prf_size() const {
 inline void Proposals::clear_prf() {
   _impl_.prf_.Clear();
 }
-inline ::opi_api::security::v1::PseudoRandomFunction Proposals::_internal_prf(int index) const {
-  return static_cast< ::opi_api::security::v1::PseudoRandomFunction >(_impl_.prf_.Get(index));
+inline ::opi_api::security::v1::PRFunction Proposals::_internal_prf(int index) const {
+  return static_cast< ::opi_api::security::v1::PRFunction >(_impl_.prf_.Get(index));
 }
-inline ::opi_api::security::v1::PseudoRandomFunction Proposals::prf(int index) const {
+inline ::opi_api::security::v1::PRFunction Proposals::prf(int index) const {
   // @@protoc_insertion_point(field_get:opi_api.security.v1.Proposals.prf)
   return _internal_prf(index);
 }
-inline void Proposals::set_prf(int index, ::opi_api::security::v1::PseudoRandomFunction value) {
+inline void Proposals::set_prf(int index, ::opi_api::security::v1::PRFunction value) {
   _impl_.prf_.Set(index, value);
   // @@protoc_insertion_point(field_set:opi_api.security.v1.Proposals.prf)
 }
-inline void Proposals::_internal_add_prf(::opi_api::security::v1::PseudoRandomFunction value) {
+inline void Proposals::_internal_add_prf(::opi_api::security::v1::PRFunction value) {
   _impl_.prf_.Add(value);
 }
-inline void Proposals::add_prf(::opi_api::security::v1::PseudoRandomFunction value) {
+inline void Proposals::add_prf(::opi_api::security::v1::PRFunction value) {
   _internal_add_prf(value);
   // @@protoc_insertion_point(field_add:opi_api.security.v1.Proposals.prf)
 }
@@ -9718,7 +9722,7 @@ Proposals::mutable_prf() {
   return _internal_mutable_prf();
 }
 
-// repeated .opi_api.security.v1.DiffieHellmanGroups dhgroups = 4;
+// repeated .opi_api.security.v1.DHGroups dhgroups = 4;
 inline int Proposals::_internal_dhgroups_size() const {
   return _impl_.dhgroups_.size();
 }
@@ -9728,21 +9732,21 @@ inline int Proposals::dhgroups_size() const {
 inline void Proposals::clear_dhgroups() {
   _impl_.dhgroups_.Clear();
 }
-inline ::opi_api::security::v1::DiffieHellmanGroups Proposals::_internal_dhgroups(int index) const {
-  return static_cast< ::opi_api::security::v1::DiffieHellmanGroups >(_impl_.dhgroups_.Get(index));
+inline ::opi_api::security::v1::DHGroups Proposals::_internal_dhgroups(int index) const {
+  return static_cast< ::opi_api::security::v1::DHGroups >(_impl_.dhgroups_.Get(index));
 }
-inline ::opi_api::security::v1::DiffieHellmanGroups Proposals::dhgroups(int index) const {
+inline ::opi_api::security::v1::DHGroups Proposals::dhgroups(int index) const {
   // @@protoc_insertion_point(field_get:opi_api.security.v1.Proposals.dhgroups)
   return _internal_dhgroups(index);
 }
-inline void Proposals::set_dhgroups(int index, ::opi_api::security::v1::DiffieHellmanGroups value) {
+inline void Proposals::set_dhgroups(int index, ::opi_api::security::v1::DHGroups value) {
   _impl_.dhgroups_.Set(index, value);
   // @@protoc_insertion_point(field_set:opi_api.security.v1.Proposals.dhgroups)
 }
-inline void Proposals::_internal_add_dhgroups(::opi_api::security::v1::DiffieHellmanGroups value) {
+inline void Proposals::_internal_add_dhgroups(::opi_api::security::v1::DHGroups value) {
   _impl_.dhgroups_.Add(value);
 }
-inline void Proposals::add_dhgroups(::opi_api::security::v1::DiffieHellmanGroups value) {
+inline void Proposals::add_dhgroups(::opi_api::security::v1::DHGroups value) {
   _internal_add_dhgroups(value);
   // @@protoc_insertion_point(field_add:opi_api.security.v1.Proposals.dhgroups)
 }
@@ -13184,48 +13188,48 @@ Connection::children() const {
 
 // -------------------------------------------------------------------
 
-// IPsecVersionReq
+// IPsecVersionRequest
 
 // -------------------------------------------------------------------
 
-// IPsecVersionResp
+// IPsecVersionResponse
 
 // string daemon = 1;
-inline void IPsecVersionResp::clear_daemon() {
+inline void IPsecVersionResponse::clear_daemon() {
   _impl_.daemon_.ClearToEmpty();
 }
-inline const std::string& IPsecVersionResp::daemon() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResp.daemon)
+inline const std::string& IPsecVersionResponse::daemon() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResponse.daemon)
   return _internal_daemon();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecVersionResp::set_daemon(ArgT0&& arg0, ArgT... args) {
+void IPsecVersionResponse::set_daemon(ArgT0&& arg0, ArgT... args) {
  
  _impl_.daemon_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResp.daemon)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResponse.daemon)
 }
-inline std::string* IPsecVersionResp::mutable_daemon() {
+inline std::string* IPsecVersionResponse::mutable_daemon() {
   std::string* _s = _internal_mutable_daemon();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResp.daemon)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResponse.daemon)
   return _s;
 }
-inline const std::string& IPsecVersionResp::_internal_daemon() const {
+inline const std::string& IPsecVersionResponse::_internal_daemon() const {
   return _impl_.daemon_.Get();
 }
-inline void IPsecVersionResp::_internal_set_daemon(const std::string& value) {
+inline void IPsecVersionResponse::_internal_set_daemon(const std::string& value) {
   
   _impl_.daemon_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::_internal_mutable_daemon() {
+inline std::string* IPsecVersionResponse::_internal_mutable_daemon() {
   
   return _impl_.daemon_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::release_daemon() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResp.daemon)
+inline std::string* IPsecVersionResponse::release_daemon() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResponse.daemon)
   return _impl_.daemon_.Release();
 }
-inline void IPsecVersionResp::set_allocated_daemon(std::string* daemon) {
+inline void IPsecVersionResponse::set_allocated_daemon(std::string* daemon) {
   if (daemon != nullptr) {
     
   } else {
@@ -13237,45 +13241,45 @@ inline void IPsecVersionResp::set_allocated_daemon(std::string* daemon) {
     _impl_.daemon_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResp.daemon)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResponse.daemon)
 }
 
 // string version = 2;
-inline void IPsecVersionResp::clear_version() {
+inline void IPsecVersionResponse::clear_version() {
   _impl_.version_.ClearToEmpty();
 }
-inline const std::string& IPsecVersionResp::version() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResp.version)
+inline const std::string& IPsecVersionResponse::version() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResponse.version)
   return _internal_version();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecVersionResp::set_version(ArgT0&& arg0, ArgT... args) {
+void IPsecVersionResponse::set_version(ArgT0&& arg0, ArgT... args) {
  
  _impl_.version_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResp.version)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResponse.version)
 }
-inline std::string* IPsecVersionResp::mutable_version() {
+inline std::string* IPsecVersionResponse::mutable_version() {
   std::string* _s = _internal_mutable_version();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResp.version)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResponse.version)
   return _s;
 }
-inline const std::string& IPsecVersionResp::_internal_version() const {
+inline const std::string& IPsecVersionResponse::_internal_version() const {
   return _impl_.version_.Get();
 }
-inline void IPsecVersionResp::_internal_set_version(const std::string& value) {
+inline void IPsecVersionResponse::_internal_set_version(const std::string& value) {
   
   _impl_.version_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::_internal_mutable_version() {
+inline std::string* IPsecVersionResponse::_internal_mutable_version() {
   
   return _impl_.version_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::release_version() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResp.version)
+inline std::string* IPsecVersionResponse::release_version() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResponse.version)
   return _impl_.version_.Release();
 }
-inline void IPsecVersionResp::set_allocated_version(std::string* version) {
+inline void IPsecVersionResponse::set_allocated_version(std::string* version) {
   if (version != nullptr) {
     
   } else {
@@ -13287,45 +13291,45 @@ inline void IPsecVersionResp::set_allocated_version(std::string* version) {
     _impl_.version_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResp.version)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResponse.version)
 }
 
 // string sysname = 3;
-inline void IPsecVersionResp::clear_sysname() {
+inline void IPsecVersionResponse::clear_sysname() {
   _impl_.sysname_.ClearToEmpty();
 }
-inline const std::string& IPsecVersionResp::sysname() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResp.sysname)
+inline const std::string& IPsecVersionResponse::sysname() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResponse.sysname)
   return _internal_sysname();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecVersionResp::set_sysname(ArgT0&& arg0, ArgT... args) {
+void IPsecVersionResponse::set_sysname(ArgT0&& arg0, ArgT... args) {
  
  _impl_.sysname_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResp.sysname)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResponse.sysname)
 }
-inline std::string* IPsecVersionResp::mutable_sysname() {
+inline std::string* IPsecVersionResponse::mutable_sysname() {
   std::string* _s = _internal_mutable_sysname();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResp.sysname)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResponse.sysname)
   return _s;
 }
-inline const std::string& IPsecVersionResp::_internal_sysname() const {
+inline const std::string& IPsecVersionResponse::_internal_sysname() const {
   return _impl_.sysname_.Get();
 }
-inline void IPsecVersionResp::_internal_set_sysname(const std::string& value) {
+inline void IPsecVersionResponse::_internal_set_sysname(const std::string& value) {
   
   _impl_.sysname_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::_internal_mutable_sysname() {
+inline std::string* IPsecVersionResponse::_internal_mutable_sysname() {
   
   return _impl_.sysname_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::release_sysname() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResp.sysname)
+inline std::string* IPsecVersionResponse::release_sysname() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResponse.sysname)
   return _impl_.sysname_.Release();
 }
-inline void IPsecVersionResp::set_allocated_sysname(std::string* sysname) {
+inline void IPsecVersionResponse::set_allocated_sysname(std::string* sysname) {
   if (sysname != nullptr) {
     
   } else {
@@ -13337,45 +13341,45 @@ inline void IPsecVersionResp::set_allocated_sysname(std::string* sysname) {
     _impl_.sysname_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResp.sysname)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResponse.sysname)
 }
 
 // string release = 4;
-inline void IPsecVersionResp::clear_release() {
+inline void IPsecVersionResponse::clear_release() {
   _impl_.release_.ClearToEmpty();
 }
-inline const std::string& IPsecVersionResp::release() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResp.release)
+inline const std::string& IPsecVersionResponse::release() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResponse.release)
   return _internal_release();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecVersionResp::set_release(ArgT0&& arg0, ArgT... args) {
+void IPsecVersionResponse::set_release(ArgT0&& arg0, ArgT... args) {
  
  _impl_.release_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResp.release)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResponse.release)
 }
-inline std::string* IPsecVersionResp::mutable_release() {
+inline std::string* IPsecVersionResponse::mutable_release() {
   std::string* _s = _internal_mutable_release();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResp.release)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResponse.release)
   return _s;
 }
-inline const std::string& IPsecVersionResp::_internal_release() const {
+inline const std::string& IPsecVersionResponse::_internal_release() const {
   return _impl_.release_.Get();
 }
-inline void IPsecVersionResp::_internal_set_release(const std::string& value) {
+inline void IPsecVersionResponse::_internal_set_release(const std::string& value) {
   
   _impl_.release_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::_internal_mutable_release() {
+inline std::string* IPsecVersionResponse::_internal_mutable_release() {
   
   return _impl_.release_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::release_release() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResp.release)
+inline std::string* IPsecVersionResponse::release_release() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResponse.release)
   return _impl_.release_.Release();
 }
-inline void IPsecVersionResp::set_allocated_release(std::string* release) {
+inline void IPsecVersionResponse::set_allocated_release(std::string* release) {
   if (release != nullptr) {
     
   } else {
@@ -13387,45 +13391,45 @@ inline void IPsecVersionResp::set_allocated_release(std::string* release) {
     _impl_.release_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResp.release)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResponse.release)
 }
 
 // string machine = 5;
-inline void IPsecVersionResp::clear_machine() {
+inline void IPsecVersionResponse::clear_machine() {
   _impl_.machine_.ClearToEmpty();
 }
-inline const std::string& IPsecVersionResp::machine() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResp.machine)
+inline const std::string& IPsecVersionResponse::machine() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecVersionResponse.machine)
   return _internal_machine();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecVersionResp::set_machine(ArgT0&& arg0, ArgT... args) {
+void IPsecVersionResponse::set_machine(ArgT0&& arg0, ArgT... args) {
  
  _impl_.machine_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResp.machine)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecVersionResponse.machine)
 }
-inline std::string* IPsecVersionResp::mutable_machine() {
+inline std::string* IPsecVersionResponse::mutable_machine() {
   std::string* _s = _internal_mutable_machine();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResp.machine)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecVersionResponse.machine)
   return _s;
 }
-inline const std::string& IPsecVersionResp::_internal_machine() const {
+inline const std::string& IPsecVersionResponse::_internal_machine() const {
   return _impl_.machine_.Get();
 }
-inline void IPsecVersionResp::_internal_set_machine(const std::string& value) {
+inline void IPsecVersionResponse::_internal_set_machine(const std::string& value) {
   
   _impl_.machine_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::_internal_mutable_machine() {
+inline std::string* IPsecVersionResponse::_internal_mutable_machine() {
   
   return _impl_.machine_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecVersionResp::release_machine() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResp.machine)
+inline std::string* IPsecVersionResponse::release_machine() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecVersionResponse.machine)
   return _impl_.machine_.Release();
 }
-inline void IPsecVersionResp::set_allocated_machine(std::string* machine) {
+inline void IPsecVersionResponse::set_allocated_machine(std::string* machine) {
   if (machine != nullptr) {
     
   } else {
@@ -13437,53 +13441,53 @@ inline void IPsecVersionResp::set_allocated_machine(std::string* machine) {
     _impl_.machine_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResp.machine)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecVersionResponse.machine)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecStatsReq
+// IPsecStatsRequest
 
 // -------------------------------------------------------------------
 
-// IPsecStatsResp
+// IPsecStatsResponse
 
 // string status = 1;
-inline void IPsecStatsResp::clear_status() {
+inline void IPsecStatsResponse::clear_status() {
   _impl_.status_.ClearToEmpty();
 }
-inline const std::string& IPsecStatsResp::status() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecStatsResp.status)
+inline const std::string& IPsecStatsResponse::status() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecStatsResponse.status)
   return _internal_status();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecStatsResp::set_status(ArgT0&& arg0, ArgT... args) {
+void IPsecStatsResponse::set_status(ArgT0&& arg0, ArgT... args) {
  
  _impl_.status_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecStatsResp.status)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecStatsResponse.status)
 }
-inline std::string* IPsecStatsResp::mutable_status() {
+inline std::string* IPsecStatsResponse::mutable_status() {
   std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecStatsResp.status)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecStatsResponse.status)
   return _s;
 }
-inline const std::string& IPsecStatsResp::_internal_status() const {
+inline const std::string& IPsecStatsResponse::_internal_status() const {
   return _impl_.status_.Get();
 }
-inline void IPsecStatsResp::_internal_set_status(const std::string& value) {
+inline void IPsecStatsResponse::_internal_set_status(const std::string& value) {
   
   _impl_.status_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecStatsResp::_internal_mutable_status() {
+inline std::string* IPsecStatsResponse::_internal_mutable_status() {
   
   return _impl_.status_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecStatsResp::release_status() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecStatsResp.status)
+inline std::string* IPsecStatsResponse::release_status() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecStatsResponse.status)
   return _impl_.status_.Release();
 }
-inline void IPsecStatsResp::set_allocated_status(std::string* status) {
+inline void IPsecStatsResponse::set_allocated_status(std::string* status) {
   if (status != nullptr) {
     
   } else {
@@ -13495,49 +13499,49 @@ inline void IPsecStatsResp::set_allocated_status(std::string* status) {
     _impl_.status_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecStatsResp.status)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecStatsResponse.status)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecInitiateReq
+// IPsecInitiateRequest
 
 // string child = 1;
-inline void IPsecInitiateReq::clear_child() {
+inline void IPsecInitiateRequest::clear_child() {
   _impl_.child_.ClearToEmpty();
 }
-inline const std::string& IPsecInitiateReq::child() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecInitiateReq.child)
+inline const std::string& IPsecInitiateRequest::child() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecInitiateRequest.child)
   return _internal_child();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecInitiateReq::set_child(ArgT0&& arg0, ArgT... args) {
+void IPsecInitiateRequest::set_child(ArgT0&& arg0, ArgT... args) {
  
  _impl_.child_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecInitiateReq.child)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecInitiateRequest.child)
 }
-inline std::string* IPsecInitiateReq::mutable_child() {
+inline std::string* IPsecInitiateRequest::mutable_child() {
   std::string* _s = _internal_mutable_child();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecInitiateReq.child)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecInitiateRequest.child)
   return _s;
 }
-inline const std::string& IPsecInitiateReq::_internal_child() const {
+inline const std::string& IPsecInitiateRequest::_internal_child() const {
   return _impl_.child_.Get();
 }
-inline void IPsecInitiateReq::_internal_set_child(const std::string& value) {
+inline void IPsecInitiateRequest::_internal_set_child(const std::string& value) {
   
   _impl_.child_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecInitiateReq::_internal_mutable_child() {
+inline std::string* IPsecInitiateRequest::_internal_mutable_child() {
   
   return _impl_.child_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecInitiateReq::release_child() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecInitiateReq.child)
+inline std::string* IPsecInitiateRequest::release_child() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecInitiateRequest.child)
   return _impl_.child_.Release();
 }
-inline void IPsecInitiateReq::set_allocated_child(std::string* child) {
+inline void IPsecInitiateRequest::set_allocated_child(std::string* child) {
   if (child != nullptr) {
     
   } else {
@@ -13549,45 +13553,45 @@ inline void IPsecInitiateReq::set_allocated_child(std::string* child) {
     _impl_.child_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecInitiateReq.child)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecInitiateRequest.child)
 }
 
 // string ike = 2;
-inline void IPsecInitiateReq::clear_ike() {
+inline void IPsecInitiateRequest::clear_ike() {
   _impl_.ike_.ClearToEmpty();
 }
-inline const std::string& IPsecInitiateReq::ike() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecInitiateReq.ike)
+inline const std::string& IPsecInitiateRequest::ike() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecInitiateRequest.ike)
   return _internal_ike();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecInitiateReq::set_ike(ArgT0&& arg0, ArgT... args) {
+void IPsecInitiateRequest::set_ike(ArgT0&& arg0, ArgT... args) {
  
  _impl_.ike_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecInitiateReq.ike)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecInitiateRequest.ike)
 }
-inline std::string* IPsecInitiateReq::mutable_ike() {
+inline std::string* IPsecInitiateRequest::mutable_ike() {
   std::string* _s = _internal_mutable_ike();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecInitiateReq.ike)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecInitiateRequest.ike)
   return _s;
 }
-inline const std::string& IPsecInitiateReq::_internal_ike() const {
+inline const std::string& IPsecInitiateRequest::_internal_ike() const {
   return _impl_.ike_.Get();
 }
-inline void IPsecInitiateReq::_internal_set_ike(const std::string& value) {
+inline void IPsecInitiateRequest::_internal_set_ike(const std::string& value) {
   
   _impl_.ike_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecInitiateReq::_internal_mutable_ike() {
+inline std::string* IPsecInitiateRequest::_internal_mutable_ike() {
   
   return _impl_.ike_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecInitiateReq::release_ike() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecInitiateReq.ike)
+inline std::string* IPsecInitiateRequest::release_ike() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecInitiateRequest.ike)
   return _impl_.ike_.Release();
 }
-inline void IPsecInitiateReq::set_allocated_ike(std::string* ike) {
+inline void IPsecInitiateRequest::set_allocated_ike(std::string* ike) {
   if (ike != nullptr) {
     
   } else {
@@ -13599,45 +13603,45 @@ inline void IPsecInitiateReq::set_allocated_ike(std::string* ike) {
     _impl_.ike_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecInitiateReq.ike)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecInitiateRequest.ike)
 }
 
 // string timeout = 3;
-inline void IPsecInitiateReq::clear_timeout() {
+inline void IPsecInitiateRequest::clear_timeout() {
   _impl_.timeout_.ClearToEmpty();
 }
-inline const std::string& IPsecInitiateReq::timeout() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecInitiateReq.timeout)
+inline const std::string& IPsecInitiateRequest::timeout() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecInitiateRequest.timeout)
   return _internal_timeout();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecInitiateReq::set_timeout(ArgT0&& arg0, ArgT... args) {
+void IPsecInitiateRequest::set_timeout(ArgT0&& arg0, ArgT... args) {
  
  _impl_.timeout_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecInitiateReq.timeout)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecInitiateRequest.timeout)
 }
-inline std::string* IPsecInitiateReq::mutable_timeout() {
+inline std::string* IPsecInitiateRequest::mutable_timeout() {
   std::string* _s = _internal_mutable_timeout();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecInitiateReq.timeout)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecInitiateRequest.timeout)
   return _s;
 }
-inline const std::string& IPsecInitiateReq::_internal_timeout() const {
+inline const std::string& IPsecInitiateRequest::_internal_timeout() const {
   return _impl_.timeout_.Get();
 }
-inline void IPsecInitiateReq::_internal_set_timeout(const std::string& value) {
+inline void IPsecInitiateRequest::_internal_set_timeout(const std::string& value) {
   
   _impl_.timeout_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecInitiateReq::_internal_mutable_timeout() {
+inline std::string* IPsecInitiateRequest::_internal_mutable_timeout() {
   
   return _impl_.timeout_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecInitiateReq::release_timeout() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecInitiateReq.timeout)
+inline std::string* IPsecInitiateRequest::release_timeout() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecInitiateRequest.timeout)
   return _impl_.timeout_.Release();
 }
-inline void IPsecInitiateReq::set_allocated_timeout(std::string* timeout) {
+inline void IPsecInitiateRequest::set_allocated_timeout(std::string* timeout) {
   if (timeout != nullptr) {
     
   } else {
@@ -13649,45 +13653,45 @@ inline void IPsecInitiateReq::set_allocated_timeout(std::string* timeout) {
     _impl_.timeout_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecInitiateReq.timeout)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecInitiateRequest.timeout)
 }
 
 // string loglevel = 4;
-inline void IPsecInitiateReq::clear_loglevel() {
+inline void IPsecInitiateRequest::clear_loglevel() {
   _impl_.loglevel_.ClearToEmpty();
 }
-inline const std::string& IPsecInitiateReq::loglevel() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecInitiateReq.loglevel)
+inline const std::string& IPsecInitiateRequest::loglevel() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecInitiateRequest.loglevel)
   return _internal_loglevel();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecInitiateReq::set_loglevel(ArgT0&& arg0, ArgT... args) {
+void IPsecInitiateRequest::set_loglevel(ArgT0&& arg0, ArgT... args) {
  
  _impl_.loglevel_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecInitiateReq.loglevel)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecInitiateRequest.loglevel)
 }
-inline std::string* IPsecInitiateReq::mutable_loglevel() {
+inline std::string* IPsecInitiateRequest::mutable_loglevel() {
   std::string* _s = _internal_mutable_loglevel();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecInitiateReq.loglevel)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecInitiateRequest.loglevel)
   return _s;
 }
-inline const std::string& IPsecInitiateReq::_internal_loglevel() const {
+inline const std::string& IPsecInitiateRequest::_internal_loglevel() const {
   return _impl_.loglevel_.Get();
 }
-inline void IPsecInitiateReq::_internal_set_loglevel(const std::string& value) {
+inline void IPsecInitiateRequest::_internal_set_loglevel(const std::string& value) {
   
   _impl_.loglevel_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecInitiateReq::_internal_mutable_loglevel() {
+inline std::string* IPsecInitiateRequest::_internal_mutable_loglevel() {
   
   return _impl_.loglevel_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecInitiateReq::release_loglevel() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecInitiateReq.loglevel)
+inline std::string* IPsecInitiateRequest::release_loglevel() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecInitiateRequest.loglevel)
   return _impl_.loglevel_.Release();
 }
-inline void IPsecInitiateReq::set_allocated_loglevel(std::string* loglevel) {
+inline void IPsecInitiateRequest::set_allocated_loglevel(std::string* loglevel) {
   if (loglevel != nullptr) {
     
   } else {
@@ -13699,53 +13703,53 @@ inline void IPsecInitiateReq::set_allocated_loglevel(std::string* loglevel) {
     _impl_.loglevel_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecInitiateReq.loglevel)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecInitiateRequest.loglevel)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecInitiateResp
+// IPsecInitiateResponse
 
 // -------------------------------------------------------------------
 
-// IPsecTerminateReq
+// IPsecTerminateRequest
 
 // string child = 1;
-inline void IPsecTerminateReq::clear_child() {
+inline void IPsecTerminateRequest::clear_child() {
   _impl_.child_.ClearToEmpty();
 }
-inline const std::string& IPsecTerminateReq::child() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateReq.child)
+inline const std::string& IPsecTerminateRequest::child() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateRequest.child)
   return _internal_child();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecTerminateReq::set_child(ArgT0&& arg0, ArgT... args) {
+void IPsecTerminateRequest::set_child(ArgT0&& arg0, ArgT... args) {
  
  _impl_.child_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateReq.child)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateRequest.child)
 }
-inline std::string* IPsecTerminateReq::mutable_child() {
+inline std::string* IPsecTerminateRequest::mutable_child() {
   std::string* _s = _internal_mutable_child();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateReq.child)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateRequest.child)
   return _s;
 }
-inline const std::string& IPsecTerminateReq::_internal_child() const {
+inline const std::string& IPsecTerminateRequest::_internal_child() const {
   return _impl_.child_.Get();
 }
-inline void IPsecTerminateReq::_internal_set_child(const std::string& value) {
+inline void IPsecTerminateRequest::_internal_set_child(const std::string& value) {
   
   _impl_.child_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::_internal_mutable_child() {
+inline std::string* IPsecTerminateRequest::_internal_mutable_child() {
   
   return _impl_.child_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::release_child() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateReq.child)
+inline std::string* IPsecTerminateRequest::release_child() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateRequest.child)
   return _impl_.child_.Release();
 }
-inline void IPsecTerminateReq::set_allocated_child(std::string* child) {
+inline void IPsecTerminateRequest::set_allocated_child(std::string* child) {
   if (child != nullptr) {
     
   } else {
@@ -13757,45 +13761,45 @@ inline void IPsecTerminateReq::set_allocated_child(std::string* child) {
     _impl_.child_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateReq.child)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateRequest.child)
 }
 
 // string ike = 2;
-inline void IPsecTerminateReq::clear_ike() {
+inline void IPsecTerminateRequest::clear_ike() {
   _impl_.ike_.ClearToEmpty();
 }
-inline const std::string& IPsecTerminateReq::ike() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateReq.ike)
+inline const std::string& IPsecTerminateRequest::ike() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateRequest.ike)
   return _internal_ike();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecTerminateReq::set_ike(ArgT0&& arg0, ArgT... args) {
+void IPsecTerminateRequest::set_ike(ArgT0&& arg0, ArgT... args) {
  
  _impl_.ike_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateReq.ike)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateRequest.ike)
 }
-inline std::string* IPsecTerminateReq::mutable_ike() {
+inline std::string* IPsecTerminateRequest::mutable_ike() {
   std::string* _s = _internal_mutable_ike();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateReq.ike)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateRequest.ike)
   return _s;
 }
-inline const std::string& IPsecTerminateReq::_internal_ike() const {
+inline const std::string& IPsecTerminateRequest::_internal_ike() const {
   return _impl_.ike_.Get();
 }
-inline void IPsecTerminateReq::_internal_set_ike(const std::string& value) {
+inline void IPsecTerminateRequest::_internal_set_ike(const std::string& value) {
   
   _impl_.ike_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::_internal_mutable_ike() {
+inline std::string* IPsecTerminateRequest::_internal_mutable_ike() {
   
   return _impl_.ike_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::release_ike() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateReq.ike)
+inline std::string* IPsecTerminateRequest::release_ike() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateRequest.ike)
   return _impl_.ike_.Release();
 }
-inline void IPsecTerminateReq::set_allocated_ike(std::string* ike) {
+inline void IPsecTerminateRequest::set_allocated_ike(std::string* ike) {
   if (ike != nullptr) {
     
   } else {
@@ -13807,85 +13811,85 @@ inline void IPsecTerminateReq::set_allocated_ike(std::string* ike) {
     _impl_.ike_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateReq.ike)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateRequest.ike)
 }
 
 // uint64 child_id = 3;
-inline void IPsecTerminateReq::clear_child_id() {
+inline void IPsecTerminateRequest::clear_child_id() {
   _impl_.child_id_ = uint64_t{0u};
 }
-inline uint64_t IPsecTerminateReq::_internal_child_id() const {
+inline uint64_t IPsecTerminateRequest::_internal_child_id() const {
   return _impl_.child_id_;
 }
-inline uint64_t IPsecTerminateReq::child_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateReq.child_id)
+inline uint64_t IPsecTerminateRequest::child_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateRequest.child_id)
   return _internal_child_id();
 }
-inline void IPsecTerminateReq::_internal_set_child_id(uint64_t value) {
+inline void IPsecTerminateRequest::_internal_set_child_id(uint64_t value) {
   
   _impl_.child_id_ = value;
 }
-inline void IPsecTerminateReq::set_child_id(uint64_t value) {
+inline void IPsecTerminateRequest::set_child_id(uint64_t value) {
   _internal_set_child_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateReq.child_id)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateRequest.child_id)
 }
 
 // uint64 ike_id = 4;
-inline void IPsecTerminateReq::clear_ike_id() {
+inline void IPsecTerminateRequest::clear_ike_id() {
   _impl_.ike_id_ = uint64_t{0u};
 }
-inline uint64_t IPsecTerminateReq::_internal_ike_id() const {
+inline uint64_t IPsecTerminateRequest::_internal_ike_id() const {
   return _impl_.ike_id_;
 }
-inline uint64_t IPsecTerminateReq::ike_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateReq.ike_id)
+inline uint64_t IPsecTerminateRequest::ike_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateRequest.ike_id)
   return _internal_ike_id();
 }
-inline void IPsecTerminateReq::_internal_set_ike_id(uint64_t value) {
+inline void IPsecTerminateRequest::_internal_set_ike_id(uint64_t value) {
   
   _impl_.ike_id_ = value;
 }
-inline void IPsecTerminateReq::set_ike_id(uint64_t value) {
+inline void IPsecTerminateRequest::set_ike_id(uint64_t value) {
   _internal_set_ike_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateReq.ike_id)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateRequest.ike_id)
 }
 
 // string force = 5;
-inline void IPsecTerminateReq::clear_force() {
+inline void IPsecTerminateRequest::clear_force() {
   _impl_.force_.ClearToEmpty();
 }
-inline const std::string& IPsecTerminateReq::force() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateReq.force)
+inline const std::string& IPsecTerminateRequest::force() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateRequest.force)
   return _internal_force();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecTerminateReq::set_force(ArgT0&& arg0, ArgT... args) {
+void IPsecTerminateRequest::set_force(ArgT0&& arg0, ArgT... args) {
  
  _impl_.force_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateReq.force)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateRequest.force)
 }
-inline std::string* IPsecTerminateReq::mutable_force() {
+inline std::string* IPsecTerminateRequest::mutable_force() {
   std::string* _s = _internal_mutable_force();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateReq.force)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateRequest.force)
   return _s;
 }
-inline const std::string& IPsecTerminateReq::_internal_force() const {
+inline const std::string& IPsecTerminateRequest::_internal_force() const {
   return _impl_.force_.Get();
 }
-inline void IPsecTerminateReq::_internal_set_force(const std::string& value) {
+inline void IPsecTerminateRequest::_internal_set_force(const std::string& value) {
   
   _impl_.force_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::_internal_mutable_force() {
+inline std::string* IPsecTerminateRequest::_internal_mutable_force() {
   
   return _impl_.force_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::release_force() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateReq.force)
+inline std::string* IPsecTerminateRequest::release_force() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateRequest.force)
   return _impl_.force_.Release();
 }
-inline void IPsecTerminateReq::set_allocated_force(std::string* force) {
+inline void IPsecTerminateRequest::set_allocated_force(std::string* force) {
   if (force != nullptr) {
     
   } else {
@@ -13897,45 +13901,45 @@ inline void IPsecTerminateReq::set_allocated_force(std::string* force) {
     _impl_.force_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateReq.force)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateRequest.force)
 }
 
 // string timeout = 6;
-inline void IPsecTerminateReq::clear_timeout() {
+inline void IPsecTerminateRequest::clear_timeout() {
   _impl_.timeout_.ClearToEmpty();
 }
-inline const std::string& IPsecTerminateReq::timeout() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateReq.timeout)
+inline const std::string& IPsecTerminateRequest::timeout() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateRequest.timeout)
   return _internal_timeout();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecTerminateReq::set_timeout(ArgT0&& arg0, ArgT... args) {
+void IPsecTerminateRequest::set_timeout(ArgT0&& arg0, ArgT... args) {
  
  _impl_.timeout_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateReq.timeout)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateRequest.timeout)
 }
-inline std::string* IPsecTerminateReq::mutable_timeout() {
+inline std::string* IPsecTerminateRequest::mutable_timeout() {
   std::string* _s = _internal_mutable_timeout();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateReq.timeout)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateRequest.timeout)
   return _s;
 }
-inline const std::string& IPsecTerminateReq::_internal_timeout() const {
+inline const std::string& IPsecTerminateRequest::_internal_timeout() const {
   return _impl_.timeout_.Get();
 }
-inline void IPsecTerminateReq::_internal_set_timeout(const std::string& value) {
+inline void IPsecTerminateRequest::_internal_set_timeout(const std::string& value) {
   
   _impl_.timeout_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::_internal_mutable_timeout() {
+inline std::string* IPsecTerminateRequest::_internal_mutable_timeout() {
   
   return _impl_.timeout_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::release_timeout() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateReq.timeout)
+inline std::string* IPsecTerminateRequest::release_timeout() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateRequest.timeout)
   return _impl_.timeout_.Release();
 }
-inline void IPsecTerminateReq::set_allocated_timeout(std::string* timeout) {
+inline void IPsecTerminateRequest::set_allocated_timeout(std::string* timeout) {
   if (timeout != nullptr) {
     
   } else {
@@ -13947,45 +13951,45 @@ inline void IPsecTerminateReq::set_allocated_timeout(std::string* timeout) {
     _impl_.timeout_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateReq.timeout)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateRequest.timeout)
 }
 
 // string loglevel = 7;
-inline void IPsecTerminateReq::clear_loglevel() {
+inline void IPsecTerminateRequest::clear_loglevel() {
   _impl_.loglevel_.ClearToEmpty();
 }
-inline const std::string& IPsecTerminateReq::loglevel() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateReq.loglevel)
+inline const std::string& IPsecTerminateRequest::loglevel() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateRequest.loglevel)
   return _internal_loglevel();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecTerminateReq::set_loglevel(ArgT0&& arg0, ArgT... args) {
+void IPsecTerminateRequest::set_loglevel(ArgT0&& arg0, ArgT... args) {
  
  _impl_.loglevel_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateReq.loglevel)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateRequest.loglevel)
 }
-inline std::string* IPsecTerminateReq::mutable_loglevel() {
+inline std::string* IPsecTerminateRequest::mutable_loglevel() {
   std::string* _s = _internal_mutable_loglevel();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateReq.loglevel)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateRequest.loglevel)
   return _s;
 }
-inline const std::string& IPsecTerminateReq::_internal_loglevel() const {
+inline const std::string& IPsecTerminateRequest::_internal_loglevel() const {
   return _impl_.loglevel_.Get();
 }
-inline void IPsecTerminateReq::_internal_set_loglevel(const std::string& value) {
+inline void IPsecTerminateRequest::_internal_set_loglevel(const std::string& value) {
   
   _impl_.loglevel_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::_internal_mutable_loglevel() {
+inline std::string* IPsecTerminateRequest::_internal_mutable_loglevel() {
   
   return _impl_.loglevel_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateReq::release_loglevel() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateReq.loglevel)
+inline std::string* IPsecTerminateRequest::release_loglevel() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateRequest.loglevel)
   return _impl_.loglevel_.Release();
 }
-inline void IPsecTerminateReq::set_allocated_loglevel(std::string* loglevel) {
+inline void IPsecTerminateRequest::set_allocated_loglevel(std::string* loglevel) {
   if (loglevel != nullptr) {
     
   } else {
@@ -13997,49 +14001,49 @@ inline void IPsecTerminateReq::set_allocated_loglevel(std::string* loglevel) {
     _impl_.loglevel_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateReq.loglevel)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateRequest.loglevel)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecTerminateResp
+// IPsecTerminateResponse
 
 // string success = 1;
-inline void IPsecTerminateResp::clear_success() {
+inline void IPsecTerminateResponse::clear_success() {
   _impl_.success_.ClearToEmpty();
 }
-inline const std::string& IPsecTerminateResp::success() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateResp.success)
+inline const std::string& IPsecTerminateResponse::success() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateResponse.success)
   return _internal_success();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecTerminateResp::set_success(ArgT0&& arg0, ArgT... args) {
+void IPsecTerminateResponse::set_success(ArgT0&& arg0, ArgT... args) {
  
  _impl_.success_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateResp.success)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateResponse.success)
 }
-inline std::string* IPsecTerminateResp::mutable_success() {
+inline std::string* IPsecTerminateResponse::mutable_success() {
   std::string* _s = _internal_mutable_success();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateResp.success)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecTerminateResponse.success)
   return _s;
 }
-inline const std::string& IPsecTerminateResp::_internal_success() const {
+inline const std::string& IPsecTerminateResponse::_internal_success() const {
   return _impl_.success_.Get();
 }
-inline void IPsecTerminateResp::_internal_set_success(const std::string& value) {
+inline void IPsecTerminateResponse::_internal_set_success(const std::string& value) {
   
   _impl_.success_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateResp::_internal_mutable_success() {
+inline std::string* IPsecTerminateResponse::_internal_mutable_success() {
   
   return _impl_.success_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecTerminateResp::release_success() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateResp.success)
+inline std::string* IPsecTerminateResponse::release_success() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecTerminateResponse.success)
   return _impl_.success_.Release();
 }
-inline void IPsecTerminateResp::set_allocated_success(std::string* success) {
+inline void IPsecTerminateResponse::set_allocated_success(std::string* success) {
   if (success != nullptr) {
     
   } else {
@@ -14051,89 +14055,89 @@ inline void IPsecTerminateResp::set_allocated_success(std::string* success) {
     _impl_.success_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateResp.success)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecTerminateResponse.success)
 }
 
 // uint32 matches = 2;
-inline void IPsecTerminateResp::clear_matches() {
+inline void IPsecTerminateResponse::clear_matches() {
   _impl_.matches_ = 0u;
 }
-inline uint32_t IPsecTerminateResp::_internal_matches() const {
+inline uint32_t IPsecTerminateResponse::_internal_matches() const {
   return _impl_.matches_;
 }
-inline uint32_t IPsecTerminateResp::matches() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateResp.matches)
+inline uint32_t IPsecTerminateResponse::matches() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateResponse.matches)
   return _internal_matches();
 }
-inline void IPsecTerminateResp::_internal_set_matches(uint32_t value) {
+inline void IPsecTerminateResponse::_internal_set_matches(uint32_t value) {
   
   _impl_.matches_ = value;
 }
-inline void IPsecTerminateResp::set_matches(uint32_t value) {
+inline void IPsecTerminateResponse::set_matches(uint32_t value) {
   _internal_set_matches(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateResp.matches)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateResponse.matches)
 }
 
 // uint32 terminated = 3;
-inline void IPsecTerminateResp::clear_terminated() {
+inline void IPsecTerminateResponse::clear_terminated() {
   _impl_.terminated_ = 0u;
 }
-inline uint32_t IPsecTerminateResp::_internal_terminated() const {
+inline uint32_t IPsecTerminateResponse::_internal_terminated() const {
   return _impl_.terminated_;
 }
-inline uint32_t IPsecTerminateResp::terminated() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateResp.terminated)
+inline uint32_t IPsecTerminateResponse::terminated() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecTerminateResponse.terminated)
   return _internal_terminated();
 }
-inline void IPsecTerminateResp::_internal_set_terminated(uint32_t value) {
+inline void IPsecTerminateResponse::_internal_set_terminated(uint32_t value) {
   
   _impl_.terminated_ = value;
 }
-inline void IPsecTerminateResp::set_terminated(uint32_t value) {
+inline void IPsecTerminateResponse::set_terminated(uint32_t value) {
   _internal_set_terminated(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateResp.terminated)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecTerminateResponse.terminated)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecRekeyReq
+// IPsecRekeyRequest
 
 // string child = 1;
-inline void IPsecRekeyReq::clear_child() {
+inline void IPsecRekeyRequest::clear_child() {
   _impl_.child_.ClearToEmpty();
 }
-inline const std::string& IPsecRekeyReq::child() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyReq.child)
+inline const std::string& IPsecRekeyRequest::child() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyRequest.child)
   return _internal_child();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecRekeyReq::set_child(ArgT0&& arg0, ArgT... args) {
+void IPsecRekeyRequest::set_child(ArgT0&& arg0, ArgT... args) {
  
  _impl_.child_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyReq.child)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyRequest.child)
 }
-inline std::string* IPsecRekeyReq::mutable_child() {
+inline std::string* IPsecRekeyRequest::mutable_child() {
   std::string* _s = _internal_mutable_child();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecRekeyReq.child)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecRekeyRequest.child)
   return _s;
 }
-inline const std::string& IPsecRekeyReq::_internal_child() const {
+inline const std::string& IPsecRekeyRequest::_internal_child() const {
   return _impl_.child_.Get();
 }
-inline void IPsecRekeyReq::_internal_set_child(const std::string& value) {
+inline void IPsecRekeyRequest::_internal_set_child(const std::string& value) {
   
   _impl_.child_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecRekeyReq::_internal_mutable_child() {
+inline std::string* IPsecRekeyRequest::_internal_mutable_child() {
   
   return _impl_.child_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecRekeyReq::release_child() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecRekeyReq.child)
+inline std::string* IPsecRekeyRequest::release_child() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecRekeyRequest.child)
   return _impl_.child_.Release();
 }
-inline void IPsecRekeyReq::set_allocated_child(std::string* child) {
+inline void IPsecRekeyRequest::set_allocated_child(std::string* child) {
   if (child != nullptr) {
     
   } else {
@@ -14145,45 +14149,45 @@ inline void IPsecRekeyReq::set_allocated_child(std::string* child) {
     _impl_.child_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecRekeyReq.child)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecRekeyRequest.child)
 }
 
 // string ike = 2;
-inline void IPsecRekeyReq::clear_ike() {
+inline void IPsecRekeyRequest::clear_ike() {
   _impl_.ike_.ClearToEmpty();
 }
-inline const std::string& IPsecRekeyReq::ike() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyReq.ike)
+inline const std::string& IPsecRekeyRequest::ike() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyRequest.ike)
   return _internal_ike();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecRekeyReq::set_ike(ArgT0&& arg0, ArgT... args) {
+void IPsecRekeyRequest::set_ike(ArgT0&& arg0, ArgT... args) {
  
  _impl_.ike_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyReq.ike)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyRequest.ike)
 }
-inline std::string* IPsecRekeyReq::mutable_ike() {
+inline std::string* IPsecRekeyRequest::mutable_ike() {
   std::string* _s = _internal_mutable_ike();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecRekeyReq.ike)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecRekeyRequest.ike)
   return _s;
 }
-inline const std::string& IPsecRekeyReq::_internal_ike() const {
+inline const std::string& IPsecRekeyRequest::_internal_ike() const {
   return _impl_.ike_.Get();
 }
-inline void IPsecRekeyReq::_internal_set_ike(const std::string& value) {
+inline void IPsecRekeyRequest::_internal_set_ike(const std::string& value) {
   
   _impl_.ike_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecRekeyReq::_internal_mutable_ike() {
+inline std::string* IPsecRekeyRequest::_internal_mutable_ike() {
   
   return _impl_.ike_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecRekeyReq::release_ike() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecRekeyReq.ike)
+inline std::string* IPsecRekeyRequest::release_ike() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecRekeyRequest.ike)
   return _impl_.ike_.Release();
 }
-inline void IPsecRekeyReq::set_allocated_ike(std::string* ike) {
+inline void IPsecRekeyRequest::set_allocated_ike(std::string* ike) {
   if (ike != nullptr) {
     
   } else {
@@ -14195,85 +14199,85 @@ inline void IPsecRekeyReq::set_allocated_ike(std::string* ike) {
     _impl_.ike_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecRekeyReq.ike)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecRekeyRequest.ike)
 }
 
 // uint64 child_id = 3;
-inline void IPsecRekeyReq::clear_child_id() {
+inline void IPsecRekeyRequest::clear_child_id() {
   _impl_.child_id_ = uint64_t{0u};
 }
-inline uint64_t IPsecRekeyReq::_internal_child_id() const {
+inline uint64_t IPsecRekeyRequest::_internal_child_id() const {
   return _impl_.child_id_;
 }
-inline uint64_t IPsecRekeyReq::child_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyReq.child_id)
+inline uint64_t IPsecRekeyRequest::child_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyRequest.child_id)
   return _internal_child_id();
 }
-inline void IPsecRekeyReq::_internal_set_child_id(uint64_t value) {
+inline void IPsecRekeyRequest::_internal_set_child_id(uint64_t value) {
   
   _impl_.child_id_ = value;
 }
-inline void IPsecRekeyReq::set_child_id(uint64_t value) {
+inline void IPsecRekeyRequest::set_child_id(uint64_t value) {
   _internal_set_child_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyReq.child_id)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyRequest.child_id)
 }
 
 // uint64 ike_id = 4;
-inline void IPsecRekeyReq::clear_ike_id() {
+inline void IPsecRekeyRequest::clear_ike_id() {
   _impl_.ike_id_ = uint64_t{0u};
 }
-inline uint64_t IPsecRekeyReq::_internal_ike_id() const {
+inline uint64_t IPsecRekeyRequest::_internal_ike_id() const {
   return _impl_.ike_id_;
 }
-inline uint64_t IPsecRekeyReq::ike_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyReq.ike_id)
+inline uint64_t IPsecRekeyRequest::ike_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyRequest.ike_id)
   return _internal_ike_id();
 }
-inline void IPsecRekeyReq::_internal_set_ike_id(uint64_t value) {
+inline void IPsecRekeyRequest::_internal_set_ike_id(uint64_t value) {
   
   _impl_.ike_id_ = value;
 }
-inline void IPsecRekeyReq::set_ike_id(uint64_t value) {
+inline void IPsecRekeyRequest::set_ike_id(uint64_t value) {
   _internal_set_ike_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyReq.ike_id)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyRequest.ike_id)
 }
 
 // string reauth = 5;
-inline void IPsecRekeyReq::clear_reauth() {
+inline void IPsecRekeyRequest::clear_reauth() {
   _impl_.reauth_.ClearToEmpty();
 }
-inline const std::string& IPsecRekeyReq::reauth() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyReq.reauth)
+inline const std::string& IPsecRekeyRequest::reauth() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyRequest.reauth)
   return _internal_reauth();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecRekeyReq::set_reauth(ArgT0&& arg0, ArgT... args) {
+void IPsecRekeyRequest::set_reauth(ArgT0&& arg0, ArgT... args) {
  
  _impl_.reauth_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyReq.reauth)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyRequest.reauth)
 }
-inline std::string* IPsecRekeyReq::mutable_reauth() {
+inline std::string* IPsecRekeyRequest::mutable_reauth() {
   std::string* _s = _internal_mutable_reauth();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecRekeyReq.reauth)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecRekeyRequest.reauth)
   return _s;
 }
-inline const std::string& IPsecRekeyReq::_internal_reauth() const {
+inline const std::string& IPsecRekeyRequest::_internal_reauth() const {
   return _impl_.reauth_.Get();
 }
-inline void IPsecRekeyReq::_internal_set_reauth(const std::string& value) {
+inline void IPsecRekeyRequest::_internal_set_reauth(const std::string& value) {
   
   _impl_.reauth_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecRekeyReq::_internal_mutable_reauth() {
+inline std::string* IPsecRekeyRequest::_internal_mutable_reauth() {
   
   return _impl_.reauth_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecRekeyReq::release_reauth() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecRekeyReq.reauth)
+inline std::string* IPsecRekeyRequest::release_reauth() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecRekeyRequest.reauth)
   return _impl_.reauth_.Release();
 }
-inline void IPsecRekeyReq::set_allocated_reauth(std::string* reauth) {
+inline void IPsecRekeyRequest::set_allocated_reauth(std::string* reauth) {
   if (reauth != nullptr) {
     
   } else {
@@ -14285,49 +14289,49 @@ inline void IPsecRekeyReq::set_allocated_reauth(std::string* reauth) {
     _impl_.reauth_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecRekeyReq.reauth)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecRekeyRequest.reauth)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecRekeyResp
+// IPsecRekeyResponse
 
 // string success = 1;
-inline void IPsecRekeyResp::clear_success() {
+inline void IPsecRekeyResponse::clear_success() {
   _impl_.success_.ClearToEmpty();
 }
-inline const std::string& IPsecRekeyResp::success() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyResp.success)
+inline const std::string& IPsecRekeyResponse::success() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyResponse.success)
   return _internal_success();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecRekeyResp::set_success(ArgT0&& arg0, ArgT... args) {
+void IPsecRekeyResponse::set_success(ArgT0&& arg0, ArgT... args) {
  
  _impl_.success_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyResp.success)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyResponse.success)
 }
-inline std::string* IPsecRekeyResp::mutable_success() {
+inline std::string* IPsecRekeyResponse::mutable_success() {
   std::string* _s = _internal_mutable_success();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecRekeyResp.success)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecRekeyResponse.success)
   return _s;
 }
-inline const std::string& IPsecRekeyResp::_internal_success() const {
+inline const std::string& IPsecRekeyResponse::_internal_success() const {
   return _impl_.success_.Get();
 }
-inline void IPsecRekeyResp::_internal_set_success(const std::string& value) {
+inline void IPsecRekeyResponse::_internal_set_success(const std::string& value) {
   
   _impl_.success_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecRekeyResp::_internal_mutable_success() {
+inline std::string* IPsecRekeyResponse::_internal_mutable_success() {
   
   return _impl_.success_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecRekeyResp::release_success() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecRekeyResp.success)
+inline std::string* IPsecRekeyResponse::release_success() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecRekeyResponse.success)
   return _impl_.success_.Release();
 }
-inline void IPsecRekeyResp::set_allocated_success(std::string* success) {
+inline void IPsecRekeyResponse::set_allocated_success(std::string* success) {
   if (success != nullptr) {
     
   } else {
@@ -14339,69 +14343,69 @@ inline void IPsecRekeyResp::set_allocated_success(std::string* success) {
     _impl_.success_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecRekeyResp.success)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecRekeyResponse.success)
 }
 
 // uint32 matches = 2;
-inline void IPsecRekeyResp::clear_matches() {
+inline void IPsecRekeyResponse::clear_matches() {
   _impl_.matches_ = 0u;
 }
-inline uint32_t IPsecRekeyResp::_internal_matches() const {
+inline uint32_t IPsecRekeyResponse::_internal_matches() const {
   return _impl_.matches_;
 }
-inline uint32_t IPsecRekeyResp::matches() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyResp.matches)
+inline uint32_t IPsecRekeyResponse::matches() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecRekeyResponse.matches)
   return _internal_matches();
 }
-inline void IPsecRekeyResp::_internal_set_matches(uint32_t value) {
+inline void IPsecRekeyResponse::_internal_set_matches(uint32_t value) {
   
   _impl_.matches_ = value;
 }
-inline void IPsecRekeyResp::set_matches(uint32_t value) {
+inline void IPsecRekeyResponse::set_matches(uint32_t value) {
   _internal_set_matches(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyResp.matches)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecRekeyResponse.matches)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecListSasReq
+// IPsecListSasRequest
 
 // string noblock = 1;
-inline void IPsecListSasReq::clear_noblock() {
+inline void IPsecListSasRequest::clear_noblock() {
   _impl_.noblock_.ClearToEmpty();
 }
-inline const std::string& IPsecListSasReq::noblock() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasReq.noblock)
+inline const std::string& IPsecListSasRequest::noblock() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasRequest.noblock)
   return _internal_noblock();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecListSasReq::set_noblock(ArgT0&& arg0, ArgT... args) {
+void IPsecListSasRequest::set_noblock(ArgT0&& arg0, ArgT... args) {
  
  _impl_.noblock_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasReq.noblock)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasRequest.noblock)
 }
-inline std::string* IPsecListSasReq::mutable_noblock() {
+inline std::string* IPsecListSasRequest::mutable_noblock() {
   std::string* _s = _internal_mutable_noblock();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListSasReq.noblock)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListSasRequest.noblock)
   return _s;
 }
-inline const std::string& IPsecListSasReq::_internal_noblock() const {
+inline const std::string& IPsecListSasRequest::_internal_noblock() const {
   return _impl_.noblock_.Get();
 }
-inline void IPsecListSasReq::_internal_set_noblock(const std::string& value) {
+inline void IPsecListSasRequest::_internal_set_noblock(const std::string& value) {
   
   _impl_.noblock_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecListSasReq::_internal_mutable_noblock() {
+inline std::string* IPsecListSasRequest::_internal_mutable_noblock() {
   
   return _impl_.noblock_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecListSasReq::release_noblock() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListSasReq.noblock)
+inline std::string* IPsecListSasRequest::release_noblock() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListSasRequest.noblock)
   return _impl_.noblock_.Release();
 }
-inline void IPsecListSasReq::set_allocated_noblock(std::string* noblock) {
+inline void IPsecListSasRequest::set_allocated_noblock(std::string* noblock) {
   if (noblock != nullptr) {
     
   } else {
@@ -14413,45 +14417,45 @@ inline void IPsecListSasReq::set_allocated_noblock(std::string* noblock) {
     _impl_.noblock_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListSasReq.noblock)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListSasRequest.noblock)
 }
 
 // string ike = 2;
-inline void IPsecListSasReq::clear_ike() {
+inline void IPsecListSasRequest::clear_ike() {
   _impl_.ike_.ClearToEmpty();
 }
-inline const std::string& IPsecListSasReq::ike() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasReq.ike)
+inline const std::string& IPsecListSasRequest::ike() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasRequest.ike)
   return _internal_ike();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecListSasReq::set_ike(ArgT0&& arg0, ArgT... args) {
+void IPsecListSasRequest::set_ike(ArgT0&& arg0, ArgT... args) {
  
  _impl_.ike_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasReq.ike)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasRequest.ike)
 }
-inline std::string* IPsecListSasReq::mutable_ike() {
+inline std::string* IPsecListSasRequest::mutable_ike() {
   std::string* _s = _internal_mutable_ike();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListSasReq.ike)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListSasRequest.ike)
   return _s;
 }
-inline const std::string& IPsecListSasReq::_internal_ike() const {
+inline const std::string& IPsecListSasRequest::_internal_ike() const {
   return _impl_.ike_.Get();
 }
-inline void IPsecListSasReq::_internal_set_ike(const std::string& value) {
+inline void IPsecListSasRequest::_internal_set_ike(const std::string& value) {
   
   _impl_.ike_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecListSasReq::_internal_mutable_ike() {
+inline std::string* IPsecListSasRequest::_internal_mutable_ike() {
   
   return _impl_.ike_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecListSasReq::release_ike() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListSasReq.ike)
+inline std::string* IPsecListSasRequest::release_ike() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListSasRequest.ike)
   return _impl_.ike_.Release();
 }
-inline void IPsecListSasReq::set_allocated_ike(std::string* ike) {
+inline void IPsecListSasRequest::set_allocated_ike(std::string* ike) {
   if (ike != nullptr) {
     
   } else {
@@ -14463,65 +14467,65 @@ inline void IPsecListSasReq::set_allocated_ike(std::string* ike) {
     _impl_.ike_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListSasReq.ike)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListSasRequest.ike)
 }
 
 // uint64 ike_id = 3;
-inline void IPsecListSasReq::clear_ike_id() {
+inline void IPsecListSasRequest::clear_ike_id() {
   _impl_.ike_id_ = uint64_t{0u};
 }
-inline uint64_t IPsecListSasReq::_internal_ike_id() const {
+inline uint64_t IPsecListSasRequest::_internal_ike_id() const {
   return _impl_.ike_id_;
 }
-inline uint64_t IPsecListSasReq::ike_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasReq.ike_id)
+inline uint64_t IPsecListSasRequest::ike_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasRequest.ike_id)
   return _internal_ike_id();
 }
-inline void IPsecListSasReq::_internal_set_ike_id(uint64_t value) {
+inline void IPsecListSasRequest::_internal_set_ike_id(uint64_t value) {
   
   _impl_.ike_id_ = value;
 }
-inline void IPsecListSasReq::set_ike_id(uint64_t value) {
+inline void IPsecListSasRequest::set_ike_id(uint64_t value) {
   _internal_set_ike_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasReq.ike_id)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasRequest.ike_id)
 }
 
 // string child = 4;
-inline void IPsecListSasReq::clear_child() {
+inline void IPsecListSasRequest::clear_child() {
   _impl_.child_.ClearToEmpty();
 }
-inline const std::string& IPsecListSasReq::child() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasReq.child)
+inline const std::string& IPsecListSasRequest::child() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasRequest.child)
   return _internal_child();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecListSasReq::set_child(ArgT0&& arg0, ArgT... args) {
+void IPsecListSasRequest::set_child(ArgT0&& arg0, ArgT... args) {
  
  _impl_.child_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasReq.child)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasRequest.child)
 }
-inline std::string* IPsecListSasReq::mutable_child() {
+inline std::string* IPsecListSasRequest::mutable_child() {
   std::string* _s = _internal_mutable_child();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListSasReq.child)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListSasRequest.child)
   return _s;
 }
-inline const std::string& IPsecListSasReq::_internal_child() const {
+inline const std::string& IPsecListSasRequest::_internal_child() const {
   return _impl_.child_.Get();
 }
-inline void IPsecListSasReq::_internal_set_child(const std::string& value) {
+inline void IPsecListSasRequest::_internal_set_child(const std::string& value) {
   
   _impl_.child_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecListSasReq::_internal_mutable_child() {
+inline std::string* IPsecListSasRequest::_internal_mutable_child() {
   
   return _impl_.child_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecListSasReq::release_child() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListSasReq.child)
+inline std::string* IPsecListSasRequest::release_child() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListSasRequest.child)
   return _impl_.child_.Release();
 }
-inline void IPsecListSasReq::set_allocated_child(std::string* child) {
+inline void IPsecListSasRequest::set_allocated_child(std::string* child) {
   if (child != nullptr) {
     
   } else {
@@ -14533,27 +14537,27 @@ inline void IPsecListSasReq::set_allocated_child(std::string* child) {
     _impl_.child_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListSasReq.child)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListSasRequest.child)
 }
 
 // uint64 child_id = 5;
-inline void IPsecListSasReq::clear_child_id() {
+inline void IPsecListSasRequest::clear_child_id() {
   _impl_.child_id_ = uint64_t{0u};
 }
-inline uint64_t IPsecListSasReq::_internal_child_id() const {
+inline uint64_t IPsecListSasRequest::_internal_child_id() const {
   return _impl_.child_id_;
 }
-inline uint64_t IPsecListSasReq::child_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasReq.child_id)
+inline uint64_t IPsecListSasRequest::child_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasRequest.child_id)
   return _internal_child_id();
 }
-inline void IPsecListSasReq::_internal_set_child_id(uint64_t value) {
+inline void IPsecListSasRequest::_internal_set_child_id(uint64_t value) {
   
   _impl_.child_id_ = value;
 }
-inline void IPsecListSasReq::set_child_id(uint64_t value) {
+inline void IPsecListSasRequest::set_child_id(uint64_t value) {
   _internal_set_child_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasReq.child_id)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListSasRequest.child_id)
 }
 
 // -------------------------------------------------------------------
@@ -17451,88 +17455,88 @@ ListIkeSa::childsas() const {
 
 // -------------------------------------------------------------------
 
-// IPsecListSasResp
+// IPsecListSasResponse
 
 // repeated .opi_api.security.v1.ListIkeSa ikesas = 1;
-inline int IPsecListSasResp::_internal_ikesas_size() const {
+inline int IPsecListSasResponse::_internal_ikesas_size() const {
   return _impl_.ikesas_.size();
 }
-inline int IPsecListSasResp::ikesas_size() const {
+inline int IPsecListSasResponse::ikesas_size() const {
   return _internal_ikesas_size();
 }
-inline void IPsecListSasResp::clear_ikesas() {
+inline void IPsecListSasResponse::clear_ikesas() {
   _impl_.ikesas_.Clear();
 }
-inline ::opi_api::security::v1::ListIkeSa* IPsecListSasResp::mutable_ikesas(int index) {
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListSasResp.ikesas)
+inline ::opi_api::security::v1::ListIkeSa* IPsecListSasResponse::mutable_ikesas(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListSasResponse.ikesas)
   return _impl_.ikesas_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListIkeSa >*
-IPsecListSasResp::mutable_ikesas() {
-  // @@protoc_insertion_point(field_mutable_list:opi_api.security.v1.IPsecListSasResp.ikesas)
+IPsecListSasResponse::mutable_ikesas() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.security.v1.IPsecListSasResponse.ikesas)
   return &_impl_.ikesas_;
 }
-inline const ::opi_api::security::v1::ListIkeSa& IPsecListSasResp::_internal_ikesas(int index) const {
+inline const ::opi_api::security::v1::ListIkeSa& IPsecListSasResponse::_internal_ikesas(int index) const {
   return _impl_.ikesas_.Get(index);
 }
-inline const ::opi_api::security::v1::ListIkeSa& IPsecListSasResp::ikesas(int index) const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasResp.ikesas)
+inline const ::opi_api::security::v1::ListIkeSa& IPsecListSasResponse::ikesas(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListSasResponse.ikesas)
   return _internal_ikesas(index);
 }
-inline ::opi_api::security::v1::ListIkeSa* IPsecListSasResp::_internal_add_ikesas() {
+inline ::opi_api::security::v1::ListIkeSa* IPsecListSasResponse::_internal_add_ikesas() {
   return _impl_.ikesas_.Add();
 }
-inline ::opi_api::security::v1::ListIkeSa* IPsecListSasResp::add_ikesas() {
+inline ::opi_api::security::v1::ListIkeSa* IPsecListSasResponse::add_ikesas() {
   ::opi_api::security::v1::ListIkeSa* _add = _internal_add_ikesas();
-  // @@protoc_insertion_point(field_add:opi_api.security.v1.IPsecListSasResp.ikesas)
+  // @@protoc_insertion_point(field_add:opi_api.security.v1.IPsecListSasResponse.ikesas)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListIkeSa >&
-IPsecListSasResp::ikesas() const {
-  // @@protoc_insertion_point(field_list:opi_api.security.v1.IPsecListSasResp.ikesas)
+IPsecListSasResponse::ikesas() const {
+  // @@protoc_insertion_point(field_list:opi_api.security.v1.IPsecListSasResponse.ikesas)
   return _impl_.ikesas_;
 }
 
 // -------------------------------------------------------------------
 
-// IPsecListConnsReq
+// IPsecListConnsRequest
 
 // string ike = 1;
-inline void IPsecListConnsReq::clear_ike() {
+inline void IPsecListConnsRequest::clear_ike() {
   _impl_.ike_.ClearToEmpty();
 }
-inline const std::string& IPsecListConnsReq::ike() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListConnsReq.ike)
+inline const std::string& IPsecListConnsRequest::ike() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListConnsRequest.ike)
   return _internal_ike();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecListConnsReq::set_ike(ArgT0&& arg0, ArgT... args) {
+void IPsecListConnsRequest::set_ike(ArgT0&& arg0, ArgT... args) {
  
  _impl_.ike_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListConnsReq.ike)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListConnsRequest.ike)
 }
-inline std::string* IPsecListConnsReq::mutable_ike() {
+inline std::string* IPsecListConnsRequest::mutable_ike() {
   std::string* _s = _internal_mutable_ike();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListConnsReq.ike)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListConnsRequest.ike)
   return _s;
 }
-inline const std::string& IPsecListConnsReq::_internal_ike() const {
+inline const std::string& IPsecListConnsRequest::_internal_ike() const {
   return _impl_.ike_.Get();
 }
-inline void IPsecListConnsReq::_internal_set_ike(const std::string& value) {
+inline void IPsecListConnsRequest::_internal_set_ike(const std::string& value) {
   
   _impl_.ike_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecListConnsReq::_internal_mutable_ike() {
+inline std::string* IPsecListConnsRequest::_internal_mutable_ike() {
   
   return _impl_.ike_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecListConnsReq::release_ike() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListConnsReq.ike)
+inline std::string* IPsecListConnsRequest::release_ike() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListConnsRequest.ike)
   return _impl_.ike_.Release();
 }
-inline void IPsecListConnsReq::set_allocated_ike(std::string* ike) {
+inline void IPsecListConnsRequest::set_allocated_ike(std::string* ike) {
   if (ike != nullptr) {
     
   } else {
@@ -17544,7 +17548,7 @@ inline void IPsecListConnsReq::set_allocated_ike(std::string* ike) {
     _impl_.ike_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListConnsReq.ike)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListConnsRequest.ike)
 }
 
 // -------------------------------------------------------------------
@@ -19541,88 +19545,88 @@ ListConnResp::children() const {
 
 // -------------------------------------------------------------------
 
-// IPsecListConnsResp
+// IPsecListConnsResponse
 
 // repeated .opi_api.security.v1.ListConnResp connection = 1;
-inline int IPsecListConnsResp::_internal_connection_size() const {
+inline int IPsecListConnsResponse::_internal_connection_size() const {
   return _impl_.connection_.size();
 }
-inline int IPsecListConnsResp::connection_size() const {
+inline int IPsecListConnsResponse::connection_size() const {
   return _internal_connection_size();
 }
-inline void IPsecListConnsResp::clear_connection() {
+inline void IPsecListConnsResponse::clear_connection() {
   _impl_.connection_.Clear();
 }
-inline ::opi_api::security::v1::ListConnResp* IPsecListConnsResp::mutable_connection(int index) {
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListConnsResp.connection)
+inline ::opi_api::security::v1::ListConnResp* IPsecListConnsResponse::mutable_connection(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListConnsResponse.connection)
   return _impl_.connection_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListConnResp >*
-IPsecListConnsResp::mutable_connection() {
-  // @@protoc_insertion_point(field_mutable_list:opi_api.security.v1.IPsecListConnsResp.connection)
+IPsecListConnsResponse::mutable_connection() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.security.v1.IPsecListConnsResponse.connection)
   return &_impl_.connection_;
 }
-inline const ::opi_api::security::v1::ListConnResp& IPsecListConnsResp::_internal_connection(int index) const {
+inline const ::opi_api::security::v1::ListConnResp& IPsecListConnsResponse::_internal_connection(int index) const {
   return _impl_.connection_.Get(index);
 }
-inline const ::opi_api::security::v1::ListConnResp& IPsecListConnsResp::connection(int index) const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListConnsResp.connection)
+inline const ::opi_api::security::v1::ListConnResp& IPsecListConnsResponse::connection(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListConnsResponse.connection)
   return _internal_connection(index);
 }
-inline ::opi_api::security::v1::ListConnResp* IPsecListConnsResp::_internal_add_connection() {
+inline ::opi_api::security::v1::ListConnResp* IPsecListConnsResponse::_internal_add_connection() {
   return _impl_.connection_.Add();
 }
-inline ::opi_api::security::v1::ListConnResp* IPsecListConnsResp::add_connection() {
+inline ::opi_api::security::v1::ListConnResp* IPsecListConnsResponse::add_connection() {
   ::opi_api::security::v1::ListConnResp* _add = _internal_add_connection();
-  // @@protoc_insertion_point(field_add:opi_api.security.v1.IPsecListConnsResp.connection)
+  // @@protoc_insertion_point(field_add:opi_api.security.v1.IPsecListConnsResponse.connection)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListConnResp >&
-IPsecListConnsResp::connection() const {
-  // @@protoc_insertion_point(field_list:opi_api.security.v1.IPsecListConnsResp.connection)
+IPsecListConnsResponse::connection() const {
+  // @@protoc_insertion_point(field_list:opi_api.security.v1.IPsecListConnsResponse.connection)
   return _impl_.connection_;
 }
 
 // -------------------------------------------------------------------
 
-// IPsecListCertsReq
+// IPsecListCertsRequest
 
 // string type = 1;
-inline void IPsecListCertsReq::clear_type() {
+inline void IPsecListCertsRequest::clear_type() {
   _impl_.type_.ClearToEmpty();
 }
-inline const std::string& IPsecListCertsReq::type() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListCertsReq.type)
+inline const std::string& IPsecListCertsRequest::type() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListCertsRequest.type)
   return _internal_type();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecListCertsReq::set_type(ArgT0&& arg0, ArgT... args) {
+void IPsecListCertsRequest::set_type(ArgT0&& arg0, ArgT... args) {
  
  _impl_.type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListCertsReq.type)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListCertsRequest.type)
 }
-inline std::string* IPsecListCertsReq::mutable_type() {
+inline std::string* IPsecListCertsRequest::mutable_type() {
   std::string* _s = _internal_mutable_type();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListCertsReq.type)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListCertsRequest.type)
   return _s;
 }
-inline const std::string& IPsecListCertsReq::_internal_type() const {
+inline const std::string& IPsecListCertsRequest::_internal_type() const {
   return _impl_.type_.Get();
 }
-inline void IPsecListCertsReq::_internal_set_type(const std::string& value) {
+inline void IPsecListCertsRequest::_internal_set_type(const std::string& value) {
   
   _impl_.type_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecListCertsReq::_internal_mutable_type() {
+inline std::string* IPsecListCertsRequest::_internal_mutable_type() {
   
   return _impl_.type_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecListCertsReq::release_type() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListCertsReq.type)
+inline std::string* IPsecListCertsRequest::release_type() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListCertsRequest.type)
   return _impl_.type_.Release();
 }
-inline void IPsecListCertsReq::set_allocated_type(std::string* type) {
+inline void IPsecListCertsRequest::set_allocated_type(std::string* type) {
   if (type != nullptr) {
     
   } else {
@@ -19634,45 +19638,45 @@ inline void IPsecListCertsReq::set_allocated_type(std::string* type) {
     _impl_.type_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListCertsReq.type)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListCertsRequest.type)
 }
 
 // string flag = 2;
-inline void IPsecListCertsReq::clear_flag() {
+inline void IPsecListCertsRequest::clear_flag() {
   _impl_.flag_.ClearToEmpty();
 }
-inline const std::string& IPsecListCertsReq::flag() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListCertsReq.flag)
+inline const std::string& IPsecListCertsRequest::flag() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListCertsRequest.flag)
   return _internal_flag();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecListCertsReq::set_flag(ArgT0&& arg0, ArgT... args) {
+void IPsecListCertsRequest::set_flag(ArgT0&& arg0, ArgT... args) {
  
  _impl_.flag_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListCertsReq.flag)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListCertsRequest.flag)
 }
-inline std::string* IPsecListCertsReq::mutable_flag() {
+inline std::string* IPsecListCertsRequest::mutable_flag() {
   std::string* _s = _internal_mutable_flag();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListCertsReq.flag)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListCertsRequest.flag)
   return _s;
 }
-inline const std::string& IPsecListCertsReq::_internal_flag() const {
+inline const std::string& IPsecListCertsRequest::_internal_flag() const {
   return _impl_.flag_.Get();
 }
-inline void IPsecListCertsReq::_internal_set_flag(const std::string& value) {
+inline void IPsecListCertsRequest::_internal_set_flag(const std::string& value) {
   
   _impl_.flag_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecListCertsReq::_internal_mutable_flag() {
+inline std::string* IPsecListCertsRequest::_internal_mutable_flag() {
   
   return _impl_.flag_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecListCertsReq::release_flag() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListCertsReq.flag)
+inline std::string* IPsecListCertsRequest::release_flag() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListCertsRequest.flag)
   return _impl_.flag_.Release();
 }
-inline void IPsecListCertsReq::set_allocated_flag(std::string* flag) {
+inline void IPsecListCertsRequest::set_allocated_flag(std::string* flag) {
   if (flag != nullptr) {
     
   } else {
@@ -19684,45 +19688,45 @@ inline void IPsecListCertsReq::set_allocated_flag(std::string* flag) {
     _impl_.flag_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListCertsReq.flag)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListCertsRequest.flag)
 }
 
 // string subject = 3;
-inline void IPsecListCertsReq::clear_subject() {
+inline void IPsecListCertsRequest::clear_subject() {
   _impl_.subject_.ClearToEmpty();
 }
-inline const std::string& IPsecListCertsReq::subject() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListCertsReq.subject)
+inline const std::string& IPsecListCertsRequest::subject() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListCertsRequest.subject)
   return _internal_subject();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecListCertsReq::set_subject(ArgT0&& arg0, ArgT... args) {
+void IPsecListCertsRequest::set_subject(ArgT0&& arg0, ArgT... args) {
  
  _impl_.subject_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListCertsReq.subject)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecListCertsRequest.subject)
 }
-inline std::string* IPsecListCertsReq::mutable_subject() {
+inline std::string* IPsecListCertsRequest::mutable_subject() {
   std::string* _s = _internal_mutable_subject();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListCertsReq.subject)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListCertsRequest.subject)
   return _s;
 }
-inline const std::string& IPsecListCertsReq::_internal_subject() const {
+inline const std::string& IPsecListCertsRequest::_internal_subject() const {
   return _impl_.subject_.Get();
 }
-inline void IPsecListCertsReq::_internal_set_subject(const std::string& value) {
+inline void IPsecListCertsRequest::_internal_set_subject(const std::string& value) {
   
   _impl_.subject_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecListCertsReq::_internal_mutable_subject() {
+inline std::string* IPsecListCertsRequest::_internal_mutable_subject() {
   
   return _impl_.subject_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecListCertsReq::release_subject() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListCertsReq.subject)
+inline std::string* IPsecListCertsRequest::release_subject() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecListCertsRequest.subject)
   return _impl_.subject_.Release();
 }
-inline void IPsecListCertsReq::set_allocated_subject(std::string* subject) {
+inline void IPsecListCertsRequest::set_allocated_subject(std::string* subject) {
   if (subject != nullptr) {
     
   } else {
@@ -19734,7 +19738,7 @@ inline void IPsecListCertsReq::set_allocated_subject(std::string* subject) {
     _impl_.subject_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListCertsReq.subject)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecListCertsRequest.subject)
 }
 
 // -------------------------------------------------------------------
@@ -20033,75 +20037,75 @@ inline void ListCert::set_allocated_notafter(std::string* notafter) {
 
 // -------------------------------------------------------------------
 
-// IPsecListCertsResp
+// IPsecListCertsResponse
 
 // repeated .opi_api.security.v1.ListCert certs = 1;
-inline int IPsecListCertsResp::_internal_certs_size() const {
+inline int IPsecListCertsResponse::_internal_certs_size() const {
   return _impl_.certs_.size();
 }
-inline int IPsecListCertsResp::certs_size() const {
+inline int IPsecListCertsResponse::certs_size() const {
   return _internal_certs_size();
 }
-inline void IPsecListCertsResp::clear_certs() {
+inline void IPsecListCertsResponse::clear_certs() {
   _impl_.certs_.Clear();
 }
-inline ::opi_api::security::v1::ListCert* IPsecListCertsResp::mutable_certs(int index) {
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListCertsResp.certs)
+inline ::opi_api::security::v1::ListCert* IPsecListCertsResponse::mutable_certs(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecListCertsResponse.certs)
   return _impl_.certs_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListCert >*
-IPsecListCertsResp::mutable_certs() {
-  // @@protoc_insertion_point(field_mutable_list:opi_api.security.v1.IPsecListCertsResp.certs)
+IPsecListCertsResponse::mutable_certs() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.security.v1.IPsecListCertsResponse.certs)
   return &_impl_.certs_;
 }
-inline const ::opi_api::security::v1::ListCert& IPsecListCertsResp::_internal_certs(int index) const {
+inline const ::opi_api::security::v1::ListCert& IPsecListCertsResponse::_internal_certs(int index) const {
   return _impl_.certs_.Get(index);
 }
-inline const ::opi_api::security::v1::ListCert& IPsecListCertsResp::certs(int index) const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListCertsResp.certs)
+inline const ::opi_api::security::v1::ListCert& IPsecListCertsResponse::certs(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecListCertsResponse.certs)
   return _internal_certs(index);
 }
-inline ::opi_api::security::v1::ListCert* IPsecListCertsResp::_internal_add_certs() {
+inline ::opi_api::security::v1::ListCert* IPsecListCertsResponse::_internal_add_certs() {
   return _impl_.certs_.Add();
 }
-inline ::opi_api::security::v1::ListCert* IPsecListCertsResp::add_certs() {
+inline ::opi_api::security::v1::ListCert* IPsecListCertsResponse::add_certs() {
   ::opi_api::security::v1::ListCert* _add = _internal_add_certs();
-  // @@protoc_insertion_point(field_add:opi_api.security.v1.IPsecListCertsResp.certs)
+  // @@protoc_insertion_point(field_add:opi_api.security.v1.IPsecListCertsResponse.certs)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1::ListCert >&
-IPsecListCertsResp::certs() const {
-  // @@protoc_insertion_point(field_list:opi_api.security.v1.IPsecListCertsResp.certs)
+IPsecListCertsResponse::certs() const {
+  // @@protoc_insertion_point(field_list:opi_api.security.v1.IPsecListCertsResponse.certs)
   return _impl_.certs_;
 }
 
 // -------------------------------------------------------------------
 
-// IPsecLoadConnReq
+// IPsecLoadConnRequest
 
 // .opi_api.security.v1.Connection connection = 1;
-inline bool IPsecLoadConnReq::_internal_has_connection() const {
+inline bool IPsecLoadConnRequest::_internal_has_connection() const {
   return this != internal_default_instance() && _impl_.connection_ != nullptr;
 }
-inline bool IPsecLoadConnReq::has_connection() const {
+inline bool IPsecLoadConnRequest::has_connection() const {
   return _internal_has_connection();
 }
-inline void IPsecLoadConnReq::clear_connection() {
+inline void IPsecLoadConnRequest::clear_connection() {
   if (GetArenaForAllocation() == nullptr && _impl_.connection_ != nullptr) {
     delete _impl_.connection_;
   }
   _impl_.connection_ = nullptr;
 }
-inline const ::opi_api::security::v1::Connection& IPsecLoadConnReq::_internal_connection() const {
+inline const ::opi_api::security::v1::Connection& IPsecLoadConnRequest::_internal_connection() const {
   const ::opi_api::security::v1::Connection* p = _impl_.connection_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::security::v1::Connection&>(
       ::opi_api::security::v1::_Connection_default_instance_);
 }
-inline const ::opi_api::security::v1::Connection& IPsecLoadConnReq::connection() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecLoadConnReq.connection)
+inline const ::opi_api::security::v1::Connection& IPsecLoadConnRequest::connection() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecLoadConnRequest.connection)
   return _internal_connection();
 }
-inline void IPsecLoadConnReq::unsafe_arena_set_allocated_connection(
+inline void IPsecLoadConnRequest::unsafe_arena_set_allocated_connection(
     ::opi_api::security::v1::Connection* connection) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.connection_);
@@ -20112,9 +20116,9 @@ inline void IPsecLoadConnReq::unsafe_arena_set_allocated_connection(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.security.v1.IPsecLoadConnReq.connection)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.security.v1.IPsecLoadConnRequest.connection)
 }
-inline ::opi_api::security::v1::Connection* IPsecLoadConnReq::release_connection() {
+inline ::opi_api::security::v1::Connection* IPsecLoadConnRequest::release_connection() {
   
   ::opi_api::security::v1::Connection* temp = _impl_.connection_;
   _impl_.connection_ = nullptr;
@@ -20129,14 +20133,14 @@ inline ::opi_api::security::v1::Connection* IPsecLoadConnReq::release_connection
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::security::v1::Connection* IPsecLoadConnReq::unsafe_arena_release_connection() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecLoadConnReq.connection)
+inline ::opi_api::security::v1::Connection* IPsecLoadConnRequest::unsafe_arena_release_connection() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecLoadConnRequest.connection)
   
   ::opi_api::security::v1::Connection* temp = _impl_.connection_;
   _impl_.connection_ = nullptr;
   return temp;
 }
-inline ::opi_api::security::v1::Connection* IPsecLoadConnReq::_internal_mutable_connection() {
+inline ::opi_api::security::v1::Connection* IPsecLoadConnRequest::_internal_mutable_connection() {
   
   if (_impl_.connection_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::security::v1::Connection>(GetArenaForAllocation());
@@ -20144,12 +20148,12 @@ inline ::opi_api::security::v1::Connection* IPsecLoadConnReq::_internal_mutable_
   }
   return _impl_.connection_;
 }
-inline ::opi_api::security::v1::Connection* IPsecLoadConnReq::mutable_connection() {
+inline ::opi_api::security::v1::Connection* IPsecLoadConnRequest::mutable_connection() {
   ::opi_api::security::v1::Connection* _msg = _internal_mutable_connection();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecLoadConnReq.connection)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecLoadConnRequest.connection)
   return _msg;
 }
-inline void IPsecLoadConnReq::set_allocated_connection(::opi_api::security::v1::Connection* connection) {
+inline void IPsecLoadConnRequest::set_allocated_connection(::opi_api::security::v1::Connection* connection) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete _impl_.connection_;
@@ -20166,49 +20170,49 @@ inline void IPsecLoadConnReq::set_allocated_connection(::opi_api::security::v1::
     
   }
   _impl_.connection_ = connection;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecLoadConnReq.connection)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecLoadConnRequest.connection)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecLoadConnResp
+// IPsecLoadConnResponse
 
 // string success = 1;
-inline void IPsecLoadConnResp::clear_success() {
+inline void IPsecLoadConnResponse::clear_success() {
   _impl_.success_.ClearToEmpty();
 }
-inline const std::string& IPsecLoadConnResp::success() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecLoadConnResp.success)
+inline const std::string& IPsecLoadConnResponse::success() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecLoadConnResponse.success)
   return _internal_success();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecLoadConnResp::set_success(ArgT0&& arg0, ArgT... args) {
+void IPsecLoadConnResponse::set_success(ArgT0&& arg0, ArgT... args) {
  
  _impl_.success_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecLoadConnResp.success)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecLoadConnResponse.success)
 }
-inline std::string* IPsecLoadConnResp::mutable_success() {
+inline std::string* IPsecLoadConnResponse::mutable_success() {
   std::string* _s = _internal_mutable_success();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecLoadConnResp.success)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecLoadConnResponse.success)
   return _s;
 }
-inline const std::string& IPsecLoadConnResp::_internal_success() const {
+inline const std::string& IPsecLoadConnResponse::_internal_success() const {
   return _impl_.success_.Get();
 }
-inline void IPsecLoadConnResp::_internal_set_success(const std::string& value) {
+inline void IPsecLoadConnResponse::_internal_set_success(const std::string& value) {
   
   _impl_.success_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecLoadConnResp::_internal_mutable_success() {
+inline std::string* IPsecLoadConnResponse::_internal_mutable_success() {
   
   return _impl_.success_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecLoadConnResp::release_success() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecLoadConnResp.success)
+inline std::string* IPsecLoadConnResponse::release_success() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecLoadConnResponse.success)
   return _impl_.success_.Release();
 }
-inline void IPsecLoadConnResp::set_allocated_success(std::string* success) {
+inline void IPsecLoadConnResponse::set_allocated_success(std::string* success) {
   if (success != nullptr) {
     
   } else {
@@ -20220,49 +20224,49 @@ inline void IPsecLoadConnResp::set_allocated_success(std::string* success) {
     _impl_.success_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecLoadConnResp.success)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecLoadConnResponse.success)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecUnloadConnReq
+// IPsecUnloadConnRequest
 
 // string name = 1;
-inline void IPsecUnloadConnReq::clear_name() {
+inline void IPsecUnloadConnRequest::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
-inline const std::string& IPsecUnloadConnReq::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecUnloadConnReq.name)
+inline const std::string& IPsecUnloadConnRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecUnloadConnRequest.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecUnloadConnReq::set_name(ArgT0&& arg0, ArgT... args) {
+void IPsecUnloadConnRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
  _impl_.name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecUnloadConnReq.name)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecUnloadConnRequest.name)
 }
-inline std::string* IPsecUnloadConnReq::mutable_name() {
+inline std::string* IPsecUnloadConnRequest::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecUnloadConnReq.name)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecUnloadConnRequest.name)
   return _s;
 }
-inline const std::string& IPsecUnloadConnReq::_internal_name() const {
+inline const std::string& IPsecUnloadConnRequest::_internal_name() const {
   return _impl_.name_.Get();
 }
-inline void IPsecUnloadConnReq::_internal_set_name(const std::string& value) {
+inline void IPsecUnloadConnRequest::_internal_set_name(const std::string& value) {
   
   _impl_.name_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecUnloadConnReq::_internal_mutable_name() {
+inline std::string* IPsecUnloadConnRequest::_internal_mutable_name() {
   
   return _impl_.name_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecUnloadConnReq::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecUnloadConnReq.name)
+inline std::string* IPsecUnloadConnRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecUnloadConnRequest.name)
   return _impl_.name_.Release();
 }
-inline void IPsecUnloadConnReq::set_allocated_name(std::string* name) {
+inline void IPsecUnloadConnRequest::set_allocated_name(std::string* name) {
   if (name != nullptr) {
     
   } else {
@@ -20274,49 +20278,49 @@ inline void IPsecUnloadConnReq::set_allocated_name(std::string* name) {
     _impl_.name_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecUnloadConnReq.name)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecUnloadConnRequest.name)
 }
 
 // -------------------------------------------------------------------
 
-// IPsecUnloadConnResp
+// IPsecUnloadConnResponse
 
 // string success = 1;
-inline void IPsecUnloadConnResp::clear_success() {
+inline void IPsecUnloadConnResponse::clear_success() {
   _impl_.success_.ClearToEmpty();
 }
-inline const std::string& IPsecUnloadConnResp::success() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecUnloadConnResp.success)
+inline const std::string& IPsecUnloadConnResponse::success() const {
+  // @@protoc_insertion_point(field_get:opi_api.security.v1.IPsecUnloadConnResponse.success)
   return _internal_success();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void IPsecUnloadConnResp::set_success(ArgT0&& arg0, ArgT... args) {
+void IPsecUnloadConnResponse::set_success(ArgT0&& arg0, ArgT... args) {
  
  _impl_.success_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecUnloadConnResp.success)
+  // @@protoc_insertion_point(field_set:opi_api.security.v1.IPsecUnloadConnResponse.success)
 }
-inline std::string* IPsecUnloadConnResp::mutable_success() {
+inline std::string* IPsecUnloadConnResponse::mutable_success() {
   std::string* _s = _internal_mutable_success();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecUnloadConnResp.success)
+  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.IPsecUnloadConnResponse.success)
   return _s;
 }
-inline const std::string& IPsecUnloadConnResp::_internal_success() const {
+inline const std::string& IPsecUnloadConnResponse::_internal_success() const {
   return _impl_.success_.Get();
 }
-inline void IPsecUnloadConnResp::_internal_set_success(const std::string& value) {
+inline void IPsecUnloadConnResponse::_internal_set_success(const std::string& value) {
   
   _impl_.success_.Set(value, GetArenaForAllocation());
 }
-inline std::string* IPsecUnloadConnResp::_internal_mutable_success() {
+inline std::string* IPsecUnloadConnResponse::_internal_mutable_success() {
   
   return _impl_.success_.Mutable(GetArenaForAllocation());
 }
-inline std::string* IPsecUnloadConnResp::release_success() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecUnloadConnResp.success)
+inline std::string* IPsecUnloadConnResponse::release_success() {
+  // @@protoc_insertion_point(field_release:opi_api.security.v1.IPsecUnloadConnResponse.success)
   return _impl_.success_.Release();
 }
-inline void IPsecUnloadConnResp::set_allocated_success(std::string* success) {
+inline void IPsecUnloadConnResponse::set_allocated_success(std::string* success) {
   if (success != nullptr) {
     
   } else {
@@ -20328,7 +20332,7 @@ inline void IPsecUnloadConnResp::set_allocated_success(std::string* success) {
     _impl_.success_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecUnloadConnResp.success)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.IPsecUnloadConnResponse.success)
 }
 
 #ifdef __GNUC__
@@ -20433,20 +20437,20 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::security::v1::IntegAlgorithm>() {
   return ::opi_api::security::v1::IntegAlgorithm_descriptor();
 }
-template <> struct is_proto_enum< ::opi_api::security::v1::DiffieHellmanGroups> : ::std::true_type {};
+template <> struct is_proto_enum< ::opi_api::security::v1::DHGroups> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::security::v1::DiffieHellmanGroups>() {
-  return ::opi_api::security::v1::DiffieHellmanGroups_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::security::v1::DHGroups>() {
+  return ::opi_api::security::v1::DHGroups_descriptor();
 }
-template <> struct is_proto_enum< ::opi_api::security::v1::PseudoRandomFunction> : ::std::true_type {};
+template <> struct is_proto_enum< ::opi_api::security::v1::PRFunction> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::security::v1::PseudoRandomFunction>() {
-  return ::opi_api::security::v1::PseudoRandomFunction_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::security::v1::PRFunction>() {
+  return ::opi_api::security::v1::PRFunction_descriptor();
 }
-template <> struct is_proto_enum< ::opi_api::security::v1::IPsecMode> : ::std::true_type {};
+template <> struct is_proto_enum< ::opi_api::security::v1::IpsecMode> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::security::v1::IPsecMode>() {
-  return ::opi_api::security::v1::IPsecMode_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::security::v1::IpsecMode>() {
+  return ::opi_api::security::v1::IpsecMode_descriptor();
 }
 template <> struct is_proto_enum< ::opi_api::security::v1::AuthType> : ::std::true_type {};
 template <>

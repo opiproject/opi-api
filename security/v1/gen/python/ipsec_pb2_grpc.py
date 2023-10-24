@@ -5,8 +5,9 @@ import grpc
 import ipsec_pb2 as ipsec__pb2
 
 
-class IPsecStub(object):
-    """Missing associated documentation comment in .proto file."""
+class IPsecServiceStub(object):
+    """Service functions for IPSec Protocol 
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -15,59 +16,60 @@ class IPsecStub(object):
             channel: A grpc.Channel.
         """
         self.IPsecVersion = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecVersion',
-                request_serializer=ipsec__pb2.IPsecVersionReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecVersionResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecVersion',
+                request_serializer=ipsec__pb2.IPsecVersionRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecVersionResponse.FromString,
                 )
         self.IPsecStats = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecStats',
-                request_serializer=ipsec__pb2.IPsecStatsReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecStatsResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecStats',
+                request_serializer=ipsec__pb2.IPsecStatsRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecStatsResponse.FromString,
                 )
         self.IPsecInitiate = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecInitiate',
-                request_serializer=ipsec__pb2.IPsecInitiateReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecInitiateResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecInitiate',
+                request_serializer=ipsec__pb2.IPsecInitiateRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecInitiateResponse.FromString,
                 )
         self.IPsecTerminate = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecTerminate',
-                request_serializer=ipsec__pb2.IPsecTerminateReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecTerminateResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecTerminate',
+                request_serializer=ipsec__pb2.IPsecTerminateRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecTerminateResponse.FromString,
                 )
         self.IPsecRekey = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecRekey',
-                request_serializer=ipsec__pb2.IPsecRekeyReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecRekeyResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecRekey',
+                request_serializer=ipsec__pb2.IPsecRekeyRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecRekeyResponse.FromString,
                 )
         self.IPsecListSas = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecListSas',
-                request_serializer=ipsec__pb2.IPsecListSasReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecListSasResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecListSas',
+                request_serializer=ipsec__pb2.IPsecListSasRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecListSasResponse.FromString,
                 )
         self.IPsecListConns = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecListConns',
-                request_serializer=ipsec__pb2.IPsecListConnsReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecListConnsResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecListConns',
+                request_serializer=ipsec__pb2.IPsecListConnsRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecListConnsResponse.FromString,
                 )
         self.IPsecListCerts = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecListCerts',
-                request_serializer=ipsec__pb2.IPsecListCertsReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecListCertsResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecListCerts',
+                request_serializer=ipsec__pb2.IPsecListCertsRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecListCertsResponse.FromString,
                 )
         self.IPsecLoadConn = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecLoadConn',
-                request_serializer=ipsec__pb2.IPsecLoadConnReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecLoadConnResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecLoadConn',
+                request_serializer=ipsec__pb2.IPsecLoadConnRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecLoadConnResponse.FromString,
                 )
         self.IPsecUnloadConn = channel.unary_unary(
-                '/opi_api.security.v1.IPsec/IPsecUnloadConn',
-                request_serializer=ipsec__pb2.IPsecUnloadConnReq.SerializeToString,
-                response_deserializer=ipsec__pb2.IPsecUnloadConnResp.FromString,
+                '/opi_api.security.v1.IPsecService/IPsecUnloadConn',
+                request_serializer=ipsec__pb2.IPsecUnloadConnRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IPsecUnloadConnResponse.FromString,
                 )
 
 
-class IPsecServicer(object):
-    """Missing associated documentation comment in .proto file."""
+class IPsecServiceServicer(object):
+    """Service functions for IPSec Protocol 
+    """
 
     def IPsecVersion(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -130,67 +132,68 @@ class IPsecServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_IPsecServicer_to_server(servicer, server):
+def add_IPsecServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'IPsecVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecVersion,
-                    request_deserializer=ipsec__pb2.IPsecVersionReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecVersionResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecVersionRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecVersionResponse.SerializeToString,
             ),
             'IPsecStats': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecStats,
-                    request_deserializer=ipsec__pb2.IPsecStatsReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecStatsResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecStatsRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecStatsResponse.SerializeToString,
             ),
             'IPsecInitiate': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecInitiate,
-                    request_deserializer=ipsec__pb2.IPsecInitiateReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecInitiateResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecInitiateRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecInitiateResponse.SerializeToString,
             ),
             'IPsecTerminate': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecTerminate,
-                    request_deserializer=ipsec__pb2.IPsecTerminateReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecTerminateResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecTerminateRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecTerminateResponse.SerializeToString,
             ),
             'IPsecRekey': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecRekey,
-                    request_deserializer=ipsec__pb2.IPsecRekeyReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecRekeyResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecRekeyRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecRekeyResponse.SerializeToString,
             ),
             'IPsecListSas': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecListSas,
-                    request_deserializer=ipsec__pb2.IPsecListSasReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecListSasResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecListSasRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecListSasResponse.SerializeToString,
             ),
             'IPsecListConns': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecListConns,
-                    request_deserializer=ipsec__pb2.IPsecListConnsReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecListConnsResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecListConnsRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecListConnsResponse.SerializeToString,
             ),
             'IPsecListCerts': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecListCerts,
-                    request_deserializer=ipsec__pb2.IPsecListCertsReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecListCertsResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecListCertsRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecListCertsResponse.SerializeToString,
             ),
             'IPsecLoadConn': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecLoadConn,
-                    request_deserializer=ipsec__pb2.IPsecLoadConnReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecLoadConnResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecLoadConnRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecLoadConnResponse.SerializeToString,
             ),
             'IPsecUnloadConn': grpc.unary_unary_rpc_method_handler(
                     servicer.IPsecUnloadConn,
-                    request_deserializer=ipsec__pb2.IPsecUnloadConnReq.FromString,
-                    response_serializer=ipsec__pb2.IPsecUnloadConnResp.SerializeToString,
+                    request_deserializer=ipsec__pb2.IPsecUnloadConnRequest.FromString,
+                    response_serializer=ipsec__pb2.IPsecUnloadConnResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'opi_api.security.v1.IPsec', rpc_method_handlers)
+            'opi_api.security.v1.IPsecService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class IPsec(object):
-    """Missing associated documentation comment in .proto file."""
+class IPsecService(object):
+    """Service functions for IPSec Protocol 
+    """
 
     @staticmethod
     def IPsecVersion(request,
@@ -203,9 +206,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecVersion',
-            ipsec__pb2.IPsecVersionReq.SerializeToString,
-            ipsec__pb2.IPsecVersionResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecVersion',
+            ipsec__pb2.IPsecVersionRequest.SerializeToString,
+            ipsec__pb2.IPsecVersionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -220,9 +223,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecStats',
-            ipsec__pb2.IPsecStatsReq.SerializeToString,
-            ipsec__pb2.IPsecStatsResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecStats',
+            ipsec__pb2.IPsecStatsRequest.SerializeToString,
+            ipsec__pb2.IPsecStatsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -237,9 +240,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecInitiate',
-            ipsec__pb2.IPsecInitiateReq.SerializeToString,
-            ipsec__pb2.IPsecInitiateResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecInitiate',
+            ipsec__pb2.IPsecInitiateRequest.SerializeToString,
+            ipsec__pb2.IPsecInitiateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -254,9 +257,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecTerminate',
-            ipsec__pb2.IPsecTerminateReq.SerializeToString,
-            ipsec__pb2.IPsecTerminateResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecTerminate',
+            ipsec__pb2.IPsecTerminateRequest.SerializeToString,
+            ipsec__pb2.IPsecTerminateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -271,9 +274,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecRekey',
-            ipsec__pb2.IPsecRekeyReq.SerializeToString,
-            ipsec__pb2.IPsecRekeyResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecRekey',
+            ipsec__pb2.IPsecRekeyRequest.SerializeToString,
+            ipsec__pb2.IPsecRekeyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -288,9 +291,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecListSas',
-            ipsec__pb2.IPsecListSasReq.SerializeToString,
-            ipsec__pb2.IPsecListSasResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecListSas',
+            ipsec__pb2.IPsecListSasRequest.SerializeToString,
+            ipsec__pb2.IPsecListSasResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -305,9 +308,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecListConns',
-            ipsec__pb2.IPsecListConnsReq.SerializeToString,
-            ipsec__pb2.IPsecListConnsResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecListConns',
+            ipsec__pb2.IPsecListConnsRequest.SerializeToString,
+            ipsec__pb2.IPsecListConnsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -322,9 +325,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecListCerts',
-            ipsec__pb2.IPsecListCertsReq.SerializeToString,
-            ipsec__pb2.IPsecListCertsResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecListCerts',
+            ipsec__pb2.IPsecListCertsRequest.SerializeToString,
+            ipsec__pb2.IPsecListCertsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -339,9 +342,9 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecLoadConn',
-            ipsec__pb2.IPsecLoadConnReq.SerializeToString,
-            ipsec__pb2.IPsecLoadConnResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecLoadConn',
+            ipsec__pb2.IPsecLoadConnRequest.SerializeToString,
+            ipsec__pb2.IPsecLoadConnResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -356,8 +359,8 @@ class IPsec(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsec/IPsecUnloadConn',
-            ipsec__pb2.IPsecUnloadConnReq.SerializeToString,
-            ipsec__pb2.IPsecUnloadConnResp.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v1.IPsecService/IPsecUnloadConn',
+            ipsec__pb2.IPsecUnloadConnRequest.SerializeToString,
+            ipsec__pb2.IPsecUnloadConnResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
