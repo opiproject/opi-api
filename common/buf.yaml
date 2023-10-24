@@ -3,3 +3,6 @@ name: buf.build/opiproject/common
 deps:
 - buf.build/googleapis/googleapis
 - buf.build/grpc-ecosystem/grpc-gateway
+lint:
+  except:
+    - PACKAGE_DIRECTORY_MATCH

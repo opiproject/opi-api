@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 Intel Corporation
+ * Copyright (c) 2023 Dell Inc, or its subsidiaries.
  * SPDX-License-Identifier: Apache-2.0
  *
  * Major pieces taken from:
@@ -9,134 +10,140 @@ syntax = "proto3";
 package opi_api.security.v1;
 option go_package = "github.com/opiproject/opi-api/security/v1/gen/go";
 
-service IPsec {
-	rpc IPsecVersion (IPsecVersionReq) returns (IPsecVersionResp) {}
-	rpc IPsecStats   (IPsecStatsReq)   returns (IPsecStatsResp)   {}
-	rpc IPsecInitiate (IPsecInitiateReq) returns (IPsecInitiateResp) {}
-	rpc IPsecTerminate (IPsecTerminateReq) returns (IPsecTerminateResp) {}
-	rpc IPsecRekey (IPsecRekeyReq) returns (IPsecRekeyResp) {}
-	rpc IPsecListSas (IPsecListSasReq) returns (IPsecListSasResp) {}
-	rpc IPsecListConns (IPsecListConnsReq) returns (IPsecListConnsResp) {}
-	rpc IPsecListCerts (IPsecListCertsReq) returns (IPsecListCertsResp) {}
-	rpc IPsecLoadConn (IPsecLoadConnReq) returns (IPsecLoadConnResp) {}
-	rpc IPsecUnloadConn (IPsecUnloadConnReq) returns (IPsecUnloadConnResp) {}
+/* Service functions for IPSec Protocol */
+service IPsecService {
+	rpc IPsecVersion (IPsecVersionRequest) returns (IPsecVersionResponse) {}
+	rpc IPsecStats   (IPsecStatsRequest)   returns (IPsecStatsResponse)   {}
+	rpc IPsecInitiate (IPsecInitiateRequest) returns (IPsecInitiateResponse) {}
+	rpc IPsecTerminate (IPsecTerminateRequest) returns (IPsecTerminateResponse) {}
+	rpc IPsecRekey (IPsecRekeyRequest) returns (IPsecRekeyResponse) {}
+	rpc IPsecListSas (IPsecListSasRequest) returns (IPsecListSasResponse) {}
+	rpc IPsecListConns (IPsecListConnsRequest) returns (IPsecListConnsResponse) {}
+	rpc IPsecListCerts (IPsecListCertsRequest) returns (IPsecListCertsResponse) {}
+	rpc IPsecLoadConn (IPsecLoadConnRequest) returns (IPsecLoadConnResponse) {}
+	rpc IPsecUnloadConn (IPsecUnloadConnRequest) returns (IPsecUnloadConnResponse) {}
 }
 
 /* Cryptographic algorithm for encryption */
 enum CryptoAlgorithm {
-	NONE_CRYPTO  = 0;
-	AES128       = 1;
-	AES192       = 2;
-	AES256       = 3;
-	AES128GCM128 = 4;
-	AES256GCM128 = 5;
-	AES128GMAC   = 6;
-	AES256GMAC   = 7;
+	CRYPTO_ALGORITHM_UNSPECIFIED  = 0;
+	CRYPTO_ALGORITHM_AES128       = 1;
+	CRYPTO_ALGORITHM_AES192       = 2;
+	CRYPTO_ALGORITHM_AES256       = 3;
+	CRYPTO_ALGORITHM_AES128GCM128 = 4;
+	CRYPTO_ALGORITHM_AES256GCM128 = 5;
+	CRYPTO_ALGORITHM_AES128GMAC   = 6;
+	CRYPTO_ALGORITHM_AES256GMAC   = 7;
 }
 /* Cryptographic algorithm for authentication */
 enum IntegAlgorithm {
-	NONE_INTEG = 0;
-	MD5        = 1;
-	MD5_128    = 2;
-	SHA1       = 3;
-	SHA1_160   = 4;
-	SHA256     = 5;
-	SHA384     = 7;
-	SHA512     = 8;
-	SHA256_96  = 9;
+	INTEG_ALGORITHM_UNSPECIFIED = 0;
+	INTEG_ALGORITHM_MD5        = 1;
+	INTEG_ALGORITHM_MD5_128    = 2;
+	INTEG_ALGORITHM_SHA1       = 3;
+	INTEG_ALGORITHM_SHA1_160   = 4;
+	INTEG_ALGORITHM_SHA256     = 5;
+	INTEG_ALGORITHM_SHA384     = 7;
+	INTEG_ALGORITHM_SHA512     = 8;
+	INTEG_ALGORITHM_SHA256_96  = 9;
 }
 
 /* Diffie Hellman Groups */
-enum DiffieHellmanGroups {
-	NONE_DH_GROUP = 0;
-	MODP768      = 1;
-	MODP1024     = 2;
-	MODP1536     = 3;
-	MODP2048     = 4;
-	MODP3072     = 5;
-	MODP4096     = 6;
-	MODP6144     = 7;
-	MODP8192     = 8;
-	MODP1024S160 = 9;
-	MODP2048S224 = 10;
-	MODP2048S256 = 11;
-	CURVE25519   = 12;
+enum DHGroups {
+	DH_GROUPS_UNSPECIFIED  = 0;
+	DH_GROUPS_MODP768      = 1;
+	DH_GROUPS_MODP1024     = 2;
+	DH_GROUPS_MODP1536     = 3;
+	DH_GROUPS_MODP2048     = 4;
+	DH_GROUPS_MODP3072     = 5;
+	DH_GROUPS_MODP4096     = 6;
+	DH_GROUPS_MODP6144     = 7;
+	DH_GROUPS_MODP8192     = 8;
+	DH_GROUPS_MODP1024S160 = 9;
+	DH_GROUPS_MODP2048S224 = 10;
+	DH_GROUPS_MODP2048S256 = 11;
+	DH_GROUPS_CURVE25519   = 12;
 }
 
-enum PseudoRandomFunction {
-	NONE_PRF   = 0;
-	PRFMD5     = 1;
-	PRFSHA1    = 2;
-	PRFAESXCBC = 3;
-	PRFAESCMAC = 4;
-	PRFSHA256  = 5;
-	PRFSHA384  = 6;
-	PRFSHA512  = 7;
+/* Pesudo Random Function */
+enum PRFunction {
+	PR_FUNCTION_UNSPECIFIED = 0;
+	PR_FUNCTION_MD5         = 1;
+	PR_FUNCTION_SHA1        = 2;
+	PR_FUNCTION_AESXCBC     = 3;
+	PR_FUNCTION_AESCMAC     = 4;
+	PR_FUNCTION_SHA256      = 5;
+	PR_FUNCTION_SHA384      = 6;
+	PR_FUNCTION_SHA512      = 7;
 }
 
 /* Tunnel mode */
-enum IPsecMode {
-	TUNNEL_MODE = 0;
-	TRANSPORT_MODE = 1;
+enum IpsecMode {
+	IPSEC_MODE_UNSPECIFIED    = 0;
+	IPSEC_MODE_TUNNEL_MODE    = 1;
+	IPSEC_MODE_TRANSPORT_MODE = 2;
 }
 
 /* Authentication Type */
 enum AuthType {
-	PUBKEY = 0;
-	PSK    = 1;
-	XAUTH  = 2;
-	EAP    = 3;
+	AUTH_TYPE_UNSPECIFIED = 0;
+	AUTH_TYPE_PUBKEY      = 1;
+	AUTH_TYPE_PSK         = 2;
+	AUTH_TYPE_XAUTH       = 3;
+	AUTH_TYPE_EAP         = 4;
 }
 
 /* IKE_SA state */
 enum IkeSaState {
-	CREATED     = 0;
-	CONNECTING  = 1;
-	ESTABLISHED = 2;
-	PASSIVE     = 3;
-	REKEYING    = 4;
-	REKEYED     = 5;
-	DELETING    = 6;
-	DESTROYING  = 7;
+	IKE_SA_STATE_UNSPECIFIED = 0;
+	IKE_SA_STATE_CREATED     = 1;
+	IKE_SA_STATE_CONNECTING  = 2;
+	IKE_SA_STATE_ESTABLISHED = 3;
+	IKE_SA_STATE_PASSIVE     = 4;
+	IKE_SA_STATE_REKEYING    = 5;
+	IKE_SA_STATE_REKEYED     = 6;
+	IKE_SA_STATE_DELETING    = 7;
+	IKE_SA_STATE_DESTROYING  = 8;
 }
 
 /* CHILD_SA state */
 enum ChildSaState {
-	CHILD_CREATED    = 0;
-	CHILD_ROUTED     = 1;
-	CHILD_INSTALLING = 2;
-	CHILD_INSTALLED  = 3;
-	CHILD_UPDATING   = 4;
-	CHILD_REKEYING   = 5;
-	CHILD_REKEYED    = 6;
-	CHILD_RETRYING   = 7;
-	CHILD_DELETING   = 8;
-	CHILD_DELETED    = 9;
-	CHILD_DESTROYING = 10;
+	CHILD_SA_STATE_UNSPECIFIED = 0;
+	CHILD_SA_STATE_CREATED     = 1;
+	CHILD_SA_STATE_ROUTED      = 2;
+	CHILD_SA_STATE_INSTALLING  = 3;
+	CHILD_SA_STATE_INSTALLED   = 4;
+	CHILD_SA_STATE_UPDATING    = 5;
+	CHILD_SA_STATE_REKEYING    = 6;
+	CHILD_SA_STATE_REKEYED     = 7;
+	CHILD_SA_STATE_RETRYING    = 8;
+	CHILD_SA_STATE_DELETING    = 9;
+	CHILD_SA_STATE_DELETED     = 10;
+	CHILD_SA_STATE_DESTROYING  = 11;
 }
 
 /* Certificate type */
 enum CertificateType {
-	CERT_X509          = 0;
-	CERT_X509_AC       = 1;
-	CERT_X509_CRL      = 2;
-	CERT_OCSP_RESPONSE = 3;
-	CERT_PUBKEY        = 4;
+	CERTIFICATE_TYPE_X509_UNSPECIFIED = 0;
+	CERTIFICATE_TYPE_X509_AC          = 1;
+	CERTIFICATE_TYPE_X509_CRL         = 2;
+	CERTIFICATE_TYPE_OCSP_RESPONSE    = 3;
+	CERTIFICATE_TYPE_PUBKEY           = 4;
 }
 
 /* X.509 certificate flag */
 enum X509CertificateFlag {
-	X509_CERT_FLAG_NONE = 0;
-	X509_CERT_FLAG_CA   = 1;
-	X509_CERT_FLAG_AA   = 2;
-	X509_CERT_FLAG_OCSP = 3;
+	X509_CERTIFICATE_FLAG_UNSPECIFIED = 0;
+	X509_CERTIFICATE_FLAG_CA          = 1;
+	X509_CERTIFICATE_FLAG_AA          = 2;
+	X509_CERTIFICATE_FLAG_OCSP        = 3;
 }
 
 message Proposals {
 	repeated CryptoAlgorithm crypto_alg = 1;
 	repeated IntegAlgorithm integ_alg = 2;
-	repeated PseudoRandomFunction prf = 3;
-	repeated DiffieHellmanGroups dhgroups = 4;
+	repeated PRFunction prf = 3;
+	repeated DHGroups dhgroups = 4;
 }
 
 message Vips {
@@ -245,11 +252,11 @@ message Connection {
 	repeated Child children     = 19;
 }
 
-message IPsecVersionReq {
+message IPsecVersionRequest {
 	/* Intentionally empty */
 }
 
-message IPsecVersionResp {
+message IPsecVersionResponse {
 	string daemon  = 1;
 	string version = 2;
 	string sysname = 3;
@@ -257,26 +264,26 @@ message IPsecVersionResp {
 	string machine = 5;
 }
 
-message IPsecStatsReq {
+message IPsecStatsRequest {
 	/* Intentionally empty */
 }
 
-message IPsecStatsResp {
+message IPsecStatsResponse {
 	string status = 1; /* Generic status string for now */
 }
 
-message IPsecInitiateReq {
+message IPsecInitiateRequest {
 	string child    = 1;
 	string ike      = 2;
 	string timeout  = 3;
 	string loglevel = 4;
 }
 
-message IPsecInitiateResp {
+message IPsecInitiateResponse {
 	/* Intentionally empty */
 }
 
-message IPsecTerminateReq {
+message IPsecTerminateRequest {
 	string child    = 1;
 	string ike      = 2;
 	uint64 child_id = 3;
@@ -286,13 +293,13 @@ message IPsecTerminateReq {
 	string loglevel = 7;
 }
 
-message IPsecTerminateResp {
+message IPsecTerminateResponse {
 	string success    = 1;
 	uint32 matches    = 2;
 	uint32 terminated = 3;
 }
 
-message IPsecRekeyReq {
+message IPsecRekeyRequest {
 	string child    = 1;
 	string ike      = 2;
 	uint64 child_id = 3;
@@ -300,12 +307,12 @@ message IPsecRekeyReq {
 	string reauth   = 5;
 }
 
-message IPsecRekeyResp {
+message IPsecRekeyResponse {
 	string success = 1;
 	uint32 matches = 2;
 }
 
-message IPsecListSasReq {
+message IPsecListSasRequest {
 	string noblock  = 1;
 	string ike      = 2;
 	uint64 ike_id   = 3;
@@ -375,11 +382,11 @@ message ListIkeSa {
 	repeated ListChildSa childsas = 37;
 }
 
-message IPsecListSasResp {
+message IPsecListSasResponse {
 	repeated ListIkeSa ikesas = 1;
 }
 
-message IPsecListConnsReq {
+message IPsecListConnsRequest {
 	string ike = 1;
 }
 
@@ -432,11 +439,11 @@ message ListConnResp {
 	repeated ListChild children       = 14;
 }
 
-message IPsecListConnsResp {
+message IPsecListConnsResponse {
 	repeated ListConnResp connection = 1;
 }
 
-message IPsecListCertsReq {
+message IPsecListCertsRequest {
 	string type    = 1;
 	string flag    = 2;
 	string subject = 3;
@@ -453,22 +460,22 @@ message ListCert {
 	string notafter          = 7;
 }
 
-message IPsecListCertsResp {
+message IPsecListCertsResponse {
 	repeated ListCert certs = 1;
 }
 
-message IPsecLoadConnReq {
+message IPsecLoadConnRequest {
 	Connection connection = 1;
 }
 
-message IPsecLoadConnResp {
+message IPsecLoadConnResponse {
 	string success = 1;
 }
 
-message IPsecUnloadConnReq {
+message IPsecUnloadConnRequest {
 	string name = 1;
 }
 
-message IPsecUnloadConnResp {
+message IPsecUnloadConnResponse {
 	string success = 1;
 }

@@ -6,3 +6,4 @@ deps:
 lint:
   except:
     - PACKAGE_DIRECTORY_MATCH
+    - RPC_RESPONSE_STANDARD_NAME
