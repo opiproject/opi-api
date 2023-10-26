@@ -122,3 +122,13 @@ Notes:
 Recording at: <https://zoom.us/rec/share/0AmS7-zyh0iVIBtXhjL8zd76vHJL0YdyWKjyLAFyVf6e49qOE8BIoMP3FPc1A5TK.Z_xAU52fbm0csRQ2>
 
 ---
+
+## Sept 28
+
+Topics:
+
+- InfraDB Strategy Discussion for Prototypes
+
+Recording at: <https://zoom.us/rec/share/7649SWZSRLSua92_Q8BGAZjaAhyINri-Bsj9CMzh8qSZuLeUvOzavF2hO16rRseO.Mp8Nu_nPfvNoTzzy>
+
+---
