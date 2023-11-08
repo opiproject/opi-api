@@ -153,14 +153,20 @@ message NvmeRemoteController {
     // Multipath mode
     NvmeMultipath multipath = 2 [(google.api.field_behavior) = REQUIRED];
 
+    // Subsystem NQN
+    string subnqn = 3 [(google.api.field_behavior) = OPTIONAL];
+
+    // Host NQN
+    string hostnqn = 4 [(google.api.field_behavior) = OPTIONAL];
+
     // IO queues count
-    int64 io_queues_count = 3 [(google.api.field_behavior) = OPTIONAL];
+    int64 io_queues_count = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // Queue size
-    int64 queue_size = 4 [(google.api.field_behavior) = OPTIONAL];
+    int64 queue_size = 6 [(google.api.field_behavior) = OPTIONAL];
 
     // Nvme over TCP specific fields
-    TcpController tcp = 5 [(google.api.field_behavior) = OPTIONAL];
+    TcpController tcp = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents parameters specific for TCP target controller
@@ -224,14 +230,8 @@ message FabricsPath {
     // Destination fabrics endpoint
     FabricsEndpoint dst = 1 [(google.api.field_behavior) = REQUIRED];
 
-    // Subsystem NQN
-    string subnqn = 2 [(google.api.field_behavior) = REQUIRED];
-
     // Source fabrics endpoint
     FabricsEndpoint src = 3 [(google.api.field_behavior) = OPTIONAL];
-
-    // Host NQN
-    string hostnqn = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represent Nvme namespace created on bridge after connection to a target
