@@ -215,23 +215,13 @@ message NvmePath {
     // xPU's PCI/Fabrics endpoint for the controller.
     // One of the values is required
     // see https://github.com/aip-dev/google.aip.dev/issues/1147 for field_behavior annotations
-    oneof path {
+    oneof endpoint {
         // Required for pcie transport type.
         PciEndpoint pcie = 4 [(google.api.field_behavior) = OPTIONAL];
 
         // Required for Nvme over fabrics transport types
-        FabricsPath fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
+        FabricsEndpoint fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
     }
-}
-
-// Represents Fabrics transport path parameters
-message FabricsPath {
-
-    // Destination fabrics endpoint
-    FabricsEndpoint dst = 1 [(google.api.field_behavior) = REQUIRED];
-
-    // Source fabrics endpoint
-    FabricsEndpoint src = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represent Nvme namespace created on bridge after connection to a target

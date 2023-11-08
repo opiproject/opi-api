@@ -72,6 +72,14 @@ message FabricsEndpoint {
 
     // address family
     NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
+
+    // source address (e.g. IP of local NIC)
+    // not used for frontend
+    string source_traddr = 4 [(google.api.field_behavior) = OPTIONAL];
+
+    // source port (e.g. Port of local NIC)
+    // not used for frontend
+    string source_trsvcid = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents Volume statistics
