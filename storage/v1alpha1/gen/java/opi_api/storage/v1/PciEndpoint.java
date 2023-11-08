@@ -98,6 +98,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            com.google.protobuf.Int32Value.Builder subBuilder = null;
+            if (domainId_ != null) {
+              subBuilder = domainId_.toBuilder();
+            }
+            domainId_ = input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(domainId_);
+              domainId_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -136,10 +149,13 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Int32Value portId_;
   /**
    * <pre>
+   * for frontend:
    * The "port" or "device". In other words, the connector/cable that's
    * plugged into a particular host. This number may end up matching
    * the host-assigned "device" value in the bus:device:function identifier,
    * but it does not strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "bus" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -151,10 +167,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * for frontend:
    * The "port" or "device". In other words, the connector/cable that's
    * plugged into a particular host. This number may end up matching
    * the host-assigned "device" value in the bus:device:function identifier,
    * but it does not strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "bus" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -166,10 +185,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * for frontend:
    * The "port" or "device". In other words, the connector/cable that's
    * plugged into a particular host. This number may end up matching
    * the host-assigned "device" value in the bus:device:function identifier,
    * but it does not strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "bus" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -183,9 +205,12 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Int32Value physicalFunction_;
   /**
    * <pre>
+   * for frontend:
    * Physical function index. This may end up matching the host-assigned
    * "function" value in the bus:device:function identifier, but it does not
    * strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "device" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -197,9 +222,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * for frontend:
    * Physical function index. This may end up matching the host-assigned
    * "function" value in the bus:device:function identifier, but it does not
    * strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "device" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -211,9 +239,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * for frontend:
    * Physical function index. This may end up matching the host-assigned
    * "function" value in the bus:device:function identifier, but it does not
    * strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "device" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -227,11 +258,14 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Int32Value virtualFunction_;
   /**
    * <pre>
+   * for frontend:
    * Virtual function index. 1-based index.
    * The value 0 is reserved to represent the PCI physical "device".
    * This may end up matching the host-assigned "function" value in the
    * bus:device:function identifier, but it does not strictly have to and
    * that should not be relied upon.
+   * for backend:
+   * Corresponds to "function" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -243,11 +277,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * for frontend:
    * Virtual function index. 1-based index.
    * The value 0 is reserved to represent the PCI physical "device".
    * This may end up matching the host-assigned "function" value in the
    * bus:device:function identifier, but it does not strictly have to and
    * that should not be relied upon.
+   * for backend:
+   * Corresponds to "function" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -259,11 +296,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * for frontend:
    * Virtual function index. 1-based index.
    * The value 0 is reserved to represent the PCI physical "device".
    * This may end up matching the host-assigned "function" value in the
    * bus:device:function identifier, but it does not strictly have to and
    * that should not be relied upon.
+   * for backend:
+   * Corresponds to "function" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -271,6 +311,53 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getVirtualFunctionOrBuilder() {
     return getVirtualFunction();
+  }
+
+  public static final int DOMAIN_ID_FIELD_NUMBER = 4;
+  private com.google.protobuf.Int32Value domainId_;
+  /**
+   * <pre>
+   * for frontend:
+   * Not used
+   * for backend:
+   * Corresponds to pci domain value
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the domainId field is set.
+   */
+  @java.lang.Override
+  public boolean hasDomainId() {
+    return domainId_ != null;
+  }
+  /**
+   * <pre>
+   * for frontend:
+   * Not used
+   * for backend:
+   * Corresponds to pci domain value
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The domainId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int32Value getDomainId() {
+    return domainId_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : domainId_;
+  }
+  /**
+   * <pre>
+   * for frontend:
+   * Not used
+   * for backend:
+   * Corresponds to pci domain value
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int32ValueOrBuilder getDomainIdOrBuilder() {
+    return getDomainId();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -296,6 +383,9 @@ private static final long serialVersionUID = 0L;
     if (virtualFunction_ != null) {
       output.writeMessage(3, getVirtualFunction());
     }
+    if (domainId_ != null) {
+      output.writeMessage(4, getDomainId());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -316,6 +406,10 @@ private static final long serialVersionUID = 0L;
     if (virtualFunction_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getVirtualFunction());
+    }
+    if (domainId_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getDomainId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -347,6 +441,11 @@ private static final long serialVersionUID = 0L;
       if (!getVirtualFunction()
           .equals(other.getVirtualFunction())) return false;
     }
+    if (hasDomainId() != other.hasDomainId()) return false;
+    if (hasDomainId()) {
+      if (!getDomainId()
+          .equals(other.getDomainId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -369,6 +468,10 @@ private static final long serialVersionUID = 0L;
     if (hasVirtualFunction()) {
       hash = (37 * hash) + VIRTUAL_FUNCTION_FIELD_NUMBER;
       hash = (53 * hash) + getVirtualFunction().hashCode();
+    }
+    if (hasDomainId()) {
+      hash = (37 * hash) + DOMAIN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDomainId().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -532,6 +635,12 @@ private static final long serialVersionUID = 0L;
         virtualFunction_ = null;
         virtualFunctionBuilder_ = null;
       }
+      if (domainIdBuilder_ == null) {
+        domainId_ = null;
+      } else {
+        domainId_ = null;
+        domainIdBuilder_ = null;
+      }
       return this;
     }
 
@@ -572,6 +681,11 @@ private static final long serialVersionUID = 0L;
         result.virtualFunction_ = virtualFunction_;
       } else {
         result.virtualFunction_ = virtualFunctionBuilder_.build();
+      }
+      if (domainIdBuilder_ == null) {
+        result.domainId_ = domainId_;
+      } else {
+        result.domainId_ = domainIdBuilder_.build();
       }
       onBuilt();
       return result;
@@ -630,6 +744,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasVirtualFunction()) {
         mergeVirtualFunction(other.getVirtualFunction());
       }
+      if (other.hasDomainId()) {
+        mergeDomainId(other.getDomainId());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -664,10 +781,13 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> portIdBuilder_;
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -678,10 +798,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -696,10 +819,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -719,10 +845,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -740,10 +869,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -765,10 +897,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -786,10 +921,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -801,10 +939,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -819,10 +960,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * The "port" or "device". In other words, the connector/cable that's
      * plugged into a particular host. This number may end up matching
      * the host-assigned "device" value in the bus:device:function identifier,
      * but it does not strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "bus" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -846,9 +990,12 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> physicalFunctionBuilder_;
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -859,9 +1006,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -876,9 +1026,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -898,9 +1051,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -918,9 +1074,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -942,9 +1101,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -962,9 +1124,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -976,9 +1141,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -993,9 +1161,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Physical function index. This may end up matching the host-assigned
      * "function" value in the bus:device:function identifier, but it does not
      * strictly have to and that should not be relied upon.
+     * for backend:
+     * Corresponds to "device" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1019,11 +1190,14 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> virtualFunctionBuilder_;
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1034,11 +1208,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1053,11 +1230,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1077,11 +1257,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1099,11 +1282,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1125,11 +1311,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1147,11 +1336,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1163,11 +1355,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1182,11 +1377,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * for frontend:
      * Virtual function index. 1-based index.
      * The value 0 is reserved to represent the PCI physical "device".
      * This may end up matching the host-assigned "function" value in the
      * bus:device:function identifier, but it does not strictly have to and
      * that should not be relied upon.
+     * for backend:
+     * Corresponds to "function" part of BDF
      * </pre>
      *
      * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1203,6 +1401,188 @@ private static final long serialVersionUID = 0L;
         virtualFunction_ = null;
       }
       return virtualFunctionBuilder_;
+    }
+
+    private com.google.protobuf.Int32Value domainId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> domainIdBuilder_;
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the domainId field is set.
+     */
+    public boolean hasDomainId() {
+      return domainIdBuilder_ != null || domainId_ != null;
+    }
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The domainId.
+     */
+    public com.google.protobuf.Int32Value getDomainId() {
+      if (domainIdBuilder_ == null) {
+        return domainId_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : domainId_;
+      } else {
+        return domainIdBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setDomainId(com.google.protobuf.Int32Value value) {
+      if (domainIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        domainId_ = value;
+        onChanged();
+      } else {
+        domainIdBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setDomainId(
+        com.google.protobuf.Int32Value.Builder builderForValue) {
+      if (domainIdBuilder_ == null) {
+        domainId_ = builderForValue.build();
+        onChanged();
+      } else {
+        domainIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeDomainId(com.google.protobuf.Int32Value value) {
+      if (domainIdBuilder_ == null) {
+        if (domainId_ != null) {
+          domainId_ =
+            com.google.protobuf.Int32Value.newBuilder(domainId_).mergeFrom(value).buildPartial();
+        } else {
+          domainId_ = value;
+        }
+        onChanged();
+      } else {
+        domainIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearDomainId() {
+      if (domainIdBuilder_ == null) {
+        domainId_ = null;
+        onChanged();
+      } else {
+        domainId_ = null;
+        domainIdBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Int32Value.Builder getDomainIdBuilder() {
+      
+      onChanged();
+      return getDomainIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Int32ValueOrBuilder getDomainIdOrBuilder() {
+      if (domainIdBuilder_ != null) {
+        return domainIdBuilder_.getMessageOrBuilder();
+      } else {
+        return domainId_ == null ?
+            com.google.protobuf.Int32Value.getDefaultInstance() : domainId_;
+      }
+    }
+    /**
+     * <pre>
+     * for frontend:
+     * Not used
+     * for backend:
+     * Corresponds to pci domain value
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+        getDomainIdFieldBuilder() {
+      if (domainIdBuilder_ == null) {
+        domainIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
+                getDomainId(),
+                getParentForChildren(),
+                isClean());
+        domainId_ = null;
+      }
+      return domainIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

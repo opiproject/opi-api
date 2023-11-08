@@ -23,7 +23,6 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     controllerNameRef_ = "";
     trtype_ = 0;
-    traddr_ = "";
   }
 
   @java.lang.Override
@@ -75,22 +74,31 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            traddr_ = s;
+            opi_api.storage.v1.PciEndpoint.Builder subBuilder = null;
+            if (endpointCase_ == 4) {
+              subBuilder = ((opi_api.storage.v1.PciEndpoint) endpoint_).toBuilder();
+            }
+            endpoint_ =
+                input.readMessage(opi_api.storage.v1.PciEndpoint.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((opi_api.storage.v1.PciEndpoint) endpoint_);
+              endpoint_ = subBuilder.buildPartial();
+            }
+            endpointCase_ = 4;
             break;
           }
           case 42: {
-            opi_api.storage.v1.FabricsPath.Builder subBuilder = null;
-            if (fabrics_ != null) {
-              subBuilder = fabrics_.toBuilder();
+            opi_api.storage.v1.FabricsEndpoint.Builder subBuilder = null;
+            if (endpointCase_ == 5) {
+              subBuilder = ((opi_api.storage.v1.FabricsEndpoint) endpoint_).toBuilder();
             }
-            fabrics_ = input.readMessage(opi_api.storage.v1.FabricsPath.parser(), extensionRegistry);
+            endpoint_ =
+                input.readMessage(opi_api.storage.v1.FabricsEndpoint.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(fabrics_);
-              fabrics_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom((opi_api.storage.v1.FabricsEndpoint) endpoint_);
+              endpoint_ = subBuilder.buildPartial();
             }
-
+            endpointCase_ = 5;
             break;
           }
           default: {
@@ -125,6 +133,47 @@ private static final long serialVersionUID = 0L;
     return opi_api.storage.v1.BackendNvmeProto.internal_static_opi_api_storage_v1_NvmePath_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             opi_api.storage.v1.NvmePath.class, opi_api.storage.v1.NvmePath.Builder.class);
+  }
+
+  private int endpointCase_ = 0;
+  private java.lang.Object endpoint_;
+  public enum EndpointCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PCIE(4),
+    FABRICS(5),
+    ENDPOINT_NOT_SET(0);
+    private final int value;
+    private EndpointCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EndpointCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static EndpointCase forNumber(int value) {
+      switch (value) {
+        case 4: return PCIE;
+        case 5: return FABRICS;
+        case 0: return ENDPOINT_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public EndpointCase
+  getEndpointCase() {
+    return EndpointCase.forNumber(
+        endpointCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -250,88 +299,90 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.storage.v1.NvmeTransportType.UNRECOGNIZED : result;
   }
 
-  public static final int TRADDR_FIELD_NUMBER = 4;
-  private volatile java.lang.Object traddr_;
+  public static final int PCIE_FIELD_NUMBER = 4;
   /**
    * <pre>
-   * Destination address (e.g. IP address, BDF for local PCIe)
+   * Required for pcie transport type.
    * </pre>
    *
-   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The traddr.
+   * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the pcie field is set.
    */
   @java.lang.Override
-  public java.lang.String getTraddr() {
-    java.lang.Object ref = traddr_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      traddr_ = s;
-      return s;
-    }
+  public boolean hasPcie() {
+    return endpointCase_ == 4;
   }
   /**
    * <pre>
-   * Destination address (e.g. IP address, BDF for local PCIe)
+   * Required for pcie transport type.
    * </pre>
    *
-   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for traddr.
+   * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pcie.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTraddrBytes() {
-    java.lang.Object ref = traddr_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      traddr_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
+  public opi_api.storage.v1.PciEndpoint getPcie() {
+    if (endpointCase_ == 4) {
+       return (opi_api.storage.v1.PciEndpoint) endpoint_;
     }
+    return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Required for pcie transport type.
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.PciEndpointOrBuilder getPcieOrBuilder() {
+    if (endpointCase_ == 4) {
+       return (opi_api.storage.v1.PciEndpoint) endpoint_;
+    }
+    return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
   }
 
   public static final int FABRICS_FIELD_NUMBER = 5;
-  private opi_api.storage.v1.FabricsPath fabrics_;
   /**
    * <pre>
-   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+   * Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the fabrics field is set.
    */
   @java.lang.Override
   public boolean hasFabrics() {
-    return fabrics_ != null;
+    return endpointCase_ == 5;
   }
   /**
    * <pre>
-   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+   * Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The fabrics.
    */
   @java.lang.Override
-  public opi_api.storage.v1.FabricsPath getFabrics() {
-    return fabrics_ == null ? opi_api.storage.v1.FabricsPath.getDefaultInstance() : fabrics_;
+  public opi_api.storage.v1.FabricsEndpoint getFabrics() {
+    if (endpointCase_ == 5) {
+       return (opi_api.storage.v1.FabricsEndpoint) endpoint_;
+    }
+    return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
   }
   /**
    * <pre>
-   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+   * Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder() {
-    return getFabrics();
+  public opi_api.storage.v1.FabricsEndpointOrBuilder getFabricsOrBuilder() {
+    if (endpointCase_ == 5) {
+       return (opi_api.storage.v1.FabricsEndpoint) endpoint_;
+    }
+    return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -357,11 +408,11 @@ private static final long serialVersionUID = 0L;
     if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, trtype_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, traddr_);
+    if (endpointCase_ == 4) {
+      output.writeMessage(4, (opi_api.storage.v1.PciEndpoint) endpoint_);
     }
-    if (fabrics_ != null) {
-      output.writeMessage(5, getFabrics());
+    if (endpointCase_ == 5) {
+      output.writeMessage(5, (opi_api.storage.v1.FabricsEndpoint) endpoint_);
     }
     unknownFields.writeTo(output);
   }
@@ -382,12 +433,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, trtype_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, traddr_);
-    }
-    if (fabrics_ != null) {
+    if (endpointCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getFabrics());
+        .computeMessageSize(4, (opi_api.storage.v1.PciEndpoint) endpoint_);
+    }
+    if (endpointCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (opi_api.storage.v1.FabricsEndpoint) endpoint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -409,12 +461,18 @@ private static final long serialVersionUID = 0L;
     if (!getControllerNameRef()
         .equals(other.getControllerNameRef())) return false;
     if (trtype_ != other.trtype_) return false;
-    if (!getTraddr()
-        .equals(other.getTraddr())) return false;
-    if (hasFabrics() != other.hasFabrics()) return false;
-    if (hasFabrics()) {
-      if (!getFabrics()
-          .equals(other.getFabrics())) return false;
+    if (!getEndpointCase().equals(other.getEndpointCase())) return false;
+    switch (endpointCase_) {
+      case 4:
+        if (!getPcie()
+            .equals(other.getPcie())) return false;
+        break;
+      case 5:
+        if (!getFabrics()
+            .equals(other.getFabrics())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -433,11 +491,17 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getControllerNameRef().hashCode();
     hash = (37 * hash) + TRTYPE_FIELD_NUMBER;
     hash = (53 * hash) + trtype_;
-    hash = (37 * hash) + TRADDR_FIELD_NUMBER;
-    hash = (53 * hash) + getTraddr().hashCode();
-    if (hasFabrics()) {
-      hash = (37 * hash) + FABRICS_FIELD_NUMBER;
-      hash = (53 * hash) + getFabrics().hashCode();
+    switch (endpointCase_) {
+      case 4:
+        hash = (37 * hash) + PCIE_FIELD_NUMBER;
+        hash = (53 * hash) + getPcie().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + FABRICS_FIELD_NUMBER;
+        hash = (53 * hash) + getFabrics().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -582,14 +646,8 @@ private static final long serialVersionUID = 0L;
 
       trtype_ = 0;
 
-      traddr_ = "";
-
-      if (fabricsBuilder_ == null) {
-        fabrics_ = null;
-      } else {
-        fabrics_ = null;
-        fabricsBuilder_ = null;
-      }
+      endpointCase_ = 0;
+      endpoint_ = null;
       return this;
     }
 
@@ -619,12 +677,21 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.controllerNameRef_ = controllerNameRef_;
       result.trtype_ = trtype_;
-      result.traddr_ = traddr_;
-      if (fabricsBuilder_ == null) {
-        result.fabrics_ = fabrics_;
-      } else {
-        result.fabrics_ = fabricsBuilder_.build();
+      if (endpointCase_ == 4) {
+        if (pcieBuilder_ == null) {
+          result.endpoint_ = endpoint_;
+        } else {
+          result.endpoint_ = pcieBuilder_.build();
+        }
       }
+      if (endpointCase_ == 5) {
+        if (fabricsBuilder_ == null) {
+          result.endpoint_ = endpoint_;
+        } else {
+          result.endpoint_ = fabricsBuilder_.build();
+        }
+      }
+      result.endpointCase_ = endpointCase_;
       onBuilt();
       return result;
     }
@@ -684,12 +751,18 @@ private static final long serialVersionUID = 0L;
       if (other.trtype_ != 0) {
         setTrtypeValue(other.getTrtypeValue());
       }
-      if (!other.getTraddr().isEmpty()) {
-        traddr_ = other.traddr_;
-        onChanged();
-      }
-      if (other.hasFabrics()) {
-        mergeFabrics(other.getFabrics());
+      switch (other.getEndpointCase()) {
+        case PCIE: {
+          mergePcie(other.getPcie());
+          break;
+        }
+        case FABRICS: {
+          mergeFabrics(other.getFabrics());
+          break;
+        }
+        case ENDPOINT_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -719,6 +792,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int endpointCase_ = 0;
+    private java.lang.Object endpoint_;
+    public EndpointCase
+        getEndpointCase() {
+      return EndpointCase.forNumber(
+          endpointCase_);
+    }
+
+    public Builder clearEndpoint() {
+      endpointCase_ = 0;
+      endpoint_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private java.lang.Object name_ = "";
     /**
@@ -996,254 +1084,359 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object traddr_ = "";
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> pcieBuilder_;
     /**
      * <pre>
-     * Destination address (e.g. IP address, BDF for local PCIe)
+     * Required for pcie transport type.
      * </pre>
      *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The traddr.
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the pcie field is set.
      */
-    public java.lang.String getTraddr() {
-      java.lang.Object ref = traddr_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        traddr_ = s;
-        return s;
+    @java.lang.Override
+    public boolean hasPcie() {
+      return endpointCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Required for pcie transport type.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The pcie.
+     */
+    @java.lang.Override
+    public opi_api.storage.v1.PciEndpoint getPcie() {
+      if (pcieBuilder_ == null) {
+        if (endpointCase_ == 4) {
+          return (opi_api.storage.v1.PciEndpoint) endpoint_;
+        }
+        return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
       } else {
-        return (java.lang.String) ref;
+        if (endpointCase_ == 4) {
+          return pcieBuilder_.getMessage();
+        }
+        return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * Destination address (e.g. IP address, BDF for local PCIe)
+     * Required for pcie transport type.
      * </pre>
      *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for traddr.
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public com.google.protobuf.ByteString
-        getTraddrBytes() {
-      java.lang.Object ref = traddr_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        traddr_ = b;
-        return b;
+    public Builder setPcie(opi_api.storage.v1.PciEndpoint value) {
+      if (pcieBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endpoint_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        pcieBuilder_.setMessage(value);
+      }
+      endpointCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Required for pcie transport type.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setPcie(
+        opi_api.storage.v1.PciEndpoint.Builder builderForValue) {
+      if (pcieBuilder_ == null) {
+        endpoint_ = builderForValue.build();
+        onChanged();
+      } else {
+        pcieBuilder_.setMessage(builderForValue.build());
+      }
+      endpointCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Required for pcie transport type.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergePcie(opi_api.storage.v1.PciEndpoint value) {
+      if (pcieBuilder_ == null) {
+        if (endpointCase_ == 4 &&
+            endpoint_ != opi_api.storage.v1.PciEndpoint.getDefaultInstance()) {
+          endpoint_ = opi_api.storage.v1.PciEndpoint.newBuilder((opi_api.storage.v1.PciEndpoint) endpoint_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          endpoint_ = value;
+        }
+        onChanged();
+      } else {
+        if (endpointCase_ == 4) {
+          pcieBuilder_.mergeFrom(value);
+        } else {
+          pcieBuilder_.setMessage(value);
+        }
+      }
+      endpointCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Required for pcie transport type.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearPcie() {
+      if (pcieBuilder_ == null) {
+        if (endpointCase_ == 4) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+          onChanged();
+        }
+      } else {
+        if (endpointCase_ == 4) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+        }
+        pcieBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Required for pcie transport type.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public opi_api.storage.v1.PciEndpoint.Builder getPcieBuilder() {
+      return getPcieFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Required for pcie transport type.
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public opi_api.storage.v1.PciEndpointOrBuilder getPcieOrBuilder() {
+      if ((endpointCase_ == 4) && (pcieBuilder_ != null)) {
+        return pcieBuilder_.getMessageOrBuilder();
+      } else {
+        if (endpointCase_ == 4) {
+          return (opi_api.storage.v1.PciEndpoint) endpoint_;
+        }
+        return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * Destination address (e.g. IP address, BDF for local PCIe)
+     * Required for pcie transport type.
      * </pre>
      *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The traddr to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder setTraddr(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      traddr_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Destination address (e.g. IP address, BDF for local PCIe)
-     * </pre>
-     *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTraddr() {
-      
-      traddr_ = getDefaultInstance().getTraddr();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Destination address (e.g. IP address, BDF for local PCIe)
-     * </pre>
-     *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for traddr to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTraddrBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      traddr_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> 
+        getPcieFieldBuilder() {
+      if (pcieBuilder_ == null) {
+        if (!(endpointCase_ == 4)) {
+          endpoint_ = opi_api.storage.v1.PciEndpoint.getDefaultInstance();
+        }
+        pcieBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder>(
+                (opi_api.storage.v1.PciEndpoint) endpoint_,
+                getParentForChildren(),
+                isClean());
+        endpoint_ = null;
+      }
+      endpointCase_ = 4;
+      onChanged();;
+      return pcieBuilder_;
     }
 
-    private opi_api.storage.v1.FabricsPath fabrics_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.FabricsPath, opi_api.storage.v1.FabricsPath.Builder, opi_api.storage.v1.FabricsPathOrBuilder> fabricsBuilder_;
+        opi_api.storage.v1.FabricsEndpoint, opi_api.storage.v1.FabricsEndpoint.Builder, opi_api.storage.v1.FabricsEndpointOrBuilder> fabricsBuilder_;
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the fabrics field is set.
      */
+    @java.lang.Override
     public boolean hasFabrics() {
-      return fabricsBuilder_ != null || fabrics_ != null;
+      return endpointCase_ == 5;
     }
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The fabrics.
      */
-    public opi_api.storage.v1.FabricsPath getFabrics() {
+    @java.lang.Override
+    public opi_api.storage.v1.FabricsEndpoint getFabrics() {
       if (fabricsBuilder_ == null) {
-        return fabrics_ == null ? opi_api.storage.v1.FabricsPath.getDefaultInstance() : fabrics_;
+        if (endpointCase_ == 5) {
+          return (opi_api.storage.v1.FabricsEndpoint) endpoint_;
+        }
+        return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
       } else {
-        return fabricsBuilder_.getMessage();
+        if (endpointCase_ == 5) {
+          return fabricsBuilder_.getMessage();
+        }
+        return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder setFabrics(opi_api.storage.v1.FabricsPath value) {
+    public Builder setFabrics(opi_api.storage.v1.FabricsEndpoint value) {
       if (fabricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        fabrics_ = value;
+        endpoint_ = value;
         onChanged();
       } else {
         fabricsBuilder_.setMessage(value);
       }
-
+      endpointCase_ = 5;
       return this;
     }
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFabrics(
-        opi_api.storage.v1.FabricsPath.Builder builderForValue) {
+        opi_api.storage.v1.FabricsEndpoint.Builder builderForValue) {
       if (fabricsBuilder_ == null) {
-        fabrics_ = builderForValue.build();
+        endpoint_ = builderForValue.build();
         onChanged();
       } else {
         fabricsBuilder_.setMessage(builderForValue.build());
       }
-
+      endpointCase_ = 5;
       return this;
     }
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder mergeFabrics(opi_api.storage.v1.FabricsPath value) {
+    public Builder mergeFabrics(opi_api.storage.v1.FabricsEndpoint value) {
       if (fabricsBuilder_ == null) {
-        if (fabrics_ != null) {
-          fabrics_ =
-            opi_api.storage.v1.FabricsPath.newBuilder(fabrics_).mergeFrom(value).buildPartial();
+        if (endpointCase_ == 5 &&
+            endpoint_ != opi_api.storage.v1.FabricsEndpoint.getDefaultInstance()) {
+          endpoint_ = opi_api.storage.v1.FabricsEndpoint.newBuilder((opi_api.storage.v1.FabricsEndpoint) endpoint_)
+              .mergeFrom(value).buildPartial();
         } else {
-          fabrics_ = value;
+          endpoint_ = value;
         }
         onChanged();
       } else {
-        fabricsBuilder_.mergeFrom(value);
+        if (endpointCase_ == 5) {
+          fabricsBuilder_.mergeFrom(value);
+        } else {
+          fabricsBuilder_.setMessage(value);
+        }
       }
-
+      endpointCase_ = 5;
       return this;
     }
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearFabrics() {
       if (fabricsBuilder_ == null) {
-        fabrics_ = null;
-        onChanged();
+        if (endpointCase_ == 5) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+          onChanged();
+        }
       } else {
-        fabrics_ = null;
-        fabricsBuilder_ = null;
+        if (endpointCase_ == 5) {
+          endpointCase_ = 0;
+          endpoint_ = null;
+        }
+        fabricsBuilder_.clear();
       }
-
       return this;
     }
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public opi_api.storage.v1.FabricsPath.Builder getFabricsBuilder() {
-      
-      onChanged();
+    public opi_api.storage.v1.FabricsEndpoint.Builder getFabricsBuilder() {
       return getFabricsFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder() {
-      if (fabricsBuilder_ != null) {
+    @java.lang.Override
+    public opi_api.storage.v1.FabricsEndpointOrBuilder getFabricsOrBuilder() {
+      if ((endpointCase_ == 5) && (fabricsBuilder_ != null)) {
         return fabricsBuilder_.getMessageOrBuilder();
       } else {
-        return fabrics_ == null ?
-            opi_api.storage.v1.FabricsPath.getDefaultInstance() : fabrics_;
+        if (endpointCase_ == 5) {
+          return (opi_api.storage.v1.FabricsEndpoint) endpoint_;
+        }
+        return opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+     * Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.FabricsPath, opi_api.storage.v1.FabricsPath.Builder, opi_api.storage.v1.FabricsPathOrBuilder> 
+        opi_api.storage.v1.FabricsEndpoint, opi_api.storage.v1.FabricsEndpoint.Builder, opi_api.storage.v1.FabricsEndpointOrBuilder> 
         getFabricsFieldBuilder() {
       if (fabricsBuilder_ == null) {
+        if (!(endpointCase_ == 5)) {
+          endpoint_ = opi_api.storage.v1.FabricsEndpoint.getDefaultInstance();
+        }
         fabricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.storage.v1.FabricsPath, opi_api.storage.v1.FabricsPath.Builder, opi_api.storage.v1.FabricsPathOrBuilder>(
-                getFabrics(),
+            opi_api.storage.v1.FabricsEndpoint, opi_api.storage.v1.FabricsEndpoint.Builder, opi_api.storage.v1.FabricsEndpointOrBuilder>(
+                (opi_api.storage.v1.FabricsEndpoint) endpoint_,
                 getParentForChildren(),
                 isClean());
-        fabrics_ = null;
+        endpoint_ = null;
       }
+      endpointCase_ = 5;
+      onChanged();;
       return fabricsBuilder_;
     }
     @java.lang.Override

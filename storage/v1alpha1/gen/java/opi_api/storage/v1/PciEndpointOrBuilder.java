@@ -9,10 +9,13 @@ public interface PciEndpointOrBuilder extends
 
   /**
    * <pre>
+   * for frontend:
    * The "port" or "device". In other words, the connector/cable that's
    * plugged into a particular host. This number may end up matching
    * the host-assigned "device" value in the bus:device:function identifier,
    * but it does not strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "bus" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21,10 +24,13 @@ public interface PciEndpointOrBuilder extends
   boolean hasPortId();
   /**
    * <pre>
+   * for frontend:
    * The "port" or "device". In other words, the connector/cable that's
    * plugged into a particular host. This number may end up matching
    * the host-assigned "device" value in the bus:device:function identifier,
    * but it does not strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "bus" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -33,10 +39,13 @@ public interface PciEndpointOrBuilder extends
   com.google.protobuf.Int32Value getPortId();
   /**
    * <pre>
+   * for frontend:
    * The "port" or "device". In other words, the connector/cable that's
    * plugged into a particular host. This number may end up matching
    * the host-assigned "device" value in the bus:device:function identifier,
    * but it does not strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "bus" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,9 +54,12 @@ public interface PciEndpointOrBuilder extends
 
   /**
    * <pre>
+   * for frontend:
    * Physical function index. This may end up matching the host-assigned
    * "function" value in the bus:device:function identifier, but it does not
    * strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "device" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,9 +68,12 @@ public interface PciEndpointOrBuilder extends
   boolean hasPhysicalFunction();
   /**
    * <pre>
+   * for frontend:
    * Physical function index. This may end up matching the host-assigned
    * "function" value in the bus:device:function identifier, but it does not
    * strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "device" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,9 +82,12 @@ public interface PciEndpointOrBuilder extends
   com.google.protobuf.Int32Value getPhysicalFunction();
   /**
    * <pre>
+   * for frontend:
    * Physical function index. This may end up matching the host-assigned
    * "function" value in the bus:device:function identifier, but it does not
    * strictly have to and that should not be relied upon.
+   * for backend:
+   * Corresponds to "device" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value physical_function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -78,11 +96,14 @@ public interface PciEndpointOrBuilder extends
 
   /**
    * <pre>
+   * for frontend:
    * Virtual function index. 1-based index.
    * The value 0 is reserved to represent the PCI physical "device".
    * This may end up matching the host-assigned "function" value in the
    * bus:device:function identifier, but it does not strictly have to and
    * that should not be relied upon.
+   * for backend:
+   * Corresponds to "function" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,11 +112,14 @@ public interface PciEndpointOrBuilder extends
   boolean hasVirtualFunction();
   /**
    * <pre>
+   * for frontend:
    * Virtual function index. 1-based index.
    * The value 0 is reserved to represent the PCI physical "device".
    * This may end up matching the host-assigned "function" value in the
    * bus:device:function identifier, but it does not strictly have to and
    * that should not be relied upon.
+   * for backend:
+   * Corresponds to "function" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -104,14 +128,53 @@ public interface PciEndpointOrBuilder extends
   com.google.protobuf.Int32Value getVirtualFunction();
   /**
    * <pre>
+   * for frontend:
    * Virtual function index. 1-based index.
    * The value 0 is reserved to represent the PCI physical "device".
    * This may end up matching the host-assigned "function" value in the
    * bus:device:function identifier, but it does not strictly have to and
    * that should not be relied upon.
+   * for backend:
+   * Corresponds to "function" part of BDF
    * </pre>
    *
    * <code>.google.protobuf.Int32Value virtual_function = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.Int32ValueOrBuilder getVirtualFunctionOrBuilder();
+
+  /**
+   * <pre>
+   * for frontend:
+   * Not used
+   * for backend:
+   * Corresponds to pci domain value
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the domainId field is set.
+   */
+  boolean hasDomainId();
+  /**
+   * <pre>
+   * for frontend:
+   * Not used
+   * for backend:
+   * Corresponds to pci domain value
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The domainId.
+   */
+  com.google.protobuf.Int32Value getDomainId();
+  /**
+   * <pre>
+   * for frontend:
+   * Not used
+   * for backend:
+   * Corresponds to pci domain value
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.Int32ValueOrBuilder getDomainIdOrBuilder();
 }

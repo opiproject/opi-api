@@ -72,48 +72,57 @@ public interface NvmePathOrBuilder extends
 
   /**
    * <pre>
-   * Destination address (e.g. IP address, BDF for local PCIe)
+   * Required for pcie transport type.
    * </pre>
    *
-   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The traddr.
+   * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the pcie field is set.
    */
-  java.lang.String getTraddr();
+  boolean hasPcie();
   /**
    * <pre>
-   * Destination address (e.g. IP address, BDF for local PCIe)
+   * Required for pcie transport type.
    * </pre>
    *
-   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for traddr.
+   * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pcie.
    */
-  com.google.protobuf.ByteString
-      getTraddrBytes();
+  opi_api.storage.v1.PciEndpoint getPcie();
+  /**
+   * <pre>
+   * Required for pcie transport type.
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.PciEndpoint pcie = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  opi_api.storage.v1.PciEndpointOrBuilder getPcieOrBuilder();
 
   /**
    * <pre>
-   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+   * Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the fabrics field is set.
    */
   boolean hasFabrics();
   /**
    * <pre>
-   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+   * Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The fabrics.
    */
-  opi_api.storage.v1.FabricsPath getFabrics();
+  opi_api.storage.v1.FabricsEndpoint getFabrics();
   /**
    * <pre>
-   * Not applicable for local PCIe. Required for Nvme over fabrics transport types
+   * Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsEndpoint fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder();
+  opi_api.storage.v1.FabricsEndpointOrBuilder getFabricsOrBuilder();
+
+  public opi_api.storage.v1.NvmePath.EndpointCase getEndpointCase();
 }

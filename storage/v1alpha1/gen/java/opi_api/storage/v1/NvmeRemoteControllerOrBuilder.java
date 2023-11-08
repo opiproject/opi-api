@@ -52,10 +52,50 @@ public interface NvmeRemoteControllerOrBuilder extends
 
   /**
    * <pre>
+   * Subsystem NQN
+   * </pre>
+   *
+   * <code>string subnqn = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The subnqn.
+   */
+  java.lang.String getSubnqn();
+  /**
+   * <pre>
+   * Subsystem NQN
+   * </pre>
+   *
+   * <code>string subnqn = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for subnqn.
+   */
+  com.google.protobuf.ByteString
+      getSubnqnBytes();
+
+  /**
+   * <pre>
+   * Host NQN
+   * </pre>
+   *
+   * <code>string hostnqn = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The hostnqn.
+   */
+  java.lang.String getHostnqn();
+  /**
+   * <pre>
+   * Host NQN
+   * </pre>
+   *
+   * <code>string hostnqn = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for hostnqn.
+   */
+  com.google.protobuf.ByteString
+      getHostnqnBytes();
+
+  /**
+   * <pre>
    * IO queues count
    * </pre>
    *
-   * <code>int64 io_queues_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int64 io_queues_count = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The ioQueuesCount.
    */
   long getIoQueuesCount();
@@ -65,7 +105,7 @@ public interface NvmeRemoteControllerOrBuilder extends
    * Queue size
    * </pre>
    *
-   * <code>int64 queue_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int64 queue_size = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The queueSize.
    */
   long getQueueSize();
@@ -75,7 +115,7 @@ public interface NvmeRemoteControllerOrBuilder extends
    * Nvme over TCP specific fields
    * </pre>
    *
-   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.TcpController tcp = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the tcp field is set.
    */
   boolean hasTcp();
@@ -84,7 +124,7 @@ public interface NvmeRemoteControllerOrBuilder extends
    * Nvme over TCP specific fields
    * </pre>
    *
-   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.TcpController tcp = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The tcp.
    */
   opi_api.storage.v1.TcpController getTcp();
@@ -93,7 +133,7 @@ public interface NvmeRemoteControllerOrBuilder extends
    * Nvme over TCP specific fields
    * </pre>
    *
-   * <code>.opi_api.storage.v1.TcpController tcp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.TcpController tcp = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.TcpControllerOrBuilder getTcpOrBuilder();
 }
