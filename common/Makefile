@@ -22,3 +22,7 @@ all:
 	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -w /out --entrypoint=sh ghcr.io/docker-multiarch/google-api-linter:1.59.2 -c "api-linter /out/*.proto --output-format github --set-exit-status"
 	rm -rf "${PWD}"/v1/google
 
+buf:
+	buf lint
+	buf generate --template ../buf.gen.yaml -o v1
+

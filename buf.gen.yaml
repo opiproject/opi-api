@@ -1,14 +1,17 @@
 version: v1
 plugins:
 - plugin: go
-  out: proto/go
+  out: gen/go
   opt: paths=source_relative
 - plugin: go-grpc
-  out: proto/go
+  out: gen/go
   opt: paths=source_relative
 - name: grpc-gateway
-  out: ./proto/go
-  opt:
-  - paths=source_relative
+  out: ./gen/go
+  opt: paths=source_relative
+- plugin: buf.build/grpc/python:v1.59.2
+  out: gen/python
+- plugin: buf.build/protocolbuffers/python
+  out: gen/python
 
 

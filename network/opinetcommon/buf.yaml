@@ -1,5 +1,13 @@
-version: v1beta1
+version: v1
 name: buf.build/opiproject/opinetcommon
 deps:
 - buf.build/googleapis/googleapis
 - buf.build/grpc-ecosystem/grpc-gateway
+lint:
+  except:
+    - PACKAGE_DIRECTORY_MATCH
+    # Don't check standard name as that causes google aip issues
+    - RPC_RESPONSE_STANDARD_NAME
+    # Allow same name used in request/response type for multiple RPCs
+    - RPC_REQUEST_RESPONSE_UNIQUE
+    - ENUM_ZERO_VALUE_SUFFIX

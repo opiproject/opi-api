@@ -34,25 +34,25 @@
     - [WildcardMatch](#opi_api-network-opinetcommon-v1alpha1-WildcardMatch)
   
 - [openconfig_interfaces.proto](#openconfig_interfaces-proto)
-    - [Config](#opi_api-network-v1alpha1-Config)
-    - [Counters](#opi_api-network-v1alpha1-Counters)
-    - [GetNetInterfaceRequest](#opi_api-network-v1alpha1-GetNetInterfaceRequest)
-    - [ListNetInterfacesRequest](#opi_api-network-v1alpha1-ListNetInterfacesRequest)
-    - [ListNetInterfacesResponse](#opi_api-network-v1alpha1-ListNetInterfacesResponse)
-    - [NetInterface](#opi_api-network-v1alpha1-NetInterface)
-    - [NetInterface.HoldTime](#opi_api-network-v1alpha1-NetInterface-HoldTime)
-    - [NetInterface.HoldTime.HoldConfig](#opi_api-network-v1alpha1-NetInterface-HoldTime-HoldConfig)
-    - [NetInterface.HoldTime.HoldState](#opi_api-network-v1alpha1-NetInterface-HoldTime-HoldState)
-    - [NetInterface.Subinterfaces](#opi_api-network-v1alpha1-NetInterface-Subinterfaces)
-    - [NetInterface.Subinterfaces.Subinterface](#opi_api-network-v1alpha1-NetInterface-Subinterfaces-Subinterface)
-    - [NetInterface.Subinterfaces.Subinterface.SubifConfig](#opi_api-network-v1alpha1-NetInterface-Subinterfaces-Subinterface-SubifConfig)
-    - [State](#opi_api-network-v1alpha1-State)
-    - [UpdateNetInterfaceRequest](#opi_api-network-v1alpha1-UpdateNetInterfaceRequest)
+    - [Config](#opi_api-network-opinetcommon-v1alpha1-Config)
+    - [Counters](#opi_api-network-opinetcommon-v1alpha1-Counters)
+    - [GetNetInterfaceRequest](#opi_api-network-opinetcommon-v1alpha1-GetNetInterfaceRequest)
+    - [ListNetInterfacesRequest](#opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesRequest)
+    - [ListNetInterfacesResponse](#opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesResponse)
+    - [NetInterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface)
+    - [NetInterface.HoldTime](#opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime)
+    - [NetInterface.HoldTime.HoldConfig](#opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime-HoldConfig)
+    - [NetInterface.HoldTime.HoldState](#opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime-HoldState)
+    - [NetInterface.Subinterfaces](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces)
+    - [NetInterface.Subinterfaces.Subinterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface)
+    - [NetInterface.Subinterfaces.Subinterface.SubifConfig](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface-SubifConfig)
+    - [State](#opi_api-network-opinetcommon-v1alpha1-State)
+    - [UpdateNetInterfaceRequest](#opi_api-network-opinetcommon-v1alpha1-UpdateNetInterfaceRequest)
   
-    - [InterfaceType](#opi_api-network-v1alpha1-InterfaceType)
-    - [OperState](#opi_api-network-v1alpha1-OperState)
+    - [InterfaceType](#opi_api-network-opinetcommon-v1alpha1-InterfaceType)
+    - [OperState](#opi_api-network-opinetcommon-v1alpha1-OperState)
   
-    - [NetInterfaceService](#opi_api-network-v1alpha1-NetInterfaceService)
+    - [NetInterfaceService](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceService)
   
 - [uuid.proto](#uuid-proto)
     - [Uuid](#opi_api-common-v1-Uuid)
@@ -493,8 +493,8 @@ WildcardMatch options
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| MATCH_NONE | 0 | wouldn&#39;t match anything (-- api-linter: core::0126::unspecified=disabled aip.dev/not-precedent: NONE means don&#39;t match anything. --) |
-| MATCH_ANY | 256 | match everything |
+| WILDCARD_MATCH_NONE | 0 | wouldn&#39;t match anything (-- api-linter: core::0126::unspecified=disabled aip.dev/not-precedent: NONE means don&#39;t match anything. --) |
+| WILDCARD_MATCH_ANY | 256 | match everything |
 
 
  
@@ -516,7 +516,7 @@ Copyright (c) 2023 Dell Inc, or its subsidiaries.
     aip.dev/not-precedent: counters, mtu, index must be uint and not int. --)
 
 
-<a name="opi_api-network-v1alpha1-Config"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-Config"></a>
 
 ### Config
 Interface config
@@ -527,7 +527,7 @@ Interface config
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Name of the interface. This is the opaque object used for designating the created interface. |
-| type | [InterfaceType](#opi_api-network-v1alpha1-InterfaceType) |  | Type of interface - Ethernet and others |
+| type | [InterfaceType](#opi_api-network-opinetcommon-v1alpha1-InterfaceType) |  | Type of interface - Ethernet and others |
 | mtu | [uint32](#uint32) |  | MTU for the interface that can be configured |
 | loopback_mode | [bool](#bool) |  | Setting the loopback mode of the interface |
 | description | [string](#string) |  | Description of the interface and usage |
@@ -538,7 +538,7 @@ Interface config
 
 
 
-<a name="opi_api-network-v1alpha1-Counters"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-Counters"></a>
 
 ### Counters
 Statistics Counters for the interface - ro
@@ -570,7 +570,7 @@ Statistics Counters for the interface - ro
 
 
 
-<a name="opi_api-network-v1alpha1-GetNetInterfaceRequest"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-GetNetInterfaceRequest"></a>
 
 ### GetNetInterfaceRequest
 Get Interface Request
@@ -585,7 +585,7 @@ Get Interface Request
 
 
 
-<a name="opi_api-network-v1alpha1-ListNetInterfacesRequest"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesRequest"></a>
 
 ### ListNetInterfacesRequest
 List Interfaces Request
@@ -602,7 +602,7 @@ List Interfaces Request
 
 
 
-<a name="opi_api-network-v1alpha1-ListNetInterfacesResponse"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesResponse"></a>
 
 ### ListNetInterfacesResponse
 List of Interfaces Response
@@ -610,7 +610,7 @@ List of Interfaces Response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| net_interfaces | [NetInterface](#opi_api-network-v1alpha1-NetInterface) | repeated | List of interfaces |
+| net_interfaces | [NetInterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface) | repeated | List of interfaces |
 | next_page_token | [string](#string) |  | next page token |
 
 
@@ -618,7 +618,7 @@ List of Interfaces Response
 
 
 
-<a name="opi_api-network-v1alpha1-NetInterface"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterface"></a>
 
 ### NetInterface
 Interface - physical or virtual interface reported
@@ -627,17 +627,17 @@ Interface - physical or virtual interface reported
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Name of the interface. This is an opaque object that is not user settable. It is returned by the created object |
-| config | [Config](#opi_api-network-v1alpha1-Config) |  | Configuration settings - rw |
-| state | [State](#opi_api-network-v1alpha1-State) |  | Interface State and Statistics - ro |
-| holdtime | [NetInterface.HoldTime](#opi_api-network-v1alpha1-NetInterface-HoldTime) |  | Hold Time Settings |
-| subinterfaces | [NetInterface.Subinterfaces](#opi_api-network-v1alpha1-NetInterface-Subinterfaces) |  | Subinterfaces assigned to the interface |
+| config | [Config](#opi_api-network-opinetcommon-v1alpha1-Config) |  | Configuration settings - rw |
+| state | [State](#opi_api-network-opinetcommon-v1alpha1-State) |  | Interface State and Statistics - ro |
+| holdtime | [NetInterface.HoldTime](#opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime) |  | Hold Time Settings |
+| subinterfaces | [NetInterface.Subinterfaces](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces) |  | Subinterfaces assigned to the interface |
 
 
 
 
 
 
-<a name="opi_api-network-v1alpha1-NetInterface-HoldTime"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime"></a>
 
 ### NetInterface.HoldTime
 Hold Time Settings
@@ -645,15 +645,15 @@ Hold Time Settings
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| hold_config | [NetInterface.HoldTime.HoldConfig](#opi_api-network-v1alpha1-NetInterface-HoldTime-HoldConfig) |  | Hold Time Config |
-| hold_state | [NetInterface.HoldTime.HoldState](#opi_api-network-v1alpha1-NetInterface-HoldTime-HoldState) |  | Hold State Settings |
+| hold_config | [NetInterface.HoldTime.HoldConfig](#opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime-HoldConfig) |  | Hold Time Config |
+| hold_state | [NetInterface.HoldTime.HoldState](#opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime-HoldState) |  | Hold State Settings |
 
 
 
 
 
 
-<a name="opi_api-network-v1alpha1-NetInterface-HoldTime-HoldConfig"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime-HoldConfig"></a>
 
 ### NetInterface.HoldTime.HoldConfig
 Hold Time Config - rw
@@ -669,7 +669,7 @@ Hold Time Config - rw
 
 
 
-<a name="opi_api-network-v1alpha1-NetInterface-HoldTime-HoldState"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime-HoldState"></a>
 
 ### NetInterface.HoldTime.HoldState
 Hold State Settings - ro
@@ -685,7 +685,7 @@ Hold State Settings - ro
 
 
 
-<a name="opi_api-network-v1alpha1-NetInterface-Subinterfaces"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces"></a>
 
 ### NetInterface.Subinterfaces
 Subinterfaces settings - VLAN, etc.
@@ -693,14 +693,14 @@ Subinterfaces settings - VLAN, etc.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subinterface | [NetInterface.Subinterfaces.Subinterface](#opi_api-network-v1alpha1-NetInterface-Subinterfaces-Subinterface) | repeated | Subinterface Settings |
+| subinterface | [NetInterface.Subinterfaces.Subinterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface) | repeated | Subinterface Settings |
 
 
 
 
 
 
-<a name="opi_api-network-v1alpha1-NetInterface-Subinterfaces-Subinterface"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface"></a>
 
 ### NetInterface.Subinterfaces.Subinterface
 Subinterface settings
@@ -709,15 +709,15 @@ Subinterface settings
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | index | [int64](#int64) |  | Subinterface index |
-| subif_config | [NetInterface.Subinterfaces.Subinterface.SubifConfig](#opi_api-network-v1alpha1-NetInterface-Subinterfaces-Subinterface-SubifConfig) |  | Subinterface Configuration |
-| state | [State](#opi_api-network-v1alpha1-State) |  | Subinterface State and Statistics |
+| subif_config | [NetInterface.Subinterfaces.Subinterface.SubifConfig](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface-SubifConfig) |  | Subinterface Configuration |
+| state | [State](#opi_api-network-opinetcommon-v1alpha1-State) |  | Subinterface State and Statistics |
 
 
 
 
 
 
-<a name="opi_api-network-v1alpha1-NetInterface-Subinterfaces-Subinterface-SubifConfig"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface-SubifConfig"></a>
 
 ### NetInterface.Subinterfaces.Subinterface.SubifConfig
 Subinterface configuration
@@ -734,7 +734,7 @@ Subinterface configuration
 
 
 
-<a name="opi_api-network-v1alpha1-State"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-State"></a>
 
 ### State
 Interface State information - ro
@@ -745,26 +745,26 @@ Interface State information - ro
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Name of the interface. This is the opaque object used for designating the created interface. |
-| type | [InterfaceType](#opi_api-network-v1alpha1-InterfaceType) |  | Interface type indicator |
+| type | [InterfaceType](#opi_api-network-opinetcommon-v1alpha1-InterfaceType) |  | Interface type indicator |
 | mtu | [uint32](#uint32) |  | Configured MTU size |
 | loopback_mode | [bool](#bool) |  | Configured Loopback mode |
 | description | [string](#string) |  | Interface description |
 | enabled | [bool](#bool) |  | Interface enabled indicator |
 | ifindex | [uint32](#uint32) |  | Interface Index |
-| admin_state | [opi_api.network.opinetcommon.v1alpha1.AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState) |  | Admin State |
-| oper_state | [OperState](#opi_api-network-v1alpha1-OperState) |  | Operational State |
+| admin_state | [AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState) |  | Admin State |
+| oper_state | [OperState](#opi_api-network-opinetcommon-v1alpha1-OperState) |  | Operational State |
 | last_change | [uint64](#uint64) |  | Last Change |
 | logical | [bool](#bool) |  | Logical interface |
 | management | [bool](#bool) |  | Management interface indicator |
 | cpu | [bool](#bool) |  | CPU |
-| counters | [Counters](#opi_api-network-v1alpha1-Counters) |  | Interface Statistics Counters |
+| counters | [Counters](#opi_api-network-opinetcommon-v1alpha1-Counters) |  | Interface Statistics Counters |
 
 
 
 
 
 
-<a name="opi_api-network-v1alpha1-UpdateNetInterfaceRequest"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-UpdateNetInterfaceRequest"></a>
 
 ### UpdateNetInterfaceRequest
 Update Interface Request
@@ -772,7 +772,7 @@ Update Interface Request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| net_interface | [NetInterface](#opi_api-network-v1alpha1-NetInterface) |  | Interface update settings |
+| net_interface | [NetInterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface) |  | Interface update settings |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 | allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
@@ -783,7 +783,7 @@ Update Interface Request
  
 
 
-<a name="opi_api-network-v1alpha1-InterfaceType"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-InterfaceType"></a>
 
 ### InterfaceType
 Interface Types Enumeration
@@ -791,12 +791,12 @@ Interface Types Enumeration
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | INTERFACE_TYPE_UNSPECIFIED | 0 | Interface Unspecified |
-| ETHERNET | 1 | Ethernet Interface |
-| LOOPBACK | 2 | Loopback Interface |
+| INTERFACE_TYPE_ETHERNET | 1 | Ethernet Interface |
+| INTERFACE_TYPE_LOOPBACK | 2 | Loopback Interface |
 
 
 
-<a name="opi_api-network-v1alpha1-OperState"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-OperState"></a>
 
 ### OperState
 Operational State Enumeration
@@ -818,16 +818,16 @@ Operational State Enumeration
  
 
 
-<a name="opi_api-network-v1alpha1-NetInterfaceService"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterfaceService"></a>
 
 ### NetInterfaceService
 Service functions for Network Interface exported by the server
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| GetNetInterface | [GetNetInterfaceRequest](#opi_api-network-v1alpha1-GetNetInterfaceRequest) | [NetInterface](#opi_api-network-v1alpha1-NetInterface) | Retrieves the interface information for a given interface |
-| ListNetInterfaces | [ListNetInterfacesRequest](#opi_api-network-v1alpha1-ListNetInterfacesRequest) | [ListNetInterfacesResponse](#opi_api-network-v1alpha1-ListNetInterfacesResponse) | Retrieves the set of interfaces on the device |
-| UpdateNetInterface | [UpdateNetInterfaceRequest](#opi_api-network-v1alpha1-UpdateNetInterfaceRequest) | [NetInterface](#opi_api-network-v1alpha1-NetInterface) | A method for setting or changing configuration of an interface |
+| GetNetInterface | [GetNetInterfaceRequest](#opi_api-network-opinetcommon-v1alpha1-GetNetInterfaceRequest) | [NetInterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface) | Retrieves the interface information for a given interface |
+| ListNetInterfaces | [ListNetInterfacesRequest](#opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesRequest) | [ListNetInterfacesResponse](#opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesResponse) | Retrieves the set of interfaces on the device |
+| UpdateNetInterface | [UpdateNetInterfaceRequest](#opi_api-network-opinetcommon-v1alpha1-UpdateNetInterfaceRequest) | [NetInterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface) | A method for setting or changing configuration of an interface |
 
  
 

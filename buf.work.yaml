@@ -4,7 +4,7 @@ directories:
 - inventory
 - security
 #  - storage
-#  - network/opinetcommon
+-  network/opinetcommon
 #  - network/cloud
 #  - network/evpn-gw
 #  - network/k8s

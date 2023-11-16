@@ -308,7 +308,7 @@ enum WildcardMatch {
   // wouldn't match anything
   // (-- api-linter: core::0126::unspecified=disabled
   //     aip.dev/not-precedent: NONE means don't match anything. --)
-  MATCH_NONE = 0;
+  WILDCARD_MATCH_NONE = 0;
   // match everything
-  MATCH_ANY  = 256;
+  WILDCARD_MATCH_ANY  = 256;
 }
