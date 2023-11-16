@@ -2,11 +2,16 @@
 # Copyright (C) 2022 Intel Corporation
 # Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
-all: doc buf
+all: buflint doc
 
-buf:
-	buf lint
+buflint:
+#	buf lint
+	docker run --rm -v "${PWD}/../../common/v1":/common -v "${PWD}":/out -w /out bufbuild/buf lint
+
+bufgen:
 	buf generate --template ../../buf.gen.yaml -o v1alpha1
+#	buf generate does not work in docker since it relies on locally installed protoc to compile the proto files
+#	docker run --rm -v "${PWD}/../../common/v1":/common -v "${PWD}/../..":/base -v "${PWD}":/out -w /out bufbuild/buf generate --template /base/buf.gen.yaml -o v1alpha1
 
 doc:
 	rm -rf ./google
