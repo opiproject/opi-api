@@ -289,6 +289,7 @@ class PciEndpoint final :
     kPortIdFieldNumber = 1,
     kPhysicalFunctionFieldNumber = 2,
     kVirtualFunctionFieldNumber = 3,
+    kDomainIdFieldNumber = 4,
   };
   // .google.protobuf.Int32Value port_id = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_port_id() const;
@@ -344,6 +345,24 @@ class PciEndpoint final :
       ::PROTOBUF_NAMESPACE_ID::Int32Value* virtual_function);
   ::PROTOBUF_NAMESPACE_ID::Int32Value* unsafe_arena_release_virtual_function();
 
+  // .google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+  bool has_domain_id() const;
+  private:
+  bool _internal_has_domain_id() const;
+  public:
+  void clear_domain_id();
+  const ::PROTOBUF_NAMESPACE_ID::Int32Value& domain_id() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Int32Value* release_domain_id();
+  ::PROTOBUF_NAMESPACE_ID::Int32Value* mutable_domain_id();
+  void set_allocated_domain_id(::PROTOBUF_NAMESPACE_ID::Int32Value* domain_id);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Int32Value& _internal_domain_id() const;
+  ::PROTOBUF_NAMESPACE_ID::Int32Value* _internal_mutable_domain_id();
+  public:
+  void unsafe_arena_set_allocated_domain_id(
+      ::PROTOBUF_NAMESPACE_ID::Int32Value* domain_id);
+  ::PROTOBUF_NAMESPACE_ID::Int32Value* unsafe_arena_release_domain_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.PciEndpoint)
  private:
   class _Internal;
@@ -355,6 +374,7 @@ class PciEndpoint final :
     ::PROTOBUF_NAMESPACE_ID::Int32Value* port_id_;
     ::PROTOBUF_NAMESPACE_ID::Int32Value* physical_function_;
     ::PROTOBUF_NAMESPACE_ID::Int32Value* virtual_function_;
+    ::PROTOBUF_NAMESPACE_ID::Int32Value* domain_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -485,6 +505,8 @@ class FabricsEndpoint final :
   enum : int {
     kTraddrFieldNumber = 1,
     kTrsvcidFieldNumber = 2,
+    kSourceTraddrFieldNumber = 4,
+    kSourceTrsvcidFieldNumber = 5,
     kAdrfamFieldNumber = 3,
   };
   // string traddr = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -515,6 +537,34 @@ class FabricsEndpoint final :
   std::string* _internal_mutable_trsvcid();
   public:
 
+  // string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];
+  void clear_source_traddr();
+  const std::string& source_traddr() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_source_traddr(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_source_traddr();
+  PROTOBUF_NODISCARD std::string* release_source_traddr();
+  void set_allocated_source_traddr(std::string* source_traddr);
+  private:
+  const std::string& _internal_source_traddr() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_source_traddr(const std::string& value);
+  std::string* _internal_mutable_source_traddr();
+  public:
+
+  // string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];
+  void clear_source_trsvcid();
+  const std::string& source_trsvcid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_source_trsvcid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_source_trsvcid();
+  PROTOBUF_NODISCARD std::string* release_source_trsvcid();
+  void set_allocated_source_trsvcid(std::string* source_trsvcid);
+  private:
+  const std::string& _internal_source_trsvcid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_source_trsvcid(const std::string& value);
+  std::string* _internal_mutable_source_trsvcid();
+  public:
+
   // .opi_api.storage.v1.NvmeAddressFamily adrfam = 3 [(.google.api.field_behavior) = REQUIRED];
   void clear_adrfam();
   ::opi_api::storage::v1::NvmeAddressFamily adrfam() const;
@@ -534,6 +584,8 @@ class FabricsEndpoint final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traddr_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trsvcid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr source_traddr_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr source_trsvcid_;
     int adrfam_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1245,6 +1297,91 @@ inline void PciEndpoint::set_allocated_virtual_function(::PROTOBUF_NAMESPACE_ID:
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.PciEndpoint.virtual_function)
 }
 
+// .google.protobuf.Int32Value domain_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+inline bool PciEndpoint::_internal_has_domain_id() const {
+  return this != internal_default_instance() && _impl_.domain_id_ != nullptr;
+}
+inline bool PciEndpoint::has_domain_id() const {
+  return _internal_has_domain_id();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Int32Value& PciEndpoint::_internal_domain_id() const {
+  const ::PROTOBUF_NAMESPACE_ID::Int32Value* p = _impl_.domain_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Int32Value&>(
+      ::PROTOBUF_NAMESPACE_ID::_Int32Value_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Int32Value& PciEndpoint::domain_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.PciEndpoint.domain_id)
+  return _internal_domain_id();
+}
+inline void PciEndpoint::unsafe_arena_set_allocated_domain_id(
+    ::PROTOBUF_NAMESPACE_ID::Int32Value* domain_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.domain_id_);
+  }
+  _impl_.domain_id_ = domain_id;
+  if (domain_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.PciEndpoint.domain_id)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Int32Value* PciEndpoint::release_domain_id() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Int32Value* temp = _impl_.domain_id_;
+  _impl_.domain_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Int32Value* PciEndpoint::unsafe_arena_release_domain_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.PciEndpoint.domain_id)
+  
+  ::PROTOBUF_NAMESPACE_ID::Int32Value* temp = _impl_.domain_id_;
+  _impl_.domain_id_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Int32Value* PciEndpoint::_internal_mutable_domain_id() {
+  
+  if (_impl_.domain_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Int32Value>(GetArenaForAllocation());
+    _impl_.domain_id_ = p;
+  }
+  return _impl_.domain_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Int32Value* PciEndpoint::mutable_domain_id() {
+  ::PROTOBUF_NAMESPACE_ID::Int32Value* _msg = _internal_mutable_domain_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.PciEndpoint.domain_id)
+  return _msg;
+}
+inline void PciEndpoint::set_allocated_domain_id(::PROTOBUF_NAMESPACE_ID::Int32Value* domain_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.domain_id_);
+  }
+  if (domain_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(domain_id));
+    if (message_arena != submessage_arena) {
+      domain_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, domain_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.domain_id_ = domain_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.PciEndpoint.domain_id)
+}
+
 // -------------------------------------------------------------------
 
 // FabricsEndpoint
@@ -1367,6 +1504,106 @@ inline void FabricsEndpoint::_internal_set_adrfam(::opi_api::storage::v1::NvmeAd
 inline void FabricsEndpoint::set_adrfam(::opi_api::storage::v1::NvmeAddressFamily value) {
   _internal_set_adrfam(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.FabricsEndpoint.adrfam)
+}
+
+// string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];
+inline void FabricsEndpoint::clear_source_traddr() {
+  _impl_.source_traddr_.ClearToEmpty();
+}
+inline const std::string& FabricsEndpoint::source_traddr() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.FabricsEndpoint.source_traddr)
+  return _internal_source_traddr();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FabricsEndpoint::set_source_traddr(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.source_traddr_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.FabricsEndpoint.source_traddr)
+}
+inline std::string* FabricsEndpoint::mutable_source_traddr() {
+  std::string* _s = _internal_mutable_source_traddr();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.FabricsEndpoint.source_traddr)
+  return _s;
+}
+inline const std::string& FabricsEndpoint::_internal_source_traddr() const {
+  return _impl_.source_traddr_.Get();
+}
+inline void FabricsEndpoint::_internal_set_source_traddr(const std::string& value) {
+  
+  _impl_.source_traddr_.Set(value, GetArenaForAllocation());
+}
+inline std::string* FabricsEndpoint::_internal_mutable_source_traddr() {
+  
+  return _impl_.source_traddr_.Mutable(GetArenaForAllocation());
+}
+inline std::string* FabricsEndpoint::release_source_traddr() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.FabricsEndpoint.source_traddr)
+  return _impl_.source_traddr_.Release();
+}
+inline void FabricsEndpoint::set_allocated_source_traddr(std::string* source_traddr) {
+  if (source_traddr != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.source_traddr_.SetAllocated(source_traddr, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.source_traddr_.IsDefault()) {
+    _impl_.source_traddr_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.FabricsEndpoint.source_traddr)
+}
+
+// string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];
+inline void FabricsEndpoint::clear_source_trsvcid() {
+  _impl_.source_trsvcid_.ClearToEmpty();
+}
+inline const std::string& FabricsEndpoint::source_trsvcid() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.FabricsEndpoint.source_trsvcid)
+  return _internal_source_trsvcid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FabricsEndpoint::set_source_trsvcid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.source_trsvcid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.FabricsEndpoint.source_trsvcid)
+}
+inline std::string* FabricsEndpoint::mutable_source_trsvcid() {
+  std::string* _s = _internal_mutable_source_trsvcid();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.FabricsEndpoint.source_trsvcid)
+  return _s;
+}
+inline const std::string& FabricsEndpoint::_internal_source_trsvcid() const {
+  return _impl_.source_trsvcid_.Get();
+}
+inline void FabricsEndpoint::_internal_set_source_trsvcid(const std::string& value) {
+  
+  _impl_.source_trsvcid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* FabricsEndpoint::_internal_mutable_source_trsvcid() {
+  
+  return _impl_.source_trsvcid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* FabricsEndpoint::release_source_trsvcid() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.FabricsEndpoint.source_trsvcid)
+  return _impl_.source_trsvcid_.Release();
+}
+inline void FabricsEndpoint::set_allocated_source_trsvcid(std::string* source_trsvcid) {
+  if (source_trsvcid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.source_trsvcid_.SetAllocated(source_trsvcid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.source_trsvcid_.IsDefault()) {
+    _impl_.source_trsvcid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.FabricsEndpoint.source_trsvcid)
 }
 
 // -------------------------------------------------------------------

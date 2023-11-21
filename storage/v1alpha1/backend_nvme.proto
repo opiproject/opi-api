@@ -153,14 +153,20 @@ message NvmeRemoteController {
     // Multipath mode
     NvmeMultipath multipath = 2 [(google.api.field_behavior) = REQUIRED];
 
+    // Subsystem NQN
+    string subnqn = 3 [(google.api.field_behavior) = OPTIONAL];
+
+    // Host NQN
+    string hostnqn = 4 [(google.api.field_behavior) = OPTIONAL];
+
     // IO queues count
-    int64 io_queues_count = 3 [(google.api.field_behavior) = OPTIONAL];
+    int64 io_queues_count = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // Queue size
-    int64 queue_size = 4 [(google.api.field_behavior) = OPTIONAL];
+    int64 queue_size = 6 [(google.api.field_behavior) = OPTIONAL];
 
     // Nvme over TCP specific fields
-    TcpController tcp = 5 [(google.api.field_behavior) = OPTIONAL];
+    TcpController tcp = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents parameters specific for TCP target controller
@@ -206,32 +212,16 @@ message NvmePath {
     // Transport type
     NvmeTransportType trtype = 3 [(google.api.field_behavior) = REQUIRED];
 
-    // Destination address (e.g. IP address, BDF for local PCIe)
-    string traddr = 4 [(google.api.field_behavior) = REQUIRED];
+    // xPU's PCI/Fabrics endpoint for the controller.
+    // One of the values is required
+    // see https://github.com/aip-dev/google.aip.dev/issues/1147 for field_behavior annotations
+    oneof endpoint {
+        // Required for pcie transport type.
+        PciEndpoint pcie = 4 [(google.api.field_behavior) = OPTIONAL];
 
-    // Not applicable for local PCIe. Required for Nvme over fabrics transport types
-    FabricsPath fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
-}
-
-// Represents Fabrics transport path parameters
-message FabricsPath {
-    // Destination service id (e.g. Port)
-    int64 trsvcid = 1 [(google.api.field_behavior) = REQUIRED];
-
-    // Subsystem NQN
-    string subnqn = 2 [(google.api.field_behavior) = REQUIRED];
-
-    // Address family
-    NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
-
-    // Source address (e.g. IP of local NIC)
-    string source_traddr = 4 [(google.api.field_behavior) = OPTIONAL];
-
-    // Source port (e.g. Port of local NIC)
-    int64 source_trsvcid = 5 [(google.api.field_behavior) = OPTIONAL];
-
-    // Host NQN
-    string hostnqn = 6 [(google.api.field_behavior) = OPTIONAL];
+        // Required for Nvme over fabrics transport types
+        FabricsEndpoint fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
+    }
 }
 
 // Represent Nvme namespace created on bridge after connection to a target

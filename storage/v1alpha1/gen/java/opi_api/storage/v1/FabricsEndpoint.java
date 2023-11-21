@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     traddr_ = "";
     trsvcid_ = "";
     adrfam_ = 0;
+    sourceTraddr_ = "";
+    sourceTrsvcid_ = "";
   }
 
   @java.lang.Override
@@ -71,6 +73,18 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             adrfam_ = rawValue;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sourceTraddr_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sourceTrsvcid_ = s;
             break;
           }
           default: {
@@ -226,6 +240,102 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.storage.v1.NvmeAddressFamily.UNRECOGNIZED : result;
   }
 
+  public static final int SOURCE_TRADDR_FIELD_NUMBER = 4;
+  private volatile java.lang.Object sourceTraddr_;
+  /**
+   * <pre>
+   * source address (e.g. IP of local NIC)
+   * not used for frontend
+   * </pre>
+   *
+   * <code>string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The sourceTraddr.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceTraddr() {
+    java.lang.Object ref = sourceTraddr_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceTraddr_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * source address (e.g. IP of local NIC)
+   * not used for frontend
+   * </pre>
+   *
+   * <code>string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for sourceTraddr.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSourceTraddrBytes() {
+    java.lang.Object ref = sourceTraddr_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sourceTraddr_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_TRSVCID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object sourceTrsvcid_;
+  /**
+   * <pre>
+   * source port (e.g. Port of local NIC)
+   * not used for frontend
+   * </pre>
+   *
+   * <code>string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The sourceTrsvcid.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceTrsvcid() {
+    java.lang.Object ref = sourceTrsvcid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceTrsvcid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * source port (e.g. Port of local NIC)
+   * not used for frontend
+   * </pre>
+   *
+   * <code>string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for sourceTrsvcid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSourceTrsvcidBytes() {
+    java.lang.Object ref = sourceTrsvcid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sourceTrsvcid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -249,6 +359,12 @@ private static final long serialVersionUID = 0L;
     if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVME_ADDRESS_FAMILY_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, adrfam_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceTraddr_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sourceTraddr_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceTrsvcid_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sourceTrsvcid_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -267,6 +383,12 @@ private static final long serialVersionUID = 0L;
     if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVME_ADDRESS_FAMILY_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, adrfam_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceTraddr_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sourceTraddr_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceTrsvcid_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sourceTrsvcid_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -288,6 +410,10 @@ private static final long serialVersionUID = 0L;
     if (!getTrsvcid()
         .equals(other.getTrsvcid())) return false;
     if (adrfam_ != other.adrfam_) return false;
+    if (!getSourceTraddr()
+        .equals(other.getSourceTraddr())) return false;
+    if (!getSourceTrsvcid()
+        .equals(other.getSourceTrsvcid())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -305,6 +431,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTrsvcid().hashCode();
     hash = (37 * hash) + ADRFAM_FIELD_NUMBER;
     hash = (53 * hash) + adrfam_;
+    hash = (37 * hash) + SOURCE_TRADDR_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceTraddr().hashCode();
+    hash = (37 * hash) + SOURCE_TRSVCID_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceTrsvcid().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -448,6 +578,10 @@ private static final long serialVersionUID = 0L;
 
       adrfam_ = 0;
 
+      sourceTraddr_ = "";
+
+      sourceTrsvcid_ = "";
+
       return this;
     }
 
@@ -477,6 +611,8 @@ private static final long serialVersionUID = 0L;
       result.traddr_ = traddr_;
       result.trsvcid_ = trsvcid_;
       result.adrfam_ = adrfam_;
+      result.sourceTraddr_ = sourceTraddr_;
+      result.sourceTrsvcid_ = sourceTrsvcid_;
       onBuilt();
       return result;
     }
@@ -535,6 +671,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.adrfam_ != 0) {
         setAdrfamValue(other.getAdrfamValue());
+      }
+      if (!other.getSourceTraddr().isEmpty()) {
+        sourceTraddr_ = other.sourceTraddr_;
+        onChanged();
+      }
+      if (!other.getSourceTrsvcid().isEmpty()) {
+        sourceTrsvcid_ = other.sourceTrsvcid_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -827,6 +971,208 @@ private static final long serialVersionUID = 0L;
     public Builder clearAdrfam() {
       
       adrfam_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceTraddr_ = "";
+    /**
+     * <pre>
+     * source address (e.g. IP of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The sourceTraddr.
+     */
+    public java.lang.String getSourceTraddr() {
+      java.lang.Object ref = sourceTraddr_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceTraddr_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * source address (e.g. IP of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for sourceTraddr.
+     */
+    public com.google.protobuf.ByteString
+        getSourceTraddrBytes() {
+      java.lang.Object ref = sourceTraddr_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceTraddr_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * source address (e.g. IP of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The sourceTraddr to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceTraddr(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sourceTraddr_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * source address (e.g. IP of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceTraddr() {
+      
+      sourceTraddr_ = getDefaultInstance().getSourceTraddr();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * source address (e.g. IP of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_traddr = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for sourceTraddr to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceTraddrBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sourceTraddr_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceTrsvcid_ = "";
+    /**
+     * <pre>
+     * source port (e.g. Port of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The sourceTrsvcid.
+     */
+    public java.lang.String getSourceTrsvcid() {
+      java.lang.Object ref = sourceTrsvcid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceTrsvcid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * source port (e.g. Port of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for sourceTrsvcid.
+     */
+    public com.google.protobuf.ByteString
+        getSourceTrsvcidBytes() {
+      java.lang.Object ref = sourceTrsvcid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceTrsvcid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * source port (e.g. Port of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The sourceTrsvcid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceTrsvcid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sourceTrsvcid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * source port (e.g. Port of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceTrsvcid() {
+      
+      sourceTrsvcid_ = getDefaultInstance().getSourceTrsvcid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * source port (e.g. Port of local NIC)
+     * not used for frontend
+     * </pre>
+     *
+     * <code>string source_trsvcid = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for sourceTrsvcid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceTrsvcidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sourceTrsvcid_ = value;
       onChanged();
       return this;
     }

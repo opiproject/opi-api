@@ -35,7 +35,6 @@
     - [CreateNvmeRemoteControllerRequest](#opi_api-storage-v1-CreateNvmeRemoteControllerRequest)
     - [DeleteNvmePathRequest](#opi_api-storage-v1-DeleteNvmePathRequest)
     - [DeleteNvmeRemoteControllerRequest](#opi_api-storage-v1-DeleteNvmeRemoteControllerRequest)
-    - [FabricsPath](#opi_api-storage-v1-FabricsPath)
     - [GetNvmePathRequest](#opi_api-storage-v1-GetNvmePathRequest)
     - [GetNvmeRemoteControllerRequest](#opi_api-storage-v1-GetNvmeRemoteControllerRequest)
     - [GetNvmeRemoteNamespaceRequest](#opi_api-storage-v1-GetNvmeRemoteNamespaceRequest)
@@ -630,26 +629,6 @@ Represents a request to delete an Nvme Remote Controller.
 
 
 
-<a name="opi_api-storage-v1-FabricsPath"></a>
-
-### FabricsPath
-Represents Fabrics transport path parameters
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| trsvcid | [int64](#int64) |  | Destination service id (e.g. Port) |
-| subnqn | [string](#string) |  | Subsystem NQN |
-| adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  | Address family |
-| source_traddr | [string](#string) |  | Source address (e.g. IP of local NIC) |
-| source_trsvcid | [int64](#int64) |  | Source port (e.g. Port of local NIC) |
-| hostnqn | [string](#string) |  | Host NQN |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-GetNvmePathRequest"></a>
 
 ### GetNvmePathRequest
@@ -805,8 +784,8 @@ Represents a specific path to target controller
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | controller_name_ref | [string](#string) |  | Nvme Remote Controller this path corresponds to |
 | trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  | Transport type |
-| traddr | [string](#string) |  | Destination address (e.g. IP address, BDF for local PCIe) |
-| fabrics | [FabricsPath](#opi_api-storage-v1-FabricsPath) |  | Not applicable for local PCIe. Required for Nvme over fabrics transport types |
+| pcie | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | Required for pcie transport type. |
+| fabrics | [FabricsEndpoint](#opi_api-storage-v1-FabricsEndpoint) |  | Required for Nvme over fabrics transport types |
 
 
 
@@ -823,6 +802,8 @@ Represents a target controller
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | multipath | [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath) |  | Multipath mode |
+| subnqn | [string](#string) |  | Subsystem NQN |
+| hostnqn | [string](#string) |  | Host NQN |
 | io_queues_count | [int64](#int64) |  | IO queues count |
 | queue_size | [int64](#int64) |  | Queue size |
 | tcp | [TcpController](#opi_api-storage-v1-TcpController) |  | Nvme over TCP specific fields |
@@ -2702,6 +2683,8 @@ Represents Fabrics Endpoint
 | traddr | [string](#string) |  | ip address for TCP and RDMA |
 | trsvcid | [string](#string) |  | port for TCP and RDMA |
 | adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  | address family |
+| source_traddr | [string](#string) |  | source address (e.g. IP of local NIC) not used for frontend |
+| source_trsvcid | [string](#string) |  | source port (e.g. Port of local NIC) not used for frontend |
 
 
 
@@ -2723,9 +2706,18 @@ confusion with storage &#34;devices&#34;.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| port_id | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
-| physical_function | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
-| virtual_function | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | Virtual function index. 1-based index. The value 0 is reserved to represent the PCI physical &#34;device&#34;. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| port_id | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | for frontend: The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon.
+
+for backend: Corresponds to &#34;bus&#34; part of BDF |
+| physical_function | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | for frontend: Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon.
+
+for backend: Corresponds to &#34;device&#34; part of BDF |
+| virtual_function | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | for frontend: Virtual function index. 1-based index. The value 0 is reserved to represent the PCI physical &#34;device&#34;. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon.
+
+for backend: Corresponds to &#34;function&#34; part of BDF |
+| domain_id | [google.protobuf.Int32Value](#google-protobuf-Int32Value) |  | for frontend: Not used
+
+for backend: Corresponds to pci domain value |
 
 
 
