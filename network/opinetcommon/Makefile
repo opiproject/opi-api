@@ -5,12 +5,9 @@
 all: buflint doc
 
 buflint:
-#	buf lint
 	docker run --rm -v "${PWD}/../../common/v1":/common -v "${PWD}":/out -w /out bufbuild/buf lint
 
 bufgen:
-#	buf generate --template ../../buf.gen.yaml -o v1alpha1
-#	buf generate does not work in docker since it relies on locally installed protoc to compile the proto files
 	docker run --rm -v "${PWD}/../../common/v1":/common -v "${PWD}/../..":/base -v "${PWD}":/out -w /out msandersdell/bufbuild-go-gen:1.1.0 generate --template /base/buf.gen.yaml -o v1alpha1
 
 doc:
