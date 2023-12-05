@@ -386,9 +386,9 @@ BridgePortType reflects the different types of a Bridge Port
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| UNKNOWN | 0 | &#34;unknown&#34; bridge port type |
-| ACCESS | 1 | &#34;access&#34; bridge port type |
-| TRUNK | 2 | &#34;trunk&#34; bridge port type |
+| BRIDGE_PORT_TYPE_UNSPECIFIED | 0 | &#34;unknown&#34; bridge port type |
+| BRIDGE_PORT_TYPE_ACCESS | 1 | &#34;access&#34; bridge port type |
+| BRIDGE_PORT_TYPE_TRUNK | 2 | &#34;trunk&#34; bridge port type |
 
 
 

@@ -337,9 +337,9 @@ enum BPOperStatus {
 // BridgePortType reflects the different types of a Bridge Port
 enum BridgePortType {
     // "unknown" bridge port type
-    UNKNOWN = 0;
+    BRIDGE_PORT_TYPE_UNSPECIFIED = 0;
     // "access" bridge port type 
-    ACCESS  = 1;
+    BRIDGE_PORT_TYPE_ACCESS  = 1;
     // "trunk" bridge port type
-    TRUNK   = 2;
+    BRIDGE_PORT_TYPE_TRUNK   = 2;
 }
