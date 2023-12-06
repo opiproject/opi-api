@@ -21,7 +21,7 @@ import "google/protobuf/field_mask.proto";
 import "opicommon.proto";
 import "uuid.proto";
 
-// Back End APIs. Reponsible for connection to external Nvme devices
+// Back End APIs. Responsible for connection to external Nvme devices
 // e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
 service NvmeRemoteControllerService {
     // Create an Nvme Remote Controller
@@ -50,9 +50,8 @@ service NvmeRemoteControllerService {
     // List Nvme Remote Controllers
     rpc ListNvmeRemoteControllers   (ListNvmeRemoteControllersRequest)   returns (ListNvmeRemoteControllersResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/nvmeRemoteControllers"
         };
-        option (google.api.method_signature) = "parent";
     }
     // Get an Nvme Remote Controller
     rpc GetNvmeRemoteController    (GetNvmeRemoteControllerRequest)    returns (NvmeRemoteController)    {
@@ -79,36 +78,36 @@ service NvmeRemoteControllerService {
     // List Nvme Remote Namespaces
     rpc ListNvmeRemoteNamespaces   (ListNvmeRemoteNamespacesRequest)   returns (ListNvmeRemoteNamespacesResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/{parent=nvmeRemoteControllers/*}/nvmeRemoteNamespaces"
         };
         option (google.api.method_signature) = "parent";
     }
     // Get an Nvme Remote Namespace
     rpc GetNvmeRemoteNamespace (GetNvmeRemoteNamespaceRequest) returns (NvmeRemoteNamespace) {
         option (google.api.http) = {
-            get: "/v1/{name=nvmeRemoteNamespaces/*}"
+            get: "/v1/{name=nvmeRemoteControllers/*/nvmeRemoteNamespaces/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Create an Nvme Path
     rpc CreateNvmePath (CreateNvmePathRequest) returns (NvmePath) {
         option (google.api.http) = {
-            post: "/v1/nvmePaths"
+            post: "/v1/{parent=nvmeRemoteControllers/*}/nvmePaths"
             body: "nvme_path"
         };
-        option (google.api.method_signature) = "nvme_path,nvme_path_id";
+        option (google.api.method_signature) = "parent,nvme_path,nvme_path_id";
     }
     // Delete an Nvme Path
     rpc DeleteNvmePath (DeleteNvmePathRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=nvmePaths/*}"
+            delete: "/v1/{name=nvmeRemoteControllers/*/nvmePaths/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Update an Nvme Path
     rpc UpdateNvmePath (UpdateNvmePathRequest) returns (NvmePath) {
         option (google.api.http) = {
-            patch: "/v1/{nvme_path.name=nvmePaths/*}"
+            patch: "/v1/{nvme_path.name=nvmeRemoteControllers/*/nvmePaths/*}"
             body: "nvme_path"
         };
         option (google.api.method_signature) = "nvme_path,update_mask";
@@ -116,21 +115,21 @@ service NvmeRemoteControllerService {
     // List Nvme Paths
     rpc ListNvmePaths   (ListNvmePathsRequest)   returns (ListNvmePathsResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/{parent=nvmeRemoteControllers/*}/nvmePaths"
         };
         option (google.api.method_signature) = "parent";
     }
     // Get an Nvme Path
     rpc GetNvmePath    (GetNvmePathRequest)    returns (NvmePath)    {
         option (google.api.http) = {
-            get: "/v1/{name=nvmePaths/*}"
+            get: "/v1/{name=nvmeRemoteControllers/*/nvmePaths/*}"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an Nvme Path statistics
     rpc StatsNvmePath  (StatsNvmePathRequest)  returns (StatsNvmePathResponse)  {
         option (google.api.http) = {
-            get: "/v1/{name=nvmePaths/*}:stats"
+            get: "/v1/{name=nvmeRemoteControllers/*/nvmePaths/*}:stats"
         };
         option (google.api.method_signature) = "name";
     }
@@ -140,7 +139,7 @@ service NvmeRemoteControllerService {
 message NvmeRemoteController {
     option (google.api.resource) = {
         type: "opi_api.storage.v1/NvmeRemoteController"
-        pattern: "nvmeRemoteControllers/{volume}"
+        pattern: "nvmeRemoteControllers/{controller}"
         singular: "nvmeRemoteController"
         plural: "nvmeRemoteControllers"
     };
@@ -187,7 +186,7 @@ message TcpController {
 message NvmePath {
     option (google.api.resource) = {
         type: "opi_api.storage.v1/NvmePath"
-        pattern: "nvmePaths/{volume}"
+        pattern: "nvmeRemoteControllers/{controller}/nvmePaths/{path}"
         singular: "nvmePath"
         plural: "nvmePaths"
     };
@@ -197,20 +196,14 @@ message NvmePath {
     // user can only set {resource}_id on the Create request object
     string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // Nvme Remote Controller this path corresponds to
-    string controller_name_ref = 2 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
-    ];
-
     // Transport type
-    NvmeTransportType trtype = 3 [(google.api.field_behavior) = REQUIRED];
+    NvmeTransportType trtype = 2 [(google.api.field_behavior) = REQUIRED];
 
     // Destination address (e.g. IP address, BDF for local PCIe)
-    string traddr = 4 [(google.api.field_behavior) = REQUIRED];
+    string traddr = 3 [(google.api.field_behavior) = REQUIRED];
 
     // Not applicable for local PCIe. Required for Nvme over fabrics transport types
-    FabricsPath fabrics = 5 [(google.api.field_behavior) = OPTIONAL];
+    FabricsPath fabrics = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents Fabrics transport path parameters
@@ -239,7 +232,7 @@ message NvmeRemoteNamespace {
     // namespace's unique key. Assign to middle/front-end objects.
     option (google.api.resource) = {
         type: "opi_api.storage.v1/NvmeRemoteNamespace"
-        pattern: "nvmeRemoteNamespaces/{volume}"
+        pattern: "nvmeRemoteControllers/{controller}/nvmeRemoteNamespaces/{namespace}"
         singular: "nvmeRemoteNamespace"
         plural: "nvmeRemoteNamespaces"
     };
@@ -249,24 +242,18 @@ message NvmeRemoteNamespace {
     // user can only set {resource}_id on the Create request object
     string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // controller through which the namespace is visible
-    string controller_name_ref = 2 [
-        (google.api.field_behavior) = OUTPUT_ONLY,
-        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
-    ];
-
     // NSID
-    int32 nsid = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int32 nsid = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Globally unique identifier for the namespace
-    string nguid = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+    string nguid = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified
-    int64 eui64 = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+    int64 eui64 = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+    common.v1.Uuid uuid = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // ANA state and such?
 }
@@ -280,6 +267,11 @@ message CreateNvmeRemoteControllerRequest {
     string nvme_remote_controller_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// (-- api-linter: core::0135::force-field=disabled
+//     aip.dev/not-precedent: disabled since cascade deleting is a dangerous
+//                            operation and we want to force a user to delete
+//                            all child resources(paths) on
+//                            its own --)
 // Represents a request to delete an Nvme Remote Controller.
 message DeleteNvmeRemoteControllerRequest {
     // Object's unique identifier to delete
@@ -305,15 +297,10 @@ message UpdateNvmeRemoteControllerRequest {
 
 // Represents a request to list all Nvme Remote Controllers.
 message ListNvmeRemoteControllersRequest {
-    // Parent's object unique identifier
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).child_type = "opi_api.storage.v1/NvmeRemoteController"
-    ];
     // page size of list request
-    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
     // page token of list request
-    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a response to list all Nvme Remote Controllers.
@@ -390,11 +377,16 @@ message GetNvmeRemoteNamespaceRequest {
 
 // Represents a request to create an Nvme Path.
 message CreateNvmePathRequest {
+    // Parent's remote controller unique identifier
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeRemoteController"
+    ];
     // The Nvme Path to be created.
-    NvmePath nvme_path = 1 [(google.api.field_behavior) = REQUIRED];
+    NvmePath nvme_path = 2 [(google.api.field_behavior) = REQUIRED];
     // An optional ID to assign to the Nvme Path.
     // If this is not provided the system will auto-generate it.
-    string nvme_path_id = 2 [(google.api.field_behavior) = OPTIONAL];
+    string nvme_path_id = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to delete an Nvme Path.
