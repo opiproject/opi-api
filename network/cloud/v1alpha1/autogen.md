@@ -26,12 +26,12 @@
     - [BGPClearRouteOptions](#opi_api-network-cloud-v1alpha1-BGPClearRouteOptions)
     - [BGPOperState](#opi_api-network-cloud-v1alpha1-BGPOperState)
     - [BGPOriginAttr](#opi_api-network-cloud-v1alpha1-BGPOriginAttr)
-    - [BGPPeerRRClient](#opi_api-network-cloud-v1alpha1-BGPPeerRRClient)
+    - [BGPPeerRR](#opi_api-network-cloud-v1alpha1-BGPPeerRR)
     - [BGPPeerSessionState](#opi_api-network-cloud-v1alpha1-BGPPeerSessionState)
     - [BGPPeerType](#opi_api-network-cloud-v1alpha1-BGPPeerType)
-    - [BGPRsnNotBest](#opi_api-network-cloud-v1alpha1-BGPRsnNotBest)
+    - [BGPRouteReason](#opi_api-network-cloud-v1alpha1-BGPRouteReason)
     - [BGPSafi](#opi_api-network-cloud-v1alpha1-BGPSafi)
-    - [BgpAddPathCapNegCap](#opi_api-network-cloud-v1alpha1-BgpAddPathCapNegCap)
+    - [BgpAddPathCapNeg](#opi_api-network-cloud-v1alpha1-BgpAddPathCapNeg)
     - [BgpAroAdvertState](#opi_api-network-cloud-v1alpha1-BgpAroAdvertState)
     - [BgpAsSize](#opi_api-network-cloud-v1alpha1-BgpAsSize)
     - [BgpNlriIsActive](#opi_api-network-cloud-v1alpha1-BgpNlriIsActive)
@@ -111,7 +111,7 @@
     - [ListMappingsResponse](#opi_api-network-cloud-v1alpha1-ListMappingsResponse)
     - [ListNextHopGroupsRequest](#opi_api-network-cloud-v1alpha1-ListNextHopGroupsRequest)
     - [ListNextHopGroupsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopGroupsResponse)
-    - [ListNextHopsRequest](#opi_api-network-cloud-v1alpha1-ListNextHopsRequest)
+    - [ListNextHopRequest](#opi_api-network-cloud-v1alpha1-ListNextHopRequest)
     - [ListNextHopsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopsResponse)
     - [ListPortsRequest](#opi_api-network-cloud-v1alpha1-ListPortsRequest)
     - [ListPortsResponse](#opi_api-network-cloud-v1alpha1-ListPortsResponse)
@@ -467,7 +467,7 @@ BGP NLRI prefix table
 | is_active | [BgpNlriIsActive](#opi_api-network-cloud-v1alpha1-BgpNlriIsActive) |  | An indication of whether or not this route is installed in the forwarding table |
 | stale | [bool](#bool) |  | Whether or not this route was last sent by the peer before BGP detected that the peer was restarting. |
 | flap_starttime | [int32](#int32) |  | The value of sysUpTime when this route flapped |
-| reason_not_best | [BGPRsnNotBest](#opi_api-network-cloud-v1alpha1-BGPRsnNotBest) |  | If bgpNlriPrefixBest is &#39;true&#39;, then this field is set to &#39;routeIsBest&#39;. Otherwise, it reports the stage in the decision process when the route was determined to be non-best. |
+| reason_not_best | [BGPRouteReason](#opi_api-network-cloud-v1alpha1-BGPRouteReason) |  | If bgpNlriPrefixBest is &#39;true&#39;, then this field is set to &#39;routeIsBest&#39;. Otherwise, it reports the stage in the decision process when the route was determined to be non-best. |
 | ext_comm | [bytes](#bytes) | repeated | The extended community membership associated with the route after import policy has been applied. |
 | comm | [bytes](#bytes) | repeated | The community list associated with the route after import policy has been applied. |
 | local_pref | [int32](#int32) |  | Calculated local preference |
@@ -549,8 +549,8 @@ BGP peer AF status
 | update_group | [int32](#int32) |  | BGP The index of the update group that the peer is a member of for this AFI/SAFI |
 | local_addr_scope_id | [int32](#int32) |  | For a peer identified by a link-local IPv6 addresses, this is the scope ID of bgpPeerLocalAddr and bgpPeerRemoteAddr. |
 | route_refresh | [bool](#bool) |  | send a Route Refresh request to the peer for this AFI/SAFI. |
-| add_path_cap_neg | [BgpAddPathCapNegCap](#opi_api-network-cloud-v1alpha1-BgpAddPathCapNegCap) |  | The BGP additional path capability negotiated with this peer for this AFI/SAFI. |
-| reflector_client | [BGPPeerRRClient](#opi_api-network-cloud-v1alpha1-BGPPeerRRClient) |  | This value indicates whether the given peer is a reflector client of this router for this AFI/SAFI, or not |
+| add_path_cap_neg | [BgpAddPathCapNeg](#opi_api-network-cloud-v1alpha1-BgpAddPathCapNeg) |  | The BGP additional path capability negotiated with this peer for this AFI/SAFI. |
+| reflector_client | [BGPPeerRR](#opi_api-network-cloud-v1alpha1-BGPPeerRR) |  | This value indicates whether the given peer is a reflector client of this router for this AFI/SAFI, or not |
 
 
 
@@ -571,7 +571,7 @@ BGP peer configurations
 | remote_asn | [uint32](#uint32) |  | remote 4-byte AS number (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: must use uint32 per BGP spec. --) |
 | send_comm | [bool](#bool) |  | send regular community attributes to neighbor |
 | send_ext_comm | [bool](#bool) |  | send extended community attributes to neighbor |
-| rr_client | [BGPPeerRRClient](#opi_api-network-cloud-v1alpha1-BGPPeerRRClient) |  | peer is a route reflector client |
+| rr_client | [BGPPeerRR](#opi_api-network-cloud-v1alpha1-BGPPeerRR) |  | peer is a route reflector client |
 | connect_retry | [int32](#int32) |  | BGP session connect-retry timer in seconds |
 | holdtime | [int32](#int32) |  | BGP session configured holdtime timer in seconds |
 | keep_alive | [int32](#int32) |  | BGP session configured keepalive timer in seconds |
@@ -794,14 +794,14 @@ bgp origin attribute
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-BGPPeerRRClient"></a>
+<a name="opi_api-network-cloud-v1alpha1-BGPPeerRR"></a>
 
-### BGPPeerRRClient
-BGP peer RR client
+### BGPPeerRR
+BGP peer Route Reflector client
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| BGP_PEER_RR_CLIENT_UNSPECIFIED | 0 | RR_UNSPECIFIED |
+| BGP_PEER_RR_UNSPECIFIED | 0 | RR_UNSPECIFIED |
 | BGP_PEER_RR_CLIENT | 1 | RR_CLIENT |
 | BGP_PEER_RR_MESHED_CLIENT | 2 | RR_MESHED_CLIENT |
 
@@ -838,32 +838,32 @@ bgp peer type
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-BGPRsnNotBest"></a>
+<a name="opi_api-network-cloud-v1alpha1-BGPRouteReason"></a>
 
-### BGPRsnNotBest
+### BGPRouteReason
 BGP Reason for not best route
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| BGP_REASON_NOT_CONSIDERED | 0 | not considered (-- api-linter: core::0126::unspecified=disabled aip.dev/not-precedent: zero is not-considered, not unspecified. --) |
-| BGP_REASON_ROUTE_IS_BEST | 1 | route is best |
-| BGP_REASON_WEIGHT | 2 | weight based |
-| BGP_REASON_LOCAL_PREF | 3 | local preference |
-| BGP_REASON_LCL_ORIG_PRFRRED | 4 | local origin preferred |
-| BGP_REASON_AS_PATH_LEN | 5 | as path lengt |
-| BGP_REASON_ORIGIN | 6 | origin based |
-| BGP_REASON_MED | 7 | med |
-| BGP_REASON_LOCAL_ORIG_TIE | 8 | origin tie |
-| BGP_REASON_EBGP_V_IBGP_PEER | 9 | ebpg vs. ibgp peer |
-| BGP_REASON_ADMIN_DISTANCE | 10 | admin distance |
-| BGP_REASON_PATH_TO_NEXT_CST | 11 | path next to cst |
-| BGP_REASON_PREF_EXISTING | 12 | preferenc existing |
-| BGP_REASON_IDENTIFIER | 13 | reason identifier (-- api-linter: core::0140::abbreviations=disabled aip.dev/not-precedent: --) |
-| BGP_REASON_CLUSTER_LEN | 14 | cluster length |
-| BGP_REASON_PEER_ADDR_TYPE | 15 | peer address type |
-| BGP_REASON_PEER_ADDR | 16 | peer address |
-| BGP_REASON_PEER_PORT | 17 | peer port |
-| BGP_REASON_PATH_ID | 18 | path id |
+| BGP_ROUTE_REASON_NOT_CONSIDERED | 0 | not considered (-- api-linter: core::0126::unspecified=disabled aip.dev/not-precedent: zero is not-considered, not unspecified. --) |
+| BGP_ROUTE_REASON_ROUTE_IS_BEST | 1 | route is best |
+| BGP_ROUTE_REASON_WEIGHT | 2 | weight based |
+| BGP_ROUTE_REASON_LOCAL_PREF | 3 | local preference |
+| BGP_ROUTE_REASON_LCL_ORIG_PRFRRED | 4 | local origin preferred |
+| BGP_ROUTE_REASON_AS_PATH_LEN | 5 | as path lengt |
+| BGP_ROUTE_REASON_ORIGIN | 6 | origin based |
+| BGP_ROUTE_REASON_MED | 7 | med |
+| BGP_ROUTE_REASON_LOCAL_ORIG_TIE | 8 | origin tie |
+| BGP_ROUTE_REASON_EBGP_V_IBGP_PEER | 9 | ebpg vs. ibgp peer |
+| BGP_ROUTE_REASON_ADMIN_DISTANCE | 10 | admin distance |
+| BGP_ROUTE_REASON_PATH_TO_NEXT_CST | 11 | path next to cst |
+| BGP_ROUTE_REASON_PREF_EXISTING | 12 | preferenc existing |
+| BGP_ROUTE_REASON_IDENTIFIER | 13 | reason identifier (-- api-linter: core::0140::abbreviations=disabled aip.dev/not-precedent: --) |
+| BGP_ROUTE_REASON_CLUSTER_LEN | 14 | cluster length |
+| BGP_ROUTE_REASON_PEER_ADDR_TYPE | 15 | peer address type |
+| BGP_ROUTE_REASON_PEER_ADDR | 16 | peer address |
+| BGP_ROUTE_REASON_PEER_PORT | 17 | peer port |
+| BGP_ROUTE_REASON_PATH_ID | 18 | path id |
 
 
 
@@ -880,19 +880,19 @@ BGP sub-address family identitfier
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-BgpAddPathCapNegCap"></a>
+<a name="opi_api-network-cloud-v1alpha1-BgpAddPathCapNeg"></a>
 
-### BgpAddPathCapNegCap
+### BgpAddPathCapNeg
 bgp add path capability negotiation
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| BGP_ADD_PATH_SR_DISABLE | 0 | disabled (-- api-linter: core::0126::unspecified=disabled aip.dev/not-precedent: zero is disabled, not unspecified. --) |
-| BGP_ADD_PATH_SR_RECEIVE | 1 | receive |
-| BGP_ADD_PATH_SR_SEND | 2 | send |
-| BGP_ADD_PATH_SR_BOTH | 3 | both |
-| BGP_ADD_PATH_SR_INHERIT | 4 | inherit |
-| BGP_ADD_PATH_SR_UNKNOWN | 5 | uknown |
+| BGP_ADD_PATH_CAP_NEG_SR_DISABLE | 0 | disabled (-- api-linter: core::0126::unspecified=disabled aip.dev/not-precedent: zero is disabled, not unspecified. --) |
+| BGP_ADD_PATH_CAP_NEG_SR_RECEIVE | 1 | receive |
+| BGP_ADD_PATH_CAP_NEG_SR_SEND | 2 | send |
+| BGP_ADD_PATH_CAP_NEG_SR_BOTH | 3 | both |
+| BGP_ADD_PATH_CAP_NEG_SR_INHERIT | 4 | inherit |
+| BGP_ADD_PATH_CAP_NEG_SR_UNKNOWN | 5 | uknown |
 
 
 
@@ -2134,9 +2134,9 @@ List nexthopgroup response
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListNextHopsRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListNextHopRequest"></a>
 
-### ListNextHopsRequest
+### ListNextHopRequest
 List nexthop request
 
 
@@ -2571,6 +2571,7 @@ Update bgppeeraf request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of bgp peer af requested |
 | bgppeeraf | [BGPPeerAf](#opi_api-network-cloud-v1alpha1-BGPPeerAf) |  | updated bgppeeraf info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2587,6 +2588,7 @@ Update bgppeer request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of bgp peer requested |
 | bgppeer | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) |  | updated bgppeer info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2603,6 +2605,7 @@ Update bgp request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of bgp requested |
 | bgp | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  | updated bgp info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2619,6 +2622,7 @@ Update device request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of device updated |
 | device | [Device](#opi_api-network-cloud-v1alpha1-Device) |  | updated device info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2635,6 +2639,7 @@ Update interface request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of interface requested |
 | interface | [Interface](#opi_api-network-cloud-v1alpha1-Interface) |  | updated interface info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2651,6 +2656,7 @@ Update mapping request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of mapping requested |
 | mapping | [Mapping](#opi_api-network-cloud-v1alpha1-Mapping) |  | updated mapping info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2667,6 +2673,7 @@ Update nexthopgroup request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of next hop group requested |
 | nexthopgroup | [NextHopGroup](#opi_api-network-cloud-v1alpha1-NextHopGroup) |  | updated nexthopgroup info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2683,6 +2690,7 @@ Update nexthop request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of nexthop requested |
 | nexthop | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) |  | updated nexthop info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2699,6 +2707,7 @@ Update port request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of port requested |
 | port | [Port](#opi_api-network-cloud-v1alpha1-Port) |  | updated port info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2715,6 +2724,7 @@ Update route request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of route requested |
 | route | [Route](#opi_api-network-cloud-v1alpha1-Route) |  | updated route info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2731,6 +2741,7 @@ Update routetable request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of route table requested |
 | routetable | [RouteTable](#opi_api-network-cloud-v1alpha1-RouteTable) |  | updated routetable info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2747,6 +2758,7 @@ Update securitypolicy request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of security policy requested |
 | securitypolicy | [SecurityPolicy](#opi_api-network-cloud-v1alpha1-SecurityPolicy) |  | updated securitypolicy info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2763,6 +2775,7 @@ Update securityprofile request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of security profile requested |
 | securityprofile | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) |  | updated securityprofile info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2779,6 +2792,7 @@ Update securityrule request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of security rule requested |
 | securityrule | [SecurityRule](#opi_api-network-cloud-v1alpha1-SecurityRule) |  | updated securityrule info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2795,7 +2809,10 @@ Update subnet request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subnet | [Subnet](#opi_api-network-cloud-v1alpha1-Subnet) |  | updated subnet info |
+| name | [string](#string) |  | Name of subnet requested
+
+updated subnet info |
+| subnet | [Subnet](#opi_api-network-cloud-v1alpha1-Subnet) |  |  |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
 
@@ -2811,6 +2828,7 @@ Update Tunnel request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of tunnel requested |
 | tunnel | [Tunnel](#opi_api-network-cloud-v1alpha1-Tunnel) |  | updated tunnel info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2827,6 +2845,7 @@ Update underlayroute request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of underlay route requested |
 | underlayroute | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) |  | updated underlayroute info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2843,6 +2862,7 @@ Update vpcpeer request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of vpc peer requested |
 | vpcpeer | [VPCPeer](#opi_api-network-cloud-v1alpha1-VPCPeer) |  | updated vpcpeer info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2859,6 +2879,7 @@ Update vnic request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of Vnic requested |
 | vnic | [Vnic](#opi_api-network-cloud-v1alpha1-Vnic) |  | updated vnic info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2875,6 +2896,7 @@ Update vpc request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of vpc requested |
 | vpc | [Vpc](#opi_api-network-cloud-v1alpha1-Vpc) |  | updated vpc info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
@@ -2953,7 +2975,7 @@ Cloud Infra APIs - to manage a multi-node cloud infrastructure on a xPU
 | CreateNextHop | [CreateNextHopRequest](#opi_api-network-cloud-v1alpha1-CreateNextHopRequest) | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) | nexthop apis |
 | DeleteNextHop | [DeleteNextHopRequest](#opi_api-network-cloud-v1alpha1-DeleteNextHopRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateNextHop | [UpdateNextHopRequest](#opi_api-network-cloud-v1alpha1-UpdateNextHopRequest) | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) |  |
-| ListNextHop | [ListNextHopsRequest](#opi_api-network-cloud-v1alpha1-ListNextHopsRequest) | [ListNextHopsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopsResponse) |  |
+| ListNextHop | [ListNextHopRequest](#opi_api-network-cloud-v1alpha1-ListNextHopRequest) | [ListNextHopsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopsResponse) |  |
 | GetNextHop | [GetNextHopRequest](#opi_api-network-cloud-v1alpha1-GetNextHopRequest) | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) |  |
 | CreateNextHopGroup | [CreateNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-CreateNextHopGroupRequest) | [NextHopGroup](#opi_api-network-cloud-v1alpha1-NextHopGroup) | nexthopgroup apis |
 | DeleteNextHopGroup | [DeleteNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-DeleteNextHopGroupRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |

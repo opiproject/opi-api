@@ -330,7 +330,7 @@ class CloudInfraServiceStub(object):
                 )
         self.ListNextHop = channel.unary_unary(
                 '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListNextHop',
-                request_serializer=cloudrpc__pb2.ListNextHopsRequest.SerializeToString,
+                request_serializer=cloudrpc__pb2.ListNextHopRequest.SerializeToString,
                 response_deserializer=cloudrpc__pb2.ListNextHopsResponse.FromString,
                 )
         self.GetNextHop = channel.unary_unary(
@@ -1463,7 +1463,7 @@ def add_CloudInfraServiceServicer_to_server(servicer, server):
             ),
             'ListNextHop': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNextHop,
-                    request_deserializer=cloudrpc__pb2.ListNextHopsRequest.FromString,
+                    request_deserializer=cloudrpc__pb2.ListNextHopRequest.FromString,
                     response_serializer=cloudrpc__pb2.ListNextHopsResponse.SerializeToString,
             ),
             'GetNextHop': grpc.unary_unary_rpc_method_handler(
@@ -2677,7 +2677,7 @@ class CloudInfraService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListNextHop',
-            cloudrpc__pb2.ListNextHopsRequest.SerializeToString,
+            cloudrpc__pb2.ListNextHopRequest.SerializeToString,
             cloudrpc__pb2.ListNextHopsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
