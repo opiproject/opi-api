@@ -7,7 +7,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NvmeRemoteControllerServiceStub(object):
-    """Back End APIs. Reponsible for connection to external Nvme devices
+    """Back End APIs. Responsible for connection to external Nvme devices
     e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
     """
 
@@ -95,7 +95,7 @@ class NvmeRemoteControllerServiceStub(object):
 
 
 class NvmeRemoteControllerServiceServicer(object):
-    """Back End APIs. Reponsible for connection to external Nvme devices
+    """Back End APIs. Responsible for connection to external Nvme devices
     e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
     """
 
@@ -290,7 +290,7 @@ def add_NvmeRemoteControllerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class NvmeRemoteControllerService(object):
-    """Back End APIs. Reponsible for connection to external Nvme devices
+    """Back End APIs. Responsible for connection to external Nvme devices
     e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
     """
 

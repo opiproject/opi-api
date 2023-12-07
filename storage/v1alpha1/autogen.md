@@ -574,6 +574,7 @@ Represents a request to create an Nvme Path.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | Parent&#39;s remote controller unique identifier |
 | nvme_path | [NvmePath](#opi_api-storage-v1-NvmePath) |  | The Nvme Path to be created. |
 | nvme_path_id | [string](#string) |  | An optional ID to assign to the Nvme Path. If this is not provided the system will auto-generate it. |
 
@@ -617,6 +618,11 @@ Represents a request to delete an Nvme Path.
 <a name="opi_api-storage-v1-DeleteNvmeRemoteControllerRequest"></a>
 
 ### DeleteNvmeRemoteControllerRequest
+(-- api-linter: core::0135::force-field=disabled
+    aip.dev/not-precedent: disabled since cascade deleting is a dangerous
+                           operation and we want to force a user to delete
+                           all child resources(paths) on
+                           its own --)
 Represents a request to delete an Nvme Remote Controller.
 
 
@@ -736,7 +742,6 @@ Represents a request to list all Nvme Remote Controllers.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -803,7 +808,6 @@ Represents a specific path to target controller
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| controller_name_ref | [string](#string) |  | Nvme Remote Controller this path corresponds to |
 | trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  | Transport type |
 | traddr | [string](#string) |  | Destination address (e.g. IP address, BDF for local PCIe) |
 | fabrics | [FabricsPath](#opi_api-storage-v1-FabricsPath) |  | Not applicable for local PCIe. Required for Nvme over fabrics transport types |
@@ -841,7 +845,6 @@ Represent Nvme namespace created on bridge after connection to a target
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| controller_name_ref | [string](#string) |  | controller through which the namespace is visible |
 | nsid | [int32](#int32) |  | NSID |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
@@ -1001,7 +1004,7 @@ Multipath mode value options
 <a name="opi_api-storage-v1-NvmeRemoteControllerService"></a>
 
 ### NvmeRemoteControllerService
-Back End APIs. Reponsible for connection to external Nvme devices
+Back End APIs. Responsible for connection to external Nvme devices
 e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
 
 | Method Name | Request Type | Response Type | Description |

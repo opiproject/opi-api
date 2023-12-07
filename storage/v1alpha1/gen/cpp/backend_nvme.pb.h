@@ -697,10 +697,9 @@ class NvmePath final :
 
   enum : int {
     kNameFieldNumber = 1,
-    kControllerNameRefFieldNumber = 2,
-    kTraddrFieldNumber = 4,
-    kFabricsFieldNumber = 5,
-    kTrtypeFieldNumber = 3,
+    kTraddrFieldNumber = 3,
+    kFabricsFieldNumber = 4,
+    kTrtypeFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
@@ -716,21 +715,7 @@ class NvmePath final :
   std::string* _internal_mutable_name();
   public:
 
-  // string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_controller_name_ref();
-  const std::string& controller_name_ref() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_controller_name_ref(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_controller_name_ref();
-  PROTOBUF_NODISCARD std::string* release_controller_name_ref();
-  void set_allocated_controller_name_ref(std::string* controller_name_ref);
-  private:
-  const std::string& _internal_controller_name_ref() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_controller_name_ref(const std::string& value);
-  std::string* _internal_mutable_controller_name_ref();
-  public:
-
-  // string traddr = 4 [(.google.api.field_behavior) = REQUIRED];
+  // string traddr = 3 [(.google.api.field_behavior) = REQUIRED];
   void clear_traddr();
   const std::string& traddr() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -744,7 +729,7 @@ class NvmePath final :
   std::string* _internal_mutable_traddr();
   public:
 
-  // .opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];
+  // .opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];
   bool has_fabrics() const;
   private:
   bool _internal_has_fabrics() const;
@@ -762,7 +747,7 @@ class NvmePath final :
       ::opi_api::storage::v1::FabricsPath* fabrics);
   ::opi_api::storage::v1::FabricsPath* unsafe_arena_release_fabrics();
 
-  // .opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];
   void clear_trtype();
   ::opi_api::storage::v1::NvmeTransportType trtype() const;
   void set_trtype(::opi_api::storage::v1::NvmeTransportType value);
@@ -780,7 +765,6 @@ class NvmePath final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr controller_name_ref_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traddr_;
     ::opi_api::storage::v1::FabricsPath* fabrics_;
     int trtype_;
@@ -1131,11 +1115,10 @@ class NvmeRemoteNamespace final :
 
   enum : int {
     kNameFieldNumber = 1,
-    kControllerNameRefFieldNumber = 2,
-    kNguidFieldNumber = 4,
-    kUuidFieldNumber = 6,
-    kEui64FieldNumber = 5,
-    kNsidFieldNumber = 3,
+    kNguidFieldNumber = 3,
+    kUuidFieldNumber = 5,
+    kEui64FieldNumber = 4,
+    kNsidFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = IDENTIFIER];
   void clear_name();
@@ -1151,21 +1134,7 @@ class NvmeRemoteNamespace final :
   std::string* _internal_mutable_name();
   public:
 
-  // string controller_name_ref = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
-  void clear_controller_name_ref();
-  const std::string& controller_name_ref() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_controller_name_ref(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_controller_name_ref();
-  PROTOBUF_NODISCARD std::string* release_controller_name_ref();
-  void set_allocated_controller_name_ref(std::string* controller_name_ref);
-  private:
-  const std::string& _internal_controller_name_ref() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_controller_name_ref(const std::string& value);
-  std::string* _internal_mutable_controller_name_ref();
-  public:
-
-  // string nguid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+  // string nguid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_nguid();
   const std::string& nguid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1179,7 +1148,7 @@ class NvmeRemoteNamespace final :
   std::string* _internal_mutable_nguid();
   public:
 
-  // .opi_api.common.v1.Uuid uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+  // .opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_uuid() const;
   private:
   bool _internal_has_uuid() const;
@@ -1197,7 +1166,7 @@ class NvmeRemoteNamespace final :
       ::opi_api::common::v1::Uuid* uuid);
   ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
-  // int64 eui64 = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+  // int64 eui64 = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_eui64();
   int64_t eui64() const;
   void set_eui64(int64_t value);
@@ -1206,7 +1175,7 @@ class NvmeRemoteNamespace final :
   void _internal_set_eui64(int64_t value);
   public:
 
-  // int32 nsid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+  // int32 nsid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_nsid();
   int32_t nsid() const;
   void set_nsid(int32_t value);
@@ -1224,7 +1193,6 @@ class NvmeRemoteNamespace final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr controller_name_ref_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nguid_;
     ::opi_api::common::v1::Uuid* uuid_;
     int64_t eui64_;
@@ -1882,25 +1850,10 @@ class ListNvmeRemoteControllersRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kParentFieldNumber = 1,
-    kPageTokenFieldNumber = 3,
-    kPageSizeFieldNumber = 2,
+    kPageTokenFieldNumber = 2,
+    kPageSizeFieldNumber = 1,
   };
-  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_parent();
-  const std::string& parent() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_parent(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_parent();
-  PROTOBUF_NODISCARD std::string* release_parent();
-  void set_allocated_parent(std::string* parent);
-  private:
-  const std::string& _internal_parent() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parent(const std::string& value);
-  std::string* _internal_mutable_parent();
-  public:
-
-  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+  // string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1914,7 +1867,7 @@ class ListNvmeRemoteControllersRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
+  // int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -1931,7 +1884,6 @@ class ListNvmeRemoteControllersRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parent_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr page_token_;
     int32_t page_size_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3357,10 +3309,25 @@ class CreateNvmePathRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNvmePathIdFieldNumber = 2,
-    kNvmePathFieldNumber = 1,
+    kParentFieldNumber = 1,
+    kNvmePathIdFieldNumber = 3,
+    kNvmePathFieldNumber = 2,
   };
-  // string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];
+  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_parent();
+  const std::string& parent() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_parent(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_parent();
+  PROTOBUF_NODISCARD std::string* release_parent();
+  void set_allocated_parent(std::string* parent);
+  private:
+  const std::string& _internal_parent() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parent(const std::string& value);
+  std::string* _internal_mutable_parent();
+  public:
+
+  // string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_nvme_path_id();
   const std::string& nvme_path_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3374,7 +3341,7 @@ class CreateNvmePathRequest final :
   std::string* _internal_mutable_nvme_path_id();
   public:
 
-  // .opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];
   bool has_nvme_path() const;
   private:
   bool _internal_has_nvme_path() const;
@@ -3400,6 +3367,7 @@ class CreateNvmePathRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parent_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nvme_path_id_;
     ::opi_api::storage::v1::NvmePath* nvme_path_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -4934,57 +4902,7 @@ inline void NvmePath::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmePath.name)
 }
 
-// string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void NvmePath::clear_controller_name_ref() {
-  _impl_.controller_name_ref_.ClearToEmpty();
-}
-inline const std::string& NvmePath::controller_name_ref() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmePath.controller_name_ref)
-  return _internal_controller_name_ref();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NvmePath::set_controller_name_ref(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.controller_name_ref_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmePath.controller_name_ref)
-}
-inline std::string* NvmePath::mutable_controller_name_ref() {
-  std::string* _s = _internal_mutable_controller_name_ref();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmePath.controller_name_ref)
-  return _s;
-}
-inline const std::string& NvmePath::_internal_controller_name_ref() const {
-  return _impl_.controller_name_ref_.Get();
-}
-inline void NvmePath::_internal_set_controller_name_ref(const std::string& value) {
-  
-  _impl_.controller_name_ref_.Set(value, GetArenaForAllocation());
-}
-inline std::string* NvmePath::_internal_mutable_controller_name_ref() {
-  
-  return _impl_.controller_name_ref_.Mutable(GetArenaForAllocation());
-}
-inline std::string* NvmePath::release_controller_name_ref() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmePath.controller_name_ref)
-  return _impl_.controller_name_ref_.Release();
-}
-inline void NvmePath::set_allocated_controller_name_ref(std::string* controller_name_ref) {
-  if (controller_name_ref != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.controller_name_ref_.SetAllocated(controller_name_ref, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.controller_name_ref_.IsDefault()) {
-    _impl_.controller_name_ref_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmePath.controller_name_ref)
-}
-
-// .opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];
+// .opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];
 inline void NvmePath::clear_trtype() {
   _impl_.trtype_ = 0;
 }
@@ -5004,7 +4922,7 @@ inline void NvmePath::set_trtype(::opi_api::storage::v1::NvmeTransportType value
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmePath.trtype)
 }
 
-// string traddr = 4 [(.google.api.field_behavior) = REQUIRED];
+// string traddr = 3 [(.google.api.field_behavior) = REQUIRED];
 inline void NvmePath::clear_traddr() {
   _impl_.traddr_.ClearToEmpty();
 }
@@ -5054,7 +4972,7 @@ inline void NvmePath::set_allocated_traddr(std::string* traddr) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmePath.traddr)
 }
 
-// .opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];
+// .opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NvmePath::_internal_has_fabrics() const {
   return this != internal_default_instance() && _impl_.fabrics_ != nullptr;
 }
@@ -5412,57 +5330,7 @@ inline void NvmeRemoteNamespace::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeRemoteNamespace.name)
 }
 
-// string controller_name_ref = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {
-inline void NvmeRemoteNamespace::clear_controller_name_ref() {
-  _impl_.controller_name_ref_.ClearToEmpty();
-}
-inline const std::string& NvmeRemoteNamespace::controller_name_ref() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeRemoteNamespace.controller_name_ref)
-  return _internal_controller_name_ref();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NvmeRemoteNamespace::set_controller_name_ref(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.controller_name_ref_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeRemoteNamespace.controller_name_ref)
-}
-inline std::string* NvmeRemoteNamespace::mutable_controller_name_ref() {
-  std::string* _s = _internal_mutable_controller_name_ref();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NvmeRemoteNamespace.controller_name_ref)
-  return _s;
-}
-inline const std::string& NvmeRemoteNamespace::_internal_controller_name_ref() const {
-  return _impl_.controller_name_ref_.Get();
-}
-inline void NvmeRemoteNamespace::_internal_set_controller_name_ref(const std::string& value) {
-  
-  _impl_.controller_name_ref_.Set(value, GetArenaForAllocation());
-}
-inline std::string* NvmeRemoteNamespace::_internal_mutable_controller_name_ref() {
-  
-  return _impl_.controller_name_ref_.Mutable(GetArenaForAllocation());
-}
-inline std::string* NvmeRemoteNamespace::release_controller_name_ref() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NvmeRemoteNamespace.controller_name_ref)
-  return _impl_.controller_name_ref_.Release();
-}
-inline void NvmeRemoteNamespace::set_allocated_controller_name_ref(std::string* controller_name_ref) {
-  if (controller_name_ref != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.controller_name_ref_.SetAllocated(controller_name_ref, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.controller_name_ref_.IsDefault()) {
-    _impl_.controller_name_ref_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeRemoteNamespace.controller_name_ref)
-}
-
-// int32 nsid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+// int32 nsid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void NvmeRemoteNamespace::clear_nsid() {
   _impl_.nsid_ = 0;
 }
@@ -5482,7 +5350,7 @@ inline void NvmeRemoteNamespace::set_nsid(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeRemoteNamespace.nsid)
 }
 
-// string nguid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+// string nguid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void NvmeRemoteNamespace::clear_nguid() {
   _impl_.nguid_.ClearToEmpty();
 }
@@ -5532,7 +5400,7 @@ inline void NvmeRemoteNamespace::set_allocated_nguid(std::string* nguid) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NvmeRemoteNamespace.nguid)
 }
 
-// int64 eui64 = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+// int64 eui64 = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void NvmeRemoteNamespace::clear_eui64() {
   _impl_.eui64_ = int64_t{0};
 }
@@ -5552,7 +5420,7 @@ inline void NvmeRemoteNamespace::set_eui64(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeRemoteNamespace.eui64)
 }
 
-// .opi_api.common.v1.Uuid uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+// .opi_api.common.v1.Uuid uuid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool NvmeRemoteNamespace::_internal_has_uuid() const {
   return this != internal_default_instance() && _impl_.uuid_ != nullptr;
 }
@@ -6058,57 +5926,7 @@ inline void UpdateNvmeRemoteControllerRequest::set_allow_missing(bool value) {
 
 // ListNvmeRemoteControllersRequest
 
-// string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void ListNvmeRemoteControllersRequest::clear_parent() {
-  _impl_.parent_.ClearToEmpty();
-}
-inline const std::string& ListNvmeRemoteControllersRequest::parent() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListNvmeRemoteControllersRequest.parent)
-  return _internal_parent();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ListNvmeRemoteControllersRequest::set_parent(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.parent_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListNvmeRemoteControllersRequest.parent)
-}
-inline std::string* ListNvmeRemoteControllersRequest::mutable_parent() {
-  std::string* _s = _internal_mutable_parent();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListNvmeRemoteControllersRequest.parent)
-  return _s;
-}
-inline const std::string& ListNvmeRemoteControllersRequest::_internal_parent() const {
-  return _impl_.parent_.Get();
-}
-inline void ListNvmeRemoteControllersRequest::_internal_set_parent(const std::string& value) {
-  
-  _impl_.parent_.Set(value, GetArenaForAllocation());
-}
-inline std::string* ListNvmeRemoteControllersRequest::_internal_mutable_parent() {
-  
-  return _impl_.parent_.Mutable(GetArenaForAllocation());
-}
-inline std::string* ListNvmeRemoteControllersRequest::release_parent() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.ListNvmeRemoteControllersRequest.parent)
-  return _impl_.parent_.Release();
-}
-inline void ListNvmeRemoteControllersRequest::set_allocated_parent(std::string* parent) {
-  if (parent != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.parent_.SetAllocated(parent, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.parent_.IsDefault()) {
-    _impl_.parent_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListNvmeRemoteControllersRequest.parent)
-}
-
-// int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
+// int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListNvmeRemoteControllersRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -6128,7 +5946,7 @@ inline void ListNvmeRemoteControllersRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListNvmeRemoteControllersRequest.page_size)
 }
 
-// string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+// string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListNvmeRemoteControllersRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }
@@ -6799,7 +6617,57 @@ inline void GetNvmeRemoteNamespaceRequest::set_allocated_name(std::string* name)
 
 // CreateNvmePathRequest
 
-// .opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];
+// string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void CreateNvmePathRequest::clear_parent() {
+  _impl_.parent_.ClearToEmpty();
+}
+inline const std::string& CreateNvmePathRequest::parent() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateNvmePathRequest.parent)
+  return _internal_parent();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateNvmePathRequest::set_parent(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.parent_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.CreateNvmePathRequest.parent)
+}
+inline std::string* CreateNvmePathRequest::mutable_parent() {
+  std::string* _s = _internal_mutable_parent();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateNvmePathRequest.parent)
+  return _s;
+}
+inline const std::string& CreateNvmePathRequest::_internal_parent() const {
+  return _impl_.parent_.Get();
+}
+inline void CreateNvmePathRequest::_internal_set_parent(const std::string& value) {
+  
+  _impl_.parent_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CreateNvmePathRequest::_internal_mutable_parent() {
+  
+  return _impl_.parent_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CreateNvmePathRequest::release_parent() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateNvmePathRequest.parent)
+  return _impl_.parent_.Release();
+}
+inline void CreateNvmePathRequest::set_allocated_parent(std::string* parent) {
+  if (parent != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.parent_.SetAllocated(parent, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.parent_.IsDefault()) {
+    _impl_.parent_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNvmePathRequest.parent)
+}
+
+// .opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateNvmePathRequest::_internal_has_nvme_path() const {
   return this != internal_default_instance() && _impl_.nvme_path_ != nullptr;
 }
@@ -6889,7 +6757,7 @@ inline void CreateNvmePathRequest::set_allocated_nvme_path(::opi_api::storage::v
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNvmePathRequest.nvme_path)
 }
 
-// string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];
+// string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void CreateNvmePathRequest::clear_nvme_path_id() {
   _impl_.nvme_path_id_.ClearToEmpty();
 }

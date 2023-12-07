@@ -9,30 +9,10 @@ public interface ListNvmeRemoteControllersRequestOrBuilder extends
 
   /**
    * <pre>
-   * Parent's object unique identifier
-   * </pre>
-   *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The parent.
-   */
-  java.lang.String getParent();
-  /**
-   * <pre>
-   * Parent's object unique identifier
-   * </pre>
-   *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for parent.
-   */
-  com.google.protobuf.ByteString
-      getParentBytes();
-
-  /**
-   * <pre>
    * page size of list request
    * </pre>
    *
-   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   int getPageSize();
@@ -42,7 +22,7 @@ public interface ListNvmeRemoteControllersRequestOrBuilder extends
    * page token of list request
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
@@ -51,7 +31,7 @@ public interface ListNvmeRemoteControllersRequestOrBuilder extends
    * page token of list request
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
