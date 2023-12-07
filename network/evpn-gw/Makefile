@@ -3,11 +3,11 @@
 # Copyright (c) 2022 Dell Inc, or its subsidiaries.
 # Copyright (C) 2023 Nordix Foundation.
 
-all: buflint doc
+all: buflint bufgen doc
 
 doc:
 	rm -rf ./google
-	rm -rf ./v1alpha1/{autogen.md}
+	rm -f ./v1alpha1/autogen.md
 	mkdir -p  ./v1alpha1
 
 	# protoc doesn't include annotation and http googleapis, so we have to get them here
