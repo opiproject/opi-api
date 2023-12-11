@@ -4,6 +4,9 @@ deps:
 - buf.build/googleapis/googleapis
 - buf.build/grpc-ecosystem/grpc-gateway
 lint:
+  use:
+    - DEFAULT
+    - COMMENTS
   except:
     - PACKAGE_DIRECTORY_MATCH
     # Don't check standard name as that causes google aip issues
@@ -11,3 +14,5 @@ lint:
     # Allow same name used in request/response type for multiple RPCs
     - RPC_REQUEST_RESPONSE_UNIQUE
     - ENUM_ZERO_VALUE_SUFFIX
+    # disabled comment checking - todo: enable and resolve these errors
+    - COMMENT_ONEOF
