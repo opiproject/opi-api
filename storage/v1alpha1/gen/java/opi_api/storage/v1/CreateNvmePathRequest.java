@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateNvmePathRequest() {
+    parent_ = "";
     nvmePathId_ = "";
   }
 
@@ -54,6 +55,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
+          case 18: {
             opi_api.storage.v1.NvmePath.Builder subBuilder = null;
             if (nvmePath_ != null) {
               subBuilder = nvmePath_.toBuilder();
@@ -66,7 +73,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             nvmePathId_ = s;
@@ -106,14 +113,60 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateNvmePathRequest.class, opi_api.storage.v1.CreateNvmePathRequest.Builder.class);
   }
 
-  public static final int NVME_PATH_FIELD_NUMBER = 1;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
+  /**
+   * <pre>
+   * Parent's remote controller unique identifier
+   * </pre>
+   *
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
+   */
+  @java.lang.Override
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Parent's remote controller unique identifier
+   * </pre>
+   *
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NVME_PATH_FIELD_NUMBER = 2;
   private opi_api.storage.v1.NvmePath nvmePath_;
   /**
    * <pre>
    * The Nvme Path to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmePath field is set.
    */
   @java.lang.Override
@@ -125,7 +178,7 @@ private static final long serialVersionUID = 0L;
    * The Nvme Path to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmePath.
    */
   @java.lang.Override
@@ -137,14 +190,14 @@ private static final long serialVersionUID = 0L;
    * The Nvme Path to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmePathOrBuilder getNvmePathOrBuilder() {
     return getNvmePath();
   }
 
-  public static final int NVME_PATH_ID_FIELD_NUMBER = 2;
+  public static final int NVME_PATH_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object nvmePathId_;
   /**
    * <pre>
@@ -152,7 +205,7 @@ private static final long serialVersionUID = 0L;
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmePathId.
    */
   @java.lang.Override
@@ -174,7 +227,7 @@ private static final long serialVersionUID = 0L;
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmePathId.
    */
   @java.lang.Override
@@ -206,11 +259,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    }
     if (nvmePath_ != null) {
-      output.writeMessage(1, getNvmePath());
+      output.writeMessage(2, getNvmePath());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvmePathId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nvmePathId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nvmePathId_);
     }
     unknownFields.writeTo(output);
   }
@@ -221,12 +277,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
     if (nvmePath_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getNvmePath());
+        .computeMessageSize(2, getNvmePath());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvmePathId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nvmePathId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nvmePathId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -243,6 +302,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateNvmePathRequest other = (opi_api.storage.v1.CreateNvmePathRequest) obj;
 
+    if (!getParent()
+        .equals(other.getParent())) return false;
     if (hasNvmePath() != other.hasNvmePath()) return false;
     if (hasNvmePath()) {
       if (!getNvmePath()
@@ -261,6 +322,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     if (hasNvmePath()) {
       hash = (37 * hash) + NVME_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getNvmePath().hashCode();
@@ -404,6 +467,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      parent_ = "";
+
       if (nvmePathBuilder_ == null) {
         nvmePath_ = null;
       } else {
@@ -438,6 +503,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateNvmePathRequest buildPartial() {
       opi_api.storage.v1.CreateNvmePathRequest result = new opi_api.storage.v1.CreateNvmePathRequest(this);
+      result.parent_ = parent_;
       if (nvmePathBuilder_ == null) {
         result.nvmePath_ = nvmePath_;
       } else {
@@ -492,6 +558,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateNvmePathRequest other) {
       if (other == opi_api.storage.v1.CreateNvmePathRequest.getDefaultInstance()) return this;
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
       if (other.hasNvmePath()) {
         mergeNvmePath(other.getNvmePath());
       }
@@ -528,6 +598,102 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object parent_ = "";
+    /**
+     * <pre>
+     * Parent's remote controller unique identifier
+     * </pre>
+     *
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Parent's remote controller unique identifier
+     * </pre>
+     *
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
+     */
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Parent's remote controller unique identifier
+     * </pre>
+     *
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Parent's remote controller unique identifier
+     * </pre>
+     *
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Parent's remote controller unique identifier
+     * </pre>
+     *
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+
     private opi_api.storage.v1.NvmePath nvmePath_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmePath, opi_api.storage.v1.NvmePath.Builder, opi_api.storage.v1.NvmePathOrBuilder> nvmePathBuilder_;
@@ -536,7 +702,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the nvmePath field is set.
      */
     public boolean hasNvmePath() {
@@ -547,7 +713,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The nvmePath.
      */
     public opi_api.storage.v1.NvmePath getNvmePath() {
@@ -562,7 +728,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmePath(opi_api.storage.v1.NvmePath value) {
       if (nvmePathBuilder_ == null) {
@@ -582,7 +748,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNvmePath(
         opi_api.storage.v1.NvmePath.Builder builderForValue) {
@@ -600,7 +766,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNvmePath(opi_api.storage.v1.NvmePath value) {
       if (nvmePathBuilder_ == null) {
@@ -622,7 +788,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNvmePath() {
       if (nvmePathBuilder_ == null) {
@@ -640,7 +806,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmePath.Builder getNvmePathBuilder() {
       
@@ -652,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.storage.v1.NvmePathOrBuilder getNvmePathOrBuilder() {
       if (nvmePathBuilder_ != null) {
@@ -667,7 +833,7 @@ private static final long serialVersionUID = 0L;
      * The Nvme Path to be created.
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmePath, opi_api.storage.v1.NvmePath.Builder, opi_api.storage.v1.NvmePathOrBuilder> 
@@ -690,7 +856,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nvmePathId.
      */
     public java.lang.String getNvmePathId() {
@@ -711,7 +877,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nvmePathId.
      */
     public com.google.protobuf.ByteString
@@ -733,7 +899,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nvmePathId to set.
      * @return This builder for chaining.
      */
@@ -753,7 +919,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearNvmePathId() {
@@ -768,7 +934,7 @@ private static final long serialVersionUID = 0L;
      * If this is not provided the system will auto-generate it.
      * </pre>
      *
-     * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nvmePathId to set.
      * @return This builder for chaining.
      */

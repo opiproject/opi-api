@@ -2,7 +2,7 @@
 # Copyright (C) 2022 Intel Corporation
 # Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
-all: buflint doc
+all: buflint bufgen doc
 
 buflint:
 	docker run --rm -v "${PWD}/../../common/v1":/common -v "${PWD}":/out -w /out bufbuild/buf lint

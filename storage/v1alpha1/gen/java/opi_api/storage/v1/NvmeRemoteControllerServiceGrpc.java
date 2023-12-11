@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Back End APIs. Reponsible for connection to external Nvme devices
+ * Back End APIs. Responsible for connection to external Nvme devices
  * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
  * </pre>
  */
@@ -530,7 +530,7 @@ public final class NvmeRemoteControllerServiceGrpc {
 
   /**
    * <pre>
-   * Back End APIs. Reponsible for connection to external Nvme devices
+   * Back End APIs. Responsible for connection to external Nvme devices
    * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
    * </pre>
    */
@@ -799,7 +799,7 @@ public final class NvmeRemoteControllerServiceGrpc {
 
   /**
    * <pre>
-   * Back End APIs. Reponsible for connection to external Nvme devices
+   * Back End APIs. Responsible for connection to external Nvme devices
    * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
    * </pre>
    */
@@ -983,7 +983,7 @@ public final class NvmeRemoteControllerServiceGrpc {
 
   /**
    * <pre>
-   * Back End APIs. Reponsible for connection to external Nvme devices
+   * Back End APIs. Responsible for connection to external Nvme devices
    * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
    * </pre>
    */
@@ -1152,7 +1152,7 @@ public final class NvmeRemoteControllerServiceGrpc {
 
   /**
    * <pre>
-   * Back End APIs. Reponsible for connection to external Nvme devices
+   * Back End APIs. Responsible for connection to external Nvme devices
    * e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
    * </pre>
    */

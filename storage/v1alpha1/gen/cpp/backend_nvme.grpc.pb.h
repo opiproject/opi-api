@@ -34,7 +34,7 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-// Back End APIs. Reponsible for connection to external Nvme devices
+// Back End APIs. Responsible for connection to external Nvme devices
 // e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
 class NvmeRemoteControllerService final {
  public:

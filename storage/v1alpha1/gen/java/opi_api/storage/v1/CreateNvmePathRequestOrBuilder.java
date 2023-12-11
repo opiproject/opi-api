@@ -9,10 +9,30 @@ public interface CreateNvmePathRequestOrBuilder extends
 
   /**
    * <pre>
+   * Parent's remote controller unique identifier
+   * </pre>
+   *
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   * <pre>
+   * Parent's remote controller unique identifier
+   * </pre>
+   *
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString
+      getParentBytes();
+
+  /**
+   * <pre>
    * The Nvme Path to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the nvmePath field is set.
    */
   boolean hasNvmePath();
@@ -21,7 +41,7 @@ public interface CreateNvmePathRequestOrBuilder extends
    * The Nvme Path to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The nvmePath.
    */
   opi_api.storage.v1.NvmePath getNvmePath();
@@ -30,7 +50,7 @@ public interface CreateNvmePathRequestOrBuilder extends
    * The Nvme Path to be created.
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmePath nvme_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmePath nvme_path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.storage.v1.NvmePathOrBuilder getNvmePathOrBuilder();
 
@@ -40,7 +60,7 @@ public interface CreateNvmePathRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nvmePathId.
    */
   java.lang.String getNvmePathId();
@@ -50,7 +70,7 @@ public interface CreateNvmePathRequestOrBuilder extends
    * If this is not provided the system will auto-generate it.
    * </pre>
    *
-   * <code>string nvme_path_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string nvme_path_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nvmePathId.
    */
   com.google.protobuf.ByteString

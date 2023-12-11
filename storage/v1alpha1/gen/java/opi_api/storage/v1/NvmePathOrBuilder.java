@@ -33,30 +33,10 @@ public interface NvmePathOrBuilder extends
 
   /**
    * <pre>
-   * Nvme Remote Controller this path corresponds to
-   * </pre>
-   *
-   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The controllerNameRef.
-   */
-  java.lang.String getControllerNameRef();
-  /**
-   * <pre>
-   * Nvme Remote Controller this path corresponds to
-   * </pre>
-   *
-   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for controllerNameRef.
-   */
-  com.google.protobuf.ByteString
-      getControllerNameRefBytes();
-
-  /**
-   * <pre>
    * Transport type
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for trtype.
    */
   int getTrtypeValue();
@@ -65,7 +45,7 @@ public interface NvmePathOrBuilder extends
    * Transport type
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trtype.
    */
   opi_api.storage.v1.NvmeTransportType getTrtype();
@@ -75,7 +55,7 @@ public interface NvmePathOrBuilder extends
    * Destination address (e.g. IP address, BDF for local PCIe)
    * </pre>
    *
-   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The traddr.
    */
   java.lang.String getTraddr();
@@ -84,7 +64,7 @@ public interface NvmePathOrBuilder extends
    * Destination address (e.g. IP address, BDF for local PCIe)
    * </pre>
    *
-   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for traddr.
    */
   com.google.protobuf.ByteString
@@ -95,7 +75,7 @@ public interface NvmePathOrBuilder extends
    * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the fabrics field is set.
    */
   boolean hasFabrics();
@@ -104,7 +84,7 @@ public interface NvmePathOrBuilder extends
    * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The fabrics.
    */
   opi_api.storage.v1.FabricsPath getFabrics();
@@ -113,7 +93,7 @@ public interface NvmePathOrBuilder extends
    * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder();
 }

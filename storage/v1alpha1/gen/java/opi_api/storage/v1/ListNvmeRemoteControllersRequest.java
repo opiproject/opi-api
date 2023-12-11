@@ -20,7 +20,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListNvmeRemoteControllersRequest() {
-    parent_ = "";
     pageToken_ = "";
   }
 
@@ -54,18 +53,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            parent_ = s;
-            break;
-          }
-          case 16: {
+          case 8: {
 
             pageSize_ = input.readInt32();
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             pageToken_ = s;
@@ -105,60 +98,14 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.ListNvmeRemoteControllersRequest.class, opi_api.storage.v1.ListNvmeRemoteControllersRequest.Builder.class);
   }
 
-  public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
-  /**
-   * <pre>
-   * Parent's object unique identifier
-   * </pre>
-   *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The parent.
-   */
-  @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Parent's object unique identifier
-   * </pre>
-   *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for parent.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getParentBytes() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      parent_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
+  public static final int PAGE_SIZE_FIELD_NUMBER = 1;
   private int pageSize_;
   /**
    * <pre>
    * page size of list request
    * </pre>
    *
-   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -166,14 +113,14 @@ private static final long serialVersionUID = 0L;
     return pageSize_;
   }
 
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
    * page token of list request
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   @java.lang.Override
@@ -194,7 +141,7 @@ private static final long serialVersionUID = 0L;
    * page token of list request
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   @java.lang.Override
@@ -226,14 +173,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
-    }
     if (pageSize_ != 0) {
-      output.writeInt32(2, pageSize_);
+      output.writeInt32(1, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -244,15 +188,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
-    }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, pageSize_);
+        .computeInt32Size(1, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -269,8 +210,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.ListNvmeRemoteControllersRequest other = (opi_api.storage.v1.ListNvmeRemoteControllersRequest) obj;
 
-    if (!getParent()
-        .equals(other.getParent())) return false;
     if (getPageSize()
         != other.getPageSize()) return false;
     if (!getPageToken()
@@ -286,8 +225,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
@@ -429,8 +366,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
-
       pageSize_ = 0;
 
       pageToken_ = "";
@@ -461,7 +396,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.ListNvmeRemoteControllersRequest buildPartial() {
       opi_api.storage.v1.ListNvmeRemoteControllersRequest result = new opi_api.storage.v1.ListNvmeRemoteControllersRequest(this);
-      result.parent_ = parent_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       onBuilt();
@@ -512,10 +446,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.ListNvmeRemoteControllersRequest other) {
       if (other == opi_api.storage.v1.ListNvmeRemoteControllersRequest.getDefaultInstance()) return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
-        onChanged();
-      }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
@@ -552,109 +482,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object parent_ = "";
-    /**
-     * <pre>
-     * Parent's object unique identifier
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The parent.
-     */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Parent's object unique identifier
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for parent.
-     */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
-      java.lang.Object ref = parent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        parent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Parent's object unique identifier
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParent(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      parent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Parent's object unique identifier
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearParent() {
-      
-      parent_ = getDefaultInstance().getParent();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Parent's object unique identifier
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      parent_ = value;
-      onChanged();
-      return this;
-    }
-
     private int pageSize_ ;
     /**
      * <pre>
      * page size of list request
      * </pre>
      *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -666,7 +500,7 @@ private static final long serialVersionUID = 0L;
      * page size of list request
      * </pre>
      *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -681,7 +515,7 @@ private static final long serialVersionUID = 0L;
      * page size of list request
      * </pre>
      *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
@@ -697,7 +531,7 @@ private static final long serialVersionUID = 0L;
      * page token of list request
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -717,7 +551,7 @@ private static final long serialVersionUID = 0L;
      * page token of list request
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -738,7 +572,7 @@ private static final long serialVersionUID = 0L;
      * page token of list request
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -757,7 +591,7 @@ private static final long serialVersionUID = 0L;
      * page token of list request
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
@@ -771,7 +605,7 @@ private static final long serialVersionUID = 0L;
      * page token of list request
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */

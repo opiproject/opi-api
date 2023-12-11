@@ -21,7 +21,6 @@ private static final long serialVersionUID = 0L;
   }
   private NvmePath() {
     name_ = "";
-    controllerNameRef_ = "";
     trtype_ = 0;
     traddr_ = "";
   }
@@ -62,25 +61,19 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            controllerNameRef_ = s;
-            break;
-          }
-          case 24: {
+          case 16: {
             int rawValue = input.readEnum();
 
             trtype_ = rawValue;
             break;
           }
-          case 34: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             traddr_ = s;
             break;
           }
-          case 42: {
+          case 34: {
             opi_api.storage.v1.FabricsPath.Builder subBuilder = null;
             if (fabrics_ != null) {
               subBuilder = fabrics_.toBuilder();
@@ -177,60 +170,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONTROLLER_NAME_REF_FIELD_NUMBER = 2;
-  private volatile java.lang.Object controllerNameRef_;
-  /**
-   * <pre>
-   * Nvme Remote Controller this path corresponds to
-   * </pre>
-   *
-   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The controllerNameRef.
-   */
-  @java.lang.Override
-  public java.lang.String getControllerNameRef() {
-    java.lang.Object ref = controllerNameRef_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      controllerNameRef_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Nvme Remote Controller this path corresponds to
-   * </pre>
-   *
-   * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for controllerNameRef.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getControllerNameRefBytes() {
-    java.lang.Object ref = controllerNameRef_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      controllerNameRef_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TRTYPE_FIELD_NUMBER = 3;
+  public static final int TRTYPE_FIELD_NUMBER = 2;
   private int trtype_;
   /**
    * <pre>
    * Transport type
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for trtype.
    */
   @java.lang.Override public int getTrtypeValue() {
@@ -241,7 +188,7 @@ private static final long serialVersionUID = 0L;
    * Transport type
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trtype.
    */
   @java.lang.Override public opi_api.storage.v1.NvmeTransportType getTrtype() {
@@ -250,14 +197,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.storage.v1.NvmeTransportType.UNRECOGNIZED : result;
   }
 
-  public static final int TRADDR_FIELD_NUMBER = 4;
+  public static final int TRADDR_FIELD_NUMBER = 3;
   private volatile java.lang.Object traddr_;
   /**
    * <pre>
    * Destination address (e.g. IP address, BDF for local PCIe)
    * </pre>
    *
-   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The traddr.
    */
   @java.lang.Override
@@ -278,7 +225,7 @@ private static final long serialVersionUID = 0L;
    * Destination address (e.g. IP address, BDF for local PCIe)
    * </pre>
    *
-   * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for traddr.
    */
   @java.lang.Override
@@ -296,14 +243,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FABRICS_FIELD_NUMBER = 5;
+  public static final int FABRICS_FIELD_NUMBER = 4;
   private opi_api.storage.v1.FabricsPath fabrics_;
   /**
    * <pre>
    * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the fabrics field is set.
    */
   @java.lang.Override
@@ -315,7 +262,7 @@ private static final long serialVersionUID = 0L;
    * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The fabrics.
    */
   @java.lang.Override
@@ -327,7 +274,7 @@ private static final long serialVersionUID = 0L;
    * Not applicable for local PCIe. Required for Nvme over fabrics transport types
    * </pre>
    *
-   * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder() {
@@ -351,17 +298,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerNameRef_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, controllerNameRef_);
-    }
     if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, trtype_);
+      output.writeEnum(2, trtype_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, traddr_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, traddr_);
     }
     if (fabrics_ != null) {
-      output.writeMessage(5, getFabrics());
+      output.writeMessage(4, getFabrics());
     }
     unknownFields.writeTo(output);
   }
@@ -375,19 +319,16 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerNameRef_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, controllerNameRef_);
-    }
     if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, trtype_);
+        .computeEnumSize(2, trtype_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, traddr_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, traddr_);
     }
     if (fabrics_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getFabrics());
+        .computeMessageSize(4, getFabrics());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -406,8 +347,6 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getControllerNameRef()
-        .equals(other.getControllerNameRef())) return false;
     if (trtype_ != other.trtype_) return false;
     if (!getTraddr()
         .equals(other.getTraddr())) return false;
@@ -429,8 +368,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + CONTROLLER_NAME_REF_FIELD_NUMBER;
-    hash = (53 * hash) + getControllerNameRef().hashCode();
     hash = (37 * hash) + TRTYPE_FIELD_NUMBER;
     hash = (53 * hash) + trtype_;
     hash = (37 * hash) + TRADDR_FIELD_NUMBER;
@@ -578,8 +515,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      controllerNameRef_ = "";
-
       trtype_ = 0;
 
       traddr_ = "";
@@ -617,7 +552,6 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.NvmePath buildPartial() {
       opi_api.storage.v1.NvmePath result = new opi_api.storage.v1.NvmePath(this);
       result.name_ = name_;
-      result.controllerNameRef_ = controllerNameRef_;
       result.trtype_ = trtype_;
       result.traddr_ = traddr_;
       if (fabricsBuilder_ == null) {
@@ -675,10 +609,6 @@ private static final long serialVersionUID = 0L;
       if (other == opi_api.storage.v1.NvmePath.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        onChanged();
-      }
-      if (!other.getControllerNameRef().isEmpty()) {
-        controllerNameRef_ = other.controllerNameRef_;
         onChanged();
       }
       if (other.trtype_ != 0) {
@@ -826,109 +756,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object controllerNameRef_ = "";
-    /**
-     * <pre>
-     * Nvme Remote Controller this path corresponds to
-     * </pre>
-     *
-     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The controllerNameRef.
-     */
-    public java.lang.String getControllerNameRef() {
-      java.lang.Object ref = controllerNameRef_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        controllerNameRef_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Nvme Remote Controller this path corresponds to
-     * </pre>
-     *
-     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for controllerNameRef.
-     */
-    public com.google.protobuf.ByteString
-        getControllerNameRefBytes() {
-      java.lang.Object ref = controllerNameRef_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        controllerNameRef_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Nvme Remote Controller this path corresponds to
-     * </pre>
-     *
-     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The controllerNameRef to set.
-     * @return This builder for chaining.
-     */
-    public Builder setControllerNameRef(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      controllerNameRef_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Nvme Remote Controller this path corresponds to
-     * </pre>
-     *
-     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearControllerNameRef() {
-      
-      controllerNameRef_ = getDefaultInstance().getControllerNameRef();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Nvme Remote Controller this path corresponds to
-     * </pre>
-     *
-     * <code>string controller_name_ref = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for controllerNameRef to set.
-     * @return This builder for chaining.
-     */
-    public Builder setControllerNameRefBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      controllerNameRef_ = value;
-      onChanged();
-      return this;
-    }
-
     private int trtype_ = 0;
     /**
      * <pre>
      * Transport type
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for trtype.
      */
     @java.lang.Override public int getTrtypeValue() {
@@ -939,7 +773,7 @@ private static final long serialVersionUID = 0L;
      * Transport type
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The enum numeric value on the wire for trtype to set.
      * @return This builder for chaining.
      */
@@ -954,7 +788,7 @@ private static final long serialVersionUID = 0L;
      * Transport type
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The trtype.
      */
     @java.lang.Override
@@ -968,7 +802,7 @@ private static final long serialVersionUID = 0L;
      * Transport type
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The trtype to set.
      * @return This builder for chaining.
      */
@@ -986,7 +820,7 @@ private static final long serialVersionUID = 0L;
      * Transport type
      * </pre>
      *
-     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearTrtype() {
@@ -1002,7 +836,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The traddr.
      */
     public java.lang.String getTraddr() {
@@ -1022,7 +856,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for traddr.
      */
     public com.google.protobuf.ByteString
@@ -1043,7 +877,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The traddr to set.
      * @return This builder for chaining.
      */
@@ -1062,7 +896,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearTraddr() {
@@ -1076,7 +910,7 @@ private static final long serialVersionUID = 0L;
      * Destination address (e.g. IP address, BDF for local PCIe)
      * </pre>
      *
-     * <code>string traddr = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string traddr = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for traddr to set.
      * @return This builder for chaining.
      */
@@ -1100,7 +934,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the fabrics field is set.
      */
     public boolean hasFabrics() {
@@ -1111,7 +945,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The fabrics.
      */
     public opi_api.storage.v1.FabricsPath getFabrics() {
@@ -1126,7 +960,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFabrics(opi_api.storage.v1.FabricsPath value) {
       if (fabricsBuilder_ == null) {
@@ -1146,7 +980,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFabrics(
         opi_api.storage.v1.FabricsPath.Builder builderForValue) {
@@ -1164,7 +998,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeFabrics(opi_api.storage.v1.FabricsPath value) {
       if (fabricsBuilder_ == null) {
@@ -1186,7 +1020,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearFabrics() {
       if (fabricsBuilder_ == null) {
@@ -1204,7 +1038,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.FabricsPath.Builder getFabricsBuilder() {
       
@@ -1216,7 +1050,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.storage.v1.FabricsPathOrBuilder getFabricsOrBuilder() {
       if (fabricsBuilder_ != null) {
@@ -1231,7 +1065,7 @@ private static final long serialVersionUID = 0L;
      * Not applicable for local PCIe. Required for Nvme over fabrics transport types
      * </pre>
      *
-     * <code>.opi_api.storage.v1.FabricsPath fabrics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.opi_api.storage.v1.FabricsPath fabrics = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.FabricsPath, opi_api.storage.v1.FabricsPath.Builder, opi_api.storage.v1.FabricsPathOrBuilder> 
