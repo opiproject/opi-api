@@ -19,7 +19,6 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
 import "opicommon.proto";
-import "uuid.proto";
 
 // Back End APIs. Responsible for connection to external Nvme devices
 // e.g. connection to Nvme/TCP Nvme/RDMA and local Nvme/Pcie ssds
@@ -253,7 +252,7 @@ message NvmeRemoteNamespace {
     int64 eui64 = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+    string uuid = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // ANA state and such?
 }

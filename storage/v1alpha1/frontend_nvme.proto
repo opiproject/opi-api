@@ -12,7 +12,6 @@ option java_outer_classname = "FrontendNvmeProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "opicommon.proto";
-import "uuid.proto";
 
 import "google/api/client.proto";
 import "google/api/resource.proto";
@@ -325,7 +324,7 @@ message NvmeNamespaceSpec {
     int64 eui64 = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 5 [(google.api.field_behavior) = OPTIONAL];
+    string uuid = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // The back/middle-end volume to back this namespace.
     string volume_name_ref = 6 [(google.api.field_behavior) = REQUIRED];

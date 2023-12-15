@@ -19,7 +19,6 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
 import "opicommon.proto";
-import "uuid.proto";
 
 // Back End (network-facing) APIs. This is debug interface for null block devices.
 service NullVolumeService {
@@ -90,7 +89,7 @@ message NullVolume {
     int64 blocks_count = 3 [(google.api.field_behavior) = REQUIRED];
 
     // The UUID of the NullVolume. This field is optional.
-    common.v1.Uuid uuid = 4 [(google.api.field_behavior) = OPTIONAL];
+    string uuid = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to create an Null Volume.

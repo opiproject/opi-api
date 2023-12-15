@@ -19,7 +19,6 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
 import "opicommon.proto";
-import "uuid.proto";
 
 // Back End (network-facing) APIs. This service is for AIO generic kernel block device.
 service AioVolumeService {
@@ -90,7 +89,7 @@ message AioVolume {
     int64 blocks_count = 3 [(google.api.field_behavior) = OPTIONAL];
 
     // The UUID (Universally Unique Identifier) of the AioVolume.
-    common.v1.Uuid uuid = 4 [(google.api.field_behavior) = OPTIONAL];
+    string uuid = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // The filename associated with the AioVolume.
     string filename = 5 [(google.api.field_behavior) = REQUIRED];
