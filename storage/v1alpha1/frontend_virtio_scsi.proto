@@ -47,7 +47,7 @@ service FrontendVirtioScsiService {
     // List Virtio Scsi Targets
     rpc ListVirtioScsiTargets   (ListVirtioScsiTargetsRequest)   returns (ListVirtioScsiTargetsResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/{parent=virtioScsiTargets}"
         };
         option (google.api.method_signature) = "parent";
     }
@@ -135,7 +135,7 @@ service FrontendVirtioScsiService {
     // List Virtio Scsi Luns
     rpc ListVirtioScsiLuns   (ListVirtioScsiLunsRequest)   returns (ListVirtioScsiLunsResponse)   {
         option (google.api.http) = {
-            get: "/v1/{parent=subsystems}"
+            get: "/v1/{parent=virtioScsiLuns}"
         };
         option (google.api.method_signature) = "parent";
     }
