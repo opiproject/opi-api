@@ -3,7 +3,7 @@ directories:
 - common
 - inventory
 - security
-#  - storage
+- storage
 - network/opinetcommon
 - network/cloud
 - network/evpn-gw
