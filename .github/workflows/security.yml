@@ -48,7 +48,7 @@ jobs:
       working-directory: security
 
     - name: Upload build artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         path: security/v1/gen/go/*.pb.go
         retention-days: 1
