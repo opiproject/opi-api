@@ -18,8 +18,8 @@ all:
 	mv google "${PWD}"/v1/
 
 	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -v "${PWD}"/v1:/protos pseudomuto/protoc-gen-doc:1.5.1 --doc_opt=markdown,autogen.md
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -w /out --entrypoint=sh ghcr.io/docker-multiarch/google-api-linter:1.59.2 -c "api-linter /out/*.proto --output-format summary"
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -w /out --entrypoint=sh ghcr.io/docker-multiarch/google-api-linter:1.59.2 -c "api-linter /out/*.proto --output-format github --set-exit-status"
+	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -w /out --entrypoint=sh ghcr.io/docker-multiarch/google-api-linter:1.60.0 -c "api-linter /out/*.proto --output-format summary"
+	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -w /out --entrypoint=sh ghcr.io/docker-multiarch/google-api-linter:1.60.0 -c "api-linter /out/*.proto --output-format github --set-exit-status"
 	rm -rf "${PWD}"/v1/google
 
 buf:
