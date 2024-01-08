@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Dell Inc, or its subsidiaries.
+
+syntax = "proto3";
+package opi_api.network.k8s.v1alpha1;
+
+option java_package = "opi_api.network.k8s.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "K8sProto";
+
+option go_package = "github.com/opiproject/opi-api/network/k8s/v1alpha1/gen/go";
