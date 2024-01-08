@@ -1,6 +1,11 @@
-version: v1beta1
+version: v1
 name: buf.build/opiproject/k8s
 deps:
 - buf.build/googleapis/googleapis
 - buf.build/grpc-ecosystem/grpc-gateway
-
+lint:
+  use:
+    - DEFAULT
+    - COMMENTS
+  except:
+    - PACKAGE_DIRECTORY_MATCH

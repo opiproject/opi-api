@@ -2,7 +2,7 @@
 # Copyright (C) 2022 Intel Corporation
 # Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
-all: buflint doc
+all: buflint bufgen doc
 
 doc:
 	rm -rf ./google

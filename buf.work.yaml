@@ -7,5 +7,5 @@ directories:
 - network/opinetcommon
 - network/cloud
 - network/evpn-gw
-#  - network/k8s
-#  - network/telco
+- network/k8s
+- network/telco
