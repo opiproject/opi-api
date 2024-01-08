@@ -1,0 +1,42 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (C) 2023 Nordix Foundation.
+// Copyright (c) 2024 Ericsson AB.
+
+// (-- api-linter: core::0216::synonyms=disabled
+//     aip.dev/not-precedent: Word "Status" will be used instead of "State". --)
+
+syntax = "proto3";
+
+package opi_api.network.evpn_gw.v1alpha1;
+
+option go_package = "github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go";
+option java_package = "opi_api.network.evpn_gw.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "ComponentProto";
+
+import "google/api/field_behavior.proto";
+
+// Component represents a subscribed component (e.g. FRR component, Linux component etc...)
+// (-- api-linter: core::0123::resource-annotation=disabled
+//     aip.dev/not-precedent: The name here is not the unique identifier of a DB object 
+//                            just the name of the component that is subscribed. --)
+message Component {
+    // Component's name
+    string name       = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Component's status
+    CompStatus status = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // Component's details in the form of json string
+    string details    = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// CompStatus reflects the status of a component
+enum CompStatus {
+    // component status is "unspecified"
+    COMP_STATUS_UNSPECIFIED = 0;
+    // component status is "pending"
+    COMP_STATUS_PENDING     = 1;
+    // component status is "success"
+    COMP_STATUS_SUCCESS     = 2;
+    // component status is "error"
+    COMP_STATUS_ERROR       = 3;
+}

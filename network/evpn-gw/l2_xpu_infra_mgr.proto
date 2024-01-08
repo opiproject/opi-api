@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2023 Nordix Foundation.
+// Copyright (c) 2024 Ericsson AB.
 
 // (-- api-linter: core::0132::request-parent-required=disabled
 //     aip.dev/not-precedent: All the resources are top level. --)
@@ -20,6 +21,7 @@ option java_multiple_files = true;
 option java_outer_classname = "L2XpuInfraMgrProto";
 
 import "networktypes.proto";
+import "component.proto";
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";
@@ -147,6 +149,8 @@ message LogicalBridgeSpec {
 message LogicalBridgeStatus {
     // operational state of a Logical Bridge
     LBOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // status of the components
+    repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateLogicalBridgeRequest structure
@@ -249,6 +253,8 @@ message BridgePortSpec {
 message BridgePortStatus {
     // operational status of a Bridge Port
     BPOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // status of the components
+    repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateBridgePortRequest structure
@@ -317,21 +323,25 @@ message UpdateBridgePortRequest {
 // LBOperStatus status reflects the operational status of a Logical Bridge
 enum LBOperStatus {
     // unknown
-    LB_OPER_STATUS_UNSPECIFIED = 0;
+    LB_OPER_STATUS_UNSPECIFIED   = 0;
     // Logical Bridge is up
-    LB_OPER_STATUS_UP          = 1;
+    LB_OPER_STATUS_UP            = 1;
     // Logical Bridge is down
-    LB_OPER_STATUS_DOWN        = 2;
+    LB_OPER_STATUS_DOWN          = 2;
+    // Logical Bridge is to be deleted
+    LB_OPER_STATUS_TO_BE_DELETED = 3;
 }
 
 // BPOperStatus status reflects the operational status of a Bridge Port
 enum BPOperStatus {
     // unknown
-    BP_OPER_STATUS_UNSPECIFIED = 0;
+    BP_OPER_STATUS_UNSPECIFIED   = 0;
     // Bridge Port is up
-    BP_OPER_STATUS_UP          = 1;
+    BP_OPER_STATUS_UP            = 1;
     // Bridge Port is down
-    BP_OPER_STATUS_DOWN        = 2;
+    BP_OPER_STATUS_DOWN          = 2;
+    // Bridge Port is to be deleted
+    BP_OPER_STATUS_TO_BE_DELETED = 3;
 }
 
 // BridgePortType reflects the different types of a Bridge Port

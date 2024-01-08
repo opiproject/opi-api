@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2023 Nordix Foundation.
+// Copyright (c) 2024 Ericsson AB.
 
 // (-- api-linter: core::0132::request-parent-required=disabled
 //     aip.dev/not-precedent: All the resources are top level. --)
@@ -20,6 +21,7 @@ option java_multiple_files = true;
 option java_outer_classname = "L3XpuInfraMgrProto";
 
 import "networktypes.proto";
+import "component.proto";
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";
@@ -144,27 +146,10 @@ message VrfSpec {
 
 // operational status of a Vrf
 message VrfStatus {
-    // Routing table number
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: routing_table cannot be negative number. --)
-    uint32 routing_table              = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Local AS configured for VRF
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: local_as cannot be negative number. --)
-    uint32 local_as                   = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Route distinguisher
-    string rd                         = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Router MAC address of the Vrf
-    bytes rmac                        = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // List of import RTs
-    repeated string import_rts        = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // List of export RTs
-    repeated string export_rts        = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // List of connected Logical Bridges to Vrf
-    // This defines the VLANs that are connected to the Vrf
-    repeated string logical_bridges   = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
     // operational status of a Vrf
     VRFOperStatus oper_status         = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // status of the components
+    repeated Component components     = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateVrfRequest structure
@@ -282,6 +267,8 @@ message SviSpec {
 message SviStatus {
     // operational status of a Svi
     SVIOperStatus oper_status  = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // status of the components
+    repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateSviRequest structure
@@ -350,19 +337,23 @@ message UpdateSviRequest {
 // VRFOperStatus status reflects the operational status of a Vrf
 enum VRFOperStatus {
     // unknown
-    VRF_OPER_STATUS_UNSPECIFIED = 0;
+    VRF_OPER_STATUS_UNSPECIFIED   = 0;
     // Vrf is up
-    VRF_OPER_STATUS_UP          = 1;
+    VRF_OPER_STATUS_UP            = 1;
     // Vrf is down
-    VRF_OPER_STATUS_DOWN        = 2;
+    VRF_OPER_STATUS_DOWN          = 2;
+    // Vrf is to be deleted
+    VRF_OPER_STATUS_TO_BE_DELETED = 3;
 }
 
 // SVIOperStatus status reflects the operational status of a Svi
 enum SVIOperStatus {
     // unknown
-    SVI_OPER_STATUS_UNSPECIFIED = 0;
+    SVI_OPER_STATUS_UNSPECIFIED   = 0;
     // Svi is up
-    SVI_OPER_STATUS_UP          = 1;
+    SVI_OPER_STATUS_UP            = 1;
     // Svi is down
-    SVI_OPER_STATUS_DOWN        = 2;
+    SVI_OPER_STATUS_DOWN          = 2;
+    // Svi is to be deleted
+    SVI_OPER_STATUS_TO_BE_DELETED = 3;
 }

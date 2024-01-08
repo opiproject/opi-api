@@ -32,18 +32,14 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 var (
-	filter_VrfService_CreateVrf_0 = &utilities.DoubleArray{Encoding: map[string]int{"vrf": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_VrfService_CreateVrf_0 = &utilities.DoubleArray{Encoding: map[string]int{"vrf": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_VrfService_CreateVrf_0(ctx context.Context, marshaler runtime.Marshaler, client VrfServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateVrfRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Vrf); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Vrf); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -63,11 +59,7 @@ func local_request_VrfService_CreateVrf_0(ctx context.Context, marshaler runtime
 	var protoReq CreateVrfRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Vrf); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Vrf); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -172,7 +164,7 @@ func local_request_VrfService_GetVrf_0(ctx context.Context, marshaler runtime.Ma
 }
 
 var (
-	filter_VrfService_DeleteVrf_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_VrfService_DeleteVrf_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_VrfService_DeleteVrf_0(ctx context.Context, marshaler runtime.Marshaler, client VrfServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -242,7 +234,7 @@ func local_request_VrfService_DeleteVrf_0(ctx context.Context, marshaler runtime
 }
 
 var (
-	filter_VrfService_UpdateVrf_0 = &utilities.DoubleArray{Encoding: map[string]int{"vrf": 0, "name": 1}, Base: []int{1, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 4, 2, 2, 3}}
+	filter_VrfService_UpdateVrf_0 = &utilities.DoubleArray{Encoding: map[string]int{"vrf": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_VrfService_UpdateVrf_0(ctx context.Context, marshaler runtime.Marshaler, client VrfServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -342,18 +334,14 @@ func local_request_VrfService_UpdateVrf_0(ctx context.Context, marshaler runtime
 }
 
 var (
-	filter_SviService_CreateSvi_0 = &utilities.DoubleArray{Encoding: map[string]int{"svi": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_SviService_CreateSvi_0 = &utilities.DoubleArray{Encoding: map[string]int{"svi": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_SviService_CreateSvi_0(ctx context.Context, marshaler runtime.Marshaler, client SviServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateSviRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Svi); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Svi); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -373,11 +361,7 @@ func local_request_SviService_CreateSvi_0(ctx context.Context, marshaler runtime
 	var protoReq CreateSviRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Svi); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Svi); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -482,7 +466,7 @@ func local_request_SviService_GetSvi_0(ctx context.Context, marshaler runtime.Ma
 }
 
 var (
-	filter_SviService_DeleteSvi_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_SviService_DeleteSvi_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_SviService_DeleteSvi_0(ctx context.Context, marshaler runtime.Marshaler, client SviServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -552,7 +536,7 @@ func local_request_SviService_DeleteSvi_0(ctx context.Context, marshaler runtime
 }
 
 var (
-	filter_SviService_UpdateSvi_0 = &utilities.DoubleArray{Encoding: map[string]int{"svi": 0, "name": 1}, Base: []int{1, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 4, 2, 2, 3}}
+	filter_SviService_UpdateSvi_0 = &utilities.DoubleArray{Encoding: map[string]int{"svi": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_SviService_UpdateSvi_0(ctx context.Context, marshaler runtime.Marshaler, client SviServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {

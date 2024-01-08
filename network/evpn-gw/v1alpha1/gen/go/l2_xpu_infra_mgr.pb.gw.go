@@ -32,18 +32,14 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 var (
-	filter_LogicalBridgeService_CreateLogicalBridge_0 = &utilities.DoubleArray{Encoding: map[string]int{"logical_bridge": 0, "logicalBridge": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_LogicalBridgeService_CreateLogicalBridge_0 = &utilities.DoubleArray{Encoding: map[string]int{"logical_bridge": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_LogicalBridgeService_CreateLogicalBridge_0(ctx context.Context, marshaler runtime.Marshaler, client LogicalBridgeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateLogicalBridgeRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.LogicalBridge); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.LogicalBridge); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -63,11 +59,7 @@ func local_request_LogicalBridgeService_CreateLogicalBridge_0(ctx context.Contex
 	var protoReq CreateLogicalBridgeRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.LogicalBridge); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.LogicalBridge); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -172,7 +164,7 @@ func local_request_LogicalBridgeService_GetLogicalBridge_0(ctx context.Context, 
 }
 
 var (
-	filter_LogicalBridgeService_DeleteLogicalBridge_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_LogicalBridgeService_DeleteLogicalBridge_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_LogicalBridgeService_DeleteLogicalBridge_0(ctx context.Context, marshaler runtime.Marshaler, client LogicalBridgeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -242,7 +234,7 @@ func local_request_LogicalBridgeService_DeleteLogicalBridge_0(ctx context.Contex
 }
 
 var (
-	filter_LogicalBridgeService_UpdateLogicalBridge_0 = &utilities.DoubleArray{Encoding: map[string]int{"logical_bridge": 0, "logicalBridge": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_LogicalBridgeService_UpdateLogicalBridge_0 = &utilities.DoubleArray{Encoding: map[string]int{"logical_bridge": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_LogicalBridgeService_UpdateLogicalBridge_0(ctx context.Context, marshaler runtime.Marshaler, client LogicalBridgeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -342,18 +334,14 @@ func local_request_LogicalBridgeService_UpdateLogicalBridge_0(ctx context.Contex
 }
 
 var (
-	filter_BridgePortService_CreateBridgePort_0 = &utilities.DoubleArray{Encoding: map[string]int{"bridge_port": 0, "bridgePort": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_BridgePortService_CreateBridgePort_0 = &utilities.DoubleArray{Encoding: map[string]int{"bridge_port": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_BridgePortService_CreateBridgePort_0(ctx context.Context, marshaler runtime.Marshaler, client BridgePortServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateBridgePortRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.BridgePort); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.BridgePort); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -373,11 +361,7 @@ func local_request_BridgePortService_CreateBridgePort_0(ctx context.Context, mar
 	var protoReq CreateBridgePortRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.BridgePort); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.BridgePort); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -482,7 +466,7 @@ func local_request_BridgePortService_GetBridgePort_0(ctx context.Context, marsha
 }
 
 var (
-	filter_BridgePortService_DeleteBridgePort_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_BridgePortService_DeleteBridgePort_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_BridgePortService_DeleteBridgePort_0(ctx context.Context, marshaler runtime.Marshaler, client BridgePortServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -552,7 +536,7 @@ func local_request_BridgePortService_DeleteBridgePort_0(ctx context.Context, mar
 }
 
 var (
-	filter_BridgePortService_UpdateBridgePort_0 = &utilities.DoubleArray{Encoding: map[string]int{"bridge_port": 0, "bridgePort": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_BridgePortService_UpdateBridgePort_0 = &utilities.DoubleArray{Encoding: map[string]int{"bridge_port": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_BridgePortService_UpdateBridgePort_0(ctx context.Context, marshaler runtime.Marshaler, client BridgePortServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
