@@ -25,6 +25,18 @@
       "matchStrings": ["google-api-linter:(?<currentValue>.*?)\\s"],
       "datasourceTemplate": "docker",
       "depNameTemplate": "ghcr.io/docker-multiarch/google-api-linter"
+    },
+    {
+      "fileMatch": ["(^|\\/)buf.work.yaml"],
+      "matchStrings": ["grpc/python:(?<currentValue>.*?\\s"],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "buf.build/grpc/python"
+    }
+    {
+      "fileMatch": ["(^|\\/)buf.work.yaml"],
+      "matchStrings": ["protocolbuffers/python:(?<currentValue>.*?\\s"],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "buf.build/protocolbuffers/python"
     }
   ]
 }
