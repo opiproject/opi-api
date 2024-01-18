@@ -183,9 +183,6 @@
     - [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily)
     - [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType)
   
-- [uuid.proto](#uuid-proto)
-    - [Uuid](#opi_api-common-v1-Uuid)
-  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -208,7 +205,7 @@ Volume represented by Linux kernel block device or a file on a Linux filesystem
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | block_size | [int64](#int64) |  | The size of each block in the AioVolume. |
 | blocks_count | [int64](#int64) |  | The total number of blocks in the AioVolume. |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | The UUID (Universally Unique Identifier) of the AioVolume. |
+| uuid | [string](#string) |  | The UUID (Universally Unique Identifier) of the AioVolume. |
 | filename | [string](#string) |  | The filename associated with the AioVolume. |
 
 
@@ -271,7 +268,6 @@ Represents a request to list all Aio Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -445,7 +441,6 @@ Represents a request to list all Null Volumes.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -481,7 +476,7 @@ Null volume which discards writes and returns random reads
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | block_size | [int64](#int64) |  | The block size of the NullVolume. This field is required. |
 | blocks_count | [int64](#int64) |  | The number of blocks in the NullVolume. This field is required. |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | The UUID of the NullVolume. This field is optional. |
+| uuid | [string](#string) |  | The UUID of the NullVolume. This field is optional. |
 
 
 
@@ -848,7 +843,7 @@ Represent Nvme namespace created on bridge after connection to a target
 | nsid | [int32](#int32) |  | NSID |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
+| uuid | [string](#string) |  | Globally unique identifier for the namespace |
 
 
 
@@ -1367,7 +1362,7 @@ Represents Nvme Namespace configuration
 | host_nsid | [int32](#int32) |  | NSID presented by the Nvme controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
+| uuid | [string](#string) |  | Globally unique identifier for the namespace |
 | volume_name_ref | [string](#string) |  | The back/middle-end volume to back this namespace. |
 
 
@@ -1712,7 +1707,6 @@ Represents a request to list all Virtio Blks.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  | Parent&#39;s object unique identifier |
 | page_size | [int32](#int32) |  | page size of list request |
 | page_token | [string](#string) |  | page token of list request |
 
@@ -2805,11 +2799,11 @@ Address family value options
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | NVME_ADDRESS_FAMILY_UNSPECIFIED | 0 | Address family is not specified |
-| NVME_ADRFAM_IPV4 | 1 | IPv4 address family |
-| NVME_ADRFAM_IPV6 | 2 | IPv6 address family |
-| NVME_ADRFAM_IB | 3 | InfiniBand address family |
-| NVME_ADRFAM_FC | 4 | Fibre channel address family |
-| NVME_ADRFAM_INTRA_HOST | 5 | Intra host address family |
+| NVME_ADDRESS_FAMILY_IPV4 | 1 | IPv4 address family |
+| NVME_ADDRESS_FAMILY_IPV6 | 2 | IPv6 address family |
+| NVME_ADDRESS_FAMILY_IB | 3 | InfiniBand address family |
+| NVME_ADDRESS_FAMILY_FC | 4 | Fibre channel address family |
+| NVME_ADDRESS_FAMILY_INTRA_HOST | 5 | Intra host address family |
 
 
 
@@ -2821,44 +2815,12 @@ Transport type value options
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | NVME_TRANSPORT_TYPE_UNSPECIFIED | 0 | Transport type is not specified |
-| NVME_TRANSPORT_FC | 1 | Fibre channel transport type |
-| NVME_TRANSPORT_PCIE | 2 | Pcie transport type |
-| NVME_TRANSPORT_RDMA | 3 | RDMA transport type |
-| NVME_TRANSPORT_TCP | 4 | TCP transport type |
-| NVME_TRANSPORT_CUSTOM | 5 | Custom transport type |
+| NVME_TRANSPORT_TYPE_FC | 1 | Fibre channel transport type |
+| NVME_TRANSPORT_TYPE_PCIE | 2 | Pcie transport type |
+| NVME_TRANSPORT_TYPE_RDMA | 3 | RDMA transport type |
+| NVME_TRANSPORT_TYPE_TCP | 4 | TCP transport type |
+| NVME_TRANSPORT_TYPE_CUSTOM | 5 | Custom transport type |
 
-
- 
-
- 
-
- 
-
-
-
-<a name="uuid-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## uuid.proto
-
-
-
-<a name="opi_api-common-v1-Uuid"></a>
-
-### Uuid
-A universally unique identifier (UUID) is a 128-bit label
-When generated according to the standard methods, UUIDs are, for practical purposes, unique.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  | The value of the UUID |
-
-
-
-
-
- 
 
  
 
