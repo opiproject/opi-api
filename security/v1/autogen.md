@@ -59,9 +59,6 @@
   
     - [IPsecService](#opi_api-security-v1-IPsecService)
   
-- [uuid.proto](#uuid-proto)
-    - [Uuid](#opi_api-common-v1-Uuid)
-  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -1051,38 +1048,6 @@ Service functions for IPSec Protocol
 | IPsecListCerts | [IPsecListCertsRequest](#opi_api-security-v1-IPsecListCertsRequest) | [IPsecListCertsResponse](#opi_api-security-v1-IPsecListCertsResponse) |  |
 | IPsecLoadConn | [IPsecLoadConnRequest](#opi_api-security-v1-IPsecLoadConnRequest) | [IPsecLoadConnResponse](#opi_api-security-v1-IPsecLoadConnResponse) |  |
 | IPsecUnloadConn | [IPsecUnloadConnRequest](#opi_api-security-v1-IPsecUnloadConnRequest) | [IPsecUnloadConnResponse](#opi_api-security-v1-IPsecUnloadConnResponse) |  |
-
- 
-
-
-
-<a name="uuid-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## uuid.proto
-
-
-
-<a name="opi_api-common-v1-Uuid"></a>
-
-### Uuid
-A universally unique identifier (UUID) is a 128-bit label
-When generated according to the standard methods, UUIDs are, for practical purposes, unique.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  | The value of the UUID |
-
-
-
-
-
- 
-
- 
-
- 
 
  
 

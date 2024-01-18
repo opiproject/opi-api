@@ -56,9 +56,6 @@
     - [SviService](#opi_api-network-evpn_gw-v1alpha1-SviService)
     - [VrfService](#opi_api-network-evpn_gw-v1alpha1-VrfService)
   
-- [uuid.proto](#uuid-proto)
-    - [Uuid](#opi_api-common-v1-Uuid)
-  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -809,38 +806,6 @@ Management of Vrf Resources
 | GetVrf | [GetVrfRequest](#opi_api-network-evpn_gw-v1alpha1-GetVrfRequest) | [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf) | Retrieve a Vrf |
 | DeleteVrf | [DeleteVrfRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteVrfRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Vrf |
 | UpdateVrf | [UpdateVrfRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateVrfRequest) | [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf) | Update a Vrf |
-
- 
-
-
-
-<a name="uuid-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## uuid.proto
-
-
-
-<a name="opi_api-common-v1-Uuid"></a>
-
-### Uuid
-A universally unique identifier (UUID) is a 128-bit label
-When generated according to the standard methods, UUIDs are, for practical purposes, unique.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  | The value of the UUID |
-
-
-
-
-
- 
-
- 
-
- 
 
  
 

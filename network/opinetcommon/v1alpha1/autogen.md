@@ -54,9 +54,6 @@
   
     - [NetInterfaceService](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceService)
   
-- [uuid.proto](#uuid-proto)
-    - [Uuid](#opi_api-common-v1-Uuid)
-  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -828,38 +825,6 @@ Service functions for Network Interface exported by the server
 | GetNetInterface | [GetNetInterfaceRequest](#opi_api-network-opinetcommon-v1alpha1-GetNetInterfaceRequest) | [NetInterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface) | Retrieves the interface information for a given interface |
 | ListNetInterfaces | [ListNetInterfacesRequest](#opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesRequest) | [ListNetInterfacesResponse](#opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesResponse) | Retrieves the set of interfaces on the device |
 | UpdateNetInterface | [UpdateNetInterfaceRequest](#opi_api-network-opinetcommon-v1alpha1-UpdateNetInterfaceRequest) | [NetInterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface) | A method for setting or changing configuration of an interface |
-
- 
-
-
-
-<a name="uuid-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## uuid.proto
-
-
-
-<a name="opi_api-common-v1-Uuid"></a>
-
-### Uuid
-A universally unique identifier (UUID) is a 128-bit label
-When generated according to the standard methods, UUIDs are, for practical purposes, unique.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  | The value of the UUID |
-
-
-
-
-
- 
-
- 
-
- 
 
  
 
