@@ -1,6 +1,5 @@
 version: v1
 directories:
-- common
 - inventory
 - security
 - storage

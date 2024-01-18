@@ -5,16 +5,12 @@ on:
   push:
     branches: [ main ]
     paths-ignore:
-      - 'common/v1/**'
-      - 'common/Makefile'
       - 'security/v1/**'
       - 'security/Makefile'
       - '.github/workflows/security.yml'
   pull_request:
     branches: [ main ]
     paths-ignore:
-      - 'common/v1/**'
-      - 'common/Makefile'
       - 'security/v1/**'
       - 'security/Makefile'
       - '.github/workflows/security.yml'

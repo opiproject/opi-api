@@ -5,16 +5,12 @@ on:
   push:
     branches: [ main ]
     paths-ignore:
-      - 'common/v1/**'
-      - 'common/Makefile'
       - 'inventory/v1/**'
       - 'inventory/Makefile'
       - '.github/workflows/inventory.yml'
   pull_request:
     branches: [ main ]
     paths-ignore:
-      - 'common/v1/**'
-      - 'common/Makefile'
       - 'inventory/v1/**'
       - 'inventory/Makefile'
       - '.github/workflows/inventory.yml'

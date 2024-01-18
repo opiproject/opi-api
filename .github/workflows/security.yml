@@ -6,16 +6,12 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'common/v1/**'
-      - 'common/Makefile'
       - 'security/v1/**'
       - 'security/Makefile'
       - '.github/workflows/security.yml'
   pull_request:
     branches: [ main ]
     paths:
-      - 'common/v1/**'
-      - 'common/Makefile'
       - 'security/v1/**'
       - 'security/Makefile'
       - '.github/workflows/security.yml'
