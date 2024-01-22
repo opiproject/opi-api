@@ -18,7 +18,7 @@ doc:
 
 
 buflint:
-	docker run --rm -v "${PWD}/../../common":/common -v "${PWD}/../opinetcommon":/opinnetcommon -v "${PWD}":/out -w /out bufbuild/buf lint
+	docker run --rm -v "${PWD}/../opinetcommon":/opinnetcommon -v "${PWD}":/out -w /out bufbuild/buf lint
 
 bufgen:
-	docker run --rm -v "${PWD}/../../common":/common -v "${PWD}/../opinetcommon":/opinnetcommon -v "${PWD}/../..":/base -v "${PWD}":/out -w /out msandersdell/bufbuild-go-gen:1.1.0 generate --template /base/buf.gen.yaml -o v1alpha1
+	docker run --rm -v "${PWD}/../opinetcommon":/opinnetcommon -v "${PWD}/../..":/base -v "${PWD}":/out -w /out msandersdell/bufbuild-go-gen:1.1.0 generate --template /base/buf.gen.yaml -o v1alpha1
