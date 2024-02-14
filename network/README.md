@@ -56,7 +56,6 @@ Configuration of the basic use case should consider the ability to setup OVS, SO
 
 The basic setup can then be extended to include IPSec traffic flows for building additional services.
 
-
 ## Industry Models
 
 There are industry available API Models that can be leveraged.
