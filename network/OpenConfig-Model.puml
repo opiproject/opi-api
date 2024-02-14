@@ -1,4 +1,4 @@
-@startuml OpenConfig-Model.plantuml
+@startuml OpenConfig-Model.puml
 @startmindmap
 + DPU_Network_Device
 ++ Network Instance
