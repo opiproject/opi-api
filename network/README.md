@@ -180,7 +180,7 @@ Root(xPU Network Device)
             aggregate
          bgp
          ospf
-         is-is
+         isis
    Routing Policy
    Interfaces
       ipv4
