@@ -1,6 +1,8 @@
-// openconfig_interfaces.proto file
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2023-2024 Dell Inc, or its subsidiaries.
+//
 // Derived from the OpenConfig interfaces model github.com/openconfig/public/release/models/interfaces
-// Copyright (c) 2023 Dell Inc, or its subsidiaries.
+//
 // (-- api-linter: core::0141::forbidden-types=disabled
 //     aip.dev/not-precedent: counters, mtu, index must be uint and not int. --)
 
@@ -8,7 +10,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             (unknown)
-// source: openconfig_interfaces.proto
+// source: networkinterfaces.proto
 
 package _go
 
@@ -25,9 +27,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	NetInterfaceService_GetNetInterface_FullMethodName    = "/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/GetNetInterface"
-	NetInterfaceService_ListNetInterfaces_FullMethodName  = "/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/ListNetInterfaces"
-	NetInterfaceService_UpdateNetInterface_FullMethodName = "/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/UpdateNetInterface"
+	NetInterfaceService_GetNetInterface_FullMethodName    = "/exper.network.opencfg.v1alpha1.NetInterfaceService/GetNetInterface"
+	NetInterfaceService_ListNetInterfaces_FullMethodName  = "/exper.network.opencfg.v1alpha1.NetInterfaceService/ListNetInterfaces"
+	NetInterfaceService_UpdateNetInterface_FullMethodName = "/exper.network.opencfg.v1alpha1.NetInterfaceService/UpdateNetInterface"
 )
 
 // NetInterfaceServiceClient is the client API for NetInterfaceService service.
@@ -174,7 +176,7 @@ func _NetInterfaceService_UpdateNetInterface_Handler(srv interface{}, ctx contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var NetInterfaceService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "opi_api.network.opinetcommon.v1alpha1.NetInterfaceService",
+	ServiceName: "exper.network.opencfg.v1alpha1.NetInterfaceService",
 	HandlerType: (*NetInterfaceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -191,5 +193,5 @@ var NetInterfaceService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "openconfig_interfaces.proto",
+	Metadata: "networkinterfaces.proto",
 }

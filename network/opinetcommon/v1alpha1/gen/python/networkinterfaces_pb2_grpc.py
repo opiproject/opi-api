@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import openconfig_interfaces_pb2 as openconfig__interfaces__pb2
+import networkinterfaces_pb2 as networkinterfaces__pb2
 
 
 class NetInterfaceServiceStub(object):
@@ -16,19 +16,19 @@ class NetInterfaceServiceStub(object):
             channel: A grpc.Channel.
         """
         self.GetNetInterface = channel.unary_unary(
-                '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/GetNetInterface',
-                request_serializer=openconfig__interfaces__pb2.GetNetInterfaceRequest.SerializeToString,
-                response_deserializer=openconfig__interfaces__pb2.NetInterface.FromString,
+                '/exper.network.opencfg.v1alpha1.NetInterfaceService/GetNetInterface',
+                request_serializer=networkinterfaces__pb2.GetNetInterfaceRequest.SerializeToString,
+                response_deserializer=networkinterfaces__pb2.NetInterface.FromString,
                 )
         self.ListNetInterfaces = channel.unary_unary(
-                '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/ListNetInterfaces',
-                request_serializer=openconfig__interfaces__pb2.ListNetInterfacesRequest.SerializeToString,
-                response_deserializer=openconfig__interfaces__pb2.ListNetInterfacesResponse.FromString,
+                '/exper.network.opencfg.v1alpha1.NetInterfaceService/ListNetInterfaces',
+                request_serializer=networkinterfaces__pb2.ListNetInterfacesRequest.SerializeToString,
+                response_deserializer=networkinterfaces__pb2.ListNetInterfacesResponse.FromString,
                 )
         self.UpdateNetInterface = channel.unary_unary(
-                '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/UpdateNetInterface',
-                request_serializer=openconfig__interfaces__pb2.UpdateNetInterfaceRequest.SerializeToString,
-                response_deserializer=openconfig__interfaces__pb2.NetInterface.FromString,
+                '/exper.network.opencfg.v1alpha1.NetInterfaceService/UpdateNetInterface',
+                request_serializer=networkinterfaces__pb2.UpdateNetInterfaceRequest.SerializeToString,
+                response_deserializer=networkinterfaces__pb2.NetInterface.FromString,
                 )
 
 
@@ -62,22 +62,22 @@ def add_NetInterfaceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetNetInterface': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNetInterface,
-                    request_deserializer=openconfig__interfaces__pb2.GetNetInterfaceRequest.FromString,
-                    response_serializer=openconfig__interfaces__pb2.NetInterface.SerializeToString,
+                    request_deserializer=networkinterfaces__pb2.GetNetInterfaceRequest.FromString,
+                    response_serializer=networkinterfaces__pb2.NetInterface.SerializeToString,
             ),
             'ListNetInterfaces': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNetInterfaces,
-                    request_deserializer=openconfig__interfaces__pb2.ListNetInterfacesRequest.FromString,
-                    response_serializer=openconfig__interfaces__pb2.ListNetInterfacesResponse.SerializeToString,
+                    request_deserializer=networkinterfaces__pb2.ListNetInterfacesRequest.FromString,
+                    response_serializer=networkinterfaces__pb2.ListNetInterfacesResponse.SerializeToString,
             ),
             'UpdateNetInterface': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateNetInterface,
-                    request_deserializer=openconfig__interfaces__pb2.UpdateNetInterfaceRequest.FromString,
-                    response_serializer=openconfig__interfaces__pb2.NetInterface.SerializeToString,
+                    request_deserializer=networkinterfaces__pb2.UpdateNetInterfaceRequest.FromString,
+                    response_serializer=networkinterfaces__pb2.NetInterface.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'opi_api.network.opinetcommon.v1alpha1.NetInterfaceService', rpc_method_handlers)
+            'exper.network.opencfg.v1alpha1.NetInterfaceService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -97,9 +97,9 @@ class NetInterfaceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/GetNetInterface',
-            openconfig__interfaces__pb2.GetNetInterfaceRequest.SerializeToString,
-            openconfig__interfaces__pb2.NetInterface.FromString,
+        return grpc.experimental.unary_unary(request, target, '/exper.network.opencfg.v1alpha1.NetInterfaceService/GetNetInterface',
+            networkinterfaces__pb2.GetNetInterfaceRequest.SerializeToString,
+            networkinterfaces__pb2.NetInterface.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -114,9 +114,9 @@ class NetInterfaceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/ListNetInterfaces',
-            openconfig__interfaces__pb2.ListNetInterfacesRequest.SerializeToString,
-            openconfig__interfaces__pb2.ListNetInterfacesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/exper.network.opencfg.v1alpha1.NetInterfaceService/ListNetInterfaces',
+            networkinterfaces__pb2.ListNetInterfacesRequest.SerializeToString,
+            networkinterfaces__pb2.ListNetInterfacesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -131,8 +131,8 @@ class NetInterfaceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/UpdateNetInterface',
-            openconfig__interfaces__pb2.UpdateNetInterfaceRequest.SerializeToString,
-            openconfig__interfaces__pb2.NetInterface.FromString,
+        return grpc.experimental.unary_unary(request, target, '/exper.network.opencfg.v1alpha1.NetInterfaceService/UpdateNetInterface',
+            networkinterfaces__pb2.UpdateNetInterfaceRequest.SerializeToString,
+            networkinterfaces__pb2.NetInterface.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
