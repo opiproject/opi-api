@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2023 Nordix Foundation.
+// Copyright (c) 2024 Ericsson AB.
 
 // (-- api-linter: core::0132::request-parent-required=disabled
 //     aip.dev/not-precedent: All the resources are top level. --)
