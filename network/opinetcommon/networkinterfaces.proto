@@ -1,6 +1,8 @@
-// openconfig_interfaces.proto file
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2023-2024 Dell Inc, or its subsidiaries.
+//
 // Derived from the OpenConfig interfaces model github.com/openconfig/public/release/models/interfaces
-// Copyright (c) 2023 Dell Inc, or its subsidiaries.
+//
 // (-- api-linter: core::0141::forbidden-types=disabled
 //     aip.dev/not-precedent: counters, mtu, index must be uint and not int. --)
 syntax = "proto3";
@@ -9,11 +11,14 @@ package opi_api.network.opinetcommon.v1alpha1;
 
 option java_package = "opi_api.network.opinetcommon.v1alpha1";
 option java_multiple_files = true;
-option java_outer_classname = "OpenconfigInterfacesProto";
+option java_outer_classname = "NetworkInterfacesProto";
 
 option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
 
 import "networktypes.proto";
+import "networkvlan.proto";
+import "networkethernet.proto";
+
 import "google/api/client.proto";
 import "google/api/resource.proto";
 import "google/api/annotations.proto";
@@ -65,6 +70,8 @@ message Config {
     string description = 5 [(google.api.field_behavior) = REQUIRED];
     // Setting for enabling/disabling the interface
     bool enabled = 6 [(google.api.field_behavior) = REQUIRED];
+    // VLAN Tag Protocol Identifier (TPID)
+    TpidTypes tpid = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Statistics Counters for the interface - ro
@@ -103,7 +110,7 @@ message Counters {
     uint64 out_errors = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Carrier transition count
     uint64 carrier_transitions = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Last Clear
+    // Timestamp of the last time the interface counters were cleared
     uint64 last_clear = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
@@ -132,27 +139,35 @@ message State {
     OperState oper_state = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Last Change
     uint64 last_change = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Logical interface
+    // Logical interface - when set to true indicates a logical interface with
+    // no associated physical port or channel
     bool logical = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Management interface indicator
+    // Management interface - when set to true indicates a dedicated management
+    // interface that is independent of the dataplane interfaces such as an out
+    // of band management network
     bool management = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // CPU
+    // CPU interface - when set to true the interface is for traffic handled by
+    // the system CPU or control plane
     bool cpu = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Interface Statistics Counters
     Counters counters = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+    // VLAN Tag Protocol Identifier
+    TpidTypes tpid = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 //Interface - physical or virtual interface reported
+// (-- api-linter: core::0123::resource-annotation=disabled
+//     aip.dev/not-precedent: the name field is an opaque object --)
 message NetInterface {
     option (google.api.resource) = {
-        type: "opi_api.network.common.v1alpha1/NetInterface"
+        type: "opi_api.network.opinetcommon.v1alpha1/NetInterface"
         pattern: "netInterface/{interface}"
         singular: "netInterface"
         plural: "netInterfaces"
     };
     // Name of the interface.  This is an opaque object that is not
     // user settable.  It is returned by the created object
-    string name             = 1 [(google.api.field_behavior) = IDENTIFIER];
+    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
     // Configuration settings - rw
     Config config = 2 [(google.api.field_behavior) = REQUIRED];
     // Interface State and Statistics - ro
@@ -204,12 +219,18 @@ message NetInterface {
 
             // Subinterface State and Statistics
             State state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+            // Subinterface VLAN
+            VlanIf vlan = 4 [(google.api.field_behavior) = OPTIONAL];
         }
         // Subinterface Settings
         repeated Subinterface subinterface = 2 [(google.api.field_behavior) = OPTIONAL];
     }
     // Subinterfaces assigned to the interface
     Subinterfaces subinterfaces = 5 [(google.api.field_behavior) = OPTIONAL];
+
+    // Ethernet interface
+    EthernetIf ethernet = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Get Interface Request
@@ -246,10 +267,10 @@ message ListNetInterfacesResponse {
 message UpdateNetInterfaceRequest {
     // Interface update settings
     NetInterface net_interface = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2  [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
+    // list of fields to update
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+    // If set to true, and the object is not found, a new object will be created. 
+    // In this situation, 'update_mask' is ignored. 
     bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 

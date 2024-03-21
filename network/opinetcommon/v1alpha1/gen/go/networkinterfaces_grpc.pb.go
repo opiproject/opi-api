@@ -1,6 +1,8 @@
-// openconfig_interfaces.proto file
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2023-2024 Dell Inc, or its subsidiaries.
+//
 // Derived from the OpenConfig interfaces model github.com/openconfig/public/release/models/interfaces
-// Copyright (c) 2023 Dell Inc, or its subsidiaries.
+//
 // (-- api-linter: core::0141::forbidden-types=disabled
 //     aip.dev/not-precedent: counters, mtu, index must be uint and not int. --)
 
@@ -8,7 +10,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             (unknown)
-// source: openconfig_interfaces.proto
+// source: networkinterfaces.proto
 
 package _go
 
@@ -191,5 +193,5 @@ var NetInterfaceService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "openconfig_interfaces.proto",
+	Metadata: "networkinterfaces.proto",
 }
