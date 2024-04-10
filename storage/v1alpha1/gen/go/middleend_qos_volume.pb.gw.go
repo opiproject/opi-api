@@ -32,18 +32,14 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 var (
-	filter_MiddleendQosVolumeService_CreateQosVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"qos_volume": 0, "qosVolume": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_MiddleendQosVolumeService_CreateQosVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"qos_volume": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_MiddleendQosVolumeService_CreateQosVolume_0(ctx context.Context, marshaler runtime.Marshaler, client MiddleendQosVolumeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateQosVolumeRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.QosVolume); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.QosVolume); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -63,11 +59,7 @@ func local_request_MiddleendQosVolumeService_CreateQosVolume_0(ctx context.Conte
 	var protoReq CreateQosVolumeRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.QosVolume); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.QosVolume); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -84,7 +76,7 @@ func local_request_MiddleendQosVolumeService_CreateQosVolume_0(ctx context.Conte
 }
 
 var (
-	filter_MiddleendQosVolumeService_DeleteQosVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_MiddleendQosVolumeService_DeleteQosVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_MiddleendQosVolumeService_DeleteQosVolume_0(ctx context.Context, marshaler runtime.Marshaler, client MiddleendQosVolumeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -154,7 +146,7 @@ func local_request_MiddleendQosVolumeService_DeleteQosVolume_0(ctx context.Conte
 }
 
 var (
-	filter_MiddleendQosVolumeService_UpdateQosVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"qos_volume": 0, "qosVolume": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_MiddleendQosVolumeService_UpdateQosVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"qos_volume": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_MiddleendQosVolumeService_UpdateQosVolume_0(ctx context.Context, marshaler runtime.Marshaler, client MiddleendQosVolumeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -254,7 +246,7 @@ func local_request_MiddleendQosVolumeService_UpdateQosVolume_0(ctx context.Conte
 }
 
 var (
-	filter_MiddleendQosVolumeService_ListQosVolumes_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_MiddleendQosVolumeService_ListQosVolumes_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_MiddleendQosVolumeService_ListQosVolumes_0(ctx context.Context, marshaler runtime.Marshaler, client MiddleendQosVolumeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {

@@ -32,18 +32,14 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 var (
-	filter_FrontendNvmeService_CreateNvmeSubsystem_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_subsystem": 0, "nvmeSubsystem": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_FrontendNvmeService_CreateNvmeSubsystem_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_subsystem": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendNvmeService_CreateNvmeSubsystem_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateNvmeSubsystemRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.NvmeSubsystem); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.NvmeSubsystem); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -63,11 +59,7 @@ func local_request_FrontendNvmeService_CreateNvmeSubsystem_0(ctx context.Context
 	var protoReq CreateNvmeSubsystemRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.NvmeSubsystem); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.NvmeSubsystem); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -84,7 +76,7 @@ func local_request_FrontendNvmeService_CreateNvmeSubsystem_0(ctx context.Context
 }
 
 var (
-	filter_FrontendNvmeService_DeleteNvmeSubsystem_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendNvmeService_DeleteNvmeSubsystem_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendNvmeService_DeleteNvmeSubsystem_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -154,7 +146,7 @@ func local_request_FrontendNvmeService_DeleteNvmeSubsystem_0(ctx context.Context
 }
 
 var (
-	filter_FrontendNvmeService_UpdateNvmeSubsystem_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_subsystem": 0, "nvmeSubsystem": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_FrontendNvmeService_UpdateNvmeSubsystem_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_subsystem": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_FrontendNvmeService_UpdateNvmeSubsystem_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -394,18 +386,14 @@ func local_request_FrontendNvmeService_StatsNvmeSubsystem_0(ctx context.Context,
 }
 
 var (
-	filter_FrontendNvmeService_CreateNvmeController_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_controller": 0, "nvmeController": 1, "parent": 2}, Base: []int{1, 1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 3, 4, 4}}
+	filter_FrontendNvmeService_CreateNvmeController_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_controller": 0, "parent": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_FrontendNvmeService_CreateNvmeController_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateNvmeControllerRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.NvmeController); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.NvmeController); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -442,11 +430,7 @@ func local_request_FrontendNvmeService_CreateNvmeController_0(ctx context.Contex
 	var protoReq CreateNvmeControllerRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.NvmeController); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.NvmeController); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -480,7 +464,7 @@ func local_request_FrontendNvmeService_CreateNvmeController_0(ctx context.Contex
 }
 
 var (
-	filter_FrontendNvmeService_DeleteNvmeController_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendNvmeService_DeleteNvmeController_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendNvmeService_DeleteNvmeController_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -550,7 +534,7 @@ func local_request_FrontendNvmeService_DeleteNvmeController_0(ctx context.Contex
 }
 
 var (
-	filter_FrontendNvmeService_UpdateNvmeController_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_controller": 0, "nvmeController": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_FrontendNvmeService_UpdateNvmeController_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_controller": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_FrontendNvmeService_UpdateNvmeController_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -650,7 +634,7 @@ func local_request_FrontendNvmeService_UpdateNvmeController_0(ctx context.Contex
 }
 
 var (
-	filter_FrontendNvmeService_ListNvmeControllers_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendNvmeService_ListNvmeControllers_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendNvmeService_ListNvmeControllers_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -824,18 +808,14 @@ func local_request_FrontendNvmeService_StatsNvmeController_0(ctx context.Context
 }
 
 var (
-	filter_FrontendNvmeService_CreateNvmeNamespace_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_namespace": 0, "nvmeNamespace": 1, "parent": 2}, Base: []int{1, 1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 3, 4, 4}}
+	filter_FrontendNvmeService_CreateNvmeNamespace_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_namespace": 0, "parent": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_FrontendNvmeService_CreateNvmeNamespace_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateNvmeNamespaceRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.NvmeNamespace); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.NvmeNamespace); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -872,11 +852,7 @@ func local_request_FrontendNvmeService_CreateNvmeNamespace_0(ctx context.Context
 	var protoReq CreateNvmeNamespaceRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.NvmeNamespace); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.NvmeNamespace); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -910,7 +886,7 @@ func local_request_FrontendNvmeService_CreateNvmeNamespace_0(ctx context.Context
 }
 
 var (
-	filter_FrontendNvmeService_DeleteNvmeNamespace_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendNvmeService_DeleteNvmeNamespace_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendNvmeService_DeleteNvmeNamespace_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -980,7 +956,7 @@ func local_request_FrontendNvmeService_DeleteNvmeNamespace_0(ctx context.Context
 }
 
 var (
-	filter_FrontendNvmeService_UpdateNvmeNamespace_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_namespace": 0, "nvmeNamespace": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_FrontendNvmeService_UpdateNvmeNamespace_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_namespace": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_FrontendNvmeService_UpdateNvmeNamespace_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1080,7 +1056,7 @@ func local_request_FrontendNvmeService_UpdateNvmeNamespace_0(ctx context.Context
 }
 
 var (
-	filter_FrontendNvmeService_ListNvmeNamespaces_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendNvmeService_ListNvmeNamespaces_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendNvmeService_ListNvmeNamespaces_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {

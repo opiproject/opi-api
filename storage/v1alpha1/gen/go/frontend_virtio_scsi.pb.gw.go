@@ -32,18 +32,14 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 var (
-	filter_FrontendVirtioScsiService_CreateVirtioScsiTarget_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_target": 0, "virtioScsiTarget": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_FrontendVirtioScsiService_CreateVirtioScsiTarget_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_target": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_CreateVirtioScsiTarget_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateVirtioScsiTargetRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.VirtioScsiTarget); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.VirtioScsiTarget); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -63,11 +59,7 @@ func local_request_FrontendVirtioScsiService_CreateVirtioScsiTarget_0(ctx contex
 	var protoReq CreateVirtioScsiTargetRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.VirtioScsiTarget); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.VirtioScsiTarget); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -84,7 +76,7 @@ func local_request_FrontendVirtioScsiService_CreateVirtioScsiTarget_0(ctx contex
 }
 
 var (
-	filter_FrontendVirtioScsiService_DeleteVirtioScsiTarget_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendVirtioScsiService_DeleteVirtioScsiTarget_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_DeleteVirtioScsiTarget_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -154,7 +146,7 @@ func local_request_FrontendVirtioScsiService_DeleteVirtioScsiTarget_0(ctx contex
 }
 
 var (
-	filter_FrontendVirtioScsiService_UpdateVirtioScsiTarget_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_target": 0, "virtioScsiTarget": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_FrontendVirtioScsiService_UpdateVirtioScsiTarget_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_target": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_FrontendVirtioScsiService_UpdateVirtioScsiTarget_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -254,7 +246,7 @@ func local_request_FrontendVirtioScsiService_UpdateVirtioScsiTarget_0(ctx contex
 }
 
 var (
-	filter_FrontendVirtioScsiService_ListVirtioScsiTargets_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendVirtioScsiService_ListVirtioScsiTargets_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_ListVirtioScsiTargets_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -428,18 +420,14 @@ func local_request_FrontendVirtioScsiService_StatsVirtioScsiTarget_0(ctx context
 }
 
 var (
-	filter_FrontendVirtioScsiService_CreateVirtioScsiController_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_controller": 0, "virtioScsiController": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_FrontendVirtioScsiService_CreateVirtioScsiController_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_controller": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_CreateVirtioScsiController_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateVirtioScsiControllerRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.VirtioScsiController); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.VirtioScsiController); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -459,11 +447,7 @@ func local_request_FrontendVirtioScsiService_CreateVirtioScsiController_0(ctx co
 	var protoReq CreateVirtioScsiControllerRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.VirtioScsiController); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.VirtioScsiController); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -480,7 +464,7 @@ func local_request_FrontendVirtioScsiService_CreateVirtioScsiController_0(ctx co
 }
 
 var (
-	filter_FrontendVirtioScsiService_DeleteVirtioScsiController_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendVirtioScsiService_DeleteVirtioScsiController_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_DeleteVirtioScsiController_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -550,7 +534,7 @@ func local_request_FrontendVirtioScsiService_DeleteVirtioScsiController_0(ctx co
 }
 
 var (
-	filter_FrontendVirtioScsiService_UpdateVirtioScsiController_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_controller": 0, "virtioScsiController": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_FrontendVirtioScsiService_UpdateVirtioScsiController_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_controller": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_FrontendVirtioScsiService_UpdateVirtioScsiController_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -650,7 +634,7 @@ func local_request_FrontendVirtioScsiService_UpdateVirtioScsiController_0(ctx co
 }
 
 var (
-	filter_FrontendVirtioScsiService_ListVirtioScsiControllers_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendVirtioScsiService_ListVirtioScsiControllers_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_ListVirtioScsiControllers_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -824,18 +808,14 @@ func local_request_FrontendVirtioScsiService_StatsVirtioScsiController_0(ctx con
 }
 
 var (
-	filter_FrontendVirtioScsiService_CreateVirtioScsiLun_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_lun": 0, "virtioScsiLun": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_FrontendVirtioScsiService_CreateVirtioScsiLun_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_lun": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_CreateVirtioScsiLun_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateVirtioScsiLunRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.VirtioScsiLun); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.VirtioScsiLun); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -855,11 +835,7 @@ func local_request_FrontendVirtioScsiService_CreateVirtioScsiLun_0(ctx context.C
 	var protoReq CreateVirtioScsiLunRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.VirtioScsiLun); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.VirtioScsiLun); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -876,7 +852,7 @@ func local_request_FrontendVirtioScsiService_CreateVirtioScsiLun_0(ctx context.C
 }
 
 var (
-	filter_FrontendVirtioScsiService_DeleteVirtioScsiLun_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendVirtioScsiService_DeleteVirtioScsiLun_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_DeleteVirtioScsiLun_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -946,7 +922,7 @@ func local_request_FrontendVirtioScsiService_DeleteVirtioScsiLun_0(ctx context.C
 }
 
 var (
-	filter_FrontendVirtioScsiService_UpdateVirtioScsiLun_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_lun": 0, "virtioScsiLun": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_FrontendVirtioScsiService_UpdateVirtioScsiLun_0 = &utilities.DoubleArray{Encoding: map[string]int{"virtio_scsi_lun": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_FrontendVirtioScsiService_UpdateVirtioScsiLun_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1046,7 +1022,7 @@ func local_request_FrontendVirtioScsiService_UpdateVirtioScsiLun_0(ctx context.C
 }
 
 var (
-	filter_FrontendVirtioScsiService_ListVirtioScsiLuns_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendVirtioScsiService_ListVirtioScsiLuns_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_ListVirtioScsiLuns_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1168,7 +1144,7 @@ func local_request_FrontendVirtioScsiService_GetVirtioScsiLun_0(ctx context.Cont
 }
 
 var (
-	filter_FrontendVirtioScsiService_StatsVirtioScsiLun_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_FrontendVirtioScsiService_StatsVirtioScsiLun_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_FrontendVirtioScsiService_StatsVirtioScsiLun_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendVirtioScsiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {

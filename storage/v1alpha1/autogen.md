@@ -17,6 +17,19 @@
     - [AioVolumeService](#opi_api-storage-v1-AioVolumeService)
   
 - [backend_iscsi.proto](#backend_iscsi-proto)
+- [backend_malloc.proto](#backend_malloc-proto)
+    - [CreateMallocVolumeRequest](#opi_api-storage-v1-CreateMallocVolumeRequest)
+    - [DeleteMallocVolumeRequest](#opi_api-storage-v1-DeleteMallocVolumeRequest)
+    - [GetMallocVolumeRequest](#opi_api-storage-v1-GetMallocVolumeRequest)
+    - [ListMallocVolumesRequest](#opi_api-storage-v1-ListMallocVolumesRequest)
+    - [ListMallocVolumesResponse](#opi_api-storage-v1-ListMallocVolumesResponse)
+    - [MallocVolume](#opi_api-storage-v1-MallocVolume)
+    - [StatsMallocVolumeRequest](#opi_api-storage-v1-StatsMallocVolumeRequest)
+    - [StatsMallocVolumeResponse](#opi_api-storage-v1-StatsMallocVolumeResponse)
+    - [UpdateMallocVolumeRequest](#opi_api-storage-v1-UpdateMallocVolumeRequest)
+  
+    - [MallocVolumeService](#opi_api-storage-v1-MallocVolumeService)
+  
 - [backend_null.proto](#backend_null-proto)
     - [CreateNullVolumeRequest](#opi_api-storage-v1-CreateNullVolumeRequest)
     - [DeleteNullVolumeRequest](#opi_api-storage-v1-DeleteNullVolumeRequest)
@@ -374,6 +387,182 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
  
 
  
+
+ 
+
+
+
+<a name="backend_malloc-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## backend_malloc.proto
+
+
+
+<a name="opi_api-storage-v1-CreateMallocVolumeRequest"></a>
+
+### CreateMallocVolumeRequest
+Represents a request to create a Malloc Volume.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| malloc_volume | [MallocVolume](#opi_api-storage-v1-MallocVolume) |  | The Malloc Volume to be created. |
+| malloc_volume_id | [string](#string) |  | An optional ID to assign to the Malloc Volume. If this is not provided the system will auto-generate it. |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-DeleteMallocVolumeRequest"></a>
+
+### DeleteMallocVolumeRequest
+Represents a request to delete a Malloc Volume.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Object&#39;s unique identifier to delete |
+| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-GetMallocVolumeRequest"></a>
+
+### GetMallocVolumeRequest
+Represents a request to get a Malloc Volume.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListMallocVolumesRequest"></a>
+
+### ListMallocVolumesRequest
+Represents a request to list all Malloc Volumes.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page_size | [int32](#int32) |  | page size of list request |
+| page_token | [string](#string) |  | page token of list request |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListMallocVolumesResponse"></a>
+
+### ListMallocVolumesResponse
+Represents a response to list all Malloc Volumes.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| malloc_volumes | [MallocVolume](#opi_api-storage-v1-MallocVolume) | repeated | List of Malloc volumes |
+| next_page_token | [string](#string) |  | Next page token of list response |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-MallocVolume"></a>
+
+### MallocVolume
+Malloc volume, volatile volume
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
+| block_size | [int64](#int64) |  | The block size of the MallocVolume. |
+| blocks_count | [int64](#int64) |  | The number of blocks in the MallocVolume. |
+| metadata_size | [int64](#int64) |  | The metadata size of the MallocVolume. |
+| uuid | [string](#string) |  | The UUID of the MallocVolume. |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsMallocVolumeRequest"></a>
+
+### StatsMallocVolumeRequest
+Represents a request to get a Malloc Volume statistics.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Object&#39;s unique identifier to retrieve statistics |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-StatsMallocVolumeResponse"></a>
+
+### StatsMallocVolumeResponse
+Represents a response to get a Malloc Volume statistics.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  | Volume statistics |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-UpdateMallocVolumeRequest"></a>
+
+### UpdateMallocVolumeRequest
+Represents a request to update a Malloc Volume.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| malloc_volume | [MallocVolume](#opi_api-storage-v1-MallocVolume) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="opi_api-storage-v1-MallocVolumeService"></a>
+
+### MallocVolumeService
+Back End Malloc Volume APIs. This is debug interface for malloc block devices.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateMallocVolume | [CreateMallocVolumeRequest](#opi_api-storage-v1-CreateMallocVolumeRequest) | [MallocVolume](#opi_api-storage-v1-MallocVolume) | Create a Malloc Volume |
+| DeleteMallocVolume | [DeleteMallocVolumeRequest](#opi_api-storage-v1-DeleteMallocVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Malloc Volume |
+| UpdateMallocVolume | [UpdateMallocVolumeRequest](#opi_api-storage-v1-UpdateMallocVolumeRequest) | [MallocVolume](#opi_api-storage-v1-MallocVolume) | Update a Malloc Volume |
+| ListMallocVolumes | [ListMallocVolumesRequest](#opi_api-storage-v1-ListMallocVolumesRequest) | [ListMallocVolumesResponse](#opi_api-storage-v1-ListMallocVolumesResponse) | List Malloc Volumes |
+| GetMallocVolume | [GetMallocVolumeRequest](#opi_api-storage-v1-GetMallocVolumeRequest) | [MallocVolume](#opi_api-storage-v1-MallocVolume) | Get a Malloc Volume |
+| StatsMallocVolume | [StatsMallocVolumeRequest](#opi_api-storage-v1-StatsMallocVolumeRequest) | [StatsMallocVolumeResponse](#opi_api-storage-v1-StatsMallocVolumeResponse) | Get a Malloc Volume statistics |
 
  
 

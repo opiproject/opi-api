@@ -32,18 +32,14 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 var (
-	filter_AioVolumeService_CreateAioVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"aio_volume": 0, "aioVolume": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_AioVolumeService_CreateAioVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"aio_volume": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_AioVolumeService_CreateAioVolume_0(ctx context.Context, marshaler runtime.Marshaler, client AioVolumeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAioVolumeRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.AioVolume); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.AioVolume); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -63,11 +59,7 @@ func local_request_AioVolumeService_CreateAioVolume_0(ctx context.Context, marsh
 	var protoReq CreateAioVolumeRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.AioVolume); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.AioVolume); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -84,7 +76,7 @@ func local_request_AioVolumeService_CreateAioVolume_0(ctx context.Context, marsh
 }
 
 var (
-	filter_AioVolumeService_DeleteAioVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_AioVolumeService_DeleteAioVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_AioVolumeService_DeleteAioVolume_0(ctx context.Context, marshaler runtime.Marshaler, client AioVolumeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -154,7 +146,7 @@ func local_request_AioVolumeService_DeleteAioVolume_0(ctx context.Context, marsh
 }
 
 var (
-	filter_AioVolumeService_UpdateAioVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"aio_volume": 0, "aioVolume": 1, "name": 2}, Base: []int{1, 3, 4, 5, 2, 0, 0, 0, 0}, Check: []int{0, 1, 1, 1, 2, 5, 2, 3, 4}}
+	filter_AioVolumeService_UpdateAioVolume_0 = &utilities.DoubleArray{Encoding: map[string]int{"aio_volume": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_AioVolumeService_UpdateAioVolume_0(ctx context.Context, marshaler runtime.Marshaler, client AioVolumeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
