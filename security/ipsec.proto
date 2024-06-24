@@ -5,477 +5,723 @@
  *
  * Major pieces taken from:
  * https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/ipsec/ipsec.proto
+ *
+ * Service functions for IKE.
+ *
+ * The configuration model is derived from RFC 9061.
  */
 syntax = "proto3";
-package opi_api.security.v1;
-option go_package = "github.com/opiproject/opi-api/security/v1/gen/go";
 
-/* Service functions for IPSec Protocol */
-service IPsecService {
-	rpc IPsecVersion (IPsecVersionRequest) returns (IPsecVersionResponse) {}
-	rpc IPsecStats   (IPsecStatsRequest)   returns (IPsecStatsResponse)   {}
-	rpc IPsecInitiate (IPsecInitiateRequest) returns (IPsecInitiateResponse) {}
-	rpc IPsecTerminate (IPsecTerminateRequest) returns (IPsecTerminateResponse) {}
-	rpc IPsecRekey (IPsecRekeyRequest) returns (IPsecRekeyResponse) {}
-	rpc IPsecListSas (IPsecListSasRequest) returns (IPsecListSasResponse) {}
-	rpc IPsecListConns (IPsecListConnsRequest) returns (IPsecListConnsResponse) {}
-	rpc IPsecListCerts (IPsecListCertsRequest) returns (IPsecListCertsResponse) {}
-	rpc IPsecLoadConn (IPsecLoadConnRequest) returns (IPsecLoadConnResponse) {}
-	rpc IPsecUnloadConn (IPsecUnloadConnRequest) returns (IPsecUnloadConnResponse) {}
+package opi_api.security.v2alpha1;
+
+import "networktypes.proto";
+
+option go_package = "github.com/opiproject/opi-api/security/v2alpha1/gen/go";
+
+// The IPsec service defines operations on:
+// - IKE Peer Association Database (PAD)
+// - IKE Connections
+// - IPsec Security Associations (SAs)
+service IpsecService {
+  // Create an IKE peer. This request includes the specification of the keys and certificates
+  // associated with the peer.
+  rpc CreateIkePeer(CreateIkePeerRequest) returns (CreateIkePeerResponse) {}
+  // Update an existing IKE peer specification.
+  rpc UpdateIkePeer(UpdateIkePeerRequest) returns (UpdateIkePeerResponse) {}
+  // Delete an existing IKE peer specification.
+  rpc DeleteIkePeer(DeleteIkePeerRequest) returns (DeleteIkePeerResponse) {}
+  // Get an existing IKE peer specification.
+  rpc GetIkePeer(GetIkePeerRequest) returns (GetIkePeerResponse) {}
+  // List existing IKE peers.
+  rpc ListIkePeers(ListIkePeersRequest) returns (ListIkePeersResponse) {}
+
+  // Create an IKE connection. The request includes specification of the local
+  // and remote IKE peers and the specification of the IPsec SAs (aka child SAs)
+  // from this IKE connection.
+  rpc CreateIkeConn(CreateIkeConnRequest) returns (CreateIkeConnResponse) {}
+  // Update an existing IKE connection.
+  rpc UpdateIkeConn(UpdateIkeConnRequest) returns (UpdateIkeConnResponse) {}
+  // Delete an existing IKE connection.
+  rpc DeleteIkeConn(DeleteIkeConnRequest) returns (DeleteIkeConnResponse) {}
+  // Retrieve an IKE connection.
+  rpc GetIkeConn(GetIkeConnRequest) returns (GetIkeConnResponse) {}
+  // List existing IKE connections
+  rpc ListIkeConns(ListIkeConnsRequest) returns (ListIkeConnsResponse) {}
+
+  // Create an IPsec Security Association
+  rpc CreateIpsecSa(CreateIpsecSaRequest) returns (CreateIpsecSaResponse) {}
+  // Update an existing IPsec Security Association
+  rpc UpdateIpsecSa(UpdateIpsecSaRequest) returns (UpdateIpsecSaResponse) {}
+  // Delete an existing IPsec Security Association
+  rpc DeleteIpsecSa(DeleteIpsecSaRequest) returns (DeleteIpsecSaResponse) {}
+  // Get an IPsec Security Association
+  rpc GetIpsecSa(GetIpsecSaRequest) returns (GetIpsecSaResponse) {}
+  // List existing IPsec Security Associations
+  rpc ListIpsecSas(ListIpsecSasRequest) returns (ListIpsecSasResponse) {}
 }
 
-/* Cryptographic algorithm for encryption */
-enum CryptoAlgorithm {
-	CRYPTO_ALGORITHM_UNSPECIFIED  = 0;
-	CRYPTO_ALGORITHM_AES128       = 1;
-	CRYPTO_ALGORITHM_AES192       = 2;
-	CRYPTO_ALGORITHM_AES256       = 3;
-	CRYPTO_ALGORITHM_AES128GCM128 = 4;
-	CRYPTO_ALGORITHM_AES256GCM128 = 5;
-	CRYPTO_ALGORITHM_AES128GMAC   = 6;
-	CRYPTO_ALGORITHM_AES256GMAC   = 7;
+// Cryptographic algorithm for encryption.
+enum EncAlgorithm {
+  ENC_ALGORITHM_UNSPECIFIED = 0;
+  ENC_ALGORITHM_AES128CBC = 1; // AES-CBC with a 128 bit key
+  ENC_ALGORITHM_AES192CBC = 2; // AES-CBC with a 192 bit key
+  ENC_ALGORITHM_AES256CBC = 3; // AES-CBC with a 256 bit key
+  ENC_ALGORITHM_AES128GCM128 = 4; // AES-GCM with a 128 bit key and a 128 byte tag
+  ENC_ALGORITHM_AES192GCM128 = 5; // AES-GCM with a 192 bit key and a 128 byte tag
+  ENC_ALGORITHM_AES256GCM128 = 6; // AES-GCM with a 256 bit key and a 128 byte tag
+  ENC_ALGORITHM_CHACHA20POLY1305 = 7;
 }
-/* Cryptographic algorithm for authentication */
+
+// Cryptographic algorithm for authentication.
 enum IntegAlgorithm {
-	INTEG_ALGORITHM_UNSPECIFIED = 0;
-	INTEG_ALGORITHM_MD5        = 1;
-	INTEG_ALGORITHM_MD5_128    = 2;
-	INTEG_ALGORITHM_SHA1       = 3;
-	INTEG_ALGORITHM_SHA1_160   = 4;
-	INTEG_ALGORITHM_SHA256     = 5;
-	INTEG_ALGORITHM_SHA384     = 7;
-	INTEG_ALGORITHM_SHA512     = 8;
-	INTEG_ALGORITHM_SHA256_96  = 9;
+  INTEG_ALGORITHM_UNSPECIFIED = 0;
+  INTEG_ALGORITHM_SHA1_96 = 1; // SHA-1 with a 96 bit truncated hash output length
+  INTEG_ALGORITHM_SHA256_128 = 2; // SHA-256 with a 128 bit truncated hash output length
+  INTEG_ALGORITHM_SHA384_192 = 3; // SHA-384 with a 192 bit truncated hash output length
+  INTEG_ALGORITHM_SHA512_512 = 4; // SHA-512 with a 256 bit truncated hash output length
+  INTEG_ALGORITHM_AES128GMAC = 5; // AES-GMAC with a 128 bit key
+  INTEG_ALGORITHM_AES256GMAC = 6; // AES-GMAC with a 256 bit key
 }
 
 /* Diffie Hellman Groups */
 enum DHGroups {
-	DH_GROUPS_UNSPECIFIED  = 0;
-	DH_GROUPS_MODP768      = 1;
-	DH_GROUPS_MODP1024     = 2;
-	DH_GROUPS_MODP1536     = 3;
-	DH_GROUPS_MODP2048     = 4;
-	DH_GROUPS_MODP3072     = 5;
-	DH_GROUPS_MODP4096     = 6;
-	DH_GROUPS_MODP6144     = 7;
-	DH_GROUPS_MODP8192     = 8;
-	DH_GROUPS_MODP1024S160 = 9;
-	DH_GROUPS_MODP2048S224 = 10;
-	DH_GROUPS_MODP2048S256 = 11;
-	DH_GROUPS_CURVE25519   = 12;
+  DH_GROUPS_UNSPECIFIED = 0;
+  DH_GROUPS_MODP768 = 1;
+  DH_GROUPS_MODP1024 = 2;
+  DH_GROUPS_MODP1536 = 3;
+  DH_GROUPS_MODP2048 = 4;
+  DH_GROUPS_MODP3072 = 5;
+  DH_GROUPS_MODP4096 = 6;
+  DH_GROUPS_MODP6144 = 7;
+  DH_GROUPS_MODP8192 = 8;
+  DH_GROUPS_MODP1024S160 = 9;
+  DH_GROUPS_MODP2048S224 = 10;
+  DH_GROUPS_MODP2048S256 = 11;
+  DH_GROUPS_CURVE25519 = 12;
 }
 
-/* Pesudo Random Function */
-enum PRFunction {
-	PR_FUNCTION_UNSPECIFIED = 0;
-	PR_FUNCTION_MD5         = 1;
-	PR_FUNCTION_SHA1        = 2;
-	PR_FUNCTION_AESXCBC     = 3;
-	PR_FUNCTION_AESCMAC     = 4;
-	PR_FUNCTION_SHA256      = 5;
-	PR_FUNCTION_SHA384      = 6;
-	PR_FUNCTION_SHA512      = 7;
+// Pesudo Random Function  (PRF)
+enum PRF {
+  PRF_UNSPECIFIED = 0;
+  PRF_SHA1 = 1;
+  PRF_AESXCBC = 2;
+  PRF_AESCMAC = 3;
+  PRF_SHA256 = 4;
+  PRF_SHA384 = 5;
+  PRF_SHA512 = 6;
 }
 
 /* Tunnel mode */
 enum IpsecMode {
-	IPSEC_MODE_UNSPECIFIED    = 0;
-	IPSEC_MODE_TUNNEL_MODE    = 1;
-	IPSEC_MODE_TRANSPORT_MODE = 2;
+  IPSEC_MODE_UNSPECIFIED = 0;
+  IPSEC_MODE_TUNNEL_MODE = 1;
+  IPSEC_MODE_TRANSPORT_MODE = 2;
 }
 
 /* Authentication Type */
 enum AuthType {
-	AUTH_TYPE_UNSPECIFIED = 0;
-	AUTH_TYPE_PUBKEY      = 1;
-	AUTH_TYPE_PSK         = 2;
-	AUTH_TYPE_XAUTH       = 3;
-	AUTH_TYPE_EAP         = 4;
+  AUTH_TYPE_UNSPECIFIED = 0;
+  AUTH_TYPE_PUBKEY = 1;
+  AUTH_TYPE_PSK = 2;
+  AUTH_TYPE_XAUTH = 3;
+  AUTH_TYPE_EAP = 4;
 }
 
-/* IKE_SA state */
-enum IkeSaState {
-	IKE_SA_STATE_UNSPECIFIED = 0;
-	IKE_SA_STATE_CREATED     = 1;
-	IKE_SA_STATE_CONNECTING  = 2;
-	IKE_SA_STATE_ESTABLISHED = 3;
-	IKE_SA_STATE_PASSIVE     = 4;
-	IKE_SA_STATE_REKEYING    = 5;
-	IKE_SA_STATE_REKEYED     = 6;
-	IKE_SA_STATE_DELETING    = 7;
-	IKE_SA_STATE_DESTROYING  = 8;
+// IKE connection startup behavior
+enum AutoStartupMode {
+  AUTO_STARTUP_MODE_UNSPECIFIED = 0;
+  // IKE/IPsec connection configuration is only loaded into the IKE
+  // implementation, but IKE/IPsec SA is not started.
+  AUTO_STARTUP_MODE_ADD = 1;
+  // IKE/IPsec connection configuration is loaded into the IKE implementation.
+  // The IPsec policies are configured but the IKE SAs are not established
+  // immediately. The IKE implementation will negotiate the IPsec SAs when they
+  // are required.
+  AUTO_STARTUP_MODE_ON_DEMAND = 2;
+  // IKE/IPsec connection configuration is loaded and the IKEv2-based IPsec SAs
+  // are established immediately without waiting for any packet.
+  AUTO_STARTUP_MODE_START = 3;
 }
 
-/* CHILD_SA state */
-enum ChildSaState {
-	CHILD_SA_STATE_UNSPECIFIED = 0;
-	CHILD_SA_STATE_CREATED     = 1;
-	CHILD_SA_STATE_ROUTED      = 2;
-	CHILD_SA_STATE_INSTALLING  = 3;
-	CHILD_SA_STATE_INSTALLED   = 4;
-	CHILD_SA_STATE_UPDATING    = 5;
-	CHILD_SA_STATE_REKEYING    = 6;
-	CHILD_SA_STATE_REKEYED     = 7;
-	CHILD_SA_STATE_RETRYING    = 8;
-	CHILD_SA_STATE_DELETING    = 9;
-	CHILD_SA_STATE_DELETED     = 10;
-	CHILD_SA_STATE_DESTROYING  = 11;
+// IKE Version
+enum IkeVersion {
+  IKE_VERSION_UNSPECIFIED = 0;
+  IKE_VERSION_IKEV2 = 2;
 }
 
-/* Certificate type */
-enum CertificateType {
-	CERTIFICATE_TYPE_X509_UNSPECIFIED = 0;
-	CERTIFICATE_TYPE_X509_AC          = 1;
-	CERTIFICATE_TYPE_X509_CRL         = 2;
-	CERTIFICATE_TYPE_OCSP_RESPONSE    = 3;
-	CERTIFICATE_TYPE_PUBKEY           = 4;
+// ESP Encapsulation method for NAT traversal
+enum EspEncap {
+  ESP_ENCAP_UNSPECIFIED = 0;
+  ESP_ENCAP_ESP_IN_UDP = 1;
 }
 
-/* X.509 certificate flag */
-enum X509CertificateFlag {
-	X509_CERTIFICATE_FLAG_UNSPECIFIED = 0;
-	X509_CERTIFICATE_FLAG_CA          = 1;
-	X509_CERTIFICATE_FLAG_AA          = 2;
-	X509_CERTIFICATE_FLAG_OCSP        = 3;
+// IPsec Security Policy Actions
+enum IpsecSpdAction {
+  IPSEC_SPD_ACTION_UNSPECIFIED = 0;
+  // Protect the traffic with IPsec.
+  IPSEC_SPD_ACTION_PROTECT = 1;
+  // Bypass the traffic. The packet is forwarded without IPsec protection.
+  IPSEC_SPD_ACTION_BYPASS = 2;
+  // Discard the traffic. The IP packet is discarded.
+  IPSEC_SPD_ACTION_DISCARD = 3;
 }
 
-message Proposals {
-	repeated CryptoAlgorithm crypto_alg = 1;
-	repeated IntegAlgorithm integ_alg = 2;
-	repeated PRFunction prf = 3;
-	repeated DHGroups dhgroups = 4;
+// IPsec security protocols
+enum IpsecProtocol {
+  IPSEC_PROTOCOL_UNSPECIFIED = 0;
+  IPSEC_PROTOCOL_ESP = 1;
 }
 
-message Vips {
-	repeated string vip = 1;
+enum LifetimeAction {
+  LIFETIME_ACTION_UNSPECIFIED = 0;
+  // Terminates the IPsec SA and allows the packets through.
+  LIFETIME_ACTION_TERMINATE_CLEAR = 1;
+  // Terminates the IPsec SA and drops the packets.
+  LIFETIME_ACTION_TERMINATE_HOLD = 2;
+  // Replaces the IPsec SA with a new one. Rekey.
+  LIFETIME_ACTION_REPLACE = 3;
 }
 
-message Pools {
-	repeated string pool = 1;
+// Don't Fragment (DF) bit handling when encapsulating tunnel mode IPsec
+// traffic.
+enum DfBitAction {
+  DF_BIT_ACTION_UNSPECIFIED = 0;
+  // Disable the Don't Fragment (DF) bit in the outer header.
+  DF_BIT_ACTION_CLEAR = 1;
+  // Enable the DF bit in the outer header
+  DF_BIT_ACTION_SET = 2;
+  // Copy the DF bit to the outer header
+  DF_BIT_ACTION_COPY = 3;
 }
 
-message Certs {
-	repeated string cert = 1;
+// Digital Signature Algorithm
+// Encoding follows the IANA encoding for IKEv2 Authentication Method
+// https://www.iana.org/assignments/ikev2-parameters/ikev2-parameters.xhtml#ikev2-parameters-12
+enum DSAlgorithm {
+  DS_ALGORITHM_UNSPECIFIED = 0;
+  DS_ALGORITHM_RSA = 1;
+  DS_ALGORITHM_ECDSA_SHA256_P256 = 9;
+  DS_ALGORITHM_ECDSA_SHA384_P384 = 10;
+  DS_ALGORITHM_ECDSA_SHA512_P512 = 11;
 }
 
-message PubKeys {
-	repeated string pubkey = 1;
+// IKEv2 Fragmentation, as per RFC 7383. If IKEv2 fragmentation is enabled, it
+// is possible to specify the MTU.
+message IkeFragmentation {
+  // Enable/Disable IKEv2 fragmentation.
+  bool enabled = 1;
+  // When fragmentation is enabled, the MTU that IKEv2 can use for IKEv2
+  // fragmentation.
+  optional uint32 mtu = 2;
 }
 
-message Groups {
-	repeated string group = 1;
+// IKE SA soft lifetime. Two lifetime values can be configured, either rekey
+// time of the IKE SA or reauth time of the IKE SA. When the rekey lifetime
+// expires, a rekey of the IKE SA starts. When reauth lifetime expires, an IKE
+// SA re-authentication starts.
+message IkeSaLifetimeSoft {
+  // Time in seconds between each IKE SA rekey. The value of 0 means infinite.
+  uint32 rekey_time = 1;
+  // Time in seconds between each IKE SA re-authentication. The value of 0 means
+  // infinite.
+  uint32 reauth_time = 2;
 }
 
-message CertPolicy {
-	repeated string cert_policy = 1;
+// IKE SA hard lifetime. When this time is reached, the IKE SA is removed.
+message IkeSaLifetimeHard {
+  // Time in seconds before the IKE SA is removed. The value 0 means infinite.
+  uint32 over_time = 1;
 }
 
 message CaCerts {
-	repeated string cacert = 1;
+  repeated string cacert = 1;
 }
 
-message LocalAuth {
-	AuthType auth    = 1;
-	string id        = 2;
-	string eap_id    = 3;
-	string aaa_id    = 4;
-	string xauth_id  = 5;
-	Certs certs      = 6;
-	PubKeys pubkeys  = 7;
+// Defines the type of encapsulation in case NAT traversal is required and
+// includes port information.
+message Encap {
+  // Type of encapsulation to use.
+  EspEncap espencap = 1;
+  // Encapsulation source port. Default = 4500
+  uint32 sport = 2;
+  // Encapsulation destination port. Default = 4500
+  uint32 dport = 3;
 }
 
-message RemoteAuth {
-	AuthType auth          = 1;
-	string id              = 2;
-	string eap_id          = 3;
-	Groups groups          = 4;
-	CertPolicy cert_policy = 5;
-	Certs certs            = 6;
-	CaCerts ca_certs       = 7;
-	PubKeys pubkeys        = 8;
+// An IKE Connection specification
+message IkeConnection {
+  // Identifier for this connection entry.
+  string name = 1;
+  // IKE/IPsec connection startup behavior. Default: AUTO_STARTUP_MODE_ADD
+  AutoStartupMode autostartup = 2;
+  // IKE version. Only version 2 is supported.
+  IkeVersion version = 3;
+  // IKE fragmentation
+  IkeFragmentation fragmentation = 4;
+  // IKE SA soft lifetime
+  IkeSaLifetimeSoft ike_sa_lifetime_soft = 5;
+  // IKE SA hard lifetime
+  IkeSaLifetimeHard ike_sa_lifetime_hard = 6;
+  // Cryptographic algorithms
+  repeated EncAlgorithm encryption_alg = 7;
+  repeated IntegAlgorithm integrity_alg = 8;
+  repeated PRF prf = 9;
+  repeated DHGroups dhgroups = 10;
+  // Local peer name.
+  string local = 11;
+  // Remote peer name.
+  string remote = 12;
+  // Configuration information about the encapsulation that should be used when
+  // NAT traversal is required. No encapsulation is used if this field is not
+  // specified.
+  optional Encap encap = 13;
+  // Local UDP port for IKE communication. Defaults to 500 if not specified.
+  optional uint32 local_port = 14;
+  // Remote UDP port for IKE communication. Defaults to 500 if not specified.
+  optional uint32 remote_port = 15;
+  // Interface that this connection is associated with. Used for route based
+  // VPNs.
+  string if_id = 16;
+  // IPsec policies that apply to the connection
+  repeated IpsecPolicy policies = 17;
+  // Connection state / status
+  IkeConnectionState state = 18;
 }
 
-message TrafficSelectors {
-	message TrafficSelector {
-		string cidr  = 1;
-		string proto = 2;
-		string port  = 3;
-	}
-	repeated TrafficSelector ts = 1;
+// An IPsec Security Association (SA)
+message IpsecSA {
+  // Unique name in the SAD to identify this SA
+  string name = 1;
+  // This value allows linking this IPsec SA with an IPsec policy with the same
+  // reqid
+  uint64 reqid = 2;
+  // IPsec SA configuration
+  IpsecSaConfig config = 3;
+  // IPsec SA state
+  IpsecSaState state = 4;
 }
 
-/* IP addresses or hostanmes */
-message Addrs {
-	string addr = 1;
+// IPsec Security Association Configuration
+message IpsecSaConfig {
+  // IPsec SA Security Parameter Index (SPI)
+  uint32 spi = 1;
+  // True if this IPsec SA is using extended sequence numbers. If true, the
+  // 64-bit extended sequence number counter is used. If false, the normal
+  // 32-bit sequence number counter is used.
+  bool esn = 2;
+  // Anti-Replay-Window size. If not set, the default value is 64, following the
+  // recommendation in RFC4303.
+  optional uint32 arw_size = 3;
+  // Packets are selected for processing actions based on Traffic Selector
+  // values, which refer to IP and inner protocol header information.
+  TrafficSelector traffic_selector = 4;
+  // Security protocol of the IPsec SA. Only ESP is supported.
+  IpsecProtocol protocol = 5;
+  // IPsec SA has to be processed in transport or tunnel mode. If not specified,
+  // transport mode is used.
+  IpsecMode mode = 6;
+  // IPsec ESP algorithm configuration
+  EspAlgorithms esp_algorithms = 7;
+  // Tunnel configuration. Only relevant when mode = Tunnel.
+  optional Tunnel tunnel = 8;
+  // Soft IPsec SA lifetime. After the lifetime, the lifetime action is
+  // performed.
+  IpsecSaLifetimeSoft lifetime_soft = 9;
+  // Hard IPsec SA lifetime. The action will be used to terminate the IPsec SA.
+  IpsecSaLifetimeHard lifetime_hard = 10;
+  // Provides information about the encapsulation that the IPsec SA is using.
+  Encap encap = 11;
 }
 
-/* Child SA */
-message Child {
-	string name                = 1; /* Child SA name */
-	Proposals ag_proposals     = 2;
-	Proposals esp_proposals    = 3;
-	TrafficSelectors local_ts  = 4;
-	TrafficSelectors remote_ts = 5;
-	uint32 rekey_time          = 6;
-	uint32 life_time           = 7;
-	uint32 rand_time           = 8;
-	string updown              = 9;
-	uint32 inactivity          = 10;
-	uint32 mark_in             = 11;
-	string mark_in_sa          = 12;
-	uint32 mark_out            = 13;
-	uint32 set_mark_in         = 14;
-	uint32 set_mark_out        = 15;
-	string hw_offload          = 16;
+// IPsec Security Association State
+message IpsecSaState {
+  // SA Current Lifetime
+  Lifetime lifetime = 1;
+  // State about the anti-replay window
+  AntiReplayStats replay_stats = 2;
 }
 
-/* IKE connection */
-message Connection {
-	string name                 = 1; /* connection name */
-	string version              = 2;
-	repeated Addrs local_addrs  = 3;
-	repeated Addrs remote_addrs = 4;
-	uint32 local_port           = 5;
-	uint32 remote_port          = 6;
-	Proposals proposals         = 7;
-	Vips vips                   = 8;
-	uint64 dscp                 = 9; /* We use only the lower 6 bytes */
-	string encap                = 10;
-	string mobike               = 11;
-	uint32 dpd_delay            = 12;
-	uint32 dpd_timeout          = 13;
-	uint32 reauth_time          = 14;
-	uint32 rekey_time           = 15;
-	Pools pools                 = 16;
-	LocalAuth local_auth        = 17;
-	RemoteAuth remote_auth      = 18;
-	repeated Child children     = 19;
+message IpsecPolicy {
+  // Unique name to identify the IPsec policy in the SPD.
+  string name = 1;
+  // This value allows linking this IPsec policy with the IPsec SAs with the
+  // same reqid. A value of 0 (the default) means that the reqid is unused.
+  uint64 reqid = 2;
+  // IPsec Policy configuration
+  IpsecPolicyConfig config = 3;
 }
 
-message IPsecVersionRequest {
-	/* Intentionally empty */
+// Holds configuration information for an IPsec SPD entry.
+message IpsecPolicyConfig {
+  // Anti-Replay-Window size. If not set, the default value is 64, following the
+  // recommendation in RFC4303.
+  optional uint32 arw_size = 1;
+  // Packets are selected for processing actions based on Traffic Selector
+  // values, which refer to IP and inner protocol header information.
+  TrafficSelector traffic_selector = 2;
+  // SPD processing to be performed on packets that match the traffic selector.
+  SpdProcessingInfo processing = 3;
 }
 
-message IPsecVersionResponse {
-	string daemon  = 1;
-	string version = 2;
-	string sysname = 3;
-	string release = 4;
-	string machine = 5;
+// A Traffic Selector used in IPsec policies and IPsec SAs.
+message TrafficSelector {
+  // Local IP address prefix.
+  network.opinetcommon.v1alpha1.IPPrefix local_prefix = 1;
+  // Remote IP address prefix.
+  network.opinetcommon.v1alpha1.IPPrefix remote_prefix = 2;
+  // Inner protocol that is going to be protected with IPsec. If no protocol is
+  // specified, all inner protocol will be protected.
+  uint32 inner_protocol = 3;
+  // List of local ports. When the inner protocol is ICMP, this 16-bit value
+  // represents code and type. If this list is not defined, it is assumed that
+  // start and end are 0 by default (any port).
+  repeated PortRange local_ports = 4;
+  // List of remote ports. When the inner protocol is ICMP, this 16-bit value
+  // represents code and type. If this list is not defined, it is assumed that
+  // start and end are 0 by default (any port).
+  repeated PortRange remote_ports = 5;
 }
 
-message IPsecStatsRequest {
-	/* Intentionally empty */
+// A port range, such as that expressed in RFC 4301, for example 1500 (Start
+// Port Number) - 1600 (End Port Number). A port range is used in the Traffic
+// Selector. To express a single prot, set the same value as start and end.
+message PortRange {
+  // Start port number.
+  uint32 start = 1;
+  // End port number. The end port number must be equal to or greater than the
+  // start port number.
+  uint32 end = 2;
 }
 
-message IPsecStatsResponse {
-	string status = 1; /* Generic status string for now */
+// SPD processing. If the required processing action is protect, it contains the
+// required information to process the packet.
+message SpdProcessingInfo {
+  IpsecSpdAction action = 1;
+  // IPsec SA configuration included in the SPD entry.
+  optional IpsecSaTemplate sa_config = 2;
 }
 
-message IPsecInitiateRequest {
-	string child    = 1;
-	string ike      = 2;
-	string timeout  = 3;
-	string loglevel = 4;
+message IpsecSaTemplate {
+  // True if this IPsec SA is using extended sequence numbers. If true, the
+  // 64-bit extended sequence number counter is used. If false, the normal
+  // 32-bit sequence number counter is used.
+  bool esn = 1;
+  // IPsec SA has to be processed in transport or tunnel mode. If not specified,
+  // transport mode is used.
+  IpsecMode mode = 2;
+  // Security protocol of the IPsec SA. Only ESP is supported.
+  IpsecProtocol protocol = 3;
+  // IPsec ESP algorithm configuration
+  EspAlgorithms esp_algorithms = 4;
+  // Tunnel configuration. Only relevant when mode = Tunnel.
+  optional Tunnel tunnel = 5;
 }
 
-message IPsecInitiateResponse {
-	/* Intentionally empty */
+// Configuration of ESP parameters and algorithms
+message EspAlgorithms {
+  // Configuration of ESP authentication based on the specified integrity
+  // algorithm. With AEAD encryption algorithms, the integrity node is not used.
+  repeated IntegAlgorithm integrity = 1;
+  // Encryption of AEAD algorithm for the IPsec SAs. This list is ordered from
+  // higher priority to lower priority. The first node of the list will be the
+  // algorithm with the higher priority. If the list is empty then AES-256-GCM
+  // will be applied.
+  repeated EncAlgorithm encryption = 2;
+  // If Traffic Flow Confidentiality (TFC) padding for ESP encryption can be
+  // used (true) or not (false).
+  optional bool tfc_pad = 3;
 }
 
-message IPsecTerminateRequest {
-	string child    = 1;
-	string ike      = 2;
-	uint64 child_id = 3;
-	uint64 ike_id   = 4;
-	string force    = 5;
-	string timeout  = 6;
-	string loglevel = 7;
+// The parameters required to define the IP tunnel endpoints when IPsec SA
+// requires tunnel mode. The tunnel is defined by two endpoints: the local IP
+// address and the remote IP address.
+message Tunnel {
+  // Local IP address tunnel endpoint
+  optional network.opinetcommon.v1alpha1.IPAddress local = 1;
+  // Remote IP address tunnel endpoint
+  optional network.opinetcommon.v1alpha1.IPAddress remote = 2;
+  // Allow configuring the DF bit when encapsulating tunnel mode IPsec traffic.
+  // RFC 4301 describes three options to handle the DF bit during tunnel
+  // encapsulation: clear, set and copy from the inner IP header. This must be
+  // ignored or has no meaning when the local/remote IP addresses are IPv6
+  // addresses.
+  DfBitAction df_bit = 3;
+  // If true, copy the DSCP value from the inner header to the outer header. If
+  // false, map the DSCP values from an inner header to values in an outer
+  // header following the dscp_mapping.
+  bool bypass_dscp = 4;
+  // A list that represents an array with the mapping from the inner DSCP value
+  // to outer DSCP value when bypass_dscp is false. To express a default mapping
+  // in the list where any other inner dscp value is not matching a node in the
+  // list, a new node has to be included at the end of the list where the
+  // inner-dscp is not defined (ANY) and the outer-dscp includes the value of
+  // the mapping. If there is no value set in the outer-dscp, the default value
+  // for this leaf is 0.
+  repeated DscpMapping dscp_mapping = 5;
 }
 
-message IPsecTerminateResponse {
-	string success    = 1;
-	uint32 matches    = 2;
-	uint32 terminated = 3;
+message DscpMapping {
+  // The list entry index with the different mappings.
+  uint32 id = 1;
+  // The DSCP value of the inner IP packet.
+  uint32 inner_dscp = 2;
+  // The DSCP value of the outer IP packet.
+  uint32 outer_dscp = 3;
 }
 
-message IPsecRekeyRequest {
-	string child    = 1;
-	string ike      = 2;
-	uint64 child_id = 3;
-	uint64 ike_id   = 4;
-	string reauth   = 5;
+// Specific information for IPsec SAs. It includes Perfect Forward Secrecy (PFS)
+// group and IPsec SA rekey lifetimes.
+message ChildSaInfo {
+  // If non-zero, forward secrecy is required when a new IPsec SA is being
+  // created. The non-zero value indicates the DH group number to use for the
+  // key exchange process used to achieve forward secrecy. The list is ordered
+  // following from the higher priority to lower priority. The first node of the
+  // list will be the algorithm with higher priority.
+  repeated uint32 fs_groups = 1;
+  // Soft IPsec SA lifetime. After the lifetime, the lifetime action is
+  // performed.
+  IpsecSaLifetimeSoft lifetime_soft = 2;
+  // Hard IPsec SA lifetime. The action will be used to terminate the IPsec SA.
+  IpsecSaLifetimeHard lifetime_hard = 3;
 }
 
-message IPsecRekeyResponse {
-	string success = 1;
-	uint32 matches = 2;
+message IpsecSaLifetimeSoft {
+  Lifetime lifetime = 1;
+  LifetimeAction action = 2;
 }
 
-message IPsecListSasRequest {
-	string noblock  = 1;
-	string ike      = 2;
-	uint64 ike_id   = 3;
-	string child    = 4;
-	uint64 child_id = 5;
+message IpsecSaLifetimeHard {
+  Lifetime lifetime = 1;
 }
 
-message ListChildSa {
-	string name = 1;
-	string protocol = 2;
-	string encap = 3;
-	string spi_in = 4;
-	string spi_out = 5;
-	string cpi_in = 6;
-	string cpi_out = 7;
-	string mark_in = 8;
-	string mark_mask_in = 9;
-	string mark_out = 10;
-	string mark_mask_out = 11;
-	string if_id_in = 12;
-	string if_id_out = 13;
-	string encr_alg = 14;
-	string encr_keysize = 15;
-	string integ_alg = 16;
-	string integ_keysize = 17;
-	string dh_group = 18;
-	string esn = 19;
+message Lifetime {
+  // Time in seconds since the IPsec SA was added. For example, if this value is
+  // 180 seconds, it means the IPsec SA expires in 180 seconds after it was
+  // added. A value of 0 implies infinite.
+  uint32 time = 1;
+  // If the IPsec SA processes the number of bytes expressed in this field, the
+  // IPsec SA expires and should be rekeyed. A value of 0 implies infinite.
+  uint64 bytes = 2;
+  // If the IPsec SA processes the number of packets expressed in this field,
+  // the IPsec SA expires and should be rekeyed. A value of 0 implies infinite.
+  uint64 packets = 3;
+  // If the IPsec SA is idle during this number of seconds, the IPsec SA should
+  // be removed. A value of 0 implies infinite.
+  uint32 idle = 4;
 }
 
-message ListIkeSa {
-	string name                   = 1; /* IKE_SA name */
-	string uniqueid               = 2;
-	string version                = 3;
-	IkeSaState ikestate           = 4;
-	string local_host             = 5;
-	string local_port             = 6;
-	string local_id               = 7;
-	string remote_host            = 8;
-	string remote_port            = 9;
-	string remote_id              = 10;
-	string remote_xauth_id        = 11;
-	string remote_eap_id          = 12;
-	string initiator              = 13;
-	string initiator_spi          = 14;
-	string responder_spi          = 15;
-	string nat_local              = 16;
-	string nat_remote             = 17;
-	string nat_fake               = 18;
-	string nat_any                = 19;
-	string if_id_in               = 20;
-	string if_id_out              = 21;
-	string encr_alg               = 22;
-	string encr_keysize           = 23;
-	string integ_alg              = 24;
-	string integ_keysize          = 25;
-	string prf_alg                = 26;
-	string dh_group               = 27;
-	string ppk                    = 28;
-	string established            = 29;
-	string rekey_time             = 30;
-	string reauth_time            = 31;
-	repeated string local_vips    = 32;
-	repeated string remote_vips   = 33;
-	repeated string tasks_queued  = 34;
-	repeated string tasks_active  = 35;
-	repeated string tasks_passive = 36;
-	repeated ListChildSa childsas = 37;
+// Anti-replay stats
+message AntiReplayStats {
+  // ARW state
+  AntiReplayWindow replay_window = 1;
+  // Packets dropped because they are replay packets
+  uint64 packet_dropped = 2;
+  // Number of packets detected out of the replay window
+  uint64 failed = 3;
+  // Current value of the sequence number
+  uint64 seq_num_counter = 4;
 }
 
-message IPsecListSasResponse {
-	repeated ListIkeSa ikesas = 1;
+// Anti-replay window state. Three parameters define the state of the replay
+// window: window size (w), highest sequence number authenticated (t), and lower
+// bound of the window (b), according to Appendix A2.1 in RFC 4303 (w = t - b +
+// 1)
+message AntiReplayWindow {
+  // Size of the replay window
+  uint32 w = 1;
+  // Highest sequence number authenticated so far, upper bound of window
+  uint64 t = 2;
+  // Lower bound of window
+  uint64 b = 3;
 }
 
-message IPsecListConnsRequest {
-	string ike = 1;
+// IKE state data for an IKE connection
+message IkeConnectionState {
+  // True if the local endpoint is acting as the initiator for this connection.
+  bool initiator = 1;
+  // Initiator's IKE SA SPI
+  uint32 initiator_ike_spi = 2;
+  // Responder's IKE SA SPI
+  uint32 responder_ike_sa = 3;
+  // True if the local endpoint is behind a NAT.
+  bool nat_local = 4;
+  // True if the remote endpoint is behind a NAT.
+  bool nat_remote = 5;
+  // Provides information about the encapsulation that IKE is using.
+  Encap encap = 6;
+  // Seconds since this IKE SA has been established.
+  uint64 established = 7;
+  // Seconds before IKE SA is rekeyed
+  uint64 current_rekey_time = 8;
+  // Seconds before IKE SA is re-authenticated
+  uint64 current_reauth_time = 9;
 }
 
-message ListConnAuth {
-	string  class          = 1;
-	string  eaptype        = 2;
-	string  eapvendor      = 3;
-	string  xauth          = 4;
-	string  revocation     = 5;
-	string  id             = 6;
-	string  ca_id          = 7;
-	string  aaa_id         = 8;
-	string  eap_id         = 9;
-	string  xauth_id       = 10;
-	Groups  group          = 11;
-	CertPolicy cert_policy = 12;
-	Certs   certs          = 13;
-	CaCerts cacerts        = 14;
+// General information about the IKE SAs. In particular, it provides the number
+// of IKE SAs.
+message NumberIkeSAs {
+  // Total number of active IKE SAs.
+  uint64 total = 1;
+  // Number of half-open active IKE SAs.
+  uint64 half_open = 2;
 }
 
-message ListChild {
-	string           name          = 1; /* Child SA name */
-	string           mode          = 2;
-	string           label         = 3;
-	uint32           rekey_time    = 4;
-	uint32           rekey_bytes   = 5;
-	uint32           rekey_packets = 6;
-	string           dpd_action    = 7;
-	string           close_action  = 8;
-	TrafficSelectors local_ts      = 9;
-	TrafficSelectors remote_ts     = 10;
-	string           interface     = 11;
-	string           priority      = 12;
+/* Digital Signature Authentication */
+message DSAuth {
+  // The digital signature algorithm
+  DSAlgorithm algorithm = 1;
+  string raw_public_key = 2;
+  string cert = 3;
+  string private_key = 4;
+  CaCerts ca_certs = 5;
 }
 
-message ListConnResp {
-	string name                       = 1; /* Connection name */
-	repeated Addrs local_addrs        = 2;
-	repeated Addrs remote_addrs       = 3;
-	string version                    = 4;
-	uint32 reauth_time                = 5;
-	uint32 rekey_time                 = 6;
-	string unique                     = 7;
-	uint32 dpd_delay                  = 8;
-	uint32 dpd_timeout                = 9;
-	string ppk                        = 10;
-	string ppk_required               = 11;
-	repeated ListConnAuth local_auth  = 12;
-	repeated ListConnAuth remote_auth = 13;
-	repeated ListChild children       = 14;
+/* IKE Peer Authentication */
+message IkePeerAuthentication {
+  // Authentication method
+  AuthType auth_method = 1;
+  // EAP method type specified with a value extracted from the IANA registry.
+  // This information provides the particular EAP method to be used. Depending
+  // on the EAP method, pre-shared keys or certificates may be used.
+  optional uint32 eap_type = 2;
+  // Pre-shared secret value. This value MUST be set of the EAP method uses a
+  // pre-shared key or pre-shared authentication has been chosen.
+  optional string psk = 3;
+  // Digital signature
+  optional DSAuth digital_signature = 4;
 }
 
-message IPsecListConnsResponse {
-	repeated ListConnResp connection = 1;
+/* IKE Peer */
+message IkePeer {
+  // Name to uniquely identify the peer.
+  string name = 1;
+  // IPv4 or IPv6 address of the peer.
+  optional network.opinetcommon.v1alpha1.IPAddress ip_address = 2;
+  // FQDN of the peer.
+  optional string fqdn = 3;
+  optional IkePeerAuthentication peer_auth = 4;
 }
 
-message IPsecListCertsRequest {
-	string type    = 1;
-	string flag    = 2;
-	string subject = 3;
+//
+// IKE Peers
+//
+
+message CreateIkePeerRequest {
+  IkePeer peer = 1;
 }
 
-/* list-cert */
-message ListCert {
-	CertificateType type     = 1;
-	X509CertificateFlag flag = 2;
-	string hasprivkey        = 3;
-	string data              = 4;
-	string subject           = 5;
-	string notbefore         = 6;
-	string notafter          = 7;
+message CreateIkePeerResponse {}
+
+message UpdateIkePeerRequest {
+  // Name identifying the IKE peer to update
+  string name = 1;
+  // Updated IKE peer specification
+  IkePeer peer = 2;
 }
 
-message IPsecListCertsResponse {
-	repeated ListCert certs = 1;
+message UpdateIkePeerResponse {}
+
+message DeleteIkePeerRequest {
+  // Name of the IKE peer to delete
+  string name = 1;
 }
 
-message IPsecLoadConnRequest {
-	Connection connection = 1;
+message DeleteIkePeerResponse {}
+
+message GetIkePeerRequest {
+  // Name of the IKE peer to retrieve
+  string name = 1;
 }
 
-message IPsecLoadConnResponse {
-	string success = 1;
+message GetIkePeerResponse {
+  IkePeer peer = 1;
 }
 
-message IPsecUnloadConnRequest {
-	string name = 1;
+message ListIkePeersRequest {}
+
+message ListIkePeersResponse {
+  repeated IkePeer peers = 1;
 }
 
-message IPsecUnloadConnResponse {
-	string success = 1;
+//
+// IKE Connections
+//
+
+message CreateIkeConnRequest {
+  IkeConnection connection = 1;
 }
+
+message CreateIkeConnResponse {}
+
+message UpdateIkeConnRequest {
+  // Connection name identifying the IKE connection to update
+  string name = 1;
+  // Updated IKE connection specification
+  IkeConnection connection = 2;
+}
+
+message UpdateIkeConnResponse {}
+
+message DeleteIkeConnRequest {
+  // Connection name identifying the IKE connection to delete
+  repeated string name = 1;
+}
+
+message DeleteIkeConnResponse {}
+
+message GetIkeConnRequest {
+  // Connection name identifying the IKE connection to retrieve
+  string name = 1;
+}
+
+message GetIkeConnResponse {
+  IkeConnection connection = 1;
+}
+
+message ListIkeConnsRequest {}
+
+message ListIkeConnsResponse {
+  repeated IkeConnection connections = 1;
+}
+
+//
+// IPsec SAs
+//
+
+message ListIpsecSasRequest {
+  // Intentionally empty
+}
+
+message ListIpsecSasResponse {
+  repeated IpsecSA sas = 1;
+}
+
+message GetIpsecSaRequest {
+  // Name of the SA to retrieve
+  string name = 1;
+}
+
+message GetIpsecSaResponse {
+  IpsecSA sa = 1;
+}
+
+message CreateIpsecSaRequest {
+  IpsecSA sa = 1;
+}
+
+message CreateIpsecSaResponse {}
+
+message UpdateIpsecSaRequest {
+  // Name of the SA to update
+  string name = 1;
+  IpsecSA sa = 2;
+}
+
+message UpdateIpsecSaResponse {}
+
+message DeleteIpsecSaRequest {
+  // Name of the SA to delete
+  string name = 1;
+}
+
+message DeleteIpsecSaResponse {}
