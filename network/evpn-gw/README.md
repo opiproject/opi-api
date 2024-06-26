@@ -70,23 +70,23 @@ erDiagram
 
 The following objects are managed though the xPU EVPN Gateway API
 
-* **Logical Bridge (LB)**
+* __Logical Bridge (LB)__
 
     Provide L2 forwarding between bridge ports. A logical bridge is a single broadcast domain and corresponds to a single VLAN with its own FDB. The logical bridge gives per VLAN learning.
 
     A Logical Bridge can optionally be associated with an L2-EVPN instance, which extends the L2 forwarding domain beyond the scope of the single server. The VNI value is used as import and export route target in EVPN BGP as well as in the VXLAN encapsulation of the tunneled traffic.
 
-* **Bridge Port (BP)**
+* __Bridge Port (BP)__
 
     A bridge port connects a tenant to one or more Logical Bridges. The model supports both access and trunk ports. An access port receives untagged frames from tenants and maps frames to the configured VLAN of a single logical bridge. Trunk ports forward tagged frames transparently for a set of specified VLANs. Within the xPU the packets are forwarded according to their VLAN tag. A trunk port is hence associated with multiple Logical Bridges.
 
     A typical use case of a bridge port is to configure L2 services for a VF in the host domain. In Kubernetes context a CNI plugin would create the BridgePort and inject the configured VF through a Network Attachment Definition into the Pod
 
-* **Switched Virtual Interface (SVI)**
+* __Switched Virtual Interface (SVI)__
 
     An SVI is a virtual L3 interface that connects a logical Bridge to a VRF on the xPU. The SVI has a MAC address on the Logical Bridge and one or more IP addresses in the VRF , which can act as GW IPs for the tenants connected to the Logical Bridge. The GW IPs must be in the same subnets as the Pod IP addresses assigned through the chosen Kubernetes IPAM plugin.
 
-* **Virtual Routing Funtions (VRF)**
+* __Virtual Routing Funtions (VRF)__
 
     A VRF routes IP packets locally between BridgePorts on LogicalBridges connected through SVIs.
 
