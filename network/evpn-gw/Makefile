@@ -3,7 +3,7 @@
 # Copyright (c) 2022 Dell Inc, or its subsidiaries.
 # Copyright (C) 2023 Nordix Foundation.
 
-all: buflint bufgen doc
+all: buflint apilint bufgen doc
 
 doc:
 	rm -rf ./google
@@ -15,6 +15,11 @@ doc:
 
 	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../opinetcommon":/opinetcommon -v "${PWD}"/v1alpha1/:/out -w /out -v "${PWD}":/protos pseudomuto/protoc-gen-doc:1.5.1 -c "protoc -I /opinetcommon -I /protos --doc_out=/out --doc_opt=markdown,autogen.md /protos/*.proto"
 
+	rm -rf "${PWD}"/google
+
+apilint:
+	curl -kL https://github.com/googleapis/googleapis/archive/master.tar.gz | tar --strip=1 -zxvf - googleapis-master/google/api
+	docker run --user=$(id -u):$(id -g) --rm --entrypoint=sh -v "${PWD}/../../network/opinetcommon":/common -v "${PWD}":/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.56.1 -c "api-linter -I /common /out/*.proto --output-format github --set-exit-status"
 	rm -rf "${PWD}"/google
 
 buflint:
