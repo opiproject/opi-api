@@ -2,14 +2,13 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 import ipsec_pb2 as ipsec__pb2
 
 
-class IpsecServiceStub(object):
-    """The IPsec service defines operations on:
-    - IKE Peer Association Database (PAD)
-    - IKE Connections
-    - IPsec Security Associations (SAs)
+class IkePeerServiceStub(object):
+    """Management of the IKE Peer Association Database (PAD). The PAD contains
+    information about the peers that are allowed to establish an IKE connection.
     """
 
     def __init__(self, channel):
@@ -19,87 +18,35 @@ class IpsecServiceStub(object):
             channel: A grpc.Channel.
         """
         self.CreateIkePeer = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/CreateIkePeer',
+                '/opi_api.security.v2alpha1.IkePeerService/CreateIkePeer',
                 request_serializer=ipsec__pb2.CreateIkePeerRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.CreateIkePeerResponse.FromString,
+                response_deserializer=ipsec__pb2.IkePeer.FromString,
                 )
         self.UpdateIkePeer = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/UpdateIkePeer',
+                '/opi_api.security.v2alpha1.IkePeerService/UpdateIkePeer',
                 request_serializer=ipsec__pb2.UpdateIkePeerRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.UpdateIkePeerResponse.FromString,
+                response_deserializer=ipsec__pb2.IkePeer.FromString,
                 )
         self.DeleteIkePeer = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/DeleteIkePeer',
+                '/opi_api.security.v2alpha1.IkePeerService/DeleteIkePeer',
                 request_serializer=ipsec__pb2.DeleteIkePeerRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.DeleteIkePeerResponse.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.GetIkePeer = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/GetIkePeer',
+                '/opi_api.security.v2alpha1.IkePeerService/GetIkePeer',
                 request_serializer=ipsec__pb2.GetIkePeerRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.GetIkePeerResponse.FromString,
+                response_deserializer=ipsec__pb2.IkePeer.FromString,
                 )
         self.ListIkePeers = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/ListIkePeers',
+                '/opi_api.security.v2alpha1.IkePeerService/ListIkePeers',
                 request_serializer=ipsec__pb2.ListIkePeersRequest.SerializeToString,
                 response_deserializer=ipsec__pb2.ListIkePeersResponse.FromString,
                 )
-        self.CreateIkeConn = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/CreateIkeConn',
-                request_serializer=ipsec__pb2.CreateIkeConnRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.CreateIkeConnResponse.FromString,
-                )
-        self.UpdateIkeConn = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/UpdateIkeConn',
-                request_serializer=ipsec__pb2.UpdateIkeConnRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.UpdateIkeConnResponse.FromString,
-                )
-        self.DeleteIkeConn = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/DeleteIkeConn',
-                request_serializer=ipsec__pb2.DeleteIkeConnRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.DeleteIkeConnResponse.FromString,
-                )
-        self.GetIkeConn = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/GetIkeConn',
-                request_serializer=ipsec__pb2.GetIkeConnRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.GetIkeConnResponse.FromString,
-                )
-        self.ListIkeConns = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/ListIkeConns',
-                request_serializer=ipsec__pb2.ListIkeConnsRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.ListIkeConnsResponse.FromString,
-                )
-        self.CreateIpsecSa = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/CreateIpsecSa',
-                request_serializer=ipsec__pb2.CreateIpsecSaRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.CreateIpsecSaResponse.FromString,
-                )
-        self.UpdateIpsecSa = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/UpdateIpsecSa',
-                request_serializer=ipsec__pb2.UpdateIpsecSaRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.UpdateIpsecSaResponse.FromString,
-                )
-        self.DeleteIpsecSa = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/DeleteIpsecSa',
-                request_serializer=ipsec__pb2.DeleteIpsecSaRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.DeleteIpsecSaResponse.FromString,
-                )
-        self.GetIpsecSa = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/GetIpsecSa',
-                request_serializer=ipsec__pb2.GetIpsecSaRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.GetIpsecSaResponse.FromString,
-                )
-        self.ListIpsecSas = channel.unary_unary(
-                '/opi_api.security.v2alpha1.IpsecService/ListIpsecSas',
-                request_serializer=ipsec__pb2.ListIpsecSasRequest.SerializeToString,
-                response_deserializer=ipsec__pb2.ListIpsecSasResponse.FromString,
-                )
 
 
-class IpsecServiceServicer(object):
-    """The IPsec service defines operations on:
-    - IKE Peer Association Database (PAD)
-    - IKE Connections
-    - IPsec Security Associations (SAs)
+class IkePeerServiceServicer(object):
+    """Management of the IKE Peer Association Database (PAD). The PAD contains
+    information about the peers that are allowed to establish an IKE connection.
     """
 
     def CreateIkePeer(self, request, context):
@@ -138,7 +85,187 @@ class IpsecServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateIkeConn(self, request, context):
+
+def add_IkePeerServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'CreateIkePeer': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateIkePeer,
+                    request_deserializer=ipsec__pb2.CreateIkePeerRequest.FromString,
+                    response_serializer=ipsec__pb2.IkePeer.SerializeToString,
+            ),
+            'UpdateIkePeer': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateIkePeer,
+                    request_deserializer=ipsec__pb2.UpdateIkePeerRequest.FromString,
+                    response_serializer=ipsec__pb2.IkePeer.SerializeToString,
+            ),
+            'DeleteIkePeer': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteIkePeer,
+                    request_deserializer=ipsec__pb2.DeleteIkePeerRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetIkePeer': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetIkePeer,
+                    request_deserializer=ipsec__pb2.GetIkePeerRequest.FromString,
+                    response_serializer=ipsec__pb2.IkePeer.SerializeToString,
+            ),
+            'ListIkePeers': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListIkePeers,
+                    request_deserializer=ipsec__pb2.ListIkePeersRequest.FromString,
+                    response_serializer=ipsec__pb2.ListIkePeersResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'opi_api.security.v2alpha1.IkePeerService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class IkePeerService(object):
+    """Management of the IKE Peer Association Database (PAD). The PAD contains
+    information about the peers that are allowed to establish an IKE connection.
+    """
+
+    @staticmethod
+    def CreateIkePeer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkePeerService/CreateIkePeer',
+            ipsec__pb2.CreateIkePeerRequest.SerializeToString,
+            ipsec__pb2.IkePeer.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateIkePeer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkePeerService/UpdateIkePeer',
+            ipsec__pb2.UpdateIkePeerRequest.SerializeToString,
+            ipsec__pb2.IkePeer.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteIkePeer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkePeerService/DeleteIkePeer',
+            ipsec__pb2.DeleteIkePeerRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetIkePeer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkePeerService/GetIkePeer',
+            ipsec__pb2.GetIkePeerRequest.SerializeToString,
+            ipsec__pb2.IkePeer.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListIkePeers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkePeerService/ListIkePeers',
+            ipsec__pb2.ListIkePeersRequest.SerializeToString,
+            ipsec__pb2.ListIkePeersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class IkeConnectionServiceStub(object):
+    """Management of IKE connections. An IKE connection is a logical connection
+    between two peers that is used to establish IPsec SAs. An IKE connection
+    includes the configuration of the local and remote peers, the IPsec SAs
+    that are part of the connection, and the configuration of the IKE connection
+    itself.
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.CreateIkeConnection = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IkeConnectionService/CreateIkeConnection',
+                request_serializer=ipsec__pb2.CreateIkeConnectionRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IkeConnection.FromString,
+                )
+        self.UpdateIkeConnection = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IkeConnectionService/UpdateIkeConnection',
+                request_serializer=ipsec__pb2.UpdateIkeConnectionRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IkeConnection.FromString,
+                )
+        self.DeleteIkeConnection = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IkeConnectionService/DeleteIkeConnection',
+                request_serializer=ipsec__pb2.DeleteIkeConnectionRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetIkeConnection = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IkeConnectionService/GetIkeConnection',
+                request_serializer=ipsec__pb2.GetIkeConnectionRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IkeConnection.FromString,
+                )
+        self.ListIkeConnections = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IkeConnectionService/ListIkeConnections',
+                request_serializer=ipsec__pb2.ListIkeConnectionsRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.ListIkeConnectionsResponse.FromString,
+                )
+        self.StatsIkeConnections = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IkeConnectionService/StatsIkeConnections',
+                request_serializer=ipsec__pb2.StatsIkeConnectionsRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.StatsIkeConnectionsResponse.FromString,
+                )
+
+
+class IkeConnectionServiceServicer(object):
+    """Management of IKE connections. An IKE connection is a logical connection
+    between two peers that is used to establish IPsec SAs. An IKE connection
+    includes the configuration of the local and remote peers, the IPsec SAs
+    that are part of the connection, and the configuration of the IKE connection
+    itself.
+    """
+
+    def CreateIkeConnection(self, request, context):
         """Create an IKE connection. The request includes specification of the local
         and remote IKE peers and the specification of the IPsec SAs (aka child SAs)
         from this IKE connection.
@@ -147,33 +274,236 @@ class IpsecServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateIkeConn(self, request, context):
+    def UpdateIkeConnection(self, request, context):
         """Update an existing IKE connection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteIkeConn(self, request, context):
+    def DeleteIkeConnection(self, request, context):
         """Delete an existing IKE connection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetIkeConn(self, request, context):
+    def GetIkeConnection(self, request, context):
         """Retrieve an IKE connection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListIkeConns(self, request, context):
-        """List existing IKE connections
+    def ListIkeConnections(self, request, context):
+        """List existing IKE connections.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
+
+    def StatsIkeConnections(self, request, context):
+        """Get IKE connection statistics.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_IkeConnectionServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'CreateIkeConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateIkeConnection,
+                    request_deserializer=ipsec__pb2.CreateIkeConnectionRequest.FromString,
+                    response_serializer=ipsec__pb2.IkeConnection.SerializeToString,
+            ),
+            'UpdateIkeConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateIkeConnection,
+                    request_deserializer=ipsec__pb2.UpdateIkeConnectionRequest.FromString,
+                    response_serializer=ipsec__pb2.IkeConnection.SerializeToString,
+            ),
+            'DeleteIkeConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteIkeConnection,
+                    request_deserializer=ipsec__pb2.DeleteIkeConnectionRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetIkeConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetIkeConnection,
+                    request_deserializer=ipsec__pb2.GetIkeConnectionRequest.FromString,
+                    response_serializer=ipsec__pb2.IkeConnection.SerializeToString,
+            ),
+            'ListIkeConnections': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListIkeConnections,
+                    request_deserializer=ipsec__pb2.ListIkeConnectionsRequest.FromString,
+                    response_serializer=ipsec__pb2.ListIkeConnectionsResponse.SerializeToString,
+            ),
+            'StatsIkeConnections': grpc.unary_unary_rpc_method_handler(
+                    servicer.StatsIkeConnections,
+                    request_deserializer=ipsec__pb2.StatsIkeConnectionsRequest.FromString,
+                    response_serializer=ipsec__pb2.StatsIkeConnectionsResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'opi_api.security.v2alpha1.IkeConnectionService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class IkeConnectionService(object):
+    """Management of IKE connections. An IKE connection is a logical connection
+    between two peers that is used to establish IPsec SAs. An IKE connection
+    includes the configuration of the local and remote peers, the IPsec SAs
+    that are part of the connection, and the configuration of the IKE connection
+    itself.
+    """
+
+    @staticmethod
+    def CreateIkeConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkeConnectionService/CreateIkeConnection',
+            ipsec__pb2.CreateIkeConnectionRequest.SerializeToString,
+            ipsec__pb2.IkeConnection.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateIkeConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkeConnectionService/UpdateIkeConnection',
+            ipsec__pb2.UpdateIkeConnectionRequest.SerializeToString,
+            ipsec__pb2.IkeConnection.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteIkeConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkeConnectionService/DeleteIkeConnection',
+            ipsec__pb2.DeleteIkeConnectionRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetIkeConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkeConnectionService/GetIkeConnection',
+            ipsec__pb2.GetIkeConnectionRequest.SerializeToString,
+            ipsec__pb2.IkeConnection.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListIkeConnections(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkeConnectionService/ListIkeConnections',
+            ipsec__pb2.ListIkeConnectionsRequest.SerializeToString,
+            ipsec__pb2.ListIkeConnectionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StatsIkeConnections(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IkeConnectionService/StatsIkeConnections',
+            ipsec__pb2.StatsIkeConnectionsRequest.SerializeToString,
+            ipsec__pb2.StatsIkeConnectionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class IpsecSaServiceStub(object):
+    """Management of the IPsec Security Association Database (SAD). The SAD
+    contains information about the IPsec SAs that are used to protect the
+    traffic between two peers
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.CreateIpsecSa = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecSaService/CreateIpsecSa',
+                request_serializer=ipsec__pb2.CreateIpsecSaRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IpsecSa.FromString,
+                )
+        self.UpdateIpsecSa = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecSaService/UpdateIpsecSa',
+                request_serializer=ipsec__pb2.UpdateIpsecSaRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IpsecSa.FromString,
+                )
+        self.DeleteIpsecSa = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecSaService/DeleteIpsecSa',
+                request_serializer=ipsec__pb2.DeleteIpsecSaRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetIpsecSa = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecSaService/GetIpsecSa',
+                request_serializer=ipsec__pb2.GetIpsecSaRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IpsecSa.FromString,
+                )
+        self.ListIpsecSas = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecSaService/ListIpsecSas',
+                request_serializer=ipsec__pb2.ListIpsecSasRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.ListIpsecSasResponse.FromString,
+                )
+
+
+class IpsecSaServiceServicer(object):
+    """Management of the IPsec Security Association Database (SAD). The SAD
+    contains information about the IPsec SAs that are used to protect the
+    traffic between two peers
+    """
 
     def CreateIpsecSa(self, request, context):
         """Create an IPsec Security Association
@@ -211,77 +541,27 @@ class IpsecServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_IpsecServiceServicer_to_server(servicer, server):
+def add_IpsecSaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'CreateIkePeer': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateIkePeer,
-                    request_deserializer=ipsec__pb2.CreateIkePeerRequest.FromString,
-                    response_serializer=ipsec__pb2.CreateIkePeerResponse.SerializeToString,
-            ),
-            'UpdateIkePeer': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateIkePeer,
-                    request_deserializer=ipsec__pb2.UpdateIkePeerRequest.FromString,
-                    response_serializer=ipsec__pb2.UpdateIkePeerResponse.SerializeToString,
-            ),
-            'DeleteIkePeer': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteIkePeer,
-                    request_deserializer=ipsec__pb2.DeleteIkePeerRequest.FromString,
-                    response_serializer=ipsec__pb2.DeleteIkePeerResponse.SerializeToString,
-            ),
-            'GetIkePeer': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetIkePeer,
-                    request_deserializer=ipsec__pb2.GetIkePeerRequest.FromString,
-                    response_serializer=ipsec__pb2.GetIkePeerResponse.SerializeToString,
-            ),
-            'ListIkePeers': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListIkePeers,
-                    request_deserializer=ipsec__pb2.ListIkePeersRequest.FromString,
-                    response_serializer=ipsec__pb2.ListIkePeersResponse.SerializeToString,
-            ),
-            'CreateIkeConn': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateIkeConn,
-                    request_deserializer=ipsec__pb2.CreateIkeConnRequest.FromString,
-                    response_serializer=ipsec__pb2.CreateIkeConnResponse.SerializeToString,
-            ),
-            'UpdateIkeConn': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateIkeConn,
-                    request_deserializer=ipsec__pb2.UpdateIkeConnRequest.FromString,
-                    response_serializer=ipsec__pb2.UpdateIkeConnResponse.SerializeToString,
-            ),
-            'DeleteIkeConn': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteIkeConn,
-                    request_deserializer=ipsec__pb2.DeleteIkeConnRequest.FromString,
-                    response_serializer=ipsec__pb2.DeleteIkeConnResponse.SerializeToString,
-            ),
-            'GetIkeConn': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetIkeConn,
-                    request_deserializer=ipsec__pb2.GetIkeConnRequest.FromString,
-                    response_serializer=ipsec__pb2.GetIkeConnResponse.SerializeToString,
-            ),
-            'ListIkeConns': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListIkeConns,
-                    request_deserializer=ipsec__pb2.ListIkeConnsRequest.FromString,
-                    response_serializer=ipsec__pb2.ListIkeConnsResponse.SerializeToString,
-            ),
             'CreateIpsecSa': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateIpsecSa,
                     request_deserializer=ipsec__pb2.CreateIpsecSaRequest.FromString,
-                    response_serializer=ipsec__pb2.CreateIpsecSaResponse.SerializeToString,
+                    response_serializer=ipsec__pb2.IpsecSa.SerializeToString,
             ),
             'UpdateIpsecSa': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateIpsecSa,
                     request_deserializer=ipsec__pb2.UpdateIpsecSaRequest.FromString,
-                    response_serializer=ipsec__pb2.UpdateIpsecSaResponse.SerializeToString,
+                    response_serializer=ipsec__pb2.IpsecSa.SerializeToString,
             ),
             'DeleteIpsecSa': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteIpsecSa,
                     request_deserializer=ipsec__pb2.DeleteIpsecSaRequest.FromString,
-                    response_serializer=ipsec__pb2.DeleteIpsecSaResponse.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetIpsecSa': grpc.unary_unary_rpc_method_handler(
                     servicer.GetIpsecSa,
                     request_deserializer=ipsec__pb2.GetIpsecSaRequest.FromString,
-                    response_serializer=ipsec__pb2.GetIpsecSaResponse.SerializeToString,
+                    response_serializer=ipsec__pb2.IpsecSa.SerializeToString,
             ),
             'ListIpsecSas': grpc.unary_unary_rpc_method_handler(
                     servicer.ListIpsecSas,
@@ -290,187 +570,16 @@ def add_IpsecServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'opi_api.security.v2alpha1.IpsecService', rpc_method_handlers)
+            'opi_api.security.v2alpha1.IpsecSaService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class IpsecService(object):
-    """The IPsec service defines operations on:
-    - IKE Peer Association Database (PAD)
-    - IKE Connections
-    - IPsec Security Associations (SAs)
+class IpsecSaService(object):
+    """Management of the IPsec Security Association Database (SAD). The SAD
+    contains information about the IPsec SAs that are used to protect the
+    traffic between two peers
     """
-
-    @staticmethod
-    def CreateIkePeer(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/CreateIkePeer',
-            ipsec__pb2.CreateIkePeerRequest.SerializeToString,
-            ipsec__pb2.CreateIkePeerResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateIkePeer(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/UpdateIkePeer',
-            ipsec__pb2.UpdateIkePeerRequest.SerializeToString,
-            ipsec__pb2.UpdateIkePeerResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DeleteIkePeer(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/DeleteIkePeer',
-            ipsec__pb2.DeleteIkePeerRequest.SerializeToString,
-            ipsec__pb2.DeleteIkePeerResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetIkePeer(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/GetIkePeer',
-            ipsec__pb2.GetIkePeerRequest.SerializeToString,
-            ipsec__pb2.GetIkePeerResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ListIkePeers(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/ListIkePeers',
-            ipsec__pb2.ListIkePeersRequest.SerializeToString,
-            ipsec__pb2.ListIkePeersResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CreateIkeConn(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/CreateIkeConn',
-            ipsec__pb2.CreateIkeConnRequest.SerializeToString,
-            ipsec__pb2.CreateIkeConnResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateIkeConn(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/UpdateIkeConn',
-            ipsec__pb2.UpdateIkeConnRequest.SerializeToString,
-            ipsec__pb2.UpdateIkeConnResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DeleteIkeConn(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/DeleteIkeConn',
-            ipsec__pb2.DeleteIkeConnRequest.SerializeToString,
-            ipsec__pb2.DeleteIkeConnResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetIkeConn(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/GetIkeConn',
-            ipsec__pb2.GetIkeConnRequest.SerializeToString,
-            ipsec__pb2.GetIkeConnResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ListIkeConns(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/ListIkeConns',
-            ipsec__pb2.ListIkeConnsRequest.SerializeToString,
-            ipsec__pb2.ListIkeConnsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateIpsecSa(request,
@@ -483,9 +592,9 @@ class IpsecService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/CreateIpsecSa',
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecSaService/CreateIpsecSa',
             ipsec__pb2.CreateIpsecSaRequest.SerializeToString,
-            ipsec__pb2.CreateIpsecSaResponse.FromString,
+            ipsec__pb2.IpsecSa.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -500,9 +609,9 @@ class IpsecService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/UpdateIpsecSa',
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecSaService/UpdateIpsecSa',
             ipsec__pb2.UpdateIpsecSaRequest.SerializeToString,
-            ipsec__pb2.UpdateIpsecSaResponse.FromString,
+            ipsec__pb2.IpsecSa.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -517,9 +626,9 @@ class IpsecService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/DeleteIpsecSa',
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecSaService/DeleteIpsecSa',
             ipsec__pb2.DeleteIpsecSaRequest.SerializeToString,
-            ipsec__pb2.DeleteIpsecSaResponse.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -534,9 +643,9 @@ class IpsecService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/GetIpsecSa',
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecSaService/GetIpsecSa',
             ipsec__pb2.GetIpsecSaRequest.SerializeToString,
-            ipsec__pb2.GetIpsecSaResponse.FromString,
+            ipsec__pb2.IpsecSa.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -551,8 +660,215 @@ class IpsecService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecService/ListIpsecSas',
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecSaService/ListIpsecSas',
             ipsec__pb2.ListIpsecSasRequest.SerializeToString,
             ipsec__pb2.ListIpsecSasResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class IpsecPolicyServiceStub(object):
+    """Management of the IPsec Security Policy Database (SPD). The SPD contains
+    information about the IPsec policies that are used to protect the traffic
+    between two peers.
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.CreateIpsecPolicy = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecPolicyService/CreateIpsecPolicy',
+                request_serializer=ipsec__pb2.CreateIpsecPolicyRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IpsecPolicy.FromString,
+                )
+        self.UpdateIpsecPolicy = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecPolicyService/UpdateIpsecPolicy',
+                request_serializer=ipsec__pb2.UpdateIpsecPolicyRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IpsecPolicy.FromString,
+                )
+        self.DeleteIpsecPolicy = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecPolicyService/DeleteIpsecPolicy',
+                request_serializer=ipsec__pb2.DeleteIpsecPolicyRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetIpsecPolicy = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecPolicyService/GetIpsecPolicy',
+                request_serializer=ipsec__pb2.GetIpsecPolicyRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.IpsecPolicy.FromString,
+                )
+        self.ListIpsecPolicies = channel.unary_unary(
+                '/opi_api.security.v2alpha1.IpsecPolicyService/ListIpsecPolicies',
+                request_serializer=ipsec__pb2.ListIpsecPoliciesRequest.SerializeToString,
+                response_deserializer=ipsec__pb2.ListIpsecPoliciesResponse.FromString,
+                )
+
+
+class IpsecPolicyServiceServicer(object):
+    """Management of the IPsec Security Policy Database (SPD). The SPD contains
+    information about the IPsec policies that are used to protect the traffic
+    between two peers.
+    """
+
+    def CreateIpsecPolicy(self, request, context):
+        """Create an IPsec Policy
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateIpsecPolicy(self, request, context):
+        """Update an existing IPsec Policy
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteIpsecPolicy(self, request, context):
+        """Delete an existing IPsec Policy
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetIpsecPolicy(self, request, context):
+        """Get an IPsec Policy
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListIpsecPolicies(self, request, context):
+        """List existing IPsec Policies
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_IpsecPolicyServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'CreateIpsecPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateIpsecPolicy,
+                    request_deserializer=ipsec__pb2.CreateIpsecPolicyRequest.FromString,
+                    response_serializer=ipsec__pb2.IpsecPolicy.SerializeToString,
+            ),
+            'UpdateIpsecPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateIpsecPolicy,
+                    request_deserializer=ipsec__pb2.UpdateIpsecPolicyRequest.FromString,
+                    response_serializer=ipsec__pb2.IpsecPolicy.SerializeToString,
+            ),
+            'DeleteIpsecPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteIpsecPolicy,
+                    request_deserializer=ipsec__pb2.DeleteIpsecPolicyRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetIpsecPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetIpsecPolicy,
+                    request_deserializer=ipsec__pb2.GetIpsecPolicyRequest.FromString,
+                    response_serializer=ipsec__pb2.IpsecPolicy.SerializeToString,
+            ),
+            'ListIpsecPolicies': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListIpsecPolicies,
+                    request_deserializer=ipsec__pb2.ListIpsecPoliciesRequest.FromString,
+                    response_serializer=ipsec__pb2.ListIpsecPoliciesResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'opi_api.security.v2alpha1.IpsecPolicyService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class IpsecPolicyService(object):
+    """Management of the IPsec Security Policy Database (SPD). The SPD contains
+    information about the IPsec policies that are used to protect the traffic
+    between two peers.
+    """
+
+    @staticmethod
+    def CreateIpsecPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecPolicyService/CreateIpsecPolicy',
+            ipsec__pb2.CreateIpsecPolicyRequest.SerializeToString,
+            ipsec__pb2.IpsecPolicy.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateIpsecPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecPolicyService/UpdateIpsecPolicy',
+            ipsec__pb2.UpdateIpsecPolicyRequest.SerializeToString,
+            ipsec__pb2.IpsecPolicy.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteIpsecPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecPolicyService/DeleteIpsecPolicy',
+            ipsec__pb2.DeleteIpsecPolicyRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetIpsecPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecPolicyService/GetIpsecPolicy',
+            ipsec__pb2.GetIpsecPolicyRequest.SerializeToString,
+            ipsec__pb2.IpsecPolicy.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListIpsecPolicies(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.security.v2alpha1.IpsecPolicyService/ListIpsecPolicies',
+            ipsec__pb2.ListIpsecPoliciesRequest.SerializeToString,
+            ipsec__pb2.ListIpsecPoliciesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

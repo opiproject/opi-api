@@ -3,10 +3,13 @@
 // Copyright (c) 2023 Dell Inc, or its subsidiaries.
 // SPDX-License-Identifier: Apache-2.0
 //
-// Major pieces taken from:
-// https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/ipsec/ipsec.proto
+// Service functions for IKE/IPsec resources.
 //
-// Service functions for IKE.
+// Operations are defined for the following resources:
+// - IKE Peer Association Database (PAD)
+// - IKE Connections
+// - IPsec Security Policy Database (SPD)
+// - IPsec Security Associations (SAs)
 //
 // The configuration model is derived from RFC 9061.
 
@@ -23,6 +26,7 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -31,643 +35,1036 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	IpsecService_CreateIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/CreateIkePeer"
-	IpsecService_UpdateIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/UpdateIkePeer"
-	IpsecService_DeleteIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/DeleteIkePeer"
-	IpsecService_GetIkePeer_FullMethodName    = "/opi_api.security.v2alpha1.IpsecService/GetIkePeer"
-	IpsecService_ListIkePeers_FullMethodName  = "/opi_api.security.v2alpha1.IpsecService/ListIkePeers"
-	IpsecService_CreateIkeConn_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/CreateIkeConn"
-	IpsecService_UpdateIkeConn_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/UpdateIkeConn"
-	IpsecService_DeleteIkeConn_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/DeleteIkeConn"
-	IpsecService_GetIkeConn_FullMethodName    = "/opi_api.security.v2alpha1.IpsecService/GetIkeConn"
-	IpsecService_ListIkeConns_FullMethodName  = "/opi_api.security.v2alpha1.IpsecService/ListIkeConns"
-	IpsecService_CreateIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/CreateIpsecSa"
-	IpsecService_UpdateIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/UpdateIpsecSa"
-	IpsecService_DeleteIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecService/DeleteIpsecSa"
-	IpsecService_GetIpsecSa_FullMethodName    = "/opi_api.security.v2alpha1.IpsecService/GetIpsecSa"
-	IpsecService_ListIpsecSas_FullMethodName  = "/opi_api.security.v2alpha1.IpsecService/ListIpsecSas"
+	IkePeerService_CreateIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IkePeerService/CreateIkePeer"
+	IkePeerService_UpdateIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IkePeerService/UpdateIkePeer"
+	IkePeerService_DeleteIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IkePeerService/DeleteIkePeer"
+	IkePeerService_GetIkePeer_FullMethodName    = "/opi_api.security.v2alpha1.IkePeerService/GetIkePeer"
+	IkePeerService_ListIkePeers_FullMethodName  = "/opi_api.security.v2alpha1.IkePeerService/ListIkePeers"
 )
 
-// IpsecServiceClient is the client API for IpsecService service.
+// IkePeerServiceClient is the client API for IkePeerService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type IpsecServiceClient interface {
+type IkePeerServiceClient interface {
 	// Create an IKE peer. This request includes the specification of the keys and certificates
 	// associated with the peer.
-	CreateIkePeer(ctx context.Context, in *CreateIkePeerRequest, opts ...grpc.CallOption) (*CreateIkePeerResponse, error)
+	CreateIkePeer(ctx context.Context, in *CreateIkePeerRequest, opts ...grpc.CallOption) (*IkePeer, error)
 	// Update an existing IKE peer specification.
-	UpdateIkePeer(ctx context.Context, in *UpdateIkePeerRequest, opts ...grpc.CallOption) (*UpdateIkePeerResponse, error)
+	UpdateIkePeer(ctx context.Context, in *UpdateIkePeerRequest, opts ...grpc.CallOption) (*IkePeer, error)
 	// Delete an existing IKE peer specification.
-	DeleteIkePeer(ctx context.Context, in *DeleteIkePeerRequest, opts ...grpc.CallOption) (*DeleteIkePeerResponse, error)
+	DeleteIkePeer(ctx context.Context, in *DeleteIkePeerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Get an existing IKE peer specification.
-	GetIkePeer(ctx context.Context, in *GetIkePeerRequest, opts ...grpc.CallOption) (*GetIkePeerResponse, error)
+	GetIkePeer(ctx context.Context, in *GetIkePeerRequest, opts ...grpc.CallOption) (*IkePeer, error)
 	// List existing IKE peers.
 	ListIkePeers(ctx context.Context, in *ListIkePeersRequest, opts ...grpc.CallOption) (*ListIkePeersResponse, error)
-	// Create an IKE connection. The request includes specification of the local
-	// and remote IKE peers and the specification of the IPsec SAs (aka child SAs)
-	// from this IKE connection.
-	CreateIkeConn(ctx context.Context, in *CreateIkeConnRequest, opts ...grpc.CallOption) (*CreateIkeConnResponse, error)
-	// Update an existing IKE connection.
-	UpdateIkeConn(ctx context.Context, in *UpdateIkeConnRequest, opts ...grpc.CallOption) (*UpdateIkeConnResponse, error)
-	// Delete an existing IKE connection.
-	DeleteIkeConn(ctx context.Context, in *DeleteIkeConnRequest, opts ...grpc.CallOption) (*DeleteIkeConnResponse, error)
-	// Retrieve an IKE connection.
-	GetIkeConn(ctx context.Context, in *GetIkeConnRequest, opts ...grpc.CallOption) (*GetIkeConnResponse, error)
-	// List existing IKE connections
-	ListIkeConns(ctx context.Context, in *ListIkeConnsRequest, opts ...grpc.CallOption) (*ListIkeConnsResponse, error)
-	// Create an IPsec Security Association
-	CreateIpsecSa(ctx context.Context, in *CreateIpsecSaRequest, opts ...grpc.CallOption) (*CreateIpsecSaResponse, error)
-	// Update an existing IPsec Security Association
-	UpdateIpsecSa(ctx context.Context, in *UpdateIpsecSaRequest, opts ...grpc.CallOption) (*UpdateIpsecSaResponse, error)
-	// Delete an existing IPsec Security Association
-	DeleteIpsecSa(ctx context.Context, in *DeleteIpsecSaRequest, opts ...grpc.CallOption) (*DeleteIpsecSaResponse, error)
-	// Get an IPsec Security Association
-	GetIpsecSa(ctx context.Context, in *GetIpsecSaRequest, opts ...grpc.CallOption) (*GetIpsecSaResponse, error)
-	// List existing IPsec Security Associations
-	ListIpsecSas(ctx context.Context, in *ListIpsecSasRequest, opts ...grpc.CallOption) (*ListIpsecSasResponse, error)
 }
 
-type ipsecServiceClient struct {
+type ikePeerServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewIpsecServiceClient(cc grpc.ClientConnInterface) IpsecServiceClient {
-	return &ipsecServiceClient{cc}
+func NewIkePeerServiceClient(cc grpc.ClientConnInterface) IkePeerServiceClient {
+	return &ikePeerServiceClient{cc}
 }
 
-func (c *ipsecServiceClient) CreateIkePeer(ctx context.Context, in *CreateIkePeerRequest, opts ...grpc.CallOption) (*CreateIkePeerResponse, error) {
-	out := new(CreateIkePeerResponse)
-	err := c.cc.Invoke(ctx, IpsecService_CreateIkePeer_FullMethodName, in, out, opts...)
+func (c *ikePeerServiceClient) CreateIkePeer(ctx context.Context, in *CreateIkePeerRequest, opts ...grpc.CallOption) (*IkePeer, error) {
+	out := new(IkePeer)
+	err := c.cc.Invoke(ctx, IkePeerService_CreateIkePeer_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *ipsecServiceClient) UpdateIkePeer(ctx context.Context, in *UpdateIkePeerRequest, opts ...grpc.CallOption) (*UpdateIkePeerResponse, error) {
-	out := new(UpdateIkePeerResponse)
-	err := c.cc.Invoke(ctx, IpsecService_UpdateIkePeer_FullMethodName, in, out, opts...)
+func (c *ikePeerServiceClient) UpdateIkePeer(ctx context.Context, in *UpdateIkePeerRequest, opts ...grpc.CallOption) (*IkePeer, error) {
+	out := new(IkePeer)
+	err := c.cc.Invoke(ctx, IkePeerService_UpdateIkePeer_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *ipsecServiceClient) DeleteIkePeer(ctx context.Context, in *DeleteIkePeerRequest, opts ...grpc.CallOption) (*DeleteIkePeerResponse, error) {
-	out := new(DeleteIkePeerResponse)
-	err := c.cc.Invoke(ctx, IpsecService_DeleteIkePeer_FullMethodName, in, out, opts...)
+func (c *ikePeerServiceClient) DeleteIkePeer(ctx context.Context, in *DeleteIkePeerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, IkePeerService_DeleteIkePeer_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *ipsecServiceClient) GetIkePeer(ctx context.Context, in *GetIkePeerRequest, opts ...grpc.CallOption) (*GetIkePeerResponse, error) {
-	out := new(GetIkePeerResponse)
-	err := c.cc.Invoke(ctx, IpsecService_GetIkePeer_FullMethodName, in, out, opts...)
+func (c *ikePeerServiceClient) GetIkePeer(ctx context.Context, in *GetIkePeerRequest, opts ...grpc.CallOption) (*IkePeer, error) {
+	out := new(IkePeer)
+	err := c.cc.Invoke(ctx, IkePeerService_GetIkePeer_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *ipsecServiceClient) ListIkePeers(ctx context.Context, in *ListIkePeersRequest, opts ...grpc.CallOption) (*ListIkePeersResponse, error) {
+func (c *ikePeerServiceClient) ListIkePeers(ctx context.Context, in *ListIkePeersRequest, opts ...grpc.CallOption) (*ListIkePeersResponse, error) {
 	out := new(ListIkePeersResponse)
-	err := c.cc.Invoke(ctx, IpsecService_ListIkePeers_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, IkePeerService_ListIkePeers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *ipsecServiceClient) CreateIkeConn(ctx context.Context, in *CreateIkeConnRequest, opts ...grpc.CallOption) (*CreateIkeConnResponse, error) {
-	out := new(CreateIkeConnResponse)
-	err := c.cc.Invoke(ctx, IpsecService_CreateIkeConn_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) UpdateIkeConn(ctx context.Context, in *UpdateIkeConnRequest, opts ...grpc.CallOption) (*UpdateIkeConnResponse, error) {
-	out := new(UpdateIkeConnResponse)
-	err := c.cc.Invoke(ctx, IpsecService_UpdateIkeConn_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) DeleteIkeConn(ctx context.Context, in *DeleteIkeConnRequest, opts ...grpc.CallOption) (*DeleteIkeConnResponse, error) {
-	out := new(DeleteIkeConnResponse)
-	err := c.cc.Invoke(ctx, IpsecService_DeleteIkeConn_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) GetIkeConn(ctx context.Context, in *GetIkeConnRequest, opts ...grpc.CallOption) (*GetIkeConnResponse, error) {
-	out := new(GetIkeConnResponse)
-	err := c.cc.Invoke(ctx, IpsecService_GetIkeConn_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) ListIkeConns(ctx context.Context, in *ListIkeConnsRequest, opts ...grpc.CallOption) (*ListIkeConnsResponse, error) {
-	out := new(ListIkeConnsResponse)
-	err := c.cc.Invoke(ctx, IpsecService_ListIkeConns_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) CreateIpsecSa(ctx context.Context, in *CreateIpsecSaRequest, opts ...grpc.CallOption) (*CreateIpsecSaResponse, error) {
-	out := new(CreateIpsecSaResponse)
-	err := c.cc.Invoke(ctx, IpsecService_CreateIpsecSa_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) UpdateIpsecSa(ctx context.Context, in *UpdateIpsecSaRequest, opts ...grpc.CallOption) (*UpdateIpsecSaResponse, error) {
-	out := new(UpdateIpsecSaResponse)
-	err := c.cc.Invoke(ctx, IpsecService_UpdateIpsecSa_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) DeleteIpsecSa(ctx context.Context, in *DeleteIpsecSaRequest, opts ...grpc.CallOption) (*DeleteIpsecSaResponse, error) {
-	out := new(DeleteIpsecSaResponse)
-	err := c.cc.Invoke(ctx, IpsecService_DeleteIpsecSa_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) GetIpsecSa(ctx context.Context, in *GetIpsecSaRequest, opts ...grpc.CallOption) (*GetIpsecSaResponse, error) {
-	out := new(GetIpsecSaResponse)
-	err := c.cc.Invoke(ctx, IpsecService_GetIpsecSa_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *ipsecServiceClient) ListIpsecSas(ctx context.Context, in *ListIpsecSasRequest, opts ...grpc.CallOption) (*ListIpsecSasResponse, error) {
-	out := new(ListIpsecSasResponse)
-	err := c.cc.Invoke(ctx, IpsecService_ListIpsecSas_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// IpsecServiceServer is the server API for IpsecService service.
-// All implementations must embed UnimplementedIpsecServiceServer
+// IkePeerServiceServer is the server API for IkePeerService service.
+// All implementations must embed UnimplementedIkePeerServiceServer
 // for forward compatibility
-type IpsecServiceServer interface {
+type IkePeerServiceServer interface {
 	// Create an IKE peer. This request includes the specification of the keys and certificates
 	// associated with the peer.
-	CreateIkePeer(context.Context, *CreateIkePeerRequest) (*CreateIkePeerResponse, error)
+	CreateIkePeer(context.Context, *CreateIkePeerRequest) (*IkePeer, error)
 	// Update an existing IKE peer specification.
-	UpdateIkePeer(context.Context, *UpdateIkePeerRequest) (*UpdateIkePeerResponse, error)
+	UpdateIkePeer(context.Context, *UpdateIkePeerRequest) (*IkePeer, error)
 	// Delete an existing IKE peer specification.
-	DeleteIkePeer(context.Context, *DeleteIkePeerRequest) (*DeleteIkePeerResponse, error)
+	DeleteIkePeer(context.Context, *DeleteIkePeerRequest) (*emptypb.Empty, error)
 	// Get an existing IKE peer specification.
-	GetIkePeer(context.Context, *GetIkePeerRequest) (*GetIkePeerResponse, error)
+	GetIkePeer(context.Context, *GetIkePeerRequest) (*IkePeer, error)
 	// List existing IKE peers.
 	ListIkePeers(context.Context, *ListIkePeersRequest) (*ListIkePeersResponse, error)
-	// Create an IKE connection. The request includes specification of the local
-	// and remote IKE peers and the specification of the IPsec SAs (aka child SAs)
-	// from this IKE connection.
-	CreateIkeConn(context.Context, *CreateIkeConnRequest) (*CreateIkeConnResponse, error)
-	// Update an existing IKE connection.
-	UpdateIkeConn(context.Context, *UpdateIkeConnRequest) (*UpdateIkeConnResponse, error)
-	// Delete an existing IKE connection.
-	DeleteIkeConn(context.Context, *DeleteIkeConnRequest) (*DeleteIkeConnResponse, error)
-	// Retrieve an IKE connection.
-	GetIkeConn(context.Context, *GetIkeConnRequest) (*GetIkeConnResponse, error)
-	// List existing IKE connections
-	ListIkeConns(context.Context, *ListIkeConnsRequest) (*ListIkeConnsResponse, error)
-	// Create an IPsec Security Association
-	CreateIpsecSa(context.Context, *CreateIpsecSaRequest) (*CreateIpsecSaResponse, error)
-	// Update an existing IPsec Security Association
-	UpdateIpsecSa(context.Context, *UpdateIpsecSaRequest) (*UpdateIpsecSaResponse, error)
-	// Delete an existing IPsec Security Association
-	DeleteIpsecSa(context.Context, *DeleteIpsecSaRequest) (*DeleteIpsecSaResponse, error)
-	// Get an IPsec Security Association
-	GetIpsecSa(context.Context, *GetIpsecSaRequest) (*GetIpsecSaResponse, error)
-	// List existing IPsec Security Associations
-	ListIpsecSas(context.Context, *ListIpsecSasRequest) (*ListIpsecSasResponse, error)
-	mustEmbedUnimplementedIpsecServiceServer()
+	mustEmbedUnimplementedIkePeerServiceServer()
 }
 
-// UnimplementedIpsecServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedIpsecServiceServer struct {
+// UnimplementedIkePeerServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedIkePeerServiceServer struct {
 }
 
-func (UnimplementedIpsecServiceServer) CreateIkePeer(context.Context, *CreateIkePeerRequest) (*CreateIkePeerResponse, error) {
+func (UnimplementedIkePeerServiceServer) CreateIkePeer(context.Context, *CreateIkePeerRequest) (*IkePeer, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateIkePeer not implemented")
 }
-func (UnimplementedIpsecServiceServer) UpdateIkePeer(context.Context, *UpdateIkePeerRequest) (*UpdateIkePeerResponse, error) {
+func (UnimplementedIkePeerServiceServer) UpdateIkePeer(context.Context, *UpdateIkePeerRequest) (*IkePeer, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateIkePeer not implemented")
 }
-func (UnimplementedIpsecServiceServer) DeleteIkePeer(context.Context, *DeleteIkePeerRequest) (*DeleteIkePeerResponse, error) {
+func (UnimplementedIkePeerServiceServer) DeleteIkePeer(context.Context, *DeleteIkePeerRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteIkePeer not implemented")
 }
-func (UnimplementedIpsecServiceServer) GetIkePeer(context.Context, *GetIkePeerRequest) (*GetIkePeerResponse, error) {
+func (UnimplementedIkePeerServiceServer) GetIkePeer(context.Context, *GetIkePeerRequest) (*IkePeer, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIkePeer not implemented")
 }
-func (UnimplementedIpsecServiceServer) ListIkePeers(context.Context, *ListIkePeersRequest) (*ListIkePeersResponse, error) {
+func (UnimplementedIkePeerServiceServer) ListIkePeers(context.Context, *ListIkePeersRequest) (*ListIkePeersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListIkePeers not implemented")
 }
-func (UnimplementedIpsecServiceServer) CreateIkeConn(context.Context, *CreateIkeConnRequest) (*CreateIkeConnResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateIkeConn not implemented")
-}
-func (UnimplementedIpsecServiceServer) UpdateIkeConn(context.Context, *UpdateIkeConnRequest) (*UpdateIkeConnResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateIkeConn not implemented")
-}
-func (UnimplementedIpsecServiceServer) DeleteIkeConn(context.Context, *DeleteIkeConnRequest) (*DeleteIkeConnResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteIkeConn not implemented")
-}
-func (UnimplementedIpsecServiceServer) GetIkeConn(context.Context, *GetIkeConnRequest) (*GetIkeConnResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetIkeConn not implemented")
-}
-func (UnimplementedIpsecServiceServer) ListIkeConns(context.Context, *ListIkeConnsRequest) (*ListIkeConnsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListIkeConns not implemented")
-}
-func (UnimplementedIpsecServiceServer) CreateIpsecSa(context.Context, *CreateIpsecSaRequest) (*CreateIpsecSaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateIpsecSa not implemented")
-}
-func (UnimplementedIpsecServiceServer) UpdateIpsecSa(context.Context, *UpdateIpsecSaRequest) (*UpdateIpsecSaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateIpsecSa not implemented")
-}
-func (UnimplementedIpsecServiceServer) DeleteIpsecSa(context.Context, *DeleteIpsecSaRequest) (*DeleteIpsecSaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteIpsecSa not implemented")
-}
-func (UnimplementedIpsecServiceServer) GetIpsecSa(context.Context, *GetIpsecSaRequest) (*GetIpsecSaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetIpsecSa not implemented")
-}
-func (UnimplementedIpsecServiceServer) ListIpsecSas(context.Context, *ListIpsecSasRequest) (*ListIpsecSasResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListIpsecSas not implemented")
-}
-func (UnimplementedIpsecServiceServer) mustEmbedUnimplementedIpsecServiceServer() {}
+func (UnimplementedIkePeerServiceServer) mustEmbedUnimplementedIkePeerServiceServer() {}
 
-// UnsafeIpsecServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to IpsecServiceServer will
+// UnsafeIkePeerServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to IkePeerServiceServer will
 // result in compilation errors.
-type UnsafeIpsecServiceServer interface {
-	mustEmbedUnimplementedIpsecServiceServer()
+type UnsafeIkePeerServiceServer interface {
+	mustEmbedUnimplementedIkePeerServiceServer()
 }
 
-func RegisterIpsecServiceServer(s grpc.ServiceRegistrar, srv IpsecServiceServer) {
-	s.RegisterService(&IpsecService_ServiceDesc, srv)
+func RegisterIkePeerServiceServer(s grpc.ServiceRegistrar, srv IkePeerServiceServer) {
+	s.RegisterService(&IkePeerService_ServiceDesc, srv)
 }
 
-func _IpsecService_CreateIkePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IkePeerService_CreateIkePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateIkePeerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).CreateIkePeer(ctx, in)
+		return srv.(IkePeerServiceServer).CreateIkePeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_CreateIkePeer_FullMethodName,
+		FullMethod: IkePeerService_CreateIkePeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).CreateIkePeer(ctx, req.(*CreateIkePeerRequest))
+		return srv.(IkePeerServiceServer).CreateIkePeer(ctx, req.(*CreateIkePeerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_UpdateIkePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IkePeerService_UpdateIkePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateIkePeerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).UpdateIkePeer(ctx, in)
+		return srv.(IkePeerServiceServer).UpdateIkePeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_UpdateIkePeer_FullMethodName,
+		FullMethod: IkePeerService_UpdateIkePeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).UpdateIkePeer(ctx, req.(*UpdateIkePeerRequest))
+		return srv.(IkePeerServiceServer).UpdateIkePeer(ctx, req.(*UpdateIkePeerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_DeleteIkePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IkePeerService_DeleteIkePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteIkePeerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).DeleteIkePeer(ctx, in)
+		return srv.(IkePeerServiceServer).DeleteIkePeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_DeleteIkePeer_FullMethodName,
+		FullMethod: IkePeerService_DeleteIkePeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).DeleteIkePeer(ctx, req.(*DeleteIkePeerRequest))
+		return srv.(IkePeerServiceServer).DeleteIkePeer(ctx, req.(*DeleteIkePeerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_GetIkePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IkePeerService_GetIkePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetIkePeerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).GetIkePeer(ctx, in)
+		return srv.(IkePeerServiceServer).GetIkePeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_GetIkePeer_FullMethodName,
+		FullMethod: IkePeerService_GetIkePeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).GetIkePeer(ctx, req.(*GetIkePeerRequest))
+		return srv.(IkePeerServiceServer).GetIkePeer(ctx, req.(*GetIkePeerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_ListIkePeers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IkePeerService_ListIkePeers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListIkePeersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).ListIkePeers(ctx, in)
+		return srv.(IkePeerServiceServer).ListIkePeers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_ListIkePeers_FullMethodName,
+		FullMethod: IkePeerService_ListIkePeers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).ListIkePeers(ctx, req.(*ListIkePeersRequest))
+		return srv.(IkePeerServiceServer).ListIkePeers(ctx, req.(*ListIkePeersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_CreateIkeConn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateIkeConnRequest)
+// IkePeerService_ServiceDesc is the grpc.ServiceDesc for IkePeerService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var IkePeerService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "opi_api.security.v2alpha1.IkePeerService",
+	HandlerType: (*IkePeerServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateIkePeer",
+			Handler:    _IkePeerService_CreateIkePeer_Handler,
+		},
+		{
+			MethodName: "UpdateIkePeer",
+			Handler:    _IkePeerService_UpdateIkePeer_Handler,
+		},
+		{
+			MethodName: "DeleteIkePeer",
+			Handler:    _IkePeerService_DeleteIkePeer_Handler,
+		},
+		{
+			MethodName: "GetIkePeer",
+			Handler:    _IkePeerService_GetIkePeer_Handler,
+		},
+		{
+			MethodName: "ListIkePeers",
+			Handler:    _IkePeerService_ListIkePeers_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ipsec.proto",
+}
+
+const (
+	IkeConnectionService_CreateIkeConnection_FullMethodName = "/opi_api.security.v2alpha1.IkeConnectionService/CreateIkeConnection"
+	IkeConnectionService_UpdateIkeConnection_FullMethodName = "/opi_api.security.v2alpha1.IkeConnectionService/UpdateIkeConnection"
+	IkeConnectionService_DeleteIkeConnection_FullMethodName = "/opi_api.security.v2alpha1.IkeConnectionService/DeleteIkeConnection"
+	IkeConnectionService_GetIkeConnection_FullMethodName    = "/opi_api.security.v2alpha1.IkeConnectionService/GetIkeConnection"
+	IkeConnectionService_ListIkeConnections_FullMethodName  = "/opi_api.security.v2alpha1.IkeConnectionService/ListIkeConnections"
+	IkeConnectionService_StatsIkeConnections_FullMethodName = "/opi_api.security.v2alpha1.IkeConnectionService/StatsIkeConnections"
+)
+
+// IkeConnectionServiceClient is the client API for IkeConnectionService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type IkeConnectionServiceClient interface {
+	// Create an IKE connection. The request includes specification of the local
+	// and remote IKE peers and the specification of the IPsec SAs (aka child SAs)
+	// from this IKE connection.
+	CreateIkeConnection(ctx context.Context, in *CreateIkeConnectionRequest, opts ...grpc.CallOption) (*IkeConnection, error)
+	// Update an existing IKE connection.
+	UpdateIkeConnection(ctx context.Context, in *UpdateIkeConnectionRequest, opts ...grpc.CallOption) (*IkeConnection, error)
+	// Delete an existing IKE connection.
+	DeleteIkeConnection(ctx context.Context, in *DeleteIkeConnectionRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Retrieve an IKE connection.
+	GetIkeConnection(ctx context.Context, in *GetIkeConnectionRequest, opts ...grpc.CallOption) (*IkeConnection, error)
+	// List existing IKE connections.
+	ListIkeConnections(ctx context.Context, in *ListIkeConnectionsRequest, opts ...grpc.CallOption) (*ListIkeConnectionsResponse, error)
+	// Get IKE connection statistics.
+	StatsIkeConnections(ctx context.Context, in *StatsIkeConnectionsRequest, opts ...grpc.CallOption) (*StatsIkeConnectionsResponse, error)
+}
+
+type ikeConnectionServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewIkeConnectionServiceClient(cc grpc.ClientConnInterface) IkeConnectionServiceClient {
+	return &ikeConnectionServiceClient{cc}
+}
+
+func (c *ikeConnectionServiceClient) CreateIkeConnection(ctx context.Context, in *CreateIkeConnectionRequest, opts ...grpc.CallOption) (*IkeConnection, error) {
+	out := new(IkeConnection)
+	err := c.cc.Invoke(ctx, IkeConnectionService_CreateIkeConnection_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ikeConnectionServiceClient) UpdateIkeConnection(ctx context.Context, in *UpdateIkeConnectionRequest, opts ...grpc.CallOption) (*IkeConnection, error) {
+	out := new(IkeConnection)
+	err := c.cc.Invoke(ctx, IkeConnectionService_UpdateIkeConnection_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ikeConnectionServiceClient) DeleteIkeConnection(ctx context.Context, in *DeleteIkeConnectionRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, IkeConnectionService_DeleteIkeConnection_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ikeConnectionServiceClient) GetIkeConnection(ctx context.Context, in *GetIkeConnectionRequest, opts ...grpc.CallOption) (*IkeConnection, error) {
+	out := new(IkeConnection)
+	err := c.cc.Invoke(ctx, IkeConnectionService_GetIkeConnection_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ikeConnectionServiceClient) ListIkeConnections(ctx context.Context, in *ListIkeConnectionsRequest, opts ...grpc.CallOption) (*ListIkeConnectionsResponse, error) {
+	out := new(ListIkeConnectionsResponse)
+	err := c.cc.Invoke(ctx, IkeConnectionService_ListIkeConnections_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ikeConnectionServiceClient) StatsIkeConnections(ctx context.Context, in *StatsIkeConnectionsRequest, opts ...grpc.CallOption) (*StatsIkeConnectionsResponse, error) {
+	out := new(StatsIkeConnectionsResponse)
+	err := c.cc.Invoke(ctx, IkeConnectionService_StatsIkeConnections_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// IkeConnectionServiceServer is the server API for IkeConnectionService service.
+// All implementations must embed UnimplementedIkeConnectionServiceServer
+// for forward compatibility
+type IkeConnectionServiceServer interface {
+	// Create an IKE connection. The request includes specification of the local
+	// and remote IKE peers and the specification of the IPsec SAs (aka child SAs)
+	// from this IKE connection.
+	CreateIkeConnection(context.Context, *CreateIkeConnectionRequest) (*IkeConnection, error)
+	// Update an existing IKE connection.
+	UpdateIkeConnection(context.Context, *UpdateIkeConnectionRequest) (*IkeConnection, error)
+	// Delete an existing IKE connection.
+	DeleteIkeConnection(context.Context, *DeleteIkeConnectionRequest) (*emptypb.Empty, error)
+	// Retrieve an IKE connection.
+	GetIkeConnection(context.Context, *GetIkeConnectionRequest) (*IkeConnection, error)
+	// List existing IKE connections.
+	ListIkeConnections(context.Context, *ListIkeConnectionsRequest) (*ListIkeConnectionsResponse, error)
+	// Get IKE connection statistics.
+	StatsIkeConnections(context.Context, *StatsIkeConnectionsRequest) (*StatsIkeConnectionsResponse, error)
+	mustEmbedUnimplementedIkeConnectionServiceServer()
+}
+
+// UnimplementedIkeConnectionServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedIkeConnectionServiceServer struct {
+}
+
+func (UnimplementedIkeConnectionServiceServer) CreateIkeConnection(context.Context, *CreateIkeConnectionRequest) (*IkeConnection, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateIkeConnection not implemented")
+}
+func (UnimplementedIkeConnectionServiceServer) UpdateIkeConnection(context.Context, *UpdateIkeConnectionRequest) (*IkeConnection, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateIkeConnection not implemented")
+}
+func (UnimplementedIkeConnectionServiceServer) DeleteIkeConnection(context.Context, *DeleteIkeConnectionRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteIkeConnection not implemented")
+}
+func (UnimplementedIkeConnectionServiceServer) GetIkeConnection(context.Context, *GetIkeConnectionRequest) (*IkeConnection, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIkeConnection not implemented")
+}
+func (UnimplementedIkeConnectionServiceServer) ListIkeConnections(context.Context, *ListIkeConnectionsRequest) (*ListIkeConnectionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListIkeConnections not implemented")
+}
+func (UnimplementedIkeConnectionServiceServer) StatsIkeConnections(context.Context, *StatsIkeConnectionsRequest) (*StatsIkeConnectionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StatsIkeConnections not implemented")
+}
+func (UnimplementedIkeConnectionServiceServer) mustEmbedUnimplementedIkeConnectionServiceServer() {}
+
+// UnsafeIkeConnectionServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to IkeConnectionServiceServer will
+// result in compilation errors.
+type UnsafeIkeConnectionServiceServer interface {
+	mustEmbedUnimplementedIkeConnectionServiceServer()
+}
+
+func RegisterIkeConnectionServiceServer(s grpc.ServiceRegistrar, srv IkeConnectionServiceServer) {
+	s.RegisterService(&IkeConnectionService_ServiceDesc, srv)
+}
+
+func _IkeConnectionService_CreateIkeConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateIkeConnectionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).CreateIkeConn(ctx, in)
+		return srv.(IkeConnectionServiceServer).CreateIkeConnection(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_CreateIkeConn_FullMethodName,
+		FullMethod: IkeConnectionService_CreateIkeConnection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).CreateIkeConn(ctx, req.(*CreateIkeConnRequest))
+		return srv.(IkeConnectionServiceServer).CreateIkeConnection(ctx, req.(*CreateIkeConnectionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_UpdateIkeConn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateIkeConnRequest)
+func _IkeConnectionService_UpdateIkeConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateIkeConnectionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).UpdateIkeConn(ctx, in)
+		return srv.(IkeConnectionServiceServer).UpdateIkeConnection(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_UpdateIkeConn_FullMethodName,
+		FullMethod: IkeConnectionService_UpdateIkeConnection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).UpdateIkeConn(ctx, req.(*UpdateIkeConnRequest))
+		return srv.(IkeConnectionServiceServer).UpdateIkeConnection(ctx, req.(*UpdateIkeConnectionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_DeleteIkeConn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteIkeConnRequest)
+func _IkeConnectionService_DeleteIkeConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteIkeConnectionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).DeleteIkeConn(ctx, in)
+		return srv.(IkeConnectionServiceServer).DeleteIkeConnection(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_DeleteIkeConn_FullMethodName,
+		FullMethod: IkeConnectionService_DeleteIkeConnection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).DeleteIkeConn(ctx, req.(*DeleteIkeConnRequest))
+		return srv.(IkeConnectionServiceServer).DeleteIkeConnection(ctx, req.(*DeleteIkeConnectionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_GetIkeConn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetIkeConnRequest)
+func _IkeConnectionService_GetIkeConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIkeConnectionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).GetIkeConn(ctx, in)
+		return srv.(IkeConnectionServiceServer).GetIkeConnection(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_GetIkeConn_FullMethodName,
+		FullMethod: IkeConnectionService_GetIkeConnection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).GetIkeConn(ctx, req.(*GetIkeConnRequest))
+		return srv.(IkeConnectionServiceServer).GetIkeConnection(ctx, req.(*GetIkeConnectionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_ListIkeConns_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListIkeConnsRequest)
+func _IkeConnectionService_ListIkeConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIkeConnectionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).ListIkeConns(ctx, in)
+		return srv.(IkeConnectionServiceServer).ListIkeConnections(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_ListIkeConns_FullMethodName,
+		FullMethod: IkeConnectionService_ListIkeConnections_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).ListIkeConns(ctx, req.(*ListIkeConnsRequest))
+		return srv.(IkeConnectionServiceServer).ListIkeConnections(ctx, req.(*ListIkeConnectionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_CreateIpsecSa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IkeConnectionService_StatsIkeConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatsIkeConnectionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IkeConnectionServiceServer).StatsIkeConnections(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IkeConnectionService_StatsIkeConnections_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IkeConnectionServiceServer).StatsIkeConnections(ctx, req.(*StatsIkeConnectionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// IkeConnectionService_ServiceDesc is the grpc.ServiceDesc for IkeConnectionService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var IkeConnectionService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "opi_api.security.v2alpha1.IkeConnectionService",
+	HandlerType: (*IkeConnectionServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateIkeConnection",
+			Handler:    _IkeConnectionService_CreateIkeConnection_Handler,
+		},
+		{
+			MethodName: "UpdateIkeConnection",
+			Handler:    _IkeConnectionService_UpdateIkeConnection_Handler,
+		},
+		{
+			MethodName: "DeleteIkeConnection",
+			Handler:    _IkeConnectionService_DeleteIkeConnection_Handler,
+		},
+		{
+			MethodName: "GetIkeConnection",
+			Handler:    _IkeConnectionService_GetIkeConnection_Handler,
+		},
+		{
+			MethodName: "ListIkeConnections",
+			Handler:    _IkeConnectionService_ListIkeConnections_Handler,
+		},
+		{
+			MethodName: "StatsIkeConnections",
+			Handler:    _IkeConnectionService_StatsIkeConnections_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ipsec.proto",
+}
+
+const (
+	IpsecSaService_CreateIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecSaService/CreateIpsecSa"
+	IpsecSaService_UpdateIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecSaService/UpdateIpsecSa"
+	IpsecSaService_DeleteIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecSaService/DeleteIpsecSa"
+	IpsecSaService_GetIpsecSa_FullMethodName    = "/opi_api.security.v2alpha1.IpsecSaService/GetIpsecSa"
+	IpsecSaService_ListIpsecSas_FullMethodName  = "/opi_api.security.v2alpha1.IpsecSaService/ListIpsecSas"
+)
+
+// IpsecSaServiceClient is the client API for IpsecSaService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type IpsecSaServiceClient interface {
+	// Create an IPsec Security Association
+	CreateIpsecSa(ctx context.Context, in *CreateIpsecSaRequest, opts ...grpc.CallOption) (*IpsecSa, error)
+	// Update an existing IPsec Security Association
+	UpdateIpsecSa(ctx context.Context, in *UpdateIpsecSaRequest, opts ...grpc.CallOption) (*IpsecSa, error)
+	// Delete an existing IPsec Security Association
+	DeleteIpsecSa(ctx context.Context, in *DeleteIpsecSaRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get an IPsec Security Association
+	GetIpsecSa(ctx context.Context, in *GetIpsecSaRequest, opts ...grpc.CallOption) (*IpsecSa, error)
+	// List existing IPsec Security Associations
+	ListIpsecSas(ctx context.Context, in *ListIpsecSasRequest, opts ...grpc.CallOption) (*ListIpsecSasResponse, error)
+}
+
+type ipsecSaServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewIpsecSaServiceClient(cc grpc.ClientConnInterface) IpsecSaServiceClient {
+	return &ipsecSaServiceClient{cc}
+}
+
+func (c *ipsecSaServiceClient) CreateIpsecSa(ctx context.Context, in *CreateIpsecSaRequest, opts ...grpc.CallOption) (*IpsecSa, error) {
+	out := new(IpsecSa)
+	err := c.cc.Invoke(ctx, IpsecSaService_CreateIpsecSa_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecSaServiceClient) UpdateIpsecSa(ctx context.Context, in *UpdateIpsecSaRequest, opts ...grpc.CallOption) (*IpsecSa, error) {
+	out := new(IpsecSa)
+	err := c.cc.Invoke(ctx, IpsecSaService_UpdateIpsecSa_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecSaServiceClient) DeleteIpsecSa(ctx context.Context, in *DeleteIpsecSaRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, IpsecSaService_DeleteIpsecSa_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecSaServiceClient) GetIpsecSa(ctx context.Context, in *GetIpsecSaRequest, opts ...grpc.CallOption) (*IpsecSa, error) {
+	out := new(IpsecSa)
+	err := c.cc.Invoke(ctx, IpsecSaService_GetIpsecSa_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecSaServiceClient) ListIpsecSas(ctx context.Context, in *ListIpsecSasRequest, opts ...grpc.CallOption) (*ListIpsecSasResponse, error) {
+	out := new(ListIpsecSasResponse)
+	err := c.cc.Invoke(ctx, IpsecSaService_ListIpsecSas_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// IpsecSaServiceServer is the server API for IpsecSaService service.
+// All implementations must embed UnimplementedIpsecSaServiceServer
+// for forward compatibility
+type IpsecSaServiceServer interface {
+	// Create an IPsec Security Association
+	CreateIpsecSa(context.Context, *CreateIpsecSaRequest) (*IpsecSa, error)
+	// Update an existing IPsec Security Association
+	UpdateIpsecSa(context.Context, *UpdateIpsecSaRequest) (*IpsecSa, error)
+	// Delete an existing IPsec Security Association
+	DeleteIpsecSa(context.Context, *DeleteIpsecSaRequest) (*emptypb.Empty, error)
+	// Get an IPsec Security Association
+	GetIpsecSa(context.Context, *GetIpsecSaRequest) (*IpsecSa, error)
+	// List existing IPsec Security Associations
+	ListIpsecSas(context.Context, *ListIpsecSasRequest) (*ListIpsecSasResponse, error)
+	mustEmbedUnimplementedIpsecSaServiceServer()
+}
+
+// UnimplementedIpsecSaServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedIpsecSaServiceServer struct {
+}
+
+func (UnimplementedIpsecSaServiceServer) CreateIpsecSa(context.Context, *CreateIpsecSaRequest) (*IpsecSa, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateIpsecSa not implemented")
+}
+func (UnimplementedIpsecSaServiceServer) UpdateIpsecSa(context.Context, *UpdateIpsecSaRequest) (*IpsecSa, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateIpsecSa not implemented")
+}
+func (UnimplementedIpsecSaServiceServer) DeleteIpsecSa(context.Context, *DeleteIpsecSaRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteIpsecSa not implemented")
+}
+func (UnimplementedIpsecSaServiceServer) GetIpsecSa(context.Context, *GetIpsecSaRequest) (*IpsecSa, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIpsecSa not implemented")
+}
+func (UnimplementedIpsecSaServiceServer) ListIpsecSas(context.Context, *ListIpsecSasRequest) (*ListIpsecSasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListIpsecSas not implemented")
+}
+func (UnimplementedIpsecSaServiceServer) mustEmbedUnimplementedIpsecSaServiceServer() {}
+
+// UnsafeIpsecSaServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to IpsecSaServiceServer will
+// result in compilation errors.
+type UnsafeIpsecSaServiceServer interface {
+	mustEmbedUnimplementedIpsecSaServiceServer()
+}
+
+func RegisterIpsecSaServiceServer(s grpc.ServiceRegistrar, srv IpsecSaServiceServer) {
+	s.RegisterService(&IpsecSaService_ServiceDesc, srv)
+}
+
+func _IpsecSaService_CreateIpsecSa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateIpsecSaRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).CreateIpsecSa(ctx, in)
+		return srv.(IpsecSaServiceServer).CreateIpsecSa(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_CreateIpsecSa_FullMethodName,
+		FullMethod: IpsecSaService_CreateIpsecSa_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).CreateIpsecSa(ctx, req.(*CreateIpsecSaRequest))
+		return srv.(IpsecSaServiceServer).CreateIpsecSa(ctx, req.(*CreateIpsecSaRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_UpdateIpsecSa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IpsecSaService_UpdateIpsecSa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateIpsecSaRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).UpdateIpsecSa(ctx, in)
+		return srv.(IpsecSaServiceServer).UpdateIpsecSa(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_UpdateIpsecSa_FullMethodName,
+		FullMethod: IpsecSaService_UpdateIpsecSa_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).UpdateIpsecSa(ctx, req.(*UpdateIpsecSaRequest))
+		return srv.(IpsecSaServiceServer).UpdateIpsecSa(ctx, req.(*UpdateIpsecSaRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_DeleteIpsecSa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IpsecSaService_DeleteIpsecSa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteIpsecSaRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).DeleteIpsecSa(ctx, in)
+		return srv.(IpsecSaServiceServer).DeleteIpsecSa(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_DeleteIpsecSa_FullMethodName,
+		FullMethod: IpsecSaService_DeleteIpsecSa_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).DeleteIpsecSa(ctx, req.(*DeleteIpsecSaRequest))
+		return srv.(IpsecSaServiceServer).DeleteIpsecSa(ctx, req.(*DeleteIpsecSaRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_GetIpsecSa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IpsecSaService_GetIpsecSa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetIpsecSaRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).GetIpsecSa(ctx, in)
+		return srv.(IpsecSaServiceServer).GetIpsecSa(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_GetIpsecSa_FullMethodName,
+		FullMethod: IpsecSaService_GetIpsecSa_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).GetIpsecSa(ctx, req.(*GetIpsecSaRequest))
+		return srv.(IpsecSaServiceServer).GetIpsecSa(ctx, req.(*GetIpsecSaRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IpsecService_ListIpsecSas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _IpsecSaService_ListIpsecSas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListIpsecSasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IpsecServiceServer).ListIpsecSas(ctx, in)
+		return srv.(IpsecSaServiceServer).ListIpsecSas(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IpsecService_ListIpsecSas_FullMethodName,
+		FullMethod: IpsecSaService_ListIpsecSas_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IpsecServiceServer).ListIpsecSas(ctx, req.(*ListIpsecSasRequest))
+		return srv.(IpsecSaServiceServer).ListIpsecSas(ctx, req.(*ListIpsecSasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// IpsecService_ServiceDesc is the grpc.ServiceDesc for IpsecService service.
+// IpsecSaService_ServiceDesc is the grpc.ServiceDesc for IpsecSaService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var IpsecService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "opi_api.security.v2alpha1.IpsecService",
-	HandlerType: (*IpsecServiceServer)(nil),
+var IpsecSaService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "opi_api.security.v2alpha1.IpsecSaService",
+	HandlerType: (*IpsecSaServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateIkePeer",
-			Handler:    _IpsecService_CreateIkePeer_Handler,
-		},
-		{
-			MethodName: "UpdateIkePeer",
-			Handler:    _IpsecService_UpdateIkePeer_Handler,
-		},
-		{
-			MethodName: "DeleteIkePeer",
-			Handler:    _IpsecService_DeleteIkePeer_Handler,
-		},
-		{
-			MethodName: "GetIkePeer",
-			Handler:    _IpsecService_GetIkePeer_Handler,
-		},
-		{
-			MethodName: "ListIkePeers",
-			Handler:    _IpsecService_ListIkePeers_Handler,
-		},
-		{
-			MethodName: "CreateIkeConn",
-			Handler:    _IpsecService_CreateIkeConn_Handler,
-		},
-		{
-			MethodName: "UpdateIkeConn",
-			Handler:    _IpsecService_UpdateIkeConn_Handler,
-		},
-		{
-			MethodName: "DeleteIkeConn",
-			Handler:    _IpsecService_DeleteIkeConn_Handler,
-		},
-		{
-			MethodName: "GetIkeConn",
-			Handler:    _IpsecService_GetIkeConn_Handler,
-		},
-		{
-			MethodName: "ListIkeConns",
-			Handler:    _IpsecService_ListIkeConns_Handler,
-		},
-		{
 			MethodName: "CreateIpsecSa",
-			Handler:    _IpsecService_CreateIpsecSa_Handler,
+			Handler:    _IpsecSaService_CreateIpsecSa_Handler,
 		},
 		{
 			MethodName: "UpdateIpsecSa",
-			Handler:    _IpsecService_UpdateIpsecSa_Handler,
+			Handler:    _IpsecSaService_UpdateIpsecSa_Handler,
 		},
 		{
 			MethodName: "DeleteIpsecSa",
-			Handler:    _IpsecService_DeleteIpsecSa_Handler,
+			Handler:    _IpsecSaService_DeleteIpsecSa_Handler,
 		},
 		{
 			MethodName: "GetIpsecSa",
-			Handler:    _IpsecService_GetIpsecSa_Handler,
+			Handler:    _IpsecSaService_GetIpsecSa_Handler,
 		},
 		{
 			MethodName: "ListIpsecSas",
-			Handler:    _IpsecService_ListIpsecSas_Handler,
+			Handler:    _IpsecSaService_ListIpsecSas_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ipsec.proto",
+}
+
+const (
+	IpsecPolicyService_CreateIpsecPolicy_FullMethodName = "/opi_api.security.v2alpha1.IpsecPolicyService/CreateIpsecPolicy"
+	IpsecPolicyService_UpdateIpsecPolicy_FullMethodName = "/opi_api.security.v2alpha1.IpsecPolicyService/UpdateIpsecPolicy"
+	IpsecPolicyService_DeleteIpsecPolicy_FullMethodName = "/opi_api.security.v2alpha1.IpsecPolicyService/DeleteIpsecPolicy"
+	IpsecPolicyService_GetIpsecPolicy_FullMethodName    = "/opi_api.security.v2alpha1.IpsecPolicyService/GetIpsecPolicy"
+	IpsecPolicyService_ListIpsecPolicies_FullMethodName = "/opi_api.security.v2alpha1.IpsecPolicyService/ListIpsecPolicies"
+)
+
+// IpsecPolicyServiceClient is the client API for IpsecPolicyService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type IpsecPolicyServiceClient interface {
+	// Create an IPsec Policy
+	CreateIpsecPolicy(ctx context.Context, in *CreateIpsecPolicyRequest, opts ...grpc.CallOption) (*IpsecPolicy, error)
+	// Update an existing IPsec Policy
+	UpdateIpsecPolicy(ctx context.Context, in *UpdateIpsecPolicyRequest, opts ...grpc.CallOption) (*IpsecPolicy, error)
+	// Delete an existing IPsec Policy
+	DeleteIpsecPolicy(ctx context.Context, in *DeleteIpsecPolicyRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get an IPsec Policy
+	GetIpsecPolicy(ctx context.Context, in *GetIpsecPolicyRequest, opts ...grpc.CallOption) (*IpsecPolicy, error)
+	// List existing IPsec Policies
+	ListIpsecPolicies(ctx context.Context, in *ListIpsecPoliciesRequest, opts ...grpc.CallOption) (*ListIpsecPoliciesResponse, error)
+}
+
+type ipsecPolicyServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewIpsecPolicyServiceClient(cc grpc.ClientConnInterface) IpsecPolicyServiceClient {
+	return &ipsecPolicyServiceClient{cc}
+}
+
+func (c *ipsecPolicyServiceClient) CreateIpsecPolicy(ctx context.Context, in *CreateIpsecPolicyRequest, opts ...grpc.CallOption) (*IpsecPolicy, error) {
+	out := new(IpsecPolicy)
+	err := c.cc.Invoke(ctx, IpsecPolicyService_CreateIpsecPolicy_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecPolicyServiceClient) UpdateIpsecPolicy(ctx context.Context, in *UpdateIpsecPolicyRequest, opts ...grpc.CallOption) (*IpsecPolicy, error) {
+	out := new(IpsecPolicy)
+	err := c.cc.Invoke(ctx, IpsecPolicyService_UpdateIpsecPolicy_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecPolicyServiceClient) DeleteIpsecPolicy(ctx context.Context, in *DeleteIpsecPolicyRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, IpsecPolicyService_DeleteIpsecPolicy_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecPolicyServiceClient) GetIpsecPolicy(ctx context.Context, in *GetIpsecPolicyRequest, opts ...grpc.CallOption) (*IpsecPolicy, error) {
+	out := new(IpsecPolicy)
+	err := c.cc.Invoke(ctx, IpsecPolicyService_GetIpsecPolicy_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecPolicyServiceClient) ListIpsecPolicies(ctx context.Context, in *ListIpsecPoliciesRequest, opts ...grpc.CallOption) (*ListIpsecPoliciesResponse, error) {
+	out := new(ListIpsecPoliciesResponse)
+	err := c.cc.Invoke(ctx, IpsecPolicyService_ListIpsecPolicies_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// IpsecPolicyServiceServer is the server API for IpsecPolicyService service.
+// All implementations must embed UnimplementedIpsecPolicyServiceServer
+// for forward compatibility
+type IpsecPolicyServiceServer interface {
+	// Create an IPsec Policy
+	CreateIpsecPolicy(context.Context, *CreateIpsecPolicyRequest) (*IpsecPolicy, error)
+	// Update an existing IPsec Policy
+	UpdateIpsecPolicy(context.Context, *UpdateIpsecPolicyRequest) (*IpsecPolicy, error)
+	// Delete an existing IPsec Policy
+	DeleteIpsecPolicy(context.Context, *DeleteIpsecPolicyRequest) (*emptypb.Empty, error)
+	// Get an IPsec Policy
+	GetIpsecPolicy(context.Context, *GetIpsecPolicyRequest) (*IpsecPolicy, error)
+	// List existing IPsec Policies
+	ListIpsecPolicies(context.Context, *ListIpsecPoliciesRequest) (*ListIpsecPoliciesResponse, error)
+	mustEmbedUnimplementedIpsecPolicyServiceServer()
+}
+
+// UnimplementedIpsecPolicyServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedIpsecPolicyServiceServer struct {
+}
+
+func (UnimplementedIpsecPolicyServiceServer) CreateIpsecPolicy(context.Context, *CreateIpsecPolicyRequest) (*IpsecPolicy, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateIpsecPolicy not implemented")
+}
+func (UnimplementedIpsecPolicyServiceServer) UpdateIpsecPolicy(context.Context, *UpdateIpsecPolicyRequest) (*IpsecPolicy, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateIpsecPolicy not implemented")
+}
+func (UnimplementedIpsecPolicyServiceServer) DeleteIpsecPolicy(context.Context, *DeleteIpsecPolicyRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteIpsecPolicy not implemented")
+}
+func (UnimplementedIpsecPolicyServiceServer) GetIpsecPolicy(context.Context, *GetIpsecPolicyRequest) (*IpsecPolicy, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIpsecPolicy not implemented")
+}
+func (UnimplementedIpsecPolicyServiceServer) ListIpsecPolicies(context.Context, *ListIpsecPoliciesRequest) (*ListIpsecPoliciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListIpsecPolicies not implemented")
+}
+func (UnimplementedIpsecPolicyServiceServer) mustEmbedUnimplementedIpsecPolicyServiceServer() {}
+
+// UnsafeIpsecPolicyServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to IpsecPolicyServiceServer will
+// result in compilation errors.
+type UnsafeIpsecPolicyServiceServer interface {
+	mustEmbedUnimplementedIpsecPolicyServiceServer()
+}
+
+func RegisterIpsecPolicyServiceServer(s grpc.ServiceRegistrar, srv IpsecPolicyServiceServer) {
+	s.RegisterService(&IpsecPolicyService_ServiceDesc, srv)
+}
+
+func _IpsecPolicyService_CreateIpsecPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateIpsecPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecPolicyServiceServer).CreateIpsecPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecPolicyService_CreateIpsecPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecPolicyServiceServer).CreateIpsecPolicy(ctx, req.(*CreateIpsecPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _IpsecPolicyService_UpdateIpsecPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateIpsecPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecPolicyServiceServer).UpdateIpsecPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecPolicyService_UpdateIpsecPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecPolicyServiceServer).UpdateIpsecPolicy(ctx, req.(*UpdateIpsecPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _IpsecPolicyService_DeleteIpsecPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteIpsecPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecPolicyServiceServer).DeleteIpsecPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecPolicyService_DeleteIpsecPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecPolicyServiceServer).DeleteIpsecPolicy(ctx, req.(*DeleteIpsecPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _IpsecPolicyService_GetIpsecPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIpsecPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecPolicyServiceServer).GetIpsecPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecPolicyService_GetIpsecPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecPolicyServiceServer).GetIpsecPolicy(ctx, req.(*GetIpsecPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _IpsecPolicyService_ListIpsecPolicies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIpsecPoliciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecPolicyServiceServer).ListIpsecPolicies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecPolicyService_ListIpsecPolicies_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecPolicyServiceServer).ListIpsecPolicies(ctx, req.(*ListIpsecPoliciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// IpsecPolicyService_ServiceDesc is the grpc.ServiceDesc for IpsecPolicyService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var IpsecPolicyService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "opi_api.security.v2alpha1.IpsecPolicyService",
+	HandlerType: (*IpsecPolicyServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateIpsecPolicy",
+			Handler:    _IpsecPolicyService_CreateIpsecPolicy_Handler,
+		},
+		{
+			MethodName: "UpdateIpsecPolicy",
+			Handler:    _IpsecPolicyService_UpdateIpsecPolicy_Handler,
+		},
+		{
+			MethodName: "DeleteIpsecPolicy",
+			Handler:    _IpsecPolicyService_DeleteIpsecPolicy_Handler,
+		},
+		{
+			MethodName: "GetIpsecPolicy",
+			Handler:    _IpsecPolicyService_GetIpsecPolicy_Handler,
+		},
+		{
+			MethodName: "ListIpsecPolicies",
+			Handler:    _IpsecPolicyService_ListIpsecPolicies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

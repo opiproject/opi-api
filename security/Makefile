@@ -25,7 +25,7 @@ doc:
 
 apilint:
 	curl -kL https://github.com/googleapis/googleapis/archive/master.tar.gz | tar --strip=1 -zxvf - googleapis-master/google/api
-	docker run --user=$(id -u):$(id -g) --rm --entrypoint=sh -v "${PWD}":/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.56.1 -c "api-linter -I /common /out/*.proto --output-format github --disable-rule=core::0192 --disable-rule=core::0191 --disable-rule=core::0140 --disable-rule=core::0123 --disable-rule=core::0142 --disable-rule=core::0126 --disable-rule=core::0127 --disable-rule=core::0141 --disable-rule=core::0203 --disable-rule=core::0216 --set-exit-status"
+	docker run --user=$(id -u):$(id -g) --rm --entrypoint=sh -v "${PWD}/../network/opinetcommon":/common -v "${PWD}":/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.56.1 -c "api-linter -I /common /out/*.proto --output-format github --disable-rule=core::0192 --disable-rule=core::0191 --disable-rule=core::0140 --disable-rule=core::0123 --disable-rule=core::0142 --disable-rule=core::0126 --disable-rule=core::0127 --disable-rule=core::0141 --disable-rule=core::0203 --disable-rule=core::0216 --set-exit-status"
 	rm -rf "${PWD}"/google
 
 buflint:
