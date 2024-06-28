@@ -35,11 +35,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	IkePeerService_CreateIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IkePeerService/CreateIkePeer"
-	IkePeerService_UpdateIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IkePeerService/UpdateIkePeer"
-	IkePeerService_DeleteIkePeer_FullMethodName = "/opi_api.security.v2alpha1.IkePeerService/DeleteIkePeer"
-	IkePeerService_GetIkePeer_FullMethodName    = "/opi_api.security.v2alpha1.IkePeerService/GetIkePeer"
-	IkePeerService_ListIkePeers_FullMethodName  = "/opi_api.security.v2alpha1.IkePeerService/ListIkePeers"
+	IkePeerService_CreateIkePeer_FullMethodName = "/opi_api.security.v1alpha1.IkePeerService/CreateIkePeer"
+	IkePeerService_UpdateIkePeer_FullMethodName = "/opi_api.security.v1alpha1.IkePeerService/UpdateIkePeer"
+	IkePeerService_DeleteIkePeer_FullMethodName = "/opi_api.security.v1alpha1.IkePeerService/DeleteIkePeer"
+	IkePeerService_GetIkePeer_FullMethodName    = "/opi_api.security.v1alpha1.IkePeerService/GetIkePeer"
+	IkePeerService_ListIkePeers_FullMethodName  = "/opi_api.security.v1alpha1.IkePeerService/ListIkePeers"
 )
 
 // IkePeerServiceClient is the client API for IkePeerService service.
@@ -256,7 +256,7 @@ func _IkePeerService_ListIkePeers_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var IkePeerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "opi_api.security.v2alpha1.IkePeerService",
+	ServiceName: "opi_api.security.v1alpha1.IkePeerService",
 	HandlerType: (*IkePeerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -285,12 +285,12 @@ var IkePeerService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	IkeConnectionService_CreateIkeConnection_FullMethodName = "/opi_api.security.v2alpha1.IkeConnectionService/CreateIkeConnection"
-	IkeConnectionService_UpdateIkeConnection_FullMethodName = "/opi_api.security.v2alpha1.IkeConnectionService/UpdateIkeConnection"
-	IkeConnectionService_DeleteIkeConnection_FullMethodName = "/opi_api.security.v2alpha1.IkeConnectionService/DeleteIkeConnection"
-	IkeConnectionService_GetIkeConnection_FullMethodName    = "/opi_api.security.v2alpha1.IkeConnectionService/GetIkeConnection"
-	IkeConnectionService_ListIkeConnections_FullMethodName  = "/opi_api.security.v2alpha1.IkeConnectionService/ListIkeConnections"
-	IkeConnectionService_StatsIkeConnections_FullMethodName = "/opi_api.security.v2alpha1.IkeConnectionService/StatsIkeConnections"
+	IkeConnectionService_CreateIkeConnection_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/CreateIkeConnection"
+	IkeConnectionService_UpdateIkeConnection_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/UpdateIkeConnection"
+	IkeConnectionService_DeleteIkeConnection_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/DeleteIkeConnection"
+	IkeConnectionService_GetIkeConnection_FullMethodName    = "/opi_api.security.v1alpha1.IkeConnectionService/GetIkeConnection"
+	IkeConnectionService_ListIkeConnections_FullMethodName  = "/opi_api.security.v1alpha1.IkeConnectionService/ListIkeConnections"
+	IkeConnectionService_StatsIkeConnections_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/StatsIkeConnections"
 )
 
 // IkeConnectionServiceClient is the client API for IkeConnectionService service.
@@ -543,7 +543,7 @@ func _IkeConnectionService_StatsIkeConnections_Handler(srv interface{}, ctx cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var IkeConnectionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "opi_api.security.v2alpha1.IkeConnectionService",
+	ServiceName: "opi_api.security.v1alpha1.IkeConnectionService",
 	HandlerType: (*IkeConnectionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -576,11 +576,11 @@ var IkeConnectionService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	IpsecSaService_CreateIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecSaService/CreateIpsecSa"
-	IpsecSaService_UpdateIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecSaService/UpdateIpsecSa"
-	IpsecSaService_DeleteIpsecSa_FullMethodName = "/opi_api.security.v2alpha1.IpsecSaService/DeleteIpsecSa"
-	IpsecSaService_GetIpsecSa_FullMethodName    = "/opi_api.security.v2alpha1.IpsecSaService/GetIpsecSa"
-	IpsecSaService_ListIpsecSas_FullMethodName  = "/opi_api.security.v2alpha1.IpsecSaService/ListIpsecSas"
+	IpsecSaService_CreateIpsecSa_FullMethodName = "/opi_api.security.v1alpha1.IpsecSaService/CreateIpsecSa"
+	IpsecSaService_UpdateIpsecSa_FullMethodName = "/opi_api.security.v1alpha1.IpsecSaService/UpdateIpsecSa"
+	IpsecSaService_DeleteIpsecSa_FullMethodName = "/opi_api.security.v1alpha1.IpsecSaService/DeleteIpsecSa"
+	IpsecSaService_GetIpsecSa_FullMethodName    = "/opi_api.security.v1alpha1.IpsecSaService/GetIpsecSa"
+	IpsecSaService_ListIpsecSas_FullMethodName  = "/opi_api.security.v1alpha1.IpsecSaService/ListIpsecSas"
 )
 
 // IpsecSaServiceClient is the client API for IpsecSaService service.
@@ -795,7 +795,7 @@ func _IpsecSaService_ListIpsecSas_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var IpsecSaService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "opi_api.security.v2alpha1.IpsecSaService",
+	ServiceName: "opi_api.security.v1alpha1.IpsecSaService",
 	HandlerType: (*IpsecSaServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -824,11 +824,11 @@ var IpsecSaService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	IpsecPolicyService_CreateIpsecPolicy_FullMethodName = "/opi_api.security.v2alpha1.IpsecPolicyService/CreateIpsecPolicy"
-	IpsecPolicyService_UpdateIpsecPolicy_FullMethodName = "/opi_api.security.v2alpha1.IpsecPolicyService/UpdateIpsecPolicy"
-	IpsecPolicyService_DeleteIpsecPolicy_FullMethodName = "/opi_api.security.v2alpha1.IpsecPolicyService/DeleteIpsecPolicy"
-	IpsecPolicyService_GetIpsecPolicy_FullMethodName    = "/opi_api.security.v2alpha1.IpsecPolicyService/GetIpsecPolicy"
-	IpsecPolicyService_ListIpsecPolicies_FullMethodName = "/opi_api.security.v2alpha1.IpsecPolicyService/ListIpsecPolicies"
+	IpsecPolicyService_CreateIpsecPolicy_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/CreateIpsecPolicy"
+	IpsecPolicyService_UpdateIpsecPolicy_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/UpdateIpsecPolicy"
+	IpsecPolicyService_DeleteIpsecPolicy_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/DeleteIpsecPolicy"
+	IpsecPolicyService_GetIpsecPolicy_FullMethodName    = "/opi_api.security.v1alpha1.IpsecPolicyService/GetIpsecPolicy"
+	IpsecPolicyService_ListIpsecPolicies_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/ListIpsecPolicies"
 )
 
 // IpsecPolicyServiceClient is the client API for IpsecPolicyService service.
@@ -1043,7 +1043,7 @@ func _IpsecPolicyService_ListIpsecPolicies_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var IpsecPolicyService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "opi_api.security.v2alpha1.IpsecPolicyService",
+	ServiceName: "opi_api.security.v1alpha1.IpsecPolicyService",
 	HandlerType: (*IpsecPolicyServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

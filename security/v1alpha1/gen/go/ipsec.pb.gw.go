@@ -1199,7 +1199,7 @@ func RegisterIkePeerServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/CreateIkePeer", runtime.WithHTTPPathPattern("/v2alpha1/ikePeers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/CreateIkePeer", runtime.WithHTTPPathPattern("/v1alpha1/ikePeers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1224,7 +1224,7 @@ func RegisterIkePeerServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/UpdateIkePeer", runtime.WithHTTPPathPattern("/v2alpha1/{ike_peer.name=ikepeers/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/UpdateIkePeer", runtime.WithHTTPPathPattern("/v1alpha1/{ike_peer.name=ikepeers/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1249,7 +1249,7 @@ func RegisterIkePeerServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/DeleteIkePeer", runtime.WithHTTPPathPattern("/v2alpha1/{name=ikePeers/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/DeleteIkePeer", runtime.WithHTTPPathPattern("/v1alpha1/{name=ikePeers/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1274,7 +1274,7 @@ func RegisterIkePeerServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/GetIkePeer", runtime.WithHTTPPathPattern("/v2alpha1/{name=ikePeers/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/GetIkePeer", runtime.WithHTTPPathPattern("/v1alpha1/{name=ikePeers/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1299,7 +1299,7 @@ func RegisterIkePeerServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/ListIkePeers", runtime.WithHTTPPathPattern("/v2alpha1/ikePeers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/ListIkePeers", runtime.WithHTTPPathPattern("/v1alpha1/ikePeers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1333,7 +1333,7 @@ func RegisterIkeConnectionServiceHandlerServer(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/CreateIkeConnection", runtime.WithHTTPPathPattern("/v2alpha1/ikeConnections"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/CreateIkeConnection", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1358,7 +1358,7 @@ func RegisterIkeConnectionServiceHandlerServer(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/UpdateIkeConnection", runtime.WithHTTPPathPattern("/v2alpha1/{ike_connection.name=ikeConnections/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/UpdateIkeConnection", runtime.WithHTTPPathPattern("/v1alpha1/{ike_connection.name=ikeConnections/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1383,7 +1383,7 @@ func RegisterIkeConnectionServiceHandlerServer(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/DeleteIkeConnection", runtime.WithHTTPPathPattern("/v2alpha1/{name=ikeConnections/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/DeleteIkeConnection", runtime.WithHTTPPathPattern("/v1alpha1/{name=ikeConnections/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1408,7 +1408,7 @@ func RegisterIkeConnectionServiceHandlerServer(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/GetIkeConnection", runtime.WithHTTPPathPattern("/v2alpha1/{name=ikeConnections/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/GetIkeConnection", runtime.WithHTTPPathPattern("/v1alpha1/{name=ikeConnections/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1433,7 +1433,7 @@ func RegisterIkeConnectionServiceHandlerServer(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/ListIkeConnections", runtime.WithHTTPPathPattern("/v2alpha1/ikeConnections"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/ListIkeConnections", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1458,7 +1458,7 @@ func RegisterIkeConnectionServiceHandlerServer(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/StatsIkeConnections", runtime.WithHTTPPathPattern("/v2alpha1/ikeConnections:stats"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/StatsIkeConnections", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections:stats"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1492,7 +1492,7 @@ func RegisterIpsecSaServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/CreateIpsecSa", runtime.WithHTTPPathPattern("/v2alpha1/ipsecSas"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/CreateIpsecSa", runtime.WithHTTPPathPattern("/v1alpha1/ipsecSas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1517,7 +1517,7 @@ func RegisterIpsecSaServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/UpdateIpsecSa", runtime.WithHTTPPathPattern("/v2alpha1/{ipsec_sa.name=ipsecSas/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/UpdateIpsecSa", runtime.WithHTTPPathPattern("/v1alpha1/{ipsec_sa.name=ipsecSas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1542,7 +1542,7 @@ func RegisterIpsecSaServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/DeleteIpsecSa", runtime.WithHTTPPathPattern("/v2alpha1/{name=ipsecSas/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/DeleteIpsecSa", runtime.WithHTTPPathPattern("/v1alpha1/{name=ipsecSas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1567,7 +1567,7 @@ func RegisterIpsecSaServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/GetIpsecSa", runtime.WithHTTPPathPattern("/v2alpha1/{name=ipsecSas/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/GetIpsecSa", runtime.WithHTTPPathPattern("/v1alpha1/{name=ipsecSas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1592,7 +1592,7 @@ func RegisterIpsecSaServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/ListIpsecSas", runtime.WithHTTPPathPattern("/v2alpha1/ipsecSas"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/ListIpsecSas", runtime.WithHTTPPathPattern("/v1alpha1/ipsecSas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1626,7 +1626,7 @@ func RegisterIpsecPolicyServiceHandlerServer(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/CreateIpsecPolicy", runtime.WithHTTPPathPattern("/v2alpha1/ipsecPolicies"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/CreateIpsecPolicy", runtime.WithHTTPPathPattern("/v1alpha1/ipsecPolicies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1651,7 +1651,7 @@ func RegisterIpsecPolicyServiceHandlerServer(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/UpdateIpsecPolicy", runtime.WithHTTPPathPattern("/v2alpha1/{ipsec_policy.name=ipsecPolicies/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/UpdateIpsecPolicy", runtime.WithHTTPPathPattern("/v1alpha1/{ipsec_policy.name=ipsecPolicies/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1676,7 +1676,7 @@ func RegisterIpsecPolicyServiceHandlerServer(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/DeleteIpsecPolicy", runtime.WithHTTPPathPattern("/v2alpha1/{name=ipsecPolicies/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/DeleteIpsecPolicy", runtime.WithHTTPPathPattern("/v1alpha1/{name=ipsecPolicies/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1701,7 +1701,7 @@ func RegisterIpsecPolicyServiceHandlerServer(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/GetIpsecPolicy", runtime.WithHTTPPathPattern("/v2alpha1/{name=ipsecPolicies/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/GetIpsecPolicy", runtime.WithHTTPPathPattern("/v1alpha1/{name=ipsecPolicies/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1726,7 +1726,7 @@ func RegisterIpsecPolicyServiceHandlerServer(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/ListIpsecPolicies", runtime.WithHTTPPathPattern("/v2alpha1/ipsecPolicies"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/ListIpsecPolicies", runtime.WithHTTPPathPattern("/v1alpha1/ipsecPolicies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1790,7 +1790,7 @@ func RegisterIkePeerServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/CreateIkePeer", runtime.WithHTTPPathPattern("/v2alpha1/ikePeers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/CreateIkePeer", runtime.WithHTTPPathPattern("/v1alpha1/ikePeers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1812,7 +1812,7 @@ func RegisterIkePeerServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/UpdateIkePeer", runtime.WithHTTPPathPattern("/v2alpha1/{ike_peer.name=ikepeers/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/UpdateIkePeer", runtime.WithHTTPPathPattern("/v1alpha1/{ike_peer.name=ikepeers/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1834,7 +1834,7 @@ func RegisterIkePeerServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/DeleteIkePeer", runtime.WithHTTPPathPattern("/v2alpha1/{name=ikePeers/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/DeleteIkePeer", runtime.WithHTTPPathPattern("/v1alpha1/{name=ikePeers/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1856,7 +1856,7 @@ func RegisterIkePeerServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/GetIkePeer", runtime.WithHTTPPathPattern("/v2alpha1/{name=ikePeers/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/GetIkePeer", runtime.WithHTTPPathPattern("/v1alpha1/{name=ikePeers/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1878,7 +1878,7 @@ func RegisterIkePeerServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkePeerService/ListIkePeers", runtime.WithHTTPPathPattern("/v2alpha1/ikePeers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/ListIkePeers", runtime.WithHTTPPathPattern("/v1alpha1/ikePeers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1898,15 +1898,15 @@ func RegisterIkePeerServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_IkePeerService_CreateIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ikePeers"}, ""))
+	pattern_IkePeerService_CreateIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikePeers"}, ""))
 
-	pattern_IkePeerService_UpdateIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ikepeers", "ike_peer.name"}, ""))
+	pattern_IkePeerService_UpdateIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikepeers", "ike_peer.name"}, ""))
 
-	pattern_IkePeerService_DeleteIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ikePeers", "name"}, ""))
+	pattern_IkePeerService_DeleteIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikePeers", "name"}, ""))
 
-	pattern_IkePeerService_GetIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ikePeers", "name"}, ""))
+	pattern_IkePeerService_GetIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikePeers", "name"}, ""))
 
-	pattern_IkePeerService_ListIkePeers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ikePeers"}, ""))
+	pattern_IkePeerService_ListIkePeers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikePeers"}, ""))
 )
 
 var (
@@ -1965,7 +1965,7 @@ func RegisterIkeConnectionServiceHandlerClient(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/CreateIkeConnection", runtime.WithHTTPPathPattern("/v2alpha1/ikeConnections"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/CreateIkeConnection", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1987,7 +1987,7 @@ func RegisterIkeConnectionServiceHandlerClient(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/UpdateIkeConnection", runtime.WithHTTPPathPattern("/v2alpha1/{ike_connection.name=ikeConnections/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/UpdateIkeConnection", runtime.WithHTTPPathPattern("/v1alpha1/{ike_connection.name=ikeConnections/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2009,7 +2009,7 @@ func RegisterIkeConnectionServiceHandlerClient(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/DeleteIkeConnection", runtime.WithHTTPPathPattern("/v2alpha1/{name=ikeConnections/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/DeleteIkeConnection", runtime.WithHTTPPathPattern("/v1alpha1/{name=ikeConnections/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2031,7 +2031,7 @@ func RegisterIkeConnectionServiceHandlerClient(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/GetIkeConnection", runtime.WithHTTPPathPattern("/v2alpha1/{name=ikeConnections/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/GetIkeConnection", runtime.WithHTTPPathPattern("/v1alpha1/{name=ikeConnections/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2053,7 +2053,7 @@ func RegisterIkeConnectionServiceHandlerClient(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/ListIkeConnections", runtime.WithHTTPPathPattern("/v2alpha1/ikeConnections"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/ListIkeConnections", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2075,7 +2075,7 @@ func RegisterIkeConnectionServiceHandlerClient(ctx context.Context, mux *runtime
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IkeConnectionService/StatsIkeConnections", runtime.WithHTTPPathPattern("/v2alpha1/ikeConnections:stats"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/StatsIkeConnections", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections:stats"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2095,17 +2095,17 @@ func RegisterIkeConnectionServiceHandlerClient(ctx context.Context, mux *runtime
 }
 
 var (
-	pattern_IkeConnectionService_CreateIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ikeConnections"}, ""))
+	pattern_IkeConnectionService_CreateIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, ""))
 
-	pattern_IkeConnectionService_UpdateIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ikeConnections", "ike_connection.name"}, ""))
+	pattern_IkeConnectionService_UpdateIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "ike_connection.name"}, ""))
 
-	pattern_IkeConnectionService_DeleteIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ikeConnections", "name"}, ""))
+	pattern_IkeConnectionService_DeleteIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "name"}, ""))
 
-	pattern_IkeConnectionService_GetIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ikeConnections", "name"}, ""))
+	pattern_IkeConnectionService_GetIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "name"}, ""))
 
-	pattern_IkeConnectionService_ListIkeConnections_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ikeConnections"}, ""))
+	pattern_IkeConnectionService_ListIkeConnections_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, ""))
 
-	pattern_IkeConnectionService_StatsIkeConnections_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ikeConnections"}, "stats"))
+	pattern_IkeConnectionService_StatsIkeConnections_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, "stats"))
 )
 
 var (
@@ -2166,7 +2166,7 @@ func RegisterIpsecSaServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/CreateIpsecSa", runtime.WithHTTPPathPattern("/v2alpha1/ipsecSas"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/CreateIpsecSa", runtime.WithHTTPPathPattern("/v1alpha1/ipsecSas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2188,7 +2188,7 @@ func RegisterIpsecSaServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/UpdateIpsecSa", runtime.WithHTTPPathPattern("/v2alpha1/{ipsec_sa.name=ipsecSas/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/UpdateIpsecSa", runtime.WithHTTPPathPattern("/v1alpha1/{ipsec_sa.name=ipsecSas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2210,7 +2210,7 @@ func RegisterIpsecSaServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/DeleteIpsecSa", runtime.WithHTTPPathPattern("/v2alpha1/{name=ipsecSas/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/DeleteIpsecSa", runtime.WithHTTPPathPattern("/v1alpha1/{name=ipsecSas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2232,7 +2232,7 @@ func RegisterIpsecSaServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/GetIpsecSa", runtime.WithHTTPPathPattern("/v2alpha1/{name=ipsecSas/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/GetIpsecSa", runtime.WithHTTPPathPattern("/v1alpha1/{name=ipsecSas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2254,7 +2254,7 @@ func RegisterIpsecSaServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecSaService/ListIpsecSas", runtime.WithHTTPPathPattern("/v2alpha1/ipsecSas"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/ListIpsecSas", runtime.WithHTTPPathPattern("/v1alpha1/ipsecSas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2274,15 +2274,15 @@ func RegisterIpsecSaServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_IpsecSaService_CreateIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ipsecSas"}, ""))
+	pattern_IpsecSaService_CreateIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecSas"}, ""))
 
-	pattern_IpsecSaService_UpdateIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ipsecSas", "ipsec_sa.name"}, ""))
+	pattern_IpsecSaService_UpdateIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "ipsec_sa.name"}, ""))
 
-	pattern_IpsecSaService_DeleteIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ipsecSas", "name"}, ""))
+	pattern_IpsecSaService_DeleteIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "name"}, ""))
 
-	pattern_IpsecSaService_GetIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ipsecSas", "name"}, ""))
+	pattern_IpsecSaService_GetIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "name"}, ""))
 
-	pattern_IpsecSaService_ListIpsecSas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ipsecSas"}, ""))
+	pattern_IpsecSaService_ListIpsecSas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecSas"}, ""))
 )
 
 var (
@@ -2341,7 +2341,7 @@ func RegisterIpsecPolicyServiceHandlerClient(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/CreateIpsecPolicy", runtime.WithHTTPPathPattern("/v2alpha1/ipsecPolicies"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/CreateIpsecPolicy", runtime.WithHTTPPathPattern("/v1alpha1/ipsecPolicies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2363,7 +2363,7 @@ func RegisterIpsecPolicyServiceHandlerClient(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/UpdateIpsecPolicy", runtime.WithHTTPPathPattern("/v2alpha1/{ipsec_policy.name=ipsecPolicies/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/UpdateIpsecPolicy", runtime.WithHTTPPathPattern("/v1alpha1/{ipsec_policy.name=ipsecPolicies/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2385,7 +2385,7 @@ func RegisterIpsecPolicyServiceHandlerClient(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/DeleteIpsecPolicy", runtime.WithHTTPPathPattern("/v2alpha1/{name=ipsecPolicies/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/DeleteIpsecPolicy", runtime.WithHTTPPathPattern("/v1alpha1/{name=ipsecPolicies/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2407,7 +2407,7 @@ func RegisterIpsecPolicyServiceHandlerClient(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/GetIpsecPolicy", runtime.WithHTTPPathPattern("/v2alpha1/{name=ipsecPolicies/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/GetIpsecPolicy", runtime.WithHTTPPathPattern("/v1alpha1/{name=ipsecPolicies/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2429,7 +2429,7 @@ func RegisterIpsecPolicyServiceHandlerClient(ctx context.Context, mux *runtime.S
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v2alpha1.IpsecPolicyService/ListIpsecPolicies", runtime.WithHTTPPathPattern("/v2alpha1/ipsecPolicies"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/ListIpsecPolicies", runtime.WithHTTPPathPattern("/v1alpha1/ipsecPolicies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2449,15 +2449,15 @@ func RegisterIpsecPolicyServiceHandlerClient(ctx context.Context, mux *runtime.S
 }
 
 var (
-	pattern_IpsecPolicyService_CreateIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ipsecPolicies"}, ""))
+	pattern_IpsecPolicyService_CreateIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecPolicies"}, ""))
 
-	pattern_IpsecPolicyService_UpdateIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ipsecPolicies", "ipsec_policy.name"}, ""))
+	pattern_IpsecPolicyService_UpdateIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "ipsec_policy.name"}, ""))
 
-	pattern_IpsecPolicyService_DeleteIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ipsecPolicies", "name"}, ""))
+	pattern_IpsecPolicyService_DeleteIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "name"}, ""))
 
-	pattern_IpsecPolicyService_GetIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v2alpha1", "ipsecPolicies", "name"}, ""))
+	pattern_IpsecPolicyService_GetIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "name"}, ""))
 
-	pattern_IpsecPolicyService_ListIpsecPolicies_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v2alpha1", "ipsecPolicies"}, ""))
+	pattern_IpsecPolicyService_ListIpsecPolicies_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecPolicies"}, ""))
 )
 
 var (

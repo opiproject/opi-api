@@ -2,7 +2,7 @@
 # Copyright (C) 2022 Intel Corporation
 # Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
-APIVER = v2alpha1
+APIVER = v1alpha1
 
 all: buflint apilint bufgen doc
 

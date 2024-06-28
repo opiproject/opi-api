@@ -4,81 +4,81 @@
 ## Table of Contents
 
 - [ipsec.proto](#ipsec-proto)
-    - [AntiReplayStats](#opi_api-security-v2alpha1-AntiReplayStats)
-    - [AntiReplayWindow](#opi_api-security-v2alpha1-AntiReplayWindow)
-    - [CaCerts](#opi_api-security-v2alpha1-CaCerts)
-    - [ChildSaInfo](#opi_api-security-v2alpha1-ChildSaInfo)
-    - [CreateIkeConnectionRequest](#opi_api-security-v2alpha1-CreateIkeConnectionRequest)
-    - [CreateIkePeerRequest](#opi_api-security-v2alpha1-CreateIkePeerRequest)
-    - [CreateIpsecPolicyRequest](#opi_api-security-v2alpha1-CreateIpsecPolicyRequest)
-    - [CreateIpsecSaRequest](#opi_api-security-v2alpha1-CreateIpsecSaRequest)
-    - [DSAuth](#opi_api-security-v2alpha1-DSAuth)
-    - [DeleteIkeConnectionRequest](#opi_api-security-v2alpha1-DeleteIkeConnectionRequest)
-    - [DeleteIkePeerRequest](#opi_api-security-v2alpha1-DeleteIkePeerRequest)
-    - [DeleteIpsecPolicyRequest](#opi_api-security-v2alpha1-DeleteIpsecPolicyRequest)
-    - [DeleteIpsecSaRequest](#opi_api-security-v2alpha1-DeleteIpsecSaRequest)
-    - [DscpMapping](#opi_api-security-v2alpha1-DscpMapping)
-    - [Encap](#opi_api-security-v2alpha1-Encap)
-    - [EspAlgorithms](#opi_api-security-v2alpha1-EspAlgorithms)
-    - [GetIkeConnectionRequest](#opi_api-security-v2alpha1-GetIkeConnectionRequest)
-    - [GetIkePeerRequest](#opi_api-security-v2alpha1-GetIkePeerRequest)
-    - [GetIpsecPolicyRequest](#opi_api-security-v2alpha1-GetIpsecPolicyRequest)
-    - [GetIpsecSaRequest](#opi_api-security-v2alpha1-GetIpsecSaRequest)
-    - [IkeConnection](#opi_api-security-v2alpha1-IkeConnection)
-    - [IkeConnectionState](#opi_api-security-v2alpha1-IkeConnectionState)
-    - [IkeFragmentation](#opi_api-security-v2alpha1-IkeFragmentation)
-    - [IkePeer](#opi_api-security-v2alpha1-IkePeer)
-    - [IkePeerAuthentication](#opi_api-security-v2alpha1-IkePeerAuthentication)
-    - [IkeSaLifetimeHard](#opi_api-security-v2alpha1-IkeSaLifetimeHard)
-    - [IkeSaLifetimeSoft](#opi_api-security-v2alpha1-IkeSaLifetimeSoft)
-    - [IpsecPolicy](#opi_api-security-v2alpha1-IpsecPolicy)
-    - [IpsecPolicyConfig](#opi_api-security-v2alpha1-IpsecPolicyConfig)
-    - [IpsecSa](#opi_api-security-v2alpha1-IpsecSa)
-    - [IpsecSaConfig](#opi_api-security-v2alpha1-IpsecSaConfig)
-    - [IpsecSaLifetimeHard](#opi_api-security-v2alpha1-IpsecSaLifetimeHard)
-    - [IpsecSaLifetimeSoft](#opi_api-security-v2alpha1-IpsecSaLifetimeSoft)
-    - [IpsecSaState](#opi_api-security-v2alpha1-IpsecSaState)
-    - [IpsecSaTemplate](#opi_api-security-v2alpha1-IpsecSaTemplate)
-    - [Lifetime](#opi_api-security-v2alpha1-Lifetime)
-    - [ListIkeConnectionsRequest](#opi_api-security-v2alpha1-ListIkeConnectionsRequest)
-    - [ListIkeConnectionsResponse](#opi_api-security-v2alpha1-ListIkeConnectionsResponse)
-    - [ListIkePeersRequest](#opi_api-security-v2alpha1-ListIkePeersRequest)
-    - [ListIkePeersResponse](#opi_api-security-v2alpha1-ListIkePeersResponse)
-    - [ListIpsecPoliciesRequest](#opi_api-security-v2alpha1-ListIpsecPoliciesRequest)
-    - [ListIpsecPoliciesResponse](#opi_api-security-v2alpha1-ListIpsecPoliciesResponse)
-    - [ListIpsecSasRequest](#opi_api-security-v2alpha1-ListIpsecSasRequest)
-    - [ListIpsecSasResponse](#opi_api-security-v2alpha1-ListIpsecSasResponse)
-    - [NumberIkeSAs](#opi_api-security-v2alpha1-NumberIkeSAs)
-    - [PortRange](#opi_api-security-v2alpha1-PortRange)
-    - [SpdProcessingInfo](#opi_api-security-v2alpha1-SpdProcessingInfo)
-    - [StatsIkeConnectionsRequest](#opi_api-security-v2alpha1-StatsIkeConnectionsRequest)
-    - [StatsIkeConnectionsResponse](#opi_api-security-v2alpha1-StatsIkeConnectionsResponse)
-    - [TrafficSelector](#opi_api-security-v2alpha1-TrafficSelector)
-    - [Tunnel](#opi_api-security-v2alpha1-Tunnel)
-    - [UpdateIkeConnectionRequest](#opi_api-security-v2alpha1-UpdateIkeConnectionRequest)
-    - [UpdateIkePeerRequest](#opi_api-security-v2alpha1-UpdateIkePeerRequest)
-    - [UpdateIpsecPolicyRequest](#opi_api-security-v2alpha1-UpdateIpsecPolicyRequest)
-    - [UpdateIpsecSaRequest](#opi_api-security-v2alpha1-UpdateIpsecSaRequest)
+    - [AntiReplayStats](#opi_api-security-v1alpha1-AntiReplayStats)
+    - [AntiReplayWindow](#opi_api-security-v1alpha1-AntiReplayWindow)
+    - [CaCerts](#opi_api-security-v1alpha1-CaCerts)
+    - [ChildSaInfo](#opi_api-security-v1alpha1-ChildSaInfo)
+    - [CreateIkeConnectionRequest](#opi_api-security-v1alpha1-CreateIkeConnectionRequest)
+    - [CreateIkePeerRequest](#opi_api-security-v1alpha1-CreateIkePeerRequest)
+    - [CreateIpsecPolicyRequest](#opi_api-security-v1alpha1-CreateIpsecPolicyRequest)
+    - [CreateIpsecSaRequest](#opi_api-security-v1alpha1-CreateIpsecSaRequest)
+    - [DSAuth](#opi_api-security-v1alpha1-DSAuth)
+    - [DeleteIkeConnectionRequest](#opi_api-security-v1alpha1-DeleteIkeConnectionRequest)
+    - [DeleteIkePeerRequest](#opi_api-security-v1alpha1-DeleteIkePeerRequest)
+    - [DeleteIpsecPolicyRequest](#opi_api-security-v1alpha1-DeleteIpsecPolicyRequest)
+    - [DeleteIpsecSaRequest](#opi_api-security-v1alpha1-DeleteIpsecSaRequest)
+    - [DscpMapping](#opi_api-security-v1alpha1-DscpMapping)
+    - [Encap](#opi_api-security-v1alpha1-Encap)
+    - [EspAlgorithms](#opi_api-security-v1alpha1-EspAlgorithms)
+    - [GetIkeConnectionRequest](#opi_api-security-v1alpha1-GetIkeConnectionRequest)
+    - [GetIkePeerRequest](#opi_api-security-v1alpha1-GetIkePeerRequest)
+    - [GetIpsecPolicyRequest](#opi_api-security-v1alpha1-GetIpsecPolicyRequest)
+    - [GetIpsecSaRequest](#opi_api-security-v1alpha1-GetIpsecSaRequest)
+    - [IkeConnection](#opi_api-security-v1alpha1-IkeConnection)
+    - [IkeConnectionState](#opi_api-security-v1alpha1-IkeConnectionState)
+    - [IkeFragmentation](#opi_api-security-v1alpha1-IkeFragmentation)
+    - [IkePeer](#opi_api-security-v1alpha1-IkePeer)
+    - [IkePeerAuthentication](#opi_api-security-v1alpha1-IkePeerAuthentication)
+    - [IkeSaLifetimeHard](#opi_api-security-v1alpha1-IkeSaLifetimeHard)
+    - [IkeSaLifetimeSoft](#opi_api-security-v1alpha1-IkeSaLifetimeSoft)
+    - [IpsecPolicy](#opi_api-security-v1alpha1-IpsecPolicy)
+    - [IpsecPolicyConfig](#opi_api-security-v1alpha1-IpsecPolicyConfig)
+    - [IpsecSa](#opi_api-security-v1alpha1-IpsecSa)
+    - [IpsecSaConfig](#opi_api-security-v1alpha1-IpsecSaConfig)
+    - [IpsecSaLifetimeHard](#opi_api-security-v1alpha1-IpsecSaLifetimeHard)
+    - [IpsecSaLifetimeSoft](#opi_api-security-v1alpha1-IpsecSaLifetimeSoft)
+    - [IpsecSaState](#opi_api-security-v1alpha1-IpsecSaState)
+    - [IpsecSaTemplate](#opi_api-security-v1alpha1-IpsecSaTemplate)
+    - [Lifetime](#opi_api-security-v1alpha1-Lifetime)
+    - [ListIkeConnectionsRequest](#opi_api-security-v1alpha1-ListIkeConnectionsRequest)
+    - [ListIkeConnectionsResponse](#opi_api-security-v1alpha1-ListIkeConnectionsResponse)
+    - [ListIkePeersRequest](#opi_api-security-v1alpha1-ListIkePeersRequest)
+    - [ListIkePeersResponse](#opi_api-security-v1alpha1-ListIkePeersResponse)
+    - [ListIpsecPoliciesRequest](#opi_api-security-v1alpha1-ListIpsecPoliciesRequest)
+    - [ListIpsecPoliciesResponse](#opi_api-security-v1alpha1-ListIpsecPoliciesResponse)
+    - [ListIpsecSasRequest](#opi_api-security-v1alpha1-ListIpsecSasRequest)
+    - [ListIpsecSasResponse](#opi_api-security-v1alpha1-ListIpsecSasResponse)
+    - [NumberIkeSAs](#opi_api-security-v1alpha1-NumberIkeSAs)
+    - [PortRange](#opi_api-security-v1alpha1-PortRange)
+    - [SpdProcessingInfo](#opi_api-security-v1alpha1-SpdProcessingInfo)
+    - [StatsIkeConnectionsRequest](#opi_api-security-v1alpha1-StatsIkeConnectionsRequest)
+    - [StatsIkeConnectionsResponse](#opi_api-security-v1alpha1-StatsIkeConnectionsResponse)
+    - [TrafficSelector](#opi_api-security-v1alpha1-TrafficSelector)
+    - [Tunnel](#opi_api-security-v1alpha1-Tunnel)
+    - [UpdateIkeConnectionRequest](#opi_api-security-v1alpha1-UpdateIkeConnectionRequest)
+    - [UpdateIkePeerRequest](#opi_api-security-v1alpha1-UpdateIkePeerRequest)
+    - [UpdateIpsecPolicyRequest](#opi_api-security-v1alpha1-UpdateIpsecPolicyRequest)
+    - [UpdateIpsecSaRequest](#opi_api-security-v1alpha1-UpdateIpsecSaRequest)
   
-    - [AuthType](#opi_api-security-v2alpha1-AuthType)
-    - [AutoStartupMode](#opi_api-security-v2alpha1-AutoStartupMode)
-    - [DHGroups](#opi_api-security-v2alpha1-DHGroups)
-    - [DSAlgorithm](#opi_api-security-v2alpha1-DSAlgorithm)
-    - [DfBitAction](#opi_api-security-v2alpha1-DfBitAction)
-    - [EncAlgorithm](#opi_api-security-v2alpha1-EncAlgorithm)
-    - [EspEncap](#opi_api-security-v2alpha1-EspEncap)
-    - [IkeVersion](#opi_api-security-v2alpha1-IkeVersion)
-    - [IntegAlgorithm](#opi_api-security-v2alpha1-IntegAlgorithm)
-    - [IpsecMode](#opi_api-security-v2alpha1-IpsecMode)
-    - [IpsecProtocol](#opi_api-security-v2alpha1-IpsecProtocol)
-    - [IpsecSpdAction](#opi_api-security-v2alpha1-IpsecSpdAction)
-    - [LifetimeAction](#opi_api-security-v2alpha1-LifetimeAction)
-    - [PRF](#opi_api-security-v2alpha1-PRF)
+    - [AuthType](#opi_api-security-v1alpha1-AuthType)
+    - [AutoStartupMode](#opi_api-security-v1alpha1-AutoStartupMode)
+    - [DHGroups](#opi_api-security-v1alpha1-DHGroups)
+    - [DSAlgorithm](#opi_api-security-v1alpha1-DSAlgorithm)
+    - [DfBitAction](#opi_api-security-v1alpha1-DfBitAction)
+    - [EncAlgorithm](#opi_api-security-v1alpha1-EncAlgorithm)
+    - [EspEncap](#opi_api-security-v1alpha1-EspEncap)
+    - [IkeVersion](#opi_api-security-v1alpha1-IkeVersion)
+    - [IntegAlgorithm](#opi_api-security-v1alpha1-IntegAlgorithm)
+    - [IpsecMode](#opi_api-security-v1alpha1-IpsecMode)
+    - [IpsecProtocol](#opi_api-security-v1alpha1-IpsecProtocol)
+    - [IpsecSpdAction](#opi_api-security-v1alpha1-IpsecSpdAction)
+    - [LifetimeAction](#opi_api-security-v1alpha1-LifetimeAction)
+    - [PRF](#opi_api-security-v1alpha1-PRF)
   
-    - [IkeConnectionService](#opi_api-security-v2alpha1-IkeConnectionService)
-    - [IkePeerService](#opi_api-security-v2alpha1-IkePeerService)
-    - [IpsecPolicyService](#opi_api-security-v2alpha1-IpsecPolicyService)
-    - [IpsecSaService](#opi_api-security-v2alpha1-IpsecSaService)
+    - [IkeConnectionService](#opi_api-security-v1alpha1-IkeConnectionService)
+    - [IkePeerService](#opi_api-security-v1alpha1-IkePeerService)
+    - [IpsecPolicyService](#opi_api-security-v1alpha1-IpsecPolicyService)
+    - [IpsecSaService](#opi_api-security-v1alpha1-IpsecSaService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -103,7 +103,7 @@ Operations are defined for the following resources:
 The configuration model is derived from RFC 9061.
 
 
-<a name="opi_api-security-v2alpha1-AntiReplayStats"></a>
+<a name="opi_api-security-v1alpha1-AntiReplayStats"></a>
 
 ### AntiReplayStats
 Anti-replay stats
@@ -111,17 +111,17 @@ Anti-replay stats
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| replay_window | [AntiReplayWindow](#opi_api-security-v2alpha1-AntiReplayWindow) |  | ARW state |
+| replay_window | [AntiReplayWindow](#opi_api-security-v1alpha1-AntiReplayWindow) |  | ARW state |
 | packet_dropped | [int64](#int64) |  | Packets dropped because they are replay packets |
 | failed | [int64](#int64) |  | Number of packets detected out of the replay window |
-| seq_num_counter | [int64](#int64) |  | Current value of the sequence number |
+| seq_num_counter | [uint64](#uint64) |  | Current value of the sequence number (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: The sequence number cannot be negative. --) |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-AntiReplayWindow"></a>
+<a name="opi_api-security-v1alpha1-AntiReplayWindow"></a>
 
 ### AntiReplayWindow
 Anti-replay window state. Three parameters define the state of the replay
@@ -132,16 +132,16 @@ bound of the window (b), according to Appendix A2.1 in RFC 4303 (w = t - b &#43;
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| w | [int32](#int32) |  | Size of the replay window |
-| t | [int64](#int64) |  | Highest sequence number authenticated so far, upper bound of window |
-| b | [int64](#int64) |  | Lower bound of window |
+| w | [int32](#int32) |  | Size of the replay window. A value in the range [1, 4096]. |
+| t | [uint64](#uint64) |  | Highest sequence number authenticated so far, upper bound of window (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: The sequence number cannot be negative. --) |
+| b | [uint64](#uint64) |  | Lower bound of window (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: The sequence number cannot be negative. --) |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-CaCerts"></a>
+<a name="opi_api-security-v1alpha1-CaCerts"></a>
 
 ### CaCerts
 Defines a Certificate Authority (CA) certificate.
@@ -156,7 +156,7 @@ Defines a Certificate Authority (CA) certificate.
 
 
 
-<a name="opi_api-security-v2alpha1-ChildSaInfo"></a>
+<a name="opi_api-security-v1alpha1-ChildSaInfo"></a>
 
 ### ChildSaInfo
 Specific information for IPsec SAs. It includes Perfect Forward Secrecy (PFS)
@@ -166,15 +166,15 @@ group and IPsec SA rekey lifetimes.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | fs_groups | [int32](#int32) | repeated | If non-zero, forward secrecy is required when a new IPsec SA is being created. The non-zero value indicates the DH group number to use for the key exchange process used to achieve forward secrecy. The list is ordered following from the higher priority to lower priority. The first node of the list will be the algorithm with higher priority. |
-| lifetime_soft | [IpsecSaLifetimeSoft](#opi_api-security-v2alpha1-IpsecSaLifetimeSoft) |  | Soft IPsec SA lifetime. After the lifetime, the lifetime action is performed. |
-| lifetime_hard | [IpsecSaLifetimeHard](#opi_api-security-v2alpha1-IpsecSaLifetimeHard) |  | Hard IPsec SA lifetime. The action will be used to terminate the IPsec SA. |
+| lifetime_soft | [IpsecSaLifetimeSoft](#opi_api-security-v1alpha1-IpsecSaLifetimeSoft) |  | Soft IPsec SA lifetime. After the lifetime, the lifetime action is performed. |
+| lifetime_hard | [IpsecSaLifetimeHard](#opi_api-security-v1alpha1-IpsecSaLifetimeHard) |  | Hard IPsec SA lifetime. The action will be used to terminate the IPsec SA. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-CreateIkeConnectionRequest"></a>
+<a name="opi_api-security-v1alpha1-CreateIkeConnectionRequest"></a>
 
 ### CreateIkeConnectionRequest
 Create an IKE Connection
@@ -183,14 +183,14 @@ Create an IKE Connection
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ike_connection_id | [string](#string) |  | The ID to use for the IKE Connection. |
-| ike_connection | [IkeConnection](#opi_api-security-v2alpha1-IkeConnection) |  | The IKE Connection to create. |
+| ike_connection | [IkeConnection](#opi_api-security-v1alpha1-IkeConnection) |  | The IKE Connection to create. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-CreateIkePeerRequest"></a>
+<a name="opi_api-security-v1alpha1-CreateIkePeerRequest"></a>
 
 ### CreateIkePeerRequest
 Create an IKE Peer
@@ -199,14 +199,14 @@ Create an IKE Peer
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ike_peer_id | [string](#string) |  | The ID to use for the IKE Peer. |
-| ike_peer | [IkePeer](#opi_api-security-v2alpha1-IkePeer) |  | The IKE Peer to create. |
+| ike_peer | [IkePeer](#opi_api-security-v1alpha1-IkePeer) |  | The IKE Peer to create. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-CreateIpsecPolicyRequest"></a>
+<a name="opi_api-security-v1alpha1-CreateIpsecPolicyRequest"></a>
 
 ### CreateIpsecPolicyRequest
 Create an IPsec Policy
@@ -215,14 +215,14 @@ Create an IPsec Policy
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ipsec_policy_id | [string](#string) |  | The ID to use for the IPsec Policy. |
-| ipsec_policy | [IpsecPolicy](#opi_api-security-v2alpha1-IpsecPolicy) |  | The IPsec Policy to create. |
+| ipsec_policy | [IpsecPolicy](#opi_api-security-v1alpha1-IpsecPolicy) |  | The IPsec Policy to create. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-CreateIpsecSaRequest"></a>
+<a name="opi_api-security-v1alpha1-CreateIpsecSaRequest"></a>
 
 ### CreateIpsecSaRequest
 Create an IPsec SA
@@ -231,14 +231,14 @@ Create an IPsec SA
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ipsec_sa_id | [string](#string) |  | The ID to use for the IPsec SA. |
-| ipsec_sa | [IpsecSa](#opi_api-security-v2alpha1-IpsecSa) |  | The IPsec SA to create. |
+| ipsec_sa | [IpsecSa](#opi_api-security-v1alpha1-IpsecSa) |  | The IPsec SA to create. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-DSAuth"></a>
+<a name="opi_api-security-v1alpha1-DSAuth"></a>
 
 ### DSAuth
 Digital Signature Authentication
@@ -246,18 +246,18 @@ Digital Signature Authentication
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| algorithm | [DSAlgorithm](#opi_api-security-v2alpha1-DSAlgorithm) |  | The digital signature algorithm |
+| algorithm | [DSAlgorithm](#opi_api-security-v1alpha1-DSAlgorithm) |  | The digital signature algorithm |
 | raw_public_key | [string](#string) |  | Raw public key |
 | cert | [string](#string) |  | Certificate |
 | private_key | [string](#string) |  | Private key |
-| ca_certs | [CaCerts](#opi_api-security-v2alpha1-CaCerts) |  | Certificates |
+| ca_certs | [CaCerts](#opi_api-security-v1alpha1-CaCerts) |  | Certificates |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-DeleteIkeConnectionRequest"></a>
+<a name="opi_api-security-v1alpha1-DeleteIkeConnectionRequest"></a>
 
 ### DeleteIkeConnectionRequest
 Delete an IKE Connection
@@ -272,7 +272,7 @@ Delete an IKE Connection
 
 
 
-<a name="opi_api-security-v2alpha1-DeleteIkePeerRequest"></a>
+<a name="opi_api-security-v1alpha1-DeleteIkePeerRequest"></a>
 
 ### DeleteIkePeerRequest
 Delete an IKE Peer
@@ -287,7 +287,7 @@ Delete an IKE Peer
 
 
 
-<a name="opi_api-security-v2alpha1-DeleteIpsecPolicyRequest"></a>
+<a name="opi_api-security-v1alpha1-DeleteIpsecPolicyRequest"></a>
 
 ### DeleteIpsecPolicyRequest
 Delete an IPsec Policy
@@ -302,7 +302,7 @@ Delete an IPsec Policy
 
 
 
-<a name="opi_api-security-v2alpha1-DeleteIpsecSaRequest"></a>
+<a name="opi_api-security-v1alpha1-DeleteIpsecSaRequest"></a>
 
 ### DeleteIpsecSaRequest
 Delete an IPsec SA
@@ -317,7 +317,7 @@ Delete an IPsec SA
 
 
 
-<a name="opi_api-security-v2alpha1-DscpMapping"></a>
+<a name="opi_api-security-v1alpha1-DscpMapping"></a>
 
 ### DscpMapping
 Mapping from the inner DSCP value to the outer DSCP value.
@@ -334,7 +334,7 @@ Mapping from the inner DSCP value to the outer DSCP value.
 
 
 
-<a name="opi_api-security-v2alpha1-Encap"></a>
+<a name="opi_api-security-v1alpha1-Encap"></a>
 
 ### Encap
 Defines the type of encapsulation in case NAT traversal is required and
@@ -343,7 +343,7 @@ includes port information.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| espencap | [EspEncap](#opi_api-security-v2alpha1-EspEncap) |  | Type of encapsulation to use. |
+| espencap | [EspEncap](#opi_api-security-v1alpha1-EspEncap) |  | Type of encapsulation to use. |
 | sport | [int32](#int32) |  | Encapsulation source port. Default = 4500 |
 | dport | [int32](#int32) |  | Encapsulation destination port. Default = 4500 |
 
@@ -352,7 +352,7 @@ includes port information.
 
 
 
-<a name="opi_api-security-v2alpha1-EspAlgorithms"></a>
+<a name="opi_api-security-v1alpha1-EspAlgorithms"></a>
 
 ### EspAlgorithms
 Configuration of ESP parameters and algorithms
@@ -360,16 +360,16 @@ Configuration of ESP parameters and algorithms
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| integrity | [IntegAlgorithm](#opi_api-security-v2alpha1-IntegAlgorithm) | repeated | Configuration of ESP authentication based on the specified integrity algorithm. With AEAD encryption algorithms, the integrity node is not used. |
-| encryption | [EncAlgorithm](#opi_api-security-v2alpha1-EncAlgorithm) | repeated | Encryption of AEAD algorithm for the IPsec SAs. This list is ordered from higher priority to lower priority. The first node of the list will be the algorithm with the higher priority. If the list is empty then AES-256-GCM will be applied. |
-| tfc_pad | [bool](#bool) | optional | If Traffic Flow Confidentiality (TFC) padding for ESP encryption can be used (true) or not (false). |
+| integrity | [IntegAlgorithm](#opi_api-security-v1alpha1-IntegAlgorithm) | repeated | Configuration of ESP authentication based on the specified integrity algorithm. With AEAD encryption algorithms, the integrity node is not used. |
+| encryption | [EncAlgorithm](#opi_api-security-v1alpha1-EncAlgorithm) | repeated | Encryption of AEAD algorithm for the IPsec SAs. This list is ordered from higher priority to lower priority. The first node of the list will be the algorithm with the higher priority. If the list is empty then AES-256-GCM will be applied. |
+| tfc_pad | [bool](#bool) |  | If Traffic Flow Confidentiality (TFC) padding for ESP encryption can be used (true) or not (false). |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-GetIkeConnectionRequest"></a>
+<a name="opi_api-security-v1alpha1-GetIkeConnectionRequest"></a>
 
 ### GetIkeConnectionRequest
 Get an IKE Connection
@@ -384,7 +384,7 @@ Get an IKE Connection
 
 
 
-<a name="opi_api-security-v2alpha1-GetIkePeerRequest"></a>
+<a name="opi_api-security-v1alpha1-GetIkePeerRequest"></a>
 
 ### GetIkePeerRequest
 Get an IKE Peer
@@ -399,7 +399,7 @@ Get an IKE Peer
 
 
 
-<a name="opi_api-security-v2alpha1-GetIpsecPolicyRequest"></a>
+<a name="opi_api-security-v1alpha1-GetIpsecPolicyRequest"></a>
 
 ### GetIpsecPolicyRequest
 Get an IPsec Policy
@@ -414,7 +414,7 @@ Get an IPsec Policy
 
 
 
-<a name="opi_api-security-v2alpha1-GetIpsecSaRequest"></a>
+<a name="opi_api-security-v1alpha1-GetIpsecSaRequest"></a>
 
 ### GetIpsecSaRequest
 Get an IPsec SA
@@ -429,7 +429,7 @@ Get an IPsec SA
 
 
 
-<a name="opi_api-security-v2alpha1-IkeConnection"></a>
+<a name="opi_api-security-v1alpha1-IkeConnection"></a>
 
 ### IkeConnection
 An IKE Connection specification
@@ -438,30 +438,30 @@ An IKE Connection specification
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Unique name to identify the connection. |
-| autostartup | [AutoStartupMode](#opi_api-security-v2alpha1-AutoStartupMode) |  | IKE/IPsec connection startup behavior. Default: AUTO_STARTUP_MODE_ADD |
-| version | [IkeVersion](#opi_api-security-v2alpha1-IkeVersion) |  | IKE version. Only version 2 is supported. |
-| fragmentation | [IkeFragmentation](#opi_api-security-v2alpha1-IkeFragmentation) |  | IKE fragmentation |
-| ike_sa_lifetime_soft | [IkeSaLifetimeSoft](#opi_api-security-v2alpha1-IkeSaLifetimeSoft) |  | IKE SA soft lifetime |
-| ike_sa_lifetime_hard | [IkeSaLifetimeHard](#opi_api-security-v2alpha1-IkeSaLifetimeHard) |  | IKE SA hard lifetime |
-| encryption_alg | [EncAlgorithm](#opi_api-security-v2alpha1-EncAlgorithm) | repeated | Encryption algorithms |
-| integrity_alg | [IntegAlgorithm](#opi_api-security-v2alpha1-IntegAlgorithm) | repeated | Integrity algorithms |
-| prf | [PRF](#opi_api-security-v2alpha1-PRF) | repeated | Pseudo Random Function (PRF) algorithms |
-| dhgroups | [DHGroups](#opi_api-security-v2alpha1-DHGroups) | repeated | Diffie Hellman groups |
+| autostartup | [AutoStartupMode](#opi_api-security-v1alpha1-AutoStartupMode) |  | IKE/IPsec connection startup behavior. Default: AUTO_STARTUP_MODE_ADD |
+| version | [IkeVersion](#opi_api-security-v1alpha1-IkeVersion) |  | IKE version. Only version 2 is supported. |
+| fragmentation | [IkeFragmentation](#opi_api-security-v1alpha1-IkeFragmentation) |  | IKE fragmentation |
+| ike_sa_lifetime_soft | [IkeSaLifetimeSoft](#opi_api-security-v1alpha1-IkeSaLifetimeSoft) |  | IKE SA soft lifetime |
+| ike_sa_lifetime_hard | [IkeSaLifetimeHard](#opi_api-security-v1alpha1-IkeSaLifetimeHard) |  | IKE SA hard lifetime |
+| encryption_alg | [EncAlgorithm](#opi_api-security-v1alpha1-EncAlgorithm) | repeated | Encryption algorithms |
+| integrity_alg | [IntegAlgorithm](#opi_api-security-v1alpha1-IntegAlgorithm) | repeated | Integrity algorithms |
+| prf | [PRF](#opi_api-security-v1alpha1-PRF) | repeated | Pseudo Random Function (PRF) algorithms |
+| dhgroups | [DHGroups](#opi_api-security-v1alpha1-DHGroups) | repeated | Diffie Hellman groups |
 | local | [string](#string) |  | Local peer name. |
 | remote | [string](#string) |  | Remote peer name. |
-| encap | [Encap](#opi_api-security-v2alpha1-Encap) | optional | Configuration information about the encapsulation that should be used when NAT traversal is required. No encapsulation is used if this field is not specified. |
-| local_port | [int32](#int32) | optional | Local UDP port for IKE communication. Defaults to 500 if not specified. |
-| remote_port | [int32](#int32) | optional | Remote UDP port for IKE communication. Defaults to 500 if not specified. |
+| encap | [Encap](#opi_api-security-v1alpha1-Encap) |  | Configuration information about the encapsulation that should be used when NAT traversal is required. No encapsulation is used if this field is not specified. |
+| local_port | [int32](#int32) |  | Local UDP port for IKE communication. Defaults to 500 if not specified. |
+| remote_port | [int32](#int32) |  | Remote UDP port for IKE communication. Defaults to 500 if not specified. |
 | if_id | [string](#string) |  | Interface that this connection is associated with. Used for route based VPNs. |
 | policies | [string](#string) | repeated | IPsec policies that apply to the connection |
-| state | [IkeConnectionState](#opi_api-security-v2alpha1-IkeConnectionState) |  | Connection state / status |
+| state | [IkeConnectionState](#opi_api-security-v1alpha1-IkeConnectionState) |  | Connection state / status |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IkeConnectionState"></a>
+<a name="opi_api-security-v1alpha1-IkeConnectionState"></a>
 
 ### IkeConnectionState
 IKE state data for an IKE connection
@@ -474,7 +474,7 @@ IKE state data for an IKE connection
 | responder_ike_sa | [int32](#int32) |  | Responder&#39;s IKE SA SPI |
 | nat_local | [bool](#bool) |  | True if the local endpoint is behind a NAT. |
 | nat_remote | [bool](#bool) |  | True if the remote endpoint is behind a NAT. |
-| encap | [Encap](#opi_api-security-v2alpha1-Encap) |  | Provides information about the encapsulation that IKE is using. |
+| encap | [Encap](#opi_api-security-v1alpha1-Encap) |  | Provides information about the encapsulation that IKE is using. |
 | established | [int64](#int64) |  | Seconds since this IKE SA has been established. |
 | current_rekey_interval | [google.protobuf.Duration](#google-protobuf-Duration) |  | Seconds before IKE SA is rekeyed |
 | current_reauth_interval | [google.protobuf.Duration](#google-protobuf-Duration) |  | Seconds before IKE SA is re-authenticated |
@@ -484,7 +484,7 @@ IKE state data for an IKE connection
 
 
 
-<a name="opi_api-security-v2alpha1-IkeFragmentation"></a>
+<a name="opi_api-security-v1alpha1-IkeFragmentation"></a>
 
 ### IkeFragmentation
 IKEv2 Fragmentation, as per RFC 7383. If IKEv2 fragmentation is enabled, it
@@ -494,14 +494,14 @@ is possible to specify the MTU.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | enabled | [bool](#bool) |  | Enable/Disable IKEv2 fragmentation. |
-| mtu | [int32](#int32) | optional | When fragmentation is enabled, the MTU that IKEv2 can use for IKEv2 fragmentation. |
+| mtu | [int32](#int32) |  | When fragmentation is enabled, the MTU that IKEv2 can use for IKEv2 fragmentation. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IkePeer"></a>
+<a name="opi_api-security-v1alpha1-IkePeer"></a>
 
 ### IkePeer
 IKE Peer
@@ -510,16 +510,16 @@ IKE Peer
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Name to uniquely identify the peer. |
-| ip_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) | optional | IPv4 or IPv6 address of the peer. |
-| fqdn | [string](#string) | optional | FQDN of the peer. |
-| peer_auth | [IkePeerAuthentication](#opi_api-security-v2alpha1-IkePeerAuthentication) | optional | IKE Peer Authentication |
+| ip_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | IPv4 or IPv6 address of the peer. |
+| fqdn | [string](#string) |  | FQDN of the peer. |
+| peer_auth | [IkePeerAuthentication](#opi_api-security-v1alpha1-IkePeerAuthentication) |  | IKE Peer Authentication |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IkePeerAuthentication"></a>
+<a name="opi_api-security-v1alpha1-IkePeerAuthentication"></a>
 
 ### IkePeerAuthentication
 IKE Peer Authentication
@@ -527,17 +527,17 @@ IKE Peer Authentication
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| auth_method | [AuthType](#opi_api-security-v2alpha1-AuthType) |  | Authentication method |
-| eap_type | [int32](#int32) | optional | EAP method type specified with a value extracted from the IANA registry. This information provides the particular EAP method to be used. Depending on the EAP method, pre-shared keys or certificates may be used. |
-| psk | [string](#string) | optional | Pre-shared secret value. This value MUST be set of the EAP method uses a pre-shared key or pre-shared authentication has been chosen. |
-| digital_signature | [DSAuth](#opi_api-security-v2alpha1-DSAuth) | optional | Digital signature |
+| auth_method | [AuthType](#opi_api-security-v1alpha1-AuthType) |  | Authentication method |
+| eap_type | [int32](#int32) |  | EAP method type specified with a value extracted from the IANA registry. This information provides the particular EAP method to be used. Depending on the EAP method, pre-shared keys or certificates may be used. |
+| psk | [string](#string) |  | Pre-shared secret value. This value MUST be set of the EAP method uses a pre-shared key or pre-shared authentication has been chosen. |
+| digital_signature | [DSAuth](#opi_api-security-v1alpha1-DSAuth) |  | Digital signature |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IkeSaLifetimeHard"></a>
+<a name="opi_api-security-v1alpha1-IkeSaLifetimeHard"></a>
 
 ### IkeSaLifetimeHard
 IKE SA hard lifetime. When this time is reached, the IKE SA is removed.
@@ -552,7 +552,7 @@ IKE SA hard lifetime. When this time is reached, the IKE SA is removed.
 
 
 
-<a name="opi_api-security-v2alpha1-IkeSaLifetimeSoft"></a>
+<a name="opi_api-security-v1alpha1-IkeSaLifetimeSoft"></a>
 
 ### IkeSaLifetimeSoft
 IKE SA soft lifetime. Two lifetime values can be configured, either rekey
@@ -571,7 +571,7 @@ SA re-authentication starts.
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecPolicy"></a>
+<a name="opi_api-security-v1alpha1-IpsecPolicy"></a>
 
 ### IpsecPolicy
 Holds configuration information for an IPsec SPD entry.
@@ -581,14 +581,14 @@ Holds configuration information for an IPsec SPD entry.
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Unique name to identify the IPsec policy in the SPD. |
 | reqid | [int64](#int64) |  | This value allows linking this IPsec policy with the IPsec SAs with the same reqid. A value of 0 (the default) means that the reqid is unused. |
-| config | [IpsecPolicyConfig](#opi_api-security-v2alpha1-IpsecPolicyConfig) |  | IPsec Policy configuration |
+| config | [IpsecPolicyConfig](#opi_api-security-v1alpha1-IpsecPolicyConfig) |  | IPsec Policy configuration |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecPolicyConfig"></a>
+<a name="opi_api-security-v1alpha1-IpsecPolicyConfig"></a>
 
 ### IpsecPolicyConfig
 Holds configuration information for an IPsec SPD entry.
@@ -596,16 +596,16 @@ Holds configuration information for an IPsec SPD entry.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| arw_size | [int32](#int32) | optional | Anti-Replay-Window size. If not set, the default value is 64, following the recommendation in RFC4303. |
-| traffic_selector | [TrafficSelector](#opi_api-security-v2alpha1-TrafficSelector) |  | Packets are selected for processing actions based on Traffic Selector values, which refer to IP and inner protocol header information. |
-| processing | [SpdProcessingInfo](#opi_api-security-v2alpha1-SpdProcessingInfo) |  | SPD processing to be performed on packets that match the traffic selector. |
+| arw_size | [int32](#int32) |  | Anti-Replay-Window size. If not set, the default value is 64, following the recommendation in RFC4303. |
+| traffic_selector | [TrafficSelector](#opi_api-security-v1alpha1-TrafficSelector) |  | Packets are selected for processing actions based on Traffic Selector values, which refer to IP and inner protocol header information. |
+| processing | [SpdProcessingInfo](#opi_api-security-v1alpha1-SpdProcessingInfo) |  | SPD processing to be performed on packets that match the traffic selector. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecSa"></a>
+<a name="opi_api-security-v1alpha1-IpsecSa"></a>
 
 ### IpsecSa
 An IPsec Security Association (SA)
@@ -615,15 +615,15 @@ An IPsec Security Association (SA)
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Unique name in the SAD to identify this SA |
 | reqid | [int64](#int64) |  | This value allows linking this IPsec SA with an IPsec policy with the same reqid |
-| config | [IpsecSaConfig](#opi_api-security-v2alpha1-IpsecSaConfig) |  | IPsec SA configuration |
-| state | [IpsecSaState](#opi_api-security-v2alpha1-IpsecSaState) |  | IPsec SA state |
+| config | [IpsecSaConfig](#opi_api-security-v1alpha1-IpsecSaConfig) |  | IPsec SA configuration |
+| state | [IpsecSaState](#opi_api-security-v1alpha1-IpsecSaState) |  | IPsec SA state |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecSaConfig"></a>
+<a name="opi_api-security-v1alpha1-IpsecSaConfig"></a>
 
 ### IpsecSaConfig
 IPsec Security Association Configuration
@@ -631,24 +631,24 @@ IPsec Security Association Configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| spi | [int32](#int32) |  | IPsec SA Security Parameter Index (SPI) |
+| spi | [uint32](#uint32) |  | IPsec SA Security Parameter Index (SPI) (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: The SPI cannot be negative. --) |
 | esn | [bool](#bool) |  | True if this IPsec SA is using extended sequence numbers. If true, the 64-bit extended sequence number counter is used. If false, the normal 32-bit sequence number counter is used. |
-| arw_size | [int32](#int32) | optional | Anti-Replay-Window size. If not set, the default value is 64, following the recommendation in RFC4303. |
-| traffic_selector | [TrafficSelector](#opi_api-security-v2alpha1-TrafficSelector) |  | Packets are selected for processing actions based on Traffic Selector values, which refer to IP and inner protocol header information. |
-| protocol | [IpsecProtocol](#opi_api-security-v2alpha1-IpsecProtocol) |  | Security protocol of the IPsec SA. Only ESP is supported. |
-| mode | [IpsecMode](#opi_api-security-v2alpha1-IpsecMode) |  | IPsec SA has to be processed in transport or tunnel mode. If not specified, transport mode is used. |
-| esp_algorithms | [EspAlgorithms](#opi_api-security-v2alpha1-EspAlgorithms) |  | IPsec ESP algorithm configuration |
-| tunnel | [Tunnel](#opi_api-security-v2alpha1-Tunnel) | optional | Tunnel configuration. Only relevant when mode = Tunnel. |
-| lifetime_soft | [IpsecSaLifetimeSoft](#opi_api-security-v2alpha1-IpsecSaLifetimeSoft) |  | Soft IPsec SA lifetime. After the lifetime, the lifetime action is performed. |
-| lifetime_hard | [IpsecSaLifetimeHard](#opi_api-security-v2alpha1-IpsecSaLifetimeHard) |  | Hard IPsec SA lifetime. The action will be used to terminate the IPsec SA. |
-| encap | [Encap](#opi_api-security-v2alpha1-Encap) |  | Provides information about the encapsulation that the IPsec SA is using. |
+| arw_size | [int32](#int32) |  | Anti-Replay-Window size. If not set, the default value is 64, following the recommendation in RFC4303. |
+| traffic_selector | [TrafficSelector](#opi_api-security-v1alpha1-TrafficSelector) |  | Packets are selected for processing actions based on Traffic Selector values, which refer to IP and inner protocol header information. |
+| protocol | [IpsecProtocol](#opi_api-security-v1alpha1-IpsecProtocol) |  | Security protocol of the IPsec SA. Only ESP is supported. |
+| mode | [IpsecMode](#opi_api-security-v1alpha1-IpsecMode) |  | IPsec SA has to be processed in transport or tunnel mode. If not specified, transport mode is used. |
+| esp_algorithms | [EspAlgorithms](#opi_api-security-v1alpha1-EspAlgorithms) |  | IPsec ESP algorithm configuration |
+| tunnel | [Tunnel](#opi_api-security-v1alpha1-Tunnel) |  | Tunnel configuration. Only relevant when mode = Tunnel. |
+| lifetime_soft | [IpsecSaLifetimeSoft](#opi_api-security-v1alpha1-IpsecSaLifetimeSoft) |  | Soft IPsec SA lifetime. After the lifetime, the lifetime action is performed. |
+| lifetime_hard | [IpsecSaLifetimeHard](#opi_api-security-v1alpha1-IpsecSaLifetimeHard) |  | Hard IPsec SA lifetime. The action will be used to terminate the IPsec SA. |
+| encap | [Encap](#opi_api-security-v1alpha1-Encap) |  | Provides information about the encapsulation that the IPsec SA is using. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecSaLifetimeHard"></a>
+<a name="opi_api-security-v1alpha1-IpsecSaLifetimeHard"></a>
 
 ### IpsecSaLifetimeHard
 IPsec SA hard lifetime. Specifies a lifetime after which the IPsec SA should
@@ -657,14 +657,14 @@ be terminated.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| lifetime | [Lifetime](#opi_api-security-v2alpha1-Lifetime) |  | The lifetime of the IPsec SA. |
+| lifetime | [Lifetime](#opi_api-security-v1alpha1-Lifetime) |  | The lifetime of the IPsec SA. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecSaLifetimeSoft"></a>
+<a name="opi_api-security-v1alpha1-IpsecSaLifetimeSoft"></a>
 
 ### IpsecSaLifetimeSoft
 IPsec SA soft lifetime. Specifies a lifetime and an action to be performed
@@ -673,15 +673,15 @@ once the lifetime expires.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| lifetime | [Lifetime](#opi_api-security-v2alpha1-Lifetime) |  | The lifetime of the IPsec SA. |
-| action | [LifetimeAction](#opi_api-security-v2alpha1-LifetimeAction) |  | The action to be performed once the lifetime expires. |
+| lifetime | [Lifetime](#opi_api-security-v1alpha1-Lifetime) |  | The lifetime of the IPsec SA. |
+| action | [LifetimeAction](#opi_api-security-v1alpha1-LifetimeAction) |  | The action to be performed once the lifetime expires. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecSaState"></a>
+<a name="opi_api-security-v1alpha1-IpsecSaState"></a>
 
 ### IpsecSaState
 IPsec Security Association State
@@ -689,15 +689,15 @@ IPsec Security Association State
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| lifetime | [Lifetime](#opi_api-security-v2alpha1-Lifetime) |  | SA Current Lifetime |
-| replay_stats | [AntiReplayStats](#opi_api-security-v2alpha1-AntiReplayStats) |  | State about the anti-replay window |
+| lifetime | [Lifetime](#opi_api-security-v1alpha1-Lifetime) |  | SA Current Lifetime |
+| replay_stats | [AntiReplayStats](#opi_api-security-v1alpha1-AntiReplayStats) |  | State about the anti-replay window |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecSaTemplate"></a>
+<a name="opi_api-security-v1alpha1-IpsecSaTemplate"></a>
 
 ### IpsecSaTemplate
 IPsec SA configuration template
@@ -706,17 +706,17 @@ IPsec SA configuration template
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | esn | [bool](#bool) |  | True if this IPsec SA is using extended sequence numbers. If true, the 64-bit extended sequence number counter is used. If false, the normal 32-bit sequence number counter is used. |
-| mode | [IpsecMode](#opi_api-security-v2alpha1-IpsecMode) |  | IPsec SA has to be processed in transport or tunnel mode. If not specified, transport mode is used. |
-| protocol | [IpsecProtocol](#opi_api-security-v2alpha1-IpsecProtocol) |  | Security protocol of the IPsec SA. Only ESP is supported. |
-| esp_algorithms | [EspAlgorithms](#opi_api-security-v2alpha1-EspAlgorithms) |  | IPsec ESP algorithm configuration |
-| tunnel | [Tunnel](#opi_api-security-v2alpha1-Tunnel) | optional | Tunnel configuration. Only relevant when mode = Tunnel. |
+| mode | [IpsecMode](#opi_api-security-v1alpha1-IpsecMode) |  | IPsec SA has to be processed in transport or tunnel mode. If not specified, transport mode is used. |
+| protocol | [IpsecProtocol](#opi_api-security-v1alpha1-IpsecProtocol) |  | Security protocol of the IPsec SA. Only ESP is supported. |
+| esp_algorithms | [EspAlgorithms](#opi_api-security-v1alpha1-EspAlgorithms) |  | IPsec ESP algorithm configuration |
+| tunnel | [Tunnel](#opi_api-security-v1alpha1-Tunnel) |  | Tunnel configuration. Only relevant when mode = Tunnel. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-Lifetime"></a>
+<a name="opi_api-security-v1alpha1-Lifetime"></a>
 
 ### Lifetime
 Lifetime of an IPsec SA. The lifetime can be expressed in terms of time,
@@ -735,7 +735,7 @@ bytes, packets, or idle time.
 
 
 
-<a name="opi_api-security-v2alpha1-ListIkeConnectionsRequest"></a>
+<a name="opi_api-security-v1alpha1-ListIkeConnectionsRequest"></a>
 
 ### ListIkeConnectionsRequest
 List IKE Connections
@@ -751,7 +751,7 @@ List IKE Connections
 
 
 
-<a name="opi_api-security-v2alpha1-ListIkeConnectionsResponse"></a>
+<a name="opi_api-security-v1alpha1-ListIkeConnectionsResponse"></a>
 
 ### ListIkeConnectionsResponse
 Response to a ListIkeConnectionsRequest
@@ -759,7 +759,7 @@ Response to a ListIkeConnectionsRequest
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ike_connections | [IkeConnection](#opi_api-security-v2alpha1-IkeConnection) | repeated | List of IKE connections |
+| ike_connections | [IkeConnection](#opi_api-security-v1alpha1-IkeConnection) | repeated | List of IKE connections |
 | next_page_token | [string](#string) |  | A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are not subsequent pages. |
 
 
@@ -767,7 +767,7 @@ Response to a ListIkeConnectionsRequest
 
 
 
-<a name="opi_api-security-v2alpha1-ListIkePeersRequest"></a>
+<a name="opi_api-security-v1alpha1-ListIkePeersRequest"></a>
 
 ### ListIkePeersRequest
 List IKE Peers
@@ -783,7 +783,7 @@ List IKE Peers
 
 
 
-<a name="opi_api-security-v2alpha1-ListIkePeersResponse"></a>
+<a name="opi_api-security-v1alpha1-ListIkePeersResponse"></a>
 
 ### ListIkePeersResponse
 Response to a ListIkePeersRequest
@@ -791,7 +791,7 @@ Response to a ListIkePeersRequest
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ike_peers | [IkePeer](#opi_api-security-v2alpha1-IkePeer) | repeated | List of IKE peers |
+| ike_peers | [IkePeer](#opi_api-security-v1alpha1-IkePeer) | repeated | List of IKE peers |
 | next_page_token | [string](#string) |  | A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are not subsequent pages. |
 
 
@@ -799,7 +799,7 @@ Response to a ListIkePeersRequest
 
 
 
-<a name="opi_api-security-v2alpha1-ListIpsecPoliciesRequest"></a>
+<a name="opi_api-security-v1alpha1-ListIpsecPoliciesRequest"></a>
 
 ### ListIpsecPoliciesRequest
 List IPsec Policies
@@ -815,7 +815,7 @@ List IPsec Policies
 
 
 
-<a name="opi_api-security-v2alpha1-ListIpsecPoliciesResponse"></a>
+<a name="opi_api-security-v1alpha1-ListIpsecPoliciesResponse"></a>
 
 ### ListIpsecPoliciesResponse
 Response to a ListIpsecPoliciesRequest
@@ -823,7 +823,7 @@ Response to a ListIpsecPoliciesRequest
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ipsec_policies | [IpsecPolicy](#opi_api-security-v2alpha1-IpsecPolicy) | repeated | List of IPsec policies |
+| ipsec_policies | [IpsecPolicy](#opi_api-security-v1alpha1-IpsecPolicy) | repeated | List of IPsec policies |
 | next_page_token | [string](#string) |  | A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are not subsequent pages. |
 
 
@@ -831,7 +831,7 @@ Response to a ListIpsecPoliciesRequest
 
 
 
-<a name="opi_api-security-v2alpha1-ListIpsecSasRequest"></a>
+<a name="opi_api-security-v1alpha1-ListIpsecSasRequest"></a>
 
 ### ListIpsecSasRequest
 List IPsec SAs
@@ -847,7 +847,7 @@ List IPsec SAs
 
 
 
-<a name="opi_api-security-v2alpha1-ListIpsecSasResponse"></a>
+<a name="opi_api-security-v1alpha1-ListIpsecSasResponse"></a>
 
 ### ListIpsecSasResponse
 Response to a ListIpsecSasRequest
@@ -855,7 +855,7 @@ Response to a ListIpsecSasRequest
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ipsec_sas | [IpsecSa](#opi_api-security-v2alpha1-IpsecSa) | repeated | List of IPsec SAs |
+| ipsec_sas | [IpsecSa](#opi_api-security-v1alpha1-IpsecSa) | repeated | List of IPsec SAs |
 | next_page_token | [string](#string) |  | A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are not subsequent pages. |
 
 
@@ -863,7 +863,7 @@ Response to a ListIpsecSasRequest
 
 
 
-<a name="opi_api-security-v2alpha1-NumberIkeSAs"></a>
+<a name="opi_api-security-v1alpha1-NumberIkeSAs"></a>
 
 ### NumberIkeSAs
 General information about the IKE SAs. In particular, it provides the number
@@ -880,7 +880,7 @@ of IKE SAs.
 
 
 
-<a name="opi_api-security-v2alpha1-PortRange"></a>
+<a name="opi_api-security-v1alpha1-PortRange"></a>
 
 ### PortRange
 A port range, such as that expressed in RFC 4301, for example 1500 (Start
@@ -898,7 +898,7 @@ Selector. To express a single prot, set the same value as start and end.
 
 
 
-<a name="opi_api-security-v2alpha1-SpdProcessingInfo"></a>
+<a name="opi_api-security-v1alpha1-SpdProcessingInfo"></a>
 
 ### SpdProcessingInfo
 SPD processing. If the required processing action is protect, it contains the
@@ -907,15 +907,15 @@ required information to process the packet.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| action | [IpsecSpdAction](#opi_api-security-v2alpha1-IpsecSpdAction) |  | Action to be performed on the packet. |
-| sa_config | [IpsecSaTemplate](#opi_api-security-v2alpha1-IpsecSaTemplate) | optional | IPsec SA configuration included in the SPD entry. |
+| action | [IpsecSpdAction](#opi_api-security-v1alpha1-IpsecSpdAction) |  | Action to be performed on the packet. |
+| sa_config | [IpsecSaTemplate](#opi_api-security-v1alpha1-IpsecSaTemplate) |  | IPsec SA configuration included in the SPD entry. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-StatsIkeConnectionsRequest"></a>
+<a name="opi_api-security-v1alpha1-StatsIkeConnectionsRequest"></a>
 
 ### StatsIkeConnectionsRequest
 Request to get IKE Connection statistics
@@ -925,7 +925,7 @@ Request to get IKE Connection statistics
 
 
 
-<a name="opi_api-security-v2alpha1-StatsIkeConnectionsResponse"></a>
+<a name="opi_api-security-v1alpha1-StatsIkeConnectionsResponse"></a>
 
 ### StatsIkeConnectionsResponse
 Response to a StatsIkeConnectionsRequest
@@ -933,14 +933,14 @@ Response to a StatsIkeConnectionsRequest
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| number_ike_sas | [NumberIkeSAs](#opi_api-security-v2alpha1-NumberIkeSAs) |  | Number of IKE SAs |
+| number_ike_sas | [NumberIkeSAs](#opi_api-security-v1alpha1-NumberIkeSAs) |  | Number of IKE SAs |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-TrafficSelector"></a>
+<a name="opi_api-security-v1alpha1-TrafficSelector"></a>
 
 ### TrafficSelector
 A Traffic Selector used in IPsec policies and IPsec SAs.
@@ -951,15 +951,15 @@ A Traffic Selector used in IPsec policies and IPsec SAs.
 | local_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | Local IP address prefix. |
 | remote_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | Remote IP address prefix. |
 | inner_protocol | [int32](#int32) |  | Inner protocol that is going to be protected with IPsec. If no protocol is specified, all inner protocols will be protected. Protocols are encoded using the IP protocol number. |
-| local_ports | [PortRange](#opi_api-security-v2alpha1-PortRange) | repeated | List of local ports. When the inner protocol is ICMP, this 16-bit value represents code and type. If this list is not defined, it is assumed that start and end are 0 by default (any port). |
-| remote_ports | [PortRange](#opi_api-security-v2alpha1-PortRange) | repeated | List of remote ports. When the inner protocol is ICMP, this 16-bit value represents code and type. If this list is not defined, it is assumed that start and end are 0 by default (any port). |
+| local_ports | [PortRange](#opi_api-security-v1alpha1-PortRange) | repeated | List of local ports. When the inner protocol is ICMP, this 16-bit value represents code and type. If this list is not defined, it is assumed that start and end are 0 by default (any port). |
+| remote_ports | [PortRange](#opi_api-security-v1alpha1-PortRange) | repeated | List of remote ports. When the inner protocol is ICMP, this 16-bit value represents code and type. If this list is not defined, it is assumed that start and end are 0 by default (any port). |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-Tunnel"></a>
+<a name="opi_api-security-v1alpha1-Tunnel"></a>
 
 ### Tunnel
 The parameters required to define the IP tunnel endpoints when IPsec SA
@@ -971,16 +971,16 @@ address and the remote IP address.
 | ----- | ---- | ----- | ----------- |
 | local | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | Local IP address tunnel endpoint |
 | remote | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | Remote IP address tunnel endpoint |
-| df_bit | [DfBitAction](#opi_api-security-v2alpha1-DfBitAction) |  | Allow configuring the DF bit when encapsulating tunnel mode IPsec traffic. RFC 4301 describes three options to handle the DF bit during tunnel encapsulation: clear, set and copy from the inner IP header. This must be ignored or has no meaning when the local/remote IP addresses are IPv6 addresses. |
+| df_bit | [DfBitAction](#opi_api-security-v1alpha1-DfBitAction) |  | Allow configuring the DF bit when encapsulating tunnel mode IPsec traffic. RFC 4301 describes three options to handle the DF bit during tunnel encapsulation: clear, set and copy from the inner IP header. This must be ignored or has no meaning when the local/remote IP addresses are IPv6 addresses. |
 | bypass_dscp | [bool](#bool) |  | If true, copy the DSCP value from the inner header to the outer header. If false, map the DSCP values from an inner header to values in an outer header following the dscp_mapping. |
-| dscp_mapping | [DscpMapping](#opi_api-security-v2alpha1-DscpMapping) | repeated | A list that represents an array with the mapping from the inner DSCP value to outer DSCP value when bypass_dscp is false. To express a default mapping in the list where any other inner dscp value is not matching a node in the list, a new node has to be included at the end of the list where the inner-dscp is not defined (ANY) and the outer-dscp includes the value of the mapping. If there is no value set in the outer-dscp, the default value for this leaf is 0. |
+| dscp_mapping | [DscpMapping](#opi_api-security-v1alpha1-DscpMapping) | repeated | A list that represents an array with the mapping from the inner DSCP value to outer DSCP value when bypass_dscp is false. To express a default mapping in the list where any other inner dscp value is not matching a node in the list, a new node has to be included at the end of the list where the inner-dscp is not defined (ANY) and the outer-dscp includes the value of the mapping. If there is no value set in the outer-dscp, the default value for this leaf is 0. |
 
 
 
 
 
 
-<a name="opi_api-security-v2alpha1-UpdateIkeConnectionRequest"></a>
+<a name="opi_api-security-v1alpha1-UpdateIkeConnectionRequest"></a>
 
 ### UpdateIkeConnectionRequest
 Update an IKE Connection
@@ -988,7 +988,7 @@ Update an IKE Connection
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ike_connection | [IkeConnection](#opi_api-security-v2alpha1-IkeConnection) |  | The connections `name` field identifies the IKE connection to update. |
+| ike_connection | [IkeConnection](#opi_api-security-v1alpha1-IkeConnection) |  | The connections `name` field identifies the IKE connection to update. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update |
 
 
@@ -996,7 +996,7 @@ Update an IKE Connection
 
 
 
-<a name="opi_api-security-v2alpha1-UpdateIkePeerRequest"></a>
+<a name="opi_api-security-v1alpha1-UpdateIkePeerRequest"></a>
 
 ### UpdateIkePeerRequest
 Update an IKE Peer
@@ -1004,7 +1004,7 @@ Update an IKE Peer
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ike_peer | [IkePeer](#opi_api-security-v2alpha1-IkePeer) |  | the peer&#39;s `name` field is used to identify the IKE peer to update. |
+| ike_peer | [IkePeer](#opi_api-security-v1alpha1-IkePeer) |  | the peer&#39;s `name` field is used to identify the IKE peer to update. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update |
 
 
@@ -1012,7 +1012,7 @@ Update an IKE Peer
 
 
 
-<a name="opi_api-security-v2alpha1-UpdateIpsecPolicyRequest"></a>
+<a name="opi_api-security-v1alpha1-UpdateIpsecPolicyRequest"></a>
 
 ### UpdateIpsecPolicyRequest
 Update an IPsec Policy
@@ -1020,7 +1020,7 @@ Update an IPsec Policy
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ipsec_policy | [IpsecPolicy](#opi_api-security-v2alpha1-IpsecPolicy) |  | The policy&#39;s name field identifies the IPsec policy to update. |
+| ipsec_policy | [IpsecPolicy](#opi_api-security-v1alpha1-IpsecPolicy) |  | The policy&#39;s name field identifies the IPsec policy to update. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update |
 
 
@@ -1028,7 +1028,7 @@ Update an IPsec Policy
 
 
 
-<a name="opi_api-security-v2alpha1-UpdateIpsecSaRequest"></a>
+<a name="opi_api-security-v1alpha1-UpdateIpsecSaRequest"></a>
 
 ### UpdateIpsecSaRequest
 Update an IPsec SA
@@ -1036,7 +1036,7 @@ Update an IPsec SA
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ipsec_sa | [IpsecSa](#opi_api-security-v2alpha1-IpsecSa) |  | The SA&#39;s name field identifies the IPsec SA to update. |
+| ipsec_sa | [IpsecSa](#opi_api-security-v1alpha1-IpsecSa) |  | The SA&#39;s name field identifies the IPsec SA to update. |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update |
 
 
@@ -1046,7 +1046,7 @@ Update an IPsec SA
  
 
 
-<a name="opi_api-security-v2alpha1-AuthType"></a>
+<a name="opi_api-security-v1alpha1-AuthType"></a>
 
 ### AuthType
 Authentication Type
@@ -1061,7 +1061,7 @@ Authentication Type
 
 
 
-<a name="opi_api-security-v2alpha1-AutoStartupMode"></a>
+<a name="opi_api-security-v1alpha1-AutoStartupMode"></a>
 
 ### AutoStartupMode
 IKE connection startup behavior
@@ -1075,7 +1075,7 @@ IKE connection startup behavior
 
 
 
-<a name="opi_api-security-v2alpha1-DHGroups"></a>
+<a name="opi_api-security-v1alpha1-DHGroups"></a>
 
 ### DHGroups
 Diffie Hellman Groups
@@ -1098,7 +1098,7 @@ Diffie Hellman Groups
 
 
 
-<a name="opi_api-security-v2alpha1-DSAlgorithm"></a>
+<a name="opi_api-security-v1alpha1-DSAlgorithm"></a>
 
 ### DSAlgorithm
 Digital Signature Algorithm
@@ -1115,7 +1115,7 @@ https://www.iana.org/assignments/ikev2-parameters/ikev2-parameters.xhtml#ikev2-p
 
 
 
-<a name="opi_api-security-v2alpha1-DfBitAction"></a>
+<a name="opi_api-security-v1alpha1-DfBitAction"></a>
 
 ### DfBitAction
 Don&#39;t Fragment (DF) bit handling when encapsulating tunnel mode IPsec
@@ -1130,7 +1130,7 @@ traffic.
 
 
 
-<a name="opi_api-security-v2alpha1-EncAlgorithm"></a>
+<a name="opi_api-security-v1alpha1-EncAlgorithm"></a>
 
 ### EncAlgorithm
 Cryptographic algorithm for encryption.
@@ -1148,7 +1148,7 @@ Cryptographic algorithm for encryption.
 
 
 
-<a name="opi_api-security-v2alpha1-EspEncap"></a>
+<a name="opi_api-security-v1alpha1-EspEncap"></a>
 
 ### EspEncap
 ESP Encapsulation method for NAT traversal
@@ -1160,7 +1160,7 @@ ESP Encapsulation method for NAT traversal
 
 
 
-<a name="opi_api-security-v2alpha1-IkeVersion"></a>
+<a name="opi_api-security-v1alpha1-IkeVersion"></a>
 
 ### IkeVersion
 IKE Version
@@ -1172,7 +1172,7 @@ IKE Version
 
 
 
-<a name="opi_api-security-v2alpha1-IntegAlgorithm"></a>
+<a name="opi_api-security-v1alpha1-IntegAlgorithm"></a>
 
 ### IntegAlgorithm
 Cryptographic algorithm for authentication.
@@ -1189,7 +1189,7 @@ Cryptographic algorithm for authentication.
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecMode"></a>
+<a name="opi_api-security-v1alpha1-IpsecMode"></a>
 
 ### IpsecMode
 IPsec Mode. Tunnel or Transport mode.
@@ -1202,7 +1202,7 @@ IPsec Mode. Tunnel or Transport mode.
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecProtocol"></a>
+<a name="opi_api-security-v1alpha1-IpsecProtocol"></a>
 
 ### IpsecProtocol
 IPsec security protocols
@@ -1214,7 +1214,7 @@ IPsec security protocols
 
 
 
-<a name="opi_api-security-v2alpha1-IpsecSpdAction"></a>
+<a name="opi_api-security-v1alpha1-IpsecSpdAction"></a>
 
 ### IpsecSpdAction
 IPsec Security Policy Actions
@@ -1228,7 +1228,7 @@ IPsec Security Policy Actions
 
 
 
-<a name="opi_api-security-v2alpha1-LifetimeAction"></a>
+<a name="opi_api-security-v1alpha1-LifetimeAction"></a>
 
 ### LifetimeAction
 Lifetime action for IPsec SAs
@@ -1242,7 +1242,7 @@ Lifetime action for IPsec SAs
 
 
 
-<a name="opi_api-security-v2alpha1-PRF"></a>
+<a name="opi_api-security-v1alpha1-PRF"></a>
 
 ### PRF
 Pesudo Random Function (PRF) Algorithm
@@ -1263,7 +1263,7 @@ Pesudo Random Function (PRF) Algorithm
  
 
 
-<a name="opi_api-security-v2alpha1-IkeConnectionService"></a>
+<a name="opi_api-security-v1alpha1-IkeConnectionService"></a>
 
 ### IkeConnectionService
 Management of IKE connections. An IKE connection is a logical connection
@@ -1274,15 +1274,15 @@ itself.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateIkeConnection | [CreateIkeConnectionRequest](#opi_api-security-v2alpha1-CreateIkeConnectionRequest) | [IkeConnection](#opi_api-security-v2alpha1-IkeConnection) | Create an IKE connection. The request includes specification of the local and remote IKE peers and the specification of the IPsec SAs (aka child SAs) from this IKE connection. |
-| UpdateIkeConnection | [UpdateIkeConnectionRequest](#opi_api-security-v2alpha1-UpdateIkeConnectionRequest) | [IkeConnection](#opi_api-security-v2alpha1-IkeConnection) | Update an existing IKE connection. |
-| DeleteIkeConnection | [DeleteIkeConnectionRequest](#opi_api-security-v2alpha1-DeleteIkeConnectionRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an existing IKE connection. |
-| GetIkeConnection | [GetIkeConnectionRequest](#opi_api-security-v2alpha1-GetIkeConnectionRequest) | [IkeConnection](#opi_api-security-v2alpha1-IkeConnection) | Retrieve an IKE connection. |
-| ListIkeConnections | [ListIkeConnectionsRequest](#opi_api-security-v2alpha1-ListIkeConnectionsRequest) | [ListIkeConnectionsResponse](#opi_api-security-v2alpha1-ListIkeConnectionsResponse) | List existing IKE connections. |
-| StatsIkeConnections | [StatsIkeConnectionsRequest](#opi_api-security-v2alpha1-StatsIkeConnectionsRequest) | [StatsIkeConnectionsResponse](#opi_api-security-v2alpha1-StatsIkeConnectionsResponse) | Get IKE connection statistics. |
+| CreateIkeConnection | [CreateIkeConnectionRequest](#opi_api-security-v1alpha1-CreateIkeConnectionRequest) | [IkeConnection](#opi_api-security-v1alpha1-IkeConnection) | Create an IKE connection. The request includes specification of the local and remote IKE peers and the specification of the IPsec SAs (aka child SAs) from this IKE connection. |
+| UpdateIkeConnection | [UpdateIkeConnectionRequest](#opi_api-security-v1alpha1-UpdateIkeConnectionRequest) | [IkeConnection](#opi_api-security-v1alpha1-IkeConnection) | Update an existing IKE connection. |
+| DeleteIkeConnection | [DeleteIkeConnectionRequest](#opi_api-security-v1alpha1-DeleteIkeConnectionRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an existing IKE connection. |
+| GetIkeConnection | [GetIkeConnectionRequest](#opi_api-security-v1alpha1-GetIkeConnectionRequest) | [IkeConnection](#opi_api-security-v1alpha1-IkeConnection) | Retrieve an IKE connection. |
+| ListIkeConnections | [ListIkeConnectionsRequest](#opi_api-security-v1alpha1-ListIkeConnectionsRequest) | [ListIkeConnectionsResponse](#opi_api-security-v1alpha1-ListIkeConnectionsResponse) | List existing IKE connections. |
+| StatsIkeConnections | [StatsIkeConnectionsRequest](#opi_api-security-v1alpha1-StatsIkeConnectionsRequest) | [StatsIkeConnectionsResponse](#opi_api-security-v1alpha1-StatsIkeConnectionsResponse) | Get IKE connection statistics. |
 
 
-<a name="opi_api-security-v2alpha1-IkePeerService"></a>
+<a name="opi_api-security-v1alpha1-IkePeerService"></a>
 
 ### IkePeerService
 Management of the IKE Peer Association Database (PAD). The PAD contains
@@ -1290,14 +1290,14 @@ information about the peers that are allowed to establish an IKE connection.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateIkePeer | [CreateIkePeerRequest](#opi_api-security-v2alpha1-CreateIkePeerRequest) | [IkePeer](#opi_api-security-v2alpha1-IkePeer) | Create an IKE peer. This request includes the specification of the keys and certificates associated with the peer. |
-| UpdateIkePeer | [UpdateIkePeerRequest](#opi_api-security-v2alpha1-UpdateIkePeerRequest) | [IkePeer](#opi_api-security-v2alpha1-IkePeer) | Update an existing IKE peer specification. |
-| DeleteIkePeer | [DeleteIkePeerRequest](#opi_api-security-v2alpha1-DeleteIkePeerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an existing IKE peer specification. |
-| GetIkePeer | [GetIkePeerRequest](#opi_api-security-v2alpha1-GetIkePeerRequest) | [IkePeer](#opi_api-security-v2alpha1-IkePeer) | Get an existing IKE peer specification. |
-| ListIkePeers | [ListIkePeersRequest](#opi_api-security-v2alpha1-ListIkePeersRequest) | [ListIkePeersResponse](#opi_api-security-v2alpha1-ListIkePeersResponse) | List existing IKE peers. |
+| CreateIkePeer | [CreateIkePeerRequest](#opi_api-security-v1alpha1-CreateIkePeerRequest) | [IkePeer](#opi_api-security-v1alpha1-IkePeer) | Create an IKE peer. This request includes the specification of the keys and certificates associated with the peer. |
+| UpdateIkePeer | [UpdateIkePeerRequest](#opi_api-security-v1alpha1-UpdateIkePeerRequest) | [IkePeer](#opi_api-security-v1alpha1-IkePeer) | Update an existing IKE peer specification. |
+| DeleteIkePeer | [DeleteIkePeerRequest](#opi_api-security-v1alpha1-DeleteIkePeerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an existing IKE peer specification. |
+| GetIkePeer | [GetIkePeerRequest](#opi_api-security-v1alpha1-GetIkePeerRequest) | [IkePeer](#opi_api-security-v1alpha1-IkePeer) | Get an existing IKE peer specification. |
+| ListIkePeers | [ListIkePeersRequest](#opi_api-security-v1alpha1-ListIkePeersRequest) | [ListIkePeersResponse](#opi_api-security-v1alpha1-ListIkePeersResponse) | List existing IKE peers. |
 
 
-<a name="opi_api-security-v2alpha1-IpsecPolicyService"></a>
+<a name="opi_api-security-v1alpha1-IpsecPolicyService"></a>
 
 ### IpsecPolicyService
 Management of the IPsec Security Policy Database (SPD). The SPD contains
@@ -1306,14 +1306,14 @@ between two peers.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateIpsecPolicy | [CreateIpsecPolicyRequest](#opi_api-security-v2alpha1-CreateIpsecPolicyRequest) | [IpsecPolicy](#opi_api-security-v2alpha1-IpsecPolicy) | Create an IPsec Policy |
-| UpdateIpsecPolicy | [UpdateIpsecPolicyRequest](#opi_api-security-v2alpha1-UpdateIpsecPolicyRequest) | [IpsecPolicy](#opi_api-security-v2alpha1-IpsecPolicy) | Update an existing IPsec Policy |
-| DeleteIpsecPolicy | [DeleteIpsecPolicyRequest](#opi_api-security-v2alpha1-DeleteIpsecPolicyRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an existing IPsec Policy |
-| GetIpsecPolicy | [GetIpsecPolicyRequest](#opi_api-security-v2alpha1-GetIpsecPolicyRequest) | [IpsecPolicy](#opi_api-security-v2alpha1-IpsecPolicy) | Get an IPsec Policy |
-| ListIpsecPolicies | [ListIpsecPoliciesRequest](#opi_api-security-v2alpha1-ListIpsecPoliciesRequest) | [ListIpsecPoliciesResponse](#opi_api-security-v2alpha1-ListIpsecPoliciesResponse) | List existing IPsec Policies |
+| CreateIpsecPolicy | [CreateIpsecPolicyRequest](#opi_api-security-v1alpha1-CreateIpsecPolicyRequest) | [IpsecPolicy](#opi_api-security-v1alpha1-IpsecPolicy) | Create an IPsec Policy |
+| UpdateIpsecPolicy | [UpdateIpsecPolicyRequest](#opi_api-security-v1alpha1-UpdateIpsecPolicyRequest) | [IpsecPolicy](#opi_api-security-v1alpha1-IpsecPolicy) | Update an existing IPsec Policy |
+| DeleteIpsecPolicy | [DeleteIpsecPolicyRequest](#opi_api-security-v1alpha1-DeleteIpsecPolicyRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an existing IPsec Policy |
+| GetIpsecPolicy | [GetIpsecPolicyRequest](#opi_api-security-v1alpha1-GetIpsecPolicyRequest) | [IpsecPolicy](#opi_api-security-v1alpha1-IpsecPolicy) | Get an IPsec Policy |
+| ListIpsecPolicies | [ListIpsecPoliciesRequest](#opi_api-security-v1alpha1-ListIpsecPoliciesRequest) | [ListIpsecPoliciesResponse](#opi_api-security-v1alpha1-ListIpsecPoliciesResponse) | List existing IPsec Policies |
 
 
-<a name="opi_api-security-v2alpha1-IpsecSaService"></a>
+<a name="opi_api-security-v1alpha1-IpsecSaService"></a>
 
 ### IpsecSaService
 Management of the IPsec Security Association Database (SAD). The SAD
@@ -1322,11 +1322,11 @@ traffic between two peers
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateIpsecSa | [CreateIpsecSaRequest](#opi_api-security-v2alpha1-CreateIpsecSaRequest) | [IpsecSa](#opi_api-security-v2alpha1-IpsecSa) | Create an IPsec Security Association |
-| UpdateIpsecSa | [UpdateIpsecSaRequest](#opi_api-security-v2alpha1-UpdateIpsecSaRequest) | [IpsecSa](#opi_api-security-v2alpha1-IpsecSa) | Update an existing IPsec Security Association |
-| DeleteIpsecSa | [DeleteIpsecSaRequest](#opi_api-security-v2alpha1-DeleteIpsecSaRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an existing IPsec Security Association |
-| GetIpsecSa | [GetIpsecSaRequest](#opi_api-security-v2alpha1-GetIpsecSaRequest) | [IpsecSa](#opi_api-security-v2alpha1-IpsecSa) | Get an IPsec Security Association |
-| ListIpsecSas | [ListIpsecSasRequest](#opi_api-security-v2alpha1-ListIpsecSasRequest) | [ListIpsecSasResponse](#opi_api-security-v2alpha1-ListIpsecSasResponse) | List existing IPsec Security Associations |
+| CreateIpsecSa | [CreateIpsecSaRequest](#opi_api-security-v1alpha1-CreateIpsecSaRequest) | [IpsecSa](#opi_api-security-v1alpha1-IpsecSa) | Create an IPsec Security Association |
+| UpdateIpsecSa | [UpdateIpsecSaRequest](#opi_api-security-v1alpha1-UpdateIpsecSaRequest) | [IpsecSa](#opi_api-security-v1alpha1-IpsecSa) | Update an existing IPsec Security Association |
+| DeleteIpsecSa | [DeleteIpsecSaRequest](#opi_api-security-v1alpha1-DeleteIpsecSaRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an existing IPsec Security Association |
+| GetIpsecSa | [GetIpsecSaRequest](#opi_api-security-v1alpha1-GetIpsecSaRequest) | [IpsecSa](#opi_api-security-v1alpha1-IpsecSa) | Get an IPsec Security Association |
+| ListIpsecSas | [ListIpsecSasRequest](#opi_api-security-v1alpha1-ListIpsecSasRequest) | [ListIpsecSasResponse](#opi_api-security-v1alpha1-ListIpsecSasResponse) | List existing IPsec Security Associations |
 
  
 

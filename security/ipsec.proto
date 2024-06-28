@@ -15,7 +15,7 @@
  */
 syntax = "proto3";
 
-package opi_api.security.v2alpha1;
+package opi_api.security.v1alpha1;
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";
@@ -27,10 +27,10 @@ import "google/protobuf/field_mask.proto";
 
 import "networktypes.proto";
 
-option go_package = "github.com/opiproject/opi-api/security/v2alpha1/gen/go";
+option go_package = "github.com/opiproject/opi-api/security/v1alpha1/gen/go";
 option java_multiple_files = true;
 option java_outer_classname = "IpsecProto";
-option java_package = "opi_api.security.v2alpha1";
+option java_package = "opi_api.security.v1alpha1";
 
 // Management of the IKE Peer Association Database (PAD). The PAD contains
 // information about the peers that are allowed to establish an IKE connection.
@@ -39,7 +39,7 @@ service IkePeerService {
   // associated with the peer.
   rpc CreateIkePeer(CreateIkePeerRequest) returns (IkePeer) {
     option (google.api.http) = {
-      post: "/v2alpha1/ikePeers"
+      post: "/v1alpha1/ikePeers"
       body: "ike_peer"
     };
     option (google.api.method_signature) = "ike_peer,ike_peer_id";
@@ -47,7 +47,7 @@ service IkePeerService {
   // Update an existing IKE peer specification.
   rpc UpdateIkePeer(UpdateIkePeerRequest) returns (IkePeer) {
     option (google.api.http) = {
-      patch: "/v2alpha1/{ike_peer.name=ikepeers/*}"
+      patch: "/v1alpha1/{ike_peer.name=ikepeers/*}"
       body: "ike_peer"
     };
     option (google.api.method_signature) = "ike_peer,update_mask";
@@ -55,21 +55,21 @@ service IkePeerService {
   // Delete an existing IKE peer specification.
   rpc DeleteIkePeer(DeleteIkePeerRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v2alpha1/{name=ikePeers/*}"
+      delete: "/v1alpha1/{name=ikePeers/*}"
     };
     option (google.api.method_signature) = "name";
   }
   // Get an existing IKE peer specification.
   rpc GetIkePeer(GetIkePeerRequest) returns (IkePeer) {
     option (google.api.http) = {
-      get: "/v2alpha1/{name=ikePeers/*}"
+      get: "/v1alpha1/{name=ikePeers/*}"
     };
     option (google.api.method_signature) = "name";
   }
   // List existing IKE peers.
   rpc ListIkePeers(ListIkePeersRequest) returns (ListIkePeersResponse) {
     option (google.api.http) = {
-      get: "/v2alpha1/ikePeers"
+      get: "/v1alpha1/ikePeers"
     };
   }
 }
@@ -85,7 +85,7 @@ service IkeConnectionService {
   // from this IKE connection.
   rpc CreateIkeConnection(CreateIkeConnectionRequest) returns (IkeConnection) {
     option (google.api.http) = {
-      post: "/v2alpha1/ikeConnections"
+      post: "/v1alpha1/ikeConnections"
       body: "ike_connection"
     };
     option (google.api.method_signature) = "ike_connection,ike_connection_id";
@@ -93,7 +93,7 @@ service IkeConnectionService {
   // Update an existing IKE connection.
   rpc UpdateIkeConnection(UpdateIkeConnectionRequest) returns (IkeConnection) {
     option (google.api.http) = {
-      patch: "/v2alpha1/{ike_connection.name=ikeConnections/*}"
+      patch: "/v1alpha1/{ike_connection.name=ikeConnections/*}"
       body: "ike_connection"
     };
     option (google.api.method_signature) = "ike_connection,update_mask";
@@ -101,27 +101,27 @@ service IkeConnectionService {
   // Delete an existing IKE connection.
   rpc DeleteIkeConnection(DeleteIkeConnectionRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v2alpha1/{name=ikeConnections/*}"
+      delete: "/v1alpha1/{name=ikeConnections/*}"
     };
     option (google.api.method_signature) = "name";
   }
   // Retrieve an IKE connection.
   rpc GetIkeConnection(GetIkeConnectionRequest) returns (IkeConnection) {
     option (google.api.http) = {
-      get: "/v2alpha1/{name=ikeConnections/*}"
+      get: "/v1alpha1/{name=ikeConnections/*}"
     };
     option (google.api.method_signature) = "name";
   }
   // List existing IKE connections.
   rpc ListIkeConnections(ListIkeConnectionsRequest) returns (ListIkeConnectionsResponse) {
     option (google.api.http) = {
-      get: "/v2alpha1/ikeConnections"
+      get: "/v1alpha1/ikeConnections"
     };
   }
   // Get IKE connection statistics.
   rpc StatsIkeConnections(StatsIkeConnectionsRequest) returns (StatsIkeConnectionsResponse) {
     option (google.api.http) = {
-      get: "/v2alpha1/ikeConnections:stats"
+      get: "/v1alpha1/ikeConnections:stats"
     };
   }
 }
@@ -133,7 +133,7 @@ service IpsecSaService {
   // Create an IPsec Security Association
   rpc CreateIpsecSa(CreateIpsecSaRequest) returns (IpsecSa) {
     option (google.api.http) = {
-      post: "/v2alpha1/ipsecSas"
+      post: "/v1alpha1/ipsecSas"
       body: "ipsec_sa"
     };
     option (google.api.method_signature) = "ipsec_sa,ipsec_sa_id";
@@ -141,7 +141,7 @@ service IpsecSaService {
   // Update an existing IPsec Security Association
   rpc UpdateIpsecSa(UpdateIpsecSaRequest) returns (IpsecSa) {
     option (google.api.http) = {
-      patch: "/v2alpha1/{ipsec_sa.name=ipsecSas/*}"
+      patch: "/v1alpha1/{ipsec_sa.name=ipsecSas/*}"
       body: "ipsec_sa"
     };
     option (google.api.method_signature) = "ipsec_sa,update_mask";
@@ -149,21 +149,21 @@ service IpsecSaService {
   // Delete an existing IPsec Security Association
   rpc DeleteIpsecSa(DeleteIpsecSaRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v2alpha1/{name=ipsecSas/*}"
+      delete: "/v1alpha1/{name=ipsecSas/*}"
     };
     option (google.api.method_signature) = "name";
   }
   // Get an IPsec Security Association
   rpc GetIpsecSa(GetIpsecSaRequest) returns (IpsecSa) {
     option (google.api.http) = {
-      get: "/v2alpha1/{name=ipsecSas/*}"
+      get: "/v1alpha1/{name=ipsecSas/*}"
     };
     option (google.api.method_signature) = "name";
   }
   // List existing IPsec Security Associations
   rpc ListIpsecSas(ListIpsecSasRequest) returns (ListIpsecSasResponse) {
     option (google.api.http) = {
-      get: "/v2alpha1/ipsecSas"
+      get: "/v1alpha1/ipsecSas"
     };
   }
 } 
@@ -175,7 +175,7 @@ service IpsecPolicyService {
   // Create an IPsec Policy
   rpc CreateIpsecPolicy(CreateIpsecPolicyRequest) returns (IpsecPolicy) {
     option (google.api.http) = {
-      post: "/v2alpha1/ipsecPolicies"
+      post: "/v1alpha1/ipsecPolicies"
       body: "ipsec_policy"
     };
     option (google.api.method_signature) = "ipsec_policy,ipsec_policy_id";
@@ -183,7 +183,7 @@ service IpsecPolicyService {
   // Update an existing IPsec Policy
   rpc UpdateIpsecPolicy(UpdateIpsecPolicyRequest) returns (IpsecPolicy) {
     option (google.api.http) = {
-      patch: "/v2alpha1/{ipsec_policy.name=ipsecPolicies/*}"
+      patch: "/v1alpha1/{ipsec_policy.name=ipsecPolicies/*}"
       body: "ipsec_policy"
     };
     option (google.api.method_signature) = "ipsec_policy,update_mask";
@@ -191,21 +191,21 @@ service IpsecPolicyService {
   // Delete an existing IPsec Policy
   rpc DeleteIpsecPolicy(DeleteIpsecPolicyRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v2alpha1/{name=ipsecPolicies/*}"
+      delete: "/v1alpha1/{name=ipsecPolicies/*}"
     };
     option (google.api.method_signature) = "name";
   }
   // Get an IPsec Policy
   rpc GetIpsecPolicy(GetIpsecPolicyRequest) returns (IpsecPolicy) {
     option (google.api.http) = {
-      get: "/v2alpha1/{name=ipsecPolicies/*}"
+      get: "/v1alpha1/{name=ipsecPolicies/*}"
     };
     option (google.api.method_signature) = "name";
   }
   // List existing IPsec Policies
   rpc ListIpsecPolicies(ListIpsecPoliciesRequest) returns (ListIpsecPoliciesResponse) {
     option (google.api.http) = {
-      get: "/v2alpha1/ipsecPolicies"
+      get: "/v1alpha1/ipsecPolicies"
     };
   }
 }
@@ -258,7 +258,7 @@ message Encap {
 // An IKE Connection specification
 message IkeConnection {
   option (google.api.resource) = {
-    type: "opi_api.security.v2alpha1/IkeConnection"
+    type: "opi_api.security.v1alpha1/IkeConnection"
     pattern: "ikeConnections/{connection}"
     singular: "ikeConnection"
     plural: "ikeConnections"
@@ -314,7 +314,7 @@ message IkeConnection {
 // An IPsec Security Association (SA)
 message IpsecSa {
   option (google.api.resource) = {
-    type: "opi_api.security.v2alpha1/IpsecSa"
+    type: "opi_api.security.v1alpha1/IpsecSa"
     pattern: "ipsecSas/{ipsec_sa}"
     singular: "ipsecSa"
     plural: "ipsecSas"
@@ -376,7 +376,7 @@ message IpsecSaState {
 // Holds configuration information for an IPsec SPD entry.
 message IpsecPolicy {
   option (google.api.resource) = {
-    type: "opi_api.security.v2alpha1/IpsecPolicy"
+    type: "opi_api.security.v1alpha1/IpsecPolicy"
     pattern: "ipsecPolicies/{ipsec_policy}"
     singular: "ipsecPolicy"
     plural: "ipsecPolicies"
@@ -657,7 +657,7 @@ message IkePeerAuthentication {
 // IKE Peer
 message IkePeer {
   option (google.api.resource) = {
-    type: "opi_api.security.v2alpha1/IkePeer"
+    type: "opi_api.security.v1alpha1/IkePeer"
     pattern: "ikePeers/{ike_peer}"
     singular: "ikePeer"
     plural: "ikePeers"
