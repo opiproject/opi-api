@@ -15,7 +15,7 @@ doc:
 	curl -kL https://github.com/googleapis/googleapis/archive/master.tar.gz | tar --strip=1 -zxvf - googleapis-master/google/api
 
 	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh \
-		-v "${PWD}/${APIVER}":/out \
+		-v "${PWD}"/${APIVER}:/out \
 		-v "${PWD}/../network/opinetcommon":/opinetcommon \
 		-w /out \
 		-v "${PWD}":/protos \
@@ -29,7 +29,14 @@ apilint:
 	rm -rf "${PWD}"/google
 
 buflint:
-	docker run --rm -v "${PWD}":/out -w /out bufbuild/buf lint
+	docker run --rm \
+		-v "${PWD}":/out \
+		-w /out \
+		bufbuild/buf lint
 
 bufgen:
-	docker run --rm -v "${PWD}/..":/base -v "${PWD}":/out -w /out msandersdell/bufbuild-go-gen:1.1.0 generate --template /base/buf.gen.yaml -o ${APIVER}
+	docker run --rm \
+		-v "${PWD}/..":/base \
+		-v "${PWD}":/out \
+		-w /out \
+		msandersdell/bufbuild-go-gen:1.1.0 generate --template /base/buf.gen.yaml -o ${APIVER}
