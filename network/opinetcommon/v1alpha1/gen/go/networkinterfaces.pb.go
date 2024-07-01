@@ -930,7 +930,7 @@ type UpdateNetInterfaceRequest struct {
 	NetInterface *NetInterface `protobuf:"bytes,1,opt,name=net_interface,json=netInterface,proto3" json:"net_interface,omitempty"`
 	// list of fields to update
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
-	// If set to true, and the object is found, a new object will be created.
+	// If set to true, and the object is not found, a new object will be created.
 	// In this situation, 'update_mask' is ignored.
 	AllowMissing bool `protobuf:"varint,3,opt,name=allow_missing,json=allowMissing,proto3" json:"allow_missing,omitempty"`
 }

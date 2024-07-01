@@ -50,18 +50,14 @@ func local_request_CloudInfraService_GetDeviceCapabilities_0(ctx context.Context
 }
 
 var (
-	filter_CloudInfraService_CreateDevice_0 = &utilities.DoubleArray{Encoding: map[string]int{"device": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateDevice_0 = &utilities.DoubleArray{Encoding: map[string]int{"device": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateDevice_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateDeviceRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Device); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Device); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -81,11 +77,7 @@ func local_request_CloudInfraService_CreateDevice_0(ctx context.Context, marshal
 	var protoReq CreateDeviceRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Device); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Device); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -102,7 +94,7 @@ func local_request_CloudInfraService_CreateDevice_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_DeleteDevice_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteDevice_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteDevice_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -172,7 +164,7 @@ func local_request_CloudInfraService_DeleteDevice_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_UpdateDevice_0 = &utilities.DoubleArray{Encoding: map[string]int{"device": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateDevice_0 = &utilities.DoubleArray{Encoding: map[string]int{"device": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateDevice_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -360,7 +352,7 @@ func local_request_CloudInfraService_GetDevice_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_CloudInfraService_UpdatePort_0 = &utilities.DoubleArray{Encoding: map[string]int{"port": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdatePort_0 = &utilities.DoubleArray{Encoding: map[string]int{"port": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdatePort_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -548,18 +540,14 @@ func local_request_CloudInfraService_GetPort_0(ctx context.Context, marshaler ru
 }
 
 var (
-	filter_CloudInfraService_CreateVnic_0 = &utilities.DoubleArray{Encoding: map[string]int{"vnic": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateVnic_0 = &utilities.DoubleArray{Encoding: map[string]int{"vnic": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateVnic_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateVnicRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Vnic); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Vnic); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -579,11 +567,7 @@ func local_request_CloudInfraService_CreateVnic_0(ctx context.Context, marshaler
 	var protoReq CreateVnicRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Vnic); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Vnic); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -600,7 +584,7 @@ func local_request_CloudInfraService_CreateVnic_0(ctx context.Context, marshaler
 }
 
 var (
-	filter_CloudInfraService_DeleteVnic_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteVnic_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteVnic_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -670,7 +654,7 @@ func local_request_CloudInfraService_DeleteVnic_0(ctx context.Context, marshaler
 }
 
 var (
-	filter_CloudInfraService_UpdateVnic_0 = &utilities.DoubleArray{Encoding: map[string]int{"vnic": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateVnic_0 = &utilities.DoubleArray{Encoding: map[string]int{"vnic": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateVnic_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -858,18 +842,14 @@ func local_request_CloudInfraService_GetVnic_0(ctx context.Context, marshaler ru
 }
 
 var (
-	filter_CloudInfraService_CreateInterface_0 = &utilities.DoubleArray{Encoding: map[string]int{"interface": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateInterface_0 = &utilities.DoubleArray{Encoding: map[string]int{"interface": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateInterface_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateInterfaceRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Interface); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Interface); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -889,11 +869,7 @@ func local_request_CloudInfraService_CreateInterface_0(ctx context.Context, mars
 	var protoReq CreateInterfaceRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Interface); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Interface); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -910,7 +886,7 @@ func local_request_CloudInfraService_CreateInterface_0(ctx context.Context, mars
 }
 
 var (
-	filter_CloudInfraService_DeleteInterface_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteInterface_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteInterface_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -980,7 +956,7 @@ func local_request_CloudInfraService_DeleteInterface_0(ctx context.Context, mars
 }
 
 var (
-	filter_CloudInfraService_UpdateInterface_0 = &utilities.DoubleArray{Encoding: map[string]int{"interface": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateInterface_0 = &utilities.DoubleArray{Encoding: map[string]int{"interface": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateInterface_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1168,18 +1144,14 @@ func local_request_CloudInfraService_GetInterface_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_CreateRouteTable_0 = &utilities.DoubleArray{Encoding: map[string]int{"routetable": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateRouteTable_0 = &utilities.DoubleArray{Encoding: map[string]int{"routetable": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateRouteTable_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateRouteTableRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Routetable); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Routetable); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -1199,11 +1171,7 @@ func local_request_CloudInfraService_CreateRouteTable_0(ctx context.Context, mar
 	var protoReq CreateRouteTableRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Routetable); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Routetable); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -1220,7 +1188,7 @@ func local_request_CloudInfraService_CreateRouteTable_0(ctx context.Context, mar
 }
 
 var (
-	filter_CloudInfraService_DeleteRouteTable_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteRouteTable_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteRouteTable_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1290,7 +1258,7 @@ func local_request_CloudInfraService_DeleteRouteTable_0(ctx context.Context, mar
 }
 
 var (
-	filter_CloudInfraService_UpdateRouteTable_0 = &utilities.DoubleArray{Encoding: map[string]int{"routetable": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateRouteTable_0 = &utilities.DoubleArray{Encoding: map[string]int{"routetable": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateRouteTable_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1478,18 +1446,14 @@ func local_request_CloudInfraService_GetRouteTable_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_CreateRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"route": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"route": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateRoute_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateRouteRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Route); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Route); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -1509,11 +1473,7 @@ func local_request_CloudInfraService_CreateRoute_0(ctx context.Context, marshale
 	var protoReq CreateRouteRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Route); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Route); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -1530,7 +1490,7 @@ func local_request_CloudInfraService_CreateRoute_0(ctx context.Context, marshale
 }
 
 var (
-	filter_CloudInfraService_DeleteRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteRoute_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1600,7 +1560,7 @@ func local_request_CloudInfraService_DeleteRoute_0(ctx context.Context, marshale
 }
 
 var (
-	filter_CloudInfraService_UpdateRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"route": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"route": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateRoute_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1788,18 +1748,14 @@ func local_request_CloudInfraService_GetRoute_0(ctx context.Context, marshaler r
 }
 
 var (
-	filter_CloudInfraService_CreateUnderlayRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"underlayroute": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateUnderlayRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"underlayroute": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateUnderlayRoute_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateUnderlayRouteRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Underlayroute); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Underlayroute); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -1819,11 +1775,7 @@ func local_request_CloudInfraService_CreateUnderlayRoute_0(ctx context.Context, 
 	var protoReq CreateUnderlayRouteRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Underlayroute); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Underlayroute); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -1840,7 +1792,7 @@ func local_request_CloudInfraService_CreateUnderlayRoute_0(ctx context.Context, 
 }
 
 var (
-	filter_CloudInfraService_DeleteUnderlayRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteUnderlayRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteUnderlayRoute_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1910,7 +1862,7 @@ func local_request_CloudInfraService_DeleteUnderlayRoute_0(ctx context.Context, 
 }
 
 var (
-	filter_CloudInfraService_UpdateUnderlayRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"underlayroute": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateUnderlayRoute_0 = &utilities.DoubleArray{Encoding: map[string]int{"underlayroute": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateUnderlayRoute_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2098,18 +2050,14 @@ func local_request_CloudInfraService_GetUnderlayRoute_0(ctx context.Context, mar
 }
 
 var (
-	filter_CloudInfraService_CreateBgp_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateBgp_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateBgp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateBgpRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgp); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgp); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -2129,11 +2077,7 @@ func local_request_CloudInfraService_CreateBgp_0(ctx context.Context, marshaler 
 	var protoReq CreateBgpRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgp); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgp); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -2150,7 +2094,7 @@ func local_request_CloudInfraService_CreateBgp_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_CloudInfraService_DeleteBgp_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteBgp_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteBgp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2220,7 +2164,7 @@ func local_request_CloudInfraService_DeleteBgp_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_CloudInfraService_UpdateBgp_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateBgp_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateBgp_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2408,18 +2352,14 @@ func local_request_CloudInfraService_GetBgp_0(ctx context.Context, marshaler run
 }
 
 var (
-	filter_CloudInfraService_CreateBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeer": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeer": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateBGPPeerRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgppeer); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgppeer); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -2439,11 +2379,7 @@ func local_request_CloudInfraService_CreateBGPPeer_0(ctx context.Context, marsha
 	var protoReq CreateBGPPeerRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgppeer); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgppeer); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -2460,7 +2396,7 @@ func local_request_CloudInfraService_CreateBGPPeer_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_DeleteBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2530,7 +2466,7 @@ func local_request_CloudInfraService_DeleteBGPPeer_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_UpdateBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeer": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeer": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2718,18 +2654,14 @@ func local_request_CloudInfraService_GetBGPPeer_0(ctx context.Context, marshaler
 }
 
 var (
-	filter_CloudInfraService_CreateBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeeraf": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeeraf": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateBGPPeerAfRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgppeeraf); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgppeeraf); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -2749,11 +2681,7 @@ func local_request_CloudInfraService_CreateBGPPeerAf_0(ctx context.Context, mars
 	var protoReq CreateBGPPeerAfRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgppeeraf); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgppeeraf); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -2770,7 +2698,7 @@ func local_request_CloudInfraService_CreateBGPPeerAf_0(ctx context.Context, mars
 }
 
 var (
-	filter_CloudInfraService_DeleteBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2840,7 +2768,7 @@ func local_request_CloudInfraService_DeleteBGPPeerAf_0(ctx context.Context, mars
 }
 
 var (
-	filter_CloudInfraService_UpdateBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeeraf": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeeraf": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3028,18 +2956,14 @@ func local_request_CloudInfraService_GetBGPPeerAf_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_CreateMapping_0 = &utilities.DoubleArray{Encoding: map[string]int{"mapping": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateMapping_0 = &utilities.DoubleArray{Encoding: map[string]int{"mapping": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateMapping_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateMappingRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Mapping); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Mapping); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -3059,11 +2983,7 @@ func local_request_CloudInfraService_CreateMapping_0(ctx context.Context, marsha
 	var protoReq CreateMappingRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Mapping); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Mapping); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -3080,7 +3000,7 @@ func local_request_CloudInfraService_CreateMapping_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_DeleteMapping_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteMapping_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteMapping_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3150,7 +3070,7 @@ func local_request_CloudInfraService_DeleteMapping_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_UpdateMapping_0 = &utilities.DoubleArray{Encoding: map[string]int{"mapping": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateMapping_0 = &utilities.DoubleArray{Encoding: map[string]int{"mapping": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateMapping_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3338,18 +3258,14 @@ func local_request_CloudInfraService_GetMapping_0(ctx context.Context, marshaler
 }
 
 var (
-	filter_CloudInfraService_CreateNextHop_0 = &utilities.DoubleArray{Encoding: map[string]int{"nexthop": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateNextHop_0 = &utilities.DoubleArray{Encoding: map[string]int{"nexthop": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateNextHop_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateNextHopRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Nexthop); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Nexthop); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -3369,11 +3285,7 @@ func local_request_CloudInfraService_CreateNextHop_0(ctx context.Context, marsha
 	var protoReq CreateNextHopRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Nexthop); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Nexthop); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -3390,7 +3302,7 @@ func local_request_CloudInfraService_CreateNextHop_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_DeleteNextHop_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteNextHop_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteNextHop_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3460,7 +3372,7 @@ func local_request_CloudInfraService_DeleteNextHop_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_UpdateNextHop_0 = &utilities.DoubleArray{Encoding: map[string]int{"nexthop": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateNextHop_0 = &utilities.DoubleArray{Encoding: map[string]int{"nexthop": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateNextHop_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3648,18 +3560,14 @@ func local_request_CloudInfraService_GetNextHop_0(ctx context.Context, marshaler
 }
 
 var (
-	filter_CloudInfraService_CreateNextHopGroup_0 = &utilities.DoubleArray{Encoding: map[string]int{"nexthopgroup": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateNextHopGroup_0 = &utilities.DoubleArray{Encoding: map[string]int{"nexthopgroup": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateNextHopGroup_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateNextHopGroupRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Nexthopgroup); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Nexthopgroup); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -3679,11 +3587,7 @@ func local_request_CloudInfraService_CreateNextHopGroup_0(ctx context.Context, m
 	var protoReq CreateNextHopGroupRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Nexthopgroup); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Nexthopgroup); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -3700,7 +3604,7 @@ func local_request_CloudInfraService_CreateNextHopGroup_0(ctx context.Context, m
 }
 
 var (
-	filter_CloudInfraService_DeleteNextHopGroup_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteNextHopGroup_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteNextHopGroup_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3770,7 +3674,7 @@ func local_request_CloudInfraService_DeleteNextHopGroup_0(ctx context.Context, m
 }
 
 var (
-	filter_CloudInfraService_UpdateNextHopGroup_0 = &utilities.DoubleArray{Encoding: map[string]int{"nexthopgroup": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateNextHopGroup_0 = &utilities.DoubleArray{Encoding: map[string]int{"nexthopgroup": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateNextHopGroup_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3958,18 +3862,14 @@ func local_request_CloudInfraService_GetNextHopGroup_0(ctx context.Context, mars
 }
 
 var (
-	filter_CloudInfraService_CreateSubnet_0 = &utilities.DoubleArray{Encoding: map[string]int{"subnet": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateSubnet_0 = &utilities.DoubleArray{Encoding: map[string]int{"subnet": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateSubnet_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateSubnetRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Subnet); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Subnet); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -3989,11 +3889,7 @@ func local_request_CloudInfraService_CreateSubnet_0(ctx context.Context, marshal
 	var protoReq CreateSubnetRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Subnet); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Subnet); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -4010,7 +3906,7 @@ func local_request_CloudInfraService_CreateSubnet_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_DeleteSubnet_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteSubnet_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteSubnet_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4080,7 +3976,7 @@ func local_request_CloudInfraService_DeleteSubnet_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_UpdateSubnet_0 = &utilities.DoubleArray{Encoding: map[string]int{"subnet": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateSubnet_0 = &utilities.DoubleArray{Encoding: map[string]int{"subnet": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateSubnet_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4268,18 +4164,14 @@ func local_request_CloudInfraService_GetSubnet_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_CloudInfraService_CreateTunnel_0 = &utilities.DoubleArray{Encoding: map[string]int{"tunnel": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateTunnel_0 = &utilities.DoubleArray{Encoding: map[string]int{"tunnel": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateTunnel_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateTunnelRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Tunnel); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Tunnel); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -4299,11 +4191,7 @@ func local_request_CloudInfraService_CreateTunnel_0(ctx context.Context, marshal
 	var protoReq CreateTunnelRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Tunnel); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Tunnel); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -4320,7 +4208,7 @@ func local_request_CloudInfraService_CreateTunnel_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_DeleteTunnel_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteTunnel_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteTunnel_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4390,7 +4278,7 @@ func local_request_CloudInfraService_DeleteTunnel_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_UpdateTunnel_0 = &utilities.DoubleArray{Encoding: map[string]int{"tunnel": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateTunnel_0 = &utilities.DoubleArray{Encoding: map[string]int{"tunnel": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateTunnel_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4578,18 +4466,14 @@ func local_request_CloudInfraService_GetTunnel_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_CloudInfraService_CreateVpc_0 = &utilities.DoubleArray{Encoding: map[string]int{"vpc": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateVpc_0 = &utilities.DoubleArray{Encoding: map[string]int{"vpc": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateVpc_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateVpcRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Vpc); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Vpc); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -4609,11 +4493,7 @@ func local_request_CloudInfraService_CreateVpc_0(ctx context.Context, marshaler 
 	var protoReq CreateVpcRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Vpc); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Vpc); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -4630,7 +4510,7 @@ func local_request_CloudInfraService_CreateVpc_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_CloudInfraService_DeleteVpc_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteVpc_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteVpc_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4700,7 +4580,7 @@ func local_request_CloudInfraService_DeleteVpc_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_CloudInfraService_UpdateVpc_0 = &utilities.DoubleArray{Encoding: map[string]int{"vpc": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateVpc_0 = &utilities.DoubleArray{Encoding: map[string]int{"vpc": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateVpc_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4888,18 +4768,14 @@ func local_request_CloudInfraService_GetVpc_0(ctx context.Context, marshaler run
 }
 
 var (
-	filter_CloudInfraService_CreateVPCPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"vpcpeer": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateVPCPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"vpcpeer": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateVPCPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateVPCPeerRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Vpcpeer); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Vpcpeer); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -4919,11 +4795,7 @@ func local_request_CloudInfraService_CreateVPCPeer_0(ctx context.Context, marsha
 	var protoReq CreateVPCPeerRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Vpcpeer); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Vpcpeer); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -4940,7 +4812,7 @@ func local_request_CloudInfraService_CreateVPCPeer_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_DeleteVPCPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteVPCPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteVPCPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -5010,7 +4882,7 @@ func local_request_CloudInfraService_DeleteVPCPeer_0(ctx context.Context, marsha
 }
 
 var (
-	filter_CloudInfraService_UpdateVPCPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"vpcpeer": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateVPCPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"vpcpeer": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateVPCPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -5198,18 +5070,14 @@ func local_request_CloudInfraService_GetVPCPeer_0(ctx context.Context, marshaler
 }
 
 var (
-	filter_CloudInfraService_CreateSecurityPolicy_0 = &utilities.DoubleArray{Encoding: map[string]int{"securitypolicy": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateSecurityPolicy_0 = &utilities.DoubleArray{Encoding: map[string]int{"securitypolicy": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateSecurityPolicy_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateSecurityPolicyRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Securitypolicy); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Securitypolicy); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -5229,11 +5097,7 @@ func local_request_CloudInfraService_CreateSecurityPolicy_0(ctx context.Context,
 	var protoReq CreateSecurityPolicyRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Securitypolicy); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Securitypolicy); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -5250,7 +5114,7 @@ func local_request_CloudInfraService_CreateSecurityPolicy_0(ctx context.Context,
 }
 
 var (
-	filter_CloudInfraService_DeleteSecurityPolicy_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteSecurityPolicy_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteSecurityPolicy_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -5320,7 +5184,7 @@ func local_request_CloudInfraService_DeleteSecurityPolicy_0(ctx context.Context,
 }
 
 var (
-	filter_CloudInfraService_UpdateSecurityPolicy_0 = &utilities.DoubleArray{Encoding: map[string]int{"securitypolicy": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateSecurityPolicy_0 = &utilities.DoubleArray{Encoding: map[string]int{"securitypolicy": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateSecurityPolicy_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -5508,18 +5372,14 @@ func local_request_CloudInfraService_GetSecurityPolicy_0(ctx context.Context, ma
 }
 
 var (
-	filter_CloudInfraService_CreateSecurityRule_0 = &utilities.DoubleArray{Encoding: map[string]int{"securityrule": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateSecurityRule_0 = &utilities.DoubleArray{Encoding: map[string]int{"securityrule": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateSecurityRule_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateSecurityRuleRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Securityrule); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Securityrule); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -5539,11 +5399,7 @@ func local_request_CloudInfraService_CreateSecurityRule_0(ctx context.Context, m
 	var protoReq CreateSecurityRuleRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Securityrule); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Securityrule); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -5560,7 +5416,7 @@ func local_request_CloudInfraService_CreateSecurityRule_0(ctx context.Context, m
 }
 
 var (
-	filter_CloudInfraService_DeleteSecurityRule_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteSecurityRule_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteSecurityRule_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -5630,7 +5486,7 @@ func local_request_CloudInfraService_DeleteSecurityRule_0(ctx context.Context, m
 }
 
 var (
-	filter_CloudInfraService_UpdateSecurityRule_0 = &utilities.DoubleArray{Encoding: map[string]int{"securityrule": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateSecurityRule_0 = &utilities.DoubleArray{Encoding: map[string]int{"securityrule": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateSecurityRule_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -5818,18 +5674,14 @@ func local_request_CloudInfraService_GetSecurityRule_0(ctx context.Context, mars
 }
 
 var (
-	filter_CloudInfraService_CreateSecurityProfile_0 = &utilities.DoubleArray{Encoding: map[string]int{"securityprofile": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_CreateSecurityProfile_0 = &utilities.DoubleArray{Encoding: map[string]int{"securityprofile": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateSecurityProfile_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateSecurityProfileRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Securityprofile); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Securityprofile); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -5849,11 +5701,7 @@ func local_request_CloudInfraService_CreateSecurityProfile_0(ctx context.Context
 	var protoReq CreateSecurityProfileRequest
 	var metadata runtime.ServerMetadata
 
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Securityprofile); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Securityprofile); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -5870,7 +5718,7 @@ func local_request_CloudInfraService_CreateSecurityProfile_0(ctx context.Context
 }
 
 var (
-	filter_CloudInfraService_DeleteSecurityProfile_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 2, 0, 0}, Check: []int{0, 1, 2, 2}}
+	filter_CloudInfraService_DeleteSecurityProfile_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_DeleteSecurityProfile_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -5940,7 +5788,7 @@ func local_request_CloudInfraService_DeleteSecurityProfile_0(ctx context.Context
 }
 
 var (
-	filter_CloudInfraService_UpdateSecurityProfile_0 = &utilities.DoubleArray{Encoding: map[string]int{"securityprofile": 0, "name": 1}, Base: []int{1, 2, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 2, 2, 3, 3}}
+	filter_CloudInfraService_UpdateSecurityProfile_0 = &utilities.DoubleArray{Encoding: map[string]int{"securityprofile": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_CloudInfraService_UpdateSecurityProfile_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {

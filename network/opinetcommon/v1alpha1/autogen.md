@@ -560,7 +560,7 @@ Update Interface Request
 | ----- | ---- | ----- | ----------- |
 | net_interface | [NetInterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface) |  | Interface update settings |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update |
-| allow_missing | [bool](#bool) |  | If set to true, and the object is found, a new object will be created. In this situation, &#39;update_mask&#39; is ignored. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, &#39;update_mask&#39; is ignored. |
 
 
 
