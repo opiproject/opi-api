@@ -127,6 +127,8 @@ message BGPPeerSpec {
   // is active triggers BGP to refresh its routes from the peer
   // range:0-255, default 0
   int32 allow_local_as = 14;
+  // BGP Peer Description
+  string peer_description = 15;
 }
 
 // BGP peer status
@@ -267,6 +269,38 @@ message BGPPeerAfSpec {
   // the interface index of the local point-to-point interface through which the
   // peer is reachable
   int32 local_addr_scope_id = 9;
+  // Max number of prefixes before an action is taken
+  BGPMaxPrefix max_prefixes = 10;
+  // Route Map definition
+  BGPRouteMap route_map = 11;
+  // NLRI advertisement
+  network.opinetcommon.v1alpha1.IPPrefix network = 12;
+}
+
+// BGPMaxPrefix
+message BGPMaxPrefix {
+  // Max number of prefixes before an action is taken
+  int32 max_prefixes = 1;
+  // Warning message
+  string warning_message = 2;
+  // Max number of prefixes after limit is exceeded before restart
+  BGPMaxPrefixRestart max_prefix_restart = 3;
+}
+
+// BGPMaxPrefixRestart
+message BGPMaxPrefixRestart {
+  // restart message
+  string restart_message = 1;
+  // restart interval in minutes
+  int32 restart_minutes = 2;
+}
+
+// BGPRouteMap
+message BGPRouteMap {
+  // Route map identifier
+  string map_id = 1;
+  // Direction true = in, false = out
+  bool direction = 2;
 }
 
 // BGP peer AF status

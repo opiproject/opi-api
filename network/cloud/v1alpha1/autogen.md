@@ -7,6 +7,8 @@
     - [BGPAdjRibOut](#opi_api-network-cloud-v1alpha1-BGPAdjRibOut)
     - [BGPAdjRibOutSpec](#opi_api-network-cloud-v1alpha1-BGPAdjRibOutSpec)
     - [BGPAdjRibOutStatus](#opi_api-network-cloud-v1alpha1-BGPAdjRibOutStatus)
+    - [BGPMaxPrefix](#opi_api-network-cloud-v1alpha1-BGPMaxPrefix)
+    - [BGPMaxPrefixRestart](#opi_api-network-cloud-v1alpha1-BGPMaxPrefixRestart)
     - [BGPNLRIPrefix](#opi_api-network-cloud-v1alpha1-BGPNLRIPrefix)
     - [BGPNLRIPrefixFilter](#opi_api-network-cloud-v1alpha1-BGPNLRIPrefixFilter)
     - [BGPNLRIPrefixSpec](#opi_api-network-cloud-v1alpha1-BGPNLRIPrefixSpec)
@@ -17,6 +19,7 @@
     - [BGPPeerAfStatus](#opi_api-network-cloud-v1alpha1-BGPPeerAfStatus)
     - [BGPPeerSpec](#opi_api-network-cloud-v1alpha1-BGPPeerSpec)
     - [BGPPeerStatus](#opi_api-network-cloud-v1alpha1-BGPPeerStatus)
+    - [BGPRouteMap](#opi_api-network-cloud-v1alpha1-BGPRouteMap)
     - [Bgp](#opi_api-network-cloud-v1alpha1-Bgp)
     - [BgpSpec](#opi_api-network-cloud-v1alpha1-BgpSpec)
     - [BgpStatus](#opi_api-network-cloud-v1alpha1-BgpStatus)
@@ -379,6 +382,39 @@ BGP Adj-RIB-Out table contains set of routes advertised to all peers
 
 
 
+<a name="opi_api-network-cloud-v1alpha1-BGPMaxPrefix"></a>
+
+### BGPMaxPrefix
+BGPMaxPrefix
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| max_prefixes | [int32](#int32) |  | Max number of Prefixes before an action is taken |
+| warning_string | [string](#string) |  | Warning strings |
+| max_prefix_restart | [BGPMaxPrefixRestart](#opi_api-network-cloud-v1alpha1-BGPMaxPrefixRestart) |  | BGPMaxPrefixRestart information |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-BGPMaxPrefixRestart"></a>
+
+### BGPMaxPrefixRestart
+BGPMaxPrefixRestart
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| restart_string | [string](#string) |  | restart string |
+| restart_minutes | [int32](#int32) |  | restart in X number minutes |
+
+
+
+
+
+
 <a name="opi_api-network-cloud-v1alpha1-BGPNLRIPrefix"></a>
 
 ### BGPNLRIPrefix
@@ -529,6 +565,9 @@ BGP peer AF configurations
 | local_port | [int32](#int32) |  | The local port configured for the peering session |
 | remote_port | [int32](#int32) |  | The remote port configured for the peering session |
 | local_addr_scope_id | [int32](#int32) |  | For a peer identified by a link-local IPv6 addresses, this is the scope ID of bgpPeerLocalAddr and bgpPeerRemoteAddr. For a peer identified only by interface (bgpPeerLocalAddr and bgpPeerRemoteAddr are both zero), this is the interface index of the local point-to-point interface through which the peer is reachable |
+| max_prefixes | [BGPMaxPrefix](#opi_api-network-cloud-v1alpha1-BGPMaxPrefix) |  | Max Prefix conditions |
+| route_map | [BGPRouteMap](#opi_api-network-cloud-v1alpha1-BGPRouteMap) |  | Route Map information |
+| network | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | NLRI advertisment |
 
 
 
@@ -576,6 +615,7 @@ BGP peer configurations
 | ttl | [int32](#int32) |  | TTL, set 1 to enable fast-external-fallover for directly connected eBGP sessions range:1-255, default 64 (-- api-linter: core::0214::ttl-type=disabled aip.dev/not-precedent: ttl is not a duration. --) |
 | idle_holdtime | [int32](#int32) |  | IdleHoldTime in seconds, range:1-32767, default 15 |
 | allow_local_as | [int32](#int32) |  | The number of instances of the local AS identifier that may be contained in the route&#39;s AS-Path without rejecting the route. Changing the value of this object while the peer is active triggers BGP to refresh its routes from the peer range:0-255, default 0 |
+| description | [string](#string) |  | BGP Description for reference |
 
 
 
@@ -637,6 +677,22 @@ BGP peer status
 | peer_index | [int32](#int32) |  | Peer Index |
 | ttl | [int32](#int32) |  | Current TTL value in use (-- api-linter: core::0214::ttl-type=disabled aip.dev/not-precedent: ttl is not a duration. --) |
 | oper_state | [BGPOperState](#opi_api-network-cloud-v1alpha1-BGPOperState) |  | Operational status of this peer |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-BGPRouteMap"></a>
+
+### BGPRouteMap
+BGPRouteMap
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| map_id | [string](#string) |  | Route map id or name of map |
+| direction | [bool](#bool) |  | Direction true = in, false = out |
 
 
 
