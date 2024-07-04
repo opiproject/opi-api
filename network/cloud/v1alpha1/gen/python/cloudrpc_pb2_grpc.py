@@ -10,6 +10,7 @@ import interface_pb2 as interface__pb2
 import mapping_pb2 as mapping__pb2
 import networkpolicy_pb2 as networkpolicy__pb2
 import nexthop_pb2 as nexthop__pb2
+import ospf_pb2 as ospf__pb2
 import port_pb2 as port__pb2
 import route_pb2 as route__pb2
 import subnet_pb2 as subnet__pb2
@@ -537,6 +538,81 @@ class CloudInfraServiceStub(object):
                 '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetSecurityProfile',
                 request_serializer=cloudrpc__pb2.GetSecurityProfileRequest.SerializeToString,
                 response_deserializer=networkpolicy__pb2.SecurityProfile.FromString,
+                )
+        self.CreateOSPF = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPF',
+                request_serializer=cloudrpc__pb2.CreateOSPFRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFConfig.FromString,
+                )
+        self.UpdateOSPF = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPF',
+                request_serializer=cloudrpc__pb2.UpdateOSPFRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFConfig.FromString,
+                )
+        self.DeleteOSPF = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPF',
+                request_serializer=cloudrpc__pb2.DeleteOSPFRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetOSPF = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPF',
+                request_serializer=cloudrpc__pb2.GetOSPFRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFConfig.FromString,
+                )
+        self.ListOSPF = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPF',
+                request_serializer=cloudrpc__pb2.ListOSPFRequest.SerializeToString,
+                response_deserializer=cloudrpc__pb2.ListOSPFResponse.FromString,
+                )
+        self.CreateOSPFArea = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFArea',
+                request_serializer=cloudrpc__pb2.CreateOSPFAreaRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFArea.FromString,
+                )
+        self.UpdateOSPFArea = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFArea',
+                request_serializer=cloudrpc__pb2.UpdateOSPFAreaRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFArea.FromString,
+                )
+        self.DeleteOSPFArea = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFArea',
+                request_serializer=cloudrpc__pb2.DeleteOSPFAreaRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetOSPFArea = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFArea',
+                request_serializer=cloudrpc__pb2.GetOSPFAreaRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFArea.FromString,
+                )
+        self.ListOSPFArea = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFArea',
+                request_serializer=cloudrpc__pb2.ListOSPFAreaRequest.SerializeToString,
+                response_deserializer=cloudrpc__pb2.ListOSPFAreaResponse.FromString,
+                )
+        self.CreateOSPFIfNetwork = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFIfNetwork',
+                request_serializer=cloudrpc__pb2.CreateOSPFIfNetworkRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFIfNetwork.FromString,
+                )
+        self.UpdateOSPFIfNetwork = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFIfNetwork',
+                request_serializer=cloudrpc__pb2.UpdateOSPFIfNetworkRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFIfNetwork.FromString,
+                )
+        self.DeleteOSPFIfNetwork = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFIfNetwork',
+                request_serializer=cloudrpc__pb2.DeleteOSPFIfNetworkRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetOSPFIfNetwork = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFIfNetwork',
+                request_serializer=cloudrpc__pb2.GetOSPFIfNetworkRequest.SerializeToString,
+                response_deserializer=ospf__pb2.OSPFIfNetwork.FromString,
+                )
+        self.ListOSPFIfNetwork = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFIfNetwork',
+                request_serializer=cloudrpc__pb2.ListOSPFIfNetworkRequest.SerializeToString,
+                response_deserializer=cloudrpc__pb2.ListOSPFIfNetworkResponse.FromString,
                 )
 
 
@@ -1173,6 +1249,112 @@ class CloudInfraServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateOSPF(self, request, context):
+        """OSPF APIs
+        Create a OSPF. Contains the configuration of the OSPF instance.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateOSPF(self, request, context):
+        """Update a OSPF instance
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteOSPF(self, request, context):
+        """Delete a OSPF instance
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetOSPF(self, request, context):
+        """Get an OSPF instance
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListOSPF(self, request, context):
+        """All OSPF instances
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateOSPFArea(self, request, context):
+        """Create a OSPF Area
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateOSPFArea(self, request, context):
+        """Update an OSPF Area
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteOSPFArea(self, request, context):
+        """Delete an OSPF Area
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetOSPFArea(self, request, context):
+        """Get an OSPF Area
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListOSPFArea(self, request, context):
+        """List all OSPF Areas
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateOSPFIfNetwork(self, request, context):
+        """Create an OSPF IfNetwork
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateOSPFIfNetwork(self, request, context):
+        """Update an OSPF IfNetwork
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteOSPFIfNetwork(self, request, context):
+        """Delete an OSPF IfNetwork
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetOSPFIfNetwork(self, request, context):
+        """Get an OSPF IfNetwork
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListOSPFIfNetwork(self, request, context):
+        """List all OSPF IfNetworks
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CloudInfraServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1670,6 +1852,81 @@ def add_CloudInfraServiceServicer_to_server(servicer, server):
                     servicer.GetSecurityProfile,
                     request_deserializer=cloudrpc__pb2.GetSecurityProfileRequest.FromString,
                     response_serializer=networkpolicy__pb2.SecurityProfile.SerializeToString,
+            ),
+            'CreateOSPF': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateOSPF,
+                    request_deserializer=cloudrpc__pb2.CreateOSPFRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFConfig.SerializeToString,
+            ),
+            'UpdateOSPF': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOSPF,
+                    request_deserializer=cloudrpc__pb2.UpdateOSPFRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFConfig.SerializeToString,
+            ),
+            'DeleteOSPF': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteOSPF,
+                    request_deserializer=cloudrpc__pb2.DeleteOSPFRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetOSPF': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOSPF,
+                    request_deserializer=cloudrpc__pb2.GetOSPFRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFConfig.SerializeToString,
+            ),
+            'ListOSPF': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOSPF,
+                    request_deserializer=cloudrpc__pb2.ListOSPFRequest.FromString,
+                    response_serializer=cloudrpc__pb2.ListOSPFResponse.SerializeToString,
+            ),
+            'CreateOSPFArea': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateOSPFArea,
+                    request_deserializer=cloudrpc__pb2.CreateOSPFAreaRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFArea.SerializeToString,
+            ),
+            'UpdateOSPFArea': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOSPFArea,
+                    request_deserializer=cloudrpc__pb2.UpdateOSPFAreaRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFArea.SerializeToString,
+            ),
+            'DeleteOSPFArea': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteOSPFArea,
+                    request_deserializer=cloudrpc__pb2.DeleteOSPFAreaRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetOSPFArea': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOSPFArea,
+                    request_deserializer=cloudrpc__pb2.GetOSPFAreaRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFArea.SerializeToString,
+            ),
+            'ListOSPFArea': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOSPFArea,
+                    request_deserializer=cloudrpc__pb2.ListOSPFAreaRequest.FromString,
+                    response_serializer=cloudrpc__pb2.ListOSPFAreaResponse.SerializeToString,
+            ),
+            'CreateOSPFIfNetwork': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateOSPFIfNetwork,
+                    request_deserializer=cloudrpc__pb2.CreateOSPFIfNetworkRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFIfNetwork.SerializeToString,
+            ),
+            'UpdateOSPFIfNetwork': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOSPFIfNetwork,
+                    request_deserializer=cloudrpc__pb2.UpdateOSPFIfNetworkRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFIfNetwork.SerializeToString,
+            ),
+            'DeleteOSPFIfNetwork': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteOSPFIfNetwork,
+                    request_deserializer=cloudrpc__pb2.DeleteOSPFIfNetworkRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetOSPFIfNetwork': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOSPFIfNetwork,
+                    request_deserializer=cloudrpc__pb2.GetOSPFIfNetworkRequest.FromString,
+                    response_serializer=ospf__pb2.OSPFIfNetwork.SerializeToString,
+            ),
+            'ListOSPFIfNetwork': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOSPFIfNetwork,
+                    request_deserializer=cloudrpc__pb2.ListOSPFIfNetworkRequest.FromString,
+                    response_serializer=cloudrpc__pb2.ListOSPFIfNetworkResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3376,5 +3633,260 @@ class CloudInfraService(object):
         return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetSecurityProfile',
             cloudrpc__pb2.GetSecurityProfileRequest.SerializeToString,
             networkpolicy__pb2.SecurityProfile.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateOSPF(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPF',
+            cloudrpc__pb2.CreateOSPFRequest.SerializeToString,
+            ospf__pb2.OSPFConfig.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateOSPF(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPF',
+            cloudrpc__pb2.UpdateOSPFRequest.SerializeToString,
+            ospf__pb2.OSPFConfig.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteOSPF(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPF',
+            cloudrpc__pb2.DeleteOSPFRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetOSPF(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPF',
+            cloudrpc__pb2.GetOSPFRequest.SerializeToString,
+            ospf__pb2.OSPFConfig.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListOSPF(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPF',
+            cloudrpc__pb2.ListOSPFRequest.SerializeToString,
+            cloudrpc__pb2.ListOSPFResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateOSPFArea(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFArea',
+            cloudrpc__pb2.CreateOSPFAreaRequest.SerializeToString,
+            ospf__pb2.OSPFArea.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateOSPFArea(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFArea',
+            cloudrpc__pb2.UpdateOSPFAreaRequest.SerializeToString,
+            ospf__pb2.OSPFArea.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteOSPFArea(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFArea',
+            cloudrpc__pb2.DeleteOSPFAreaRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetOSPFArea(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFArea',
+            cloudrpc__pb2.GetOSPFAreaRequest.SerializeToString,
+            ospf__pb2.OSPFArea.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListOSPFArea(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFArea',
+            cloudrpc__pb2.ListOSPFAreaRequest.SerializeToString,
+            cloudrpc__pb2.ListOSPFAreaResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateOSPFIfNetwork(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFIfNetwork',
+            cloudrpc__pb2.CreateOSPFIfNetworkRequest.SerializeToString,
+            ospf__pb2.OSPFIfNetwork.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateOSPFIfNetwork(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFIfNetwork',
+            cloudrpc__pb2.UpdateOSPFIfNetworkRequest.SerializeToString,
+            ospf__pb2.OSPFIfNetwork.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteOSPFIfNetwork(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFIfNetwork',
+            cloudrpc__pb2.DeleteOSPFIfNetworkRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetOSPFIfNetwork(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFIfNetwork',
+            cloudrpc__pb2.GetOSPFIfNetworkRequest.SerializeToString,
+            ospf__pb2.OSPFIfNetwork.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListOSPFIfNetwork(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFIfNetwork',
+            cloudrpc__pb2.ListOSPFIfNetworkRequest.SerializeToString,
+            cloudrpc__pb2.ListOSPFIfNetworkResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
