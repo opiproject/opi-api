@@ -56,7 +56,7 @@ service NetInterfaceService {
 // Interface config
 // (-- api-linter: core::0123::resource-annotation=disabled
 //     aip.dev/not-precedent: the name field is an opaque object --)
-message Config {
+message NetInterfaceConfig {
     // Name of the interface.  This is the opaque object
     // used for designating the created interface.
     string name = 1 [(google.api.field_behavior) = REQUIRED];
@@ -75,7 +75,7 @@ message Config {
 }
 
 // Statistics Counters for the interface - ro
-message Counters {
+message NetInterfaceCounters {
     // Received Octet counter
     uint64 rx_octets = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Received Packet counter
@@ -117,7 +117,7 @@ message Counters {
 // Interface State information - ro
 // (-- api-linter: core::0123::resource-annotation=disabled
 //     aip.dev/not-precedent: the name field is an opaque object --)
-message State {
+message NetInterfaceState {
     // Name of the interface.  This is the opaque object
     // used for designating the created interface.
     string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -150,7 +150,7 @@ message State {
     // the system CPU or control plane
     bool cpu = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Interface Statistics Counters
-    Counters counters = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+    NetInterfaceCounters counters = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
     // VLAN Tag Protocol Identifier
     TpidTypes tpid = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
@@ -169,9 +169,9 @@ message NetInterface {
     // user settable.  It is returned by the created object
     string name = 1 [(google.api.field_behavior) = IDENTIFIER];
     // Configuration settings - rw
-    Config config = 2 [(google.api.field_behavior) = REQUIRED];
+    NetInterfaceConfig config = 2 [(google.api.field_behavior) = REQUIRED];
     // Interface State and Statistics - ro
-    State state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+    NetInterfaceState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Hold Time Settings
     message HoldTime {
@@ -218,7 +218,7 @@ message NetInterface {
             SubifConfig subif_config = 2 [(google.api.field_behavior) = OPTIONAL];
 
             // Subinterface State and Statistics
-            State state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+            NetInterfaceState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
             // Subinterface VLAN
             VlanIf vlan = 4 [(google.api.field_behavior) = OPTIONAL];
@@ -230,7 +230,7 @@ message NetInterface {
     Subinterfaces subinterfaces = 5 [(google.api.field_behavior) = OPTIONAL];
 
     // Ethernet interface
-    EthernetIf ethernet = 6 [(google.api.field_behavior) = OPTIONAL];
+    EthernetInterface ethernet = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Get Interface Request

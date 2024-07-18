@@ -6,8 +6,8 @@
 - [networkethernet.proto](#networkethernet-proto)
     - [EthernetConfig](#opi_api-network-opinetcommon-v1alpha1-EthernetConfig)
     - [EthernetCounters](#opi_api-network-opinetcommon-v1alpha1-EthernetCounters)
-    - [EthernetIf](#opi_api-network-opinetcommon-v1alpha1-EthernetIf)
     - [EthernetInDistribution](#opi_api-network-opinetcommon-v1alpha1-EthernetInDistribution)
+    - [EthernetInterface](#opi_api-network-opinetcommon-v1alpha1-EthernetInterface)
     - [EthernetState](#opi_api-network-opinetcommon-v1alpha1-EthernetState)
   
     - [EthDuplexMode](#opi_api-network-opinetcommon-v1alpha1-EthDuplexMode)
@@ -15,8 +15,6 @@
     - [EthPortSpeed](#opi_api-network-opinetcommon-v1alpha1-EthPortSpeed)
   
 - [networkinterfaces.proto](#networkinterfaces-proto)
-    - [Config](#opi_api-network-opinetcommon-v1alpha1-Config)
-    - [Counters](#opi_api-network-opinetcommon-v1alpha1-Counters)
     - [GetNetInterfaceRequest](#opi_api-network-opinetcommon-v1alpha1-GetNetInterfaceRequest)
     - [ListNetInterfacesRequest](#opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesRequest)
     - [ListNetInterfacesResponse](#opi_api-network-opinetcommon-v1alpha1-ListNetInterfacesResponse)
@@ -27,7 +25,9 @@
     - [NetInterface.Subinterfaces](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces)
     - [NetInterface.Subinterfaces.Subinterface](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface)
     - [NetInterface.Subinterfaces.Subinterface.SubifConfig](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface-SubifConfig)
-    - [State](#opi_api-network-opinetcommon-v1alpha1-State)
+    - [NetInterfaceConfig](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceConfig)
+    - [NetInterfaceCounters](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceCounters)
+    - [NetInterfaceState](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceState)
     - [UpdateNetInterfaceRequest](#opi_api-network-opinetcommon-v1alpha1-UpdateNetInterfaceRequest)
   
     - [InterfaceType](#opi_api-network-opinetcommon-v1alpha1-InterfaceType)
@@ -157,23 +157,6 @@ Ethernet Interface Counters
 
 
 
-<a name="opi_api-network-opinetcommon-v1alpha1-EthernetIf"></a>
-
-### EthernetIf
-Ethernet Interface
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| config | [EthernetConfig](#opi_api-network-opinetcommon-v1alpha1-EthernetConfig) |  | Ethernet Interface Configuration settings |
-| state | [EthernetState](#opi_api-network-opinetcommon-v1alpha1-EthernetState) |  | Ethernet Interface State information |
-| switched_vlan | [VlanSwitchedIf](#opi_api-network-opinetcommon-v1alpha1-VlanSwitchedIf) |  | Switched VLAN Interface configuration for interface |
-
-
-
-
-
-
 <a name="opi_api-network-opinetcommon-v1alpha1-EthernetInDistribution"></a>
 
 ### EthernetInDistribution
@@ -188,6 +171,23 @@ Ethernet receive frame distribution counters
 | rx_frames_octets256_to511 | [uint64](#uint64) |  | receive counter for 256 to 511 byte frames |
 | rx_frames_octets512_to1023 | [uint64](#uint64) |  | receive counter for 512 to 1023 byte frames |
 | rx_frames_octets1024_to1518 | [uint64](#uint64) |  | receive counter for 1024 to 1518 byte frames |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-EthernetInterface"></a>
+
+### EthernetInterface
+Ethernet Interface
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config | [EthernetConfig](#opi_api-network-opinetcommon-v1alpha1-EthernetConfig) |  | Ethernet Interface Configuration settings |
+| state | [EthernetState](#opi_api-network-opinetcommon-v1alpha1-EthernetState) |  | Ethernet Interface State information |
+| switched_vlan | [VlanSwitchedIf](#opi_api-network-opinetcommon-v1alpha1-VlanSwitchedIf) |  | Switched VLAN Interface configuration for interface |
 
 
 
@@ -296,61 +296,6 @@ Derived from the OpenConfig interfaces model github.com/openconfig/public/releas
     aip.dev/not-precedent: counters, mtu, index must be uint and not int. --)
 
 
-<a name="opi_api-network-opinetcommon-v1alpha1-Config"></a>
-
-### Config
-Interface config
-(-- api-linter: core::0123::resource-annotation=disabled
-    aip.dev/not-precedent: the name field is an opaque object --)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Name of the interface. This is the opaque object used for designating the created interface. |
-| type | [InterfaceType](#opi_api-network-opinetcommon-v1alpha1-InterfaceType) |  | Type of interface - Ethernet and others |
-| mtu | [uint32](#uint32) |  | MTU for the interface that can be configured |
-| loopback_mode | [bool](#bool) |  | Setting the loopback mode of the interface |
-| description | [string](#string) |  | Description of the interface and usage |
-| enabled | [bool](#bool) |  | Setting for enabling/disabling the interface |
-| tpid | [TpidTypes](#opi_api-network-opinetcommon-v1alpha1-TpidTypes) |  | VLAN Tag Protocol Identifier (TPID) |
-
-
-
-
-
-
-<a name="opi_api-network-opinetcommon-v1alpha1-Counters"></a>
-
-### Counters
-Statistics Counters for the interface - ro
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| rx_octets | [uint64](#uint64) |  | Received Octet counter |
-| rx_packets | [uint64](#uint64) |  | Received Packet counter |
-| rx_unicast_pkts | [uint64](#uint64) |  | Unicast packets received counter |
-| rx_broadcast_pkts | [uint64](#uint64) |  | Broadcast packets received counter |
-| rx_multicast_pkts | [uint64](#uint64) |  | multicast packets received counter |
-| rx_discards | [uint64](#uint64) |  | discarded received packets counter |
-| rx_errors | [uint64](#uint64) |  | Receive error counter |
-| rx_unknown_protos | [uint64](#uint64) |  | Unknown received protocol counter |
-| rx_fcs_errors | [uint64](#uint64) |  | Received FCS error counter |
-| out_octets | [uint64](#uint64) |  | Transmit octet counter |
-| out_packets | [uint64](#uint64) |  | Transmit packet counter |
-| out_unicast_pkts | [uint64](#uint64) |  | Unicast packet transmit counter |
-| out_broadcast_pkts | [uint64](#uint64) |  | Broadcast packet transmit counter |
-| out_multicast_pkts | [uint64](#uint64) |  | Multicast packet transmit counter |
-| out_discards | [uint64](#uint64) |  | Discarded transmit packet counter |
-| out_errors | [uint64](#uint64) |  | Transmit error counter |
-| carrier_transitions | [uint64](#uint64) |  | Carrier transition count |
-| last_clear | [uint64](#uint64) |  | Timestamp of the last time the interface counters were cleared |
-
-
-
-
-
-
 <a name="opi_api-network-opinetcommon-v1alpha1-GetNetInterfaceRequest"></a>
 
 ### GetNetInterfaceRequest
@@ -410,11 +355,11 @@ Interface - physical or virtual interface reported
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Name of the interface. This is an opaque object that is not user settable. It is returned by the created object |
-| config | [Config](#opi_api-network-opinetcommon-v1alpha1-Config) |  | Configuration settings - rw |
-| state | [State](#opi_api-network-opinetcommon-v1alpha1-State) |  | Interface State and Statistics - ro |
+| config | [NetInterfaceConfig](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceConfig) |  | Configuration settings - rw |
+| state | [NetInterfaceState](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceState) |  | Interface State and Statistics - ro |
 | holdtime | [NetInterface.HoldTime](#opi_api-network-opinetcommon-v1alpha1-NetInterface-HoldTime) |  | Hold Time Settings |
 | subinterfaces | [NetInterface.Subinterfaces](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces) |  | Subinterfaces assigned to the interface |
-| ethernet | [EthernetIf](#opi_api-network-opinetcommon-v1alpha1-EthernetIf) |  | Ethernet interface |
+| ethernet | [EthernetInterface](#opi_api-network-opinetcommon-v1alpha1-EthernetInterface) |  | Ethernet interface |
 
 
 
@@ -494,7 +439,7 @@ Subinterface settings
 | ----- | ---- | ----- | ----------- |
 | index | [int64](#int64) |  | Subinterface index |
 | subif_config | [NetInterface.Subinterfaces.Subinterface.SubifConfig](#opi_api-network-opinetcommon-v1alpha1-NetInterface-Subinterfaces-Subinterface-SubifConfig) |  | Subinterface Configuration |
-| state | [State](#opi_api-network-opinetcommon-v1alpha1-State) |  | Subinterface State and Statistics |
+| state | [NetInterfaceState](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceState) |  | Subinterface State and Statistics |
 | vlan | [VlanIf](#opi_api-network-opinetcommon-v1alpha1-VlanIf) |  | Subinterface VLAN |
 
 
@@ -519,9 +464,64 @@ Subinterface configuration
 
 
 
-<a name="opi_api-network-opinetcommon-v1alpha1-State"></a>
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterfaceConfig"></a>
 
-### State
+### NetInterfaceConfig
+Interface config
+(-- api-linter: core::0123::resource-annotation=disabled
+    aip.dev/not-precedent: the name field is an opaque object --)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of the interface. This is the opaque object used for designating the created interface. |
+| type | [InterfaceType](#opi_api-network-opinetcommon-v1alpha1-InterfaceType) |  | Type of interface - Ethernet and others |
+| mtu | [uint32](#uint32) |  | MTU for the interface that can be configured |
+| loopback_mode | [bool](#bool) |  | Setting the loopback mode of the interface |
+| description | [string](#string) |  | Description of the interface and usage |
+| enabled | [bool](#bool) |  | Setting for enabling/disabling the interface |
+| tpid | [TpidTypes](#opi_api-network-opinetcommon-v1alpha1-TpidTypes) |  | VLAN Tag Protocol Identifier (TPID) |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterfaceCounters"></a>
+
+### NetInterfaceCounters
+Statistics Counters for the interface - ro
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| rx_octets | [uint64](#uint64) |  | Received Octet counter |
+| rx_packets | [uint64](#uint64) |  | Received Packet counter |
+| rx_unicast_pkts | [uint64](#uint64) |  | Unicast packets received counter |
+| rx_broadcast_pkts | [uint64](#uint64) |  | Broadcast packets received counter |
+| rx_multicast_pkts | [uint64](#uint64) |  | multicast packets received counter |
+| rx_discards | [uint64](#uint64) |  | discarded received packets counter |
+| rx_errors | [uint64](#uint64) |  | Receive error counter |
+| rx_unknown_protos | [uint64](#uint64) |  | Unknown received protocol counter |
+| rx_fcs_errors | [uint64](#uint64) |  | Received FCS error counter |
+| out_octets | [uint64](#uint64) |  | Transmit octet counter |
+| out_packets | [uint64](#uint64) |  | Transmit packet counter |
+| out_unicast_pkts | [uint64](#uint64) |  | Unicast packet transmit counter |
+| out_broadcast_pkts | [uint64](#uint64) |  | Broadcast packet transmit counter |
+| out_multicast_pkts | [uint64](#uint64) |  | Multicast packet transmit counter |
+| out_discards | [uint64](#uint64) |  | Discarded transmit packet counter |
+| out_errors | [uint64](#uint64) |  | Transmit error counter |
+| carrier_transitions | [uint64](#uint64) |  | Carrier transition count |
+| last_clear | [uint64](#uint64) |  | Timestamp of the last time the interface counters were cleared |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-NetInterfaceState"></a>
+
+### NetInterfaceState
 Interface State information - ro
 (-- api-linter: core::0123::resource-annotation=disabled
     aip.dev/not-precedent: the name field is an opaque object --)
@@ -542,7 +542,7 @@ Interface State information - ro
 | logical | [bool](#bool) |  | Logical interface - when set to true indicates a logical interface with no associated physical port or channel |
 | management | [bool](#bool) |  | Management interface - when set to true indicates a dedicated management interface that is independent of the dataplane interfaces such as an out of band management network |
 | cpu | [bool](#bool) |  | CPU interface - when set to true the interface is for traffic handled by the system CPU or control plane |
-| counters | [Counters](#opi_api-network-opinetcommon-v1alpha1-Counters) |  | Interface Statistics Counters |
+| counters | [NetInterfaceCounters](#opi_api-network-opinetcommon-v1alpha1-NetInterfaceCounters) |  | Interface Statistics Counters |
 | tpid | [TpidTypes](#opi_api-network-opinetcommon-v1alpha1-TpidTypes) |  | VLAN Tag Protocol Identifier |
 
 
