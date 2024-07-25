@@ -1373,9 +1373,9 @@ message UpdateBgpRouterRequest {
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
     ];
     // updated bgp router info
-    BgpRouter bgp_router = 2;
+    BgpRouter bgp_router = 2 [(google.api.field_behavior) = REQUIRED];
     // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+    google.protobuf.FieldMask update_mask = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List BgpRouter request
@@ -1420,7 +1420,7 @@ message CreateBGPPeerRequest {
     // bgp_peer
     BGPPeer bgp_peer = 2 [(google.api.field_behavior) = REQUIRED];
     // bgp_peer_id
-    string bgp_peer_id = 3;
+    string bgp_peer_id = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Delete BGP Peer request
@@ -1443,7 +1443,7 @@ message UpdateBGPPeerRequest {
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
     ];
     // updated bgp peer info
-    BGPPeer bgp_peer = 2;
+    BGPPeer bgp_peer = 2 [(google.api.field_behavior) = REQUIRED];
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 3;
 }
@@ -1490,7 +1490,7 @@ message CreateBGPPeerAfRequest {
     // bgp_peer_af
     BGPPeerAf bgp_peer_af = 2 [(google.api.field_behavior) = REQUIRED];
     // bgp_peer_af_id
-    string bgp_peer_af_id = 3;
+    string bgp_peer_af_id = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Delete bgp peer af request
@@ -1513,9 +1513,9 @@ message UpdateBGPPeerAfRequest {
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
     ];
     // updated bgp peer af info
-    BGPPeerAf bgp_peer_af = 2;
+    BGPPeerAf bgp_peer_af = 2 [(google.api.field_behavior) = REQUIRED];
     // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+    google.protobuf.FieldMask update_mask = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List bgp peer af request
