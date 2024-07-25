@@ -21,6 +21,7 @@ option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go
 
 import "networktypes.proto";
 import "google/api/resource.proto";
+import "google/api/field_behavior.proto";
 
 // BGP Router object
 message BgpRouter {
@@ -63,7 +64,7 @@ message BgpSpec {
 // operational status of BGP
 message BgpStatus {
   // BGP current oper status
-  BGPOperState oper_state = 1;
+  BGPOperState oper_state = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   // The total number of Adj-RIB-Out routes currently allocated
   int32 adj_rib_out_routes_count = 2;
   // The peak number of Adj-RIB-Out routes that have been allocated at any one time
@@ -95,7 +96,7 @@ message BGPPeerSpec {
   // peer enable/disable admin state. if peer is not enabled then local router
   // must not initiate connections to the neighbor and must not respond to
   // TCP connections attempts from neighbor
-  network.opinetcommon.v1alpha1.AdminState state = 1;
+  network.opinetcommon.v1alpha1.AdminState state = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   // BGP local IP address. control plane chooses the local IP address of the
   // session if an all 0 IP address is provided
   network.opinetcommon.v1alpha1.IPAddress  local_address = 2;
@@ -138,9 +139,9 @@ message BGPPeerSpec {
 // BGP peer status
 message BGPPeerStatus {
   // BGP session state
-  BGPPeerSessionState session_state = 1;
+  BGPPeerSessionState session_state = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   // BGP session previous status
-  BGPPeerSessionState prev_session_state = 2;
+  BGPPeerSessionState prev_session_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
   // last error received
   bytes last_error_rcvd = 3;
   // Last error sent
@@ -232,7 +233,7 @@ message BGPPeerStatus {
   //     aip.dev/not-precedent: ttl is not a duration. --)
   int32 ttl = 46;
   // Operational status of this peer
-  BGPOperState oper_state = 47;
+  BGPOperState oper_state = 47 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // BGP peer AF object
@@ -456,7 +457,7 @@ message BGPAdjRibOutStatus {
   // Prefix length
   int32 prefix_len = 5;
   // Advertisement status
-  BgpAroAdvertState state = 6;
+  BgpAroAdvertState state = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
   // AS size
   BgpAsSize as_size = 7;
   // AS path string
