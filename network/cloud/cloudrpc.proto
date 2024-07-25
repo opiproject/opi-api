@@ -296,12 +296,14 @@ service CloudInfraService {
         };
         option (google.api.method_signature) = "bgp_router,bgp_router_id";
     }
+    // BGG Router Delete
     rpc DeleteBgpRouter (DeleteBgpRouterRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=bgpRouter}/*"
         };
         option (google.api.method_signature) = "name";
     }
+    // BGP Router Update
     rpc UpdateBgpRouter (UpdateBgpRouterRequest) returns (BgpRouter) {
         option (google.api.http) = {
             patch: "/v1/{bgp_router.name=bgpRouters}/*"
@@ -309,12 +311,14 @@ service CloudInfraService {
         };
         option (google.api.method_signature) = "bgp_router,update_mask";
     }
+    // BGP Router List
     rpc ListBgpRouters (ListBgpRoutersRequest) returns (ListBgpRoutersResponse) {
         option (google.api.http) = {
             get: "/v1/{parent=bgpRouters}"
         };
         option (google.api.method_signature) = "parent";
     }
+    // BGP Router Get
     rpc GetBgpRouter (GetBgpRouterRequest) returns (BgpRouter) {
         option (google.api.http) = {
             get: "/v1/{name=bgps}/*"
@@ -330,12 +334,14 @@ service CloudInfraService {
         };
         option (google.api.method_signature) = "bgp_peer,bgp_peer_id";
     }
+    // BGP Peer Delete
     rpc DeleteBGPPeer (DeleteBGPPeerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=bgppeers}/*"
         };
         option (google.api.method_signature) = "name";
     }
+    // BGP Peer Update
     rpc UpdateBGPPeer (UpdateBGPPeerRequest) returns (BGPPeer) {
         option (google.api.http) = {
             patch: "/v1/{bgp_peer.name=bgppeers}/*"
@@ -343,12 +349,14 @@ service CloudInfraService {
         };
         option (google.api.method_signature) = "bgp_peer,update_mask";
     }
+    // BGP Peer List
     rpc ListBGPPeers (ListBGPPeersRequest) returns (ListBGPPeersResponse) {
         option (google.api.http) = {
             get: "/v1/{parent=bgpPeers}"
         };
         option (google.api.method_signature) = "parent";
     }
+    // BGP Peer Get
     rpc GetBGPPeer (GetBGPPeerRequest) returns (BGPPeer) {
         option (google.api.http) = {
             get: "/v1/{name=bgppeers}/*"
@@ -364,12 +372,14 @@ service CloudInfraService {
         };
         option (google.api.method_signature) = "bgp_peer_af,bgp_peer_af_id";
     }
+    // BGP Peer AF Delete
     rpc DeleteBGPPeerAf (DeleteBGPPeerAfRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=bgpPeerAfs}/*"
         };
         option (google.api.method_signature) = "name";
     }
+    // BGP Peer AF Update
     rpc UpdateBGPPeerAf (UpdateBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
             patch: "/v1/{bgp_peer_af.name=bgpPeerAfs}/*"
@@ -377,12 +387,14 @@ service CloudInfraService {
         };
         option (google.api.method_signature) = "bgp_peer_af,update_mask";
     }
+    // BGP Peer AF List
     rpc ListBGPPeerAfs (ListBGPPeerAfsRequest) returns (ListBGPPeerAfsResponse) {
         option (google.api.http) = {
             get: "/v1/{parent=bgpPeerAfs}"
         };
         option (google.api.method_signature) = "parent";
     }
+    // BGP Peer AF Get
     rpc GetBGPPeerAf (GetBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
             get: "/v1/{name=bgpPeerAfs}/*"
@@ -1328,7 +1340,6 @@ message GetUnderlayRouteRequest {
 //
 // Bgp Requests/Responses
 //
-
 // Create BgpRouter Request
 message CreateBgpRouterRequest {
     // parent
@@ -1399,7 +1410,6 @@ message GetBgpRouterRequest {
 //
 // BGPPeer Requests/Responses
 //
-
 // Create BGPPeer Request
 message CreateBGPPeerRequest {
     // parent
@@ -1470,7 +1480,6 @@ message GetBGPPeerRequest {
 //
 // BGPPeerAf Requests/Responses
 //
-
 // Create BGPPeerAf Request
 message CreateBGPPeerAfRequest {
     // parent
