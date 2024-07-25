@@ -15,28 +15,30 @@ package opi_api.network.cloud.v1alpha1;
 
 option java_package = "opi_api.network.cloud.v1alpha1";
 option java_multiple_files = true;
-option java_outer_classname = "BGPProto";
+option java_outer_classname = "BgpProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
 import "networktypes.proto";
 import "google/api/resource.proto";
 
-// BGP object
-message Bgp {
+// BGP Router object
+message BgpRouter {
   option (google.api.resource) = {
-    type: "opi_api.network.cloud.v1alpha1/bgp"
-    pattern: "bgps/{bgp}"
+    type: "opi_api.network.cloud.v1alpha1/BgpRouter"
+    pattern: "bgpRouters/{router}"
+    singular: "bgpRouter"
+    plural: "bgpRouters"
   };
-  // unique key/identifier of BGP config
+  // unique key/identifier of BGP Router config
   string name = 1;
-  // BGP Configuration
+  // BGP Router Configuration
   BgpSpec spec = 2;
-  // BGP Status
+  // BGP Router Status
   BgpStatus status = 3;
 }
 
-// BGP configuration
+// BGP Router configuration
 message BgpSpec {
   // the local autonomous system number
   // (-- api-linter: core::0141::forbidden-types=disabled

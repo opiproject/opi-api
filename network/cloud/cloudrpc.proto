@@ -289,33 +289,33 @@ service CloudInfraService {
     // TBD rpc CPRouteRedistGet (CPRouteRedistGetRequest) returns (CPRouteRedistGetResponse) {}
 
     // bgp (optional) apis
-    rpc CreateBgp (CreateBgpRequest) returns (Bgp) {
+    rpc CreateBgpRouter (CreateBgpRouterRequest) returns (BgpRouter) {
         option (google.api.http) = {
             post: "/v1/bgps"
             body: "bgp"
         };
         option (google.api.method_signature) = "bgp,bgp_id";
     }
-    rpc DeleteBgp (DeleteBgpRequest) returns (google.protobuf.Empty) {
+    rpc DeleteBgpRouter (DeleteBgpRouterRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=bgps}/*"
         };
         option (google.api.method_signature) = "name";
     }
-    rpc UpdateBgp (UpdateBgpRequest) returns (Bgp) {
+    rpc UpdateBgpRouter (UpdateBgpRouterRequest) returns (BgpRouter) {
         option (google.api.http) = {
             patch: "/v1/{name=bgps}/*"
             body: "bgp"
         };
         option (google.api.method_signature) = "bgp, update_mask";
     }
-    rpc ListBgps (ListBgpsRequest) returns (ListBgpsResponse) {
+    rpc ListBgpRouters (ListBgpRoutersRequest) returns (ListBgpRoutersResponse) {
         option (google.api.http) = {
             get: "/v1/bgps"
         };
         option (google.api.method_signature) = "";
     }
-    rpc GetBgp (GetBgpRequest) returns (Bgp) {
+    rpc GetBgpRouter (GetBgpRouterRequest) returns (BgpRouter) {
         option (google.api.http) = {
             get: "/v1/{name=bgps}/*"
         };
@@ -1329,21 +1329,21 @@ message GetUnderlayRouteRequest {
 // Bgp Requests/Responses
 //
 
-// Create Bgp Request
-message CreateBgpRequest {
+// Create BgpRouter Request
+message CreateBgpRouterRequest {
     // parent
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"
     ];
     // bgp
-    Bgp bgp = 2 [(google.api.field_behavior) = REQUIRED];
+    BgpRouter bgp = 2 [(google.api.field_behavior) = REQUIRED];
     // bgp_id
     string bgp_id = 3;
 }
 
-// Delete bgp request
-message DeleteBgpRequest {
+// Delete BgpRouter request
+message DeleteBgpRouterRequest {
     // bgp id
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -1354,21 +1354,21 @@ message DeleteBgpRequest {
     bool allow_missing = 2;
 }
 
-// Update bgp request
-message UpdateBgpRequest {
+// Update BgpRouter request
+message UpdateBgpRouterRequest {
     // Name of bgp requested
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"
     ];
     // updated bgp info
-    Bgp bgp = 2;
+    BgpRouter bgp = 2;
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 3;
 }
 
-// List bgp request
-message ListBgpsRequest {
+// List BgpRouter request
+message ListBgpRoutersRequest {
     // parent
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -1380,16 +1380,16 @@ message ListBgpsRequest {
     string page_token = 3;
 }
 
-// List bgp response
-message ListBgpsResponse {
+// List BgpRouter response
+message ListBgpRoutersResponse {
     // list of bgps
-    repeated Bgp bgp = 1;
+    repeated BgpRouter bgp = 1;
     // next page token
     string next_page_token = 2;
 }
 
 // Get bgp request
-message GetBgpRequest {
+message GetBgpRouterRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"

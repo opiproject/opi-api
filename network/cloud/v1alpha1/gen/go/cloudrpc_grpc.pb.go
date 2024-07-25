@@ -57,11 +57,11 @@ const (
 	CloudInfraService_UpdateUnderlayRoute_FullMethodName   = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateUnderlayRoute"
 	CloudInfraService_ListUnderlayRoutes_FullMethodName    = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListUnderlayRoutes"
 	CloudInfraService_GetUnderlayRoute_FullMethodName      = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetUnderlayRoute"
-	CloudInfraService_CreateBgp_FullMethodName             = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgp"
-	CloudInfraService_DeleteBgp_FullMethodName             = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgp"
-	CloudInfraService_UpdateBgp_FullMethodName             = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgp"
-	CloudInfraService_ListBgps_FullMethodName              = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgps"
-	CloudInfraService_GetBgp_FullMethodName                = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgp"
+	CloudInfraService_CreateBgpRouter_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpRouter"
+	CloudInfraService_DeleteBgpRouter_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpRouter"
+	CloudInfraService_UpdateBgpRouter_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpRouter"
+	CloudInfraService_ListBgpRouters_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpRouters"
+	CloudInfraService_GetBgpRouter_FullMethodName          = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpRouter"
 	CloudInfraService_CreateBGPPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeer"
 	CloudInfraService_DeleteBGPPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeer"
 	CloudInfraService_UpdateBGPPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeer"
@@ -186,11 +186,11 @@ type CloudInfraServiceClient interface {
 	ListUnderlayRoutes(ctx context.Context, in *ListUnderlayRoutesRequest, opts ...grpc.CallOption) (*ListUnderlayRoutesResponse, error)
 	GetUnderlayRoute(ctx context.Context, in *GetUnderlayRouteRequest, opts ...grpc.CallOption) (*UnderlayRoute, error)
 	// bgp (optional) apis
-	CreateBgp(ctx context.Context, in *CreateBgpRequest, opts ...grpc.CallOption) (*Bgp, error)
-	DeleteBgp(ctx context.Context, in *DeleteBgpRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	UpdateBgp(ctx context.Context, in *UpdateBgpRequest, opts ...grpc.CallOption) (*Bgp, error)
-	ListBgps(ctx context.Context, in *ListBgpsRequest, opts ...grpc.CallOption) (*ListBgpsResponse, error)
-	GetBgp(ctx context.Context, in *GetBgpRequest, opts ...grpc.CallOption) (*Bgp, error)
+	CreateBgpRouter(ctx context.Context, in *CreateBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error)
+	DeleteBgpRouter(ctx context.Context, in *DeleteBgpRouterRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	UpdateBgpRouter(ctx context.Context, in *UpdateBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error)
+	ListBgpRouters(ctx context.Context, in *ListBgpRoutersRequest, opts ...grpc.CallOption) (*ListBgpRoutersResponse, error)
+	GetBgpRouter(ctx context.Context, in *GetBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error)
 	// bgppeer (optional) apis
 	CreateBGPPeer(ctx context.Context, in *CreateBGPPeerRequest, opts ...grpc.CallOption) (*BGPPeer, error)
 	DeleteBGPPeer(ctx context.Context, in *DeleteBGPPeerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
@@ -610,45 +610,45 @@ func (c *cloudInfraServiceClient) GetUnderlayRoute(ctx context.Context, in *GetU
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) CreateBgp(ctx context.Context, in *CreateBgpRequest, opts ...grpc.CallOption) (*Bgp, error) {
-	out := new(Bgp)
-	err := c.cc.Invoke(ctx, CloudInfraService_CreateBgp_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) CreateBgpRouter(ctx context.Context, in *CreateBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error) {
+	out := new(BgpRouter)
+	err := c.cc.Invoke(ctx, CloudInfraService_CreateBgpRouter_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) DeleteBgp(ctx context.Context, in *DeleteBgpRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *cloudInfraServiceClient) DeleteBgpRouter(ctx context.Context, in *DeleteBgpRouterRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, CloudInfraService_DeleteBgp_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudInfraService_DeleteBgpRouter_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) UpdateBgp(ctx context.Context, in *UpdateBgpRequest, opts ...grpc.CallOption) (*Bgp, error) {
-	out := new(Bgp)
-	err := c.cc.Invoke(ctx, CloudInfraService_UpdateBgp_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) UpdateBgpRouter(ctx context.Context, in *UpdateBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error) {
+	out := new(BgpRouter)
+	err := c.cc.Invoke(ctx, CloudInfraService_UpdateBgpRouter_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) ListBgps(ctx context.Context, in *ListBgpsRequest, opts ...grpc.CallOption) (*ListBgpsResponse, error) {
-	out := new(ListBgpsResponse)
-	err := c.cc.Invoke(ctx, CloudInfraService_ListBgps_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) ListBgpRouters(ctx context.Context, in *ListBgpRoutersRequest, opts ...grpc.CallOption) (*ListBgpRoutersResponse, error) {
+	out := new(ListBgpRoutersResponse)
+	err := c.cc.Invoke(ctx, CloudInfraService_ListBgpRouters_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) GetBgp(ctx context.Context, in *GetBgpRequest, opts ...grpc.CallOption) (*Bgp, error) {
-	out := new(Bgp)
-	err := c.cc.Invoke(ctx, CloudInfraService_GetBgp_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) GetBgpRouter(ctx context.Context, in *GetBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error) {
+	out := new(BgpRouter)
+	err := c.cc.Invoke(ctx, CloudInfraService_GetBgpRouter_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1377,11 +1377,11 @@ type CloudInfraServiceServer interface {
 	ListUnderlayRoutes(context.Context, *ListUnderlayRoutesRequest) (*ListUnderlayRoutesResponse, error)
 	GetUnderlayRoute(context.Context, *GetUnderlayRouteRequest) (*UnderlayRoute, error)
 	// bgp (optional) apis
-	CreateBgp(context.Context, *CreateBgpRequest) (*Bgp, error)
-	DeleteBgp(context.Context, *DeleteBgpRequest) (*emptypb.Empty, error)
-	UpdateBgp(context.Context, *UpdateBgpRequest) (*Bgp, error)
-	ListBgps(context.Context, *ListBgpsRequest) (*ListBgpsResponse, error)
-	GetBgp(context.Context, *GetBgpRequest) (*Bgp, error)
+	CreateBgpRouter(context.Context, *CreateBgpRouterRequest) (*BgpRouter, error)
+	DeleteBgpRouter(context.Context, *DeleteBgpRouterRequest) (*emptypb.Empty, error)
+	UpdateBgpRouter(context.Context, *UpdateBgpRouterRequest) (*BgpRouter, error)
+	ListBgpRouters(context.Context, *ListBgpRoutersRequest) (*ListBgpRoutersResponse, error)
+	GetBgpRouter(context.Context, *GetBgpRouterRequest) (*BgpRouter, error)
 	// bgppeer (optional) apis
 	CreateBGPPeer(context.Context, *CreateBGPPeerRequest) (*BGPPeer, error)
 	DeleteBGPPeer(context.Context, *DeleteBGPPeerRequest) (*emptypb.Empty, error)
@@ -1594,20 +1594,20 @@ func (UnimplementedCloudInfraServiceServer) ListUnderlayRoutes(context.Context, 
 func (UnimplementedCloudInfraServiceServer) GetUnderlayRoute(context.Context, *GetUnderlayRouteRequest) (*UnderlayRoute, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUnderlayRoute not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) CreateBgp(context.Context, *CreateBgpRequest) (*Bgp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateBgp not implemented")
+func (UnimplementedCloudInfraServiceServer) CreateBgpRouter(context.Context, *CreateBgpRouterRequest) (*BgpRouter, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateBgpRouter not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) DeleteBgp(context.Context, *DeleteBgpRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteBgp not implemented")
+func (UnimplementedCloudInfraServiceServer) DeleteBgpRouter(context.Context, *DeleteBgpRouterRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteBgpRouter not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) UpdateBgp(context.Context, *UpdateBgpRequest) (*Bgp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateBgp not implemented")
+func (UnimplementedCloudInfraServiceServer) UpdateBgpRouter(context.Context, *UpdateBgpRouterRequest) (*BgpRouter, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateBgpRouter not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) ListBgps(context.Context, *ListBgpsRequest) (*ListBgpsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListBgps not implemented")
+func (UnimplementedCloudInfraServiceServer) ListBgpRouters(context.Context, *ListBgpRoutersRequest) (*ListBgpRoutersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListBgpRouters not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) GetBgp(context.Context, *GetBgpRequest) (*Bgp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBgp not implemented")
+func (UnimplementedCloudInfraServiceServer) GetBgpRouter(context.Context, *GetBgpRouterRequest) (*BgpRouter, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBgpRouter not implemented")
 }
 func (UnimplementedCloudInfraServiceServer) CreateBGPPeer(context.Context, *CreateBGPPeerRequest) (*BGPPeer, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBGPPeer not implemented")
@@ -2459,92 +2459,92 @@ func _CloudInfraService_GetUnderlayRoute_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_CreateBgp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateBgpRequest)
+func _CloudInfraService_CreateBgpRouter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateBgpRouterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).CreateBgp(ctx, in)
+		return srv.(CloudInfraServiceServer).CreateBgpRouter(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_CreateBgp_FullMethodName,
+		FullMethod: CloudInfraService_CreateBgpRouter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).CreateBgp(ctx, req.(*CreateBgpRequest))
+		return srv.(CloudInfraServiceServer).CreateBgpRouter(ctx, req.(*CreateBgpRouterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_DeleteBgp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteBgpRequest)
+func _CloudInfraService_DeleteBgpRouter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteBgpRouterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).DeleteBgp(ctx, in)
+		return srv.(CloudInfraServiceServer).DeleteBgpRouter(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_DeleteBgp_FullMethodName,
+		FullMethod: CloudInfraService_DeleteBgpRouter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).DeleteBgp(ctx, req.(*DeleteBgpRequest))
+		return srv.(CloudInfraServiceServer).DeleteBgpRouter(ctx, req.(*DeleteBgpRouterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_UpdateBgp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateBgpRequest)
+func _CloudInfraService_UpdateBgpRouter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateBgpRouterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).UpdateBgp(ctx, in)
+		return srv.(CloudInfraServiceServer).UpdateBgpRouter(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_UpdateBgp_FullMethodName,
+		FullMethod: CloudInfraService_UpdateBgpRouter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).UpdateBgp(ctx, req.(*UpdateBgpRequest))
+		return srv.(CloudInfraServiceServer).UpdateBgpRouter(ctx, req.(*UpdateBgpRouterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_ListBgps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListBgpsRequest)
+func _CloudInfraService_ListBgpRouters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBgpRoutersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).ListBgps(ctx, in)
+		return srv.(CloudInfraServiceServer).ListBgpRouters(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_ListBgps_FullMethodName,
+		FullMethod: CloudInfraService_ListBgpRouters_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).ListBgps(ctx, req.(*ListBgpsRequest))
+		return srv.(CloudInfraServiceServer).ListBgpRouters(ctx, req.(*ListBgpRoutersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_GetBgp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBgpRequest)
+func _CloudInfraService_GetBgpRouter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBgpRouterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).GetBgp(ctx, in)
+		return srv.(CloudInfraServiceServer).GetBgpRouter(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_GetBgp_FullMethodName,
+		FullMethod: CloudInfraService_GetBgpRouter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).GetBgp(ctx, req.(*GetBgpRequest))
+		return srv.(CloudInfraServiceServer).GetBgpRouter(ctx, req.(*GetBgpRouterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4043,24 +4043,24 @@ var CloudInfraService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudInfraService_GetUnderlayRoute_Handler,
 		},
 		{
-			MethodName: "CreateBgp",
-			Handler:    _CloudInfraService_CreateBgp_Handler,
+			MethodName: "CreateBgpRouter",
+			Handler:    _CloudInfraService_CreateBgpRouter_Handler,
 		},
 		{
-			MethodName: "DeleteBgp",
-			Handler:    _CloudInfraService_DeleteBgp_Handler,
+			MethodName: "DeleteBgpRouter",
+			Handler:    _CloudInfraService_DeleteBgpRouter_Handler,
 		},
 		{
-			MethodName: "UpdateBgp",
-			Handler:    _CloudInfraService_UpdateBgp_Handler,
+			MethodName: "UpdateBgpRouter",
+			Handler:    _CloudInfraService_UpdateBgpRouter_Handler,
 		},
 		{
-			MethodName: "ListBgps",
-			Handler:    _CloudInfraService_ListBgps_Handler,
+			MethodName: "ListBgpRouters",
+			Handler:    _CloudInfraService_ListBgpRouters_Handler,
 		},
 		{
-			MethodName: "GetBgp",
-			Handler:    _CloudInfraService_GetBgp_Handler,
+			MethodName: "GetBgpRouter",
+			Handler:    _CloudInfraService_GetBgpRouter_Handler,
 		},
 		{
 			MethodName: "CreateBGPPeer",

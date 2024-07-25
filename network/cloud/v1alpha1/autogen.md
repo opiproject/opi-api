@@ -20,7 +20,7 @@
     - [BGPPeerSpec](#opi_api-network-cloud-v1alpha1-BGPPeerSpec)
     - [BGPPeerStatus](#opi_api-network-cloud-v1alpha1-BGPPeerStatus)
     - [BGPRouteMap](#opi_api-network-cloud-v1alpha1-BGPRouteMap)
-    - [Bgp](#opi_api-network-cloud-v1alpha1-Bgp)
+    - [BgpRouter](#opi_api-network-cloud-v1alpha1-BgpRouter)
     - [BgpSpec](#opi_api-network-cloud-v1alpha1-BgpSpec)
     - [BgpStatus](#opi_api-network-cloud-v1alpha1-BgpStatus)
   
@@ -43,7 +43,7 @@
 - [cloudrpc.proto](#cloudrpc-proto)
     - [CreateBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-CreateBGPPeerAfRequest)
     - [CreateBGPPeerRequest](#opi_api-network-cloud-v1alpha1-CreateBGPPeerRequest)
-    - [CreateBgpRequest](#opi_api-network-cloud-v1alpha1-CreateBgpRequest)
+    - [CreateBgpRouterRequest](#opi_api-network-cloud-v1alpha1-CreateBgpRouterRequest)
     - [CreateDeviceRequest](#opi_api-network-cloud-v1alpha1-CreateDeviceRequest)
     - [CreateInterfaceRequest](#opi_api-network-cloud-v1alpha1-CreateInterfaceRequest)
     - [CreateMappingRequest](#opi_api-network-cloud-v1alpha1-CreateMappingRequest)
@@ -65,7 +65,7 @@
     - [CreateVpcRequest](#opi_api-network-cloud-v1alpha1-CreateVpcRequest)
     - [DeleteBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-DeleteBGPPeerAfRequest)
     - [DeleteBGPPeerRequest](#opi_api-network-cloud-v1alpha1-DeleteBGPPeerRequest)
-    - [DeleteBgpRequest](#opi_api-network-cloud-v1alpha1-DeleteBgpRequest)
+    - [DeleteBgpRouterRequest](#opi_api-network-cloud-v1alpha1-DeleteBgpRouterRequest)
     - [DeleteDeviceRequest](#opi_api-network-cloud-v1alpha1-DeleteDeviceRequest)
     - [DeleteInterfaceRequest](#opi_api-network-cloud-v1alpha1-DeleteInterfaceRequest)
     - [DeleteMappingRequest](#opi_api-network-cloud-v1alpha1-DeleteMappingRequest)
@@ -87,7 +87,7 @@
     - [DeleteVpcRequest](#opi_api-network-cloud-v1alpha1-DeleteVpcRequest)
     - [GetBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-GetBGPPeerAfRequest)
     - [GetBGPPeerRequest](#opi_api-network-cloud-v1alpha1-GetBGPPeerRequest)
-    - [GetBgpRequest](#opi_api-network-cloud-v1alpha1-GetBgpRequest)
+    - [GetBgpRouterRequest](#opi_api-network-cloud-v1alpha1-GetBgpRouterRequest)
     - [GetDeviceCapabilitiesRequest](#opi_api-network-cloud-v1alpha1-GetDeviceCapabilitiesRequest)
     - [GetDeviceRequest](#opi_api-network-cloud-v1alpha1-GetDeviceRequest)
     - [GetInterfaceRequest](#opi_api-network-cloud-v1alpha1-GetInterfaceRequest)
@@ -113,8 +113,8 @@
     - [ListBGPPeerAfsResponse](#opi_api-network-cloud-v1alpha1-ListBGPPeerAfsResponse)
     - [ListBGPPeersRequest](#opi_api-network-cloud-v1alpha1-ListBGPPeersRequest)
     - [ListBGPPeersResponse](#opi_api-network-cloud-v1alpha1-ListBGPPeersResponse)
-    - [ListBgpsRequest](#opi_api-network-cloud-v1alpha1-ListBgpsRequest)
-    - [ListBgpsResponse](#opi_api-network-cloud-v1alpha1-ListBgpsResponse)
+    - [ListBgpRoutersRequest](#opi_api-network-cloud-v1alpha1-ListBgpRoutersRequest)
+    - [ListBgpRoutersResponse](#opi_api-network-cloud-v1alpha1-ListBgpRoutersResponse)
     - [ListDevicesRequest](#opi_api-network-cloud-v1alpha1-ListDevicesRequest)
     - [ListDevicesResponse](#opi_api-network-cloud-v1alpha1-ListDevicesResponse)
     - [ListInterfacesRequest](#opi_api-network-cloud-v1alpha1-ListInterfacesRequest)
@@ -157,7 +157,7 @@
     - [ListVpcsResponse](#opi_api-network-cloud-v1alpha1-ListVpcsResponse)
     - [UpdateBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-UpdateBGPPeerAfRequest)
     - [UpdateBGPPeerRequest](#opi_api-network-cloud-v1alpha1-UpdateBGPPeerRequest)
-    - [UpdateBgpRequest](#opi_api-network-cloud-v1alpha1-UpdateBgpRequest)
+    - [UpdateBgpRouterRequest](#opi_api-network-cloud-v1alpha1-UpdateBgpRouterRequest)
     - [UpdateDeviceRequest](#opi_api-network-cloud-v1alpha1-UpdateDeviceRequest)
     - [UpdateInterfaceRequest](#opi_api-network-cloud-v1alpha1-UpdateInterfaceRequest)
     - [UpdateMappingRequest](#opi_api-network-cloud-v1alpha1-UpdateMappingRequest)
@@ -424,9 +424,9 @@ BGPMaxPrefix
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| max_prefixes | [int32](#int32) |  | Max number of Prefixes before an action is taken |
-| warning_string | [string](#string) |  | Warning strings |
-| max_prefix_restart | [BGPMaxPrefixRestart](#opi_api-network-cloud-v1alpha1-BGPMaxPrefixRestart) |  | BGPMaxPrefixRestart information |
+| max_prefixes | [int32](#int32) |  | Max number of prefixes before an action is taken |
+| warning_message | [string](#string) |  | Warning message |
+| max_prefix_restart | [BGPMaxPrefixRestart](#opi_api-network-cloud-v1alpha1-BGPMaxPrefixRestart) |  | Max number of prefixes after limit is exceeded before restart |
 
 
 
@@ -441,8 +441,8 @@ BGPMaxPrefixRestart
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| restart_string | [string](#string) |  | restart string |
-| restart_minutes | [int32](#int32) |  | restart in X number minutes |
+| restart_message | [string](#string) |  | restart message |
+| restart_minutes | [int32](#int32) |  | restart interval in minutes |
 
 
 
@@ -599,9 +599,9 @@ BGP peer AF configurations
 | local_port | [int32](#int32) |  | The local port configured for the peering session |
 | remote_port | [int32](#int32) |  | The remote port configured for the peering session |
 | local_addr_scope_id | [int32](#int32) |  | For a peer identified by a link-local IPv6 addresses, this is the scope ID of bgpPeerLocalAddr and bgpPeerRemoteAddr. For a peer identified only by interface (bgpPeerLocalAddr and bgpPeerRemoteAddr are both zero), this is the interface index of the local point-to-point interface through which the peer is reachable |
-| max_prefixes | [BGPMaxPrefix](#opi_api-network-cloud-v1alpha1-BGPMaxPrefix) |  | Max Prefix conditions |
-| route_map | [BGPRouteMap](#opi_api-network-cloud-v1alpha1-BGPRouteMap) |  | Route Map information |
-| network | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | NLRI advertisment |
+| max_prefixes | [BGPMaxPrefix](#opi_api-network-cloud-v1alpha1-BGPMaxPrefix) |  | Max number of prefixes before an action is taken |
+| route_map | [BGPRouteMap](#opi_api-network-cloud-v1alpha1-BGPRouteMap) |  | Route Map definition |
+| network | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | NLRI advertisement |
 
 
 
@@ -649,7 +649,7 @@ BGP peer configurations
 | ttl | [int32](#int32) |  | TTL, set 1 to enable fast-external-fallover for directly connected eBGP sessions range:1-255, default 64 (-- api-linter: core::0214::ttl-type=disabled aip.dev/not-precedent: ttl is not a duration. --) |
 | idle_holdtime | [int32](#int32) |  | IdleHoldTime in seconds, range:1-32767, default 15 |
 | allow_local_as | [int32](#int32) |  | The number of instances of the local AS identifier that may be contained in the route&#39;s AS-Path without rejecting the route. Changing the value of this object while the peer is active triggers BGP to refresh its routes from the peer range:0-255, default 0 |
-| description | [string](#string) |  | BGP Description for reference |
+| peer_description | [string](#string) |  | BGP Peer Description |
 
 
 
@@ -725,7 +725,7 @@ BGPRouteMap
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| map_id | [string](#string) |  | Route map id or name of map |
+| map_id | [string](#string) |  | Route map identifier |
 | direction | [bool](#bool) |  | Direction true = in, false = out |
 
 
@@ -733,17 +733,17 @@ BGPRouteMap
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-Bgp"></a>
+<a name="opi_api-network-cloud-v1alpha1-BgpRouter"></a>
 
-### Bgp
-BGP object
+### BgpRouter
+BGP Router object
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | unique key/identifier of BGP config |
-| spec | [BgpSpec](#opi_api-network-cloud-v1alpha1-BgpSpec) |  | BGP Configuration |
-| status | [BgpStatus](#opi_api-network-cloud-v1alpha1-BgpStatus) |  | BGP Status |
+| name | [string](#string) |  | unique key/identifier of BGP Router config |
+| spec | [BgpSpec](#opi_api-network-cloud-v1alpha1-BgpSpec) |  | BGP Router Configuration |
+| status | [BgpStatus](#opi_api-network-cloud-v1alpha1-BgpStatus) |  | BGP Router Status |
 
 
 
@@ -753,7 +753,7 @@ BGP object
 <a name="opi_api-network-cloud-v1alpha1-BgpSpec"></a>
 
 ### BgpSpec
-BGP configuration
+BGP Router configuration
 
 
 | Field | Type | Label | Description |
@@ -1087,16 +1087,16 @@ Create BGPPeer Request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-CreateBgpRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-CreateBgpRouterRequest"></a>
 
-### CreateBgpRequest
-Create Bgp Request
+### CreateBgpRouterRequest
+Create BgpRouter Request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  | parent |
-| bgp | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  | bgp |
+| bgp | [BgpRouter](#opi_api-network-cloud-v1alpha1-BgpRouter) |  | bgp |
 | bgp_id | [string](#string) |  | bgp_id |
 
 
@@ -1457,10 +1457,10 @@ Delete bgppeer request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-DeleteBgpRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-DeleteBgpRouterRequest"></a>
 
-### DeleteBgpRequest
-Delete bgp request
+### DeleteBgpRouterRequest
+Delete BgpRouter request
 
 
 | Field | Type | Label | Description |
@@ -1807,9 +1807,9 @@ Get bgppeer request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-GetBgpRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-GetBgpRouterRequest"></a>
 
-### GetBgpRequest
+### GetBgpRouterRequest
 Get bgp request
 
 
@@ -2198,10 +2198,10 @@ List bgppeer response
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListBgpsRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListBgpRoutersRequest"></a>
 
-### ListBgpsRequest
-List bgp request
+### ListBgpRoutersRequest
+List BgpRouter request
 
 
 | Field | Type | Label | Description |
@@ -2215,15 +2215,15 @@ List bgp request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListBgpsResponse"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListBgpRoutersResponse"></a>
 
-### ListBgpsResponse
-List bgp response
+### ListBgpRoutersResponse
+List BgpRouter response
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| bgp | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) | repeated | list of bgps |
+| bgp | [BgpRouter](#opi_api-network-cloud-v1alpha1-BgpRouter) | repeated | list of bgps |
 | next_page_token | [string](#string) |  | next page token |
 
 
@@ -2923,16 +2923,16 @@ Update bgppeer request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-UpdateBgpRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-UpdateBgpRouterRequest"></a>
 
-### UpdateBgpRequest
-Update bgp request
+### UpdateBgpRouterRequest
+Update BgpRouter request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | Name of bgp requested |
-| bgp | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  | updated bgp info |
+| bgp | [BgpRouter](#opi_api-network-cloud-v1alpha1-BgpRouter) |  | updated bgp info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
 
@@ -3327,11 +3327,11 @@ Cloud Infra APIs - to manage a multi-node cloud infrastructure on a xPU
 | UpdateUnderlayRoute | [UpdateUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-UpdateUnderlayRouteRequest) | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) |  |
 | ListUnderlayRoutes | [ListUnderlayRoutesRequest](#opi_api-network-cloud-v1alpha1-ListUnderlayRoutesRequest) | [ListUnderlayRoutesResponse](#opi_api-network-cloud-v1alpha1-ListUnderlayRoutesResponse) |  |
 | GetUnderlayRoute | [GetUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-GetUnderlayRouteRequest) | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) |  |
-| CreateBgp | [CreateBgpRequest](#opi_api-network-cloud-v1alpha1-CreateBgpRequest) | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) | bgp (optional) apis |
-| DeleteBgp | [DeleteBgpRequest](#opi_api-network-cloud-v1alpha1-DeleteBgpRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateBgp | [UpdateBgpRequest](#opi_api-network-cloud-v1alpha1-UpdateBgpRequest) | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  |
-| ListBgps | [ListBgpsRequest](#opi_api-network-cloud-v1alpha1-ListBgpsRequest) | [ListBgpsResponse](#opi_api-network-cloud-v1alpha1-ListBgpsResponse) |  |
-| GetBgp | [GetBgpRequest](#opi_api-network-cloud-v1alpha1-GetBgpRequest) | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  |
+| CreateBgpRouter | [CreateBgpRouterRequest](#opi_api-network-cloud-v1alpha1-CreateBgpRouterRequest) | [BgpRouter](#opi_api-network-cloud-v1alpha1-BgpRouter) | bgp (optional) apis |
+| DeleteBgpRouter | [DeleteBgpRouterRequest](#opi_api-network-cloud-v1alpha1-DeleteBgpRouterRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateBgpRouter | [UpdateBgpRouterRequest](#opi_api-network-cloud-v1alpha1-UpdateBgpRouterRequest) | [BgpRouter](#opi_api-network-cloud-v1alpha1-BgpRouter) |  |
+| ListBgpRouters | [ListBgpRoutersRequest](#opi_api-network-cloud-v1alpha1-ListBgpRoutersRequest) | [ListBgpRoutersResponse](#opi_api-network-cloud-v1alpha1-ListBgpRoutersResponse) |  |
+| GetBgpRouter | [GetBgpRouterRequest](#opi_api-network-cloud-v1alpha1-GetBgpRouterRequest) | [BgpRouter](#opi_api-network-cloud-v1alpha1-BgpRouter) |  |
 | CreateBGPPeer | [CreateBGPPeerRequest](#opi_api-network-cloud-v1alpha1-CreateBGPPeerRequest) | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) | bgppeer (optional) apis |
 | DeleteBGPPeer | [DeleteBGPPeerRequest](#opi_api-network-cloud-v1alpha1-DeleteBGPPeerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateBGPPeer | [UpdateBGPPeerRequest](#opi_api-network-cloud-v1alpha1-UpdateBGPPeerRequest) | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) |  |
