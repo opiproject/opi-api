@@ -77,8 +77,10 @@ message BgpStatus {
 // BGP peer object
 message BGPPeer {
   option (google.api.resource) = {
-    type: "opi_api.network.cloud.v1alpha1/bgppeer"
-    pattern: "bgppeers/{bgppeer}"
+    type: "opi_api.network.cloud.v1alpha1/BgpPeer"
+    pattern: "bgpPeers/{peer}"
+    singular: "bgpPeer"
+    plural: "bgpPeers"
   };
   // unique key/identifier of peer
   string name = 1;
@@ -236,8 +238,10 @@ message BGPPeerStatus {
 // BGP peer AF object
 message BGPPeerAf {
   option (google.api.resource) = {
-    type: "opi_api.network.cloud.v1alpha1/bgppeeraf"
-    pattern: "bgppeerafs/{bgppeeraf}"
+    type: "opi_api.network.cloud.v1alpha1/BgpPeerAf"
+    pattern: "bgpPeerAfs/{peeraf}"
+    singular: "bgpPeerAf"
+    plural: "bgpPeerAfs"
   };
   // unique key/identifier of peer AF config
   string name = 1;
