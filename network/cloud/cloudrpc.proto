@@ -291,23 +291,23 @@ service CloudInfraService {
     // bgp (optional) apis
     rpc CreateBgpRouter (CreateBgpRouterRequest) returns (BgpRouter) {
         option (google.api.http) = {
-            post: "/v1/bgps"
-            body: "bgp"
+            post: "/v1/bgpRouters"
+            body: "bgp_router"
         };
-        option (google.api.method_signature) = "bgp,bgp_id";
+        option (google.api.method_signature) = "bgp_router,bgp_router_id";
     }
     rpc DeleteBgpRouter (DeleteBgpRouterRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=bgps}/*"
+            delete: "/v1/{name=bgpRouter}/*"
         };
         option (google.api.method_signature) = "name";
     }
     rpc UpdateBgpRouter (UpdateBgpRouterRequest) returns (BgpRouter) {
         option (google.api.http) = {
-            patch: "/v1/{name=bgps}/*"
-            body: "bgp"
+            patch: "/v1/{bgp_router.name=bgpRouters}/*"
+            body: "bgp_router"
         };
-        option (google.api.method_signature) = "bgp, update_mask";
+        option (google.api.method_signature) = "bgp_router,update_mask";
     }
     rpc ListBgpRouters (ListBgpRoutersRequest) returns (ListBgpRoutersResponse) {
         option (google.api.http) = {
@@ -325,10 +325,10 @@ service CloudInfraService {
     // bgppeer (optional) apis
     rpc CreateBGPPeer (CreateBGPPeerRequest) returns (BGPPeer) {
         option (google.api.http) = {
-            post: "/v1/bgppeers"
-            body: "bgppeer"
+            post: "/v1/bgpPeers"
+            body: "bgp_peer"
         };
-        option (google.api.method_signature) = "bgppeer,bgppeer_id";
+        option (google.api.method_signature) = "bgp_peer,bgp_peer_id";
     }
     rpc DeleteBGPPeer (DeleteBGPPeerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -338,10 +338,10 @@ service CloudInfraService {
     }
     rpc UpdateBGPPeer (UpdateBGPPeerRequest) returns (BGPPeer) {
         option (google.api.http) = {
-            patch: "/v1/{name=bgppeers}/*"
-            body: "bgppeer"
+            patch: "/v1/{bgp_peer.name=bgppeers}/*"
+            body: "bgp_peer"
         };
-        option (google.api.method_signature) = "bgppeer, update_mask";
+        option (google.api.method_signature) = "bgp_peer,update_mask";
     }
     rpc ListBGPPeers (ListBGPPeersRequest) returns (ListBGPPeersResponse) {
         option (google.api.http) = {
@@ -359,23 +359,23 @@ service CloudInfraService {
     // bgppeeraf (optional) apis
     rpc CreateBGPPeerAf (CreateBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
-            post: "/v1/bgppeerafs"
-            body: "bgppeeraf"
+            post: "/v1/bgpPeerAfs"
+            body: "bgp_peer_af"
         };
-        option (google.api.method_signature) = "bgppeeraf,bgppeeraf_id";
+        option (google.api.method_signature) = "bgp_peer_af,bgp_peer_af_id";
     }
     rpc DeleteBGPPeerAf (DeleteBGPPeerAfRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{name=bgppeerafs}/*"
+            delete: "/v1/{name=bgpPeerAfs}/*"
         };
         option (google.api.method_signature) = "name";
     }
     rpc UpdateBGPPeerAf (UpdateBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
-            patch: "/v1/{name=bgppeerafs}/*"
-            body: "bgppeeraf"
+            patch: "/v1/{bgp_peer_af.name=bgpPeerAfs}/*"
+            body: "bgp_peer_af"
         };
-        option (google.api.method_signature) = "bgppeeraf, update_mask";
+        option (google.api.method_signature) = "bgp_peer_af,update_mask";
     }
     rpc ListBGPPeerAfs (ListBGPPeerAfsRequest) returns (ListBGPPeerAfsResponse) {
         option (google.api.http) = {
@@ -385,7 +385,7 @@ service CloudInfraService {
     }
     rpc GetBGPPeerAf (GetBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
-            get: "/v1/{name=bgppeerafs}/*"
+            get: "/v1/{name=bgpPeerAfs}/*"
         };
         option (google.api.method_signature) = "name";
     }
@@ -1337,9 +1337,9 @@ message CreateBgpRouterRequest {
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"
     ];
     // bgp
-    BgpRouter bgp = 2 [(google.api.field_behavior) = REQUIRED];
+    BgpRouter bgp_router = 2 [(google.api.field_behavior) = REQUIRED];
     // bgp_id
-    string bgp_id = 3;
+    string bgp_router_id = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Delete BgpRouter request
@@ -1359,10 +1359,10 @@ message UpdateBgpRouterRequest {
     // Name of bgp requested
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
     ];
-    // updated bgp info
-    BgpRouter bgp = 2;
+    // updated bgp router info
+    BgpRouter bgp_router = 2;
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 3;
 }
@@ -1382,7 +1382,7 @@ message ListBgpRoutersRequest {
 
 // List BgpRouter response
 message ListBgpRoutersResponse {
-    // list of bgps
+    // list of bgp routers
     repeated BgpRouter bgp = 1;
     // next page token
     string next_page_token = 2;
@@ -1405,40 +1405,40 @@ message CreateBGPPeerRequest {
     // parent
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
     ];
-    // bgppeer
-    BGPPeer bgppeer = 2 [(google.api.field_behavior) = REQUIRED];
-    // bgppeer_id
-    string bgppeer_id = 3;
+    // bgp_peer
+    BGPPeer bgp_peer = 2 [(google.api.field_behavior) = REQUIRED];
+    // bgp_peer_id
+    string bgp_peer_id = 3;
 }
 
-// Delete bgppeer request
+// Delete BGP Peer request
 message DeleteBGPPeerRequest {
-    // bgppeer id
+    // bgp peer id
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
     bool allow_missing = 2;
 }
 
-// Update bgppeer request
+// Update bgp peer request
 message UpdateBGPPeerRequest {
     // Name of bgp peer requested
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
     ];
-    // updated bgppeer info
-    BGPPeer bgppeer = 2;
+    // updated bgp peer info
+    BGPPeer bgp_peer = 2;
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 3;
 }
 
-// List bgppeer request
+// List bgp peer request
 message ListBGPPeersRequest {
     // parent
     string parent = 1 [
@@ -1451,15 +1451,15 @@ message ListBGPPeersRequest {
     string page_token = 3;
 }
 
-// List bgppeer response
+// List bgp peer response
 message ListBGPPeersResponse {
-    // list of bgppeers
-    repeated BGPPeer bgppeer = 1;
+    // list of bgp peers
+    repeated BGPPeer bgp_peer = 1;
     // next page token
     string next_page_token = 2;
 }
 
-// Get bgppeer request
+// Get bgp peer request
 message GetBGPPeerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -1478,15 +1478,15 @@ message CreateBGPPeerAfRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
     ];
-    // bgppeeraf
-    BGPPeerAf bgppeeraf = 2 [(google.api.field_behavior) = REQUIRED];
-    // bgppeeraf_id
-    string bgppeeraf_id = 3;
+    // bgp_peer_af
+    BGPPeerAf bgp_peer_af = 2 [(google.api.field_behavior) = REQUIRED];
+    // bgp_peer_af_id
+    string bgp_peer_af_id = 3;
 }
 
-// Delete bgppeeraf request
+// Delete bgp peer af request
 message DeleteBGPPeerAfRequest {
-    // bgppeeraf id
+    // bgp peer af id
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
@@ -1496,20 +1496,20 @@ message DeleteBGPPeerAfRequest {
     bool allow_missing = 2;
 }
 
-// Update bgppeeraf request
+// Update bgp peer af request
 message UpdateBGPPeerAfRequest {
     // Name of bgp peer af requested
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
     ];
-    // updated bgppeeraf info
-    BGPPeerAf bgppeeraf = 2;
+    // updated bgp peer af info
+    BGPPeerAf bgp_peer_af = 2;
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 3;
 }
 
-// List bgppeeraf request
+// List bgp peer af request
 message ListBGPPeerAfsRequest {
     // parent
     string parent = 1 [
@@ -1522,15 +1522,15 @@ message ListBGPPeerAfsRequest {
     string page_token = 3;
 }
 
-// List bgppeeraf response
+// List bgp peer af response
 message ListBGPPeerAfsResponse {
-    // list of bgppeerafs
-    repeated BGPPeerAf bgppeeraf = 1;
+    // list of bgp peer afs
+    repeated BGPPeerAf bgp_peer_af = 1;
     // next page token
     string next_page_token = 2;
 }
 
-// Get bgppeeraf request
+// Get bgp peer af request
 message GetBGPPeerAfRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
