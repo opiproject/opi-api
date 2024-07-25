@@ -311,9 +311,9 @@ service CloudInfraService {
     }
     rpc ListBgpRouters (ListBgpRoutersRequest) returns (ListBgpRoutersResponse) {
         option (google.api.http) = {
-            get: "/v1/bgps"
+            get: "/v1/{parent=bgpRouters}"
         };
-        option (google.api.method_signature) = "";
+        option (google.api.method_signature) = "parent";
     }
     rpc GetBgpRouter (GetBgpRouterRequest) returns (BgpRouter) {
         option (google.api.http) = {
@@ -345,9 +345,9 @@ service CloudInfraService {
     }
     rpc ListBGPPeers (ListBGPPeersRequest) returns (ListBGPPeersResponse) {
         option (google.api.http) = {
-            get: "/v1/bgppeers"
+            get: "/v1/{parent=bgpPeers}"
         };
-        option (google.api.method_signature) = "";
+        option (google.api.method_signature) = "parent";
     }
     rpc GetBGPPeer (GetBGPPeerRequest) returns (BGPPeer) {
         option (google.api.http) = {
@@ -379,9 +379,9 @@ service CloudInfraService {
     }
     rpc ListBGPPeerAfs (ListBGPPeerAfsRequest) returns (ListBGPPeerAfsResponse) {
         option (google.api.http) = {
-            get: "/v1/bgppeerafs"
+            get: "/v1/{parent=bgpPeerAfs}"
         };
-        option (google.api.method_signature) = "";
+        option (google.api.method_signature) = "parent";
     }
     rpc GetBGPPeerAf (GetBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
@@ -1372,7 +1372,7 @@ message ListBgpRoutersRequest {
     // parent
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
     ];
     // pagination: page-size
     int32 page_size = 2;
@@ -1443,7 +1443,7 @@ message ListBGPPeersRequest {
     // parent
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
     ];
     // pagination: page-size
     int32 page_size = 2;
@@ -1463,7 +1463,7 @@ message ListBGPPeersResponse {
 message GetBGPPeerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
     ];
 }
 
@@ -1476,7 +1476,7 @@ message CreateBGPPeerAfRequest {
     // parent
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeerAf"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
     ];
     // bgppeeraf
     BGPPeerAf bgppeeraf = 2 [(google.api.field_behavior) = REQUIRED];
@@ -1489,7 +1489,7 @@ message DeleteBGPPeerAfRequest {
     // bgppeeraf id
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeerAf"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
@@ -1501,7 +1501,7 @@ message UpdateBGPPeerAfRequest {
     // Name of bgp peer af requested
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeerAf"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
     ];
     // updated bgppeeraf info
     BGPPeerAf bgppeeraf = 2;
@@ -1514,7 +1514,7 @@ message ListBGPPeerAfsRequest {
     // parent
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeerAf"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
     ];
     // pagination: page-size
     int32 page_size = 2;
