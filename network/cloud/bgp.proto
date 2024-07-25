@@ -27,12 +27,12 @@ import "google/api/field_behavior.proto";
 message BgpRouter {
   option (google.api.resource) = {
     type: "opi_api.network.cloud.v1alpha1/BgpRouter"
-    pattern: "bgpRouters/{router}"
+    pattern: "bgpRouters/{bgp_router}"
     singular: "bgpRouter"
     plural: "bgpRouters"
   };
   // unique key/identifier of BGP Router config
-  string name = 1;
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
   // BGP Router Configuration
   BgpSpec spec = 2;
   // BGP Router Status
@@ -76,23 +76,23 @@ message BgpStatus {
 }
 
 // BGP peer object
-message BGPPeer {
+message BgpPeer {
   option (google.api.resource) = {
     type: "opi_api.network.cloud.v1alpha1/BgpPeer"
-    pattern: "bgpPeers/{peer}"
+    pattern: "bgpPeers/{bgp_peer}"
     singular: "bgpPeer"
     plural: "bgpPeers"
   };
   // unique key/identifier of peer
   string name = 1;
   // bgp peer configuration
-  BGPPeerSpec spec = 2;
+  BgpPeerSpec spec = 2;
   // bgp peer status
-  BGPPeerStatus status = 3;
+  BgpPeerStatus status = 3;
 }
 
 // BGP peer configurations
-message BGPPeerSpec {
+message BgpPeerSpec {
   // peer enable/disable admin state. if peer is not enabled then local router
   // must not initiate connections to the neighbor and must not respond to
   // TCP connections attempts from neighbor
@@ -111,7 +111,7 @@ message BGPPeerSpec {
   // send extended community attributes to neighbor
   bool send_ext_comm = 6;
   // peer is a route reflector client
-  BGPPeerRR rr_client = 7;
+  BgpPeerRR rr_client = 7;
   // BGP session connect-retry timer in seconds
   int32 connect_retry = 8;
   // BGP session configured holdtime timer in seconds
@@ -137,11 +137,11 @@ message BGPPeerSpec {
 }
 
 // BGP peer status
-message BGPPeerStatus {
+message BgpPeerStatus {
   // BGP session state
-  BGPPeerSessionState session_state = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  BgpPeerSessionState session_state = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   // BGP session previous status
-  BGPPeerSessionState prev_session_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  BgpPeerSessionState prev_session_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
   // last error received
   bytes last_error_rcvd = 3;
   // Last error sent
@@ -237,7 +237,7 @@ message BGPPeerStatus {
 }
 
 // BGP peer AF object
-message BGPPeerAf {
+message BgpPeerAf {
   option (google.api.resource) = {
     type: "opi_api.network.cloud.v1alpha1/BgpPeerAf"
     pattern: "bgpPeerAfs/{peeraf}"
@@ -247,13 +247,13 @@ message BGPPeerAf {
   // unique key/identifier of peer AF config
   string name = 1;
   // configuration
-  BGPPeerAfSpec spec = 2;
+  BgpPeerAfSpec spec = 2;
   // status
-  BGPPeerAfStatus state = 3;
+  BgpPeerAfStatus state = 3;
 }
 
 // BGP peer AF configurations
-message BGPPeerAfSpec {
+message BgpPeerAfSpec {
   // BGP local IP address
   network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
   // BGP peer IP address
@@ -311,7 +311,7 @@ message BGPRouteMap {
 }
 
 // BGP peer AF status
-message BGPPeerAfStatus {
+message BgpPeerAfStatus {
   // BGP The index of the update group that the peer is a member of for this AFI/SAFI
   int32 update_group = 1;
   // For a peer identified by a link-local IPv6 addresses, this is the scope ID
@@ -323,7 +323,7 @@ message BGPPeerAfStatus {
   BgpAddPathCapNeg add_path_cap_neg = 4;
   // This value indicates whether the given peer is a reflector client of this
   // router for this AFI/SAFI, or not
-  BGPPeerRR reflector_client = 5;
+  BgpPeerRR reflector_client = 5;
 }
 
 // BGP NLRI prefix object, this object is not conifgured by the user
@@ -411,7 +411,7 @@ message BGPNLRIPrefixStatus {
   //     aip.dev/not-precedent: must use uint32 per BGP spec. --)
   uint32 med = 26;
   // Peer type
-  BGPPeerType peer_type = 27;
+  BgpPeerType peer_type = 27;
 }
 
 // BGP NLRI prefix filter object, returned in get response for BGP prefixes
@@ -497,7 +497,7 @@ enum BGPSafi {
 }
 
 // BGP peer Route Reflector client
-enum BGPPeerRR {
+enum BgpPeerRR {
   // RR_UNSPECIFIED
   BGP_PEER_RR_UNSPECIFIED   = 0;
   // RR_CLIENT
@@ -507,7 +507,7 @@ enum BGPPeerRR {
 }
 
 // BGP peer session's last_state
-enum BGPPeerSessionState {
+enum BgpPeerSessionState {
   // unspecified
   BGP_PEER_SESSION_STATE_UNSPECIFIED = 0;
   // idle
@@ -713,7 +713,7 @@ enum BGPOriginAttr {
 }
 
 // bgp peer type
-enum BGPPeerType {
+enum BgpPeerType {
   // unspecified
   BGP_PEER_TYPE_UNSPECIFIED = 0;
   // none (per protocol)

@@ -2050,14 +2050,14 @@ func local_request_CloudInfraService_GetUnderlayRoute_0(ctx context.Context, mar
 }
 
 var (
-	filter_CloudInfraService_CreateBgpRouter_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_CreateBgpRouter_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp_router": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_CreateBgpRouter_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateBgpRouterRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgp); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.BgpRouter); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -2077,7 +2077,7 @@ func local_request_CloudInfraService_CreateBgpRouter_0(ctx context.Context, mars
 	var protoReq CreateBgpRouterRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgp); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.BgpRouter); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -2164,7 +2164,7 @@ func local_request_CloudInfraService_DeleteBgpRouter_0(ctx context.Context, mars
 }
 
 var (
-	filter_CloudInfraService_UpdateBgpRouter_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_CloudInfraService_UpdateBgpRouter_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp_router": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
 func request_CloudInfraService_UpdateBgpRouter_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2175,11 +2175,11 @@ func request_CloudInfraService_UpdateBgpRouter_0(ctx context.Context, marshaler 
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgp); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.BgpRouter); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.Bgp); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.BgpRouter); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -2193,14 +2193,14 @@ func request_CloudInfraService_UpdateBgpRouter_0(ctx context.Context, marshaler 
 		_   = err
 	)
 
-	val, ok = pathParams["name"]
+	val, ok = pathParams["bgp_router.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "bgp_router.name")
 	}
 
-	protoReq.Name, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "bgp_router.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "bgp_router.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -2223,11 +2223,11 @@ func local_request_CloudInfraService_UpdateBgpRouter_0(ctx context.Context, mars
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgp); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.BgpRouter); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.Bgp); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.BgpRouter); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -2241,14 +2241,14 @@ func local_request_CloudInfraService_UpdateBgpRouter_0(ctx context.Context, mars
 		_   = err
 	)
 
-	val, ok = pathParams["name"]
+	val, ok = pathParams["bgp_router.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "bgp_router.name")
 	}
 
-	protoReq.Name, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "bgp_router.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "bgp_router.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -2264,12 +2264,29 @@ func local_request_CloudInfraService_UpdateBgpRouter_0(ctx context.Context, mars
 }
 
 var (
-	filter_CloudInfraService_ListBgpRouters_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_CloudInfraService_ListBgpRouters_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_CloudInfraService_ListBgpRouters_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ListBgpRoutersRequest
 	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["parent"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "parent")
+	}
+
+	protoReq.Parent, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "parent", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -2286,6 +2303,23 @@ func request_CloudInfraService_ListBgpRouters_0(ctx context.Context, marshaler r
 func local_request_CloudInfraService_ListBgpRouters_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ListBgpRoutersRequest
 	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["parent"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "parent")
+	}
+
+	protoReq.Parent, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "parent", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -2352,55 +2386,55 @@ func local_request_CloudInfraService_GetBgpRouter_0(ctx context.Context, marshal
 }
 
 var (
-	filter_CloudInfraService_CreateBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeer": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_CreateBgpPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp_peer": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_CreateBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateBGPPeerRequest
+func request_CloudInfraService_CreateBgpPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateBgpPeerRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgppeer); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.BgpPeer); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateBGPPeer_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateBgpPeer_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateBGPPeer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateBgpPeer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_CreateBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateBGPPeerRequest
+func local_request_CloudInfraService_CreateBgpPeer_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateBgpPeerRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgppeer); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.BgpPeer); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateBGPPeer_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateBgpPeer_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateBGPPeer(ctx, &protoReq)
+	msg, err := server.CreateBgpPeer(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_DeleteBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_DeleteBgpPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_DeleteBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteBGPPeerRequest
+func request_CloudInfraService_DeleteBgpPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteBgpPeerRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -2423,17 +2457,17 @@ func request_CloudInfraService_DeleteBGPPeer_0(ctx context.Context, marshaler ru
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteBGPPeer_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteBgpPeer_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.DeleteBGPPeer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.DeleteBgpPeer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_DeleteBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteBGPPeerRequest
+func local_request_CloudInfraService_DeleteBgpPeer_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteBgpPeerRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -2456,32 +2490,32 @@ func local_request_CloudInfraService_DeleteBGPPeer_0(ctx context.Context, marsha
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteBGPPeer_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteBgpPeer_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeleteBGPPeer(ctx, &protoReq)
+	msg, err := server.DeleteBgpPeer(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_UpdateBGPPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeer": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_CloudInfraService_UpdateBgpPeer_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp_peer": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
-func request_CloudInfraService_UpdateBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateBGPPeerRequest
+func request_CloudInfraService_UpdateBgpPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateBgpPeerRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgppeer); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.BgpPeer); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.Bgppeer); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.BgpPeer); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -2495,41 +2529,41 @@ func request_CloudInfraService_UpdateBGPPeer_0(ctx context.Context, marshaler ru
 		_   = err
 	)
 
-	val, ok = pathParams["name"]
+	val, ok = pathParams["bgp_peer.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "bgp_peer.name")
 	}
 
-	protoReq.Name, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "bgp_peer.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "bgp_peer.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateBGPPeer_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateBgpPeer_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateBGPPeer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateBgpPeer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_UpdateBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateBGPPeerRequest
+func local_request_CloudInfraService_UpdateBgpPeer_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateBgpPeerRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgppeer); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.BgpPeer); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.Bgppeer); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.BgpPeer); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -2543,66 +2577,100 @@ func local_request_CloudInfraService_UpdateBGPPeer_0(ctx context.Context, marsha
 		_   = err
 	)
 
-	val, ok = pathParams["name"]
+	val, ok = pathParams["bgp_peer.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "bgp_peer.name")
 	}
 
-	protoReq.Name, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "bgp_peer.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "bgp_peer.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateBGPPeer_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateBgpPeer_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateBGPPeer(ctx, &protoReq)
+	msg, err := server.UpdateBgpPeer(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_ListBGPPeers_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_CloudInfraService_ListBgpPeers_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_ListBGPPeers_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListBGPPeersRequest
+func request_CloudInfraService_ListBgpPeers_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListBgpPeersRequest
 	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["parent"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "parent")
+	}
+
+	protoReq.Parent, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "parent", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListBGPPeers_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListBgpPeers_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.ListBGPPeers(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.ListBgpPeers(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_ListBGPPeers_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListBGPPeersRequest
+func local_request_CloudInfraService_ListBgpPeers_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListBgpPeersRequest
 	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["parent"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "parent")
+	}
+
+	protoReq.Parent, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "parent", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListBGPPeers_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListBgpPeers_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.ListBGPPeers(ctx, &protoReq)
+	msg, err := server.ListBgpPeers(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudInfraService_GetBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetBGPPeerRequest
+func request_CloudInfraService_GetBgpPeer_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetBgpPeerRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -2622,13 +2690,13 @@ func request_CloudInfraService_GetBGPPeer_0(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := client.GetBGPPeer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetBgpPeer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_GetBGPPeer_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetBGPPeerRequest
+func local_request_CloudInfraService_GetBgpPeer_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetBgpPeerRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -2648,94 +2716,61 @@ func local_request_CloudInfraService_GetBGPPeer_0(ctx context.Context, marshaler
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := server.GetBGPPeer(ctx, &protoReq)
+	msg, err := server.GetBgpPeer(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_CreateBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeeraf": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_CreateBgpPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp_peer_af": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_CreateBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateBGPPeerAfRequest
+func request_CloudInfraService_CreateBgpPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateBgpPeerAfRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgppeeraf); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.BgpPeerAf); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateBGPPeerAf_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateBgpPeerAf_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateBGPPeerAf(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateBgpPeerAf(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_CreateBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateBGPPeerAfRequest
+func local_request_CloudInfraService_CreateBgpPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateBgpPeerAfRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.Bgppeeraf); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.BgpPeerAf); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateBGPPeerAf_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateBgpPeerAf_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateBGPPeerAf(ctx, &protoReq)
+	msg, err := server.CreateBgpPeerAf(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_DeleteBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_DeleteBgpPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_DeleteBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteBGPPeerAfRequest
-	var metadata runtime.ServerMetadata
-
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["name"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
-	}
-
-	protoReq.Name, err = runtime.String(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
-	}
-
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteBGPPeerAf_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	msg, err := client.DeleteBGPPeerAf(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
-	return msg, metadata, err
-
-}
-
-func local_request_CloudInfraService_DeleteBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteBGPPeerAfRequest
+func request_CloudInfraService_DeleteBgpPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteBgpPeerAfRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -2758,32 +2793,65 @@ func local_request_CloudInfraService_DeleteBGPPeerAf_0(ctx context.Context, mars
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteBGPPeerAf_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteBgpPeerAf_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeleteBGPPeerAf(ctx, &protoReq)
+	msg, err := client.DeleteBgpPeerAf(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_CloudInfraService_DeleteBgpPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteBgpPeerAfRequest
+	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+	}
+
+	protoReq.Name, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteBgpPeerAf_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.DeleteBgpPeerAf(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_UpdateBGPPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgppeeraf": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_CloudInfraService_UpdateBgpPeerAf_0 = &utilities.DoubleArray{Encoding: map[string]int{"bgp_peer_af": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
-func request_CloudInfraService_UpdateBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateBGPPeerAfRequest
+func request_CloudInfraService_UpdateBgpPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateBgpPeerAfRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgppeeraf); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.BgpPeerAf); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.Bgppeeraf); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.BgpPeerAf); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -2797,41 +2865,41 @@ func request_CloudInfraService_UpdateBGPPeerAf_0(ctx context.Context, marshaler 
 		_   = err
 	)
 
-	val, ok = pathParams["name"]
+	val, ok = pathParams["bgp_peer_af.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "bgp_peer_af.name")
 	}
 
-	protoReq.Name, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "bgp_peer_af.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "bgp_peer_af.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateBGPPeerAf_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateBgpPeerAf_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateBGPPeerAf(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateBgpPeerAf(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_UpdateBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateBGPPeerAfRequest
+func local_request_CloudInfraService_UpdateBgpPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateBgpPeerAfRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Bgppeeraf); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.BgpPeerAf); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.Bgppeeraf); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.BgpPeerAf); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -2845,66 +2913,100 @@ func local_request_CloudInfraService_UpdateBGPPeerAf_0(ctx context.Context, mars
 		_   = err
 	)
 
-	val, ok = pathParams["name"]
+	val, ok = pathParams["bgp_peer_af.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "bgp_peer_af.name")
 	}
 
-	protoReq.Name, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "bgp_peer_af.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "bgp_peer_af.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateBGPPeerAf_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateBgpPeerAf_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateBGPPeerAf(ctx, &protoReq)
+	msg, err := server.UpdateBgpPeerAf(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_ListBGPPeerAfs_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_CloudInfraService_ListBgpPeerAfs_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_ListBGPPeerAfs_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListBGPPeerAfsRequest
+func request_CloudInfraService_ListBgpPeerAfs_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListBgpPeerAfsRequest
 	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["parent"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "parent")
+	}
+
+	protoReq.Parent, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "parent", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListBGPPeerAfs_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListBgpPeerAfs_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.ListBGPPeerAfs(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.ListBgpPeerAfs(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_ListBGPPeerAfs_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListBGPPeerAfsRequest
+func local_request_CloudInfraService_ListBgpPeerAfs_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListBgpPeerAfsRequest
 	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["parent"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "parent")
+	}
+
+	protoReq.Parent, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "parent", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListBGPPeerAfs_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListBgpPeerAfs_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.ListBGPPeerAfs(ctx, &protoReq)
+	msg, err := server.ListBgpPeerAfs(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudInfraService_GetBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetBGPPeerAfRequest
+func request_CloudInfraService_GetBgpPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetBgpPeerAfRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -2924,13 +3026,13 @@ func request_CloudInfraService_GetBGPPeerAf_0(ctx context.Context, marshaler run
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := client.GetBGPPeerAf(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetBgpPeerAf(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_GetBGPPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetBGPPeerAfRequest
+func local_request_CloudInfraService_GetBgpPeerAf_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetBgpPeerAfRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -2950,7 +3052,7 @@ func local_request_CloudInfraService_GetBGPPeerAf_0(ctx context.Context, marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := server.GetBGPPeerAf(ctx, &protoReq)
+	msg, err := server.GetBgpPeerAf(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -7745,7 +7847,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpRouter", runtime.WithHTTPPathPattern("/v1/bgps"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpRouter", runtime.WithHTTPPathPattern("/v1/bgpRouters"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -7770,7 +7872,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgps}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgpRouter}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -7795,7 +7897,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgps}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpRouter", runtime.WithHTTPPathPattern("/v1/{bgp_router.name=bgpRouters}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -7820,7 +7922,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpRouters", runtime.WithHTTPPathPattern("/v1/bgps"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpRouters", runtime.WithHTTPPathPattern("/v1/{parent=bgpRouters}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -7845,7 +7947,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgps}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgpRouters}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -7862,7 +7964,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateBGPPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateBgpPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -7870,12 +7972,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeer", runtime.WithHTTPPathPattern("/v1/bgppeers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeer", runtime.WithHTTPPathPattern("/v1/bgpPeers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_CreateBGPPeer_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_CreateBgpPeer_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -7883,11 +7985,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_CreateBGPPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateBgpPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteBGPPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteBgpPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -7895,12 +7997,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeer", runtime.WithHTTPPathPattern("/v1/{name=bgppeers}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeer", runtime.WithHTTPPathPattern("/v1/{name=bgpPeers}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_DeleteBGPPeer_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_DeleteBgpPeer_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -7908,11 +8010,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_DeleteBGPPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteBgpPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateBGPPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateBgpPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -7920,12 +8022,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeer", runtime.WithHTTPPathPattern("/v1/{name=bgppeers}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeer", runtime.WithHTTPPathPattern("/v1/{bgp_peer.name=bgpPeers}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_UpdateBGPPeer_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_UpdateBgpPeer_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -7933,11 +8035,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_UpdateBGPPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateBgpPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListBGPPeers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListBgpPeers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -7945,12 +8047,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeers", runtime.WithHTTPPathPattern("/v1/bgppeers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeers", runtime.WithHTTPPathPattern("/v1/{parent=bgpPeers}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_ListBGPPeers_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_ListBgpPeers_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -7958,11 +8060,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_ListBGPPeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListBgpPeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetBGPPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetBgpPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -7970,12 +8072,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeer", runtime.WithHTTPPathPattern("/v1/{name=bgppeers}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeer", runtime.WithHTTPPathPattern("/v1/{name=bgpPeers}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_GetBGPPeer_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_GetBgpPeer_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -7983,11 +8085,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_GetBGPPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetBgpPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateBGPPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateBgpPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -7995,12 +8097,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeerAf", runtime.WithHTTPPathPattern("/v1/bgppeerafs"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeerAf", runtime.WithHTTPPathPattern("/v1/bgpPeerAfs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_CreateBGPPeerAf_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_CreateBgpPeerAf_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -8008,11 +8110,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_CreateBGPPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateBgpPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteBGPPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteBgpPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -8020,12 +8122,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgppeerafs}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgpPeerAfs}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_DeleteBGPPeerAf_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_DeleteBgpPeerAf_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -8033,11 +8135,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_DeleteBGPPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteBgpPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateBGPPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateBgpPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -8045,12 +8147,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgppeerafs}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeerAf", runtime.WithHTTPPathPattern("/v1/{bgp_peer_af.name=bgpPeerAfs}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_UpdateBGPPeerAf_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_UpdateBgpPeerAf_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -8058,11 +8160,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_UpdateBGPPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateBgpPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListBGPPeerAfs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListBgpPeerAfs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -8070,12 +8172,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeerAfs", runtime.WithHTTPPathPattern("/v1/bgppeerafs"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeerAfs", runtime.WithHTTPPathPattern("/v1/{parent=bgpPeerAfs}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_ListBGPPeerAfs_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_ListBgpPeerAfs_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -8083,11 +8185,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_ListBGPPeerAfs_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListBgpPeerAfs_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetBGPPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetBgpPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -8095,12 +8197,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgppeerafs}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgpPeerAfs}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_GetBGPPeerAf_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_GetBgpPeerAf_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -8108,7 +8210,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_GetBGPPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetBgpPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -10532,7 +10634,7 @@ func RegisterCloudInfraServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpRouter", runtime.WithHTTPPathPattern("/v1/bgps"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpRouter", runtime.WithHTTPPathPattern("/v1/bgpRouters"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -10554,7 +10656,7 @@ func RegisterCloudInfraServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgps}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgpRouter}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -10576,7 +10678,7 @@ func RegisterCloudInfraServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgps}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpRouter", runtime.WithHTTPPathPattern("/v1/{bgp_router.name=bgpRouters}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -10598,7 +10700,7 @@ func RegisterCloudInfraServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpRouters", runtime.WithHTTPPathPattern("/v1/bgps"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpRouters", runtime.WithHTTPPathPattern("/v1/{parent=bgpRouters}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -10620,7 +10722,7 @@ func RegisterCloudInfraServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgps}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpRouter", runtime.WithHTTPPathPattern("/v1/{name=bgpRouters}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -10636,223 +10738,223 @@ func RegisterCloudInfraServiceHandlerClient(ctx context.Context, mux *runtime.Se
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateBGPPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateBgpPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeer", runtime.WithHTTPPathPattern("/v1/bgppeers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeer", runtime.WithHTTPPathPattern("/v1/bgpPeers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_CreateBGPPeer_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_CreateBgpPeer_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_CreateBGPPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateBgpPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteBGPPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteBgpPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeer", runtime.WithHTTPPathPattern("/v1/{name=bgppeers}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeer", runtime.WithHTTPPathPattern("/v1/{name=bgpPeers}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_DeleteBGPPeer_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_DeleteBgpPeer_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_DeleteBGPPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteBgpPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateBGPPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateBgpPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeer", runtime.WithHTTPPathPattern("/v1/{name=bgppeers}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeer", runtime.WithHTTPPathPattern("/v1/{bgp_peer.name=bgpPeers}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_UpdateBGPPeer_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_UpdateBgpPeer_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_UpdateBGPPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateBgpPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListBGPPeers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListBgpPeers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeers", runtime.WithHTTPPathPattern("/v1/bgppeers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeers", runtime.WithHTTPPathPattern("/v1/{parent=bgpPeers}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_ListBGPPeers_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_ListBgpPeers_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_ListBGPPeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListBgpPeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetBGPPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetBgpPeer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeer", runtime.WithHTTPPathPattern("/v1/{name=bgppeers}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeer", runtime.WithHTTPPathPattern("/v1/{name=bgpPeers}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_GetBGPPeer_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_GetBgpPeer_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_GetBGPPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetBgpPeer_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateBGPPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateBgpPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeerAf", runtime.WithHTTPPathPattern("/v1/bgppeerafs"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeerAf", runtime.WithHTTPPathPattern("/v1/bgpPeerAfs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_CreateBGPPeerAf_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_CreateBgpPeerAf_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_CreateBGPPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateBgpPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteBGPPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteBgpPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgppeerafs}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgpPeerAfs}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_DeleteBGPPeerAf_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_DeleteBgpPeerAf_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_DeleteBGPPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteBgpPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateBGPPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateBgpPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgppeerafs}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeerAf", runtime.WithHTTPPathPattern("/v1/{bgp_peer_af.name=bgpPeerAfs}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_UpdateBGPPeerAf_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_UpdateBgpPeerAf_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_UpdateBGPPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateBgpPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListBGPPeerAfs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListBgpPeerAfs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeerAfs", runtime.WithHTTPPathPattern("/v1/bgppeerafs"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeerAfs", runtime.WithHTTPPathPattern("/v1/{parent=bgpPeerAfs}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_ListBGPPeerAfs_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_ListBgpPeerAfs_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_ListBGPPeerAfs_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListBgpPeerAfs_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetBGPPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetBgpPeerAf_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgppeerafs}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeerAf", runtime.WithHTTPPathPattern("/v1/{name=bgpPeerAfs}/*"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_GetBGPPeerAf_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_GetBgpPeerAf_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_GetBGPPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetBgpPeerAf_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -12358,35 +12460,35 @@ var (
 
 	pattern_CloudInfraService_GetUnderlayRoute_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "underlayroutes", "name"}, ""))
 
-	pattern_CloudInfraService_CreateBgpRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgps"}, ""))
+	pattern_CloudInfraService_CreateBgpRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgpRouters"}, ""))
 
-	pattern_CloudInfraService_DeleteBgpRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgps", "name"}, ""))
+	pattern_CloudInfraService_DeleteBgpRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpRouter", "name"}, ""))
 
-	pattern_CloudInfraService_UpdateBgpRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgps", "name"}, ""))
+	pattern_CloudInfraService_UpdateBgpRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpRouters", "bgp_router.name"}, ""))
 
-	pattern_CloudInfraService_ListBgpRouters_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgps"}, ""))
+	pattern_CloudInfraService_ListBgpRouters_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2}, []string{"v1", "bgpRouters", "parent"}, ""))
 
-	pattern_CloudInfraService_GetBgpRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgps", "name"}, ""))
+	pattern_CloudInfraService_GetBgpRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpRouters", "name"}, ""))
 
-	pattern_CloudInfraService_CreateBGPPeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgppeers"}, ""))
+	pattern_CloudInfraService_CreateBgpPeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgpPeers"}, ""))
 
-	pattern_CloudInfraService_DeleteBGPPeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgppeers", "name"}, ""))
+	pattern_CloudInfraService_DeleteBgpPeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpPeers", "name"}, ""))
 
-	pattern_CloudInfraService_UpdateBGPPeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgppeers", "name"}, ""))
+	pattern_CloudInfraService_UpdateBgpPeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpPeers", "bgp_peer.name"}, ""))
 
-	pattern_CloudInfraService_ListBGPPeers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgppeers"}, ""))
+	pattern_CloudInfraService_ListBgpPeers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2}, []string{"v1", "bgpPeers", "parent"}, ""))
 
-	pattern_CloudInfraService_GetBGPPeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgppeers", "name"}, ""))
+	pattern_CloudInfraService_GetBgpPeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpPeers", "name"}, ""))
 
-	pattern_CloudInfraService_CreateBGPPeerAf_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgppeerafs"}, ""))
+	pattern_CloudInfraService_CreateBgpPeerAf_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgpPeerAfs"}, ""))
 
-	pattern_CloudInfraService_DeleteBGPPeerAf_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgppeerafs", "name"}, ""))
+	pattern_CloudInfraService_DeleteBgpPeerAf_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpPeerAfs", "name"}, ""))
 
-	pattern_CloudInfraService_UpdateBGPPeerAf_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgppeerafs", "name"}, ""))
+	pattern_CloudInfraService_UpdateBgpPeerAf_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpPeerAfs", "bgp_peer_af.name"}, ""))
 
-	pattern_CloudInfraService_ListBGPPeerAfs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "bgppeerafs"}, ""))
+	pattern_CloudInfraService_ListBgpPeerAfs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2}, []string{"v1", "bgpPeerAfs", "parent"}, ""))
 
-	pattern_CloudInfraService_GetBGPPeerAf_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgppeerafs", "name"}, ""))
+	pattern_CloudInfraService_GetBgpPeerAf_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "bgpPeerAfs", "name"}, ""))
 
 	pattern_CloudInfraService_CreateMapping_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "mappings"}, ""))
 
@@ -12598,25 +12700,25 @@ var (
 
 	forward_CloudInfraService_GetBgpRouter_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_CreateBGPPeer_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_CreateBgpPeer_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_DeleteBGPPeer_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_DeleteBgpPeer_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_UpdateBGPPeer_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_UpdateBgpPeer_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_ListBGPPeers_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_ListBgpPeers_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_GetBGPPeer_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_GetBgpPeer_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_CreateBGPPeerAf_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_CreateBgpPeerAf_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_DeleteBGPPeerAf_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_DeleteBgpPeerAf_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_UpdateBGPPeerAf_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_UpdateBgpPeerAf_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_ListBGPPeerAfs_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_ListBgpPeerAfs_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_GetBGPPeerAf_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_GetBgpPeerAf_0 = runtime.ForwardResponseMessage
 
 	forward_CloudInfraService_CreateMapping_0 = runtime.ForwardResponseMessage
 

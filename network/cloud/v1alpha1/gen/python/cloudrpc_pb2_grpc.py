@@ -239,55 +239,55 @@ class CloudInfraServiceStub(object):
                 request_serializer=cloudrpc__pb2.GetBgpRouterRequest.SerializeToString,
                 response_deserializer=bgp__pb2.BgpRouter.FromString,
                 )
-        self.CreateBGPPeer = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeer',
-                request_serializer=cloudrpc__pb2.CreateBGPPeerRequest.SerializeToString,
-                response_deserializer=bgp__pb2.BGPPeer.FromString,
+        self.CreateBgpPeer = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeer',
+                request_serializer=cloudrpc__pb2.CreateBgpPeerRequest.SerializeToString,
+                response_deserializer=bgp__pb2.BgpPeer.FromString,
                 )
-        self.DeleteBGPPeer = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeer',
-                request_serializer=cloudrpc__pb2.DeleteBGPPeerRequest.SerializeToString,
+        self.DeleteBgpPeer = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeer',
+                request_serializer=cloudrpc__pb2.DeleteBgpPeerRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.UpdateBGPPeer = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeer',
-                request_serializer=cloudrpc__pb2.UpdateBGPPeerRequest.SerializeToString,
-                response_deserializer=bgp__pb2.BGPPeer.FromString,
+        self.UpdateBgpPeer = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeer',
+                request_serializer=cloudrpc__pb2.UpdateBgpPeerRequest.SerializeToString,
+                response_deserializer=bgp__pb2.BgpPeer.FromString,
                 )
-        self.ListBGPPeers = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeers',
-                request_serializer=cloudrpc__pb2.ListBGPPeersRequest.SerializeToString,
-                response_deserializer=cloudrpc__pb2.ListBGPPeersResponse.FromString,
+        self.ListBgpPeers = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeers',
+                request_serializer=cloudrpc__pb2.ListBgpPeersRequest.SerializeToString,
+                response_deserializer=cloudrpc__pb2.ListBgpPeersResponse.FromString,
                 )
-        self.GetBGPPeer = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeer',
-                request_serializer=cloudrpc__pb2.GetBGPPeerRequest.SerializeToString,
-                response_deserializer=bgp__pb2.BGPPeer.FromString,
+        self.GetBgpPeer = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeer',
+                request_serializer=cloudrpc__pb2.GetBgpPeerRequest.SerializeToString,
+                response_deserializer=bgp__pb2.BgpPeer.FromString,
                 )
-        self.CreateBGPPeerAf = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeerAf',
-                request_serializer=cloudrpc__pb2.CreateBGPPeerAfRequest.SerializeToString,
-                response_deserializer=bgp__pb2.BGPPeerAf.FromString,
+        self.CreateBgpPeerAf = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeerAf',
+                request_serializer=cloudrpc__pb2.CreateBgpPeerAfRequest.SerializeToString,
+                response_deserializer=bgp__pb2.BgpPeerAf.FromString,
                 )
-        self.DeleteBGPPeerAf = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeerAf',
-                request_serializer=cloudrpc__pb2.DeleteBGPPeerAfRequest.SerializeToString,
+        self.DeleteBgpPeerAf = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeerAf',
+                request_serializer=cloudrpc__pb2.DeleteBgpPeerAfRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.UpdateBGPPeerAf = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeerAf',
-                request_serializer=cloudrpc__pb2.UpdateBGPPeerAfRequest.SerializeToString,
-                response_deserializer=bgp__pb2.BGPPeerAf.FromString,
+        self.UpdateBgpPeerAf = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeerAf',
+                request_serializer=cloudrpc__pb2.UpdateBgpPeerAfRequest.SerializeToString,
+                response_deserializer=bgp__pb2.BgpPeerAf.FromString,
                 )
-        self.ListBGPPeerAfs = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeerAfs',
-                request_serializer=cloudrpc__pb2.ListBGPPeerAfsRequest.SerializeToString,
-                response_deserializer=cloudrpc__pb2.ListBGPPeerAfsResponse.FromString,
+        self.ListBgpPeerAfs = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeerAfs',
+                request_serializer=cloudrpc__pb2.ListBgpPeerAfsRequest.SerializeToString,
+                response_deserializer=cloudrpc__pb2.ListBgpPeerAfsResponse.FromString,
                 )
-        self.GetBGPPeerAf = channel.unary_unary(
-                '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeerAf',
-                request_serializer=cloudrpc__pb2.GetBGPPeerAfRequest.SerializeToString,
-                response_deserializer=bgp__pb2.BGPPeerAf.FromString,
+        self.GetBgpPeerAf = channel.unary_unary(
+                '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeerAf',
+                request_serializer=cloudrpc__pb2.GetBgpPeerAfRequest.SerializeToString,
+                response_deserializer=bgp__pb2.BgpPeerAf.FromString,
                 )
         self.CreateMapping = channel.unary_unary(
                 '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateMapping',
@@ -854,87 +854,99 @@ class CloudInfraServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteBgpRouter(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """BGP Router Delete
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateBgpRouter(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """BGP Router Update
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListBgpRouters(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """BGP Router List
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetBgpRouter(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """BGP Router Get
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateBGPPeer(self, request, context):
+    def CreateBgpPeer(self, request, context):
         """bgppeer (optional) apis
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteBGPPeer(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def DeleteBgpPeer(self, request, context):
+        """BGP Peer Delete
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateBGPPeer(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def UpdateBgpPeer(self, request, context):
+        """BGP Peer Update
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListBGPPeers(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def ListBgpPeers(self, request, context):
+        """BGP Peer List
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetBGPPeer(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def GetBgpPeer(self, request, context):
+        """BGP Peer Get
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateBGPPeerAf(self, request, context):
+    def CreateBgpPeerAf(self, request, context):
         """bgppeeraf (optional) apis
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteBGPPeerAf(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def DeleteBgpPeerAf(self, request, context):
+        """BGP Peer AF Delete
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateBGPPeerAf(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def UpdateBgpPeerAf(self, request, context):
+        """BGP Peer AF Update
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListBGPPeerAfs(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def ListBgpPeerAfs(self, request, context):
+        """BGP Peer AF List
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetBGPPeerAf(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def GetBgpPeerAf(self, request, context):
+        """BGP Peer AF Get
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -1553,55 +1565,55 @@ def add_CloudInfraServiceServicer_to_server(servicer, server):
                     request_deserializer=cloudrpc__pb2.GetBgpRouterRequest.FromString,
                     response_serializer=bgp__pb2.BgpRouter.SerializeToString,
             ),
-            'CreateBGPPeer': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateBGPPeer,
-                    request_deserializer=cloudrpc__pb2.CreateBGPPeerRequest.FromString,
-                    response_serializer=bgp__pb2.BGPPeer.SerializeToString,
+            'CreateBgpPeer': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateBgpPeer,
+                    request_deserializer=cloudrpc__pb2.CreateBgpPeerRequest.FromString,
+                    response_serializer=bgp__pb2.BgpPeer.SerializeToString,
             ),
-            'DeleteBGPPeer': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteBGPPeer,
-                    request_deserializer=cloudrpc__pb2.DeleteBGPPeerRequest.FromString,
+            'DeleteBgpPeer': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteBgpPeer,
+                    request_deserializer=cloudrpc__pb2.DeleteBgpPeerRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'UpdateBGPPeer': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateBGPPeer,
-                    request_deserializer=cloudrpc__pb2.UpdateBGPPeerRequest.FromString,
-                    response_serializer=bgp__pb2.BGPPeer.SerializeToString,
+            'UpdateBgpPeer': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBgpPeer,
+                    request_deserializer=cloudrpc__pb2.UpdateBgpPeerRequest.FromString,
+                    response_serializer=bgp__pb2.BgpPeer.SerializeToString,
             ),
-            'ListBGPPeers': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListBGPPeers,
-                    request_deserializer=cloudrpc__pb2.ListBGPPeersRequest.FromString,
-                    response_serializer=cloudrpc__pb2.ListBGPPeersResponse.SerializeToString,
+            'ListBgpPeers': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBgpPeers,
+                    request_deserializer=cloudrpc__pb2.ListBgpPeersRequest.FromString,
+                    response_serializer=cloudrpc__pb2.ListBgpPeersResponse.SerializeToString,
             ),
-            'GetBGPPeer': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetBGPPeer,
-                    request_deserializer=cloudrpc__pb2.GetBGPPeerRequest.FromString,
-                    response_serializer=bgp__pb2.BGPPeer.SerializeToString,
+            'GetBgpPeer': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBgpPeer,
+                    request_deserializer=cloudrpc__pb2.GetBgpPeerRequest.FromString,
+                    response_serializer=bgp__pb2.BgpPeer.SerializeToString,
             ),
-            'CreateBGPPeerAf': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateBGPPeerAf,
-                    request_deserializer=cloudrpc__pb2.CreateBGPPeerAfRequest.FromString,
-                    response_serializer=bgp__pb2.BGPPeerAf.SerializeToString,
+            'CreateBgpPeerAf': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateBgpPeerAf,
+                    request_deserializer=cloudrpc__pb2.CreateBgpPeerAfRequest.FromString,
+                    response_serializer=bgp__pb2.BgpPeerAf.SerializeToString,
             ),
-            'DeleteBGPPeerAf': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteBGPPeerAf,
-                    request_deserializer=cloudrpc__pb2.DeleteBGPPeerAfRequest.FromString,
+            'DeleteBgpPeerAf': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteBgpPeerAf,
+                    request_deserializer=cloudrpc__pb2.DeleteBgpPeerAfRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'UpdateBGPPeerAf': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateBGPPeerAf,
-                    request_deserializer=cloudrpc__pb2.UpdateBGPPeerAfRequest.FromString,
-                    response_serializer=bgp__pb2.BGPPeerAf.SerializeToString,
+            'UpdateBgpPeerAf': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBgpPeerAf,
+                    request_deserializer=cloudrpc__pb2.UpdateBgpPeerAfRequest.FromString,
+                    response_serializer=bgp__pb2.BgpPeerAf.SerializeToString,
             ),
-            'ListBGPPeerAfs': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListBGPPeerAfs,
-                    request_deserializer=cloudrpc__pb2.ListBGPPeerAfsRequest.FromString,
-                    response_serializer=cloudrpc__pb2.ListBGPPeerAfsResponse.SerializeToString,
+            'ListBgpPeerAfs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBgpPeerAfs,
+                    request_deserializer=cloudrpc__pb2.ListBgpPeerAfsRequest.FromString,
+                    response_serializer=cloudrpc__pb2.ListBgpPeerAfsResponse.SerializeToString,
             ),
-            'GetBGPPeerAf': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetBGPPeerAf,
-                    request_deserializer=cloudrpc__pb2.GetBGPPeerAfRequest.FromString,
-                    response_serializer=bgp__pb2.BGPPeerAf.SerializeToString,
+            'GetBgpPeerAf': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBgpPeerAf,
+                    request_deserializer=cloudrpc__pb2.GetBgpPeerAfRequest.FromString,
+                    response_serializer=bgp__pb2.BgpPeerAf.SerializeToString,
             ),
             'CreateMapping': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateMapping,
@@ -2617,7 +2629,7 @@ class CloudInfraService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateBGPPeer(request,
+    def CreateBgpPeer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2627,14 +2639,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeer',
-            cloudrpc__pb2.CreateBGPPeerRequest.SerializeToString,
-            bgp__pb2.BGPPeer.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeer',
+            cloudrpc__pb2.CreateBgpPeerRequest.SerializeToString,
+            bgp__pb2.BgpPeer.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteBGPPeer(request,
+    def DeleteBgpPeer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2644,14 +2656,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeer',
-            cloudrpc__pb2.DeleteBGPPeerRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeer',
+            cloudrpc__pb2.DeleteBgpPeerRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateBGPPeer(request,
+    def UpdateBgpPeer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2661,14 +2673,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeer',
-            cloudrpc__pb2.UpdateBGPPeerRequest.SerializeToString,
-            bgp__pb2.BGPPeer.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeer',
+            cloudrpc__pb2.UpdateBgpPeerRequest.SerializeToString,
+            bgp__pb2.BgpPeer.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListBGPPeers(request,
+    def ListBgpPeers(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2678,14 +2690,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeers',
-            cloudrpc__pb2.ListBGPPeersRequest.SerializeToString,
-            cloudrpc__pb2.ListBGPPeersResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeers',
+            cloudrpc__pb2.ListBgpPeersRequest.SerializeToString,
+            cloudrpc__pb2.ListBgpPeersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetBGPPeer(request,
+    def GetBgpPeer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2695,14 +2707,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeer',
-            cloudrpc__pb2.GetBGPPeerRequest.SerializeToString,
-            bgp__pb2.BGPPeer.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeer',
+            cloudrpc__pb2.GetBgpPeerRequest.SerializeToString,
+            bgp__pb2.BgpPeer.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateBGPPeerAf(request,
+    def CreateBgpPeerAf(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2712,14 +2724,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeerAf',
-            cloudrpc__pb2.CreateBGPPeerAfRequest.SerializeToString,
-            bgp__pb2.BGPPeerAf.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeerAf',
+            cloudrpc__pb2.CreateBgpPeerAfRequest.SerializeToString,
+            bgp__pb2.BgpPeerAf.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteBGPPeerAf(request,
+    def DeleteBgpPeerAf(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2729,14 +2741,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeerAf',
-            cloudrpc__pb2.DeleteBGPPeerAfRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeerAf',
+            cloudrpc__pb2.DeleteBgpPeerAfRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateBGPPeerAf(request,
+    def UpdateBgpPeerAf(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2746,14 +2758,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeerAf',
-            cloudrpc__pb2.UpdateBGPPeerAfRequest.SerializeToString,
-            bgp__pb2.BGPPeerAf.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeerAf',
+            cloudrpc__pb2.UpdateBgpPeerAfRequest.SerializeToString,
+            bgp__pb2.BgpPeerAf.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListBGPPeerAfs(request,
+    def ListBgpPeerAfs(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2763,14 +2775,14 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeerAfs',
-            cloudrpc__pb2.ListBGPPeerAfsRequest.SerializeToString,
-            cloudrpc__pb2.ListBGPPeerAfsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeerAfs',
+            cloudrpc__pb2.ListBgpPeerAfsRequest.SerializeToString,
+            cloudrpc__pb2.ListBgpPeerAfsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetBGPPeerAf(request,
+    def GetBgpPeerAf(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2780,9 +2792,9 @@ class CloudInfraService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeerAf',
-            cloudrpc__pb2.GetBGPPeerAfRequest.SerializeToString,
-            bgp__pb2.BGPPeerAf.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeerAf',
+            cloudrpc__pb2.GetBgpPeerAfRequest.SerializeToString,
+            bgp__pb2.BgpPeerAf.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

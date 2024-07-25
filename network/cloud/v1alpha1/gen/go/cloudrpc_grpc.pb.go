@@ -62,16 +62,16 @@ const (
 	CloudInfraService_UpdateBgpRouter_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpRouter"
 	CloudInfraService_ListBgpRouters_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpRouters"
 	CloudInfraService_GetBgpRouter_FullMethodName          = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpRouter"
-	CloudInfraService_CreateBGPPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeer"
-	CloudInfraService_DeleteBGPPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeer"
-	CloudInfraService_UpdateBGPPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeer"
-	CloudInfraService_ListBGPPeers_FullMethodName          = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeers"
-	CloudInfraService_GetBGPPeer_FullMethodName            = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeer"
-	CloudInfraService_CreateBGPPeerAf_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBGPPeerAf"
-	CloudInfraService_DeleteBGPPeerAf_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBGPPeerAf"
-	CloudInfraService_UpdateBGPPeerAf_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBGPPeerAf"
-	CloudInfraService_ListBGPPeerAfs_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBGPPeerAfs"
-	CloudInfraService_GetBGPPeerAf_FullMethodName          = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBGPPeerAf"
+	CloudInfraService_CreateBgpPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeer"
+	CloudInfraService_DeleteBgpPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeer"
+	CloudInfraService_UpdateBgpPeer_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeer"
+	CloudInfraService_ListBgpPeers_FullMethodName          = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeers"
+	CloudInfraService_GetBgpPeer_FullMethodName            = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeer"
+	CloudInfraService_CreateBgpPeerAf_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateBgpPeerAf"
+	CloudInfraService_DeleteBgpPeerAf_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteBgpPeerAf"
+	CloudInfraService_UpdateBgpPeerAf_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateBgpPeerAf"
+	CloudInfraService_ListBgpPeerAfs_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListBgpPeerAfs"
+	CloudInfraService_GetBgpPeerAf_FullMethodName          = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetBgpPeerAf"
 	CloudInfraService_CreateMapping_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateMapping"
 	CloudInfraService_DeleteMapping_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteMapping"
 	CloudInfraService_UpdateMapping_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateMapping"
@@ -187,22 +187,34 @@ type CloudInfraServiceClient interface {
 	GetUnderlayRoute(ctx context.Context, in *GetUnderlayRouteRequest, opts ...grpc.CallOption) (*UnderlayRoute, error)
 	// bgp (optional) apis
 	CreateBgpRouter(ctx context.Context, in *CreateBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error)
+	// BGP Router Delete
 	DeleteBgpRouter(ctx context.Context, in *DeleteBgpRouterRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// BGP Router Update
 	UpdateBgpRouter(ctx context.Context, in *UpdateBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error)
+	// BGP Router List
 	ListBgpRouters(ctx context.Context, in *ListBgpRoutersRequest, opts ...grpc.CallOption) (*ListBgpRoutersResponse, error)
+	// BGP Router Get
 	GetBgpRouter(ctx context.Context, in *GetBgpRouterRequest, opts ...grpc.CallOption) (*BgpRouter, error)
 	// bgppeer (optional) apis
-	CreateBGPPeer(ctx context.Context, in *CreateBGPPeerRequest, opts ...grpc.CallOption) (*BGPPeer, error)
-	DeleteBGPPeer(ctx context.Context, in *DeleteBGPPeerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	UpdateBGPPeer(ctx context.Context, in *UpdateBGPPeerRequest, opts ...grpc.CallOption) (*BGPPeer, error)
-	ListBGPPeers(ctx context.Context, in *ListBGPPeersRequest, opts ...grpc.CallOption) (*ListBGPPeersResponse, error)
-	GetBGPPeer(ctx context.Context, in *GetBGPPeerRequest, opts ...grpc.CallOption) (*BGPPeer, error)
+	CreateBgpPeer(ctx context.Context, in *CreateBgpPeerRequest, opts ...grpc.CallOption) (*BgpPeer, error)
+	// BGP Peer Delete
+	DeleteBgpPeer(ctx context.Context, in *DeleteBgpPeerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// BGP Peer Update
+	UpdateBgpPeer(ctx context.Context, in *UpdateBgpPeerRequest, opts ...grpc.CallOption) (*BgpPeer, error)
+	// BGP Peer List
+	ListBgpPeers(ctx context.Context, in *ListBgpPeersRequest, opts ...grpc.CallOption) (*ListBgpPeersResponse, error)
+	// BGP Peer Get
+	GetBgpPeer(ctx context.Context, in *GetBgpPeerRequest, opts ...grpc.CallOption) (*BgpPeer, error)
 	// bgppeeraf (optional) apis
-	CreateBGPPeerAf(ctx context.Context, in *CreateBGPPeerAfRequest, opts ...grpc.CallOption) (*BGPPeerAf, error)
-	DeleteBGPPeerAf(ctx context.Context, in *DeleteBGPPeerAfRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	UpdateBGPPeerAf(ctx context.Context, in *UpdateBGPPeerAfRequest, opts ...grpc.CallOption) (*BGPPeerAf, error)
-	ListBGPPeerAfs(ctx context.Context, in *ListBGPPeerAfsRequest, opts ...grpc.CallOption) (*ListBGPPeerAfsResponse, error)
-	GetBGPPeerAf(ctx context.Context, in *GetBGPPeerAfRequest, opts ...grpc.CallOption) (*BGPPeerAf, error)
+	CreateBgpPeerAf(ctx context.Context, in *CreateBgpPeerAfRequest, opts ...grpc.CallOption) (*BgpPeerAf, error)
+	// BGP Peer AF Delete
+	DeleteBgpPeerAf(ctx context.Context, in *DeleteBgpPeerAfRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// BGP Peer AF Update
+	UpdateBgpPeerAf(ctx context.Context, in *UpdateBgpPeerAfRequest, opts ...grpc.CallOption) (*BgpPeerAf, error)
+	// BGP Peer AF List
+	ListBgpPeerAfs(ctx context.Context, in *ListBgpPeerAfsRequest, opts ...grpc.CallOption) (*ListBgpPeerAfsResponse, error)
+	// BGP Peer AF Get
+	GetBgpPeerAf(ctx context.Context, in *GetBgpPeerAfRequest, opts ...grpc.CallOption) (*BgpPeerAf, error)
 	// mapping apis
 	CreateMapping(ctx context.Context, in *CreateMappingRequest, opts ...grpc.CallOption) (*Mapping, error)
 	DeleteMapping(ctx context.Context, in *DeleteMappingRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
@@ -655,90 +667,90 @@ func (c *cloudInfraServiceClient) GetBgpRouter(ctx context.Context, in *GetBgpRo
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) CreateBGPPeer(ctx context.Context, in *CreateBGPPeerRequest, opts ...grpc.CallOption) (*BGPPeer, error) {
-	out := new(BGPPeer)
-	err := c.cc.Invoke(ctx, CloudInfraService_CreateBGPPeer_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) CreateBgpPeer(ctx context.Context, in *CreateBgpPeerRequest, opts ...grpc.CallOption) (*BgpPeer, error) {
+	out := new(BgpPeer)
+	err := c.cc.Invoke(ctx, CloudInfraService_CreateBgpPeer_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) DeleteBGPPeer(ctx context.Context, in *DeleteBGPPeerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *cloudInfraServiceClient) DeleteBgpPeer(ctx context.Context, in *DeleteBgpPeerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, CloudInfraService_DeleteBGPPeer_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudInfraService_DeleteBgpPeer_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) UpdateBGPPeer(ctx context.Context, in *UpdateBGPPeerRequest, opts ...grpc.CallOption) (*BGPPeer, error) {
-	out := new(BGPPeer)
-	err := c.cc.Invoke(ctx, CloudInfraService_UpdateBGPPeer_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) UpdateBgpPeer(ctx context.Context, in *UpdateBgpPeerRequest, opts ...grpc.CallOption) (*BgpPeer, error) {
+	out := new(BgpPeer)
+	err := c.cc.Invoke(ctx, CloudInfraService_UpdateBgpPeer_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) ListBGPPeers(ctx context.Context, in *ListBGPPeersRequest, opts ...grpc.CallOption) (*ListBGPPeersResponse, error) {
-	out := new(ListBGPPeersResponse)
-	err := c.cc.Invoke(ctx, CloudInfraService_ListBGPPeers_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) ListBgpPeers(ctx context.Context, in *ListBgpPeersRequest, opts ...grpc.CallOption) (*ListBgpPeersResponse, error) {
+	out := new(ListBgpPeersResponse)
+	err := c.cc.Invoke(ctx, CloudInfraService_ListBgpPeers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) GetBGPPeer(ctx context.Context, in *GetBGPPeerRequest, opts ...grpc.CallOption) (*BGPPeer, error) {
-	out := new(BGPPeer)
-	err := c.cc.Invoke(ctx, CloudInfraService_GetBGPPeer_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) GetBgpPeer(ctx context.Context, in *GetBgpPeerRequest, opts ...grpc.CallOption) (*BgpPeer, error) {
+	out := new(BgpPeer)
+	err := c.cc.Invoke(ctx, CloudInfraService_GetBgpPeer_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) CreateBGPPeerAf(ctx context.Context, in *CreateBGPPeerAfRequest, opts ...grpc.CallOption) (*BGPPeerAf, error) {
-	out := new(BGPPeerAf)
-	err := c.cc.Invoke(ctx, CloudInfraService_CreateBGPPeerAf_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) CreateBgpPeerAf(ctx context.Context, in *CreateBgpPeerAfRequest, opts ...grpc.CallOption) (*BgpPeerAf, error) {
+	out := new(BgpPeerAf)
+	err := c.cc.Invoke(ctx, CloudInfraService_CreateBgpPeerAf_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) DeleteBGPPeerAf(ctx context.Context, in *DeleteBGPPeerAfRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *cloudInfraServiceClient) DeleteBgpPeerAf(ctx context.Context, in *DeleteBgpPeerAfRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, CloudInfraService_DeleteBGPPeerAf_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudInfraService_DeleteBgpPeerAf_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) UpdateBGPPeerAf(ctx context.Context, in *UpdateBGPPeerAfRequest, opts ...grpc.CallOption) (*BGPPeerAf, error) {
-	out := new(BGPPeerAf)
-	err := c.cc.Invoke(ctx, CloudInfraService_UpdateBGPPeerAf_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) UpdateBgpPeerAf(ctx context.Context, in *UpdateBgpPeerAfRequest, opts ...grpc.CallOption) (*BgpPeerAf, error) {
+	out := new(BgpPeerAf)
+	err := c.cc.Invoke(ctx, CloudInfraService_UpdateBgpPeerAf_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) ListBGPPeerAfs(ctx context.Context, in *ListBGPPeerAfsRequest, opts ...grpc.CallOption) (*ListBGPPeerAfsResponse, error) {
-	out := new(ListBGPPeerAfsResponse)
-	err := c.cc.Invoke(ctx, CloudInfraService_ListBGPPeerAfs_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) ListBgpPeerAfs(ctx context.Context, in *ListBgpPeerAfsRequest, opts ...grpc.CallOption) (*ListBgpPeerAfsResponse, error) {
+	out := new(ListBgpPeerAfsResponse)
+	err := c.cc.Invoke(ctx, CloudInfraService_ListBgpPeerAfs_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) GetBGPPeerAf(ctx context.Context, in *GetBGPPeerAfRequest, opts ...grpc.CallOption) (*BGPPeerAf, error) {
-	out := new(BGPPeerAf)
-	err := c.cc.Invoke(ctx, CloudInfraService_GetBGPPeerAf_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) GetBgpPeerAf(ctx context.Context, in *GetBgpPeerAfRequest, opts ...grpc.CallOption) (*BgpPeerAf, error) {
+	out := new(BgpPeerAf)
+	err := c.cc.Invoke(ctx, CloudInfraService_GetBgpPeerAf_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1378,22 +1390,34 @@ type CloudInfraServiceServer interface {
 	GetUnderlayRoute(context.Context, *GetUnderlayRouteRequest) (*UnderlayRoute, error)
 	// bgp (optional) apis
 	CreateBgpRouter(context.Context, *CreateBgpRouterRequest) (*BgpRouter, error)
+	// BGP Router Delete
 	DeleteBgpRouter(context.Context, *DeleteBgpRouterRequest) (*emptypb.Empty, error)
+	// BGP Router Update
 	UpdateBgpRouter(context.Context, *UpdateBgpRouterRequest) (*BgpRouter, error)
+	// BGP Router List
 	ListBgpRouters(context.Context, *ListBgpRoutersRequest) (*ListBgpRoutersResponse, error)
+	// BGP Router Get
 	GetBgpRouter(context.Context, *GetBgpRouterRequest) (*BgpRouter, error)
 	// bgppeer (optional) apis
-	CreateBGPPeer(context.Context, *CreateBGPPeerRequest) (*BGPPeer, error)
-	DeleteBGPPeer(context.Context, *DeleteBGPPeerRequest) (*emptypb.Empty, error)
-	UpdateBGPPeer(context.Context, *UpdateBGPPeerRequest) (*BGPPeer, error)
-	ListBGPPeers(context.Context, *ListBGPPeersRequest) (*ListBGPPeersResponse, error)
-	GetBGPPeer(context.Context, *GetBGPPeerRequest) (*BGPPeer, error)
+	CreateBgpPeer(context.Context, *CreateBgpPeerRequest) (*BgpPeer, error)
+	// BGP Peer Delete
+	DeleteBgpPeer(context.Context, *DeleteBgpPeerRequest) (*emptypb.Empty, error)
+	// BGP Peer Update
+	UpdateBgpPeer(context.Context, *UpdateBgpPeerRequest) (*BgpPeer, error)
+	// BGP Peer List
+	ListBgpPeers(context.Context, *ListBgpPeersRequest) (*ListBgpPeersResponse, error)
+	// BGP Peer Get
+	GetBgpPeer(context.Context, *GetBgpPeerRequest) (*BgpPeer, error)
 	// bgppeeraf (optional) apis
-	CreateBGPPeerAf(context.Context, *CreateBGPPeerAfRequest) (*BGPPeerAf, error)
-	DeleteBGPPeerAf(context.Context, *DeleteBGPPeerAfRequest) (*emptypb.Empty, error)
-	UpdateBGPPeerAf(context.Context, *UpdateBGPPeerAfRequest) (*BGPPeerAf, error)
-	ListBGPPeerAfs(context.Context, *ListBGPPeerAfsRequest) (*ListBGPPeerAfsResponse, error)
-	GetBGPPeerAf(context.Context, *GetBGPPeerAfRequest) (*BGPPeerAf, error)
+	CreateBgpPeerAf(context.Context, *CreateBgpPeerAfRequest) (*BgpPeerAf, error)
+	// BGP Peer AF Delete
+	DeleteBgpPeerAf(context.Context, *DeleteBgpPeerAfRequest) (*emptypb.Empty, error)
+	// BGP Peer AF Update
+	UpdateBgpPeerAf(context.Context, *UpdateBgpPeerAfRequest) (*BgpPeerAf, error)
+	// BGP Peer AF List
+	ListBgpPeerAfs(context.Context, *ListBgpPeerAfsRequest) (*ListBgpPeerAfsResponse, error)
+	// BGP Peer AF Get
+	GetBgpPeerAf(context.Context, *GetBgpPeerAfRequest) (*BgpPeerAf, error)
 	// mapping apis
 	CreateMapping(context.Context, *CreateMappingRequest) (*Mapping, error)
 	DeleteMapping(context.Context, *DeleteMappingRequest) (*emptypb.Empty, error)
@@ -1609,35 +1633,35 @@ func (UnimplementedCloudInfraServiceServer) ListBgpRouters(context.Context, *Lis
 func (UnimplementedCloudInfraServiceServer) GetBgpRouter(context.Context, *GetBgpRouterRequest) (*BgpRouter, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBgpRouter not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) CreateBGPPeer(context.Context, *CreateBGPPeerRequest) (*BGPPeer, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateBGPPeer not implemented")
+func (UnimplementedCloudInfraServiceServer) CreateBgpPeer(context.Context, *CreateBgpPeerRequest) (*BgpPeer, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateBgpPeer not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) DeleteBGPPeer(context.Context, *DeleteBGPPeerRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteBGPPeer not implemented")
+func (UnimplementedCloudInfraServiceServer) DeleteBgpPeer(context.Context, *DeleteBgpPeerRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteBgpPeer not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) UpdateBGPPeer(context.Context, *UpdateBGPPeerRequest) (*BGPPeer, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateBGPPeer not implemented")
+func (UnimplementedCloudInfraServiceServer) UpdateBgpPeer(context.Context, *UpdateBgpPeerRequest) (*BgpPeer, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateBgpPeer not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) ListBGPPeers(context.Context, *ListBGPPeersRequest) (*ListBGPPeersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListBGPPeers not implemented")
+func (UnimplementedCloudInfraServiceServer) ListBgpPeers(context.Context, *ListBgpPeersRequest) (*ListBgpPeersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListBgpPeers not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) GetBGPPeer(context.Context, *GetBGPPeerRequest) (*BGPPeer, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBGPPeer not implemented")
+func (UnimplementedCloudInfraServiceServer) GetBgpPeer(context.Context, *GetBgpPeerRequest) (*BgpPeer, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBgpPeer not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) CreateBGPPeerAf(context.Context, *CreateBGPPeerAfRequest) (*BGPPeerAf, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateBGPPeerAf not implemented")
+func (UnimplementedCloudInfraServiceServer) CreateBgpPeerAf(context.Context, *CreateBgpPeerAfRequest) (*BgpPeerAf, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateBgpPeerAf not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) DeleteBGPPeerAf(context.Context, *DeleteBGPPeerAfRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteBGPPeerAf not implemented")
+func (UnimplementedCloudInfraServiceServer) DeleteBgpPeerAf(context.Context, *DeleteBgpPeerAfRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteBgpPeerAf not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) UpdateBGPPeerAf(context.Context, *UpdateBGPPeerAfRequest) (*BGPPeerAf, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateBGPPeerAf not implemented")
+func (UnimplementedCloudInfraServiceServer) UpdateBgpPeerAf(context.Context, *UpdateBgpPeerAfRequest) (*BgpPeerAf, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateBgpPeerAf not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) ListBGPPeerAfs(context.Context, *ListBGPPeerAfsRequest) (*ListBGPPeerAfsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListBGPPeerAfs not implemented")
+func (UnimplementedCloudInfraServiceServer) ListBgpPeerAfs(context.Context, *ListBgpPeerAfsRequest) (*ListBgpPeerAfsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListBgpPeerAfs not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) GetBGPPeerAf(context.Context, *GetBGPPeerAfRequest) (*BGPPeerAf, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBGPPeerAf not implemented")
+func (UnimplementedCloudInfraServiceServer) GetBgpPeerAf(context.Context, *GetBgpPeerAfRequest) (*BgpPeerAf, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBgpPeerAf not implemented")
 }
 func (UnimplementedCloudInfraServiceServer) CreateMapping(context.Context, *CreateMappingRequest) (*Mapping, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMapping not implemented")
@@ -2549,182 +2573,182 @@ func _CloudInfraService_GetBgpRouter_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_CreateBGPPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateBGPPeerRequest)
+func _CloudInfraService_CreateBgpPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateBgpPeerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).CreateBGPPeer(ctx, in)
+		return srv.(CloudInfraServiceServer).CreateBgpPeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_CreateBGPPeer_FullMethodName,
+		FullMethod: CloudInfraService_CreateBgpPeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).CreateBGPPeer(ctx, req.(*CreateBGPPeerRequest))
+		return srv.(CloudInfraServiceServer).CreateBgpPeer(ctx, req.(*CreateBgpPeerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_DeleteBGPPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteBGPPeerRequest)
+func _CloudInfraService_DeleteBgpPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteBgpPeerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).DeleteBGPPeer(ctx, in)
+		return srv.(CloudInfraServiceServer).DeleteBgpPeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_DeleteBGPPeer_FullMethodName,
+		FullMethod: CloudInfraService_DeleteBgpPeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).DeleteBGPPeer(ctx, req.(*DeleteBGPPeerRequest))
+		return srv.(CloudInfraServiceServer).DeleteBgpPeer(ctx, req.(*DeleteBgpPeerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_UpdateBGPPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateBGPPeerRequest)
+func _CloudInfraService_UpdateBgpPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateBgpPeerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).UpdateBGPPeer(ctx, in)
+		return srv.(CloudInfraServiceServer).UpdateBgpPeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_UpdateBGPPeer_FullMethodName,
+		FullMethod: CloudInfraService_UpdateBgpPeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).UpdateBGPPeer(ctx, req.(*UpdateBGPPeerRequest))
+		return srv.(CloudInfraServiceServer).UpdateBgpPeer(ctx, req.(*UpdateBgpPeerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_ListBGPPeers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListBGPPeersRequest)
+func _CloudInfraService_ListBgpPeers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBgpPeersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).ListBGPPeers(ctx, in)
+		return srv.(CloudInfraServiceServer).ListBgpPeers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_ListBGPPeers_FullMethodName,
+		FullMethod: CloudInfraService_ListBgpPeers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).ListBGPPeers(ctx, req.(*ListBGPPeersRequest))
+		return srv.(CloudInfraServiceServer).ListBgpPeers(ctx, req.(*ListBgpPeersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_GetBGPPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBGPPeerRequest)
+func _CloudInfraService_GetBgpPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBgpPeerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).GetBGPPeer(ctx, in)
+		return srv.(CloudInfraServiceServer).GetBgpPeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_GetBGPPeer_FullMethodName,
+		FullMethod: CloudInfraService_GetBgpPeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).GetBGPPeer(ctx, req.(*GetBGPPeerRequest))
+		return srv.(CloudInfraServiceServer).GetBgpPeer(ctx, req.(*GetBgpPeerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_CreateBGPPeerAf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateBGPPeerAfRequest)
+func _CloudInfraService_CreateBgpPeerAf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateBgpPeerAfRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).CreateBGPPeerAf(ctx, in)
+		return srv.(CloudInfraServiceServer).CreateBgpPeerAf(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_CreateBGPPeerAf_FullMethodName,
+		FullMethod: CloudInfraService_CreateBgpPeerAf_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).CreateBGPPeerAf(ctx, req.(*CreateBGPPeerAfRequest))
+		return srv.(CloudInfraServiceServer).CreateBgpPeerAf(ctx, req.(*CreateBgpPeerAfRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_DeleteBGPPeerAf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteBGPPeerAfRequest)
+func _CloudInfraService_DeleteBgpPeerAf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteBgpPeerAfRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).DeleteBGPPeerAf(ctx, in)
+		return srv.(CloudInfraServiceServer).DeleteBgpPeerAf(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_DeleteBGPPeerAf_FullMethodName,
+		FullMethod: CloudInfraService_DeleteBgpPeerAf_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).DeleteBGPPeerAf(ctx, req.(*DeleteBGPPeerAfRequest))
+		return srv.(CloudInfraServiceServer).DeleteBgpPeerAf(ctx, req.(*DeleteBgpPeerAfRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_UpdateBGPPeerAf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateBGPPeerAfRequest)
+func _CloudInfraService_UpdateBgpPeerAf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateBgpPeerAfRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).UpdateBGPPeerAf(ctx, in)
+		return srv.(CloudInfraServiceServer).UpdateBgpPeerAf(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_UpdateBGPPeerAf_FullMethodName,
+		FullMethod: CloudInfraService_UpdateBgpPeerAf_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).UpdateBGPPeerAf(ctx, req.(*UpdateBGPPeerAfRequest))
+		return srv.(CloudInfraServiceServer).UpdateBgpPeerAf(ctx, req.(*UpdateBgpPeerAfRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_ListBGPPeerAfs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListBGPPeerAfsRequest)
+func _CloudInfraService_ListBgpPeerAfs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBgpPeerAfsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).ListBGPPeerAfs(ctx, in)
+		return srv.(CloudInfraServiceServer).ListBgpPeerAfs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_ListBGPPeerAfs_FullMethodName,
+		FullMethod: CloudInfraService_ListBgpPeerAfs_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).ListBGPPeerAfs(ctx, req.(*ListBGPPeerAfsRequest))
+		return srv.(CloudInfraServiceServer).ListBgpPeerAfs(ctx, req.(*ListBgpPeerAfsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_GetBGPPeerAf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBGPPeerAfRequest)
+func _CloudInfraService_GetBgpPeerAf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBgpPeerAfRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).GetBGPPeerAf(ctx, in)
+		return srv.(CloudInfraServiceServer).GetBgpPeerAf(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_GetBGPPeerAf_FullMethodName,
+		FullMethod: CloudInfraService_GetBgpPeerAf_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).GetBGPPeerAf(ctx, req.(*GetBGPPeerAfRequest))
+		return srv.(CloudInfraServiceServer).GetBgpPeerAf(ctx, req.(*GetBgpPeerAfRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4063,44 +4087,44 @@ var CloudInfraService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudInfraService_GetBgpRouter_Handler,
 		},
 		{
-			MethodName: "CreateBGPPeer",
-			Handler:    _CloudInfraService_CreateBGPPeer_Handler,
+			MethodName: "CreateBgpPeer",
+			Handler:    _CloudInfraService_CreateBgpPeer_Handler,
 		},
 		{
-			MethodName: "DeleteBGPPeer",
-			Handler:    _CloudInfraService_DeleteBGPPeer_Handler,
+			MethodName: "DeleteBgpPeer",
+			Handler:    _CloudInfraService_DeleteBgpPeer_Handler,
 		},
 		{
-			MethodName: "UpdateBGPPeer",
-			Handler:    _CloudInfraService_UpdateBGPPeer_Handler,
+			MethodName: "UpdateBgpPeer",
+			Handler:    _CloudInfraService_UpdateBgpPeer_Handler,
 		},
 		{
-			MethodName: "ListBGPPeers",
-			Handler:    _CloudInfraService_ListBGPPeers_Handler,
+			MethodName: "ListBgpPeers",
+			Handler:    _CloudInfraService_ListBgpPeers_Handler,
 		},
 		{
-			MethodName: "GetBGPPeer",
-			Handler:    _CloudInfraService_GetBGPPeer_Handler,
+			MethodName: "GetBgpPeer",
+			Handler:    _CloudInfraService_GetBgpPeer_Handler,
 		},
 		{
-			MethodName: "CreateBGPPeerAf",
-			Handler:    _CloudInfraService_CreateBGPPeerAf_Handler,
+			MethodName: "CreateBgpPeerAf",
+			Handler:    _CloudInfraService_CreateBgpPeerAf_Handler,
 		},
 		{
-			MethodName: "DeleteBGPPeerAf",
-			Handler:    _CloudInfraService_DeleteBGPPeerAf_Handler,
+			MethodName: "DeleteBgpPeerAf",
+			Handler:    _CloudInfraService_DeleteBgpPeerAf_Handler,
 		},
 		{
-			MethodName: "UpdateBGPPeerAf",
-			Handler:    _CloudInfraService_UpdateBGPPeerAf_Handler,
+			MethodName: "UpdateBgpPeerAf",
+			Handler:    _CloudInfraService_UpdateBgpPeerAf_Handler,
 		},
 		{
-			MethodName: "ListBGPPeerAfs",
-			Handler:    _CloudInfraService_ListBGPPeerAfs_Handler,
+			MethodName: "ListBgpPeerAfs",
+			Handler:    _CloudInfraService_ListBgpPeerAfs_Handler,
 		},
 		{
-			MethodName: "GetBGPPeerAf",
-			Handler:    _CloudInfraService_GetBGPPeerAf_Handler,
+			MethodName: "GetBgpPeerAf",
+			Handler:    _CloudInfraService_GetBgpPeerAf_Handler,
 		},
 		{
 			MethodName: "CreateMapping",
