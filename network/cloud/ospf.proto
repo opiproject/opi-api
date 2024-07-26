@@ -17,12 +17,12 @@ option java_outer_classname = "OSPFProto";
 option java_package = "opi_api.network.cloud.v1alpha1";
 
 //  OSPF Config object
-message OSPFConfig {
+message OspfRouter {
     option (google.api.resource) = {
-        type: "opi_api.network.cloud.v1alpha1/OSPFConfig"
+        type: "opi_api.network.cloud.v1alpha1/OspfRouter"
         pattern: "ospfs/{ospf_config}"
-        singular: "ospfConfig"
-        plural: "ospfConfigs" 
+        singular: "ospfRouter"
+        plural: "ospfRouters" 
     };    
     // unique key/identifier of OSPF
     string name = 1 [(google.api.field_behavior) = IDENTIFIER];
@@ -77,22 +77,24 @@ message OSPFRedistSpec {
     int32 metric = 6;
 }
 
-// OSPFArea object
-message OSPFArea {
+// OspfArea object
+message OspfArea {
     option (google.api.resource) = {
-        type : "opi_api.network.cloud.v1alpha1/OSPFArea"
+        type : "opi_api.network.cloud.v1alpha1/OspfArea"
         pattern : "ospfareas/{ospf_area}"
+        singular: "ospfArea"
+        plural: "ospfAreas" 
     };
     // Unique name to identify the area.
     string name = 1 [(google.api.field_behavior) = IDENTIFIER];
     // area configuration
-    OSPFAreaSpec spec = 2;
+    OspfAreaSpec spec = 2;
     // area state
     OSPFOperState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// OSPFAreaSpec configuration
-message OSPFAreaSpec {
+// OspfAreaSpec configuration
+message OspfAreaSpec {
     // OSPF Area IP address. control plane chooses the local IP address of the
     // session if an all 0 IP address is provided, example area zero 0.0.0.0 and
     // area 1 0.0.0.1
@@ -104,25 +106,27 @@ message OSPFAreaSpec {
     // example configuration: area 0 authentication_message_digest
     string auth_message_digest = 4;
     // IfNetwork Type
-    OSPFIfNetworkType network_type = 5;
+    OspfIfNetworkType network_type = 5;
 }
 
-// OSPFIfNetwork
-message OSPFIfNetwork {
+// OspfIfNetwork
+message OspfIfNetwork {
     option (google.api.resource) = {
-        type : "opi_api.network.cloud.v1alpha1/OSPFIfNetwork"
+        type : "opi_api.network.cloud.v1alpha1/OspfIfNetwork"
         pattern : "ospfifnetworks/{ospf_ifnetwork}"
+        singular: "ospfIfNetwork"
+        plural: "ospfIfNetworks" 
     };
     // unique key/identifier of ifnetwork
     string name = 1 [(google.api.field_behavior) = IDENTIFIER];
-    // OSPFIfNetwork configuration
-    OSPFIfNetworkSpec spec = 2;
-    // OSPFIfNetwork state
+    // OspfIfNetwork configuration
+    OspfIfNetworkSpec spec = 2;
+    // OspfIfNetwork state
     OSPFOperState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// OSPFIfNetworkSpec configuration
-message OSPFIfNetworkSpec {
+// OspfIfNetworkSpec configuration
+message OspfIfNetworkSpec {
     // Network Type Point_To_Point or Broadcast
     string network_type = 1;
     // peer enable/disable admin state. if peer is not enabled then local router
@@ -147,7 +151,7 @@ message OSPFMD5Auth {
 }
 
 // IfNetwork Types
-enum OSPFIfNetworkType {
+enum OspfIfNetworkType {
     // IfNetwork Type Unspecified
     OSPF_IF_NETWORK_TYPE_UNSPECIFIED = 0;
     // Broadcast type

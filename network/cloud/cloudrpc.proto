@@ -751,7 +751,7 @@ service CloudInfraService {
 
     // OSPF APIs
     // Create a OSPF. Contains the configuration of the OSPF instance.
-    rpc CreateOSPF(CreateOSPFRequest) returns (OSPFConfig) {
+    rpc CreateOSPF(CreateOSPFRequest) returns (OspfRouter) {
         option (google.api.http) = {
             post: "/v1alpha1/ospfConfigs"
             body: "ospf_config"
@@ -759,7 +759,7 @@ service CloudInfraService {
         option (google.api.method_signature) = "ospf_config,ospf_id";
     }
     // Update a OSPF instance
-    rpc UpdateOSPF(UpdateOSPFRequest) returns (OSPFConfig) {
+    rpc UpdateOSPF(UpdateOSPFRequest) returns (OspfRouter) {
         option (google.api.http) = {
             patch: "/v1alpha1/{ospf_config.name=ospfConfigs}/*"
             body: "ospf_config"
@@ -774,7 +774,7 @@ service CloudInfraService {
         option (google.api.method_signature) = "name";
     }
     // Get an OSPF instance
-    rpc GetOSPF(GetOSPFRequest) returns (OSPFConfig) {
+    rpc GetOSPF(GetOSPFRequest) returns (OspfRouter) {
         option (google.api.http) = {
             get: "/v1alpha1/{name=ospfConfigs}/*"
         };
@@ -788,7 +788,7 @@ service CloudInfraService {
     }
 
     // Create a OSPF Area
-    rpc CreateOSPFArea(CreateOSPFAreaRequest) returns (OSPFArea) {
+    rpc CreateOspfArea(CreateOspfAreaRequest) returns (OspfArea) {
         option (google.api.http) = {
             post: "/v1alpha1/ospfAreas"
             body: "ospf_area"
@@ -796,7 +796,7 @@ service CloudInfraService {
         option (google.api.method_signature) = "ospf_area,area_id";
     }
     // Update an OSPF Area
-    rpc UpdateOSPFArea(UpdateOSPFAreaRequest) returns (OSPFArea) {
+    rpc UpdateOspfArea(UpdateOspfAreaRequest) returns (OspfArea) {
         option (google.api.http) = {
             patch: "/v1alpha1/{ospf_area.name=ospfareas}/*"
             body: "ospf_area"
@@ -804,28 +804,28 @@ service CloudInfraService {
         option (google.api.method_signature) = "ospf_area,update_mask";
     }
     // Delete an OSPF Area
-    rpc DeleteOSPFArea(DeleteOSPFAreaRequest) returns (google.protobuf.Empty) {
+    rpc DeleteOspfArea(DeleteOspfAreaRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1alpha1/{name=ospfAreas}/*"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an OSPF Area
-    rpc GetOSPFArea(GetOSPFAreaRequest) returns (OSPFArea) {
+    rpc GetOspfArea(GetOspfAreaRequest) returns (OspfArea) {
         option (google.api.http) = {
             get: "/v1alpha1/{name=ospfAreas}/*"
         };
         option (google.api.method_signature) = "name";
     }
     // List all OSPF Areas
-    rpc ListOSPFArea(ListOSPFAreaRequest) returns (ListOSPFAreaResponse) {
+    rpc ListOspfArea(ListOspfAreaRequest) returns (ListOspfAreaResponse) {
         option (google.api.http) = {
             get: "/v1alpha1/ospfAreas"
         };
     }
 
     // Create an OSPF IfNetwork
-    rpc CreateOSPFIfNetwork(CreateOSPFIfNetworkRequest) returns (OSPFIfNetwork) {
+    rpc CreateOspfIfNetwork(CreateOspfIfNetworkRequest) returns (OspfIfNetwork) {
         option (google.api.http) = {
             post: "/v1alpha1/ospfIfNetworks"
             body: "ospf_ifnetwork"
@@ -833,7 +833,7 @@ service CloudInfraService {
         option (google.api.method_signature) = "ospf_ifnetwork_id,ospf_ifnetwork_area,ospf_ifnetwork";
     }
     // Update an OSPF IfNetwork
-    rpc UpdateOSPFIfNetwork(UpdateOSPFIfNetworkRequest) returns (OSPFIfNetwork) {
+    rpc UpdateOspfIfNetwork(UpdateOspfIfNetworkRequest) returns (OspfIfNetwork) {
         option (google.api.http) = {
             patch: "/v1alpha1/{ospf_ifnetwork.name=ospfifnetworks}/*"
             body: "ospf_ifnetwork"
@@ -841,21 +841,21 @@ service CloudInfraService {
         option (google.api.method_signature) = "ospf_ifnetwork,update_mask";
     }
     // Delete an OSPF IfNetwork
-    rpc DeleteOSPFIfNetwork(DeleteOSPFIfNetworkRequest) returns (google.protobuf.Empty) {
+    rpc DeleteOspfIfNetwork(DeleteOspfIfNetworkRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1alpha1/{name=ospfIfNetwork}/*"
         };
         option (google.api.method_signature) = "name";
     }
     // Get an OSPF IfNetwork
-    rpc GetOSPFIfNetwork(GetOSPFIfNetworkRequest) returns (OSPFIfNetwork) {
+    rpc GetOspfIfNetwork(GetOspfIfNetworkRequest) returns (OspfIfNetwork) {
         option (google.api.http) = {
             get: "/v1alpha1/{name=ospfIfNetworks}/*"
         };
         option (google.api.method_signature) = "name";
     }
     // List all OSPF IfNetworks
-    rpc ListOSPFIfNetwork(ListOSPFIfNetworkRequest) returns (ListOSPFIfNetworkResponse) {
+    rpc ListOspfIfNetwork(ListOspfIfNetworkRequest) returns (ListOspfIfNetworkResponse) {
         option (google.api.http) = {
             get: "/v1alpha1/ospfIfNetworks"
         };
@@ -2235,13 +2235,13 @@ message CreateOSPFRequest {
     // OSPF identifier
     string ospf_id = 1 [(google.api.field_behavior) = OPTIONAL];
     // OSPF configuration
-    OSPFConfig ospf_config = 2 [(google.api.field_behavior) = REQUIRED];
+    OspfRouter ospf_config = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Update OSPF request
 message UpdateOSPFRequest {
     // updated ospf configuration
-    OSPFConfig ospf_config = 1 [(google.api.field_behavior) = REQUIRED];
+    OspfRouter ospf_config = 1 [(google.api.field_behavior) = REQUIRED];
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
@@ -2251,7 +2251,7 @@ message DeleteOSPFRequest {
     // Name or OSPF identifier
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OSPFConfig"
+        (google.api.resource_reference).type = "OspfRouter"
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
@@ -2263,7 +2263,7 @@ message GetOSPFRequest {
     // Name of the OSPF Config to retrieve
     string name = 1 [
         (google.api.field_behavior) = OPTIONAL,
-        (google.api.resource_reference).type = "OSPFConfig"
+        (google.api.resource_reference).type = "OspfRouter"
     ];
 }
 
@@ -2279,7 +2279,7 @@ message ListOSPFRequest {
 // List OSPF response
 message ListOSPFResponse {
     // List of OSPF configs
-    repeated OSPFConfig ospf_configs = 1;
+    repeated OspfRouter ospf_configs = 1;
 
     // A token that can be sent as `page_token` to retrieve the next page.
     // If this field is omitted, there are not subsequent pages.
@@ -2287,58 +2287,58 @@ message ListOSPFResponse {
 }
 
 //
-// OSPFArea Requests/Responses
+// OspfArea Requests/Responses
 //
 
-// Create OSPFArea Request
-message CreateOSPFAreaRequest {
+// Create OspfArea Request
+message CreateOspfAreaRequest {
     // area_id
     string area_id = 1 [(google.api.field_behavior) = REQUIRED];
     // ospf_area
-    OSPFArea ospf_area = 2 [(google.api.field_behavior) = REQUIRED];
+    OspfArea ospf_area = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Update OSPFArea request
-message UpdateOSPFAreaRequest {
+// Update OspfArea request
+message UpdateOspfAreaRequest {
     // updated ospf_area info
-    OSPFArea ospf_area = 1 [(google.api.field_behavior) = REQUIRED];
+    OspfArea ospf_area = 1 [(google.api.field_behavior) = REQUIRED];
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Delete OSPFArea request
-message DeleteOSPFAreaRequest {
+// Delete OspfArea request
+message DeleteOspfAreaRequest {
     // name or area_id
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OSPFArea"
+        (google.api.resource_reference).type = "OspfArea"
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Get OSPFArea request
-message GetOSPFAreaRequest {
+// Get OspfArea request
+message GetOspfAreaRequest {
     // name
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OSPFArea"
+        (google.api.resource_reference).type = "OspfArea"
     ];
 }
 
-// List OSPFArea request
-message ListOSPFAreaRequest {
+// List OspfArea request
+message ListOspfAreaRequest {
     // pagination: page-size
     int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
     // pagination: start token
     string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// List OSPFArea response
-message ListOSPFAreaResponse {
+// List OspfArea response
+message ListOspfAreaResponse {
     // list of ospf_areas
-    repeated OSPFArea ospf_areas = 1;
+    repeated OspfArea ospf_areas = 1;
 
     // next page token
     string next_page_token = 2;
@@ -2348,56 +2348,56 @@ message ListOSPFAreaResponse {
 // OSPFvIfNetwork Requests/Responses
 //
 
-// Create OSPFIfNetwork Request
-message CreateOSPFIfNetworkRequest {
+// Create OspfIfNetwork Request
+message CreateOspfIfNetworkRequest {
     // OSPF IfNetwork ID
     string ospf_ifnetwork_id = 1 [(google.api.field_behavior) = REQUIRED];
     // OSPF IfNetwork Area ID
     string ospf_ifnetwork_area = 2 [(google.api.field_behavior) = REQUIRED];
     // ospf_ifnetwork
-    OSPFIfNetwork ospf_ifnetwork = 3 [(google.api.field_behavior) = REQUIRED];
+    OspfIfNetwork ospf_ifnetwork = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Update OSPFIfNetwork request
-message UpdateOSPFIfNetworkRequest {
+// Update OspfIfNetwork request
+message UpdateOspfIfNetworkRequest {
     // name
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OSPFIfNetwork"
+        (google.api.resource_reference).type = "OspfIfNetwork"
     ];
     // updated OSPF IfNetwork information
-    OSPFIfNetwork ospf_ifnetwork = 2;
+    OspfIfNetwork ospf_ifnetwork = 2;
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Delete OSPFIfNetwork request
-message DeleteOSPFIfNetworkRequest {
+// Delete OspfIfNetwork request
+message DeleteOspfIfNetworkRequest {
     // OSPF IfNetwork name
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OSPFIfNetwork"
+        (google.api.resource_reference).type = "OspfIfNetwork"
     ];
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
     bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Get OSPFIfNetwork request
-message GetOSPFIfNetworkRequest {
+// Get OspfIfNetwork request
+message GetOspfIfNetworkRequest {
     // name
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/OSPFIfNetwork"
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfIfNetwork"
     ];
 }
 
-// List OSPFIfNetwork request
-message ListOSPFIfNetworkRequest {
+// List OspfIfNetwork request
+message ListOspfIfNetworkRequest {
     // name or IfNetwork identifier
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OSPFIfNetwork"
+        (google.api.resource_reference).type = "OspfIfNetwork"
     ];
     // pagination: page-size
     int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
@@ -2405,10 +2405,10 @@ message ListOSPFIfNetworkRequest {
     string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// List OSPFIfNetwork response
-message ListOSPFIfNetworkResponse {
-    // list of OSPFIfNetwork
-    repeated OSPFIfNetwork ospf_ifnetworks = 1;
+// List OspfIfNetwork response
+message ListOspfIfNetworkResponse {
+    // list of OspfIfNetwork
+    repeated OspfIfNetwork ospf_ifnetworks = 1;
     // next page token
     string next_page_token = 2;
 }
