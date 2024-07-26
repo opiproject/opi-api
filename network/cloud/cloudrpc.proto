@@ -781,7 +781,7 @@ service CloudInfraService {
         option (google.api.method_signature) = "name";
     }
     // All OSPF instances
-    rpc ListOspfRouter(ListOspfRouterRequest) returns (ListOspfRouterResponse) {
+    rpc ListOspfRouters(ListOspfRoutersRequest) returns (ListOspfRoutersResponse) {
         option (google.api.http) = {
             get: "/v1alpha1/ospfConfigs"
         };
@@ -2268,16 +2268,21 @@ message GetOspfRouterRequest {
 }
 
 // List OSPF request
-message ListOspfRouterRequest {
-    // The maximum number of OSPF configs to return. The service may return fewer than this value.
-    int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
-    // A page token, received from a previous `ListOspfRouter` call.
+message ListOspfRoutersRequest {
+    // parent
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfRouter"
+    ];
+    // The maximum number of OSPF routers to return. The service may return fewer than this value.
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+    // A page token, received from a previous `ListOspfRouters` call.
     // Provide this to retrieve the subsequent page.
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List OSPF response
-message ListOspfRouterResponse {
+message ListOspfRoutersResponse {
     // List of OSPF configs
     repeated OspfRouter ospf_configs = 1;
 
@@ -2329,10 +2334,15 @@ message GetOspfAreaRequest {
 
 // List OspfArea request
 message ListOspfAreaRequest {
+    // parent
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfRouter"
+    ];
     // pagination: page-size
-    int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
     // pagination: start token
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List OspfArea response
@@ -2394,8 +2404,8 @@ message GetOspfIfNetworkRequest {
 
 // List OspfIfNetwork request
 message ListOspfIfNetworkRequest {
-    // name or IfNetwork identifier
-    string name = 1 [
+    // parent or IfNetwork identifier
+    string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "OspfIfNetwork"
     ];
