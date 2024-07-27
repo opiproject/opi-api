@@ -37,7 +37,7 @@ message OspfRouter {
 // OSPF configuration
 message OSPFSpec {
     // OSPF version v2 or v3 or unspecified assumes v2
-    OSPFVersion ospf_version = 1;
+    OSPFVersion ospf_version = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
     // router ID for this ospf instance
     string router_id = 2;
     // Suppress default resolution if true

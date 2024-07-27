@@ -2298,7 +2298,7 @@ message ListOspfRoutersResponse {
 // Create OspfArea Request
 message CreateOspfAreaRequest {
     // ospf_area_id
-    string ospf_area_id = 1 [(google.api.field_behavior) = IDENTIFIER];
+    string ospf_area_id = 1 [(google.api.field_behavior) = REQUIRED];
     // ospf_area
     OspfArea ospf_area = 2 [(google.api.field_behavior) = REQUIRED];
 }
@@ -2374,7 +2374,7 @@ message UpdateOspfIfNetworkRequest {
         (google.api.resource_reference).type = "OspfIfNetwork"
     ];
     // updated OSPF IfNetwork information
-    OspfIfNetwork ospf_if_network = 2;
+    OspfIfNetwork ospf_if_network = 2 [(google.api.field_behavior) = REQUIRED];
     // list of fields to update.
     google.protobuf.FieldMask update_mask = 3 [(google.api.field_behavior) = OPTIONAL];
 }
