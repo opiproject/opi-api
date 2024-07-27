@@ -6078,66 +6078,66 @@ func local_request_CloudInfraService_GetSecurityProfile_0(ctx context.Context, m
 }
 
 var (
-	filter_CloudInfraService_CreateOSPF_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_config": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_CreateOspfRouter_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_router": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_CreateOSPF_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateOSPFRequest
+func request_CloudInfraService_CreateOspfRouter_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateOspfRouterRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfConfig); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfRouter); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOSPF_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOspfRouter_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateOSPF(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateOspfRouter(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_CreateOSPF_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateOSPFRequest
+func local_request_CloudInfraService_CreateOspfRouter_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateOspfRouterRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfConfig); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfRouter); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOSPF_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOspfRouter_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateOSPF(ctx, &protoReq)
+	msg, err := server.CreateOspfRouter(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_UpdateOSPF_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_config": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
+	filter_CloudInfraService_UpdateOspfRouter_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_router": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
-func request_CloudInfraService_UpdateOSPF_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateOSPFRequest
+func request_CloudInfraService_UpdateOspfRouter_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateOspfRouterRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.OspfConfig); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.OspfRouter); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.OspfConfig); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.OspfRouter); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -6151,41 +6151,41 @@ func request_CloudInfraService_UpdateOSPF_0(ctx context.Context, marshaler runti
 		_   = err
 	)
 
-	val, ok = pathParams["ospf_config.name"]
+	val, ok = pathParams["ospf_router.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "ospf_config.name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "ospf_router.name")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "ospf_config.name", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "ospf_router.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ospf_config.name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ospf_router.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOSPF_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOspfRouter_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateOSPF(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateOspfRouter(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_UpdateOSPF_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateOSPFRequest
+func local_request_CloudInfraService_UpdateOspfRouter_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateOspfRouterRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.OspfConfig); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.OspfRouter); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.OspfConfig); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.OspfRouter); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -6199,34 +6199,34 @@ func local_request_CloudInfraService_UpdateOSPF_0(ctx context.Context, marshaler
 		_   = err
 	)
 
-	val, ok = pathParams["ospf_config.name"]
+	val, ok = pathParams["ospf_router.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "ospf_config.name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "ospf_router.name")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "ospf_config.name", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "ospf_router.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ospf_config.name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ospf_router.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOSPF_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOspfRouter_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateOSPF(ctx, &protoReq)
+	msg, err := server.UpdateOspfRouter(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_DeleteOSPF_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_DeleteOspfRouter_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_DeleteOSPF_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteOSPFRequest
+func request_CloudInfraService_DeleteOspfRouter_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteOspfRouterRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6249,17 +6249,17 @@ func request_CloudInfraService_DeleteOSPF_0(ctx context.Context, marshaler runti
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOSPF_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOspfRouter_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.DeleteOSPF(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.DeleteOspfRouter(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_DeleteOSPF_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteOSPFRequest
+func local_request_CloudInfraService_DeleteOspfRouter_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteOspfRouterRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6282,17 +6282,17 @@ func local_request_CloudInfraService_DeleteOSPF_0(ctx context.Context, marshaler
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOSPF_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOspfRouter_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeleteOSPF(ctx, &protoReq)
+	msg, err := server.DeleteOspfRouter(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudInfraService_GetOSPF_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetOSPFRequest
+func request_CloudInfraService_GetOspfRouter_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetOspfRouterRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6312,13 +6312,13 @@ func request_CloudInfraService_GetOSPF_0(ctx context.Context, marshaler runtime.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := client.GetOSPF(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetOspfRouter(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_GetOSPF_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetOSPFRequest
+func local_request_CloudInfraService_GetOspfRouter_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetOspfRouterRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6338,53 +6338,53 @@ func local_request_CloudInfraService_GetOSPF_0(ctx context.Context, marshaler ru
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := server.GetOSPF(ctx, &protoReq)
+	msg, err := server.GetOspfRouter(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_ListOSPF_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_CloudInfraService_ListOspfRouters_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_CloudInfraService_ListOSPF_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListOSPFRequest
+func request_CloudInfraService_ListOspfRouters_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListOspfRoutersRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOSPF_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOspfRouters_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.ListOSPF(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.ListOspfRouters(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_ListOSPF_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListOSPFRequest
+func local_request_CloudInfraService_ListOspfRouters_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListOspfRoutersRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOSPF_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOspfRouters_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.ListOSPF(ctx, &protoReq)
+	msg, err := server.ListOspfRouters(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_CreateOSPFArea_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_area": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_CreateOspfArea_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_area": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_CreateOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateOSPFAreaRequest
+func request_CloudInfraService_CreateOspfArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateOspfAreaRequest
 	var metadata runtime.ServerMetadata
 
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfArea); err != nil && err != io.EOF {
@@ -6394,17 +6394,17 @@ func request_CloudInfraService_CreateOSPFArea_0(ctx context.Context, marshaler r
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOSPFArea_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOspfArea_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateOSPFArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateOspfArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_CreateOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateOSPFAreaRequest
+func local_request_CloudInfraService_CreateOspfArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateOspfAreaRequest
 	var metadata runtime.ServerMetadata
 
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfArea); err != nil && err != io.EOF {
@@ -6414,21 +6414,21 @@ func local_request_CloudInfraService_CreateOSPFArea_0(ctx context.Context, marsh
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOSPFArea_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOspfArea_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateOSPFArea(ctx, &protoReq)
+	msg, err := server.CreateOspfArea(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_UpdateOSPFArea_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_area": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
+	filter_CloudInfraService_UpdateOspfArea_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_area": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
-func request_CloudInfraService_UpdateOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateOSPFAreaRequest
+func request_CloudInfraService_UpdateOspfArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateOspfAreaRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -6466,17 +6466,17 @@ func request_CloudInfraService_UpdateOSPFArea_0(ctx context.Context, marshaler r
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOSPFArea_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOspfArea_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateOSPFArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateOspfArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_UpdateOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateOSPFAreaRequest
+func local_request_CloudInfraService_UpdateOspfArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateOspfAreaRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -6514,21 +6514,21 @@ func local_request_CloudInfraService_UpdateOSPFArea_0(ctx context.Context, marsh
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOSPFArea_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOspfArea_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateOSPFArea(ctx, &protoReq)
+	msg, err := server.UpdateOspfArea(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_DeleteOSPFArea_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_DeleteOspfArea_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_DeleteOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteOSPFAreaRequest
+func request_CloudInfraService_DeleteOspfArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteOspfAreaRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6551,17 +6551,17 @@ func request_CloudInfraService_DeleteOSPFArea_0(ctx context.Context, marshaler r
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOSPFArea_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOspfArea_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.DeleteOSPFArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.DeleteOspfArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_DeleteOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteOSPFAreaRequest
+func local_request_CloudInfraService_DeleteOspfArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteOspfAreaRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6584,17 +6584,17 @@ func local_request_CloudInfraService_DeleteOSPFArea_0(ctx context.Context, marsh
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOSPFArea_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOspfArea_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeleteOSPFArea(ctx, &protoReq)
+	msg, err := server.DeleteOspfArea(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudInfraService_GetOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetOSPFAreaRequest
+func request_CloudInfraService_GetOspfArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetOspfAreaRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6614,13 +6614,13 @@ func request_CloudInfraService_GetOSPFArea_0(ctx context.Context, marshaler runt
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := client.GetOSPFArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetOspfArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_GetOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetOSPFAreaRequest
+func local_request_CloudInfraService_GetOspfArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetOspfAreaRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6640,108 +6640,108 @@ func local_request_CloudInfraService_GetOSPFArea_0(ctx context.Context, marshale
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := server.GetOSPFArea(ctx, &protoReq)
+	msg, err := server.GetOspfArea(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_ListOSPFArea_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_CloudInfraService_ListOspfAreas_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_CloudInfraService_ListOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListOSPFAreaRequest
+func request_CloudInfraService_ListOspfAreas_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListOspfAreasRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOSPFArea_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOspfAreas_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.ListOSPFArea(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.ListOspfAreas(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_ListOSPFArea_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListOSPFAreaRequest
+func local_request_CloudInfraService_ListOspfAreas_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListOspfAreasRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOSPFArea_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOspfAreas_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.ListOSPFArea(ctx, &protoReq)
+	msg, err := server.ListOspfAreas(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_CreateOSPFIfNetwork_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_ifnetwork": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_CreateOspfIfNetwork_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_if_network": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_CreateOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateOSPFIfNetworkRequest
+func request_CloudInfraService_CreateOspfIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateOspfIfNetworkRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfIfnetwork); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfIfNetwork); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOSPFIfNetwork_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOspfIfNetwork_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateOSPFIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateOspfIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_CreateOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateOSPFIfNetworkRequest
+func local_request_CloudInfraService_CreateOspfIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateOspfIfNetworkRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfIfnetwork); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.OspfIfNetwork); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOSPFIfNetwork_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_CreateOspfIfNetwork_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateOSPFIfNetwork(ctx, &protoReq)
+	msg, err := server.CreateOspfIfNetwork(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_UpdateOSPFIfNetwork_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_ifnetwork": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
+	filter_CloudInfraService_UpdateOspfIfNetwork_0 = &utilities.DoubleArray{Encoding: map[string]int{"ospf_if_network": 0, "name": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
 )
 
-func request_CloudInfraService_UpdateOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateOSPFIfNetworkRequest
+func request_CloudInfraService_UpdateOspfIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateOspfIfNetworkRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.OspfIfnetwork); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.OspfIfNetwork); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.OspfIfnetwork); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.OspfIfNetwork); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -6755,41 +6755,41 @@ func request_CloudInfraService_UpdateOSPFIfNetwork_0(ctx context.Context, marsha
 		_   = err
 	)
 
-	val, ok = pathParams["ospf_ifnetwork.name"]
+	val, ok = pathParams["ospf_if_network.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "ospf_ifnetwork.name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "ospf_if_network.name")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "ospf_ifnetwork.name", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "ospf_if_network.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ospf_ifnetwork.name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ospf_if_network.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOSPFIfNetwork_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOspfIfNetwork_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateOSPFIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdateOspfIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_UpdateOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateOSPFIfNetworkRequest
+func local_request_CloudInfraService_UpdateOspfIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdateOspfIfNetworkRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
 	if berr != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.OspfIfnetwork); err != nil && err != io.EOF {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.OspfIfNetwork); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	if protoReq.UpdateMask == nil || len(protoReq.UpdateMask.GetPaths()) == 0 {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.OspfIfnetwork); err != nil {
+		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader(), protoReq.OspfIfNetwork); err != nil {
 			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 		} else {
 			protoReq.UpdateMask = fieldMask
@@ -6803,34 +6803,34 @@ func local_request_CloudInfraService_UpdateOSPFIfNetwork_0(ctx context.Context, 
 		_   = err
 	)
 
-	val, ok = pathParams["ospf_ifnetwork.name"]
+	val, ok = pathParams["ospf_if_network.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "ospf_ifnetwork.name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "ospf_if_network.name")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "ospf_ifnetwork.name", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "ospf_if_network.name", val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ospf_ifnetwork.name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ospf_if_network.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOSPFIfNetwork_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_UpdateOspfIfNetwork_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateOSPFIfNetwork(ctx, &protoReq)
+	msg, err := server.UpdateOspfIfNetwork(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_DeleteOSPFIfNetwork_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_CloudInfraService_DeleteOspfIfNetwork_0 = &utilities.DoubleArray{Encoding: map[string]int{"name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_CloudInfraService_DeleteOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteOSPFIfNetworkRequest
+func request_CloudInfraService_DeleteOspfIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteOspfIfNetworkRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6853,17 +6853,17 @@ func request_CloudInfraService_DeleteOSPFIfNetwork_0(ctx context.Context, marsha
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOSPFIfNetwork_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOspfIfNetwork_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.DeleteOSPFIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.DeleteOspfIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_DeleteOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteOSPFIfNetworkRequest
+func local_request_CloudInfraService_DeleteOspfIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteOspfIfNetworkRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6886,17 +6886,17 @@ func local_request_CloudInfraService_DeleteOSPFIfNetwork_0(ctx context.Context, 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOSPFIfNetwork_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_DeleteOspfIfNetwork_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeleteOSPFIfNetwork(ctx, &protoReq)
+	msg, err := server.DeleteOspfIfNetwork(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_CloudInfraService_GetOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetOSPFIfNetworkRequest
+func request_CloudInfraService_GetOspfIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetOspfIfNetworkRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6916,13 +6916,13 @@ func request_CloudInfraService_GetOSPFIfNetwork_0(ctx context.Context, marshaler
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := client.GetOSPFIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetOspfIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_GetOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetOSPFIfNetworkRequest
+func local_request_CloudInfraService_GetOspfIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetOspfIfNetworkRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -6942,43 +6942,43 @@ func local_request_CloudInfraService_GetOSPFIfNetwork_0(ctx context.Context, mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
-	msg, err := server.GetOSPFIfNetwork(ctx, &protoReq)
+	msg, err := server.GetOspfIfNetwork(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_CloudInfraService_ListOSPFIfNetwork_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_CloudInfraService_ListOspfIfNetworks_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_CloudInfraService_ListOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListOSPFIfNetworkRequest
+func request_CloudInfraService_ListOspfIfNetworks_0(ctx context.Context, marshaler runtime.Marshaler, client CloudInfraServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListOspfIfNetworksRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOSPFIfNetwork_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOspfIfNetworks_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.ListOSPFIfNetwork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.ListOspfIfNetworks(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudInfraService_ListOSPFIfNetwork_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListOSPFIfNetworkRequest
+func local_request_CloudInfraService_ListOspfIfNetworks_0(ctx context.Context, marshaler runtime.Marshaler, server CloudInfraServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListOspfIfNetworksRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOSPFIfNetwork_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CloudInfraService_ListOspfIfNetworks_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.ListOSPFIfNetwork(ctx, &protoReq)
+	msg, err := server.ListOspfIfNetworks(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -9464,7 +9464,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateOspfRouter_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9472,12 +9472,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPF", runtime.WithHTTPPathPattern("/v1alpha1/ospfConfigs"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfRouter", runtime.WithHTTPPathPattern("/v1alpha1/ospfRouters"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_CreateOSPF_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_CreateOspfRouter_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9485,11 +9485,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_CreateOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateOspfRouter_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOspfRouter_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9497,12 +9497,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPF", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_config.name=ospfConfigs}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfRouter", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_router.name=ospfRouters/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_UpdateOSPF_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_UpdateOspfRouter_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9510,11 +9510,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_UpdateOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateOspfRouter_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOspfRouter_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9522,12 +9522,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPF", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfConfigs}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfRouter", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfRouters/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_DeleteOSPF_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_DeleteOspfRouter_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9535,11 +9535,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_DeleteOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteOspfRouter_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetOspfRouter_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9547,12 +9547,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPF", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfConfigs}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfRouter", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfRouters/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_GetOSPF_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_GetOspfRouter_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9560,11 +9560,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_GetOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetOspfRouter_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListOspfRouters_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9572,12 +9572,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPF", runtime.WithHTTPPathPattern("/v1alpha1/ospfConfigs"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfRouters", runtime.WithHTTPPathPattern("/v1alpha1/ospfRouters"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_ListOSPF_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_ListOspfRouters_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9585,11 +9585,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_ListOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListOspfRouters_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateOspfArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9597,12 +9597,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/ospfAreas"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfArea", runtime.WithHTTPPathPattern("/v1alpha1/ospfAreas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_CreateOSPFArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_CreateOspfArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9610,11 +9610,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_CreateOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateOspfArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOspfArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9622,12 +9622,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_area.name=ospfareas}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfArea", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_area.name=ospfAreas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_UpdateOSPFArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_UpdateOspfArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9635,11 +9635,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_UpdateOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateOspfArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOspfArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9647,12 +9647,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfAreas}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfArea", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfAreas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_DeleteOSPFArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_DeleteOspfArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9660,11 +9660,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_DeleteOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteOspfArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetOspfArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9672,12 +9672,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfAreas}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfArea", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfAreas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_GetOSPFArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_GetOspfArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9685,11 +9685,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_GetOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetOspfArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListOspfAreas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9697,12 +9697,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/ospfAreas"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfAreas", runtime.WithHTTPPathPattern("/v1alpha1/ospfAreas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_ListOSPFArea_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_ListOspfAreas_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9710,11 +9710,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_ListOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListOspfAreas_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateOspfIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9722,12 +9722,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/ospfIfNetworks"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/ospfIfNetworks"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_CreateOSPFIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_CreateOspfIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9735,11 +9735,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_CreateOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateOspfIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOspfIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9747,12 +9747,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_ifnetwork.name=ospfifnetworks}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_if_network.name=ospfIfNetworks/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_UpdateOSPFIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_UpdateOspfIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9760,11 +9760,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_UpdateOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateOspfIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOspfIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9772,12 +9772,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfIfNetwork}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfIfNetwork/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_DeleteOSPFIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_DeleteOspfIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9785,11 +9785,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_DeleteOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteOspfIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetOspfIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9797,12 +9797,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfIfNetworks}/*"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfIfNetworks/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_GetOSPFIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_GetOspfIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9810,11 +9810,11 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_GetOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetOspfIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListOspfIfNetworks_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -9822,12 +9822,12 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/ospfIfNetworks"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfIfNetworks", runtime.WithHTTPPathPattern("/v1alpha1/ospfIfNetworks"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudInfraService_ListOSPFIfNetwork_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudInfraService_ListOspfIfNetworks_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -9835,7 +9835,7 @@ func RegisterCloudInfraServiceHandlerServer(ctx context.Context, mux *runtime.Se
 			return
 		}
 
-		forward_CloudInfraService_ListOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListOspfIfNetworks_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -12058,333 +12058,333 @@ func RegisterCloudInfraServiceHandlerClient(ctx context.Context, mux *runtime.Se
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateOspfRouter_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPF", runtime.WithHTTPPathPattern("/v1alpha1/ospfConfigs"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfRouter", runtime.WithHTTPPathPattern("/v1alpha1/ospfRouters"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_CreateOSPF_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_CreateOspfRouter_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_CreateOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateOspfRouter_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOspfRouter_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPF", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_config.name=ospfConfigs}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfRouter", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_router.name=ospfRouters/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_UpdateOSPF_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_UpdateOspfRouter_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_UpdateOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateOspfRouter_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOspfRouter_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPF", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfConfigs}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfRouter", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfRouters/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_DeleteOSPF_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_DeleteOspfRouter_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_DeleteOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteOspfRouter_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetOspfRouter_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPF", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfConfigs}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfRouter", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfRouters/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_GetOSPF_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_GetOspfRouter_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_GetOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetOspfRouter_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListOSPF_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListOspfRouters_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPF", runtime.WithHTTPPathPattern("/v1alpha1/ospfConfigs"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfRouters", runtime.WithHTTPPathPattern("/v1alpha1/ospfRouters"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_ListOSPF_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_ListOspfRouters_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_ListOSPF_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListOspfRouters_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateOspfArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/ospfAreas"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfArea", runtime.WithHTTPPathPattern("/v1alpha1/ospfAreas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_CreateOSPFArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_CreateOspfArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_CreateOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateOspfArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOspfArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_area.name=ospfareas}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfArea", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_area.name=ospfAreas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_UpdateOSPFArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_UpdateOspfArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_UpdateOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateOspfArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOspfArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfAreas}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfArea", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfAreas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_DeleteOSPFArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_DeleteOspfArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_DeleteOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteOspfArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetOspfArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfAreas}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfArea", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfAreas/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_GetOSPFArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_GetOspfArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_GetOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetOspfArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListOSPFArea_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListOspfAreas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFArea", runtime.WithHTTPPathPattern("/v1alpha1/ospfAreas"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfAreas", runtime.WithHTTPPathPattern("/v1alpha1/ospfAreas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_ListOSPFArea_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_ListOspfAreas_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_ListOSPFArea_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListOspfAreas_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_CloudInfraService_CreateOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudInfraService_CreateOspfIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/ospfIfNetworks"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/ospfIfNetworks"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_CreateOSPFIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_CreateOspfIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_CreateOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_CreateOspfIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_CloudInfraService_UpdateOspfIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_ifnetwork.name=ospfifnetworks}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{ospf_if_network.name=ospfIfNetworks/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_UpdateOSPFIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_UpdateOspfIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_UpdateOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_UpdateOspfIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_CloudInfraService_DeleteOspfIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfIfNetwork}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfIfNetwork/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_DeleteOSPFIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_DeleteOspfIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_DeleteOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_DeleteOspfIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_GetOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_GetOspfIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfIfNetworks}/*"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/{name=ospfIfNetworks/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_GetOSPFIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_GetOspfIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_GetOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_GetOspfIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_CloudInfraService_ListOSPFIfNetwork_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_CloudInfraService_ListOspfIfNetworks_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFIfNetwork", runtime.WithHTTPPathPattern("/v1alpha1/ospfIfNetworks"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfIfNetworks", runtime.WithHTTPPathPattern("/v1alpha1/ospfIfNetworks"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudInfraService_ListOSPFIfNetwork_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudInfraService_ListOspfIfNetworks_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudInfraService_ListOSPFIfNetwork_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudInfraService_ListOspfIfNetworks_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -12590,35 +12590,35 @@ var (
 
 	pattern_CloudInfraService_GetSecurityProfile_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1", "securityprofiles", "name"}, ""))
 
-	pattern_CloudInfraService_CreateOSPF_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfConfigs"}, ""))
+	pattern_CloudInfraService_CreateOspfRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfRouters"}, ""))
 
-	pattern_CloudInfraService_UpdateOSPF_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfConfigs", "ospf_config.name"}, ""))
+	pattern_CloudInfraService_UpdateOspfRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfRouters", "ospf_router.name"}, ""))
 
-	pattern_CloudInfraService_DeleteOSPF_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfConfigs", "name"}, ""))
+	pattern_CloudInfraService_DeleteOspfRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfRouters", "name"}, ""))
 
-	pattern_CloudInfraService_GetOSPF_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfConfigs", "name"}, ""))
+	pattern_CloudInfraService_GetOspfRouter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfRouters", "name"}, ""))
 
-	pattern_CloudInfraService_ListOSPF_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfConfigs"}, ""))
+	pattern_CloudInfraService_ListOspfRouters_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfRouters"}, ""))
 
-	pattern_CloudInfraService_CreateOSPFArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfAreas"}, ""))
+	pattern_CloudInfraService_CreateOspfArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfAreas"}, ""))
 
-	pattern_CloudInfraService_UpdateOSPFArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfareas", "ospf_area.name"}, ""))
+	pattern_CloudInfraService_UpdateOspfArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfAreas", "ospf_area.name"}, ""))
 
-	pattern_CloudInfraService_DeleteOSPFArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfAreas", "name"}, ""))
+	pattern_CloudInfraService_DeleteOspfArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfAreas", "name"}, ""))
 
-	pattern_CloudInfraService_GetOSPFArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfAreas", "name"}, ""))
+	pattern_CloudInfraService_GetOspfArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfAreas", "name"}, ""))
 
-	pattern_CloudInfraService_ListOSPFArea_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfAreas"}, ""))
+	pattern_CloudInfraService_ListOspfAreas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfAreas"}, ""))
 
-	pattern_CloudInfraService_CreateOSPFIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfIfNetworks"}, ""))
+	pattern_CloudInfraService_CreateOspfIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfIfNetworks"}, ""))
 
-	pattern_CloudInfraService_UpdateOSPFIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfifnetworks", "ospf_ifnetwork.name"}, ""))
+	pattern_CloudInfraService_UpdateOspfIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfIfNetworks", "ospf_if_network.name"}, ""))
 
-	pattern_CloudInfraService_DeleteOSPFIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfIfNetwork", "name"}, ""))
+	pattern_CloudInfraService_DeleteOspfIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfIfNetwork", "name"}, ""))
 
-	pattern_CloudInfraService_GetOSPFIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2, 1, 0}, []string{"v1alpha1", "ospfIfNetworks", "name"}, ""))
+	pattern_CloudInfraService_GetOspfIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ospfIfNetworks", "name"}, ""))
 
-	pattern_CloudInfraService_ListOSPFIfNetwork_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfIfNetworks"}, ""))
+	pattern_CloudInfraService_ListOspfIfNetworks_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ospfIfNetworks"}, ""))
 )
 
 var (
@@ -12820,33 +12820,33 @@ var (
 
 	forward_CloudInfraService_GetSecurityProfile_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_CreateOSPF_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_CreateOspfRouter_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_UpdateOSPF_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_UpdateOspfRouter_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_DeleteOSPF_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_DeleteOspfRouter_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_GetOSPF_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_GetOspfRouter_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_ListOSPF_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_ListOspfRouters_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_CreateOSPFArea_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_CreateOspfArea_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_UpdateOSPFArea_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_UpdateOspfArea_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_DeleteOSPFArea_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_DeleteOspfArea_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_GetOSPFArea_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_GetOspfArea_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_ListOSPFArea_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_ListOspfAreas_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_CreateOSPFIfNetwork_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_CreateOspfIfNetwork_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_UpdateOSPFIfNetwork_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_UpdateOspfIfNetwork_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_DeleteOSPFIfNetwork_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_DeleteOspfIfNetwork_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_GetOSPFIfNetwork_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_GetOspfIfNetwork_0 = runtime.ForwardResponseMessage
 
-	forward_CloudInfraService_ListOSPFIfNetwork_0 = runtime.ForwardResponseMessage
+	forward_CloudInfraService_ListOspfIfNetworks_0 = runtime.ForwardResponseMessage
 )

@@ -818,7 +818,7 @@ service CloudInfraService {
         option (google.api.method_signature) = "name";
     }
     // List all OSPF Areas
-    rpc ListOspfArea(ListOspfAreaRequest) returns (ListOspfAreaResponse) {
+    rpc ListOspfAreas(ListOspfAreasRequest) returns (ListOspfAreasResponse) {
         option (google.api.http) = {
             get: "/v1alpha1/ospfAreas"
         };
@@ -855,7 +855,7 @@ service CloudInfraService {
         option (google.api.method_signature) = "name";
     }
     // List all OSPF IfNetworks
-    rpc ListOspfIfNetwork(ListOspfIfNetworkRequest) returns (ListOspfIfNetworkResponse) {
+    rpc ListOspfIfNetworks(ListOspfIfNetworksRequest) returns (ListOspfIfNetworksResponse) {
         option (google.api.http) = {
             get: "/v1alpha1/ospfIfNetworks"
         };
@@ -2333,7 +2333,7 @@ message GetOspfAreaRequest {
 }
 
 // List OspfArea request
-message ListOspfAreaRequest {
+message ListOspfAreasRequest {
     // parent
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -2346,7 +2346,7 @@ message ListOspfAreaRequest {
 }
 
 // List OspfArea response
-message ListOspfAreaResponse {
+message ListOspfAreasResponse {
     // list of ospf_areas
     repeated OspfArea ospf_areas = 1;
 
@@ -2399,7 +2399,7 @@ message GetOspfIfNetworkRequest {
 }
 
 // List OspfIfNetwork request
-message ListOspfIfNetworkRequest {
+message ListOspfIfNetworksRequest {
     // parent or IfNetwork identifier
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
@@ -2412,7 +2412,7 @@ message ListOspfIfNetworkRequest {
 }
 
 // List OspfIfNetwork response
-message ListOspfIfNetworkResponse {
+message ListOspfIfNetworksResponse {
     // list of OspfIfNetwork
     repeated OspfIfNetwork ospf_if_networks = 1;
     // next page token

@@ -144,7 +144,7 @@ message OSPFMD5Auth {
 enum OSPFVersion {
     // OSPF Version not specified and assume v2
     OSPF_VERSION_UNSPECIFIED = 0;
-    // OSPF Verison 2
+    // OSPF Version 2
     OSPF_VERSION_2 = 1;
     // OSPF Version 3
     OSPF_VERSION_3 = 2;

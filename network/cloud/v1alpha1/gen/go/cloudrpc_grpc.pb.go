@@ -122,21 +122,21 @@ const (
 	CloudInfraService_UpdateSecurityProfile_FullMethodName = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateSecurityProfile"
 	CloudInfraService_ListSecurityProfiles_FullMethodName  = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListSecurityProfiles"
 	CloudInfraService_GetSecurityProfile_FullMethodName    = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetSecurityProfile"
-	CloudInfraService_CreateOSPF_FullMethodName            = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPF"
-	CloudInfraService_UpdateOSPF_FullMethodName            = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPF"
-	CloudInfraService_DeleteOSPF_FullMethodName            = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPF"
-	CloudInfraService_GetOSPF_FullMethodName               = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPF"
-	CloudInfraService_ListOSPF_FullMethodName              = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPF"
-	CloudInfraService_CreateOSPFArea_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFArea"
-	CloudInfraService_UpdateOSPFArea_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFArea"
-	CloudInfraService_DeleteOSPFArea_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFArea"
-	CloudInfraService_GetOSPFArea_FullMethodName           = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFArea"
-	CloudInfraService_ListOSPFArea_FullMethodName          = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFArea"
-	CloudInfraService_CreateOSPFIfNetwork_FullMethodName   = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOSPFIfNetwork"
-	CloudInfraService_UpdateOSPFIfNetwork_FullMethodName   = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOSPFIfNetwork"
-	CloudInfraService_DeleteOSPFIfNetwork_FullMethodName   = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOSPFIfNetwork"
-	CloudInfraService_GetOSPFIfNetwork_FullMethodName      = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOSPFIfNetwork"
-	CloudInfraService_ListOSPFIfNetwork_FullMethodName     = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOSPFIfNetwork"
+	CloudInfraService_CreateOspfRouter_FullMethodName      = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfRouter"
+	CloudInfraService_UpdateOspfRouter_FullMethodName      = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfRouter"
+	CloudInfraService_DeleteOspfRouter_FullMethodName      = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfRouter"
+	CloudInfraService_GetOspfRouter_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfRouter"
+	CloudInfraService_ListOspfRouters_FullMethodName       = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfRouters"
+	CloudInfraService_CreateOspfArea_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfArea"
+	CloudInfraService_UpdateOspfArea_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfArea"
+	CloudInfraService_DeleteOspfArea_FullMethodName        = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfArea"
+	CloudInfraService_GetOspfArea_FullMethodName           = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfArea"
+	CloudInfraService_ListOspfAreas_FullMethodName         = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfAreas"
+	CloudInfraService_CreateOspfIfNetwork_FullMethodName   = "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateOspfIfNetwork"
+	CloudInfraService_UpdateOspfIfNetwork_FullMethodName   = "/opi_api.network.cloud.v1alpha1.CloudInfraService/UpdateOspfIfNetwork"
+	CloudInfraService_DeleteOspfIfNetwork_FullMethodName   = "/opi_api.network.cloud.v1alpha1.CloudInfraService/DeleteOspfIfNetwork"
+	CloudInfraService_GetOspfIfNetwork_FullMethodName      = "/opi_api.network.cloud.v1alpha1.CloudInfraService/GetOspfIfNetwork"
+	CloudInfraService_ListOspfIfNetworks_FullMethodName    = "/opi_api.network.cloud.v1alpha1.CloudInfraService/ListOspfIfNetworks"
 )
 
 // CloudInfraServiceClient is the client API for CloudInfraService service.
@@ -276,36 +276,36 @@ type CloudInfraServiceClient interface {
 	ListSecurityProfiles(ctx context.Context, in *ListSecurityProfilesRequest, opts ...grpc.CallOption) (*ListSecurityProfilesResponse, error)
 	GetSecurityProfile(ctx context.Context, in *GetSecurityProfileRequest, opts ...grpc.CallOption) (*SecurityProfile, error)
 	// OSPF APIs
-	// Create a OSPF. Contains the configuration of the OSPF instance.
-	CreateOSPF(ctx context.Context, in *CreateOSPFRequest, opts ...grpc.CallOption) (*OSPFConfig, error)
-	// Update a OSPF instance
-	UpdateOSPF(ctx context.Context, in *UpdateOSPFRequest, opts ...grpc.CallOption) (*OSPFConfig, error)
+	// Create a OSPF Router. Contains the configuration of the OSPF instance.
+	CreateOspfRouter(ctx context.Context, in *CreateOspfRouterRequest, opts ...grpc.CallOption) (*OspfRouter, error)
+	// Update a OSPF Router instance
+	UpdateOspfRouter(ctx context.Context, in *UpdateOspfRouterRequest, opts ...grpc.CallOption) (*OspfRouter, error)
 	// Delete a OSPF instance
-	DeleteOSPF(ctx context.Context, in *DeleteOSPFRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	DeleteOspfRouter(ctx context.Context, in *DeleteOspfRouterRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Get an OSPF instance
-	GetOSPF(ctx context.Context, in *GetOSPFRequest, opts ...grpc.CallOption) (*OSPFConfig, error)
+	GetOspfRouter(ctx context.Context, in *GetOspfRouterRequest, opts ...grpc.CallOption) (*OspfRouter, error)
 	// All OSPF instances
-	ListOSPF(ctx context.Context, in *ListOSPFRequest, opts ...grpc.CallOption) (*ListOSPFResponse, error)
+	ListOspfRouters(ctx context.Context, in *ListOspfRoutersRequest, opts ...grpc.CallOption) (*ListOspfRoutersResponse, error)
 	// Create a OSPF Area
-	CreateOSPFArea(ctx context.Context, in *CreateOSPFAreaRequest, opts ...grpc.CallOption) (*OSPFArea, error)
+	CreateOspfArea(ctx context.Context, in *CreateOspfAreaRequest, opts ...grpc.CallOption) (*OspfArea, error)
 	// Update an OSPF Area
-	UpdateOSPFArea(ctx context.Context, in *UpdateOSPFAreaRequest, opts ...grpc.CallOption) (*OSPFArea, error)
+	UpdateOspfArea(ctx context.Context, in *UpdateOspfAreaRequest, opts ...grpc.CallOption) (*OspfArea, error)
 	// Delete an OSPF Area
-	DeleteOSPFArea(ctx context.Context, in *DeleteOSPFAreaRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	DeleteOspfArea(ctx context.Context, in *DeleteOspfAreaRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Get an OSPF Area
-	GetOSPFArea(ctx context.Context, in *GetOSPFAreaRequest, opts ...grpc.CallOption) (*OSPFArea, error)
+	GetOspfArea(ctx context.Context, in *GetOspfAreaRequest, opts ...grpc.CallOption) (*OspfArea, error)
 	// List all OSPF Areas
-	ListOSPFArea(ctx context.Context, in *ListOSPFAreaRequest, opts ...grpc.CallOption) (*ListOSPFAreaResponse, error)
+	ListOspfAreas(ctx context.Context, in *ListOspfAreasRequest, opts ...grpc.CallOption) (*ListOspfAreasResponse, error)
 	// Create an OSPF IfNetwork
-	CreateOSPFIfNetwork(ctx context.Context, in *CreateOSPFIfNetworkRequest, opts ...grpc.CallOption) (*OSPFIfNetwork, error)
+	CreateOspfIfNetwork(ctx context.Context, in *CreateOspfIfNetworkRequest, opts ...grpc.CallOption) (*OspfIfNetwork, error)
 	// Update an OSPF IfNetwork
-	UpdateOSPFIfNetwork(ctx context.Context, in *UpdateOSPFIfNetworkRequest, opts ...grpc.CallOption) (*OSPFIfNetwork, error)
+	UpdateOspfIfNetwork(ctx context.Context, in *UpdateOspfIfNetworkRequest, opts ...grpc.CallOption) (*OspfIfNetwork, error)
 	// Delete an OSPF IfNetwork
-	DeleteOSPFIfNetwork(ctx context.Context, in *DeleteOSPFIfNetworkRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	DeleteOspfIfNetwork(ctx context.Context, in *DeleteOspfIfNetworkRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Get an OSPF IfNetwork
-	GetOSPFIfNetwork(ctx context.Context, in *GetOSPFIfNetworkRequest, opts ...grpc.CallOption) (*OSPFIfNetwork, error)
+	GetOspfIfNetwork(ctx context.Context, in *GetOspfIfNetworkRequest, opts ...grpc.CallOption) (*OspfIfNetwork, error)
 	// List all OSPF IfNetworks
-	ListOSPFIfNetwork(ctx context.Context, in *ListOSPFIfNetworkRequest, opts ...grpc.CallOption) (*ListOSPFIfNetworkResponse, error)
+	ListOspfIfNetworks(ctx context.Context, in *ListOspfIfNetworksRequest, opts ...grpc.CallOption) (*ListOspfIfNetworksResponse, error)
 }
 
 type cloudInfraServiceClient struct {
@@ -1207,135 +1207,135 @@ func (c *cloudInfraServiceClient) GetSecurityProfile(ctx context.Context, in *Ge
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) CreateOSPF(ctx context.Context, in *CreateOSPFRequest, opts ...grpc.CallOption) (*OSPFConfig, error) {
-	out := new(OSPFConfig)
-	err := c.cc.Invoke(ctx, CloudInfraService_CreateOSPF_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) CreateOspfRouter(ctx context.Context, in *CreateOspfRouterRequest, opts ...grpc.CallOption) (*OspfRouter, error) {
+	out := new(OspfRouter)
+	err := c.cc.Invoke(ctx, CloudInfraService_CreateOspfRouter_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) UpdateOSPF(ctx context.Context, in *UpdateOSPFRequest, opts ...grpc.CallOption) (*OSPFConfig, error) {
-	out := new(OSPFConfig)
-	err := c.cc.Invoke(ctx, CloudInfraService_UpdateOSPF_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) UpdateOspfRouter(ctx context.Context, in *UpdateOspfRouterRequest, opts ...grpc.CallOption) (*OspfRouter, error) {
+	out := new(OspfRouter)
+	err := c.cc.Invoke(ctx, CloudInfraService_UpdateOspfRouter_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) DeleteOSPF(ctx context.Context, in *DeleteOSPFRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *cloudInfraServiceClient) DeleteOspfRouter(ctx context.Context, in *DeleteOspfRouterRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, CloudInfraService_DeleteOSPF_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudInfraService_DeleteOspfRouter_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) GetOSPF(ctx context.Context, in *GetOSPFRequest, opts ...grpc.CallOption) (*OSPFConfig, error) {
-	out := new(OSPFConfig)
-	err := c.cc.Invoke(ctx, CloudInfraService_GetOSPF_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) GetOspfRouter(ctx context.Context, in *GetOspfRouterRequest, opts ...grpc.CallOption) (*OspfRouter, error) {
+	out := new(OspfRouter)
+	err := c.cc.Invoke(ctx, CloudInfraService_GetOspfRouter_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) ListOSPF(ctx context.Context, in *ListOSPFRequest, opts ...grpc.CallOption) (*ListOSPFResponse, error) {
-	out := new(ListOSPFResponse)
-	err := c.cc.Invoke(ctx, CloudInfraService_ListOSPF_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) ListOspfRouters(ctx context.Context, in *ListOspfRoutersRequest, opts ...grpc.CallOption) (*ListOspfRoutersResponse, error) {
+	out := new(ListOspfRoutersResponse)
+	err := c.cc.Invoke(ctx, CloudInfraService_ListOspfRouters_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) CreateOSPFArea(ctx context.Context, in *CreateOSPFAreaRequest, opts ...grpc.CallOption) (*OSPFArea, error) {
-	out := new(OSPFArea)
-	err := c.cc.Invoke(ctx, CloudInfraService_CreateOSPFArea_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) CreateOspfArea(ctx context.Context, in *CreateOspfAreaRequest, opts ...grpc.CallOption) (*OspfArea, error) {
+	out := new(OspfArea)
+	err := c.cc.Invoke(ctx, CloudInfraService_CreateOspfArea_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) UpdateOSPFArea(ctx context.Context, in *UpdateOSPFAreaRequest, opts ...grpc.CallOption) (*OSPFArea, error) {
-	out := new(OSPFArea)
-	err := c.cc.Invoke(ctx, CloudInfraService_UpdateOSPFArea_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) UpdateOspfArea(ctx context.Context, in *UpdateOspfAreaRequest, opts ...grpc.CallOption) (*OspfArea, error) {
+	out := new(OspfArea)
+	err := c.cc.Invoke(ctx, CloudInfraService_UpdateOspfArea_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) DeleteOSPFArea(ctx context.Context, in *DeleteOSPFAreaRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *cloudInfraServiceClient) DeleteOspfArea(ctx context.Context, in *DeleteOspfAreaRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, CloudInfraService_DeleteOSPFArea_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudInfraService_DeleteOspfArea_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) GetOSPFArea(ctx context.Context, in *GetOSPFAreaRequest, opts ...grpc.CallOption) (*OSPFArea, error) {
-	out := new(OSPFArea)
-	err := c.cc.Invoke(ctx, CloudInfraService_GetOSPFArea_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) GetOspfArea(ctx context.Context, in *GetOspfAreaRequest, opts ...grpc.CallOption) (*OspfArea, error) {
+	out := new(OspfArea)
+	err := c.cc.Invoke(ctx, CloudInfraService_GetOspfArea_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) ListOSPFArea(ctx context.Context, in *ListOSPFAreaRequest, opts ...grpc.CallOption) (*ListOSPFAreaResponse, error) {
-	out := new(ListOSPFAreaResponse)
-	err := c.cc.Invoke(ctx, CloudInfraService_ListOSPFArea_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) ListOspfAreas(ctx context.Context, in *ListOspfAreasRequest, opts ...grpc.CallOption) (*ListOspfAreasResponse, error) {
+	out := new(ListOspfAreasResponse)
+	err := c.cc.Invoke(ctx, CloudInfraService_ListOspfAreas_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) CreateOSPFIfNetwork(ctx context.Context, in *CreateOSPFIfNetworkRequest, opts ...grpc.CallOption) (*OSPFIfNetwork, error) {
-	out := new(OSPFIfNetwork)
-	err := c.cc.Invoke(ctx, CloudInfraService_CreateOSPFIfNetwork_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) CreateOspfIfNetwork(ctx context.Context, in *CreateOspfIfNetworkRequest, opts ...grpc.CallOption) (*OspfIfNetwork, error) {
+	out := new(OspfIfNetwork)
+	err := c.cc.Invoke(ctx, CloudInfraService_CreateOspfIfNetwork_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) UpdateOSPFIfNetwork(ctx context.Context, in *UpdateOSPFIfNetworkRequest, opts ...grpc.CallOption) (*OSPFIfNetwork, error) {
-	out := new(OSPFIfNetwork)
-	err := c.cc.Invoke(ctx, CloudInfraService_UpdateOSPFIfNetwork_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) UpdateOspfIfNetwork(ctx context.Context, in *UpdateOspfIfNetworkRequest, opts ...grpc.CallOption) (*OspfIfNetwork, error) {
+	out := new(OspfIfNetwork)
+	err := c.cc.Invoke(ctx, CloudInfraService_UpdateOspfIfNetwork_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) DeleteOSPFIfNetwork(ctx context.Context, in *DeleteOSPFIfNetworkRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *cloudInfraServiceClient) DeleteOspfIfNetwork(ctx context.Context, in *DeleteOspfIfNetworkRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, CloudInfraService_DeleteOSPFIfNetwork_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudInfraService_DeleteOspfIfNetwork_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) GetOSPFIfNetwork(ctx context.Context, in *GetOSPFIfNetworkRequest, opts ...grpc.CallOption) (*OSPFIfNetwork, error) {
-	out := new(OSPFIfNetwork)
-	err := c.cc.Invoke(ctx, CloudInfraService_GetOSPFIfNetwork_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) GetOspfIfNetwork(ctx context.Context, in *GetOspfIfNetworkRequest, opts ...grpc.CallOption) (*OspfIfNetwork, error) {
+	out := new(OspfIfNetwork)
+	err := c.cc.Invoke(ctx, CloudInfraService_GetOspfIfNetwork_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudInfraServiceClient) ListOSPFIfNetwork(ctx context.Context, in *ListOSPFIfNetworkRequest, opts ...grpc.CallOption) (*ListOSPFIfNetworkResponse, error) {
-	out := new(ListOSPFIfNetworkResponse)
-	err := c.cc.Invoke(ctx, CloudInfraService_ListOSPFIfNetwork_FullMethodName, in, out, opts...)
+func (c *cloudInfraServiceClient) ListOspfIfNetworks(ctx context.Context, in *ListOspfIfNetworksRequest, opts ...grpc.CallOption) (*ListOspfIfNetworksResponse, error) {
+	out := new(ListOspfIfNetworksResponse)
+	err := c.cc.Invoke(ctx, CloudInfraService_ListOspfIfNetworks_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1479,36 +1479,36 @@ type CloudInfraServiceServer interface {
 	ListSecurityProfiles(context.Context, *ListSecurityProfilesRequest) (*ListSecurityProfilesResponse, error)
 	GetSecurityProfile(context.Context, *GetSecurityProfileRequest) (*SecurityProfile, error)
 	// OSPF APIs
-	// Create a OSPF. Contains the configuration of the OSPF instance.
-	CreateOSPF(context.Context, *CreateOSPFRequest) (*OSPFConfig, error)
-	// Update a OSPF instance
-	UpdateOSPF(context.Context, *UpdateOSPFRequest) (*OSPFConfig, error)
+	// Create a OSPF Router. Contains the configuration of the OSPF instance.
+	CreateOspfRouter(context.Context, *CreateOspfRouterRequest) (*OspfRouter, error)
+	// Update a OSPF Router instance
+	UpdateOspfRouter(context.Context, *UpdateOspfRouterRequest) (*OspfRouter, error)
 	// Delete a OSPF instance
-	DeleteOSPF(context.Context, *DeleteOSPFRequest) (*emptypb.Empty, error)
+	DeleteOspfRouter(context.Context, *DeleteOspfRouterRequest) (*emptypb.Empty, error)
 	// Get an OSPF instance
-	GetOSPF(context.Context, *GetOSPFRequest) (*OSPFConfig, error)
+	GetOspfRouter(context.Context, *GetOspfRouterRequest) (*OspfRouter, error)
 	// All OSPF instances
-	ListOSPF(context.Context, *ListOSPFRequest) (*ListOSPFResponse, error)
+	ListOspfRouters(context.Context, *ListOspfRoutersRequest) (*ListOspfRoutersResponse, error)
 	// Create a OSPF Area
-	CreateOSPFArea(context.Context, *CreateOSPFAreaRequest) (*OSPFArea, error)
+	CreateOspfArea(context.Context, *CreateOspfAreaRequest) (*OspfArea, error)
 	// Update an OSPF Area
-	UpdateOSPFArea(context.Context, *UpdateOSPFAreaRequest) (*OSPFArea, error)
+	UpdateOspfArea(context.Context, *UpdateOspfAreaRequest) (*OspfArea, error)
 	// Delete an OSPF Area
-	DeleteOSPFArea(context.Context, *DeleteOSPFAreaRequest) (*emptypb.Empty, error)
+	DeleteOspfArea(context.Context, *DeleteOspfAreaRequest) (*emptypb.Empty, error)
 	// Get an OSPF Area
-	GetOSPFArea(context.Context, *GetOSPFAreaRequest) (*OSPFArea, error)
+	GetOspfArea(context.Context, *GetOspfAreaRequest) (*OspfArea, error)
 	// List all OSPF Areas
-	ListOSPFArea(context.Context, *ListOSPFAreaRequest) (*ListOSPFAreaResponse, error)
+	ListOspfAreas(context.Context, *ListOspfAreasRequest) (*ListOspfAreasResponse, error)
 	// Create an OSPF IfNetwork
-	CreateOSPFIfNetwork(context.Context, *CreateOSPFIfNetworkRequest) (*OSPFIfNetwork, error)
+	CreateOspfIfNetwork(context.Context, *CreateOspfIfNetworkRequest) (*OspfIfNetwork, error)
 	// Update an OSPF IfNetwork
-	UpdateOSPFIfNetwork(context.Context, *UpdateOSPFIfNetworkRequest) (*OSPFIfNetwork, error)
+	UpdateOspfIfNetwork(context.Context, *UpdateOspfIfNetworkRequest) (*OspfIfNetwork, error)
 	// Delete an OSPF IfNetwork
-	DeleteOSPFIfNetwork(context.Context, *DeleteOSPFIfNetworkRequest) (*emptypb.Empty, error)
+	DeleteOspfIfNetwork(context.Context, *DeleteOspfIfNetworkRequest) (*emptypb.Empty, error)
 	// Get an OSPF IfNetwork
-	GetOSPFIfNetwork(context.Context, *GetOSPFIfNetworkRequest) (*OSPFIfNetwork, error)
+	GetOspfIfNetwork(context.Context, *GetOspfIfNetworkRequest) (*OspfIfNetwork, error)
 	// List all OSPF IfNetworks
-	ListOSPFIfNetwork(context.Context, *ListOSPFIfNetworkRequest) (*ListOSPFIfNetworkResponse, error)
+	ListOspfIfNetworks(context.Context, *ListOspfIfNetworksRequest) (*ListOspfIfNetworksResponse, error)
 	mustEmbedUnimplementedCloudInfraServiceServer()
 }
 
@@ -1813,50 +1813,50 @@ func (UnimplementedCloudInfraServiceServer) ListSecurityProfiles(context.Context
 func (UnimplementedCloudInfraServiceServer) GetSecurityProfile(context.Context, *GetSecurityProfileRequest) (*SecurityProfile, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSecurityProfile not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) CreateOSPF(context.Context, *CreateOSPFRequest) (*OSPFConfig, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOSPF not implemented")
+func (UnimplementedCloudInfraServiceServer) CreateOspfRouter(context.Context, *CreateOspfRouterRequest) (*OspfRouter, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOspfRouter not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) UpdateOSPF(context.Context, *UpdateOSPFRequest) (*OSPFConfig, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOSPF not implemented")
+func (UnimplementedCloudInfraServiceServer) UpdateOspfRouter(context.Context, *UpdateOspfRouterRequest) (*OspfRouter, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOspfRouter not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) DeleteOSPF(context.Context, *DeleteOSPFRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteOSPF not implemented")
+func (UnimplementedCloudInfraServiceServer) DeleteOspfRouter(context.Context, *DeleteOspfRouterRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteOspfRouter not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) GetOSPF(context.Context, *GetOSPFRequest) (*OSPFConfig, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOSPF not implemented")
+func (UnimplementedCloudInfraServiceServer) GetOspfRouter(context.Context, *GetOspfRouterRequest) (*OspfRouter, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOspfRouter not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) ListOSPF(context.Context, *ListOSPFRequest) (*ListOSPFResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListOSPF not implemented")
+func (UnimplementedCloudInfraServiceServer) ListOspfRouters(context.Context, *ListOspfRoutersRequest) (*ListOspfRoutersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListOspfRouters not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) CreateOSPFArea(context.Context, *CreateOSPFAreaRequest) (*OSPFArea, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOSPFArea not implemented")
+func (UnimplementedCloudInfraServiceServer) CreateOspfArea(context.Context, *CreateOspfAreaRequest) (*OspfArea, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOspfArea not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) UpdateOSPFArea(context.Context, *UpdateOSPFAreaRequest) (*OSPFArea, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOSPFArea not implemented")
+func (UnimplementedCloudInfraServiceServer) UpdateOspfArea(context.Context, *UpdateOspfAreaRequest) (*OspfArea, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOspfArea not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) DeleteOSPFArea(context.Context, *DeleteOSPFAreaRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteOSPFArea not implemented")
+func (UnimplementedCloudInfraServiceServer) DeleteOspfArea(context.Context, *DeleteOspfAreaRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteOspfArea not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) GetOSPFArea(context.Context, *GetOSPFAreaRequest) (*OSPFArea, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOSPFArea not implemented")
+func (UnimplementedCloudInfraServiceServer) GetOspfArea(context.Context, *GetOspfAreaRequest) (*OspfArea, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOspfArea not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) ListOSPFArea(context.Context, *ListOSPFAreaRequest) (*ListOSPFAreaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListOSPFArea not implemented")
+func (UnimplementedCloudInfraServiceServer) ListOspfAreas(context.Context, *ListOspfAreasRequest) (*ListOspfAreasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListOspfAreas not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) CreateOSPFIfNetwork(context.Context, *CreateOSPFIfNetworkRequest) (*OSPFIfNetwork, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOSPFIfNetwork not implemented")
+func (UnimplementedCloudInfraServiceServer) CreateOspfIfNetwork(context.Context, *CreateOspfIfNetworkRequest) (*OspfIfNetwork, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOspfIfNetwork not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) UpdateOSPFIfNetwork(context.Context, *UpdateOSPFIfNetworkRequest) (*OSPFIfNetwork, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOSPFIfNetwork not implemented")
+func (UnimplementedCloudInfraServiceServer) UpdateOspfIfNetwork(context.Context, *UpdateOspfIfNetworkRequest) (*OspfIfNetwork, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOspfIfNetwork not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) DeleteOSPFIfNetwork(context.Context, *DeleteOSPFIfNetworkRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteOSPFIfNetwork not implemented")
+func (UnimplementedCloudInfraServiceServer) DeleteOspfIfNetwork(context.Context, *DeleteOspfIfNetworkRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteOspfIfNetwork not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) GetOSPFIfNetwork(context.Context, *GetOSPFIfNetworkRequest) (*OSPFIfNetwork, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOSPFIfNetwork not implemented")
+func (UnimplementedCloudInfraServiceServer) GetOspfIfNetwork(context.Context, *GetOspfIfNetworkRequest) (*OspfIfNetwork, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOspfIfNetwork not implemented")
 }
-func (UnimplementedCloudInfraServiceServer) ListOSPFIfNetwork(context.Context, *ListOSPFIfNetworkRequest) (*ListOSPFIfNetworkResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListOSPFIfNetwork not implemented")
+func (UnimplementedCloudInfraServiceServer) ListOspfIfNetworks(context.Context, *ListOspfIfNetworksRequest) (*ListOspfIfNetworksResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListOspfIfNetworks not implemented")
 }
 func (UnimplementedCloudInfraServiceServer) mustEmbedUnimplementedCloudInfraServiceServer() {}
 
@@ -3653,272 +3653,272 @@ func _CloudInfraService_GetSecurityProfile_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_CreateOSPF_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOSPFRequest)
+func _CloudInfraService_CreateOspfRouter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOspfRouterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).CreateOSPF(ctx, in)
+		return srv.(CloudInfraServiceServer).CreateOspfRouter(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_CreateOSPF_FullMethodName,
+		FullMethod: CloudInfraService_CreateOspfRouter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).CreateOSPF(ctx, req.(*CreateOSPFRequest))
+		return srv.(CloudInfraServiceServer).CreateOspfRouter(ctx, req.(*CreateOspfRouterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_UpdateOSPF_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOSPFRequest)
+func _CloudInfraService_UpdateOspfRouter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOspfRouterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).UpdateOSPF(ctx, in)
+		return srv.(CloudInfraServiceServer).UpdateOspfRouter(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_UpdateOSPF_FullMethodName,
+		FullMethod: CloudInfraService_UpdateOspfRouter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).UpdateOSPF(ctx, req.(*UpdateOSPFRequest))
+		return srv.(CloudInfraServiceServer).UpdateOspfRouter(ctx, req.(*UpdateOspfRouterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_DeleteOSPF_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteOSPFRequest)
+func _CloudInfraService_DeleteOspfRouter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteOspfRouterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).DeleteOSPF(ctx, in)
+		return srv.(CloudInfraServiceServer).DeleteOspfRouter(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_DeleteOSPF_FullMethodName,
+		FullMethod: CloudInfraService_DeleteOspfRouter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).DeleteOSPF(ctx, req.(*DeleteOSPFRequest))
+		return srv.(CloudInfraServiceServer).DeleteOspfRouter(ctx, req.(*DeleteOspfRouterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_GetOSPF_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOSPFRequest)
+func _CloudInfraService_GetOspfRouter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOspfRouterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).GetOSPF(ctx, in)
+		return srv.(CloudInfraServiceServer).GetOspfRouter(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_GetOSPF_FullMethodName,
+		FullMethod: CloudInfraService_GetOspfRouter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).GetOSPF(ctx, req.(*GetOSPFRequest))
+		return srv.(CloudInfraServiceServer).GetOspfRouter(ctx, req.(*GetOspfRouterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_ListOSPF_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListOSPFRequest)
+func _CloudInfraService_ListOspfRouters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListOspfRoutersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).ListOSPF(ctx, in)
+		return srv.(CloudInfraServiceServer).ListOspfRouters(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_ListOSPF_FullMethodName,
+		FullMethod: CloudInfraService_ListOspfRouters_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).ListOSPF(ctx, req.(*ListOSPFRequest))
+		return srv.(CloudInfraServiceServer).ListOspfRouters(ctx, req.(*ListOspfRoutersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_CreateOSPFArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOSPFAreaRequest)
+func _CloudInfraService_CreateOspfArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOspfAreaRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).CreateOSPFArea(ctx, in)
+		return srv.(CloudInfraServiceServer).CreateOspfArea(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_CreateOSPFArea_FullMethodName,
+		FullMethod: CloudInfraService_CreateOspfArea_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).CreateOSPFArea(ctx, req.(*CreateOSPFAreaRequest))
+		return srv.(CloudInfraServiceServer).CreateOspfArea(ctx, req.(*CreateOspfAreaRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_UpdateOSPFArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOSPFAreaRequest)
+func _CloudInfraService_UpdateOspfArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOspfAreaRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).UpdateOSPFArea(ctx, in)
+		return srv.(CloudInfraServiceServer).UpdateOspfArea(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_UpdateOSPFArea_FullMethodName,
+		FullMethod: CloudInfraService_UpdateOspfArea_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).UpdateOSPFArea(ctx, req.(*UpdateOSPFAreaRequest))
+		return srv.(CloudInfraServiceServer).UpdateOspfArea(ctx, req.(*UpdateOspfAreaRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_DeleteOSPFArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteOSPFAreaRequest)
+func _CloudInfraService_DeleteOspfArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteOspfAreaRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).DeleteOSPFArea(ctx, in)
+		return srv.(CloudInfraServiceServer).DeleteOspfArea(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_DeleteOSPFArea_FullMethodName,
+		FullMethod: CloudInfraService_DeleteOspfArea_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).DeleteOSPFArea(ctx, req.(*DeleteOSPFAreaRequest))
+		return srv.(CloudInfraServiceServer).DeleteOspfArea(ctx, req.(*DeleteOspfAreaRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_GetOSPFArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOSPFAreaRequest)
+func _CloudInfraService_GetOspfArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOspfAreaRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).GetOSPFArea(ctx, in)
+		return srv.(CloudInfraServiceServer).GetOspfArea(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_GetOSPFArea_FullMethodName,
+		FullMethod: CloudInfraService_GetOspfArea_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).GetOSPFArea(ctx, req.(*GetOSPFAreaRequest))
+		return srv.(CloudInfraServiceServer).GetOspfArea(ctx, req.(*GetOspfAreaRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_ListOSPFArea_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListOSPFAreaRequest)
+func _CloudInfraService_ListOspfAreas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListOspfAreasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).ListOSPFArea(ctx, in)
+		return srv.(CloudInfraServiceServer).ListOspfAreas(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_ListOSPFArea_FullMethodName,
+		FullMethod: CloudInfraService_ListOspfAreas_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).ListOSPFArea(ctx, req.(*ListOSPFAreaRequest))
+		return srv.(CloudInfraServiceServer).ListOspfAreas(ctx, req.(*ListOspfAreasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_CreateOSPFIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOSPFIfNetworkRequest)
+func _CloudInfraService_CreateOspfIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOspfIfNetworkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).CreateOSPFIfNetwork(ctx, in)
+		return srv.(CloudInfraServiceServer).CreateOspfIfNetwork(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_CreateOSPFIfNetwork_FullMethodName,
+		FullMethod: CloudInfraService_CreateOspfIfNetwork_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).CreateOSPFIfNetwork(ctx, req.(*CreateOSPFIfNetworkRequest))
+		return srv.(CloudInfraServiceServer).CreateOspfIfNetwork(ctx, req.(*CreateOspfIfNetworkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_UpdateOSPFIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOSPFIfNetworkRequest)
+func _CloudInfraService_UpdateOspfIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOspfIfNetworkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).UpdateOSPFIfNetwork(ctx, in)
+		return srv.(CloudInfraServiceServer).UpdateOspfIfNetwork(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_UpdateOSPFIfNetwork_FullMethodName,
+		FullMethod: CloudInfraService_UpdateOspfIfNetwork_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).UpdateOSPFIfNetwork(ctx, req.(*UpdateOSPFIfNetworkRequest))
+		return srv.(CloudInfraServiceServer).UpdateOspfIfNetwork(ctx, req.(*UpdateOspfIfNetworkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_DeleteOSPFIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteOSPFIfNetworkRequest)
+func _CloudInfraService_DeleteOspfIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteOspfIfNetworkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).DeleteOSPFIfNetwork(ctx, in)
+		return srv.(CloudInfraServiceServer).DeleteOspfIfNetwork(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_DeleteOSPFIfNetwork_FullMethodName,
+		FullMethod: CloudInfraService_DeleteOspfIfNetwork_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).DeleteOSPFIfNetwork(ctx, req.(*DeleteOSPFIfNetworkRequest))
+		return srv.(CloudInfraServiceServer).DeleteOspfIfNetwork(ctx, req.(*DeleteOspfIfNetworkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_GetOSPFIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOSPFIfNetworkRequest)
+func _CloudInfraService_GetOspfIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOspfIfNetworkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).GetOSPFIfNetwork(ctx, in)
+		return srv.(CloudInfraServiceServer).GetOspfIfNetwork(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_GetOSPFIfNetwork_FullMethodName,
+		FullMethod: CloudInfraService_GetOspfIfNetwork_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).GetOSPFIfNetwork(ctx, req.(*GetOSPFIfNetworkRequest))
+		return srv.(CloudInfraServiceServer).GetOspfIfNetwork(ctx, req.(*GetOspfIfNetworkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudInfraService_ListOSPFIfNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListOSPFIfNetworkRequest)
+func _CloudInfraService_ListOspfIfNetworks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListOspfIfNetworksRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudInfraServiceServer).ListOSPFIfNetwork(ctx, in)
+		return srv.(CloudInfraServiceServer).ListOspfIfNetworks(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudInfraService_ListOSPFIfNetwork_FullMethodName,
+		FullMethod: CloudInfraService_ListOspfIfNetworks_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudInfraServiceServer).ListOSPFIfNetwork(ctx, req.(*ListOSPFIfNetworkRequest))
+		return srv.(CloudInfraServiceServer).ListOspfIfNetworks(ctx, req.(*ListOspfIfNetworksRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4327,64 +4327,64 @@ var CloudInfraService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudInfraService_GetSecurityProfile_Handler,
 		},
 		{
-			MethodName: "CreateOSPF",
-			Handler:    _CloudInfraService_CreateOSPF_Handler,
+			MethodName: "CreateOspfRouter",
+			Handler:    _CloudInfraService_CreateOspfRouter_Handler,
 		},
 		{
-			MethodName: "UpdateOSPF",
-			Handler:    _CloudInfraService_UpdateOSPF_Handler,
+			MethodName: "UpdateOspfRouter",
+			Handler:    _CloudInfraService_UpdateOspfRouter_Handler,
 		},
 		{
-			MethodName: "DeleteOSPF",
-			Handler:    _CloudInfraService_DeleteOSPF_Handler,
+			MethodName: "DeleteOspfRouter",
+			Handler:    _CloudInfraService_DeleteOspfRouter_Handler,
 		},
 		{
-			MethodName: "GetOSPF",
-			Handler:    _CloudInfraService_GetOSPF_Handler,
+			MethodName: "GetOspfRouter",
+			Handler:    _CloudInfraService_GetOspfRouter_Handler,
 		},
 		{
-			MethodName: "ListOSPF",
-			Handler:    _CloudInfraService_ListOSPF_Handler,
+			MethodName: "ListOspfRouters",
+			Handler:    _CloudInfraService_ListOspfRouters_Handler,
 		},
 		{
-			MethodName: "CreateOSPFArea",
-			Handler:    _CloudInfraService_CreateOSPFArea_Handler,
+			MethodName: "CreateOspfArea",
+			Handler:    _CloudInfraService_CreateOspfArea_Handler,
 		},
 		{
-			MethodName: "UpdateOSPFArea",
-			Handler:    _CloudInfraService_UpdateOSPFArea_Handler,
+			MethodName: "UpdateOspfArea",
+			Handler:    _CloudInfraService_UpdateOspfArea_Handler,
 		},
 		{
-			MethodName: "DeleteOSPFArea",
-			Handler:    _CloudInfraService_DeleteOSPFArea_Handler,
+			MethodName: "DeleteOspfArea",
+			Handler:    _CloudInfraService_DeleteOspfArea_Handler,
 		},
 		{
-			MethodName: "GetOSPFArea",
-			Handler:    _CloudInfraService_GetOSPFArea_Handler,
+			MethodName: "GetOspfArea",
+			Handler:    _CloudInfraService_GetOspfArea_Handler,
 		},
 		{
-			MethodName: "ListOSPFArea",
-			Handler:    _CloudInfraService_ListOSPFArea_Handler,
+			MethodName: "ListOspfAreas",
+			Handler:    _CloudInfraService_ListOspfAreas_Handler,
 		},
 		{
-			MethodName: "CreateOSPFIfNetwork",
-			Handler:    _CloudInfraService_CreateOSPFIfNetwork_Handler,
+			MethodName: "CreateOspfIfNetwork",
+			Handler:    _CloudInfraService_CreateOspfIfNetwork_Handler,
 		},
 		{
-			MethodName: "UpdateOSPFIfNetwork",
-			Handler:    _CloudInfraService_UpdateOSPFIfNetwork_Handler,
+			MethodName: "UpdateOspfIfNetwork",
+			Handler:    _CloudInfraService_UpdateOspfIfNetwork_Handler,
 		},
 		{
-			MethodName: "DeleteOSPFIfNetwork",
-			Handler:    _CloudInfraService_DeleteOSPFIfNetwork_Handler,
+			MethodName: "DeleteOspfIfNetwork",
+			Handler:    _CloudInfraService_DeleteOspfIfNetwork_Handler,
 		},
 		{
-			MethodName: "GetOSPFIfNetwork",
-			Handler:    _CloudInfraService_GetOSPFIfNetwork_Handler,
+			MethodName: "GetOspfIfNetwork",
+			Handler:    _CloudInfraService_GetOspfIfNetwork_Handler,
 		},
 		{
-			MethodName: "ListOSPFIfNetwork",
-			Handler:    _CloudInfraService_ListOSPFIfNetwork_Handler,
+			MethodName: "ListOspfIfNetworks",
+			Handler:    _CloudInfraService_ListOspfIfNetworks_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

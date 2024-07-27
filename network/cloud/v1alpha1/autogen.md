@@ -49,9 +49,9 @@
     - [CreateMappingRequest](#opi_api-network-cloud-v1alpha1-CreateMappingRequest)
     - [CreateNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-CreateNextHopGroupRequest)
     - [CreateNextHopRequest](#opi_api-network-cloud-v1alpha1-CreateNextHopRequest)
-    - [CreateOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-CreateOSPFAreaRequest)
-    - [CreateOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-CreateOSPFIfNetworkRequest)
-    - [CreateOSPFRequest](#opi_api-network-cloud-v1alpha1-CreateOSPFRequest)
+    - [CreateOspfAreaRequest](#opi_api-network-cloud-v1alpha1-CreateOspfAreaRequest)
+    - [CreateOspfIfNetworkRequest](#opi_api-network-cloud-v1alpha1-CreateOspfIfNetworkRequest)
+    - [CreateOspfRouterRequest](#opi_api-network-cloud-v1alpha1-CreateOspfRouterRequest)
     - [CreateRouteRequest](#opi_api-network-cloud-v1alpha1-CreateRouteRequest)
     - [CreateRouteTableRequest](#opi_api-network-cloud-v1alpha1-CreateRouteTableRequest)
     - [CreateSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-CreateSecurityPolicyRequest)
@@ -71,9 +71,9 @@
     - [DeleteMappingRequest](#opi_api-network-cloud-v1alpha1-DeleteMappingRequest)
     - [DeleteNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-DeleteNextHopGroupRequest)
     - [DeleteNextHopRequest](#opi_api-network-cloud-v1alpha1-DeleteNextHopRequest)
-    - [DeleteOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-DeleteOSPFAreaRequest)
-    - [DeleteOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-DeleteOSPFIfNetworkRequest)
-    - [DeleteOSPFRequest](#opi_api-network-cloud-v1alpha1-DeleteOSPFRequest)
+    - [DeleteOspfAreaRequest](#opi_api-network-cloud-v1alpha1-DeleteOspfAreaRequest)
+    - [DeleteOspfIfNetworkRequest](#opi_api-network-cloud-v1alpha1-DeleteOspfIfNetworkRequest)
+    - [DeleteOspfRouterRequest](#opi_api-network-cloud-v1alpha1-DeleteOspfRouterRequest)
     - [DeleteRouteRequest](#opi_api-network-cloud-v1alpha1-DeleteRouteRequest)
     - [DeleteRouteTableRequest](#opi_api-network-cloud-v1alpha1-DeleteRouteTableRequest)
     - [DeleteSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-DeleteSecurityPolicyRequest)
@@ -94,9 +94,9 @@
     - [GetMappingRequest](#opi_api-network-cloud-v1alpha1-GetMappingRequest)
     - [GetNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-GetNextHopGroupRequest)
     - [GetNextHopRequest](#opi_api-network-cloud-v1alpha1-GetNextHopRequest)
-    - [GetOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-GetOSPFAreaRequest)
-    - [GetOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-GetOSPFIfNetworkRequest)
-    - [GetOSPFRequest](#opi_api-network-cloud-v1alpha1-GetOSPFRequest)
+    - [GetOspfAreaRequest](#opi_api-network-cloud-v1alpha1-GetOspfAreaRequest)
+    - [GetOspfIfNetworkRequest](#opi_api-network-cloud-v1alpha1-GetOspfIfNetworkRequest)
+    - [GetOspfRouterRequest](#opi_api-network-cloud-v1alpha1-GetOspfRouterRequest)
     - [GetPortRequest](#opi_api-network-cloud-v1alpha1-GetPortRequest)
     - [GetRouteRequest](#opi_api-network-cloud-v1alpha1-GetRouteRequest)
     - [GetRouteTableRequest](#opi_api-network-cloud-v1alpha1-GetRouteTableRequest)
@@ -125,12 +125,12 @@
     - [ListNextHopGroupsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopGroupsResponse)
     - [ListNextHopRequest](#opi_api-network-cloud-v1alpha1-ListNextHopRequest)
     - [ListNextHopsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopsResponse)
-    - [ListOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-ListOSPFAreaRequest)
-    - [ListOSPFAreaResponse](#opi_api-network-cloud-v1alpha1-ListOSPFAreaResponse)
-    - [ListOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-ListOSPFIfNetworkRequest)
-    - [ListOSPFIfNetworkResponse](#opi_api-network-cloud-v1alpha1-ListOSPFIfNetworkResponse)
-    - [ListOSPFRequest](#opi_api-network-cloud-v1alpha1-ListOSPFRequest)
-    - [ListOSPFResponse](#opi_api-network-cloud-v1alpha1-ListOSPFResponse)
+    - [ListOspfAreasRequest](#opi_api-network-cloud-v1alpha1-ListOspfAreasRequest)
+    - [ListOspfAreasResponse](#opi_api-network-cloud-v1alpha1-ListOspfAreasResponse)
+    - [ListOspfIfNetworksRequest](#opi_api-network-cloud-v1alpha1-ListOspfIfNetworksRequest)
+    - [ListOspfIfNetworksResponse](#opi_api-network-cloud-v1alpha1-ListOspfIfNetworksResponse)
+    - [ListOspfRoutersRequest](#opi_api-network-cloud-v1alpha1-ListOspfRoutersRequest)
+    - [ListOspfRoutersResponse](#opi_api-network-cloud-v1alpha1-ListOspfRoutersResponse)
     - [ListPortsRequest](#opi_api-network-cloud-v1alpha1-ListPortsRequest)
     - [ListPortsResponse](#opi_api-network-cloud-v1alpha1-ListPortsResponse)
     - [ListRouteTablesRequest](#opi_api-network-cloud-v1alpha1-ListRouteTablesRequest)
@@ -163,9 +163,9 @@
     - [UpdateMappingRequest](#opi_api-network-cloud-v1alpha1-UpdateMappingRequest)
     - [UpdateNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-UpdateNextHopGroupRequest)
     - [UpdateNextHopRequest](#opi_api-network-cloud-v1alpha1-UpdateNextHopRequest)
-    - [UpdateOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-UpdateOSPFAreaRequest)
-    - [UpdateOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-UpdateOSPFIfNetworkRequest)
-    - [UpdateOSPFRequest](#opi_api-network-cloud-v1alpha1-UpdateOSPFRequest)
+    - [UpdateOspfAreaRequest](#opi_api-network-cloud-v1alpha1-UpdateOspfAreaRequest)
+    - [UpdateOspfIfNetworkRequest](#opi_api-network-cloud-v1alpha1-UpdateOspfIfNetworkRequest)
+    - [UpdateOspfRouterRequest](#opi_api-network-cloud-v1alpha1-UpdateOspfRouterRequest)
     - [UpdatePortRequest](#opi_api-network-cloud-v1alpha1-UpdatePortRequest)
     - [UpdateRouteRequest](#opi_api-network-cloud-v1alpha1-UpdateRouteRequest)
     - [UpdateRouteTableRequest](#opi_api-network-cloud-v1alpha1-UpdateRouteTableRequest)
@@ -267,20 +267,20 @@
     - [NextHopType](#opi_api-network-cloud-v1alpha1-NextHopType)
   
 - [ospf.proto](#ospf-proto)
-    - [OSPFArea](#opi_api-network-cloud-v1alpha1-OSPFArea)
-    - [OSPFAreaSpec](#opi_api-network-cloud-v1alpha1-OSPFAreaSpec)
-    - [OSPFConfig](#opi_api-network-cloud-v1alpha1-OSPFConfig)
-    - [OSPFIfNetwork](#opi_api-network-cloud-v1alpha1-OSPFIfNetwork)
-    - [OSPFIfNetworkSpec](#opi_api-network-cloud-v1alpha1-OSPFIfNetworkSpec)
     - [OSPFMD5Auth](#opi_api-network-cloud-v1alpha1-OSPFMD5Auth)
     - [OSPFRedistSpec](#opi_api-network-cloud-v1alpha1-OSPFRedistSpec)
     - [OSPFSpec](#opi_api-network-cloud-v1alpha1-OSPFSpec)
+    - [OspfArea](#opi_api-network-cloud-v1alpha1-OspfArea)
+    - [OspfAreaSpec](#opi_api-network-cloud-v1alpha1-OspfAreaSpec)
+    - [OspfIfNetwork](#opi_api-network-cloud-v1alpha1-OspfIfNetwork)
+    - [OspfIfNetworkSpec](#opi_api-network-cloud-v1alpha1-OspfIfNetworkSpec)
+    - [OspfRouter](#opi_api-network-cloud-v1alpha1-OspfRouter)
   
-    - [OSPFIfNetworkType](#opi_api-network-cloud-v1alpha1-OSPFIfNetworkType)
     - [OSPFOperState](#opi_api-network-cloud-v1alpha1-OSPFOperState)
     - [OSPFRedistMetricType](#opi_api-network-cloud-v1alpha1-OSPFRedistMetricType)
     - [OSPFRedistType](#opi_api-network-cloud-v1alpha1-OSPFRedistType)
     - [OSPFVersion](#opi_api-network-cloud-v1alpha1-OSPFVersion)
+    - [OspfIfNetworkType](#opi_api-network-cloud-v1alpha1-OspfIfNetworkType)
   
 - [port.proto](#port-proto)
     - [Port](#opi_api-network-cloud-v1alpha1-Port)
@@ -1192,49 +1192,48 @@ Create NextHop Request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-CreateOSPFAreaRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-CreateOspfAreaRequest"></a>
 
-### CreateOSPFAreaRequest
-Create OSPFArea Request
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| area_id | [string](#string) |  | area_id |
-| ospf_area | [OSPFArea](#opi_api-network-cloud-v1alpha1-OSPFArea) |  | ospf_area |
-
-
-
-
-
-
-<a name="opi_api-network-cloud-v1alpha1-CreateOSPFIfNetworkRequest"></a>
-
-### CreateOSPFIfNetworkRequest
-Create OSPFIfNetwork Request
+### CreateOspfAreaRequest
+Create OspfArea Request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ospf_ifnetwork_id | [string](#string) |  | OSPF IfNetwork ID |
-| ospf_ifnetwork_area | [string](#string) |  | OSPF IfNetwork Area ID |
-| ospf_ifnetwork | [OSPFIfNetwork](#opi_api-network-cloud-v1alpha1-OSPFIfNetwork) |  | ospf_ifnetwork |
+| ospf_area_id | [string](#string) |  | ospf_area_id |
+| ospf_area | [OspfArea](#opi_api-network-cloud-v1alpha1-OspfArea) |  | ospf_area |
 
 
 
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-CreateOSPFRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-CreateOspfIfNetworkRequest"></a>
 
-### CreateOSPFRequest
-Create OSPF Request
+### CreateOspfIfNetworkRequest
+Create OspfIfNetwork Request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ospf_id | [string](#string) |  | OSPF identifier |
-| ospf_config | [OSPFConfig](#opi_api-network-cloud-v1alpha1-OSPFConfig) |  | OSPF configuration |
+| ospf_if_network_id | [string](#string) |  | OSPF IfNetwork ID |
+| ospf_if_network | [OspfIfNetwork](#opi_api-network-cloud-v1alpha1-OspfIfNetwork) |  | ospf_if_network |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateOspfRouterRequest"></a>
+
+### CreateOspfRouterRequest
+Create OSPF Router Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ospf_router_id | [string](#string) |  | OSPF identifier |
+| ospf_router | [OspfRouter](#opi_api-network-cloud-v1alpha1-OspfRouter) |  | OSPF configuration |
 
 
 
@@ -1556,10 +1555,10 @@ Delete nexthop request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-DeleteOSPFAreaRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-DeleteOspfAreaRequest"></a>
 
-### DeleteOSPFAreaRequest
-Delete OSPFArea request
+### DeleteOspfAreaRequest
+Delete OspfArea request
 
 
 | Field | Type | Label | Description |
@@ -1572,10 +1571,10 @@ Delete OSPFArea request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-DeleteOSPFIfNetworkRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-DeleteOspfIfNetworkRequest"></a>
 
-### DeleteOSPFIfNetworkRequest
-Delete OSPFIfNetwork request
+### DeleteOspfIfNetworkRequest
+Delete OspfIfNetwork request
 
 
 | Field | Type | Label | Description |
@@ -1588,9 +1587,9 @@ Delete OSPFIfNetwork request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-DeleteOSPFRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-DeleteOspfRouterRequest"></a>
 
-### DeleteOSPFRequest
+### DeleteOspfRouterRequest
 Delete OSPF request
 
 
@@ -1910,25 +1909,10 @@ Get nexthop request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-GetOSPFAreaRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-GetOspfAreaRequest"></a>
 
-### GetOSPFAreaRequest
-Get OSPFArea request
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | name |
-
-
-
-
-
-
-<a name="opi_api-network-cloud-v1alpha1-GetOSPFIfNetworkRequest"></a>
-
-### GetOSPFIfNetworkRequest
-Get OSPFIfNetwork request
+### GetOspfAreaRequest
+Get OspfArea request
 
 
 | Field | Type | Label | Description |
@@ -1940,9 +1924,24 @@ Get OSPFIfNetwork request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-GetOSPFRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-GetOspfIfNetworkRequest"></a>
 
-### GetOSPFRequest
+### GetOspfIfNetworkRequest
+Get OspfIfNetwork request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | name |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetOspfRouterRequest"></a>
+
+### GetOspfRouterRequest
 Get OSPF request
 
 
@@ -2399,14 +2398,15 @@ List nexthop response
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListOSPFAreaRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListOspfAreasRequest"></a>
 
-### ListOSPFAreaRequest
-List OSPFArea request
+### ListOspfAreasRequest
+List OspfArea request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
 | page_size | [int32](#int32) |  | pagination: page-size |
 | page_token | [string](#string) |  | pagination: start token |
 
@@ -2415,15 +2415,15 @@ List OSPFArea request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListOSPFAreaResponse"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListOspfAreasResponse"></a>
 
-### ListOSPFAreaResponse
-List OSPFArea response
+### ListOspfAreasResponse
+List OspfArea response
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ospf_areas | [OSPFArea](#opi_api-network-cloud-v1alpha1-OSPFArea) | repeated | list of ospf_areas |
+| ospf_areas | [OspfArea](#opi_api-network-cloud-v1alpha1-OspfArea) | repeated | list of ospf_areas |
 | next_page_token | [string](#string) |  | next page token |
 
 
@@ -2431,15 +2431,15 @@ List OSPFArea response
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListOSPFIfNetworkRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListOspfIfNetworksRequest"></a>
 
-### ListOSPFIfNetworkRequest
-List OSPFIfNetwork request
+### ListOspfIfNetworksRequest
+List OspfIfNetwork request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | name or IfNetwork identifier |
+| parent | [string](#string) |  | parent or IfNetwork identifier |
 | page_size | [int32](#int32) |  | pagination: page-size |
 | page_token | [string](#string) |  | pagination: start token |
 
@@ -2448,15 +2448,15 @@ List OSPFIfNetwork request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListOSPFIfNetworkResponse"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListOspfIfNetworksResponse"></a>
 
-### ListOSPFIfNetworkResponse
-List OSPFIfNetwork response
+### ListOspfIfNetworksResponse
+List OspfIfNetwork response
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ospf_ifnetworks | [OSPFIfNetwork](#opi_api-network-cloud-v1alpha1-OSPFIfNetwork) | repeated | list of OSPFIfNetwork |
+| ospf_if_networks | [OspfIfNetwork](#opi_api-network-cloud-v1alpha1-OspfIfNetwork) | repeated | list of OspfIfNetwork |
 | next_page_token | [string](#string) |  | next page token |
 
 
@@ -2464,31 +2464,32 @@ List OSPFIfNetwork response
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListOSPFRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListOspfRoutersRequest"></a>
 
-### ListOSPFRequest
+### ListOspfRoutersRequest
 List OSPF request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| page_size | [int32](#int32) |  | The maximum number of OSPF configs to return. The service may return fewer than this value. |
-| page_token | [string](#string) |  | A page token, received from a previous `ListOSPF` call. Provide this to retrieve the subsequent page. |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | The maximum number of OSPF routers to return. The service may return fewer than this value. |
+| page_token | [string](#string) |  | A page token, received from a previous `ListOspfRouters` call. Provide this to retrieve the subsequent page. |
 
 
 
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-ListOSPFResponse"></a>
+<a name="opi_api-network-cloud-v1alpha1-ListOspfRoutersResponse"></a>
 
-### ListOSPFResponse
+### ListOspfRoutersResponse
 List OSPF response
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ospf_configs | [OSPFConfig](#opi_api-network-cloud-v1alpha1-OSPFConfig) | repeated | List of OSPF configs |
+| ospf_routers | [OspfRouter](#opi_api-network-cloud-v1alpha1-OspfRouter) | repeated | List of OSPF configs |
 | next_page_token | [string](#string) |  | A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are not subsequent pages. |
 
 
@@ -3025,15 +3026,15 @@ Update nexthop request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-UpdateOSPFAreaRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-UpdateOspfAreaRequest"></a>
 
-### UpdateOSPFAreaRequest
-Update OSPFArea request
+### UpdateOspfAreaRequest
+Update OspfArea request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ospf_area | [OSPFArea](#opi_api-network-cloud-v1alpha1-OSPFArea) |  | updated ospf_area info |
+| ospf_area | [OspfArea](#opi_api-network-cloud-v1alpha1-OspfArea) |  | updated ospf_area info |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
 
@@ -3041,32 +3042,32 @@ Update OSPFArea request
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-UpdateOSPFIfNetworkRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-UpdateOspfIfNetworkRequest"></a>
 
-### UpdateOSPFIfNetworkRequest
-Update OSPFIfNetwork request
+### UpdateOspfIfNetworkRequest
+Update OspfIfNetwork request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | name |
-| ospf_ifnetwork | [OSPFIfNetwork](#opi_api-network-cloud-v1alpha1-OSPFIfNetwork) |  | updated OSPF IfNetwork information |
+| ospf_if_network | [OspfIfNetwork](#opi_api-network-cloud-v1alpha1-OspfIfNetwork) |  | updated OSPF IfNetwork information |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-UpdateOSPFRequest"></a>
+<a name="opi_api-network-cloud-v1alpha1-UpdateOspfRouterRequest"></a>
 
-### UpdateOSPFRequest
+### UpdateOspfRouterRequest
 Update OSPF request
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ospf_config | [OSPFConfig](#opi_api-network-cloud-v1alpha1-OSPFConfig) |  | updated ospf configuration |
+| ospf_router | [OspfRouter](#opi_api-network-cloud-v1alpha1-OspfRouter) |  | updated ospf configuration |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
 
 
@@ -3392,21 +3393,21 @@ Cloud Infra APIs - to manage a multi-node cloud infrastructure on a xPU
 | UpdateSecurityProfile | [UpdateSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-UpdateSecurityProfileRequest) | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) |  |
 | ListSecurityProfiles | [ListSecurityProfilesRequest](#opi_api-network-cloud-v1alpha1-ListSecurityProfilesRequest) | [ListSecurityProfilesResponse](#opi_api-network-cloud-v1alpha1-ListSecurityProfilesResponse) |  |
 | GetSecurityProfile | [GetSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-GetSecurityProfileRequest) | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) |  |
-| CreateOSPF | [CreateOSPFRequest](#opi_api-network-cloud-v1alpha1-CreateOSPFRequest) | [OSPFConfig](#opi_api-network-cloud-v1alpha1-OSPFConfig) | OSPF APIs Create a OSPF. Contains the configuration of the OSPF instance. |
-| UpdateOSPF | [UpdateOSPFRequest](#opi_api-network-cloud-v1alpha1-UpdateOSPFRequest) | [OSPFConfig](#opi_api-network-cloud-v1alpha1-OSPFConfig) | Update a OSPF instance |
-| DeleteOSPF | [DeleteOSPFRequest](#opi_api-network-cloud-v1alpha1-DeleteOSPFRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a OSPF instance |
-| GetOSPF | [GetOSPFRequest](#opi_api-network-cloud-v1alpha1-GetOSPFRequest) | [OSPFConfig](#opi_api-network-cloud-v1alpha1-OSPFConfig) | Get an OSPF instance |
-| ListOSPF | [ListOSPFRequest](#opi_api-network-cloud-v1alpha1-ListOSPFRequest) | [ListOSPFResponse](#opi_api-network-cloud-v1alpha1-ListOSPFResponse) | All OSPF instances |
-| CreateOSPFArea | [CreateOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-CreateOSPFAreaRequest) | [OSPFArea](#opi_api-network-cloud-v1alpha1-OSPFArea) | Create a OSPF Area |
-| UpdateOSPFArea | [UpdateOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-UpdateOSPFAreaRequest) | [OSPFArea](#opi_api-network-cloud-v1alpha1-OSPFArea) | Update an OSPF Area |
-| DeleteOSPFArea | [DeleteOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-DeleteOSPFAreaRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an OSPF Area |
-| GetOSPFArea | [GetOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-GetOSPFAreaRequest) | [OSPFArea](#opi_api-network-cloud-v1alpha1-OSPFArea) | Get an OSPF Area |
-| ListOSPFArea | [ListOSPFAreaRequest](#opi_api-network-cloud-v1alpha1-ListOSPFAreaRequest) | [ListOSPFAreaResponse](#opi_api-network-cloud-v1alpha1-ListOSPFAreaResponse) | List all OSPF Areas |
-| CreateOSPFIfNetwork | [CreateOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-CreateOSPFIfNetworkRequest) | [OSPFIfNetwork](#opi_api-network-cloud-v1alpha1-OSPFIfNetwork) | Create an OSPF IfNetwork |
-| UpdateOSPFIfNetwork | [UpdateOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-UpdateOSPFIfNetworkRequest) | [OSPFIfNetwork](#opi_api-network-cloud-v1alpha1-OSPFIfNetwork) | Update an OSPF IfNetwork |
-| DeleteOSPFIfNetwork | [DeleteOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-DeleteOSPFIfNetworkRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an OSPF IfNetwork |
-| GetOSPFIfNetwork | [GetOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-GetOSPFIfNetworkRequest) | [OSPFIfNetwork](#opi_api-network-cloud-v1alpha1-OSPFIfNetwork) | Get an OSPF IfNetwork |
-| ListOSPFIfNetwork | [ListOSPFIfNetworkRequest](#opi_api-network-cloud-v1alpha1-ListOSPFIfNetworkRequest) | [ListOSPFIfNetworkResponse](#opi_api-network-cloud-v1alpha1-ListOSPFIfNetworkResponse) | List all OSPF IfNetworks |
+| CreateOspfRouter | [CreateOspfRouterRequest](#opi_api-network-cloud-v1alpha1-CreateOspfRouterRequest) | [OspfRouter](#opi_api-network-cloud-v1alpha1-OspfRouter) | OSPF APIs Create a OSPF Router. Contains the configuration of the OSPF instance. |
+| UpdateOspfRouter | [UpdateOspfRouterRequest](#opi_api-network-cloud-v1alpha1-UpdateOspfRouterRequest) | [OspfRouter](#opi_api-network-cloud-v1alpha1-OspfRouter) | Update a OSPF Router instance |
+| DeleteOspfRouter | [DeleteOspfRouterRequest](#opi_api-network-cloud-v1alpha1-DeleteOspfRouterRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a OSPF instance |
+| GetOspfRouter | [GetOspfRouterRequest](#opi_api-network-cloud-v1alpha1-GetOspfRouterRequest) | [OspfRouter](#opi_api-network-cloud-v1alpha1-OspfRouter) | Get an OSPF instance |
+| ListOspfRouters | [ListOspfRoutersRequest](#opi_api-network-cloud-v1alpha1-ListOspfRoutersRequest) | [ListOspfRoutersResponse](#opi_api-network-cloud-v1alpha1-ListOspfRoutersResponse) | All OSPF instances |
+| CreateOspfArea | [CreateOspfAreaRequest](#opi_api-network-cloud-v1alpha1-CreateOspfAreaRequest) | [OspfArea](#opi_api-network-cloud-v1alpha1-OspfArea) | Create a OSPF Area |
+| UpdateOspfArea | [UpdateOspfAreaRequest](#opi_api-network-cloud-v1alpha1-UpdateOspfAreaRequest) | [OspfArea](#opi_api-network-cloud-v1alpha1-OspfArea) | Update an OSPF Area |
+| DeleteOspfArea | [DeleteOspfAreaRequest](#opi_api-network-cloud-v1alpha1-DeleteOspfAreaRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an OSPF Area |
+| GetOspfArea | [GetOspfAreaRequest](#opi_api-network-cloud-v1alpha1-GetOspfAreaRequest) | [OspfArea](#opi_api-network-cloud-v1alpha1-OspfArea) | Get an OSPF Area |
+| ListOspfAreas | [ListOspfAreasRequest](#opi_api-network-cloud-v1alpha1-ListOspfAreasRequest) | [ListOspfAreasResponse](#opi_api-network-cloud-v1alpha1-ListOspfAreasResponse) | List all OSPF Areas |
+| CreateOspfIfNetwork | [CreateOspfIfNetworkRequest](#opi_api-network-cloud-v1alpha1-CreateOspfIfNetworkRequest) | [OspfIfNetwork](#opi_api-network-cloud-v1alpha1-OspfIfNetwork) | Create an OSPF IfNetwork |
+| UpdateOspfIfNetwork | [UpdateOspfIfNetworkRequest](#opi_api-network-cloud-v1alpha1-UpdateOspfIfNetworkRequest) | [OspfIfNetwork](#opi_api-network-cloud-v1alpha1-OspfIfNetwork) | Update an OSPF IfNetwork |
+| DeleteOspfIfNetwork | [DeleteOspfIfNetworkRequest](#opi_api-network-cloud-v1alpha1-DeleteOspfIfNetworkRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete an OSPF IfNetwork |
+| GetOspfIfNetwork | [GetOspfIfNetworkRequest](#opi_api-network-cloud-v1alpha1-GetOspfIfNetworkRequest) | [OspfIfNetwork](#opi_api-network-cloud-v1alpha1-OspfIfNetwork) | Get an OSPF IfNetwork |
+| ListOspfIfNetworks | [ListOspfIfNetworksRequest](#opi_api-network-cloud-v1alpha1-ListOspfIfNetworksRequest) | [ListOspfIfNetworksResponse](#opi_api-network-cloud-v1alpha1-ListOspfIfNetworksResponse) | List all OSPF IfNetworks |
 
  
 
@@ -4725,95 +4726,6 @@ next hop type
 
 
 
-<a name="opi_api-network-cloud-v1alpha1-OSPFArea"></a>
-
-### OSPFArea
-OSPFArea object
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Unique name to identify the area. |
-| spec | [OSPFAreaSpec](#opi_api-network-cloud-v1alpha1-OSPFAreaSpec) |  | area configuration |
-| state | [OSPFOperState](#opi_api-network-cloud-v1alpha1-OSPFOperState) |  | area state |
-
-
-
-
-
-
-<a name="opi_api-network-cloud-v1alpha1-OSPFAreaSpec"></a>
-
-### OSPFAreaSpec
-OSPFAreaSpec configuration
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| area_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | OSPF Area IP address. control plane chooses the local IP address of the session if an all 0 IP address is provided, example area zero 0.0.0.0 and area 1 0.0.0.1 |
-| state | [opi_api.network.opinetcommon.v1alpha1.AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState) |  | OSPF Process &amp; context definition for (IPv4) |
-| network_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | Network prefix address |
-| auth_message_digest | [string](#string) |  | example configuration: area 0 authentication_message_digest |
-| network_type | [OSPFIfNetworkType](#opi_api-network-cloud-v1alpha1-OSPFIfNetworkType) |  | IfNetwork Type |
-
-
-
-
-
-
-<a name="opi_api-network-cloud-v1alpha1-OSPFConfig"></a>
-
-### OSPFConfig
-OSPF Config object
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | unique key/identifier of OSPF |
-| spec | [OSPFSpec](#opi_api-network-cloud-v1alpha1-OSPFSpec) |  | OSPF Configuration specification |
-| state | [OSPFOperState](#opi_api-network-cloud-v1alpha1-OSPFOperState) |  | OSPF State |
-
-
-
-
-
-
-<a name="opi_api-network-cloud-v1alpha1-OSPFIfNetwork"></a>
-
-### OSPFIfNetwork
-OSPFIfNetwork
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | unique key/identifier of ifnetwork |
-| spec | [OSPFIfNetworkSpec](#opi_api-network-cloud-v1alpha1-OSPFIfNetworkSpec) |  | OSPFIfNetwork configuration |
-| state | [OSPFOperState](#opi_api-network-cloud-v1alpha1-OSPFOperState) |  | OSPFIfNetwork state |
-
-
-
-
-
-
-<a name="opi_api-network-cloud-v1alpha1-OSPFIfNetworkSpec"></a>
-
-### OSPFIfNetworkSpec
-OSPFIfNetworkSpec configuration
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| network_type | [string](#string) |  | Network Type Point_To_Point or Broadcast |
-| state | [opi_api.network.opinetcommon.v1alpha1.AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState) |  | peer enable/disable admin state. if peer is not enabled then local router must not initiate connections to the neighbor and must not respond to TCP connections attempts from neighbor |
-| local_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | OSPF local IP address. control plane chooses the local IP address of the session if an all 0 IP address is provided |
-| cost_or_link_metric | [int32](#int32) |  | Cost or link metric value is 16 bits and must be validated |
-| md5_auth | [OSPFMD5Auth](#opi_api-network-cloud-v1alpha1-OSPFMD5Auth) |  | Example: ip ospf message-digest-key 1 md5 intel |
-
-
-
-
-
-
 <a name="opi_api-network-cloud-v1alpha1-OSPFMD5Auth"></a>
 
 ### OSPFMD5Auth
@@ -4859,7 +4771,7 @@ OSPF configuration
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ospf_version | [OSPFVersion](#opi_api-network-cloud-v1alpha1-OSPFVersion) |  | OSPF version v2 or v3 or unspecified assumes v2 |
-| router_id | [fixed32](#fixed32) |  | router ID for this ospf instance (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: must use fixed32 per OSPF spec. --) |
+| router_id | [string](#string) |  | router ID for this ospf instance |
 | suppress_default_resolution | [bool](#bool) |  | Suppress default resolution if true |
 | redist | [OSPFRedistSpec](#opi_api-network-cloud-v1alpha1-OSPFRedistSpec) |  | Redistribution |
 | passive_if | [string](#string) |  | Passive Interface name |
@@ -4868,20 +4780,96 @@ OSPF configuration
 
 
 
+
+<a name="opi_api-network-cloud-v1alpha1-OspfArea"></a>
+
+### OspfArea
+OspfArea object
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Unique name to identify the area. |
+| spec | [OspfAreaSpec](#opi_api-network-cloud-v1alpha1-OspfAreaSpec) |  | area configuration |
+| state | [OSPFOperState](#opi_api-network-cloud-v1alpha1-OSPFOperState) |  | area state |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-OspfAreaSpec"></a>
+
+### OspfAreaSpec
+OspfAreaSpec configuration
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| area_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | OSPF Area IP address. control plane chooses the local IP address of the session if an all 0 IP address is provided, example area zero 0.0.0.0 and area 1 0.0.0.1 |
+| state | [opi_api.network.opinetcommon.v1alpha1.AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState) |  | OSPF Process &amp; context definition for (IPv4) |
+| network_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | Network prefix address |
+| auth_message_digest | [string](#string) |  | example configuration: area 0 authentication_message_digest |
+| network_type | [OspfIfNetworkType](#opi_api-network-cloud-v1alpha1-OspfIfNetworkType) |  | IfNetwork Type |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-OspfIfNetwork"></a>
+
+### OspfIfNetwork
+OspfIfNetwork
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique key/identifier of ifnetwork |
+| spec | [OspfIfNetworkSpec](#opi_api-network-cloud-v1alpha1-OspfIfNetworkSpec) |  | OspfIfNetwork configuration |
+| state | [OSPFOperState](#opi_api-network-cloud-v1alpha1-OSPFOperState) |  | OspfIfNetwork state |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-OspfIfNetworkSpec"></a>
+
+### OspfIfNetworkSpec
+OspfIfNetworkSpec configuration
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| network_type | [string](#string) |  | Network Type Point_To_Point or Broadcast |
+| state | [opi_api.network.opinetcommon.v1alpha1.AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState) |  | peer enable/disable admin state. if peer is not enabled then local router must not initiate connections to the neighbor and must not respond to TCP connections attempts from neighbor |
+| local_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | OSPF local IP address. control plane chooses the local IP address of the session if an all 0 IP address is provided |
+| cost_or_link_metric | [int32](#int32) |  | Cost or link metric value is 16 bits and must be validated |
+| md5_auth | [OSPFMD5Auth](#opi_api-network-cloud-v1alpha1-OSPFMD5Auth) |  | Example: ip ospf message-digest-key 1 md5 intel |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-OspfRouter"></a>
+
+### OspfRouter
+OSPF Config object
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
+| spec | [OSPFSpec](#opi_api-network-cloud-v1alpha1-OSPFSpec) |  | OSPF Configuration specification |
+| state | [OSPFOperState](#opi_api-network-cloud-v1alpha1-OSPFOperState) |  | OSPF State |
+
+
+
+
+
  
-
-
-<a name="opi_api-network-cloud-v1alpha1-OSPFIfNetworkType"></a>
-
-### OSPFIfNetworkType
-IfNetwork Types
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| OSPF_IF_NETWORK_TYPE_UNSPECIFIED | 0 | IfNetwork Type Unspecified |
-| OSPF_IF_NETWORK_TYPE_BROADCAST | 1 | Broadcast type |
-| OSPF_IF_NETWORK_TYPE_POINT_TO_POINT | 2 | Point to Point type |
-
 
 
 <a name="opi_api-network-cloud-v1alpha1-OSPFOperState"></a>
@@ -4935,8 +4923,21 @@ OSPF Version Number
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | OSPF_VERSION_UNSPECIFIED | 0 | OSPF Version not specified and assume v2 |
-| OSPF_VERSION_2 | 1 | OSPF Verison 2 |
+| OSPF_VERSION_2 | 1 | OSPF Version 2 |
 | OSPF_VERSION_3 | 2 | OSPF Version 3 |
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-OspfIfNetworkType"></a>
+
+### OspfIfNetworkType
+IfNetwork Types
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OSPF_IF_NETWORK_TYPE_UNSPECIFIED | 0 | IfNetwork Type Unspecified |
+| OSPF_IF_NETWORK_TYPE_BROADCAST | 1 | Broadcast type |
+| OSPF_IF_NETWORK_TYPE_POINT_TO_POINT | 2 | Point to Point type |
 
 
  
