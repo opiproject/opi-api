@@ -55,7 +55,7 @@ message OSPFRedistSpec {
     // peer enable/disable admin state. if peer is not enabled then local router
     // must not initiate connections to the neighbor and must not respond to
     // TCP connections attempts from neighbor
-    network.opinetcommon.v1alpha1.AdminState state = 2;
+    network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     // OSPF local IP address. control plane chooses the local IP address of the
     // session if an all 0 IP address is provided
     network.opinetcommon.v1alpha1.IPAddress local_address = 3;
@@ -90,7 +90,7 @@ message OspfAreaSpec {
     // area 1 0.0.0.1
     network.opinetcommon.v1alpha1.IPAddress area_address = 1;
     // OSPF Process & context definition for (IPv4)
-    network.opinetcommon.v1alpha1.AdminState state = 2;
+    network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Network prefix address
     network.opinetcommon.v1alpha1.IPPrefix network_prefix = 3;
     // example configuration: area 0 authentication_message_digest
@@ -122,7 +122,7 @@ message OspfIfNetworkSpec {
     // peer enable/disable admin state. if peer is not enabled then local router
     // must not initiate connections to the neighbor and must not respond to
     // TCP connections attempts from neighbor
-    network.opinetcommon.v1alpha1.AdminState state = 2;
+    network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     // OSPF local IP address. control plane chooses the local IP address of the
     // session if an all 0 IP address is provided
     network.opinetcommon.v1alpha1.IPAddress local_address = 3;
