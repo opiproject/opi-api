@@ -2368,15 +2368,13 @@ message CreateOspfIfNetworkRequest {
 
 // Update OspfIfNetwork request
 message UpdateOspfIfNetworkRequest {
-    // name
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OspfIfNetwork"
-    ];
     // updated OSPF IfNetwork information
-    OspfIfNetwork ospf_if_network = 2 [(google.api.field_behavior) = REQUIRED];
+    OspfIfNetwork ospf_if_network = 1 [(google.api.field_behavior) = REQUIRED];
     // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3 [(google.api.field_behavior) = OPTIONAL];
+    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Delete OspfIfNetwork request
