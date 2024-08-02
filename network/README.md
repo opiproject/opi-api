@@ -5,7 +5,7 @@
 - OPI defines/recommends __protobuf__ definitions that each vendor can tie into the underlying SDKs.
 - The __protobuf__ definitions will be aligned with the API and behavioral models available from OVS DB, OpenConfig, OpenFlow, P4, etc. to allow configuration of the service.
 - OPI provides a __LAN service__ implementation for the network capabilities that is compatible with OVS, SONiC, VPP, P4, etc.
-- OPI defines a __device interface__ for the data services that are delivered through the the PF/VF from the xPU.
+- OPI defines a __device interface__ for the data services that are delivered through the PF/VF from the xPU.
 - OPI provides a __prototype client__ for sending gRPC, REST protobufs to the xPU for configuation and management.
 
 ## Network APIs to be defined

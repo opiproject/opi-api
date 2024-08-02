@@ -46,7 +46,7 @@ The API Abstraction Layer provides the interface set for the capabilities provid
 
   ![API Control Plane Stacking](doc/images/Control%20Path%20Stacking%20Diagram.png)
 
-  A detailed conceptial diagram below illustrates the deployment on the local xPU where the API gateway and load balancer which provides the gRPC/REST interface to the client (client can be an orchestration agent).  As part of the abstraction layer, the Authentication and Authorization service is needed to verify the user/agent access and authorization for the service.
+  A detailed conceptual diagram below illustrates the deployment on the local xPU where the API gateway and load balancer which provides the gRPC/REST interface to the client (client can be an orchestration agent).  As part of the abstraction layer, the Authentication and Authorization service is needed to verify the user/agent access and authorization for the service.
 
 ![API Abstraction Layer](doc/images/API-Detailed-Abstraction-Layer-Local.png)
 

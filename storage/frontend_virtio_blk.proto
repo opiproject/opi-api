@@ -19,7 +19,7 @@ import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
-// Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
+// Front End (host-facing) APIs. Mostly used for Virtio-blk emulation and host presentation as alternative to Nvme.
 service FrontendVirtioBlkService {
     // Create an Virtio Blk
     rpc CreateVirtioBlk (CreateVirtioBlkRequest) returns (VirtioBlk) {

@@ -29,7 +29,7 @@ Application API requirements center around the ability to provide service chaini
 
 ### Background
 
-For network applications such as firewalls and load balancers to use DPUs there needs to be significant performanance benefits. Therefore this set of requriements focuses on the areas that require a significant amount of x86 CPU for these type of applications. Ideally the performance improvemenst should be in the range of at least one order of magnitude as there is both a CAPEX and OPEX costs for the end customers.
+For network applications such as firewalls and load balancers to use DPUs there needs to be significant performanance benefits. Therefore this set of requirements focuses on the areas that require a significant amount of x86 CPU for these type of applications. Ideally the performance improvemenst should be in the range of at least one order of magnitude as there is both a CAPEX and OPEX costs for the end customers.
 
 ### SSL Acceleration
 
