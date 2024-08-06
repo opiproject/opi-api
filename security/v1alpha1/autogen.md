@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [ipsec.proto](#ipsec-proto)
+- [opi_ipsec.proto](#opi_ipsec-proto)
     - [AntiReplayStats](#opi_api-security-v1alpha1-AntiReplayStats)
     - [AntiReplayWindow](#opi_api-security-v1alpha1-AntiReplayWindow)
     - [CaCerts](#opi_api-security-v1alpha1-CaCerts)
@@ -84,10 +84,10 @@
 
 
 
-<a name="ipsec-proto"></a>
+<a name="opi_ipsec-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ipsec.proto
+## opi_ipsec.proto
 Copyright (C) 2021 Intel Corporation
 Copyright (c) 2023 Dell Inc, or its subsidiaries.
 SPDX-License-Identifier: Apache-2.0

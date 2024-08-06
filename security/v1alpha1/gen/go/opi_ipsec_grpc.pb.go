@@ -17,7 +17,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             (unknown)
-// source: ipsec.proto
+// source: opi_ipsec.proto
 
 package _go
 
@@ -281,7 +281,7 @@ var IkePeerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ipsec.proto",
+	Metadata: "opi_ipsec.proto",
 }
 
 const (
@@ -572,7 +572,7 @@ var IkeConnectionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ipsec.proto",
+	Metadata: "opi_ipsec.proto",
 }
 
 const (
@@ -820,7 +820,7 @@ var IpsecSaService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ipsec.proto",
+	Metadata: "opi_ipsec.proto",
 }
 
 const (
@@ -1068,5 +1068,5 @@ var IpsecPolicyService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ipsec.proto",
+	Metadata: "opi_ipsec.proto",
 }
