@@ -89,6 +89,7 @@ The diagram below shows the packet pipeline and packet processing layers and the
 ![VNIC and NVME Offload](doc/images/API-VNIC-NVME-Use-Case.png)
 
 The table below provides the datapaths where each one has a specific objective and combining all of these objectives results in the above diagram.
+
 |   | Objective           | Datapath Service Chain                                                   |
 | - | :--------           | :---------------------                                                   |
 | 1 | Basic NIC           | Host ↔ VNIC ↔ IP ↔ Eth ↔ Wire                                            |
