@@ -12,45 +12,42 @@
 syntax = "proto3";
 package opi_api.inventory.v1;
 
-option java_package = "opi_api.inventory.v1";
-option java_multiple_files = true;
-option java_outer_classname = "InventoryProto";
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
 
 option go_package = "github.com/opiproject/opi-api/inventory/v1/gen/go";
-
-import "google/api/client.proto";
-import "google/api/resource.proto";
-import "google/api/annotations.proto";
-import "google/api/field_behavior.proto";
+option java_multiple_files = true;
+option java_outer_classname = "InventoryProto";
+option java_package = "opi_api.inventory.v1";
 
 // Service functions for the device inventory data
 service InventoryService {
-    // retrieves the inventory data for the device
-    rpc GetInventory (GetInventoryRequest) returns (Inventory) {
-        option (google.api.http) = {
-            get: "/v1/{name=inventory/*/inventory/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // retrieves the inventory data for the device
+  rpc GetInventory(GetInventoryRequest) returns (Inventory) {
+    option (google.api.http) = {get: "/v1/{name=inventory/*/inventory/*}"};
+    option (google.api.method_signature) = "name";
+  }
 }
 
 // (-- Doc taken from https://www.dmtf.org/sites/default/files/standards/documents/DSP0134_3.6.0.pdf --)
 
 // BIOS Information (Type 0)
 message BIOSInfo {
-    // String number of the BIOS Vendor’s Name.
-    string vendor = 1;
-    // String number of the BIOS Version. This value is a
-    // free-form string that may contain Core and OEM
-    // version information.
-    string version = 2;
-    // String number of the BIOS release date. The date
-    // string, if supplied, is in either mm/dd/yy or
-    // mm/dd/yyyy format. If the year portion of the string
-    // is two digits, the year is assumed to be 19yy.
-    // NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
-    // format is only used.
-    string date = 3;
+  // String number of the BIOS Vendor’s Name.
+  string vendor = 1;
+  // String number of the BIOS Version. This value is a
+  // free-form string that may contain Core and OEM
+  // version information.
+  string version = 2;
+  // String number of the BIOS release date. The date
+  // string, if supplied, is in either mm/dd/yy or
+  // mm/dd/yyyy format. If the year portion of the string
+  // is two digits, the year is assumed to be 19yy.
+  // NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+  // format is only used.
+  string date = 3;
 }
 
 // System Information (Type 1)
@@ -59,41 +56,41 @@ message BIOSInfo {
 //  system instance and contains one and only one System Information (Type 1) structure. Table 10 shows
 //  the contents of this structure.
 message SystemInfo {
-    // Number of null-terminated string
-    // This text string identifies the family to which a
-    // particular computer belongs. A family refers to a
-    // set of computers that are similar but not identical
-    // from a hardware or software point of view.
-    // Typically, a family is composed of different
-    // computer models, which have different
-    // configurations and pricing points. Computers in
-    // the same family often have similar branding and
-    // cosmetic features.
-    string family = 1;
-    // Number of null-terminated string
-    string name = 2;
-    // Number of null-terminated string
-    string vendor = 3;
-    // Number of null-terminated string
-    string serial_number = 4;
-    // A UUID is an identifier that is designed to be unique across both time and space. It requires no central
-    // registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
-    // contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
-    // byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
-    // historical practice.
-    string uuid = 5;
-    // Number of null-terminated string
-    // This text string identifies a particular computer
-    // configuration for sale. It is sometimes also called
-    // a product ID or purchase order number. This
-    // number is frequently found in existing fields, but
-    // there is no standard format. Typically for a given
-    // system board from a given OEM, there are tens
-    // of unique processor, memory, hard drive, and
-    // optical drive configurations.
-    string sku = 6;
-    // Number of null-terminated string
-    string version = 7;
+  // Number of null-terminated string
+  // This text string identifies the family to which a
+  // particular computer belongs. A family refers to a
+  // set of computers that are similar but not identical
+  // from a hardware or software point of view.
+  // Typically, a family is composed of different
+  // computer models, which have different
+  // configurations and pricing points. Computers in
+  // the same family often have similar branding and
+  // cosmetic features.
+  string family = 1;
+  // Number of null-terminated string
+  string name = 2;
+  // Number of null-terminated string
+  string vendor = 3;
+  // Number of null-terminated string
+  string serial_number = 4;
+  // A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+  // registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+  // contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+  // byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+  // historical practice.
+  string uuid = 5;
+  // Number of null-terminated string
+  // This text string identifies a particular computer
+  // configuration for sale. It is sometimes also called
+  // a product ID or purchase order number. This
+  // number is frequently found in existing fields, but
+  // there is no standard format. Typically for a given
+  // system board from a given OEM, there are tens
+  // of unique processor, memory, hard drive, and
+  // optical drive configurations.
+  string sku = 6;
+  // Number of null-terminated string
+  string version = 7;
 }
 
 // System Enclosure or Chassis (Type 3)
@@ -102,38 +99,38 @@ message SystemInfo {
 //  structures would be returned: one for the main system enclosure and the second for the peripheral device
 //  enclosure. The additions to this structure in version 2.1 of this specification support the population of the
 //  CIM_Chassis class.
-message ChassisInfo{
-    // Number of null-terminated string
-    string asset_tag = 1;
-    // Number of null-terminated string
-    string serial_number = 2;
-    // Bit 7 Chassis lock is present if 1.
-    // Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
-    // Bits 6:0 Enumeration value; see below. 
-    string type = 3;
-    // Table 17 shows the byte values for the System Enclosure or Chassis Types field
-    // Number of null-terminated string
-    string type_description = 4;
-    // Number of null-terminated string
-    string vendor = 5;
-    // Number of null-terminated string
-    string version = 6;
+message ChassisInfo {
+  // Number of null-terminated string
+  string asset_tag = 1;
+  // Number of null-terminated string
+  string serial_number = 2;
+  // Bit 7 Chassis lock is present if 1.
+  // Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+  // Bits 6:0 Enumeration value; see below.
+  string type = 3;
+  // Table 17 shows the byte values for the System Enclosure or Chassis Types field
+  // Number of null-terminated string
+  string type_description = 4;
+  // Number of null-terminated string
+  string vendor = 5;
+  // Number of null-terminated string
+  string version = 6;
 }
 
 // Baseboard (or Module) Information (Type 2)
 //  The information in this structure defines attributes of a system baseboard (for
 //  example, a motherboard, planar, server blade, or other standard system module)
-message BaseboardInfo{
-    // Number of a null-terminated string
-    string asset_tag = 1;
-    // Number of null-terminated string
-    string serial_number = 2;
-    // Number of null-terminated string
-    string vendor = 3;
-    // Number of null-terminated string
-    string version = 4;
-    // Number of null-terminated string
-    string product = 5;
+message BaseboardInfo {
+  // Number of a null-terminated string
+  string asset_tag = 1;
+  // Number of null-terminated string
+  string serial_number = 2;
+  // Number of null-terminated string
+  string vendor = 3;
+  // Number of null-terminated string
+  string version = 4;
+  // Number of null-terminated string
+  string product = 5;
 }
 
 // Processor Information (Type 4)
@@ -141,81 +138,81 @@ message BaseboardInfo{
 //  structure instance is provided for each system processor socket/slot. For example, a system with an
 //  IntelDX2™ processor would have a single structure instance while a system with an IntelSX2™ processor
 //  would have a structure to describe the main CPU and a second structure to describe the 80487 co1054 processor.
-message CPUInfo{
-    // Number of cores per processor socket
-    // See 7.5.6. If the value is unknown, the field is set
-    // to 0. For core counts of 256 or greater, the Core
-    // Count field is set to FFh and the Core Count 2
-    // field is set to the number of cores.
-    int32 total_cores = 1;
-    // Number of threads per processor socket
-    // See 7.5.8. If the value is unknown, the field is set
-    // to 0. For thread counts of 256 or greater, the
-    // Thread Count field is set to FFh and the Thread
-    // Count 2 field is set to the number of threads.
-    int32 total_threads = 2;
+message CPUInfo {
+  // Number of cores per processor socket
+  // See 7.5.6. If the value is unknown, the field is set
+  // to 0. For core counts of 256 or greater, the Core
+  // Count field is set to FFh and the Core Count 2
+  // field is set to the number of cores.
+  int32 total_cores = 1;
+  // Number of threads per processor socket
+  // See 7.5.8. If the value is unknown, the field is set
+  // to 0. For thread counts of 256 or greater, the
+  // Thread Count field is set to FFh and the Thread
+  // Count 2 field is set to the number of threads.
+  int32 total_threads = 2;
 }
 
 // Physical Memory Array (Type 16)
 //  This structure describes a collection of memory devices that operate together to form a memory address
 //  space.
-message MemoryInfo{
-    // Maximum memory capacity, in kilobytes, for this array
-    // If the capacity is not represented in this field, then this
-    // field contains 8000 0000h and the Extended
-    // Maximum Capacity field should be used. Values 2 TB
-    // (8000 0000h) or greater must be represented in the
-    // Extended Maximum Capacity field.
-    int64 total_physical_bytes = 1;
-    // TBD
-    int64 total_usable_bytes = 2;
+message MemoryInfo {
+  // Maximum memory capacity, in kilobytes, for this array
+  // If the capacity is not represented in this field, then this
+  // field contains 8000 0000h and the Extended
+  // Maximum Capacity field should be used. Values 2 TB
+  // (8000 0000h) or greater must be represented in the
+  // Extended Maximum Capacity field.
+  int64 total_physical_bytes = 1;
+  // TBD
+  int64 total_usable_bytes = 2;
 }
 
 // PCI device information
 //  TBD: Type 9 or Type 41 ?
 //  This structure describes a collection of PCI devices.
 message PCIeDeviceInfo {
-    // Driver assiociated with the device
-    string driver = 1;
-    // BDF address in a string format, for example "0000:00:17.7"
-    string address = 2;
-    // string vendor info
-    string vendor = 3;
-    // string product info
-    string product = 4;
-    // string revision info
-    string revision = 5;
-    // string subsystem info
-    string subsystem = 6;
-    // string class info
-    string class = 7;
-    // string subclass info
-    string subclass = 8;
+  // Driver assiociated with the device
+  string driver = 1;
+  // BDF address in a string format, for example "0000:00:17.7"
+  string address = 2;
+  // string vendor info
+  string vendor = 3;
+  // string product info
+  string product = 4;
+  // string revision info
+  string revision = 5;
+  // string subsystem info
+  string subsystem = 6;
+  // string class info
+  string class = 7;
+  // string subclass info
+  string subclass = 8;
 }
 
 // Request for Retrieving Inventory data from a device
 message GetInventoryRequest {
-    // The name of the inventory to retrieve - blank for the full inventory
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.inventory.v1/Inventory"
-    ];
+  // The name of the inventory to retrieve - blank for the full inventory
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.inventory.v1/Inventory"
+  ];
 }
 
 // Response for device inventory data
 message Inventory {
-    // BIOS Inventory 
-    BIOSInfo bios = 1;
-    // System Inventory
-    SystemInfo system = 2;
-    // Baseboard Inventory
-    BaseboardInfo baseboard = 3;
-    // Chassis Inventory
-    ChassisInfo chassis = 4;
-    // CPU Inventory
-    CPUInfo processor = 5;
-    // Memory Inventory
-    MemoryInfo memory = 6;
-    // PCI Devices Inventory
-    repeated PCIeDeviceInfo pci = 7;
+  // BIOS Inventory
+  BIOSInfo bios = 1;
+  // System Inventory
+  SystemInfo system = 2;
+  // Baseboard Inventory
+  BaseboardInfo baseboard = 3;
+  // Chassis Inventory
+  ChassisInfo chassis = 4;
+  // CPU Inventory
+  CPUInfo processor = 5;
+  // Memory Inventory
+  MemoryInfo memory = 6;
+  // PCI Devices Inventory
+  repeated PCIeDeviceInfo pci = 7;
 }
