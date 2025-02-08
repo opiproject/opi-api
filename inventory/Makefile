@@ -39,3 +39,7 @@ bufgen:
 		-v "${PWD}":/out \
 		-w /out \
 		msandersdell/bufbuild-go-gen:1.1.0 generate --template /base/buf.gen.yaml -o ${APIVER}
+
+bufformat:
+	# format the protobuf using buf industry standard
+	buf format --diff -w
