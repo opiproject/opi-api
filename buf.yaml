@@ -1,0 +1,33 @@
+version: v2
+modules:
+  - path: inventory
+    name: buf.build/opiproject/inventory
+    lint:
+      except:
+        - PACKAGE_DIRECTORY_MATCH
+        - RPC_RESPONSE_STANDARD_NAME
+      disallow_comment_ignores: true
+    breaking:
+      except:
+        - EXTENSION_NO_DELETE
+        - FIELD_SAME_DEFAULT
+  - path: storage
+    name: buf.build/opiproject/storage
+    lint:
+      use:
+        - COMMENTS
+      except:
+        - ENUM_FIRST_VALUE_ZERO
+        - FIELD_NOT_REQUIRED
+        - PACKAGE_DIRECTORY_MATCH
+        - PACKAGE_NO_IMPORT_CYCLE
+        - RPC_REQUEST_RESPONSE_UNIQUE
+        - RPC_RESPONSE_STANDARD_NAME
+      disallow_comment_ignores: true
+    breaking:
+      except:
+        - EXTENSION_NO_DELETE
+        - FIELD_SAME_DEFAULT
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/grpc-ecosystem/grpc-gateway

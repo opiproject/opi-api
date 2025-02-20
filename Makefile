@@ -31,14 +31,14 @@ apilint:
 	rm -rf "${PWD}"/google
 
 buflint:
-	docker run --rm -v "${PWD}":/out -w /out bufbuild/buf lint
+	docker run --rm -v "${PWD}":/out -w /out bufbuild/buf:1.50.0 lint
 
 bufgen:
 	docker run --rm \
-		-v "${PWD}/..":/base \
+		-v "${PWD}":/base \
 		-v "${PWD}":/out \
 		-w /out \
-		msandersdell/bufbuild-go-gen:1.1.0 generate --template /base/buf.gen.yaml -o ${APIVER}
+		ghcr.io/sandersms/bufbuild-go-gen:latest generate --template /base/buf.gen.yaml -o ${APIVER}
 
 bufformat:
 	# format the protobuf using buf industry standard
