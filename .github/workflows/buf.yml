@@ -1,4 +1,4 @@
-name: Buf
+name: Buf CI
 
 on:
   workflow_dispatch:
@@ -8,9 +8,10 @@ on:
     branches: [ main ]
 
 jobs:
-  buf-lint:
+  buf:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: bufbuild/buf-setup-action@v1
-      - uses: bufbuild/buf-lint-action@v1
+      - uses: bufbuild/buf-action@v1
+        with:
+          token: ${{ secrets.BUF_TOKEN}}
