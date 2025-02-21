@@ -5,165 +5,156 @@
 syntax = "proto3";
 package opi_api.storage.v1;
 
-option java_package = "opi_api.storage.v1";
-option java_multiple_files = true;
-option java_outer_classname = "FrontendVirtioBlkProto";
-
-option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
-import "opicommon.proto";
-
+import "google/api/annotations.proto";
 import "google/api/client.proto";
+import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
-import "google/api/annotations.proto";
-import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
+import "opicommon.proto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "FrontendVirtioBlkProto";
+option java_package = "opi_api.storage.v1";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-blk emulation and host presentation as alternative to Nvme.
 service FrontendVirtioBlkService {
-    // Create an Virtio Blk
-    rpc CreateVirtioBlk (CreateVirtioBlkRequest) returns (VirtioBlk) {
-        option (google.api.http) = {
-            post: "/v1/virtioBlks"
-            body: "virtio_blk"
-        };
-        option (google.api.method_signature) = "virtio_blk,virtio_blk_id";
-    }
-    // Delete an Virtio Blk
-    rpc DeleteVirtioBlk (DeleteVirtioBlkRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=virtioBlks/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update an Virtio Blk
-    rpc UpdateVirtioBlk (UpdateVirtioBlkRequest) returns (VirtioBlk) {
-        option (google.api.http) = {
-            patch: "/v1/{virtio_blk.name=virtioBlks/*}"
-            body: "virtio_blk"
-        };
-        option (google.api.method_signature) = "virtio_blk,update_mask";
-    }
-    // List Virtio Blks
-    rpc ListVirtioBlks   (ListVirtioBlksRequest)   returns (ListVirtioBlksResponse)   {
-        option (google.api.http) = {
-            get: "/v1/virtioBlks"
-        };
-    }
-    // Get an Virtio Blk
-    rpc GetVirtioBlk    (GetVirtioBlkRequest)    returns (VirtioBlk)    {
-        option (google.api.http) = {
-            get: "/v1/{name=virtioBlks/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get an Virtio Blk statistics
-    rpc StatsVirtioBlk  (StatsVirtioBlkRequest)  returns (StatsVirtioBlkResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=virtioBlks/*}:stats"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // Create an Virtio Blk
+  rpc CreateVirtioBlk(CreateVirtioBlkRequest) returns (VirtioBlk) {
+    option (google.api.http) = {
+      post: "/v1/virtioBlks"
+      body: "virtio_blk"
+    };
+    option (google.api.method_signature) = "virtio_blk,virtio_blk_id";
+  }
+  // Delete an Virtio Blk
+  rpc DeleteVirtioBlk(DeleteVirtioBlkRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=virtioBlks/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update an Virtio Blk
+  rpc UpdateVirtioBlk(UpdateVirtioBlkRequest) returns (VirtioBlk) {
+    option (google.api.http) = {
+      patch: "/v1/{virtio_blk.name=virtioBlks/*}"
+      body: "virtio_blk"
+    };
+    option (google.api.method_signature) = "virtio_blk,update_mask";
+  }
+  // List Virtio Blks
+  rpc ListVirtioBlks(ListVirtioBlksRequest) returns (ListVirtioBlksResponse) {
+    option (google.api.http) = {get: "/v1/virtioBlks"};
+  }
+  // Get an Virtio Blk
+  rpc GetVirtioBlk(GetVirtioBlkRequest) returns (VirtioBlk) {
+    option (google.api.http) = {get: "/v1/{name=virtioBlks/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get an Virtio Blk statistics
+  rpc StatsVirtioBlk(StatsVirtioBlkRequest) returns (StatsVirtioBlkResponse) {
+    option (google.api.http) = {get: "/v1/{name=virtioBlks/*}:stats"};
+    option (google.api.method_signature) = "name";
+  }
 }
 
 // Represnts emulated Virtio-blk device
 message VirtioBlk {
-    option (google.api.resource) = {
-        type: "opi_api.storage.v1/VirtioBlk"
-        pattern: "virtioBlks/{volume}"
-        singular: "virtioBlk"
-        plural: "virtioBlks"
-    };
+  option (google.api.resource) = {
+    type: "opi_api.storage.v1/VirtioBlk"
+    pattern: "virtioBlks/{volume}"
+    singular: "virtioBlk"
+    plural: "virtioBlks"
+  };
 
-    // name is an opaque object handle that is not user settable.
-    // name will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // name is an opaque object handle that is not user settable.
+  // name will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // The PCI endpoint where this device should appear
-    PciEndpoint pcie_id = 2 [(google.api.field_behavior) = REQUIRED];
+  // The PCI endpoint where this device should appear
+  PciEndpoint pcie_id = 2 [(google.api.field_behavior) = REQUIRED];
 
-    // The back/middle-end volume to back this controller
-    string volume_name_ref = 3 [(google.api.field_behavior) = REQUIRED];
+  // The back/middle-end volume to back this controller
+  string volume_name_ref = 3 [(google.api.field_behavior) = REQUIRED];
 
-    // Max IO queue pairs
-    int64 max_io_qps = 4 [(google.api.field_behavior) = OPTIONAL];
+  // Max IO queue pairs
+  int64 max_io_qps = 4 [(google.api.field_behavior) = OPTIONAL];
 
-    // min QoS limits for the virtio-blk device
-    QosLimit min_limit = 5 [(google.api.field_behavior) = OPTIONAL];
+  // min QoS limits for the virtio-blk device
+  QosLimit min_limit = 5 [(google.api.field_behavior) = OPTIONAL];
 
-    // max QoS limits for the virtio-blk device
-    QosLimit max_limit = 6 [(google.api.field_behavior) = OPTIONAL];
+  // max QoS limits for the virtio-blk device
+  QosLimit max_limit = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to create an Virtio Blk.
 message CreateVirtioBlkRequest {
-    // The Virtio Blk to be created.
-    VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
-    // An optional ID to assign to the Virtio Blk.
-    // If this is not provided the system will auto-generate it.
-    string virtio_blk_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The Virtio Blk to be created.
+  VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
+  // An optional ID to assign to the Virtio Blk.
+  // If this is not provided the system will auto-generate it.
+  string virtio_blk_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to delete an Virtio Blk.
 message DeleteVirtioBlkRequest {
-    // Object's unique identifier to delete
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Object's unique identifier to delete
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to update an Virtio Blk.
 message UpdateVirtioBlkRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  VirtioBlk virtio_blk = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to list all Virtio Blks.
 message ListVirtioBlksRequest {
-    // page size of list request
-    int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page size of list request
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a response to list all Virtio Blks.
 message ListVirtioBlksResponse {
-    // List of Virtio-Blk devices
-    repeated VirtioBlk virtio_blks = 1;
-    // Next page token of list response
-    string next_page_token = 2;
+  // List of Virtio-Blk devices
+  repeated VirtioBlk virtio_blks = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // Represents a request to get an Virtio Blk.
 message GetVirtioBlkRequest {
-    // Object's unique identifier to retrieve
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
-    ];
+  // Object's unique identifier to retrieve
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
+  ];
 }
 
 // Represents a request to get an Virtio Blk statistics.
 message StatsVirtioBlkRequest {
-    // Object's unique identifier to retrieve statistics
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
-    ];
+  // Object's unique identifier to retrieve statistics
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
+  ];
 }
 
 // Represents a response to get an Virtio Blk statistics.
 message StatsVirtioBlkResponse {
-    // Device statistics
-    VolumeStats stats = 1;
+  // Device statistics
+  VolumeStats stats = 1;
 }

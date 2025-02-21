@@ -6,14 +6,13 @@
 syntax = "proto3";
 package opi_api.storage.v1;
 
-option java_package = "opi_api.storage.v1";
-option java_multiple_files = true;
-option java_outer_classname = "OpiCommonProto";
-
-option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
-
 import "google/api/field_behavior.proto";
 import "google/protobuf/wrappers.proto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "OpiCommonProto";
+option java_package = "opi_api.storage.v1";
 
 // Many front-ends expose PCI devices to the host. This represents that endpoint.
 // This device will ultimately be surfaced by the operating system at some
@@ -24,122 +23,122 @@ import "google/protobuf/wrappers.proto";
 // we'll use the term "port" which also commonly used with PCI switches and avoids
 // confusion with storage "devices".
 message PciEndpoint {
-    // The "port" or "device". In other words, the connector/cable that's
-    // plugged into a particular host. This number may end up matching
-    // the host-assigned "device" value in the bus:device:function identifier,
-    // but it does not strictly have to and that should not be relied upon.
-    google.protobuf.Int32Value port_id = 1 [(google.api.field_behavior) = REQUIRED];
+  // The "port" or "device". In other words, the connector/cable that's
+  // plugged into a particular host. This number may end up matching
+  // the host-assigned "device" value in the bus:device:function identifier,
+  // but it does not strictly have to and that should not be relied upon.
+  google.protobuf.Int32Value port_id = 1 [(google.api.field_behavior) = REQUIRED];
 
-    // Physical function index. This may end up matching the host-assigned
-    // "function" value in the bus:device:function identifier, but it does not
-    // strictly have to and that should not be relied upon.
-    google.protobuf.Int32Value  physical_function = 2 [(google.api.field_behavior) = REQUIRED];
+  // Physical function index. This may end up matching the host-assigned
+  // "function" value in the bus:device:function identifier, but it does not
+  // strictly have to and that should not be relied upon.
+  google.protobuf.Int32Value physical_function = 2 [(google.api.field_behavior) = REQUIRED];
 
-    // Virtual function index. 1-based index.
-    // The value 0 is reserved to represent the PCI physical "device".
-    // This may end up matching the host-assigned "function" value in the
-    // bus:device:function identifier, but it does not strictly have to and
-    // that should not be relied upon.
-    google.protobuf.Int32Value  virtual_function = 3 [(google.api.field_behavior) = REQUIRED];
+  // Virtual function index. 1-based index.
+  // The value 0 is reserved to represent the PCI physical "device".
+  // This may end up matching the host-assigned "function" value in the
+  // bus:device:function identifier, but it does not strictly have to and
+  // that should not be relied upon.
+  google.protobuf.Int32Value virtual_function = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Represents Fabrics Endpoint
 message FabricsEndpoint {
-    // ip address for TCP and RDMA
-    string traddr = 1 [(google.api.field_behavior) = REQUIRED];
+  // ip address for TCP and RDMA
+  string traddr = 1 [(google.api.field_behavior) = REQUIRED];
 
-    // port for TCP and RDMA
-    string trsvcid = 2 [(google.api.field_behavior) = REQUIRED];
+  // port for TCP and RDMA
+  string trsvcid = 2 [(google.api.field_behavior) = REQUIRED];
 
-    // address family
-    NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
+  // address family
+  NvmeAddressFamily adrfam = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Represents Volume statistics
 message VolumeStats {
-    // Count of read bytes
-    int32    read_bytes_count       = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Count of read operations
-    int32    read_ops_count         = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Count of written bytes
-    int32    write_bytes_count      = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Count of write opeations
-    int32    write_ops_count        = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Count of unmapped bytes
-    int32    unmap_bytes_count      = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Count of unmap operations
-    int32    unmap_ops_count        = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Read latency ticks
-    int32    read_latency_ticks     = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Write latency ticks
-    int32    write_latency_ticks    = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Unmap latency ticks
-    int32    unmap_latency_ticks    = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of read bytes
+  int32 read_bytes_count = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of read operations
+  int32 read_ops_count = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of written bytes
+  int32 write_bytes_count = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of write opeations
+  int32 write_ops_count = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of unmapped bytes
+  int32 unmap_bytes_count = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of unmap operations
+  int32 unmap_ops_count = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Read latency ticks
+  int32 read_latency_ticks = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Write latency ticks
+  int32 write_latency_ticks = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Unmap latency ticks
+  int32 unmap_latency_ticks = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // QoS limits applied to volumes/devices
 message QosLimit {
-    // Read kIOPS
-    int64 rd_iops_kiops = 1 [(google.api.field_behavior) = OPTIONAL];
-    // Write kIOPS
-    int64 wr_iops_kiops = 2 [(google.api.field_behavior) = OPTIONAL];
-    // Read/write kIOPS
-    int64 rw_iops_kiops = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Read kIOPS
+  int64 rd_iops_kiops = 1 [(google.api.field_behavior) = OPTIONAL];
+  // Write kIOPS
+  int64 wr_iops_kiops = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Read/write kIOPS
+  int64 rw_iops_kiops = 3 [(google.api.field_behavior) = OPTIONAL];
 
-    // Read bandwidth (MB/s)
-    int64 rd_bandwidth_mbs = 4 [(google.api.field_behavior) = OPTIONAL];
-    // Write bandwidth (MB/s)
-    int64 wr_bandwidth_mbs = 5 [(google.api.field_behavior) = OPTIONAL];
-    // Read/write bandwidth (MB/s)
-    int64 rw_bandwidth_mbs = 6 [(google.api.field_behavior) = OPTIONAL];
+  // Read bandwidth (MB/s)
+  int64 rd_bandwidth_mbs = 4 [(google.api.field_behavior) = OPTIONAL];
+  // Write bandwidth (MB/s)
+  int64 wr_bandwidth_mbs = 5 [(google.api.field_behavior) = OPTIONAL];
+  // Read/write bandwidth (MB/s)
+  int64 rw_bandwidth_mbs = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // AES encryption types
 enum EncryptionType {
-    // Encryption type is not specified
-    ENCRYPTION_TYPE_UNSPECIFIED = 0;
-    // AES CBC 128 encryption type
-    ENCRYPTION_TYPE_AES_CBC_128 = 1;
-    // AES CBC 192 encryption type
-    ENCRYPTION_TYPE_AES_CBC_192 = 2;
-    // AES CBC 256 encryption type
-    ENCRYPTION_TYPE_AES_CBC_256 = 3;
-    // AES XTS 128 encryption type
-    ENCRYPTION_TYPE_AES_XTS_128 = 4;
-    // AES XTS 192 encryption type
-    ENCRYPTION_TYPE_AES_XTS_192 = 5;
-    // AES XTS 256 encryption type
-    ENCRYPTION_TYPE_AES_XTS_256 = 6;
+  // Encryption type is not specified
+  ENCRYPTION_TYPE_UNSPECIFIED = 0;
+  // AES CBC 128 encryption type
+  ENCRYPTION_TYPE_AES_CBC_128 = 1;
+  // AES CBC 192 encryption type
+  ENCRYPTION_TYPE_AES_CBC_192 = 2;
+  // AES CBC 256 encryption type
+  ENCRYPTION_TYPE_AES_CBC_256 = 3;
+  // AES XTS 128 encryption type
+  ENCRYPTION_TYPE_AES_XTS_128 = 4;
+  // AES XTS 192 encryption type
+  ENCRYPTION_TYPE_AES_XTS_192 = 5;
+  // AES XTS 256 encryption type
+  ENCRYPTION_TYPE_AES_XTS_256 = 6;
 }
 
 // Transport type value options
 enum NvmeTransportType {
-    // Transport type is not specified
-    NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;
-    // Fibre channel transport type
-    NVME_TRANSPORT_TYPE_FC = 1;
-    // Pcie transport type
-    NVME_TRANSPORT_TYPE_PCIE = 2;
-    // RDMA transport type
-    NVME_TRANSPORT_TYPE_RDMA = 3;
-    // TCP transport type
-    NVME_TRANSPORT_TYPE_TCP = 4;
-    // Custom transport type
-    NVME_TRANSPORT_TYPE_CUSTOM = 5;
+  // Transport type is not specified
+  NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;
+  // Fibre channel transport type
+  NVME_TRANSPORT_TYPE_FC = 1;
+  // Pcie transport type
+  NVME_TRANSPORT_TYPE_PCIE = 2;
+  // RDMA transport type
+  NVME_TRANSPORT_TYPE_RDMA = 3;
+  // TCP transport type
+  NVME_TRANSPORT_TYPE_TCP = 4;
+  // Custom transport type
+  NVME_TRANSPORT_TYPE_CUSTOM = 5;
 }
 
 // Address family value options
 enum NvmeAddressFamily {
-    // Address family is not specified
-    NVME_ADDRESS_FAMILY_UNSPECIFIED = 0;
-    // IPv4 address family
-    NVME_ADDRESS_FAMILY_IPV4 = 1;
-    // IPv6 address family
-    NVME_ADDRESS_FAMILY_IPV6 = 2;
-    // InfiniBand address family
-    NVME_ADDRESS_FAMILY_IB = 3;
-    // Fibre channel address family
-    NVME_ADDRESS_FAMILY_FC = 4;
-    // Intra host address family
-    NVME_ADDRESS_FAMILY_INTRA_HOST = 5;
+  // Address family is not specified
+  NVME_ADDRESS_FAMILY_UNSPECIFIED = 0;
+  // IPv4 address family
+  NVME_ADDRESS_FAMILY_IPV4 = 1;
+  // IPv6 address family
+  NVME_ADDRESS_FAMILY_IPV6 = 2;
+  // InfiniBand address family
+  NVME_ADDRESS_FAMILY_IB = 3;
+  // Fibre channel address family
+  NVME_ADDRESS_FAMILY_FC = 4;
+  // Intra host address family
+  NVME_ADDRESS_FAMILY_INTRA_HOST = 5;
 }

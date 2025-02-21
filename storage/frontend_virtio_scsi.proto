@@ -5,449 +5,424 @@
 syntax = "proto3";
 package opi_api.storage.v1;
 
-option java_package = "opi_api.storage.v1";
-option java_multiple_files = true;
-option java_outer_classname = "FrontendVirtioScsiProto";
-
-option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
-import "opicommon.proto";
-
+import "google/api/annotations.proto";
 import "google/api/client.proto";
+import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
-import "google/api/annotations.proto";
-import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
+import "opicommon.proto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "FrontendVirtioScsiProto";
+option java_package = "opi_api.storage.v1";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host presentation as alternative to Virtio-blk.
 service FrontendVirtioScsiService {
-    // Create an Virtio Scsi Target
-    rpc CreateVirtioScsiTarget (CreateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
-        option (google.api.http) = {
-            post: "/v1/virtioScsiTargets"
-            body: "virtio_scsi_target"
-        };
-        option (google.api.method_signature) = "virtio_scsi_target,virtio_scsi_target_id";
-    }
-    // Delete an Virtio Scsi Target
-    rpc DeleteVirtioScsiTarget (DeleteVirtioScsiTargetRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=virtioScsiTargets/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update an Virtio Scsi Target
-    rpc UpdateVirtioScsiTarget (UpdateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
-        option (google.api.http) = {
-            patch: "/v1/{virtio_scsi_target.name=virtioScsiTargets/*}"
-            body: "virtio_scsi_target"
-        };
-        option (google.api.method_signature) = "virtio_scsi_target,update_mask";
-    }
-    // List Virtio Scsi Targets
-    rpc ListVirtioScsiTargets   (ListVirtioScsiTargetsRequest)   returns (ListVirtioScsiTargetsResponse)   {
-        option (google.api.http) = {
-            get: "/v1/{parent=virtioScsiTargets}"
-        };
-        option (google.api.method_signature) = "parent";
-    }
-    // Get an Virtio Scsi Target
-    rpc GetVirtioScsiTarget    (GetVirtioScsiTargetRequest)    returns (VirtioScsiTarget)    {
-        option (google.api.http) = {
-            get: "/v1/{name=virtioScsiTargets/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get an Virtio Scsi Target statistics
-    rpc StatsVirtioScsiTarget  (StatsVirtioScsiTargetRequest)  returns (StatsVirtioScsiTargetResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=virtioScsiTargets/*}:stats"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Create an Virtio Scsi Controller
-    rpc CreateVirtioScsiController (CreateVirtioScsiControllerRequest) returns (VirtioScsiController) {
-        option (google.api.http) = {
-            post: "/v1/virtioScsiControllers"
-            body: "virtio_scsi_controller"
-        };
-        option (google.api.method_signature) = "virtio_scsi_controller,virtio_scsi_controller_id";
-    }
-    // Delete an Virtio Scsi Controller
-    rpc DeleteVirtioScsiController (DeleteVirtioScsiControllerRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=virtioScsiControllers/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update an Virtio Scsi Controller
-    rpc UpdateVirtioScsiController (UpdateVirtioScsiControllerRequest) returns (VirtioScsiController) {
-        option (google.api.http) = {
-            patch: "/v1/{virtio_scsi_controller.name=virtioScsiControllers/*}"
-            body: "virtio_scsi_controller"
-        };
-        option (google.api.method_signature) = "virtio_scsi_controller,update_mask";
-    }
-    // List Virtio Scsi Controllers
-    rpc ListVirtioScsiControllers   (ListVirtioScsiControllersRequest)   returns (ListVirtioScsiControllersResponse)   {
-        option (google.api.http) = {
-            get: "/v1/{parent=virtioScsiControllers}"
-        };
-        option (google.api.method_signature) = "parent";
-    }
-    // Get an Virtio Scsi Controller
-    rpc GetVirtioScsiController    (GetVirtioScsiControllerRequest)    returns (VirtioScsiController)    {
-        option (google.api.http) = {
-            get: "/v1/{name=virtioScsiControllers/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get an Virtio Scsi Controller statistics
-    rpc StatsVirtioScsiController  (StatsVirtioScsiControllerRequest)  returns (StatsVirtioScsiControllerResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=virtioScsiControllers/*}:stats"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Create an Virtio Scsi Lun
-    rpc CreateVirtioScsiLun (CreateVirtioScsiLunRequest) returns (VirtioScsiLun) {
-        option (google.api.http) = {
-            post: "/v1/virtioScsiLuns"
-            body: "virtio_scsi_lun"
-        };
-        option (google.api.method_signature) = "virtio_scsi_lun,virtio_scsi_lun_id";
-    }
-    // Delete an Virtio Scsi Lun
-    rpc DeleteVirtioScsiLun (DeleteVirtioScsiLunRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=virtioScsiLuns/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update an Virtio Scsi Lun
-    rpc UpdateVirtioScsiLun (UpdateVirtioScsiLunRequest) returns (VirtioScsiLun) {
-        option (google.api.http) = {
-            patch: "/v1/{virtio_scsi_lun.name=virtioScsiLuns/*}"
-            body: "virtio_scsi_lun"
-        };
-        option (google.api.method_signature) = "virtio_scsi_lun,update_mask";
-    }
-    // List Virtio Scsi Luns
-    rpc ListVirtioScsiLuns   (ListVirtioScsiLunsRequest)   returns (ListVirtioScsiLunsResponse)   {
-        option (google.api.http) = {
-            get: "/v1/{parent=virtioScsiLuns}"
-        };
-        option (google.api.method_signature) = "parent";
-    }
-    // Get an Virtio Scsi Lun
-    rpc GetVirtioScsiLun    (GetVirtioScsiLunRequest)    returns (VirtioScsiLun)    {
-        option (google.api.http) = {
-            get: "/v1/{name=virtioScsiLuns/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get an Virtio Scsi Lun statistics
-    rpc StatsVirtioScsiLun  (StatsVirtioScsiLunRequest)  returns (StatsVirtioScsiLunResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=virtioScsiLuns/*}:stats"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // Create an Virtio Scsi Target
+  rpc CreateVirtioScsiTarget(CreateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
+    option (google.api.http) = {
+      post: "/v1/virtioScsiTargets"
+      body: "virtio_scsi_target"
+    };
+    option (google.api.method_signature) = "virtio_scsi_target,virtio_scsi_target_id";
+  }
+  // Delete an Virtio Scsi Target
+  rpc DeleteVirtioScsiTarget(DeleteVirtioScsiTargetRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=virtioScsiTargets/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update an Virtio Scsi Target
+  rpc UpdateVirtioScsiTarget(UpdateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
+    option (google.api.http) = {
+      patch: "/v1/{virtio_scsi_target.name=virtioScsiTargets/*}"
+      body: "virtio_scsi_target"
+    };
+    option (google.api.method_signature) = "virtio_scsi_target,update_mask";
+  }
+  // List Virtio Scsi Targets
+  rpc ListVirtioScsiTargets(ListVirtioScsiTargetsRequest) returns (ListVirtioScsiTargetsResponse) {
+    option (google.api.http) = {get: "/v1/{parent=virtioScsiTargets}"};
+    option (google.api.method_signature) = "parent";
+  }
+  // Get an Virtio Scsi Target
+  rpc GetVirtioScsiTarget(GetVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
+    option (google.api.http) = {get: "/v1/{name=virtioScsiTargets/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get an Virtio Scsi Target statistics
+  rpc StatsVirtioScsiTarget(StatsVirtioScsiTargetRequest) returns (StatsVirtioScsiTargetResponse) {
+    option (google.api.http) = {get: "/v1/{name=virtioScsiTargets/*}:stats"};
+    option (google.api.method_signature) = "name";
+  }
+  // Create an Virtio Scsi Controller
+  rpc CreateVirtioScsiController(CreateVirtioScsiControllerRequest) returns (VirtioScsiController) {
+    option (google.api.http) = {
+      post: "/v1/virtioScsiControllers"
+      body: "virtio_scsi_controller"
+    };
+    option (google.api.method_signature) = "virtio_scsi_controller,virtio_scsi_controller_id";
+  }
+  // Delete an Virtio Scsi Controller
+  rpc DeleteVirtioScsiController(DeleteVirtioScsiControllerRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=virtioScsiControllers/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update an Virtio Scsi Controller
+  rpc UpdateVirtioScsiController(UpdateVirtioScsiControllerRequest) returns (VirtioScsiController) {
+    option (google.api.http) = {
+      patch: "/v1/{virtio_scsi_controller.name=virtioScsiControllers/*}"
+      body: "virtio_scsi_controller"
+    };
+    option (google.api.method_signature) = "virtio_scsi_controller,update_mask";
+  }
+  // List Virtio Scsi Controllers
+  rpc ListVirtioScsiControllers(ListVirtioScsiControllersRequest) returns (ListVirtioScsiControllersResponse) {
+    option (google.api.http) = {get: "/v1/{parent=virtioScsiControllers}"};
+    option (google.api.method_signature) = "parent";
+  }
+  // Get an Virtio Scsi Controller
+  rpc GetVirtioScsiController(GetVirtioScsiControllerRequest) returns (VirtioScsiController) {
+    option (google.api.http) = {get: "/v1/{name=virtioScsiControllers/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get an Virtio Scsi Controller statistics
+  rpc StatsVirtioScsiController(StatsVirtioScsiControllerRequest) returns (StatsVirtioScsiControllerResponse) {
+    option (google.api.http) = {get: "/v1/{name=virtioScsiControllers/*}:stats"};
+    option (google.api.method_signature) = "name";
+  }
+  // Create an Virtio Scsi Lun
+  rpc CreateVirtioScsiLun(CreateVirtioScsiLunRequest) returns (VirtioScsiLun) {
+    option (google.api.http) = {
+      post: "/v1/virtioScsiLuns"
+      body: "virtio_scsi_lun"
+    };
+    option (google.api.method_signature) = "virtio_scsi_lun,virtio_scsi_lun_id";
+  }
+  // Delete an Virtio Scsi Lun
+  rpc DeleteVirtioScsiLun(DeleteVirtioScsiLunRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=virtioScsiLuns/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update an Virtio Scsi Lun
+  rpc UpdateVirtioScsiLun(UpdateVirtioScsiLunRequest) returns (VirtioScsiLun) {
+    option (google.api.http) = {
+      patch: "/v1/{virtio_scsi_lun.name=virtioScsiLuns/*}"
+      body: "virtio_scsi_lun"
+    };
+    option (google.api.method_signature) = "virtio_scsi_lun,update_mask";
+  }
+  // List Virtio Scsi Luns
+  rpc ListVirtioScsiLuns(ListVirtioScsiLunsRequest) returns (ListVirtioScsiLunsResponse) {
+    option (google.api.http) = {get: "/v1/{parent=virtioScsiLuns}"};
+    option (google.api.method_signature) = "parent";
+  }
+  // Get an Virtio Scsi Lun
+  rpc GetVirtioScsiLun(GetVirtioScsiLunRequest) returns (VirtioScsiLun) {
+    option (google.api.http) = {get: "/v1/{name=virtioScsiLuns/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get an Virtio Scsi Lun statistics
+  rpc StatsVirtioScsiLun(StatsVirtioScsiLunRequest) returns (StatsVirtioScsiLunResponse) {
+    option (google.api.http) = {get: "/v1/{name=virtioScsiLuns/*}:stats"};
+    option (google.api.method_signature) = "name";
+  }
 }
 
 // Represents Scsi Target
 message VirtioScsiTarget {
-    option (google.api.resource) = {
-        type: "opi_api.storage.v1/VirtioScsiTarget"
-        pattern: "virtioScsiTargets/{volume}"
-        singular: "virtioScsiTarget"
-        plural: "virtioScsiTargets"
-    };
+  option (google.api.resource) = {
+    type: "opi_api.storage.v1/VirtioScsiTarget"
+    pattern: "virtioScsiTargets/{volume}"
+    singular: "virtioScsiTarget"
+    plural: "virtioScsiTargets"
+  };
 
-    // name is an opaque object handle that is not user settable.
-    // name will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // name is an opaque object handle that is not user settable.
+  // name will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // maximum LUNs within a target
-    int32 max_luns = 2 [(google.api.field_behavior) = OPTIONAL];
+  // maximum LUNs within a target
+  int32 max_luns = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents Scsi Controller
 message VirtioScsiController {
-    option (google.api.resource) = {
-        type: "opi_api.storage.v1/VirtioScsiController"
-        pattern: "virtioScsiControllers/{volume}"
-        singular: "virtioScsiController"
-        plural: "virtioScsiControllers"
-    };
+  option (google.api.resource) = {
+    type: "opi_api.storage.v1/VirtioScsiController"
+    pattern: "virtioScsiControllers/{volume}"
+    singular: "virtioScsiController"
+    plural: "virtioScsiControllers"
+  };
 
-    // name is an opaque object handle that is not user settable.
-    // name will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // name is an opaque object handle that is not user settable.
+  // name will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // xPU's PCI ID for the controller
-    PciEndpoint pcie_id = 2 [(google.api.field_behavior) = REQUIRED];
+  // xPU's PCI ID for the controller
+  PciEndpoint pcie_id = 2 [(google.api.field_behavior) = REQUIRED];
 
-    // min QoS limits for the controller
-    QosLimit min_limit = 3 [(google.api.field_behavior) = OPTIONAL];
+  // min QoS limits for the controller
+  QosLimit min_limit = 3 [(google.api.field_behavior) = OPTIONAL];
 
-    // max QoS limits for the controller
-    QosLimit max_limit = 4 [(google.api.field_behavior) = OPTIONAL];
+  // max QoS limits for the controller
+  QosLimit max_limit = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents Scsi Lun
 message VirtioScsiLun {
-    option (google.api.resource) = {
-        type: "opi_api.storage.v1/VirtioScsiLun"
-        pattern: "virtioScsiLuns/{volume}"
-        singular: "virtioScsiLun"
-        plural: "virtioScsiLuns"
-    };
+  option (google.api.resource) = {
+    type: "opi_api.storage.v1/VirtioScsiLun"
+    pattern: "virtioScsiLuns/{volume}"
+    singular: "virtioScsiLun"
+    plural: "virtioScsiLuns"
+  };
 
-    // name is an opaque object handle that is not user settable.
-    // name will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // name is an opaque object handle that is not user settable.
+  // name will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // The target that this LUN is in
-    string target_name_ref = 2 [(google.api.field_behavior) = REQUIRED];
+  // The target that this LUN is in
+  string target_name_ref = 2 [(google.api.field_behavior) = REQUIRED];
 
-    // The middle/back-end volume for this LLUN
-    string volume_name_ref = 3 [(google.api.field_behavior) = REQUIRED];
+  // The middle/back-end volume for this LLUN
+  string volume_name_ref = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Represents a request to create an Virtio Scsi Target.
 message CreateVirtioScsiTargetRequest {
-    // The Virtio Scsi Target to be created.
-    VirtioScsiTarget virtio_scsi_target = 1 [(google.api.field_behavior) = REQUIRED];
-    // An optional ID to assign to the Virtio Scsi Target.
-    // If this is not provided the system will auto-generate it.
-    string virtio_scsi_target_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The Virtio Scsi Target to be created.
+  VirtioScsiTarget virtio_scsi_target = 1 [(google.api.field_behavior) = REQUIRED];
+  // An optional ID to assign to the Virtio Scsi Target.
+  // If this is not provided the system will auto-generate it.
+  string virtio_scsi_target_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to delete an Virtio Scsi Target.
 message DeleteVirtioScsiTargetRequest {
-    // Object's unique identifier to delete
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Object's unique identifier to delete
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to update an Virtio Scsi Target.
 message UpdateVirtioScsiTargetRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    VirtioScsiTarget virtio_scsi_target = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  VirtioScsiTarget virtio_scsi_target = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to list all Virtio Scsi Targets.
 message ListVirtioScsiTargetsRequest {
-    // Parent's object unique identifier
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiTarget"
-    ];
-    // page size of list request
-    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Parent's object unique identifier
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiTarget"
+  ];
+  // page size of list request
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a response to list all Virtio Scsi Targets.
 message ListVirtioScsiTargetsResponse {
-    // List of Scsi Targets
-    repeated VirtioScsiTarget virtio_scsi_targets = 1;
-    // Next page token of list response
-    string next_page_token = 2;
+  // List of Scsi Targets
+  repeated VirtioScsiTarget virtio_scsi_targets = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // Represents a request to get an Virtio Scsi Target.
 message GetVirtioScsiTargetRequest {
-    // Object's unique identifier to retrieve
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
-    ];
+  // Object's unique identifier to retrieve
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
+  ];
 }
 
 // Represents a request to get an Virtio Scsi Target statistics.
 message StatsVirtioScsiTargetRequest {
-    // Object's unique identifier to retrieve statistics
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
-    ];
+  // Object's unique identifier to retrieve statistics
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
+  ];
 }
 
 // Represents a response to get an Virtio Scsi Target statistics.
 message StatsVirtioScsiTargetResponse {
-    // Scsi Target statistics
-    VolumeStats stats = 1;
+  // Scsi Target statistics
+  VolumeStats stats = 1;
 }
 
 // Represents a request to create an Virtio Scsi Controller.
 message CreateVirtioScsiControllerRequest {
-    // The Virtio Scsi Controller to be created.
-    VirtioScsiController virtio_scsi_controller = 1 [(google.api.field_behavior) = REQUIRED];
-    // An optional ID to assign to the Virtio Scsi Controller.
-    // If this is not provided the system will auto-generate it.
-    string virtio_scsi_controller_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The Virtio Scsi Controller to be created.
+  VirtioScsiController virtio_scsi_controller = 1 [(google.api.field_behavior) = REQUIRED];
+  // An optional ID to assign to the Virtio Scsi Controller.
+  // If this is not provided the system will auto-generate it.
+  string virtio_scsi_controller_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to delete an Virtio Scsi Controller.
 message DeleteVirtioScsiControllerRequest {
-    // Object's unique identifier to delete
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Object's unique identifier to delete
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to update an Virtio Scsi Controller.
 message UpdateVirtioScsiControllerRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    VirtioScsiController virtio_scsi_controller = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  VirtioScsiController virtio_scsi_controller = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to list all Virtio Scsi Controllers.
 message ListVirtioScsiControllersRequest {
-    // Parent's object unique identifier
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiController"
-    ];
-    // page size of list request
-    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Parent's object unique identifier
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiController"
+  ];
+  // page size of list request
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a response to list all Virtio Scsi Controllers.
 message ListVirtioScsiControllersResponse {
-    // List of Scsi Controllers
-    repeated VirtioScsiController virtio_scsi_controllers = 1;
-    // Next page token of list response
-    string next_page_token = 2;
+  // List of Scsi Controllers
+  repeated VirtioScsiController virtio_scsi_controllers = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // Represents a request to get an Virtio Scsi Controller.
 message GetVirtioScsiControllerRequest {
-    // Object's unique identifier to retrieve
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
-    ];
+  // Object's unique identifier to retrieve
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
+  ];
 }
 
 // Represents a request to get an Virtio Scsi Controller statistics.
 message StatsVirtioScsiControllerRequest {
-    // Object's unique identifier to retrieve statistics
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
-    ];
+  // Object's unique identifier to retrieve statistics
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
+  ];
 }
 
 // Represents a response to get an Virtio Scsi Controller statistics.
 message StatsVirtioScsiControllerResponse {
-    // Scsi Controller statistics
-    VolumeStats stats = 1;
+  // Scsi Controller statistics
+  VolumeStats stats = 1;
 }
 
 // Represents a request to create an Virtio Scsi Lun.
 message CreateVirtioScsiLunRequest {
-    // The Virtio Scsi Lun to be created.
-    VirtioScsiLun virtio_scsi_lun = 1 [(google.api.field_behavior) = REQUIRED];
-    // An optional ID to assign to the Virtio Scsi Lun.
-    // If this is not provided the system will auto-generate it.
-    string virtio_scsi_lun_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The Virtio Scsi Lun to be created.
+  VirtioScsiLun virtio_scsi_lun = 1 [(google.api.field_behavior) = REQUIRED];
+  // An optional ID to assign to the Virtio Scsi Lun.
+  // If this is not provided the system will auto-generate it.
+  string virtio_scsi_lun_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to delete an Virtio Scsi Lun.
 message DeleteVirtioScsiLunRequest {
-    // Object's unique identifier to delete
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Object's unique identifier to delete
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to update an Virtio Scsi Lun.
 message UpdateVirtioScsiLunRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    VirtioScsiLun virtio_scsi_lun = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  VirtioScsiLun virtio_scsi_lun = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to list all Virtio Scsi Luns.
 message ListVirtioScsiLunsRequest {
-    // Parent's object unique identifier
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiLun"
-    ];
-    // page size of list request
-    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Parent's object unique identifier
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).child_type = "opi_api.storage.v1/VirtioScsiLun"
+  ];
+  // page size of list request
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a response to list all Virtio Scsi Luns.
 message ListVirtioScsiLunsResponse {
-    // List of Scsi Luns
-    repeated VirtioScsiLun virtio_scsi_luns = 1;
-    // Next page token of list response
-    string next_page_token = 2;
+  // List of Scsi Luns
+  repeated VirtioScsiLun virtio_scsi_luns = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // Represents a request to get an Virtio Scsi Lun.
 message GetVirtioScsiLunRequest {
-    // Object's unique identifier to retrieve
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
-    ];
+  // Object's unique identifier to retrieve
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
+  ];
 }
 
 // Represents a request to get an Virtio Scsi Lun statistics.
 message StatsVirtioScsiLunRequest {
-    // Object's unique identifier to retrieve statistics
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
-    ];
+  // Object's unique identifier to retrieve statistics
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
+  ];
 
-    // Controller's uniqie identifier
-    string controller_name_ref = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Controller's uniqie identifier
+  string controller_name_ref = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a response to get an Virtio Scsi Lun statistics.
 message StatsVirtioScsiLunResponse {
-    // Scsi Lun statistics
-    VolumeStats stats = 1;
+  // Scsi Lun statistics
+  VolumeStats stats = 1;
 }
