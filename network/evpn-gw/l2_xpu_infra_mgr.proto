@@ -20,8 +20,8 @@ option java_package = "opi_api.network.evpn_gw.v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "L2XpuInfraMgrProto";
 
-import "networktypes.proto";
-import "component.proto";
+import "network/opinetcommon/networktypes.proto";
+import "network/evpn-gw/component.proto";
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";

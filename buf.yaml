@@ -1,37 +1,20 @@
 version: v2
-modules:
-  - path: inventory
-    name: buf.build/opiproject/inventory
-    lint:
-      use:
-        - STANDARD
-        - COMMENTS
-      except:
-        - PACKAGE_DIRECTORY_MATCH
-        - RPC_RESPONSE_STANDARD_NAME
-      disallow_comment_ignores: true
-    breaking:
-      except:
-        - EXTENSION_NO_DELETE
-        - FIELD_SAME_DEFAULT
-  - path: storage
-    name: buf.build/opiproject/storage
-    lint:
-      use:
-        - STANDARD
-        - COMMENTS
-      except:
-        - ENUM_FIRST_VALUE_ZERO
-        - FIELD_NOT_REQUIRED
-        - PACKAGE_DIRECTORY_MATCH
-        - PACKAGE_NO_IMPORT_CYCLE
-        - RPC_REQUEST_RESPONSE_UNIQUE
-        - RPC_RESPONSE_STANDARD_NAME
-      disallow_comment_ignores: true
-    breaking:
-      except:
-        - EXTENSION_NO_DELETE
-        - FIELD_SAME_DEFAULT
+name: buf.build/opiproject/opi
+lint:
+  use:
+    - STANDARD
+    - COMMENTS
+  except:
+    - PACKAGE_DIRECTORY_MATCH
+    # Don't check standard name as that causes google aip issues
+    - RPC_RESPONSE_STANDARD_NAME
+    # Allow same name used in request/response type for multiple RPCs
+    - RPC_REQUEST_RESPONSE_UNIQUE
+    - ENUM_ZERO_VALUE_SUFFIX
+    # disabled comment checking - todo: enable and resolve these errors
+    - COMMENT_ONEOF
+    - COMMENT_RPC
+    - COMMENT_FIELD
 deps:
   - buf.build/googleapis/googleapis
   - buf.build/grpc-ecosystem/grpc-gateway

@@ -12,7 +12,7 @@ option java_outer_classname = "UnderlayRouteProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "networktypes.proto";
+import "network/opinetcommon/networktypes.proto";
 import "google/api/resource.proto";
 
 // Underlay Route can be static or dynamic underlay route

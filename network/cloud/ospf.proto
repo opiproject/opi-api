@@ -7,7 +7,7 @@ syntax = "proto3";
 
 package opi_api.network.cloud.v1alpha1;
 
-import "networktypes.proto";
+import "network/opinetcommon/networktypes.proto";
 import "google/api/resource.proto";
 import "google/api/field_behavior.proto";
 

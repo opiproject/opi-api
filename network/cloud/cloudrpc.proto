@@ -17,20 +17,20 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 import "google/api/resource.proto";
 
-import "device.proto";
-import "port.proto";
-import "interface.proto";
-import "route.proto";
-import "vnic.proto";
-import "underlayroute.proto";
-import "bgp.proto";
-import "nexthop.proto";
-import "mapping.proto";
-import "subnet.proto";
-import "tunnel.proto";
-import "vpc.proto";
-import "networkpolicy.proto";
-import "ospf.proto";
+import "network/cloud/device.proto";
+import "network/cloud/port.proto";
+import "network/cloud/interface.proto";
+import "network/cloud/route.proto";
+import "network/cloud/vnic.proto";
+import "network/cloud/underlayroute.proto";
+import "network/cloud/bgp.proto";
+import "network/cloud/nexthop.proto";
+import "network/cloud/mapping.proto";
+import "network/cloud/subnet.proto";
+import "network/cloud/tunnel.proto";
+import "network/cloud/vpc.proto";
+import "network/cloud/networkpolicy.proto";
+import "network/cloud/ospf.proto";
 
 
 // Cloud Infra Service configure/operate objects to manage cloud infrastructure

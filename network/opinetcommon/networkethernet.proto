@@ -15,7 +15,7 @@ option java_outer_classname = "NetworkEthernetProto";
 
 option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
 
-import "networkvlan.proto";
+import "network/opinetcommon/networkvlan.proto";
 
 import "google/api/field_behavior.proto";
 

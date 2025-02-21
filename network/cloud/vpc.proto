@@ -10,7 +10,7 @@ option java_outer_classname = "VpcProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "networktypes.proto";
+import "network/opinetcommon/networktypes.proto";
 import "google/api/resource.proto";
 
 // Virtual Private Cloud object
