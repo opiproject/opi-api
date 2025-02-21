@@ -15,9 +15,9 @@ option java_outer_classname = "NetworkInterfacesProto";
 
 option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
 
-import "networktypes.proto";
-import "networkvlan.proto";
-import "networkethernet.proto";
+import "network/opinetcommon/networktypes.proto";
+import "network/opinetcommon/networkvlan.proto";
+import "network/opinetcommon/networkethernet.proto";
 
 import "google/api/client.proto";
 import "google/api/resource.proto";
