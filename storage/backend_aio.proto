@@ -5,163 +5,153 @@
 syntax = "proto3";
 package opi_api.storage.v1;
 
-option java_package = "opi_api.storage.v1";
-option java_multiple_files = true;
-option java_outer_classname = "BackendAioProto";
-
-option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
-
+import "google/api/annotations.proto";
 import "google/api/client.proto";
+import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
-import "google/api/annotations.proto";
-import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
-
 import "opicommon.proto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "BackendAioProto";
+option java_package = "opi_api.storage.v1";
 
 // Back End (network-facing) APIs. This service is for AIO generic kernel block device.
 service AioVolumeService {
-    // Create an Aio Volume
-    rpc CreateAioVolume (CreateAioVolumeRequest) returns (AioVolume) {
-        option (google.api.http) = {
-            post: "/v1/aioVolumes"
-            body: "aio_volume"
-        };
-        option (google.api.method_signature) = "aio_volume,aio_volume_id";
-    }
-    // Delete an Aio Volume
-    rpc DeleteAioVolume (DeleteAioVolumeRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=aioVolumes/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update an Aio Volume
-    rpc UpdateAioVolume (UpdateAioVolumeRequest) returns (AioVolume) {
-        option (google.api.http) = {
-            patch: "/v1/{aio_volume.name=aioVolumes/*}"
-            body: "aio_volume"
-        };
-        option (google.api.method_signature) = "aio_volume,update_mask";
-    }
-    // List Aio Volumes
-    rpc ListAioVolumes   (ListAioVolumesRequest)   returns (ListAioVolumesResponse)   {
-        option (google.api.http) = {
-            get: "/v1/aioVolumes"
-        };
-    }
-    // Get an Aio Volume
-    rpc GetAioVolume    (GetAioVolumeRequest)    returns (AioVolume)    {
-        option (google.api.http) = {
-            get: "/v1/{name=aioVolumes/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get an Aio Volume statistics
-    rpc StatsAioVolume  (StatsAioVolumeRequest)  returns (StatsAioVolumeResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=aioVolumes/*}:stats"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // Create an Aio Volume
+  rpc CreateAioVolume(CreateAioVolumeRequest) returns (AioVolume) {
+    option (google.api.http) = {
+      post: "/v1/aioVolumes"
+      body: "aio_volume"
+    };
+    option (google.api.method_signature) = "aio_volume,aio_volume_id";
+  }
+  // Delete an Aio Volume
+  rpc DeleteAioVolume(DeleteAioVolumeRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=aioVolumes/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update an Aio Volume
+  rpc UpdateAioVolume(UpdateAioVolumeRequest) returns (AioVolume) {
+    option (google.api.http) = {
+      patch: "/v1/{aio_volume.name=aioVolumes/*}"
+      body: "aio_volume"
+    };
+    option (google.api.method_signature) = "aio_volume,update_mask";
+  }
+  // List Aio Volumes
+  rpc ListAioVolumes(ListAioVolumesRequest) returns (ListAioVolumesResponse) {
+    option (google.api.http) = {get: "/v1/aioVolumes"};
+  }
+  // Get an Aio Volume
+  rpc GetAioVolume(GetAioVolumeRequest) returns (AioVolume) {
+    option (google.api.http) = {get: "/v1/{name=aioVolumes/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get an Aio Volume statistics
+  rpc StatsAioVolume(StatsAioVolumeRequest) returns (StatsAioVolumeResponse) {
+    option (google.api.http) = {get: "/v1/{name=aioVolumes/*}:stats"};
+    option (google.api.method_signature) = "name";
+  }
 }
 
 // Volume represented by Linux kernel block device or a file on a Linux filesystem
 message AioVolume {
-    option (google.api.resource) = {
-        type: "opi_api.storage.v1/AioVolume"
-        pattern: "aioVolumes/{volume}"
-        singular: "aioVolume"
-        plural: "aioVolumes"
-    };
+  option (google.api.resource) = {
+    type: "opi_api.storage.v1/AioVolume"
+    pattern: "aioVolumes/{volume}"
+    singular: "aioVolume"
+    plural: "aioVolumes"
+  };
 
-    // name is an opaque object handle that is not user settable.
-    // name will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // name is an opaque object handle that is not user settable.
+  // name will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // The size of each block in the AioVolume.
-    int64 block_size = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The size of each block in the AioVolume.
+  int64 block_size = 2 [(google.api.field_behavior) = OPTIONAL];
 
-    // The total number of blocks in the AioVolume.
-    int64 blocks_count = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The total number of blocks in the AioVolume.
+  int64 blocks_count = 3 [(google.api.field_behavior) = OPTIONAL];
 
-    // The UUID (Universally Unique Identifier) of the AioVolume.
-    string uuid = 4 [(google.api.field_behavior) = OPTIONAL];
+  // The UUID (Universally Unique Identifier) of the AioVolume.
+  string uuid = 4 [(google.api.field_behavior) = OPTIONAL];
 
-    // The filename associated with the AioVolume.
-    string filename = 5 [(google.api.field_behavior) = REQUIRED];
+  // The filename associated with the AioVolume.
+  string filename = 5 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Represents a request to create an Aio Volume.
 message CreateAioVolumeRequest {
-    // The Aio Volume to be created.
-    AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
-    // An optional ID to assign to the Aio Volume.
-    // If this is not provided the system will auto-generate it.
-    string aio_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The Aio Volume to be created.
+  AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
+  // An optional ID to assign to the Aio Volume.
+  // If this is not provided the system will auto-generate it.
+  string aio_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to delete an Aio Volume.
 message DeleteAioVolumeRequest {
-    // Object's unique identifier to delete
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Object's unique identifier to delete
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to update an Aio Volume.
 message UpdateAioVolumeRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  AioVolume aio_volume = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to list all Aio Volumes.
 message ListAioVolumesRequest {
-    // page size of list request
-    int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page size of list request
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a response to list all Aio Volumes.
 message ListAioVolumesResponse {
-    // List of Aio volumes
-    repeated AioVolume aio_volumes = 1;
-    // Next page token of list response
-    string next_page_token = 2;
+  // List of Aio volumes
+  repeated AioVolume aio_volumes = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // Represents a request to get an Aio Volume.
 message GetAioVolumeRequest {
-    // Object's unique identifier to retrieve
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
-    ];
+  // Object's unique identifier to retrieve
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
+  ];
 }
 
 // Represents a request to get an Aio Volume statistics.
 message StatsAioVolumeRequest {
-    // Object's unique identifier to retrieve statistics
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
-    ];
+  // Object's unique identifier to retrieve statistics
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/AioVolume"
+  ];
 }
 
 // Represents a response to get an Aio Volume statistics.
 message StatsAioVolumeResponse {
-    // Volume statistics
-    VolumeStats stats = 1;
+  // Volume statistics
+  VolumeStats stats = 1;
 }

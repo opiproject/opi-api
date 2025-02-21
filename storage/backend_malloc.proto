@@ -6,163 +6,153 @@
 syntax = "proto3";
 package opi_api.storage.v1;
 
-option java_package = "opi_api.storage.v1";
-option java_multiple_files = true;
-option java_outer_classname = "BackendMallocProto";
-
-option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
-
+import "google/api/annotations.proto";
 import "google/api/client.proto";
+import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
-import "google/api/annotations.proto";
-import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
-
 import "opicommon.proto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "BackendMallocProto";
+option java_package = "opi_api.storage.v1";
 
 // Back End Malloc Volume APIs. This is debug interface for malloc block devices.
 service MallocVolumeService {
-    // Create a Malloc Volume
-    rpc CreateMallocVolume (CreateMallocVolumeRequest) returns (MallocVolume) {
-        option (google.api.http) = {
-            post: "/v1/mallocVolumes"
-            body: "malloc_volume"
-        };
-        option (google.api.method_signature) = "malloc_volume,malloc_volume_id";
-    }
-    // Delete a Malloc Volume
-    rpc DeleteMallocVolume (DeleteMallocVolumeRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=mallocVolumes/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update a Malloc Volume
-    rpc UpdateMallocVolume (UpdateMallocVolumeRequest) returns (MallocVolume) {
-        option (google.api.http) = {
-            patch: "/v1/{malloc_volume.name=mallocVolumes/*}"
-            body: "malloc_volume"
-        };
-        option (google.api.method_signature) = "malloc_volume,update_mask";
-    }
-    // List Malloc Volumes
-    rpc ListMallocVolumes   (ListMallocVolumesRequest)   returns (ListMallocVolumesResponse)   {
-        option (google.api.http) = {
-            get: "/v1/mallocVolumes"
-        };
-    }
-    // Get a Malloc Volume
-    rpc GetMallocVolume    (GetMallocVolumeRequest)    returns (MallocVolume)    {
-        option (google.api.http) = {
-            get: "/v1/{name=mallocVolumes/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get a Malloc Volume statistics
-    rpc StatsMallocVolume  (StatsMallocVolumeRequest)  returns (StatsMallocVolumeResponse)  {
-        option (google.api.http) = {
-            get: "/v1/{name=mallocVolumes/*}:stats"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // Create a Malloc Volume
+  rpc CreateMallocVolume(CreateMallocVolumeRequest) returns (MallocVolume) {
+    option (google.api.http) = {
+      post: "/v1/mallocVolumes"
+      body: "malloc_volume"
+    };
+    option (google.api.method_signature) = "malloc_volume,malloc_volume_id";
+  }
+  // Delete a Malloc Volume
+  rpc DeleteMallocVolume(DeleteMallocVolumeRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=mallocVolumes/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update a Malloc Volume
+  rpc UpdateMallocVolume(UpdateMallocVolumeRequest) returns (MallocVolume) {
+    option (google.api.http) = {
+      patch: "/v1/{malloc_volume.name=mallocVolumes/*}"
+      body: "malloc_volume"
+    };
+    option (google.api.method_signature) = "malloc_volume,update_mask";
+  }
+  // List Malloc Volumes
+  rpc ListMallocVolumes(ListMallocVolumesRequest) returns (ListMallocVolumesResponse) {
+    option (google.api.http) = {get: "/v1/mallocVolumes"};
+  }
+  // Get a Malloc Volume
+  rpc GetMallocVolume(GetMallocVolumeRequest) returns (MallocVolume) {
+    option (google.api.http) = {get: "/v1/{name=mallocVolumes/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get a Malloc Volume statistics
+  rpc StatsMallocVolume(StatsMallocVolumeRequest) returns (StatsMallocVolumeResponse) {
+    option (google.api.http) = {get: "/v1/{name=mallocVolumes/*}:stats"};
+    option (google.api.method_signature) = "name";
+  }
 }
 
 // Malloc volume, volatile volume
 message MallocVolume {
-    option (google.api.resource) = {
-        type: "opi_api.storage.v1/MallocVolume"
-        pattern: "mallocVolumes/{volume}"
-        singular: "mallocVolume"
-        plural: "mallocVolumes"
-    };
+  option (google.api.resource) = {
+    type: "opi_api.storage.v1/MallocVolume"
+    pattern: "mallocVolumes/{volume}"
+    singular: "mallocVolume"
+    plural: "mallocVolumes"
+  };
 
-    // name is an opaque object handle that is not user settable.
-    // name will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // name is an opaque object handle that is not user settable.
+  // name will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // The block size of the MallocVolume.
-    int64 block_size = 2 [(google.api.field_behavior) = REQUIRED];
+  // The block size of the MallocVolume.
+  int64 block_size = 2 [(google.api.field_behavior) = REQUIRED];
 
-    // The number of blocks in the MallocVolume.
-    int64 blocks_count = 3 [(google.api.field_behavior) = REQUIRED];
+  // The number of blocks in the MallocVolume.
+  int64 blocks_count = 3 [(google.api.field_behavior) = REQUIRED];
 
-    // The metadata size of the MallocVolume.
-    int64 metadata_size = 4 [(google.api.field_behavior) = OPTIONAL];
+  // The metadata size of the MallocVolume.
+  int64 metadata_size = 4 [(google.api.field_behavior) = OPTIONAL];
 
-    // The UUID of the MallocVolume.
-    string uuid = 5 [(google.api.field_behavior) = OPTIONAL];
+  // The UUID of the MallocVolume.
+  string uuid = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to create a Malloc Volume.
 message CreateMallocVolumeRequest {
-    // The Malloc Volume to be created.
-    MallocVolume malloc_volume = 1 [(google.api.field_behavior) = REQUIRED];
-    // An optional ID to assign to the Malloc Volume.
-    // If this is not provided the system will auto-generate it.
-    string malloc_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The Malloc Volume to be created.
+  MallocVolume malloc_volume = 1 [(google.api.field_behavior) = REQUIRED];
+  // An optional ID to assign to the Malloc Volume.
+  // If this is not provided the system will auto-generate it.
+  string malloc_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to delete a Malloc Volume.
 message DeleteMallocVolumeRequest {
-    // Object's unique identifier to delete
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/MallocVolume"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Object's unique identifier to delete
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/MallocVolume"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to update a Malloc Volume.
 message UpdateMallocVolumeRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    MallocVolume malloc_volume = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  MallocVolume malloc_volume = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a request to list all Malloc Volumes.
 message ListMallocVolumesRequest {
-    // page size of list request
-    int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page size of list request
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents a response to list all Malloc Volumes.
 message ListMallocVolumesResponse {
-    // List of Malloc volumes
-    repeated MallocVolume malloc_volumes = 1;
-    // Next page token of list response
-    string next_page_token = 2;
+  // List of Malloc volumes
+  repeated MallocVolume malloc_volumes = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // Represents a request to get a Malloc Volume.
 message GetMallocVolumeRequest {
-    // Object's unique identifier to retrieve
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/MallocVolume"
-    ];
+  // Object's unique identifier to retrieve
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/MallocVolume"
+  ];
 }
 
 // Represents a request to get a Malloc Volume statistics.
 message StatsMallocVolumeRequest {
-    // Object's unique identifier to retrieve statistics
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/MallocVolume"
-    ];
+  // Object's unique identifier to retrieve statistics
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/MallocVolume"
+  ];
 }
 
 // Represents a response to get a Malloc Volume statistics.
 message StatsMallocVolumeResponse {
-    // Volume statistics
-    VolumeStats stats = 1;
+  // Volume statistics
+  VolumeStats stats = 1;
 }

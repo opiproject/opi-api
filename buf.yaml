@@ -3,6 +3,9 @@ modules:
   - path: inventory
     name: buf.build/opiproject/inventory
     lint:
+      use:
+        - STANDARD
+        - COMMENTS
       except:
         - PACKAGE_DIRECTORY_MATCH
         - RPC_RESPONSE_STANDARD_NAME
@@ -15,6 +18,7 @@ modules:
     name: buf.build/opiproject/storage
     lint:
       use:
+        - STANDARD
         - COMMENTS
       except:
         - ENUM_FIRST_VALUE_ZERO
