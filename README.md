@@ -1,6 +1,7 @@
 # OPI API and Behavioral Model Group
 
 [![Linters](https://github.com/opiproject/opi-api/actions/workflows/linters.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/linters.yml)
+[![Buf CI](https://github.com/opiproject/opi-api/actions/workflows/buf.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/buf.yml)
 
 ## I Want To Contribute
 
@@ -54,6 +55,12 @@ The use of gRPC is the preferred mechanism for the config/control interface, wit
   ![API Gateway](doc/images/API-GW-Layers.png)
 
 The OPI API boundary for the consumption interface will provide the exposed VF/PF capabilities to be used by the Host platform and/or the compute cores on the xPU.
+
+## OPI API Checking and Publishing
+
+The generation of the OPI API files from the protobuf definitions is handled by using the Buf tool for managing the schemas.  The Buf tools provide for formatting, linting, building, and generation of code stubs.  The Buf environment also provides a Buf Schema Registry (BSR) where the API can be published.
+
+The OPI API is published to the BSR in the [opiproject](https://buf.build/opiproject/opi).  This project contains the auto-generated documentation as well as the code and sdk files.  Refer th the BSR for information and documentation.
 
 ---
 
