@@ -17,5 +17,5 @@ jobs:
           version: 1.50.0
           token: ${{ secrets.BUF_TOKEN}}
           lint: true
-          format: false
+          format: true
           breaking: false
