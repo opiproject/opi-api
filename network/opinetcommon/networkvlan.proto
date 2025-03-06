@@ -2,165 +2,163 @@
 // Copyright (c) 2024 Dell Inc, or its subsidiaries.
 //
 // Derived from the OpenConfig interfaces model github.com/openconfig/public/release/models/vlan
-// 
+//
 // (-- api-linter: core::0141::forbidden-types=disabled
 //     aip.dev/not-precedent: counters, mtu, index must be uint and not int. --)
 syntax = "proto3";
 
 package opi_api.network.opinetcommon.v1alpha1;
 
-option java_package = "opi_api.network.opinetcommon.v1alpha1";
+option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
 option java_multiple_files = true;
 option java_outer_classname = "NetworkVlanProto";
-
-option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
+option java_package = "opi_api.network.opinetcommon.v1alpha1";
 
 // Switched VLAN Configuration Settings that are part of the Ethernet interface
 message SwitchedVlanSetting {
-    // Setting for the VLAN interface to access or trunk mode
-    VlanIfMode vlan_interface_mode = 1;
-    // VLAN ID when the mode is set to trunk mode
-    uint32 native_vlan = 2;
-    // VLAN ID when the mode is set to access mode
-    uint32 access_vlan = 3;
-    // Allowed VLANs may be specified for trunk mode interfaces
-    string trunk_vlans = 4;
+  // Setting for the VLAN interface to access or trunk mode
+  VlanIfMode vlan_interface_mode = 1;
+  // VLAN ID when the mode is set to trunk mode
+  uint32 native_vlan = 2;
+  // VLAN ID when the mode is set to access mode
+  uint32 access_vlan = 3;
+  // Allowed VLANs may be specified for trunk mode interfaces
+  string trunk_vlans = 4;
 }
 
 // VLAN settings associated with the Ethernet Interface
 message VlanSwitchedIf {
-    // Configuration parameters for VLAN
-    SwitchedVlanSetting config = 1;
-    // State variables for VLAN
-    SwitchedVlanSetting state = 2;
+  // Configuration parameters for VLAN
+  SwitchedVlanSetting config = 1;
+  // State variables for VLAN
+  SwitchedVlanSetting state = 2;
 }
 
 // VLAN Ingress and Egress Settings
 message VlanIngressEgressSetting {
-    // VLAN stack behaviors for packets that arrive or are transmitted on
-    // this subinterface after their VLAN idenitifer(s) have been matched
-    VlanStackAction vlanstackaction = 1;
-    // VLAN identifier - (1-4094) and will utilize 16 bits max
-    uint32 vlan_id = 2;
-    // The tag protocol identifier field (TPID) that is used by the action
-    // configured by 'vlan-stack-action' when modifying the VLAN stack.
-    TpidTypes tpid = 3;
+  // VLAN stack behaviors for packets that arrive or are transmitted on
+  // this subinterface after their VLAN idenitifer(s) have been matched
+  VlanStackAction vlanstackaction = 1;
+  // VLAN identifier - (1-4094) and will utilize 16 bits max
+  uint32 vlan_id = 2;
+  // The tag protocol identifier field (TPID) that is used by the action
+  // configured by 'vlan-stack-action' when modifying the VLAN stack.
+  TpidTypes tpid = 3;
 }
 
 // VLAN Interface Configuration
 message VlanIf {
-    // Configuration for VLAN tag matching schemes
-    message VlanMatch {
-        // Single Tagged matching of exact VLAN identifier
-        message SingleTagged {
-            // Configuration for matching single-tagged packets with an exact
-            // VLAN identifier
-            message SingleTagConfig {
-                // Single tag VLAN Identifier (1-4094)
-                uint32 vlan_id = 1;
-            } 
-            // Configuration for exact matching of single tagged packets
-            SingleTagConfig config = 1;
+  // Configuration for VLAN tag matching schemes
+  message VlanMatch {
+    // Single Tagged matching of exact VLAN identifier
+    message SingleTagged {
+      // Configuration for matching single-tagged packets with an exact
+      // VLAN identifier
+      message SingleTagConfig {
+        // Single tag VLAN Identifier (1-4094)
+        uint32 vlan_id = 1;
+      }
+      // Configuration for exact matching of single tagged packets
+      SingleTagConfig config = 1;
 
-            // State for matching single-tagged packets with an exact VLAN
-            message SingleTagState {
-                // Single tag VLAN Identifier configured (1-4094)
-                uint32 vlan_id = 1;
-            } 
-            // State for exact matching of single tagged packets
-            SingleTagState state = 2;
-        } 
-        // Single tagged VLAN exact matching
-        SingleTagged singletagged = 1;
-
-        // Single tagged list matching configuration
-        message SingleTaggedList {
-            // Configuration for matching single-tagged packets with a list of
-            // VLAN identifiers
-            message TagListConfig {
-                // List of VLAN identifiers for single-tagged packets
-                repeated uint32 vlan_id = 1;
-            }
-            // Configuration for single tagged VLAN list 
-            TagListConfig config = 1;
-
-            // State for matching single-tagged packets with a list of VLAN
-            // identifiers
-            message TagListStatus {
-                // List of VLAN identifiers configured for single-tagged packets
-                repeated uint32 vlanid = 1;
-            }
-            // State for sintle tagged list
-            TagListStatus status = 2;
-        }
-        // Single tag list VLAN matching
-        SingleTaggedList singletaggedlist = 2;
-    
-    } 
-    // VLAN Tag matching schemes
-    VlanMatch match = 1;
-
-    // Ingress VLAN stack behaviors for packets that arrive on this subinterface
-    // after their VLAN idenitifer(s) have been matched
-    message VlanIngressMapping {
-        // Configuration for ingress VLAN and label behaviors for packets that
-        // arrive on this subinterface
-        VlanIngressEgressSetting config = 1;
-        // State for ingress VLAN and label behaviors for packets that arrive
-        // on this subinterface
-        VlanIngressEgressSetting state = 2;
+      // State for matching single-tagged packets with an exact VLAN
+      message SingleTagState {
+        // Single tag VLAN Identifier configured (1-4094)
+        uint32 vlan_id = 1;
+      }
+      // State for exact matching of single tagged packets
+      SingleTagState state = 2;
     }
-    // Ingress VLAN stack behaviors after received packets have matched
-    VlanIngressMapping ingressmapping = 2;
+    // Single tagged VLAN exact matching
+    SingleTagged singletagged = 1;
 
-    // Egress VLAN stack behaviors for packets that are destined for output via
-    // this subinterface
-    message VlanEgressMapping {
-        // Configuration for egress VLAN stack behaviors for packets that are
-        // destined for output via this subinterface
-        VlanIngressEgressSetting config = 1;
-        // State for engress VLAN stack behaviors for packets that are destined
-        // for output via this subinterface
-        VlanIngressEgressSetting state = 2;
-    } 
-    // Egress VLAN stack behaviors for output packets
-    VlanEgressMapping egressmapping = 3;
+    // Single tagged list matching configuration
+    message SingleTaggedList {
+      // Configuration for matching single-tagged packets with a list of
+      // VLAN identifiers
+      message TagListConfig {
+        // List of VLAN identifiers for single-tagged packets
+        repeated uint32 vlan_id = 1;
+      }
+      // Configuration for single tagged VLAN list
+      TagListConfig config = 1;
+
+      // State for matching single-tagged packets with a list of VLAN
+      // identifiers
+      message TagListStatus {
+        // List of VLAN identifiers configured for single-tagged packets
+        repeated uint32 vlanid = 1;
+      }
+      // State for sintle tagged list
+      TagListStatus status = 2;
+    }
+    // Single tag list VLAN matching
+    SingleTaggedList singletaggedlist = 2;
+  }
+  // VLAN Tag matching schemes
+  VlanMatch match = 1;
+
+  // Ingress VLAN stack behaviors for packets that arrive on this subinterface
+  // after their VLAN idenitifer(s) have been matched
+  message VlanIngressMapping {
+    // Configuration for ingress VLAN and label behaviors for packets that
+    // arrive on this subinterface
+    VlanIngressEgressSetting config = 1;
+    // State for ingress VLAN and label behaviors for packets that arrive
+    // on this subinterface
+    VlanIngressEgressSetting state = 2;
+  }
+  // Ingress VLAN stack behaviors after received packets have matched
+  VlanIngressMapping ingressmapping = 2;
+
+  // Egress VLAN stack behaviors for packets that are destined for output via
+  // this subinterface
+  message VlanEgressMapping {
+    // Configuration for egress VLAN stack behaviors for packets that are
+    // destined for output via this subinterface
+    VlanIngressEgressSetting config = 1;
+    // State for engress VLAN stack behaviors for packets that are destined
+    // for output via this subinterface
+    VlanIngressEgressSetting state = 2;
+  }
+  // Egress VLAN stack behaviors for output packets
+  VlanEgressMapping egressmapping = 3;
 }
 
 // Tag Protocol Identifier (TPID) Types Enumeration
 enum TpidTypes {
-    // Unspecified
-    TPID_TYPES_UNSPECIFIED = 0;
-    // Default value for 802.1q single-tagged VLANs
-    TPID_TYPES_0X8100 = 1;
-    // Value for 802.1ad provider bridging, QinQ, or stacked VLANs
-    TPID_TYPES_0X88A8 = 2;
-    // Alternate TPID value
-    TPID_TYPES_0X9100 = 3;
-    // Alternate TPID value
-    TPID_TYPES_0X9200 = 4;
-    // Any - Wildcard that matches any of the singly or multiply tagged VLANS
-    TPID_TYPES_ANY = 5;
+  // Unspecified
+  TPID_TYPES_UNSPECIFIED = 0;
+  // Default value for 802.1q single-tagged VLANs
+  TPID_TYPES_0X8100 = 1;
+  // Value for 802.1ad provider bridging, QinQ, or stacked VLANs
+  TPID_TYPES_0X88A8 = 2;
+  // Alternate TPID value
+  TPID_TYPES_0X9100 = 3;
+  // Alternate TPID value
+  TPID_TYPES_0X9200 = 4;
+  // Any - Wildcard that matches any of the singly or multiply tagged VLANS
+  TPID_TYPES_ANY = 5;
 }
 
 // Vlan Stack Action to be performed on the VLAN stack
 enum VlanStackAction {
-    // No action to perform on the VLAN Stack
-    VLAN_STACK_ACTION_UNSPECIFIED = 0;
-    // PUSH a VLAN onto the VLAN Stack
-    VLAN_STACK_ACTION_PUSH = 1;
-    // POP a VLAN from the VLAN Stack
-    VLAN_STACK_ACTION_POP = 2;
-    // SWAP the VLAN at the top of the VLAN Stack
-    VLAN_STACK_ACTION_SWAP = 3;
+  // No action to perform on the VLAN Stack
+  VLAN_STACK_ACTION_UNSPECIFIED = 0;
+  // PUSH a VLAN onto the VLAN Stack
+  VLAN_STACK_ACTION_PUSH = 1;
+  // POP a VLAN from the VLAN Stack
+  VLAN_STACK_ACTION_POP = 2;
+  // SWAP the VLAN at the top of the VLAN Stack
+  VLAN_STACK_ACTION_SWAP = 3;
 }
 
 // VLAN Interface Mode
 enum VlanIfMode {
-    // Interface Mode Unspecified
-    VLAN_IF_MODE_UNSPECIFIED = 0;
-    // Interface mode ACCESS
-    VLAN_IF_MODE_ACCESS = 1;
-    // Interface mode TRUNK
-    VLAN_IF_MODE_TRUNK = 2;
+  // Interface Mode Unspecified
+  VLAN_IF_MODE_UNSPECIFIED = 0;
+  // Interface mode ACCESS
+  VLAN_IF_MODE_ACCESS = 1;
+  // Interface mode TRUNK
+  VLAN_IF_MODE_TRUNK = 2;
 }

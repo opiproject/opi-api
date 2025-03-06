@@ -9,297 +9,291 @@ syntax = "proto3";
 
 package opi_api.network.opinetcommon.v1alpha1;
 
-option java_package = "opi_api.network.opinetcommon.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "NetworkInterfacesProto";
-
-option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
-
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/protobuf/field_mask.proto";
+import "network/opinetcommon/networkethernet.proto";
 import "network/opinetcommon/networktypes.proto";
 import "network/opinetcommon/networkvlan.proto";
-import "network/opinetcommon/networkethernet.proto";
 
-import "google/api/client.proto";
-import "google/api/resource.proto";
-import "google/api/annotations.proto";
-import "google/api/field_behavior.proto";
-import "google/protobuf/field_mask.proto";
+option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "NetworkInterfacesProto";
+option java_package = "opi_api.network.opinetcommon.v1alpha1";
 
 // Service functions for Network Interface exported by the server
 service NetInterfaceService {
-    // Retrieves the interface information for a given interface
-    rpc GetNetInterface (GetNetInterfaceRequest) returns (NetInterface) {
-        option (google.api.http) = {
-            get: "/v1/{name=interfaces/*/interface/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Retrieves the set of interfaces on the device
-    rpc ListNetInterfaces (ListNetInterfacesRequest) returns (ListNetInterfacesResponse) {
-        option (google.api.http) = {
-            get: "/v1/{parent=interfaces}"
-        };
-        option (google.api.method_signature) = "parent";
-    }
-    // A method for setting or changing configuration of an interface
-    rpc UpdateNetInterface (UpdateNetInterfaceRequest) returns (NetInterface) {
-        option (google.api.http) = {
-            patch: "/v1/{net_interface.name=interfaces/*/interface/*}"
-            body: "net_interface"
-        };
-        option (google.api.method_signature) = "net_interface,update_mask";
-    }
-    // (-- TODO Add Create network interface for adding additional virtual interfaces --)
-    // (-- TODO Add Delete network interface for removing virtual interfaces --)
+  // Retrieves the interface information for a given interface
+  rpc GetNetInterface(GetNetInterfaceRequest) returns (NetInterface) {
+    option (google.api.http) = {get: "/v1/{name=interfaces/*/interface/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Retrieves the set of interfaces on the device
+  rpc ListNetInterfaces(ListNetInterfacesRequest) returns (ListNetInterfacesResponse) {
+    option (google.api.http) = {get: "/v1/{parent=interfaces}"};
+    option (google.api.method_signature) = "parent";
+  }
+  // A method for setting or changing configuration of an interface
+  rpc UpdateNetInterface(UpdateNetInterfaceRequest) returns (NetInterface) {
+    option (google.api.http) = {
+      patch: "/v1/{net_interface.name=interfaces/*/interface/*}"
+      body: "net_interface"
+    };
+    option (google.api.method_signature) = "net_interface,update_mask";
+  }
+  // (-- TODO Add Create network interface for adding additional virtual interfaces --)
+  // (-- TODO Add Delete network interface for removing virtual interfaces --)
 }
 
 // Interface config
 // (-- api-linter: core::0123::resource-annotation=disabled
 //     aip.dev/not-precedent: the name field is an opaque object --)
 message NetInterfaceConfig {
-    // Name of the interface.  This is the opaque object
-    // used for designating the created interface.
-    string name = 1 [(google.api.field_behavior) = REQUIRED];
-    // Type of interface - Ethernet and others
-    InterfaceType type = 2 [(google.api.field_behavior) = REQUIRED];
-    // MTU for the interface that can be configured
-    uint32 mtu = 3 [(google.api.field_behavior) = REQUIRED];
-    // Setting the loopback mode of the interface
-    bool loopback_mode = 4 [(google.api.field_behavior) = REQUIRED];
-    // Description of the interface and usage
-    string description = 5 [(google.api.field_behavior) = REQUIRED];
-    // Setting for enabling/disabling the interface
-    bool enabled = 6 [(google.api.field_behavior) = REQUIRED];
-    // VLAN Tag Protocol Identifier (TPID)
-    TpidTypes tpid = 7 [(google.api.field_behavior) = OPTIONAL];
+  // Name of the interface.  This is the opaque object
+  // used for designating the created interface.
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
+  // Type of interface - Ethernet and others
+  InterfaceType type = 2 [(google.api.field_behavior) = REQUIRED];
+  // MTU for the interface that can be configured
+  uint32 mtu = 3 [(google.api.field_behavior) = REQUIRED];
+  // Setting the loopback mode of the interface
+  bool loopback_mode = 4 [(google.api.field_behavior) = REQUIRED];
+  // Description of the interface and usage
+  string description = 5 [(google.api.field_behavior) = REQUIRED];
+  // Setting for enabling/disabling the interface
+  bool enabled = 6 [(google.api.field_behavior) = REQUIRED];
+  // VLAN Tag Protocol Identifier (TPID)
+  TpidTypes tpid = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Statistics Counters for the interface - ro
 message NetInterfaceCounters {
-    // Received Octet counter
-    uint64 rx_octets = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Received Packet counter
-    uint64 rx_packets = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Unicast packets received counter
-    uint64 rx_unicast_pkts = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Broadcast packets received counter
-    uint64 rx_broadcast_pkts = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // multicast packets received counter
-    uint64 rx_multicast_pkts = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // discarded received packets counter
-    uint64 rx_discards = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Receive error counter
-    uint64 rx_errors = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Unknown received protocol counter
-    uint64 rx_unknown_protos = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Received FCS error counter
-    uint64 rx_fcs_errors = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Transmit octet counter
-    uint64 out_octets = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Transmit packet counter
-    uint64 out_packets = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Unicast packet transmit counter
-    uint64 out_unicast_pkts = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Broadcast packet transmit counter
-    uint64 out_broadcast_pkts = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Multicast packet transmit counter
-    uint64 out_multicast_pkts = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Discarded transmit packet counter
-    uint64 out_discards = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Transmit error counter
-    uint64 out_errors = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Carrier transition count
-    uint64 carrier_transitions = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Timestamp of the last time the interface counters were cleared
-    uint64 last_clear = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Received Octet counter
+  uint64 rx_octets = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Received Packet counter
+  uint64 rx_packets = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Unicast packets received counter
+  uint64 rx_unicast_pkts = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Broadcast packets received counter
+  uint64 rx_broadcast_pkts = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // multicast packets received counter
+  uint64 rx_multicast_pkts = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // discarded received packets counter
+  uint64 rx_discards = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Receive error counter
+  uint64 rx_errors = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Unknown received protocol counter
+  uint64 rx_unknown_protos = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Received FCS error counter
+  uint64 rx_fcs_errors = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Transmit octet counter
+  uint64 out_octets = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Transmit packet counter
+  uint64 out_packets = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Unicast packet transmit counter
+  uint64 out_unicast_pkts = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Broadcast packet transmit counter
+  uint64 out_broadcast_pkts = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Multicast packet transmit counter
+  uint64 out_multicast_pkts = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Discarded transmit packet counter
+  uint64 out_discards = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Transmit error counter
+  uint64 out_errors = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Carrier transition count
+  uint64 carrier_transitions = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Timestamp of the last time the interface counters were cleared
+  uint64 last_clear = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Interface State information - ro
 // (-- api-linter: core::0123::resource-annotation=disabled
 //     aip.dev/not-precedent: the name field is an opaque object --)
 message NetInterfaceState {
-    // Name of the interface.  This is the opaque object
-    // used for designating the created interface.
-    string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Interface type indicator
-    InterfaceType type = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Configured MTU size
-    uint32 mtu = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Configured Loopback mode
-    bool loopback_mode = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Interface description
-    string description = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Interface enabled indicator
-    bool enabled = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Interface Index
-    uint32 ifindex = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Admin State
-    network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Operational State
-    OperState oper_state = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Last Change
-    uint64 last_change = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Logical interface - when set to true indicates a logical interface with
-    // no associated physical port or channel
-    bool logical = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Management interface - when set to true indicates a dedicated management
-    // interface that is independent of the dataplane interfaces such as an out
-    // of band management network
-    bool management = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // CPU interface - when set to true the interface is for traffic handled by
-    // the system CPU or control plane
-    bool cpu = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Interface Statistics Counters
-    NetInterfaceCounters counters = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // VLAN Tag Protocol Identifier
-    TpidTypes tpid = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Name of the interface.  This is the opaque object
+  // used for designating the created interface.
+  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Interface type indicator
+  InterfaceType type = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Configured MTU size
+  uint32 mtu = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Configured Loopback mode
+  bool loopback_mode = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Interface description
+  string description = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Interface enabled indicator
+  bool enabled = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Interface Index
+  uint32 ifindex = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Admin State
+  network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Operational State
+  OperState oper_state = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Last Change
+  uint64 last_change = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Logical interface - when set to true indicates a logical interface with
+  // no associated physical port or channel
+  bool logical = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Management interface - when set to true indicates a dedicated management
+  // interface that is independent of the dataplane interfaces such as an out
+  // of band management network
+  bool management = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // CPU interface - when set to true the interface is for traffic handled by
+  // the system CPU or control plane
+  bool cpu = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Interface Statistics Counters
+  NetInterfaceCounters counters = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // VLAN Tag Protocol Identifier
+  TpidTypes tpid = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 //Interface - physical or virtual interface reported
 // (-- api-linter: core::0123::resource-annotation=disabled
 //     aip.dev/not-precedent: the name field is an opaque object --)
 message NetInterface {
-    option (google.api.resource) = {
-        type: "opi_api.network.opinetcommon.v1alpha1/NetInterface"
-        pattern: "netInterface/{interface}"
-        singular: "netInterface"
-        plural: "netInterfaces"
-    };
-    // Name of the interface.  This is an opaque object that is not
-    // user settable.  It is returned by the created object
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
-    // Configuration settings - rw
-    NetInterfaceConfig config = 2 [(google.api.field_behavior) = REQUIRED];
-    // Interface State and Statistics - ro
-    NetInterfaceState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  option (google.api.resource) = {
+    type: "opi_api.network.opinetcommon.v1alpha1/NetInterface"
+    pattern: "netInterface/{interface}"
+    singular: "netInterface"
+    plural: "netInterfaces"
+  };
+  // Name of the interface.  This is an opaque object that is not
+  // user settable.  It is returned by the created object
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // Configuration settings - rw
+  NetInterfaceConfig config = 2 [(google.api.field_behavior) = REQUIRED];
+  // Interface State and Statistics - ro
+  NetInterfaceState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-    // Hold Time Settings
-    message HoldTime {
-        // Hold Time Config - rw
-        message HoldConfig {
-            // Hold time up
-            uint32 up = 1 [(google.api.field_behavior) = OPTIONAL];
-            // Hold time down
-            uint32 down = 2 [(google.api.field_behavior) = OPTIONAL];
-        }
-        // Hold Time Config
-        HoldConfig hold_config = 1 [(google.api.field_behavior) = OPTIONAL];
-
-        // Hold State Settings - ro
-        message HoldState {
-            // Hold state up
-            uint32 up = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-            // Hold state down
-            uint32 down = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-        }
-        // Hold State Settings
-        HoldState hold_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Hold Time Settings
+  message HoldTime {
+    // Hold Time Config - rw
+    message HoldConfig {
+      // Hold time up
+      uint32 up = 1 [(google.api.field_behavior) = OPTIONAL];
+      // Hold time down
+      uint32 down = 2 [(google.api.field_behavior) = OPTIONAL];
     }
-    // Hold Time Settings
-    HoldTime holdtime = 4 [(google.api.field_behavior) = OPTIONAL];
+    // Hold Time Config
+    HoldConfig hold_config = 1 [(google.api.field_behavior) = OPTIONAL];
 
-    // Subinterfaces settings - VLAN, etc.
-    message Subinterfaces {
-        // Subinterface settings
-        message Subinterface {
-            // Subinterface index
-            int64 index = 1 [(google.api.field_behavior) = OPTIONAL];
-
-            // Subinterface configuration
-            message SubifConfig {
-                // Subinterface Index
-                uint64 index = 1 [(google.api.field_behavior) = OPTIONAL];
-                // Subinterface description
-                string description = 2 [(google.api.field_behavior) = OPTIONAL];
-                // Subinterface enabled
-                bool enabled = 3 [(google.api.field_behavior) = OPTIONAL];
-            }
-            // Subinterface Configuration
-            SubifConfig subif_config = 2 [(google.api.field_behavior) = OPTIONAL];
-
-            // Subinterface State and Statistics
-            NetInterfaceState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-            // Subinterface VLAN
-            VlanIf vlan = 4 [(google.api.field_behavior) = OPTIONAL];
-        }
-        // Subinterface Settings
-        repeated Subinterface subinterface = 2 [(google.api.field_behavior) = OPTIONAL];
+    // Hold State Settings - ro
+    message HoldState {
+      // Hold state up
+      uint32 up = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+      // Hold state down
+      uint32 down = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     }
-    // Subinterfaces assigned to the interface
-    Subinterfaces subinterfaces = 5 [(google.api.field_behavior) = OPTIONAL];
+    // Hold State Settings
+    HoldState hold_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  }
+  // Hold Time Settings
+  HoldTime holdtime = 4 [(google.api.field_behavior) = OPTIONAL];
 
-    // Ethernet interface
-    EthernetInterface ethernet = 6 [(google.api.field_behavior) = OPTIONAL];
+  // Subinterfaces settings - VLAN, etc.
+  message Subinterfaces {
+    // Subinterface settings
+    message Subinterface {
+      // Subinterface index
+      int64 index = 1 [(google.api.field_behavior) = OPTIONAL];
+
+      // Subinterface configuration
+      message SubifConfig {
+        // Subinterface Index
+        uint64 index = 1 [(google.api.field_behavior) = OPTIONAL];
+        // Subinterface description
+        string description = 2 [(google.api.field_behavior) = OPTIONAL];
+        // Subinterface enabled
+        bool enabled = 3 [(google.api.field_behavior) = OPTIONAL];
+      }
+      // Subinterface Configuration
+      SubifConfig subif_config = 2 [(google.api.field_behavior) = OPTIONAL];
+
+      // Subinterface State and Statistics
+      NetInterfaceState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+      // Subinterface VLAN
+      VlanIf vlan = 4 [(google.api.field_behavior) = OPTIONAL];
+    }
+    // Subinterface Settings
+    repeated Subinterface subinterface = 2 [(google.api.field_behavior) = OPTIONAL];
+  }
+  // Subinterfaces assigned to the interface
+  Subinterfaces subinterfaces = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Ethernet interface
+  EthernetInterface ethernet = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Get Interface Request
 message GetNetInterfaceRequest {
-    // Name of interface requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1/Interfaces"
-    ];
+  // Name of interface requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1/Interfaces"
+  ];
 }
 
 // List Interfaces Request
 message ListNetInterfacesRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1/Interfaces"
-    ];
-    // page size
-    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
-    // page token
-    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1/Interfaces"
+  ];
+  // page size
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page token
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List of Interfaces Response
 message ListNetInterfacesResponse {
-    // List of interfaces
-    repeated NetInterface net_interfaces = 1;
-    // next page token
-    string next_page_token = 2;
+  // List of interfaces
+  repeated NetInterface net_interfaces = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Update Interface Request
 message UpdateNetInterfaceRequest {
-    // Interface update settings
-    NetInterface net_interface = 1 [(google.api.field_behavior) = REQUIRED];
-    // list of fields to update
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created. 
-    // In this situation, 'update_mask' is ignored. 
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Interface update settings
+  NetInterface net_interface = 1 [(google.api.field_behavior) = REQUIRED];
+  // list of fields to update
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, 'update_mask' is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Interface Types Enumeration
 enum InterfaceType {
-    // Interface Unspecified
-    INTERFACE_TYPE_UNSPECIFIED = 0;
-    // Ethernet Interface
-    INTERFACE_TYPE_ETHERNET = 1;
-    // Loopback Interface
-    INTERFACE_TYPE_LOOPBACK = 2;
+  // Interface Unspecified
+  INTERFACE_TYPE_UNSPECIFIED = 0;
+  // Ethernet Interface
+  INTERFACE_TYPE_ETHERNET = 1;
+  // Loopback Interface
+  INTERFACE_TYPE_LOOPBACK = 2;
 }
 
 // Operational State Enumeration
 enum OperState {
-    // Unspecified
-    OPER_STATE_UNSPECIFIED = 0;
-    // Operational Up
-    OPER_STATE_UP = 2;
-    // Operational Down
-    OPER_STATE_DOWN = 3;
-    // Operational Testing
-    OPER_STATE_TESTING = 4;
-    // Unknown
-    OPER_STATE_UNKNOWN = 5;
-    // Dormant
-    OPER_STATE_DORMANT = 6;
-    // Not Present
-    OPER_STATE_NOT_PRESENT = 7;
-    // Lower Layer Down
-    OPER_STATE_LOWER_LAYER_DOWN = 8;
+  // Unspecified
+  OPER_STATE_UNSPECIFIED = 0;
+  // Operational Up
+  OPER_STATE_UP = 2;
+  // Operational Down
+  OPER_STATE_DOWN = 3;
+  // Operational Testing
+  OPER_STATE_TESTING = 4;
+  // Unknown
+  OPER_STATE_UNKNOWN = 5;
+  // Dormant
+  OPER_STATE_DORMANT = 6;
+  // Not Present
+  OPER_STATE_NOT_PRESENT = 7;
+  // Lower Layer Down
+  OPER_STATE_LOWER_LAYER_DOWN = 8;
 }

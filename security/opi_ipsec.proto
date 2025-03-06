@@ -24,7 +24,6 @@ import "google/api/resource.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
-
 import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/security/v1alpha1/gen/go";
@@ -54,23 +53,17 @@ service IkePeerService {
   }
   // Delete an existing IKE peer specification.
   rpc DeleteIkePeer(DeleteIkePeerRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      delete: "/v1alpha1/{name=ikePeers/*}"
-    };
+    option (google.api.http) = {delete: "/v1alpha1/{name=ikePeers/*}"};
     option (google.api.method_signature) = "name";
   }
   // Get an existing IKE peer specification.
   rpc GetIkePeer(GetIkePeerRequest) returns (IkePeer) {
-    option (google.api.http) = {
-      get: "/v1alpha1/{name=ikePeers/*}"
-    };
+    option (google.api.http) = {get: "/v1alpha1/{name=ikePeers/*}"};
     option (google.api.method_signature) = "name";
   }
   // List existing IKE peers.
   rpc ListIkePeers(ListIkePeersRequest) returns (ListIkePeersResponse) {
-    option (google.api.http) = {
-      get: "/v1alpha1/ikePeers"
-    };
+    option (google.api.http) = {get: "/v1alpha1/ikePeers"};
   }
 }
 
@@ -100,29 +93,21 @@ service IkeConnectionService {
   }
   // Delete an existing IKE connection.
   rpc DeleteIkeConnection(DeleteIkeConnectionRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      delete: "/v1alpha1/{name=ikeConnections/*}"
-    };
+    option (google.api.http) = {delete: "/v1alpha1/{name=ikeConnections/*}"};
     option (google.api.method_signature) = "name";
   }
   // Retrieve an IKE connection.
   rpc GetIkeConnection(GetIkeConnectionRequest) returns (IkeConnection) {
-    option (google.api.http) = {
-      get: "/v1alpha1/{name=ikeConnections/*}"
-    };
+    option (google.api.http) = {get: "/v1alpha1/{name=ikeConnections/*}"};
     option (google.api.method_signature) = "name";
   }
   // List existing IKE connections.
   rpc ListIkeConnections(ListIkeConnectionsRequest) returns (ListIkeConnectionsResponse) {
-    option (google.api.http) = {
-      get: "/v1alpha1/ikeConnections"
-    };
+    option (google.api.http) = {get: "/v1alpha1/ikeConnections"};
   }
   // Get IKE connection statistics.
   rpc StatsIkeConnections(StatsIkeConnectionsRequest) returns (StatsIkeConnectionsResponse) {
-    option (google.api.http) = {
-      get: "/v1alpha1/ikeConnections:stats"
-    };
+    option (google.api.http) = {get: "/v1alpha1/ikeConnections:stats"};
   }
 }
 
@@ -148,25 +133,19 @@ service IpsecSaService {
   }
   // Delete an existing IPsec Security Association
   rpc DeleteIpsecSa(DeleteIpsecSaRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      delete: "/v1alpha1/{name=ipsecSas/*}"
-    };
+    option (google.api.http) = {delete: "/v1alpha1/{name=ipsecSas/*}"};
     option (google.api.method_signature) = "name";
   }
   // Get an IPsec Security Association
   rpc GetIpsecSa(GetIpsecSaRequest) returns (IpsecSa) {
-    option (google.api.http) = {
-      get: "/v1alpha1/{name=ipsecSas/*}"
-    };
+    option (google.api.http) = {get: "/v1alpha1/{name=ipsecSas/*}"};
     option (google.api.method_signature) = "name";
   }
   // List existing IPsec Security Associations
   rpc ListIpsecSas(ListIpsecSasRequest) returns (ListIpsecSasResponse) {
-    option (google.api.http) = {
-      get: "/v1alpha1/ipsecSas"
-    };
+    option (google.api.http) = {get: "/v1alpha1/ipsecSas"};
   }
-} 
+}
 
 // Management of the IPsec Security Policy Database (SPD). The SPD contains
 // information about the IPsec policies that are used to protect the traffic
@@ -190,23 +169,17 @@ service IpsecPolicyService {
   }
   // Delete an existing IPsec Policy
   rpc DeleteIpsecPolicy(DeleteIpsecPolicyRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      delete: "/v1alpha1/{name=ipsecPolicies/*}"
-    };
+    option (google.api.http) = {delete: "/v1alpha1/{name=ipsecPolicies/*}"};
     option (google.api.method_signature) = "name";
   }
   // Get an IPsec Policy
   rpc GetIpsecPolicy(GetIpsecPolicyRequest) returns (IpsecPolicy) {
-    option (google.api.http) = {
-      get: "/v1alpha1/{name=ipsecPolicies/*}"
-    };
+    option (google.api.http) = {get: "/v1alpha1/{name=ipsecPolicies/*}"};
     option (google.api.method_signature) = "name";
   }
   // List existing IPsec Policies
   rpc ListIpsecPolicies(ListIpsecPoliciesRequest) returns (ListIpsecPoliciesResponse) {
-    option (google.api.http) = {
-      get: "/v1alpha1/ipsecPolicies"
-    };
+    option (google.api.http) = {get: "/v1alpha1/ipsecPolicies"};
   }
 }
 
@@ -263,7 +236,7 @@ message IkeConnection {
     singular: "ikeConnection"
     plural: "ikeConnections"
   };
-  
+
   // Unique name to identify the connection.
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
   // IKE/IPsec connection startup behavior. Default: AUTO_STARTUP_MODE_ADD
@@ -287,11 +260,13 @@ message IkeConnection {
   // Local peer name.
   string local = 11 [
     (google.api.field_behavior) = OPTIONAL,
-    (google.api.resource_reference).type = "IkePeer"];
+    (google.api.resource_reference).type = "IkePeer"
+  ];
   // Remote peer name.
   string remote = 12 [
     (google.api.field_behavior) = OPTIONAL,
-    (google.api.resource_reference).type = "IkePeer"];
+    (google.api.resource_reference).type = "IkePeer"
+  ];
   // Configuration information about the encapsulation that should be used when
   // NAT traversal is required. No encapsulation is used if this field is not
   // specified.
@@ -306,7 +281,8 @@ message IkeConnection {
   // IPsec policies that apply to the connection
   repeated string policies = 17 [
     (google.api.field_behavior) = OPTIONAL,
-    (google.api.resource_reference).type = "IpsecPolicy"];
+    (google.api.resource_reference).type = "IpsecPolicy"
+  ];
   // Connection state / status
   IkeConnectionState state = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
@@ -675,7 +651,7 @@ message IkePeer {
 
 // Create an IKE Peer
 message CreateIkePeerRequest {
-  // The ID to use for the IKE Peer. 
+  // The ID to use for the IKE Peer.
   string ike_peer_id = 1 [(google.api.field_behavior) = REQUIRED];
   // The IKE Peer to create.
   IkePeer ike_peer = 2 [(google.api.field_behavior) = REQUIRED];
@@ -694,7 +670,8 @@ message DeleteIkePeerRequest {
   // Name of the IKE peer to delete
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "IkePeer"];
+    (google.api.resource_reference).type = "IkePeer"
+  ];
 }
 
 // Get an IKE Peer
@@ -702,7 +679,8 @@ message GetIkePeerRequest {
   // Name of the IKE peer to retrieve
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "IkePeer"];
+    (google.api.resource_reference).type = "IkePeer"
+  ];
 }
 
 // List IKE Peers
@@ -718,7 +696,7 @@ message ListIkePeersRequest {
 message ListIkePeersResponse {
   // List of IKE peers
   repeated IkePeer ike_peers = 1;
-  
+
   // A token that can be sent as `page_token` to retrieve the next page.
   // If this field is omitted, there are not subsequent pages.
   string next_page_token = 2;
@@ -728,7 +706,7 @@ message ListIkePeersResponse {
 message CreateIkeConnectionRequest {
   // The ID to use for the IKE Connection.
   string ike_connection_id = 1 [(google.api.field_behavior) = REQUIRED];
-  
+
   // The IKE Connection to create.
   IkeConnection ike_connection = 2 [(google.api.field_behavior) = REQUIRED];
 }
@@ -746,7 +724,8 @@ message DeleteIkeConnectionRequest {
   // Connection name identifying the IKE connection to delete
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "IkeConnection"];
+    (google.api.resource_reference).type = "IkeConnection"
+  ];
 }
 
 // Get an IKE Connection
@@ -754,7 +733,8 @@ message GetIkeConnectionRequest {
   // Connection name identifying the IKE connection to retrieve
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "IkeConnection"];
+    (google.api.resource_reference).type = "IkeConnection"
+  ];
 }
 
 // List IKE Connections
@@ -770,15 +750,14 @@ message ListIkeConnectionsRequest {
 message ListIkeConnectionsResponse {
   // List of IKE connections
   repeated IkeConnection ike_connections = 1;
-  
+
   // A token that can be sent as `page_token` to retrieve the next page.
   // If this field is omitted, there are not subsequent pages.
   string next_page_token = 2;
 }
 
 // Request to get IKE Connection statistics
-message StatsIkeConnectionsRequest {
-}
+message StatsIkeConnectionsRequest {}
 
 // Response to a StatsIkeConnectionsRequest
 message StatsIkeConnectionsResponse {
@@ -799,7 +778,7 @@ message ListIpsecSasRequest {
 message ListIpsecSasResponse {
   // List of IPsec SAs
   repeated IpsecSa ipsec_sas = 1;
-  
+
   // A token that can be sent as `page_token` to retrieve the next page.
   // If this field is omitted, there are not subsequent pages.
   string next_page_token = 2;
@@ -810,7 +789,8 @@ message GetIpsecSaRequest {
   // Name of the SA to retrieve
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "IpsecSa"];
+    (google.api.resource_reference).type = "IpsecSa"
+  ];
 }
 
 // Create an IPsec SA
@@ -835,14 +815,15 @@ message DeleteIpsecSaRequest {
   // Name of the SA to delete
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "IpsecSa"];
+    (google.api.resource_reference).type = "IpsecSa"
+  ];
 }
 
 // Create an IPsec Policy
 message CreateIpsecPolicyRequest {
   // The ID to use for the IPsec Policy.
   string ipsec_policy_id = 1 [(google.api.field_behavior) = REQUIRED];
-  
+
   // The IPsec Policy to create.
   IpsecPolicy ipsec_policy = 2 [(google.api.field_behavior) = REQUIRED];
 }
@@ -860,7 +841,8 @@ message DeleteIpsecPolicyRequest {
   // Name of the policy to delete
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "IpsecPolicy"];
+    (google.api.resource_reference).type = "IpsecPolicy"
+  ];
 }
 
 // Get an IPsec Policy
@@ -868,7 +850,8 @@ message GetIpsecPolicyRequest {
   // Name of the policy to retrieve
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "IpsecPolicy"];
+    (google.api.resource_reference).type = "IpsecPolicy"
+  ];
 }
 
 // List IPsec Policies
@@ -884,7 +867,7 @@ message ListIpsecPoliciesRequest {
 message ListIpsecPoliciesResponse {
   // List of IPsec policies
   repeated IpsecPolicy ipsec_policies = 1;
-  
+
   // A token that can be sent as `page_token` to retrieve the next page.
   // If this field is omitted, there are not subsequent pages.
   string next_page_token = 2;
