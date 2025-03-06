@@ -2,216 +2,214 @@
 // Copyright (c) 2024 Dell Inc, or its subsidiaries.
 //
 // Derived from the OpenConfig interfaces model github.com/openconfig/public/release/models/interfaces
-// 
+//
 // (-- api-linter: core::0141::forbidden-types=disabled
 //     aip.dev/not-precedent: counters, mtu, index must be uint and not int. --)
 syntax = "proto3";
 
 package opi_api.network.opinetcommon.v1alpha1;
 
-option java_package = "opi_api.network.opinetcommon.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "NetworkEthernetProto";
-
-option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
-
+import "google/api/field_behavior.proto";
 import "network/opinetcommon/networkvlan.proto";
 
-import "google/api/field_behavior.proto";
+option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "NetworkEthernetProto";
+option java_package = "opi_api.network.opinetcommon.v1alpha1";
 
 // Ethernet Configuration
 message EthernetConfig {
-    // MAC address to assign to the Ethernet Interface if not assigned
-    string mac_address = 1 [(google.api.field_behavior) = OPTIONAL];
-    // Set to TRUE to request autonegotiate the transmission parameters 
-    // with the peer interface
-    bool auto_negotiate = 2 [(google.api.field_behavior) = OPTIONAL];
-    // Used when full autonegotiation is not desired by setting to TRUE
-    // and setting auto_negotiate to FALSE.  It is ignored when auto-negotiate
-    // is set to TRUE.
-    bool standalone_link_training = 3 [(google.api.field_behavior) = OPTIONAL];
-    // Optionally sets the duplex mode that is advertised to the peer interface
-    EthDuplexMode duplex_mode = 4 [(google.api.field_behavior) = OPTIONAL];
-    // Optionally sets the port speed that is advertised to the peer interface
-    EthPortSpeed port_speed = 5 [(google.api.field_behavior) = OPTIONAL];
-    // Override for the negotiated flow control on the interface
-    bool enable_flow_control = 6 [(google.api.field_behavior) = OPTIONAL];
-    // FEC applied to the physical channel of the interface
-    EthFecMode fec_mode = 7 [(google.api.field_behavior) = OPTIONAL];
+  // MAC address to assign to the Ethernet Interface if not assigned
+  string mac_address = 1 [(google.api.field_behavior) = OPTIONAL];
+  // Set to TRUE to request autonegotiate the transmission parameters
+  // with the peer interface
+  bool auto_negotiate = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Used when full autonegotiation is not desired by setting to TRUE
+  // and setting auto_negotiate to FALSE.  It is ignored when auto-negotiate
+  // is set to TRUE.
+  bool standalone_link_training = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Optionally sets the duplex mode that is advertised to the peer interface
+  EthDuplexMode duplex_mode = 4 [(google.api.field_behavior) = OPTIONAL];
+  // Optionally sets the port speed that is advertised to the peer interface
+  EthPortSpeed port_speed = 5 [(google.api.field_behavior) = OPTIONAL];
+  // Override for the negotiated flow control on the interface
+  bool enable_flow_control = 6 [(google.api.field_behavior) = OPTIONAL];
+  // FEC applied to the physical channel of the interface
+  EthFecMode fec_mode = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Ethernet receive frame distribution counters
 message EthernetInDistribution {
-    // Receive counter for 64 byte frames
-    uint64 rx_frames_octets64 = 1;
-    // Receive counter for 65 to 127 byte frames
-    uint64 rx_frames_octets65_to127 = 2;
-    // Receive counter for 128 to 255 byte frames
-    uint64 rx_frames_octets128_to255 = 3;
-    // receive counter for 256 to 511 byte frames
-    uint64 rx_frames_octets256_to511 = 4;
-    // receive counter for 512 to 1023 byte frames
-    uint64 rx_frames_octets512_to1023 = 5;
-    // receive counter for 1024 to 1518 byte frames
-    uint64 rx_frames_octets1024_to1518 = 6;
+  // Receive counter for 64 byte frames
+  uint64 rx_frames_octets64 = 1;
+  // Receive counter for 65 to 127 byte frames
+  uint64 rx_frames_octets65_to127 = 2;
+  // Receive counter for 128 to 255 byte frames
+  uint64 rx_frames_octets128_to255 = 3;
+  // receive counter for 256 to 511 byte frames
+  uint64 rx_frames_octets256_to511 = 4;
+  // receive counter for 512 to 1023 byte frames
+  uint64 rx_frames_octets512_to1023 = 5;
+  // receive counter for 1024 to 1518 byte frames
+  uint64 rx_frames_octets1024_to1518 = 6;
 }
 
 // Ethernet Interface Counters
 message EthernetCounters {
-    // received mac control frame counter
-    uint64 rx_mac_control_frames = 1;
-    // received mac pause frame counter
-    uint64 rx_mac_pause_frames = 2;
-    // frames received that were oversized on the interface
-    // (larger then 1518 octets)
-    uint64 rx_oversize_frames = 3;
-    // frames received that were undersized on the interface
-    // (smaller then 64 octets)
-    uint64 rx_undersize_frames = 4;
-    // Number of jabber frames received on the interface.
-    // Jabber frames are typically defined as oversize frames which also
-    // have a bad CRC
-    uint64 rx_jabber_frames = 5;
-    // The total number of frames received that were less than 64 octets
-    // in length (excluding framing bits but including FCS octets)
-    // and had either a bad Frame Check Sequence (FCS) with an integral
-    // number of octets (FCS Error) or a bad FCS with a non-integral number
-    // of octets (Alignment Error)
-    uint64 rx_fragment_frames = 6;
-    // Number of 802.1q tagged frames received on the interface
-    uint64 rx_ieee8021q_frames = 7;
-    // The total number of frames received that had FCS errors
-    uint64 rx_crc_errors = 8;
-    // The number of received errored blocks
-    uint64 rx_block_errors = 9;
-    // The number of received errored frames due to a carrier issue
-    uint64 rx_carrier_errors = 10;
-    // The number of received errored frames due to interrupted transmission
-    // issue
-    uint64 rx_interrupted_tx = 11;
-    // The number of received errored frames due to late collision issue
-    uint64 rx_late_collision = 12;
-    // The number of received errored frames due to MAC errors received
-    uint64 rx_mac_errors_rx = 13;
-    // The number of received errored frames due to single collision issue
-    uint64 rx_single_collision = 14;
-    // The number of received errored frames due to symbol error
-    uint64 rx_symbol_error = 15;
-    // The total number frames received that are well-formed but dropped due
-    // to exceeding the maximum frame size on the interface
-    uint64 rx_maxsize_exceeded = 16;
-    // MAC layer control frames sent on the interface
-    uint64 out_mac_control_frames = 17;
-    // MAC layer PAUSE frames sent on the interface
-    uint64 out_mac_pause_frames = 18;
-    // Number of 802.1q tagged frames sent on the interface
-    uint64 out_ieee8021q_frames = 19;
-    // The number of sent errored frames due to MAC errors transmitted
-    uint64 out_mac_errors_tx = 20;
-    // Receive Frame Distribution counters
-    EthernetInDistribution eth_rx_distribution = 21;
+  // received mac control frame counter
+  uint64 rx_mac_control_frames = 1;
+  // received mac pause frame counter
+  uint64 rx_mac_pause_frames = 2;
+  // frames received that were oversized on the interface
+  // (larger then 1518 octets)
+  uint64 rx_oversize_frames = 3;
+  // frames received that were undersized on the interface
+  // (smaller then 64 octets)
+  uint64 rx_undersize_frames = 4;
+  // Number of jabber frames received on the interface.
+  // Jabber frames are typically defined as oversize frames which also
+  // have a bad CRC
+  uint64 rx_jabber_frames = 5;
+  // The total number of frames received that were less than 64 octets
+  // in length (excluding framing bits but including FCS octets)
+  // and had either a bad Frame Check Sequence (FCS) with an integral
+  // number of octets (FCS Error) or a bad FCS with a non-integral number
+  // of octets (Alignment Error)
+  uint64 rx_fragment_frames = 6;
+  // Number of 802.1q tagged frames received on the interface
+  uint64 rx_ieee8021q_frames = 7;
+  // The total number of frames received that had FCS errors
+  uint64 rx_crc_errors = 8;
+  // The number of received errored blocks
+  uint64 rx_block_errors = 9;
+  // The number of received errored frames due to a carrier issue
+  uint64 rx_carrier_errors = 10;
+  // The number of received errored frames due to interrupted transmission
+  // issue
+  uint64 rx_interrupted_tx = 11;
+  // The number of received errored frames due to late collision issue
+  uint64 rx_late_collision = 12;
+  // The number of received errored frames due to MAC errors received
+  uint64 rx_mac_errors_rx = 13;
+  // The number of received errored frames due to single collision issue
+  uint64 rx_single_collision = 14;
+  // The number of received errored frames due to symbol error
+  uint64 rx_symbol_error = 15;
+  // The total number frames received that are well-formed but dropped due
+  // to exceeding the maximum frame size on the interface
+  uint64 rx_maxsize_exceeded = 16;
+  // MAC layer control frames sent on the interface
+  uint64 out_mac_control_frames = 17;
+  // MAC layer PAUSE frames sent on the interface
+  uint64 out_mac_pause_frames = 18;
+  // Number of 802.1q tagged frames sent on the interface
+  uint64 out_ieee8021q_frames = 19;
+  // The number of sent errored frames due to MAC errors transmitted
+  uint64 out_mac_errors_tx = 20;
+  // Receive Frame Distribution counters
+  EthernetInDistribution eth_rx_distribution = 21;
 }
 
 // Ethernet interface state settings
 message EthernetState {
-    // MAC address to assign to the Ethernet Interface if not assigned or
-    // being overridden.
-    string mac_address = 1;
-    // Set to TRUE to request autonegotiate the transmission parameters 
-    // with the peer interface
-    bool auto_negotiate = 2;
-    // Used when full autonegotiation is not desired by setting to TRUE
-    // and setting auto_negotiate to FALSE.  It is ignored when auto-negotiate
-    // is set to TRUE.
-    bool standalone_link_training = 3;
-    // The duplex mode that is negotiated or set interface
-    EthDuplexMode duplex_mode = 4;
-    // The port speed that is negotiated or set for the interface
-    EthPortSpeed port_speed = 5;
-    // Override for the negotiated flow control on the interface
-    bool enable_flow_control = 6;
-    // FEC applied to the physical channel of the interface
-    EthFecMode fec_mode = 7;
-    // Hardware MAC address defined for the interface
-    string hw_mac_address = 8;
-    // Negotiated Duplex mode for the interface
-    EthDuplexMode negotiated_duplex_mode = 9;
-    // Negotiated Port Speed for the interface
-    EthPortSpeed negotiated_port_speed = 10;
-    // Ethernet port counters
-    EthernetCounters counters = 11;
+  // MAC address to assign to the Ethernet Interface if not assigned or
+  // being overridden.
+  string mac_address = 1;
+  // Set to TRUE to request autonegotiate the transmission parameters
+  // with the peer interface
+  bool auto_negotiate = 2;
+  // Used when full autonegotiation is not desired by setting to TRUE
+  // and setting auto_negotiate to FALSE.  It is ignored when auto-negotiate
+  // is set to TRUE.
+  bool standalone_link_training = 3;
+  // The duplex mode that is negotiated or set interface
+  EthDuplexMode duplex_mode = 4;
+  // The port speed that is negotiated or set for the interface
+  EthPortSpeed port_speed = 5;
+  // Override for the negotiated flow control on the interface
+  bool enable_flow_control = 6;
+  // FEC applied to the physical channel of the interface
+  EthFecMode fec_mode = 7;
+  // Hardware MAC address defined for the interface
+  string hw_mac_address = 8;
+  // Negotiated Duplex mode for the interface
+  EthDuplexMode negotiated_duplex_mode = 9;
+  // Negotiated Port Speed for the interface
+  EthPortSpeed negotiated_port_speed = 10;
+  // Ethernet port counters
+  EthernetCounters counters = 11;
 }
 
 // Ethernet Interface
 message EthernetInterface {
-    // Ethernet Interface Configuration settings
-    EthernetConfig config = 1;
-    // Ethernet Interface State information
-    EthernetState state = 2;
-    // Switched VLAN Interface configuration for interface
-    VlanSwitchedIf switched_vlan = 3;
+  // Ethernet Interface Configuration settings
+  EthernetConfig config = 1;
+  // Ethernet Interface State information
+  EthernetState state = 2;
+  // Switched VLAN Interface configuration for interface
+  VlanSwitchedIf switched_vlan = 3;
 }
 
 // Ethernet Duplex Mode Definitions
 enum EthDuplexMode {
-    // Unspecified - interface will negotiate duplex speed directly
-    ETH_DUPLEX_MODE_UNSPECIFIED = 0;
-    // Specify Full Duplex mode in autonegotiation
-    ETH_DUPLEX_MODE_FULL = 1;
-    // Specify Half Duplex mode in autonegotiation
-    ETH_DUPLEX_MODE_HALF = 2;
+  // Unspecified - interface will negotiate duplex speed directly
+  ETH_DUPLEX_MODE_UNSPECIFIED = 0;
+  // Specify Full Duplex mode in autonegotiation
+  ETH_DUPLEX_MODE_FULL = 1;
+  // Specify Half Duplex mode in autonegotiation
+  ETH_DUPLEX_MODE_HALF = 2;
 }
 
 // Ethernet Port Speed Definitions
 enum EthPortSpeed {
-    // Unspecified - interface will negotiate port speed with the peer interface
-    ETH_PORT_SPEED_UNSPECIFIED = 0;
-    // 10M port speed
-    ETH_PORT_SPEED_10M = 1;
-    // 100M port speed
-    ETH_PORT_SPEED_100M = 2;
-    // 1G port speed
-    ETH_PORT_SPEED_1G = 3;
-    // 2.5G port speed
-    ETH_PORT_SPEED_2500M = 4;
-    // 5G port speed
-    ETH_PORT_SPEED_5G = 5;
-    // 10G port speed
-    ETH_PORT_SPEED_10G = 6;
-    // 25G port speed
-    ETH_PORT_SPEED_25G = 7;
-    // 40G port speed
-    ETH_PORT_SPEED_40G = 8;
-    // 50G port speed
-    ETH_PORT_SPEED_50G = 9;
-    // 100G port speed
-    ETH_PORT_SPEED_100G = 10;
-    // 200G port speed
-    ETH_PORT_SPEED_200G = 11;
-    // 400G port speed
-    ETH_PORT_SPEED_400G = 12;
-    // 600G port speed
-    ETH_PORT_SPEED_600G = 13;
-    // 800G port speed
-    ETH_PORT_SPEED_800G = 14;
-    // Interface speed is unknown.  Systems may report
-    // speed UNKNOWN when an interface is down or unpopuplated
-    ETH_PORT_SPEED_UNKNOWN = 15;
+  // Unspecified - interface will negotiate port speed with the peer interface
+  ETH_PORT_SPEED_UNSPECIFIED = 0;
+  // 10M port speed
+  ETH_PORT_SPEED_10M = 1;
+  // 100M port speed
+  ETH_PORT_SPEED_100M = 2;
+  // 1G port speed
+  ETH_PORT_SPEED_1G = 3;
+  // 2.5G port speed
+  ETH_PORT_SPEED_2500M = 4;
+  // 5G port speed
+  ETH_PORT_SPEED_5G = 5;
+  // 10G port speed
+  ETH_PORT_SPEED_10G = 6;
+  // 25G port speed
+  ETH_PORT_SPEED_25G = 7;
+  // 40G port speed
+  ETH_PORT_SPEED_40G = 8;
+  // 50G port speed
+  ETH_PORT_SPEED_50G = 9;
+  // 100G port speed
+  ETH_PORT_SPEED_100G = 10;
+  // 200G port speed
+  ETH_PORT_SPEED_200G = 11;
+  // 400G port speed
+  ETH_PORT_SPEED_400G = 12;
+  // 600G port speed
+  ETH_PORT_SPEED_600G = 13;
+  // 800G port speed
+  ETH_PORT_SPEED_800G = 14;
+  // Interface speed is unknown.  Systems may report
+  // speed UNKNOWN when an interface is down or unpopuplated
+  ETH_PORT_SPEED_UNKNOWN = 15;
 }
 
 // Ethernet Forward Error Correction Mode Definitions
 enum EthFecMode {
-    // Unspecified
-    ETH_FEC_MODE_UNSPECIFIED = 0;
-    // Firecode for NRZ channels with less then 100G
-    ETH_FEC_MODE_FC = 1;
-    // RS528 is used for channels with NRZ modulation. This FEC is designed to
-    // comply with IEEE 802.3, Clause 91.
-    ETH_FEC_MODE_RS528 = 2;
-    // RS544 is used for channels with PAM4 modulation
-    ETH_FEC_MODE_RS544 = 3;
-    // RS544-2x-interleave is used for channels with PAM4 modulation
-    ETH_FEC_MODE_RS544_2X_INTERLEAVE = 4;
-    // FEC is administratively disabled
-    ETH_FEC_MODE_DISABLED = 5;
+  // Unspecified
+  ETH_FEC_MODE_UNSPECIFIED = 0;
+  // Firecode for NRZ channels with less then 100G
+  ETH_FEC_MODE_FC = 1;
+  // RS528 is used for channels with NRZ modulation. This FEC is designed to
+  // comply with IEEE 802.3, Clause 91.
+  ETH_FEC_MODE_RS528 = 2;
+  // RS544 is used for channels with PAM4 modulation
+  ETH_FEC_MODE_RS544 = 3;
+  // RS544-2x-interleave is used for channels with PAM4 modulation
+  ETH_FEC_MODE_RS544_2X_INTERLEAVE = 4;
+  // FEC is administratively disabled
+  ETH_FEC_MODE_DISABLED = 5;
 }
