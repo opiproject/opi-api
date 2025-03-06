@@ -4,34 +4,31 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "CloudRPC";
-
-option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
 import "google/api/annotations.proto";
 import "google/api/client.proto";
-import "google/protobuf/empty.proto";
 import "google/api/field_behavior.proto";
-import "google/protobuf/field_mask.proto";
 import "google/api/resource.proto";
-
-import "network/cloud/device.proto";
-import "network/cloud/port.proto";
-import "network/cloud/interface.proto";
-import "network/cloud/route.proto";
-import "network/cloud/vnic.proto";
-import "network/cloud/underlayroute.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
 import "network/cloud/bgp.proto";
-import "network/cloud/nexthop.proto";
+import "network/cloud/device.proto";
+import "network/cloud/interface.proto";
 import "network/cloud/mapping.proto";
+import "network/cloud/networkpolicy.proto";
+import "network/cloud/nexthop.proto";
+import "network/cloud/ospf.proto";
+import "network/cloud/port.proto";
+import "network/cloud/route.proto";
 import "network/cloud/subnet.proto";
 import "network/cloud/tunnel.proto";
+import "network/cloud/underlayroute.proto";
+import "network/cloud/vnic.proto";
 import "network/cloud/vpc.proto";
-import "network/cloud/networkpolicy.proto";
-import "network/cloud/ospf.proto";
 
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "CloudRPC";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // Cloud Infra Service configure/operate objects to manage cloud infrastructure
 //  Device Capabilities APIs
@@ -47,828 +44,686 @@ import "network/cloud/ospf.proto";
 //  SecurityProfile APIs
 //
 
-
 // Cloud Infra APIs - to manage a multi-node cloud infrastructure on a xPU
 service CloudInfraService {
-    // device capabilities
-    rpc GetDeviceCapabilities (GetDeviceCapabilitiesRequest) returns (DeviceCapabilities) {
-        option (google.api.http) = {
-            get: "/v1/devicecapabilitiess"
-        };
-        option (google.api.method_signature) = "";
-    }
+  // device capabilities
+  rpc GetDeviceCapabilities(GetDeviceCapabilitiesRequest) returns (DeviceCapabilities) {
+    option (google.api.http) = {get: "/v1/devicecapabilitiess"};
+    option (google.api.method_signature) = "";
+  }
 
-    // device apis
-    rpc CreateDevice (CreateDeviceRequest) returns (Device) {
-        option (google.api.http) = {
-            post: "/v1/devices"
-            body: "device"
-        };
-        option (google.api.method_signature) = "device,device_id";
-    }
-    rpc DeleteDevice (DeleteDeviceRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=devices}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateDevice (UpdateDeviceRequest) returns (Device) {
-        option (google.api.http) = {
-            patch: "/v1/{name=devices}/*"
-            body: "device"
-        };
-        option (google.api.method_signature) = "device, update_mask";
-    }
-    rpc ListDevices (ListDevicesRequest) returns (ListDevicesResponse) {
-        option (google.api.http) = {
-            get: "/v1/devices"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetDevice (GetDeviceRequest) returns (Device) {
-        option (google.api.http) = {
-            get: "/v1/{name=devices}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // device apis
+  rpc CreateDevice(CreateDeviceRequest) returns (Device) {
+    option (google.api.http) = {
+      post: "/v1/devices"
+      body: "device"
+    };
+    option (google.api.method_signature) = "device,device_id";
+  }
+  rpc DeleteDevice(DeleteDeviceRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=devices}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateDevice(UpdateDeviceRequest) returns (Device) {
+    option (google.api.http) = {
+      patch: "/v1/{name=devices}/*"
+      body: "device"
+    };
+    option (google.api.method_signature) = "device, update_mask";
+  }
+  rpc ListDevices(ListDevicesRequest) returns (ListDevicesResponse) {
+    option (google.api.http) = {get: "/v1/devices"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetDevice(GetDeviceRequest) returns (Device) {
+    option (google.api.http) = {get: "/v1/{name=devices}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // port apis
-    rpc UpdatePort (UpdatePortRequest) returns (Port) {
-        option (google.api.http) = {
-            patch: "/v1/{name=ports}/*"
-            body: "port"
-        };
-        option (google.api.method_signature) = "port, update_mask";
-    }
-    rpc ListPorts (ListPortsRequest) returns (ListPortsResponse) {
-        option (google.api.http) = {
-            get: "/v1/ports"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetPort (GetPortRequest) returns (Port) {
-        option (google.api.http) = {
-            get: "/v1/{name=ports}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // port apis
+  rpc UpdatePort(UpdatePortRequest) returns (Port) {
+    option (google.api.http) = {
+      patch: "/v1/{name=ports}/*"
+      body: "port"
+    };
+    option (google.api.method_signature) = "port, update_mask";
+  }
+  rpc ListPorts(ListPortsRequest) returns (ListPortsResponse) {
+    option (google.api.http) = {get: "/v1/ports"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetPort(GetPortRequest) returns (Port) {
+    option (google.api.http) = {get: "/v1/{name=ports}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // vnic apis
-    rpc CreateVnic (CreateVnicRequest) returns (Vnic) {
-        option (google.api.http) = {
-            post: "/v1/vnics"
-            body: "vnic"
-        };
-        option (google.api.method_signature) = "vnic,vnic_id";
-    }
-    rpc DeleteVnic (DeleteVnicRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=vnics}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateVnic (UpdateVnicRequest) returns (Vnic) {
-        option (google.api.http) = {
-            patch: "/v1/{name=vnics}/*"
-            body: "vnic"
-        };
-        option (google.api.method_signature) = "vnic, update_mask";
-    }
-    rpc ListVnics (ListVnicsRequest) returns (ListVnicsResponse) {
-        option (google.api.http) = {
-            get: "/v1/vnics"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetVnic (GetVnicRequest) returns (Vnic) {
-        option (google.api.http) = {
-            get: "/v1/{name=vnics}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // vnic apis
+  rpc CreateVnic(CreateVnicRequest) returns (Vnic) {
+    option (google.api.http) = {
+      post: "/v1/vnics"
+      body: "vnic"
+    };
+    option (google.api.method_signature) = "vnic,vnic_id";
+  }
+  rpc DeleteVnic(DeleteVnicRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=vnics}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateVnic(UpdateVnicRequest) returns (Vnic) {
+    option (google.api.http) = {
+      patch: "/v1/{name=vnics}/*"
+      body: "vnic"
+    };
+    option (google.api.method_signature) = "vnic, update_mask";
+  }
+  rpc ListVnics(ListVnicsRequest) returns (ListVnicsResponse) {
+    option (google.api.http) = {get: "/v1/vnics"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetVnic(GetVnicRequest) returns (Vnic) {
+    option (google.api.http) = {get: "/v1/{name=vnics}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // interface apis
-    rpc CreateInterface (CreateInterfaceRequest) returns (Interface) {
-        option (google.api.http) = {
-            post: "/v1/interfaces"
-            body: "interface"
-        };
-        option (google.api.method_signature) = "interface,interface_id";
-    }
-    rpc DeleteInterface (DeleteInterfaceRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=interfaces}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateInterface (UpdateInterfaceRequest) returns (Interface) {
-        option (google.api.http) = {
-            patch: "/v1/{name=interfaces}/*"
-            body: "interface"
-        };
-        option (google.api.method_signature) = "interface, update_mask";
-    }
-    rpc ListInterfaces (ListInterfacesRequest) returns (ListInterfacesResponse) {
-        option (google.api.http) = {
-            get: "/v1/interfaces"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetInterface (GetInterfaceRequest) returns (Interface) {
-        option (google.api.http) = {
-            get: "/v1/{name=interfaces}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // interface apis
+  rpc CreateInterface(CreateInterfaceRequest) returns (Interface) {
+    option (google.api.http) = {
+      post: "/v1/interfaces"
+      body: "interface"
+    };
+    option (google.api.method_signature) = "interface,interface_id";
+  }
+  rpc DeleteInterface(DeleteInterfaceRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=interfaces}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateInterface(UpdateInterfaceRequest) returns (Interface) {
+    option (google.api.http) = {
+      patch: "/v1/{name=interfaces}/*"
+      body: "interface"
+    };
+    option (google.api.method_signature) = "interface, update_mask";
+  }
+  rpc ListInterfaces(ListInterfacesRequest) returns (ListInterfacesResponse) {
+    option (google.api.http) = {get: "/v1/interfaces"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetInterface(GetInterfaceRequest) returns (Interface) {
+    option (google.api.http) = {get: "/v1/{name=interfaces}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // routetable apis
-    rpc CreateRouteTable (CreateRouteTableRequest) returns (RouteTable) {
-        option (google.api.http) = {
-            post: "/v1/routetables"
-            body: "routetable"
-        };
-        option (google.api.method_signature) = "routetable,routetable_id";
-    }
-    rpc DeleteRouteTable (DeleteRouteTableRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=routetables}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateRouteTable (UpdateRouteTableRequest) returns (RouteTable) {
-        option (google.api.http) = {
-            patch: "/v1/{name=routetables}/*"
-            body: "routetable"
-        };
-        option (google.api.method_signature) = "routetable, update_mask";
-    }
-    rpc ListRouteTables (ListRouteTablesRequest) returns (ListRouteTablesResponse) {
-        option (google.api.http) = {
-            get: "/v1/routetables"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetRouteTable (GetRouteTableRequest) returns (RouteTable) {
-        option (google.api.http) = {
-            get: "/v1/{name=routetables}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // TBD rpc RouteTableGetStreaming (RouteTableGetRequest) returns (stream RouteTableGetResponse) {}
+  // routetable apis
+  rpc CreateRouteTable(CreateRouteTableRequest) returns (RouteTable) {
+    option (google.api.http) = {
+      post: "/v1/routetables"
+      body: "routetable"
+    };
+    option (google.api.method_signature) = "routetable,routetable_id";
+  }
+  rpc DeleteRouteTable(DeleteRouteTableRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=routetables}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateRouteTable(UpdateRouteTableRequest) returns (RouteTable) {
+    option (google.api.http) = {
+      patch: "/v1/{name=routetables}/*"
+      body: "routetable"
+    };
+    option (google.api.method_signature) = "routetable, update_mask";
+  }
+  rpc ListRouteTables(ListRouteTablesRequest) returns (ListRouteTablesResponse) {
+    option (google.api.http) = {get: "/v1/routetables"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetRouteTable(GetRouteTableRequest) returns (RouteTable) {
+    option (google.api.http) = {get: "/v1/{name=routetables}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  // TBD rpc RouteTableGetStreaming (RouteTableGetRequest) returns (stream RouteTableGetResponse) {}
 
+  // route apis
+  rpc CreateRoute(CreateRouteRequest) returns (Route) {
+    option (google.api.http) = {
+      post: "/v1/routes"
+      body: "route"
+    };
+    option (google.api.method_signature) = "route,route_id";
+  }
+  rpc DeleteRoute(DeleteRouteRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=routes}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateRoute(UpdateRouteRequest) returns (Route) {
+    option (google.api.http) = {
+      patch: "/v1/{name=routes}/*"
+      body: "route"
+    };
+    option (google.api.method_signature) = "route, update_mask";
+  }
+  rpc ListRoutes(ListRoutesRequest) returns (ListRoutesResponse) {
+    option (google.api.http) = {get: "/v1/routes"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetRoute(GetRouteRequest) returns (Route) {
+    option (google.api.http) = {get: "/v1/{name=routes}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  // TBD rpc RouteLookup (RouteLookupRequest) returns (RouteLookupResponse) {}
 
-    // route apis
-    rpc CreateRoute (CreateRouteRequest) returns (Route) {
-        option (google.api.http) = {
-            post: "/v1/routes"
-            body: "route"
-        };
-        option (google.api.method_signature) = "route,route_id";
-    }
-    rpc DeleteRoute (DeleteRouteRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=routes}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateRoute (UpdateRouteRequest) returns (Route) {
-        option (google.api.http) = {
-            patch: "/v1/{name=routes}/*"
-            body: "route"
-        };
-        option (google.api.method_signature) = "route, update_mask";
-    }
-    rpc ListRoutes (ListRoutesRequest) returns (ListRoutesResponse) {
-        option (google.api.http) = {
-            get: "/v1/routes"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetRoute (GetRouteRequest) returns (Route) {
-        option (google.api.http) = {
-            get: "/v1/{name=routes}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // TBD rpc RouteLookup (RouteLookupRequest) returns (RouteLookupResponse) {}
+  // underlayroute apis
+  rpc CreateUnderlayRoute(CreateUnderlayRouteRequest) returns (UnderlayRoute) {
+    option (google.api.http) = {
+      post: "/v1/underlayroutes"
+      body: "underlayroute"
+    };
+    option (google.api.method_signature) = "underlayroute,underlayroute_id";
+  }
+  rpc DeleteUnderlayRoute(DeleteUnderlayRouteRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=underlayroutes}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateUnderlayRoute(UpdateUnderlayRouteRequest) returns (UnderlayRoute) {
+    option (google.api.http) = {
+      patch: "/v1/{name=underlayroutes}/*"
+      body: "underlayroute"
+    };
+    option (google.api.method_signature) = "underlayroute, update_mask";
+  }
+  rpc ListUnderlayRoutes(ListUnderlayRoutesRequest) returns (ListUnderlayRoutesResponse) {
+    option (google.api.http) = {get: "/v1/underlayroutes"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetUnderlayRoute(GetUnderlayRouteRequest) returns (UnderlayRoute) {
+    option (google.api.http) = {get: "/v1/{name=underlayroutes}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  // TBD rpc CPRouteLookup (CPRouteGetRequest) returns (CPRouteGetResponse) {}
+  // TBD rpc CPRouteRedistGet (CPRouteRedistGetRequest) returns (CPRouteRedistGetResponse) {}
 
-    // underlayroute apis
-    rpc CreateUnderlayRoute (CreateUnderlayRouteRequest) returns (UnderlayRoute) {
-        option (google.api.http) = {
-            post: "/v1/underlayroutes"
-            body: "underlayroute"
-        };
-        option (google.api.method_signature) = "underlayroute,underlayroute_id";
-    }
-    rpc DeleteUnderlayRoute (DeleteUnderlayRouteRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=underlayroutes}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateUnderlayRoute (UpdateUnderlayRouteRequest) returns (UnderlayRoute) {
-        option (google.api.http) = {
-            patch: "/v1/{name=underlayroutes}/*"
-            body: "underlayroute"
-        };
-        option (google.api.method_signature) = "underlayroute, update_mask";
-    }
-    rpc ListUnderlayRoutes (ListUnderlayRoutesRequest) returns (ListUnderlayRoutesResponse) {
-        option (google.api.http) = {
-            get: "/v1/underlayroutes"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetUnderlayRoute (GetUnderlayRouteRequest) returns (UnderlayRoute) {
-        option (google.api.http) = {
-            get: "/v1/{name=underlayroutes}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // TBD rpc CPRouteLookup (CPRouteGetRequest) returns (CPRouteGetResponse) {}
-    // TBD rpc CPRouteRedistGet (CPRouteRedistGetRequest) returns (CPRouteRedistGetResponse) {}
+  // bgp (optional) apis
+  rpc CreateBgpRouter(CreateBgpRouterRequest) returns (BgpRouter) {
+    option (google.api.http) = {
+      post: "/v1/bgpRouters"
+      body: "bgp_router"
+    };
+    option (google.api.method_signature) = "bgp_router,bgp_router_id";
+  }
+  // BGP Router Delete
+  rpc DeleteBgpRouter(DeleteBgpRouterRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=bgpRouter}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  // BGP Router Update
+  rpc UpdateBgpRouter(UpdateBgpRouterRequest) returns (BgpRouter) {
+    option (google.api.http) = {
+      patch: "/v1/{bgp_router.name=bgpRouters}/*"
+      body: "bgp_router"
+    };
+    option (google.api.method_signature) = "bgp_router,update_mask";
+  }
+  // BGP Router List
+  rpc ListBgpRouters(ListBgpRoutersRequest) returns (ListBgpRoutersResponse) {
+    option (google.api.http) = {get: "/v1/{parent=bgpRouters}"};
+    option (google.api.method_signature) = "parent";
+  }
+  // BGP Router Get
+  rpc GetBgpRouter(GetBgpRouterRequest) returns (BgpRouter) {
+    option (google.api.http) = {get: "/v1/{name=bgpRouters}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // bgp (optional) apis
-    rpc CreateBgpRouter (CreateBgpRouterRequest) returns (BgpRouter) {
-        option (google.api.http) = {
-            post: "/v1/bgpRouters"
-            body: "bgp_router"
-        };
-        option (google.api.method_signature) = "bgp_router,bgp_router_id";
-    }
-    // BGP Router Delete
-    rpc DeleteBgpRouter (DeleteBgpRouterRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=bgpRouter}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // BGP Router Update
-    rpc UpdateBgpRouter (UpdateBgpRouterRequest) returns (BgpRouter) {
-        option (google.api.http) = {
-            patch: "/v1/{bgp_router.name=bgpRouters}/*"
-            body: "bgp_router"
-        };
-        option (google.api.method_signature) = "bgp_router,update_mask";
-    }
-    // BGP Router List
-    rpc ListBgpRouters (ListBgpRoutersRequest) returns (ListBgpRoutersResponse) {
-        option (google.api.http) = {
-            get: "/v1/{parent=bgpRouters}"
-        };
-        option (google.api.method_signature) = "parent";
-    }
-    // BGP Router Get
-    rpc GetBgpRouter (GetBgpRouterRequest) returns (BgpRouter) {
-        option (google.api.http) = {
-            get: "/v1/{name=bgpRouters}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // bgppeer (optional) apis
+  rpc CreateBgpPeer(CreateBgpPeerRequest) returns (BgpPeer) {
+    option (google.api.http) = {
+      post: "/v1/bgpPeers"
+      body: "bgp_peer"
+    };
+    option (google.api.method_signature) = "bgp_peer,bgp_peer_id";
+  }
+  // BGP Peer Delete
+  rpc DeleteBgpPeer(DeleteBgpPeerRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=bgpPeers}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  // BGP Peer Update
+  rpc UpdateBgpPeer(UpdateBgpPeerRequest) returns (BgpPeer) {
+    option (google.api.http) = {
+      patch: "/v1/{bgp_peer.name=bgpPeers}/*"
+      body: "bgp_peer"
+    };
+    option (google.api.method_signature) = "bgp_peer,update_mask";
+  }
+  // BGP Peer List
+  rpc ListBgpPeers(ListBgpPeersRequest) returns (ListBgpPeersResponse) {
+    option (google.api.http) = {get: "/v1/{parent=bgpPeers}"};
+    option (google.api.method_signature) = "parent";
+  }
+  // BGP Peer Get
+  rpc GetBgpPeer(GetBgpPeerRequest) returns (BgpPeer) {
+    option (google.api.http) = {get: "/v1/{name=bgpPeers}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // bgppeer (optional) apis
-    rpc CreateBgpPeer (CreateBgpPeerRequest) returns (BgpPeer) {
-        option (google.api.http) = {
-            post: "/v1/bgpPeers"
-            body: "bgp_peer"
-        };
-        option (google.api.method_signature) = "bgp_peer,bgp_peer_id";
-    }
-    // BGP Peer Delete
-    rpc DeleteBgpPeer (DeleteBgpPeerRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=bgpPeers}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // BGP Peer Update
-    rpc UpdateBgpPeer (UpdateBgpPeerRequest) returns (BgpPeer) {
-        option (google.api.http) = {
-            patch: "/v1/{bgp_peer.name=bgpPeers}/*"
-            body: "bgp_peer"
-        };
-        option (google.api.method_signature) = "bgp_peer,update_mask";
-    }
-    // BGP Peer List
-    rpc ListBgpPeers (ListBgpPeersRequest) returns (ListBgpPeersResponse) {
-        option (google.api.http) = {
-            get: "/v1/{parent=bgpPeers}"
-        };
-        option (google.api.method_signature) = "parent";
-    }
-    // BGP Peer Get
-    rpc GetBgpPeer (GetBgpPeerRequest) returns (BgpPeer) {
-        option (google.api.http) = {
-            get: "/v1/{name=bgpPeers}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // bgppeeraf (optional) apis
+  rpc CreateBgpPeerAf(CreateBgpPeerAfRequest) returns (BgpPeerAf) {
+    option (google.api.http) = {
+      post: "/v1/bgpPeerAfs"
+      body: "bgp_peer_af"
+    };
+    option (google.api.method_signature) = "bgp_peer_af,bgp_peer_af_id";
+  }
+  // BGP Peer AF Delete
+  rpc DeleteBgpPeerAf(DeleteBgpPeerAfRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=bgpPeerAfs}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  // BGP Peer AF Update
+  rpc UpdateBgpPeerAf(UpdateBgpPeerAfRequest) returns (BgpPeerAf) {
+    option (google.api.http) = {
+      patch: "/v1/{bgp_peer_af.name=bgpPeerAfs}/*"
+      body: "bgp_peer_af"
+    };
+    option (google.api.method_signature) = "bgp_peer_af,update_mask";
+  }
+  // BGP Peer AF List
+  rpc ListBgpPeerAfs(ListBgpPeerAfsRequest) returns (ListBgpPeerAfsResponse) {
+    option (google.api.http) = {get: "/v1/{parent=bgpPeerAfs}"};
+    option (google.api.method_signature) = "parent";
+  }
+  // BGP Peer AF Get
+  rpc GetBgpPeerAf(GetBgpPeerAfRequest) returns (BgpPeerAf) {
+    option (google.api.http) = {get: "/v1/{name=bgpPeerAfs}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  // TBD rpc BGPClearRoute (BGPClearRouteRequest) returns (BGPClearRouteResponse) {}
+  // TBD rpc BGPNLRIPrefixGet (BGPNLRIPrefixGetRequest) returns (BGPNLRIPrefixGetResponse) {}
+  // TBD rpc BGPPrfxCntrsGet (BGPPrfxCntrsGetRequest) returns (BGPPrfxCntrsGetResponse) {}
+  // TBD rpc BGPAdjRibOutGet (BGPAdjRibOutGetRequest) returns (BGPAdjRibOutGetResponse) {}
 
-    // bgppeeraf (optional) apis
-    rpc CreateBgpPeerAf (CreateBgpPeerAfRequest) returns (BgpPeerAf) {
-        option (google.api.http) = {
-            post: "/v1/bgpPeerAfs"
-            body: "bgp_peer_af"
-        };
-        option (google.api.method_signature) = "bgp_peer_af,bgp_peer_af_id";
-    }
-    // BGP Peer AF Delete
-    rpc DeleteBgpPeerAf (DeleteBgpPeerAfRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=bgpPeerAfs}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // BGP Peer AF Update
-    rpc UpdateBgpPeerAf (UpdateBgpPeerAfRequest) returns (BgpPeerAf) {
-        option (google.api.http) = {
-            patch: "/v1/{bgp_peer_af.name=bgpPeerAfs}/*"
-            body: "bgp_peer_af"
-        };
-        option (google.api.method_signature) = "bgp_peer_af,update_mask";
-    }
-    // BGP Peer AF List
-    rpc ListBgpPeerAfs (ListBgpPeerAfsRequest) returns (ListBgpPeerAfsResponse) {
-        option (google.api.http) = {
-            get: "/v1/{parent=bgpPeerAfs}"
-        };
-        option (google.api.method_signature) = "parent";
-    }
-    // BGP Peer AF Get
-    rpc GetBgpPeerAf (GetBgpPeerAfRequest) returns (BgpPeerAf) {
-        option (google.api.http) = {
-            get: "/v1/{name=bgpPeerAfs}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // TBD rpc BGPClearRoute (BGPClearRouteRequest) returns (BGPClearRouteResponse) {}
-    // TBD rpc BGPNLRIPrefixGet (BGPNLRIPrefixGetRequest) returns (BGPNLRIPrefixGetResponse) {}
-    // TBD rpc BGPPrfxCntrsGet (BGPPrfxCntrsGetRequest) returns (BGPPrfxCntrsGetResponse) {}
-    // TBD rpc BGPAdjRibOutGet (BGPAdjRibOutGetRequest) returns (BGPAdjRibOutGetResponse) {}
+  // mapping apis
+  rpc CreateMapping(CreateMappingRequest) returns (Mapping) {
+    option (google.api.http) = {
+      post: "/v1/mappings"
+      body: "mapping"
+    };
+    option (google.api.method_signature) = "mapping,mapping_id";
+  }
+  rpc DeleteMapping(DeleteMappingRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=mappings}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateMapping(UpdateMappingRequest) returns (Mapping) {
+    option (google.api.http) = {
+      patch: "/v1/{name=mappings}/*"
+      body: "mapping"
+    };
+    option (google.api.method_signature) = "mapping, update_mask";
+  }
+  rpc ListMappings(ListMappingsRequest) returns (ListMappingsResponse) {
+    option (google.api.http) = {get: "/v1/mappings"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetMapping(GetMappingRequest) returns (Mapping) {
+    option (google.api.http) = {get: "/v1/{name=mappings}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  // TBD rpc MappingGetStreaming (MappingGetRequest) returns (stream MappingGetResponse) {}
 
-    // mapping apis
-    rpc CreateMapping (CreateMappingRequest) returns (Mapping) {
-        option (google.api.http) = {
-            post: "/v1/mappings"
-            body: "mapping"
-        };
-        option (google.api.method_signature) = "mapping,mapping_id";
-    }
-    rpc DeleteMapping (DeleteMappingRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=mappings}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateMapping (UpdateMappingRequest) returns (Mapping) {
-        option (google.api.http) = {
-            patch: "/v1/{name=mappings}/*"
-            body: "mapping"
-        };
-        option (google.api.method_signature) = "mapping, update_mask";
-    }
-    rpc ListMappings (ListMappingsRequest) returns (ListMappingsResponse) {
-        option (google.api.http) = {
-            get: "/v1/mappings"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetMapping (GetMappingRequest) returns (Mapping) {
-        option (google.api.http) = {
-            get: "/v1/{name=mappings}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // TBD rpc MappingGetStreaming (MappingGetRequest) returns (stream MappingGetResponse) {}
+  // nexthop apis
+  rpc CreateNextHop(CreateNextHopRequest) returns (NextHop) {
+    option (google.api.http) = {
+      post: "/v1/nexthops"
+      body: "nexthop"
+    };
+    option (google.api.method_signature) = "nexthop,nexthop_id";
+  }
+  rpc DeleteNextHop(DeleteNextHopRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=nexthops}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateNextHop(UpdateNextHopRequest) returns (NextHop) {
+    option (google.api.http) = {
+      patch: "/v1/{name=nexthops}/*"
+      body: "nexthop"
+    };
+    option (google.api.method_signature) = "nexthop, update_mask";
+  }
+  rpc ListNextHop(ListNextHopRequest) returns (ListNextHopsResponse) {
+    option (google.api.http) = {get: "/v1/nexthops"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetNextHop(GetNextHopRequest) returns (NextHop) {
+    option (google.api.http) = {get: "/v1/{name=nexthops}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // nexthop apis
-    rpc CreateNextHop (CreateNextHopRequest) returns (NextHop) {
-        option (google.api.http) = {
-            post: "/v1/nexthops"
-            body: "nexthop"
-        };
-        option (google.api.method_signature) = "nexthop,nexthop_id";
-    }
-    rpc DeleteNextHop (DeleteNextHopRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=nexthops}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateNextHop (UpdateNextHopRequest) returns (NextHop) {
-        option (google.api.http) = {
-            patch: "/v1/{name=nexthops}/*"
-            body: "nexthop"
-        };
-        option (google.api.method_signature) = "nexthop, update_mask";
-    }
-    rpc ListNextHop (ListNextHopRequest) returns (ListNextHopsResponse) {
-        option (google.api.http) = {
-            get: "/v1/nexthops"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetNextHop (GetNextHopRequest) returns (NextHop) {
-        option (google.api.http) = {
-            get: "/v1/{name=nexthops}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // nexthopgroup apis
+  rpc CreateNextHopGroup(CreateNextHopGroupRequest) returns (NextHopGroup) {
+    option (google.api.http) = {
+      post: "/v1/nexthopgroups"
+      body: "nexthopgroup"
+    };
+    option (google.api.method_signature) = "nexthopgroup,nexthopgroup_id";
+  }
+  rpc DeleteNextHopGroup(DeleteNextHopGroupRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=nexthopgroups}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateNextHopGroup(UpdateNextHopGroupRequest) returns (NextHopGroup) {
+    option (google.api.http) = {
+      patch: "/v1/{name=nexthopgroups}/*"
+      body: "nexthopgroup"
+    };
+    option (google.api.method_signature) = "nexthopgroup, update_mask";
+  }
+  rpc ListNextHopGroups(ListNextHopGroupsRequest) returns (ListNextHopGroupsResponse) {
+    option (google.api.http) = {get: "/v1/nexthopgroups"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetNextHopGroup(GetNextHopGroupRequest) returns (NextHopGroup) {
+    option (google.api.http) = {get: "/v1/{name=nexthopgroups}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // nexthopgroup apis
-    rpc CreateNextHopGroup (CreateNextHopGroupRequest) returns (NextHopGroup) {
-        option (google.api.http) = {
-            post: "/v1/nexthopgroups"
-            body: "nexthopgroup"
-        };
-        option (google.api.method_signature) = "nexthopgroup,nexthopgroup_id";
-    }
-    rpc DeleteNextHopGroup (DeleteNextHopGroupRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=nexthopgroups}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateNextHopGroup (UpdateNextHopGroupRequest) returns (NextHopGroup) {
-        option (google.api.http) = {
-            patch: "/v1/{name=nexthopgroups}/*"
-            body: "nexthopgroup"
-        };
-        option (google.api.method_signature) = "nexthopgroup, update_mask";
-    }
-    rpc ListNextHopGroups (ListNextHopGroupsRequest) returns (ListNextHopGroupsResponse) {
-        option (google.api.http) = {
-            get: "/v1/nexthopgroups"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetNextHopGroup (GetNextHopGroupRequest) returns (NextHopGroup) {
-        option (google.api.http) = {
-            get: "/v1/{name=nexthopgroups}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // subnet apis
+  rpc CreateSubnet(CreateSubnetRequest) returns (Subnet) {
+    option (google.api.http) = {
+      post: "/v1/subnets"
+      body: "subnet"
+    };
+    option (google.api.method_signature) = "subnet,subnet_id";
+  }
+  rpc DeleteSubnet(DeleteSubnetRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=subnets}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateSubnet(UpdateSubnetRequest) returns (Subnet) {
+    option (google.api.http) = {
+      patch: "/v1/{name=subnets}/*"
+      body: "subnet"
+    };
+    option (google.api.method_signature) = "subnet, update_mask";
+  }
+  rpc ListSubnets(ListSubnetsRequest) returns (ListSubnetsResponse) {
+    option (google.api.http) = {get: "/v1/subnets"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetSubnet(GetSubnetRequest) returns (Subnet) {
+    option (google.api.http) = {get: "/v1/{name=subnets}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // subnet apis
-    rpc CreateSubnet (CreateSubnetRequest) returns (Subnet) {
-        option (google.api.http) = {
-            post: "/v1/subnets"
-            body: "subnet"
-        };
-        option (google.api.method_signature) = "subnet,subnet_id";
-    }
-    rpc DeleteSubnet (DeleteSubnetRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=subnets}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateSubnet (UpdateSubnetRequest) returns (Subnet) {
-        option (google.api.http) = {
-            patch: "/v1/{name=subnets}/*"
-            body: "subnet"
-        };
-        option (google.api.method_signature) = "subnet, update_mask";
-    }
-    rpc ListSubnets (ListSubnetsRequest) returns (ListSubnetsResponse) {
-        option (google.api.http) = {
-            get: "/v1/subnets"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetSubnet (GetSubnetRequest) returns (Subnet) {
-        option (google.api.http) = {
-            get: "/v1/{name=subnets}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // tunnel apis
+  rpc CreateTunnel(CreateTunnelRequest) returns (Tunnel) {
+    option (google.api.http) = {
+      post: "/v1/tunnels"
+      body: "tunnel"
+    };
+    option (google.api.method_signature) = "tunnel,tunnel_id";
+  }
+  rpc DeleteTunnel(DeleteTunnelRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=tunnels}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateTunnel(UpdateTunnelRequest) returns (Tunnel) {
+    option (google.api.http) = {
+      patch: "/v1/{name=tunnels}/*"
+      body: "tunnel"
+    };
+    option (google.api.method_signature) = "tunnel, update_mask";
+  }
+  rpc ListTunnels(ListTunnelsRequest) returns (ListTunnelsResponse) {
+    option (google.api.http) = {get: "/v1/tunnels"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetTunnel(GetTunnelRequest) returns (Tunnel) {
+    option (google.api.http) = {get: "/v1/{name=tunnels}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // tunnel apis
-    rpc CreateTunnel (CreateTunnelRequest) returns (Tunnel) {
-        option (google.api.http) = {
-            post: "/v1/tunnels"
-            body: "tunnel"
-        };
-        option (google.api.method_signature) = "tunnel,tunnel_id";
-    }
-    rpc DeleteTunnel (DeleteTunnelRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=tunnels}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateTunnel (UpdateTunnelRequest) returns (Tunnel) {
-        option (google.api.http) = {
-            patch: "/v1/{name=tunnels}/*"
-            body: "tunnel"
-        };
-        option (google.api.method_signature) = "tunnel, update_mask";
-    }
-    rpc ListTunnels (ListTunnelsRequest) returns (ListTunnelsResponse) {
-        option (google.api.http) = {
-            get: "/v1/tunnels"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetTunnel (GetTunnelRequest) returns (Tunnel) {
-        option (google.api.http) = {
-            get: "/v1/{name=tunnels}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // vpc apis
+  rpc CreateVpc(CreateVpcRequest) returns (Vpc) {
+    option (google.api.http) = {
+      post: "/v1/vpcs"
+      body: "vpc"
+    };
+    option (google.api.method_signature) = "vpc,vpc_id";
+  }
+  rpc DeleteVpc(DeleteVpcRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=vpcs}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateVpc(UpdateVpcRequest) returns (Vpc) {
+    option (google.api.http) = {
+      patch: "/v1/{name=vpcs}/*"
+      body: "vpc"
+    };
+    option (google.api.method_signature) = "vpc, update_mask";
+  }
+  rpc ListVpcs(ListVpcsRequest) returns (ListVpcsResponse) {
+    option (google.api.http) = {get: "/v1/vpcs"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetVpc(GetVpcRequest) returns (Vpc) {
+    option (google.api.http) = {get: "/v1/{name=vpcs}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // vpc apis
-    rpc CreateVpc (CreateVpcRequest) returns (Vpc) {
-        option (google.api.http) = {
-            post: "/v1/vpcs"
-            body: "vpc"
-        };
-        option (google.api.method_signature) = "vpc,vpc_id";
-    }
-    rpc DeleteVpc (DeleteVpcRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=vpcs}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateVpc (UpdateVpcRequest) returns (Vpc) {
-        option (google.api.http) = {
-            patch: "/v1/{name=vpcs}/*"
-            body: "vpc"
-        };
-        option (google.api.method_signature) = "vpc, update_mask";
-    }
-    rpc ListVpcs (ListVpcsRequest) returns (ListVpcsResponse) {
-        option (google.api.http) = {
-            get: "/v1/vpcs"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetVpc (GetVpcRequest) returns (Vpc) {
-        option (google.api.http) = {
-            get: "/v1/{name=vpcs}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // vpcpeer apis
+  rpc CreateVPCPeer(CreateVPCPeerRequest) returns (VPCPeer) {
+    option (google.api.http) = {
+      post: "/v1/vpcpeers"
+      body: "vpcpeer"
+    };
+    option (google.api.method_signature) = "vpcpeer,vpcpeer_id";
+  }
+  rpc DeleteVPCPeer(DeleteVPCPeerRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=vpcpeers}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateVPCPeer(UpdateVPCPeerRequest) returns (VPCPeer) {
+    option (google.api.http) = {
+      patch: "/v1/{name=vpcpeers}/*"
+      body: "vpcpeer"
+    };
+    option (google.api.method_signature) = "vpcpeer, update_mask";
+  }
+  rpc ListVPCPeers(ListVPCPeersRequest) returns (ListVPCPeersResponse) {
+    option (google.api.http) = {get: "/v1/vpcpeers"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetVPCPeer(GetVPCPeerRequest) returns (VPCPeer) {
+    option (google.api.http) = {get: "/v1/{name=vpcpeers}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // vpcpeer apis
-    rpc CreateVPCPeer (CreateVPCPeerRequest) returns (VPCPeer) {
-        option (google.api.http) = {
-            post: "/v1/vpcpeers"
-            body: "vpcpeer"
-        };
-        option (google.api.method_signature) = "vpcpeer,vpcpeer_id";
-    }
-    rpc DeleteVPCPeer (DeleteVPCPeerRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=vpcpeers}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateVPCPeer (UpdateVPCPeerRequest) returns (VPCPeer) {
-        option (google.api.http) = {
-            patch: "/v1/{name=vpcpeers}/*"
-            body: "vpcpeer"
-        };
-        option (google.api.method_signature) = "vpcpeer, update_mask";
-    }
-    rpc ListVPCPeers (ListVPCPeersRequest) returns (ListVPCPeersResponse) {
-        option (google.api.http) = {
-            get: "/v1/vpcpeers"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetVPCPeer (GetVPCPeerRequest) returns (VPCPeer) {
-        option (google.api.http) = {
-            get: "/v1/{name=vpcpeers}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // securitypolicy apis
+  rpc CreateSecurityPolicy(CreateSecurityPolicyRequest) returns (SecurityPolicy) {
+    option (google.api.http) = {
+      post: "/v1/securitypolicys"
+      body: "securitypolicy"
+    };
+    option (google.api.method_signature) = "securitypolicy,securitypolicy_id";
+  }
+  rpc DeleteSecurityPolicy(DeleteSecurityPolicyRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=securitypolicys}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateSecurityPolicy(UpdateSecurityPolicyRequest) returns (SecurityPolicy) {
+    option (google.api.http) = {
+      patch: "/v1/{name=securitypolicys}/*"
+      body: "securitypolicy"
+    };
+    option (google.api.method_signature) = "securitypolicy, update_mask";
+  }
+  rpc ListSecurityPolicys(ListSecurityPolicysRequest) returns (ListSecurityPolicysResponse) {
+    option (google.api.http) = {get: "/v1/securitypolicys"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetSecurityPolicy(GetSecurityPolicyRequest) returns (SecurityPolicy) {
+    option (google.api.http) = {get: "/v1/{name=securitypolicys}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // securitypolicy apis
-    rpc CreateSecurityPolicy (CreateSecurityPolicyRequest) returns (SecurityPolicy) {
-        option (google.api.http) = {
-            post: "/v1/securitypolicys"
-            body: "securitypolicy"
-        };
-        option (google.api.method_signature) = "securitypolicy,securitypolicy_id";
-    }
-    rpc DeleteSecurityPolicy (DeleteSecurityPolicyRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=securitypolicys}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateSecurityPolicy (UpdateSecurityPolicyRequest) returns (SecurityPolicy) {
-        option (google.api.http) = {
-            patch: "/v1/{name=securitypolicys}/*"
-            body: "securitypolicy"
-        };
-        option (google.api.method_signature) = "securitypolicy, update_mask";
-    }
-    rpc ListSecurityPolicys (ListSecurityPolicysRequest) returns (ListSecurityPolicysResponse) {
-        option (google.api.http) = {
-            get: "/v1/securitypolicys"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetSecurityPolicy (GetSecurityPolicyRequest) returns (SecurityPolicy) {
-        option (google.api.http) = {
-            get: "/v1/{name=securitypolicys}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // securityrule apis
+  rpc CreateSecurityRule(CreateSecurityRuleRequest) returns (SecurityRule) {
+    option (google.api.http) = {
+      post: "/v1/securityrules"
+      body: "securityrule"
+    };
+    option (google.api.method_signature) = "securityrule,securityrule_id";
+  }
+  rpc DeleteSecurityRule(DeleteSecurityRuleRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=securityrules}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateSecurityRule(UpdateSecurityRuleRequest) returns (SecurityRule) {
+    option (google.api.http) = {
+      patch: "/v1/{name=securityrules}/*"
+      body: "securityrule"
+    };
+    option (google.api.method_signature) = "securityrule, update_mask";
+  }
+  rpc ListSecurityRules(ListSecurityRulesRequest) returns (ListSecurityRulesResponse) {
+    option (google.api.http) = {get: "/v1/securityrules"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetSecurityRule(GetSecurityRuleRequest) returns (SecurityRule) {
+    option (google.api.http) = {get: "/v1/{name=securityrules}/*"};
+    option (google.api.method_signature) = "name";
+  }
 
-    // securityrule apis
-    rpc CreateSecurityRule (CreateSecurityRuleRequest) returns (SecurityRule) {
-        option (google.api.http) = {
-            post: "/v1/securityrules"
-            body: "securityrule"
-        };
-        option (google.api.method_signature) = "securityrule,securityrule_id";
-    }
-    rpc DeleteSecurityRule (DeleteSecurityRuleRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=securityrules}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateSecurityRule (UpdateSecurityRuleRequest) returns (SecurityRule) {
-        option (google.api.http) = {
-            patch: "/v1/{name=securityrules}/*"
-            body: "securityrule"
-        };
-        option (google.api.method_signature) = "securityrule, update_mask";
-    }
-    rpc ListSecurityRules (ListSecurityRulesRequest) returns (ListSecurityRulesResponse) {
-        option (google.api.http) = {
-            get: "/v1/securityrules"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetSecurityRule (GetSecurityRuleRequest) returns (SecurityRule) {
-        option (google.api.http) = {
-            get: "/v1/{name=securityrules}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
+  // securityprofile apis
+  rpc CreateSecurityProfile(CreateSecurityProfileRequest) returns (SecurityProfile) {
+    option (google.api.http) = {
+      post: "/v1/securityprofiles"
+      body: "securityprofile"
+    };
+    option (google.api.method_signature) = "securityprofile,securityprofile_id";
+  }
+  rpc DeleteSecurityProfile(DeleteSecurityProfileRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=securityprofiles}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  rpc UpdateSecurityProfile(UpdateSecurityProfileRequest) returns (SecurityProfile) {
+    option (google.api.http) = {
+      patch: "/v1/{name=securityprofiles}/*"
+      body: "securityprofile"
+    };
+    option (google.api.method_signature) = "securityprofile, update_mask";
+  }
+  rpc ListSecurityProfiles(ListSecurityProfilesRequest) returns (ListSecurityProfilesResponse) {
+    option (google.api.http) = {get: "/v1/securityprofiles"};
+    option (google.api.method_signature) = "";
+  }
+  rpc GetSecurityProfile(GetSecurityProfileRequest) returns (SecurityProfile) {
+    option (google.api.http) = {get: "/v1/{name=securityprofiles}/*"};
+    option (google.api.method_signature) = "name";
+  }
+  //  TBD rpc SecurityPolicyGetStreaming (SecurityPolicyGetRequest) returns (stream SecurityPolicyGetResponse) {}
+  //  TBD rpc SecurityPolicyLookup (SecurityPolicyLookupRequest) returns (SecurityPolicyLookupResponse) {}
 
-    // securityprofile apis
-    rpc CreateSecurityProfile (CreateSecurityProfileRequest) returns (SecurityProfile) {
-        option (google.api.http) = {
-            post: "/v1/securityprofiles"
-            body: "securityprofile"
-        };
-        option (google.api.method_signature) = "securityprofile,securityprofile_id";
-    }
-    rpc DeleteSecurityProfile (DeleteSecurityProfileRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=securityprofiles}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    rpc UpdateSecurityProfile (UpdateSecurityProfileRequest) returns (SecurityProfile) {
-        option (google.api.http) = {
-            patch: "/v1/{name=securityprofiles}/*"
-            body: "securityprofile"
-        };
-        option (google.api.method_signature) = "securityprofile, update_mask";
-    }
-    rpc ListSecurityProfiles (ListSecurityProfilesRequest) returns (ListSecurityProfilesResponse) {
-        option (google.api.http) = {
-            get: "/v1/securityprofiles"
-        };
-        option (google.api.method_signature) = "";
-    }
-    rpc GetSecurityProfile (GetSecurityProfileRequest) returns (SecurityProfile) {
-        option (google.api.http) = {
-            get: "/v1/{name=securityprofiles}/*"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    //  TBD rpc SecurityPolicyGetStreaming (SecurityPolicyGetRequest) returns (stream SecurityPolicyGetResponse) {}
-    //  TBD rpc SecurityPolicyLookup (SecurityPolicyLookupRequest) returns (SecurityPolicyLookupResponse) {}
+  // OSPF APIs
+  // Create a OSPF Router. Contains the configuration of the OSPF instance.
+  rpc CreateOspfRouter(CreateOspfRouterRequest) returns (OspfRouter) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ospfRouters"
+      body: "ospf_router"
+    };
+    option (google.api.method_signature) = "ospf_router,ospf_router_id";
+  }
+  // Update a OSPF Router instance
+  rpc UpdateOspfRouter(UpdateOspfRouterRequest) returns (OspfRouter) {
+    option (google.api.http) = {
+      patch: "/v1alpha1/{ospf_router.name=ospfRouters/*}"
+      body: "ospf_router"
+    };
+    option (google.api.method_signature) = "ospf_router,update_mask";
+  }
+  // Delete a OSPF instance
+  rpc DeleteOspfRouter(DeleteOspfRouterRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1alpha1/{name=ospfRouters/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get an OSPF instance
+  rpc GetOspfRouter(GetOspfRouterRequest) returns (OspfRouter) {
+    option (google.api.http) = {get: "/v1alpha1/{name=ospfRouters/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // All OSPF instances
+  rpc ListOspfRouters(ListOspfRoutersRequest) returns (ListOspfRoutersResponse) {
+    option (google.api.http) = {get: "/v1alpha1/ospfRouters"};
+  }
 
-    // OSPF APIs
-    // Create a OSPF Router. Contains the configuration of the OSPF instance.
-    rpc CreateOspfRouter(CreateOspfRouterRequest) returns (OspfRouter) {
-        option (google.api.http) = {
-            post: "/v1alpha1/ospfRouters"
-            body: "ospf_router"
-        };
-        option (google.api.method_signature) = "ospf_router,ospf_router_id";
-    }
-    // Update a OSPF Router instance
-    rpc UpdateOspfRouter(UpdateOspfRouterRequest) returns (OspfRouter) {
-        option (google.api.http) = {
-            patch: "/v1alpha1/{ospf_router.name=ospfRouters/*}"
-            body: "ospf_router"
-        };
-        option (google.api.method_signature) = "ospf_router,update_mask";
-    }
-    // Delete a OSPF instance
-    rpc DeleteOspfRouter(DeleteOspfRouterRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1alpha1/{name=ospfRouters/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get an OSPF instance
-    rpc GetOspfRouter(GetOspfRouterRequest) returns (OspfRouter) {
-        option (google.api.http) = {
-            get: "/v1alpha1/{name=ospfRouters/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // All OSPF instances
-    rpc ListOspfRouters(ListOspfRoutersRequest) returns (ListOspfRoutersResponse) {
-        option (google.api.http) = {
-            get: "/v1alpha1/ospfRouters"
-        };
-    }
+  // Create a OSPF Area
+  rpc CreateOspfArea(CreateOspfAreaRequest) returns (OspfArea) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ospfAreas"
+      body: "ospf_area"
+    };
+    option (google.api.method_signature) = "ospf_area,ospf_area_id";
+  }
+  // Update an OSPF Area
+  rpc UpdateOspfArea(UpdateOspfAreaRequest) returns (OspfArea) {
+    option (google.api.http) = {
+      patch: "/v1alpha1/{ospf_area.name=ospfAreas/*}"
+      body: "ospf_area"
+    };
+    option (google.api.method_signature) = "ospf_area,update_mask";
+  }
+  // Delete an OSPF Area
+  rpc DeleteOspfArea(DeleteOspfAreaRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1alpha1/{name=ospfAreas/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get an OSPF Area
+  rpc GetOspfArea(GetOspfAreaRequest) returns (OspfArea) {
+    option (google.api.http) = {get: "/v1alpha1/{name=ospfAreas/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // List all OSPF Areas
+  rpc ListOspfAreas(ListOspfAreasRequest) returns (ListOspfAreasResponse) {
+    option (google.api.http) = {get: "/v1alpha1/ospfAreas"};
+  }
 
-    // Create a OSPF Area
-    rpc CreateOspfArea(CreateOspfAreaRequest) returns (OspfArea) {
-        option (google.api.http) = {
-            post: "/v1alpha1/ospfAreas"
-            body: "ospf_area"
-        };
-        option (google.api.method_signature) = "ospf_area,ospf_area_id";
-    }
-    // Update an OSPF Area
-    rpc UpdateOspfArea(UpdateOspfAreaRequest) returns (OspfArea) {
-        option (google.api.http) = {
-            patch: "/v1alpha1/{ospf_area.name=ospfAreas/*}"
-            body: "ospf_area"
-        };
-        option (google.api.method_signature) = "ospf_area,update_mask";
-    }
-    // Delete an OSPF Area
-    rpc DeleteOspfArea(DeleteOspfAreaRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1alpha1/{name=ospfAreas/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get an OSPF Area
-    rpc GetOspfArea(GetOspfAreaRequest) returns (OspfArea) {
-        option (google.api.http) = {
-            get: "/v1alpha1/{name=ospfAreas/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // List all OSPF Areas
-    rpc ListOspfAreas(ListOspfAreasRequest) returns (ListOspfAreasResponse) {
-        option (google.api.http) = {
-            get: "/v1alpha1/ospfAreas"
-        };
-    }
-
-    // Create an OSPF IfNetwork
-    rpc CreateOspfIfNetwork(CreateOspfIfNetworkRequest) returns (OspfIfNetwork) {
-        option (google.api.http) = {
-            post: "/v1alpha1/ospfIfNetworks"
-            body: "ospf_if_network"
-        };
-        option (google.api.method_signature) = "ospf_if_network,ospf_if_network_id";
-    }
-    // Update an OSPF IfNetwork
-    rpc UpdateOspfIfNetwork(UpdateOspfIfNetworkRequest) returns (OspfIfNetwork) {
-        option (google.api.http) = {
-            patch: "/v1alpha1/{ospf_if_network.name=ospfIfNetworks/*}"
-            body: "ospf_if_network"
-        };
-        option (google.api.method_signature) = "ospf_if_network,update_mask";
-    }
-    // Delete an OSPF IfNetwork
-    rpc DeleteOspfIfNetwork(DeleteOspfIfNetworkRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1alpha1/{name=ospfIfNetwork/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Get an OSPF IfNetwork
-    rpc GetOspfIfNetwork(GetOspfIfNetworkRequest) returns (OspfIfNetwork) {
-        option (google.api.http) = {
-            get: "/v1alpha1/{name=ospfIfNetworks/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // List all OSPF IfNetworks
-    rpc ListOspfIfNetworks(ListOspfIfNetworksRequest) returns (ListOspfIfNetworksResponse) {
-        option (google.api.http) = {
-            get: "/v1alpha1/ospfIfNetworks"
-        };
-    }
+  // Create an OSPF IfNetwork
+  rpc CreateOspfIfNetwork(CreateOspfIfNetworkRequest) returns (OspfIfNetwork) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ospfIfNetworks"
+      body: "ospf_if_network"
+    };
+    option (google.api.method_signature) = "ospf_if_network,ospf_if_network_id";
+  }
+  // Update an OSPF IfNetwork
+  rpc UpdateOspfIfNetwork(UpdateOspfIfNetworkRequest) returns (OspfIfNetwork) {
+    option (google.api.http) = {
+      patch: "/v1alpha1/{ospf_if_network.name=ospfIfNetworks/*}"
+      body: "ospf_if_network"
+    };
+    option (google.api.method_signature) = "ospf_if_network,update_mask";
+  }
+  // Delete an OSPF IfNetwork
+  rpc DeleteOspfIfNetwork(DeleteOspfIfNetworkRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1alpha1/{name=ospfIfNetwork/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Get an OSPF IfNetwork
+  rpc GetOspfIfNetwork(GetOspfIfNetworkRequest) returns (OspfIfNetwork) {
+    option (google.api.http) = {get: "/v1alpha1/{name=ospfIfNetworks/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // List all OSPF IfNetworks
+  rpc ListOspfIfNetworks(ListOspfIfNetworksRequest) returns (ListOspfIfNetworksResponse) {
+    option (google.api.http) = {get: "/v1alpha1/ospfIfNetworks"};
+  }
 }
 
 //
 // Device Capabilities Requests/Responses
 
-
 // Get DeviceCapabilities Request
-message GetDeviceCapabilitiesRequest {
-}
+message GetDeviceCapabilitiesRequest {}
 
 //
 // Device Requests/Responses
@@ -876,111 +731,111 @@ message GetDeviceCapabilitiesRequest {
 
 // Create Device Request
 message CreateDeviceRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
-    ];
-    // device
-    Device device = 2 [(google.api.field_behavior) = REQUIRED];
-    // device_id
-    string device_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
+  ];
+  // device
+  Device device = 2 [(google.api.field_behavior) = REQUIRED];
+  // device_id
+  string device_id = 3;
 }
 
 // Delete device request
 message DeleteDeviceRequest {
-    // device id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // device id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update device request
 message UpdateDeviceRequest {
-    // Name of device updated
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
-    ];
-    // updated device info
-    Device device = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of device updated
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
+  ];
+  // updated device info
+  Device device = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List device request
 message ListDevicesRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List device response
 message ListDevicesResponse {
-    // list of devices
-    repeated Device device = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of devices
+  repeated Device device = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get device request
 message GetDeviceRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
+  ];
 }
 
 // Update port request
 message UpdatePortRequest {
-    // Name of port requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Port"
-    ];
-    // updated port info
-    Port port = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of port requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Port"
+  ];
+  // updated port info
+  Port port = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List port request
 message ListPortsRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Port"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Port"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List port response
 message ListPortsResponse {
-    // list of ports
-    repeated Port port = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of ports
+  repeated Port port = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get port request
 message GetPortRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Port"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Port"
+  ];
 }
 
 //
@@ -989,69 +844,69 @@ message GetPortRequest {
 
 // Create Vnic Request
 message CreateVnicRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
-    ];
-    // vnic
-    Vnic vnic = 2 [(google.api.field_behavior) = REQUIRED];
-    // vnic_id
-    string vnic_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
+  ];
+  // vnic
+  Vnic vnic = 2 [(google.api.field_behavior) = REQUIRED];
+  // vnic_id
+  string vnic_id = 3;
 }
 
 // Delete vnic request
 message DeleteVnicRequest {
-    // vnic id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // vnic id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update vnic request
 message UpdateVnicRequest {
-    // Name of Vnic requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
-    ];
-    // updated vnic info
-    Vnic vnic = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of Vnic requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
+  ];
+  // updated vnic info
+  Vnic vnic = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List vnic request
 message ListVnicsRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List vnic response
 message ListVnicsResponse {
-    // list of vnics
-    repeated Vnic vnic = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of vnics
+  repeated Vnic vnic = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get vnic request
 message GetVnicRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
+  ];
 }
 //
 // Interface Requests/Responses
@@ -1059,69 +914,69 @@ message GetVnicRequest {
 
 // Create Interface Request
 message CreateInterfaceRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
-    ];
-    // interface
-    Interface interface = 2 [(google.api.field_behavior) = REQUIRED];
-    // interface_id
-    string interface_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
+  ];
+  // interface
+  Interface interface = 2 [(google.api.field_behavior) = REQUIRED];
+  // interface_id
+  string interface_id = 3;
 }
 
 // Delete interface request
 message DeleteInterfaceRequest {
-    // interface id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // interface id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update interface request
 message UpdateInterfaceRequest {
-    // Name of interface requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
-    ];
-    // updated interface info
-    Interface interface = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of interface requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
+  ];
+  // updated interface info
+  Interface interface = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List interface request
 message ListInterfacesRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List interface response
 message ListInterfacesResponse {
-    // list of interfaces
-    repeated Interface interface = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of interfaces
+  repeated Interface interface = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get interface request
 message GetInterfaceRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
+  ];
 }
 
 //
@@ -1130,69 +985,69 @@ message GetInterfaceRequest {
 
 // Create RouteTable Request
 message CreateRouteTableRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
-    ];
-    // routetable
-    RouteTable routetable = 2 [(google.api.field_behavior) = REQUIRED];
-    // routetable_id
-    string routetable_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
+  ];
+  // routetable
+  RouteTable routetable = 2 [(google.api.field_behavior) = REQUIRED];
+  // routetable_id
+  string routetable_id = 3;
 }
 
 // Delete routetable request
 message DeleteRouteTableRequest {
-    // routetable id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // routetable id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update routetable request
 message UpdateRouteTableRequest {
-    // Name of route table requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
-    ];
-    // updated routetable info
-    RouteTable routetable = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of route table requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
+  ];
+  // updated routetable info
+  RouteTable routetable = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List routetable request
 message ListRouteTablesRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List routetable response
 message ListRouteTablesResponse {
-    // list of routetables
-    repeated RouteTable routetable = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of routetables
+  repeated RouteTable routetable = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get routetable request
 message GetRouteTableRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
+  ];
 }
 
 //
@@ -1201,69 +1056,69 @@ message GetRouteTableRequest {
 
 // Create Route Request
 message CreateRouteRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
-    ];
-    // route
-    Route route = 2 [(google.api.field_behavior) = REQUIRED];
-    // route_id
-    string route_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
+  ];
+  // route
+  Route route = 2 [(google.api.field_behavior) = REQUIRED];
+  // route_id
+  string route_id = 3;
 }
 
 // Delete route request
 message DeleteRouteRequest {
-    // route id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // route id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update route request
 message UpdateRouteRequest {
-    // Name of route requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
-    ];
-    // updated route info
-    Route route = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of route requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
+  ];
+  // updated route info
+  Route route = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List route request
 message ListRoutesRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List route response
 message ListRoutesResponse {
-    // list of routes
-    repeated Route route = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of routes
+  repeated Route route = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get route request
 message GetRouteRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
+  ];
 }
 
 //
@@ -1272,69 +1127,69 @@ message GetRouteRequest {
 
 // Create UnderlayRoute Request
 message CreateUnderlayRouteRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
-    ];
-    // underlayroute
-    UnderlayRoute underlayroute = 2 [(google.api.field_behavior) = REQUIRED];
-    // underlayroute_id
-    string underlayroute_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
+  ];
+  // underlayroute
+  UnderlayRoute underlayroute = 2 [(google.api.field_behavior) = REQUIRED];
+  // underlayroute_id
+  string underlayroute_id = 3;
 }
 
 // Delete underlayroute request
 message DeleteUnderlayRouteRequest {
-    // underlayroute id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // underlayroute id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update underlayroute request
 message UpdateUnderlayRouteRequest {
-    // Name of underlay route requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
-    ];
-    // updated underlayroute info
-    UnderlayRoute underlayroute = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of underlay route requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
+  ];
+  // updated underlayroute info
+  UnderlayRoute underlayroute = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List underlayroute request
 message ListUnderlayRoutesRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List underlayroute response
 message ListUnderlayRoutesResponse {
-    // list of underlayroutes
-    repeated UnderlayRoute underlayroute = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of underlayroutes
+  repeated UnderlayRoute underlayroute = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get underlayroute request
 message GetUnderlayRouteRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
+  ];
 }
 
 //
@@ -1342,59 +1197,59 @@ message GetUnderlayRouteRequest {
 //
 // Create BgpRouter Request
 message CreateBgpRouterRequest {
-    // bgp
-    BgpRouter bgp_router = 1 [(google.api.field_behavior) = REQUIRED];
-    // bgp_id
-    string bgp_router_id = 2 [(google.api.field_behavior) = REQUIRED];
+  // bgp
+  BgpRouter bgp_router = 1 [(google.api.field_behavior) = REQUIRED];
+  // bgp_id
+  string bgp_router_id = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Delete BgpRouter request
 message DeleteBgpRouterRequest {
-    // bgp id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // bgp id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Update BgpRouter request
 message UpdateBgpRouterRequest {
-    // updated bgp router info
-    BgpRouter bgp_router = 1 [(google.api.field_behavior) = REQUIRED];
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // updated bgp router info
+  BgpRouter bgp_router = 1 [(google.api.field_behavior) = REQUIRED];
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List BgpRouter request
 message ListBgpRoutersRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List BgpRouter response
 message ListBgpRoutersResponse {
-    // list of bgp routers
-    repeated BgpRouter bgp = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of bgp routers
+  repeated BgpRouter bgp = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get bgp request
 message GetBgpRouterRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpRouter"
+  ];
 }
 
 //
@@ -1402,59 +1257,59 @@ message GetBgpRouterRequest {
 //
 // Create BgpPeer Request
 message CreateBgpPeerRequest {
-    // bgp_peer_id
-    string bgp_peer_id = 1 [(google.api.field_behavior) = REQUIRED];
-    // bgp_peer
-    BgpPeer bgp_peer = 2 [(google.api.field_behavior) = REQUIRED];
+  // bgp_peer_id
+  string bgp_peer_id = 1 [(google.api.field_behavior) = REQUIRED];
+  // bgp_peer
+  BgpPeer bgp_peer = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Delete BGP Peer request
 message DeleteBgpPeerRequest {
-    // bgp peer id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // bgp peer id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update bgp peer request
 message UpdateBgpPeerRequest {
-    // updated bgp peer info
-    BgpPeer bgp_peer = 1 [(google.api.field_behavior) = REQUIRED];
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // updated bgp peer info
+  BgpPeer bgp_peer = 1 [(google.api.field_behavior) = REQUIRED];
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List bgp peer request
 message ListBgpPeersRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List bgp peer response
 message ListBgpPeersResponse {
-    // list of bgp peers
-    repeated BgpPeer bgp_peer = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of bgp peers
+  repeated BgpPeer bgp_peer = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get bgp peer request
 message GetBgpPeerRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeer"
+  ];
 }
 
 //
@@ -1462,59 +1317,59 @@ message GetBgpPeerRequest {
 //
 // Create BgpPeerAf Request
 message CreateBgpPeerAfRequest {
-    // bgp_peer_af
-    BgpPeerAf bgp_peer_af = 1 [(google.api.field_behavior) = REQUIRED];
-    // bgp_peer_af_id
-    string bgp_peer_af_id = 2 [(google.api.field_behavior) = REQUIRED];
+  // bgp_peer_af
+  BgpPeerAf bgp_peer_af = 1 [(google.api.field_behavior) = REQUIRED];
+  // bgp_peer_af_id
+  string bgp_peer_af_id = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Delete bgp peer af request
 message DeleteBgpPeerAfRequest {
-    // bgp peer af id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // bgp peer af id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update bgp peer af request
 message UpdateBgpPeerAfRequest {
-    // updated bgp peer af info
-    BgpPeerAf bgp_peer_af = 1 [(google.api.field_behavior) = REQUIRED];
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // updated bgp peer af info
+  BgpPeerAf bgp_peer_af = 1 [(google.api.field_behavior) = REQUIRED];
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List bgp peer af request
 message ListBgpPeerAfsRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List bgp peer af response
 message ListBgpPeerAfsResponse {
-    // list of bgp peer afs
-    repeated BgpPeerAf bgp_peer_af = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of bgp peer afs
+  repeated BgpPeerAf bgp_peer_af = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get bgp peer af request
 message GetBgpPeerAfRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/BgpPeerAf"
+  ];
 }
 
 //
@@ -1523,69 +1378,69 @@ message GetBgpPeerAfRequest {
 
 // Create Mapping Request
 message CreateMappingRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
-    ];
-    // mapping
-    Mapping mapping = 2 [(google.api.field_behavior) = REQUIRED];
-    // mapping_id
-    string mapping_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
+  ];
+  // mapping
+  Mapping mapping = 2 [(google.api.field_behavior) = REQUIRED];
+  // mapping_id
+  string mapping_id = 3;
 }
 
 // Delete mapping request
 message DeleteMappingRequest {
-    // mapping id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // mapping id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update mapping request
 message UpdateMappingRequest {
-    // Name of mapping requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
-    ];
-    // updated mapping info
-    Mapping mapping = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of mapping requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
+  ];
+  // updated mapping info
+  Mapping mapping = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List mapping request
 message ListMappingsRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List mapping response
 message ListMappingsResponse {
-    // list of mappings
-    repeated Mapping mapping = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of mappings
+  repeated Mapping mapping = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get mapping request
 message GetMappingRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
+  ];
 }
 
 //
@@ -1594,69 +1449,69 @@ message GetMappingRequest {
 
 // Create NextHop Request
 message CreateNextHopRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
-    ];
-    // nexthop
-    NextHop nexthop = 2 [(google.api.field_behavior) = REQUIRED];
-    // nexthop_id
-    string nexthop_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
+  ];
+  // nexthop
+  NextHop nexthop = 2 [(google.api.field_behavior) = REQUIRED];
+  // nexthop_id
+  string nexthop_id = 3;
 }
 
 // Delete nexthop request
 message DeleteNextHopRequest {
-    // nexthop id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // nexthop id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update nexthop request
 message UpdateNextHopRequest {
-    // Name of nexthop requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
-    ];
-    // updated nexthop info
-    NextHop nexthop = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of nexthop requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
+  ];
+  // updated nexthop info
+  NextHop nexthop = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List nexthop request
 message ListNextHopRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List nexthop response
 message ListNextHopsResponse {
-    // list of nexthops
-    repeated NextHop nexthop = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of nexthops
+  repeated NextHop nexthop = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get nexthop request
 message GetNextHopRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
+  ];
 }
 
 //
@@ -1665,69 +1520,69 @@ message GetNextHopRequest {
 
 // Create NextHopGroup Request
 message CreateNextHopGroupRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
-    ];
-    // nexthopgroup
-    NextHopGroup nexthopgroup = 2 [(google.api.field_behavior) = REQUIRED];
-    // nexthopgroup_id
-    string nexthopgroup_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
+  ];
+  // nexthopgroup
+  NextHopGroup nexthopgroup = 2 [(google.api.field_behavior) = REQUIRED];
+  // nexthopgroup_id
+  string nexthopgroup_id = 3;
 }
 
 // Delete nexthopgroup request
 message DeleteNextHopGroupRequest {
-    // nexthopgroup id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // nexthopgroup id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update nexthopgroup request
 message UpdateNextHopGroupRequest {
-    // Name of next hop group requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
-    ];
-    // updated nexthopgroup info
-    NextHopGroup nexthopgroup = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of next hop group requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
+  ];
+  // updated nexthopgroup info
+  NextHopGroup nexthopgroup = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List nexthopgroup request
 message ListNextHopGroupsRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List nexthopgroup response
 message ListNextHopGroupsResponse {
-    // list of nexthopgroups
-    repeated NextHopGroup nexthopgroup = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of nexthopgroups
+  repeated NextHopGroup nexthopgroup = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get nexthopgroup request
 message GetNextHopGroupRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
+  ];
 }
 
 //
@@ -1736,68 +1591,68 @@ message GetNextHopGroupRequest {
 
 // Create Subnet Request
 message CreateSubnetRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
-    ];
-    // subnet
-    Subnet subnet = 2 [(google.api.field_behavior) = REQUIRED];
-    // subnet_id
-    string subnet_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
+  ];
+  // subnet
+  Subnet subnet = 2 [(google.api.field_behavior) = REQUIRED];
+  // subnet_id
+  string subnet_id = 3;
 }
 
 // Delete subnet request
 message DeleteSubnetRequest {
-    // subnet id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // subnet id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update subnet request
 message UpdateSubnetRequest {
-    // Name of subnet requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
-    ];    // updated subnet info
-    Subnet subnet = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of subnet requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
+  ]; // updated subnet info
+  Subnet subnet = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List subnet request
 message ListSubnetsRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List subnet response
 message ListSubnetsResponse {
-    // list of subnets
-    repeated Subnet subnet = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of subnets
+  repeated Subnet subnet = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get subnet request
 message GetSubnetRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
+  ];
 }
 
 //
@@ -1806,69 +1661,69 @@ message GetSubnetRequest {
 
 // Create Tunnel Request
 message CreateTunnelRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
-    ];
-    // tunnel
-    Tunnel tunnel = 2 [(google.api.field_behavior) = REQUIRED];
-    // tunnel_id
-    string tunnel_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
+  ];
+  // tunnel
+  Tunnel tunnel = 2 [(google.api.field_behavior) = REQUIRED];
+  // tunnel_id
+  string tunnel_id = 3;
 }
 
 // Delete Tunnel request
 message DeleteTunnelRequest {
-    // tunnel id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // tunnel id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update Tunnel request
 message UpdateTunnelRequest {
-    // Name of tunnel requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
-    ];
-    // updated tunnel info
-    Tunnel tunnel = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of tunnel requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
+  ];
+  // updated tunnel info
+  Tunnel tunnel = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List Tunnel request
 message ListTunnelsRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List Tunnel response
 message ListTunnelsResponse {
-    // list of tunnels
-    repeated Tunnel tunnel = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of tunnels
+  repeated Tunnel tunnel = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get Tunnel request
 message GetTunnelRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
+  ];
 }
 
 //
@@ -1877,69 +1732,69 @@ message GetTunnelRequest {
 
 // Create Vpc Request
 message CreateVpcRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
-    ];
-    // vpc
-    Vpc vpc = 2 [(google.api.field_behavior) = REQUIRED];
-    // vpc_id
-    string vpc_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
+  ];
+  // vpc
+  Vpc vpc = 2 [(google.api.field_behavior) = REQUIRED];
+  // vpc_id
+  string vpc_id = 3;
 }
 
 // Delete vpc request
 message DeleteVpcRequest {
-    // vpc id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // vpc id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update vpc request
 message UpdateVpcRequest {
-    // Name of vpc requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
-    ];
-    // updated vpc info
-    Vpc vpc = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of vpc requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
+  ];
+  // updated vpc info
+  Vpc vpc = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List vpc request
 message ListVpcsRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List vpc response
 message ListVpcsResponse {
-    // list of vpcs
-    repeated Vpc vpc = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of vpcs
+  repeated Vpc vpc = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get vpc request
 message GetVpcRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
+  ];
 }
 
 //
@@ -1948,69 +1803,69 @@ message GetVpcRequest {
 
 // Create VPCPeer Request
 message CreateVPCPeerRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
-    ];
-    // vpcpeer
-    VPCPeer vpcpeer = 2 [(google.api.field_behavior) = REQUIRED];
-    // vpcpeer_id
-    string vpcpeer_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
+  ];
+  // vpcpeer
+  VPCPeer vpcpeer = 2 [(google.api.field_behavior) = REQUIRED];
+  // vpcpeer_id
+  string vpcpeer_id = 3;
 }
 
 // Delete vpcpeer request
 message DeleteVPCPeerRequest {
-    // vpcpeer id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // vpcpeer id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update vpcpeer request
 message UpdateVPCPeerRequest {
-    // Name of vpc peer requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
-    ];
-    // updated vpcpeer info
-    VPCPeer vpcpeer = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of vpc peer requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
+  ];
+  // updated vpcpeer info
+  VPCPeer vpcpeer = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List vpcpeer request
 message ListVPCPeersRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List vpcpeer response
 message ListVPCPeersResponse {
-    // list of vpcpeers
-    repeated VPCPeer vpcpeer = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of vpcpeers
+  repeated VPCPeer vpcpeer = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get vpcpeer request
 message GetVPCPeerRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
+  ];
 }
 
 //
@@ -2019,69 +1874,69 @@ message GetVPCPeerRequest {
 
 // Create SecurityPolicy Request
 message CreateSecurityPolicyRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
-    ];
-    // securitypolicy
-    SecurityPolicy securitypolicy = 2 [(google.api.field_behavior) = REQUIRED];
-    // securitypolicy_id
-    string securitypolicy_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
+  ];
+  // securitypolicy
+  SecurityPolicy securitypolicy = 2 [(google.api.field_behavior) = REQUIRED];
+  // securitypolicy_id
+  string securitypolicy_id = 3;
 }
 
 // Delete securitypolicy request
 message DeleteSecurityPolicyRequest {
-    // securitypolicy id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // securitypolicy id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update securitypolicy request
 message UpdateSecurityPolicyRequest {
-    // Name of security policy requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
-    ];
-    // updated securitypolicy info
-    SecurityPolicy securitypolicy = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of security policy requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
+  ];
+  // updated securitypolicy info
+  SecurityPolicy securitypolicy = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List securitypolicy request
 message ListSecurityPolicysRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List securitypolicy response
 message ListSecurityPolicysResponse {
-    // list of securitypolicys
-    repeated SecurityPolicy securitypolicy = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of securitypolicys
+  repeated SecurityPolicy securitypolicy = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get securitypolicy request
 message GetSecurityPolicyRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
+  ];
 }
 
 //
@@ -2090,69 +1945,69 @@ message GetSecurityPolicyRequest {
 
 // Create SecurityRule Request
 message CreateSecurityRuleRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
-    ];
-    // securityrule
-    SecurityRule securityrule = 2 [(google.api.field_behavior) = REQUIRED];
-    // securityrule_id
-    string securityrule_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
+  ];
+  // securityrule
+  SecurityRule securityrule = 2 [(google.api.field_behavior) = REQUIRED];
+  // securityrule_id
+  string securityrule_id = 3;
 }
 
 // Delete securityrule request
 message DeleteSecurityRuleRequest {
-    // securityrule id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // securityrule id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update securityrule request
 message UpdateSecurityRuleRequest {
-    // Name of security rule requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
-    ];
-    // updated securityrule info
-    SecurityRule securityrule = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of security rule requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
+  ];
+  // updated securityrule info
+  SecurityRule securityrule = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List securityrule request
 message ListSecurityRulesRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List securityrule response
 message ListSecurityRulesResponse {
-    // list of securityrules
-    repeated SecurityRule securityrule = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of securityrules
+  repeated SecurityRule securityrule = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get securityrule request
 message GetSecurityRuleRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
+  ];
 }
 
 //
@@ -2161,69 +2016,69 @@ message GetSecurityRuleRequest {
 
 // Create SecurityProfile Request
 message CreateSecurityProfileRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
-    ];
-    // securityprofile
-    SecurityProfile securityprofile = 2 [(google.api.field_behavior) = REQUIRED];
-    // securityprofile_id
-    string securityprofile_id = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
+  ];
+  // securityprofile
+  SecurityProfile securityprofile = 2 [(google.api.field_behavior) = REQUIRED];
+  // securityprofile_id
+  string securityprofile_id = 3;
 }
 
 // Delete securityprofile request
 message DeleteSecurityProfileRequest {
-    // securityprofile id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2;
+  // securityprofile id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2;
 }
 
 // Update securityprofile request
 message UpdateSecurityProfileRequest {
-    // Name of security profile requested
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
-    ];
-    // updated securityprofile info
-    SecurityProfile securityprofile = 2;
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 3;
+  // Name of security profile requested
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
+  ];
+  // updated securityprofile info
+  SecurityProfile securityprofile = 2;
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 3;
 }
 
 // List securityprofile request
 message ListSecurityProfilesRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
-    ];
-    // pagination: page-size
-    int32 page_size = 2;
-    // pagination: start token
-    string page_token = 3;
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
+  ];
+  // pagination: page-size
+  int32 page_size = 2;
+  // pagination: start token
+  string page_token = 3;
 }
 
 // List securityprofile response
 message ListSecurityProfilesResponse {
-    // list of securityprofiles
-    repeated SecurityProfile securityprofile = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of securityprofiles
+  repeated SecurityProfile securityprofile = 1;
+  // next page token
+  string next_page_token = 2;
 }
 
 // Get securityprofile request
 message GetSecurityProfileRequest {
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
-    ];
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
+  ];
 }
 
 //
@@ -2232,63 +2087,63 @@ message GetSecurityProfileRequest {
 
 // Create OSPF Router Request
 message CreateOspfRouterRequest {
-    // OSPF identifier
-    string ospf_router_id = 1 [(google.api.field_behavior) = OPTIONAL];
-    // OSPF configuration
-    OspfRouter ospf_router = 2 [(google.api.field_behavior) = REQUIRED];
+  // OSPF identifier
+  string ospf_router_id = 1 [(google.api.field_behavior) = OPTIONAL];
+  // OSPF configuration
+  OspfRouter ospf_router = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Update OSPF request
 message UpdateOspfRouterRequest {
-    // updated ospf configuration
-    OspfRouter ospf_router = 1 [(google.api.field_behavior) = REQUIRED];
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // updated ospf configuration
+  OspfRouter ospf_router = 1 [(google.api.field_behavior) = REQUIRED];
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Delete OSPF request
 message DeleteOspfRouterRequest {
-    // Name or OSPF identifier
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OspfRouter"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Name or OSPF identifier
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "OspfRouter"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Get OSPF request
 message GetOspfRouterRequest {
-    // Name of the OSPF Config to retrieve
-    string name = 1 [
-        (google.api.field_behavior) = OPTIONAL,
-        (google.api.resource_reference).type = "OspfRouter"
-    ];
+  // Name of the OSPF Config to retrieve
+  string name = 1 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "OspfRouter"
+  ];
 }
 
 // List OSPF request
 message ListOspfRoutersRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfRouter"
-    ];
-    // The maximum number of OSPF routers to return. The service may return fewer than this value.
-    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
-    // A page token, received from a previous `ListOspfRouters` call.
-    // Provide this to retrieve the subsequent page.
-    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfRouter"
+  ];
+  // The maximum number of OSPF routers to return. The service may return fewer than this value.
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+  // A page token, received from a previous `ListOspfRouters` call.
+  // Provide this to retrieve the subsequent page.
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List OSPF response
 message ListOspfRoutersResponse {
-    // List of OSPF configs
-    repeated OspfRouter ospf_routers = 1;
+  // List of OSPF configs
+  repeated OspfRouter ospf_routers = 1;
 
-    // A token that can be sent as `page_token` to retrieve the next page.
-    // If this field is omitted, there are not subsequent pages.
-    string next_page_token = 2;
+  // A token that can be sent as `page_token` to retrieve the next page.
+  // If this field is omitted, there are not subsequent pages.
+  string next_page_token = 2;
 }
 
 //
@@ -2297,61 +2152,61 @@ message ListOspfRoutersResponse {
 
 // Create OspfArea Request
 message CreateOspfAreaRequest {
-    // ospf_area_id
-    string ospf_area_id = 1 [(google.api.field_behavior) = REQUIRED];
-    // ospf_area
-    OspfArea ospf_area = 2 [(google.api.field_behavior) = REQUIRED];
+  // ospf_area_id
+  string ospf_area_id = 1 [(google.api.field_behavior) = REQUIRED];
+  // ospf_area
+  OspfArea ospf_area = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Update OspfArea request
 message UpdateOspfAreaRequest {
-    // updated ospf_area info
-    OspfArea ospf_area = 1 [(google.api.field_behavior) = REQUIRED];
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // updated ospf_area info
+  OspfArea ospf_area = 1 [(google.api.field_behavior) = REQUIRED];
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Delete OspfArea request
 message DeleteOspfAreaRequest {
-    // name or area_id
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OspfArea"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // name or area_id
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "OspfArea"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Get OspfArea request
 message GetOspfAreaRequest {
-    // name
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OspfArea"
-    ];
+  // name
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "OspfArea"
+  ];
 }
 
 // List OspfArea request
 message ListOspfAreasRequest {
-    // parent
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfRouter"
-    ];
-    // pagination: page-size
-    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
-    // pagination: start token
-    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
+  // parent
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfRouter"
+  ];
+  // pagination: page-size
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+  // pagination: start token
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List OspfArea response
 message ListOspfAreasResponse {
-    // list of ospf_areas
-    repeated OspfArea ospf_areas = 1;
+  // list of ospf_areas
+  repeated OspfArea ospf_areas = 1;
 
-    // next page token
-    string next_page_token = 2;
+  // next page token
+  string next_page_token = 2;
 }
 
 //
@@ -2360,61 +2215,61 @@ message ListOspfAreasResponse {
 
 // Create OspfIfNetwork Request
 message CreateOspfIfNetworkRequest {
-    // OSPF IfNetwork ID
-    string ospf_if_network_id = 1 [(google.api.field_behavior) = REQUIRED];
-    // ospf_if_network
-    OspfIfNetwork ospf_if_network = 2 [(google.api.field_behavior) = REQUIRED];
+  // OSPF IfNetwork ID
+  string ospf_if_network_id = 1 [(google.api.field_behavior) = REQUIRED];
+  // ospf_if_network
+  OspfIfNetwork ospf_if_network = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Update OspfIfNetwork request
 message UpdateOspfIfNetworkRequest {
-    // updated OSPF IfNetwork information
-    OspfIfNetwork ospf_if_network = 1 [(google.api.field_behavior) = REQUIRED];
-    // list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // updated OSPF IfNetwork information
+  OspfIfNetwork ospf_if_network = 1 [(google.api.field_behavior) = REQUIRED];
+  // list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Delete OspfIfNetwork request
 message DeleteOspfIfNetworkRequest {
-    // OSPF IfNetwork name
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OspfIfNetwork"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // OSPF IfNetwork name
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "OspfIfNetwork"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Get OspfIfNetwork request
 message GetOspfIfNetworkRequest {
-    // name
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfIfNetwork"
-    ];
+  // name
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.v1alpha1/OspfIfNetwork"
+  ];
 }
 
 // List OspfIfNetwork request
 message ListOspfIfNetworksRequest {
-    // parent or IfNetwork identifier
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "OspfIfNetwork"
-    ];
-    // pagination: page-size
-    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
-    // pagination: start token
-    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
+  // parent or IfNetwork identifier
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "OspfIfNetwork"
+  ];
+  // pagination: page-size
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
+  // pagination: start token
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List OspfIfNetwork response
 message ListOspfIfNetworksResponse {
-    // list of OspfIfNetwork
-    repeated OspfIfNetwork ospf_if_networks = 1;
-    // next page token
-    string next_page_token = 2;
+  // list of OspfIfNetwork
+  repeated OspfIfNetwork ospf_if_networks = 1;
+  // next page token
+  string next_page_token = 2;
 }

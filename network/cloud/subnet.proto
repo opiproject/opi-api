@@ -4,14 +4,13 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "SubnetProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "SubnetProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // subnet object
 message Subnet {
@@ -98,7 +97,7 @@ message SubnetSpec {
   string ingress_default_sg_policy_name_ref = 18;
   // default egress stateful security policy for this subnet
   // if configured, is the 1st policy evaluated before other security polices on a given vnic
-  string  egress_default_sg_policy_name_ref = 19;
+  string egress_default_sg_policy_name_ref = 19;
   // remote_subnet, if set, indicates that the subnet does not have any IP
   // mappings in local pod and such subnets are used to program all remote
   // pod IP mappings behind it

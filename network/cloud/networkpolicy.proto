@@ -4,14 +4,13 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "NetworkPolicyProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "NetworkPolicyProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // security policy object
 message SecurityPolicy {
@@ -48,7 +47,7 @@ message SecurityPolicySpec {
   // that is also not set then  default "deny" action is enforced
   // When no policy is configured on subnet and vnic, this knob doesn't
   // apply and traffic is allowed in that case
-  network.opinetcommon.v1alpha1.SecurityRuleAction  default_security_action = 4;
+  network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;
   // list of security rules
   repeated SecurityRuleInfo rules = 5;
   // PolicyRuleFormat indicates whether the policy is set of flattened rules
@@ -58,7 +57,7 @@ message SecurityPolicySpec {
 
 // SecurityRuleInfo is a single rule in the security policy
 message SecurityRuleInfo {
-  // rule id needed for incremental rule ADD/DEL/UPD 
+  // rule id needed for incremental rule ADD/DEL/UPD
   // (-- api-linter: core::0122::name-suffix=disabled
   //     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
   string rule_name = 1;
@@ -73,7 +72,7 @@ message SecurityRuleAttrs {
   // packet, the first such matching rule in the policy is picked (i.e., based
   // on the order, first in the list of such matching rules)
   // range:0-65534
-  int32 priority= 1;
+  int32 priority = 1;
   // rule match criteria
   network.opinetcommon.v1alpha1.RuleMatch match = 2;
   // action to take when this rule is matched
@@ -142,11 +141,11 @@ message ALGSpec {
   // ALG specific options, if any
   oneof alg_options {
     // ftp alg options
-    FTPOptions    ftp_options    = 3;
-    // dns alg options 
-    DNSOptions    dns_options    = 4;
+    FTPOptions ftp_options = 3;
+    // dns alg options
+    DNSOptions dns_options = 4;
     // msrpc options
-    MSRPCOptions  msrpc_options  = 5;
+    MSRPCOptions msrpc_options = 5;
     // sunrpc options
     SunRPCOptions sunrpc_options = 6;
   }
@@ -195,8 +194,7 @@ message SecurityRuleSpec {
 }
 
 // operational status of the security rule, if any
-message SecurityRuleStatus {
-}
+message SecurityRuleStatus {}
 
 // security profile object
 message SecurityProfile {
@@ -263,8 +261,7 @@ message SecurityProfileSpec {
 }
 
 // operational status of security profile, if any
-message SecurityProfileStatus {
-}
+message SecurityProfileStatus {}
 
 // PolicyLookupMatch captures all the policy lookup match conditions
 message PolicyLookupMatch {
@@ -310,7 +307,7 @@ message SecurityPolicyLookupRequest {
   // lookup_info is mandatory
   oneof lookup_info {
     // security policy uuid to do the lookup in
-    string policy_name_ref= 1;
+    string policy_name_ref = 1;
     // vnic specific policies will be evaluated when vnic info is provided
     VnicLookupInfo vnic_lookup_info = 2;
   }
@@ -334,7 +331,7 @@ message PolicyLookupResult {
 
 // types of security policies
 enum SecurityPolicyType {
-  // unspecified 
+  // unspecified
   SECURITY_POLICY_TYPE_UNSPECIFIED = 0;
   // UNDERLAY security policy object is singleton object per DSC
   SECURITY_POLICY_TYPE_UNDERLAY = 1;
@@ -349,17 +346,17 @@ enum ALGType {
   // unspecified
   ALG_TYPE_UNSPECIFIED = 0;
   // TFTP ALG
-  ALG_TYPE_TFTP        = 1;
+  ALG_TYPE_TFTP = 1;
   // FTP ALG
-  ALG_TYPE_FTP         = 2;
+  ALG_TYPE_FTP = 2;
   // DNS ALG
-  ALG_TYPE_DNS         = 3;
+  ALG_TYPE_DNS = 3;
   // SUNRPC ALG
-  ALG_TYPE_SUNRPC      = 4;
+  ALG_TYPE_SUNRPC = 4;
   // MSRPC ALG
-  ALG_TYPE_MSRPC       = 5;
+  ALG_TYPE_MSRPC = 5;
   // RTSP ALG
-  ALG_TYPE_RTSP        = 6;
+  ALG_TYPE_RTSP = 6;
 }
 
 // PolicyRuleFormat captures what format is used for the rules in a given
@@ -381,5 +378,5 @@ enum PolicyRuleFormat {
   // as match conditions
   // In this format, ALL the rules must use SrcIPList, DstIPList,
   // PortList, ICMPMatchList attributes only, whereever applicable
-  POLICY_RULE_FORMAT_COMPACT   = 2;
+  POLICY_RULE_FORMAT_COMPACT = 2;
 }
