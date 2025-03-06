@@ -15,341 +15,328 @@ syntax = "proto3";
 
 package opi_api.network.evpn_gw.v1alpha1;
 
-option go_package = "github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go";
-option java_package = "opi_api.network.evpn_gw.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "L2XpuInfraMgrProto";
-
-import "network/opinetcommon/networktypes.proto";
-import "network/evpn-gw/component.proto";
-
 import "google/api/annotations.proto";
 import "google/api/client.proto";
-import "google/protobuf/empty.proto";
 import "google/api/field_behavior.proto";
-import "google/protobuf/field_mask.proto";
 import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+import "network/evpn-gw/component.proto";
+import "network/opinetcommon/networktypes.proto";
+
+option go_package = "github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "L2XpuInfraMgrProto";
+option java_package = "opi_api.network.evpn_gw.v1alpha1";
 
 // Management of LogicalBridge Resources
 service LogicalBridgeService {
-    // Create a Logical Bridge
-    rpc CreateLogicalBridge(CreateLogicalBridgeRequest) returns (LogicalBridge){
-        option (google.api.http) = {
-          post: "/v1/logicalBridges"
-          body: "logical_bridge"
-        };
-        option (google.api.method_signature) = "logical_bridge,logical_bridge_id";
-    }
-    // List Logical Bridges
-    rpc ListLogicalBridges(ListLogicalBridgesRequest) returns (ListLogicalBridgesResponse){
-        option (google.api.http) = {
-          get: "/v1/logicalBridges"
-        };
-    }
-    // Retrieve a Logical Bridge
-    rpc GetLogicalBridge(GetLogicalBridgeRequest) returns (LogicalBridge){
-        option (google.api.http) = {
-          get: "/v1/{name=logicalBridges/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Delete a Logical Bridge
-    rpc DeleteLogicalBridge(DeleteLogicalBridgeRequest) returns (google.protobuf.Empty){
-        option (google.api.http) = {
-          delete: "/v1/{name=logicalBridges/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update a Logical Bridge
-    rpc UpdateLogicalBridge(UpdateLogicalBridgeRequest) returns (LogicalBridge){
-        option (google.api.http) = {
-          patch: "/v1/{logical_bridge.name=logicalBridges/*}"
-          body: "logical_bridge"
-        };
-        option (google.api.method_signature) = "logical_bridge,update_mask";
-    }
+  // Create a Logical Bridge
+  rpc CreateLogicalBridge(CreateLogicalBridgeRequest) returns (LogicalBridge) {
+    option (google.api.http) = {
+      post: "/v1/logicalBridges"
+      body: "logical_bridge"
+    };
+    option (google.api.method_signature) = "logical_bridge,logical_bridge_id";
+  }
+  // List Logical Bridges
+  rpc ListLogicalBridges(ListLogicalBridgesRequest) returns (ListLogicalBridgesResponse) {
+    option (google.api.http) = {get: "/v1/logicalBridges"};
+  }
+  // Retrieve a Logical Bridge
+  rpc GetLogicalBridge(GetLogicalBridgeRequest) returns (LogicalBridge) {
+    option (google.api.http) = {get: "/v1/{name=logicalBridges/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Delete a Logical Bridge
+  rpc DeleteLogicalBridge(DeleteLogicalBridgeRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=logicalBridges/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update a Logical Bridge
+  rpc UpdateLogicalBridge(UpdateLogicalBridgeRequest) returns (LogicalBridge) {
+    option (google.api.http) = {
+      patch: "/v1/{logical_bridge.name=logicalBridges/*}"
+      body: "logical_bridge"
+    };
+    option (google.api.method_signature) = "logical_bridge,update_mask";
+  }
 }
 
 // Management of BridgePort resources
 service BridgePortService {
-    // Create a Bridge Port
-    rpc CreateBridgePort(CreateBridgePortRequest) returns (BridgePort){
-        option (google.api.http) = {
-          post: "/v1/bridgePorts"
-          body: "bridge_port"
-        };
-        option (google.api.method_signature) = "bridge_port,bridge_port_id";
-    }
-    // List Bridge Ports
-    rpc ListBridgePorts(ListBridgePortsRequest) returns (ListBridgePortsResponse){
-        option (google.api.http) = {
-          get: "/v1/bridgePorts"
-        };
-    }
-    // Retrieve a Bridge Port
-    rpc GetBridgePort(GetBridgePortRequest) returns (BridgePort){
-        option (google.api.http) = {
-          get: "/v1/{name=bridgePorts/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Delete a Bridge Port
-    rpc DeleteBridgePort(DeleteBridgePortRequest) returns (google.protobuf.Empty){
-        option (google.api.http) = {
-          delete: "/v1/{name=bridgePorts/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update a Bridge Port
-    rpc UpdateBridgePort(UpdateBridgePortRequest) returns (BridgePort){
-        option (google.api.http) = {
-          patch: "/v1/{bridge_port.name=bridgePorts/*}"
-          body: "bridge_port"
-        };
-        option (google.api.method_signature) = "bridge_port,update_mask";
-    }
+  // Create a Bridge Port
+  rpc CreateBridgePort(CreateBridgePortRequest) returns (BridgePort) {
+    option (google.api.http) = {
+      post: "/v1/bridgePorts"
+      body: "bridge_port"
+    };
+    option (google.api.method_signature) = "bridge_port,bridge_port_id";
+  }
+  // List Bridge Ports
+  rpc ListBridgePorts(ListBridgePortsRequest) returns (ListBridgePortsResponse) {
+    option (google.api.http) = {get: "/v1/bridgePorts"};
+  }
+  // Retrieve a Bridge Port
+  rpc GetBridgePort(GetBridgePortRequest) returns (BridgePort) {
+    option (google.api.http) = {get: "/v1/{name=bridgePorts/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Delete a Bridge Port
+  rpc DeleteBridgePort(DeleteBridgePortRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=bridgePorts/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update a Bridge Port
+  rpc UpdateBridgePort(UpdateBridgePortRequest) returns (BridgePort) {
+    option (google.api.http) = {
+      patch: "/v1/{bridge_port.name=bridgePorts/*}"
+      body: "bridge_port"
+    };
+    option (google.api.method_signature) = "bridge_port,update_mask";
+  }
 }
 
 // Logical Bridge network configuration and status
 message LogicalBridge {
-    option (google.api.resource) = {
-      type: "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
-      pattern: "logicalBridges/{logical_bridge}"
-      singular: "logicalBridge"
-      plural: "logicalBridges"
-    };
-    // The resource name of the Logical Bridge.
-    // "name" is an opaque object handle that is not user settable.
-    // "name" will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    // Format: logicalBridges/{logical_bridge}
-    string name                = 1 [(google.api.field_behavior) = IDENTIFIER];
+  option (google.api.resource) = {
+    type: "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
+    pattern: "logicalBridges/{logical_bridge}"
+    singular: "logicalBridge"
+    plural: "logicalBridges"
+  };
+  // The resource name of the Logical Bridge.
+  // "name" is an opaque object handle that is not user settable.
+  // "name" will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  // Format: logicalBridges/{logical_bridge}
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // Logical Bridge network configuration
-    LogicalBridgeSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
-    // Logical Bridge network status
-    LogicalBridgeStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Logical Bridge network configuration
+  LogicalBridgeSpec spec = 2 [(google.api.field_behavior) = REQUIRED];
+  // Logical Bridge network status
+  LogicalBridgeStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Logical Bridge network configuration
 message LogicalBridgeSpec {
-    // the VLAN of the L2 domain
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    uint32 vlan_id                                        = 1 [(google.api.field_behavior) = REQUIRED];
-    //VXLAN VNI for the L2 EVPN. Also used as EVPN route target
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vni cannot be negative number. --)
-    optional uint32 vni                                   = 2 [(google.api.field_behavior) = OPTIONAL];
-    // IPv4 or IPv6 IP address prefix for the VXLAN TEP
-    network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(google.api.field_behavior) = OPTIONAL];
+  // the VLAN of the L2 domain
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: vlan cannot be negative number. --)
+  uint32 vlan_id = 1 [(google.api.field_behavior) = REQUIRED];
+  //VXLAN VNI for the L2 EVPN. Also used as EVPN route target
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: vni cannot be negative number. --)
+  optional uint32 vni = 2 [(google.api.field_behavior) = OPTIONAL];
+  // IPv4 or IPv6 IP address prefix for the VXLAN TEP
+  network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Logical Bridge
 message LogicalBridgeStatus {
-    // operational state of a Logical Bridge
-    LBOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // status of the components
-    repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // operational state of a Logical Bridge
+  LBOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // status of the components
+  repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateLogicalBridgeRequest structure
 message CreateLogicalBridgeRequest {
-    // The ID to use for the logical bridge, which will become the final component of
-    // the logical bridge's resource name.
-    //
-    // This value should be 4-63 characters, and valid characters
-    // are /[a-z][0-9]-/.
-    // If this is not provided the system will auto-generate it.
-    string logical_bridge_id     = 1 [(google.api.field_behavior) = OPTIONAL];
+  // The ID to use for the logical bridge, which will become the final component of
+  // the logical bridge's resource name.
+  //
+  // This value should be 4-63 characters, and valid characters
+  // are /[a-z][0-9]-/.
+  // If this is not provided the system will auto-generate it.
+  string logical_bridge_id = 1 [(google.api.field_behavior) = OPTIONAL];
 
-    // The logical bridge to create
-    LogicalBridge logical_bridge = 2 [(google.api.field_behavior) = REQUIRED];
+  // The logical bridge to create
+  LogicalBridge logical_bridge = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // ListLogicalBridgesRequest structure
 message ListLogicalBridgesRequest {
-    // page size of list request
-    int32 page_size   = 1 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page size of list request
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // ListLogicalBridgesResponse structure
 message ListLogicalBridgesResponse {
-    // List of all the logical bridges
-    repeated LogicalBridge logical_bridges = 1;
-    // Next page token of list response
-    string next_page_token                 = 2;
+  // List of all the logical bridges
+  repeated LogicalBridge logical_bridges = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // GetLogicalBridgeRequest structure
 message GetLogicalBridgeRequest {
-    // The name of the logical bridge to retrieve
-    // Format: logicalBridges/{logical_bridge}
-    string name = 1 [
-      (google.api.field_behavior) = REQUIRED,
-      (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
-    ];
+  // The name of the logical bridge to retrieve
+  // Format: logicalBridges/{logical_bridge}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
+  ];
 }
 
 // DeleteLogicalBridgeRequest structure
 message DeleteLogicalBridgeRequest {
-    // The name of the logical bridge to retrieve
-    // Format: logicalBridges/{logical_bridge}
-    string name = 1 [
-      (google.api.field_behavior) = REQUIRED,
-      (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The name of the logical bridge to retrieve
+  // Format: logicalBridges/{logical_bridge}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // UpdateLogicalBridgeRequest structure
 message UpdateLogicalBridgeRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    LogicalBridge logical_bridge = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  LogicalBridge logical_bridge = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Bridge Port network configuration and status
 message BridgePort {
-    option (google.api.resource) = {
-      type: "opi_api.network.evpn_gw.v1alpha1/BridgePort"
-      pattern: "bridgePorts/{bridge_port}"
-      singular: "bridgePort"
-      plural: "bridgePorts"
-    };
-    // The resource name of the Bridge Port.
-    // "name" is an opaque object handle that is not user settable.
-    // "name" will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    // Format: bridge_ports/{bridge_port}
-    string name             = 1 [(google.api.field_behavior) = IDENTIFIER];
+  option (google.api.resource) = {
+    type: "opi_api.network.evpn_gw.v1alpha1/BridgePort"
+    pattern: "bridgePorts/{bridge_port}"
+    singular: "bridgePort"
+    plural: "bridgePorts"
+  };
+  // The resource name of the Bridge Port.
+  // "name" is an opaque object handle that is not user settable.
+  // "name" will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  // Format: bridge_ports/{bridge_port}
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // Bridge Port network configuration
-    BridgePortSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
-    // Bridge Port network status
-    BridgePortStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Bridge Port network configuration
+  BridgePortSpec spec = 2 [(google.api.field_behavior) = REQUIRED];
+  // Bridge Port network status
+  BridgePortStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Bridge Port network configuration
 message BridgePortSpec {
-    // Bridge Port's MAC address.
-    bytes mac_address               = 1 [(google.api.field_behavior) = REQUIRED];
-    // Type of Bridge Port
-    BridgePortType ptype            = 2 [(google.api.field_behavior) = REQUIRED];
-    // List of Logical Bridges this Bridge Port will attach.
-    // This will define the VLANs that will be enabled in this Bridge Port
-    repeated string logical_bridges = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Bridge Port's MAC address.
+  bytes mac_address = 1 [(google.api.field_behavior) = REQUIRED];
+  // Type of Bridge Port
+  BridgePortType ptype = 2 [(google.api.field_behavior) = REQUIRED];
+  // List of Logical Bridges this Bridge Port will attach.
+  // This will define the VLANs that will be enabled in this Bridge Port
+  repeated string logical_bridges = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Bridge Port
 message BridgePortStatus {
-    // operational status of a Bridge Port
-    BPOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // status of the components
-    repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // operational status of a Bridge Port
+  BPOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // status of the components
+  repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateBridgePortRequest structure
 message CreateBridgePortRequest {
-    // The ID to use for the bridge port, which will become the final component of
-    // the bridge port's resource name.
-    //
-    // This value should be 4-63 characters, and valid characters
-    // are /[a-z][0-9]-/.
-    // If this is not provided the system will auto-generate it.
-    string bridge_port_id     = 1 [(google.api.field_behavior) = OPTIONAL];
-    // The bridge port to create
-    BridgePort bridge_port    = 2 [(google.api.field_behavior) = REQUIRED];
+  // The ID to use for the bridge port, which will become the final component of
+  // the bridge port's resource name.
+  //
+  // This value should be 4-63 characters, and valid characters
+  // are /[a-z][0-9]-/.
+  // If this is not provided the system will auto-generate it.
+  string bridge_port_id = 1 [(google.api.field_behavior) = OPTIONAL];
+  // The bridge port to create
+  BridgePort bridge_port = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // ListBridgePortsRequest structure
 message ListBridgePortsRequest {
-    // page size of list request
-    int32 page_size   = 1 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page size of list request
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // ListBridgePortsResponse structure
 message ListBridgePortsResponse {
-    // List of all the bridge ports
-    repeated BridgePort bridge_ports = 1;
-    // Next page token of list response
-    string next_page_token           = 2;
+  // List of all the bridge ports
+  repeated BridgePort bridge_ports = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // GetBridgePortRequest structure
 message GetBridgePortRequest {
-    // The name of the bridge port to retrieve
-    // Format: bridgePorts/{bridge_port}
-    string name = 1 [
-      (google.api.field_behavior) = REQUIRED,
-      (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/BridgePort"
-    ];
+  // The name of the bridge port to retrieve
+  // Format: bridgePorts/{bridge_port}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/BridgePort"
+  ];
 }
 
 // DeleteBridgePortRequest structure
 message DeleteBridgePortRequest {
-    // The name of the bridge port to retrieve
-    // Format: bridgePorts/{bridge_port}
-    string name = 1 [
-      (google.api.field_behavior) = REQUIRED,
-      (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/BridgePort"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The name of the bridge port to retrieve
+  // Format: bridgePorts/{bridge_port}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/BridgePort"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // UpdateBridgePortRequest structure
 message UpdateBridgePortRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    BridgePort bridge_port = 1  [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2  [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  BridgePort bridge_port = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // LBOperStatus status reflects the operational status of a Logical Bridge
 enum LBOperStatus {
-    // unknown
-    LB_OPER_STATUS_UNSPECIFIED   = 0;
-    // Logical Bridge is up
-    LB_OPER_STATUS_UP            = 1;
-    // Logical Bridge is down
-    LB_OPER_STATUS_DOWN          = 2;
-    // Logical Bridge is to be deleted
-    LB_OPER_STATUS_TO_BE_DELETED = 3;
+  // unknown
+  LB_OPER_STATUS_UNSPECIFIED = 0;
+  // Logical Bridge is up
+  LB_OPER_STATUS_UP = 1;
+  // Logical Bridge is down
+  LB_OPER_STATUS_DOWN = 2;
+  // Logical Bridge is to be deleted
+  LB_OPER_STATUS_TO_BE_DELETED = 3;
 }
 
 // BPOperStatus status reflects the operational status of a Bridge Port
 enum BPOperStatus {
-    // unknown
-    BP_OPER_STATUS_UNSPECIFIED   = 0;
-    // Bridge Port is up
-    BP_OPER_STATUS_UP            = 1;
-    // Bridge Port is down
-    BP_OPER_STATUS_DOWN          = 2;
-    // Bridge Port is to be deleted
-    BP_OPER_STATUS_TO_BE_DELETED = 3;
+  // unknown
+  BP_OPER_STATUS_UNSPECIFIED = 0;
+  // Bridge Port is up
+  BP_OPER_STATUS_UP = 1;
+  // Bridge Port is down
+  BP_OPER_STATUS_DOWN = 2;
+  // Bridge Port is to be deleted
+  BP_OPER_STATUS_TO_BE_DELETED = 3;
 }
 
 // BridgePortType reflects the different types of a Bridge Port
 enum BridgePortType {
-    // "unknown" bridge port type
-    BRIDGE_PORT_TYPE_UNSPECIFIED = 0;
-    // "access" bridge port type 
-    BRIDGE_PORT_TYPE_ACCESS  = 1;
-    // "trunk" bridge port type
-    BRIDGE_PORT_TYPE_TRUNK   = 2;
+  // "unknown" bridge port type
+  BRIDGE_PORT_TYPE_UNSPECIFIED = 0;
+  // "access" bridge port type
+  BRIDGE_PORT_TYPE_ACCESS = 1;
+  // "trunk" bridge port type
+  BRIDGE_PORT_TYPE_TRUNK = 2;
 }

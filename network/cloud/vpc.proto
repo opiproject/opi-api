@@ -4,14 +4,13 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "VpcProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "VpcProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // Virtual Private Cloud object
 message Vpc {
@@ -104,17 +103,16 @@ message VPCPeerSpec {
 }
 
 // operational status of a VPC peering, if any
-message VPCPeerStatus {
-}
+message VPCPeerStatus {}
 
 // type of the virtual private cloud
 enum VPCType {
   // unspecified
   VPC_TYPE_UNSPECIFIED = 0;
   // underlay
-  VPC_TYPE_UNDERLAY    = 1;
+  VPC_TYPE_UNDERLAY = 1;
   // tenant
-  VPC_TYPE_TENANT      = 2;
+  VPC_TYPE_TENANT = 2;
   // control
-  VPC_TYPE_CONTROL     = 3;
+  VPC_TYPE_CONTROL = 3;
 }

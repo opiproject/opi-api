@@ -4,14 +4,13 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "InterfaceProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "InterfaceProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // interface - ethernet interface (layer2 and layer3 configuration)
 message Interface {
@@ -43,9 +42,9 @@ message InterfaceSpec {
     // layer3 interface configuration
     L3IfSpec l3_if_spec = 5;
     // loopback interface configuration
-    LoopbackIfSpec loopback_if_spec  = 6;
+    LoopbackIfSpec loopback_if_spec = 6;
     // control interface configuration
-    ControlIfSpec control_if_spec   = 7;
+    ControlIfSpec control_if_spec = 7;
     // host facing interface's configuration
     HostIfSpec host_if_spec = 8;
   }
@@ -121,15 +120,15 @@ message HostIfSpec {
   bytes mac_address = 3;
   // interface name (this can be populated from what is obtaine from the driver
   // for easier troublsehooting, or other operations
-  string  ifname = 4;
+  string ifname = 4;
 }
 
 // operational status of uplink interface
 message UplinkIfStatus {
   // hw specific index associated with this uplink, useful for operations
-  int32     hw_if_idx     = 1;
+  int32 hw_if_idx = 1;
   // hw port number is hw identifier of the port, usefor for operations
-  int32     hw_port_number = 2;
+  int32 hw_port_number = 2;
 }
 
 // operational status of loopback interface
@@ -155,16 +154,16 @@ message InterfaceStatus {
   // encoded interface index of this interface
   // (-- api-linter: core::0141::forbidden-types=disabled
   //     aip.dev/not-precedent: interface index is an opaque uint32 value. --)
-  uint32             if_index           = 1;
+  uint32 if_index = 1;
   // operational status of the interface
-  IfStatus           oper_status        = 2;
+  IfStatus oper_status = 2;
   oneof ifstatus {
     // uplink specific status
-    UplinkIfStatus   uplink_if_status   = 3;
+    UplinkIfStatus uplink_if_status = 3;
     // loopback interface specific status
     LoopbackIfStatus loopback_if_status = 4;
     // host interface specific status
-    HostIfStatus     host_if_status     = 5;
+    HostIfStatus host_if_status = 5;
   }
 }
 
@@ -173,17 +172,17 @@ enum IfType {
   // unspecified
   IF_TYPE_UNSPECIFIED = 0;
   // uplink interface
-  IF_TYPE_UPLINK      = 1;
+  IF_TYPE_UPLINK = 1;
   // uplink port-channel interface
-  IF_TYPE_UPLINK_PC   = 2;
+  IF_TYPE_UPLINK_PC = 2;
   // L3 interface
-  IF_TYPE_L3          = 3;
+  IF_TYPE_L3 = 3;
   // loopback interface
-  IF_TYPE_LOOPBACK    = 4;
+  IF_TYPE_LOOPBACK = 4;
   // inband management/control interface
-  IF_TYPE_CONTROL     = 5;
+  IF_TYPE_CONTROL = 5;
   // host visible PF/VF device
-  IF_TYPE_HOST        = 6;
+  IF_TYPE_HOST = 6;
 }
 
 // IfStatus status reflects the operational status of Interface
@@ -193,7 +192,7 @@ enum IfStatus {
   // unknown
   IF_STATUS_UNSPECIFIED = 0;
   // interface is up
-  IF_STATUS_UP          = 1;
+  IF_STATUS_UP = 1;
   // interface is down
-  IF_STATUS_DOWN        = 2;
+  IF_STATUS_DOWN = 2;
 }

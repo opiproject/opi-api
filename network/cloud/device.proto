@@ -4,16 +4,14 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "DeviceProto";
-
-option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
+import "google/api/resource.proto";
+import "google/protobuf/timestamp.proto";
 import "network/opinetcommon/networktypes.proto";
 
-import "google/protobuf/timestamp.proto";
-import "google/api/resource.proto";
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "DeviceProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // device capabilities indicate the capabilities of software/hardware
 // as exposed by current firmware of the device. This can help cloud controller
@@ -64,7 +62,7 @@ message DeviceSpec {
   // number and type of pcie functions exposed
   PCIeFunctionsSpec pcie_functions = 5;
   // ovelay routing
-  bool overlay_routing_enabled = 6; 
+  bool overlay_routing_enabled = 6;
   // system name is used as named identifier in protocols (e.g. LLDP)
   string systemname = 7;
   // management network details
@@ -122,15 +120,15 @@ message DeviceStatus {
 // system events happened during device operations
 message SystemEvent {
   // event timestamp
-  google.protobuf.Timestamp event_time  = 1;
+  google.protobuf.Timestamp event_time = 1;
   // name of the event
-  string                    event_description = 2;
+  string event_description = 2;
 }
 
 // critical alerts effecting the health of the system
 message SystemAlert {
   // alert timestamp
-  google.protobuf.Timestamp alert_time  = 1;
+  google.protobuf.Timestamp alert_time = 1;
   // name of the alert
-  string                    alert_description = 2;
+  string alert_description = 2;
 }

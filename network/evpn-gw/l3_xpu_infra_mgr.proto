@@ -15,345 +15,331 @@ syntax = "proto3";
 
 package opi_api.network.evpn_gw.v1alpha1;
 
-option go_package = "github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go";
-option java_package = "opi_api.network.evpn_gw.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "L3XpuInfraMgrProto";
-
-import "network/opinetcommon/networktypes.proto";
-import "network/evpn-gw/component.proto";
-
 import "google/api/annotations.proto";
 import "google/api/client.proto";
-import "google/protobuf/empty.proto";
 import "google/api/field_behavior.proto";
-import "google/protobuf/field_mask.proto";
 import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+import "network/evpn-gw/component.proto";
+import "network/opinetcommon/networktypes.proto";
+
+option go_package = "github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "L3XpuInfraMgrProto";
+option java_package = "opi_api.network.evpn_gw.v1alpha1";
 
 // Management of Vrf Resources
 service VrfService {
-    // Create a Vrf
-    rpc CreateVrf(CreateVrfRequest) returns (Vrf){
-        option (google.api.http) = {
-          post: "/v1/vrfs"
-          body: "vrf"
-        };
-        option (google.api.method_signature) = "vrf,vrf_id";
-    }
-    // List Vrfs
-    rpc ListVrfs(ListVrfsRequest) returns (ListVrfsResponse){
-        option (google.api.http) = {
-          get: "/v1/vrfs"
-        };
-    }
-    // Retrieve a Vrf
-    rpc GetVrf(GetVrfRequest) returns (Vrf){
-        option (google.api.http) = {
-          get: "/v1/{name=vrfs/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Delete a Vrf
-    rpc DeleteVrf(DeleteVrfRequest) returns (google.protobuf.Empty){
-        option (google.api.http) = {
-          delete: "/v1/{name=vrfs/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update a Vrf
-    rpc UpdateVrf(UpdateVrfRequest) returns (Vrf){
-        option (google.api.http) = {
-          patch: "/v1/{vrf.name=vrfs/*}"
-          body: "vrf"
-        };
-        option (google.api.method_signature) = "vrf,update_mask";
-    }
+  // Create a Vrf
+  rpc CreateVrf(CreateVrfRequest) returns (Vrf) {
+    option (google.api.http) = {
+      post: "/v1/vrfs"
+      body: "vrf"
+    };
+    option (google.api.method_signature) = "vrf,vrf_id";
+  }
+  // List Vrfs
+  rpc ListVrfs(ListVrfsRequest) returns (ListVrfsResponse) {
+    option (google.api.http) = {get: "/v1/vrfs"};
+  }
+  // Retrieve a Vrf
+  rpc GetVrf(GetVrfRequest) returns (Vrf) {
+    option (google.api.http) = {get: "/v1/{name=vrfs/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Delete a Vrf
+  rpc DeleteVrf(DeleteVrfRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=vrfs/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update a Vrf
+  rpc UpdateVrf(UpdateVrfRequest) returns (Vrf) {
+    option (google.api.http) = {
+      patch: "/v1/{vrf.name=vrfs/*}"
+      body: "vrf"
+    };
+    option (google.api.method_signature) = "vrf,update_mask";
+  }
 }
 
 // Management of switch virtual interfaces (SVIs) binding LogicalBridges to VRFs.
 service SviService {
-    // Create a Svi
-    rpc CreateSvi(CreateSviRequest) returns (Svi){
-        option (google.api.http) = {
-          post: "/v1/svis"
-          body: "svi"
-        };
-        option (google.api.method_signature) = "svi,svi_id";
-    }
-    // List Svis
-    rpc ListSvis(ListSvisRequest) returns (ListSvisResponse){
-        option (google.api.http) = {
-          get: "/v1/svis"
-        };
-    }
-    // Retrieve a Svi
-    rpc GetSvi(GetSviRequest) returns (Svi){
-        option (google.api.http) = {
-          get: "/v1/{name=svis/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Delete a Svi
-    rpc DeleteSvi(DeleteSviRequest) returns (google.protobuf.Empty){
-        option (google.api.http) = {
-          delete: "/v1/{name=svis/*}"
-        };
-        option (google.api.method_signature) = "name";
-    }
-    // Update a Svi
-    rpc UpdateSvi(UpdateSviRequest) returns (Svi){
-        option (google.api.http) = {
-          patch: "/v1/{svi.name=svis/*}"
-          body: "svi"
-        };
-        option (google.api.method_signature) = "svi,update_mask";
-    }
+  // Create a Svi
+  rpc CreateSvi(CreateSviRequest) returns (Svi) {
+    option (google.api.http) = {
+      post: "/v1/svis"
+      body: "svi"
+    };
+    option (google.api.method_signature) = "svi,svi_id";
+  }
+  // List Svis
+  rpc ListSvis(ListSvisRequest) returns (ListSvisResponse) {
+    option (google.api.http) = {get: "/v1/svis"};
+  }
+  // Retrieve a Svi
+  rpc GetSvi(GetSviRequest) returns (Svi) {
+    option (google.api.http) = {get: "/v1/{name=svis/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Delete a Svi
+  rpc DeleteSvi(DeleteSviRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=svis/*}"};
+    option (google.api.method_signature) = "name";
+  }
+  // Update a Svi
+  rpc UpdateSvi(UpdateSviRequest) returns (Svi) {
+    option (google.api.http) = {
+      patch: "/v1/{svi.name=svis/*}"
+      body: "svi"
+    };
+    option (google.api.method_signature) = "svi,update_mask";
+  }
 }
-
 
 // Vrf level network configuration
 message Vrf {
-    option (google.api.resource) = {
-      type: "opi_api.network.evpn_gw.v1alpha1/Vrf"
-      pattern: "vrfs/{vrf}"
-      singular: "vrf"
-      plural: "vrfs"
-    };
-    // The resource name of the Vrf.
-    // "name" is an opaque object handle that is not user settable.
-    // "name" will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    // Format: vrfs/{vrf}
-    string name      = 1 [(google.api.field_behavior) = IDENTIFIER];
+  option (google.api.resource) = {
+    type: "opi_api.network.evpn_gw.v1alpha1/Vrf"
+    pattern: "vrfs/{vrf}"
+    singular: "vrf"
+    plural: "vrfs"
+  };
+  // The resource name of the Vrf.
+  // "name" is an opaque object handle that is not user settable.
+  // "name" will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  // Format: vrfs/{vrf}
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // Vrf's network configuration
-    VrfSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
-    // Vrf's network status
-    VrfStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Vrf's network configuration
+  VrfSpec spec = 2 [(google.api.field_behavior) = REQUIRED];
+  // Vrf's network status
+  VrfStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Vrf network configuration
 message VrfSpec {
-    // VXLAN VNI for L3 EVPN. Also used as EVPN route target
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vni cannot be negative number. --)
-    optional uint32 vni                                           = 1 [(google.api.field_behavior) = OPTIONAL];
-    // IPv4 or IPv6 loopback address prefix. Also serves as basis for RD in FRR
-    network.opinetcommon.v1alpha1.IPPrefix loopback_ip_prefix     = 2 [(google.api.field_behavior) = REQUIRED];
-    // IPv4 or IPv6 IP address prefix for the VXLAN TEP
-    network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix         = 3 [(google.api.field_behavior) = OPTIONAL];
+  // VXLAN VNI for L3 EVPN. Also used as EVPN route target
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: vni cannot be negative number. --)
+  optional uint32 vni = 1 [(google.api.field_behavior) = OPTIONAL];
+  // IPv4 or IPv6 loopback address prefix. Also serves as basis for RD in FRR
+  network.opinetcommon.v1alpha1.IPPrefix loopback_ip_prefix = 2 [(google.api.field_behavior) = REQUIRED];
+  // IPv4 or IPv6 IP address prefix for the VXLAN TEP
+  network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Vrf
 message VrfStatus {
-    // operational status of a Vrf
-    VRFOperStatus oper_status         = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // status of the components
-    repeated Component components     = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // operational status of a Vrf
+  VRFOperStatus oper_status = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // status of the components
+  repeated Component components = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateVrfRequest structure
 message CreateVrfRequest {
-    // The ID to use for the vrf, which will become the final component of
-    // the vrf's resource name.
-    //
-    // This value should be 4-63 characters, and valid characters
-    // are /[a-z][0-9]-/.
-    // If this is not provided the system will auto-generate it.
-    string vrf_id = 1 [(google.api.field_behavior) = OPTIONAL];
+  // The ID to use for the vrf, which will become the final component of
+  // the vrf's resource name.
+  //
+  // This value should be 4-63 characters, and valid characters
+  // are /[a-z][0-9]-/.
+  // If this is not provided the system will auto-generate it.
+  string vrf_id = 1 [(google.api.field_behavior) = OPTIONAL];
 
-    // The vrf to create
-    Vrf vrf       = 2 [(google.api.field_behavior) = REQUIRED];
+  // The vrf to create
+  Vrf vrf = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // ListVrfsRequest structure
 message ListVrfsRequest {
-    // page size of list request
-    int32 page_size   = 1 [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page size of list request
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // ListVrfsResponse structure
 message ListVrfsResponse {
-    // List of all the vrfs
-    repeated Vrf vrfs      = 1;
-    // Next page token of list response
-    string next_page_token = 2;
+  // List of all the vrfs
+  repeated Vrf vrfs = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // GetVrfRequest structure
 message GetVrfRequest {
-    // The name of the vrf to retrieve
-    // Format: vrfs/{vrf}
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
-    ];
+  // The name of the vrf to retrieve
+  // Format: vrfs/{vrf}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
+  ];
 }
 
 // DeleteVrfRequest structure
 message DeleteVrfRequest {
-    // The name of the vrf to delete
-    // Format: vrfs/{vrf}
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The name of the vrf to delete
+  // Format: vrfs/{vrf}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // UpdateVrfRequest structure
 message UpdateVrfRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    Vrf vrf = 1 [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  Vrf vrf = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Svi network configuration
 message Svi {
-    option (google.api.resource) = {
-      type: "opi_api.network.evpn_gw.v1alpha1/Svi"
-      pattern: "svis/{svi}"
-      singular: "svi"
-      plural: "svis"
-    };
-    // The resource name of the Svi.
-    // "name" is an opaque object handle that is not user settable.
-    // "name" will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    // Format: svis/{svi}
-    string name      = 1 [(google.api.field_behavior) = IDENTIFIER];
+  option (google.api.resource) = {
+    type: "opi_api.network.evpn_gw.v1alpha1/Svi"
+    pattern: "svis/{svi}"
+    singular: "svi"
+    plural: "svis"
+  };
+  // The resource name of the Svi.
+  // "name" is an opaque object handle that is not user settable.
+  // "name" will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  // Format: svis/{svi}
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-    // Svi's network configuration
-    SviSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
-    // Svi's network status
-    SviStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Svi's network configuration
+  SviSpec spec = 2 [(google.api.field_behavior) = REQUIRED];
+  // Svi's network status
+  SviStatus status = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Svi's network configuration
 message SviSpec {
-    //Vrf name
-    // Format is `vrfs/{vrf}`
-    string vrf                                                   = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference) = {type: "opi_api.network.evpn_gw.v1alpha1/Vrf"}
-    ];
-    // Logical Bridge name
-    // Format is `logicalBridges/{logical_bridge}`
-    string logical_bridge                                        = 2 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference) = {type: "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"}
-    ];
-    // Svi's MAC address.
-    bytes mac_address                                            = 3 [(google.api.field_behavior) = REQUIRED];
-    // The GW IP addresses assigned to the SVI
-    repeated network.opinetcommon.v1alpha1.IPPrefix gw_ip_prefix = 4 [(google.api.field_behavior) = REQUIRED];
-    // Set to true to enable BGP peering with Vrf on Svi
-    bool enable_bgp                                              = 5 [(google.api.field_behavior) = OPTIONAL];
-    // Conditional: The remote AS used by BGP speakers on LB (1-65535)
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: remote_as cannot be negative number. --)
-    uint32 remote_as                                             = 6 [(google.api.field_behavior) = OPTIONAL];
+  //Vrf name
+  // Format is `vrfs/{vrf}`
+  string vrf = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "opi_api.network.evpn_gw.v1alpha1/Vrf"}
+  ];
+  // Logical Bridge name
+  // Format is `logicalBridges/{logical_bridge}`
+  string logical_bridge = 2 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"}
+  ];
+  // Svi's MAC address.
+  bytes mac_address = 3 [(google.api.field_behavior) = REQUIRED];
+  // The GW IP addresses assigned to the SVI
+  repeated network.opinetcommon.v1alpha1.IPPrefix gw_ip_prefix = 4 [(google.api.field_behavior) = REQUIRED];
+  // Set to true to enable BGP peering with Vrf on Svi
+  bool enable_bgp = 5 [(google.api.field_behavior) = OPTIONAL];
+  // Conditional: The remote AS used by BGP speakers on LB (1-65535)
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: remote_as cannot be negative number. --)
+  uint32 remote_as = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // operational status of a Svi
 message SviStatus {
-    // operational status of a Svi
-    SVIOperStatus oper_status  = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // status of the components
-    repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // operational status of a Svi
+  SVIOperStatus oper_status = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // status of the components
+  repeated Component components = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // CreateSviRequest structure
 message CreateSviRequest {
-    // The ID to use for the svi, which will become the final component of
-    // the svi's resource name.
-    //
-    // This value should be 4-63 characters, and valid characters
-    // are /[a-z][0-9]-/.
-    // If this is not provided the system will auto-generate it.
-    string svi_id = 1 [(google.api.field_behavior) = OPTIONAL];
-    // The Svi to create
-    Svi svi       = 2 [(google.api.field_behavior) = REQUIRED];
+  // The ID to use for the svi, which will become the final component of
+  // the svi's resource name.
+  //
+  // This value should be 4-63 characters, and valid characters
+  // are /[a-z][0-9]-/.
+  // If this is not provided the system will auto-generate it.
+  string svi_id = 1 [(google.api.field_behavior) = OPTIONAL];
+  // The Svi to create
+  Svi svi = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // ListSvisRequest structure
 message ListSvisRequest {
-    // page size of list request
-    int32 page_size   = 1  [(google.api.field_behavior) = OPTIONAL];
-    // page token of list request
-    string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  // page size of list request
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  // page token of list request
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // ListSvisResponse structure
 message ListSvisResponse {
-    // List of all the svis
-    repeated Svi svis      = 1;
-    // Next page token of list response
-    string next_page_token = 2;
+  // List of all the svis
+  repeated Svi svis = 1;
+  // Next page token of list response
+  string next_page_token = 2;
 }
 
 // GetSviRequest structure
 message GetSviRequest {
-    // The name of the svi to retrieve
-    // Format: svis/{svi}
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
-    ];
+  // The name of the svi to retrieve
+  // Format: svis/{svi}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
+  ];
 }
 
 // DeleteSviRequest structure
 message DeleteSviRequest {
-    // The name of the svi to delete
-    // Format: svis/{svi}
-    string name = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
-    ];
-    // If set to true, and the resource is not found, the request will succeed
-    // but no action will be taken on the server
-    bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
+  // The name of the svi to delete
+  // Format: svis/{svi}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
+  ];
+  // If set to true, and the resource is not found, the request will succeed
+  // but no action will be taken on the server
+  bool allow_missing = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // UpdateSviRequest structure
 message UpdateSviRequest {
-    // The object's `name` field is used to identify the object to be updated.
-    Svi svi = 1  [(google.api.field_behavior) = REQUIRED];
-    // The list of fields to update.
-    google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-    // If set to true, and the object is not found, a new object will be created.
-    // In this situation, `update_mask` is ignored.
-    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
+  // The object's `name` field is used to identify the object to be updated.
+  Svi svi = 1 [(google.api.field_behavior) = REQUIRED];
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If set to true, and the object is not found, a new object will be created.
+  // In this situation, `update_mask` is ignored.
+  bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // VRFOperStatus status reflects the operational status of a Vrf
 enum VRFOperStatus {
-    // unknown
-    VRF_OPER_STATUS_UNSPECIFIED   = 0;
-    // Vrf is up
-    VRF_OPER_STATUS_UP            = 1;
-    // Vrf is down
-    VRF_OPER_STATUS_DOWN          = 2;
-    // Vrf is to be deleted
-    VRF_OPER_STATUS_TO_BE_DELETED = 3;
+  // unknown
+  VRF_OPER_STATUS_UNSPECIFIED = 0;
+  // Vrf is up
+  VRF_OPER_STATUS_UP = 1;
+  // Vrf is down
+  VRF_OPER_STATUS_DOWN = 2;
+  // Vrf is to be deleted
+  VRF_OPER_STATUS_TO_BE_DELETED = 3;
 }
 
 // SVIOperStatus status reflects the operational status of a Svi
 enum SVIOperStatus {
-    // unknown
-    SVI_OPER_STATUS_UNSPECIFIED   = 0;
-    // Svi is up
-    SVI_OPER_STATUS_UP            = 1;
-    // Svi is down
-    SVI_OPER_STATUS_DOWN          = 2;
-    // Svi is to be deleted
-    SVI_OPER_STATUS_TO_BE_DELETED = 3;
+  // unknown
+  SVI_OPER_STATUS_UNSPECIFIED = 0;
+  // Svi is up
+  SVI_OPER_STATUS_UP = 1;
+  // Svi is down
+  SVI_OPER_STATUS_DOWN = 2;
+  // Svi is to be deleted
+  SVI_OPER_STATUS_TO_BE_DELETED = 3;
 }

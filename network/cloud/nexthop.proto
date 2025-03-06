@@ -4,14 +4,13 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "NextHopProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "NextHopProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // nexthop object
 message NextHop {
@@ -26,6 +25,7 @@ message NextHop {
   // status
   NextHopStatus status = 3;
 }
+
 // nexthop specification
 message NextHopSpec {
   // nexthop is different for underlay vs. overlay
@@ -75,7 +75,7 @@ message NextHopStatus {
     // nh is underlay
     UnderlayNextHopStatus underlay_nh_info = 2;
     // nh is overlay
-    OverlayNextHopStatus  overlay_nh_info = 3;
+    OverlayNextHopStatus overlay_nh_info = 3;
   }
 }
 
@@ -148,11 +148,11 @@ enum NextHopType {
   // unspecified
   NEXT_HOP_TYPE_UNSPECIFIED = 0;
   // ip
-  NEXT_HOP_TYPE_IP          = 1;
+  NEXT_HOP_TYPE_IP = 1;
   // underlay
-  NEXT_HOP_TYPE_UNDERLAY    = 2;
+  NEXT_HOP_TYPE_UNDERLAY = 2;
   // overlay
-  NEXT_HOP_TYPE_OVERLAY     = 3;
+  NEXT_HOP_TYPE_OVERLAY = 3;
 }
 
 // type of the nexthop group
