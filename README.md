@@ -65,7 +65,7 @@ The OPI API is published to the BSR in the [opiproject](https://buf.build/opipro
 ---
 
 - Leader
-  - [Mark Sanders](https://github.com/sandersms)
+  - [TBD]
 - Meeting Time & Date
   - Thursdays 12:00-13:00 ET
 - Slack Channel
