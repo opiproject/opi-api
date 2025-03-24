@@ -1,19 +1,18 @@
 // Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
 // protobuf specification for underlay (i.e. control plane) route table
-// Underlayroute object differ from overlay/tenant Route  object because 
+// Underlayroute object differ from overlay/tenant Route  object because
 // next hop is very different, doesn't require priority, classification, metering, etc.
 
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "UnderlayRouteProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "UnderlayRouteProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // Underlay Route can be static or dynamic underlay route
 message UnderlayRoute {
@@ -51,7 +50,7 @@ message UnderlayRouteSpec {
 // Underlay Route status for a control plane static or dynamic route
 message UnderlayRouteStatus {
   // route table id this route belongs to
-  int32 route_table_name_ref  = 1;
+  int32 route_table_name_ref = 1;
   // destination address
   network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
   // next-hop address

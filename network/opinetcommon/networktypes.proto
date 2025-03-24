@@ -3,11 +3,10 @@
 syntax = "proto3";
 package opi_api.network.opinetcommon.v1alpha1;
 
-option java_package = "opi_api.network.opinetcommon.v1alpha1";
+option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
 option java_multiple_files = true;
 option java_outer_classname = "NetworkTypesProto";
-
-option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
+option java_package = "opi_api.network.opinetcommon.v1alpha1";
 
 // IP Address object
 message IPAddress {
@@ -20,7 +19,7 @@ message IPAddress {
     //     aip.dev/not-precedent: must use fixed32 --)
     fixed32 v4_addr = 2;
     // IPv6 address
-    bytes  v6_addr = 3;
+    bytes v6_addr = 3;
   }
 }
 
@@ -54,28 +53,28 @@ message IPv6Prefix {
 message EncapVal {
   oneof val {
     // vlan id for DOT1Q
-    int32  vlan_id  = 1;
+    int32 vlan_id = 1;
     // MPLS tag/slot for MPLS over UDP
-    int32  mpls_tag = 2;
+    int32 mpls_tag = 2;
     // VXLAN VNID (24bit value)
-    int32  vnid     = 3;
+    int32 vnid = 3;
     // NVGRE VSID
-    int32  vsid     = 5;
+    int32 vsid = 5;
   }
 }
 
 // fabric encap
 message Encap {
   // encyp type
-  EncapType type  = 1;
+  EncapType type = 1;
   // encap value
-  EncapVal  value = 2;
+  EncapVal value = 2;
 }
 
 // PortRange object has low and high end of the port ranges
 message PortRange {
   // range:0-65535
-  int32 port_low  = 1;
+  int32 port_low = 1;
   // range:0-65535
   int32 port_high = 2;
 }
@@ -83,7 +82,7 @@ message PortRange {
 // IP Range
 message IPRange {
   // starting IP address
-  IPAddress low  = 1;
+  IPAddress low = 1;
   // ending IP address
   IPAddress high = 2;
 }
@@ -112,7 +111,7 @@ message IPEntry {
 
 // IPList is a list of IPEntry objects
 message IPList {
-   // list of ip entries (prefix, range)
+  // list of ip entries (prefix, range)
   repeated IPEntry ip_entries = 1;
 }
 
@@ -191,11 +190,11 @@ message ICMPMatchList {
 message RuleL4Match {
   oneof l4info {
     // source and/or destination ports/ranges
-    PortMatch     ports           = 1;
+    PortMatch ports = 1;
     // ICMP type/code match criteria
-    ICMPMatch     type_code       = 2;
+    ICMPMatch type_code = 2;
     // list of source and/or destination ports/ranges
-    PortListMatch port_list       = 3;
+    PortListMatch port_list = 3;
     // list ICMP type/code match criteria
     ICMPMatchList icmp_match_list = 4;
   }
@@ -222,11 +221,11 @@ enum SecurityRuleAction {
   // no action
   // (-- api-linter: core::0126::unspecified=disabled
   //     aip.dev/not-precedent: NONE means no action. --)
-  SECURITY_RULE_ACTION_NONE  = 0;
+  SECURITY_RULE_ACTION_NONE = 0;
   // allow
   SECURITY_RULE_ACTION_ALLOW = 1;
   // deny
-  SECURITY_RULE_ACTION_DENY  = 2;
+  SECURITY_RULE_ACTION_DENY = 2;
 }
 
 // IP address families
@@ -234,23 +233,23 @@ enum IpAf {
   // unspecified
   IP_AF_UNSPECIFIED = 0;
   // ipv4
-  IP_AF_INET        = 1;
+  IP_AF_INET = 1;
   // ipv6
-  IP_AF_INET6       = 2;
+  IP_AF_INET6 = 2;
 }
 
 // encap types in the network
 enum EncapType {
   // no encap
-  ENCAP_TYPE_UNSPECIFIED   = 0;
+  ENCAP_TYPE_UNSPECIFIED = 0;
   // 802.1q
-  ENCAP_TYPE_DOT1Q         = 1;
+  ENCAP_TYPE_DOT1Q = 1;
   // MPLS over UDP
   ENCAP_TYPE_MPLS_OVER_UDP = 2;
   // VXLAN
-  ENCAP_TYPE_VXLAN         = 3;
+  ENCAP_TYPE_VXLAN = 3;
   // NVGRE
-  ENCAP_TYPE_NVGRE         = 4;
+  ENCAP_TYPE_NVGRE = 4;
 }
 
 // route type
@@ -258,13 +257,13 @@ enum RouteType {
   // unspecified
   ROUTE_TYPE_UNSPECIFIED = 0;
   // other
-  ROUTE_TYPE_OTHER       = 1;
+  ROUTE_TYPE_OTHER = 1;
   // reject
-  ROUTE_TYPE_REJECT      = 2;
+  ROUTE_TYPE_REJECT = 2;
   // local
-  ROUTE_TYPE_LOCAL       = 3;
+  ROUTE_TYPE_LOCAL = 3;
   // remote
-  ROUTE_TYPE_REMOTE      = 4;
+  ROUTE_TYPE_REMOTE = 4;
 }
 
 // route protocols
@@ -272,11 +271,11 @@ enum RouteProtocol {
   // unspecified
   ROUTE_PROTOCOL_UNSPECIFIED = 0;
   // local
-  ROUTE_PROTOCOL_LOCAL       = 1;
+  ROUTE_PROTOCOL_LOCAL = 1;
   // static
-  ROUTE_PROTOCOL_STATIC      = 2;
+  ROUTE_PROTOCOL_STATIC = 2;
   // bgp (dynamic)
-  ROUTE_PROTOCOL_BGP         = 3;
+  ROUTE_PROTOCOL_BGP = 3;
 }
 
 // admin state of control plane objects
@@ -284,11 +283,11 @@ enum AdminState {
   // unspecified
   ADMIN_STATE_UNSPECIFIED = 0;
   // enable
-  ADMIN_STATE_ENABLE      = 1;
+  ADMIN_STATE_ENABLE = 1;
   // disable
-  ADMIN_STATE_DISABLE     = 2;
+  ADMIN_STATE_DISABLE = 2;
   // testing
-  ADMIN_STATE_TESTING     = 3;
+  ADMIN_STATE_TESTING = 3;
 }
 
 // direction in which policy is enforced
@@ -298,9 +297,9 @@ enum PolicyDir {
   // unspecified
   POLICY_DIR_UNSPECIFIED = 0;
   // ingress (towards vnic from network)
-  POLICY_DIR_INGRESS     = 1;
+  POLICY_DIR_INGRESS = 1;
   // egress (from vnic to network)
-  POLICY_DIR_EGRESS      = 2;
+  POLICY_DIR_EGRESS = 2;
 }
 
 // WildcardMatch options
@@ -310,5 +309,5 @@ enum WildcardMatch {
   //     aip.dev/not-precedent: NONE means don't match anything. --)
   WILDCARD_MATCH_NONE = 0;
   // match everything
-  WILDCARD_MATCH_ANY  = 256;
+  WILDCARD_MATCH_ANY = 256;
 }

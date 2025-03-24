@@ -4,8 +4,7 @@
 syntax = "proto3";
 package opi_api.network.telco.v1alpha1;
 
-option java_package = "opi_api.network.telco.v1alpha1";
+option go_package = "github.com/opiproject/opi-api/network/telco/v1alpha1/gen/go";
 option java_multiple_files = true;
 option java_outer_classname = "TelcoProto";
-
-option go_package = "github.com/opiproject/opi-api/network/telco/v1alpha1/gen/go";
+option java_package = "opi_api.network.telco.v1alpha1";

@@ -4,14 +4,13 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "RouteProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "RouteProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // route table object
 message RouteTable {
@@ -190,8 +189,7 @@ message RouteSpec {
 }
 
 // operational status of the route, if any
-message RouteStatus {
-}
+message RouteStatus {}
 
 // RouteClass captures different types/classes of routes
 enum RouteClass {
@@ -204,4 +202,3 @@ enum RouteClass {
   // VPC internal routes
   ROUTE_CLASS_VPC = 3;
 }
-

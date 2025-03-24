@@ -4,14 +4,13 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "TunnelProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "TunnelProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // tunnel object
 message Tunnel {
@@ -87,15 +86,15 @@ enum TunnelType {
   // unspecified
   TUNNEL_TYPE_UNSPECIFIED = 0;
   // tunnel type for Internet Gateway
-  TUNNEL_TYPE_IGW         = 1;
+  TUNNEL_TYPE_IGW = 1;
   // tunnel type for east-traffic workloads with in a data center
-  TUNNEL_TYPE_WORKLOAD    = 2;
+  TUNNEL_TYPE_WORKLOAD = 2;
   // tunnel type for inter data center traffic
-  TUNNEL_TYPE_INTER_DC    = 3;
+  TUNNEL_TYPE_INTER_DC = 3;
   // tunnel type for provider services
-  TUNNEL_TYPE_SERVICE     = 4;
+  TUNNEL_TYPE_SERVICE = 4;
   // tunnel pointing to an intermediate Virtual Network Function (VNF) devices
-  TUNNEL_TYPE_VNF         = 5;
+  TUNNEL_TYPE_VNF = 5;
   // tunnel type ipsec
-  TUNNEL_TYPE_IPSEC       = 6;
+  TUNNEL_TYPE_IPSEC = 6;
 }

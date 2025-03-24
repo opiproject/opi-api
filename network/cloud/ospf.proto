@@ -7,9 +7,9 @@ syntax = "proto3";
 
 package opi_api.network.cloud.v1alpha1;
 
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
 import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 option java_multiple_files = true;
@@ -18,182 +18,182 @@ option java_package = "opi_api.network.cloud.v1alpha1";
 
 //  OSPF Config object
 message OspfRouter {
-    option (google.api.resource) = {
-        type: "opi_api.network.cloud.v1alpha1/OspfRouter"
-        pattern: "ospfRouters/{router}"
-        singular: "ospfRouter"
-        plural: "ospfRouters" 
-    };
-    // name is an opaque object handle that is not user settable.
-    // name will be returned with created object
-    // user can only set {resource}_id on the Create request object
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
-    // OSPF Configuration specification
-    OSPFSpec spec = 2 [(google.api.field_behavior) = REQUIRED];
-    // OSPF State
-    OSPFOperState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/OspfRouter"
+    pattern: "ospfRouters/{router}"
+    singular: "ospfRouter"
+    plural: "ospfRouters"
+  };
+  // name is an opaque object handle that is not user settable.
+  // name will be returned with created object
+  // user can only set {resource}_id on the Create request object
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // OSPF Configuration specification
+  OSPFSpec spec = 2 [(google.api.field_behavior) = REQUIRED];
+  // OSPF State
+  OSPFOperState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // OSPF configuration
 message OSPFSpec {
-    // OSPF version v2 or v3 or unspecified assumes v2
-    OSPFVersion ospf_version = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // router ID for this ospf instance
-    string router_id = 2;
-    // Suppress default resolution if true
-    bool suppress_default_resolution = 3;
-    // Redistribution
-    OSPFRedistSpec redist = 4;
-    // Passive Interface name
-    string passive_if = 5;
+  // OSPF version v2 or v3 or unspecified assumes v2
+  OSPFVersion ospf_version = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // router ID for this ospf instance
+  string router_id = 2;
+  // Suppress default resolution if true
+  bool suppress_default_resolution = 3;
+  // Redistribution
+  OSPFRedistSpec redist = 4;
+  // Passive Interface name
+  string passive_if = 5;
 }
 
 // OSPFRedistSpec configuration
 message OSPFRedistSpec {
-    // OSPF redistribution type
-    OSPFRedistType redist_type = 1;
-    // peer enable/disable admin state. if peer is not enabled then local router
-    // must not initiate connections to the neighbor and must not respond to
-    // TCP connections attempts from neighbor
-    network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // OSPF local IP address. control plane chooses the local IP address of the
-    // session if an all 0 IP address is provided
-    network.opinetcommon.v1alpha1.IPAddress local_address = 3;
-    // Route-Map
-    string route_map = 4;
-    // Metric type
-    OSPFRedistMetricType metric_type = 5;
-    // Metric value
-    int32 metric = 6;
+  // OSPF redistribution type
+  OSPFRedistType redist_type = 1;
+  // peer enable/disable admin state. if peer is not enabled then local router
+  // must not initiate connections to the neighbor and must not respond to
+  // TCP connections attempts from neighbor
+  network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // OSPF local IP address. control plane chooses the local IP address of the
+  // session if an all 0 IP address is provided
+  network.opinetcommon.v1alpha1.IPAddress local_address = 3;
+  // Route-Map
+  string route_map = 4;
+  // Metric type
+  OSPFRedistMetricType metric_type = 5;
+  // Metric value
+  int32 metric = 6;
 }
 
 // OspfArea object
 message OspfArea {
-    option (google.api.resource) = {
-        type : "opi_api.network.cloud.v1alpha1/OspfArea"
-        pattern : "ospfAreas/{areas}"
-        singular: "ospfArea"
-        plural: "ospfAreas" 
-    };
-    // Unique name to identify the area.
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
-    // area configuration
-    OspfAreaSpec spec = 2;
-    // area state
-    OSPFOperState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/OspfArea"
+    pattern: "ospfAreas/{areas}"
+    singular: "ospfArea"
+    plural: "ospfAreas"
+  };
+  // Unique name to identify the area.
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // area configuration
+  OspfAreaSpec spec = 2;
+  // area state
+  OSPFOperState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // OspfAreaSpec configuration
 message OspfAreaSpec {
-    // OSPF Area IP address. control plane chooses the local IP address of the
-    // session if an all 0 IP address is provided, example area zero 0.0.0.0 and
-    // area 1 0.0.0.1
-    network.opinetcommon.v1alpha1.IPAddress area_address = 1;
-    // OSPF Process & context definition for (IPv4)
-    network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // Network prefix address
-    network.opinetcommon.v1alpha1.IPPrefix network_prefix = 3;
-    // example configuration: area 0 authentication_message_digest
-    string auth_message_digest = 4;
-    // IfNetwork Type
-    OspfIfNetworkType network_type = 5;
+  // OSPF Area IP address. control plane chooses the local IP address of the
+  // session if an all 0 IP address is provided, example area zero 0.0.0.0 and
+  // area 1 0.0.0.1
+  network.opinetcommon.v1alpha1.IPAddress area_address = 1;
+  // OSPF Process & context definition for (IPv4)
+  network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Network prefix address
+  network.opinetcommon.v1alpha1.IPPrefix network_prefix = 3;
+  // example configuration: area 0 authentication_message_digest
+  string auth_message_digest = 4;
+  // IfNetwork Type
+  OspfIfNetworkType network_type = 5;
 }
 
 // OspfIfNetwork
 message OspfIfNetwork {
-    option (google.api.resource) = {
-        type : "opi_api.network.cloud.v1alpha1/OspfIfNetwork"
-        pattern : "ospfIfNetworks/{network}"
-        singular: "ospfIfNetwork"
-        plural: "ospfIfNetworks" 
-    };
-    // unique key/identifier of ifnetwork
-    string name = 1 [(google.api.field_behavior) = IDENTIFIER];
-    // OspfIfNetwork configuration
-    OspfIfNetworkSpec spec = 2;
-    // OspfIfNetwork state
-    OSPFOperState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/OspfIfNetwork"
+    pattern: "ospfIfNetworks/{network}"
+    singular: "ospfIfNetwork"
+    plural: "ospfIfNetworks"
+  };
+  // unique key/identifier of ifnetwork
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // OspfIfNetwork configuration
+  OspfIfNetworkSpec spec = 2;
+  // OspfIfNetwork state
+  OSPFOperState state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // OspfIfNetworkSpec configuration
 message OspfIfNetworkSpec {
-    // Network Type Point_To_Point or Broadcast
-    string network_type = 1;
-    // peer enable/disable admin state. if peer is not enabled then local router
-    // must not initiate connections to the neighbor and must not respond to
-    // TCP connections attempts from neighbor
-    network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-    // OSPF local IP address. control plane chooses the local IP address of the
-    // session if an all 0 IP address is provided
-    network.opinetcommon.v1alpha1.IPAddress local_address = 3;
-    // Cost or link metric value is 16 bits and must be validated
-    int32 cost_or_link_metric = 4;
-    // Example: ip ospf message-digest-key 1 md5 intel
-    OSPFMD5Auth md5_auth = 5;
+  // Network Type Point_To_Point or Broadcast
+  string network_type = 1;
+  // peer enable/disable admin state. if peer is not enabled then local router
+  // must not initiate connections to the neighbor and must not respond to
+  // TCP connections attempts from neighbor
+  network.opinetcommon.v1alpha1.AdminState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // OSPF local IP address. control plane chooses the local IP address of the
+  // session if an all 0 IP address is provided
+  network.opinetcommon.v1alpha1.IPAddress local_address = 3;
+  // Cost or link metric value is 16 bits and must be validated
+  int32 cost_or_link_metric = 4;
+  // Example: ip ospf message-digest-key 1 md5 intel
+  OSPFMD5Auth md5_auth = 5;
 }
 
 // MD5 Auth
 message OSPFMD5Auth {
-    // Message Digest Key value
-    int32 message_digest_key = 1;
-    // Password
-    string password = 2;
+  // Message Digest Key value
+  int32 message_digest_key = 1;
+  // Password
+  string password = 2;
 }
 
 // OSPF Version Number
 enum OSPFVersion {
-    // OSPF Version not specified and assume v2
-    OSPF_VERSION_UNSPECIFIED = 0;
-    // OSPF Version 2
-    OSPF_VERSION_2 = 1;
-    // OSPF Version 3
-    OSPF_VERSION_3 = 2;
+  // OSPF Version not specified and assume v2
+  OSPF_VERSION_UNSPECIFIED = 0;
+  // OSPF Version 2
+  OSPF_VERSION_2 = 1;
+  // OSPF Version 3
+  OSPF_VERSION_3 = 2;
 }
 
 // IfNetwork Types
 enum OspfIfNetworkType {
-    // IfNetwork Type Unspecified
-    OSPF_IF_NETWORK_TYPE_UNSPECIFIED = 0;
-    // Broadcast type
-    OSPF_IF_NETWORK_TYPE_BROADCAST = 1;
-    // Point to Point type
-    OSPF_IF_NETWORK_TYPE_POINT_TO_POINT = 2;
+  // IfNetwork Type Unspecified
+  OSPF_IF_NETWORK_TYPE_UNSPECIFIED = 0;
+  // Broadcast type
+  OSPF_IF_NETWORK_TYPE_BROADCAST = 1;
+  // Point to Point type
+  OSPF_IF_NETWORK_TYPE_POINT_TO_POINT = 2;
 }
 
 // OSPF Redist Metric Type
 enum OSPFRedistMetricType {
-    // Redist Metric Unspecified
-    OSPF_REDIST_METRIC_TYPE_UNSPECIFIED = 0;
-    // Type 1
-    OSPF_REDIST_METRIC_TYPE_1 = 1;
-    // Type 1
-    OSPF_REDIST_METRIC_TYPE_2 = 2;
+  // Redist Metric Unspecified
+  OSPF_REDIST_METRIC_TYPE_UNSPECIFIED = 0;
+  // Type 1
+  OSPF_REDIST_METRIC_TYPE_1 = 1;
+  // Type 1
+  OSPF_REDIST_METRIC_TYPE_2 = 2;
 }
 
 // OSPF Redist Type
 enum OSPFRedistType {
-    // Redist Unspecified
-    OSPF_REDIST_TYPE_UNSPECIFIED = 0;
-    // Connection
-    OSPF_REDIST_TYPE_CONNECTED = 1;
-    // Static
-    OSPF_REDIST_TYPE_STATIC = 2;
-    // BGP
-    OSPF_REDIST_TYPE_BGP = 3;
+  // Redist Unspecified
+  OSPF_REDIST_TYPE_UNSPECIFIED = 0;
+  // Connection
+  OSPF_REDIST_TYPE_CONNECTED = 1;
+  // Static
+  OSPF_REDIST_TYPE_STATIC = 2;
+  // BGP
+  OSPF_REDIST_TYPE_BGP = 3;
 }
 
 // OSPFOperState operational state
 enum OSPFOperState {
-    // unspecified
-    OSPF_OPER_STATE_UNSPECIFIED = 0;
-    // up
-    OSPF_OPER_STATE_UP = 1;
-    // down
-    OSPF_OPER_STATE_DOWN = 2;
-    // going up
-    OSPF_OPER_STATE_GOING_UP = 3;
-    // going down
-    OSPF_OPER_STATE_GOING_DOWN = 4;
-    // activation failed
-    OSPF_OPER_STATE_ACT_FAILED = 5;
+  // unspecified
+  OSPF_OPER_STATE_UNSPECIFIED = 0;
+  // up
+  OSPF_OPER_STATE_UP = 1;
+  // down
+  OSPF_OPER_STATE_DOWN = 2;
+  // going up
+  OSPF_OPER_STATE_GOING_UP = 3;
+  // going down
+  OSPF_OPER_STATE_GOING_DOWN = 4;
+  // activation failed
+  OSPF_OPER_STATE_ACT_FAILED = 5;
 }

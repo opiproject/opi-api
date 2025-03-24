@@ -4,14 +4,13 @@
 syntax = "proto3";
 package opi_api.network.cloud.v1alpha1;
 
-option java_package = "opi_api.network.cloud.v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "VnicProto";
+import "google/api/resource.proto";
+import "network/opinetcommon/networktypes.proto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
-
-import "network/opinetcommon/networktypes.proto";
-import "google/api/resource.proto";
+option java_multiple_files = true;
+option java_outer_classname = "VnicProto";
+option java_package = "opi_api.network.cloud.v1alpha1";
 
 // vnic is a generic abstraction representing tenant workload's interface
 // tenant workload could be a VM, container or bare-metal.  VNIC is identified
@@ -39,7 +38,7 @@ message VnicSpec {
   // overlay MAC of this VNIC
   bytes mac_address = 3;
   // enable or disable reverse path checks while rx/tx traffic from/to this vnic
-  bool  source_guard_enable = 4;
+  bool source_guard_enable = 4;
   // fabric encap information to be used for traffic originated from this vnic
   network.opinetcommon.v1alpha1.Encap fabric_encap = 5;
   // VNFs (virtual network functions are workloads that implement network
@@ -64,29 +63,29 @@ message VnicSpec {
   }
   // max_sessions, if set, is total number of active sessions (across all
   // protocols) allowed from/to this vnic; zero means unlimited
-  int32  max_sessions = 13;
+  int32 max_sessions = 13;
   // guest workload's MAC in rx/tx direction is rewritten with this mac if non zero
   bytes public_mac_address = 14;
   // if allow_internet_access is set to false and traffic from the vnic hits a
   // route of class ROUTE_CLASS_INTERNET, then traffic is dropped. To allow
   // Internet connectivity for the vnic, AllowInternetAccess must be set to
   // true
-  bool allow_internet_access   = 15;
+  bool allow_internet_access = 15;
   // max_cps, if non-zero, is the maximum no. of connections per second (cps)
   // allowed for this vnic and if cps exceeds this configured limit all
   // new connections will get dropped; zero means unlimited
   int32 max_cps = 16;
   // CPS burst to be absorbed when CPS exceeds MaxCPS; zero means
   // no burst is allowed
-  int32  cps_burst = 17;
+  int32 cps_burst = 17;
   // multiple vnics can be created with same MAC but only of them can be primary
   // VNIC and all 2nd-ary vnics refer to the primary vnic, both primary and
   // secondary vnic can have one or more local IP mappings behind them
-  string  primary_vnic_name_ref = 18;
+  string primary_vnic_name_ref = 18;
   // identifier of the IPv4 route table to be used
   string v4_route_table_name_ref = 19;
   // identifier of the IPv6 route table to be used, if any
-  string  v6_route_table_name_ref = 20;
+  string v6_route_table_name_ref = 20;
   // vnic if assigned a VIP in the underlay, can be used as
   // outer encap source IP, if configured, for traffic going to certain vpc
   // private service endpoints
