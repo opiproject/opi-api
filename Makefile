@@ -7,7 +7,7 @@ APIVER = v1
 all: buflint bufgen
 
 buflint:
-	docker run --rm -v "${PWD}":/out -w /out bufbuild/buf:1.50.0 lint
+	docker run --rm -v "${PWD}":/out -w /out bufbuild/buf:1.58.0 lint
 
 bufgen:
 	docker run --rm \
