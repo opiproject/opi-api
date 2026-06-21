@@ -575,9 +575,9 @@ message IkeConnectionState {
   // True if the local endpoint is acting as the initiator for this connection.
   bool initiator = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Initiator's IKE SA SPI
-  int32 initiator_ike_spi = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  uint64 initiator_ike_spi = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Responder's IKE SA SPI
-  int32 responder_ike_sa = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  uint64 responder_ike_spi = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
   // True if the local endpoint is behind a NAT.
   bool nat_local = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
   // True if the remote endpoint is behind a NAT.
