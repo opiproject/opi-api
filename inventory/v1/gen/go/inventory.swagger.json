@@ -213,7 +213,7 @@
         "total_usable_bytes": {
           "type": "string",
           "format": "int64",
-          "title": "TBD"
+          "title": "Total usable memory, in bytes, for this array. This is the amount of memory the system can actually use after accounting for reserved system memory. This is not the amount of memory currently in use."
         }
       },
       "description": "Physical Memory Array (Type 16)\n This structure describes a collection of memory devices that operate together to form a memory address\n space."
@@ -254,7 +254,7 @@
           "title": "string subclass info"
         }
       },
-      "description": "PCI device information\n TBD: Type 9 or Type 41 ?\n This structure describes a collection of PCI devices."
+      "description": "PCI device information\n This structure describes a single PCIe device discovered\n on the system."
     },
     "v1SystemInfo": {
       "type": "object",
