@@ -157,7 +157,7 @@ Physical Memory Array (Type 16)
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | total_physical_bytes | [int64](#int64) |  | Maximum memory capacity, in kilobytes, for this array If the capacity is not represented in this field, then this field contains 8000 0000h and the Extended Maximum Capacity field should be used. Values 2 TB (8000 0000h) or greater must be represented in the Extended Maximum Capacity field. |
-| total_usable_bytes | [int64](#int64) |  | TBD |
+| total_usable_bytes | [int64](#int64) |  | Total usable memory, in bytes, for this array. This is the amount of memory the system can actually use after accounting for reserved system memory. This is not the amount of memory currently in use. |
 
 
 
@@ -168,8 +168,8 @@ Physical Memory Array (Type 16)
 
 ### PCIeDeviceInfo
 PCI device information
- TBD: Type 9 or Type 41 ?
- This structure describes a collection of PCI devices.
+ This structure describes a single PCIe device discovered
+ on the system.
 
 
 | Field | Type | Label | Description |

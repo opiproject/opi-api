@@ -495,7 +495,10 @@ type MemoryInfo struct {
 	// (8000 0000h) or greater must be represented in the
 	// Extended Maximum Capacity field.
 	TotalPhysicalBytes int64 `protobuf:"varint,1,opt,name=total_physical_bytes,json=totalPhysicalBytes,proto3" json:"total_physical_bytes,omitempty"`
-	// TBD
+	// Total usable memory, in bytes, for this array.
+	// This is the amount of memory the system can actually
+	// use after accounting for reserved system memory.
+	// This is not the amount of memory currently in use.
 	TotalUsableBytes int64 `protobuf:"varint,2,opt,name=total_usable_bytes,json=totalUsableBytes,proto3" json:"total_usable_bytes,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
@@ -547,8 +550,8 @@ func (x *MemoryInfo) GetTotalUsableBytes() int64 {
 
 // PCI device information
 //
-//	TBD: Type 9 or Type 41 ?
-//	This structure describes a collection of PCI devices.
+//	This structure describes a single PCIe device discovered
+//	on the system.
 type PCIeDeviceInfo struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Driver assiociated with the device
