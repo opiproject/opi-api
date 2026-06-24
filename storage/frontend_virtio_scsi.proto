@@ -187,7 +187,10 @@ message VirtioScsiLun {
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // The target that this LUN is in
-  string target_name_ref = 2 [(google.api.field_behavior) = REQUIRED];
+  string target_name_ref = 2 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
+  ];
 
   // The middle/back-end volume for this LLUN
   string volume_name_ref = 3 [(google.api.field_behavior) = REQUIRED];
@@ -418,7 +421,10 @@ message StatsVirtioScsiLunRequest {
   ];
 
   // Controller's uniqie identifier
-  string controller_name_ref = 2 [(google.api.field_behavior) = OPTIONAL];
+  string controller_name_ref = 2 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
+  ];
 }
 
 // Represents a response to get an Virtio Scsi Lun statistics.
