@@ -57,23 +57,23 @@ message FabricsEndpoint {
 // Represents Volume statistics
 message VolumeStats {
   // Count of read bytes
-  int32 read_bytes_count = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 read_bytes_count = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Count of read operations
-  int32 read_ops_count = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 read_ops_count = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Count of written bytes
-  int32 write_bytes_count = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
-  // Count of write opeations
-  int32 write_ops_count = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 write_bytes_count = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of write operations
+  int64 write_ops_count = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Count of unmapped bytes
-  int32 unmap_bytes_count = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 unmap_bytes_count = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Count of unmap operations
-  int32 unmap_ops_count = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 unmap_ops_count = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Read latency ticks
-  int32 read_latency_ticks = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 read_latency_ticks = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Write latency ticks
-  int32 write_latency_ticks = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 write_latency_ticks = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Unmap latency ticks
-  int32 unmap_latency_ticks = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 unmap_latency_ticks = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // QoS limits applied to volumes/devices
