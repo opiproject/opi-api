@@ -55,7 +55,7 @@ message FabricsEndpoint {
 }
 
 // Represents Volume statistics
-message VolumeStats {
+message VolumeStatistics {
   // Count of read bytes
   int32 read_bytes_count = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Count of read operations
