@@ -164,12 +164,12 @@ message MemoryInfo {
   // (8000 0000h) or greater must be represented in the
   // Extended Maximum Capacity field.
   int64 total_physical_bytes = 1;
-  // TBD
+  
   int64 total_usable_bytes = 2;
 }
 
 // PCI device information
-//  TBD: Type 9 or Type 41 ?
+
 //  This structure describes a collection of PCI devices.
 message PCIeDeviceInfo {
   // Driver assiociated with the device
