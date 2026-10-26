@@ -255,6 +255,54 @@ func local_request_IkePeerService_ListIkePeers_0(ctx context.Context, marshaler 
 	return msg, metadata, err
 }
 
+func request_IkePeerService_BatchCreateIkePeers_0(ctx context.Context, marshaler runtime.Marshaler, client IkePeerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchCreateIkePeersRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.BatchCreateIkePeers(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_IkePeerService_BatchCreateIkePeers_0(ctx context.Context, marshaler runtime.Marshaler, server IkePeerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchCreateIkePeersRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.BatchCreateIkePeers(ctx, &protoReq)
+	return msg, metadata, err
+}
+
+func request_IkePeerService_BatchDeleteIkePeers_0(ctx context.Context, marshaler runtime.Marshaler, client IkePeerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchDeleteIkePeersRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.BatchDeleteIkePeers(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_IkePeerService_BatchDeleteIkePeers_0(ctx context.Context, marshaler runtime.Marshaler, server IkePeerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchDeleteIkePeersRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.BatchDeleteIkePeers(ctx, &protoReq)
+	return msg, metadata, err
+}
+
 var filter_IkeConnectionService_CreateIkeConnection_0 = &utilities.DoubleArray{Encoding: map[string]int{"ike_connection": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
 func request_IkeConnectionService_CreateIkeConnection_0(ctx context.Context, marshaler runtime.Marshaler, client IkeConnectionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -493,6 +541,54 @@ func local_request_IkeConnectionService_StatsIkeConnections_0(ctx context.Contex
 	return msg, metadata, err
 }
 
+func request_IkeConnectionService_BatchCreateIkeConnections_0(ctx context.Context, marshaler runtime.Marshaler, client IkeConnectionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchCreateIkeConnectionsRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.BatchCreateIkeConnections(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_IkeConnectionService_BatchCreateIkeConnections_0(ctx context.Context, marshaler runtime.Marshaler, server IkeConnectionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchCreateIkeConnectionsRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.BatchCreateIkeConnections(ctx, &protoReq)
+	return msg, metadata, err
+}
+
+func request_IkeConnectionService_BatchDeleteIkeConnections_0(ctx context.Context, marshaler runtime.Marshaler, client IkeConnectionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchDeleteIkeConnectionsRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.BatchDeleteIkeConnections(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_IkeConnectionService_BatchDeleteIkeConnections_0(ctx context.Context, marshaler runtime.Marshaler, server IkeConnectionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchDeleteIkeConnectionsRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.BatchDeleteIkeConnections(ctx, &protoReq)
+	return msg, metadata, err
+}
+
 var filter_IpsecSaService_CreateIpsecSa_0 = &utilities.DoubleArray{Encoding: map[string]int{"ipsec_sa": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
 func request_IpsecSaService_CreateIpsecSa_0(ctx context.Context, marshaler runtime.Marshaler, client IpsecSaServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -710,6 +806,54 @@ func local_request_IpsecSaService_ListIpsecSas_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.ListIpsecSas(ctx, &protoReq)
+	return msg, metadata, err
+}
+
+func request_IpsecSaService_BatchCreateIpsecSas_0(ctx context.Context, marshaler runtime.Marshaler, client IpsecSaServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchCreateIpsecSasRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.BatchCreateIpsecSas(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_IpsecSaService_BatchCreateIpsecSas_0(ctx context.Context, marshaler runtime.Marshaler, server IpsecSaServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchCreateIpsecSasRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.BatchCreateIpsecSas(ctx, &protoReq)
+	return msg, metadata, err
+}
+
+func request_IpsecSaService_BatchDeleteIpsecSas_0(ctx context.Context, marshaler runtime.Marshaler, client IpsecSaServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchDeleteIpsecSasRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.BatchDeleteIpsecSas(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_IpsecSaService_BatchDeleteIpsecSas_0(ctx context.Context, marshaler runtime.Marshaler, server IpsecSaServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchDeleteIpsecSasRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.BatchDeleteIpsecSas(ctx, &protoReq)
 	return msg, metadata, err
 }
 
@@ -933,6 +1077,54 @@ func local_request_IpsecPolicyService_ListIpsecPolicies_0(ctx context.Context, m
 	return msg, metadata, err
 }
 
+func request_IpsecPolicyService_BatchCreateIpsecPolicies_0(ctx context.Context, marshaler runtime.Marshaler, client IpsecPolicyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchCreateIpsecPoliciesRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.BatchCreateIpsecPolicies(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_IpsecPolicyService_BatchCreateIpsecPolicies_0(ctx context.Context, marshaler runtime.Marshaler, server IpsecPolicyServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchCreateIpsecPoliciesRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.BatchCreateIpsecPolicies(ctx, &protoReq)
+	return msg, metadata, err
+}
+
+func request_IpsecPolicyService_BatchDeleteIpsecPolicies_0(ctx context.Context, marshaler runtime.Marshaler, client IpsecPolicyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchDeleteIpsecPoliciesRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.BatchDeleteIpsecPolicies(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_IpsecPolicyService_BatchDeleteIpsecPolicies_0(ctx context.Context, marshaler runtime.Marshaler, server IpsecPolicyServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq BatchDeleteIpsecPoliciesRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.BatchDeleteIpsecPolicies(ctx, &protoReq)
+	return msg, metadata, err
+}
+
 // RegisterIkePeerServiceHandlerServer registers the http handlers for service IkePeerService to "mux".
 // UnaryRPC     :call IkePeerServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -1038,6 +1230,46 @@ func RegisterIkePeerServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 			return
 		}
 		forward_IkePeerService_ListIkePeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IkePeerService_BatchCreateIkePeers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/BatchCreateIkePeers", runtime.WithHTTPPathPattern("/v1alpha1/ikePeers:batchCreate"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_IkePeerService_BatchCreateIkePeers_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IkePeerService_BatchCreateIkePeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IkePeerService_BatchDeleteIkePeers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/BatchDeleteIkePeers", runtime.WithHTTPPathPattern("/v1alpha1/ikePeers:batchDelete"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_IkePeerService_BatchDeleteIkePeers_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IkePeerService_BatchDeleteIkePeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
@@ -1169,6 +1401,46 @@ func RegisterIkeConnectionServiceHandlerServer(ctx context.Context, mux *runtime
 		}
 		forward_IkeConnectionService_StatsIkeConnections_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_IkeConnectionService_BatchCreateIkeConnections_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/BatchCreateIkeConnections", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections:batchCreate"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_IkeConnectionService_BatchCreateIkeConnections_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IkeConnectionService_BatchCreateIkeConnections_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IkeConnectionService_BatchDeleteIkeConnections_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/BatchDeleteIkeConnections", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections:batchDelete"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_IkeConnectionService_BatchDeleteIkeConnections_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IkeConnectionService_BatchDeleteIkeConnections_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 
 	return nil
 }
@@ -1279,6 +1551,46 @@ func RegisterIpsecSaServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		}
 		forward_IpsecSaService_ListIpsecSas_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_IpsecSaService_BatchCreateIpsecSas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/BatchCreateIpsecSas", runtime.WithHTTPPathPattern("/v1alpha1/ipsecSas:batchCreate"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_IpsecSaService_BatchCreateIpsecSas_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IpsecSaService_BatchCreateIpsecSas_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IpsecSaService_BatchDeleteIpsecSas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/BatchDeleteIpsecSas", runtime.WithHTTPPathPattern("/v1alpha1/ipsecSas:batchDelete"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_IpsecSaService_BatchDeleteIpsecSas_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IpsecSaService_BatchDeleteIpsecSas_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 
 	return nil
 }
@@ -1388,6 +1700,46 @@ func RegisterIpsecPolicyServiceHandlerServer(ctx context.Context, mux *runtime.S
 			return
 		}
 		forward_IpsecPolicyService_ListIpsecPolicies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IpsecPolicyService_BatchCreateIpsecPolicies_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/BatchCreateIpsecPolicies", runtime.WithHTTPPathPattern("/v1alpha1/ipsecPolicies:batchCreate"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_IpsecPolicyService_BatchCreateIpsecPolicies_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IpsecPolicyService_BatchCreateIpsecPolicies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IpsecPolicyService_BatchDeleteIpsecPolicies_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/BatchDeleteIpsecPolicies", runtime.WithHTTPPathPattern("/v1alpha1/ipsecPolicies:batchDelete"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_IpsecPolicyService_BatchDeleteIpsecPolicies_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IpsecPolicyService_BatchDeleteIpsecPolicies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
@@ -1514,23 +1866,61 @@ func RegisterIkePeerServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		}
 		forward_IkePeerService_ListIkePeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_IkePeerService_BatchCreateIkePeers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/BatchCreateIkePeers", runtime.WithHTTPPathPattern("/v1alpha1/ikePeers:batchCreate"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_IkePeerService_BatchCreateIkePeers_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IkePeerService_BatchCreateIkePeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IkePeerService_BatchDeleteIkePeers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkePeerService/BatchDeleteIkePeers", runtime.WithHTTPPathPattern("/v1alpha1/ikePeers:batchDelete"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_IkePeerService_BatchDeleteIkePeers_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IkePeerService_BatchDeleteIkePeers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	return nil
 }
 
 var (
-	pattern_IkePeerService_CreateIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikePeers"}, ""))
-	pattern_IkePeerService_UpdateIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikepeers", "ike_peer.name"}, ""))
-	pattern_IkePeerService_DeleteIkePeer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikePeers", "name"}, ""))
-	pattern_IkePeerService_GetIkePeer_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikePeers", "name"}, ""))
-	pattern_IkePeerService_ListIkePeers_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikePeers"}, ""))
+	pattern_IkePeerService_CreateIkePeer_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikePeers"}, ""))
+	pattern_IkePeerService_UpdateIkePeer_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikepeers", "ike_peer.name"}, ""))
+	pattern_IkePeerService_DeleteIkePeer_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikePeers", "name"}, ""))
+	pattern_IkePeerService_GetIkePeer_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikePeers", "name"}, ""))
+	pattern_IkePeerService_ListIkePeers_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikePeers"}, ""))
+	pattern_IkePeerService_BatchCreateIkePeers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikePeers"}, "batchCreate"))
+	pattern_IkePeerService_BatchDeleteIkePeers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikePeers"}, "batchDelete"))
 )
 
 var (
-	forward_IkePeerService_CreateIkePeer_0 = runtime.ForwardResponseMessage
-	forward_IkePeerService_UpdateIkePeer_0 = runtime.ForwardResponseMessage
-	forward_IkePeerService_DeleteIkePeer_0 = runtime.ForwardResponseMessage
-	forward_IkePeerService_GetIkePeer_0    = runtime.ForwardResponseMessage
-	forward_IkePeerService_ListIkePeers_0  = runtime.ForwardResponseMessage
+	forward_IkePeerService_CreateIkePeer_0       = runtime.ForwardResponseMessage
+	forward_IkePeerService_UpdateIkePeer_0       = runtime.ForwardResponseMessage
+	forward_IkePeerService_DeleteIkePeer_0       = runtime.ForwardResponseMessage
+	forward_IkePeerService_GetIkePeer_0          = runtime.ForwardResponseMessage
+	forward_IkePeerService_ListIkePeers_0        = runtime.ForwardResponseMessage
+	forward_IkePeerService_BatchCreateIkePeers_0 = runtime.ForwardResponseMessage
+	forward_IkePeerService_BatchDeleteIkePeers_0 = runtime.ForwardResponseMessage
 )
 
 // RegisterIkeConnectionServiceHandlerFromEndpoint is same as RegisterIkeConnectionServiceHandler but
@@ -1671,25 +2061,63 @@ func RegisterIkeConnectionServiceHandlerClient(ctx context.Context, mux *runtime
 		}
 		forward_IkeConnectionService_StatsIkeConnections_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_IkeConnectionService_BatchCreateIkeConnections_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/BatchCreateIkeConnections", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections:batchCreate"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_IkeConnectionService_BatchCreateIkeConnections_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IkeConnectionService_BatchCreateIkeConnections_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IkeConnectionService_BatchDeleteIkeConnections_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IkeConnectionService/BatchDeleteIkeConnections", runtime.WithHTTPPathPattern("/v1alpha1/ikeConnections:batchDelete"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_IkeConnectionService_BatchDeleteIkeConnections_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IkeConnectionService_BatchDeleteIkeConnections_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	return nil
 }
 
 var (
-	pattern_IkeConnectionService_CreateIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, ""))
-	pattern_IkeConnectionService_UpdateIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "ike_connection.name"}, ""))
-	pattern_IkeConnectionService_DeleteIkeConnection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "name"}, ""))
-	pattern_IkeConnectionService_GetIkeConnection_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "name"}, ""))
-	pattern_IkeConnectionService_ListIkeConnections_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, ""))
-	pattern_IkeConnectionService_StatsIkeConnections_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, "stats"))
+	pattern_IkeConnectionService_CreateIkeConnection_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, ""))
+	pattern_IkeConnectionService_UpdateIkeConnection_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "ike_connection.name"}, ""))
+	pattern_IkeConnectionService_DeleteIkeConnection_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "name"}, ""))
+	pattern_IkeConnectionService_GetIkeConnection_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ikeConnections", "name"}, ""))
+	pattern_IkeConnectionService_ListIkeConnections_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, ""))
+	pattern_IkeConnectionService_StatsIkeConnections_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, "stats"))
+	pattern_IkeConnectionService_BatchCreateIkeConnections_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, "batchCreate"))
+	pattern_IkeConnectionService_BatchDeleteIkeConnections_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ikeConnections"}, "batchDelete"))
 )
 
 var (
-	forward_IkeConnectionService_CreateIkeConnection_0 = runtime.ForwardResponseMessage
-	forward_IkeConnectionService_UpdateIkeConnection_0 = runtime.ForwardResponseMessage
-	forward_IkeConnectionService_DeleteIkeConnection_0 = runtime.ForwardResponseMessage
-	forward_IkeConnectionService_GetIkeConnection_0    = runtime.ForwardResponseMessage
-	forward_IkeConnectionService_ListIkeConnections_0  = runtime.ForwardResponseMessage
-	forward_IkeConnectionService_StatsIkeConnections_0 = runtime.ForwardResponseMessage
+	forward_IkeConnectionService_CreateIkeConnection_0       = runtime.ForwardResponseMessage
+	forward_IkeConnectionService_UpdateIkeConnection_0       = runtime.ForwardResponseMessage
+	forward_IkeConnectionService_DeleteIkeConnection_0       = runtime.ForwardResponseMessage
+	forward_IkeConnectionService_GetIkeConnection_0          = runtime.ForwardResponseMessage
+	forward_IkeConnectionService_ListIkeConnections_0        = runtime.ForwardResponseMessage
+	forward_IkeConnectionService_StatsIkeConnections_0       = runtime.ForwardResponseMessage
+	forward_IkeConnectionService_BatchCreateIkeConnections_0 = runtime.ForwardResponseMessage
+	forward_IkeConnectionService_BatchDeleteIkeConnections_0 = runtime.ForwardResponseMessage
 )
 
 // RegisterIpsecSaServiceHandlerFromEndpoint is same as RegisterIpsecSaServiceHandler but
@@ -1813,23 +2241,61 @@ func RegisterIpsecSaServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		}
 		forward_IpsecSaService_ListIpsecSas_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_IpsecSaService_BatchCreateIpsecSas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/BatchCreateIpsecSas", runtime.WithHTTPPathPattern("/v1alpha1/ipsecSas:batchCreate"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_IpsecSaService_BatchCreateIpsecSas_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IpsecSaService_BatchCreateIpsecSas_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IpsecSaService_BatchDeleteIpsecSas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecSaService/BatchDeleteIpsecSas", runtime.WithHTTPPathPattern("/v1alpha1/ipsecSas:batchDelete"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_IpsecSaService_BatchDeleteIpsecSas_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IpsecSaService_BatchDeleteIpsecSas_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	return nil
 }
 
 var (
-	pattern_IpsecSaService_CreateIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecSas"}, ""))
-	pattern_IpsecSaService_UpdateIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "ipsec_sa.name"}, ""))
-	pattern_IpsecSaService_DeleteIpsecSa_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "name"}, ""))
-	pattern_IpsecSaService_GetIpsecSa_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "name"}, ""))
-	pattern_IpsecSaService_ListIpsecSas_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecSas"}, ""))
+	pattern_IpsecSaService_CreateIpsecSa_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecSas"}, ""))
+	pattern_IpsecSaService_UpdateIpsecSa_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "ipsec_sa.name"}, ""))
+	pattern_IpsecSaService_DeleteIpsecSa_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "name"}, ""))
+	pattern_IpsecSaService_GetIpsecSa_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecSas", "name"}, ""))
+	pattern_IpsecSaService_ListIpsecSas_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecSas"}, ""))
+	pattern_IpsecSaService_BatchCreateIpsecSas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecSas"}, "batchCreate"))
+	pattern_IpsecSaService_BatchDeleteIpsecSas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecSas"}, "batchDelete"))
 )
 
 var (
-	forward_IpsecSaService_CreateIpsecSa_0 = runtime.ForwardResponseMessage
-	forward_IpsecSaService_UpdateIpsecSa_0 = runtime.ForwardResponseMessage
-	forward_IpsecSaService_DeleteIpsecSa_0 = runtime.ForwardResponseMessage
-	forward_IpsecSaService_GetIpsecSa_0    = runtime.ForwardResponseMessage
-	forward_IpsecSaService_ListIpsecSas_0  = runtime.ForwardResponseMessage
+	forward_IpsecSaService_CreateIpsecSa_0       = runtime.ForwardResponseMessage
+	forward_IpsecSaService_UpdateIpsecSa_0       = runtime.ForwardResponseMessage
+	forward_IpsecSaService_DeleteIpsecSa_0       = runtime.ForwardResponseMessage
+	forward_IpsecSaService_GetIpsecSa_0          = runtime.ForwardResponseMessage
+	forward_IpsecSaService_ListIpsecSas_0        = runtime.ForwardResponseMessage
+	forward_IpsecSaService_BatchCreateIpsecSas_0 = runtime.ForwardResponseMessage
+	forward_IpsecSaService_BatchDeleteIpsecSas_0 = runtime.ForwardResponseMessage
 )
 
 // RegisterIpsecPolicyServiceHandlerFromEndpoint is same as RegisterIpsecPolicyServiceHandler but
@@ -1953,21 +2419,59 @@ func RegisterIpsecPolicyServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 		forward_IpsecPolicyService_ListIpsecPolicies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_IpsecPolicyService_BatchCreateIpsecPolicies_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/BatchCreateIpsecPolicies", runtime.WithHTTPPathPattern("/v1alpha1/ipsecPolicies:batchCreate"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_IpsecPolicyService_BatchCreateIpsecPolicies_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IpsecPolicyService_BatchCreateIpsecPolicies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_IpsecPolicyService_BatchDeleteIpsecPolicies_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.security.v1alpha1.IpsecPolicyService/BatchDeleteIpsecPolicies", runtime.WithHTTPPathPattern("/v1alpha1/ipsecPolicies:batchDelete"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_IpsecPolicyService_BatchDeleteIpsecPolicies_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_IpsecPolicyService_BatchDeleteIpsecPolicies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	return nil
 }
 
 var (
-	pattern_IpsecPolicyService_CreateIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecPolicies"}, ""))
-	pattern_IpsecPolicyService_UpdateIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "ipsec_policy.name"}, ""))
-	pattern_IpsecPolicyService_DeleteIpsecPolicy_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "name"}, ""))
-	pattern_IpsecPolicyService_GetIpsecPolicy_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "name"}, ""))
-	pattern_IpsecPolicyService_ListIpsecPolicies_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecPolicies"}, ""))
+	pattern_IpsecPolicyService_CreateIpsecPolicy_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecPolicies"}, ""))
+	pattern_IpsecPolicyService_UpdateIpsecPolicy_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "ipsec_policy.name"}, ""))
+	pattern_IpsecPolicyService_DeleteIpsecPolicy_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "name"}, ""))
+	pattern_IpsecPolicyService_GetIpsecPolicy_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1alpha1", "ipsecPolicies", "name"}, ""))
+	pattern_IpsecPolicyService_ListIpsecPolicies_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecPolicies"}, ""))
+	pattern_IpsecPolicyService_BatchCreateIpsecPolicies_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecPolicies"}, "batchCreate"))
+	pattern_IpsecPolicyService_BatchDeleteIpsecPolicies_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1alpha1", "ipsecPolicies"}, "batchDelete"))
 )
 
 var (
-	forward_IpsecPolicyService_CreateIpsecPolicy_0 = runtime.ForwardResponseMessage
-	forward_IpsecPolicyService_UpdateIpsecPolicy_0 = runtime.ForwardResponseMessage
-	forward_IpsecPolicyService_DeleteIpsecPolicy_0 = runtime.ForwardResponseMessage
-	forward_IpsecPolicyService_GetIpsecPolicy_0    = runtime.ForwardResponseMessage
-	forward_IpsecPolicyService_ListIpsecPolicies_0 = runtime.ForwardResponseMessage
+	forward_IpsecPolicyService_CreateIpsecPolicy_0        = runtime.ForwardResponseMessage
+	forward_IpsecPolicyService_UpdateIpsecPolicy_0        = runtime.ForwardResponseMessage
+	forward_IpsecPolicyService_DeleteIpsecPolicy_0        = runtime.ForwardResponseMessage
+	forward_IpsecPolicyService_GetIpsecPolicy_0           = runtime.ForwardResponseMessage
+	forward_IpsecPolicyService_ListIpsecPolicies_0        = runtime.ForwardResponseMessage
+	forward_IpsecPolicyService_BatchCreateIpsecPolicies_0 = runtime.ForwardResponseMessage
+	forward_IpsecPolicyService_BatchDeleteIpsecPolicies_0 = runtime.ForwardResponseMessage
 )

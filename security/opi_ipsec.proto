@@ -65,6 +65,20 @@ service IkePeerService {
   rpc ListIkePeers(ListIkePeersRequest) returns (ListIkePeersResponse) {
     option (google.api.http) = {get: "/v1alpha1/ikePeers"};
   }
+  // Create a batch of IKE peers atomically.
+  rpc BatchCreateIkePeers(BatchCreateIkePeersRequest) returns (BatchCreateIkePeersResponse) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ikePeers:batchCreate"
+      body: "*"
+    };
+  }
+  // Delete a batch of IKE peers atomically.
+  rpc BatchDeleteIkePeers(BatchDeleteIkePeersRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ikePeers:batchDelete"
+      body: "*"
+    };
+  }
 }
 
 // Management of IKE connections. An IKE connection is a logical connection
@@ -109,6 +123,20 @@ service IkeConnectionService {
   rpc StatsIkeConnections(StatsIkeConnectionsRequest) returns (StatsIkeConnectionsResponse) {
     option (google.api.http) = {get: "/v1alpha1/ikeConnections:stats"};
   }
+  // Create a batch of IKE connections atomically.
+  rpc BatchCreateIkeConnections(BatchCreateIkeConnectionsRequest) returns (BatchCreateIkeConnectionsResponse) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ikeConnections:batchCreate"
+      body: "*"
+    };
+  }
+  // Delete a batch of IKE connections atomically.
+  rpc BatchDeleteIkeConnections(BatchDeleteIkeConnectionsRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ikeConnections:batchDelete"
+      body: "*"
+    };
+  }
 }
 
 // Management of the IPsec Security Association Database (SAD). The SAD
@@ -145,6 +173,20 @@ service IpsecSaService {
   rpc ListIpsecSas(ListIpsecSasRequest) returns (ListIpsecSasResponse) {
     option (google.api.http) = {get: "/v1alpha1/ipsecSas"};
   }
+  // Create a batch of IPsec SAs atomically.
+  rpc BatchCreateIpsecSas(BatchCreateIpsecSasRequest) returns (BatchCreateIpsecSasResponse) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ipsecSas:batchCreate"
+      body: "*"
+    };
+  }
+  // Delete a batch of IPsec SAs atomically.
+  rpc BatchDeleteIpsecSas(BatchDeleteIpsecSasRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ipsecSas:batchDelete"
+      body: "*"
+    };
+  }
 }
 
 // Management of the IPsec Security Policy Database (SPD). The SPD contains
@@ -180,6 +222,20 @@ service IpsecPolicyService {
   // List existing IPsec Policies
   rpc ListIpsecPolicies(ListIpsecPoliciesRequest) returns (ListIpsecPoliciesResponse) {
     option (google.api.http) = {get: "/v1alpha1/ipsecPolicies"};
+  }
+  // Create a batch of IPsec policies atomically.
+  rpc BatchCreateIpsecPolicies(BatchCreateIpsecPoliciesRequest) returns (BatchCreateIpsecPoliciesResponse) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ipsecPolicies:batchCreate"
+      body: "*"
+    };
+  }
+  // Delete a batch of IPsec policies atomically.
+  rpc BatchDeleteIpsecPolicies(BatchDeleteIpsecPoliciesRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1alpha1/ipsecPolicies:batchDelete"
+      body: "*"
+    };
   }
 }
 
@@ -702,6 +758,27 @@ message ListIkePeersResponse {
   string next_page_token = 2;
 }
 
+// Create a batch of IKE Peers
+message BatchCreateIkePeersRequest {
+  // The create requests; split large configurations into several batches.
+  repeated CreateIkePeerRequest requests = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Response to a BatchCreateIkePeersRequest
+message BatchCreateIkePeersResponse {
+  // The IKE peers created, in the same order as the requests.
+  repeated IkePeer ike_peers = 1;
+}
+
+// Delete a batch of IKE Peers
+message BatchDeleteIkePeersRequest {
+  // Names of the IKE peers to delete
+  repeated string names = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "IkePeer"
+  ];
+}
+
 // Create an IKE Connection
 message CreateIkeConnectionRequest {
   // The ID to use for the IKE Connection.
@@ -756,6 +833,27 @@ message ListIkeConnectionsResponse {
   string next_page_token = 2;
 }
 
+// Create a batch of IKE Connections
+message BatchCreateIkeConnectionsRequest {
+  // The create requests; split large configurations into several batches.
+  repeated CreateIkeConnectionRequest requests = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Response to a BatchCreateIkeConnectionsRequest
+message BatchCreateIkeConnectionsResponse {
+  // The IKE connections created, in the same order as the requests.
+  repeated IkeConnection ike_connections = 1;
+}
+
+// Delete a batch of IKE Connections
+message BatchDeleteIkeConnectionsRequest {
+  // Names of the IKE connections to delete
+  repeated string names = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "IkeConnection"
+  ];
+}
+
 // Request to get IKE Connection statistics
 message StatsIkeConnectionsRequest {}
 
@@ -782,6 +880,27 @@ message ListIpsecSasResponse {
   // A token that can be sent as `page_token` to retrieve the next page.
   // If this field is omitted, there are not subsequent pages.
   string next_page_token = 2;
+}
+
+// Create a batch of IPsec SAs
+message BatchCreateIpsecSasRequest {
+  // The create requests; split large configurations into several batches.
+  repeated CreateIpsecSaRequest requests = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Response to a BatchCreateIpsecSasRequest
+message BatchCreateIpsecSasResponse {
+  // The IPsec SAs created, in the same order as the requests.
+  repeated IpsecSa ipsec_sas = 1;
+}
+
+// Delete a batch of IPsec SAs
+message BatchDeleteIpsecSasRequest {
+  // Names of the IPsec SAs to delete
+  repeated string names = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "IpsecSa"
+  ];
 }
 
 // Get an IPsec SA
@@ -871,6 +990,27 @@ message ListIpsecPoliciesResponse {
   // A token that can be sent as `page_token` to retrieve the next page.
   // If this field is omitted, there are not subsequent pages.
   string next_page_token = 2;
+}
+
+// Create a batch of IPsec Policies
+message BatchCreateIpsecPoliciesRequest {
+  // The create requests; split large configurations into several batches.
+  repeated CreateIpsecPolicyRequest requests = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Response to a BatchCreateIpsecPoliciesRequest
+message BatchCreateIpsecPoliciesResponse {
+  // The IPsec policies created, in the same order as the requests.
+  repeated IpsecPolicy ipsec_policies = 1;
+}
+
+// Delete a batch of IPsec Policies
+message BatchDeleteIpsecPoliciesRequest {
+  // Names of the IPsec policies to delete
+  repeated string names = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "IpsecPolicy"
+  ];
 }
 
 // Cryptographic algorithm for encryption.

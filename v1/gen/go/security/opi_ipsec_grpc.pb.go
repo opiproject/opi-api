@@ -35,11 +35,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	IkePeerService_CreateIkePeer_FullMethodName = "/opi_api.security.v1alpha1.IkePeerService/CreateIkePeer"
-	IkePeerService_UpdateIkePeer_FullMethodName = "/opi_api.security.v1alpha1.IkePeerService/UpdateIkePeer"
-	IkePeerService_DeleteIkePeer_FullMethodName = "/opi_api.security.v1alpha1.IkePeerService/DeleteIkePeer"
-	IkePeerService_GetIkePeer_FullMethodName    = "/opi_api.security.v1alpha1.IkePeerService/GetIkePeer"
-	IkePeerService_ListIkePeers_FullMethodName  = "/opi_api.security.v1alpha1.IkePeerService/ListIkePeers"
+	IkePeerService_CreateIkePeer_FullMethodName       = "/opi_api.security.v1alpha1.IkePeerService/CreateIkePeer"
+	IkePeerService_UpdateIkePeer_FullMethodName       = "/opi_api.security.v1alpha1.IkePeerService/UpdateIkePeer"
+	IkePeerService_DeleteIkePeer_FullMethodName       = "/opi_api.security.v1alpha1.IkePeerService/DeleteIkePeer"
+	IkePeerService_GetIkePeer_FullMethodName          = "/opi_api.security.v1alpha1.IkePeerService/GetIkePeer"
+	IkePeerService_ListIkePeers_FullMethodName        = "/opi_api.security.v1alpha1.IkePeerService/ListIkePeers"
+	IkePeerService_BatchCreateIkePeers_FullMethodName = "/opi_api.security.v1alpha1.IkePeerService/BatchCreateIkePeers"
+	IkePeerService_BatchDeleteIkePeers_FullMethodName = "/opi_api.security.v1alpha1.IkePeerService/BatchDeleteIkePeers"
 )
 
 // IkePeerServiceClient is the client API for IkePeerService service.
@@ -60,6 +62,10 @@ type IkePeerServiceClient interface {
 	GetIkePeer(ctx context.Context, in *GetIkePeerRequest, opts ...grpc.CallOption) (*IkePeer, error)
 	// List existing IKE peers.
 	ListIkePeers(ctx context.Context, in *ListIkePeersRequest, opts ...grpc.CallOption) (*ListIkePeersResponse, error)
+	// Create a batch of IKE peers atomically.
+	BatchCreateIkePeers(ctx context.Context, in *BatchCreateIkePeersRequest, opts ...grpc.CallOption) (*BatchCreateIkePeersResponse, error)
+	// Delete a batch of IKE peers atomically.
+	BatchDeleteIkePeers(ctx context.Context, in *BatchDeleteIkePeersRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
 type ikePeerServiceClient struct {
@@ -120,6 +126,26 @@ func (c *ikePeerServiceClient) ListIkePeers(ctx context.Context, in *ListIkePeer
 	return out, nil
 }
 
+func (c *ikePeerServiceClient) BatchCreateIkePeers(ctx context.Context, in *BatchCreateIkePeersRequest, opts ...grpc.CallOption) (*BatchCreateIkePeersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BatchCreateIkePeersResponse)
+	err := c.cc.Invoke(ctx, IkePeerService_BatchCreateIkePeers_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ikePeerServiceClient) BatchDeleteIkePeers(ctx context.Context, in *BatchDeleteIkePeersRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, IkePeerService_BatchDeleteIkePeers_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // IkePeerServiceServer is the server API for IkePeerService service.
 // All implementations must embed UnimplementedIkePeerServiceServer
 // for forward compatibility.
@@ -138,6 +164,10 @@ type IkePeerServiceServer interface {
 	GetIkePeer(context.Context, *GetIkePeerRequest) (*IkePeer, error)
 	// List existing IKE peers.
 	ListIkePeers(context.Context, *ListIkePeersRequest) (*ListIkePeersResponse, error)
+	// Create a batch of IKE peers atomically.
+	BatchCreateIkePeers(context.Context, *BatchCreateIkePeersRequest) (*BatchCreateIkePeersResponse, error)
+	// Delete a batch of IKE peers atomically.
+	BatchDeleteIkePeers(context.Context, *BatchDeleteIkePeersRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedIkePeerServiceServer()
 }
 
@@ -162,6 +192,12 @@ func (UnimplementedIkePeerServiceServer) GetIkePeer(context.Context, *GetIkePeer
 }
 func (UnimplementedIkePeerServiceServer) ListIkePeers(context.Context, *ListIkePeersRequest) (*ListIkePeersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListIkePeers not implemented")
+}
+func (UnimplementedIkePeerServiceServer) BatchCreateIkePeers(context.Context, *BatchCreateIkePeersRequest) (*BatchCreateIkePeersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchCreateIkePeers not implemented")
+}
+func (UnimplementedIkePeerServiceServer) BatchDeleteIkePeers(context.Context, *BatchDeleteIkePeersRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchDeleteIkePeers not implemented")
 }
 func (UnimplementedIkePeerServiceServer) mustEmbedUnimplementedIkePeerServiceServer() {}
 func (UnimplementedIkePeerServiceServer) testEmbeddedByValue()                        {}
@@ -274,6 +310,42 @@ func _IkePeerService_ListIkePeers_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _IkePeerService_BatchCreateIkePeers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchCreateIkePeersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IkePeerServiceServer).BatchCreateIkePeers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IkePeerService_BatchCreateIkePeers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IkePeerServiceServer).BatchCreateIkePeers(ctx, req.(*BatchCreateIkePeersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _IkePeerService_BatchDeleteIkePeers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchDeleteIkePeersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IkePeerServiceServer).BatchDeleteIkePeers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IkePeerService_BatchDeleteIkePeers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IkePeerServiceServer).BatchDeleteIkePeers(ctx, req.(*BatchDeleteIkePeersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // IkePeerService_ServiceDesc is the grpc.ServiceDesc for IkePeerService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -301,18 +373,28 @@ var IkePeerService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "ListIkePeers",
 			Handler:    _IkePeerService_ListIkePeers_Handler,
 		},
+		{
+			MethodName: "BatchCreateIkePeers",
+			Handler:    _IkePeerService_BatchCreateIkePeers_Handler,
+		},
+		{
+			MethodName: "BatchDeleteIkePeers",
+			Handler:    _IkePeerService_BatchDeleteIkePeers_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "security/opi_ipsec.proto",
 }
 
 const (
-	IkeConnectionService_CreateIkeConnection_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/CreateIkeConnection"
-	IkeConnectionService_UpdateIkeConnection_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/UpdateIkeConnection"
-	IkeConnectionService_DeleteIkeConnection_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/DeleteIkeConnection"
-	IkeConnectionService_GetIkeConnection_FullMethodName    = "/opi_api.security.v1alpha1.IkeConnectionService/GetIkeConnection"
-	IkeConnectionService_ListIkeConnections_FullMethodName  = "/opi_api.security.v1alpha1.IkeConnectionService/ListIkeConnections"
-	IkeConnectionService_StatsIkeConnections_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/StatsIkeConnections"
+	IkeConnectionService_CreateIkeConnection_FullMethodName       = "/opi_api.security.v1alpha1.IkeConnectionService/CreateIkeConnection"
+	IkeConnectionService_UpdateIkeConnection_FullMethodName       = "/opi_api.security.v1alpha1.IkeConnectionService/UpdateIkeConnection"
+	IkeConnectionService_DeleteIkeConnection_FullMethodName       = "/opi_api.security.v1alpha1.IkeConnectionService/DeleteIkeConnection"
+	IkeConnectionService_GetIkeConnection_FullMethodName          = "/opi_api.security.v1alpha1.IkeConnectionService/GetIkeConnection"
+	IkeConnectionService_ListIkeConnections_FullMethodName        = "/opi_api.security.v1alpha1.IkeConnectionService/ListIkeConnections"
+	IkeConnectionService_StatsIkeConnections_FullMethodName       = "/opi_api.security.v1alpha1.IkeConnectionService/StatsIkeConnections"
+	IkeConnectionService_BatchCreateIkeConnections_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/BatchCreateIkeConnections"
+	IkeConnectionService_BatchDeleteIkeConnections_FullMethodName = "/opi_api.security.v1alpha1.IkeConnectionService/BatchDeleteIkeConnections"
 )
 
 // IkeConnectionServiceClient is the client API for IkeConnectionService service.
@@ -339,6 +421,10 @@ type IkeConnectionServiceClient interface {
 	ListIkeConnections(ctx context.Context, in *ListIkeConnectionsRequest, opts ...grpc.CallOption) (*ListIkeConnectionsResponse, error)
 	// Get IKE connection statistics.
 	StatsIkeConnections(ctx context.Context, in *StatsIkeConnectionsRequest, opts ...grpc.CallOption) (*StatsIkeConnectionsResponse, error)
+	// Create a batch of IKE connections atomically.
+	BatchCreateIkeConnections(ctx context.Context, in *BatchCreateIkeConnectionsRequest, opts ...grpc.CallOption) (*BatchCreateIkeConnectionsResponse, error)
+	// Delete a batch of IKE connections atomically.
+	BatchDeleteIkeConnections(ctx context.Context, in *BatchDeleteIkeConnectionsRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
 type ikeConnectionServiceClient struct {
@@ -409,6 +495,26 @@ func (c *ikeConnectionServiceClient) StatsIkeConnections(ctx context.Context, in
 	return out, nil
 }
 
+func (c *ikeConnectionServiceClient) BatchCreateIkeConnections(ctx context.Context, in *BatchCreateIkeConnectionsRequest, opts ...grpc.CallOption) (*BatchCreateIkeConnectionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BatchCreateIkeConnectionsResponse)
+	err := c.cc.Invoke(ctx, IkeConnectionService_BatchCreateIkeConnections_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ikeConnectionServiceClient) BatchDeleteIkeConnections(ctx context.Context, in *BatchDeleteIkeConnectionsRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, IkeConnectionService_BatchDeleteIkeConnections_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // IkeConnectionServiceServer is the server API for IkeConnectionService service.
 // All implementations must embed UnimplementedIkeConnectionServiceServer
 // for forward compatibility.
@@ -433,6 +539,10 @@ type IkeConnectionServiceServer interface {
 	ListIkeConnections(context.Context, *ListIkeConnectionsRequest) (*ListIkeConnectionsResponse, error)
 	// Get IKE connection statistics.
 	StatsIkeConnections(context.Context, *StatsIkeConnectionsRequest) (*StatsIkeConnectionsResponse, error)
+	// Create a batch of IKE connections atomically.
+	BatchCreateIkeConnections(context.Context, *BatchCreateIkeConnectionsRequest) (*BatchCreateIkeConnectionsResponse, error)
+	// Delete a batch of IKE connections atomically.
+	BatchDeleteIkeConnections(context.Context, *BatchDeleteIkeConnectionsRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedIkeConnectionServiceServer()
 }
 
@@ -460,6 +570,12 @@ func (UnimplementedIkeConnectionServiceServer) ListIkeConnections(context.Contex
 }
 func (UnimplementedIkeConnectionServiceServer) StatsIkeConnections(context.Context, *StatsIkeConnectionsRequest) (*StatsIkeConnectionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StatsIkeConnections not implemented")
+}
+func (UnimplementedIkeConnectionServiceServer) BatchCreateIkeConnections(context.Context, *BatchCreateIkeConnectionsRequest) (*BatchCreateIkeConnectionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchCreateIkeConnections not implemented")
+}
+func (UnimplementedIkeConnectionServiceServer) BatchDeleteIkeConnections(context.Context, *BatchDeleteIkeConnectionsRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchDeleteIkeConnections not implemented")
 }
 func (UnimplementedIkeConnectionServiceServer) mustEmbedUnimplementedIkeConnectionServiceServer() {}
 func (UnimplementedIkeConnectionServiceServer) testEmbeddedByValue()                              {}
@@ -590,6 +706,42 @@ func _IkeConnectionService_StatsIkeConnections_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _IkeConnectionService_BatchCreateIkeConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchCreateIkeConnectionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IkeConnectionServiceServer).BatchCreateIkeConnections(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IkeConnectionService_BatchCreateIkeConnections_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IkeConnectionServiceServer).BatchCreateIkeConnections(ctx, req.(*BatchCreateIkeConnectionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _IkeConnectionService_BatchDeleteIkeConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchDeleteIkeConnectionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IkeConnectionServiceServer).BatchDeleteIkeConnections(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IkeConnectionService_BatchDeleteIkeConnections_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IkeConnectionServiceServer).BatchDeleteIkeConnections(ctx, req.(*BatchDeleteIkeConnectionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // IkeConnectionService_ServiceDesc is the grpc.ServiceDesc for IkeConnectionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -621,17 +773,27 @@ var IkeConnectionService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "StatsIkeConnections",
 			Handler:    _IkeConnectionService_StatsIkeConnections_Handler,
 		},
+		{
+			MethodName: "BatchCreateIkeConnections",
+			Handler:    _IkeConnectionService_BatchCreateIkeConnections_Handler,
+		},
+		{
+			MethodName: "BatchDeleteIkeConnections",
+			Handler:    _IkeConnectionService_BatchDeleteIkeConnections_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "security/opi_ipsec.proto",
 }
 
 const (
-	IpsecSaService_CreateIpsecSa_FullMethodName = "/opi_api.security.v1alpha1.IpsecSaService/CreateIpsecSa"
-	IpsecSaService_UpdateIpsecSa_FullMethodName = "/opi_api.security.v1alpha1.IpsecSaService/UpdateIpsecSa"
-	IpsecSaService_DeleteIpsecSa_FullMethodName = "/opi_api.security.v1alpha1.IpsecSaService/DeleteIpsecSa"
-	IpsecSaService_GetIpsecSa_FullMethodName    = "/opi_api.security.v1alpha1.IpsecSaService/GetIpsecSa"
-	IpsecSaService_ListIpsecSas_FullMethodName  = "/opi_api.security.v1alpha1.IpsecSaService/ListIpsecSas"
+	IpsecSaService_CreateIpsecSa_FullMethodName       = "/opi_api.security.v1alpha1.IpsecSaService/CreateIpsecSa"
+	IpsecSaService_UpdateIpsecSa_FullMethodName       = "/opi_api.security.v1alpha1.IpsecSaService/UpdateIpsecSa"
+	IpsecSaService_DeleteIpsecSa_FullMethodName       = "/opi_api.security.v1alpha1.IpsecSaService/DeleteIpsecSa"
+	IpsecSaService_GetIpsecSa_FullMethodName          = "/opi_api.security.v1alpha1.IpsecSaService/GetIpsecSa"
+	IpsecSaService_ListIpsecSas_FullMethodName        = "/opi_api.security.v1alpha1.IpsecSaService/ListIpsecSas"
+	IpsecSaService_BatchCreateIpsecSas_FullMethodName = "/opi_api.security.v1alpha1.IpsecSaService/BatchCreateIpsecSas"
+	IpsecSaService_BatchDeleteIpsecSas_FullMethodName = "/opi_api.security.v1alpha1.IpsecSaService/BatchDeleteIpsecSas"
 )
 
 // IpsecSaServiceClient is the client API for IpsecSaService service.
@@ -652,6 +814,10 @@ type IpsecSaServiceClient interface {
 	GetIpsecSa(ctx context.Context, in *GetIpsecSaRequest, opts ...grpc.CallOption) (*IpsecSa, error)
 	// List existing IPsec Security Associations
 	ListIpsecSas(ctx context.Context, in *ListIpsecSasRequest, opts ...grpc.CallOption) (*ListIpsecSasResponse, error)
+	// Create a batch of IPsec SAs atomically.
+	BatchCreateIpsecSas(ctx context.Context, in *BatchCreateIpsecSasRequest, opts ...grpc.CallOption) (*BatchCreateIpsecSasResponse, error)
+	// Delete a batch of IPsec SAs atomically.
+	BatchDeleteIpsecSas(ctx context.Context, in *BatchDeleteIpsecSasRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
 type ipsecSaServiceClient struct {
@@ -712,6 +878,26 @@ func (c *ipsecSaServiceClient) ListIpsecSas(ctx context.Context, in *ListIpsecSa
 	return out, nil
 }
 
+func (c *ipsecSaServiceClient) BatchCreateIpsecSas(ctx context.Context, in *BatchCreateIpsecSasRequest, opts ...grpc.CallOption) (*BatchCreateIpsecSasResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BatchCreateIpsecSasResponse)
+	err := c.cc.Invoke(ctx, IpsecSaService_BatchCreateIpsecSas_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecSaServiceClient) BatchDeleteIpsecSas(ctx context.Context, in *BatchDeleteIpsecSasRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, IpsecSaService_BatchDeleteIpsecSas_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // IpsecSaServiceServer is the server API for IpsecSaService service.
 // All implementations must embed UnimplementedIpsecSaServiceServer
 // for forward compatibility.
@@ -730,6 +916,10 @@ type IpsecSaServiceServer interface {
 	GetIpsecSa(context.Context, *GetIpsecSaRequest) (*IpsecSa, error)
 	// List existing IPsec Security Associations
 	ListIpsecSas(context.Context, *ListIpsecSasRequest) (*ListIpsecSasResponse, error)
+	// Create a batch of IPsec SAs atomically.
+	BatchCreateIpsecSas(context.Context, *BatchCreateIpsecSasRequest) (*BatchCreateIpsecSasResponse, error)
+	// Delete a batch of IPsec SAs atomically.
+	BatchDeleteIpsecSas(context.Context, *BatchDeleteIpsecSasRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedIpsecSaServiceServer()
 }
 
@@ -754,6 +944,12 @@ func (UnimplementedIpsecSaServiceServer) GetIpsecSa(context.Context, *GetIpsecSa
 }
 func (UnimplementedIpsecSaServiceServer) ListIpsecSas(context.Context, *ListIpsecSasRequest) (*ListIpsecSasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListIpsecSas not implemented")
+}
+func (UnimplementedIpsecSaServiceServer) BatchCreateIpsecSas(context.Context, *BatchCreateIpsecSasRequest) (*BatchCreateIpsecSasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchCreateIpsecSas not implemented")
+}
+func (UnimplementedIpsecSaServiceServer) BatchDeleteIpsecSas(context.Context, *BatchDeleteIpsecSasRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchDeleteIpsecSas not implemented")
 }
 func (UnimplementedIpsecSaServiceServer) mustEmbedUnimplementedIpsecSaServiceServer() {}
 func (UnimplementedIpsecSaServiceServer) testEmbeddedByValue()                        {}
@@ -866,6 +1062,42 @@ func _IpsecSaService_ListIpsecSas_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _IpsecSaService_BatchCreateIpsecSas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchCreateIpsecSasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecSaServiceServer).BatchCreateIpsecSas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecSaService_BatchCreateIpsecSas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecSaServiceServer).BatchCreateIpsecSas(ctx, req.(*BatchCreateIpsecSasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _IpsecSaService_BatchDeleteIpsecSas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchDeleteIpsecSasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecSaServiceServer).BatchDeleteIpsecSas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecSaService_BatchDeleteIpsecSas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecSaServiceServer).BatchDeleteIpsecSas(ctx, req.(*BatchDeleteIpsecSasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // IpsecSaService_ServiceDesc is the grpc.ServiceDesc for IpsecSaService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -893,17 +1125,27 @@ var IpsecSaService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "ListIpsecSas",
 			Handler:    _IpsecSaService_ListIpsecSas_Handler,
 		},
+		{
+			MethodName: "BatchCreateIpsecSas",
+			Handler:    _IpsecSaService_BatchCreateIpsecSas_Handler,
+		},
+		{
+			MethodName: "BatchDeleteIpsecSas",
+			Handler:    _IpsecSaService_BatchDeleteIpsecSas_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "security/opi_ipsec.proto",
 }
 
 const (
-	IpsecPolicyService_CreateIpsecPolicy_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/CreateIpsecPolicy"
-	IpsecPolicyService_UpdateIpsecPolicy_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/UpdateIpsecPolicy"
-	IpsecPolicyService_DeleteIpsecPolicy_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/DeleteIpsecPolicy"
-	IpsecPolicyService_GetIpsecPolicy_FullMethodName    = "/opi_api.security.v1alpha1.IpsecPolicyService/GetIpsecPolicy"
-	IpsecPolicyService_ListIpsecPolicies_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/ListIpsecPolicies"
+	IpsecPolicyService_CreateIpsecPolicy_FullMethodName        = "/opi_api.security.v1alpha1.IpsecPolicyService/CreateIpsecPolicy"
+	IpsecPolicyService_UpdateIpsecPolicy_FullMethodName        = "/opi_api.security.v1alpha1.IpsecPolicyService/UpdateIpsecPolicy"
+	IpsecPolicyService_DeleteIpsecPolicy_FullMethodName        = "/opi_api.security.v1alpha1.IpsecPolicyService/DeleteIpsecPolicy"
+	IpsecPolicyService_GetIpsecPolicy_FullMethodName           = "/opi_api.security.v1alpha1.IpsecPolicyService/GetIpsecPolicy"
+	IpsecPolicyService_ListIpsecPolicies_FullMethodName        = "/opi_api.security.v1alpha1.IpsecPolicyService/ListIpsecPolicies"
+	IpsecPolicyService_BatchCreateIpsecPolicies_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/BatchCreateIpsecPolicies"
+	IpsecPolicyService_BatchDeleteIpsecPolicies_FullMethodName = "/opi_api.security.v1alpha1.IpsecPolicyService/BatchDeleteIpsecPolicies"
 )
 
 // IpsecPolicyServiceClient is the client API for IpsecPolicyService service.
@@ -924,6 +1166,10 @@ type IpsecPolicyServiceClient interface {
 	GetIpsecPolicy(ctx context.Context, in *GetIpsecPolicyRequest, opts ...grpc.CallOption) (*IpsecPolicy, error)
 	// List existing IPsec Policies
 	ListIpsecPolicies(ctx context.Context, in *ListIpsecPoliciesRequest, opts ...grpc.CallOption) (*ListIpsecPoliciesResponse, error)
+	// Create a batch of IPsec policies atomically.
+	BatchCreateIpsecPolicies(ctx context.Context, in *BatchCreateIpsecPoliciesRequest, opts ...grpc.CallOption) (*BatchCreateIpsecPoliciesResponse, error)
+	// Delete a batch of IPsec policies atomically.
+	BatchDeleteIpsecPolicies(ctx context.Context, in *BatchDeleteIpsecPoliciesRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
 type ipsecPolicyServiceClient struct {
@@ -984,6 +1230,26 @@ func (c *ipsecPolicyServiceClient) ListIpsecPolicies(ctx context.Context, in *Li
 	return out, nil
 }
 
+func (c *ipsecPolicyServiceClient) BatchCreateIpsecPolicies(ctx context.Context, in *BatchCreateIpsecPoliciesRequest, opts ...grpc.CallOption) (*BatchCreateIpsecPoliciesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BatchCreateIpsecPoliciesResponse)
+	err := c.cc.Invoke(ctx, IpsecPolicyService_BatchCreateIpsecPolicies_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ipsecPolicyServiceClient) BatchDeleteIpsecPolicies(ctx context.Context, in *BatchDeleteIpsecPoliciesRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, IpsecPolicyService_BatchDeleteIpsecPolicies_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // IpsecPolicyServiceServer is the server API for IpsecPolicyService service.
 // All implementations must embed UnimplementedIpsecPolicyServiceServer
 // for forward compatibility.
@@ -1002,6 +1268,10 @@ type IpsecPolicyServiceServer interface {
 	GetIpsecPolicy(context.Context, *GetIpsecPolicyRequest) (*IpsecPolicy, error)
 	// List existing IPsec Policies
 	ListIpsecPolicies(context.Context, *ListIpsecPoliciesRequest) (*ListIpsecPoliciesResponse, error)
+	// Create a batch of IPsec policies atomically.
+	BatchCreateIpsecPolicies(context.Context, *BatchCreateIpsecPoliciesRequest) (*BatchCreateIpsecPoliciesResponse, error)
+	// Delete a batch of IPsec policies atomically.
+	BatchDeleteIpsecPolicies(context.Context, *BatchDeleteIpsecPoliciesRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedIpsecPolicyServiceServer()
 }
 
@@ -1026,6 +1296,12 @@ func (UnimplementedIpsecPolicyServiceServer) GetIpsecPolicy(context.Context, *Ge
 }
 func (UnimplementedIpsecPolicyServiceServer) ListIpsecPolicies(context.Context, *ListIpsecPoliciesRequest) (*ListIpsecPoliciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListIpsecPolicies not implemented")
+}
+func (UnimplementedIpsecPolicyServiceServer) BatchCreateIpsecPolicies(context.Context, *BatchCreateIpsecPoliciesRequest) (*BatchCreateIpsecPoliciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchCreateIpsecPolicies not implemented")
+}
+func (UnimplementedIpsecPolicyServiceServer) BatchDeleteIpsecPolicies(context.Context, *BatchDeleteIpsecPoliciesRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchDeleteIpsecPolicies not implemented")
 }
 func (UnimplementedIpsecPolicyServiceServer) mustEmbedUnimplementedIpsecPolicyServiceServer() {}
 func (UnimplementedIpsecPolicyServiceServer) testEmbeddedByValue()                            {}
@@ -1138,6 +1414,42 @@ func _IpsecPolicyService_ListIpsecPolicies_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _IpsecPolicyService_BatchCreateIpsecPolicies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchCreateIpsecPoliciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecPolicyServiceServer).BatchCreateIpsecPolicies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecPolicyService_BatchCreateIpsecPolicies_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecPolicyServiceServer).BatchCreateIpsecPolicies(ctx, req.(*BatchCreateIpsecPoliciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _IpsecPolicyService_BatchDeleteIpsecPolicies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchDeleteIpsecPoliciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IpsecPolicyServiceServer).BatchDeleteIpsecPolicies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IpsecPolicyService_BatchDeleteIpsecPolicies_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IpsecPolicyServiceServer).BatchDeleteIpsecPolicies(ctx, req.(*BatchDeleteIpsecPoliciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // IpsecPolicyService_ServiceDesc is the grpc.ServiceDesc for IpsecPolicyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1164,6 +1476,14 @@ var IpsecPolicyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListIpsecPolicies",
 			Handler:    _IpsecPolicyService_ListIpsecPolicies_Handler,
+		},
+		{
+			MethodName: "BatchCreateIpsecPolicies",
+			Handler:    _IpsecPolicyService_BatchCreateIpsecPolicies_Handler,
+		},
+		{
+			MethodName: "BatchDeleteIpsecPolicies",
+			Handler:    _IpsecPolicyService_BatchDeleteIpsecPolicies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

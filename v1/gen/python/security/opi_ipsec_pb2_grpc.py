@@ -42,6 +42,16 @@ class IkePeerServiceStub(object):
                 request_serializer=security_dot_opi__ipsec__pb2.ListIkePeersRequest.SerializeToString,
                 response_deserializer=security_dot_opi__ipsec__pb2.ListIkePeersResponse.FromString,
                 _registered_method=True)
+        self.BatchCreateIkePeers = channel.unary_unary(
+                '/opi_api.security.v1alpha1.IkePeerService/BatchCreateIkePeers',
+                request_serializer=security_dot_opi__ipsec__pb2.BatchCreateIkePeersRequest.SerializeToString,
+                response_deserializer=security_dot_opi__ipsec__pb2.BatchCreateIkePeersResponse.FromString,
+                _registered_method=True)
+        self.BatchDeleteIkePeers = channel.unary_unary(
+                '/opi_api.security.v1alpha1.IkePeerService/BatchDeleteIkePeers',
+                request_serializer=security_dot_opi__ipsec__pb2.BatchDeleteIkePeersRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class IkePeerServiceServicer(object):
@@ -85,6 +95,20 @@ class IkePeerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchCreateIkePeers(self, request, context):
+        """Create a batch of IKE peers atomically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDeleteIkePeers(self, request, context):
+        """Delete a batch of IKE peers atomically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IkePeerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -112,6 +136,16 @@ def add_IkePeerServiceServicer_to_server(servicer, server):
                     servicer.ListIkePeers,
                     request_deserializer=security_dot_opi__ipsec__pb2.ListIkePeersRequest.FromString,
                     response_serializer=security_dot_opi__ipsec__pb2.ListIkePeersResponse.SerializeToString,
+            ),
+            'BatchCreateIkePeers': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchCreateIkePeers,
+                    request_deserializer=security_dot_opi__ipsec__pb2.BatchCreateIkePeersRequest.FromString,
+                    response_serializer=security_dot_opi__ipsec__pb2.BatchCreateIkePeersResponse.SerializeToString,
+            ),
+            'BatchDeleteIkePeers': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDeleteIkePeers,
+                    request_deserializer=security_dot_opi__ipsec__pb2.BatchDeleteIkePeersRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -261,6 +295,60 @@ class IkePeerService(object):
             metadata,
             _registered_method=True)
 
+    @staticmethod
+    def BatchCreateIkePeers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.security.v1alpha1.IkePeerService/BatchCreateIkePeers',
+            security_dot_opi__ipsec__pb2.BatchCreateIkePeersRequest.SerializeToString,
+            security_dot_opi__ipsec__pb2.BatchCreateIkePeersResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchDeleteIkePeers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.security.v1alpha1.IkePeerService/BatchDeleteIkePeers',
+            security_dot_opi__ipsec__pb2.BatchDeleteIkePeersRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
 
 class IkeConnectionServiceStub(object):
     """Management of IKE connections. An IKE connection is a logical connection
@@ -305,6 +393,16 @@ class IkeConnectionServiceStub(object):
                 '/opi_api.security.v1alpha1.IkeConnectionService/StatsIkeConnections',
                 request_serializer=security_dot_opi__ipsec__pb2.StatsIkeConnectionsRequest.SerializeToString,
                 response_deserializer=security_dot_opi__ipsec__pb2.StatsIkeConnectionsResponse.FromString,
+                _registered_method=True)
+        self.BatchCreateIkeConnections = channel.unary_unary(
+                '/opi_api.security.v1alpha1.IkeConnectionService/BatchCreateIkeConnections',
+                request_serializer=security_dot_opi__ipsec__pb2.BatchCreateIkeConnectionsRequest.SerializeToString,
+                response_deserializer=security_dot_opi__ipsec__pb2.BatchCreateIkeConnectionsResponse.FromString,
+                _registered_method=True)
+        self.BatchDeleteIkeConnections = channel.unary_unary(
+                '/opi_api.security.v1alpha1.IkeConnectionService/BatchDeleteIkeConnections',
+                request_serializer=security_dot_opi__ipsec__pb2.BatchDeleteIkeConnectionsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
 
 
@@ -360,6 +458,20 @@ class IkeConnectionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchCreateIkeConnections(self, request, context):
+        """Create a batch of IKE connections atomically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDeleteIkeConnections(self, request, context):
+        """Delete a batch of IKE connections atomically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IkeConnectionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -392,6 +504,16 @@ def add_IkeConnectionServiceServicer_to_server(servicer, server):
                     servicer.StatsIkeConnections,
                     request_deserializer=security_dot_opi__ipsec__pb2.StatsIkeConnectionsRequest.FromString,
                     response_serializer=security_dot_opi__ipsec__pb2.StatsIkeConnectionsResponse.SerializeToString,
+            ),
+            'BatchCreateIkeConnections': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchCreateIkeConnections,
+                    request_deserializer=security_dot_opi__ipsec__pb2.BatchCreateIkeConnectionsRequest.FromString,
+                    response_serializer=security_dot_opi__ipsec__pb2.BatchCreateIkeConnectionsResponse.SerializeToString,
+            ),
+            'BatchDeleteIkeConnections': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDeleteIkeConnections,
+                    request_deserializer=security_dot_opi__ipsec__pb2.BatchDeleteIkeConnectionsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -571,6 +693,60 @@ class IkeConnectionService(object):
             metadata,
             _registered_method=True)
 
+    @staticmethod
+    def BatchCreateIkeConnections(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.security.v1alpha1.IkeConnectionService/BatchCreateIkeConnections',
+            security_dot_opi__ipsec__pb2.BatchCreateIkeConnectionsRequest.SerializeToString,
+            security_dot_opi__ipsec__pb2.BatchCreateIkeConnectionsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchDeleteIkeConnections(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.security.v1alpha1.IkeConnectionService/BatchDeleteIkeConnections',
+            security_dot_opi__ipsec__pb2.BatchDeleteIkeConnectionsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
 
 class IpsecSaServiceStub(object):
     """Management of the IPsec Security Association Database (SAD). The SAD
@@ -608,6 +784,16 @@ class IpsecSaServiceStub(object):
                 '/opi_api.security.v1alpha1.IpsecSaService/ListIpsecSas',
                 request_serializer=security_dot_opi__ipsec__pb2.ListIpsecSasRequest.SerializeToString,
                 response_deserializer=security_dot_opi__ipsec__pb2.ListIpsecSasResponse.FromString,
+                _registered_method=True)
+        self.BatchCreateIpsecSas = channel.unary_unary(
+                '/opi_api.security.v1alpha1.IpsecSaService/BatchCreateIpsecSas',
+                request_serializer=security_dot_opi__ipsec__pb2.BatchCreateIpsecSasRequest.SerializeToString,
+                response_deserializer=security_dot_opi__ipsec__pb2.BatchCreateIpsecSasResponse.FromString,
+                _registered_method=True)
+        self.BatchDeleteIpsecSas = channel.unary_unary(
+                '/opi_api.security.v1alpha1.IpsecSaService/BatchDeleteIpsecSas',
+                request_serializer=security_dot_opi__ipsec__pb2.BatchDeleteIpsecSasRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
 
 
@@ -652,6 +838,20 @@ class IpsecSaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchCreateIpsecSas(self, request, context):
+        """Create a batch of IPsec SAs atomically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDeleteIpsecSas(self, request, context):
+        """Delete a batch of IPsec SAs atomically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IpsecSaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -679,6 +879,16 @@ def add_IpsecSaServiceServicer_to_server(servicer, server):
                     servicer.ListIpsecSas,
                     request_deserializer=security_dot_opi__ipsec__pb2.ListIpsecSasRequest.FromString,
                     response_serializer=security_dot_opi__ipsec__pb2.ListIpsecSasResponse.SerializeToString,
+            ),
+            'BatchCreateIpsecSas': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchCreateIpsecSas,
+                    request_deserializer=security_dot_opi__ipsec__pb2.BatchCreateIpsecSasRequest.FromString,
+                    response_serializer=security_dot_opi__ipsec__pb2.BatchCreateIpsecSasResponse.SerializeToString,
+            ),
+            'BatchDeleteIpsecSas': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDeleteIpsecSas,
+                    request_deserializer=security_dot_opi__ipsec__pb2.BatchDeleteIpsecSasRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -829,6 +1039,60 @@ class IpsecSaService(object):
             metadata,
             _registered_method=True)
 
+    @staticmethod
+    def BatchCreateIpsecSas(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.security.v1alpha1.IpsecSaService/BatchCreateIpsecSas',
+            security_dot_opi__ipsec__pb2.BatchCreateIpsecSasRequest.SerializeToString,
+            security_dot_opi__ipsec__pb2.BatchCreateIpsecSasResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchDeleteIpsecSas(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.security.v1alpha1.IpsecSaService/BatchDeleteIpsecSas',
+            security_dot_opi__ipsec__pb2.BatchDeleteIpsecSasRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
 
 class IpsecPolicyServiceStub(object):
     """Management of the IPsec Security Policy Database (SPD). The SPD contains
@@ -866,6 +1130,16 @@ class IpsecPolicyServiceStub(object):
                 '/opi_api.security.v1alpha1.IpsecPolicyService/ListIpsecPolicies',
                 request_serializer=security_dot_opi__ipsec__pb2.ListIpsecPoliciesRequest.SerializeToString,
                 response_deserializer=security_dot_opi__ipsec__pb2.ListIpsecPoliciesResponse.FromString,
+                _registered_method=True)
+        self.BatchCreateIpsecPolicies = channel.unary_unary(
+                '/opi_api.security.v1alpha1.IpsecPolicyService/BatchCreateIpsecPolicies',
+                request_serializer=security_dot_opi__ipsec__pb2.BatchCreateIpsecPoliciesRequest.SerializeToString,
+                response_deserializer=security_dot_opi__ipsec__pb2.BatchCreateIpsecPoliciesResponse.FromString,
+                _registered_method=True)
+        self.BatchDeleteIpsecPolicies = channel.unary_unary(
+                '/opi_api.security.v1alpha1.IpsecPolicyService/BatchDeleteIpsecPolicies',
+                request_serializer=security_dot_opi__ipsec__pb2.BatchDeleteIpsecPoliciesRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
 
 
@@ -910,6 +1184,20 @@ class IpsecPolicyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchCreateIpsecPolicies(self, request, context):
+        """Create a batch of IPsec policies atomically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDeleteIpsecPolicies(self, request, context):
+        """Delete a batch of IPsec policies atomically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IpsecPolicyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -937,6 +1225,16 @@ def add_IpsecPolicyServiceServicer_to_server(servicer, server):
                     servicer.ListIpsecPolicies,
                     request_deserializer=security_dot_opi__ipsec__pb2.ListIpsecPoliciesRequest.FromString,
                     response_serializer=security_dot_opi__ipsec__pb2.ListIpsecPoliciesResponse.SerializeToString,
+            ),
+            'BatchCreateIpsecPolicies': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchCreateIpsecPolicies,
+                    request_deserializer=security_dot_opi__ipsec__pb2.BatchCreateIpsecPoliciesRequest.FromString,
+                    response_serializer=security_dot_opi__ipsec__pb2.BatchCreateIpsecPoliciesResponse.SerializeToString,
+            ),
+            'BatchDeleteIpsecPolicies': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDeleteIpsecPolicies,
+                    request_deserializer=security_dot_opi__ipsec__pb2.BatchDeleteIpsecPoliciesRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1077,6 +1375,60 @@ class IpsecPolicyService(object):
             '/opi_api.security.v1alpha1.IpsecPolicyService/ListIpsecPolicies',
             security_dot_opi__ipsec__pb2.ListIpsecPoliciesRequest.SerializeToString,
             security_dot_opi__ipsec__pb2.ListIpsecPoliciesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchCreateIpsecPolicies(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.security.v1alpha1.IpsecPolicyService/BatchCreateIpsecPolicies',
+            security_dot_opi__ipsec__pb2.BatchCreateIpsecPoliciesRequest.SerializeToString,
+            security_dot_opi__ipsec__pb2.BatchCreateIpsecPoliciesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchDeleteIpsecPolicies(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.security.v1alpha1.IpsecPolicyService/BatchDeleteIpsecPolicies',
+            security_dot_opi__ipsec__pb2.BatchDeleteIpsecPoliciesRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
