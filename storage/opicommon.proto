@@ -9,7 +9,7 @@ package opi_api.storage.v1;
 import "google/api/field_behavior.proto";
 import "google/protobuf/wrappers.proto";
 
-option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+option go_package = "github.com/opiproject/opi-api/v1/gen/go/storage";
 option java_multiple_files = true;
 option java_outer_classname = "OpiCommonProto";
 option java_package = "opi_api.storage.v1";

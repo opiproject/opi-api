@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fnetwork/evpn-gw/component.proto\x12 opi_api.network.evpn_gw.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\"\x8e\x01\n\tComponent\x12\x17\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x03R\x04name\x12I\n\x06status\x18\x02 \x01(\x0e\x32,.opi_api.network.evpn_gw.v1alpha1.CompStatusB\x03\xe0\x41\x03R\x06status\x12\x1d\n\x07\x64\x65tails\x18\x03 \x01(\tB\x03\xe0\x41\x03R\x07\x64\x65tails*r\n\nCompStatus\x12\x1b\n\x17\x43OMP_STATUS_UNSPECIFIED\x10\x00\x12\x17\n\x13\x43OMP_STATUS_PENDING\x10\x01\x12\x17\n\x13\x43OMP_STATUS_SUCCESS\x10\x02\x12\x15\n\x11\x43OMP_STATUS_ERROR\x10\x03\x42s\n opi_api.network.evpn_gw.v1alpha1B\x0e\x43omponentProtoP\x01Z=github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fnetwork/evpn-gw/component.proto\x12 opi_api.network.evpn_gw.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\"\x8e\x01\n\tComponent\x12\x17\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x03R\x04name\x12I\n\x06status\x18\x02 \x01(\x0e\x32,.opi_api.network.evpn_gw.v1alpha1.CompStatusB\x03\xe0\x41\x03R\x06status\x12\x1d\n\x07\x64\x65tails\x18\x03 \x01(\tB\x03\xe0\x41\x03R\x07\x64\x65tails*r\n\nCompStatus\x12\x1b\n\x17\x43OMP_STATUS_UNSPECIFIED\x10\x00\x12\x17\n\x13\x43OMP_STATUS_PENDING\x10\x01\x12\x17\n\x13\x43OMP_STATUS_SUCCESS\x10\x02\x12\x15\n\x11\x43OMP_STATUS_ERROR\x10\x03\x42t\n opi_api.network.evpn_gw.v1alpha1B\x0e\x43omponentProtoP\x01Z>github.com/opiproject/opi-api/v1/gen/go/network/evpn-gw;evpngwb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'network.evpn_gw.component_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n opi_api.network.evpn_gw.v1alpha1B\016ComponentProtoP\001Z=github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go'
+  _globals['DESCRIPTOR']._serialized_options = b'\n opi_api.network.evpn_gw.v1alpha1B\016ComponentProtoP\001Z>github.com/opiproject/opi-api/v1/gen/go/network/evpn-gw;evpngw'
   _globals['_COMPONENT'].fields_by_name['name']._loaded_options = None
   _globals['_COMPONENT'].fields_by_name['name']._serialized_options = b'\340A\003'
   _globals['_COMPONENT'].fields_by_name['status']._loaded_options = None

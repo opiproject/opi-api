@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/tunnel.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -167,13 +167,13 @@ type TunnelSpec struct {
 	// virtual private cloud this is tunnel belongs to
 	VpcNameRef string `protobuf:"bytes,1,opt,name=vpc_name_ref,json=vpcNameRef,proto3" json:"vpc_name_ref,omitempty"`
 	// local IP of the tunnel (used as outer SIP in tunneled packets)
-	LocalIp *_go.IPAddress `protobuf:"bytes,2,opt,name=local_ip,json=localIp,proto3" json:"local_ip,omitempty"`
+	LocalIp *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=local_ip,json=localIp,proto3" json:"local_ip,omitempty"`
 	// remote IP of the tunnel (used as outer DIP in tunneled packets)
-	RemoteIp *_go.IPAddress `protobuf:"bytes,3,opt,name=remote_ip,json=remoteIp,proto3" json:"remote_ip,omitempty"`
+	RemoteIp *opinetcommon.IPAddress `protobuf:"bytes,3,opt,name=remote_ip,json=remoteIp,proto3" json:"remote_ip,omitempty"`
 	// type of the tunnel
 	Type TunnelType `protobuf:"varint,4,opt,name=type,proto3,enum=opi_api.network.cloud.v1alpha1.TunnelType" json:"type,omitempty"`
 	// encap used while sending traffic to this tunnel
-	Encap *_go.Encap `protobuf:"bytes,5,opt,name=encap,proto3" json:"encap,omitempty"`
+	Encap *opinetcommon.Encap `protobuf:"bytes,5,opt,name=encap,proto3" json:"encap,omitempty"`
 	// Tunnel points to a underlay nexthop, nexthop-group(ECMP), or another Tunnel
 	//
 	// Types that are valid to be assigned to Nh:
@@ -236,14 +236,14 @@ func (x *TunnelSpec) GetVpcNameRef() string {
 	return ""
 }
 
-func (x *TunnelSpec) GetLocalIp() *_go.IPAddress {
+func (x *TunnelSpec) GetLocalIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.LocalIp
 	}
 	return nil
 }
 
-func (x *TunnelSpec) GetRemoteIp() *_go.IPAddress {
+func (x *TunnelSpec) GetRemoteIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.RemoteIp
 	}
@@ -257,7 +257,7 @@ func (x *TunnelSpec) GetType() TunnelType {
 	return TunnelType_TUNNEL_TYPE_UNSPECIFIED
 }
 
-func (x *TunnelSpec) GetEncap() *_go.Encap {
+func (x *TunnelSpec) GetEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.Encap
 	}
@@ -398,7 +398,7 @@ func (*DropNexthop) Descriptor() ([]byte, []int) {
 type TunnelStatus struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// tunnel_hw_handle
-	HwHandle *_go.HwHandle `protobuf:"bytes,1,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
+	HwHandle *opinetcommon.HwHandle `protobuf:"bytes,1,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
 	// no. of vnics behind the tunnel
 	VnicCount     int32 `protobuf:"varint,2,opt,name=vnic_count,json=vnicCount,proto3" json:"vnic_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -435,7 +435,7 @@ func (*TunnelStatus) Descriptor() ([]byte, []int) {
 	return file_network_cloud_tunnel_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *TunnelStatus) GetHwHandle() *_go.HwHandle {
+func (x *TunnelStatus) GetHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.HwHandle
 	}
@@ -533,14 +533,14 @@ var file_network_cloud_tunnel_proto_rawDesc = []byte{
 	0x56, 0x49, 0x43, 0x45, 0x10, 0x04, 0x12, 0x13, 0x0a, 0x0f, 0x54, 0x55, 0x4e, 0x4e, 0x45, 0x4c,
 	0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x56, 0x4e, 0x46, 0x10, 0x05, 0x12, 0x15, 0x0a, 0x11, 0x54,
 	0x55, 0x4e, 0x4e, 0x45, 0x4c, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x49, 0x50, 0x53, 0x45, 0x43,
-	0x10, 0x06, 0x42, 0x6c, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65,
+	0x10, 0x06, 0x42, 0x66, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65,
 	0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c,
 	0x70, 0x68, 0x61, 0x31, 0x42, 0x0b, 0x54, 0x75, 0x6e, 0x6e, 0x65, 0x6c, 0x50, 0x72, 0x6f, 0x74,
-	0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
 	0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61,
-	0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64,
-	0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74,
+	0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -558,14 +558,14 @@ func file_network_cloud_tunnel_proto_rawDescGZIP() []byte {
 var file_network_cloud_tunnel_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_network_cloud_tunnel_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_network_cloud_tunnel_proto_goTypes = []any{
-	(TunnelType)(0),       // 0: opi_api.network.cloud.v1alpha1.TunnelType
-	(*Tunnel)(nil),        // 1: opi_api.network.cloud.v1alpha1.Tunnel
-	(*TunnelSpec)(nil),    // 2: opi_api.network.cloud.v1alpha1.TunnelSpec
-	(*DropNexthop)(nil),   // 3: opi_api.network.cloud.v1alpha1.DropNexthop
-	(*TunnelStatus)(nil),  // 4: opi_api.network.cloud.v1alpha1.TunnelStatus
-	(*_go.IPAddress)(nil), // 5: opi_api.network.opinetcommon.v1alpha1.IPAddress
-	(*_go.Encap)(nil),     // 6: opi_api.network.opinetcommon.v1alpha1.Encap
-	(*_go.HwHandle)(nil),  // 7: opi_api.network.opinetcommon.v1alpha1.HwHandle
+	(TunnelType)(0),                // 0: opi_api.network.cloud.v1alpha1.TunnelType
+	(*Tunnel)(nil),                 // 1: opi_api.network.cloud.v1alpha1.Tunnel
+	(*TunnelSpec)(nil),             // 2: opi_api.network.cloud.v1alpha1.TunnelSpec
+	(*DropNexthop)(nil),            // 3: opi_api.network.cloud.v1alpha1.DropNexthop
+	(*TunnelStatus)(nil),           // 4: opi_api.network.cloud.v1alpha1.TunnelStatus
+	(*opinetcommon.IPAddress)(nil), // 5: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(*opinetcommon.Encap)(nil),     // 6: opi_api.network.opinetcommon.v1alpha1.Encap
+	(*opinetcommon.HwHandle)(nil),  // 7: opi_api.network.opinetcommon.v1alpha1.HwHandle
 }
 var file_network_cloud_tunnel_proto_depIdxs = []int32{
 	2, // 0: opi_api.network.cloud.v1alpha1.Tunnel.spec:type_name -> opi_api.network.cloud.v1alpha1.TunnelSpec

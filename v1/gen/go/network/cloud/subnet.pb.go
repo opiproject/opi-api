@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/subnet.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -95,9 +95,9 @@ type SubnetSpec struct {
 	// virtual private cloud this subnet is belongs to
 	VpcNameRef string `protobuf:"bytes,1,opt,name=vpc_name_ref,json=vpcNameRef,proto3" json:"vpc_name_ref,omitempty"`
 	// IPv4 prefix of this subnet, this must be a sub prefix of VPC's prefix
-	V4Prefix *_go.IPv4Prefix `protobuf:"bytes,2,opt,name=v4_prefix,json=v4Prefix,proto3" json:"v4_prefix,omitempty"`
+	V4Prefix *opinetcommon.IPv4Prefix `protobuf:"bytes,2,opt,name=v4_prefix,json=v4Prefix,proto3" json:"v4_prefix,omitempty"`
 	// IPv6 prefix of this subnet, this must be a sub prefix of VPC's prefix
-	V6Prefix *_go.IPv6Prefix `protobuf:"bytes,3,opt,name=v6_prefix,json=v6Prefix,proto3" json:"v6_prefix,omitempty"`
+	V6Prefix *opinetcommon.IPv6Prefix `protobuf:"bytes,3,opt,name=v6_prefix,json=v6Prefix,proto3" json:"v6_prefix,omitempty"`
 	// IPv4 Virtual Router (VR) IP of this subnet, this IP is owned by the device
 	// and packets originated by this device carry this IP as source IP
 	// (-- api-linter: core::0141::forbidden-types=disabled
@@ -140,11 +140,11 @@ type SubnetSpec struct {
 	//   - it is also possible to have subnet encap as ENCAP_TYPE_DOT1Q with
 	//     certain tag value but some vnic's in that subnet to have different
 	//     DOT1Q encap than that of subnet
-	AccessEncap *_go.Encap `protobuf:"bytes,13,opt,name=access_encap,json=accessEncap,proto3" json:"access_encap,omitempty"`
+	AccessEncap *opinetcommon.Encap `protobuf:"bytes,13,opt,name=access_encap,json=accessEncap,proto3" json:"access_encap,omitempty"`
 	// encapped traffic coming with the specified encap from fabric side will be
 	// mapped to this subnet and traffic from workloads in this subnet will carry
 	// this encap towards the fabric side
-	FabricEncap *_go.Encap `protobuf:"bytes,14,opt,name=fabric_encap,json=fabricEncap,proto3" json:"fabric_encap,omitempty"`
+	FabricEncap *opinetcommon.Encap `protobuf:"bytes,14,opt,name=fabric_encap,json=fabricEncap,proto3" json:"fabric_encap,omitempty"`
 	// when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
 	// present, subnet needs to be attached to a PF/VF (aka. host interface),
 	// HostIf is list of such VF/PFs
@@ -208,14 +208,14 @@ func (x *SubnetSpec) GetVpcNameRef() string {
 	return ""
 }
 
-func (x *SubnetSpec) GetV4Prefix() *_go.IPv4Prefix {
+func (x *SubnetSpec) GetV4Prefix() *opinetcommon.IPv4Prefix {
 	if x != nil {
 		return x.V4Prefix
 	}
 	return nil
 }
 
-func (x *SubnetSpec) GetV6Prefix() *_go.IPv6Prefix {
+func (x *SubnetSpec) GetV6Prefix() *opinetcommon.IPv6Prefix {
 	if x != nil {
 		return x.V6Prefix
 	}
@@ -285,14 +285,14 @@ func (x *SubnetSpec) GetEgressV6SecurityPolicyNameRef() []string {
 	return nil
 }
 
-func (x *SubnetSpec) GetAccessEncap() *_go.Encap {
+func (x *SubnetSpec) GetAccessEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.AccessEncap
 	}
 	return nil
 }
 
-func (x *SubnetSpec) GetFabricEncap() *_go.Encap {
+func (x *SubnetSpec) GetFabricEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.FabricEncap
 	}
@@ -502,14 +502,14 @@ var file_network_cloud_subnet_proto_rawDesc = []byte{
 	0x6e, 0x64, 0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x68, 0x77, 0x49, 0x6e,
 	0x64, 0x65, 0x78, 0x12, 0x1d, 0x0a, 0x0a, 0x76, 0x6e, 0x69, 0x63, 0x5f, 0x63, 0x6f, 0x75, 0x6e,
 	0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x76, 0x6e, 0x69, 0x63, 0x43, 0x6f, 0x75,
-	0x6e, 0x74, 0x42, 0x6c, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65,
+	0x6e, 0x74, 0x42, 0x66, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65,
 	0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c,
 	0x70, 0x68, 0x61, 0x31, 0x42, 0x0b, 0x53, 0x75, 0x62, 0x6e, 0x65, 0x74, 0x50, 0x72, 0x6f, 0x74,
-	0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
 	0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61,
-	0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64,
-	0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74,
+	0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -526,12 +526,12 @@ func file_network_cloud_subnet_proto_rawDescGZIP() []byte {
 
 var file_network_cloud_subnet_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_network_cloud_subnet_proto_goTypes = []any{
-	(*Subnet)(nil),         // 0: opi_api.network.cloud.v1alpha1.Subnet
-	(*SubnetSpec)(nil),     // 1: opi_api.network.cloud.v1alpha1.SubnetSpec
-	(*SubnetStatus)(nil),   // 2: opi_api.network.cloud.v1alpha1.SubnetStatus
-	(*_go.IPv4Prefix)(nil), // 3: opi_api.network.opinetcommon.v1alpha1.IPv4Prefix
-	(*_go.IPv6Prefix)(nil), // 4: opi_api.network.opinetcommon.v1alpha1.IPv6Prefix
-	(*_go.Encap)(nil),      // 5: opi_api.network.opinetcommon.v1alpha1.Encap
+	(*Subnet)(nil),                  // 0: opi_api.network.cloud.v1alpha1.Subnet
+	(*SubnetSpec)(nil),              // 1: opi_api.network.cloud.v1alpha1.SubnetSpec
+	(*SubnetStatus)(nil),            // 2: opi_api.network.cloud.v1alpha1.SubnetStatus
+	(*opinetcommon.IPv4Prefix)(nil), // 3: opi_api.network.opinetcommon.v1alpha1.IPv4Prefix
+	(*opinetcommon.IPv6Prefix)(nil), // 4: opi_api.network.opinetcommon.v1alpha1.IPv6Prefix
+	(*opinetcommon.Encap)(nil),      // 5: opi_api.network.opinetcommon.v1alpha1.Encap
 }
 var file_network_cloud_subnet_proto_depIdxs = []int32{
 	1, // 0: opi_api.network.cloud.v1alpha1.Subnet.spec:type_name -> opi_api.network.cloud.v1alpha1.SubnetSpec

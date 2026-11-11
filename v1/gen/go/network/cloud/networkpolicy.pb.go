@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/networkpolicy.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -286,7 +286,7 @@ type SecurityPolicySpec struct {
 	// - if Type is not specified, policy type defaults to TENANT policy
 	Type SecurityPolicyType `protobuf:"varint,1,opt,name=type,proto3,enum=opi_api.network.cloud.v1alpha1.SecurityPolicyType" json:"type,omitempty"`
 	// IPv4 or IPv6 policy
-	AddressFamily _go.IpAf `protobuf:"varint,2,opt,name=address_family,json=addressFamily,proto3,enum=opi_api.network.opinetcommon.v1alpha1.IpAf" json:"address_family,omitempty"`
+	AddressFamily opinetcommon.IpAf `protobuf:"varint,2,opt,name=address_family,json=addressFamily,proto3,enum=opi_api.network.opinetcommon.v1alpha1.IpAf" json:"address_family,omitempty"`
 	// when Stateless attribute is set on a policy, the policy is applied for
 	// traffic in both directions before deciding the final action of the flow
 	// when Stateless is set to false, the policy behavior is same as Network
@@ -300,7 +300,7 @@ type SecurityPolicySpec struct {
 	// that is also not set then  default "deny" action is enforced
 	// When no policy is configured on subnet and vnic, this knob doesn't
 	// apply and traffic is allowed in that case
-	DefaultSecurityAction _go.SecurityRuleAction `protobuf:"varint,4,opt,name=default_security_action,json=defaultSecurityAction,proto3,enum=opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction" json:"default_security_action,omitempty"`
+	DefaultSecurityAction opinetcommon.SecurityRuleAction `protobuf:"varint,4,opt,name=default_security_action,json=defaultSecurityAction,proto3,enum=opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction" json:"default_security_action,omitempty"`
 	// list of security rules
 	Rules []*SecurityRuleInfo `protobuf:"bytes,5,rep,name=rules,proto3" json:"rules,omitempty"`
 	// PolicyRuleFormat indicates whether the policy is set of flattened rules
@@ -347,11 +347,11 @@ func (x *SecurityPolicySpec) GetType() SecurityPolicyType {
 	return SecurityPolicyType_SECURITY_POLICY_TYPE_UNSPECIFIED
 }
 
-func (x *SecurityPolicySpec) GetAddressFamily() _go.IpAf {
+func (x *SecurityPolicySpec) GetAddressFamily() opinetcommon.IpAf {
 	if x != nil {
 		return x.AddressFamily
 	}
-	return _go.IpAf(0)
+	return opinetcommon.IpAf(0)
 }
 
 func (x *SecurityPolicySpec) GetStateless() bool {
@@ -361,11 +361,11 @@ func (x *SecurityPolicySpec) GetStateless() bool {
 	return false
 }
 
-func (x *SecurityPolicySpec) GetDefaultSecurityAction() _go.SecurityRuleAction {
+func (x *SecurityPolicySpec) GetDefaultSecurityAction() opinetcommon.SecurityRuleAction {
 	if x != nil {
 		return x.DefaultSecurityAction
 	}
-	return _go.SecurityRuleAction(0)
+	return opinetcommon.SecurityRuleAction(0)
 }
 
 func (x *SecurityPolicySpec) GetRules() []*SecurityRuleInfo {
@@ -450,9 +450,9 @@ type SecurityRuleAttrs struct {
 	// range:0-65534
 	Priority int32 `protobuf:"varint,1,opt,name=priority,proto3" json:"priority,omitempty"`
 	// rule match criteria
-	Match *_go.RuleMatch `protobuf:"bytes,2,opt,name=match,proto3" json:"match,omitempty"`
+	Match *opinetcommon.RuleMatch `protobuf:"bytes,2,opt,name=match,proto3" json:"match,omitempty"`
 	// action to take when this rule is matched
-	Action _go.SecurityRuleAction `protobuf:"varint,3,opt,name=action,proto3,enum=opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction" json:"action,omitempty"`
+	Action opinetcommon.SecurityRuleAction `protobuf:"varint,3,opt,name=action,proto3,enum=opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction" json:"action,omitempty"`
 	// when a rule marked as terminating is picked (based on the priority) as the
 	// matching rule from a policy, then the action of such rule will prevail or
 	// stick over the matching rules picked from already evaluated policies and
@@ -504,18 +504,18 @@ func (x *SecurityRuleAttrs) GetPriority() int32 {
 	return 0
 }
 
-func (x *SecurityRuleAttrs) GetMatch() *_go.RuleMatch {
+func (x *SecurityRuleAttrs) GetMatch() *opinetcommon.RuleMatch {
 	if x != nil {
 		return x.Match
 	}
 	return nil
 }
 
-func (x *SecurityRuleAttrs) GetAction() _go.SecurityRuleAction {
+func (x *SecurityRuleAttrs) GetAction() opinetcommon.SecurityRuleAction {
 	if x != nil {
 		return x.Action
 	}
-	return _go.SecurityRuleAction(0)
+	return opinetcommon.SecurityRuleAction(0)
 }
 
 func (x *SecurityRuleAttrs) GetTerminating() bool {
@@ -921,9 +921,9 @@ type SecurityPolicyStatus struct {
 	// no. of vnics using the policy
 	VnicCount int32 `protobuf:"varint,4,opt,name=vnic_count,json=vnicCount,proto3" json:"vnic_count,omitempty"`
 	// security policy h/w pool handle, if any
-	HwPoolHandle *_go.HwHandle `protobuf:"bytes,5,opt,name=hw_pool_handle,json=hwPoolHandle,proto3" json:"hw_pool_handle,omitempty"`
+	HwPoolHandle *opinetcommon.HwHandle `protobuf:"bytes,5,opt,name=hw_pool_handle,json=hwPoolHandle,proto3" json:"hw_pool_handle,omitempty"`
 	// security-policy h/w handle
-	HwHandle *_go.HwHandle `protobuf:"bytes,6,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
+	HwHandle *opinetcommon.HwHandle `protobuf:"bytes,6,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
 	// security-policy base address
 	// (-- api-linter: core::0141::forbidden-types=disabled
 	//
@@ -991,14 +991,14 @@ func (x *SecurityPolicyStatus) GetVnicCount() int32 {
 	return 0
 }
 
-func (x *SecurityPolicyStatus) GetHwPoolHandle() *_go.HwHandle {
+func (x *SecurityPolicyStatus) GetHwPoolHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.HwPoolHandle
 	}
 	return nil
 }
 
-func (x *SecurityPolicyStatus) GetHwHandle() *_go.HwHandle {
+func (x *SecurityPolicyStatus) GetHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.HwHandle
 	}
@@ -1251,7 +1251,7 @@ type SecurityProfileSpec struct {
 	// configured on the subnet or vnic, no rule matches and default action for policy is none
 	// this will have effect iff policy is attached on either vnic or subnet.
 	// if no action is specified  in security profile, default action is "deny"
-	DefaultFirewallAction _go.SecurityRuleAction `protobuf:"varint,3,opt,name=default_firewall_action,json=defaultFirewallAction,proto3,enum=opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction" json:"default_firewall_action,omitempty"`
+	DefaultFirewallAction opinetcommon.SecurityRuleAction `protobuf:"varint,3,opt,name=default_firewall_action,json=defaultFirewallAction,proto3,enum=opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction" json:"default_firewall_action,omitempty"`
 	// timeouts for established sessions per TCP/UDP/ICMP and other protocols
 	// range:1-86400, default=600
 	TcpIdleTimeout int32 `protobuf:"varint,4,opt,name=tcp_idle_timeout,json=tcpIdleTimeout,proto3" json:"tcp_idle_timeout,omitempty"`
@@ -1329,11 +1329,11 @@ func (x *SecurityProfileSpec) GetRuleStatsEnable() bool {
 	return false
 }
 
-func (x *SecurityProfileSpec) GetDefaultFirewallAction() _go.SecurityRuleAction {
+func (x *SecurityProfileSpec) GetDefaultFirewallAction() opinetcommon.SecurityRuleAction {
 	if x != nil {
 		return x.DefaultFirewallAction
 	}
-	return _go.SecurityRuleAction(0)
+	return opinetcommon.SecurityRuleAction(0)
 }
 
 func (x *SecurityProfileSpec) GetTcpIdleTimeout() int32 {
@@ -1454,7 +1454,7 @@ func (*SecurityProfileStatus) Descriptor() ([]byte, []int) {
 type PolicyLookupMatch struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// source IP address
-	SourceIp *_go.IPAddress `protobuf:"bytes,1,opt,name=source_ip,json=sourceIp,proto3" json:"source_ip,omitempty"`
+	SourceIp *opinetcommon.IPAddress `protobuf:"bytes,1,opt,name=source_ip,json=sourceIp,proto3" json:"source_ip,omitempty"`
 	// tags corresponding to the source; an implementation may limit the maximum number of tags
 	// range:1-4294967294
 	// (-- api-linter: core::0141::forbidden-types=disabled
@@ -1462,7 +1462,7 @@ type PolicyLookupMatch struct {
 	//	aip.dev/not-precedent: tags are 32bit values. --)
 	SourceTags []uint32 `protobuf:"varint,2,rep,packed,name=source_tags,json=sourceTags,proto3" json:"source_tags,omitempty"`
 	// destination IP address
-	DestinationIp *_go.IPAddress `protobuf:"bytes,3,opt,name=destination_ip,json=destinationIp,proto3" json:"destination_ip,omitempty"`
+	DestinationIp *opinetcommon.IPAddress `protobuf:"bytes,3,opt,name=destination_ip,json=destinationIp,proto3" json:"destination_ip,omitempty"`
 	// tags corresponding to the destination; an implementation may limit the maximum number of tags
 	// range:1-4294967294
 	// (-- api-linter: core::0141::forbidden-types=disabled
@@ -1513,7 +1513,7 @@ func (*PolicyLookupMatch) Descriptor() ([]byte, []int) {
 	return file_network_cloud_networkpolicy_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *PolicyLookupMatch) GetSourceIp() *_go.IPAddress {
+func (x *PolicyLookupMatch) GetSourceIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.SourceIp
 	}
@@ -1527,7 +1527,7 @@ func (x *PolicyLookupMatch) GetSourceTags() []uint32 {
 	return nil
 }
 
-func (x *PolicyLookupMatch) GetDestinationIp() *_go.IPAddress {
+func (x *PolicyLookupMatch) GetDestinationIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.DestinationIp
 	}
@@ -1677,11 +1677,11 @@ func (*SecurityPolicyLookupRequest_VnicLookupInfo_) isSecurityPolicyLookupReques
 type PolicyLookupResult struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// h/w id of the rule that matched
-	RuleHwHandle *_go.HwHandle `protobuf:"bytes,1,opt,name=rule_hw_handle,json=ruleHwHandle,proto3" json:"rule_hw_handle,omitempty"`
+	RuleHwHandle *opinetcommon.HwHandle `protobuf:"bytes,1,opt,name=rule_hw_handle,json=ruleHwHandle,proto3" json:"rule_hw_handle,omitempty"`
 	// priority of the rule that matched
 	Priority int32 `protobuf:"varint,2,opt,name=priority,proto3" json:"priority,omitempty"`
 	// action associated with the rule
-	Action _go.SecurityRuleAction `protobuf:"varint,3,opt,name=action,proto3,enum=opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction" json:"action,omitempty"`
+	Action opinetcommon.SecurityRuleAction `protobuf:"varint,3,opt,name=action,proto3,enum=opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction" json:"action,omitempty"`
 	// ALG associated with the rule, if any
 	AlgType ALGType `protobuf:"varint,4,opt,name=alg_type,json=algType,proto3,enum=opi_api.network.cloud.v1alpha1.ALGType" json:"alg_type,omitempty"`
 	// terminating is set to true, if this rule is configured as terminating
@@ -1720,7 +1720,7 @@ func (*PolicyLookupResult) Descriptor() ([]byte, []int) {
 	return file_network_cloud_networkpolicy_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *PolicyLookupResult) GetRuleHwHandle() *_go.HwHandle {
+func (x *PolicyLookupResult) GetRuleHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.RuleHwHandle
 	}
@@ -1734,11 +1734,11 @@ func (x *PolicyLookupResult) GetPriority() int32 {
 	return 0
 }
 
-func (x *PolicyLookupResult) GetAction() _go.SecurityRuleAction {
+func (x *PolicyLookupResult) GetAction() opinetcommon.SecurityRuleAction {
 	if x != nil {
 		return x.Action
 	}
-	return _go.SecurityRuleAction(0)
+	return opinetcommon.SecurityRuleAction(0)
 }
 
 func (x *PolicyLookupResult) GetAlgType() ALGType {
@@ -1762,9 +1762,9 @@ type SecurityPolicyLookupRequest_VnicLookupInfo struct {
 	// vnic uuid
 	VnicNameRef string `protobuf:"bytes,1,opt,name=vnic_name_ref,json=vnicNameRef,proto3" json:"vnic_name_ref,omitempty"`
 	// policy evaluation direction
-	PolicyDirection _go.PolicyDir `protobuf:"varint,2,opt,name=policy_direction,json=policyDirection,proto3,enum=opi_api.network.opinetcommon.v1alpha1.PolicyDir" json:"policy_direction,omitempty"`
+	PolicyDirection opinetcommon.PolicyDir `protobuf:"varint,2,opt,name=policy_direction,json=policyDirection,proto3,enum=opi_api.network.opinetcommon.v1alpha1.PolicyDir" json:"policy_direction,omitempty"`
 	// IPv4 or IPv6 policy
-	AddressFamily _go.IpAf `protobuf:"varint,3,opt,name=address_family,json=addressFamily,proto3,enum=opi_api.network.opinetcommon.v1alpha1.IpAf" json:"address_family,omitempty"`
+	AddressFamily opinetcommon.IpAf `protobuf:"varint,3,opt,name=address_family,json=addressFamily,proto3,enum=opi_api.network.opinetcommon.v1alpha1.IpAf" json:"address_family,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1806,18 +1806,18 @@ func (x *SecurityPolicyLookupRequest_VnicLookupInfo) GetVnicNameRef() string {
 	return ""
 }
 
-func (x *SecurityPolicyLookupRequest_VnicLookupInfo) GetPolicyDirection() _go.PolicyDir {
+func (x *SecurityPolicyLookupRequest_VnicLookupInfo) GetPolicyDirection() opinetcommon.PolicyDir {
 	if x != nil {
 		return x.PolicyDirection
 	}
-	return _go.PolicyDir(0)
+	return opinetcommon.PolicyDir(0)
 }
 
-func (x *SecurityPolicyLookupRequest_VnicLookupInfo) GetAddressFamily() _go.IpAf {
+func (x *SecurityPolicyLookupRequest_VnicLookupInfo) GetAddressFamily() opinetcommon.IpAf {
 	if x != nil {
 		return x.AddressFamily
 	}
-	return _go.IpAf(0)
+	return opinetcommon.IpAf(0)
 }
 
 var File_network_cloud_networkpolicy_proto protoreflect.FileDescriptor
@@ -2186,14 +2186,14 @@ var file_network_cloud_networkpolicy_proto_rawDesc = []byte{
 	0x5f, 0x46, 0x4f, 0x52, 0x4d, 0x41, 0x54, 0x5f, 0x46, 0x4c, 0x41, 0x54, 0x54, 0x45, 0x4e, 0x45,
 	0x44, 0x10, 0x01, 0x12, 0x1e, 0x0a, 0x1a, 0x50, 0x4f, 0x4c, 0x49, 0x43, 0x59, 0x5f, 0x52, 0x55,
 	0x4c, 0x45, 0x5f, 0x46, 0x4f, 0x52, 0x4d, 0x41, 0x54, 0x5f, 0x43, 0x4f, 0x4d, 0x50, 0x41, 0x43,
-	0x54, 0x10, 0x02, 0x42, 0x73, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e,
+	0x54, 0x10, 0x02, 0x42, 0x6d, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e,
 	0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61,
 	0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x12, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x50, 0x6f,
-	0x6c, 0x69, 0x63, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74,
+	0x6c, 0x69, 0x63, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65,
-	0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f,
-	0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
-	0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
+	0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f,
+	0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2234,12 +2234,12 @@ var file_network_cloud_networkpolicy_proto_goTypes = []any{
 	(*SecurityPolicyLookupRequest)(nil),                // 20: opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest
 	(*PolicyLookupResult)(nil),                         // 21: opi_api.network.cloud.v1alpha1.PolicyLookupResult
 	(*SecurityPolicyLookupRequest_VnicLookupInfo)(nil), // 22: opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo
-	(_go.IpAf)(0),                                      // 23: opi_api.network.opinetcommon.v1alpha1.IpAf
-	(_go.SecurityRuleAction)(0),                        // 24: opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction
-	(*_go.RuleMatch)(nil),                              // 25: opi_api.network.opinetcommon.v1alpha1.RuleMatch
-	(*_go.HwHandle)(nil),                               // 26: opi_api.network.opinetcommon.v1alpha1.HwHandle
-	(*_go.IPAddress)(nil),                              // 27: opi_api.network.opinetcommon.v1alpha1.IPAddress
-	(_go.PolicyDir)(0),                                 // 28: opi_api.network.opinetcommon.v1alpha1.PolicyDir
+	(opinetcommon.IpAf)(0),                             // 23: opi_api.network.opinetcommon.v1alpha1.IpAf
+	(opinetcommon.SecurityRuleAction)(0),               // 24: opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction
+	(*opinetcommon.RuleMatch)(nil),                     // 25: opi_api.network.opinetcommon.v1alpha1.RuleMatch
+	(*opinetcommon.HwHandle)(nil),                      // 26: opi_api.network.opinetcommon.v1alpha1.HwHandle
+	(*opinetcommon.IPAddress)(nil),                     // 27: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(opinetcommon.PolicyDir)(0),                        // 28: opi_api.network.opinetcommon.v1alpha1.PolicyDir
 }
 var file_network_cloud_networkpolicy_proto_depIdxs = []int32{
 	4,  // 0: opi_api.network.cloud.v1alpha1.SecurityPolicy.spec:type_name -> opi_api.network.cloud.v1alpha1.SecurityPolicySpec

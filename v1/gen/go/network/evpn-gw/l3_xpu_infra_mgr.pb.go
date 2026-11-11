@@ -17,10 +17,10 @@
 // 	protoc        (unknown)
 // source: network/evpn-gw/l3_xpu_infra_mgr.proto
 
-package _go
+package evpngw
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -228,9 +228,9 @@ type VrfSpec struct {
 	//	aip.dev/not-precedent: vni cannot be negative number. --)
 	Vni *uint32 `protobuf:"varint,1,opt,name=vni,proto3,oneof" json:"vni,omitempty"`
 	// IPv4 or IPv6 loopback address prefix. Also serves as basis for RD in FRR
-	LoopbackIpPrefix *_go.IPPrefix `protobuf:"bytes,2,opt,name=loopback_ip_prefix,json=loopbackIpPrefix,proto3" json:"loopback_ip_prefix,omitempty"`
+	LoopbackIpPrefix *opinetcommon.IPPrefix `protobuf:"bytes,2,opt,name=loopback_ip_prefix,json=loopbackIpPrefix,proto3" json:"loopback_ip_prefix,omitempty"`
 	// IPv4 or IPv6 IP address prefix for the VXLAN TEP
-	VtepIpPrefix  *_go.IPPrefix `protobuf:"bytes,3,opt,name=vtep_ip_prefix,json=vtepIpPrefix,proto3" json:"vtep_ip_prefix,omitempty"`
+	VtepIpPrefix  *opinetcommon.IPPrefix `protobuf:"bytes,3,opt,name=vtep_ip_prefix,json=vtepIpPrefix,proto3" json:"vtep_ip_prefix,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -272,14 +272,14 @@ func (x *VrfSpec) GetVni() uint32 {
 	return 0
 }
 
-func (x *VrfSpec) GetLoopbackIpPrefix() *_go.IPPrefix {
+func (x *VrfSpec) GetLoopbackIpPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.LoopbackIpPrefix
 	}
 	return nil
 }
 
-func (x *VrfSpec) GetVtepIpPrefix() *_go.IPPrefix {
+func (x *VrfSpec) GetVtepIpPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.VtepIpPrefix
 	}
@@ -760,7 +760,7 @@ type SviSpec struct {
 	// Svi's MAC address.
 	MacAddress []byte `protobuf:"bytes,3,opt,name=mac_address,json=macAddress,proto3" json:"mac_address,omitempty"`
 	// The GW IP addresses assigned to the SVI
-	GwIpPrefix []*_go.IPPrefix `protobuf:"bytes,4,rep,name=gw_ip_prefix,json=gwIpPrefix,proto3" json:"gw_ip_prefix,omitempty"`
+	GwIpPrefix []*opinetcommon.IPPrefix `protobuf:"bytes,4,rep,name=gw_ip_prefix,json=gwIpPrefix,proto3" json:"gw_ip_prefix,omitempty"`
 	// Set to true to enable BGP peering with Vrf on Svi
 	EnableBgp bool `protobuf:"varint,5,opt,name=enable_bgp,json=enableBgp,proto3" json:"enable_bgp,omitempty"`
 	// Conditional: The remote AS used by BGP speakers on LB (1-65535)
@@ -823,7 +823,7 @@ func (x *SviSpec) GetMacAddress() []byte {
 	return nil
 }
 
-func (x *SviSpec) GetGwIpPrefix() []*_go.IPPrefix {
+func (x *SviSpec) GetGwIpPrefix() []*opinetcommon.IPPrefix {
 	if x != nil {
 		return x.GwIpPrefix
 	}
@@ -1547,15 +1547,15 @@ var file_network_evpn_gw_l3_xpu_infra_mgr_proto_rawDesc = []byte{
 	0x69, 0x22, 0x34, 0xda, 0x41, 0x0f, 0x73, 0x76, 0x69, 0x2c, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65,
 	0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x3a, 0x03, 0x73, 0x76, 0x69,
 	0x32, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x73, 0x76, 0x69, 0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x3d,
-	0x73, 0x76, 0x69, 0x73, 0x2f, 0x2a, 0x7d, 0x42, 0x77, 0x0a, 0x20, 0x6f, 0x70, 0x69, 0x5f, 0x61,
+	0x73, 0x76, 0x69, 0x73, 0x2f, 0x2a, 0x7d, 0x42, 0x78, 0x0a, 0x20, 0x6f, 0x70, 0x69, 0x5f, 0x61,
 	0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x65, 0x76, 0x70, 0x6e, 0x5f,
 	0x67, 0x77, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x12, 0x4c, 0x33, 0x58,
 	0x70, 0x75, 0x49, 0x6e, 0x66, 0x72, 0x61, 0x4d, 0x67, 0x72, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
-	0x01, 0x5a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70,
+	0x01, 0x5a, 0x3e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70,
 	0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69,
-	0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x65, 0x76, 0x70, 0x6e, 0x2d, 0x67, 0x77,
-	0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f,
+	0x72, 0x6b, 0x2f, 0x65, 0x76, 0x70, 0x6e, 0x2d, 0x67, 0x77, 0x3b, 0x65, 0x76, 0x70, 0x6e, 0x67,
+	0x77, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1593,7 +1593,7 @@ var file_network_evpn_gw_l3_xpu_infra_mgr_proto_goTypes = []any{
 	(*GetSviRequest)(nil),         // 17: opi_api.network.evpn_gw.v1alpha1.GetSviRequest
 	(*DeleteSviRequest)(nil),      // 18: opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest
 	(*UpdateSviRequest)(nil),      // 19: opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest
-	(*_go.IPPrefix)(nil),          // 20: opi_api.network.opinetcommon.v1alpha1.IPPrefix
+	(*opinetcommon.IPPrefix)(nil), // 20: opi_api.network.opinetcommon.v1alpha1.IPPrefix
 	(*Component)(nil),             // 21: opi_api.network.evpn_gw.v1alpha1.Component
 	(*fieldmaskpb.FieldMask)(nil), // 22: google.protobuf.FieldMask
 	(*emptypb.Empty)(nil),         // 23: google.protobuf.Empty

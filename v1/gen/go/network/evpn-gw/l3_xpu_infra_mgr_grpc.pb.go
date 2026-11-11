@@ -17,7 +17,7 @@
 // - protoc             (unknown)
 // source: network/evpn-gw/l3_xpu_infra_mgr.proto
 
-package _go
+package evpngw
 
 import (
 	context "context"

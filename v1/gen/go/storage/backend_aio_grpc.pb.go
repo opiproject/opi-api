@@ -8,7 +8,7 @@
 // - protoc             (unknown)
 // source: storage/backend_aio.proto
 
-package _go
+package storage
 
 import (
 	context "context"

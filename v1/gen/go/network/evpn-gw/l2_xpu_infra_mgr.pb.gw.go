@@ -2,11 +2,11 @@
 // source: network/evpn-gw/l2_xpu_infra_mgr.proto
 
 /*
-Package _go is a reverse proxy.
+Package evpngw is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package _go
+package evpngw
 
 import (
 	"context"

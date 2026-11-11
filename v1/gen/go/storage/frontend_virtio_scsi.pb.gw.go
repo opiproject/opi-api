@@ -2,11 +2,11 @@
 // source: storage/frontend_virtio_scsi.proto
 
 /*
-Package _go is a reverse proxy.
+Package storage is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package _go
+package storage
 
 import (
 	"context"

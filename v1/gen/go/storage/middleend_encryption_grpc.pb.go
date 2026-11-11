@@ -9,7 +9,7 @@
 // - protoc             (unknown)
 // source: storage/middleend_encryption.proto
 
-package _go
+package storage
 
 import (
 	context "context"

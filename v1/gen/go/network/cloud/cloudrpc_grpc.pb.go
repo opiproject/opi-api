@@ -7,7 +7,7 @@
 // - protoc             (unknown)
 // source: network/cloud/cloudrpc.proto
 
-package _go
+package cloud
 
 import (
 	context "context"

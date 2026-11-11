@@ -19,7 +19,7 @@
 // - protoc             (unknown)
 // source: security/opi_ipsec.proto
 
-package _go
+package security
 
 import (
 	context "context"

@@ -8,7 +8,7 @@
 // - protoc             (unknown)
 // source: lifecycle/lifecycle.proto
 
-package _go
+package lifecycle
 
 import (
 	context "context"

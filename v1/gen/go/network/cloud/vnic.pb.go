@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/vnic.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -98,13 +98,13 @@ type VnicSpec struct {
 	// id of the subnet this vnic belongs to
 	SubnetNameRef string `protobuf:"bytes,1,opt,name=subnet_name_ref,json=subnetNameRef,proto3" json:"subnet_name_ref,omitempty"`
 	// vnic encap information to be used while sending packets to this vnic
-	VnicEncap *_go.Encap `protobuf:"bytes,2,opt,name=vnic_encap,json=vnicEncap,proto3" json:"vnic_encap,omitempty"`
+	VnicEncap *opinetcommon.Encap `protobuf:"bytes,2,opt,name=vnic_encap,json=vnicEncap,proto3" json:"vnic_encap,omitempty"`
 	// overlay MAC of this VNIC
 	MacAddress []byte `protobuf:"bytes,3,opt,name=mac_address,json=macAddress,proto3" json:"mac_address,omitempty"`
 	// enable or disable reverse path checks while rx/tx traffic from/to this vnic
 	SourceGuardEnable bool `protobuf:"varint,4,opt,name=source_guard_enable,json=sourceGuardEnable,proto3" json:"source_guard_enable,omitempty"`
 	// fabric encap information to be used for traffic originated from this vnic
-	FabricEncap *_go.Encap `protobuf:"bytes,5,opt,name=fabric_encap,json=fabricEncap,proto3" json:"fabric_encap,omitempty"`
+	FabricEncap *opinetcommon.Encap `protobuf:"bytes,5,opt,name=fabric_encap,json=fabricEncap,proto3" json:"fabric_encap,omitempty"`
 	// VNFs (virtual network functions are workloads that implement network
 	// features such as firewalls, virtual switches/bridges, security monitoring, etc.
 	// since VNFs are devices in the middle, they can rx/tx traffic on behalf of other
@@ -151,7 +151,7 @@ type VnicSpec struct {
 	// vnic if assigned a VIP in the underlay, can be used as
 	// outer encap source IP, if configured, for traffic going to certain vpc
 	// private service endpoints
-	ServiceIp *_go.IPAddress `protobuf:"bytes,21,opt,name=service_ip,json=serviceIp,proto3" json:"service_ip,omitempty"`
+	ServiceIp *opinetcommon.IPAddress `protobuf:"bytes,21,opt,name=service_ip,json=serviceIp,proto3" json:"service_ip,omitempty"`
 	// max_tcp_sessions is the maximum number of TCP sessions allowed from/to this
 	// vnic, if it is non-zero; zero implies no limit
 	MaxTcpSessions int32 `protobuf:"varint,22,opt,name=max_tcp_sessions,json=maxTcpSessions,proto3" json:"max_tcp_sessions,omitempty"`
@@ -205,7 +205,7 @@ func (x *VnicSpec) GetSubnetNameRef() string {
 	return ""
 }
 
-func (x *VnicSpec) GetVnicEncap() *_go.Encap {
+func (x *VnicSpec) GetVnicEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.VnicEncap
 	}
@@ -226,7 +226,7 @@ func (x *VnicSpec) GetSourceGuardEnable() bool {
 	return false
 }
 
-func (x *VnicSpec) GetFabricEncap() *_go.Encap {
+func (x *VnicSpec) GetFabricEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.FabricEncap
 	}
@@ -349,7 +349,7 @@ func (x *VnicSpec) GetV6RouteTableNameRef() string {
 	return ""
 }
 
-func (x *VnicSpec) GetServiceIp() *_go.IPAddress {
+func (x *VnicSpec) GetServiceIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.ServiceIp
 	}
@@ -655,15 +655,14 @@ var file_network_cloud_vnic_proto_rawDesc = []byte{
 	0x70, 0x48, 0x77, 0x49, 0x64, 0x78, 0x12, 0x35, 0x0a, 0x17, 0x73, 0x65, 0x63, 0x6f, 0x6e, 0x64,
 	0x61, 0x72, 0x79, 0x5f, 0x76, 0x6e, 0x69, 0x63, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x5f, 0x72, 0x65,
 	0x66, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x14, 0x73, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x61,
-	0x72, 0x79, 0x56, 0x6e, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x65, 0x66, 0x42, 0x6a, 0x0a,
+	0x72, 0x79, 0x56, 0x6e, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x65, 0x66, 0x42, 0x64, 0x0a,
 	0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b,
 	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42,
-	0x09, 0x56, 0x6e, 0x69, 0x63, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69,
+	0x09, 0x56, 0x6e, 0x69, 0x63, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69,
 	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a,
-	0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77,
-	0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
-	0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67,
+	0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -680,11 +679,11 @@ func file_network_cloud_vnic_proto_rawDescGZIP() []byte {
 
 var file_network_cloud_vnic_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_network_cloud_vnic_proto_goTypes = []any{
-	(*Vnic)(nil),          // 0: opi_api.network.cloud.v1alpha1.Vnic
-	(*VnicSpec)(nil),      // 1: opi_api.network.cloud.v1alpha1.VnicSpec
-	(*VnicStatus)(nil),    // 2: opi_api.network.cloud.v1alpha1.VnicStatus
-	(*_go.Encap)(nil),     // 3: opi_api.network.opinetcommon.v1alpha1.Encap
-	(*_go.IPAddress)(nil), // 4: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(*Vnic)(nil),                   // 0: opi_api.network.cloud.v1alpha1.Vnic
+	(*VnicSpec)(nil),               // 1: opi_api.network.cloud.v1alpha1.VnicSpec
+	(*VnicStatus)(nil),             // 2: opi_api.network.cloud.v1alpha1.VnicStatus
+	(*opinetcommon.Encap)(nil),     // 3: opi_api.network.opinetcommon.v1alpha1.Encap
+	(*opinetcommon.IPAddress)(nil), // 4: opi_api.network.opinetcommon.v1alpha1.IPAddress
 }
 var file_network_cloud_vnic_proto_depIdxs = []int32{
 	1, // 0: opi_api.network.cloud.v1alpha1.Vnic.spec:type_name -> opi_api.network.cloud.v1alpha1.VnicSpec

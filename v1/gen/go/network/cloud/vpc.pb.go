@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/vpc.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -177,7 +177,7 @@ type VpcSpec struct {
 	// encapped traffic coming with the specified encap from fabric side will be
 	// mapped to this VPC. FabricEncap is needed only for VPCs of type VPC_TYPE_TENANT,
 	// for other types of VPCs user need not provide fabric encap and will be unused when provided
-	FabricEncap *_go.Encap `protobuf:"bytes,9,opt,name=fabric_encap,json=fabricEncap,proto3" json:"fabric_encap,omitempty"`
+	FabricEncap *opinetcommon.Encap `protobuf:"bytes,9,opt,name=fabric_encap,json=fabricEncap,proto3" json:"fabric_encap,omitempty"`
 	// ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
 	// header or in the Traffic Class field of IPv6 outer header, this value, if
 	// non-zero, will be used as-is (i.e., not interpreted) during encap time by
@@ -277,7 +277,7 @@ func (x *VpcSpec) GetVirtualRouterMac() []byte {
 	return nil
 }
 
-func (x *VpcSpec) GetFabricEncap() *_go.Encap {
+func (x *VpcSpec) GetFabricEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.FabricEncap
 	}
@@ -295,9 +295,9 @@ func (x *VpcSpec) GetTos() int32 {
 type VpcStatus struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// vpc hw handle
-	HwHandle *_go.HwHandle `protobuf:"bytes,1,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
+	HwHandle *opinetcommon.HwHandle `protobuf:"bytes,1,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
 	// vpc's layer2 hw handle
-	BdHwHandle *_go.HwHandle `protobuf:"bytes,2,opt,name=bd_hw_handle,json=bdHwHandle,proto3" json:"bd_hw_handle,omitempty"`
+	BdHwHandle *opinetcommon.HwHandle `protobuf:"bytes,2,opt,name=bd_hw_handle,json=bdHwHandle,proto3" json:"bd_hw_handle,omitempty"`
 	// number of subnets in the vpc
 	SubnetCount   int32 `protobuf:"varint,3,opt,name=subnet_count,json=subnetCount,proto3" json:"subnet_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -334,14 +334,14 @@ func (*VpcStatus) Descriptor() ([]byte, []int) {
 	return file_network_cloud_vpc_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *VpcStatus) GetHwHandle() *_go.HwHandle {
+func (x *VpcStatus) GetHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.HwHandle
 	}
 	return nil
 }
 
-func (x *VpcStatus) GetBdHwHandle() *_go.HwHandle {
+func (x *VpcStatus) GetBdHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.BdHwHandle
 	}
@@ -616,15 +616,14 @@ var file_network_cloud_vpc_proto_rawDesc = []byte{
 	0x56, 0x50, 0x43, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x55, 0x4e, 0x44, 0x45, 0x52, 0x4c, 0x41,
 	0x59, 0x10, 0x01, 0x12, 0x13, 0x0a, 0x0f, 0x56, 0x50, 0x43, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f,
 	0x54, 0x45, 0x4e, 0x41, 0x4e, 0x54, 0x10, 0x02, 0x12, 0x14, 0x0a, 0x10, 0x56, 0x50, 0x43, 0x5f,
-	0x54, 0x59, 0x50, 0x45, 0x5f, 0x43, 0x4f, 0x4e, 0x54, 0x52, 0x4f, 0x4c, 0x10, 0x03, 0x42, 0x69,
+	0x54, 0x59, 0x50, 0x45, 0x5f, 0x43, 0x4f, 0x4e, 0x54, 0x52, 0x4f, 0x4c, 0x10, 0x03, 0x42, 0x63,
 	0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72,
 	0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
-	0x42, 0x08, 0x56, 0x70, 0x63, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69,
+	0x42, 0x08, 0x56, 0x70, 0x63, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69,
 	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a,
-	0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77,
-	0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
-	0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67,
+	0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -642,15 +641,15 @@ func file_network_cloud_vpc_proto_rawDescGZIP() []byte {
 var file_network_cloud_vpc_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_network_cloud_vpc_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_network_cloud_vpc_proto_goTypes = []any{
-	(VPCType)(0),          // 0: opi_api.network.cloud.v1alpha1.VPCType
-	(*Vpc)(nil),           // 1: opi_api.network.cloud.v1alpha1.Vpc
-	(*VpcSpec)(nil),       // 2: opi_api.network.cloud.v1alpha1.VpcSpec
-	(*VpcStatus)(nil),     // 3: opi_api.network.cloud.v1alpha1.VpcStatus
-	(*VPCPeer)(nil),       // 4: opi_api.network.cloud.v1alpha1.VPCPeer
-	(*VPCPeerSpec)(nil),   // 5: opi_api.network.cloud.v1alpha1.VPCPeerSpec
-	(*VPCPeerStatus)(nil), // 6: opi_api.network.cloud.v1alpha1.VPCPeerStatus
-	(*_go.Encap)(nil),     // 7: opi_api.network.opinetcommon.v1alpha1.Encap
-	(*_go.HwHandle)(nil),  // 8: opi_api.network.opinetcommon.v1alpha1.HwHandle
+	(VPCType)(0),                  // 0: opi_api.network.cloud.v1alpha1.VPCType
+	(*Vpc)(nil),                   // 1: opi_api.network.cloud.v1alpha1.Vpc
+	(*VpcSpec)(nil),               // 2: opi_api.network.cloud.v1alpha1.VpcSpec
+	(*VpcStatus)(nil),             // 3: opi_api.network.cloud.v1alpha1.VpcStatus
+	(*VPCPeer)(nil),               // 4: opi_api.network.cloud.v1alpha1.VPCPeer
+	(*VPCPeerSpec)(nil),           // 5: opi_api.network.cloud.v1alpha1.VPCPeerSpec
+	(*VPCPeerStatus)(nil),         // 6: opi_api.network.cloud.v1alpha1.VPCPeerStatus
+	(*opinetcommon.Encap)(nil),    // 7: opi_api.network.opinetcommon.v1alpha1.Encap
+	(*opinetcommon.HwHandle)(nil), // 8: opi_api.network.opinetcommon.v1alpha1.HwHandle
 }
 var file_network_cloud_vpc_proto_depIdxs = []int32{
 	2, // 0: opi_api.network.cloud.v1alpha1.Vpc.spec:type_name -> opi_api.network.cloud.v1alpha1.VpcSpec

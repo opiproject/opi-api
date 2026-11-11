@@ -24,12 +24,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19network/telco/telco.proto\x12\x1eopi_api.network.telco.v1alpha1Bk\n\x1eopi_api.network.telco.v1alpha1B\nTelcoProtoP\x01Z;github.com/opiproject/opi-api/network/telco/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19network/telco/telco.proto\x12\x1eopi_api.network.telco.v1alpha1Be\n\x1eopi_api.network.telco.v1alpha1B\nTelcoProtoP\x01Z5github.com/opiproject/opi-api/v1/gen/go/network/telcob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'network.telco.telco_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\036opi_api.network.telco.v1alpha1B\nTelcoProtoP\001Z;github.com/opiproject/opi-api/network/telco/v1alpha1/gen/go'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\036opi_api.network.telco.v1alpha1B\nTelcoProtoP\001Z5github.com/opiproject/opi-api/v1/gen/go/network/telco'
 # @@protoc_insertion_point(module_scope)

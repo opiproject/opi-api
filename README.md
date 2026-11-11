@@ -62,6 +62,39 @@ The generation of the OPI API files from the protobuf definitions is handled by 
 
 The OPI API is published to the BSR in the [opiproject](https://buf.build/opiproject/opi).  This project contains the auto-generated documentation as well as the code and sdk files.  Refer th the BSR for information and documentation.
 
+### Generated Go module
+
+All current generated Go APIs belong to one module,
+`github.com/opiproject/opi-api/v1/gen/go`, with Go 1.24 or newer. Its packages
+include `inventory`, `lifecycle`, `storage`, `security`, and `network/*`.
+One module keeps shared network types and their consumers on the same revision.
+
+Import packages from this layout, for example:
+
+```go
+import (
+    "github.com/opiproject/opi-api/v1/gen/go/network/cloud"
+    "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
+)
+```
+
+Legacy per-domain `*/v1alpha1/gen/go` snapshots are not updated by this migration.
+Switch imports to the canonical paths and regenerate clients together. The
+protobuf package names, field numbers, and gRPC service names do not change.
+Generated Go package names now match their directories (`evpngw` for `evpn-gw`).
+
+Consumers of the former inventory-only module must remove that nested module
+requirement before adding the shared module, to avoid ambiguous package imports:
+
+```bash
+go mod edit -droprequire=github.com/opiproject/opi-api/v1/gen/go/inventory
+go get github.com/opiproject/opi-api/v1/gen/go@YOUR_REVISION
+go mod tidy
+```
+
+Validate all generated packages and cross-package imports from the repository
+root with `go -C v1/gen/go test ./...`.
+
 ---
 
 - Leader

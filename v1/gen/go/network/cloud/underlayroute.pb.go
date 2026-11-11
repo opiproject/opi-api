@@ -9,10 +9,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/underlayroute.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -97,11 +97,11 @@ type UnderlayRouteSpec struct {
 	// route table id this route belongs to
 	RouteTableNameRef string `protobuf:"bytes,1,opt,name=route_table_name_ref,json=routeTableNameRef,proto3" json:"route_table_name_ref,omitempty"`
 	// destination address
-	DestPrefix *_go.IPPrefix `protobuf:"bytes,2,opt,name=dest_prefix,json=destPrefix,proto3" json:"dest_prefix,omitempty"`
+	DestPrefix *opinetcommon.IPPrefix `protobuf:"bytes,2,opt,name=dest_prefix,json=destPrefix,proto3" json:"dest_prefix,omitempty"`
 	// next-hop address
-	NextHopAddress *_go.IPAddress `protobuf:"bytes,3,opt,name=next_hop_address,json=nextHopAddress,proto3" json:"next_hop_address,omitempty"`
+	NextHopAddress *opinetcommon.IPAddress `protobuf:"bytes,3,opt,name=next_hop_address,json=nextHopAddress,proto3" json:"next_hop_address,omitempty"`
 	// route is enabled or not
-	State _go.AdminState `protobuf:"varint,4,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
+	State opinetcommon.AdminState `protobuf:"varint,4,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
 	// enable/disable admin distance
 	EnableAdminDistance bool `protobuf:"varint,5,opt,name=enable_admin_distance,json=enableAdminDistance,proto3" json:"enable_admin_distance,omitempty"`
 	// admin distance set for a static route vs. what a routing
@@ -150,25 +150,25 @@ func (x *UnderlayRouteSpec) GetRouteTableNameRef() string {
 	return ""
 }
 
-func (x *UnderlayRouteSpec) GetDestPrefix() *_go.IPPrefix {
+func (x *UnderlayRouteSpec) GetDestPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.DestPrefix
 	}
 	return nil
 }
 
-func (x *UnderlayRouteSpec) GetNextHopAddress() *_go.IPAddress {
+func (x *UnderlayRouteSpec) GetNextHopAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.NextHopAddress
 	}
 	return nil
 }
 
-func (x *UnderlayRouteSpec) GetState() _go.AdminState {
+func (x *UnderlayRouteSpec) GetState() opinetcommon.AdminState {
 	if x != nil {
 		return x.State
 	}
-	return _go.AdminState(0)
+	return opinetcommon.AdminState(0)
 }
 
 func (x *UnderlayRouteSpec) GetEnableAdminDistance() bool {
@@ -198,15 +198,15 @@ type UnderlayRouteStatus struct {
 	// route table id this route belongs to
 	RouteTableNameRef int32 `protobuf:"varint,1,opt,name=route_table_name_ref,json=routeTableNameRef,proto3" json:"route_table_name_ref,omitempty"`
 	// destination address
-	DestPrefix *_go.IPPrefix `protobuf:"bytes,2,opt,name=dest_prefix,json=destPrefix,proto3" json:"dest_prefix,omitempty"`
+	DestPrefix *opinetcommon.IPPrefix `protobuf:"bytes,2,opt,name=dest_prefix,json=destPrefix,proto3" json:"dest_prefix,omitempty"`
 	// next-hop address
-	NextHopAddress *_go.IPAddress `protobuf:"bytes,3,opt,name=next_hop_address,json=nextHopAddress,proto3" json:"next_hop_address,omitempty"`
+	NextHopAddress *opinetcommon.IPAddress `protobuf:"bytes,3,opt,name=next_hop_address,json=nextHopAddress,proto3" json:"next_hop_address,omitempty"`
 	// interface index, if the next-hop is an interface
 	IfIndex int32 `protobuf:"varint,5,opt,name=if_index,json=ifIndex,proto3" json:"if_index,omitempty"`
 	// type of route
-	Type _go.RouteType `protobuf:"varint,6,opt,name=type,proto3,enum=opi_api.network.opinetcommon.v1alpha1.RouteType" json:"type,omitempty"`
+	Type opinetcommon.RouteType `protobuf:"varint,6,opt,name=type,proto3,enum=opi_api.network.opinetcommon.v1alpha1.RouteType" json:"type,omitempty"`
 	// protocol via which the route is learned
-	Proto _go.RouteProtocol `protobuf:"varint,7,opt,name=proto,proto3,enum=opi_api.network.opinetcommon.v1alpha1.RouteProtocol" json:"proto,omitempty"`
+	Proto opinetcommon.RouteProtocol `protobuf:"varint,7,opt,name=proto,proto3,enum=opi_api.network.opinetcommon.v1alpha1.RouteProtocol" json:"proto,omitempty"`
 	// The number of seconds since this route was last updated or otherwise determined to be correct.
 	Age int32 `protobuf:"varint,8,opt,name=age,proto3" json:"age,omitempty"`
 	// The primary routing metric for this route
@@ -258,14 +258,14 @@ func (x *UnderlayRouteStatus) GetRouteTableNameRef() int32 {
 	return 0
 }
 
-func (x *UnderlayRouteStatus) GetDestPrefix() *_go.IPPrefix {
+func (x *UnderlayRouteStatus) GetDestPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.DestPrefix
 	}
 	return nil
 }
 
-func (x *UnderlayRouteStatus) GetNextHopAddress() *_go.IPAddress {
+func (x *UnderlayRouteStatus) GetNextHopAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.NextHopAddress
 	}
@@ -279,18 +279,18 @@ func (x *UnderlayRouteStatus) GetIfIndex() int32 {
 	return 0
 }
 
-func (x *UnderlayRouteStatus) GetType() _go.RouteType {
+func (x *UnderlayRouteStatus) GetType() opinetcommon.RouteType {
 	if x != nil {
 		return x.Type
 	}
-	return _go.RouteType(0)
+	return opinetcommon.RouteType(0)
 }
 
-func (x *UnderlayRouteStatus) GetProto() _go.RouteProtocol {
+func (x *UnderlayRouteStatus) GetProto() opinetcommon.RouteProtocol {
 	if x != nil {
 		return x.Proto
 	}
-	return _go.RouteProtocol(0)
+	return opinetcommon.RouteProtocol(0)
 }
 
 func (x *UnderlayRouteStatus) GetAge() int32 {
@@ -334,13 +334,13 @@ type UnderlayRouteLookupKey struct {
 	// route table id this route belongs to
 	RouteTableNameRef string `protobuf:"bytes,1,opt,name=route_table_name_ref,json=routeTableNameRef,proto3" json:"route_table_name_ref,omitempty"`
 	// destination address
-	DestPrefix *_go.IPPrefix `protobuf:"bytes,2,opt,name=dest_prefix,json=destPrefix,proto3" json:"dest_prefix,omitempty"`
+	DestPrefix *opinetcommon.IPPrefix `protobuf:"bytes,2,opt,name=dest_prefix,json=destPrefix,proto3" json:"dest_prefix,omitempty"`
 	// next-hop address
-	NextHopAddress *_go.IPAddress `protobuf:"bytes,3,opt,name=next_hop_address,json=nextHopAddress,proto3" json:"next_hop_address,omitempty"`
+	NextHopAddress *opinetcommon.IPAddress `protobuf:"bytes,3,opt,name=next_hop_address,json=nextHopAddress,proto3" json:"next_hop_address,omitempty"`
 	// interface index, if the next-hop is an interface
 	Ifid int32 `protobuf:"varint,4,opt,name=ifid,proto3" json:"ifid,omitempty"`
 	// protocol via which the route is learned
-	Proto         _go.RouteProtocol `protobuf:"varint,6,opt,name=proto,proto3,enum=opi_api.network.opinetcommon.v1alpha1.RouteProtocol" json:"proto,omitempty"`
+	Proto         opinetcommon.RouteProtocol `protobuf:"varint,6,opt,name=proto,proto3,enum=opi_api.network.opinetcommon.v1alpha1.RouteProtocol" json:"proto,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -382,14 +382,14 @@ func (x *UnderlayRouteLookupKey) GetRouteTableNameRef() string {
 	return ""
 }
 
-func (x *UnderlayRouteLookupKey) GetDestPrefix() *_go.IPPrefix {
+func (x *UnderlayRouteLookupKey) GetDestPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.DestPrefix
 	}
 	return nil
 }
 
-func (x *UnderlayRouteLookupKey) GetNextHopAddress() *_go.IPAddress {
+func (x *UnderlayRouteLookupKey) GetNextHopAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.NextHopAddress
 	}
@@ -403,11 +403,11 @@ func (x *UnderlayRouteLookupKey) GetIfid() int32 {
 	return 0
 }
 
-func (x *UnderlayRouteLookupKey) GetProto() _go.RouteProtocol {
+func (x *UnderlayRouteLookupKey) GetProto() opinetcommon.RouteProtocol {
 	if x != nil {
 		return x.Proto
 	}
-	return _go.RouteProtocol(0)
+	return opinetcommon.RouteProtocol(0)
 }
 
 var File_network_cloud_underlayroute_proto protoreflect.FileDescriptor
@@ -522,15 +522,15 @@ var file_network_cloud_underlayroute_proto_rawDesc = []byte{
 	0x32, 0x34, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f,
 	0x72, 0x6b, 0x2e, 0x6f, 0x70, 0x69, 0x6e, 0x65, 0x74, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x6f, 0x75, 0x74, 0x65, 0x50, 0x72,
-	0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x52, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x42, 0x73, 0x0a,
+	0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x52, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x42, 0x6d, 0x0a,
 	0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b,
 	0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42,
 	0x12, 0x55, 0x6e, 0x64, 0x65, 0x72, 0x6c, 0x61, 0x79, 0x52, 0x6f, 0x75, 0x74, 0x65, 0x50, 0x72,
-	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
 	0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69,
-	0x2d, 0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f,
-	0x75, 0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f,
-	0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e,
+	0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -547,15 +547,15 @@ func file_network_cloud_underlayroute_proto_rawDescGZIP() []byte {
 
 var file_network_cloud_underlayroute_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_network_cloud_underlayroute_proto_goTypes = []any{
-	(*UnderlayRoute)(nil),          // 0: opi_api.network.cloud.v1alpha1.UnderlayRoute
-	(*UnderlayRouteSpec)(nil),      // 1: opi_api.network.cloud.v1alpha1.UnderlayRouteSpec
-	(*UnderlayRouteStatus)(nil),    // 2: opi_api.network.cloud.v1alpha1.UnderlayRouteStatus
-	(*UnderlayRouteLookupKey)(nil), // 3: opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey
-	(*_go.IPPrefix)(nil),           // 4: opi_api.network.opinetcommon.v1alpha1.IPPrefix
-	(*_go.IPAddress)(nil),          // 5: opi_api.network.opinetcommon.v1alpha1.IPAddress
-	(_go.AdminState)(0),            // 6: opi_api.network.opinetcommon.v1alpha1.AdminState
-	(_go.RouteType)(0),             // 7: opi_api.network.opinetcommon.v1alpha1.RouteType
-	(_go.RouteProtocol)(0),         // 8: opi_api.network.opinetcommon.v1alpha1.RouteProtocol
+	(*UnderlayRoute)(nil),           // 0: opi_api.network.cloud.v1alpha1.UnderlayRoute
+	(*UnderlayRouteSpec)(nil),       // 1: opi_api.network.cloud.v1alpha1.UnderlayRouteSpec
+	(*UnderlayRouteStatus)(nil),     // 2: opi_api.network.cloud.v1alpha1.UnderlayRouteStatus
+	(*UnderlayRouteLookupKey)(nil),  // 3: opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey
+	(*opinetcommon.IPPrefix)(nil),   // 4: opi_api.network.opinetcommon.v1alpha1.IPPrefix
+	(*opinetcommon.IPAddress)(nil),  // 5: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(opinetcommon.AdminState)(0),    // 6: opi_api.network.opinetcommon.v1alpha1.AdminState
+	(opinetcommon.RouteType)(0),     // 7: opi_api.network.opinetcommon.v1alpha1.RouteType
+	(opinetcommon.RouteProtocol)(0), // 8: opi_api.network.opinetcommon.v1alpha1.RouteProtocol
 }
 var file_network_cloud_underlayroute_proto_depIdxs = []int32{
 	1,  // 0: opi_api.network.cloud.v1alpha1.UnderlayRoute.spec:type_name -> opi_api.network.cloud.v1alpha1.UnderlayRouteSpec

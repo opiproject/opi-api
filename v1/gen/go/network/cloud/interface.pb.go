@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/interface.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -508,11 +508,11 @@ type L3IfSpec struct {
 	// vpc/vrf this L3 interface belongs to
 	VpcNameRef string `protobuf:"bytes,1,opt,name=vpc_name_ref,json=vpcNameRef,proto3" json:"vpc_name_ref,omitempty"`
 	// IP address, prefix of this L3 interface
-	Prefix []*_go.IPPrefix `protobuf:"bytes,2,rep,name=prefix,proto3" json:"prefix,omitempty"`
+	Prefix []*opinetcommon.IPPrefix `protobuf:"bytes,2,rep,name=prefix,proto3" json:"prefix,omitempty"`
 	// Physical port of this L3 interface
 	PortNameRef string `protobuf:"bytes,3,opt,name=port_name_ref,json=portNameRef,proto3" json:"port_name_ref,omitempty"`
 	// encap used for packet rewrites if this is a L3 sub interface
-	Encap *_go.Encap `protobuf:"bytes,4,opt,name=encap,proto3" json:"encap,omitempty"`
+	Encap *opinetcommon.Encap `protobuf:"bytes,4,opt,name=encap,proto3" json:"encap,omitempty"`
 	// MAC address of this L3 interface; can be set only once
 	MacAddress    []byte `protobuf:"bytes,5,opt,name=mac_address,json=macAddress,proto3" json:"mac_address,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -556,7 +556,7 @@ func (x *L3IfSpec) GetVpcNameRef() string {
 	return ""
 }
 
-func (x *L3IfSpec) GetPrefix() []*_go.IPPrefix {
+func (x *L3IfSpec) GetPrefix() []*opinetcommon.IPPrefix {
 	if x != nil {
 		return x.Prefix
 	}
@@ -570,7 +570,7 @@ func (x *L3IfSpec) GetPortNameRef() string {
 	return ""
 }
 
-func (x *L3IfSpec) GetEncap() *_go.Encap {
+func (x *L3IfSpec) GetEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.Encap
 	}
@@ -643,7 +643,7 @@ func (x *BGPCommunity) GetCommunity() int32 {
 type LoopbackIfSpec struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// IP address hosted on the loopback interface (also DPU's TEP IP)
-	Prefix *_go.IPPrefix `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
+	Prefix *opinetcommon.IPPrefix `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
 	// BGP standard community to be attached to the route advertising this loopback TEP IP
 	Communities   []*BGPCommunity `protobuf:"bytes,2,rep,name=communities,proto3" json:"communities,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -680,7 +680,7 @@ func (*LoopbackIfSpec) Descriptor() ([]byte, []int) {
 	return file_network_cloud_interface_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *LoopbackIfSpec) GetPrefix() *_go.IPPrefix {
+func (x *LoopbackIfSpec) GetPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.Prefix
 	}
@@ -698,7 +698,7 @@ func (x *LoopbackIfSpec) GetCommunities() []*BGPCommunity {
 type ControlIfSpec struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// IP address hosted on the inband control interface
-	Prefix *_go.IPPrefix `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
+	Prefix *opinetcommon.IPPrefix `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
 	// mac address of the interface
 	MacAddress    []byte `protobuf:"bytes,2,opt,name=mac_address,json=macAddress,proto3" json:"mac_address,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -735,7 +735,7 @@ func (*ControlIfSpec) Descriptor() ([]byte, []int) {
 	return file_network_cloud_interface_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *ControlIfSpec) GetPrefix() *_go.IPPrefix {
+func (x *ControlIfSpec) GetPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.Prefix
 	}
@@ -1307,14 +1307,14 @@ var file_network_cloud_interface_proto_rawDesc = []byte{
 	0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x10, 0x0a, 0x0c,
 	0x49, 0x46, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x55, 0x53, 0x5f, 0x55, 0x50, 0x10, 0x01, 0x12, 0x12,
 	0x0a, 0x0e, 0x49, 0x46, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x55, 0x53, 0x5f, 0x44, 0x4f, 0x57, 0x4e,
-	0x10, 0x02, 0x42, 0x6f, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65,
+	0x10, 0x02, 0x42, 0x69, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65,
 	0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c,
 	0x70, 0x68, 0x61, 0x31, 0x42, 0x0e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65, 0x50,
-	0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70,
-	0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c,
-	0x6f, 0x75, 0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e,
-	0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f,
+	0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1332,23 +1332,23 @@ func file_network_cloud_interface_proto_rawDescGZIP() []byte {
 var file_network_cloud_interface_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_network_cloud_interface_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_network_cloud_interface_proto_goTypes = []any{
-	(IfType)(0),              // 0: opi_api.network.cloud.v1alpha1.IfType
-	(IfStatus)(0),            // 1: opi_api.network.cloud.v1alpha1.IfStatus
-	(*Interface)(nil),        // 2: opi_api.network.cloud.v1alpha1.Interface
-	(*InterfaceSpec)(nil),    // 3: opi_api.network.cloud.v1alpha1.InterfaceSpec
-	(*UplinkSpec)(nil),       // 4: opi_api.network.cloud.v1alpha1.UplinkSpec
-	(*UplinkPCSpec)(nil),     // 5: opi_api.network.cloud.v1alpha1.UplinkPCSpec
-	(*L3IfSpec)(nil),         // 6: opi_api.network.cloud.v1alpha1.L3IfSpec
-	(*BGPCommunity)(nil),     // 7: opi_api.network.cloud.v1alpha1.BGPCommunity
-	(*LoopbackIfSpec)(nil),   // 8: opi_api.network.cloud.v1alpha1.LoopbackIfSpec
-	(*ControlIfSpec)(nil),    // 9: opi_api.network.cloud.v1alpha1.ControlIfSpec
-	(*HostIfSpec)(nil),       // 10: opi_api.network.cloud.v1alpha1.HostIfSpec
-	(*UplinkIfStatus)(nil),   // 11: opi_api.network.cloud.v1alpha1.UplinkIfStatus
-	(*LoopbackIfStatus)(nil), // 12: opi_api.network.cloud.v1alpha1.LoopbackIfStatus
-	(*HostIfStatus)(nil),     // 13: opi_api.network.cloud.v1alpha1.HostIfStatus
-	(*InterfaceStatus)(nil),  // 14: opi_api.network.cloud.v1alpha1.InterfaceStatus
-	(*_go.IPPrefix)(nil),     // 15: opi_api.network.opinetcommon.v1alpha1.IPPrefix
-	(*_go.Encap)(nil),        // 16: opi_api.network.opinetcommon.v1alpha1.Encap
+	(IfType)(0),                   // 0: opi_api.network.cloud.v1alpha1.IfType
+	(IfStatus)(0),                 // 1: opi_api.network.cloud.v1alpha1.IfStatus
+	(*Interface)(nil),             // 2: opi_api.network.cloud.v1alpha1.Interface
+	(*InterfaceSpec)(nil),         // 3: opi_api.network.cloud.v1alpha1.InterfaceSpec
+	(*UplinkSpec)(nil),            // 4: opi_api.network.cloud.v1alpha1.UplinkSpec
+	(*UplinkPCSpec)(nil),          // 5: opi_api.network.cloud.v1alpha1.UplinkPCSpec
+	(*L3IfSpec)(nil),              // 6: opi_api.network.cloud.v1alpha1.L3IfSpec
+	(*BGPCommunity)(nil),          // 7: opi_api.network.cloud.v1alpha1.BGPCommunity
+	(*LoopbackIfSpec)(nil),        // 8: opi_api.network.cloud.v1alpha1.LoopbackIfSpec
+	(*ControlIfSpec)(nil),         // 9: opi_api.network.cloud.v1alpha1.ControlIfSpec
+	(*HostIfSpec)(nil),            // 10: opi_api.network.cloud.v1alpha1.HostIfSpec
+	(*UplinkIfStatus)(nil),        // 11: opi_api.network.cloud.v1alpha1.UplinkIfStatus
+	(*LoopbackIfStatus)(nil),      // 12: opi_api.network.cloud.v1alpha1.LoopbackIfStatus
+	(*HostIfStatus)(nil),          // 13: opi_api.network.cloud.v1alpha1.HostIfStatus
+	(*InterfaceStatus)(nil),       // 14: opi_api.network.cloud.v1alpha1.InterfaceStatus
+	(*opinetcommon.IPPrefix)(nil), // 15: opi_api.network.opinetcommon.v1alpha1.IPPrefix
+	(*opinetcommon.Encap)(nil),    // 16: opi_api.network.opinetcommon.v1alpha1.Encap
 }
 var file_network_cloud_interface_proto_depIdxs = []int32{
 	3,  // 0: opi_api.network.cloud.v1alpha1.Interface.spec:type_name -> opi_api.network.cloud.v1alpha1.InterfaceSpec

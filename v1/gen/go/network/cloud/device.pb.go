@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/device.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -243,13 +243,13 @@ func (x *Device) GetStatus() *DeviceStatus {
 type DeviceSpec struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// underlay ipv4 address for tunnel initiation/termination
-	Ipv4Address *_go.IPAddress `protobuf:"bytes,1,opt,name=ipv4_address,json=ipv4Address,proto3" json:"ipv4_address,omitempty"`
+	Ipv4Address *opinetcommon.IPAddress `protobuf:"bytes,1,opt,name=ipv4_address,json=ipv4Address,proto3" json:"ipv4_address,omitempty"`
 	// underlay ipv6 address for tunnel initiation/termination
-	Ipv6Address *_go.IPAddress `protobuf:"bytes,2,opt,name=ipv6_address,json=ipv6Address,proto3" json:"ipv6_address,omitempty"`
+	Ipv6Address *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=ipv6_address,json=ipv6Address,proto3" json:"ipv6_address,omitempty"`
 	// device's mac address - for outer ethernet header
 	MacAddr []byte `protobuf:"bytes,3,opt,name=mac_addr,json=macAddr,proto3" json:"mac_addr,omitempty"`
 	// IP address of the underlay gateway in the underlay
-	GatewayIp *_go.IPAddress `protobuf:"bytes,4,opt,name=gateway_ip,json=gatewayIp,proto3" json:"gateway_ip,omitempty"`
+	GatewayIp *opinetcommon.IPAddress `protobuf:"bytes,4,opt,name=gateway_ip,json=gatewayIp,proto3" json:"gateway_ip,omitempty"`
 	// number and type of pcie functions exposed
 	PcieFunctions *PCIeFunctionsSpec `protobuf:"bytes,5,opt,name=pcie_functions,json=pcieFunctions,proto3" json:"pcie_functions,omitempty"`
 	// ovelay routing
@@ -292,14 +292,14 @@ func (*DeviceSpec) Descriptor() ([]byte, []int) {
 	return file_network_cloud_device_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *DeviceSpec) GetIpv4Address() *_go.IPAddress {
+func (x *DeviceSpec) GetIpv4Address() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.Ipv4Address
 	}
 	return nil
 }
 
-func (x *DeviceSpec) GetIpv6Address() *_go.IPAddress {
+func (x *DeviceSpec) GetIpv6Address() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.Ipv6Address
 	}
@@ -313,7 +313,7 @@ func (x *DeviceSpec) GetMacAddr() []byte {
 	return nil
 }
 
-func (x *DeviceSpec) GetGatewayIp() *_go.IPAddress {
+func (x *DeviceSpec) GetGatewayIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.GatewayIp
 	}
@@ -407,13 +407,13 @@ func (x *PCIeFunctionsSpec) GetVfCount() int32 {
 type MgmtNetworkSpec struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// LLDPMgmtIP, if configured, will be used to advertise in LLDP's management address TLV
-	LldpMgmtIp *_go.IPAddress `protobuf:"bytes,1,opt,name=lldp_mgmt_ip,json=lldpMgmtIp,proto3" json:"lldp_mgmt_ip,omitempty"`
+	LldpMgmtIp *opinetcommon.IPAddress `protobuf:"bytes,1,opt,name=lldp_mgmt_ip,json=lldpMgmtIp,proto3" json:"lldp_mgmt_ip,omitempty"`
 	// MgmtIP is the management IP address of the DSC (also for flow log generation)
-	MgmtIp *_go.IPAddress `protobuf:"bytes,2,opt,name=mgmt_ip,json=mgmtIp,proto3" json:"mgmt_ip,omitempty"`
+	MgmtIp *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=mgmt_ip,json=mgmtIp,proto3" json:"mgmt_ip,omitempty"`
 	// Vlan ID (0-4095) is the management network's vlan tag (zero = untagged)
 	Vlan int32 `protobuf:"varint,3,opt,name=vlan,proto3" json:"vlan,omitempty"`
 	// IP address of the default gateway in the management vlan
-	GatewayIp *_go.IPAddress `protobuf:"bytes,4,opt,name=gateway_ip,json=gatewayIp,proto3" json:"gateway_ip,omitempty"`
+	GatewayIp *opinetcommon.IPAddress `protobuf:"bytes,4,opt,name=gateway_ip,json=gatewayIp,proto3" json:"gateway_ip,omitempty"`
 	// MAC address of the default gateway in the management vlan
 	GatewayMac    []byte `protobuf:"bytes,5,opt,name=gateway_mac,json=gatewayMac,proto3" json:"gateway_mac,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -450,14 +450,14 @@ func (*MgmtNetworkSpec) Descriptor() ([]byte, []int) {
 	return file_network_cloud_device_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *MgmtNetworkSpec) GetLldpMgmtIp() *_go.IPAddress {
+func (x *MgmtNetworkSpec) GetLldpMgmtIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.LldpMgmtIp
 	}
 	return nil
 }
 
-func (x *MgmtNetworkSpec) GetMgmtIp() *_go.IPAddress {
+func (x *MgmtNetworkSpec) GetMgmtIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.MgmtIp
 	}
@@ -471,7 +471,7 @@ func (x *MgmtNetworkSpec) GetVlan() int32 {
 	return 0
 }
 
-func (x *MgmtNetworkSpec) GetGatewayIp() *_go.IPAddress {
+func (x *MgmtNetworkSpec) GetGatewayIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.GatewayIp
 	}
@@ -888,14 +888,13 @@ var file_network_cloud_device_proto_rawDesc = []byte{
 	0x69, 0x6d, 0x65, 0x12, 0x2b, 0x0a, 0x11, 0x61, 0x6c, 0x65, 0x72, 0x74, 0x5f, 0x64, 0x65, 0x73,
 	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10,
 	0x61, 0x6c, 0x65, 0x72, 0x74, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
-	0x42, 0x6c, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77,
+	0x42, 0x66, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77,
 	0x6f, 0x72, 0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
 	0x61, 0x31, 0x42, 0x0b, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
-	0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70,
+	0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70,
 	0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69,
-	0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x76,
-	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f,
+	0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -922,7 +921,7 @@ var file_network_cloud_device_proto_goTypes = []any{
 	(*DeviceStatus)(nil),                     // 7: opi_api.network.cloud.v1alpha1.DeviceStatus
 	(*SystemEvent)(nil),                      // 8: opi_api.network.cloud.v1alpha1.SystemEvent
 	(*SystemAlert)(nil),                      // 9: opi_api.network.cloud.v1alpha1.SystemAlert
-	(*_go.IPAddress)(nil),                    // 10: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(*opinetcommon.IPAddress)(nil),           // 10: opi_api.network.opinetcommon.v1alpha1.IPAddress
 	(*timestamppb.Timestamp)(nil),            // 11: google.protobuf.Timestamp
 }
 var file_network_cloud_device_proto_depIdxs = []int32{

@@ -1,0 +1,20 @@
+name: Generated Go bindings
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: v1/gen/go/go.mod
+          cache-dependency-path: v1/gen/go/go.sum
+      - run: go test ./...
+        working-directory: v1/gen/go

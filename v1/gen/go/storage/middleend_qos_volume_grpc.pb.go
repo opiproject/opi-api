@@ -7,7 +7,7 @@
 // - protoc             (unknown)
 // source: storage/middleend_qos_volume.proto
 
-package _go
+package storage
 
 import (
 	context "context"
