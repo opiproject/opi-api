@@ -609,8 +609,11 @@ message DSAuth {
   string raw_public_key = 2 [(google.api.field_behavior) = OPTIONAL];
   // Certificate
   string cert = 3 [(google.api.field_behavior) = OPTIONAL];
-  // Private key
-  string private_key = 4 [(google.api.field_behavior) = OPTIONAL];
+  // Input-only private key. Never returned in resources or error messages.
+  string private_key = 4 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_behavior) = INPUT_ONLY
+  ];
   // Certificates
   CaCerts ca_certs = 5 [(google.api.field_behavior) = OPTIONAL];
 }
@@ -625,7 +628,11 @@ message IkePeerAuthentication {
   int32 eap_type = 2 [(google.api.field_behavior) = OPTIONAL];
   // Pre-shared secret value. This value MUST be set of the EAP method uses a
   // pre-shared key or pre-shared authentication has been chosen.
-  string psk = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Input only: never returned in resources or error messages.
+  string psk = 3 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_behavior) = INPUT_ONLY
+  ];
   // Digital signature
   DSAuth digital_signature = 4 [(google.api.field_behavior) = OPTIONAL];
 }
