@@ -105,7 +105,9 @@ message IPEntry {
     // IP range
     AddressRange range = 2;
     // tag that represents IP addres/pfx/range, range:1-4294967294
-    int32 tag = 3;
+    // (-- api-linter: core::0141::forbidden-types=disabled
+    //     aip.dev/not-precedent: tags share the uint32 domain used by MappingSpec. --)
+    uint32 tag = 3;
   }
 }
 
@@ -129,8 +131,10 @@ message RuleL3Match {
     IPPrefix src_prefix = 3;
     // source ip address range
     AddressRange src_range = 4;
-    // source tag for the range (range:1-429496729)
-    int32 src_tag = 5;
+    // source tag for the range (range:1-4294967294)
+    // (-- api-linter: core::0141::forbidden-types=disabled
+    //     aip.dev/not-precedent: tags share the uint32 domain used by MappingSpec. --)
+    uint32 src_tag = 5;
     // ip list
     IPList src_ip_list = 6;
   }
@@ -139,8 +143,10 @@ message RuleL3Match {
     IPPrefix dst_prefix = 7;
     // destination ip range
     AddressRange dst_range = 8;
-    // destination tag (range:1-429496729)
-    int32 dst_tag = 9;
+    // destination tag (range:1-4294967294)
+    // (-- api-linter: core::0141::forbidden-types=disabled
+    //     aip.dev/not-precedent: tags share the uint32 domain used by MappingSpec. --)
+    uint32 dst_tag = 9;
     // ip list
     IPList dst_ip_list = 10;
   }
