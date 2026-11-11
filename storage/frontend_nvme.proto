@@ -409,6 +409,8 @@ message StatsNvmeSubsystemRequest {
 message StatsNvmeSubsystemResponse {
   // Subsystem statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents a request to create an Nvme Controller.
@@ -491,6 +493,8 @@ message StatsNvmeControllerRequest {
 message StatsNvmeControllerResponse {
   // Controller statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents a request to create an Nvme Namespace.
@@ -573,4 +577,6 @@ message StatsNvmeNamespaceRequest {
 message StatsNvmeNamespaceResponse {
   // Namespace statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

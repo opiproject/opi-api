@@ -268,6 +268,8 @@ message StatsVirtioScsiTargetRequest {
 message StatsVirtioScsiTargetResponse {
   // Scsi Target statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents a request to create an Virtio Scsi Controller.
@@ -345,6 +347,8 @@ message StatsVirtioScsiControllerRequest {
 message StatsVirtioScsiControllerResponse {
   // Scsi Controller statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents a request to create an Virtio Scsi Lun.
@@ -425,4 +429,6 @@ message StatsVirtioScsiLunRequest {
 message StatsVirtioScsiLunResponse {
   // Scsi Lun statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

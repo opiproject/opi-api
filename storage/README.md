@@ -8,6 +8,42 @@ see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
 
 see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
 
+### Statistics observation context
+
+Every storage `Stats*Response` can return `sample_metadata` beside its existing
+`stats`. All metadata is optional; legacy responses without it remain valid.
+
+- `collection_time` is when the provider received the snapshot, not an assertion
+  of synchronized hardware/host clocks.
+- `tick_rate_hz`, when known, converts latency ticks into seconds. A present
+  frequency must be positive; absence is unknown, never an assumed frequency.
+- `sample_ticks` is the snapshot's source-clock position, including a valid zero.
+  Compare source-clock samples only for the same resource/source and frequency.
+- `counter_epoch` and `counter_start_time` identify counter discontinuities only
+  when the provider can establish them. Do not invent a hardware epoch from a
+  bridge restart or substitute collection time for actual counter start time.
+
+Collectors must reject out-of-order samples, rebaseline on known counter resets,
+and avoid interval calculations across clock-frequency changes. Without epoch
+metadata, a counter decrease can reveal a reset, but an unobserved reset followed
+by rapid growth cannot always be detected. Cumulative ticks and operation counts
+support mean latency, not latency percentiles.
+Collectors deriving intervals without an epoch marker must describe that
+continuity as inferred, rather than a guarantee from the provider.
+
+The current bindings are generated with the root template. Storage's legacy
+Go/Python bindings retain their basename descriptor identities and existing
+generator versions for downstream bridges:
+
+```bash
+buf generate --path storage --output v1
+bash scripts/generate-storage-legacy.sh
+go -C tests test ./...
+```
+
+The legacy script exports dependencies into a temporary build tree; it does not
+rewrite source definitions or generate replacement Google API libraries.
+
 ## Reference implementations
 
 - <https://github.com/opiproject/opi-spdk-bridge>

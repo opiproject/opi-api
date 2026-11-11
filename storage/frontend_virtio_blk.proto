@@ -157,4 +157,6 @@ message StatsVirtioBlkRequest {
 message StatsVirtioBlkResponse {
   // Device statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
