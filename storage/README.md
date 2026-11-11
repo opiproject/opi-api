@@ -8,6 +8,35 @@ see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
 
 see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
 
+### NVMe discovery queries
+
+`NvmeDiscoveryService.DiscoverNvmeTargets` queries a TCP or RDMA discovery
+controller through `POST /v1/nvmeTargets:discover`. It reports subsystem NQNs,
+transport endpoints, secure-channel requirements, and discovery-controller
+referrals. It does not create backend controllers or namespaces, automatically
+follow referrals, or keep discovered paths up to date.
+
+The request uses the standard discovery NQN when `discovery_nqn` is empty.
+TCP options can carry the existing TLS PSK format; they are invalid for RDMA.
+Implementations must validate transports and endpoints, honor caller deadlines,
+and report transport/authentication failures rather than returning an empty
+successful result.
+
+Pagination is over one immutable discovery snapshot. Generation counter and
+observation time must remain unchanged across pages. Page tokens are opaque and
+bound to the initial query and caller; changed query parameters or invalid tokens
+return `INVALID_ARGUMENT`. An expired snapshot returns `ABORTED`, requiring the
+client to restart from page one. The default page size is 100, capped at 1000.
+
+Clients may use subsystem entries to populate existing backend NVMe create/path
+requests. A point-in-time query is not a replacement for continuous discovery
+tracking when targets can migrate. Persistent discovery subscriptions remain a
+separate design decision. Bridges must implement this contract; schema bindings
+alone do not perform discovery.
+
+Run the descriptor and round-trip tests from the repository root with
+`go -C tests test ./...` (Buf and Go must be on `PATH`).
+
 ## Reference implementations
 
 - <https://github.com/opiproject/opi-spdk-bridge>

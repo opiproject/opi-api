@@ -1,0 +1,91 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2026 The OPI Project Authors
+
+syntax = "proto3";
+
+package opi_api.storage.v1;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/protobuf/timestamp.proto";
+import "storage/backend_nvme.proto";
+import "storage/opicommon.proto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "BackendNvmeDiscoveryProto";
+option java_package = "opi_api.storage.v1";
+
+// Queries NVMe discovery controllers without creating a backend connection.
+// This point-in-time query does not subscribe to future path changes.
+service NvmeDiscoveryService {
+  // Returns an immutable snapshot of NVMe discovery log entries.
+  rpc DiscoverNvmeTargets(DiscoverNvmeTargetsRequest) returns (DiscoverNvmeTargetsResponse) {
+    option (google.api.http) = {
+      post: "/v1/nvmeTargets:discover"
+      body: "*"
+    };
+    option (google.api.method_signature) = "trtype,endpoint";
+  }
+}
+
+// Request to query an NVMe discovery controller.
+message DiscoverNvmeTargetsRequest {
+  // Discovery transport. Only TCP and RDMA are valid.
+  NvmeTransportType trtype = 1 [(google.api.field_behavior) = REQUIRED];
+  // Discovery-controller address, port, and address family.
+  FabricsEndpoint endpoint = 2 [(google.api.field_behavior) = REQUIRED];
+  // Host NQN presented to the discovery controller, if required.
+  string hostnqn = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Discovery subsystem NQN. Defaults to
+  // "nqn.2014-08.org.nvmexpress.discovery" when empty.
+  string discovery_nqn = 4 [(google.api.field_behavior) = OPTIONAL];
+  // TCP options, including TLS PSK when needed. Invalid with RDMA.
+  // Credentials are input only and must never be copied into discovery results.
+  TcpController tcp = 5 [(google.api.field_behavior) = OPTIONAL];
+  // Maximum entries in a page. Defaults to 100; maximum 1000.
+  // Negative values are invalid; larger positive values are coerced to 1000.
+  int32 page_size = 6 [(google.api.field_behavior) = OPTIONAL];
+  // Opaque token from the previous page. Other query parameters must match
+  // the initial request, except page_size.
+  string page_token = 7 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// One page from a discovery snapshot.
+message DiscoverNvmeTargetsResponse {
+  // Entries include both NVMe subsystems and discovery-controller referrals.
+  repeated NvmeDiscoveryEntry entries = 1;
+  // Empty only when all entries in the snapshot have been returned.
+  string next_page_token = 2;
+  // NVMe discovery-log generation counter, preserved across pages.
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: NVMe defines an unsigned 64-bit generation counter. --)
+  uint64 generation_counter = 3;
+  // Time the first page's snapshot was observed, preserved across pages.
+  google.protobuf.Timestamp observe_time = 4;
+}
+
+// A discovered endpoint. Referrals are reported, not automatically followed.
+message NvmeDiscoveryEntry {
+  // Advertised subsystem or discovery-controller NQN.
+  string subnqn = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Advertised transport.
+  NvmeTransportType trtype = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Advertised target address, port, and address family.
+  FabricsEndpoint endpoint = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Distinguishes a connectable subsystem from a discovery referral.
+  NvmeDiscoveryEntryType type = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Whether the advertised target requires a secure channel.
+  bool secure_channel_required = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Discovery entry categories.
+enum NvmeDiscoveryEntryType {
+  // No entry type specified.
+  NVME_DISCOVERY_ENTRY_TYPE_UNSPECIFIED = 0;
+  // NVMe storage subsystem.
+  NVME_DISCOVERY_ENTRY_TYPE_SUBSYSTEM = 1;
+  // Referral to another discovery controller.
+  NVME_DISCOVERY_ENTRY_TYPE_DISCOVERY_CONTROLLER = 2;
+}
