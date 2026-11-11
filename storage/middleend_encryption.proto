@@ -9,6 +9,7 @@ package opi_api.storage.v1;
 import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
+import "google/api/field_info.proto";
 import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
@@ -90,6 +91,11 @@ message CreateEncryptedVolumeRequest {
   // An optional ID to assign to the Encrypted Volume.
   // If this is not provided the system will auto-generate it.
   string encrypted_volume_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Optional UUID4 identifying this logical create operation for safe retries.
+  string request_id = 3 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_info).format = UUID4
+  ];
 }
 
 // Represents a request to delete an Encrypted Volume.

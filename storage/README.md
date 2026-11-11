@@ -8,6 +8,37 @@ see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
 
 see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
 
+### Retry-safe create request identification
+
+All storage `Create*` requests accept an optional UUID4 `request_id`, following
+[AIP-155](https://google.aip.dev/155). Generate one ID per logical create
+operation and reuse the exact request and ID when retrying after a lost response.
+An empty ID preserves existing behavior and does not request deduplication.
+
+A bridge supporting this contract must:
+
+- Validate nonempty IDs as UUID4, including rejecting the nil UUID.
+- Scope records to the authenticated caller, RPC method, parent, and request ID.
+- Serialize concurrent duplicates and create at most one resource for that key.
+- Reject reuse with a different logical payload using `INVALID_ARGUMENT`.
+- Return the previous successful resource (or its current state), not a new
+  server-generated resource ID.
+- Keep records for at least 24 hours after successful completion, including
+  across service restarts. Caller cancellation or a lost response must not erase
+  a successful operation's record.
+- Avoid recording a terminal success before both resource creation and the
+  deduplication record are durably committed or recoverable together.
+
+These are API requirements, not automatic behavior of generated protobuf code.
+Existing bridges can ignore unknown fields, so clients must confirm provider
+support before relying on request IDs. Until support is confirmed, use stable
+client-assigned resource IDs and the provider's existing retry semantics.
+Implementations recognizing but not supporting a supplied ID must return
+`UNIMPLEMENTED`, not silently perform an undeduplicated create.
+
+Field numbers of existing request fields are unchanged. Run the descriptor and
+round-trip tests with `go -C tests test ./...` from the repository root.
+
 ## Reference implementations
 
 - <https://github.com/opiproject/opi-spdk-bridge>
