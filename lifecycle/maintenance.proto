@@ -1,0 +1,122 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2026 The OPI Project Authors
+
+syntax = "proto3";
+
+package opi_api.lifecycle.v1;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/opiproject/opi-api/lifecycle/v1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "MaintenanceProto";
+option java_package = "opi_api.lifecycle.v1";
+
+// Controls admission and graceful draining of the xPU served by this endpoint.
+// Management, observation, and resource-release operations remain available.
+// Implementations without a maintenance admission gate must return UNIMPLEMENTED.
+service MaintenanceService {
+  // Retrieves maintenance progress without changing admission.
+  rpc GetMaintenance(GetMaintenanceRequest) returns (Maintenance) {
+    option (google.api.http) = {get: "/v1/{name=lifecycle/maintenance}"};
+    option (google.api.method_signature) = "name";
+  }
+
+  // Closes admission before returning and starts graceful draining.
+  // Existing work is not forcibly terminated. Poll GetMaintenance for progress.
+  // Without an etag, repeats while draining or drained return current state.
+  rpc Drain(DrainRequest) returns (Maintenance) {
+    option (google.api.http) = {
+      post: "/v1/{name=lifecycle/maintenance}:drain"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+  }
+
+  // Cancels draining or leaves maintenance after verifying readiness.
+  // Admission is reopened only when the transition to ACTIVE succeeds.
+  rpc Resume(ResumeRequest) returns (Maintenance) {
+    option (google.api.http) = {
+      post: "/v1/{name=lifecycle/maintenance}:resume"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+  }
+}
+
+// Maintenance state of the xPU. This operation does not shut down its OS.
+message Maintenance {
+  option (google.api.resource) = {
+    type: "opi_api.lifecycle.v1/Maintenance"
+    pattern: "lifecycle/maintenance"
+    singular: "maintenance"
+    plural: "maintenance"
+  };
+
+  // Singleton name: "lifecycle/maintenance".
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // Current admission and drain state.
+  MaintenanceState state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Remaining active consumers. Absent means the count is unknown.
+  // Present values must be nonnegative. Unknown must not be interpreted as zero.
+  optional int64 active_consumers = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Operator-supplied maintenance reason.
+  string reason = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Last state or progress update.
+  google.protobuf.Timestamp update_time = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Opaque revision used for conditional transitions.
+  string etag = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Human-readable progress or failure information; not for programmatic parsing.
+  string status_message = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Request to inspect maintenance state.
+message GetMaintenanceRequest {
+  // Must be "lifecycle/maintenance".
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.lifecycle.v1/Maintenance"
+  ];
+}
+
+// Request to stop new allocations and drain existing consumers.
+message DrainRequest {
+  // Must be "lifecycle/maintenance".
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.lifecycle.v1/Maintenance"
+  ];
+  // Optional operator reason. Repeated Drain calls do not overwrite it.
+  string reason = 2 [(google.api.field_behavior) = OPTIONAL];
+  // If nonempty, must match the current revision or the request fails with ABORTED.
+  string etag = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Request to reopen admission after readiness checks.
+message ResumeRequest {
+  // Must be "lifecycle/maintenance".
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.lifecycle.v1/Maintenance"
+  ];
+  // If nonempty, must match the current revision or the request fails with ABORTED.
+  string etag = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Admission and drain states.
+enum MaintenanceState {
+  // State is unknown. Clients must not assume admission is open or draining is done.
+  MAINTENANCE_STATE_UNSPECIFIED = 0;
+  // Ready for new allocations.
+  MAINTENANCE_STATE_ACTIVE = 1;
+  // Admission is closed; existing consumers are still draining.
+  MAINTENANCE_STATE_DRAINING = 2;
+  // Admission is closed and the implementation has verified all consumers released.
+  MAINTENANCE_STATE_DRAINED = 3;
+  // Maintenance failed. Admission remains closed until a successful Resume.
+  MAINTENANCE_STATE_ERROR = 4;
+}
