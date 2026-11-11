@@ -8,6 +8,27 @@ see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
 
 see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
 
+### Capability discovery
+
+`StorageCapabilityService.GetStorageCapabilities` exposes the read-only
+`storageCapabilities` singleton through `GET /v1/storageCapabilities`. It reports
+implemented frontends, backends, NVMe transports, middle-end services, encryption
+ciphers, and optional upper bounds.
+
+Advertise only implemented features, not everything represented by an enum.
+Empty supported-feature lists mean no support in that category. Present limits
+are nonnegative: zero means unavailable, while an omitted limit is unknown
+rather than unlimited. Limits do not report free capacity or reserve resources;
+normal provisioning checks still apply. Feature combinations may have additional
+constraints, so separate list entries do not promise every combination works.
+
+This repository defines the contract and client/server bindings; bridges must
+implement discovery. An implementation without this service should return
+`UNIMPLEMENTED`, not a fabricated all-supported response.
+
+Run the descriptor and ProtoJSON tests from the repository root with
+`go -C tests test ./...` (Buf and Go must be on `PATH`).
+
 ## Reference implementations
 
 - <https://github.com/opiproject/opi-spdk-bridge>

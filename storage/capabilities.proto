@@ -1,0 +1,116 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2026 The OPI Project Authors
+
+syntax = "proto3";
+
+package opi_api.storage.v1;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "storage/opicommon.proto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+option java_multiple_files = true;
+option java_outer_classname = "StorageCapabilitiesProto";
+option java_package = "opi_api.storage.v1";
+
+// Reports storage features implemented by this xPU.
+service StorageCapabilityService {
+  // Retrieves the read-only storage capability singleton.
+  rpc GetStorageCapabilities(GetStorageCapabilitiesRequest) returns (StorageCapabilities) {
+    option (google.api.http) = {get: "/v1/{name=storageCapabilities}"};
+    option (google.api.method_signature) = "name";
+  }
+}
+
+// Request to retrieve storage capabilities.
+message GetStorageCapabilitiesRequest {
+  // Must be "storageCapabilities".
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/StorageCapabilities"
+  ];
+}
+
+// Supported storage features, not a reservation or available-capacity report.
+// Empty lists mean no support in that category. Unspecified enum values must
+// not appear in supported-feature lists.
+message StorageCapabilities {
+  option (google.api.resource) = {
+    type: "opi_api.storage.v1/StorageCapabilities"
+    pattern: "storageCapabilities"
+    singular: "storageCapabilities"
+    plural: "storageCapabilities"
+  };
+
+  // Singleton name: "storageCapabilities".
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  // Supported host-facing device types.
+  repeated StorageFrontendType frontends = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Supported backing volume types.
+  repeated StorageBackendType backends = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Supported NVMe transports. Applies only when NVMe support is advertised.
+  repeated NvmeTransportType nvme_transports = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Supported middle-end services.
+  repeated StorageMiddleendType middleends = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Supported ciphers when the encryption middle-end is advertised.
+  repeated EncryptionType encryption_ciphers = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Reported upper bounds. Omitted limits are unknown, not unlimited.
+  StorageLimits limits = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Implementation limits, not currently free capacity.
+// Present values must be nonnegative; zero means no resources of that kind can
+// be provisioned. An absent value means the limit is not reported.
+message StorageLimits {
+  // Maximum simultaneously provisioned NVMe subsystems.
+  optional int64 max_nvme_subsystems = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Maximum simultaneously provisioned host-facing NVMe controllers.
+  optional int64 max_nvme_controllers = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Maximum simultaneously provisioned host-facing NVMe namespaces.
+  optional int64 max_nvme_namespaces = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Maximum simultaneously provisioned virtio-blk devices.
+  optional int64 max_virtio_blk_devices = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Host-facing storage device types.
+enum StorageFrontendType {
+  // No frontend type specified.
+  STORAGE_FRONTEND_TYPE_UNSPECIFIED = 0;
+  // NVMe controllers and namespaces.
+  STORAGE_FRONTEND_TYPE_NVME = 1;
+  // Virtio block devices.
+  STORAGE_FRONTEND_TYPE_VIRTIO_BLK = 2;
+  // Virtio SCSI devices.
+  STORAGE_FRONTEND_TYPE_VIRTIO_SCSI = 3;
+  // Virtio filesystem devices.
+  STORAGE_FRONTEND_TYPE_VIRTIO_FS = 4;
+}
+
+// Backing storage volume types.
+enum StorageBackendType {
+  // No backend type specified.
+  STORAGE_BACKEND_TYPE_UNSPECIFIED = 0;
+  // Remote or local NVMe storage.
+  STORAGE_BACKEND_TYPE_NVME = 1;
+  // File-backed asynchronous I/O storage.
+  STORAGE_BACKEND_TYPE_AIO = 2;
+  // Memory-backed storage.
+  STORAGE_BACKEND_TYPE_MALLOC = 3;
+  // Null storage.
+  STORAGE_BACKEND_TYPE_NULL = 4;
+  // iSCSI storage.
+  STORAGE_BACKEND_TYPE_ISCSI = 5;
+}
+
+// Middle-end storage services.
+enum StorageMiddleendType {
+  // No middle-end type specified.
+  STORAGE_MIDDLEEND_TYPE_UNSPECIFIED = 0;
+  // Data-at-rest encryption.
+  STORAGE_MIDDLEEND_TYPE_ENCRYPTION = 1;
+  // Volume quality of service.
+  STORAGE_MIDDLEEND_TYPE_QOS = 2;
+}
