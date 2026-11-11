@@ -1,4 +1,7 @@
 #!/bin/bash
+set -euo pipefail
+
+source "$(dirname -- "${BASH_SOURCE[0]}")/../verified-download.sh"
 
 function info {
 	printf "=== INFO === %s\n" "$@"
@@ -15,20 +18,24 @@ function die {
 
 function install_deps {
 	status "Installing rshim driver and tools"
-	dnf install -y rshim expect wget minicom rpm-build lshw
+	dnf --setopt=gpgcheck=1 --setopt='*.gpgcheck=1' --setopt=localpkg_gpgcheck=1 install -y rshim expect wget curl minicom rpm-build lshw
 	systemctl enable --now rshim
 	systemctl status rshim --no-pager -l
 
 	status "Installing mstflint tools"
-	dnf install -y http://download.eng.bos.redhat.com/brewroot/packages/mstflint/4.15.0/1.el8/x86_64/mstflint-4.15.0-1.el8.x86_64.rpm
+	dnf --setopt=gpgcheck=1 --setopt='*.gpgcheck=1' --setopt=localpkg_gpgcheck=1 install -y \
+		"${MSTFLINT_RPM_URL:-https://download.eng.bos.redhat.com/brewroot/packages/mstflint/4.15.0/1.el8/x86_64/mstflint-4.15.0-1.el8.x86_64.rpm}"
 }
 
 function firmware_update {
 	status "Performing firmware update"
 	BFB_IMAGE=DOCA_v1.2.1_BlueField_OS_Ubuntu_20.04-5.4.0-1023-bluefield-5.5-2.1.7.0-3.8.5.12027-1.signed-aarch64.bfb
-	wget -c https://content.mellanox.com/BlueField/BFBs/Ubuntu20.04/$BFB_IMAGE
+	cache="${PROVISIONING_CACHE_DIR:-/var/cache/opi-bluefield}"
+	verified_download \
+		"${BFB_IMAGE_URL:-https://content.mellanox.com/BlueField/BFBs/Ubuntu20.04/$BFB_IMAGE}" \
+		"$cache/$BFB_IMAGE" "${BFB_IMAGE_SHA256:-}"
 	status "Sending firmware to BF2. Please wait."
-	cat $BFB_IMAGE > /dev/rshim0/boot
+	cat "$cache/$BFB_IMAGE" > /dev/rshim0/boot
 	expect -c '
 		spawn minicom --baudrate 115200 --device /dev/rshim0/console
 		expect {
@@ -56,10 +63,11 @@ function firmware_update {
 function pxe_install() {
 	status "Setting up PXE environment"
 
-	RHEL_ISO="http://download.eng.bos.redhat.com/released/rhel-8/RHEL-8/8.4.0/BaseOS/aarch64/iso/RHEL-8.4.0-20210503.1-aarch64-dvd1.iso"
+	RHEL_ISO="${RHEL_ISO_URL:-https://download.eng.bos.redhat.com/released/rhel-8/RHEL-8/8.4.0/BaseOS/aarch64/iso/RHEL-8.4.0-20210503.1-aarch64-dvd1.iso}"
 
-	wget -O "/tmp/${RHEL_ISO##*/}" -c $RHEL_ISO
-        python3 ./PXE_setup.py "/tmp/${RHEL_ISO##*/}" tmfifo tmfifo RHEL8-bluefield.ks
+	cache="${PROVISIONING_CACHE_DIR:-/var/cache/opi-bluefield}"
+	verified_download "$RHEL_ISO" "$cache/bluefield-install.iso" "${RHEL_ISO_SHA256:-}"
+	python3 ./PXE_setup.py "$cache/bluefield-install.iso" tmfifo tmfifo RHEL8-bluefield.ks
 
 	info "The BF2 is about to be rebooted and minicom console"
 	info "started. You must manually select the PXE boot device."
@@ -113,7 +121,7 @@ function pxe_install() {
 function sriov_check {
 
 	if ! rpm -qa | grep -q lshw; then
-		dnf install -y lshw
+		dnf --setopt=gpgcheck=1 --setopt='*.gpgcheck=1' --setopt=localpkg_gpgcheck=1 install -y lshw
 	fi
 
 	NEED_REBOOT=""
@@ -142,7 +150,9 @@ function sriov_check {
 		fi
 	done
 
-	test -n "${NEED_REBOOT}" && bash ./reboot_bf.sh
+	if [[ -n "${NEED_REBOOT}" ]]; then
+		bash ./reboot_bf.sh
+	fi
 }
 
 function help {
