@@ -54,11 +54,11 @@ nmcli con show
 ### Configure openvswitch on BF ###
 
 # Install openvswitch pkg
-dnf install -y \
-http://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/openvswitch2.13/2.13.0/67.el8fdp/$(uname -m)/openvswitch2.13-2.13.0-67.el8fdp.$(uname -m).rpm \
-http://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/openvswitch2.13/2.13.0/67.el8fdp/$(uname -m)/openvswitch2.13-devel-2.13.0-67.el8fdp.$(uname -m).rpm \
-http://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/openvswitch2.13/2.13.0/67.el8fdp/$(uname -m)/python3-openvswitch2.13-2.13.0-67.el8fdp.$(uname -m).rpm \
-http://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/openvswitch-selinux-extra-policy/1.0/23.el8fdp/noarch/openvswitch-selinux-extra-policy-1.0-23.el8fdp.noarch.rpm
+dnf --setopt=gpgcheck=1 --setopt='*.gpgcheck=1' --setopt=localpkg_gpgcheck=1 install -y \
+https://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/openvswitch2.13/2.13.0/67.el8fdp/$(uname -m)/openvswitch2.13-2.13.0-67.el8fdp.$(uname -m).rpm \
+https://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/openvswitch2.13/2.13.0/67.el8fdp/$(uname -m)/openvswitch2.13-devel-2.13.0-67.el8fdp.$(uname -m).rpm \
+https://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/openvswitch2.13/2.13.0/67.el8fdp/$(uname -m)/python3-openvswitch2.13-2.13.0-67.el8fdp.$(uname -m).rpm \
+https://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/openvswitch-selinux-extra-policy/1.0/23.el8fdp/noarch/openvswitch-selinux-extra-policy-1.0-23.el8fdp.noarch.rpm || exit $?
 
 
 # Enable/start openvswitch service

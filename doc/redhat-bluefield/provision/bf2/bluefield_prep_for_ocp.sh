@@ -1,8 +1,13 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 #
 # This assumes 'bluefield_provision.sh' has already been run.
 
-BASE_URL=http://file.rdu.redhat.com/~bnemeth/poc_kernel
+BASE_URL="${BLUEFIELD_KERNEL_BASE_URL:-https://file.rdu.redhat.com/~bnemeth/poc_kernel}"
+if [[ ! "$BASE_URL" =~ ^https://[a-zA-Z0-9._:/~%+-]+$ ]]; then
+	echo "BLUEFIELD_KERNEL_BASE_URL must be an HTTPS URL without shell metacharacters." >&2
+	exit 2
+fi
 VER=4.18.0-287.el8.bz1926098.bf2.poc.v2.dt3.aarch64
 
 SUBNET="172.31.100"
@@ -37,18 +42,15 @@ for I in $(seq 10 20); do
 	ssh root@${SUBNET}.${I} -i bluefield_key 'echo "ip link set p0 up" >> /etc/rc.local'
 
 	# install libreswan on BF2
-	ssh root@${SUBNET}.${I} -i bluefield_key dnf --nogpgcheck --assumeyes \
-	                            --repofrompath "rhel84-baseos,http://download.eng.bos.redhat.com/nightly/rhel-8/RHEL-8/latest-RHEL-8.4/compose/BaseOS/aarch64/os/" \
-	                            --repofrompath "rhel84-appstream,http://download.eng.bos.redhat.com/nightly/rhel-8/RHEL-8/latest-RHEL-8.4/compose/AppStream/aarch64/os/" \
+	ssh root@${SUBNET}.${I} -i bluefield_key dnf --assumeyes \
+	                            --setopt=gpgcheck=1 --setopt='*.gpgcheck=1' --setopt=localpkg_gpgcheck=1 \
+	                            --setopt=rhel84-baseos.gpgcheck=1 --setopt=rhel84-appstream.gpgcheck=1 \
+	                            --repofrompath "rhel84-baseos,https://download.eng.bos.redhat.com/nightly/rhel-8/RHEL-8/latest-RHEL-8.4/compose/BaseOS/aarch64/os/" \
+	                            --repofrompath "rhel84-appstream,https://download.eng.bos.redhat.com/nightly/rhel-8/RHEL-8/latest-RHEL-8.4/compose/AppStream/aarch64/os/" \
 	                            install libreswan
 
-	# update BF2 kernel to 8.4 kernel for ipsec offload
-	# ssh root@${SUBNET}.${I} dnf --nogpgcheck --assumeyes \
-	#                             --repofrompath "rhel84-baseos,http://download.eng.bos.redhat.com/nightly/rhel-8/RHEL-8/latest-RHEL-8.4/compose/BaseOS/aarch64/os/" \
-	#                             --repofrompath "rhel84-appstream,http://download.eng.bos.redhat.com/nightly/rhel-8/RHEL-8/latest-RHEL-8.4/compose/AppStream/aarch64/os/" \
-	#                             upgrade kernel kernel-modules-extra
-
-	ssh root@${SUBNET}.${I} -i bluefield_key dnf install -y $BASE_URL/kernel-$VER.rpm \
+	# Custom kernel packages must be signed by a key trusted on the target.
+	ssh root@${SUBNET}.${I} -i bluefield_key dnf --setopt=gpgcheck=1 --setopt='*.gpgcheck=1' --setopt=localpkg_gpgcheck=1 install -y $BASE_URL/kernel-$VER.rpm \
                                $BASE_URL/kernel-core-$VER.rpm \
 							   $BASE_URL/kernel-devel-$VER.rpm \
 							   $BASE_URL/kernel-modules-$VER.rpm \
