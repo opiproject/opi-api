@@ -8,6 +8,26 @@ see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
 
 see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
 
+### Optional I/O telemetry
+
+`VolumeStats` adds presence-aware flush/admin request counts, read/write/unmap/
+flush/admin error counts, and asynchronous event counts. These new counters are
+nonnegative 64-bit values. An omitted counter means the implementation cannot
+report it; an explicitly present zero means it was measured and no such
+operations or errors occurred. Do not substitute zero for unsupported metrics.
+
+Request counts include failures and may include in-flight operations; error
+counts describe failed completions. They must not be subtracted to infer an
+exact outstanding-I/O count. Implementations must document counter resets.
+When aggregating devices, omit a metric if any included device cannot report it;
+do not expose a partial sum as a complete total.
+
+Existing field numbers and types are unchanged. New fields use numbers 10-17.
+The new counters are independent of proposed changes to existing counter widths
+or the `VolumeStats` type name.
+
+With Buf and Go on `PATH`, run `go -C tests test ./...` from the repository root.
+
 ## Reference implementations
 
 - <https://github.com/opiproject/opi-spdk-bridge>
