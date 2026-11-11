@@ -16,10 +16,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/bgp.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -1363,12 +1363,12 @@ type BgpPeerSpec struct {
 	// peer enable/disable admin state. if peer is not enabled then local router
 	// must not initiate connections to the neighbor and must not respond to
 	// TCP connections attempts from neighbor
-	State _go.AdminState `protobuf:"varint,1,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
+	State opinetcommon.AdminState `protobuf:"varint,1,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
 	// BGP local IP address. control plane chooses the local IP address of the
 	// session if an all 0 IP address is provided
-	LocalAddress *_go.IPAddress `protobuf:"bytes,2,opt,name=local_address,json=localAddress,proto3" json:"local_address,omitempty"`
+	LocalAddress *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=local_address,json=localAddress,proto3" json:"local_address,omitempty"`
 	// BGP peer IP address
-	PeerAddr *_go.IPAddress `protobuf:"bytes,3,opt,name=peer_addr,json=peerAddr,proto3" json:"peer_addr,omitempty"`
+	PeerAddr *opinetcommon.IPAddress `protobuf:"bytes,3,opt,name=peer_addr,json=peerAddr,proto3" json:"peer_addr,omitempty"`
 	// remote 4-byte AS number
 	// (-- api-linter: core::0141::forbidden-types=disabled
 	//
@@ -1437,21 +1437,21 @@ func (*BgpPeerSpec) Descriptor() ([]byte, []int) {
 	return file_network_cloud_bgp_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *BgpPeerSpec) GetState() _go.AdminState {
+func (x *BgpPeerSpec) GetState() opinetcommon.AdminState {
 	if x != nil {
 		return x.State
 	}
-	return _go.AdminState(0)
+	return opinetcommon.AdminState(0)
 }
 
-func (x *BgpPeerSpec) GetLocalAddress() *_go.IPAddress {
+func (x *BgpPeerSpec) GetLocalAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.LocalAddress
 	}
 	return nil
 }
 
-func (x *BgpPeerSpec) GetPeerAddr() *_go.IPAddress {
+func (x *BgpPeerSpec) GetPeerAddr() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.PeerAddr
 	}
@@ -1554,7 +1554,7 @@ type BgpPeerStatus struct {
 	// Last error sent
 	LastErrorSent []byte `protobuf:"bytes,4,opt,name=last_error_sent,json=lastErrorSent,proto3" json:"last_error_sent,omitempty"`
 	// selected local address of the peer
-	LocalAddr *_go.IPAddress `protobuf:"bytes,5,opt,name=local_addr,json=localAddr,proto3" json:"local_addr,omitempty"`
+	LocalAddr *opinetcommon.IPAddress `protobuf:"bytes,5,opt,name=local_addr,json=localAddr,proto3" json:"local_addr,omitempty"`
 	// BGP session holdtime in seconds established with peer
 	Holdtime int32 `protobuf:"varint,6,opt,name=holdtime,proto3" json:"holdtime,omitempty"`
 	// BGP session keepalive in seconds established with peer
@@ -1704,7 +1704,7 @@ func (x *BgpPeerStatus) GetLastErrorSent() []byte {
 	return nil
 }
 
-func (x *BgpPeerStatus) GetLocalAddr() *_go.IPAddress {
+func (x *BgpPeerStatus) GetLocalAddr() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.LocalAddr
 	}
@@ -2073,9 +2073,9 @@ func (x *BgpPeerAf) GetState() *BgpPeerAfStatus {
 type BgpPeerAfSpec struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// BGP local IP address
-	LocalAddr *_go.IPAddress `protobuf:"bytes,1,opt,name=local_addr,json=localAddr,proto3" json:"local_addr,omitempty"`
+	LocalAddr *opinetcommon.IPAddress `protobuf:"bytes,1,opt,name=local_addr,json=localAddr,proto3" json:"local_addr,omitempty"`
 	// BGP peer IP address
-	PeerAddr *_go.IPAddress `protobuf:"bytes,2,opt,name=peer_addr,json=peerAddr,proto3" json:"peer_addr,omitempty"`
+	PeerAddr *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=peer_addr,json=peerAddr,proto3" json:"peer_addr,omitempty"`
 	// BGP address family
 	Afi BGPAfi `protobuf:"varint,3,opt,name=afi,proto3,enum=opi_api.network.cloud.v1alpha1.BGPAfi" json:"afi,omitempty"`
 	// BGP sub-address family
@@ -2099,7 +2099,7 @@ type BgpPeerAfSpec struct {
 	// Route Map definition
 	RouteMap *BGPRouteMap `protobuf:"bytes,11,opt,name=route_map,json=routeMap,proto3" json:"route_map,omitempty"`
 	// NLRI advertisement
-	Network       *_go.IPPrefix `protobuf:"bytes,12,opt,name=network,proto3" json:"network,omitempty"`
+	Network       *opinetcommon.IPPrefix `protobuf:"bytes,12,opt,name=network,proto3" json:"network,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2134,14 +2134,14 @@ func (*BgpPeerAfSpec) Descriptor() ([]byte, []int) {
 	return file_network_cloud_bgp_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *BgpPeerAfSpec) GetLocalAddr() *_go.IPAddress {
+func (x *BgpPeerAfSpec) GetLocalAddr() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.LocalAddr
 	}
 	return nil
 }
 
-func (x *BgpPeerAfSpec) GetPeerAddr() *_go.IPAddress {
+func (x *BgpPeerAfSpec) GetPeerAddr() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.PeerAddr
 	}
@@ -2211,7 +2211,7 @@ func (x *BgpPeerAfSpec) GetRouteMap() *BGPRouteMap {
 	return nil
 }
 
-func (x *BgpPeerAfSpec) GetNetwork() *_go.IPPrefix {
+func (x *BgpPeerAfSpec) GetNetwork() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.Network
 	}
@@ -2662,7 +2662,7 @@ type BGPNLRIPrefixStatus struct {
 	// Is this route part of an ECMP set
 	EcmpRoute bool `protobuf:"varint,13,opt,name=ecmp_route,json=ecmpRoute,proto3" json:"ecmp_route,omitempty"`
 	// Peer IP
-	PeerAddr *_go.IPAddress `protobuf:"bytes,14,opt,name=peer_addr,json=peerAddr,proto3" json:"peer_addr,omitempty"`
+	PeerAddr *opinetcommon.IPAddress `protobuf:"bytes,14,opt,name=peer_addr,json=peerAddr,proto3" json:"peer_addr,omitempty"`
 	// The number of times this route has flapped since statistics were last cleared.
 	FlapStatsFlapcnt int32 `protobuf:"varint,15,opt,name=flap_stats_flapcnt,json=flapStatsFlapcnt,proto3" json:"flap_stats_flapcnt,omitempty"`
 	// Whether or not this route is suppressed.
@@ -2818,7 +2818,7 @@ func (x *BGPNLRIPrefixStatus) GetEcmpRoute() bool {
 	return false
 }
 
-func (x *BGPNLRIPrefixStatus) GetPeerAddr() *_go.IPAddress {
+func (x *BGPNLRIPrefixStatus) GetPeerAddr() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.PeerAddr
 	}
@@ -2926,9 +2926,9 @@ type BGPNLRIPrefixFilter struct {
 	// filter based on route type
 	RouteType int32 `protobuf:"varint,3,opt,name=route_type,json=routeType,proto3" json:"route_type,omitempty"`
 	// filter based on next-hop address
-	NextHop *_go.IPAddress `protobuf:"bytes,4,opt,name=next_hop,json=nextHop,proto3" json:"next_hop,omitempty"`
+	NextHop *opinetcommon.IPAddress `protobuf:"bytes,4,opt,name=next_hop,json=nextHop,proto3" json:"next_hop,omitempty"`
 	// filter based on ip address
-	IpAddress *_go.IPAddress `protobuf:"bytes,5,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
+	IpAddress *opinetcommon.IPAddress `protobuf:"bytes,5,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
 	// filter to include only best routes
 	Best          bool `protobuf:"varint,6,opt,name=best,proto3" json:"best,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2986,14 +2986,14 @@ func (x *BGPNLRIPrefixFilter) GetRouteType() int32 {
 	return 0
 }
 
-func (x *BGPNLRIPrefixFilter) GetNextHop() *_go.IPAddress {
+func (x *BGPNLRIPrefixFilter) GetNextHop() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.NextHop
 	}
 	return nil
 }
 
-func (x *BGPNLRIPrefixFilter) GetIpAddress() *_go.IPAddress {
+func (x *BGPNLRIPrefixFilter) GetIpAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.IpAddress
 	}
@@ -3105,7 +3105,7 @@ func (*BGPAdjRibOutSpec) Descriptor() ([]byte, []int) {
 type BGPAdjRibOutStatus struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// BGP peer IP address
-	PeerAddr *_go.IPAddress `protobuf:"bytes,1,opt,name=peer_addr,json=peerAddr,proto3" json:"peer_addr,omitempty"`
+	PeerAddr *opinetcommon.IPAddress `protobuf:"bytes,1,opt,name=peer_addr,json=peerAddr,proto3" json:"peer_addr,omitempty"`
 	// BGP address family
 	Afi BGPAfi `protobuf:"varint,2,opt,name=afi,proto3,enum=opi_api.network.cloud.v1alpha1.BGPAfi" json:"afi,omitempty"`
 	// BGP sub-address family
@@ -3165,7 +3165,7 @@ func (*BGPAdjRibOutStatus) Descriptor() ([]byte, []int) {
 	return file_network_cloud_bgp_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *BGPAdjRibOutStatus) GetPeerAddr() *_go.IPAddress {
+func (x *BGPAdjRibOutStatus) GetPeerAddr() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.PeerAddr
 	}
@@ -3992,14 +3992,14 @@ var file_network_cloud_bgp_proto_rawDesc = []byte{
 	0x4e, 0x44, 0x49, 0x4e, 0x47, 0x5f, 0x57, 0x49, 0x54, 0x48, 0x44, 0x52, 0x41, 0x57, 0x41, 0x4c,
 	0x10, 0x03, 0x12, 0x22, 0x0a, 0x1e, 0x42, 0x47, 0x50, 0x5f, 0x41, 0x52, 0x4f, 0x5f, 0x41, 0x44,
 	0x56, 0x45, 0x52, 0x54, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x57, 0x49, 0x54, 0x48, 0x44,
-	0x52, 0x41, 0x57, 0x4e, 0x10, 0x04, 0x42, 0x69, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
+	0x52, 0x41, 0x57, 0x4e, 0x10, 0x04, 0x42, 0x63, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
 	0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e,
 	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x08, 0x42, 0x67, 0x70, 0x50, 0x72, 0x6f,
-	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
 	0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d,
-	0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75,
-	0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67,
-	0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65,
+	0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4017,43 +4017,43 @@ func file_network_cloud_bgp_proto_rawDescGZIP() []byte {
 var file_network_cloud_bgp_proto_enumTypes = make([]protoimpl.EnumInfo, 15)
 var file_network_cloud_bgp_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_network_cloud_bgp_proto_goTypes = []any{
-	(BGPAfi)(0),                 // 0: opi_api.network.cloud.v1alpha1.BGPAfi
-	(BGPSafi)(0),                // 1: opi_api.network.cloud.v1alpha1.BGPSafi
-	(BgpPeerRR)(0),              // 2: opi_api.network.cloud.v1alpha1.BgpPeerRR
-	(BgpPeerSessionState)(0),    // 3: opi_api.network.cloud.v1alpha1.BgpPeerSessionState
-	(BgpAsSize)(0),              // 4: opi_api.network.cloud.v1alpha1.BgpAsSize
-	(BGPAddrType)(0),            // 5: opi_api.network.cloud.v1alpha1.BGPAddrType
-	(BGPOperState)(0),           // 6: opi_api.network.cloud.v1alpha1.BGPOperState
-	(BgpAddPathCapNeg)(0),       // 7: opi_api.network.cloud.v1alpha1.BgpAddPathCapNeg
-	(BGPClearRouteOptions)(0),   // 8: opi_api.network.cloud.v1alpha1.BGPClearRouteOptions
-	(NLRISrc)(0),                // 9: opi_api.network.cloud.v1alpha1.NLRISrc
-	(BgpNlriIsActive)(0),        // 10: opi_api.network.cloud.v1alpha1.BgpNlriIsActive
-	(BGPRouteReason)(0),         // 11: opi_api.network.cloud.v1alpha1.BGPRouteReason
-	(BGPOriginAttr)(0),          // 12: opi_api.network.cloud.v1alpha1.BGPOriginAttr
-	(BgpPeerType)(0),            // 13: opi_api.network.cloud.v1alpha1.BgpPeerType
-	(BgpAroAdvertState)(0),      // 14: opi_api.network.cloud.v1alpha1.BgpAroAdvertState
-	(*BgpRouter)(nil),           // 15: opi_api.network.cloud.v1alpha1.BgpRouter
-	(*BgpSpec)(nil),             // 16: opi_api.network.cloud.v1alpha1.BgpSpec
-	(*BgpStatus)(nil),           // 17: opi_api.network.cloud.v1alpha1.BgpStatus
-	(*BgpPeer)(nil),             // 18: opi_api.network.cloud.v1alpha1.BgpPeer
-	(*BgpPeerSpec)(nil),         // 19: opi_api.network.cloud.v1alpha1.BgpPeerSpec
-	(*BgpPeerStatus)(nil),       // 20: opi_api.network.cloud.v1alpha1.BgpPeerStatus
-	(*BgpPeerAf)(nil),           // 21: opi_api.network.cloud.v1alpha1.BgpPeerAf
-	(*BgpPeerAfSpec)(nil),       // 22: opi_api.network.cloud.v1alpha1.BgpPeerAfSpec
-	(*BGPMaxPrefix)(nil),        // 23: opi_api.network.cloud.v1alpha1.BGPMaxPrefix
-	(*BGPMaxPrefixRestart)(nil), // 24: opi_api.network.cloud.v1alpha1.BGPMaxPrefixRestart
-	(*BGPRouteMap)(nil),         // 25: opi_api.network.cloud.v1alpha1.BGPRouteMap
-	(*BgpPeerAfStatus)(nil),     // 26: opi_api.network.cloud.v1alpha1.BgpPeerAfStatus
-	(*BGPNLRIPrefix)(nil),       // 27: opi_api.network.cloud.v1alpha1.BGPNLRIPrefix
-	(*BGPNLRIPrefixSpec)(nil),   // 28: opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec
-	(*BGPNLRIPrefixStatus)(nil), // 29: opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus
-	(*BGPNLRIPrefixFilter)(nil), // 30: opi_api.network.cloud.v1alpha1.BGPNLRIPrefixFilter
-	(*BGPAdjRibOut)(nil),        // 31: opi_api.network.cloud.v1alpha1.BGPAdjRibOut
-	(*BGPAdjRibOutSpec)(nil),    // 32: opi_api.network.cloud.v1alpha1.BGPAdjRibOutSpec
-	(*BGPAdjRibOutStatus)(nil),  // 33: opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus
-	(_go.AdminState)(0),         // 34: opi_api.network.opinetcommon.v1alpha1.AdminState
-	(*_go.IPAddress)(nil),       // 35: opi_api.network.opinetcommon.v1alpha1.IPAddress
-	(*_go.IPPrefix)(nil),        // 36: opi_api.network.opinetcommon.v1alpha1.IPPrefix
+	(BGPAfi)(0),                    // 0: opi_api.network.cloud.v1alpha1.BGPAfi
+	(BGPSafi)(0),                   // 1: opi_api.network.cloud.v1alpha1.BGPSafi
+	(BgpPeerRR)(0),                 // 2: opi_api.network.cloud.v1alpha1.BgpPeerRR
+	(BgpPeerSessionState)(0),       // 3: opi_api.network.cloud.v1alpha1.BgpPeerSessionState
+	(BgpAsSize)(0),                 // 4: opi_api.network.cloud.v1alpha1.BgpAsSize
+	(BGPAddrType)(0),               // 5: opi_api.network.cloud.v1alpha1.BGPAddrType
+	(BGPOperState)(0),              // 6: opi_api.network.cloud.v1alpha1.BGPOperState
+	(BgpAddPathCapNeg)(0),          // 7: opi_api.network.cloud.v1alpha1.BgpAddPathCapNeg
+	(BGPClearRouteOptions)(0),      // 8: opi_api.network.cloud.v1alpha1.BGPClearRouteOptions
+	(NLRISrc)(0),                   // 9: opi_api.network.cloud.v1alpha1.NLRISrc
+	(BgpNlriIsActive)(0),           // 10: opi_api.network.cloud.v1alpha1.BgpNlriIsActive
+	(BGPRouteReason)(0),            // 11: opi_api.network.cloud.v1alpha1.BGPRouteReason
+	(BGPOriginAttr)(0),             // 12: opi_api.network.cloud.v1alpha1.BGPOriginAttr
+	(BgpPeerType)(0),               // 13: opi_api.network.cloud.v1alpha1.BgpPeerType
+	(BgpAroAdvertState)(0),         // 14: opi_api.network.cloud.v1alpha1.BgpAroAdvertState
+	(*BgpRouter)(nil),              // 15: opi_api.network.cloud.v1alpha1.BgpRouter
+	(*BgpSpec)(nil),                // 16: opi_api.network.cloud.v1alpha1.BgpSpec
+	(*BgpStatus)(nil),              // 17: opi_api.network.cloud.v1alpha1.BgpStatus
+	(*BgpPeer)(nil),                // 18: opi_api.network.cloud.v1alpha1.BgpPeer
+	(*BgpPeerSpec)(nil),            // 19: opi_api.network.cloud.v1alpha1.BgpPeerSpec
+	(*BgpPeerStatus)(nil),          // 20: opi_api.network.cloud.v1alpha1.BgpPeerStatus
+	(*BgpPeerAf)(nil),              // 21: opi_api.network.cloud.v1alpha1.BgpPeerAf
+	(*BgpPeerAfSpec)(nil),          // 22: opi_api.network.cloud.v1alpha1.BgpPeerAfSpec
+	(*BGPMaxPrefix)(nil),           // 23: opi_api.network.cloud.v1alpha1.BGPMaxPrefix
+	(*BGPMaxPrefixRestart)(nil),    // 24: opi_api.network.cloud.v1alpha1.BGPMaxPrefixRestart
+	(*BGPRouteMap)(nil),            // 25: opi_api.network.cloud.v1alpha1.BGPRouteMap
+	(*BgpPeerAfStatus)(nil),        // 26: opi_api.network.cloud.v1alpha1.BgpPeerAfStatus
+	(*BGPNLRIPrefix)(nil),          // 27: opi_api.network.cloud.v1alpha1.BGPNLRIPrefix
+	(*BGPNLRIPrefixSpec)(nil),      // 28: opi_api.network.cloud.v1alpha1.BGPNLRIPrefixSpec
+	(*BGPNLRIPrefixStatus)(nil),    // 29: opi_api.network.cloud.v1alpha1.BGPNLRIPrefixStatus
+	(*BGPNLRIPrefixFilter)(nil),    // 30: opi_api.network.cloud.v1alpha1.BGPNLRIPrefixFilter
+	(*BGPAdjRibOut)(nil),           // 31: opi_api.network.cloud.v1alpha1.BGPAdjRibOut
+	(*BGPAdjRibOutSpec)(nil),       // 32: opi_api.network.cloud.v1alpha1.BGPAdjRibOutSpec
+	(*BGPAdjRibOutStatus)(nil),     // 33: opi_api.network.cloud.v1alpha1.BGPAdjRibOutStatus
+	(opinetcommon.AdminState)(0),   // 34: opi_api.network.opinetcommon.v1alpha1.AdminState
+	(*opinetcommon.IPAddress)(nil), // 35: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(*opinetcommon.IPPrefix)(nil),  // 36: opi_api.network.opinetcommon.v1alpha1.IPPrefix
 }
 var file_network_cloud_bgp_proto_depIdxs = []int32{
 	16, // 0: opi_api.network.cloud.v1alpha1.BgpRouter.spec:type_name -> opi_api.network.cloud.v1alpha1.BgpSpec

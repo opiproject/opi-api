@@ -12,7 +12,7 @@ package opi_api.network.opinetcommon.v1alpha1;
 import "google/api/field_behavior.proto";
 import "network/opinetcommon/networkvlan.proto";
 
-option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
+option go_package = "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon";
 option java_multiple_files = true;
 option java_outer_classname = "NetworkEthernetProto";
 option java_package = "opi_api.network.opinetcommon.v1alpha1";

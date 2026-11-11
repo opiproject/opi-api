@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/mapping.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -223,9 +223,9 @@ type MappingSpec struct {
 	// overlay MAC address of this mapping
 	MacAddr []byte `protobuf:"bytes,7,opt,name=mac_addr,json=macAddr,proto3" json:"mac_addr,omitempty"`
 	// fabric encap information specific to this mapping, if any
-	Encap *_go.Encap `protobuf:"bytes,8,opt,name=encap,proto3" json:"encap,omitempty"`
+	Encap *opinetcommon.Encap `protobuf:"bytes,8,opt,name=encap,proto3" json:"encap,omitempty"`
 	// public IP, if overlay IP has corresponding public IP
-	PublicIp *_go.IPAddress `protobuf:"bytes,9,opt,name=public_ip,json=publicIp,proto3" json:"public_ip,omitempty"`
+	PublicIp *opinetcommon.IPAddress `protobuf:"bytes,9,opt,name=public_ip,json=publicIp,proto3" json:"public_ip,omitempty"`
 	// tag/label/security group of this IP mapping, these tags/labels/SGs can be
 	// used in defining security policy rules
 	// range: 1 - 4294967294
@@ -342,14 +342,14 @@ func (x *MappingSpec) GetMacAddr() []byte {
 	return nil
 }
 
-func (x *MappingSpec) GetEncap() *_go.Encap {
+func (x *MappingSpec) GetEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.Encap
 	}
 	return nil
 }
 
-func (x *MappingSpec) GetPublicIp() *_go.IPAddress {
+func (x *MappingSpec) GetPublicIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.PublicIp
 	}
@@ -425,11 +425,11 @@ type MappingStatus struct {
 	// public to private IP xlation nat index
 	PrivateNatIndex int32 `protobuf:"varint,2,opt,name=private_nat_index,json=privateNatIndex,proto3" json:"private_nat_index,omitempty"`
 	// tunnel IP address
-	TunnelIp []*_go.IPAddress `protobuf:"bytes,3,rep,name=tunnel_ip,json=tunnelIp,proto3" json:"tunnel_ip,omitempty"`
+	TunnelIp []*opinetcommon.IPAddress `protobuf:"bytes,3,rep,name=tunnel_ip,json=tunnelIp,proto3" json:"tunnel_ip,omitempty"`
 	// service to backend port mapping hw handle
-	SvcPortMapHwHandle *_go.HwHandle `protobuf:"bytes,4,opt,name=svc_port_map_hw_handle,json=svcPortMapHwHandle,proto3" json:"svc_port_map_hw_handle,omitempty"`
+	SvcPortMapHwHandle *opinetcommon.HwHandle `protobuf:"bytes,4,opt,name=svc_port_map_hw_handle,json=svcPortMapHwHandle,proto3" json:"svc_port_map_hw_handle,omitempty"`
 	// VNF tunnel hw handle
-	VnfTunnelHwHandle *_go.HwHandle `protobuf:"bytes,5,opt,name=vnf_tunnel_hw_handle,json=vnfTunnelHwHandle,proto3" json:"vnf_tunnel_hw_handle,omitempty"`
+	VnfTunnelHwHandle *opinetcommon.HwHandle `protobuf:"bytes,5,opt,name=vnf_tunnel_hw_handle,json=vnfTunnelHwHandle,proto3" json:"vnf_tunnel_hw_handle,omitempty"`
 	// rewrite index
 	RewriteIndex  int32 `protobuf:"varint,6,opt,name=rewrite_index,json=rewriteIndex,proto3" json:"rewrite_index,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -480,21 +480,21 @@ func (x *MappingStatus) GetPrivateNatIndex() int32 {
 	return 0
 }
 
-func (x *MappingStatus) GetTunnelIp() []*_go.IPAddress {
+func (x *MappingStatus) GetTunnelIp() []*opinetcommon.IPAddress {
 	if x != nil {
 		return x.TunnelIp
 	}
 	return nil
 }
 
-func (x *MappingStatus) GetSvcPortMapHwHandle() *_go.HwHandle {
+func (x *MappingStatus) GetSvcPortMapHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.SvcPortMapHwHandle
 	}
 	return nil
 }
 
-func (x *MappingStatus) GetVnfTunnelHwHandle() *_go.HwHandle {
+func (x *MappingStatus) GetVnfTunnelHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.VnfTunnelHwHandle
 	}
@@ -514,7 +514,7 @@ type L3MappingKey struct {
 	// virtual private cloud of the IP mapping
 	VpcNameRef string `protobuf:"bytes,1,opt,name=vpc_name_ref,json=vpcNameRef,proto3" json:"vpc_name_ref,omitempty"`
 	// private/overlay IP of the mapping
-	IpAddress     *_go.IPAddress `protobuf:"bytes,2,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
+	IpAddress     *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -556,7 +556,7 @@ func (x *L3MappingKey) GetVpcNameRef() string {
 	return ""
 }
 
-func (x *L3MappingKey) GetIpAddress() *_go.IPAddress {
+func (x *L3MappingKey) GetIpAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.IpAddress
 	}
@@ -716,7 +716,7 @@ func (x *MappingLookupFilter) GetMacKey() *L2MappingKey {
 	return nil
 }
 
-func (x *MappingLookupFilter) GetIpAddress() *_go.IPAddress {
+func (x *MappingLookupFilter) GetIpAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		if x, ok := x.IpOrMac.(*MappingLookupFilter_IpAddress); ok {
 			return x.IpAddress
@@ -759,7 +759,7 @@ type MappingLookupFilter_MacKey struct {
 
 type MappingLookupFilter_IpAddress struct {
 	// IP address
-	IpAddress *_go.IPAddress `protobuf:"bytes,6,opt,name=ip_address,json=ipAddress,proto3,oneof"`
+	IpAddress *opinetcommon.IPAddress `protobuf:"bytes,6,opt,name=ip_address,json=ipAddress,proto3,oneof"`
 }
 
 type MappingLookupFilter_MacAddress struct {
@@ -930,14 +930,14 @@ var file_network_cloud_mapping_proto_rawDesc = []byte{
 	0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x17, 0x0a, 0x13, 0x4d, 0x41, 0x50, 0x50, 0x49, 0x4e, 0x47,
 	0x5f, 0x4b, 0x45, 0x59, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x4c, 0x32, 0x10, 0x01, 0x12, 0x17,
 	0x0a, 0x13, 0x4d, 0x41, 0x50, 0x50, 0x49, 0x4e, 0x47, 0x5f, 0x4b, 0x45, 0x59, 0x5f, 0x54, 0x59,
-	0x50, 0x45, 0x5f, 0x4c, 0x33, 0x10, 0x02, 0x42, 0x6d, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61,
+	0x50, 0x45, 0x5f, 0x4c, 0x33, 0x10, 0x02, 0x42, 0x67, 0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61,
 	0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64,
 	0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x0c, 0x4d, 0x61, 0x70, 0x70, 0x69,
-	0x6e, 0x67, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x6e, 0x67, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75,
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74,
-	0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b,
-	0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f,
-	0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f,
+	0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -955,17 +955,17 @@ func file_network_cloud_mapping_proto_rawDescGZIP() []byte {
 var file_network_cloud_mapping_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_network_cloud_mapping_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_network_cloud_mapping_proto_goTypes = []any{
-	(MappingType)(0),            // 0: opi_api.network.cloud.v1alpha1.MappingType
-	(MappingKeyType)(0),         // 1: opi_api.network.cloud.v1alpha1.MappingKeyType
-	(*Mapping)(nil),             // 2: opi_api.network.cloud.v1alpha1.Mapping
-	(*MappingSpec)(nil),         // 3: opi_api.network.cloud.v1alpha1.MappingSpec
-	(*MappingStatus)(nil),       // 4: opi_api.network.cloud.v1alpha1.MappingStatus
-	(*L3MappingKey)(nil),        // 5: opi_api.network.cloud.v1alpha1.L3MappingKey
-	(*L2MappingKey)(nil),        // 6: opi_api.network.cloud.v1alpha1.L2MappingKey
-	(*MappingLookupFilter)(nil), // 7: opi_api.network.cloud.v1alpha1.MappingLookupFilter
-	(*_go.Encap)(nil),           // 8: opi_api.network.opinetcommon.v1alpha1.Encap
-	(*_go.IPAddress)(nil),       // 9: opi_api.network.opinetcommon.v1alpha1.IPAddress
-	(*_go.HwHandle)(nil),        // 10: opi_api.network.opinetcommon.v1alpha1.HwHandle
+	(MappingType)(0),               // 0: opi_api.network.cloud.v1alpha1.MappingType
+	(MappingKeyType)(0),            // 1: opi_api.network.cloud.v1alpha1.MappingKeyType
+	(*Mapping)(nil),                // 2: opi_api.network.cloud.v1alpha1.Mapping
+	(*MappingSpec)(nil),            // 3: opi_api.network.cloud.v1alpha1.MappingSpec
+	(*MappingStatus)(nil),          // 4: opi_api.network.cloud.v1alpha1.MappingStatus
+	(*L3MappingKey)(nil),           // 5: opi_api.network.cloud.v1alpha1.L3MappingKey
+	(*L2MappingKey)(nil),           // 6: opi_api.network.cloud.v1alpha1.L2MappingKey
+	(*MappingLookupFilter)(nil),    // 7: opi_api.network.cloud.v1alpha1.MappingLookupFilter
+	(*opinetcommon.Encap)(nil),     // 8: opi_api.network.opinetcommon.v1alpha1.Encap
+	(*opinetcommon.IPAddress)(nil), // 9: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(*opinetcommon.HwHandle)(nil),  // 10: opi_api.network.opinetcommon.v1alpha1.HwHandle
 }
 var file_network_cloud_mapping_proto_depIdxs = []int32{
 	3,  // 0: opi_api.network.cloud.v1alpha1.Mapping.spec:type_name -> opi_api.network.cloud.v1alpha1.MappingSpec

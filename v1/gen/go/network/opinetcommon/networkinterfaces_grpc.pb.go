@@ -12,7 +12,7 @@
 // - protoc             (unknown)
 // source: network/opinetcommon/networkinterfaces.proto
 
-package _go
+package opinetcommon
 
 import (
 	context "context"

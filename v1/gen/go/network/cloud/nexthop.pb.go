@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/nexthop.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -411,7 +411,7 @@ type IPNextHopSpec struct {
 	// egress VRF id
 	VpcNameRef string `protobuf:"bytes,1,opt,name=vpc_name_ref,json=vpcNameRef,proto3" json:"vpc_name_ref,omitempty"`
 	// nexthop's IP address
-	IpAddress *_go.IPAddress `protobuf:"bytes,2,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
+	IpAddress *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
 	// egress vlan
 	Vlan int32 `protobuf:"varint,3,opt,name=vlan,proto3" json:"vlan,omitempty"`
 	// mac address
@@ -457,7 +457,7 @@ func (x *IPNextHopSpec) GetVpcNameRef() string {
 	return ""
 }
 
-func (x *IPNextHopSpec) GetIpAddress() *_go.IPAddress {
+func (x *IPNextHopSpec) GetIpAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.IpAddress
 	}
@@ -482,7 +482,7 @@ func (x *IPNextHopSpec) GetMac() []byte {
 type NextHopStatus struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// nexthop hw id
-	HwHandle *_go.HwHandle `protobuf:"bytes,1,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
+	HwHandle *opinetcommon.HwHandle `protobuf:"bytes,1,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
 	// next hop info
 	//
 	// Types that are valid to be assigned to Nhinfo:
@@ -524,7 +524,7 @@ func (*NextHopStatus) Descriptor() ([]byte, []int) {
 	return file_network_cloud_nexthop_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *NextHopStatus) GetHwHandle() *_go.HwHandle {
+func (x *NextHopStatus) GetHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.HwHandle
 	}
@@ -633,7 +633,7 @@ func (x *UnderlayNextHopStatus) GetVlan() int32 {
 type OverlayNextHopStatus struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// tunnel ip
-	TunnelIp      *_go.IPAddress `protobuf:"bytes,1,opt,name=tunnel_ip,json=tunnelIp,proto3" json:"tunnel_ip,omitempty"`
+	TunnelIp      *opinetcommon.IPAddress `protobuf:"bytes,1,opt,name=tunnel_ip,json=tunnelIp,proto3" json:"tunnel_ip,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -668,7 +668,7 @@ func (*OverlayNextHopStatus) Descriptor() ([]byte, []int) {
 	return file_network_cloud_nexthop_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *OverlayNextHopStatus) GetTunnelIp() *_go.IPAddress {
+func (x *OverlayNextHopStatus) GetTunnelIp() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.TunnelIp
 	}
@@ -885,7 +885,7 @@ type NextHopGroupStatus struct {
 	// nexthop group member status
 	Members []*NextHopStatus `protobuf:"bytes,1,rep,name=members,proto3" json:"members,omitempty"`
 	// nexthop group hw id
-	HwHandle      *_go.HwHandle `protobuf:"bytes,2,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
+	HwHandle      *opinetcommon.HwHandle `protobuf:"bytes,2,opt,name=hw_handle,json=hwHandle,proto3" json:"hw_handle,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -927,7 +927,7 @@ func (x *NextHopGroupStatus) GetMembers() []*NextHopStatus {
 	return nil
 }
 
-func (x *NextHopGroupStatus) GetHwHandle() *_go.HwHandle {
+func (x *NextHopGroupStatus) GetHwHandle() *opinetcommon.HwHandle {
 	if x != nil {
 		return x.HwHandle
 	}
@@ -1184,15 +1184,14 @@ var file_network_cloud_nexthop_proto_rawDesc = []byte{
 	0x4f, 0x55, 0x50, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x4f, 0x56, 0x45, 0x52, 0x4c, 0x41, 0x59,
 	0x5f, 0x45, 0x43, 0x4d, 0x50, 0x10, 0x01, 0x12, 0x25, 0x0a, 0x21, 0x4e, 0x45, 0x58, 0x54, 0x5f,
 	0x48, 0x4f, 0x50, 0x5f, 0x47, 0x52, 0x4f, 0x55, 0x50, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x55,
-	0x4e, 0x44, 0x45, 0x52, 0x4c, 0x41, 0x59, 0x5f, 0x45, 0x43, 0x4d, 0x50, 0x10, 0x02, 0x42, 0x6d,
+	0x4e, 0x44, 0x45, 0x52, 0x4c, 0x41, 0x59, 0x5f, 0x45, 0x43, 0x4d, 0x50, 0x10, 0x02, 0x42, 0x67,
 	0x0a, 0x1e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72,
 	0x6b, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
 	0x42, 0x0c, 0x4e, 0x65, 0x78, 0x74, 0x48, 0x6f, 0x70, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
-	0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69,
+	0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69,
 	0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f,
-	0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72,
+	0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1210,23 +1209,23 @@ func file_network_cloud_nexthop_proto_rawDescGZIP() []byte {
 var file_network_cloud_nexthop_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_network_cloud_nexthop_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_network_cloud_nexthop_proto_goTypes = []any{
-	(NextHopType)(0),              // 0: opi_api.network.cloud.v1alpha1.NextHopType
-	(NextHopGroupType)(0),         // 1: opi_api.network.cloud.v1alpha1.NextHopGroupType
-	(*NextHop)(nil),               // 2: opi_api.network.cloud.v1alpha1.NextHop
-	(*NextHopSpec)(nil),           // 3: opi_api.network.cloud.v1alpha1.NextHopSpec
-	(*UnderlayNextHopSpec)(nil),   // 4: opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec
-	(*OverlayNextHopSpec)(nil),    // 5: opi_api.network.cloud.v1alpha1.OverlayNextHopSpec
-	(*IPNextHopSpec)(nil),         // 6: opi_api.network.cloud.v1alpha1.IPNextHopSpec
-	(*NextHopStatus)(nil),         // 7: opi_api.network.cloud.v1alpha1.NextHopStatus
-	(*UnderlayNextHopStatus)(nil), // 8: opi_api.network.cloud.v1alpha1.UnderlayNextHopStatus
-	(*OverlayNextHopStatus)(nil),  // 9: opi_api.network.cloud.v1alpha1.OverlayNextHopStatus
-	(*NextHopLookup)(nil),         // 10: opi_api.network.cloud.v1alpha1.NextHopLookup
-	(*NextHopGroup)(nil),          // 11: opi_api.network.cloud.v1alpha1.NextHopGroup
-	(*NextHopGroupSpec)(nil),      // 12: opi_api.network.cloud.v1alpha1.NextHopGroupSpec
-	(*NextHopGroupStatus)(nil),    // 13: opi_api.network.cloud.v1alpha1.NextHopGroupStatus
-	(*NextHopGroupLookup)(nil),    // 14: opi_api.network.cloud.v1alpha1.NextHopGroupLookup
-	(*_go.IPAddress)(nil),         // 15: opi_api.network.opinetcommon.v1alpha1.IPAddress
-	(*_go.HwHandle)(nil),          // 16: opi_api.network.opinetcommon.v1alpha1.HwHandle
+	(NextHopType)(0),               // 0: opi_api.network.cloud.v1alpha1.NextHopType
+	(NextHopGroupType)(0),          // 1: opi_api.network.cloud.v1alpha1.NextHopGroupType
+	(*NextHop)(nil),                // 2: opi_api.network.cloud.v1alpha1.NextHop
+	(*NextHopSpec)(nil),            // 3: opi_api.network.cloud.v1alpha1.NextHopSpec
+	(*UnderlayNextHopSpec)(nil),    // 4: opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec
+	(*OverlayNextHopSpec)(nil),     // 5: opi_api.network.cloud.v1alpha1.OverlayNextHopSpec
+	(*IPNextHopSpec)(nil),          // 6: opi_api.network.cloud.v1alpha1.IPNextHopSpec
+	(*NextHopStatus)(nil),          // 7: opi_api.network.cloud.v1alpha1.NextHopStatus
+	(*UnderlayNextHopStatus)(nil),  // 8: opi_api.network.cloud.v1alpha1.UnderlayNextHopStatus
+	(*OverlayNextHopStatus)(nil),   // 9: opi_api.network.cloud.v1alpha1.OverlayNextHopStatus
+	(*NextHopLookup)(nil),          // 10: opi_api.network.cloud.v1alpha1.NextHopLookup
+	(*NextHopGroup)(nil),           // 11: opi_api.network.cloud.v1alpha1.NextHopGroup
+	(*NextHopGroupSpec)(nil),       // 12: opi_api.network.cloud.v1alpha1.NextHopGroupSpec
+	(*NextHopGroupStatus)(nil),     // 13: opi_api.network.cloud.v1alpha1.NextHopGroupStatus
+	(*NextHopGroupLookup)(nil),     // 14: opi_api.network.cloud.v1alpha1.NextHopGroupLookup
+	(*opinetcommon.IPAddress)(nil), // 15: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(*opinetcommon.HwHandle)(nil),  // 16: opi_api.network.opinetcommon.v1alpha1.HwHandle
 }
 var file_network_cloud_nexthop_proto_depIdxs = []int32{
 	3,  // 0: opi_api.network.cloud.v1alpha1.NextHop.spec:type_name -> opi_api.network.cloud.v1alpha1.NextHopSpec

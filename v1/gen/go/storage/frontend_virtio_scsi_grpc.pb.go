@@ -8,7 +8,7 @@
 // - protoc             (unknown)
 // source: storage/frontend_virtio_scsi.proto
 
-package _go
+package storage
 
 import (
 	context "context"

@@ -2,11 +2,11 @@
 // source: network/cloud/cloudrpc.proto
 
 /*
-Package _go is a reverse proxy.
+Package cloud is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package _go
+package cloud
 
 import (
 	"context"

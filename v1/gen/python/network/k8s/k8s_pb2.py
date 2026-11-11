@@ -24,12 +24,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15network/k8s/k8s.proto\x12\x1copi_api.network.k8s.v1alpha1Be\n\x1copi_api.network.k8s.v1alpha1B\x08K8sProtoP\x01Z9github.com/opiproject/opi-api/network/k8s/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15network/k8s/k8s.proto\x12\x1copi_api.network.k8s.v1alpha1B_\n\x1copi_api.network.k8s.v1alpha1B\x08K8sProtoP\x01Z3github.com/opiproject/opi-api/v1/gen/go/network/k8sb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'network.k8s.k8s_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\034opi_api.network.k8s.v1alpha1B\010K8sProtoP\001Z9github.com/opiproject/opi-api/network/k8s/v1alpha1/gen/go'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\034opi_api.network.k8s.v1alpha1B\010K8sProtoP\001Z3github.com/opiproject/opi-api/v1/gen/go/network/k8s'
 # @@protoc_insertion_point(module_scope)

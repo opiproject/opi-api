@@ -25,7 +25,7 @@ import "network/cloud/underlayroute.proto";
 import "network/cloud/vnic.proto";
 import "network/cloud/vpc.proto";
 
-option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+option go_package = "github.com/opiproject/opi-api/v1/gen/go/network/cloud";
 option java_multiple_files = true;
 option java_outer_classname = "CloudRPC";
 option java_package = "opi_api.network.cloud.v1alpha1";

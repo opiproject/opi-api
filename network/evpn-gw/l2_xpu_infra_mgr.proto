@@ -24,7 +24,7 @@ import "google/protobuf/field_mask.proto";
 import "network/evpn-gw/component.proto";
 import "network/opinetcommon/networktypes.proto";
 
-option go_package = "github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go";
+option go_package = "github.com/opiproject/opi-api/v1/gen/go/network/evpn-gw;evpngw";
 option java_multiple_files = true;
 option java_outer_classname = "L2XpuInfraMgrProto";
 option java_package = "opi_api.network.evpn_gw.v1alpha1";

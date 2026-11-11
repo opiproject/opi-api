@@ -9,7 +9,7 @@
 // - protoc             (unknown)
 // source: storage/frontend_nvme.proto
 
-package _go
+package storage
 
 import (
 	context "context"

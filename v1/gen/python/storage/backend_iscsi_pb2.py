@@ -24,12 +24,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bstorage/backend_iscsi.proto\x12\x12opi_api.storage.v1B`\n\x12opi_api.storage.v1B\x11\x42\x61\x63kendIscsiProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bstorage/backend_iscsi.proto\x12\x12opi_api.storage.v1BZ\n\x12opi_api.storage.v1B\x11\x42\x61\x63kendIscsiProtoP\x01Z/github.com/opiproject/opi-api/v1/gen/go/storageb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'storage.backend_iscsi_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\022opi_api.storage.v1B\021BackendIscsiProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\022opi_api.storage.v1B\021BackendIscsiProtoP\001Z/github.com/opiproject/opi-api/v1/gen/go/storage'
 # @@protoc_insertion_point(module_scope)

@@ -7,10 +7,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/route.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -152,7 +152,7 @@ func (x *RouteTable) GetStatus() *RouteTableStatus {
 type RouteTableSpec struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// IP address family
-	Af _go.IpAf `protobuf:"varint,1,opt,name=af,proto3,enum=opi_api.network.opinetcommon.v1alpha1.IpAf" json:"af,omitempty"`
+	Af opinetcommon.IpAf `protobuf:"varint,1,opt,name=af,proto3,enum=opi_api.network.opinetcommon.v1alpha1.IpAf" json:"af,omitempty"`
 	// enable or disable priority based routing for the route table
 	PriorityEnable bool `protobuf:"varint,2,opt,name=priority_enable,json=priorityEnable,proto3" json:"priority_enable,omitempty"`
 	// all routes in this route table
@@ -193,11 +193,11 @@ func (*RouteTableSpec) Descriptor() ([]byte, []int) {
 	return file_network_cloud_route_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *RouteTableSpec) GetAf() _go.IpAf {
+func (x *RouteTableSpec) GetAf() opinetcommon.IpAf {
 	if x != nil {
 		return x.Af
 	}
-	return _go.IpAf(0)
+	return opinetcommon.IpAf(0)
 }
 
 func (x *RouteTableSpec) GetPriorityEnable() bool {
@@ -392,7 +392,7 @@ func (x *RouteTableStatus) GetHwLpmRewriteBlockIdx() int32 {
 type RouteAttrs struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// IP prefix
-	Prefix *_go.IPPrefix `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
+	Prefix *opinetcommon.IPPrefix `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
 	// class of the route
 	RouteClass RouteClass `protobuf:"varint,2,opt,name=route_class,json=routeClass,proto3,enum=opi_api.network.cloud.v1alpha1.RouteClass" json:"route_class,omitempty"`
 	// priority of the route class this route belongs to (range: 0-15)
@@ -427,7 +427,7 @@ type RouteAttrs struct {
 	// in vpc, subnet and tunnel objects
 	Tos int32 `protobuf:"varint,12,opt,name=tos,proto3" json:"tos,omitempty"`
 	// override encap for this route (from what is programmed for a subnet or a vpc)
-	Encap *_go.Encap `protobuf:"bytes,13,opt,name=encap,proto3" json:"encap,omitempty"`
+	Encap *opinetcommon.Encap `protobuf:"bytes,13,opt,name=encap,proto3" json:"encap,omitempty"`
 	// when a custom overlay MAC is provided in the route configuration, the MAC
 	// address is used as inner DMAC in the (VxLAN) encapped packet
 	OverlayMac    []byte `protobuf:"bytes,14,opt,name=overlay_mac,json=overlayMac,proto3" json:"overlay_mac,omitempty"`
@@ -465,7 +465,7 @@ func (*RouteAttrs) Descriptor() ([]byte, []int) {
 	return file_network_cloud_route_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *RouteAttrs) GetPrefix() *_go.IPPrefix {
+func (x *RouteAttrs) GetPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.Prefix
 	}
@@ -570,7 +570,7 @@ func (x *RouteAttrs) GetTos() int32 {
 	return 0
 }
 
-func (x *RouteAttrs) GetEncap() *_go.Encap {
+func (x *RouteAttrs) GetEncap() *opinetcommon.Encap {
 	if x != nil {
 		return x.Encap
 	}
@@ -709,7 +709,7 @@ func (x *VPCPeerNhInfo) GetRouteTableNameRef() string {
 type OverlayNextHopIPInfo struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// overlay nexthop IP list
-	NexthopIp []*_go.IPAddress `protobuf:"bytes,1,rep,name=nexthop_ip,json=nexthopIp,proto3" json:"nexthop_ip,omitempty"`
+	NexthopIp []*opinetcommon.IPAddress `protobuf:"bytes,1,rep,name=nexthop_ip,json=nexthopIp,proto3" json:"nexthop_ip,omitempty"`
 	// overlay MAC (DMAC inner) to be used when corresponding
 	// to the overlay nexthop IP picked
 	NexthopMac [][]byte `protobuf:"bytes,2,rep,name=nexthop_mac,json=nexthopMac,proto3" json:"nexthop_mac,omitempty"`
@@ -749,7 +749,7 @@ func (*OverlayNextHopIPInfo) Descriptor() ([]byte, []int) {
 	return file_network_cloud_route_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *OverlayNextHopIPInfo) GetNexthopIp() []*_go.IPAddress {
+func (x *OverlayNextHopIPInfo) GetNexthopIp() []*opinetcommon.IPAddress {
 	if x != nil {
 		return x.NexthopIp
 	}
@@ -1145,14 +1145,14 @@ var file_network_cloud_route_proto_rawDesc = []byte{
 	0x53, 0x53, 0x5f, 0x49, 0x4e, 0x54, 0x45, 0x52, 0x4e, 0x45, 0x54, 0x10, 0x01, 0x12, 0x17, 0x0a,
 	0x13, 0x52, 0x4f, 0x55, 0x54, 0x45, 0x5f, 0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x53, 0x45, 0x52,
 	0x56, 0x49, 0x43, 0x45, 0x10, 0x02, 0x12, 0x13, 0x0a, 0x0f, 0x52, 0x4f, 0x55, 0x54, 0x45, 0x5f,
-	0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x56, 0x50, 0x43, 0x10, 0x03, 0x42, 0x6b, 0x0a, 0x1e, 0x6f,
+	0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x56, 0x50, 0x43, 0x10, 0x03, 0x42, 0x65, 0x0a, 0x1e, 0x6f,
 	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x63,
 	0x6c, 0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x0a, 0x52,
-	0x6f, 0x75, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74,
+	0x6f, 0x75, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65,
-	0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f,
-	0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
-	0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
+	0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f,
+	0x75, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1170,22 +1170,22 @@ func file_network_cloud_route_proto_rawDescGZIP() []byte {
 var file_network_cloud_route_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_network_cloud_route_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_network_cloud_route_proto_goTypes = []any{
-	(RouteClass)(0),              // 0: opi_api.network.cloud.v1alpha1.RouteClass
-	(*RouteTable)(nil),           // 1: opi_api.network.cloud.v1alpha1.RouteTable
-	(*RouteTableSpec)(nil),       // 2: opi_api.network.cloud.v1alpha1.RouteTableSpec
-	(*RouteInfo)(nil),            // 3: opi_api.network.cloud.v1alpha1.RouteInfo
-	(*RouteTableStatus)(nil),     // 4: opi_api.network.cloud.v1alpha1.RouteTableStatus
-	(*RouteAttrs)(nil),           // 5: opi_api.network.cloud.v1alpha1.RouteAttrs
-	(*VPCPeerNhInfo)(nil),        // 6: opi_api.network.cloud.v1alpha1.VPCPeerNhInfo
-	(*OverlayNextHopIPInfo)(nil), // 7: opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo
-	(*RouteId)(nil),              // 8: opi_api.network.cloud.v1alpha1.RouteId
-	(*Route)(nil),                // 9: opi_api.network.cloud.v1alpha1.Route
-	(*RouteSpec)(nil),            // 10: opi_api.network.cloud.v1alpha1.RouteSpec
-	(*RouteStatus)(nil),          // 11: opi_api.network.cloud.v1alpha1.RouteStatus
-	(_go.IpAf)(0),                // 12: opi_api.network.opinetcommon.v1alpha1.IpAf
-	(*_go.IPPrefix)(nil),         // 13: opi_api.network.opinetcommon.v1alpha1.IPPrefix
-	(*_go.Encap)(nil),            // 14: opi_api.network.opinetcommon.v1alpha1.Encap
-	(*_go.IPAddress)(nil),        // 15: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(RouteClass)(0),                // 0: opi_api.network.cloud.v1alpha1.RouteClass
+	(*RouteTable)(nil),             // 1: opi_api.network.cloud.v1alpha1.RouteTable
+	(*RouteTableSpec)(nil),         // 2: opi_api.network.cloud.v1alpha1.RouteTableSpec
+	(*RouteInfo)(nil),              // 3: opi_api.network.cloud.v1alpha1.RouteInfo
+	(*RouteTableStatus)(nil),       // 4: opi_api.network.cloud.v1alpha1.RouteTableStatus
+	(*RouteAttrs)(nil),             // 5: opi_api.network.cloud.v1alpha1.RouteAttrs
+	(*VPCPeerNhInfo)(nil),          // 6: opi_api.network.cloud.v1alpha1.VPCPeerNhInfo
+	(*OverlayNextHopIPInfo)(nil),   // 7: opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo
+	(*RouteId)(nil),                // 8: opi_api.network.cloud.v1alpha1.RouteId
+	(*Route)(nil),                  // 9: opi_api.network.cloud.v1alpha1.Route
+	(*RouteSpec)(nil),              // 10: opi_api.network.cloud.v1alpha1.RouteSpec
+	(*RouteStatus)(nil),            // 11: opi_api.network.cloud.v1alpha1.RouteStatus
+	(opinetcommon.IpAf)(0),         // 12: opi_api.network.opinetcommon.v1alpha1.IpAf
+	(*opinetcommon.IPPrefix)(nil),  // 13: opi_api.network.opinetcommon.v1alpha1.IPPrefix
+	(*opinetcommon.Encap)(nil),     // 14: opi_api.network.opinetcommon.v1alpha1.Encap
+	(*opinetcommon.IPAddress)(nil), // 15: opi_api.network.opinetcommon.v1alpha1.IPAddress
 }
 var file_network_cloud_route_proto_depIdxs = []int32{
 	2,  // 0: opi_api.network.cloud.v1alpha1.RouteTable.spec:type_name -> opi_api.network.cloud.v1alpha1.RouteTableSpec

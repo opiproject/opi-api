@@ -8,7 +8,7 @@ import "google/api/resource.proto";
 import "google/protobuf/timestamp.proto";
 import "network/opinetcommon/networktypes.proto";
 
-option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+option go_package = "github.com/opiproject/opi-api/v1/gen/go/network/cloud";
 option java_multiple_files = true;
 option java_outer_classname = "DeviceProto";
 option java_package = "opi_api.network.cloud.v1alpha1";

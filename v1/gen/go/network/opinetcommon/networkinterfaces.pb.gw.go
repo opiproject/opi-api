@@ -2,11 +2,11 @@
 // source: network/opinetcommon/networkinterfaces.proto
 
 /*
-Package _go is a reverse proxy.
+Package opinetcommon is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package _go
+package opinetcommon
 
 import (
 	"context"

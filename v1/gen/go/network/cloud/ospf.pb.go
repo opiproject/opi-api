@@ -9,10 +9,10 @@
 // 	protoc        (unknown)
 // source: network/cloud/ospf.proto
 
-package _go
+package cloud
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -464,10 +464,10 @@ type OSPFRedistSpec struct {
 	// peer enable/disable admin state. if peer is not enabled then local router
 	// must not initiate connections to the neighbor and must not respond to
 	// TCP connections attempts from neighbor
-	State _go.AdminState `protobuf:"varint,2,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
+	State opinetcommon.AdminState `protobuf:"varint,2,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
 	// OSPF local IP address. control plane chooses the local IP address of the
 	// session if an all 0 IP address is provided
-	LocalAddress *_go.IPAddress `protobuf:"bytes,3,opt,name=local_address,json=localAddress,proto3" json:"local_address,omitempty"`
+	LocalAddress *opinetcommon.IPAddress `protobuf:"bytes,3,opt,name=local_address,json=localAddress,proto3" json:"local_address,omitempty"`
 	// Route-Map
 	RouteMap string `protobuf:"bytes,4,opt,name=route_map,json=routeMap,proto3" json:"route_map,omitempty"`
 	// Metric type
@@ -515,14 +515,14 @@ func (x *OSPFRedistSpec) GetRedistType() OSPFRedistType {
 	return OSPFRedistType_OSPF_REDIST_TYPE_UNSPECIFIED
 }
 
-func (x *OSPFRedistSpec) GetState() _go.AdminState {
+func (x *OSPFRedistSpec) GetState() opinetcommon.AdminState {
 	if x != nil {
 		return x.State
 	}
-	return _go.AdminState(0)
+	return opinetcommon.AdminState(0)
 }
 
-func (x *OSPFRedistSpec) GetLocalAddress() *_go.IPAddress {
+func (x *OSPFRedistSpec) GetLocalAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.LocalAddress
 	}
@@ -620,11 +620,11 @@ type OspfAreaSpec struct {
 	// OSPF Area IP address. control plane chooses the local IP address of the
 	// session if an all 0 IP address is provided, example area zero 0.0.0.0 and
 	// area 1 0.0.0.1
-	AreaAddress *_go.IPAddress `protobuf:"bytes,1,opt,name=area_address,json=areaAddress,proto3" json:"area_address,omitempty"`
+	AreaAddress *opinetcommon.IPAddress `protobuf:"bytes,1,opt,name=area_address,json=areaAddress,proto3" json:"area_address,omitempty"`
 	// OSPF Process & context definition for (IPv4)
-	State _go.AdminState `protobuf:"varint,2,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
+	State opinetcommon.AdminState `protobuf:"varint,2,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
 	// Network prefix address
-	NetworkPrefix *_go.IPPrefix `protobuf:"bytes,3,opt,name=network_prefix,json=networkPrefix,proto3" json:"network_prefix,omitempty"`
+	NetworkPrefix *opinetcommon.IPPrefix `protobuf:"bytes,3,opt,name=network_prefix,json=networkPrefix,proto3" json:"network_prefix,omitempty"`
 	// example configuration: area 0 authentication_message_digest
 	AuthMessageDigest string `protobuf:"bytes,4,opt,name=auth_message_digest,json=authMessageDigest,proto3" json:"auth_message_digest,omitempty"`
 	// IfNetwork Type
@@ -663,21 +663,21 @@ func (*OspfAreaSpec) Descriptor() ([]byte, []int) {
 	return file_network_cloud_ospf_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *OspfAreaSpec) GetAreaAddress() *_go.IPAddress {
+func (x *OspfAreaSpec) GetAreaAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.AreaAddress
 	}
 	return nil
 }
 
-func (x *OspfAreaSpec) GetState() _go.AdminState {
+func (x *OspfAreaSpec) GetState() opinetcommon.AdminState {
 	if x != nil {
 		return x.State
 	}
-	return _go.AdminState(0)
+	return opinetcommon.AdminState(0)
 }
 
-func (x *OspfAreaSpec) GetNetworkPrefix() *_go.IPPrefix {
+func (x *OspfAreaSpec) GetNetworkPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.NetworkPrefix
 	}
@@ -770,10 +770,10 @@ type OspfIfNetworkSpec struct {
 	// peer enable/disable admin state. if peer is not enabled then local router
 	// must not initiate connections to the neighbor and must not respond to
 	// TCP connections attempts from neighbor
-	State _go.AdminState `protobuf:"varint,2,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
+	State opinetcommon.AdminState `protobuf:"varint,2,opt,name=state,proto3,enum=opi_api.network.opinetcommon.v1alpha1.AdminState" json:"state,omitempty"`
 	// OSPF local IP address. control plane chooses the local IP address of the
 	// session if an all 0 IP address is provided
-	LocalAddress *_go.IPAddress `protobuf:"bytes,3,opt,name=local_address,json=localAddress,proto3" json:"local_address,omitempty"`
+	LocalAddress *opinetcommon.IPAddress `protobuf:"bytes,3,opt,name=local_address,json=localAddress,proto3" json:"local_address,omitempty"`
 	// Cost or link metric value is 16 bits and must be validated
 	CostOrLinkMetric int32 `protobuf:"varint,4,opt,name=cost_or_link_metric,json=costOrLinkMetric,proto3" json:"cost_or_link_metric,omitempty"`
 	// Example: ip ospf message-digest-key 1 md5 intel
@@ -819,14 +819,14 @@ func (x *OspfIfNetworkSpec) GetNetworkType() string {
 	return ""
 }
 
-func (x *OspfIfNetworkSpec) GetState() _go.AdminState {
+func (x *OspfIfNetworkSpec) GetState() opinetcommon.AdminState {
 	if x != nil {
 		return x.State
 	}
-	return _go.AdminState(0)
+	return opinetcommon.AdminState(0)
 }
 
-func (x *OspfIfNetworkSpec) GetLocalAddress() *_go.IPAddress {
+func (x *OspfIfNetworkSpec) GetLocalAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.LocalAddress
 	}
@@ -1105,14 +1105,14 @@ var file_network_cloud_ospf_proto_rawDesc = []byte{
 	0x50, 0x46, 0x5f, 0x4f, 0x50, 0x45, 0x52, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x47, 0x4f,
 	0x49, 0x4e, 0x47, 0x5f, 0x44, 0x4f, 0x57, 0x4e, 0x10, 0x04, 0x12, 0x1e, 0x0a, 0x1a, 0x4f, 0x53,
 	0x50, 0x46, 0x5f, 0x4f, 0x50, 0x45, 0x52, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x41, 0x43,
-	0x54, 0x5f, 0x46, 0x41, 0x49, 0x4c, 0x45, 0x44, 0x10, 0x05, 0x42, 0x6a, 0x0a, 0x1e, 0x6f, 0x70,
+	0x54, 0x5f, 0x46, 0x41, 0x49, 0x4c, 0x45, 0x44, 0x10, 0x05, 0x42, 0x64, 0x0a, 0x1e, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x63, 0x6c,
 	0x6f, 0x75, 0x64, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x09, 0x4f, 0x53,
-	0x50, 0x46, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x50, 0x46, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75,
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74,
-	0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b,
-	0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f,
-	0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f,
+	0x67, 0x6f, 0x2f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1130,22 +1130,22 @@ func file_network_cloud_ospf_proto_rawDescGZIP() []byte {
 var file_network_cloud_ospf_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
 var file_network_cloud_ospf_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_network_cloud_ospf_proto_goTypes = []any{
-	(OSPFVersion)(0),          // 0: opi_api.network.cloud.v1alpha1.OSPFVersion
-	(OspfIfNetworkType)(0),    // 1: opi_api.network.cloud.v1alpha1.OspfIfNetworkType
-	(OSPFRedistMetricType)(0), // 2: opi_api.network.cloud.v1alpha1.OSPFRedistMetricType
-	(OSPFRedistType)(0),       // 3: opi_api.network.cloud.v1alpha1.OSPFRedistType
-	(OSPFOperState)(0),        // 4: opi_api.network.cloud.v1alpha1.OSPFOperState
-	(*OspfRouter)(nil),        // 5: opi_api.network.cloud.v1alpha1.OspfRouter
-	(*OSPFSpec)(nil),          // 6: opi_api.network.cloud.v1alpha1.OSPFSpec
-	(*OSPFRedistSpec)(nil),    // 7: opi_api.network.cloud.v1alpha1.OSPFRedistSpec
-	(*OspfArea)(nil),          // 8: opi_api.network.cloud.v1alpha1.OspfArea
-	(*OspfAreaSpec)(nil),      // 9: opi_api.network.cloud.v1alpha1.OspfAreaSpec
-	(*OspfIfNetwork)(nil),     // 10: opi_api.network.cloud.v1alpha1.OspfIfNetwork
-	(*OspfIfNetworkSpec)(nil), // 11: opi_api.network.cloud.v1alpha1.OspfIfNetworkSpec
-	(*OSPFMD5Auth)(nil),       // 12: opi_api.network.cloud.v1alpha1.OSPFMD5Auth
-	(_go.AdminState)(0),       // 13: opi_api.network.opinetcommon.v1alpha1.AdminState
-	(*_go.IPAddress)(nil),     // 14: opi_api.network.opinetcommon.v1alpha1.IPAddress
-	(*_go.IPPrefix)(nil),      // 15: opi_api.network.opinetcommon.v1alpha1.IPPrefix
+	(OSPFVersion)(0),               // 0: opi_api.network.cloud.v1alpha1.OSPFVersion
+	(OspfIfNetworkType)(0),         // 1: opi_api.network.cloud.v1alpha1.OspfIfNetworkType
+	(OSPFRedistMetricType)(0),      // 2: opi_api.network.cloud.v1alpha1.OSPFRedistMetricType
+	(OSPFRedistType)(0),            // 3: opi_api.network.cloud.v1alpha1.OSPFRedistType
+	(OSPFOperState)(0),             // 4: opi_api.network.cloud.v1alpha1.OSPFOperState
+	(*OspfRouter)(nil),             // 5: opi_api.network.cloud.v1alpha1.OspfRouter
+	(*OSPFSpec)(nil),               // 6: opi_api.network.cloud.v1alpha1.OSPFSpec
+	(*OSPFRedistSpec)(nil),         // 7: opi_api.network.cloud.v1alpha1.OSPFRedistSpec
+	(*OspfArea)(nil),               // 8: opi_api.network.cloud.v1alpha1.OspfArea
+	(*OspfAreaSpec)(nil),           // 9: opi_api.network.cloud.v1alpha1.OspfAreaSpec
+	(*OspfIfNetwork)(nil),          // 10: opi_api.network.cloud.v1alpha1.OspfIfNetwork
+	(*OspfIfNetworkSpec)(nil),      // 11: opi_api.network.cloud.v1alpha1.OspfIfNetworkSpec
+	(*OSPFMD5Auth)(nil),            // 12: opi_api.network.cloud.v1alpha1.OSPFMD5Auth
+	(opinetcommon.AdminState)(0),   // 13: opi_api.network.opinetcommon.v1alpha1.AdminState
+	(*opinetcommon.IPAddress)(nil), // 14: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(*opinetcommon.IPPrefix)(nil),  // 15: opi_api.network.opinetcommon.v1alpha1.IPPrefix
 }
 var file_network_cloud_ospf_proto_depIdxs = []int32{
 	6,  // 0: opi_api.network.cloud.v1alpha1.OspfRouter.spec:type_name -> opi_api.network.cloud.v1alpha1.OSPFSpec

@@ -8,7 +8,7 @@
 // - protoc             (unknown)
 // source: storage/backend_null.proto
 
-package _go
+package storage
 
 import (
 	context "context"

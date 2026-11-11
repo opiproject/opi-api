@@ -15,7 +15,7 @@
 // - protoc             (unknown)
 // source: inventory/inventory.proto
 
-package _go
+package inventory
 
 import (
 	context "context"

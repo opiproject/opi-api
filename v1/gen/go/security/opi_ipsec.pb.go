@@ -19,10 +19,10 @@
 // 	protoc        (unknown)
 // source: security/opi_ipsec.proto
 
-package _go
+package security
 
 import (
-	_go "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go"
+	opinetcommon "github.com/opiproject/opi-api/v1/gen/go/network/opinetcommon"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -1786,9 +1786,9 @@ func (x *IpsecPolicyConfig) GetProcessing() *SpdProcessingInfo {
 type TrafficSelector struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Local IP address prefix.
-	LocalPrefix *_go.IPPrefix `protobuf:"bytes,1,opt,name=local_prefix,json=localPrefix,proto3" json:"local_prefix,omitempty"`
+	LocalPrefix *opinetcommon.IPPrefix `protobuf:"bytes,1,opt,name=local_prefix,json=localPrefix,proto3" json:"local_prefix,omitempty"`
 	// Remote IP address prefix.
-	RemotePrefix *_go.IPPrefix `protobuf:"bytes,2,opt,name=remote_prefix,json=remotePrefix,proto3" json:"remote_prefix,omitempty"`
+	RemotePrefix *opinetcommon.IPPrefix `protobuf:"bytes,2,opt,name=remote_prefix,json=remotePrefix,proto3" json:"remote_prefix,omitempty"`
 	// Inner protocol that is going to be protected with IPsec. If no protocol is
 	// specified, all inner protocols will be protected. Protocols are encoded
 	// using the IP protocol number.
@@ -1835,14 +1835,14 @@ func (*TrafficSelector) Descriptor() ([]byte, []int) {
 	return file_security_opi_ipsec_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *TrafficSelector) GetLocalPrefix() *_go.IPPrefix {
+func (x *TrafficSelector) GetLocalPrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.LocalPrefix
 	}
 	return nil
 }
 
-func (x *TrafficSelector) GetRemotePrefix() *_go.IPPrefix {
+func (x *TrafficSelector) GetRemotePrefix() *opinetcommon.IPPrefix {
 	if x != nil {
 		return x.RemotePrefix
 	}
@@ -2144,9 +2144,9 @@ func (x *EspAlgorithms) GetTfcPad() bool {
 type Tunnel struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Local IP address tunnel endpoint
-	Local *_go.IPAddress `protobuf:"bytes,1,opt,name=local,proto3" json:"local,omitempty"`
+	Local *opinetcommon.IPAddress `protobuf:"bytes,1,opt,name=local,proto3" json:"local,omitempty"`
 	// Remote IP address tunnel endpoint
-	Remote *_go.IPAddress `protobuf:"bytes,2,opt,name=remote,proto3" json:"remote,omitempty"`
+	Remote *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=remote,proto3" json:"remote,omitempty"`
 	// Allow configuring the DF bit when encapsulating tunnel mode IPsec traffic.
 	// RFC 4301 describes three options to handle the DF bit during tunnel
 	// encapsulation: clear, set and copy from the inner IP header. This must be
@@ -2199,14 +2199,14 @@ func (*Tunnel) Descriptor() ([]byte, []int) {
 	return file_security_opi_ipsec_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *Tunnel) GetLocal() *_go.IPAddress {
+func (x *Tunnel) GetLocal() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.Local
 	}
 	return nil
 }
 
-func (x *Tunnel) GetRemote() *_go.IPAddress {
+func (x *Tunnel) GetRemote() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.Remote
 	}
@@ -3037,7 +3037,7 @@ type IkePeer struct {
 	// Name to uniquely identify the peer.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// IPv4 or IPv6 address of the peer.
-	IpAddress *_go.IPAddress `protobuf:"bytes,2,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
+	IpAddress *opinetcommon.IPAddress `protobuf:"bytes,2,opt,name=ip_address,json=ipAddress,proto3" json:"ip_address,omitempty"`
 	// FQDN of the peer.
 	Fqdn string `protobuf:"bytes,3,opt,name=fqdn,proto3" json:"fqdn,omitempty"`
 	// IKE Peer Authentication
@@ -3083,7 +3083,7 @@ func (x *IkePeer) GetName() string {
 	return ""
 }
 
-func (x *IkePeer) GetIpAddress() *_go.IPAddress {
+func (x *IkePeer) GetIpAddress() *opinetcommon.IPAddress {
 	if x != nil {
 		return x.IpAddress
 	}
@@ -5462,13 +5462,13 @@ var file_security_opi_ipsec_proto_rawDesc = []byte{
 	0x6f, 0x6c, 0x69, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
 	0x1f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x12, 0x17, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
 	0x61, 0x31, 0x2f, 0x69, 0x70, 0x73, 0x65, 0x63, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x69, 0x65, 0x73,
-	0x42, 0x64, 0x0a, 0x19, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75,
+	0x42, 0x5e, 0x0a, 0x19, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75,
 	0x72, 0x69, 0x74, 0x79, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x0d, 0x4f,
-	0x70, 0x69, 0x49, 0x70, 0x73, 0x65, 0x63, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x36,
+	0x70, 0x69, 0x49, 0x70, 0x73, 0x65, 0x63, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x30,
 	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72,
-	0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65,
-	0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f,
-	0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31,
+	0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -5556,8 +5556,8 @@ var file_security_opi_ipsec_proto_goTypes = []any{
 	(*ListIpsecPoliciesRequest)(nil),    // 67: opi_api.security.v1alpha1.ListIpsecPoliciesRequest
 	(*ListIpsecPoliciesResponse)(nil),   // 68: opi_api.security.v1alpha1.ListIpsecPoliciesResponse
 	(*durationpb.Duration)(nil),         // 69: google.protobuf.Duration
-	(*_go.IPPrefix)(nil),                // 70: opi_api.network.opinetcommon.v1alpha1.IPPrefix
-	(*_go.IPAddress)(nil),               // 71: opi_api.network.opinetcommon.v1alpha1.IPAddress
+	(*opinetcommon.IPPrefix)(nil),       // 70: opi_api.network.opinetcommon.v1alpha1.IPPrefix
+	(*opinetcommon.IPAddress)(nil),      // 71: opi_api.network.opinetcommon.v1alpha1.IPAddress
 	(*fieldmaskpb.FieldMask)(nil),       // 72: google.protobuf.FieldMask
 	(*emptypb.Empty)(nil),               // 73: google.protobuf.Empty
 }
