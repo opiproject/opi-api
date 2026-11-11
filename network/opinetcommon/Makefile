@@ -6,6 +6,10 @@ APIVER = v1alpha1
 
 all: buflint apilint bufgen doc
 
+.PHONY: bufbreaking
+bufbreaking:
+	$(MAKE) -C ../.. bufbreaking BUF_BREAKING_PATH=network/opinetcommon
+
 apilint:
 	curl -kL https://github.com/googleapis/googleapis/archive/master.tar.gz | tar --strip=1 -zxvf - googleapis-master/google/api
 	docker run --user=$(id -u):$(id -g) --rm --entrypoint=sh \

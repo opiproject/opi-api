@@ -19,3 +19,5 @@ jobs:
           lint: true
           format: true
           breaking: false
+      - name: Test advisory compatibility runner
+        run: bash scripts/check-breaking-test.sh

@@ -62,6 +62,25 @@ The generation of the OPI API files from the protobuf definitions is handled by 
 
 The OPI API is published to the BSR in the [opiproject](https://buf.build/opiproject/opi).  This project contains the auto-generated documentation as well as the code and sdk files.  Refer th the BSR for information and documentation.
 
+### Advisory compatibility checks
+
+With Buf on `PATH`, run `make bufbreaking` to compare the current schemas with
+upstream `main` using Buf's `FILE` compatibility rules. The target is opt-in:
+it is not part of `all` or a required CI check.
+
+To compare against a release, commit, local checkout, or saved Buf image instead:
+
+```bash
+BUF_BREAKING_AGAINST='https://github.com/opiproject/opi-api.git#tag=YOUR_TAG' make bufbreaking
+bash scripts/check-breaking.sh path/to/baseline.binpb
+bash scripts/check-breaking-test.sh
+```
+
+Each network API Makefile also provides `bufbreaking`, scoped to that API's
+source directory. A nonzero exit status means a breaking change or an error;
+inspect the output rather than treating an unavailable baseline as compatible.
+Intentional breaking changes still require a migration plan and review.
+
 ---
 
 - Leader
