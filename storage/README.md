@@ -8,6 +8,21 @@ see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
 
 see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
 
+### Middle-end collection routes
+
+List encrypted volumes with `GET /v1/encryptedVolumes` and QoS volumes with
+`GET /v1/qosVolumes`. Both collections are top-level, matching their create and
+get routes. The former shared `GET /v1/volumes` route was ambiguous when both
+services were registered; REST clients must migrate to the distinct routes.
+No ambiguous legacy HTTP alias is registered.
+
+The gRPC method names, pagination fields, and response types are unchanged.
+The list requests retain field 1 (`parent`) as deprecated and optional; servers
+should ignore it because these collections have no parent resource.
+
+Run the compiled-schema route regression tests from the repository root with
+`go -C tests test ./...` (Buf and Go must be on `PATH`).
+
 ## Reference implementations
 
 - <https://github.com/opiproject/opi-spdk-bridge>

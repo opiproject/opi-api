@@ -201,22 +201,13 @@ func local_request_MiddleendEncryptionService_UpdateEncryptedVolume_0(ctx contex
 	return msg, metadata, err
 }
 
-var filter_MiddleendEncryptionService_ListEncryptedVolumes_0 = &utilities.DoubleArray{Encoding: map[string]int{"parent": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+var filter_MiddleendEncryptionService_ListEncryptedVolumes_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_MiddleendEncryptionService_ListEncryptedVolumes_0(ctx context.Context, marshaler runtime.Marshaler, client MiddleendEncryptionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq ListEncryptedVolumesRequest
 		metadata runtime.ServerMetadata
-		err      error
 	)
-	val, ok := pathParams["parent"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "parent")
-	}
-	protoReq.Parent, err = runtime.String(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "parent", err)
-	}
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
@@ -231,16 +222,7 @@ func local_request_MiddleendEncryptionService_ListEncryptedVolumes_0(ctx context
 	var (
 		protoReq ListEncryptedVolumesRequest
 		metadata runtime.ServerMetadata
-		err      error
 	)
-	val, ok := pathParams["parent"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "parent")
-	}
-	protoReq.Parent, err = runtime.String(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "parent", err)
-	}
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
@@ -395,7 +377,7 @@ func RegisterMiddleendEncryptionServiceHandlerServer(ctx context.Context, mux *r
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.storage.v1.MiddleendEncryptionService/ListEncryptedVolumes", runtime.WithHTTPPathPattern("/v1/{parent=volumes}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.storage.v1.MiddleendEncryptionService/ListEncryptedVolumes", runtime.WithHTTPPathPattern("/v1/encryptedVolumes"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -544,7 +526,7 @@ func RegisterMiddleendEncryptionServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.storage.v1.MiddleendEncryptionService/ListEncryptedVolumes", runtime.WithHTTPPathPattern("/v1/{parent=volumes}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.storage.v1.MiddleendEncryptionService/ListEncryptedVolumes", runtime.WithHTTPPathPattern("/v1/encryptedVolumes"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -598,7 +580,7 @@ var (
 	pattern_MiddleendEncryptionService_CreateEncryptedVolume_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "encryptedVolumes"}, ""))
 	pattern_MiddleendEncryptionService_DeleteEncryptedVolume_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "encryptedVolumes", "name"}, ""))
 	pattern_MiddleendEncryptionService_UpdateEncryptedVolume_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "encryptedVolumes", "encrypted_volume.name"}, ""))
-	pattern_MiddleendEncryptionService_ListEncryptedVolumes_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 4, 1, 5, 2}, []string{"v1", "volumes", "parent"}, ""))
+	pattern_MiddleendEncryptionService_ListEncryptedVolumes_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "encryptedVolumes"}, ""))
 	pattern_MiddleendEncryptionService_GetEncryptedVolume_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "encryptedVolumes", "name"}, ""))
 	pattern_MiddleendEncryptionService_StatsEncryptedVolume_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "encryptedVolumes", "name"}, "stats"))
 )

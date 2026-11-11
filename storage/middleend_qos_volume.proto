@@ -42,8 +42,7 @@ service MiddleendQosVolumeService {
   }
   // List Qos Volumes
   rpc ListQosVolumes(ListQosVolumesRequest) returns (ListQosVolumesResponse) {
-    option (google.api.http) = {get: "/v1/{parent=volumes}"};
-    option (google.api.method_signature) = "parent";
+    option (google.api.http) = {get: "/v1/qosVolumes"};
   }
   // Get an Qos Volume
   rpc GetQosVolume(GetQosVolumeRequest) returns (QosVolume) {
@@ -134,10 +133,11 @@ message UpdateQosVolumeRequest {
 
 // Represents a request to list all QoS Volumes.
 message ListQosVolumesRequest {
-  // Parent's object unique identifier
+  // Deprecated. This is a top-level collection and has no parent.
+  // Ignored; retained for compatibility with existing gRPC requests.
   string parent = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).child_type = "opi_api.storage.v1/QosVolume"
+    deprecated = true,
+    (google.api.field_behavior) = OPTIONAL
   ];
   // page size of list request
   int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
