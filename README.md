@@ -62,6 +62,22 @@ The generation of the OPI API files from the protobuf definitions is handled by 
 
 The OPI API is published to the BSR in the [opiproject](https://buf.build/opiproject/opi).  This project contains the auto-generated documentation as well as the code and sdk files.  Refer th the BSR for information and documentation.
 
+### Google API lint
+
+With Buf 1.50.0 and `api-linter` v1.72.0 on `PATH`, run:
+
+```bash
+bash scripts/api-lint-test.sh
+bash scripts/api-lint.sh
+```
+
+The runner discovers schemas with `buf ls-files` and uses a Buf-built descriptor
+set to resolve local and external imports. It fails on lint findings, build
+errors, or an empty schema list. CI publishes the report and keeps the job
+advisory while existing API-linter violations are addressed. Buf lint remains
+a required check; an advisory API-linter result does not mean the schemas are
+free of API-linter findings.
+
 ---
 
 - Leader

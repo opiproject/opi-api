@@ -20,12 +20,32 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+          cache: false
+      - uses: bufbuild/buf-setup-action@v1
+        with:
+          version: 1.50.0
       - name: Install api-linter tool
-        run: |
-          go install github.com/googleapis/api-linter/cmd/api-linter@latest
+        run: go install github.com/googleapis/api-linter/cmd/api-linter@v1.72.0
+      - name: Test linter runner
+        run: bash scripts/api-lint-test.sh
       - name: Run linter
+        id: lint
+        continue-on-error: true
         run: |
-          echo '::echo::on'
-          for f in **/proto; do pushd $f && $HOME/go/bin/api-linter *.proto --output-format summary && popd ; done
-          echo '::echo::off'
-
+          set -o pipefail
+          bash scripts/api-lint.sh 2>&1 | tee api-lint-report.txt
+      - name: Explain advisory results
+        if: steps.lint.outcome == 'failure'
+        run: |
+          echo '::warning::API lint found problems. This check is advisory while existing violations are addressed; see the report artifact.'
+          echo 'API lint is advisory while existing violations are addressed. The runner returns a nonzero exit status for findings; see the api-lint-report artifact.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload API lint report
+        if: always() && steps.lint.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-lint-report
+          path: api-lint-report.txt
+          if-no-files-found: error
