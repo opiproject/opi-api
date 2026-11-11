@@ -7,6 +7,7 @@ syntax = "proto3";
 package opi_api.storage.v1;
 
 import "google/api/field_behavior.proto";
+import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
@@ -74,6 +75,27 @@ message VolumeStats {
   int32 write_latency_ticks = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Unmap latency ticks
   int32 unmap_latency_ticks = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Optional observation context for a storage statistics snapshot.
+// Unknown values must remain absent; do not assume a clock frequency or epoch.
+message StatsSampleMetadata {
+  // Wall-clock time when the provider received this snapshot.
+  // This is observation time, not necessarily the exact hardware sampling time.
+  google.protobuf.Timestamp collection_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Frequency of the clock used for latency_ticks and sample_ticks, in Hz.
+  // Must be positive when present. Do not treat absence as one tick per second.
+  optional int64 tick_rate_hz = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Snapshot time in the provider's source clock. Must be nonnegative.
+  // Compare only within the same source, counter epoch, and clock frequency.
+  optional int64 sample_ticks = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Opaque counter-generation identifier, when the provider can establish it.
+  // Changes when any counter resets or the resource is recreated.
+  // Empty means unknown, not evidence that consecutive samples are continuous.
+  string counter_epoch = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Actual counter start/reset time, only when known by the provider.
+  // Must not be fabricated from collection time or the bridge's startup time.
+  google.protobuf.Timestamp counter_start_time = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // QoS limits applied to volumes/devices

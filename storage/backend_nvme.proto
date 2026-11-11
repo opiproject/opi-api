@@ -319,6 +319,8 @@ message StatsNvmeRemoteControllerRequest {
 message StatsNvmeRemoteControllerResponse {
   // Controller statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents a request to list all Nvme Remote Namespaces.
@@ -432,6 +434,8 @@ message StatsNvmePathRequest {
 message StatsNvmePathResponse {
   // Path statistics
   VolumeStats stats = 1;
+  // Optional snapshot timing and counter-continuity information.
+  StatsSampleMetadata sample_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Multipath mode value options

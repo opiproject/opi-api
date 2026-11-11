@@ -1,0 +1,7 @@
+version: v2
+plugins:
+  - remote: buf.build/protocolbuffers/go:v1.31.0
+    out: gen/go
+    opt: paths=source_relative
+  - remote: buf.build/protocolbuffers/python:v25.2
+    out: gen/python

@@ -12,16 +12,16 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.api import client_pb2 as google_dot_api_dot_client__pb2
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 import opicommon_pb2 as opicommon__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x62\x61\x63kend_null.proto\x12\x12opi_api.storage.v1\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\x1a\x0fopicommon.proto\"\xe1\x01\n\nNullVolume\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x08R\x04name\x12#\n\nblock_size\x18\x02 \x01(\x03\x42\x04\xe2\x41\x01\x02R\tblockSize\x12\'\n\x0c\x62locks_count\x18\x03 \x01(\x03\x42\x04\xe2\x41\x01\x02R\x0b\x62locksCount\x12\x18\n\x04uuid\x18\x04 \x01(\tB\x04\xe2\x41\x01\x01R\x04uuid:Q\xea\x41N\n\x1dopi_api.storage.v1/NullVolume\x12\x14nullVolumes/{volume}*\x0bnullVolumes2\nnullVolume\"\x8c\x01\n\x17\x43reateNullVolumeRequest\x12\x45\n\x0bnull_volume\x18\x01 \x01(\x0b\x32\x1e.opi_api.storage.v1.NullVolumeB\x04\xe2\x41\x01\x02R\nnullVolume\x12*\n\x0enull_volume_id\x18\x02 \x01(\tB\x04\xe2\x41\x01\x01R\x0cnullVolumeId\"\x80\x01\n\x17\x44\x65leteNullVolumeRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dopi_api.storage.v1/NullVolumeR\x04name\x12)\n\rallow_missing\x18\x02 \x01(\x08\x42\x04\xe2\x41\x01\x01R\x0c\x61llowMissing\"\xce\x01\n\x17UpdateNullVolumeRequest\x12\x45\n\x0bnull_volume\x18\x01 \x01(\x0b\x32\x1e.opi_api.storage.v1.NullVolumeB\x04\xe2\x41\x01\x02R\nnullVolume\x12\x41\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\nupdateMask\x12)\n\rallow_missing\x18\x03 \x01(\x08\x42\x04\xe2\x41\x01\x01R\x0c\x61llowMissing\"`\n\x16ListNullVolumesRequest\x12!\n\tpage_size\x18\x01 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x02 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\"\x84\x01\n\x17ListNullVolumesResponse\x12\x41\n\x0cnull_volumes\x18\x01 \x03(\x0b\x32\x1e.opi_api.storage.v1.NullVolumeR\x0bnullVolumes\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"R\n\x14GetNullVolumeRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dopi_api.storage.v1/NullVolumeR\x04name\"T\n\x16StatsNullVolumeRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dopi_api.storage.v1/NullVolumeR\x04name\"P\n\x17StatsNullVolumeResponse\x12\x35\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStatsR\x05stats2\x99\x07\n\x11NullVolumeService\x12\xa2\x01\n\x10\x43reateNullVolume\x12+.opi_api.storage.v1.CreateNullVolumeRequest\x1a\x1e.opi_api.storage.v1.NullVolume\"A\xda\x41\x1anull_volume,null_volume_id\x82\xd3\xe4\x93\x02\x1e\"\x0f/v1/nullVolumes:\x0bnull_volume\x12\x80\x01\n\x10\x44\x65leteNullVolume\x12+.opi_api.storage.v1.DeleteNullVolumeRequest\x1a\x16.google.protobuf.Empty\"\'\xda\x41\x04name\x82\xd3\xe4\x93\x02\x1a*\x18/v1/{name=nullVolumes/*}\x12\xb4\x01\n\x10UpdateNullVolume\x12+.opi_api.storage.v1.UpdateNullVolumeRequest\x1a\x1e.opi_api.storage.v1.NullVolume\"S\xda\x41\x17null_volume,update_mask\x82\xd3\xe4\x93\x02\x33\x32$/v1/{null_volume.name=nullVolumes/*}:\x0bnull_volume\x12\x83\x01\n\x0fListNullVolumes\x12*.opi_api.storage.v1.ListNullVolumesRequest\x1a+.opi_api.storage.v1.ListNullVolumesResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/nullVolumes\x12\x82\x01\n\rGetNullVolume\x12(.opi_api.storage.v1.GetNullVolumeRequest\x1a\x1e.opi_api.storage.v1.NullVolume\"\'\xda\x41\x04name\x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/{name=nullVolumes/*}\x12\x99\x01\n\x0fStatsNullVolume\x12*.opi_api.storage.v1.StatsNullVolumeRequest\x1a+.opi_api.storage.v1.StatsNullVolumeResponse\"-\xda\x41\x04name\x82\xd3\xe4\x93\x02 \x12\x1e/v1/{name=nullVolumes/*}:statsB_\n\x12opi_api.storage.v1B\x10\x42\x61\x63kendNullProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x62\x61\x63kend_null.proto\x12\x12opi_api.storage.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x0fopicommon.proto\"\xdd\x01\n\nNullVolume\x12\x17\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x08R\x04name\x12\"\n\nblock_size\x18\x02 \x01(\x03\x42\x03\xe0\x41\x02R\tblockSize\x12&\n\x0c\x62locks_count\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02R\x0b\x62locksCount\x12\x17\n\x04uuid\x18\x04 \x01(\tB\x03\xe0\x41\x01R\x04uuid:Q\xea\x41N\n\x1dopi_api.storage.v1/NullVolume\x12\x14nullVolumes/{volume}*\x0bnullVolumes2\nnullVolume\"\x8a\x01\n\x17\x43reateNullVolumeRequest\x12\x44\n\x0bnull_volume\x18\x01 \x01(\x0b\x32\x1e.opi_api.storage.v1.NullVolumeB\x03\xe0\x41\x02R\nnullVolume\x12)\n\x0enull_volume_id\x18\x02 \x01(\tB\x03\xe0\x41\x01R\x0cnullVolumeId\"~\n\x17\x44\x65leteNullVolumeRequest\x12\x39\n\x04name\x18\x01 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dopi_api.storage.v1/NullVolumeR\x04name\x12(\n\rallow_missing\x18\x02 \x01(\x08\x42\x03\xe0\x41\x01R\x0c\x61llowMissing\"\xcb\x01\n\x17UpdateNullVolumeRequest\x12\x44\n\x0bnull_volume\x18\x01 \x01(\x0b\x32\x1e.opi_api.storage.v1.NullVolumeB\x03\xe0\x41\x02R\nnullVolume\x12@\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x03\xe0\x41\x01R\nupdateMask\x12(\n\rallow_missing\x18\x03 \x01(\x08\x42\x03\xe0\x41\x01R\x0c\x61llowMissing\"^\n\x16ListNullVolumesRequest\x12 \n\tpage_size\x18\x01 \x01(\x05\x42\x03\xe0\x41\x01R\x08pageSize\x12\"\n\npage_token\x18\x02 \x01(\tB\x03\xe0\x41\x01R\tpageToken\"\x84\x01\n\x17ListNullVolumesResponse\x12\x41\n\x0cnull_volumes\x18\x01 \x03(\x0b\x32\x1e.opi_api.storage.v1.NullVolumeR\x0bnullVolumes\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"Q\n\x14GetNullVolumeRequest\x12\x39\n\x04name\x18\x01 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dopi_api.storage.v1/NullVolumeR\x04name\"S\n\x16StatsNullVolumeRequest\x12\x39\n\x04name\x18\x01 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dopi_api.storage.v1/NullVolumeR\x04name\"\xa7\x01\n\x17StatsNullVolumeResponse\x12\x35\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStatsR\x05stats\x12U\n\x0fsample_metadata\x18\x02 \x01(\x0b\x32\'.opi_api.storage.v1.StatsSampleMetadataB\x03\xe0\x41\x03R\x0esampleMetadata2\x99\x07\n\x11NullVolumeService\x12\xa2\x01\n\x10\x43reateNullVolume\x12+.opi_api.storage.v1.CreateNullVolumeRequest\x1a\x1e.opi_api.storage.v1.NullVolume\"A\xda\x41\x1anull_volume,null_volume_id\x82\xd3\xe4\x93\x02\x1e\"\x0f/v1/nullVolumes:\x0bnull_volume\x12\x80\x01\n\x10\x44\x65leteNullVolume\x12+.opi_api.storage.v1.DeleteNullVolumeRequest\x1a\x16.google.protobuf.Empty\"\'\xda\x41\x04name\x82\xd3\xe4\x93\x02\x1a*\x18/v1/{name=nullVolumes/*}\x12\xb4\x01\n\x10UpdateNullVolume\x12+.opi_api.storage.v1.UpdateNullVolumeRequest\x1a\x1e.opi_api.storage.v1.NullVolume\"S\xda\x41\x17null_volume,update_mask\x82\xd3\xe4\x93\x02\x33\x32$/v1/{null_volume.name=nullVolumes/*}:\x0bnull_volume\x12\x83\x01\n\x0fListNullVolumes\x12*.opi_api.storage.v1.ListNullVolumesRequest\x1a+.opi_api.storage.v1.ListNullVolumesResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/nullVolumes\x12\x82\x01\n\rGetNullVolume\x12(.opi_api.storage.v1.GetNullVolumeRequest\x1a\x1e.opi_api.storage.v1.NullVolume\"\'\xda\x41\x04name\x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/{name=nullVolumes/*}\x12\x99\x01\n\x0fStatsNullVolume\x12*.opi_api.storage.v1.StatsNullVolumeRequest\x1a+.opi_api.storage.v1.StatsNullVolumeResponse\"-\xda\x41\x04name\x82\xd3\xe4\x93\x02 \x12\x1e/v1/{name=nullVolumes/*}:statsB_\n\x12opi_api.storage.v1B\x10\x42\x61\x63kendNullProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -30,37 +30,39 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\022opi_api.storage.v1B\020BackendNullProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
   _globals['_NULLVOLUME'].fields_by_name['name']._options = None
-  _globals['_NULLVOLUME'].fields_by_name['name']._serialized_options = b'\342A\001\010'
+  _globals['_NULLVOLUME'].fields_by_name['name']._serialized_options = b'\340A\010'
   _globals['_NULLVOLUME'].fields_by_name['block_size']._options = None
-  _globals['_NULLVOLUME'].fields_by_name['block_size']._serialized_options = b'\342A\001\002'
+  _globals['_NULLVOLUME'].fields_by_name['block_size']._serialized_options = b'\340A\002'
   _globals['_NULLVOLUME'].fields_by_name['blocks_count']._options = None
-  _globals['_NULLVOLUME'].fields_by_name['blocks_count']._serialized_options = b'\342A\001\002'
+  _globals['_NULLVOLUME'].fields_by_name['blocks_count']._serialized_options = b'\340A\002'
   _globals['_NULLVOLUME'].fields_by_name['uuid']._options = None
-  _globals['_NULLVOLUME'].fields_by_name['uuid']._serialized_options = b'\342A\001\001'
+  _globals['_NULLVOLUME'].fields_by_name['uuid']._serialized_options = b'\340A\001'
   _globals['_NULLVOLUME']._options = None
   _globals['_NULLVOLUME']._serialized_options = b'\352AN\n\035opi_api.storage.v1/NullVolume\022\024nullVolumes/{volume}*\013nullVolumes2\nnullVolume'
   _globals['_CREATENULLVOLUMEREQUEST'].fields_by_name['null_volume']._options = None
-  _globals['_CREATENULLVOLUMEREQUEST'].fields_by_name['null_volume']._serialized_options = b'\342A\001\002'
+  _globals['_CREATENULLVOLUMEREQUEST'].fields_by_name['null_volume']._serialized_options = b'\340A\002'
   _globals['_CREATENULLVOLUMEREQUEST'].fields_by_name['null_volume_id']._options = None
-  _globals['_CREATENULLVOLUMEREQUEST'].fields_by_name['null_volume_id']._serialized_options = b'\342A\001\001'
+  _globals['_CREATENULLVOLUMEREQUEST'].fields_by_name['null_volume_id']._serialized_options = b'\340A\001'
   _globals['_DELETENULLVOLUMEREQUEST'].fields_by_name['name']._options = None
-  _globals['_DELETENULLVOLUMEREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\037\n\035opi_api.storage.v1/NullVolume'
+  _globals['_DELETENULLVOLUMEREQUEST'].fields_by_name['name']._serialized_options = b'\340A\002\372A\037\n\035opi_api.storage.v1/NullVolume'
   _globals['_DELETENULLVOLUMEREQUEST'].fields_by_name['allow_missing']._options = None
-  _globals['_DELETENULLVOLUMEREQUEST'].fields_by_name['allow_missing']._serialized_options = b'\342A\001\001'
+  _globals['_DELETENULLVOLUMEREQUEST'].fields_by_name['allow_missing']._serialized_options = b'\340A\001'
   _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['null_volume']._options = None
-  _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['null_volume']._serialized_options = b'\342A\001\002'
+  _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['null_volume']._serialized_options = b'\340A\002'
   _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['update_mask']._options = None
-  _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['update_mask']._serialized_options = b'\342A\001\001'
+  _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['update_mask']._serialized_options = b'\340A\001'
   _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['allow_missing']._options = None
-  _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['allow_missing']._serialized_options = b'\342A\001\001'
+  _globals['_UPDATENULLVOLUMEREQUEST'].fields_by_name['allow_missing']._serialized_options = b'\340A\001'
   _globals['_LISTNULLVOLUMESREQUEST'].fields_by_name['page_size']._options = None
-  _globals['_LISTNULLVOLUMESREQUEST'].fields_by_name['page_size']._serialized_options = b'\342A\001\001'
+  _globals['_LISTNULLVOLUMESREQUEST'].fields_by_name['page_size']._serialized_options = b'\340A\001'
   _globals['_LISTNULLVOLUMESREQUEST'].fields_by_name['page_token']._options = None
-  _globals['_LISTNULLVOLUMESREQUEST'].fields_by_name['page_token']._serialized_options = b'\342A\001\001'
+  _globals['_LISTNULLVOLUMESREQUEST'].fields_by_name['page_token']._serialized_options = b'\340A\001'
   _globals['_GETNULLVOLUMEREQUEST'].fields_by_name['name']._options = None
-  _globals['_GETNULLVOLUMEREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\037\n\035opi_api.storage.v1/NullVolume'
+  _globals['_GETNULLVOLUMEREQUEST'].fields_by_name['name']._serialized_options = b'\340A\002\372A\037\n\035opi_api.storage.v1/NullVolume'
   _globals['_STATSNULLVOLUMEREQUEST'].fields_by_name['name']._options = None
-  _globals['_STATSNULLVOLUMEREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\037\n\035opi_api.storage.v1/NullVolume'
+  _globals['_STATSNULLVOLUMEREQUEST'].fields_by_name['name']._serialized_options = b'\340A\002\372A\037\n\035opi_api.storage.v1/NullVolume'
+  _globals['_STATSNULLVOLUMERESPONSE'].fields_by_name['sample_metadata']._options = None
+  _globals['_STATSNULLVOLUMERESPONSE'].fields_by_name['sample_metadata']._serialized_options = b'\340A\003'
   _globals['_NULLVOLUMESERVICE'].methods_by_name['CreateNullVolume']._options = None
   _globals['_NULLVOLUMESERVICE'].methods_by_name['CreateNullVolume']._serialized_options = b'\332A\032null_volume,null_volume_id\202\323\344\223\002\036\"\017/v1/nullVolumes:\013null_volume'
   _globals['_NULLVOLUMESERVICE'].methods_by_name['DeleteNullVolume']._options = None
@@ -74,23 +76,23 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_NULLVOLUMESERVICE'].methods_by_name['StatsNullVolume']._options = None
   _globals['_NULLVOLUMESERVICE'].methods_by_name['StatsNullVolume']._serialized_options = b'\332A\004name\202\323\344\223\002 \022\036/v1/{name=nullVolumes/*}:stats'
   _globals['_NULLVOLUME']._serialized_start=238
-  _globals['_NULLVOLUME']._serialized_end=463
-  _globals['_CREATENULLVOLUMEREQUEST']._serialized_start=466
-  _globals['_CREATENULLVOLUMEREQUEST']._serialized_end=606
-  _globals['_DELETENULLVOLUMEREQUEST']._serialized_start=609
-  _globals['_DELETENULLVOLUMEREQUEST']._serialized_end=737
-  _globals['_UPDATENULLVOLUMEREQUEST']._serialized_start=740
-  _globals['_UPDATENULLVOLUMEREQUEST']._serialized_end=946
-  _globals['_LISTNULLVOLUMESREQUEST']._serialized_start=948
-  _globals['_LISTNULLVOLUMESREQUEST']._serialized_end=1044
-  _globals['_LISTNULLVOLUMESRESPONSE']._serialized_start=1047
-  _globals['_LISTNULLVOLUMESRESPONSE']._serialized_end=1179
-  _globals['_GETNULLVOLUMEREQUEST']._serialized_start=1181
-  _globals['_GETNULLVOLUMEREQUEST']._serialized_end=1263
-  _globals['_STATSNULLVOLUMEREQUEST']._serialized_start=1265
-  _globals['_STATSNULLVOLUMEREQUEST']._serialized_end=1349
-  _globals['_STATSNULLVOLUMERESPONSE']._serialized_start=1351
-  _globals['_STATSNULLVOLUMERESPONSE']._serialized_end=1431
-  _globals['_NULLVOLUMESERVICE']._serialized_start=1434
-  _globals['_NULLVOLUMESERVICE']._serialized_end=2355
+  _globals['_NULLVOLUME']._serialized_end=459
+  _globals['_CREATENULLVOLUMEREQUEST']._serialized_start=462
+  _globals['_CREATENULLVOLUMEREQUEST']._serialized_end=600
+  _globals['_DELETENULLVOLUMEREQUEST']._serialized_start=602
+  _globals['_DELETENULLVOLUMEREQUEST']._serialized_end=728
+  _globals['_UPDATENULLVOLUMEREQUEST']._serialized_start=731
+  _globals['_UPDATENULLVOLUMEREQUEST']._serialized_end=934
+  _globals['_LISTNULLVOLUMESREQUEST']._serialized_start=936
+  _globals['_LISTNULLVOLUMESREQUEST']._serialized_end=1030
+  _globals['_LISTNULLVOLUMESRESPONSE']._serialized_start=1033
+  _globals['_LISTNULLVOLUMESRESPONSE']._serialized_end=1165
+  _globals['_GETNULLVOLUMEREQUEST']._serialized_start=1167
+  _globals['_GETNULLVOLUMEREQUEST']._serialized_end=1248
+  _globals['_STATSNULLVOLUMEREQUEST']._serialized_start=1250
+  _globals['_STATSNULLVOLUMEREQUEST']._serialized_end=1333
+  _globals['_STATSNULLVOLUMERESPONSE']._serialized_start=1336
+  _globals['_STATSNULLVOLUMERESPONSE']._serialized_end=1503
+  _globals['_NULLVOLUMESERVICE']._serialized_start=1506
+  _globals['_NULLVOLUMESERVICE']._serialized_end=2427
 # @@protoc_insertion_point(module_scope)
