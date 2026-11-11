@@ -156,7 +156,11 @@ message TcpController {
   // Calculate CRC-32 bytes to ensure validity of PSK.
   // Example: "NVMeTLSkey-1:01:VRLbtnN9AQb2WXW3c9+wEf/DRLz0QuLdbYvEhwtdWwNf9LrZ:"
   // if PSK field is empty, then unsecure connection Nvme/TCP without TLS will be made
-  bytes psk = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Input only: never returned in resources or error messages.
+  bytes psk = 3 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_behavior) = INPUT_ONLY
+  ];
 }
 
 // Represents a specific path to target controller

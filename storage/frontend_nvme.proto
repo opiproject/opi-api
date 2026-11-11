@@ -174,8 +174,11 @@ message NvmeSubsystemSpec {
   // host NQN
   string hostnqn = 5 [(google.api.field_behavior) = OPTIONAL];
 
-  // psk key for TCP transport
-  bytes psk = 6 [(google.api.field_behavior) = OPTIONAL];
+  // Input-only PSK for TCP transport. Never returned in resources or errors.
+  bytes psk = 6 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_behavior) = INPUT_ONLY
+  ];
 }
 
 // Represents Nvme Subsystem status

@@ -1,0 +1,23 @@
+name: API contract tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: tests/go.mod
+          cache-dependency-path: tests/go.sum
+      - uses: bufbuild/buf-setup-action@v1
+        with:
+          version: 1.50.0
+      - run: go test ./...
+        working-directory: tests

@@ -76,8 +76,11 @@ message EncryptedVolume {
   // The back/middle-end volume to back this volume
   string volume_name_ref = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // Key to be used for encryption
-  bytes key = 3 [(google.api.field_behavior) = REQUIRED];
+  // Input-only encryption key. Never returned in resources or error messages.
+  bytes key = 3 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.field_behavior) = INPUT_ONLY
+  ];
 
   // Cipher to use
   EncryptionType cipher = 4 [(google.api.field_behavior) = REQUIRED];

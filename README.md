@@ -62,6 +62,24 @@ The generation of the OPI API files from the protobuf definitions is handled by 
 
 The OPI API is published to the BSR in the [opiproject](https://buf.build/opiproject/opi).  This project contains the auto-generated documentation as well as the code and sdk files.  Refer th the BSR for information and documentation.
 
+### Secret-bearing resources
+
+Encryption keys, NVMe PSKs, and IKE private keys/PSKs are input-only fields.
+Bridges must omit them from every response, including Create, Update, Get,
+List, and repeated-create responses, and must not include them in status/error
+messages or logs. Public keys and certificates are not private keys and remain
+ordinary resource data.
+
+`INPUT_ONLY` is a contract annotation, not an automatic protobuf or gRPC-gateway
+redaction mechanism. Implementations must enforce it. Redact a cloned response;
+never clear stored configuration or request objects needed for encryption or TLS.
+Reference-bridge tests must verify real RPC responses, error paths, retried
+creates, and preservation of internal key material. Field numbers, request
+serialization, and existing required-input rules are unchanged.
+
+Run the annotation and input round-trip tests from the repository root with
+`go -C tests test ./...` (Buf and Go must be on `PATH`).
+
 ---
 
 - Leader
