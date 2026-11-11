@@ -28,6 +28,71 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Suspension states are independent of host-driver attachment.
+type NvmeControllerStatus_SuspensionState int32
+
+const (
+	// Suspension state is unknown, not proof that I/O admission is open.
+	NvmeControllerStatus_SUSPENSION_STATE_UNSPECIFIED NvmeControllerStatus_SuspensionState = 0
+	// Controller is ready to admit I/O.
+	NvmeControllerStatus_SUSPENSION_STATE_RESUMED NvmeControllerStatus_SuspensionState = 1
+	// New I/O admission is closed and admitted requests are completing.
+	NvmeControllerStatus_SUSPENSION_STATE_SUSPENDING NvmeControllerStatus_SuspensionState = 2
+	// Admission is closed and all admitted I/O has completed.
+	NvmeControllerStatus_SUSPENSION_STATE_SUSPENDED NvmeControllerStatus_SuspensionState = 3
+	// Readiness checks are running; admission remains closed.
+	NvmeControllerStatus_SUSPENSION_STATE_RESUMING NvmeControllerStatus_SuspensionState = 4
+	// A transition failed. Admission remains closed until recovery succeeds.
+	NvmeControllerStatus_SUSPENSION_STATE_ERROR NvmeControllerStatus_SuspensionState = 5
+)
+
+// Enum value maps for NvmeControllerStatus_SuspensionState.
+var (
+	NvmeControllerStatus_SuspensionState_name = map[int32]string{
+		0: "SUSPENSION_STATE_UNSPECIFIED",
+		1: "SUSPENSION_STATE_RESUMED",
+		2: "SUSPENSION_STATE_SUSPENDING",
+		3: "SUSPENSION_STATE_SUSPENDED",
+		4: "SUSPENSION_STATE_RESUMING",
+		5: "SUSPENSION_STATE_ERROR",
+	}
+	NvmeControllerStatus_SuspensionState_value = map[string]int32{
+		"SUSPENSION_STATE_UNSPECIFIED": 0,
+		"SUSPENSION_STATE_RESUMED":     1,
+		"SUSPENSION_STATE_SUSPENDING":  2,
+		"SUSPENSION_STATE_SUSPENDED":   3,
+		"SUSPENSION_STATE_RESUMING":    4,
+		"SUSPENSION_STATE_ERROR":       5,
+	}
+)
+
+func (x NvmeControllerStatus_SuspensionState) Enum() *NvmeControllerStatus_SuspensionState {
+	p := new(NvmeControllerStatus_SuspensionState)
+	*p = x
+	return p
+}
+
+func (x NvmeControllerStatus_SuspensionState) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (NvmeControllerStatus_SuspensionState) Descriptor() protoreflect.EnumDescriptor {
+	return file_storage_frontend_nvme_proto_enumTypes[0].Descriptor()
+}
+
+func (NvmeControllerStatus_SuspensionState) Type() protoreflect.EnumType {
+	return &file_storage_frontend_nvme_proto_enumTypes[0]
+}
+
+func (x NvmeControllerStatus_SuspensionState) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use NvmeControllerStatus_SuspensionState.Descriptor instead.
+func (NvmeControllerStatus_SuspensionState) EnumDescriptor() ([]byte, []int) {
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{5, 0}
+}
+
 // Namespace Administrative States
 type NvmeNamespaceStatus_State int32
 
@@ -69,11 +134,11 @@ func (x NvmeNamespaceStatus_State) String() string {
 }
 
 func (NvmeNamespaceStatus_State) Descriptor() protoreflect.EnumDescriptor {
-	return file_storage_frontend_nvme_proto_enumTypes[0].Descriptor()
+	return file_storage_frontend_nvme_proto_enumTypes[1].Descriptor()
 }
 
 func (NvmeNamespaceStatus_State) Type() protoreflect.EnumType {
-	return &file_storage_frontend_nvme_proto_enumTypes[0]
+	return &file_storage_frontend_nvme_proto_enumTypes[1]
 }
 
 func (x NvmeNamespaceStatus_State) Number() protoreflect.EnumNumber {
@@ -82,7 +147,7 @@ func (x NvmeNamespaceStatus_State) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NvmeNamespaceStatus_State.Descriptor instead.
 func (NvmeNamespaceStatus_State) EnumDescriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{8, 0}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{10, 0}
 }
 
 // Namespace operational states
@@ -122,11 +187,11 @@ func (x NvmeNamespaceStatus_OperState) String() string {
 }
 
 func (NvmeNamespaceStatus_OperState) Descriptor() protoreflect.EnumDescriptor {
-	return file_storage_frontend_nvme_proto_enumTypes[1].Descriptor()
+	return file_storage_frontend_nvme_proto_enumTypes[2].Descriptor()
 }
 
 func (NvmeNamespaceStatus_OperState) Type() protoreflect.EnumType {
-	return &file_storage_frontend_nvme_proto_enumTypes[1]
+	return &file_storage_frontend_nvme_proto_enumTypes[2]
 }
 
 func (x NvmeNamespaceStatus_OperState) Number() protoreflect.EnumNumber {
@@ -135,7 +200,7 @@ func (x NvmeNamespaceStatus_OperState) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NvmeNamespaceStatus_OperState.Descriptor instead.
 func (NvmeNamespaceStatus_OperState) EnumDescriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{8, 1}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{10, 1}
 }
 
 // Represents Nvme Subsystem
@@ -599,9 +664,16 @@ func (*NvmeControllerSpec_FabricsId) isNvmeControllerSpec_Endpoint() {}
 type NvmeControllerStatus struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Device is in use by host nvme driver
-	Active        bool `protobuf:"varint,1,opt,name=active,proto3" json:"active,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Active bool `protobuf:"varint,1,opt,name=active,proto3" json:"active,omitempty"`
+	// Current per-controller I/O admission and drain state.
+	SuspensionState NvmeControllerStatus_SuspensionState `protobuf:"varint,2,opt,name=suspension_state,json=suspensionState,proto3,enum=opi_api.storage.v1.NvmeControllerStatus_SuspensionState" json:"suspension_state,omitempty"`
+	// Remaining admitted I/O. Absent means unknown; present values are nonnegative.
+	// Zero alone is not proof that the admission gate is closed.
+	OutstandingIos *int64 `protobuf:"varint,3,opt,name=outstanding_ios,json=outstandingIos,proto3,oneof" json:"outstanding_ios,omitempty"`
+	// Human-readable transition progress or failure information.
+	SuspensionStatusMessage string `protobuf:"bytes,4,opt,name=suspension_status_message,json=suspensionStatusMessage,proto3" json:"suspension_status_message,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *NvmeControllerStatus) Reset() {
@@ -641,6 +713,119 @@ func (x *NvmeControllerStatus) GetActive() bool {
 	return false
 }
 
+func (x *NvmeControllerStatus) GetSuspensionState() NvmeControllerStatus_SuspensionState {
+	if x != nil {
+		return x.SuspensionState
+	}
+	return NvmeControllerStatus_SUSPENSION_STATE_UNSPECIFIED
+}
+
+func (x *NvmeControllerStatus) GetOutstandingIos() int64 {
+	if x != nil && x.OutstandingIos != nil {
+		return *x.OutstandingIos
+	}
+	return 0
+}
+
+func (x *NvmeControllerStatus) GetSuspensionStatusMessage() string {
+	if x != nil {
+		return x.SuspensionStatusMessage
+	}
+	return ""
+}
+
+// Request to quiesce one controller without deleting it or its namespaces.
+type SuspendNvmeControllerRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Controller to suspend.
+	Name          string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SuspendNvmeControllerRequest) Reset() {
+	*x = SuspendNvmeControllerRequest{}
+	mi := &file_storage_frontend_nvme_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SuspendNvmeControllerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SuspendNvmeControllerRequest) ProtoMessage() {}
+
+func (x *SuspendNvmeControllerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_storage_frontend_nvme_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SuspendNvmeControllerRequest.ProtoReflect.Descriptor instead.
+func (*SuspendNvmeControllerRequest) Descriptor() ([]byte, []int) {
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *SuspendNvmeControllerRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+// Request to reopen I/O admission on one controller.
+type ResumeNvmeControllerRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Controller to resume.
+	Name          string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResumeNvmeControllerRequest) Reset() {
+	*x = ResumeNvmeControllerRequest{}
+	mi := &file_storage_frontend_nvme_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResumeNvmeControllerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResumeNvmeControllerRequest) ProtoMessage() {}
+
+func (x *ResumeNvmeControllerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_storage_frontend_nvme_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResumeNvmeControllerRequest.ProtoReflect.Descriptor instead.
+func (*ResumeNvmeControllerRequest) Descriptor() ([]byte, []int) {
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *ResumeNvmeControllerRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
 // Represents Nvme Namespace
 type NvmeNamespace struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
@@ -658,7 +843,7 @@ type NvmeNamespace struct {
 
 func (x *NvmeNamespace) Reset() {
 	*x = NvmeNamespace{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[6]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -670,7 +855,7 @@ func (x *NvmeNamespace) String() string {
 func (*NvmeNamespace) ProtoMessage() {}
 
 func (x *NvmeNamespace) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[6]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -683,7 +868,7 @@ func (x *NvmeNamespace) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NvmeNamespace.ProtoReflect.Descriptor instead.
 func (*NvmeNamespace) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{6}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *NvmeNamespace) GetName() string {
@@ -730,7 +915,7 @@ type NvmeNamespaceSpec struct {
 
 func (x *NvmeNamespaceSpec) Reset() {
 	*x = NvmeNamespaceSpec{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[7]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -742,7 +927,7 @@ func (x *NvmeNamespaceSpec) String() string {
 func (*NvmeNamespaceSpec) ProtoMessage() {}
 
 func (x *NvmeNamespaceSpec) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[7]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -755,7 +940,7 @@ func (x *NvmeNamespaceSpec) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NvmeNamespaceSpec.ProtoReflect.Descriptor instead.
 func (*NvmeNamespaceSpec) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{7}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *NvmeNamespaceSpec) GetHostNsid() int32 {
@@ -806,7 +991,7 @@ type NvmeNamespaceStatus struct {
 
 func (x *NvmeNamespaceStatus) Reset() {
 	*x = NvmeNamespaceStatus{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[8]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -818,7 +1003,7 @@ func (x *NvmeNamespaceStatus) String() string {
 func (*NvmeNamespaceStatus) ProtoMessage() {}
 
 func (x *NvmeNamespaceStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[8]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -831,7 +1016,7 @@ func (x *NvmeNamespaceStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NvmeNamespaceStatus.ProtoReflect.Descriptor instead.
 func (*NvmeNamespaceStatus) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{8}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *NvmeNamespaceStatus) GetState() NvmeNamespaceStatus_State {
@@ -862,7 +1047,7 @@ type CreateNvmeSubsystemRequest struct {
 
 func (x *CreateNvmeSubsystemRequest) Reset() {
 	*x = CreateNvmeSubsystemRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[9]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -874,7 +1059,7 @@ func (x *CreateNvmeSubsystemRequest) String() string {
 func (*CreateNvmeSubsystemRequest) ProtoMessage() {}
 
 func (x *CreateNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[9]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -887,7 +1072,7 @@ func (x *CreateNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateNvmeSubsystemRequest.ProtoReflect.Descriptor instead.
 func (*CreateNvmeSubsystemRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{9}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *CreateNvmeSubsystemRequest) GetNvmeSubsystem() *NvmeSubsystem {
@@ -925,7 +1110,7 @@ type DeleteNvmeSubsystemRequest struct {
 
 func (x *DeleteNvmeSubsystemRequest) Reset() {
 	*x = DeleteNvmeSubsystemRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[10]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -937,7 +1122,7 @@ func (x *DeleteNvmeSubsystemRequest) String() string {
 func (*DeleteNvmeSubsystemRequest) ProtoMessage() {}
 
 func (x *DeleteNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[10]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -950,7 +1135,7 @@ func (x *DeleteNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteNvmeSubsystemRequest.ProtoReflect.Descriptor instead.
 func (*DeleteNvmeSubsystemRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{10}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DeleteNvmeSubsystemRequest) GetName() string {
@@ -983,7 +1168,7 @@ type UpdateNvmeSubsystemRequest struct {
 
 func (x *UpdateNvmeSubsystemRequest) Reset() {
 	*x = UpdateNvmeSubsystemRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[11]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -995,7 +1180,7 @@ func (x *UpdateNvmeSubsystemRequest) String() string {
 func (*UpdateNvmeSubsystemRequest) ProtoMessage() {}
 
 func (x *UpdateNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[11]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1008,7 +1193,7 @@ func (x *UpdateNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNvmeSubsystemRequest.ProtoReflect.Descriptor instead.
 func (*UpdateNvmeSubsystemRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{11}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *UpdateNvmeSubsystemRequest) GetNvmeSubsystem() *NvmeSubsystem {
@@ -1045,7 +1230,7 @@ type ListNvmeSubsystemsRequest struct {
 
 func (x *ListNvmeSubsystemsRequest) Reset() {
 	*x = ListNvmeSubsystemsRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[12]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1057,7 +1242,7 @@ func (x *ListNvmeSubsystemsRequest) String() string {
 func (*ListNvmeSubsystemsRequest) ProtoMessage() {}
 
 func (x *ListNvmeSubsystemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[12]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1070,7 +1255,7 @@ func (x *ListNvmeSubsystemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNvmeSubsystemsRequest.ProtoReflect.Descriptor instead.
 func (*ListNvmeSubsystemsRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{12}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListNvmeSubsystemsRequest) GetPageSize() int32 {
@@ -1100,7 +1285,7 @@ type ListNvmeSubsystemsResponse struct {
 
 func (x *ListNvmeSubsystemsResponse) Reset() {
 	*x = ListNvmeSubsystemsResponse{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[13]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1112,7 +1297,7 @@ func (x *ListNvmeSubsystemsResponse) String() string {
 func (*ListNvmeSubsystemsResponse) ProtoMessage() {}
 
 func (x *ListNvmeSubsystemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[13]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1125,7 +1310,7 @@ func (x *ListNvmeSubsystemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNvmeSubsystemsResponse.ProtoReflect.Descriptor instead.
 func (*ListNvmeSubsystemsResponse) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{13}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ListNvmeSubsystemsResponse) GetNvmeSubsystems() []*NvmeSubsystem {
@@ -1153,7 +1338,7 @@ type GetNvmeSubsystemRequest struct {
 
 func (x *GetNvmeSubsystemRequest) Reset() {
 	*x = GetNvmeSubsystemRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[14]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1165,7 +1350,7 @@ func (x *GetNvmeSubsystemRequest) String() string {
 func (*GetNvmeSubsystemRequest) ProtoMessage() {}
 
 func (x *GetNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[14]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1178,7 +1363,7 @@ func (x *GetNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNvmeSubsystemRequest.ProtoReflect.Descriptor instead.
 func (*GetNvmeSubsystemRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{14}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *GetNvmeSubsystemRequest) GetName() string {
@@ -1199,7 +1384,7 @@ type StatsNvmeSubsystemRequest struct {
 
 func (x *StatsNvmeSubsystemRequest) Reset() {
 	*x = StatsNvmeSubsystemRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[15]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1211,7 +1396,7 @@ func (x *StatsNvmeSubsystemRequest) String() string {
 func (*StatsNvmeSubsystemRequest) ProtoMessage() {}
 
 func (x *StatsNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[15]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1224,7 +1409,7 @@ func (x *StatsNvmeSubsystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatsNvmeSubsystemRequest.ProtoReflect.Descriptor instead.
 func (*StatsNvmeSubsystemRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{15}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *StatsNvmeSubsystemRequest) GetName() string {
@@ -1245,7 +1430,7 @@ type StatsNvmeSubsystemResponse struct {
 
 func (x *StatsNvmeSubsystemResponse) Reset() {
 	*x = StatsNvmeSubsystemResponse{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[16]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1257,7 +1442,7 @@ func (x *StatsNvmeSubsystemResponse) String() string {
 func (*StatsNvmeSubsystemResponse) ProtoMessage() {}
 
 func (x *StatsNvmeSubsystemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[16]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1270,7 +1455,7 @@ func (x *StatsNvmeSubsystemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatsNvmeSubsystemResponse.ProtoReflect.Descriptor instead.
 func (*StatsNvmeSubsystemResponse) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{16}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *StatsNvmeSubsystemResponse) GetStats() *VolumeStats {
@@ -1296,7 +1481,7 @@ type CreateNvmeControllerRequest struct {
 
 func (x *CreateNvmeControllerRequest) Reset() {
 	*x = CreateNvmeControllerRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[17]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1308,7 +1493,7 @@ func (x *CreateNvmeControllerRequest) String() string {
 func (*CreateNvmeControllerRequest) ProtoMessage() {}
 
 func (x *CreateNvmeControllerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[17]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1321,7 +1506,7 @@ func (x *CreateNvmeControllerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateNvmeControllerRequest.ProtoReflect.Descriptor instead.
 func (*CreateNvmeControllerRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{17}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CreateNvmeControllerRequest) GetParent() string {
@@ -1359,7 +1544,7 @@ type DeleteNvmeControllerRequest struct {
 
 func (x *DeleteNvmeControllerRequest) Reset() {
 	*x = DeleteNvmeControllerRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[18]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1371,7 +1556,7 @@ func (x *DeleteNvmeControllerRequest) String() string {
 func (*DeleteNvmeControllerRequest) ProtoMessage() {}
 
 func (x *DeleteNvmeControllerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[18]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1384,7 +1569,7 @@ func (x *DeleteNvmeControllerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteNvmeControllerRequest.ProtoReflect.Descriptor instead.
 func (*DeleteNvmeControllerRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{18}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *DeleteNvmeControllerRequest) GetName() string {
@@ -1417,7 +1602,7 @@ type UpdateNvmeControllerRequest struct {
 
 func (x *UpdateNvmeControllerRequest) Reset() {
 	*x = UpdateNvmeControllerRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[19]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1429,7 +1614,7 @@ func (x *UpdateNvmeControllerRequest) String() string {
 func (*UpdateNvmeControllerRequest) ProtoMessage() {}
 
 func (x *UpdateNvmeControllerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[19]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1442,7 +1627,7 @@ func (x *UpdateNvmeControllerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNvmeControllerRequest.ProtoReflect.Descriptor instead.
 func (*UpdateNvmeControllerRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{19}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *UpdateNvmeControllerRequest) GetNvmeController() *NvmeController {
@@ -1481,7 +1666,7 @@ type ListNvmeControllersRequest struct {
 
 func (x *ListNvmeControllersRequest) Reset() {
 	*x = ListNvmeControllersRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[20]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1493,7 +1678,7 @@ func (x *ListNvmeControllersRequest) String() string {
 func (*ListNvmeControllersRequest) ProtoMessage() {}
 
 func (x *ListNvmeControllersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[20]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1506,7 +1691,7 @@ func (x *ListNvmeControllersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNvmeControllersRequest.ProtoReflect.Descriptor instead.
 func (*ListNvmeControllersRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{20}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ListNvmeControllersRequest) GetParent() string {
@@ -1543,7 +1728,7 @@ type ListNvmeControllersResponse struct {
 
 func (x *ListNvmeControllersResponse) Reset() {
 	*x = ListNvmeControllersResponse{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[21]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1555,7 +1740,7 @@ func (x *ListNvmeControllersResponse) String() string {
 func (*ListNvmeControllersResponse) ProtoMessage() {}
 
 func (x *ListNvmeControllersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[21]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1568,7 +1753,7 @@ func (x *ListNvmeControllersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNvmeControllersResponse.ProtoReflect.Descriptor instead.
 func (*ListNvmeControllersResponse) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{21}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ListNvmeControllersResponse) GetNvmeControllers() []*NvmeController {
@@ -1596,7 +1781,7 @@ type GetNvmeControllerRequest struct {
 
 func (x *GetNvmeControllerRequest) Reset() {
 	*x = GetNvmeControllerRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[22]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1608,7 +1793,7 @@ func (x *GetNvmeControllerRequest) String() string {
 func (*GetNvmeControllerRequest) ProtoMessage() {}
 
 func (x *GetNvmeControllerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[22]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1621,7 +1806,7 @@ func (x *GetNvmeControllerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNvmeControllerRequest.ProtoReflect.Descriptor instead.
 func (*GetNvmeControllerRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{22}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetNvmeControllerRequest) GetName() string {
@@ -1642,7 +1827,7 @@ type StatsNvmeControllerRequest struct {
 
 func (x *StatsNvmeControllerRequest) Reset() {
 	*x = StatsNvmeControllerRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[23]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1654,7 +1839,7 @@ func (x *StatsNvmeControllerRequest) String() string {
 func (*StatsNvmeControllerRequest) ProtoMessage() {}
 
 func (x *StatsNvmeControllerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[23]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1667,7 +1852,7 @@ func (x *StatsNvmeControllerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatsNvmeControllerRequest.ProtoReflect.Descriptor instead.
 func (*StatsNvmeControllerRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{23}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *StatsNvmeControllerRequest) GetName() string {
@@ -1688,7 +1873,7 @@ type StatsNvmeControllerResponse struct {
 
 func (x *StatsNvmeControllerResponse) Reset() {
 	*x = StatsNvmeControllerResponse{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[24]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1700,7 +1885,7 @@ func (x *StatsNvmeControllerResponse) String() string {
 func (*StatsNvmeControllerResponse) ProtoMessage() {}
 
 func (x *StatsNvmeControllerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[24]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1713,7 +1898,7 @@ func (x *StatsNvmeControllerResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatsNvmeControllerResponse.ProtoReflect.Descriptor instead.
 func (*StatsNvmeControllerResponse) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{24}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *StatsNvmeControllerResponse) GetStats() *VolumeStats {
@@ -1739,7 +1924,7 @@ type CreateNvmeNamespaceRequest struct {
 
 func (x *CreateNvmeNamespaceRequest) Reset() {
 	*x = CreateNvmeNamespaceRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[25]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1751,7 +1936,7 @@ func (x *CreateNvmeNamespaceRequest) String() string {
 func (*CreateNvmeNamespaceRequest) ProtoMessage() {}
 
 func (x *CreateNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[25]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1764,7 +1949,7 @@ func (x *CreateNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateNvmeNamespaceRequest.ProtoReflect.Descriptor instead.
 func (*CreateNvmeNamespaceRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{25}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *CreateNvmeNamespaceRequest) GetParent() string {
@@ -1802,7 +1987,7 @@ type DeleteNvmeNamespaceRequest struct {
 
 func (x *DeleteNvmeNamespaceRequest) Reset() {
 	*x = DeleteNvmeNamespaceRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[26]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1814,7 +1999,7 @@ func (x *DeleteNvmeNamespaceRequest) String() string {
 func (*DeleteNvmeNamespaceRequest) ProtoMessage() {}
 
 func (x *DeleteNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[26]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1827,7 +2012,7 @@ func (x *DeleteNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteNvmeNamespaceRequest.ProtoReflect.Descriptor instead.
 func (*DeleteNvmeNamespaceRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{26}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *DeleteNvmeNamespaceRequest) GetName() string {
@@ -1860,7 +2045,7 @@ type UpdateNvmeNamespaceRequest struct {
 
 func (x *UpdateNvmeNamespaceRequest) Reset() {
 	*x = UpdateNvmeNamespaceRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[27]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1872,7 +2057,7 @@ func (x *UpdateNvmeNamespaceRequest) String() string {
 func (*UpdateNvmeNamespaceRequest) ProtoMessage() {}
 
 func (x *UpdateNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[27]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1885,7 +2070,7 @@ func (x *UpdateNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNvmeNamespaceRequest.ProtoReflect.Descriptor instead.
 func (*UpdateNvmeNamespaceRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{27}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *UpdateNvmeNamespaceRequest) GetNvmeNamespace() *NvmeNamespace {
@@ -1924,7 +2109,7 @@ type ListNvmeNamespacesRequest struct {
 
 func (x *ListNvmeNamespacesRequest) Reset() {
 	*x = ListNvmeNamespacesRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[28]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1936,7 +2121,7 @@ func (x *ListNvmeNamespacesRequest) String() string {
 func (*ListNvmeNamespacesRequest) ProtoMessage() {}
 
 func (x *ListNvmeNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[28]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1949,7 +2134,7 @@ func (x *ListNvmeNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNvmeNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*ListNvmeNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{28}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *ListNvmeNamespacesRequest) GetParent() string {
@@ -1986,7 +2171,7 @@ type ListNvmeNamespacesResponse struct {
 
 func (x *ListNvmeNamespacesResponse) Reset() {
 	*x = ListNvmeNamespacesResponse{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[29]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1998,7 +2183,7 @@ func (x *ListNvmeNamespacesResponse) String() string {
 func (*ListNvmeNamespacesResponse) ProtoMessage() {}
 
 func (x *ListNvmeNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[29]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2011,7 +2196,7 @@ func (x *ListNvmeNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNvmeNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*ListNvmeNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{29}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *ListNvmeNamespacesResponse) GetNvmeNamespaces() []*NvmeNamespace {
@@ -2039,7 +2224,7 @@ type GetNvmeNamespaceRequest struct {
 
 func (x *GetNvmeNamespaceRequest) Reset() {
 	*x = GetNvmeNamespaceRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[30]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2051,7 +2236,7 @@ func (x *GetNvmeNamespaceRequest) String() string {
 func (*GetNvmeNamespaceRequest) ProtoMessage() {}
 
 func (x *GetNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[30]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2064,7 +2249,7 @@ func (x *GetNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNvmeNamespaceRequest.ProtoReflect.Descriptor instead.
 func (*GetNvmeNamespaceRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{30}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *GetNvmeNamespaceRequest) GetName() string {
@@ -2085,7 +2270,7 @@ type StatsNvmeNamespaceRequest struct {
 
 func (x *StatsNvmeNamespaceRequest) Reset() {
 	*x = StatsNvmeNamespaceRequest{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[31]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2097,7 +2282,7 @@ func (x *StatsNvmeNamespaceRequest) String() string {
 func (*StatsNvmeNamespaceRequest) ProtoMessage() {}
 
 func (x *StatsNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[31]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2110,7 +2295,7 @@ func (x *StatsNvmeNamespaceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatsNvmeNamespaceRequest.ProtoReflect.Descriptor instead.
 func (*StatsNvmeNamespaceRequest) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{31}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *StatsNvmeNamespaceRequest) GetName() string {
@@ -2131,7 +2316,7 @@ type StatsNvmeNamespaceResponse struct {
 
 func (x *StatsNvmeNamespaceResponse) Reset() {
 	*x = StatsNvmeNamespaceResponse{}
-	mi := &file_storage_frontend_nvme_proto_msgTypes[32]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2143,7 +2328,7 @@ func (x *StatsNvmeNamespaceResponse) String() string {
 func (*StatsNvmeNamespaceResponse) ProtoMessage() {}
 
 func (x *StatsNvmeNamespaceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_storage_frontend_nvme_proto_msgTypes[32]
+	mi := &file_storage_frontend_nvme_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2156,7 +2341,7 @@ func (x *StatsNvmeNamespaceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatsNvmeNamespaceResponse.ProtoReflect.Descriptor instead.
 func (*StatsNvmeNamespaceResponse) Descriptor() ([]byte, []int) {
-	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{32}
+	return file_storage_frontend_nvme_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *StatsNvmeNamespaceResponse) GetStats() *VolumeStats {
@@ -2279,10 +2464,50 @@ var file_storage_frontend_nvme_proto_rawDesc = []byte{
 	0x31, 0x2e, 0x51, 0x6f, 0x73, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x52,
 	0x08, 0x6d, 0x61, 0x78, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x42, 0x0a, 0x0a, 0x08, 0x65, 0x6e, 0x64,
 	0x70, 0x6f, 0x69, 0x6e, 0x74, 0x42, 0x15, 0x0a, 0x13, 0x5f, 0x6e, 0x76, 0x6d, 0x65, 0x5f, 0x63,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x22, 0x33, 0x0a, 0x14,
-	0x4e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74,
-	0x61, 0x74, 0x75, 0x73, 0x12, 0x1b, 0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x08, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69, 0x76,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x22, 0xf5, 0x03, 0x0a,
+	0x14, 0x4e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53,
+	0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x1b, 0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x08, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69,
+	0x76, 0x65, 0x12, 0x68, 0x0a, 0x10, 0x73, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e,
+	0x5f, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x38, 0x2e, 0x6f,
+	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
+	0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x2e, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x73, 0x69, 0x6f,
+	0x6e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x52, 0x0f, 0x73, 0x75, 0x73,
+	0x70, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x31, 0x0a, 0x0f,
+	0x6f, 0x75, 0x74, 0x73, 0x74, 0x61, 0x6e, 0x64, 0x69, 0x6e, 0x67, 0x5f, 0x69, 0x6f, 0x73, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x03, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x48, 0x00, 0x52, 0x0e, 0x6f, 0x75,
+	0x74, 0x73, 0x74, 0x61, 0x6e, 0x64, 0x69, 0x6e, 0x67, 0x49, 0x6f, 0x73, 0x88, 0x01, 0x01, 0x12,
+	0x3f, 0x0a, 0x19, 0x73, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x5f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x52, 0x17, 0x73, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x73,
+	0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x22, 0xcd, 0x01, 0x0a, 0x0f, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x53,
+	0x74, 0x61, 0x74, 0x65, 0x12, 0x20, 0x0a, 0x1c, 0x53, 0x55, 0x53, 0x50, 0x45, 0x4e, 0x53, 0x49,
+	0x4f, 0x4e, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49,
+	0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x1c, 0x0a, 0x18, 0x53, 0x55, 0x53, 0x50, 0x45, 0x4e,
+	0x53, 0x49, 0x4f, 0x4e, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x52, 0x45, 0x53, 0x55, 0x4d,
+	0x45, 0x44, 0x10, 0x01, 0x12, 0x1f, 0x0a, 0x1b, 0x53, 0x55, 0x53, 0x50, 0x45, 0x4e, 0x53, 0x49,
+	0x4f, 0x4e, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x53, 0x55, 0x53, 0x50, 0x45, 0x4e, 0x44,
+	0x49, 0x4e, 0x47, 0x10, 0x02, 0x12, 0x1e, 0x0a, 0x1a, 0x53, 0x55, 0x53, 0x50, 0x45, 0x4e, 0x53,
+	0x49, 0x4f, 0x4e, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x53, 0x55, 0x53, 0x50, 0x45, 0x4e,
+	0x44, 0x45, 0x44, 0x10, 0x03, 0x12, 0x1d, 0x0a, 0x19, 0x53, 0x55, 0x53, 0x50, 0x45, 0x4e, 0x53,
+	0x49, 0x4f, 0x4e, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x52, 0x45, 0x53, 0x55, 0x4d, 0x49,
+	0x4e, 0x47, 0x10, 0x04, 0x12, 0x1a, 0x0a, 0x16, 0x53, 0x55, 0x53, 0x50, 0x45, 0x4e, 0x53, 0x49,
+	0x4f, 0x4e, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x45, 0x52, 0x52, 0x4f, 0x52, 0x10, 0x05,
+	0x42, 0x12, 0x0a, 0x10, 0x5f, 0x6f, 0x75, 0x74, 0x73, 0x74, 0x61, 0x6e, 0x64, 0x69, 0x6e, 0x67,
+	0x5f, 0x69, 0x6f, 0x73, 0x22, 0x5d, 0x0a, 0x1c, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x4e,
+	0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x3d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x29, 0xe0, 0x41, 0x02, 0xfa, 0x41, 0x23, 0x0a, 0x21, 0x6f, 0x70, 0x69, 0x5f,
+	0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2f, 0x4e,
+	0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x22, 0x5c, 0x0a, 0x1b, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x4e, 0x76, 0x6d,
+	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x3d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x29, 0xe0, 0x41, 0x02, 0xfa, 0x41, 0x23, 0x0a, 0x21, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2f, 0x4e, 0x76, 0x6d,
+	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x04, 0x6e, 0x61, 0x6d,
 	0x65, 0x22, 0xab, 0x02, 0x0a, 0x0d, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
 	0x61, 0x63, 0x65, 0x12, 0x17, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x09, 0x42, 0x03, 0xe0, 0x41, 0x08, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x3e, 0x0a, 0x04,
@@ -2545,7 +2770,7 @@ var file_storage_frontend_nvme_proto_rawDesc = []byte{
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
 	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
-	0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0xd9, 0x19,
+	0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0xc8, 0x1c,
 	0x0a, 0x13, 0x46, 0x72, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x4e, 0x76, 0x6d, 0x65, 0x53, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0xb7, 0x01, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
 	0x4e, 0x76, 0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x2e, 0x2e,
@@ -2681,84 +2906,107 @@ var file_storage_frontend_nvme_proto_rawDesc = []byte{
 	0x33, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x6e, 0x76, 0x6d, 0x65, 0x53,
 	0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x2f, 0x6e, 0x76, 0x6d, 0x65,
 	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x73, 0x2f, 0x2a, 0x7d, 0x3a, 0x73,
-	0x74, 0x61, 0x74, 0x73, 0x12, 0xd8, 0x01, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e,
-	0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x2e, 0x2e, 0x6f,
-	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
-	0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x6f,
-	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x22,
-	0x6e, 0xda, 0x41, 0x27, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x2c, 0x6e, 0x76, 0x6d, 0x65, 0x5f,
-	0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x2c, 0x6e, 0x76, 0x6d, 0x65, 0x5f, 0x6e,
-	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x3e, 0x3a, 0x0e, 0x6e, 0x76, 0x6d, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
-	0x65, 0x22, 0x2c, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x3d, 0x6e,
-	0x76, 0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x7d,
-	0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x12,
-	0x9a, 0x01, 0x0a, 0x13, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61,
-	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
-	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22,
-	0x3b, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2e, 0x2a, 0x2c,
-	0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x6e, 0x76, 0x6d, 0x65, 0x53, 0x75,
-	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x4e,
-	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0x12, 0xda, 0x01, 0x0a,
-	0x13, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73,
-	0x70, 0x61, 0x63, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
-	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
-	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61,
-	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x22, 0x70, 0xda, 0x41, 0x1a, 0x6e, 0x76, 0x6d, 0x65,
-	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x2c, 0x75, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x4d, 0x3a, 0x0e, 0x6e, 0x76,
-	0x6d, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x32, 0x3b, 0x2f, 0x76,
-	0x31, 0x2f, 0x7b, 0x6e, 0x76, 0x6d, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
-	0x65, 0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x6e, 0x76, 0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79,
-	0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
-	0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0x12, 0xb2, 0x01, 0x0a, 0x12, 0x4c, 0x69,
-	0x73, 0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73,
-	0x12, 0x2d, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61,
-	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d,
-	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x3d, 0xda, 0x41, 0x06, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2e,
-	0x12, 0x2c, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x3d, 0x6e, 0x76,
+	0x74, 0x61, 0x74, 0x73, 0x12, 0xb6, 0x01, 0x0a, 0x15, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64,
+	0x4e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x30,
+	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x4e, 0x76, 0x6d, 0x65, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x22, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x22, 0x47, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x3a, 0x3a, 0x01, 0x2a, 0x22, 0x35, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d,
+	0x65, 0x3d, 0x6e, 0x76, 0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73,
+	0x2f, 0x2a, 0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x73, 0x2f, 0x2a, 0x7d, 0x3a, 0x73, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x12, 0xb3, 0x01,
+	0x0a, 0x14, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x2f, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x75,
+	0x6d, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d,
+	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x46, 0xda, 0x41, 0x04,
+	0x6e, 0x61, 0x6d, 0x65, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x39, 0x3a, 0x01, 0x2a, 0x22, 0x34, 0x2f,
+	0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x6e, 0x76, 0x6d, 0x65, 0x53, 0x75, 0x62,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x73, 0x2f, 0x2a, 0x7d, 0x3a, 0x72, 0x65, 0x73,
+	0x75, 0x6d, 0x65, 0x12, 0xd8, 0x01, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x76,
+	0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70,
+	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73,
+	0x70, 0x61, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70,
+	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x22, 0x6e,
+	0xda, 0x41, 0x27, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x2c, 0x6e, 0x76, 0x6d, 0x65, 0x5f, 0x6e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x2c, 0x6e, 0x76, 0x6d, 0x65, 0x5f, 0x6e, 0x61,
+	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3e,
+	0x3a, 0x0e, 0x6e, 0x76, 0x6d, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x22, 0x2c, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x3d, 0x6e, 0x76,
 	0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x7d, 0x2f,
-	0x6e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x12, 0x9f,
-	0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
-	0x61, 0x63, 0x65, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
-	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x76, 0x6d, 0x65,
-	0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
-	0x61, 0x63, 0x65, 0x22, 0x3b, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x82, 0xd3, 0xe4, 0x93,
-	0x02, 0x2e, 0x12, 0x2c, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x6e, 0x76,
-	0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x2f, 0x6e,
-	0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x2f, 0x2a, 0x7d,
-	0x12, 0xb6, 0x01, 0x0a, 0x12, 0x53, 0x74, 0x61, 0x74, 0x73, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61,
-	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x2d, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
-	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61,
-	0x74, 0x73, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x6e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x12, 0x9a,
+	0x01, 0x0a, 0x13, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d,
+	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x3b,
+	0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2e, 0x2a, 0x2c, 0x2f,
+	0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x6e, 0x76, 0x6d, 0x65, 0x53, 0x75, 0x62,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x4e, 0x61,
+	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0x12, 0xda, 0x01, 0x0a, 0x13,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e,
+	0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d,
+	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x22, 0x70, 0xda, 0x41, 0x1a, 0x6e, 0x76, 0x6d, 0x65, 0x5f,
+	0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x2c, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x4d, 0x3a, 0x0e, 0x6e, 0x76, 0x6d,
+	0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x32, 0x3b, 0x2f, 0x76, 0x31,
+	0x2f, 0x7b, 0x6e, 0x76, 0x6d, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x6e, 0x76, 0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73,
+	0x70, 0x61, 0x63, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0x12, 0xb2, 0x01, 0x0a, 0x12, 0x4c, 0x69, 0x73,
+	0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x12,
+	0x2d, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d,
+	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e,
+	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d,
+	0xda, 0x41, 0x06, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2e, 0x12,
+	0x2c, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x3d, 0x6e, 0x76, 0x6d,
+	0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x7d, 0x2f, 0x6e,
+	0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x12, 0x9f, 0x01,
+	0x0a, 0x10, 0x47, 0x65, 0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x76, 0x6d, 0x65, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x22, 0x3b, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x2e, 0x12, 0x2c, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x6e, 0x76, 0x6d,
+	0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a, 0x2f, 0x6e, 0x76,
+	0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x2f, 0x2a, 0x7d, 0x12,
+	0xb6, 0x01, 0x0a, 0x12, 0x53, 0x74, 0x61, 0x74, 0x73, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d,
+	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x2d, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
 	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74,
 	0x73, 0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x41, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x34, 0x12, 0x32, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65,
-	0x3d, 0x6e, 0x76, 0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f,
-	0x2a, 0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73,
-	0x2f, 0x2a, 0x7d, 0x3a, 0x73, 0x74, 0x61, 0x74, 0x73, 0x42, 0x60, 0x0a, 0x12, 0x6f, 0x70, 0x69,
-	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x42,
-	0x11, 0x46, 0x72, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x4e, 0x76, 0x6d, 0x65, 0x50, 0x72, 0x6f,
-	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d,
-	0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x61, 0x6c,
-	0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
+	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x73,
+	0x4e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x41, 0xda, 0x41, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x34, 0x12, 0x32, 0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x3d,
+	0x6e, 0x76, 0x6d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x2a,
+	0x2f, 0x6e, 0x76, 0x6d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x2f,
+	0x2a, 0x7d, 0x3a, 0x73, 0x74, 0x61, 0x74, 0x73, 0x42, 0x60, 0x0a, 0x12, 0x6f, 0x70, 0x69, 0x5f,
+	0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x42, 0x11,
+	0x46, 0x72, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x4e, 0x76, 0x6d, 0x65, 0x50, 0x72, 0x6f, 0x74,
+	0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61,
+	0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70,
+	0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -2773,122 +3021,130 @@ func file_storage_frontend_nvme_proto_rawDescGZIP() []byte {
 	return file_storage_frontend_nvme_proto_rawDescData
 }
 
-var file_storage_frontend_nvme_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_storage_frontend_nvme_proto_msgTypes = make([]protoimpl.MessageInfo, 33)
+var file_storage_frontend_nvme_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_storage_frontend_nvme_proto_msgTypes = make([]protoimpl.MessageInfo, 35)
 var file_storage_frontend_nvme_proto_goTypes = []any{
-	(NvmeNamespaceStatus_State)(0),      // 0: opi_api.storage.v1.NvmeNamespaceStatus.State
-	(NvmeNamespaceStatus_OperState)(0),  // 1: opi_api.storage.v1.NvmeNamespaceStatus.OperState
-	(*NvmeSubsystem)(nil),               // 2: opi_api.storage.v1.NvmeSubsystem
-	(*NvmeSubsystemSpec)(nil),           // 3: opi_api.storage.v1.NvmeSubsystemSpec
-	(*NvmeSubsystemStatus)(nil),         // 4: opi_api.storage.v1.NvmeSubsystemStatus
-	(*NvmeController)(nil),              // 5: opi_api.storage.v1.NvmeController
-	(*NvmeControllerSpec)(nil),          // 6: opi_api.storage.v1.NvmeControllerSpec
-	(*NvmeControllerStatus)(nil),        // 7: opi_api.storage.v1.NvmeControllerStatus
-	(*NvmeNamespace)(nil),               // 8: opi_api.storage.v1.NvmeNamespace
-	(*NvmeNamespaceSpec)(nil),           // 9: opi_api.storage.v1.NvmeNamespaceSpec
-	(*NvmeNamespaceStatus)(nil),         // 10: opi_api.storage.v1.NvmeNamespaceStatus
-	(*CreateNvmeSubsystemRequest)(nil),  // 11: opi_api.storage.v1.CreateNvmeSubsystemRequest
-	(*DeleteNvmeSubsystemRequest)(nil),  // 12: opi_api.storage.v1.DeleteNvmeSubsystemRequest
-	(*UpdateNvmeSubsystemRequest)(nil),  // 13: opi_api.storage.v1.UpdateNvmeSubsystemRequest
-	(*ListNvmeSubsystemsRequest)(nil),   // 14: opi_api.storage.v1.ListNvmeSubsystemsRequest
-	(*ListNvmeSubsystemsResponse)(nil),  // 15: opi_api.storage.v1.ListNvmeSubsystemsResponse
-	(*GetNvmeSubsystemRequest)(nil),     // 16: opi_api.storage.v1.GetNvmeSubsystemRequest
-	(*StatsNvmeSubsystemRequest)(nil),   // 17: opi_api.storage.v1.StatsNvmeSubsystemRequest
-	(*StatsNvmeSubsystemResponse)(nil),  // 18: opi_api.storage.v1.StatsNvmeSubsystemResponse
-	(*CreateNvmeControllerRequest)(nil), // 19: opi_api.storage.v1.CreateNvmeControllerRequest
-	(*DeleteNvmeControllerRequest)(nil), // 20: opi_api.storage.v1.DeleteNvmeControllerRequest
-	(*UpdateNvmeControllerRequest)(nil), // 21: opi_api.storage.v1.UpdateNvmeControllerRequest
-	(*ListNvmeControllersRequest)(nil),  // 22: opi_api.storage.v1.ListNvmeControllersRequest
-	(*ListNvmeControllersResponse)(nil), // 23: opi_api.storage.v1.ListNvmeControllersResponse
-	(*GetNvmeControllerRequest)(nil),    // 24: opi_api.storage.v1.GetNvmeControllerRequest
-	(*StatsNvmeControllerRequest)(nil),  // 25: opi_api.storage.v1.StatsNvmeControllerRequest
-	(*StatsNvmeControllerResponse)(nil), // 26: opi_api.storage.v1.StatsNvmeControllerResponse
-	(*CreateNvmeNamespaceRequest)(nil),  // 27: opi_api.storage.v1.CreateNvmeNamespaceRequest
-	(*DeleteNvmeNamespaceRequest)(nil),  // 28: opi_api.storage.v1.DeleteNvmeNamespaceRequest
-	(*UpdateNvmeNamespaceRequest)(nil),  // 29: opi_api.storage.v1.UpdateNvmeNamespaceRequest
-	(*ListNvmeNamespacesRequest)(nil),   // 30: opi_api.storage.v1.ListNvmeNamespacesRequest
-	(*ListNvmeNamespacesResponse)(nil),  // 31: opi_api.storage.v1.ListNvmeNamespacesResponse
-	(*GetNvmeNamespaceRequest)(nil),     // 32: opi_api.storage.v1.GetNvmeNamespaceRequest
-	(*StatsNvmeNamespaceRequest)(nil),   // 33: opi_api.storage.v1.StatsNvmeNamespaceRequest
-	(*StatsNvmeNamespaceResponse)(nil),  // 34: opi_api.storage.v1.StatsNvmeNamespaceResponse
-	(NvmeTransportType)(0),              // 35: opi_api.storage.v1.NvmeTransportType
-	(*PciEndpoint)(nil),                 // 36: opi_api.storage.v1.PciEndpoint
-	(*FabricsEndpoint)(nil),             // 37: opi_api.storage.v1.FabricsEndpoint
-	(*QosLimit)(nil),                    // 38: opi_api.storage.v1.QosLimit
-	(*fieldmaskpb.FieldMask)(nil),       // 39: google.protobuf.FieldMask
-	(*VolumeStats)(nil),                 // 40: opi_api.storage.v1.VolumeStats
-	(*emptypb.Empty)(nil),               // 41: google.protobuf.Empty
+	(NvmeControllerStatus_SuspensionState)(0), // 0: opi_api.storage.v1.NvmeControllerStatus.SuspensionState
+	(NvmeNamespaceStatus_State)(0),            // 1: opi_api.storage.v1.NvmeNamespaceStatus.State
+	(NvmeNamespaceStatus_OperState)(0),        // 2: opi_api.storage.v1.NvmeNamespaceStatus.OperState
+	(*NvmeSubsystem)(nil),                     // 3: opi_api.storage.v1.NvmeSubsystem
+	(*NvmeSubsystemSpec)(nil),                 // 4: opi_api.storage.v1.NvmeSubsystemSpec
+	(*NvmeSubsystemStatus)(nil),               // 5: opi_api.storage.v1.NvmeSubsystemStatus
+	(*NvmeController)(nil),                    // 6: opi_api.storage.v1.NvmeController
+	(*NvmeControllerSpec)(nil),                // 7: opi_api.storage.v1.NvmeControllerSpec
+	(*NvmeControllerStatus)(nil),              // 8: opi_api.storage.v1.NvmeControllerStatus
+	(*SuspendNvmeControllerRequest)(nil),      // 9: opi_api.storage.v1.SuspendNvmeControllerRequest
+	(*ResumeNvmeControllerRequest)(nil),       // 10: opi_api.storage.v1.ResumeNvmeControllerRequest
+	(*NvmeNamespace)(nil),                     // 11: opi_api.storage.v1.NvmeNamespace
+	(*NvmeNamespaceSpec)(nil),                 // 12: opi_api.storage.v1.NvmeNamespaceSpec
+	(*NvmeNamespaceStatus)(nil),               // 13: opi_api.storage.v1.NvmeNamespaceStatus
+	(*CreateNvmeSubsystemRequest)(nil),        // 14: opi_api.storage.v1.CreateNvmeSubsystemRequest
+	(*DeleteNvmeSubsystemRequest)(nil),        // 15: opi_api.storage.v1.DeleteNvmeSubsystemRequest
+	(*UpdateNvmeSubsystemRequest)(nil),        // 16: opi_api.storage.v1.UpdateNvmeSubsystemRequest
+	(*ListNvmeSubsystemsRequest)(nil),         // 17: opi_api.storage.v1.ListNvmeSubsystemsRequest
+	(*ListNvmeSubsystemsResponse)(nil),        // 18: opi_api.storage.v1.ListNvmeSubsystemsResponse
+	(*GetNvmeSubsystemRequest)(nil),           // 19: opi_api.storage.v1.GetNvmeSubsystemRequest
+	(*StatsNvmeSubsystemRequest)(nil),         // 20: opi_api.storage.v1.StatsNvmeSubsystemRequest
+	(*StatsNvmeSubsystemResponse)(nil),        // 21: opi_api.storage.v1.StatsNvmeSubsystemResponse
+	(*CreateNvmeControllerRequest)(nil),       // 22: opi_api.storage.v1.CreateNvmeControllerRequest
+	(*DeleteNvmeControllerRequest)(nil),       // 23: opi_api.storage.v1.DeleteNvmeControllerRequest
+	(*UpdateNvmeControllerRequest)(nil),       // 24: opi_api.storage.v1.UpdateNvmeControllerRequest
+	(*ListNvmeControllersRequest)(nil),        // 25: opi_api.storage.v1.ListNvmeControllersRequest
+	(*ListNvmeControllersResponse)(nil),       // 26: opi_api.storage.v1.ListNvmeControllersResponse
+	(*GetNvmeControllerRequest)(nil),          // 27: opi_api.storage.v1.GetNvmeControllerRequest
+	(*StatsNvmeControllerRequest)(nil),        // 28: opi_api.storage.v1.StatsNvmeControllerRequest
+	(*StatsNvmeControllerResponse)(nil),       // 29: opi_api.storage.v1.StatsNvmeControllerResponse
+	(*CreateNvmeNamespaceRequest)(nil),        // 30: opi_api.storage.v1.CreateNvmeNamespaceRequest
+	(*DeleteNvmeNamespaceRequest)(nil),        // 31: opi_api.storage.v1.DeleteNvmeNamespaceRequest
+	(*UpdateNvmeNamespaceRequest)(nil),        // 32: opi_api.storage.v1.UpdateNvmeNamespaceRequest
+	(*ListNvmeNamespacesRequest)(nil),         // 33: opi_api.storage.v1.ListNvmeNamespacesRequest
+	(*ListNvmeNamespacesResponse)(nil),        // 34: opi_api.storage.v1.ListNvmeNamespacesResponse
+	(*GetNvmeNamespaceRequest)(nil),           // 35: opi_api.storage.v1.GetNvmeNamespaceRequest
+	(*StatsNvmeNamespaceRequest)(nil),         // 36: opi_api.storage.v1.StatsNvmeNamespaceRequest
+	(*StatsNvmeNamespaceResponse)(nil),        // 37: opi_api.storage.v1.StatsNvmeNamespaceResponse
+	(NvmeTransportType)(0),                    // 38: opi_api.storage.v1.NvmeTransportType
+	(*PciEndpoint)(nil),                       // 39: opi_api.storage.v1.PciEndpoint
+	(*FabricsEndpoint)(nil),                   // 40: opi_api.storage.v1.FabricsEndpoint
+	(*QosLimit)(nil),                          // 41: opi_api.storage.v1.QosLimit
+	(*fieldmaskpb.FieldMask)(nil),             // 42: google.protobuf.FieldMask
+	(*VolumeStats)(nil),                       // 43: opi_api.storage.v1.VolumeStats
+	(*emptypb.Empty)(nil),                     // 44: google.protobuf.Empty
 }
 var file_storage_frontend_nvme_proto_depIdxs = []int32{
-	3,  // 0: opi_api.storage.v1.NvmeSubsystem.spec:type_name -> opi_api.storage.v1.NvmeSubsystemSpec
-	4,  // 1: opi_api.storage.v1.NvmeSubsystem.status:type_name -> opi_api.storage.v1.NvmeSubsystemStatus
-	6,  // 2: opi_api.storage.v1.NvmeController.spec:type_name -> opi_api.storage.v1.NvmeControllerSpec
-	7,  // 3: opi_api.storage.v1.NvmeController.status:type_name -> opi_api.storage.v1.NvmeControllerStatus
-	35, // 4: opi_api.storage.v1.NvmeControllerSpec.trtype:type_name -> opi_api.storage.v1.NvmeTransportType
-	36, // 5: opi_api.storage.v1.NvmeControllerSpec.pcie_id:type_name -> opi_api.storage.v1.PciEndpoint
-	37, // 6: opi_api.storage.v1.NvmeControllerSpec.fabrics_id:type_name -> opi_api.storage.v1.FabricsEndpoint
-	38, // 7: opi_api.storage.v1.NvmeControllerSpec.min_limit:type_name -> opi_api.storage.v1.QosLimit
-	38, // 8: opi_api.storage.v1.NvmeControllerSpec.max_limit:type_name -> opi_api.storage.v1.QosLimit
-	9,  // 9: opi_api.storage.v1.NvmeNamespace.spec:type_name -> opi_api.storage.v1.NvmeNamespaceSpec
-	10, // 10: opi_api.storage.v1.NvmeNamespace.status:type_name -> opi_api.storage.v1.NvmeNamespaceStatus
-	0,  // 11: opi_api.storage.v1.NvmeNamespaceStatus.state:type_name -> opi_api.storage.v1.NvmeNamespaceStatus.State
-	1,  // 12: opi_api.storage.v1.NvmeNamespaceStatus.oper_state:type_name -> opi_api.storage.v1.NvmeNamespaceStatus.OperState
-	2,  // 13: opi_api.storage.v1.CreateNvmeSubsystemRequest.nvme_subsystem:type_name -> opi_api.storage.v1.NvmeSubsystem
-	2,  // 14: opi_api.storage.v1.UpdateNvmeSubsystemRequest.nvme_subsystem:type_name -> opi_api.storage.v1.NvmeSubsystem
-	39, // 15: opi_api.storage.v1.UpdateNvmeSubsystemRequest.update_mask:type_name -> google.protobuf.FieldMask
-	2,  // 16: opi_api.storage.v1.ListNvmeSubsystemsResponse.nvme_subsystems:type_name -> opi_api.storage.v1.NvmeSubsystem
-	40, // 17: opi_api.storage.v1.StatsNvmeSubsystemResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
-	5,  // 18: opi_api.storage.v1.CreateNvmeControllerRequest.nvme_controller:type_name -> opi_api.storage.v1.NvmeController
-	5,  // 19: opi_api.storage.v1.UpdateNvmeControllerRequest.nvme_controller:type_name -> opi_api.storage.v1.NvmeController
-	39, // 20: opi_api.storage.v1.UpdateNvmeControllerRequest.update_mask:type_name -> google.protobuf.FieldMask
-	5,  // 21: opi_api.storage.v1.ListNvmeControllersResponse.nvme_controllers:type_name -> opi_api.storage.v1.NvmeController
-	40, // 22: opi_api.storage.v1.StatsNvmeControllerResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
-	8,  // 23: opi_api.storage.v1.CreateNvmeNamespaceRequest.nvme_namespace:type_name -> opi_api.storage.v1.NvmeNamespace
-	8,  // 24: opi_api.storage.v1.UpdateNvmeNamespaceRequest.nvme_namespace:type_name -> opi_api.storage.v1.NvmeNamespace
-	39, // 25: opi_api.storage.v1.UpdateNvmeNamespaceRequest.update_mask:type_name -> google.protobuf.FieldMask
-	8,  // 26: opi_api.storage.v1.ListNvmeNamespacesResponse.nvme_namespaces:type_name -> opi_api.storage.v1.NvmeNamespace
-	40, // 27: opi_api.storage.v1.StatsNvmeNamespaceResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
-	11, // 28: opi_api.storage.v1.FrontendNvmeService.CreateNvmeSubsystem:input_type -> opi_api.storage.v1.CreateNvmeSubsystemRequest
-	12, // 29: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeSubsystem:input_type -> opi_api.storage.v1.DeleteNvmeSubsystemRequest
-	13, // 30: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeSubsystem:input_type -> opi_api.storage.v1.UpdateNvmeSubsystemRequest
-	14, // 31: opi_api.storage.v1.FrontendNvmeService.ListNvmeSubsystems:input_type -> opi_api.storage.v1.ListNvmeSubsystemsRequest
-	16, // 32: opi_api.storage.v1.FrontendNvmeService.GetNvmeSubsystem:input_type -> opi_api.storage.v1.GetNvmeSubsystemRequest
-	17, // 33: opi_api.storage.v1.FrontendNvmeService.StatsNvmeSubsystem:input_type -> opi_api.storage.v1.StatsNvmeSubsystemRequest
-	19, // 34: opi_api.storage.v1.FrontendNvmeService.CreateNvmeController:input_type -> opi_api.storage.v1.CreateNvmeControllerRequest
-	20, // 35: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeController:input_type -> opi_api.storage.v1.DeleteNvmeControllerRequest
-	21, // 36: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeController:input_type -> opi_api.storage.v1.UpdateNvmeControllerRequest
-	22, // 37: opi_api.storage.v1.FrontendNvmeService.ListNvmeControllers:input_type -> opi_api.storage.v1.ListNvmeControllersRequest
-	24, // 38: opi_api.storage.v1.FrontendNvmeService.GetNvmeController:input_type -> opi_api.storage.v1.GetNvmeControllerRequest
-	25, // 39: opi_api.storage.v1.FrontendNvmeService.StatsNvmeController:input_type -> opi_api.storage.v1.StatsNvmeControllerRequest
-	27, // 40: opi_api.storage.v1.FrontendNvmeService.CreateNvmeNamespace:input_type -> opi_api.storage.v1.CreateNvmeNamespaceRequest
-	28, // 41: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeNamespace:input_type -> opi_api.storage.v1.DeleteNvmeNamespaceRequest
-	29, // 42: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeNamespace:input_type -> opi_api.storage.v1.UpdateNvmeNamespaceRequest
-	30, // 43: opi_api.storage.v1.FrontendNvmeService.ListNvmeNamespaces:input_type -> opi_api.storage.v1.ListNvmeNamespacesRequest
-	32, // 44: opi_api.storage.v1.FrontendNvmeService.GetNvmeNamespace:input_type -> opi_api.storage.v1.GetNvmeNamespaceRequest
-	33, // 45: opi_api.storage.v1.FrontendNvmeService.StatsNvmeNamespace:input_type -> opi_api.storage.v1.StatsNvmeNamespaceRequest
-	2,  // 46: opi_api.storage.v1.FrontendNvmeService.CreateNvmeSubsystem:output_type -> opi_api.storage.v1.NvmeSubsystem
-	41, // 47: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeSubsystem:output_type -> google.protobuf.Empty
-	2,  // 48: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeSubsystem:output_type -> opi_api.storage.v1.NvmeSubsystem
-	15, // 49: opi_api.storage.v1.FrontendNvmeService.ListNvmeSubsystems:output_type -> opi_api.storage.v1.ListNvmeSubsystemsResponse
-	2,  // 50: opi_api.storage.v1.FrontendNvmeService.GetNvmeSubsystem:output_type -> opi_api.storage.v1.NvmeSubsystem
-	18, // 51: opi_api.storage.v1.FrontendNvmeService.StatsNvmeSubsystem:output_type -> opi_api.storage.v1.StatsNvmeSubsystemResponse
-	5,  // 52: opi_api.storage.v1.FrontendNvmeService.CreateNvmeController:output_type -> opi_api.storage.v1.NvmeController
-	41, // 53: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeController:output_type -> google.protobuf.Empty
-	5,  // 54: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeController:output_type -> opi_api.storage.v1.NvmeController
-	23, // 55: opi_api.storage.v1.FrontendNvmeService.ListNvmeControllers:output_type -> opi_api.storage.v1.ListNvmeControllersResponse
-	5,  // 56: opi_api.storage.v1.FrontendNvmeService.GetNvmeController:output_type -> opi_api.storage.v1.NvmeController
-	26, // 57: opi_api.storage.v1.FrontendNvmeService.StatsNvmeController:output_type -> opi_api.storage.v1.StatsNvmeControllerResponse
-	8,  // 58: opi_api.storage.v1.FrontendNvmeService.CreateNvmeNamespace:output_type -> opi_api.storage.v1.NvmeNamespace
-	41, // 59: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeNamespace:output_type -> google.protobuf.Empty
-	8,  // 60: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeNamespace:output_type -> opi_api.storage.v1.NvmeNamespace
-	31, // 61: opi_api.storage.v1.FrontendNvmeService.ListNvmeNamespaces:output_type -> opi_api.storage.v1.ListNvmeNamespacesResponse
-	8,  // 62: opi_api.storage.v1.FrontendNvmeService.GetNvmeNamespace:output_type -> opi_api.storage.v1.NvmeNamespace
-	34, // 63: opi_api.storage.v1.FrontendNvmeService.StatsNvmeNamespace:output_type -> opi_api.storage.v1.StatsNvmeNamespaceResponse
-	46, // [46:64] is the sub-list for method output_type
-	28, // [28:46] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	28, // [28:28] is the sub-list for extension extendee
-	0,  // [0:28] is the sub-list for field type_name
+	4,  // 0: opi_api.storage.v1.NvmeSubsystem.spec:type_name -> opi_api.storage.v1.NvmeSubsystemSpec
+	5,  // 1: opi_api.storage.v1.NvmeSubsystem.status:type_name -> opi_api.storage.v1.NvmeSubsystemStatus
+	7,  // 2: opi_api.storage.v1.NvmeController.spec:type_name -> opi_api.storage.v1.NvmeControllerSpec
+	8,  // 3: opi_api.storage.v1.NvmeController.status:type_name -> opi_api.storage.v1.NvmeControllerStatus
+	38, // 4: opi_api.storage.v1.NvmeControllerSpec.trtype:type_name -> opi_api.storage.v1.NvmeTransportType
+	39, // 5: opi_api.storage.v1.NvmeControllerSpec.pcie_id:type_name -> opi_api.storage.v1.PciEndpoint
+	40, // 6: opi_api.storage.v1.NvmeControllerSpec.fabrics_id:type_name -> opi_api.storage.v1.FabricsEndpoint
+	41, // 7: opi_api.storage.v1.NvmeControllerSpec.min_limit:type_name -> opi_api.storage.v1.QosLimit
+	41, // 8: opi_api.storage.v1.NvmeControllerSpec.max_limit:type_name -> opi_api.storage.v1.QosLimit
+	0,  // 9: opi_api.storage.v1.NvmeControllerStatus.suspension_state:type_name -> opi_api.storage.v1.NvmeControllerStatus.SuspensionState
+	12, // 10: opi_api.storage.v1.NvmeNamespace.spec:type_name -> opi_api.storage.v1.NvmeNamespaceSpec
+	13, // 11: opi_api.storage.v1.NvmeNamespace.status:type_name -> opi_api.storage.v1.NvmeNamespaceStatus
+	1,  // 12: opi_api.storage.v1.NvmeNamespaceStatus.state:type_name -> opi_api.storage.v1.NvmeNamespaceStatus.State
+	2,  // 13: opi_api.storage.v1.NvmeNamespaceStatus.oper_state:type_name -> opi_api.storage.v1.NvmeNamespaceStatus.OperState
+	3,  // 14: opi_api.storage.v1.CreateNvmeSubsystemRequest.nvme_subsystem:type_name -> opi_api.storage.v1.NvmeSubsystem
+	3,  // 15: opi_api.storage.v1.UpdateNvmeSubsystemRequest.nvme_subsystem:type_name -> opi_api.storage.v1.NvmeSubsystem
+	42, // 16: opi_api.storage.v1.UpdateNvmeSubsystemRequest.update_mask:type_name -> google.protobuf.FieldMask
+	3,  // 17: opi_api.storage.v1.ListNvmeSubsystemsResponse.nvme_subsystems:type_name -> opi_api.storage.v1.NvmeSubsystem
+	43, // 18: opi_api.storage.v1.StatsNvmeSubsystemResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
+	6,  // 19: opi_api.storage.v1.CreateNvmeControllerRequest.nvme_controller:type_name -> opi_api.storage.v1.NvmeController
+	6,  // 20: opi_api.storage.v1.UpdateNvmeControllerRequest.nvme_controller:type_name -> opi_api.storage.v1.NvmeController
+	42, // 21: opi_api.storage.v1.UpdateNvmeControllerRequest.update_mask:type_name -> google.protobuf.FieldMask
+	6,  // 22: opi_api.storage.v1.ListNvmeControllersResponse.nvme_controllers:type_name -> opi_api.storage.v1.NvmeController
+	43, // 23: opi_api.storage.v1.StatsNvmeControllerResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
+	11, // 24: opi_api.storage.v1.CreateNvmeNamespaceRequest.nvme_namespace:type_name -> opi_api.storage.v1.NvmeNamespace
+	11, // 25: opi_api.storage.v1.UpdateNvmeNamespaceRequest.nvme_namespace:type_name -> opi_api.storage.v1.NvmeNamespace
+	42, // 26: opi_api.storage.v1.UpdateNvmeNamespaceRequest.update_mask:type_name -> google.protobuf.FieldMask
+	11, // 27: opi_api.storage.v1.ListNvmeNamespacesResponse.nvme_namespaces:type_name -> opi_api.storage.v1.NvmeNamespace
+	43, // 28: opi_api.storage.v1.StatsNvmeNamespaceResponse.stats:type_name -> opi_api.storage.v1.VolumeStats
+	14, // 29: opi_api.storage.v1.FrontendNvmeService.CreateNvmeSubsystem:input_type -> opi_api.storage.v1.CreateNvmeSubsystemRequest
+	15, // 30: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeSubsystem:input_type -> opi_api.storage.v1.DeleteNvmeSubsystemRequest
+	16, // 31: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeSubsystem:input_type -> opi_api.storage.v1.UpdateNvmeSubsystemRequest
+	17, // 32: opi_api.storage.v1.FrontendNvmeService.ListNvmeSubsystems:input_type -> opi_api.storage.v1.ListNvmeSubsystemsRequest
+	19, // 33: opi_api.storage.v1.FrontendNvmeService.GetNvmeSubsystem:input_type -> opi_api.storage.v1.GetNvmeSubsystemRequest
+	20, // 34: opi_api.storage.v1.FrontendNvmeService.StatsNvmeSubsystem:input_type -> opi_api.storage.v1.StatsNvmeSubsystemRequest
+	22, // 35: opi_api.storage.v1.FrontendNvmeService.CreateNvmeController:input_type -> opi_api.storage.v1.CreateNvmeControllerRequest
+	23, // 36: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeController:input_type -> opi_api.storage.v1.DeleteNvmeControllerRequest
+	24, // 37: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeController:input_type -> opi_api.storage.v1.UpdateNvmeControllerRequest
+	25, // 38: opi_api.storage.v1.FrontendNvmeService.ListNvmeControllers:input_type -> opi_api.storage.v1.ListNvmeControllersRequest
+	27, // 39: opi_api.storage.v1.FrontendNvmeService.GetNvmeController:input_type -> opi_api.storage.v1.GetNvmeControllerRequest
+	28, // 40: opi_api.storage.v1.FrontendNvmeService.StatsNvmeController:input_type -> opi_api.storage.v1.StatsNvmeControllerRequest
+	9,  // 41: opi_api.storage.v1.FrontendNvmeService.SuspendNvmeController:input_type -> opi_api.storage.v1.SuspendNvmeControllerRequest
+	10, // 42: opi_api.storage.v1.FrontendNvmeService.ResumeNvmeController:input_type -> opi_api.storage.v1.ResumeNvmeControllerRequest
+	30, // 43: opi_api.storage.v1.FrontendNvmeService.CreateNvmeNamespace:input_type -> opi_api.storage.v1.CreateNvmeNamespaceRequest
+	31, // 44: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeNamespace:input_type -> opi_api.storage.v1.DeleteNvmeNamespaceRequest
+	32, // 45: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeNamespace:input_type -> opi_api.storage.v1.UpdateNvmeNamespaceRequest
+	33, // 46: opi_api.storage.v1.FrontendNvmeService.ListNvmeNamespaces:input_type -> opi_api.storage.v1.ListNvmeNamespacesRequest
+	35, // 47: opi_api.storage.v1.FrontendNvmeService.GetNvmeNamespace:input_type -> opi_api.storage.v1.GetNvmeNamespaceRequest
+	36, // 48: opi_api.storage.v1.FrontendNvmeService.StatsNvmeNamespace:input_type -> opi_api.storage.v1.StatsNvmeNamespaceRequest
+	3,  // 49: opi_api.storage.v1.FrontendNvmeService.CreateNvmeSubsystem:output_type -> opi_api.storage.v1.NvmeSubsystem
+	44, // 50: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeSubsystem:output_type -> google.protobuf.Empty
+	3,  // 51: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeSubsystem:output_type -> opi_api.storage.v1.NvmeSubsystem
+	18, // 52: opi_api.storage.v1.FrontendNvmeService.ListNvmeSubsystems:output_type -> opi_api.storage.v1.ListNvmeSubsystemsResponse
+	3,  // 53: opi_api.storage.v1.FrontendNvmeService.GetNvmeSubsystem:output_type -> opi_api.storage.v1.NvmeSubsystem
+	21, // 54: opi_api.storage.v1.FrontendNvmeService.StatsNvmeSubsystem:output_type -> opi_api.storage.v1.StatsNvmeSubsystemResponse
+	6,  // 55: opi_api.storage.v1.FrontendNvmeService.CreateNvmeController:output_type -> opi_api.storage.v1.NvmeController
+	44, // 56: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeController:output_type -> google.protobuf.Empty
+	6,  // 57: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeController:output_type -> opi_api.storage.v1.NvmeController
+	26, // 58: opi_api.storage.v1.FrontendNvmeService.ListNvmeControllers:output_type -> opi_api.storage.v1.ListNvmeControllersResponse
+	6,  // 59: opi_api.storage.v1.FrontendNvmeService.GetNvmeController:output_type -> opi_api.storage.v1.NvmeController
+	29, // 60: opi_api.storage.v1.FrontendNvmeService.StatsNvmeController:output_type -> opi_api.storage.v1.StatsNvmeControllerResponse
+	6,  // 61: opi_api.storage.v1.FrontendNvmeService.SuspendNvmeController:output_type -> opi_api.storage.v1.NvmeController
+	6,  // 62: opi_api.storage.v1.FrontendNvmeService.ResumeNvmeController:output_type -> opi_api.storage.v1.NvmeController
+	11, // 63: opi_api.storage.v1.FrontendNvmeService.CreateNvmeNamespace:output_type -> opi_api.storage.v1.NvmeNamespace
+	44, // 64: opi_api.storage.v1.FrontendNvmeService.DeleteNvmeNamespace:output_type -> google.protobuf.Empty
+	11, // 65: opi_api.storage.v1.FrontendNvmeService.UpdateNvmeNamespace:output_type -> opi_api.storage.v1.NvmeNamespace
+	34, // 66: opi_api.storage.v1.FrontendNvmeService.ListNvmeNamespaces:output_type -> opi_api.storage.v1.ListNvmeNamespacesResponse
+	11, // 67: opi_api.storage.v1.FrontendNvmeService.GetNvmeNamespace:output_type -> opi_api.storage.v1.NvmeNamespace
+	37, // 68: opi_api.storage.v1.FrontendNvmeService.StatsNvmeNamespace:output_type -> opi_api.storage.v1.StatsNvmeNamespaceResponse
+	49, // [49:69] is the sub-list for method output_type
+	29, // [29:49] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_storage_frontend_nvme_proto_init() }
@@ -2901,13 +3157,14 @@ func file_storage_frontend_nvme_proto_init() {
 		(*NvmeControllerSpec_PcieId)(nil),
 		(*NvmeControllerSpec_FabricsId)(nil),
 	}
+	file_storage_frontend_nvme_proto_msgTypes[5].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_storage_frontend_nvme_proto_rawDesc,
-			NumEnums:      2,
-			NumMessages:   33,
+			NumEnums:      3,
+			NumMessages:   35,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
