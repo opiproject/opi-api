@@ -19,3 +19,7 @@ bufgen:
 bufformat:
 	# format the protobuf using buf industry standard
 	buf format --diff -w
+
+.PHONY: bufbreaking
+bufbreaking:
+	bash scripts/check-breaking.sh

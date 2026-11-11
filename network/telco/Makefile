@@ -6,6 +6,10 @@ APIVER = v1alpha1
 
 all: buflint apilint bufgen doc
 
+.PHONY: bufbreaking
+bufbreaking:
+	$(MAKE) -C ../.. bufbreaking BUF_BREAKING_PATH=network/telco
+
 doc:
 	rm -rf ./google
 	rm -f ./${APIVER}/autogen.md
