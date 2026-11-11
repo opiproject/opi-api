@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from network.opinetcommon import networkinterfaces_pb2 as network_dot_opinetcommon_dot_networkinterfaces__pb2
 
 
@@ -30,6 +31,16 @@ class NetInterfaceServiceStub(object):
                 request_serializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.UpdateNetInterfaceRequest.SerializeToString,
                 response_deserializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.NetInterface.FromString,
                 _registered_method=True)
+        self.CreateNetInterface = channel.unary_unary(
+                '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/CreateNetInterface',
+                request_serializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.CreateNetInterfaceRequest.SerializeToString,
+                response_deserializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.NetInterface.FromString,
+                _registered_method=True)
+        self.DeleteNetInterface = channel.unary_unary(
+                '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/DeleteNetInterface',
+                request_serializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.DeleteNetInterfaceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class NetInterfaceServiceServicer(object):
@@ -57,6 +68,22 @@ class NetInterfaceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateNetInterface(self, request, context):
+        """Creates a supported virtual interface, never a physical port.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteNetInterface(self, request, context):
+        """Deletes a virtual interface owned by this API.
+        Physical interfaces or interfaces with dependent resources fail with
+        FAILED_PRECONDITION. Resources are never forcefully cascaded.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NetInterfaceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -74,6 +101,16 @@ def add_NetInterfaceServiceServicer_to_server(servicer, server):
                     servicer.UpdateNetInterface,
                     request_deserializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.UpdateNetInterfaceRequest.FromString,
                     response_serializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.NetInterface.SerializeToString,
+            ),
+            'CreateNetInterface': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateNetInterface,
+                    request_deserializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.CreateNetInterfaceRequest.FromString,
+                    response_serializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.NetInterface.SerializeToString,
+            ),
+            'DeleteNetInterface': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteNetInterface,
+                    request_deserializer=network_dot_opinetcommon_dot_networkinterfaces__pb2.DeleteNetInterfaceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -158,6 +195,60 @@ class NetInterfaceService(object):
             '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/UpdateNetInterface',
             network_dot_opinetcommon_dot_networkinterfaces__pb2.UpdateNetInterfaceRequest.SerializeToString,
             network_dot_opinetcommon_dot_networkinterfaces__pb2.NetInterface.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateNetInterface(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/CreateNetInterface',
+            network_dot_opinetcommon_dot_networkinterfaces__pb2.CreateNetInterfaceRequest.SerializeToString,
+            network_dot_opinetcommon_dot_networkinterfaces__pb2.NetInterface.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteNetInterface(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/DeleteNetInterface',
+            network_dot_opinetcommon_dot_networkinterfaces__pb2.DeleteNetInterfaceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,

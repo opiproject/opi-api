@@ -19,6 +19,7 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -30,6 +31,8 @@ const (
 	NetInterfaceService_GetNetInterface_FullMethodName    = "/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/GetNetInterface"
 	NetInterfaceService_ListNetInterfaces_FullMethodName  = "/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/ListNetInterfaces"
 	NetInterfaceService_UpdateNetInterface_FullMethodName = "/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/UpdateNetInterface"
+	NetInterfaceService_CreateNetInterface_FullMethodName = "/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/CreateNetInterface"
+	NetInterfaceService_DeleteNetInterface_FullMethodName = "/opi_api.network.opinetcommon.v1alpha1.NetInterfaceService/DeleteNetInterface"
 )
 
 // NetInterfaceServiceClient is the client API for NetInterfaceService service.
@@ -44,6 +47,12 @@ type NetInterfaceServiceClient interface {
 	ListNetInterfaces(ctx context.Context, in *ListNetInterfacesRequest, opts ...grpc.CallOption) (*ListNetInterfacesResponse, error)
 	// A method for setting or changing configuration of an interface
 	UpdateNetInterface(ctx context.Context, in *UpdateNetInterfaceRequest, opts ...grpc.CallOption) (*NetInterface, error)
+	// Creates a supported virtual interface, never a physical port.
+	CreateNetInterface(ctx context.Context, in *CreateNetInterfaceRequest, opts ...grpc.CallOption) (*NetInterface, error)
+	// Deletes a virtual interface owned by this API.
+	// Physical interfaces or interfaces with dependent resources fail with
+	// FAILED_PRECONDITION. Resources are never forcefully cascaded.
+	DeleteNetInterface(ctx context.Context, in *DeleteNetInterfaceRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
 type netInterfaceServiceClient struct {
@@ -84,6 +93,26 @@ func (c *netInterfaceServiceClient) UpdateNetInterface(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *netInterfaceServiceClient) CreateNetInterface(ctx context.Context, in *CreateNetInterfaceRequest, opts ...grpc.CallOption) (*NetInterface, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(NetInterface)
+	err := c.cc.Invoke(ctx, NetInterfaceService_CreateNetInterface_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *netInterfaceServiceClient) DeleteNetInterface(ctx context.Context, in *DeleteNetInterfaceRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, NetInterfaceService_DeleteNetInterface_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // NetInterfaceServiceServer is the server API for NetInterfaceService service.
 // All implementations must embed UnimplementedNetInterfaceServiceServer
 // for forward compatibility.
@@ -96,6 +125,12 @@ type NetInterfaceServiceServer interface {
 	ListNetInterfaces(context.Context, *ListNetInterfacesRequest) (*ListNetInterfacesResponse, error)
 	// A method for setting or changing configuration of an interface
 	UpdateNetInterface(context.Context, *UpdateNetInterfaceRequest) (*NetInterface, error)
+	// Creates a supported virtual interface, never a physical port.
+	CreateNetInterface(context.Context, *CreateNetInterfaceRequest) (*NetInterface, error)
+	// Deletes a virtual interface owned by this API.
+	// Physical interfaces or interfaces with dependent resources fail with
+	// FAILED_PRECONDITION. Resources are never forcefully cascaded.
+	DeleteNetInterface(context.Context, *DeleteNetInterfaceRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedNetInterfaceServiceServer()
 }
 
@@ -114,6 +149,12 @@ func (UnimplementedNetInterfaceServiceServer) ListNetInterfaces(context.Context,
 }
 func (UnimplementedNetInterfaceServiceServer) UpdateNetInterface(context.Context, *UpdateNetInterfaceRequest) (*NetInterface, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNetInterface not implemented")
+}
+func (UnimplementedNetInterfaceServiceServer) CreateNetInterface(context.Context, *CreateNetInterfaceRequest) (*NetInterface, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNetInterface not implemented")
+}
+func (UnimplementedNetInterfaceServiceServer) DeleteNetInterface(context.Context, *DeleteNetInterfaceRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteNetInterface not implemented")
 }
 func (UnimplementedNetInterfaceServiceServer) mustEmbedUnimplementedNetInterfaceServiceServer() {}
 func (UnimplementedNetInterfaceServiceServer) testEmbeddedByValue()                             {}
@@ -190,6 +231,42 @@ func _NetInterfaceService_UpdateNetInterface_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _NetInterfaceService_CreateNetInterface_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNetInterfaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NetInterfaceServiceServer).CreateNetInterface(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NetInterfaceService_CreateNetInterface_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NetInterfaceServiceServer).CreateNetInterface(ctx, req.(*CreateNetInterfaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _NetInterfaceService_DeleteNetInterface_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteNetInterfaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NetInterfaceServiceServer).DeleteNetInterface(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NetInterfaceService_DeleteNetInterface_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NetInterfaceServiceServer).DeleteNetInterface(ctx, req.(*DeleteNetInterfaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // NetInterfaceService_ServiceDesc is the grpc.ServiceDesc for NetInterfaceService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -208,6 +285,14 @@ var NetInterfaceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateNetInterface",
 			Handler:    _NetInterfaceService_UpdateNetInterface_Handler,
+		},
+		{
+			MethodName: "CreateNetInterface",
+			Handler:    _NetInterfaceService_CreateNetInterface_Handler,
+		},
+		{
+			MethodName: "DeleteNetInterface",
+			Handler:    _NetInterfaceService_DeleteNetInterface_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
