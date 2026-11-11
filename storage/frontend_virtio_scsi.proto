@@ -8,6 +8,7 @@ package opi_api.storage.v1;
 import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
+import "google/api/field_info.proto";
 import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
@@ -200,6 +201,11 @@ message CreateVirtioScsiTargetRequest {
   // An optional ID to assign to the Virtio Scsi Target.
   // If this is not provided the system will auto-generate it.
   string virtio_scsi_target_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Optional UUID4 identifying this logical create operation for safe retries.
+  string request_id = 3 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_info).format = UUID4
+  ];
 }
 
 // Represents a request to delete an Virtio Scsi Target.
@@ -277,6 +283,11 @@ message CreateVirtioScsiControllerRequest {
   // An optional ID to assign to the Virtio Scsi Controller.
   // If this is not provided the system will auto-generate it.
   string virtio_scsi_controller_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Optional UUID4 identifying this logical create operation for safe retries.
+  string request_id = 3 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_info).format = UUID4
+  ];
 }
 
 // Represents a request to delete an Virtio Scsi Controller.
@@ -354,6 +365,11 @@ message CreateVirtioScsiLunRequest {
   // An optional ID to assign to the Virtio Scsi Lun.
   // If this is not provided the system will auto-generate it.
   string virtio_scsi_lun_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Optional UUID4 identifying this logical create operation for safe retries.
+  string request_id = 3 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_info).format = UUID4
+  ];
 }
 
 // Represents a request to delete an Virtio Scsi Lun.
