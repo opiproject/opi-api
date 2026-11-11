@@ -74,6 +74,23 @@ message VolumeStats {
   int32 write_latency_ticks = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Unmap latency ticks
   int32 unmap_latency_ticks = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Count of flush requests, including requests that fail.
+  optional int64 flush_ops_count = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of administrative requests, including requests that fail.
+  optional int64 admin_ops_count = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of failed read completions.
+  optional int64 read_error_count = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of failed write completions.
+  optional int64 write_error_count = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of failed unmap completions.
+  optional int64 unmap_error_count = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of failed flush completions.
+  optional int64 flush_error_count = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of failed administrative completions.
+  optional int64 admin_error_count = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Count of asynchronous events reported by the controller.
+  optional int64 async_event_count = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // QoS limits applied to volumes/devices
