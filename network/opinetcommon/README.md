@@ -11,6 +11,35 @@ The objective of the network common API is to define the characteristics that ar
 
 ## Demos
 
+## Virtual-interface lifecycle
+
+`CreateNetInterface` creates supported loopback, TAP, SR-IOV VF, or S-IOV
+interfaces under `interfaces/{device}/interface/{interface}`. This follows the
+existing Get/Update HTTP hierarchy. The legacy `netInterface/{interface}`
+resource pattern remains accepted for existing resources.
+
+Use the existing config for MTU, description, and enabled state, and
+`ethernet.config.mac_address` for MAC assignment. `virtual_config` carries an
+optional positive queue count and hardware-function selection. SR-IOV requires
+a backing-interface reference and an explicitly present zero-based VF index.
+S-IOV requires a backing-interface reference and a nonempty subfunction ID.
+Function selectors do not apply to TAP or loopback interfaces. Backing resources
+must belong to the same device scope. Unsupported types/configurations fail
+explicitly rather than creating a different kind of interface.
+
+Only the server determines whether an interface is logical and owned by this
+API. Ignore caller-supplied output-only state. Create, including Update with
+`allow_missing`, must not create physical Ethernet ports. Delete must reject
+physical ports, unmanaged interfaces, and interfaces with dependent resources
+using `FAILED_PRECONDITION`. `allow_missing` only affects absent resources;
+there is no force/cascade option. Implementations without lifecycle support
+return `UNIMPLEMENTED`.
+
+The schema and generated bindings define the contract, not vendor-specific
+provisioning. Bridge conformance tests must verify physical-port safeguards,
+dependency rejection, VF-index-zero handling, queue limits, and cleanup.
+Run descriptor tests from the repository root with `go -C tests test ./...`.
+
 ## Clients
 
 ## Reference implementations
