@@ -611,6 +611,90 @@ func local_request_FrontendNvmeService_StatsNvmeController_0(ctx context.Context
 	return msg, metadata, err
 }
 
+func request_FrontendNvmeService_SuspendNvmeController_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq SuspendNvmeControllerRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	val, ok := pathParams["name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+	}
+	protoReq.Name, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+	msg, err := client.SuspendNvmeController(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_FrontendNvmeService_SuspendNvmeController_0(ctx context.Context, marshaler runtime.Marshaler, server FrontendNvmeServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq SuspendNvmeControllerRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	val, ok := pathParams["name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+	}
+	protoReq.Name, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+	msg, err := server.SuspendNvmeController(ctx, &protoReq)
+	return msg, metadata, err
+}
+
+func request_FrontendNvmeService_ResumeNvmeController_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq ResumeNvmeControllerRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	val, ok := pathParams["name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+	}
+	protoReq.Name, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+	msg, err := client.ResumeNvmeController(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_FrontendNvmeService_ResumeNvmeController_0(ctx context.Context, marshaler runtime.Marshaler, server FrontendNvmeServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq ResumeNvmeControllerRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	val, ok := pathParams["name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "name")
+	}
+	protoReq.Name, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+	msg, err := server.ResumeNvmeController(ctx, &protoReq)
+	return msg, metadata, err
+}
+
 var filter_FrontendNvmeService_CreateNvmeNamespace_0 = &utilities.DoubleArray{Encoding: map[string]int{"nvme_namespace": 0, "parent": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 
 func request_FrontendNvmeService_CreateNvmeNamespace_0(ctx context.Context, marshaler runtime.Marshaler, client FrontendNvmeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1163,6 +1247,46 @@ func RegisterFrontendNvmeServiceHandlerServer(ctx context.Context, mux *runtime.
 		}
 		forward_FrontendNvmeService_StatsNvmeController_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_FrontendNvmeService_SuspendNvmeController_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.storage.v1.FrontendNvmeService/SuspendNvmeController", runtime.WithHTTPPathPattern("/v1/{name=nvmeSubsystems/*/nvmeControllers/*}:suspend"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_FrontendNvmeService_SuspendNvmeController_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_FrontendNvmeService_SuspendNvmeController_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_FrontendNvmeService_ResumeNvmeController_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/opi_api.storage.v1.FrontendNvmeService/ResumeNvmeController", runtime.WithHTTPPathPattern("/v1/{name=nvmeSubsystems/*/nvmeControllers/*}:resume"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_FrontendNvmeService_ResumeNvmeController_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_FrontendNvmeService_ResumeNvmeController_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	mux.Handle(http.MethodPost, pattern_FrontendNvmeService_CreateNvmeNamespace_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -1527,6 +1651,40 @@ func RegisterFrontendNvmeServiceHandlerClient(ctx context.Context, mux *runtime.
 		}
 		forward_FrontendNvmeService_StatsNvmeController_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_FrontendNvmeService_SuspendNvmeController_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.storage.v1.FrontendNvmeService/SuspendNvmeController", runtime.WithHTTPPathPattern("/v1/{name=nvmeSubsystems/*/nvmeControllers/*}:suspend"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_FrontendNvmeService_SuspendNvmeController_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_FrontendNvmeService_SuspendNvmeController_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_FrontendNvmeService_ResumeNvmeController_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/opi_api.storage.v1.FrontendNvmeService/ResumeNvmeController", runtime.WithHTTPPathPattern("/v1/{name=nvmeSubsystems/*/nvmeControllers/*}:resume"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_FrontendNvmeService_ResumeNvmeController_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_FrontendNvmeService_ResumeNvmeController_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	mux.Handle(http.MethodPost, pattern_FrontendNvmeService_CreateNvmeNamespace_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -1633,43 +1791,47 @@ func RegisterFrontendNvmeServiceHandlerClient(ctx context.Context, mux *runtime.
 }
 
 var (
-	pattern_FrontendNvmeService_CreateNvmeSubsystem_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "nvmeSubsystems"}, ""))
-	pattern_FrontendNvmeService_DeleteNvmeSubsystem_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "nvmeSubsystems", "name"}, ""))
-	pattern_FrontendNvmeService_UpdateNvmeSubsystem_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "nvmeSubsystems", "nvme_subsystem.name"}, ""))
-	pattern_FrontendNvmeService_ListNvmeSubsystems_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "nvmeSubsystems"}, ""))
-	pattern_FrontendNvmeService_GetNvmeSubsystem_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "nvmeSubsystems", "name"}, ""))
-	pattern_FrontendNvmeService_StatsNvmeSubsystem_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "nvmeSubsystems", "name"}, "stats"))
-	pattern_FrontendNvmeService_CreateNvmeController_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2, 2, 3}, []string{"v1", "nvmeSubsystems", "parent", "nvmeControllers"}, ""))
-	pattern_FrontendNvmeService_DeleteNvmeController_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "name"}, ""))
-	pattern_FrontendNvmeService_UpdateNvmeController_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "nvme_controller.name"}, ""))
-	pattern_FrontendNvmeService_ListNvmeControllers_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2, 2, 3}, []string{"v1", "nvmeSubsystems", "parent", "nvmeControllers"}, ""))
-	pattern_FrontendNvmeService_GetNvmeController_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "name"}, ""))
-	pattern_FrontendNvmeService_StatsNvmeController_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "name"}, "stats"))
-	pattern_FrontendNvmeService_CreateNvmeNamespace_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2, 2, 3}, []string{"v1", "nvmeSubsystems", "parent", "nvmeNamespaces"}, ""))
-	pattern_FrontendNvmeService_DeleteNvmeNamespace_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeNamespaces", "name"}, ""))
-	pattern_FrontendNvmeService_UpdateNvmeNamespace_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeNamespaces", "nvme_namespace.name"}, ""))
-	pattern_FrontendNvmeService_ListNvmeNamespaces_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2, 2, 3}, []string{"v1", "nvmeSubsystems", "parent", "nvmeNamespaces"}, ""))
-	pattern_FrontendNvmeService_GetNvmeNamespace_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeNamespaces", "name"}, ""))
-	pattern_FrontendNvmeService_StatsNvmeNamespace_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeNamespaces", "name"}, "stats"))
+	pattern_FrontendNvmeService_CreateNvmeSubsystem_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "nvmeSubsystems"}, ""))
+	pattern_FrontendNvmeService_DeleteNvmeSubsystem_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "nvmeSubsystems", "name"}, ""))
+	pattern_FrontendNvmeService_UpdateNvmeSubsystem_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "nvmeSubsystems", "nvme_subsystem.name"}, ""))
+	pattern_FrontendNvmeService_ListNvmeSubsystems_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "nvmeSubsystems"}, ""))
+	pattern_FrontendNvmeService_GetNvmeSubsystem_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "nvmeSubsystems", "name"}, ""))
+	pattern_FrontendNvmeService_StatsNvmeSubsystem_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2}, []string{"v1", "nvmeSubsystems", "name"}, "stats"))
+	pattern_FrontendNvmeService_CreateNvmeController_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2, 2, 3}, []string{"v1", "nvmeSubsystems", "parent", "nvmeControllers"}, ""))
+	pattern_FrontendNvmeService_DeleteNvmeController_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "name"}, ""))
+	pattern_FrontendNvmeService_UpdateNvmeController_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "nvme_controller.name"}, ""))
+	pattern_FrontendNvmeService_ListNvmeControllers_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2, 2, 3}, []string{"v1", "nvmeSubsystems", "parent", "nvmeControllers"}, ""))
+	pattern_FrontendNvmeService_GetNvmeController_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "name"}, ""))
+	pattern_FrontendNvmeService_StatsNvmeController_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "name"}, "stats"))
+	pattern_FrontendNvmeService_SuspendNvmeController_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "name"}, "suspend"))
+	pattern_FrontendNvmeService_ResumeNvmeController_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeControllers", "name"}, "resume"))
+	pattern_FrontendNvmeService_CreateNvmeNamespace_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2, 2, 3}, []string{"v1", "nvmeSubsystems", "parent", "nvmeNamespaces"}, ""))
+	pattern_FrontendNvmeService_DeleteNvmeNamespace_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeNamespaces", "name"}, ""))
+	pattern_FrontendNvmeService_UpdateNvmeNamespace_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeNamespaces", "nvme_namespace.name"}, ""))
+	pattern_FrontendNvmeService_ListNvmeNamespaces_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 2, 5, 2, 2, 3}, []string{"v1", "nvmeSubsystems", "parent", "nvmeNamespaces"}, ""))
+	pattern_FrontendNvmeService_GetNvmeNamespace_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeNamespaces", "name"}, ""))
+	pattern_FrontendNvmeService_StatsNvmeNamespace_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 2, 2, 1, 0, 4, 4, 5, 3}, []string{"v1", "nvmeSubsystems", "nvmeNamespaces", "name"}, "stats"))
 )
 
 var (
-	forward_FrontendNvmeService_CreateNvmeSubsystem_0  = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_DeleteNvmeSubsystem_0  = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_UpdateNvmeSubsystem_0  = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_ListNvmeSubsystems_0   = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_GetNvmeSubsystem_0     = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_StatsNvmeSubsystem_0   = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_CreateNvmeController_0 = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_DeleteNvmeController_0 = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_UpdateNvmeController_0 = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_ListNvmeControllers_0  = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_GetNvmeController_0    = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_StatsNvmeController_0  = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_CreateNvmeNamespace_0  = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_DeleteNvmeNamespace_0  = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_UpdateNvmeNamespace_0  = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_ListNvmeNamespaces_0   = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_GetNvmeNamespace_0     = runtime.ForwardResponseMessage
-	forward_FrontendNvmeService_StatsNvmeNamespace_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_CreateNvmeSubsystem_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_DeleteNvmeSubsystem_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_UpdateNvmeSubsystem_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_ListNvmeSubsystems_0    = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_GetNvmeSubsystem_0      = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_StatsNvmeSubsystem_0    = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_CreateNvmeController_0  = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_DeleteNvmeController_0  = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_UpdateNvmeController_0  = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_ListNvmeControllers_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_GetNvmeController_0     = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_StatsNvmeController_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_SuspendNvmeController_0 = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_ResumeNvmeController_0  = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_CreateNvmeNamespace_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_DeleteNvmeNamespace_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_UpdateNvmeNamespace_0   = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_ListNvmeNamespaces_0    = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_GetNvmeNamespace_0      = runtime.ForwardResponseMessage
+	forward_FrontendNvmeService_StatsNvmeNamespace_0    = runtime.ForwardResponseMessage
 )

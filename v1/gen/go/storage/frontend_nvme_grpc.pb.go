@@ -25,24 +25,26 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	FrontendNvmeService_CreateNvmeSubsystem_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/CreateNvmeSubsystem"
-	FrontendNvmeService_DeleteNvmeSubsystem_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/DeleteNvmeSubsystem"
-	FrontendNvmeService_UpdateNvmeSubsystem_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/UpdateNvmeSubsystem"
-	FrontendNvmeService_ListNvmeSubsystems_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/ListNvmeSubsystems"
-	FrontendNvmeService_GetNvmeSubsystem_FullMethodName     = "/opi_api.storage.v1.FrontendNvmeService/GetNvmeSubsystem"
-	FrontendNvmeService_StatsNvmeSubsystem_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/StatsNvmeSubsystem"
-	FrontendNvmeService_CreateNvmeController_FullMethodName = "/opi_api.storage.v1.FrontendNvmeService/CreateNvmeController"
-	FrontendNvmeService_DeleteNvmeController_FullMethodName = "/opi_api.storage.v1.FrontendNvmeService/DeleteNvmeController"
-	FrontendNvmeService_UpdateNvmeController_FullMethodName = "/opi_api.storage.v1.FrontendNvmeService/UpdateNvmeController"
-	FrontendNvmeService_ListNvmeControllers_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/ListNvmeControllers"
-	FrontendNvmeService_GetNvmeController_FullMethodName    = "/opi_api.storage.v1.FrontendNvmeService/GetNvmeController"
-	FrontendNvmeService_StatsNvmeController_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/StatsNvmeController"
-	FrontendNvmeService_CreateNvmeNamespace_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/CreateNvmeNamespace"
-	FrontendNvmeService_DeleteNvmeNamespace_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/DeleteNvmeNamespace"
-	FrontendNvmeService_UpdateNvmeNamespace_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/UpdateNvmeNamespace"
-	FrontendNvmeService_ListNvmeNamespaces_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/ListNvmeNamespaces"
-	FrontendNvmeService_GetNvmeNamespace_FullMethodName     = "/opi_api.storage.v1.FrontendNvmeService/GetNvmeNamespace"
-	FrontendNvmeService_StatsNvmeNamespace_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/StatsNvmeNamespace"
+	FrontendNvmeService_CreateNvmeSubsystem_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/CreateNvmeSubsystem"
+	FrontendNvmeService_DeleteNvmeSubsystem_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/DeleteNvmeSubsystem"
+	FrontendNvmeService_UpdateNvmeSubsystem_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/UpdateNvmeSubsystem"
+	FrontendNvmeService_ListNvmeSubsystems_FullMethodName    = "/opi_api.storage.v1.FrontendNvmeService/ListNvmeSubsystems"
+	FrontendNvmeService_GetNvmeSubsystem_FullMethodName      = "/opi_api.storage.v1.FrontendNvmeService/GetNvmeSubsystem"
+	FrontendNvmeService_StatsNvmeSubsystem_FullMethodName    = "/opi_api.storage.v1.FrontendNvmeService/StatsNvmeSubsystem"
+	FrontendNvmeService_CreateNvmeController_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/CreateNvmeController"
+	FrontendNvmeService_DeleteNvmeController_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/DeleteNvmeController"
+	FrontendNvmeService_UpdateNvmeController_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/UpdateNvmeController"
+	FrontendNvmeService_ListNvmeControllers_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/ListNvmeControllers"
+	FrontendNvmeService_GetNvmeController_FullMethodName     = "/opi_api.storage.v1.FrontendNvmeService/GetNvmeController"
+	FrontendNvmeService_StatsNvmeController_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/StatsNvmeController"
+	FrontendNvmeService_SuspendNvmeController_FullMethodName = "/opi_api.storage.v1.FrontendNvmeService/SuspendNvmeController"
+	FrontendNvmeService_ResumeNvmeController_FullMethodName  = "/opi_api.storage.v1.FrontendNvmeService/ResumeNvmeController"
+	FrontendNvmeService_CreateNvmeNamespace_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/CreateNvmeNamespace"
+	FrontendNvmeService_DeleteNvmeNamespace_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/DeleteNvmeNamespace"
+	FrontendNvmeService_UpdateNvmeNamespace_FullMethodName   = "/opi_api.storage.v1.FrontendNvmeService/UpdateNvmeNamespace"
+	FrontendNvmeService_ListNvmeNamespaces_FullMethodName    = "/opi_api.storage.v1.FrontendNvmeService/ListNvmeNamespaces"
+	FrontendNvmeService_GetNvmeNamespace_FullMethodName      = "/opi_api.storage.v1.FrontendNvmeService/GetNvmeNamespace"
+	FrontendNvmeService_StatsNvmeNamespace_FullMethodName    = "/opi_api.storage.v1.FrontendNvmeService/StatsNvmeNamespace"
 )
 
 // FrontendNvmeServiceClient is the client API for FrontendNvmeService service.
@@ -79,6 +81,13 @@ type FrontendNvmeServiceClient interface {
 	GetNvmeController(ctx context.Context, in *GetNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error)
 	// Get an Nvme Controller statistics
 	StatsNvmeController(ctx context.Context, in *StatsNvmeControllerRequest, opts ...grpc.CallOption) (*StatsNvmeControllerResponse, error)
+	// Stops admitting I/O on one controller and begins draining admitted I/O.
+	// Poll GetNvmeController until suspension_state is SUSPENDED.
+	// Repeated calls do not restart an existing suspension.
+	SuspendNvmeController(ctx context.Context, in *SuspendNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error)
+	// Restores I/O admission after controller readiness has been verified.
+	// Repeated calls on a resumed controller return its current state.
+	ResumeNvmeController(ctx context.Context, in *ResumeNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error)
 	// Create an Nvme Namespace
 	CreateNvmeNamespace(ctx context.Context, in *CreateNvmeNamespaceRequest, opts ...grpc.CallOption) (*NvmeNamespace, error)
 	// Delete an Nvme Namespace
@@ -221,6 +230,26 @@ func (c *frontendNvmeServiceClient) StatsNvmeController(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *frontendNvmeServiceClient) SuspendNvmeController(ctx context.Context, in *SuspendNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(NvmeController)
+	err := c.cc.Invoke(ctx, FrontendNvmeService_SuspendNvmeController_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *frontendNvmeServiceClient) ResumeNvmeController(ctx context.Context, in *ResumeNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(NvmeController)
+	err := c.cc.Invoke(ctx, FrontendNvmeService_ResumeNvmeController_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *frontendNvmeServiceClient) CreateNvmeNamespace(ctx context.Context, in *CreateNvmeNamespaceRequest, opts ...grpc.CallOption) (*NvmeNamespace, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(NvmeNamespace)
@@ -315,6 +344,13 @@ type FrontendNvmeServiceServer interface {
 	GetNvmeController(context.Context, *GetNvmeControllerRequest) (*NvmeController, error)
 	// Get an Nvme Controller statistics
 	StatsNvmeController(context.Context, *StatsNvmeControllerRequest) (*StatsNvmeControllerResponse, error)
+	// Stops admitting I/O on one controller and begins draining admitted I/O.
+	// Poll GetNvmeController until suspension_state is SUSPENDED.
+	// Repeated calls do not restart an existing suspension.
+	SuspendNvmeController(context.Context, *SuspendNvmeControllerRequest) (*NvmeController, error)
+	// Restores I/O admission after controller readiness has been verified.
+	// Repeated calls on a resumed controller return its current state.
+	ResumeNvmeController(context.Context, *ResumeNvmeControllerRequest) (*NvmeController, error)
 	// Create an Nvme Namespace
 	CreateNvmeNamespace(context.Context, *CreateNvmeNamespaceRequest) (*NvmeNamespace, error)
 	// Delete an Nvme Namespace
@@ -372,6 +408,12 @@ func (UnimplementedFrontendNvmeServiceServer) GetNvmeController(context.Context,
 }
 func (UnimplementedFrontendNvmeServiceServer) StatsNvmeController(context.Context, *StatsNvmeControllerRequest) (*StatsNvmeControllerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StatsNvmeController not implemented")
+}
+func (UnimplementedFrontendNvmeServiceServer) SuspendNvmeController(context.Context, *SuspendNvmeControllerRequest) (*NvmeController, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SuspendNvmeController not implemented")
+}
+func (UnimplementedFrontendNvmeServiceServer) ResumeNvmeController(context.Context, *ResumeNvmeControllerRequest) (*NvmeController, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResumeNvmeController not implemented")
 }
 func (UnimplementedFrontendNvmeServiceServer) CreateNvmeNamespace(context.Context, *CreateNvmeNamespaceRequest) (*NvmeNamespace, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNvmeNamespace not implemented")
@@ -628,6 +670,42 @@ func _FrontendNvmeService_StatsNvmeController_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FrontendNvmeService_SuspendNvmeController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SuspendNvmeControllerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FrontendNvmeServiceServer).SuspendNvmeController(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: FrontendNvmeService_SuspendNvmeController_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FrontendNvmeServiceServer).SuspendNvmeController(ctx, req.(*SuspendNvmeControllerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FrontendNvmeService_ResumeNvmeController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResumeNvmeControllerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FrontendNvmeServiceServer).ResumeNvmeController(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: FrontendNvmeService_ResumeNvmeController_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FrontendNvmeServiceServer).ResumeNvmeController(ctx, req.(*ResumeNvmeControllerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _FrontendNvmeService_CreateNvmeNamespace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateNvmeNamespaceRequest)
 	if err := dec(in); err != nil {
@@ -790,6 +868,14 @@ var FrontendNvmeService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StatsNvmeController",
 			Handler:    _FrontendNvmeService_StatsNvmeController_Handler,
+		},
+		{
+			MethodName: "SuspendNvmeController",
+			Handler:    _FrontendNvmeService_SuspendNvmeController_Handler,
+		},
+		{
+			MethodName: "ResumeNvmeController",
+			Handler:    _FrontendNvmeService_ResumeNvmeController_Handler,
 		},
 		{
 			MethodName: "CreateNvmeNamespace",

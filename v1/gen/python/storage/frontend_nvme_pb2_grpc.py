@@ -78,6 +78,16 @@ class FrontendNvmeServiceStub(object):
                 request_serializer=storage_dot_frontend__nvme__pb2.StatsNvmeControllerRequest.SerializeToString,
                 response_deserializer=storage_dot_frontend__nvme__pb2.StatsNvmeControllerResponse.FromString,
                 _registered_method=True)
+        self.SuspendNvmeController = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendNvmeService/SuspendNvmeController',
+                request_serializer=storage_dot_frontend__nvme__pb2.SuspendNvmeControllerRequest.SerializeToString,
+                response_deserializer=storage_dot_frontend__nvme__pb2.NvmeController.FromString,
+                _registered_method=True)
+        self.ResumeNvmeController = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendNvmeService/ResumeNvmeController',
+                request_serializer=storage_dot_frontend__nvme__pb2.ResumeNvmeControllerRequest.SerializeToString,
+                response_deserializer=storage_dot_frontend__nvme__pb2.NvmeController.FromString,
+                _registered_method=True)
         self.CreateNvmeNamespace = channel.unary_unary(
                 '/opi_api.storage.v1.FrontendNvmeService/CreateNvmeNamespace',
                 request_serializer=storage_dot_frontend__nvme__pb2.CreateNvmeNamespaceRequest.SerializeToString,
@@ -202,6 +212,23 @@ class FrontendNvmeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SuspendNvmeController(self, request, context):
+        """Stops admitting I/O on one controller and begins draining admitted I/O.
+        Poll GetNvmeController until suspension_state is SUSPENDED.
+        Repeated calls do not restart an existing suspension.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResumeNvmeController(self, request, context):
+        """Restores I/O admission after controller readiness has been verified.
+        Repeated calls on a resumed controller return its current state.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateNvmeNamespace(self, request, context):
         """Create an Nvme Namespace
         """
@@ -306,6 +333,16 @@ def add_FrontendNvmeServiceServicer_to_server(servicer, server):
                     servicer.StatsNvmeController,
                     request_deserializer=storage_dot_frontend__nvme__pb2.StatsNvmeControllerRequest.FromString,
                     response_serializer=storage_dot_frontend__nvme__pb2.StatsNvmeControllerResponse.SerializeToString,
+            ),
+            'SuspendNvmeController': grpc.unary_unary_rpc_method_handler(
+                    servicer.SuspendNvmeController,
+                    request_deserializer=storage_dot_frontend__nvme__pb2.SuspendNvmeControllerRequest.FromString,
+                    response_serializer=storage_dot_frontend__nvme__pb2.NvmeController.SerializeToString,
+            ),
+            'ResumeNvmeController': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResumeNvmeController,
+                    request_deserializer=storage_dot_frontend__nvme__pb2.ResumeNvmeControllerRequest.FromString,
+                    response_serializer=storage_dot_frontend__nvme__pb2.NvmeController.SerializeToString,
             ),
             'CreateNvmeNamespace': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateNvmeNamespace,
@@ -665,6 +702,60 @@ class FrontendNvmeService(object):
             '/opi_api.storage.v1.FrontendNvmeService/StatsNvmeController',
             storage_dot_frontend__nvme__pb2.StatsNvmeControllerRequest.SerializeToString,
             storage_dot_frontend__nvme__pb2.StatsNvmeControllerResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SuspendNvmeController(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.storage.v1.FrontendNvmeService/SuspendNvmeController',
+            storage_dot_frontend__nvme__pb2.SuspendNvmeControllerRequest.SerializeToString,
+            storage_dot_frontend__nvme__pb2.NvmeController.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ResumeNvmeController(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/opi_api.storage.v1.FrontendNvmeService/ResumeNvmeController',
+            storage_dot_frontend__nvme__pb2.ResumeNvmeControllerRequest.SerializeToString,
+            storage_dot_frontend__nvme__pb2.NvmeController.FromString,
             options,
             channel_credentials,
             insecure,

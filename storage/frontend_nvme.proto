@@ -96,6 +96,25 @@ service FrontendNvmeService {
     option (google.api.http) = {get: "/v1/{name=nvmeSubsystems/*/nvmeControllers/*}:stats"};
     option (google.api.method_signature) = "name";
   }
+  // Stops admitting I/O on one controller and begins draining admitted I/O.
+  // Poll GetNvmeController until suspension_state is SUSPENDED.
+  // Repeated calls do not restart an existing suspension.
+  rpc SuspendNvmeController(SuspendNvmeControllerRequest) returns (NvmeController) {
+    option (google.api.http) = {
+      post: "/v1/{name=nvmeSubsystems/*/nvmeControllers/*}:suspend"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+  }
+  // Restores I/O admission after controller readiness has been verified.
+  // Repeated calls on a resumed controller return its current state.
+  rpc ResumeNvmeController(ResumeNvmeControllerRequest) returns (NvmeController) {
+    option (google.api.http) = {
+      post: "/v1/{name=nvmeSubsystems/*/nvmeControllers/*}:resume"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+  }
   // Create an Nvme Namespace
   rpc CreateNvmeNamespace(CreateNvmeNamespaceRequest) returns (NvmeNamespace) {
     option (google.api.http) = {
@@ -260,6 +279,47 @@ message NvmeControllerSpec {
 message NvmeControllerStatus {
   // Device is in use by host nvme driver
   bool active = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Suspension states are independent of host-driver attachment.
+  enum SuspensionState {
+    // Suspension state is unknown, not proof that I/O admission is open.
+    SUSPENSION_STATE_UNSPECIFIED = 0;
+    // Controller is ready to admit I/O.
+    SUSPENSION_STATE_RESUMED = 1;
+    // New I/O admission is closed and admitted requests are completing.
+    SUSPENSION_STATE_SUSPENDING = 2;
+    // Admission is closed and all admitted I/O has completed.
+    SUSPENSION_STATE_SUSPENDED = 3;
+    // Readiness checks are running; admission remains closed.
+    SUSPENSION_STATE_RESUMING = 4;
+    // A transition failed. Admission remains closed until recovery succeeds.
+    SUSPENSION_STATE_ERROR = 5;
+  }
+  // Current per-controller I/O admission and drain state.
+  SuspensionState suspension_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Remaining admitted I/O. Absent means unknown; present values are nonnegative.
+  // Zero alone is not proof that the admission gate is closed.
+  optional int64 outstanding_ios = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Human-readable transition progress or failure information.
+  string suspension_status_message = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Request to quiesce one controller without deleting it or its namespaces.
+message SuspendNvmeControllerRequest {
+  // Controller to suspend.
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
+  ];
+}
+
+// Request to reopen I/O admission on one controller.
+message ResumeNvmeControllerRequest {
+  // Controller to resume.
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
+  ];
 }
 
 // Represents Nvme Namespace

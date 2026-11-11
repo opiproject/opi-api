@@ -8,6 +8,33 @@ see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
 
 see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
 
+### Per-controller I/O suspension
+
+`SuspendNvmeController` atomically closes I/O admission on the named controller
+before returning `SUSPENDING`. Already admitted requests complete normally.
+`GetNvmeController` reports `SUSPENDED` only after admission is closed and all
+admitted I/O has completed. An unknown or zero outstanding-I/O count alone does
+not prove suspension. Other controllers and management/resource-release APIs
+remain available; this is not whole-xPU maintenance.
+
+`ResumeNvmeController` verifies readiness before reopening admission and reporting
+`RESUMED`. Repeated calls return the current transition without restarting it.
+Resume while suspension is still in progress returns `FAILED_PRECONDITION`;
+recover an `ERROR` through Resume only after readiness can be verified.
+Failed transitions keep admission closed and expose `ERROR` plus diagnostic
+status. Unsupported implementations return `UNIMPLEMENTED`, never fake success.
+
+The existing `active` flag still means host-driver attachment and may remain true
+while suspended. Suspension neither detaches namespaces nor forcibly terminates
+I/O. Completion retains the transport's normal durability guarantees; callers
+needing a durable checkpoint must also use the appropriate flush operation.
+Implementations must serialize conflicting controller transitions and recover
+after a restart without silently reopening an unverified admission gate.
+
+This repository defines the contract and bindings. A bridge must implement the
+admission gate and drain accounting before advertising support. With Buf and Go
+on `PATH`, run `go -C tests test ./...` from the repository root.
+
 ## Reference implementations
 
 - <https://github.com/opiproject/opi-spdk-bridge>
