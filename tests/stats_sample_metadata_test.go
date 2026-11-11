@@ -2,6 +2,8 @@
 package contracts
 
 import (
+	"bytes"
+	"os"
 	"strings"
 	"testing"
 
@@ -10,6 +12,16 @@ import (
 	"google.golang.org/protobuf/reflect/protoreflect"
 	"google.golang.org/protobuf/types/dynamicpb"
 )
+
+func TestLegacyGenerationScriptUsesUnixLineEndings(t *testing.T) {
+	script, err := os.ReadFile("../scripts/generate-storage-legacy.sh")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if bytes.ContainsRune(script, '\r') {
+		t.Fatal("the legacy-generation shell script must use Unix line endings")
+	}
+}
 
 func TestStorageStatsMetadataCoverage(t *testing.T) {
 	files := schema(t)
