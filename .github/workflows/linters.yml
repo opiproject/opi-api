@@ -17,7 +17,6 @@ jobs:
 
   api-lint:
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -34,11 +33,12 @@ jobs:
         run: bash scripts/api-lint-test.sh
       - name: Run linter
         id: lint
+        continue-on-error: true
         run: |
           set -o pipefail
           bash scripts/api-lint.sh 2>&1 | tee api-lint-report.txt
       - name: Explain advisory results
-        if: failure() && steps.lint.outcome == 'failure'
+        if: steps.lint.outcome == 'failure'
         run: |
           echo '::warning::API lint found problems. This check is advisory while existing violations are addressed; see the report artifact.'
           echo 'API lint is advisory while existing violations are addressed. The runner returns a nonzero exit status for findings; see the api-lint-report artifact.' >> "$GITHUB_STEP_SUMMARY"
